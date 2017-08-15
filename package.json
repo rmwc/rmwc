@@ -1,0 +1,46 @@
+{
+  "name": "rmdc",
+  "version": "0.0.0",
+  "description": "A thin React wrapper for Material Design (Web) Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmfriedman/rmdc.git"
+  },
+  "keywords": [
+    "react",
+    "'material",
+    "design'",
+    "material",
+    "'material",
+    "web",
+    "components'"
+  ],
+  "author": "James Friedman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmfriedman/rmdc/issues"
+  },
+  "homepage": "https://github.com/jamesmfriedman/rmdc#readme",
+  "dependencies": {
+    "@material/button": "^0.3.11",
+    "@material/checkbox": "^0.4.2",
+    "@material/icon-toggle": "^0.1.16",
+    "@material/menu": "^0.4.3",
+    "@material/radio": "^0.2.9",
+    "@material/ripple": "^0.8.2",
+    "@material/select": "^0.3.12",
+    "@material/switch": "^0.1.11",
+    "@material/textfield": "^0.3.3",
+    "@material/toolbar": "^0.4.4",
+    "classnames": "^2.2.5",
+    "material-components-web": "^0.17.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {}
+}
