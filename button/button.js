@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple';
+import { getProviderOptions } from '../provider/provider';
 
 export class Button extends React.Component {
 	static contextTypes = {
@@ -26,7 +27,7 @@ export class Button extends React.Component {
 	}
 
 	componentDidMount() {
-		this.providerOptions = this.context.RMDCOptions;
+		this.providerOptions = getProviderOptions(this.context);
 		const { buttonDefaultRipple } = this.providerOptions;
 		const shouldRipple = this.props.ripple === undefined
 			? buttonDefaultRipple

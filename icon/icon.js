@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getProviderOptions } from '../provider/provider';
 
 export class Icon extends React.Component {
 	static contextTypes = {
@@ -11,7 +12,7 @@ export class Icon extends React.Component {
 	}
 
 	componentWillMount() {
-		this.providerOptions = this.context.RMDCOptions;
+		this.providerOptions = getProviderOptions(this.context);
 	}
 
 	render() {
