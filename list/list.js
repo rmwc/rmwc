@@ -21,14 +21,14 @@ export const List = props => {
 		}
 	);
 	return (
-		<ul className={classes} {...rest}>{children}</ul>
+		<div className={classes} {...rest}>{children}</div>
 	);
-}
+};
 
 List.propTypes = {
 	dense: PropTypes.bool,
 	twoLine: PropTypes.bool,
 	avatarList: PropTypes.bool
-}
+};
 
 export default List;

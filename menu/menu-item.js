@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import ListItem from '../list/list-item';
 
 const MenuItem = props => (

@@ -6,22 +6,21 @@ export const ListItemDetail = props => {
 	const {
 		className,
 		start,
-		end,
-		children,
-		...rest } = props;
+		end
+	} = props;
 
 	const classes = classNames(
 		className,
 		{
 			'mdc-list-item__start-detail': start || (start === false && end === false),
-			'mdc-list-item__end-detail': end,
+			'mdc-list-item__end-detail': end
 		}
 	);
 	return React.cloneElement(props.children, {
 		...props.children.props,
 		className: classes
 	});
-}
+};
 
 ListItemDetail.propTypes = {
 	start: PropTypes.bool,
@@ -32,6 +31,5 @@ ListItemDetail.defaultProps = {
 	start: false,
 	end: false
 };
-
 
 export default ListItemDetail;

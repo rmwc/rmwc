@@ -7,7 +7,7 @@ export class Menu extends React.Component {
 	static propTypes = {
 		open: PropTypes.bool,
 		onChange: PropTypes.func,
-		onSelected: PropTypes.func,
+		onSelected: PropTypes.func
 	}
 
 	static defaultProps = {
@@ -15,14 +15,16 @@ export class Menu extends React.Component {
 		onSelected: () => {}
 	}
 
+	handlers = [];
+
 	componentDidMount() {
 		this.api = new MDCSimpleMenu(this.el);
 		this.props.api && this.props.api(this.api);
 
-		this.api.listen('MDCSimpleMenu:cancel', (evt) => this.handleOnChange(evt));
-		this.api.listen('MDCSimpleMenu:selected', (evt) => {
+		this.registerHandler('MDCSimpleMenu:cancel', (evt) => this.handleOnChange(evt));
+		this.registerHandler('MDCSimpleMenu:selected', (evt) => {
 			this.handleOnChange(evt);
-			this.props.onSelected(evt)
+			this.props.onSelected(evt);
 		});
 	}
 
@@ -34,13 +36,17 @@ export class Menu extends React.Component {
 
 	componentWillUnmount() {
 		this.el = null;
+		this.handlers.forEach(handler => handler());
+	}
+
+	registerHandler(eventName, handler) {
+		this.api.listen(eventName, handler);
+		this.handlers.push(() => this.api.unlisten(eventName, handler));
 	}
 
 	handleOnChange(evt) {
-		window.requestAnimationFrame(() => {
-			evt.target.value = this.api.foundation_.isOpen();
-			this.props.onChange(evt);
-		});
+		evt.target.value = false;
+		this.props.onChange(evt);
 	}
 
 	render() {
@@ -59,9 +65,9 @@ export class Menu extends React.Component {
 
 		return (
 			<div ref={el => (this.el = el)} className={classes} tabIndex="-1" {...rest}>
-				<ul className="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+				<div className="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
 					{children}
-				</ul>
+				</div>
 			</div>
 		);
 	}
