@@ -22,6 +22,8 @@ export { default as Radio } from './lib/radio/radio';
 export { default as RMDCProvider } from './lib/provider/provider';
 export { default as Select } from './lib/select/select';
 export { default as Switch } from './lib/switch/switch';
+export { default as TabBar } from './lib/tabs/tab-bar';
+export { default as Tab } from './lib/tabs/tab';
 export { default as Textfield } from './lib/textfield/textfield';
 export { default as Toolbar } from './lib/toolbar/toolbar';
 export { default as ToolbarRow } from './lib/toolbar/toolbar-row';

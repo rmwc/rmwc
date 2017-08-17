@@ -147,6 +147,18 @@ export default [
 		`
 	},
 	{
+		name: 'Tabs',
+		class: ['TabBar', 'Tab'],
+		url: 'https://material.io/components/web/catalog/tabs/',
+		example: `
+			<TabBar activeTabIndex={this.state.activeTabIndex === undefined ? 0 : this.state.activeTabIndex} onChange={evt => this.setState({'activeTabIndex': evt.target.value})}>
+				<Tab>Cookies</Tab>
+				<Tab>Pizza</Tab>
+				<Tab>Icecream</Tab>
+			</TabBar>
+		`
+	},
+	{
 		name: 'Toolbars',
 		class: ['Toolbar', 'ToolbarRow', 'ToolbarSection', 'ToolbarTitle', 'ToolbarFixedAdjust'],
 		url: 'https://material.io/components/web/catalog/toolbar/',
