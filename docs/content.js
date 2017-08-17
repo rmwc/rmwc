@@ -29,8 +29,8 @@ export default [
 		url: 'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
 		example: `
 			<IconToggle
-				toggleOn={{label: 'Remove from favorites', content: 'favorite'}}
-				toggleOff={{label: 'Add to favorites', content: 'favorite_border'}}
+				on={{label: 'Remove from favorites', content: 'favorite'}}
+				off={{label: 'Add to favorites', content: 'favorite_border'}}
 			/>
 		`
 	},
