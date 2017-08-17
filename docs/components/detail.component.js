@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from 'docs/common/build-jsx-with-context';
 import * as rmdc from 'rmdc';
 
@@ -14,6 +16,21 @@ const {
 	ListItemText,
 	ListDivider
 } = rmdc;
+
+const cleanExampleCode = (codeString = '') => {
+	const parts = codeString.split('\n').slice(1, -1) || [];
+	const tabsCount = (parts[0] || '').search(/(?!\t)/);
+	let processVal;
+
+	if (tabsCount > 0) {
+		const regex = new RegExp((new Array(tabsCount)).fill('\t').join(''));
+		processVal = val => val.replace(regex, '');
+	} else {
+		processVal = val => val;
+	}
+
+	return parts.map(processVal).join('\n');
+};
 
 export class Detail extends React.Component {
 	state = {}
@@ -31,6 +48,7 @@ export class Detail extends React.Component {
 		});
 
 		const example = buildJSXWithContext(section.example, this, {...rmdc});
+		const exampleCodePreview = cleanExampleCode(section.example);
 
 		return (
 			<Grid>
@@ -39,6 +57,21 @@ export class Detail extends React.Component {
 					<Typography subheading2>
 						<a href={section.url}>{section.url}</a>
 					</Typography>
+				</GridCell>
+
+				<GridCell span="12">
+					<div className="demo-example">
+						<div className="demo-example-inner">
+							{ example }
+						</div>
+
+						<SyntaxHighlighter
+							language='xml'
+							style={codeStyle}
+						>
+							{exampleCodePreview}
+						</SyntaxHighlighter>
+					</div>
 				</GridCell>
 
 				<GridCell span="12">
@@ -61,9 +94,6 @@ export class Detail extends React.Component {
 					</Card>
 				</GridCell>
 
-				<GridCell span="12">
-					{ example }
-				</GridCell>
 			</Grid>
 		);
 	}

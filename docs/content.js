@@ -4,10 +4,12 @@ export default [
 		class: 'Button',
 		url: 'https://material.io/components/web/catalog/buttons/',
 		example: `
-			<Button>Button</Button>
-			<Button primary>Button</Button>
-			<Button accent primary>Button</Button>
-			<Button raised>Button</Button>
+			<Button>Default</Button>
+			<Button primary>Primary</Button>
+			<Button accent>Accent</Button>
+			<Button raised>Raised</Button>
+			<Button dense>Dense</Button>
+			<Button compact>Compact</Button>
 		`
 	},
 	{
@@ -61,7 +63,10 @@ export default [
 		class: 'Select',
 		url: 'https://material.io/components/web/catalog/input-controls/select-menus/',
 		example: `
-			<Select placeholder="Select a food" options={{1: 'Cookies', 2: 'Pizza', 3: 'Icecream'}}></Select>
+			<Select
+				placeholder="Select a food"
+				options={{1: 'Cookies', 2: 'Pizza', 3: 'Icecream'}}
+			/>
 		`
 	},
 	{
@@ -69,9 +74,9 @@ export default [
 		class: 'Switch',
 		url: 'https://material.io/components/web/catalog/input-controls/switches/',
 		example: `
-			<div><Switch>Cookies</Switch></div><br/>
-			<div><Switch>Pizza</Switch></div><br/>
-			<div><Switch>Icecream</Switch></div><br/>
+			<Switch>Cookies</Switch> <br/><br/>
+			<Switch>Pizza</Switch> <br/><br/>
+			<Switch>Icecream</Switch> <br/><br/>
 		`
 	},
 	{
@@ -110,6 +115,7 @@ export default [
 							<Icon>info</Icon>
 						</ListItemDetail>
 					</ListItem>
+
 					<ListItem ripple>
 						<ListItemDetail>
 							<Icon>favorite_border</Icon>
@@ -119,6 +125,7 @@ export default [
 							<Icon>info</Icon>
 						</ListItemDetail>
 					</ListItem>
+
 					<ListItem ripple>
 						<ListItemDetail>
 							<Icon>mood</Icon>
@@ -137,8 +144,18 @@ export default [
 		url: 'https://material.io/components/web/catalog/menus/',
 		example: `
 			<MenuAnchor>
-				<Button raised primary onClick={evt => this.setState({'menuIsOpen': !this.state.menuIsOpen})}>Open Menu</Button>
-				<Menu open={this.state.menuIsOpen} onChange={evt => this.setState({'menuIsOpen': evt.target.value})}>
+				<Button
+					raised
+					primary
+					onClick={evt => this.setState({'menuIsOpen': !this.state.menuIsOpen})}
+				>
+					Open Menu
+				</Button>
+
+				<Menu
+					open={this.state.menuIsOpen}
+					onChange={evt => this.setState({'menuIsOpen': evt.target.value})}
+				>
 					<MenuItem>Cookies</MenuItem>
 					<MenuItem>Pizza</MenuItem>
 					<MenuItem>Icecream</MenuItem>
@@ -151,7 +168,10 @@ export default [
 		class: ['TabBar', 'Tab'],
 		url: 'https://material.io/components/web/catalog/tabs/',
 		example: `
-			<TabBar activeTabIndex={this.state.activeTabIndex === undefined ? 0 : this.state.activeTabIndex} onChange={evt => this.setState({'activeTabIndex': evt.target.value})}>
+			<TabBar
+				activeTabIndex={this.state.activeTabIndex || 0}
+				onChange={evt => this.setState({'activeTabIndex': evt.target.value})}
+			>
 				<Tab>Cookies</Tab>
 				<Tab>Pizza</Tab>
 				<Tab>Icecream</Tab>

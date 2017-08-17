@@ -13,7 +13,25 @@ app > div {
 	min-height: 100vh;
 }
 
+pre {
+	tab-size: 2;
+}
+
 .demo-content {
 	display: flex;
 	flex: 1;
 }
+
+.demo-example {
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 5px;
+
+	pre {
+		margin: 4px;
+	}
+}
+
+.demo-example-inner {
+	padding: 16px;
+}
+

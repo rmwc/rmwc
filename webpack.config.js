@@ -46,7 +46,19 @@ module.exports = function(env) {
 				root
 			),
 			new HtmlWebpackPlugin({
-				template: 'docs/index.ejs'
+				template: 'docs/index.ejs',
+				chunksSortMode: (a, b) => {
+					var order = ['commons', 'polyfills', 'styles', 'app'].reverse();
+					return order.indexOf(b.names[0]) - order.indexOf(a.names[0]);
+				}
+			})
+		]
+	};
+
+	const optimizedConfig = {
+		plugins: [
+			new webpack.optimize.CommonsChunkPlugin({
+				name: 'commons'
 			})
 		]
 	};
@@ -78,6 +90,6 @@ module.exports = function(env) {
 	if (process.argv.some(val => ~val.search('webpack-dev-server'))) {
 		return merge.smart(baseConfig, devConfig);
 	} else {
-		return baseConfig;
+		return merge.smart(baseConfig, optimizedConfig);
 	}
 };
