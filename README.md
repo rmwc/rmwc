@@ -60,3 +60,9 @@ import { Button } from 'rmdc';
 
 const HelloWorld = props => <Button>Easy</Button>
 ```
+
+## To run the docs / contribute
+- `git clone https://github.com/jamesmfriedman/rmdc.git`
+- `cd rmdc`
+- `npm install`
+- `npm start`
