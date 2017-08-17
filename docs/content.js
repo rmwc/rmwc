@@ -1,6 +1,6 @@
 export default [
 	{
-		name: 'Button',
+		name: 'Buttons',
 		class: 'Button',
 		url: 'https://material.io/components/web/catalog/buttons/',
 		example: `
