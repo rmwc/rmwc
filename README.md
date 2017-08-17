@@ -33,7 +33,7 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
   - [x] Form Fields
   - [x] Radio Buttons
   - [x] Select Menus
-  - [ ] Sliders
+  - [x] Sliders
   - [x] Switches
   - [x] Text Fields
 - [x] Layout Grids
