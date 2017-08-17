@@ -13,7 +13,13 @@ export default [
 	{
 		name: 'Icon Toggle Buttons',
 		class: 'IconToggle',
-		url: 'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/'
+		url: 'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
+		example: `
+			<IconToggle
+				toggleOn={{label: 'Remove from favorites', content: 'favorite'}}
+				toggleOff={{label: 'Add to favorites', content: 'favorite_border'}}
+			/>
+		`
 	},
 	{
 		name: 'Cards',
