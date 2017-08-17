@@ -70,6 +70,37 @@ export default [
 		`
 	},
 	{
+		name: 'Sliders',
+		class: 'Slider',
+		url: 'https://material.io/components/web/catalog/input-controls/sliders/',
+		example: `
+			<Slider
+				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
+				onChange={evt => this.setState({sliderValue: evt.target.value})}
+			/>
+
+			<Slider
+				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
+				onChange={evt => this.setState({sliderValue: evt.target.value})}
+				discrete
+				step={5}
+			/>
+
+			<Slider
+				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
+				onChange={evt => this.setState({sliderValue: evt.target.value})}
+				discrete
+				displayMarkers
+				step={5}
+			/>
+
+			<Textfield
+				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
+				onChange={evt => this.setState({sliderValue: evt.target.value})}
+			/>
+		`
+	},
+	{
 		name: 'Switches',
 		class: 'Switch',
 		url: 'https://material.io/components/web/catalog/input-controls/switches/',
