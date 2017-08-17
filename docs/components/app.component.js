@@ -32,7 +32,7 @@ export class App extends React.Component {
 			<div>
 				<Toolbar>
 					<ToolbarRow>
-						<ToolbarTitle>RMDC</ToolbarTitle>
+						<ToolbarTitle>ReactMDC</ToolbarTitle>
 					</ToolbarRow>
 				</Toolbar>
 				<div className="demo-content">

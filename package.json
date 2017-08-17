@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "npm run build && git subtree split --branch gh-pages --prefix public && git push origin gh-pages --force",
+    "deploy": "npm run build && git add public && git commit -m 'running build' && git subtree split -b gh-pages --prefix public && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

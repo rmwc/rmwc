@@ -19,7 +19,7 @@ module.exports = function(env) {
 		output: {
 			filename: '[name].[hash].js',
 			path: path.join(root, 'public'),
-			publicPath: '/'
+			publicPath: './'
 		},
 		resolve: {
 			alias: {
