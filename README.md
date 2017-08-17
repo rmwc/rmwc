@@ -25,12 +25,12 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
   - [x] Icon Toggles
 - [ ] Cards
 - [ ] Dialogs
-- [ ] Drawers
+- [x] Drawers
 - [ ] Elevation
 - [ ] Grid Lists
 - [ ] Inputs and Controls
   - [x] Checkboxes
-  - [ ] Form Fields
+  - [x] Form Fields
   - [x] Radio Buttons
   - [x] Select Menus
   - [ ] Sliders
@@ -42,7 +42,7 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
 - [x] Menu
 - [ ] Ripples
 - [ ] Snack Bars
-- [ ] Tabs
+- [x] Tabs
 - [x] Toolbars
 - [x] Typography
 
@@ -60,3 +60,9 @@ import { Button } from 'rmdc';
 
 const HelloWorld = props => <Button>Easy</Button>
 ```
+
+## To run the docs / contribute
+- `git clone https://github.com/jamesmfriedman/rmdc.git`
+- `cd rmdc`
+- `npm install`
+- `npm start`
