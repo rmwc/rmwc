@@ -13,6 +13,17 @@ export default [
 		`
 	},
 	{
+		name: 'Fabs',
+		class: 'Fab',
+		url: 'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
+		example: `
+			<Fab>favorite</Fab>
+			<Fab mini>favorite</Fab>
+			<Fab plain>favorite</Fab>
+			<Fab mini plain>favorite</Fab>
+		`
+	},
+	{
 		name: 'Icon Toggle Buttons',
 		class: 'IconToggle',
 		url: 'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
@@ -80,15 +91,15 @@ export default [
 			/>
 
 			<Slider
-				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
-				onChange={evt => this.setState({sliderValue: evt.target.value})}
+				value={this.state.sliderValue2 === undefined ? 50 : this.state.sliderValue2}
+				onChange={evt => this.setState({sliderValue2: evt.target.value})}
 				discrete
 				step={5}
 			/>
 
 			<Slider
-				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
-				onChange={evt => this.setState({sliderValue: evt.target.value})}
+				value={this.state.sliderValue3 === undefined ? 50 : this.state.sliderValue3}
+				onChange={evt => this.setState({sliderValue3: evt.target.value})}
 				discrete
 				displayMarkers
 				step={5}

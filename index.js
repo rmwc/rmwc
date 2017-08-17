@@ -2,6 +2,7 @@ export { default as Button } from './lib/button/button';
 export { default as Card } from './lib/card/card';
 export { default as Checkbox } from './lib/checkbox/checkbox';
 export { default as Drawer } from './lib/drawer/drawer';
+export { default as Fab } from './lib/fab/fab';
 export { default as FormField } from './lib/form-field/form-field';
 export { default as Grid } from './lib/grid/grid';
 export { default as GridCell } from './lib/grid/grid-cell';
