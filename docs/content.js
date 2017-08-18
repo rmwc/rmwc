@@ -40,6 +40,81 @@ export default [
 		url: 'https://material.io/components/web/catalog/cards/'
 	},
 	{
+		name: 'Dialogs',
+		class: ['SimpleDialog', 'Dialog', 'DialogSurface', 'DialogHeader', 'DialogHeaderTitle', 'DialogBody', 'DialogFooter', 'DialogFooterButton', 'DialogBackdrop'],
+		url: 'https://material.io/components/web/catalog/dialogs/',
+		example: `
+			{/** Simple Dialogs for basic usage **/}
+			<SimpleDialog
+				title="This is a simple dialog"
+				body="You can pass the body prop, or anything you want as children."
+				open={this.state.simpleDialogIsOpen}
+				onClose={evt => this.setState({simpleDialogIsOpen: false})}
+				onAccept={evt => alert('Accepted')}
+				onCancel={evt => alert('Cancelled')}
+			/>
+
+
+			{/** Compose your own **/}
+			<Dialog
+				open={this.state.customDialogIsOpen}
+				onClose={evt => this.setState({customDialogIsOpen: false})}
+			>
+				<DialogSurface>
+						<DialogHeader>
+							<DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
+						</DialogHeader>
+						<DialogBody>This is a custom dialog.</DialogBody>
+						<DialogFooter>
+								<DialogFooterButton cancel>Cancel</DialogFooterButton>
+								<DialogFooterButton accept>Sweet!</DialogFooterButton>
+						</DialogFooter>
+				</DialogSurface>
+				<DialogBackdrop />
+			</Dialog>
+
+
+			<Button
+				primary
+				raised
+				onClick={evt => this.setState({simpleDialogIsOpen: true})}
+			>
+				Open Simple Dialog
+			</Button>
+
+			<Button
+				primary
+				onClick={evt => this.setState({customDialogIsOpen: true})}
+			>
+				Open Custom Dialog
+			</Button>
+		`
+	},
+	{
+		name: 'Elevation',
+		class: 'Elevation',
+		url: 'https://material.io/components/web/catalog/elevation/',
+		example: `
+			{Array(25).fill().map((val, i) => (
+				<Elevation
+					z={i}
+					key={i}
+				>
+					{i}dp
+				</Elevation>
+			))}
+
+			<Elevation
+				z={this.state.elevation || 0}
+				transition
+				onMouseOver={() => this.setState({elevation: 24})}
+				onMouseOut={() => this.setState({elevation: 0})}
+			>
+				Hover Me {this.state.elevation || 0}dp
+			</Elevation>
+		`
+	},
+	{
 		name: 'Checkboxes',
 		class: 'Checkbox',
 		url: 'https://material.io/components/web/catalog/cards/',
@@ -143,6 +218,18 @@ export default [
 		`
 	},
 	{
+		name: 'Linear Progress',
+		class: 'LinearProgress',
+		url: 'https://material.io/components/web/catalog/linear-progress/',
+		example: `
+			<LinearProgress progress={0.5}></LinearProgress>
+			<LinearProgress progress={0.3} accent></LinearProgress>
+			<LinearProgress progress={0.6} buffer={0.6}></LinearProgress>
+			<LinearProgress determinate={false}></LinearProgress>
+			<LinearProgress progress={0.2} reverse></LinearProgress>
+		`
+	},
+	{
 		name: 'Lists',
 		class: ['List', 'ListItem', 'ListItemText', 'ListItemDetail', 'ListDivider', 'ListGroup', 'ListGroupSubheader'],
 		url: 'https://material.io/components/web/catalog/layout-grids/',
@@ -230,6 +317,25 @@ export default [
 					<ToolbarTitle>Toolbar</ToolbarTitle>
 				</ToolbarRow>
 			</Toolbar>
+		`
+	},
+	{
+		name: 'Typography',
+		class: ['Typography'],
+		url: 'https://material.io/components/web/catalog/typography/',
+		example: `
+			<Typography display4>display4</Typography>
+			<Typography display3>display3</Typography>
+			<Typography display2>display2</Typography>
+			<Typography display1>display1</Typography>
+			<Typography headline>headline</Typography>
+			<Typography title>title</Typography>
+			<Typography subheading2>subheading2</Typography>
+			<Typography subheading1>subheading1</Typography>
+			<Typography body2>body2</Typography>
+			<Typography body1>body1</Typography>
+			<Typography caption>caption</Typography>
+			<Typography button>button</Typography>
 		`
 	}
 ];

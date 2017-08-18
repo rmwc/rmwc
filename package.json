@@ -31,8 +31,10 @@
   "dependencies": {
     "@material/button": "^0.3.11",
     "@material/checkbox": "^0.4.2",
+    "@material/dialog": "^0.3.5",
     "@material/form-field": "^0.2.11",
     "@material/icon-toggle": "^0.1.16",
+    "@material/linear-progress": "^0.1.6",
     "@material/menu": "^0.4.3",
     "@material/radio": "^0.2.9",
     "@material/ripple": "^0.8.2",

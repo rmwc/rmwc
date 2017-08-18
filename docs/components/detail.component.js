@@ -20,16 +20,8 @@ const {
 const cleanExampleCode = (codeString = '') => {
 	const parts = codeString.split('\n').slice(1, -1) || [];
 	const tabsCount = (parts[0] || '').search(/(?!\t)/);
-	let processVal;
-
-	if (tabsCount > 0) {
-		const regex = new RegExp((new Array(tabsCount)).fill('\t').join(''));
-		processVal = val => val.replace(regex, '');
-	} else {
-		processVal = val => val;
-	}
-
-	return parts.map(processVal).join('\n');
+	const regex = new RegExp('\t'.repeat(tabsCount < 0 ? 0 : tabsCount));
+	return parts.map(val => val.replace(regex, '')).join('\n');
 };
 
 export class Detail extends React.Component {
@@ -51,10 +43,10 @@ export class Detail extends React.Component {
 		const exampleCodePreview = cleanExampleCode(section.example);
 
 		return (
-			<Grid>
+			<Grid id={'detail-section-' + section.name.toLowerCase().replace(' ', '-')}>
 				<GridCell span="12">
-					<Typography display1>{section.name}</Typography>
-					<Typography subheading2>
+					<Typography display1 tag="h2">{section.name}</Typography>
+					<Typography subheading2 tag="h3" wrap>
 						<a href={section.url}>{section.url}</a>
 					</Typography>
 				</GridCell>

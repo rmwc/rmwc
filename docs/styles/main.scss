@@ -35,3 +35,26 @@ pre {
 	padding: 16px;
 }
 
+#detail-section-elevation {
+	.demo-example [class*='mdc-elevation--'] {
+		padding: 16px;
+		margin: 16px;
+		display: inline-block;
+		width: 96px;
+		height: 96px;
+		vertical-align: top;
+	}
+}
+
+#detail-section-linear-progress {
+	.demo-example .mdc-linear-progress {
+		margin: 16px 0;
+	}
+}
+
+#detail-section-typography {
+	.demo-example [class*='mdc-typography--'] {
+		margin: 16px 0;
+		display: block;
+	}
+}

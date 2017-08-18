@@ -24,9 +24,9 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
   - [x] FABs
   - [x] Icon Toggles
 - [ ] Cards
-- [ ] Dialogs
+- [x] Dialogs
 - [x] Drawers
-- [ ] Elevation
+- [x] Elevation
 - [ ] Grid Lists
 - [x] Inputs and Controls
   - [x] Checkboxes
@@ -37,7 +37,7 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
   - [x] Switches
   - [x] Text Fields
 - [x] Layout Grids
-- [ ] Linear Progress
+- [x] Linear Progress
 - [x] Lists
 - [x] Menu
 - [ ] Ripples
