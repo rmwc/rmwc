@@ -41,11 +41,11 @@ export default [
 	},
 	{
 		name: 'Dialogs',
-		class: ['SimpleDialog', 'Dialog', 'DialogSurface', 'DialogHeader', 'DialogHeaderTitle', 'DialogBody', 'DialogFooter', 'DialogFooterButton', 'DialogBackdrop'],
+		class: ['Dialog'],
 		url: 'https://material.io/components/web/catalog/dialogs/',
 		example: `
 			{/** Simple Dialogs for basic usage **/}
-			<SimpleDialog
+			<Dialog
 				title="This is a simple dialog"
 				body="You can pass the body prop, or anything you want as children."
 				open={this.state.simpleDialogIsOpen}
@@ -56,22 +56,24 @@ export default [
 
 
 			{/** Compose your own **/}
-			<Dialog
+			<DialogController
 				open={this.state.customDialogIsOpen}
 				onClose={evt => this.setState({customDialogIsOpen: false})}
 			>
-				<DialogSurface>
-						<DialogHeader>
-							<DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
-						</DialogHeader>
-						<DialogBody>This is a custom dialog.</DialogBody>
-						<DialogFooter>
-								<DialogFooterButton cancel>Cancel</DialogFooterButton>
-								<DialogFooterButton accept>Sweet!</DialogFooterButton>
-						</DialogFooter>
-				</DialogSurface>
-				<DialogBackdrop />
-			</Dialog>
+				<DialogEl>
+					<DialogSurfaceEl>
+							<DialogHeaderEl>
+								<DialogHeaderTitleEl>Dialog Title</DialogHeaderTitleEl>
+							</DialogHeaderEl>
+							<DialogBodyEl>This is a custom dialog.</DialogBodyEl>
+							<DialogFooterEl>
+									<DialogFooterButton cancel>Cancel</DialogFooterButton>
+									<DialogFooterButton accept>Sweet!</DialogFooterButton>
+							</DialogFooterEl>
+					</DialogSurfaceEl>
+					<DialogBackdropEl />
+				</DialogEl>
+			</DialogController>
 
 
 			<Button

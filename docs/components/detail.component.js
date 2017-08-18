@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from 'docs/common/build-jsx-with-context';
 import * as rmdc from 'rmdc';
+import * as rmdcElements from 'rmdc/elements';
 
 const {
 	Grid,
@@ -39,7 +40,7 @@ export class Detail extends React.Component {
 			};
 		});
 
-		const example = buildJSXWithContext(section.example, this, {...rmdc});
+		const example = buildJSXWithContext(section.example, this, {...rmdc, ...rmdcElements});
 		const exampleCodePreview = cleanExampleCode(section.example);
 
 		return (
