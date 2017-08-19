@@ -1,61 +1,61 @@
-export { ButtonEl } from './lib/button/button';
+export { Button } from './lib/button/button';
 
 export {
-	CheckboxEl,
-	CheckboxNativeControlEl,
-	CheckboxBackgroundEl,
-	CheckboxCheckmarkEl,
-	CheckboxCheckmarkPathEl,
-	CheckboxMixedmarkEl,
-	CheckboxLabelEl
+	CheckboxRoot,
+	CheckboxNativeControl,
+	CheckboxBackground,
+	CheckboxCheckmark,
+	CheckboxCheckmarkPath,
+	CheckboxMixedmark,
+	CheckboxLabel
 } from './lib/checkbox/checkbox';
 
 export {
-	DialogEl,
-	DialogBackdropEl,
-	DialogSurfaceEl,
-	DialogHeaderEl,
-	DialogHeaderTitleEl,
-	DialogBodyEl,
-	DialogFooterEl
+	DialogRoot,
+	DialogBackdrop,
+	DialogSurface,
+	DialogHeader,
+	DialogHeaderTitle,
+	DialogBody,
+	DialogFooter
 } from './lib/dialog/dialog';
 
-export { ElevationEl } from './lib/elevation/elevation';
+export { ElevationRoot } from './lib/elevation/elevation';
 
-export { FabEl, FabIconEl } from './lib/fab/fab';
+export { FabRoot, FabIcon } from './lib/fab/fab';
 
-export { FormFieldEl } from './lib/form-field/form-field';
+export { FormFieldRoot } from './lib/form-field/form-field';
 
-export { GridEl, GridInnerEl } from './lib/grid/grid';
-export { GridCellEl } from './lib/grid/grid-cell';
+export { GridRoot, GridInner } from './lib/grid/grid';
+export { GridCellRoot } from './lib/grid/grid-cell';
 
-export { IconEl } from './lib/icon/icon';
+export { IconRoot } from './lib/icon/icon';
 
 export {
-	LinearProgressEl,
-	LinearProgressBufferingDotsEl,
-	LinearProgressBufferEl,
-	LinearProgressPrimaryBarEl,
-	LinearProgressSecondaryBarEl,
-	LinearProgressBarInnerEl
+	LinearProgressRoot,
+	LinearProgressBufferingDots,
+	LinearProgressBuffer,
+	LinearProgressPrimaryBar,
+	LinearProgressSecondaryBar,
+	LinearProgressBarInner
 } from './lib/linear-progress/linear-progress';
 
-export { ListEl } from './lib/list/list';
+export { List } from './lib/list/list';
 
-export { MenuEl } from './lib/menu/menu';
+export { Menu } from './lib/menu/menu';
 
 export {
-	RadioEl,
-	RadioNativeControlEl,
-	RadioBackgroundEl,
-	RadioOuterCircleEl,
-	RadioInnerCircleEl,
-	RadioLabelEl
+	RadioRoot,
+	RadioNativeControl,
+	RadioBackground,
+	RadioOuterCircle,
+	RadioInnerCircle,
+	RadioLabel
 } from './lib/radio/radio';
 
 export {
-	SelectEl,
-	SelectSelectedTextEl,
-	SelectLabelEl,
-	SelectMenuEl
+	SelectRoot,
+	SelectSelectedText,
+	SelectLabel,
+	SelectMenu
 } from './lib/select/select';

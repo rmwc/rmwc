@@ -60,19 +60,19 @@ export default [
 				open={this.state.customDialogIsOpen}
 				onClose={evt => this.setState({customDialogIsOpen: false})}
 			>
-				<DialogEl>
-					<DialogSurfaceEl>
-							<DialogHeaderEl>
-								<DialogHeaderTitleEl>Dialog Title</DialogHeaderTitleEl>
-							</DialogHeaderEl>
-							<DialogBodyEl>This is a custom dialog.</DialogBodyEl>
-							<DialogFooterEl>
+				<DialogRoot>
+					<DialogSurface>
+							<DialogHeader>
+								<DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
+							</DialogHeader>
+							<DialogBody>This is a custom dialog.</DialogBody>
+							<DialogFooter>
 									<DialogFooterButton cancel>Cancel</DialogFooterButton>
 									<DialogFooterButton accept>Sweet!</DialogFooterButton>
-							</DialogFooterEl>
-					</DialogSurfaceEl>
-					<DialogBackdropEl />
-				</DialogEl>
+							</DialogFooter>
+					</DialogSurface>
+					<DialogBackdrop />
+				</DialogRoot>
 			</DialogController>
 
 

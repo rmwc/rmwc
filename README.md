@@ -18,7 +18,6 @@ There are many different Material UI implementations in both Angular and React. 
 ## Status: in development
 RMDC is in development and iterating rapidly. Going to flesh out the entire api surface and then get to some tests. Check indicates at least base features of component are implemented. Looking for help to end this React + Material nightmare.
 
-- [ ] Animation
 - [x] Buttons
   - [x] Standard
   - [x] FABs
