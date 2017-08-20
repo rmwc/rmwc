@@ -37,7 +37,21 @@ export default [
 	{
 		name: 'Cards',
 		class: 'Card',
-		url: 'https://material.io/components/web/catalog/cards/'
+		url: 'https://material.io/components/web/catalog/cards/',
+		example: `
+			<Card>
+				<CardPrimary>
+					<CardTitle>Title goes here</CardTitle>
+					<CardSubtitle>Subtitle here</CardSubtitle>
+				</CardPrimary>
+				<CardSupportingText>
+				</CardSupportingText>
+				<CardActions>
+					<CardAction>Action 1</CardAction>
+					<CardAction>Action 2</CardAction>
+				</CardActions>
+			</Card>
+		`
 	},
 	{
 		name: 'Dialogs',
@@ -56,7 +70,7 @@ export default [
 
 
 			{/** Compose your own **/}
-			<DialogController
+			<Dialog
 				open={this.state.customDialogIsOpen}
 				onClose={evt => this.setState({customDialogIsOpen: false})}
 			>
@@ -73,7 +87,7 @@ export default [
 					</DialogSurface>
 					<DialogBackdrop />
 				</DialogRoot>
-			</DialogController>
+			</Dialog>
 
 
 			<Button
@@ -119,7 +133,7 @@ export default [
 	{
 		name: 'Checkboxes',
 		class: 'Checkbox',
-		url: 'https://material.io/components/web/catalog/cards/',
+		url: 'https://material.io/components/web/catalog/input-controls/checkboxes/',
 		example: `
 			<Checkbox>Cookies</Checkbox>
 			<Checkbox>Pizza</Checkbox>

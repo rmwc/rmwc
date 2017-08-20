@@ -1,8 +1,17 @@
 export { default as Button } from './lib/button/button';
-export { default as Card } from './lib/card/card';
+export {
+	Card,
+	CardAction,
+	CardActions,
+	CardPrimary,
+	CardSubtitle,
+	CardSupportingText,
+	CardTitle,
+	CardMedia
+} from './lib/card/card';
 export { default as Checkbox } from './lib/checkbox/checkbox';
 export { default as Drawer } from './lib/drawer/drawer';
-export { default as Dialog, DialogController } from './lib/dialog/dialog';
+export { default as Dialog } from './lib/dialog/dialog';
 export { default as DialogFooterButton } from './lib/dialog/dialog-footer-button';
 export { default as Elevation } from './lib/elevation/elevation';
 export { default as Fab } from './lib/fab/fab';
