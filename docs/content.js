@@ -329,7 +329,7 @@ export default [
 	{
 		name: 'Menus',
 		class: ['Menu', 'MenuItem'],
-		url: 'https://material.io/components/web/catalog/menus/',
+		url: 'https://material.io/components/web/catalog/lists/',
 		example: `
 			<MenuAnchor>
 				<Button
