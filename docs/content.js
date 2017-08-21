@@ -39,9 +39,14 @@ export default [
 		class: 'Card',
 		url: 'https://material.io/components/web/catalog/cards/',
 		example: `
-			<Card>
+			<Card style={{width: '320px'}}>
+				<CardMedia style={{
+					backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
+					height: '12.313rem'
+				}}>
+				</CardMedia>
 				<CardPrimary>
-					<CardTitle>Title goes here</CardTitle>
+					<CardTitle large>Title goes here</CardTitle>
 					<CardSubtitle>Subtitle here</CardSubtitle>
 				</CardPrimary>
 				<CardSupportingText>
@@ -128,6 +133,44 @@ export default [
 			>
 				Hover Me {this.state.elevation || 0}dp
 			</Elevation>
+		`
+	},
+	{
+		name: 'Grid Lists',
+		class: ['GridList', 'GridTile', 'GridTilePrimary', 'GridTilePrimaryContent', 'GridTileSecondary', 'GridTileTitle', 'GridTileTitleSupportText'],
+		url: 'https://material.io/components/web/catalog/grid-lists/',
+		example: `
+			<GridList
+				gutter1={this.state.gutter1}
+				headerCaption={this.state.headerCaption}
+				twolineCaption={this.state.twolineCaption}
+				withIconAlignStart={this.state.withIconAlignStart}
+				tileAspect={this.state.tileAspect}
+			>
+					{Array(4).fill().map((val, i) => (
+						<GridTile key={i}>
+							<GridTilePrimary>
+								<GridTilePrimaryContent wrap>
+									<img src="https://material-components-web.appspot.com/images/1-1.jpg"/>
+								</GridTilePrimaryContent>
+							</GridTilePrimary>
+							<GridTileSecondary>
+								<GridTileTitle>Tile {i + 1}</GridTileTitle>
+							</GridTileSecondary>
+						</GridTile>
+					))}
+			</GridList>
+
+			<Checkbox label="gutter1" onClick={() => this.setState({gutter1: !this.state.gutter1})}/>
+			<Checkbox label="headerCaption" onClick={() => this.setState({headerCaption: !this.state.headerCaption})}/>
+			<Checkbox label="twolineCaption" onClick={() => this.setState({twolineCaption: !this.state.twolineCaption})}/>
+			<Checkbox label="withIconAlignStart" onClick={() => this.setState({withIconAlignStart: !this.state.withIconAlignStart})}/>
+			<Select
+				value={this.state.tileAspect || '1x1'}
+				onChange={evt => this.setState({tileAspect: evt.target.value})}
+				label="tileAspect"
+				options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
+			/>
 		`
 	},
 	{
@@ -306,6 +349,44 @@ export default [
 					<MenuItem>Icecream</MenuItem>
 				</Menu>
 			</MenuAnchor>
+		`
+	},
+	{
+		name: 'Snackbars',
+		class: ['Snackbar'],
+		url: 'https://material.io/components/web/catalog/snackbars/',
+		example: `
+				<Button
+					raised
+					primary
+					onClick={evt => this.setState({snackbarIsOpen: !this.state.snackbarIsOpen})}
+				>
+					Show snackbar
+				</Button>
+
+				<Snackbar
+					show={this.state.snackbarIsOpen}
+					onClose={evt => this.setState({snackbarIsOpen: false})}
+					message="This is a new message"
+					actionText="Action"
+					actionHandler={() => alert('Action clicked')}
+				/>
+
+				<Button
+					primary
+					onClick={evt => this.setState({snackbarStartIsOpen: !this.state.snackbarStartIsOpen})}
+				>
+					Show start-aligned
+				</Button>
+
+				<Snackbar
+					show={this.state.snackbarStartIsOpen}
+					onClose={evt => this.setState({snackbarStartIsOpen: false})}
+					message="Start aligned"
+					actionText="Dismiss"
+					actionHandler={() => {}}
+					alignStart
+				/>
 		`
 	},
 	{

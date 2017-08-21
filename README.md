@@ -15,8 +15,8 @@ There are many different Material UI implementations in both Angular and React. 
  
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
-## Status: in development
-RMDC is in development and iterating rapidly. Going to flesh out the entire api surface and then get to some tests. Check indicates at least base features of component are implemented. Looking for help to end this React + Material nightmare.
+## Status: approaching Alpha
+RMDC is in development and iterating rapidly. The majority of the api surface is mapped out and now has to be checked for consistency and performance and tests have to be written. Following that the docs need a coat of polish. Check indicates at least base features of component are implemented. Looking for help to end this React + Material nightmare.
 
 - [x] Buttons
   - [x] Standard
@@ -26,7 +26,7 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
 - [x] Dialogs
 - [x] Drawers
 - [x] Elevation
-- [ ] Grid Lists
+- [x] Grid Lists
 - [x] Inputs and Controls
   - [x] Checkboxes
   - [x] Form Fields
@@ -40,7 +40,7 @@ RMDC is in development and iterating rapidly. Going to flesh out the entire api 
 - [x] Lists
 - [x] Menu
 - [ ] Ripples
-- [ ] Snack Bars
+- [x] Snack Bars
 - [x] Tabs
 - [x] Toolbars
 - [x] Typography

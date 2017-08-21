@@ -11,11 +11,19 @@ export {
 } from './lib/card/card';
 export { default as Checkbox } from './lib/checkbox/checkbox';
 export { default as Drawer } from './lib/drawer/drawer';
-export { default as Dialog } from './lib/dialog/dialog';
-export { default as DialogFooterButton } from './lib/dialog/dialog-footer-button';
+export { Dialog, DialogFooterButton } from './lib/dialog/dialog';
 export { default as Elevation } from './lib/elevation/elevation';
 export { default as Fab } from './lib/fab/fab';
 export { default as FormField } from './lib/form-field/form-field';
+export {
+	GridList,
+	GridTile,
+	GridTilePrimary,
+	GridTilePrimaryContent,
+	GridTileSecondary,
+	GridTileTitle,
+	GridTileTitleSupportText
+} from './lib/grid-list/grid-list';
 export { default as Grid } from './lib/grid/grid';
 export { default as GridCell } from './lib/grid/grid-cell';
 export { default as Icon } from './lib/icon/icon';
@@ -36,6 +44,7 @@ export { default as Radio } from './lib/radio/radio';
 export { default as RMDCProvider } from './lib/provider/provider';
 export { default as Select } from './lib/select/select';
 export { default as Slider } from './lib/slider/slider';
+export { Snackbar } from './lib/snackbar/snackbar';
 export { default as Switch } from './lib/switch/switch';
 export { default as TabBar } from './lib/tabs/tab-bar';
 export { default as Tab } from './lib/tabs/tab';
