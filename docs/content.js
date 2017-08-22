@@ -165,12 +165,14 @@ export default [
 			<Checkbox label="headerCaption" onClick={() => this.setState({headerCaption: !this.state.headerCaption})}/>
 			<Checkbox label="twolineCaption" onClick={() => this.setState({twolineCaption: !this.state.twolineCaption})}/>
 			<Checkbox label="withIconAlignStart" onClick={() => this.setState({withIconAlignStart: !this.state.withIconAlignStart})}/>
-			<Select
-				value={this.state.tileAspect || '1x1'}
-				onChange={evt => this.setState({tileAspect: evt.target.value})}
-				label="tileAspect"
-				options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
-			/>
+			<FormField>
+				<Select
+					value={this.state.tileAspect || '1x1'}
+					onChange={evt => this.setState({tileAspect: evt.target.value})}
+					label="tileAspect"
+					options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
+				/>
+			</FormField>
 		`
 	},
 	{
@@ -250,9 +252,9 @@ export default [
 		class: 'Switch',
 		url: 'https://material.io/components/web/catalog/input-controls/switches/',
 		example: `
-			<Switch>Cookies</Switch> <br/><br/>
-			<Switch>Pizza</Switch> <br/><br/>
-			<Switch>Icecream</Switch> <br/><br/>
+			<Switch>Cookies</Switch>
+			<Switch>Pizza</Switch>
+			<Switch>Icecream</Switch>
 		`
 	},
 	{
@@ -283,14 +285,14 @@ export default [
 		example: `
 			<LinearProgress progress={0.5}></LinearProgress>
 			<LinearProgress progress={0.3} accent></LinearProgress>
-			<LinearProgress progress={0.6} buffer={0.6}></LinearProgress>
+			<LinearProgress progress={0.6} buffer={0.8}></LinearProgress>
 			<LinearProgress determinate={false}></LinearProgress>
 			<LinearProgress progress={0.2} reverse></LinearProgress>
 		`
 	},
 	{
 		name: 'Lists',
-		class: ['List', 'ListItem', 'ListItemText', 'ListItemDetail', 'ListDivider', 'ListGroup', 'ListGroupSubheader'],
+		class: ['List', 'ListItem', 'ListItemText', 'ListItemTextSecondary', 'ListItemDetail', 'ListDivider', 'ListGroup', 'ListGroupSubheader'],
 		url: 'https://material.io/components/web/catalog/layout-grids/',
 		example: `
 				<List>
@@ -342,7 +344,7 @@ export default [
 
 				<Menu
 					open={this.state.menuIsOpen}
-					onChange={evt => this.setState({'menuIsOpen': evt.target.value})}
+					onClose={evt => this.setState({menuIsOpen: false})}
 				>
 					<MenuItem>Cookies</MenuItem>
 					<MenuItem>Pizza</MenuItem>

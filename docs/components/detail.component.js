@@ -15,6 +15,7 @@ const {
 	ListGroupSubheader,
 	ListItem,
 	ListItemText,
+	ListItemTextSecondary,
 	ListDivider
 } = rmdc;
 
@@ -33,10 +34,20 @@ export class Detail extends React.Component {
 		const componentClasses = !Array.isArray(section.class) ? [section.class] : section.class;
 		const componentDefs = componentClasses.map(componentName => {
 			const component = rmdc[componentName];
+
 			return {
 				name: componentName,
 				component: component,
-				props: component.propTypes
+				propTypes: component.propTypes,
+				defaultProps: component.defaultProps,
+				propMeta: Object.entries(component.propMeta || {}).reduce((acc, [key, val]) => {
+
+					acc[key] = {
+						...val,
+						type: !Array.isArray(val.type) ? [val.type] : val.type
+					};
+					return acc;
+				}, {})
 			};
 		});
 
@@ -73,14 +84,26 @@ export class Detail extends React.Component {
 							{componentDefs.map((def, i) => (
 								<ListGroup key={i}>
 									<ListGroupSubheader>{def.name} Props</ListGroupSubheader>
-									{def.props && Object.keys(def.props).map((propName, i) => (
-										<ListItem key={i}>
-											<ListItemText>
-												{ propName }
-											</ListItemText>
-										</ListItem>
-									))}
-									{i !== componentDefs.length - 1 && <ListDivider />}
+									<table>
+										<thead>
+											<tr>
+												<th>Prop</th>
+												<th>Type</th>
+												<th>Default</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											{def.propTypes && Object.keys(def.propTypes).map((propName, i) => (
+												<tr key={i}>
+													<td>{ propName }</td>
+													<td>{ !!def.propMeta[propName] && def.propMeta[propName].type.join(' | ') }</td>
+													<td>{ def.defaultProps[propName] + '' }</td>
+													<td>{ !!def.propMeta[propName] && def.propMeta[propName].desc }</td>
+												</tr>
+											))}
+										</tbody>
+									</table>
 								</ListGroup>
 							))}
 						</List>

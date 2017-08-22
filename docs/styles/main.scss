@@ -58,3 +58,199 @@ pre {
 		display: block;
 	}
 }
+
+#detail-section-switches {
+	.demo-example .mdc-form-field {
+		padding: 16px;
+	}
+}
+
+#detail-section-fabs {
+	.demo-example .mdc-fab {
+		margin: 16px;
+	}
+}
+
+
+#detail-section-grid-lists {
+	.demo-example .mdc-form-field {
+		padding: 16px;
+	}
+}
+
+$data-table-font-size: 13px;
+$data-table-header-font-size: 13px;
+$data-table-header-font-size: 1em !default;
+$data-table-header-sort-icon-size: 16px !default;
+
+$data-table-header-color: rgba(#000, 0.54) !default;
+$data-table-content-color: rgba(#000, 0.87) !default;
+$data-table-header-sorted-icon-hover-color: rgba(#000, 0.26) !default;
+$data-table-divider-color: rgba(#000, 0.12) !default;
+
+$data-table-hover-color: #EEEEEE !default;
+$data-table-selection-color: #F5F5F5 !default;
+
+$data-table-dividers: 1px solid $data-table-divider-color !default;
+
+$data-table-row-height: 48px !default;
+$data-table-last-row-height: 56px !default;
+$data-table-header-height: 56px !default;
+
+$data-table-column-spacing: 56px !default;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
+$data-table-card-header-height: 64px !default;
+$data-table-card-title-top: 20px !default;
+$data-table-card-padding: 10px !default;
+$data-table-button-padding-right: 16px !default;
+$data-table-cell-top: $data-table-card-padding / 2;
+
+table {
+  //border: $data-table-dividers;
+  border-collapse: collapse;
+  font-size: $data-table-font-size;
+  background-color: #FFFFFF;
+  width: 100%;
+  font-weight: 400;
+
+  thead {
+    font-size: $data-table-header-font-size;
+    padding-bottom: 3px;
+
+    .mdl-data-table__select {
+      margin-top: 0;
+    }
+  }
+
+  tbody {
+    tr {
+      position: relative;
+      height: $data-table-row-height;
+      color: $data-table-content-color;
+      //@include material-animation-default(0.28s);
+      transition-property: background-color;
+
+      &.selected {
+        background-color: $data-table-selection-color;
+      }
+
+      &:hover {
+        background-color: $data-table-hover-color;
+      }
+    }
+  }
+
+  td, th {
+    padding: 0 $data-table-column-padding 5px $data-table-column-padding;
+    text-align: left;
+
+    &.views-field-title {
+      padding-left: 12px;
+    }
+
+    &:first-of-type {
+      padding-left: 24px;
+      padding-right: 12px;
+    }
+
+    &:last-of-type {
+      padding-right: 24px;
+      padding-left: 12px;
+    }
+  }
+
+  td {
+    position: relative;
+    vertical-align: middle;
+    height: $data-table-row-height;
+    border-top: $data-table-dividers;
+    border-bottom: $data-table-dividers;
+    padding-top: $data-table-cell-top;
+    box-sizing: border-box;
+
+    .mdl-data-table__select {
+      vertical-align: middle;
+    }
+  }
+
+  th {
+    position: relative;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+    height: $data-table-header-height;
+    font-size: $data-table-header-font-size;
+    color: $data-table-header-color;
+    padding: 0 $data-table-column-padding 18px $data-table-column-padding;
+    box-sizing: border-box;
+    font-weight: 400;
+    &.is-active {
+      color: $data-table-content-color;
+    }
+
+    a {
+      color: inherit;
+      font-weight: 700;
+    }
+
+    &.mdl-data-table__header--sorted-ascending,
+    &.mdl-data-table__header--sorted-descending {
+      color: $data-table-content-color;
+      &:before {
+        //@include typo-icon;
+        font-size: $data-table-header-sort-icon-size;
+        content: "\e5d8";
+        margin-right: 5px;
+        vertical-align: sub;
+      }
+      &:hover {
+        cursor: pointer;
+        &:before {
+          color: $data-table-header-sorted-icon-hover-color;
+        }
+      }
+    }
+    &.mdl-data-table__header--sorted-descending:before {
+      content: "\e5db";
+    }
+  }
+  .mdc-form-field {
+    margin: 0;
+  }
+
+  .dropbutton-wrapper {
+    margin-right: -10px;
+  }
+  th.views-field-operations {
+    font-size: 0;
+    width: 48px;
+  }
+  th.select-all {
+    padding-bottom: 6px;
+  }
+}
+
+.mdl-data-table__select {
+  width: 16px;
+}
+
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
+  text-align: left;
+}
+
+
+.mdl-data-table td, .mdl-data-table th {
+  text-align: left;
+}
+
+.tabledrag-toggle-weight {
+  float: right;
+  margin-right: -12px;
+}
+
+
+form.vbo-hide {
+  .form-wrapper {
+    display: none;
+  }
+}

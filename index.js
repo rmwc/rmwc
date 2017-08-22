@@ -32,7 +32,7 @@ export { default as IconButton } from './lib/icon-button/icon-button';
 export { default as LinearProgress } from './lib/linear-progress/linear-progress';
 export { default as List } from './lib/list/list';
 export { default as ListItem } from './lib/list/list-item';
-export { default as ListItemText } from './lib/list/list-item-text';
+export { ListItemText, ListItemTextSecondary } from './lib/list/list-item-text';
 export { default as ListItemDetail } from './lib/list/list-item-detail';
 export { default as ListGroup } from './lib/list/list-group';
 export { default as ListGroupSubheader } from './lib/list/list-group-subheader';
