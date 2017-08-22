@@ -41,6 +41,7 @@ export { default as Menu } from './lib/menu/menu';
 export { default as MenuItem } from './lib/menu/menu-item';
 export { default as MenuAnchor } from './lib/menu/menu-anchor';
 export { default as Radio } from './lib/radio/radio';
+export { Ripple } from './lib/ripple/ripple';
 export { default as RMDCProvider } from './lib/provider/provider';
 export { default as Select } from './lib/select/select';
 export { default as Slider } from './lib/slider/slider';

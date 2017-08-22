@@ -46,7 +46,7 @@ export default [
 				}}>
 				</CardMedia>
 				<CardPrimary>
-					<CardTitle large>Title goes here</CardTitle>
+					<CardTitle large>Card Title</CardTitle>
 					<CardSubtitle>Subtitle here</CardSubtitle>
 				</CardPrimary>
 				<CardSupportingText>
@@ -349,6 +349,24 @@ export default [
 					<MenuItem>Icecream</MenuItem>
 				</Menu>
 			</MenuAnchor>
+		`
+	},
+	{
+		name: 'Ripples',
+		class: ['Ripple'],
+		url: 'https://material.io/components/web/catalog/ripples/',
+		example: `
+			<Ripple>
+				<p>Standard Ripple</p>
+			</Ripple>
+
+			<Ripple primary>
+				<p>Primary</p>
+			</Ripple>
+
+			<Ripple accent>
+				<p>Accent</p>
+			</Ripple>
 		`
 	},
 	{

@@ -39,7 +39,7 @@ RMDC is in development and iterating rapidly. The majority of the api surface is
 - [x] Linear Progress
 - [x] Lists
 - [x] Menu
-- [ ] Ripples
+- [x] Ripples
 - [x] Snack Bars
 - [x] Tabs
 - [x] Toolbars
