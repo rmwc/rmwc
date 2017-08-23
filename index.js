@@ -64,7 +64,7 @@ export { default as MenuAnchor } from './lib/menu/menu-anchor';
 export { default as Radio } from './lib/radio/radio';
 export { Ripple } from './lib/ripple/ripple';
 export { default as RMDCProvider } from './lib/provider/provider';
-export { default as Select } from './lib/select/select';
+export { Select, SelectFormField } from './lib/select/select';
 export { default as Slider } from './lib/slider/slider';
 export { Snackbar } from './lib/snackbar/snackbar';
 export { default as Switch } from './lib/switch/switch';
