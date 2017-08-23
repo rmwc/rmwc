@@ -10,7 +10,17 @@ export {
 	CardMedia
 } from './lib/card/card';
 export { default as Checkbox } from './lib/checkbox/checkbox';
-export { default as Drawer } from './lib/drawer/drawer';
+export {
+	PersistentDrawer,
+	PersistentDrawerHeaderContent,
+	PersistentDrawerHeader,
+	PersistentDrawerContent
+} from './lib/drawer/persistent-drawer';
+export {
+	PermanentDrawer,
+	PermanentDrawerToolbarSpacer,
+	PermanentDrawerContent
+} from './lib/drawer/permanent-drawer';
 export { Dialog, DialogFooterButton } from './lib/dialog/dialog';
 export { default as Elevation } from './lib/elevation/elevation';
 export { default as Fab } from './lib/fab/fab';
@@ -50,9 +60,11 @@ export { default as Switch } from './lib/switch/switch';
 export { default as TabBar } from './lib/tabs/tab-bar';
 export { default as Tab } from './lib/tabs/tab';
 export { default as Textfield } from './lib/textfield/textfield';
-export { default as Toolbar } from './lib/toolbar/toolbar';
-export { default as ToolbarRow } from './lib/toolbar/toolbar-row';
-export { default as ToolbarTitle } from './lib/toolbar/toolbar-title';
-export { default as ToolbarSection } from './lib/toolbar/toolbar-section';
-export { default as ToolbarFixedAdjust } from './lib/toolbar/toolbar-fixed-adjust';
+export {
+	Toolbar,
+	ToolbarRow,
+	ToolbarTitle,
+	ToolbarSection,
+	ToolbarFixedAdjust
+} from './lib/toolbar/toolbar';
 export { default as Typography } from './lib/typography/typography';

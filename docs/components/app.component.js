@@ -4,17 +4,27 @@ import {
 	Toolbar,
 	ToolbarRow,
 	ToolbarTitle,
-	Drawer,
+	ToolbarSection,
+	ToolbarFixedAdjust,
+	PermanentDrawer,
+	PermanentDrawerContent,
+	PersistentDrawer,
+	PersistentDrawerHeaderContent,
+	PersistentDrawerHeader,
+	PersistentDrawerContent,
 	List,
 	ListItem,
-	ListItemText
+	ListItemText,
+	IconButton,
+	Icon
 } from 'rmdc';
 
 import Detail from './detail.component';
 
 export class App extends React.Component {
 	state = {
-		section: content[0]
+		section: content[0],
+		menuIsOpen: false
 	}
 
 	render() {
@@ -30,15 +40,19 @@ export class App extends React.Component {
 
 		return (
 			<div>
-				<Toolbar>
+				<Toolbar fixed waterfall>
 					<ToolbarRow>
+						<IconButton onClick={evt => this.setState({menuIsOpen: !this.state.menuIsOpen})}><Icon>menu</Icon></IconButton>
 						<ToolbarTitle>ReactMDC</ToolbarTitle>
 					</ToolbarRow>
 				</Toolbar>
+				<ToolbarFixedAdjust/>
 				<div className="demo-content">
-					<Drawer>
-						{ nav }
-					</Drawer>
+					<PersistentDrawer open={this.state.menuIsOpen}>
+						<PersistentDrawerContent>
+							{ nav }
+						</PersistentDrawerContent>
+					</PersistentDrawer>
 					<main>
 						{this.state.section &&
 							<Detail section={this.state.section}></Detail>

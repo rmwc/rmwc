@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "npm run build && git add public && git commit -m 'running build' && git subtree split -b gh-pages --prefix public && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+    "deploy": "npm run build && git add public -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix public && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +32,7 @@
     "@material/button": "^0.3.11",
     "@material/checkbox": "^0.4.2",
     "@material/dialog": "^0.3.5",
+    "@material/drawer": "^0.5.5",
     "@material/form-field": "^0.2.11",
     "@material/icon-toggle": "^0.1.16",
     "@material/linear-progress": "^0.1.6",
