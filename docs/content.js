@@ -292,38 +292,38 @@ export default [
 	},
 	{
 		name: 'Lists',
-		class: ['List', 'ListItem', 'ListItemText', 'ListItemTextSecondary', 'ListItemDetail', 'ListDivider', 'ListGroup', 'ListGroupSubheader'],
+		class: ['List', 'ListItem', 'ListItemText', 'ListItemTextSecondary', 'ListItemStartDetail', 'ListItemEndDetail', 'ListDivider', 'ListGroup', 'ListGroupSubheader'],
 		url: 'https://material.io/components/web/catalog/layout-grids/',
 		example: `
 				<List>
 					<ListItem ripple>
-						<ListItemDetail>
+						<ListItemStartDetail>
 							<Icon>star_border</Icon>
-						</ListItemDetail>
+						</ListItemStartDetail>
 						<ListItemText>Cookies</ListItemText>
-						<ListItemDetail end>
+						<ListItemEndDetail>
 							<Icon>info</Icon>
-						</ListItemDetail>
+						</ListItemEndDetail>
 					</ListItem>
 
 					<ListItem ripple>
-						<ListItemDetail>
+						<ListItemStartDetail>
 							<Icon>favorite_border</Icon>
-						</ListItemDetail>
+						</ListItemStartDetail>
 						<ListItemText>Pizza</ListItemText>
-						<ListItemDetail end>
+						<ListItemEndDetail>
 							<Icon>info</Icon>
-						</ListItemDetail>
+						</ListItemEndDetail>
 					</ListItem>
 
 					<ListItem ripple>
-						<ListItemDetail>
+						<ListItemStartDetail>
 							<Icon>mood</Icon>
-						</ListItemDetail>
+						</ListItemStartDetail>
 						<ListItemText>Icecream</ListItemText>
-						<ListItemDetail end>
+						<ListItemEndDetail>
 							<Icon>info</Icon>
-						</ListItemDetail>
+						</ListItemEndDetail>
 					</ListItem>
 				</List>
 		`

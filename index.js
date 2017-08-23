@@ -12,14 +12,21 @@ export {
 export { default as Checkbox } from './lib/checkbox/checkbox';
 export {
 	PersistentDrawer,
-	PersistentDrawerHeaderContent,
 	PersistentDrawerHeader,
-	PersistentDrawerContent
+	PersistentDrawerContent,
+	PersistentDrawerListItem
 } from './lib/drawer/persistent-drawer';
+export {
+	TemporaryDrawer,
+	TemporaryDrawerHeader,
+	TemporaryDrawerContent,
+	TemporaryDrawerListItem
+} from './lib/drawer/temporary-drawer';
 export {
 	PermanentDrawer,
 	PermanentDrawerToolbarSpacer,
-	PermanentDrawerContent
+	PermanentDrawerContent,
+	PermanentDrawerListItem
 } from './lib/drawer/permanent-drawer';
 export { Dialog, DialogFooterButton } from './lib/dialog/dialog';
 export { default as Elevation } from './lib/elevation/elevation';
@@ -40,13 +47,17 @@ export { default as Icon } from './lib/icon/icon';
 export { default as IconToggle } from './lib/icon-toggle/icon-toggle';
 export { default as IconButton } from './lib/icon-button/icon-button';
 export { default as LinearProgress } from './lib/linear-progress/linear-progress';
-export { default as List } from './lib/list/list';
-export { default as ListItem } from './lib/list/list-item';
-export { ListItemText, ListItemTextSecondary } from './lib/list/list-item-text';
-export { default as ListItemDetail } from './lib/list/list-item-detail';
-export { default as ListGroup } from './lib/list/list-group';
-export { default as ListGroupSubheader } from './lib/list/list-group-subheader';
-export { default as ListDivider } from './lib/list/list-divider';
+export {
+	List,
+	ListItem,
+	ListItemText,
+	ListItemTextSecondary,
+	ListItemStartDetail,
+	ListItemEndDetail,
+	ListGroup,
+	ListGroupSubheader,
+	ListDivider
+} from './lib/list/list';
 export { default as Menu } from './lib/menu/menu';
 export { default as MenuItem } from './lib/menu/menu-item';
 export { default as MenuAnchor } from './lib/menu/menu-anchor';

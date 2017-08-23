@@ -9,9 +9,13 @@ import {
 	PermanentDrawer,
 	PermanentDrawerContent,
 	PersistentDrawer,
-	PersistentDrawerHeaderContent,
 	PersistentDrawerHeader,
+	PersistentDrawerListItem,
 	PersistentDrawerContent,
+	TemporaryDrawer,
+	TemporaryDrawerHeader,
+	TemporaryDrawerListItem,
+	TemporaryDrawerContent,
 	List,
 	ListItem,
 	ListItemText,
@@ -24,20 +28,10 @@ import Detail from './detail.component';
 export class App extends React.Component {
 	state = {
 		section: content[0],
-		menuIsOpen: false
+		menuIsOpen: true
 	}
 
 	render() {
-		const nav = (
-			<List>
-				{content.map((section, i) => (
-					<ListItem ripple key={i} onClick={evt => this.setState({section: section})}>
-						<ListItemText>{ section.name }</ListItemText>
-					</ListItem>
-				))}
-			</List>
-		);
-
 		return (
 			<div>
 				<Toolbar fixed waterfall>
@@ -48,9 +42,15 @@ export class App extends React.Component {
 				</Toolbar>
 				<ToolbarFixedAdjust/>
 				<div className="demo-content">
-					<PersistentDrawer open={this.state.menuIsOpen}>
+					<PersistentDrawer
+						open={this.state.menuIsOpen}
+						onClose={() => this.setState({menuIsOpen: false})}>
 						<PersistentDrawerContent>
-							{ nav }
+							{content.map((section, i) => (
+								<ListItem key={i} onClick={evt => this.setState({section: section})}>
+									<ListItemText>{ section.name }</ListItemText>
+								</ListItem>
+							))}
 						</PersistentDrawerContent>
 					</PersistentDrawer>
 					<main>
