@@ -369,6 +369,10 @@ export default [
 			<Ripple accent>
 				<p>Accent</p>
 			</Ripple>
+
+			<Ripple unbounded>
+				<p>Unbounded</p>
+			</Ripple>
 		`
 	},
 	{
@@ -441,18 +445,18 @@ export default [
 		class: ['Typography'],
 		url: 'https://material.io/components/web/catalog/typography/',
 		example: `
-			<Typography display4>display4</Typography>
-			<Typography display3>display3</Typography>
-			<Typography display2>display2</Typography>
-			<Typography display1>display1</Typography>
-			<Typography headline>headline</Typography>
-			<Typography title>title</Typography>
-			<Typography subheading2>subheading2</Typography>
-			<Typography subheading1>subheading1</Typography>
-			<Typography body2>body2</Typography>
-			<Typography body1>body1</Typography>
-			<Typography caption>caption</Typography>
-			<Typography button>button</Typography>
+			<Typography kind="display4">display4</Typography>
+			<Typography kind="display3">display3</Typography>
+			<Typography kind="display2">display2</Typography>
+			<Typography kind="display1">display1</Typography>
+			<Typography kind="headline">headline</Typography>
+			<Typography kind="title">title</Typography>
+			<Typography kind="subheading2">subheading2</Typography>
+			<Typography kind="subheading1">subheading1</Typography>
+			<Typography kind="body2">body2</Typography>
+			<Typography kind="body1">body1</Typography>
+			<Typography kind="caption">caption</Typography>
+			<Typography kind="button">button</Typography>
 		`
 	}
 ];
