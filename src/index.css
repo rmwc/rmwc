@@ -1,0 +1,192 @@
+body, #root {
+	display: block;
+	min-height: 100vh;
+}
+
+
+#root > div {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+pre {
+	tab-size: 2;
+}
+
+.demo-content {
+	display: flex;
+	flex: 1;
+}
+
+.demo-example {
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 5px;
+}
+
+.demo-example pre {
+  margin: 4px;
+}
+
+.demo-example-inner {
+	padding: 16px;
+}
+
+#detail-section-elevation .demo-example [class*='mdc-elevation--'] {
+  padding: 16px;
+  margin: 16px;
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  vertical-align: top;
+}
+
+#detail-section-linear-progress .demo-example .mdc-linear-progress {
+		margin: 16px 0;
+}
+
+#detail-section-typography .demo-example [class*='mdc-typography--'] {
+		margin: 16px 0;
+		display: block;
+}
+
+#detail-section-switches demo-example .mdc-form-field {
+	padding: 16px;
+}
+
+#detail-section-fabs .demo-example .mdc-fab {
+	margin: 16px;
+}
+
+
+#detail-section-grid-lists .demo-example .mdc-form-field {
+	padding: 16px;
+}
+
+
+
+.mdl-data-table__select {
+  width: 16px;
+}
+
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
+  text-align: left;
+}
+
+
+.mdl-data-table td, .mdl-data-table th {
+  text-align: left;
+}
+
+.tabledrag-toggle-weight {
+  float: right;
+  margin-right: -12px;
+}
+
+
+form.vbo-hide .form-wrapper {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 13px;
+  background-color: #fff;
+  width: 100%;
+  font-weight: 400;
+}
+table thead {
+  font-size: 13px;
+  padding-bottom: 3px;
+}
+table thead .mdl-data-table__select {
+  margin-top: 0;
+}
+table tbody tr {
+  position: relative;
+  height: 48px;
+  color: rgba(0, 0, 0, 0.87);
+  transition-property: background-color;
+}
+table tbody tr.selected {
+  background-color: #f5f5f5;
+}
+table tbody tr:hover {
+  background-color: #eee;
+}
+table td, table th {
+  padding: 0 28px 5px 28px;
+  text-align: left;
+}
+table td.views-field-title, table th.views-field-title {
+  padding-left: 12px;
+}
+table td:first-of-type, table th:first-of-type {
+  padding-left: 24px;
+  padding-right: 12px;
+}
+table td:last-of-type, table th:last-of-type {
+  padding-right: 24px;
+  padding-left: 12px;
+}
+table td {
+  position: relative;
+  vertical-align: middle;
+  height: 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+table td .mdl-data-table__select {
+  vertical-align: middle;
+}
+table th {
+  position: relative;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+  height: 56px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0 28px 18px 28px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+table th.is-active {
+  color: rgba(0, 0, 0, 0.87);
+}
+table th a {
+  color: inherit;
+  font-weight: 700;
+}
+table th.mdl-data-table__header--sorted-ascending, table th.mdl-data-table__header--sorted-descending {
+  color: rgba(0, 0, 0, 0.87);
+}
+table th.mdl-data-table__header--sorted-ascending:before, table th.mdl-data-table__header--sorted-descending:before {
+  font-size: 16px;
+  content: "\e5d8";
+  margin-right: 5px;
+  vertical-align: sub;
+}
+table th.mdl-data-table__header--sorted-ascending:hover, table th.mdl-data-table__header--sorted-descending:hover {
+  cursor: pointer;
+}
+table th.mdl-data-table__header--sorted-ascending:hover:before, table th.mdl-data-table__header--sorted-descending:hover:before {
+  color: rgba(0, 0, 0, 0.26);
+}
+table th.mdl-data-table__header--sorted-descending:before {
+  content: "\e5db";
+}
+table .mdc-form-field {
+  margin: 0;
+}
+table .dropbutton-wrapper {
+  margin-right: -10px;
+}
+table th.views-field-operations {
+  font-size: 0;
+  width: 48px;
+}
+table th.select-all {
+  padding-bottom: 6px;
+}

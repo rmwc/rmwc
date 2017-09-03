@@ -1,61 +1,122 @@
 {
   "name": "rmdc",
-  "version": "0.0.0",
-  "description": "A thin React wrapper for Material Design (Web) Components",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
-    "deploy": "npm run build && git add public -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix public && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jamesmfriedman/rmdc.git"
-  },
-  "keywords": [
-    "react",
-    "'material",
-    "design'",
-    "material",
-    "'material",
-    "web",
-    "components'"
-  ],
-  "author": "James Friedman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jamesmfriedman/rmdc/issues"
-  },
-  "homepage": "https://github.com/jamesmfriedman/rmdc#readme",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://jamesmfriedman.github.io/rmdc/",
   "dependencies": {
-    "classnames": "^2.2.5",
-    "material-components-web": "^0.19.0",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-hot-loader": "^3.0.0-beta.7"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.1",
+    "autoprefixer": "7.1.2",
+    "babel-core": "6.25.0",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-loader": "7.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.4",
-    "html-webpack-plugin": "^2.30.1",
-    "node-sass": "^4.5.3",
+    "babel-preset-react-app": "^3.0.2",
+    "babel-runtime": "6.26.0",
+    "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "chalk": "1.1.3",
+    "classnames": "^2.2.5",
+    "css-loader": "0.28.4",
+    "css-to-string-loader": "^0.1.3",
+    "dotenv": "4.0.0",
+    "eslint": "4.4.1",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0",
+    "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "0.11.2",
+    "fs-extra": "3.0.1",
+    "html-webpack-plugin": "2.29.0",
+    "jest": "20.0.4",
+    "material-components-web": "^0.19.0",
     "normalize.css": "^7.0.0",
-    "postcss-loader": "^2.0.6",
-    "raw-loader": "^0.5.1",
-    "react-router": "^4.1.2",
-    "react-router-dom": "^4.1.2",
-    "react-syntax-highlighter": "^5.6.3",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-merge": "^4.1.0"
+    "object-assign": "4.1.1",
+    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-loader": "2.0.6",
+    "promise": "8.0.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dev-utils": "^4.0.0",
+    "react-dom": "^15.6.1",
+    "react-syntax-highlighter": "^5.7.0",
+    "style-loader": "0.18.2",
+    "sw-precache-webpack-plugin": "0.11.4",
+    "url-loader": "0.5.9",
+    "webpack": "3.5.1",
+    "webpack-dev-server": "2.7.1",
+    "webpack-manifest-plugin": "1.2.1",
+    "whatwg-fetch": "2.0.3"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "deploy": "npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+    "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "transform-object-rest-spread",
+        {
+          "useBuiltIns": true
+        }
+      ],
+      [
+        "transform-class-properties",
+        {
+          "spec": true
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.6",
+    "@storybook/addon-knobs": "^3.2.8",
+    "@storybook/addon-links": "^3.2.6",
+    "@storybook/react": "^3.2.8"
   }
 }
