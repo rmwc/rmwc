@@ -41,8 +41,7 @@ export {
 	GridTileTitle,
 	GridTileTitleSupportText
 } from './lib/grid-list/grid-list';
-export { default as Grid } from './lib/grid/grid';
-export { default as GridCell } from './lib/grid/grid-cell';
+export { Grid, GridCell } from './lib/grid/grid';
 export { default as Icon } from './lib/icon/icon';
 export { default as IconToggle } from './lib/icon-toggle/icon-toggle';
 export { default as IconButton } from './lib/icon-button/icon-button';
@@ -68,8 +67,7 @@ export { Select, SelectFormField } from './lib/select/select';
 export { default as Slider } from './lib/slider/slider';
 export { Snackbar } from './lib/snackbar/snackbar';
 export { default as Switch } from './lib/switch/switch';
-export { default as TabBar } from './lib/tabs/tab-bar';
-export { default as Tab } from './lib/tabs/tab';
+export { Tab, TabBar } from './lib/tabs/tabs';
 export { default as Textfield } from './lib/textfield/textfield';
 export {
 	Toolbar,
