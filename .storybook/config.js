@@ -13,7 +13,7 @@ function loadStories() {
 }
 
 const StylesDecorator = storyFn => (
-  <div className="mdc-typography" style={{padding: '24px'}}>
+  <div className="mdc-typography" style={{padding: '24px', height: '100%'}}>
     <style>
       {normalizeStyles}
       {materialStyles}

@@ -57,9 +57,7 @@ export {
 	ListGroupSubheader,
 	ListDivider
 } from './lib/list/list';
-export { default as Menu } from './lib/menu/menu';
-export { default as MenuItem } from './lib/menu/menu-item';
-export { default as MenuAnchor } from './lib/menu/menu-anchor';
+export { Menu, MenuItem, MenuAnchor } from './lib/menu/menu';
 export { default as Radio } from './lib/radio/radio';
 export { Ripple } from './lib/ripple/ripple';
 export { default as RMDCProvider } from './lib/provider/provider';
