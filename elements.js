@@ -27,7 +27,7 @@ export { FabRoot, FabIcon } from './lib/fab/fab';
 export { FormFieldRoot } from './lib/form-field/form-field';
 
 export { GridRoot, GridInner } from './lib/grid/grid';
-export { GridCellRoot } from './lib/grid/grid-cell';
+export { GridCellRoot } from './lib/grid/grid';
 
 export { IconRoot } from './lib/icon/icon';
 
