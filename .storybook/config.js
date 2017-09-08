@@ -9,20 +9,20 @@ function requireAll(requireContext) {
 }
 
 function loadStories() {
-  requireAll(require.context('../lib/', true, /\.story\.js?$/));
+  requireAll(require.context('../src/', true, /\.story\.js?$/));
 }
 
 const StylesDecorator = storyFn => (
-  <div className="mdc-typography" style={{padding: '24px', height: '100%'}}>
+  <div className="mdc-typography" style={{ padding: '24px', height: '100%' }}>
     <style>
       {normalizeStyles}
       {materialStyles}
     </style>
-    { storyFn() }
+    {storyFn()}
   </div>
 );
 
 addDecorator(withKnobs);
-addDecorator(StylesDecorator)
+addDecorator(StylesDecorator);
 
 configure(loadStories, module);

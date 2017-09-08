@@ -1,77 +1,79 @@
-export { default as Button } from './lib/button/button';
+export { default as Button } from './src/button/button';
 export {
-	Card,
-	CardAction,
-	CardActions,
-	CardPrimary,
-	CardSubtitle,
-	CardSupportingText,
-	CardTitle,
-	CardMedia
-} from './lib/card/card';
-export { default as Checkbox } from './lib/checkbox/checkbox';
+  Card,
+  CardAction,
+  CardActions,
+  CardPrimary,
+  CardSubtitle,
+  CardSupportingText,
+  CardTitle,
+  CardMedia
+} from './src/card/card';
+export { default as Checkbox } from './src/checkbox/checkbox';
 export {
-	PersistentDrawer,
-	PersistentDrawerHeader,
-	PersistentDrawerContent,
-	PersistentDrawerListItem
-} from './lib/drawer/persistent-drawer';
+  PersistentDrawer,
+  PersistentDrawerHeader,
+  PersistentDrawerContent,
+  PersistentDrawerListItem
+} from './src/drawer/persistent-drawer';
 export {
-	TemporaryDrawer,
-	TemporaryDrawerHeader,
-	TemporaryDrawerContent,
-	TemporaryDrawerListItem
-} from './lib/drawer/temporary-drawer';
+  TemporaryDrawer,
+  TemporaryDrawerHeader,
+  TemporaryDrawerContent,
+  TemporaryDrawerListItem
+} from './src/drawer/temporary-drawer';
 export {
-	PermanentDrawer,
-	PermanentDrawerToolbarSpacer,
-	PermanentDrawerContent,
-	PermanentDrawerListItem
-} from './lib/drawer/permanent-drawer';
-export { Dialog, DialogFooterButton } from './lib/dialog/dialog';
-export { default as Elevation } from './lib/elevation/elevation';
-export { default as Fab } from './lib/fab/fab';
-export { default as FormField } from './lib/form-field/form-field';
+  PermanentDrawer,
+  PermanentDrawerToolbarSpacer,
+  PermanentDrawerContent,
+  PermanentDrawerListItem
+} from './src/drawer/permanent-drawer';
+export { Dialog, DialogFooterButton } from './src/dialog/dialog';
+export { default as Elevation } from './src/elevation/elevation';
+export { default as Fab } from './src/fab/fab';
+export { default as FormField } from './src/form-field/form-field';
 export {
-	GridList,
-	GridTile,
-	GridTilePrimary,
-	GridTilePrimaryContent,
-	GridTileSecondary,
-	GridTileTitle,
-	GridTileTitleSupportText
-} from './lib/grid-list/grid-list';
-export { Grid, GridCell } from './lib/grid/grid';
-export { default as Icon } from './lib/icon/icon';
-export { default as IconToggle } from './lib/icon-toggle/icon-toggle';
-export { default as IconButton } from './lib/icon-button/icon-button';
-export { default as LinearProgress } from './lib/linear-progress/linear-progress';
+  GridList,
+  GridTile,
+  GridTilePrimary,
+  GridTilePrimaryContent,
+  GridTileSecondary,
+  GridTileTitle,
+  GridTileTitleSupportText
+} from './src/grid-list/grid-list';
+export { Grid, GridCell } from './src/grid/grid';
+export { default as Icon } from './src/icon/icon';
+export { default as IconToggle } from './src/icon-toggle/icon-toggle';
+export { default as IconButton } from './src/icon-button/icon-button';
 export {
-	List,
-	ListItem,
-	ListItemText,
-	ListItemTextSecondary,
-	ListItemStartDetail,
-	ListItemEndDetail,
-	ListGroup,
-	ListGroupSubheader,
-	ListDivider
-} from './lib/list/list';
-export { Menu, MenuItem, MenuAnchor } from './lib/menu/menu';
-export { default as Radio } from './lib/radio/radio';
-export { Ripple } from './lib/ripple/ripple';
-export { default as RMDCProvider } from './lib/provider/provider';
-export { Select, SelectFormField } from './lib/select/select';
-export { default as Slider } from './lib/slider/slider';
-export { Snackbar } from './lib/snackbar/snackbar';
-export { default as Switch } from './lib/switch/switch';
-export { Tab, TabBar } from './lib/tabs/tabs';
-export { default as Textfield } from './lib/textfield/textfield';
+  default as LinearProgress
+} from './src/linear-progress/linear-progress';
 export {
-	Toolbar,
-	ToolbarRow,
-	ToolbarTitle,
-	ToolbarSection,
-	ToolbarFixedAdjust
-} from './lib/toolbar/toolbar';
-export { default as Typography } from './lib/typography/typography';
+  List,
+  ListItem,
+  ListItemText,
+  ListItemTextSecondary,
+  ListItemStartDetail,
+  ListItemEndDetail,
+  ListGroup,
+  ListGroupSubheader,
+  ListDivider
+} from './src/list/list';
+export { Menu, MenuItem, MenuAnchor } from './src/menu/menu';
+export { default as Radio } from './src/radio/radio';
+export { Ripple } from './src/ripple/ripple';
+export { default as RMDCProvider } from './src/provider/provider';
+export { Select, SelectFormField } from './src/select/select';
+export { default as Slider } from './src/slider/slider';
+export { Snackbar } from './src/snackbar/snackbar';
+export { default as Switch } from './src/switch/switch';
+export { Tab, TabBar } from './src/tabs/tabs';
+export { default as Textfield } from './src/textfield/textfield';
+export {
+  Toolbar,
+  ToolbarRow,
+  ToolbarTitle,
+  ToolbarSection,
+  ToolbarFixedAdjust
+} from './src/toolbar/toolbar';
+export { default as Typography } from './src/typography/typography';

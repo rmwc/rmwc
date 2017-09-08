@@ -1,61 +1,61 @@
-export { Button } from './lib/button/button';
+export { Button } from './src/button/button';
 
 export {
-	CheckboxRoot,
-	CheckboxNativeControl,
-	CheckboxBackground,
-	CheckboxCheckmark,
-	CheckboxCheckmarkPath,
-	CheckboxMixedmark,
-	CheckboxLabel
-} from './lib/checkbox/checkbox';
+  CheckboxRoot,
+  CheckboxNativeControl,
+  CheckboxBackground,
+  CheckboxCheckmark,
+  CheckboxCheckmarkPath,
+  CheckboxMixedmark,
+  CheckboxLabel
+} from './src/checkbox/checkbox';
 
 export {
-	DialogRoot,
-	DialogBackdrop,
-	DialogSurface,
-	DialogHeader,
-	DialogHeaderTitle,
-	DialogBody,
-	DialogFooter
-} from './lib/dialog/dialog';
+  DialogRoot,
+  DialogBackdrop,
+  DialogSurface,
+  DialogHeader,
+  DialogHeaderTitle,
+  DialogBody,
+  DialogFooter
+} from './src/dialog/dialog';
 
-export { ElevationRoot } from './lib/elevation/elevation';
+export { ElevationRoot } from './src/elevation/elevation';
 
-export { FabRoot, FabIcon } from './lib/fab/fab';
+export { FabRoot, FabIcon } from './src/fab/fab';
 
-export { FormFieldRoot } from './lib/form-field/form-field';
+export { FormFieldRoot } from './src/form-field/form-field';
 
-export { GridRoot, GridInner } from './lib/grid/grid';
-export { GridCellRoot } from './lib/grid/grid';
+export { GridRoot, GridInner } from './src/grid/grid';
+export { GridCellRoot } from './src/grid/grid';
 
-export { IconRoot } from './lib/icon/icon';
-
-export {
-	LinearProgressRoot,
-	LinearProgressBufferingDots,
-	LinearProgressBuffer,
-	LinearProgressPrimaryBar,
-	LinearProgressSecondaryBar,
-	LinearProgressBarInner
-} from './lib/linear-progress/linear-progress';
-
-export { List } from './lib/list/list';
-
-export { Menu } from './lib/menu/menu';
+export { IconRoot } from './src/icon/icon';
 
 export {
-	RadioRoot,
-	RadioNativeControl,
-	RadioBackground,
-	RadioOuterCircle,
-	RadioInnerCircle,
-	RadioLabel
-} from './lib/radio/radio';
+  LinearProgressRoot,
+  LinearProgressBufferingDots,
+  LinearProgressBuffer,
+  LinearProgressPrimaryBar,
+  LinearProgressSecondaryBar,
+  LinearProgressBarInner
+} from './src/linear-progress/linear-progress';
+
+export { List } from './src/list/list';
+
+export { Menu } from './src/menu/menu';
 
 export {
-	SelectRoot,
-	SelectSelectedText,
-	SelectLabel,
-	SelectMenu
-} from './lib/select/select';
+  RadioRoot,
+  RadioNativeControl,
+  RadioBackground,
+  RadioOuterCircle,
+  RadioInnerCircle,
+  RadioLabel
+} from './src/radio/radio';
+
+export {
+  SelectRoot,
+  SelectSelectedText,
+  SelectLabel,
+  SelectMenu
+} from './src/select/select';
