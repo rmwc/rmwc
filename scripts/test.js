@@ -23,5 +23,5 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
   argv.push('--watch');
 }
 
-
+console.log(argv)
 jest.run(argv);

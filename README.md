@@ -16,7 +16,7 @@ There are many different Material UI implementations in both Angular and React. 
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
 ## Status: approaching Alpha
-RMDC is in development and iterating rapidly. The majority of the api surface is mapped out and now has to be checked for consistency and performance and tests have to be written. Following that the docs need a coat of polish. Check indicates at least base features of component are implemented. Looking for help to end this React + Material nightmare.
+RMDC is nearing an alpha NPM release. The majority of the api surface is mapped out and basic smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
 
 - [x] Buttons
   - [x] Standard
@@ -65,3 +65,4 @@ const HelloWorld = props => <Button>Easy</Button>
 - `cd rmdc`
 - `npm install`
 - `npm start`
+
