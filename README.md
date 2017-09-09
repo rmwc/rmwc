@@ -7,6 +7,20 @@ A thin React wrapper for Material Design (Web) Components
 - To utilize the Foundation javascript classes and expose their api for consumption
 - To be as unobtrusive and sensible as possible.
 
+## Installation
+- `npm install rmdc --save`
+- material-web-components should be installed automatically as a peer    dependency. Include `node_modules/material-components-web/dist/material-components-web.css` in your webpage via your method of choice.
+
+## Usage
+```javascript
+import React from 'react';
+import { Button } from 'rmdc';
+
+const HelloWorld = props => <Button>Easy</Button>
+```
+This example is using ES6 modules imports, but the library will work via CommonJS or any other UMD format.
+
+
 ## Why?
 There are many different Material UI implementations in both Angular and React. The last thing we need is another one... In React land there has been a lot of great work done, but you eventually end up in one of the following situations:
  - The library is heavy or extremely inflexible (crazy api, opinionated styling)
@@ -15,8 +29,8 @@ There are many different Material UI implementations in both Angular and React. 
  
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
-## Status: approaching Alpha
-RMDC is nearing an alpha NPM release. The majority of the api surface is mapped out and basic smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
+## Status: Alpha
+RMDC is currently in alpha. The majority of the api surface is mapped out and smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
 
 - [x] Buttons
   - [x] Standard
@@ -44,21 +58,6 @@ RMDC is nearing an alpha NPM release. The majority of the api surface is mapped 
 - [x] Tabs
 - [x] Toolbars
 - [x] Typography
-
-## Installation
-- `npm install git://github.com/jamesmfriedman/rmdc.git#master --save`
-- requires the following babel-transforms
-  - transform-object-rest-spread
-  - ["transform-class-properties", { "spec": true }]
-- if you're using Webpack and the babel-loader, make sure to explicity include node_modules/rmdc. This will be rectified with the V1 release
-
-## Usage
-```javascript
-import React from 'react';
-import { Button } from 'rmdc';
-
-const HelloWorld = props => <Button>Easy</Button>
-```
 
 ## To run the docs / contribute
 - `git clone https://github.com/jamesmfriedman/rmdc.git`

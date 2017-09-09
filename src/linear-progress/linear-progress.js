@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import { linearProgress as mdcLinearProgress } from 'material-components-web';
 import MDCComponentBase from '../_base/mdc-component-base';
 import { propMeta } from '../_base/prop-meta';
+import { simpleComponentFactory } from '../_base/simple-component-factory';
 
 const { MDCLinearProgress } = mdcLinearProgress;
-
-import { simpleComponentFactory } from '../_base/simple-component-factory';
 
 export const LinearProgressRoot = simpleComponentFactory('LinearProgressRoot', {
   tag: 'nav',
