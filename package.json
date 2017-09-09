@@ -36,7 +36,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "preversion": "npm test",
+    "preversion": "npm test -- --coverage",
     "version": "npm run build-lib && git add -A lib",
     "postversion": "git push && git push --tags"
   },
