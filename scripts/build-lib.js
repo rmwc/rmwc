@@ -36,8 +36,8 @@ const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 fs.emptyDirSync(paths.appLibBuild);
 
 [
-  // { libraryTarget: 'commonjs2', filename: 'rmdc.commonjs' },
-  { libraryTarget: 'umd', filename: 'rmdc' }
+  // { libraryTarget: 'commonjs2', filename: 'rmwc.commonjs' },
+  { libraryTarget: 'umd', filename: 'rmwc' }
 ].forEach(defs => {
   // First, read the current file sizes in build directory.
   // This lets us display how much they changed later.

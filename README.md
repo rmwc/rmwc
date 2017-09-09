@@ -1,6 +1,6 @@
-# RMDC - React Material Design Components
+# rmwc - React Material Web Components
 A thin React wrapper for Material Design (Web) Components
-[https://jamesmfriedman.github.io/rmdc/](https://jamesmfriedman.github.io/rmdc/)
+[https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Goals
 - To create the thinnest, lightest, and spec compliant wrapper around Google Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)
@@ -8,13 +8,13 @@ A thin React wrapper for Material Design (Web) Components
 - To be as unobtrusive and sensible as possible.
 
 ## Installation
-- `npm install rmdc --save`
+- `npm install rmwc --save`
 - material-web-components should be installed automatically as a peer    dependency. Include `node_modules/material-components-web/dist/material-components-web.css` in your webpage via your method of choice.
 
 ## Usage
 ```javascript
 import React from 'react';
-import { Button } from 'rmdc';
+import { Button } from 'rmwc';
 
 const HelloWorld = props => <Button>Easy</Button>
 ```
@@ -30,7 +30,7 @@ There are many different Material UI implementations in both Angular and React. 
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
 ## Status: Alpha
-RMDC is currently in alpha. The majority of the api surface is mapped out and smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
+rmwc is currently in alpha. The majority of the api surface is mapped out and smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
 
 - [x] Buttons
   - [x] Standard
@@ -60,8 +60,8 @@ RMDC is currently in alpha. The majority of the api surface is mapped out and sm
 - [x] Typography
 
 ## To run the docs / contribute
-- `git clone https://github.com/jamesmfriedman/rmdc.git`
-- `cd rmdc`
+- `git clone https://github.com/jamesmfriedman/rmwc.git`
+- `cd rmwc`
 - `npm install`
 - `npm start`
 

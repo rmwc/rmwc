@@ -1,1 +1,1 @@
-export * from './lib/rmdc';
+export * from './lib/rmwc';

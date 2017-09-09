@@ -1,17 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "baseUrl": "/",
-        "paths": {
-          "rmdc/*": ["/*"],
-          "docs/*": ["docs/*"]
-        }
-    },
-    "exclude": [
-        "node_modules",
-        "public"
-    ]
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "baseUrl": "/",
+    "paths": {
+      "rmwc/*": ["/*"],
+      "docs/*": ["docs/*"]
+    }
+  },
+  "exclude": ["node_modules", "public"]
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from '../common/build-jsx-with-context';
-import * as rmdc from '../../';
+import * as rmwc from '../../';
 import * as rmdcElements from '../../elements';
 
 const {
@@ -17,7 +17,7 @@ const {
   ListItemText,
   ListItemTextSecondary,
   ListDivider
-} = rmdc;
+} = rmwc;
 
 const cleanExampleCode = (codeString = '') => {
   const parts = codeString.split('\n').slice(1, -1) || [];
@@ -35,7 +35,7 @@ export class Detail extends React.Component {
       ? [section.class]
       : section.class;
     const componentDefs = componentClasses.map(componentName => {
-      const component = rmdc[componentName];
+      const component = rmwc[componentName];
 
       return {
         name: componentName,
@@ -55,7 +55,7 @@ export class Detail extends React.Component {
     });
 
     const example = buildJSXWithContext(section.example, this, {
-      ...rmdc,
+      ...rmwc,
       ...rmdcElements
     });
     const exampleCodePreview = cleanExampleCode(section.example);

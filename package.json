@@ -1,12 +1,12 @@
 {
-  "name": "rmdc",
+  "name": "rmwc",
   "version": "0.0.0",
   "author": "James Friedman",
   "private": false,
   "description": "A thin React wrapper for Material Design (Web) Components",
-  "homepage": "https://jamesmfriedman.github.io/rmdc/",
+  "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "keywords": [
-    "rmdc",
+    "rmwc",
     "react",
     "react-material",
     "material-design",
@@ -14,12 +14,12 @@
     "react-material-design"
   ],
   "bugs": {
-    "url": "https://github.com/jamesmfriedman/rmdc/issues",
+    "url": "https://github.com/jamesmfriedman/rmwc/issues",
     "email": "me@jamesmfriedman.com"
   },
   "license": "MIT",
   "files": ["lib/", "src/", "index.js", "README.md", "LICENSE"],
-  "main": "lib/index.js",
+  "main": "index.js",
   "dependencies": {
     "classnames": "^2.2.x",
     "material-components-web": "^0.19.x",

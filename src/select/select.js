@@ -36,7 +36,7 @@ export const SelectMenu = simpleComponentFactory('SelectMenu', {
 });
 
 export const SelectFormField = simpleComponentFactory('SelectMenu', {
-  classNames: 'rmdc-select-form-field',
+  classNames: 'rmwc-select-form-field',
   defaultProps: {
     style: {
       height: '48px',
