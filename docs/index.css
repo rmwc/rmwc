@@ -29,7 +29,8 @@ pre {
 }
 
 .demo-example-inner {
-	padding: 16px;
+  padding: 16px;
+  overflow: hidden;
 }
 
 #detail-section-elevation .demo-example [class*='mdc-elevation--'] {
@@ -61,6 +62,15 @@ pre {
 
 #detail-section-grid-lists .demo-example .mdc-form-field {
 	padding: 16px;
+}
+
+#detail-section-theme .demo-example [class*='mdc-theme--'] {
+  padding: 16px;
+  margin: 4px;
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+	vertical-align: top;
 }
 
 

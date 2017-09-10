@@ -59,6 +59,10 @@ rmwc is currently in alpha. The majority of the api surface is mapped out and sm
 - [x] Toolbars
 - [x] Typography
 
+## To run the tests
+- On MacOS Sierra and higher, install watchman to fix a filesystem issue with Jest.  `brew install watchman`
+- `npm test`
+
 ## To run the docs / contribute
 - `git clone https://github.com/jamesmfriedman/rmwc.git`
 - `cd rmwc`

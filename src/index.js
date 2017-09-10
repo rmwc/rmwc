@@ -67,6 +67,7 @@ export { Snackbar } from './snackbar/snackbar';
 export { default as Switch } from './switch/switch';
 export { Tab, TabBar } from './tabs/tabs';
 export { default as Textfield } from './textfield/textfield';
+export { Theme } from './theme/theme';
 export {
   Toolbar,
   ToolbarRow,

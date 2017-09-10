@@ -59,6 +59,96 @@ export default [
 				</CardActions>
 			</Card>
 		`
+	},
+	{
+    name: 'PermanentDrawer',
+    class: ['PermanentDrawer', 'PermanentDrawerContent'],
+    url: 'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
+    example: `
+			<PermanentDrawer>
+				<PermanentDrawerContent>
+					<List>
+						<ListItem>
+							<ListItemText>Cookies</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemText>Pizza</ListItemText>
+						</ListItem>
+						<ListItem>
+							<ListItemText>Icecream</ListItemText>
+						</ListItem>
+					</List>
+				</PermanentDrawerContent>
+			</PermanentDrawer>
+		`
+	},
+	{
+    name: 'PersistentDrawer',
+    class: ['PersistentDrawer', 'PersistentDrawerHeader', 'PersistentDrawerContent'],
+    url: 'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
+		example: `
+			<Button 
+				onClick={() => this.setState({open: !this.state.open})}
+				primary
+				raised
+			>
+				Toggle Drawer
+			</Button>
+
+			<PersistentDrawer
+				open={this.state.open}
+				onClose={() => this.setState({open: false})}
+			>
+				<PersistentDrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+					PersistentDrawerHeader
+				</PersistentDrawerHeader>
+				<PersistentDrawerContent>
+					<ListItem>
+						<ListItemText>Cookies</ListItemText>
+					</ListItem>
+					<ListItem>
+						<ListItemText>Pizza</ListItemText>
+					</ListItem>
+					<ListItem>
+						<ListItemText>Icecream</ListItemText>
+					</ListItem>
+				</PersistentDrawerContent>
+			</PersistentDrawer>
+		`
+	},
+	{
+    name: 'TemporaryDrawer',
+    class: ['TemporaryDrawer', 'TemporaryDrawerHeader', 'TemporaryDrawerContent'],
+    url: 'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
+		example: `
+			<Button 
+				onClick={() => this.setState({open: !this.state.open})}
+				primary
+				raised
+			>
+				Toggle Drawer
+			</Button>
+
+			<TemporaryDrawer
+				open={this.state.open}
+				onClose={() => this.setState({open: false})}
+			>
+				<TemporaryDrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+					TemporaryDrawerHeader
+				</TemporaryDrawerHeader>
+				<TemporaryDrawerContent>
+					<ListItem>
+						<ListItemText>Cookies</ListItemText>
+					</ListItem>
+					<ListItem>
+						<ListItemText>Pizza</ListItemText>
+					</ListItem>
+					<ListItem>
+						<ListItemText>Icecream</ListItemText>
+					</ListItem>
+				</TemporaryDrawerContent>
+			</TemporaryDrawer>
+		`
   },
   {
     name: 'Dialogs',
@@ -451,6 +541,71 @@ export default [
 				<Tab>Pizza</Tab>
 				<Tab>Icecream</Tab>
 			</TabBar>
+		`
+	},
+	{
+    name: 'Theme',
+    class: [
+      'Theme'
+    ],
+    url: 'https://material.io/components/web/catalog/theme/',
+    example: `
+			<div>
+				<div style={{ backgroundColor: '#ddd' }}>
+					{[
+						'primary',
+						'primary-light',
+						'primary-dark',
+						'secondary',
+						'secondary-light',
+						'secondary-dark',
+						'background',
+						'primary-bg',
+						'primary-light-bg',
+						'primary-dark-bg',
+						'secondary-bg',
+						'secondary-light-bg',
+						'secondary-dark-bg',
+						'text-primary-on-background',
+						'text-secondary-on-background',
+						'text-hint-on-background',
+						'text-disabled-on-background',
+						'text-icon-on-background',
+						'text-primary-on-light',
+						'text-secondary-on-light',
+						'text-hint-on-light',
+						'text-disabled-on-light',
+						'text-icon-on-light'
+					].map((theme, i) => (
+						<Theme kind={theme} key={i}>
+							{theme}
+						</Theme>
+					))}
+				</div>
+				<div style={{ backgroundColor: '#333' }}>
+					{[
+						'text-primary-on-primary',
+						'text-secondary-on-primary',
+						'text-hint-on-primary',
+						'text-disabled-on-primary',
+						'text-icon-on-primary',
+						'text-primary-on-secondary',
+						'text-secondary-on-secondary',
+						'text-hint-on-secondary',
+						'text-disabled-on-secondary',
+						'text-icon-on-secondary',
+						'text-primary-on-dark',
+						'text-secondary-on-dark',
+						'text-hint-on-dark',
+						'text-disabled-on-dark',
+						'text-icon-on-dark'
+					].map((theme, i) => (
+						<Theme kind={theme} key={i}>
+							{theme}
+						</Theme>
+					))}
+				</div>
+			</div>
 		`
   },
   {

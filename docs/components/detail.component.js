@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from '../common/build-jsx-with-context';
-import * as rmwc from '../../';
+import * as rmwc from '../../src';
 import * as rmdcElements from '../../elements';
 
 const {
