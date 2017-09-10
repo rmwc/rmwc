@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "0.0.1-alpha1",
+  "version": "0.0.1-alpha2",
   "author": "James Friedman",
   "private": false,
   "description": "A thin React wrapper for Material Design (Web) Components",
