@@ -73,7 +73,7 @@ storiesOf('Theme', module)
 				{themes.map((theme, i) => (
 					<Theme
 						key={i}
-						kind={theme}
+						use={theme}
 						style={themeStyle}
 					>
 						{theme}
@@ -84,7 +84,7 @@ storiesOf('Theme', module)
 				{darkThemes.map((theme, i) => (
 					<Theme
 						key={i}
-						kind={theme}
+						use={theme}
 						style={darkThemeStyle}
 					>
 						{theme}

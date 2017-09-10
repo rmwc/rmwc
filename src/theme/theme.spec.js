@@ -48,7 +48,7 @@ describe('Theme', () => {
     {themes.map((theme, i) => (
       <Theme
         key={i}
-        kind={theme}
+        use={theme}
       >
         {theme}
       </Theme>

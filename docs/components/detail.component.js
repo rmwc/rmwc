@@ -65,10 +65,10 @@ export class Detail extends React.Component {
         id={'detail-section-' + section.name.toLowerCase().replace(' ', '-')}
       >
         <GridCell span="12">
-          <Typography kind="display1" tag="h2">
+          <Typography use="display1" tag="h2">
             {section.name}
           </Typography>
-          <Typography kind="subheading2" tag="h3" wrap>
+          <Typography use="subheading2" tag="h3" wrap>
             <a href={section.url}>{section.url}</a>
           </Typography>
         </GridCell>

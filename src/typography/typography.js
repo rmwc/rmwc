@@ -6,12 +6,12 @@ export const Typography = simpleComponentFactory('Typography', {
 	tag: 'span',
 	classNames: props => [
 		{
-			[`mdc-typography--${props.kind}`]: props.kind,
+			[`mdc-typography--${props.use}`]: props.use,
 			'mdc-typography--adjust-margin': props.adjustMargin
 		}
 	],
 	propTypes: {
-		kind: PropTypes.oneOf([
+		use: PropTypes.oneOf([
 			'display4',
 			'display3',
 			'display2',
@@ -28,11 +28,11 @@ export const Typography = simpleComponentFactory('Typography', {
 		adjustMargin: PropTypes.bool
 	},
 	defaultProps: {
-		kind: undefined,
+		use: undefined,
 		adjustMargin: false
 	},
 	propMeta: {
-		kind: {
+		use: {
 			type: 'String',
 			desc: 'The typography style. display4, display3, display2, display1, headline, title, subheading2, subheading1, body2, body1, caption, button.'
 		},
@@ -42,7 +42,7 @@ export const Typography = simpleComponentFactory('Typography', {
 		}
 	},
 	consumeProps: [
-		'kind',
+		'use',
 		'adjustMargin'
 	]
 });
