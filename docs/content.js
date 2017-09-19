@@ -59,11 +59,12 @@ export default [
 				</CardActions>
 			</Card>
 		`
-	},
-	{
+  },
+  {
     name: 'PermanentDrawer',
     class: ['PermanentDrawer', 'PermanentDrawerContent'],
-    url: 'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
+    url:
+      'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
     example: `
 			<PermanentDrawer>
 				<PermanentDrawerContent>
@@ -81,12 +82,17 @@ export default [
 				</PermanentDrawerContent>
 			</PermanentDrawer>
 		`
-	},
-	{
+  },
+  {
     name: 'PersistentDrawer',
-    class: ['PersistentDrawer', 'PersistentDrawerHeader', 'PersistentDrawerContent'],
-    url: 'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
-		example: `
+    class: [
+      'PersistentDrawer',
+      'PersistentDrawerHeader',
+      'PersistentDrawerContent'
+    ],
+    url:
+      'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
+    example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
 				primary
@@ -115,12 +121,17 @@ export default [
 				</PersistentDrawerContent>
 			</PersistentDrawer>
 		`
-	},
-	{
+  },
+  {
     name: 'TemporaryDrawer',
-    class: ['TemporaryDrawer', 'TemporaryDrawerHeader', 'TemporaryDrawerContent'],
-    url: 'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
-		example: `
+    class: [
+      'TemporaryDrawer',
+      'TemporaryDrawerHeader',
+      'TemporaryDrawerContent'
+    ],
+    url:
+      'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
+    example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
 				primary
@@ -542,12 +553,10 @@ export default [
 				<Tab>Icecream</Tab>
 			</TabBar>
 		`
-	},
-	{
+  },
+  {
     name: 'Theme',
-    class: [
-      'Theme'
-    ],
+    class: ['Theme'],
     url: 'https://material.io/components/web/catalog/theme/',
     example: `
 			<div>

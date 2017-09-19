@@ -94,7 +94,7 @@ export class Textfield extends MDCComponentBase {
 		);
 
 		const tagProps = {
-			ref: inputRef,
+			elementRef: inputRef,
 			...rest
 		};
 
