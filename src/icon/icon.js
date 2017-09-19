@@ -11,10 +11,12 @@ export class Icon extends React.Component {
 	}
 
 	static propTypes = {
+		use: PropTypes.string,
 		...IconRoot.propTypes
 	}
 
 	static defaultProps = {
+		use: undefined,
 		...IconRoot.defaultProps
 	}
 
@@ -25,13 +27,15 @@ export class Icon extends React.Component {
 	render() {
 		const {
 			className,
+			use,
 			children,
 			...rest } = this.props;
 
 		const { iconPrefix } = this.providerOptions;
+		const content = use || children;
 
 		return (
-			<IconRoot className={iconPrefix + (className || '')} {...rest}>{children}</IconRoot>
+			<IconRoot className={iconPrefix + (className || '')} {...rest}>{content}</IconRoot>
 		);
 	}
 }
