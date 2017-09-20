@@ -83,6 +83,7 @@ export class Textfield extends MDCComponentBase {
 			className,
 			inputRef,
 			apiRef,
+			children,
 			...rest
 		} = this.props;
 
@@ -104,6 +105,7 @@ export class Textfield extends MDCComponentBase {
 
 		return (
 			<TextfieldRoot elementRef={el => this.MDCSetRootElement(el)} className={classes}>
+				{children}
 				{tag}
 				<TextfieldLabel>{ label }</TextfieldLabel>
 			</TextfieldRoot>

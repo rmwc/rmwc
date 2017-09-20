@@ -7,12 +7,12 @@ import { Textfield } from './textfield';
 
 class TextfieldStory extends React.Component {
 	state = {
-		value: ''
-	}
+		value: '',
+	};
 
 	onChange(evt) {
-		this.setState({value: evt.target.value})
-		action('Value: ' + evt.target.value)()
+		this.setState({ value: evt.target.value });
+		action('Value: ' + evt.target.value)();
 	}
 
 	render() {
@@ -25,9 +25,10 @@ class TextfieldStory extends React.Component {
 				onChange={evt => this.onChange(evt)}
 				label={text('label', 'Hello world')}
 			/>
-		)
+		);
 	}
 }
 
-storiesOf('Inputs and Controls', module)
-	.add('Textfield', () => <TextfieldStory />)
+storiesOf('Inputs and Controls', module).add('Textfield', () => (
+	<TextfieldStory />
+));
