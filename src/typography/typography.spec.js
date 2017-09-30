@@ -3,12 +3,12 @@ import { mount } from 'enzyme';
 import { Typography } from './typography';
 
 describe('IconToggle', () => {
-  it('renders', () => {
-    mount(<Typography use="body1" />);
-  });
+	it('renders', () => {
+		mount(<Typography use="body1" />);
+	});
 
-  it('can be adjustMargin', () => {
-    const el = mount(<Typography use="body1" adjustMargin />);
-    expect(el.hasClass('mdc-typography--adjust-margin')).toBe(true);
-  });
+	it('can be adjustMargin', () => {
+		const el = mount(<Typography use="body1" adjustMargin />);
+		expect(!!~el.html().search('mdc-typography--adjust-margin')).toBe(true);
+	});
 });

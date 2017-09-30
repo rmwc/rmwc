@@ -27,30 +27,30 @@ import { Snackbar } from './snackbar';
 // />
 
 describe('Snackbar', () => {
-  it('renders', () => {
-    const el = mount(
-      <Snackbar
-        show={true}
-        onClose={evt => {}}
-        message="This is a new message"
-        actionText="Action"
-        actionHandler={() => alert('Action clicked')}
-      />
-    );
-    expect(el.hasClass('mdc-snackbar')).toBe(true);
-  });
+	it('renders', () => {
+		const el = mount(
+			<Snackbar
+				show={true}
+				onClose={evt => {}}
+				message="This is a new message"
+				actionText="Action"
+				actionHandler={() => alert('Action clicked')}
+			/>
+		);
+		expect(!!~el.html().search('mdc-snackbar')).toBe(true);
+	});
 
-  it('can be alignStart', () => {
-    const el = mount(
-      <Snackbar
-        show={true}
-        onClose={evt => {}}
-        message="This is a new message"
-        actionText="Action"
-        actionHandler={() => alert('Action clicked')}
-        alignStart
-      />
-    );
-    expect(el.hasClass('mdc-snackbar--align-start')).toBe(true);
-  });
+	it('can be alignStart', () => {
+		const el = mount(
+			<Snackbar
+				show={true}
+				onClose={evt => {}}
+				message="This is a new message"
+				actionText="Action"
+				actionHandler={() => alert('Action clicked')}
+				alignStart
+			/>
+		);
+		expect(!!~el.html().search('mdc-snackbar--align-start')).toBe(true);
+	});
 });
