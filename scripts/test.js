@@ -22,7 +22,7 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
 }
 
 if (process.env.CI) {
-	argv.push('--no-cache');
+	argv.push('--runInBand');
 }
 
 console.log(argv);
