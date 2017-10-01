@@ -4,6 +4,9 @@
 A thin React wrapper for Material Design (Web) Components
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
+## Recent updates
+RMWC has been tested and works properly with React 16. Material Components Web has some breaking changes with its version 21 release that will be addressed shortly.
+
 ## Goals
 - To create the thinnest, lightest, and spec compliant wrapper around Google Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)
 - To utilize the Foundation javascript classes and expose their api for consumption
@@ -31,8 +34,8 @@ There are many different Material UI implementations in both Angular and React. 
  
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
-## Status: Alpha
-rmwc is currently in alpha. The majority of the api surface is mapped out and smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
+## Status: Beta
+RMWC is currently in Beta. All of the Material components are covered and  smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
 
 - [x] Buttons
   - [x] Standard
