@@ -22,22 +22,21 @@ export const FabRoot = simpleComponentFactory('FabRoot', {
 		mini: false,
 		plain: false
 	},
-	...(process.env.NODE_ENV === 'production' ? {} : {
-		propMeta: {
-			mini: {
-				type: 'Boolean',
-				desc: 'Make the Fab smaller.'
-			},
-			plain: {
-				type: 'Boolean',
-				desc: 'Make the Fab plain.'
-			}
-		}
-	}),
-	consumeProps: [
-		'mini',
-		'plain'
-	]
+	...(process.env.NODE_ENV === 'production'
+		? {}
+		: {
+				propMeta: {
+					mini: {
+						type: 'Boolean',
+						desc: 'Make the Fab smaller.'
+					},
+					plain: {
+						type: 'Boolean',
+						desc: 'Make the Fab plain.'
+					}
+				}
+			}),
+	consumeProps: ['mini', 'plain']
 });
 
 export const FabIcon = simpleComponentFactory('FabIcon', {
@@ -47,18 +46,18 @@ export const FabIcon = simpleComponentFactory('FabIcon', {
 
 export class Fab extends React.Component {
 	static contextTypes = {
-		RMDCOptions: PropTypes.object
-	}
+		RMWCOptions: PropTypes.object
+	};
 
 	static propTypes = {
 		ripple: PropTypes.bool,
 		...FabRoot.propTypes
-	}
+	};
 
 	static defaultProps = {
 		ripple: undefined,
 		...FabRoot.defaultProps
-	}
+	};
 
 	componentWillMount() {
 		this.providerOptions = getProviderOptions(this.context);
@@ -67,24 +66,17 @@ export class Fab extends React.Component {
 	render() {
 		const { buttonDefaultRipple } = this.providerOptions;
 		const { ripple, className, children, ...rest } = this.props;
-		const shouldRipple = ripple === undefined
-			? buttonDefaultRipple
-			: ripple;
+		const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
 
-		const classes = classNames(
-			this.providerOptions.iconPrefix,
-			className
-		);
+		const classes = classNames(this.providerOptions.iconPrefix, className);
 		const button = (
 			<FabRoot className={classes} {...rest}>
-				<FabIcon>
-					{children}
-				</FabIcon>
+				<FabIcon>{children}</FabIcon>
 			</FabRoot>
 		);
 
 		if (shouldRipple) {
-			return <Ripple>{ button }</Ripple>;
+			return <Ripple>{button}</Ripple>;
 		}
 
 		return button;

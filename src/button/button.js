@@ -43,7 +43,7 @@ export const ButtonRoot = simpleComponentFactory('ButtonRoot', {
 		},
 		compact: {
 			type: 'Boolean',
-			desc: 'Reduce the Button\'s padding.'
+			desc: "Reduce the Button's padding."
 		},
 		primary: {
 			type: 'Boolean',
@@ -54,29 +54,23 @@ export const ButtonRoot = simpleComponentFactory('ButtonRoot', {
 			desc: 'Use the accent palette.'
 		}
 	},
-	consumeProps: [
-		'dense',
-		'raised',
-		'compact',
-		'primary',
-		'accent'
-	]
+	consumeProps: ['dense', 'raised', 'compact', 'primary', 'accent']
 });
 
 export class Button extends React.Component {
 	static contextTypes = {
-		RMDCOptions: PropTypes.object
-	}
+		RMWCOptions: PropTypes.object
+	};
 
 	static propTypes = {
 		ripple: PropTypes.bool,
 		...ButtonRoot.propTypes
-	}
+	};
 
 	static defaultProps = {
 		ripple: undefined,
 		...ButtonRoot.defaultProps
-	}
+	};
 
 	static propMeta = propMeta({
 		...ButtonRoot.propMeta,
@@ -84,7 +78,7 @@ export class Button extends React.Component {
 			type: 'Boolean',
 			desc: 'Adds or disables a ripple from the Button.'
 		}
-	})
+	});
 
 	componentWillMount() {
 		this.providerOptions = getProviderOptions(this.context);
@@ -93,16 +87,18 @@ export class Button extends React.Component {
 	render() {
 		const { buttonDefaultRipple } = this.providerOptions;
 		const { ripple, ...rest } = this.props;
-		const shouldRipple = ripple === undefined
-			? buttonDefaultRipple
-			: ripple;
+		const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
 
 		const button = <ButtonRoot {...rest} />;
 
 		if (shouldRipple) {
-			const {primary, accent } = rest;
+			const { primary, accent } = rest;
 
-			return <Ripple primary={primary} accent={accent}>{ button }</Ripple>;
+			return (
+				<Ripple primary={primary} accent={accent}>
+					{button}
+				</Ripple>
+			);
 		}
 
 		return button;

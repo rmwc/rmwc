@@ -7,17 +7,26 @@ const providerDefaults = {
 };
 
 export const getProviderOptions = context => {
-	return context && context.RMDCOptions ? context.RMDCOptions : providerDefaults;
+	return context && context.RMWCOptions
+		? context.RMWCOptions
+		: providerDefaults;
 };
 
-export class RMDCProvider extends React.Component {
+/**
+ * Provides default options for children
+ * Prop override options in providerDefaults with the same name
+ * @export
+ * @class RMWCProvider
+ * @extends {React.Component}
+ */
+export class RMWCProvider extends React.Component {
 	static childContextTypes = {
-		RMDCOptions: PropTypes.object
-	}
+		RMWCOptions: PropTypes.object
+	};
 
 	static propTypes = {
-		RMDCOptions: PropTypes.object
-	}
+		RMWCOptions: PropTypes.object
+	};
 
 	constructor(props, ...args) {
 		super(props, ...args);
@@ -29,12 +38,12 @@ export class RMDCProvider extends React.Component {
 	}
 
 	buildOptions(props) {
-		return Object.assign({}, providerDefaults, props.options || {});
+		return Object.assign({}, providerDefaults, props || {});
 	}
 
 	getChildContext() {
 		return {
-			RMDCOptions: this.options
+			RMWCOptions: this.options
 		};
 	}
 
@@ -43,4 +52,4 @@ export class RMDCProvider extends React.Component {
 	}
 }
 
-export default RMDCProvider;
+export default RMWCProvider;
