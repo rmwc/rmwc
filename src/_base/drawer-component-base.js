@@ -13,14 +13,14 @@ export class DrawerBase extends MDCComponentBase {
 		onClose: PropTypes.func,
 		onOpen: PropTypes.func,
 		...MDCComponentBase.propTypes
-	}
+	};
 
 	static defaultProps = {
 		open: false,
 		onClose: noop,
 		onOpen: noop,
 		...MDCComponentBase.defaultProps
-	}
+	};
 
 	static propMeta = propMeta({
 		open: {
@@ -36,57 +36,66 @@ export class DrawerBase extends MDCComponentBase {
 			desc: 'Callback that fires when the Drawer is opened.'
 		},
 		...MDCComponentBase.propMeta
-	})
+	});
 
 	childOnClickRefs = [];
 
 	MDCComponentDidMount() {
-		/**
-		 * A very hacky fix to a problem in Material Drawers and React.
-		 * It blocks the native click event from firing, so we have to jump through hoops
-		 * To call our React onClick handler
-		 */
-		this.drawerEl.addEventListener('click', evt => {
-			const drawerIndex = evt.path.findIndex(el => el === this.drawerEl);
-			if (~drawerIndex) {
-				const elements = evt.path.slice(0, drawerIndex - 1);
-				const firedCallbacks = [];
-				this.childOnClickRefs.forEach(ref => {
-					const el = ReactDOM.findDOMNode(ref);
-					if (~elements.indexOf(el) && !~firedCallbacks.indexOf(ref.props.onClick)) {
-						firedCallbacks.push(ref.props.onClick);
-						ref.props.onClick(evt);
-					}
-				});
-			}
-		});
+		// Reacts events are delegated to the body but Material is using stopPropagation, preventing any
+		// onClick events in the drawer from firing/
+		// Am unfortunate solution, monkeypatch the internal handlers to work without stopProp
 
-		this.MDCRegisterListener(`${this.constructor.drawerConstructorName}:open`, evt => this.props.onOpen(evt));
-		this.MDCRegisterListener(`${this.constructor.drawerConstructorName}:close`, evt => this.props.onClose(evt));
+		// store the handler
+		const componentClickHandler = this.MDCApi.foundation_
+			.componentClickHandler_;
+
+		// remove the old one
+		this.MDCApi.foundation_.adapter_.deregisterInteractionHandler(
+			'click',
+			this.MDCApi.foundation_.componentClickHandler_
+		);
+
+		// The drawer click handler only stopsProp, we are just going to remove it
+		// and add logic to check if the drawer should close to the component click handler
+		this.MDCApi.foundation_.adapter_.deregisterDrawerInteractionHandler(
+			'click',
+			this.MDCApi.foundation_.drawerClickHandler_
+		);
+
+		// replace with new function
+		this.MDCApi.foundation_.componentClickHandler_ = evt => {
+			const path = evt.composedPath
+				? evt.composedPath()
+				: evt.deepPath || evt.path;
+			const drawerClickedWasClicked = path.some(
+				el =>
+					el.classList && el.classList.contains('mdc-temporary-drawer__drawer')
+			);
+			if (!drawerClickedWasClicked) {
+				componentClickHandler(evt);
+			}
+		};
+
+		// rebind
+		this.MDCApi.foundation_.adapter_.registerInteractionHandler(
+			'click',
+			this.MDCApi.foundation_.componentClickHandler_
+		);
+
+		this.MDCRegisterListener(
+			`${this.constructor.drawerConstructorName}:open`,
+			evt => this.props.onOpen(evt)
+		);
+		this.MDCRegisterListener(
+			`${this.constructor.drawerConstructorName}:close`,
+			evt => this.props.onClose(evt)
+		);
 	}
 
 	MDCHandleProps(nextProps) {
 		if (this.MDCApi.open !== !!nextProps.open) {
 			this.MDCApi.open = !!nextProps.open;
 		}
-	}
-
-	onClickCallbackFixForChildren(children) {
-		this.childOnClickRefs = [];
-
-		const recursiveCloneChildren = (children) => {
-			return React.Children.map(children, child => {
-				if (!React.isValidElement(child)) { return child }
-
-				return React.cloneElement(child, {
-					...child.props,
-					...(child.props.onClick ? {ref: el => this.childOnClickRefs.push(el)} : {}),
-					children: recursiveCloneChildren(child.props.children)
-				});
-			});
-		};
-
-		return recursiveCloneChildren(children);
 	}
 }
 

@@ -18,7 +18,13 @@
 		"email": "me@jamesmfriedman.com"
 	},
 	"license": "MIT",
-	"files": ["lib/", "src/", "index.js", "README.md", "LICENSE"],
+	"files": [
+		"lib/",
+		"src/",
+		"index.js",
+		"README.md",
+		"LICENSE"
+	],
 	"main": "index.js",
 	"dependencies": {
 		"classnames": "^2.2.x",
@@ -31,8 +37,8 @@
 		"start": "node scripts/start.js",
 		"build": "node scripts/build.js",
 		"build-lib": "node scripts/build-lib.js",
-		"deploy-docs":
-			"npm run build-lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+		"deploy-docs": "npm run build-lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+		"changelog": "changelog",
 		"test": "node scripts/test.js --env=jsdom",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
@@ -65,10 +71,20 @@
 		"moduleNameMapper": {
 			"^react-native$": "react-native-web"
 		},
-		"moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
+		"moduleFileExtensions": [
+			"web.js",
+			"js",
+			"json",
+			"web.jsx",
+			"jsx",
+			"node"
+		]
 	},
 	"babel": {
-		"presets": ["react-app", "es2015"],
+		"presets": [
+			"react-app",
+			"es2015"
+		],
 		"plugins": [
 			[
 				"transform-object-rest-spread",
@@ -135,6 +151,7 @@
 		"extract-text-webpack-plugin": "3.0.0",
 		"file-loader": "0.11.2",
 		"fs-extra": "3.0.1",
+		"generate-changelog": "^1.5.0",
 		"html-webpack-plugin": "2.29.0",
 		"jest": "^21.2.1",
 		"jest-enzyme": "^4.0.0",
