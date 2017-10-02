@@ -42,4 +42,33 @@ describe('Drawer', () => {
 			</TemporaryDrawer>
 		);
 	});
+
+	/**
+	 * Test the MDC monkey patch temporary drawer click fix
+	 * This should protect from future changes to the material api
+	 */
+	it('temporary Drawer works with MDC click fix', () => {
+		let counter = 0;
+		const container = document.createElement('div');
+		document.body.appendChild(container);
+		document.addEventListener('click', () => (counter += 1));
+
+		const wrapper = mount(
+			<TemporaryDrawer open={true} onClose={() => {}}>
+				<TemporaryDrawerContent>
+					<a />
+				</TemporaryDrawerContent>
+			</TemporaryDrawer>,
+			{
+				attachTo: container
+			}
+		);
+
+		wrapper
+			.find('a')
+			.instance()
+			.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+
+		expect(counter).toBe(1);
+	});
 });
