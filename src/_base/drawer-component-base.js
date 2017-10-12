@@ -71,7 +71,7 @@ export class DrawerBase extends MDCComponentBase {
 				el =>
 					el.classList && el.classList.contains('mdc-temporary-drawer__drawer')
 			);
-			if (!drawerClickedWasClicked) {
+			if (!drawerClickedWasClicked && componentClickHandler) {
 				componentClickHandler(evt);
 			}
 		};

@@ -7,7 +7,7 @@ import { Textfield } from './textfield';
 
 class TextfieldStory extends React.Component {
 	state = {
-		value: '',
+		value: ''
 	};
 
 	onChange(evt) {
@@ -18,8 +18,9 @@ class TextfieldStory extends React.Component {
 	render() {
 		return (
 			<Textfield
-				rows={number('rows', 0)}
+				rows={number('rows', 8)}
 				cols={number('cols', 0)}
+				textarea={boolean('textarea', false)}
 				disabled={boolean('disabled', false)}
 				value={text('value', this.state.value)}
 				onChange={evt => this.onChange(evt)}

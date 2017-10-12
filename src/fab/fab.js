@@ -10,17 +10,14 @@ export const FabRoot = simpleComponentFactory('FabRoot', {
 	classNames: props => [
 		'mdc-fab',
 		{
-			'mdc-fab--mini': props.mini,
-			'mdc-fab--plain': props.plain
+			'mdc-fab--mini': props.mini
 		}
 	],
 	propTypes: {
-		mini: PropTypes.bool,
-		plain: PropTypes.bool
+		mini: PropTypes.bool
 	},
 	defaultProps: {
-		mini: false,
-		plain: false
+		mini: false
 	},
 	...(process.env.NODE_ENV === 'production'
 		? {}
@@ -29,14 +26,10 @@ export const FabRoot = simpleComponentFactory('FabRoot', {
 					mini: {
 						type: 'Boolean',
 						desc: 'Make the Fab smaller.'
-					},
-					plain: {
-						type: 'Boolean',
-						desc: 'Make the Fab plain.'
 					}
 				}
 			}),
-	consumeProps: ['mini', 'plain']
+	consumeProps: ['mini']
 });
 
 export const FabIcon = simpleComponentFactory('FabIcon', {
@@ -83,14 +76,12 @@ export class Fab extends React.Component {
 	}
 }
 
-if (process.env.NODE_ENV !== 'production') {
-	Fab.propMeta = {
-		...FabRoot.propMeta,
-		ripple: {
-			type: 'Boolean',
-			desc: 'Adds or disables a ripple from the Fab.'
-		}
-	};
-}
+Fab.propMeta = {
+	...FabRoot.propMeta,
+	ripple: {
+		type: 'Boolean',
+		desc: 'Adds or disables a ripple from the Fab.'
+	}
+};
 
 export default Fab;

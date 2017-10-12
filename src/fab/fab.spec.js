@@ -8,11 +8,6 @@ describe('Fab', () => {
 		expect(!!~btn.html().search('mdc-fab')).toEqual(true);
 	});
 
-	it('can be plain', () => {
-		const btn = mount(<Fab plain />);
-		expect(!!~btn.html().search('mdc-fab--plain')).toEqual(true);
-	});
-
 	it('can be mini', () => {
 		const btn = mount(<Fab mini />);
 		expect(!!~btn.html().search('mdc-fab--mini')).toEqual(true);

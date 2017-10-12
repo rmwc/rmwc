@@ -11,8 +11,8 @@ import { Button } from './button';
 
 storiesOf('Buttons', module).add('Button', () => (
 	<Button
-		primary={boolean('primary', false)}
-		accent={boolean('accent', false)}
+		unelevated={boolean('unelevated', false)}
+		stroked={boolean('stroked', false)}
 		dense={boolean('dense', false)}
 		raised={boolean('raised', false)}
 		compact={boolean('compact', false)}

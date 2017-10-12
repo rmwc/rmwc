@@ -13,14 +13,14 @@ describe('Button', () => {
 		expect(!!~btn.html().search('mdc-button--raised')).toEqual(true);
 	});
 
-	it('can be primary', () => {
-		const btn = mount(<Button primary />);
-		expect(!!~btn.html().search('mdc-button--primary')).toEqual(true);
+	it('can be unelevated', () => {
+		const btn = mount(<Button unelevated />);
+		expect(!!~btn.html().search('mdc-button--unelevated')).toEqual(true);
 	});
 
-	it('can be accent', () => {
-		const btn = mount(<Button accent />);
-		expect(!!~btn.html().search('mdc-button--accent')).toEqual(true);
+	it('can be stroked', () => {
+		const btn = mount(<Button stroked />);
+		expect(!!~btn.html().search('mdc-button--stroked')).toEqual(true);
 	});
 
 	it('can be dense', () => {

@@ -12,11 +12,7 @@ const {
 	Card,
 	List,
 	ListGroup,
-	ListGroupSubheader,
-	ListItem,
-	ListItemText,
-	ListItemTextSecondary,
-	ListDivider
+	ListGroupSubheader
 } = rmwc;
 
 const cleanExampleCode = (codeString = '') => {

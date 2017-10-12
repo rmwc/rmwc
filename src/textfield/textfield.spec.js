@@ -11,14 +11,26 @@ describe('Textfield', () => {
 		mount(
 			<Textfield placeholder="test">
 				<div>Child</div>
-			</Textfield>,
+			</Textfield>
 		);
 	});
 
 	it('can be bound', () => {
 		const el = mount(
-			<Textfield placeholder="test" value="hello world" onChange={evt => {}} />,
+			<Textfield placeholder="test" value="hello world" onChange={evt => {}} />
 		);
 		expect(el.find('input').getDOMNode().value).toBe('hello world');
+	});
+
+	it('can be textarea', () => {
+		const el = mount(
+			<Textfield
+				placeholder="test"
+				value="hello world"
+				textarea
+				onChange={evt => {}}
+			/>
+		);
+		expect(el.find('textarea').getDOMNode().value).toBe('hello world');
 	});
 });

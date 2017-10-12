@@ -14,23 +14,23 @@ export const ButtonRoot = simpleComponentFactory('ButtonRoot', {
 			'mdc-button--dense': props.dense,
 			'mdc-button--raised': props.raised,
 			'mdc-button--compact': props.compact,
-			'mdc-button--primary': props.primary,
-			'mdc-button--accent': props.accent
+			'mdc-button--unelevated': props.unelevated,
+			'mdc-button--stroked': props.stroked
 		}
 	],
 	propTypes: {
 		dense: PropTypes.bool,
 		raised: PropTypes.bool,
 		compact: PropTypes.bool,
-		primary: PropTypes.bool,
-		accent: PropTypes.bool
+		unelevated: PropTypes.bool,
+		stroked: PropTypes.bool
 	},
 	defaultProps: {
 		dense: false,
 		raised: false,
 		compact: false,
-		primary: false,
-		accent: false
+		unelevated: false,
+		stroked: false
 	},
 	propMeta: {
 		dense: {
@@ -45,16 +45,16 @@ export const ButtonRoot = simpleComponentFactory('ButtonRoot', {
 			type: 'Boolean',
 			desc: "Reduce the Button's padding."
 		},
-		primary: {
+		unelevated: {
 			type: 'Boolean',
-			desc: 'Use the primary palette.'
+			desc: 'Make the button unelevated.'
 		},
-		accent: {
+		stroked: {
 			type: 'Boolean',
-			desc: 'Use the accent palette.'
+			desc: 'Use the stroked palette.'
 		}
 	},
-	consumeProps: ['dense', 'raised', 'compact', 'primary', 'accent']
+	consumeProps: ['dense', 'raised', 'compact', 'unelevated', 'stroked']
 });
 
 export class Button extends React.Component {
@@ -92,13 +92,7 @@ export class Button extends React.Component {
 		const button = <ButtonRoot {...rest} />;
 
 		if (shouldRipple) {
-			const { primary, accent } = rest;
-
-			return (
-				<Ripple primary={primary} accent={accent}>
-					{button}
-				</Ripple>
-			);
+			return <Ripple>{button}</Ripple>;
 		}
 
 		return button;

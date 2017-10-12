@@ -10,25 +10,28 @@ import { storyWithState } from '../_base/story-with-state';
 const CheckboxStory = storyWithState(
 	state => ({
 		checked: boolean('checked', state.checked || false),
+		indeterminate: boolean('indeterminate', state.indeterminate || false),
 		disabled: boolean('disabled', state.disabled || false),
 		value: text('value', state.value || 'myValue'),
 		label: text('label', state.label || 'Hello World')
 	}),
-	function(){
+	function() {
 		return (
 			<Checkbox
 				disabled={this.state.disabled}
 				checked={this.state.checked}
+				indeterminate={this.state.indeterminate}
 				value={this.state.value}
 				onChange={evt => {
-					this.setState({'checked': evt.target.checked});
+					this.setState({ checked: evt.target.checked });
 					action(`onChange: ${evt.target.value} ${evt.target.checked}`)();
 				}}
 				label={this.state.label}
 			/>
-		)
+		);
 	}
-)
+);
 
-storiesOf('Inputs and Controls', module)
-	.add('Checkbox', () => <CheckboxStory />)
+storiesOf('Inputs and Controls', module).add('Checkbox', () => (
+	<CheckboxStory />
+));

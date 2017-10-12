@@ -23,9 +23,7 @@ export const CardTitle = simpleComponentFactory('CardTitle', {
 	defaultProps: {
 		large: false
 	},
-	consumeProps: [
-		'large'
-	]
+	consumeProps: ['large']
 });
 
 export const CardSubtitle = simpleComponentFactory('CardSubtitle', {
@@ -48,24 +46,44 @@ export const CardMedia = simpleComponentFactory('CardMedia', {
 	classNames: 'mdc-card__media'
 });
 
-export const CardHorizontalBlock = simpleComponentFactory('CardHorizontalBlock', {
-	className: 'mdc-card__media'
-});
+export const CardHorizontalBlock = simpleComponentFactory(
+	'CardHorizontalBlock',
+	{
+		className: 'mdc-card__media'
+	}
+);
 
 export const Card = simpleComponentFactory('Card', {
-	classNames: 'mdc-card'
+	classNames: props => [
+		'mdc-card',
+		{
+			'mdc-card--theme-dark': props.themeDark
+		}
+	],
+	propTypes: {
+		themeDark: PropTypes.bool
+	},
+	defaultProps: {
+		themeDark: false
+	},
+	consumeProps: ['themeDark'],
+	propMeta: {
+		themeDark: {
+			type: 'Boolean',
+			desc: 'Use the cards dark theme.'
+		}
+	}
 });
 
 export const CardAction = props => {
 	const { className, children, ...rest } = props;
 
-	const classes = classNames(
-		'mdc-card__action',
-		className
-	);
+	const classes = classNames('mdc-card__action', className);
 
 	return (
-		<Button compact className={classes} {...rest}>{ children }</Button>
+		<Button compact className={classes} {...rest}>
+			{children}
+		</Button>
 	);
 };
 

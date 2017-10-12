@@ -18,6 +18,11 @@ describe('Checkbox', () => {
 		expect(checkbox.find('input').getDOMNode().disabled).toEqual(true);
 	});
 
+	it('can be indeterminate', () => {
+		const checkbox = mount(<Checkbox indeterminate />);
+		expect(checkbox.find('input').getDOMNode().indeterminate).toEqual(true);
+	});
+
 	it('can have a label', () => {
 		const checkbox = mount(<Checkbox label="hello world" />);
 		expect(checkbox.text()).toEqual('hello world');

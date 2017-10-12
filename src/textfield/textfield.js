@@ -11,12 +11,22 @@ const { MDCTextfield } = mdcTextfield;
 
 export const TextfieldRoot = simpleComponentFactory('TextfieldRoot', {
 	tag: 'label',
-	classNames: 'mdc-textfield'
+	classNames: props => [
+		'mdc-textfield',
+		{ 'mdc-textfield--textarea': props.textarea }
+	],
+	consumeProps: ['textarea']
 });
 
 export const TextfieldLabel = simpleComponentFactory('TextfieldLabel', {
 	tag: 'span',
-	classNames: 'mdc-textfield__label'
+	classNames: props => [
+		'mdc-textfield__label',
+		{
+			'mdc-textfield__label--float-above': props.value
+		}
+	],
+	consumeProps: ['value']
 });
 
 export const TextfieldInput = simpleComponentFactory('TextfieldInput', {
@@ -39,19 +49,17 @@ export class Textfield extends MDCComponentBase {
 		inputRef: PropTypes.func,
 		disabled: PropTypes.bool,
 		label: PropTypes.any,
-		rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-		cols: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+		textarea: PropTypes.bool,
 		...MDCComponentBase.propTypes
-	}
+	};
 
 	static defaultProps = {
 		inputRef: noop,
 		disabled: false,
 		label: undefined,
-		rows: undefined,
-		cols: undefined,
+		textarea: undefined,
 		...MDCComponentBase.defaultProps
-	}
+	};
 
 	static propMeta = propMeta({
 		inputRef: {
@@ -66,16 +74,18 @@ export class Textfield extends MDCComponentBase {
 			type: 'Any',
 			desc: 'A label for the input.'
 		},
-		rows: {
-			type: 'Number',
-			desc: 'Creates a multiline textfield with the provided number of rows.'
-		},
-		cols: {
-			type: 'Number',
-			desc: 'Creates a multiline textfield with the provided number of cols.'
+		textarea: {
+			type: 'Boolean',
+			desc: 'Creates a multiline textfield'
 		},
 		...MDCComponentBase.propMeta
-	})
+	});
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.textarea !== this.props.textarea) {
+			this.MDCComponentReinit();
+		}
+	}
 
 	render() {
 		const {
@@ -84,30 +94,29 @@ export class Textfield extends MDCComponentBase {
 			inputRef,
 			apiRef,
 			children,
+			textarea,
 			...rest
 		} = this.props;
-
-		const classes = classNames(
-			className,
-			{
-				'mdc-textfield--multiline': this.props.rows || this.props.cols
-			}
-		);
 
 		const tagProps = {
 			elementRef: inputRef,
 			...rest
 		};
 
-		const tag = this.props.rows || this.props.cols
-			? <TextfieldTextarea {...tagProps} />
-			: <TextfieldInput {...tagProps} />;
+		const tag = textarea ? (
+			<TextfieldTextarea {...tagProps} />
+		) : (
+			<TextfieldInput {...tagProps} />
+		);
 
 		return (
-			<TextfieldRoot elementRef={el => this.MDCSetRootElement(el)} className={classes}>
+			<TextfieldRoot
+				textarea={textarea}
+				elementRef={el => this.MDCSetRootElement(el)}
+			>
 				{children}
 				{tag}
-				<TextfieldLabel>{ label }</TextfieldLabel>
+				<TextfieldLabel value={this.props.value}>{label}</TextfieldLabel>
 			</TextfieldRoot>
 		);
 	}

@@ -17,6 +17,7 @@ const themes = [
 	'secondary-light',
 	'secondary-dark',
 	'background',
+	'dark',
 	'primary-bg',
 	'primary-light-bg',
 	'primary-dark-bg',
@@ -51,46 +52,39 @@ const darkThemes = [
 	'text-hint-on-dark',
 	'text-disabled-on-dark',
 	'text-icon-on-dark'
-]
+];
 
 const themeStyle = {
 	padding: '16px',
-  margin: '16px',
-  display: 'inline-block',
-  width: '96px',
-  height: '96px',
-	verticalAlign: 'top',
+	margin: '16px',
+	display: 'inline-block',
+	width: '96px',
+	height: '96px',
+	verticalAlign: 'top'
 };
 
 const darkThemeStyle = {
-	...themeStyle,
+	...themeStyle
 };
 
-storiesOf('Theme', module)
-	.add('Theme', () => (
-		<div>
-			<div style={{ backgroundColor: '#ddd' }}>
-				{themes.map((theme, i) => (
-					<Theme
-						key={i}
-						use={theme}
-						style={themeStyle}
-					>
-						{theme}
-					</Theme>
-				))}
-			</div>
-			<div style={{ backgroundColor: '#333' }}>
-				{darkThemes.map((theme, i) => (
-					<Theme
-						key={i}
-						use={theme}
-						style={darkThemeStyle}
-					>
-						{theme}
-					</Theme>
-				))}
-			</div>
+storiesOf('Theme', module).add('Theme', () => (
+	<div>
+		<div style={{ backgroundColor: '#ddd' }}>
+			<Theme use={['dark', 'text-hint-on-primary']} style={themeStyle}>
+				Test
+			</Theme>
+			{themes.map((theme, i) => (
+				<Theme key={i} use={theme} style={themeStyle}>
+					{theme}
+				</Theme>
+			))}
 		</div>
-		)
-	)
+		<div style={{ backgroundColor: '#333' }}>
+			{darkThemes.map((theme, i) => (
+				<Theme key={i} use={theme} style={darkThemeStyle}>
+					{theme}
+				</Theme>
+			))}
+		</div>
+	</div>
+));
