@@ -15,6 +15,19 @@ describe('Textfield', () => {
 		);
 	});
 
+	it('can have custom classnames', () => {
+		const el = mount(
+			<Textfield placeholder="test" className="my-custom-classname">
+				<div>Child</div>
+			</Textfield>
+		);
+
+		const html = el.html();
+		expect(
+			!!~html.search('mdc-textfield') && !!~html.search('my-custom-classname')
+		).toEqual(true);
+	});
+
 	it('can be bound', () => {
 		const el = mount(
 			<Textfield placeholder="test" value="hello world" onChange={evt => {}} />

@@ -111,6 +111,7 @@ export class Textfield extends MDCComponentBase {
 
 		return (
 			<TextfieldRoot
+				className={className}
 				textarea={textarea}
 				elementRef={el => this.MDCSetRootElement(el)}
 			>
