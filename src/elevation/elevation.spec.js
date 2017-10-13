@@ -16,4 +16,9 @@ describe('Elevation', () => {
 		const el = mount(<Elevation transition />);
 		expect(!!~el.html().search('mdc-elevation-transition')).toBe(true);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<Elevation className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

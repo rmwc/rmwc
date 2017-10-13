@@ -42,4 +42,9 @@ describe('Button', () => {
 		const btn = mount(<Button ripple={false} />);
 		expect(btn.hasClass('mdc-ripple-surface')).toEqual(false);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<Button className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

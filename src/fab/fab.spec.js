@@ -22,4 +22,9 @@ describe('Fab', () => {
 		const btn = mount(<Fab ripple={false} />);
 		expect(!!~btn.html().search('mdc-ripple-surface')).toEqual(false);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<Fab className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

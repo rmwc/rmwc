@@ -18,8 +18,8 @@ describe('Radio', () => {
 		expect(radio.find('input').getDOMNode().disabled).toEqual(true);
 	});
 
-	it('can have a label', () => {
-		const radio = mount(<Radio label="hello world" />);
-		expect(radio.text()).toEqual('hello world');
+	it('can have custom classnames on input', () => {
+		const el = mount(<Radio className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
 	});
 });

@@ -9,4 +9,11 @@ describe('Grid', () => {
 		expect(!!~grid.html().search('mdc-layout-grid')).toEqual(true);
 		expect(!!~gridCell.html().search('mdc-layout-grid__cell')).toEqual(true);
 	});
+
+	it('can have custom classnames', () => {
+		[Grid, GridCell].forEach(Component => {
+			const el = mount(<Component className={'my-custom-classname'} />);
+			expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+		});
+	});
 });

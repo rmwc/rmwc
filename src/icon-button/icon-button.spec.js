@@ -10,4 +10,9 @@ describe('IconButton', () => {
 	it('renders with use prop', () => {
 		mount(<IconButton use="favorite" />);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<IconButton className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

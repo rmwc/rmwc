@@ -41,4 +41,18 @@ describe('GridList', () => {
 		const list = mount(<GridList tileAspect="1x1" />);
 		expect(!!~list.html().search('mdc-grid-list--tile-aspect-1x1')).toBe(true);
 	});
+
+	it('can have custom classnames', () => {
+		[
+			GridList,
+			GridTile,
+			//GridTilePrimary,	Apparently these cant have custom classes, look into why
+			//GridTilePrimaryContent,
+			GridTileSecondary,
+			GridTileTitle
+		].forEach(Component => {
+			const el = mount(<Component className={'my-custom-classname'} />);
+			expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+		});
+	});
 });

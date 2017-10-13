@@ -14,13 +14,13 @@ export const IconButton = props => {
 		lineHeight: '24px',
 		padding: '8px',
 		width: '40px',
-		borderRadius: '50%',
+		borderRadius: '50%'
 	};
 
 	const { className, children, use, style = {}, ...rest } = props;
 	const mergedStyle = {
 		...buttonStyle,
-		...style,
+		...style
 	};
 
 	const iconName = use || children;
@@ -36,13 +36,13 @@ export const IconButton = props => {
 };
 
 IconButton.propTypes = {
-	use: PropTypes.string,
-	...Button.propTypes,
+	use: PropTypes.node,
+	...Button.propTypes
 };
 
 IconButton.defaultProps = {
 	use: undefined,
-	...Button.defaultProps,
+	...Button.defaultProps
 };
 
 export default IconButton;

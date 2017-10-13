@@ -17,4 +17,9 @@ describe('Slider', () => {
 		const el = mount(<Slider value={50} discrete displayMarkers />);
 		expect(!!~el.html().search('mdc-slider--display-markers')).toBe(true);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<Slider className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

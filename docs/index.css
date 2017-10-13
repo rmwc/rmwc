@@ -14,6 +14,32 @@ pre {
 	tab-size: 2;
 }
 
+.header {
+	margin-bottom: 24px;
+}
+
+.header h2 {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+#main-nav .mdc-list-item:before {
+	pointer-events: none;
+}
+
+#main-nav a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+}
+
 .demo-content {
 	display: flex;
 	flex: 1;

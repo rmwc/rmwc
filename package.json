@@ -22,13 +22,7 @@
 		"email": "me@jamesmfriedman.com"
 	},
 	"license": "MIT",
-	"files": [
-		"lib/",
-		"src/",
-		"index.js",
-		"README.md",
-		"LICENSE"
-	],
+	"files": ["lib/", "src/", "index.js", "README.md", "LICENSE"],
 	"main": "index.js",
 	"dependencies": {
 		"classnames": "^2.2.x",
@@ -41,13 +35,15 @@
 		"start": "node scripts/start.js",
 		"build": "node scripts/build.js",
 		"build-lib": "node scripts/build-lib.js",
-		"deploy-docs": "npm run build-lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+		"deploy-docs":
+			"npm run build-lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
 		"changelog": "changelog",
 		"test": "node scripts/test.js --env=jsdom",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"preversion": "npm test -- --coverage",
-		"version": "npm run build-lib && git add -A lib && npm run changelog && git add CHANGELOG.md",
+		"version":
+			"npm run build-lib && git add -A lib && npm run changelog && git add CHANGELOG.md",
 		"postversion": "git push && git push --tags"
 	},
 	"jest": {
@@ -75,21 +71,12 @@
 		"moduleNameMapper": {
 			"^react-native$": "react-native-web"
 		},
-		"moduleFileExtensions": [
-			"web.js",
-			"js",
-			"json",
-			"web.jsx",
-			"jsx",
-			"node"
-		]
+		"moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
 	},
 	"babel": {
-		"presets": [
-			"react-app",
-			"es2015"
-		],
+		"presets": ["react-app", ["es2015", { "modules": false }]],
 		"plugins": [
+			"react-hot-loader/babel",
 			[
 				"transform-object-rest-spread",
 				{
@@ -137,6 +124,7 @@
 		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-react-app": "^3.0.2",
 		"babel-runtime": "6.26.0",
+		"canvas-prebuilt": "^1.6.5-prerelease.1",
 		"case-sensitive-paths-webpack-plugin": "2.1.1",
 		"chalk": "1.1.3",
 		"css-loader": "0.28.4",
@@ -166,6 +154,8 @@
 		"promise": "8.0.1",
 		"react-addons-test-utils": "^15.6.2",
 		"react-dev-utils": "^4.0.0",
+		"react-hot-loader": "^3.0.0",
+		"react-router-dom": "^4.2.2",
 		"react-syntax-highlighter": "^5.7.0",
 		"react-test-renderer": "^16.0.0",
 		"style-loader": "0.18.2",

@@ -22,4 +22,9 @@ describe('Switch', () => {
 		const switchEl = mount(<Switch label="hello world" />);
 		expect(switchEl.text()).toEqual('hello world');
 	});
+
+	it('can have custom classnames on input', () => {
+		const el = mount(<Switch className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

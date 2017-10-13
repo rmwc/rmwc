@@ -46,4 +46,9 @@ describe('Textfield', () => {
 		);
 		expect(el.find('textarea').getDOMNode().value).toBe('hello world');
 	});
+
+	it('can have custom classnames on input', () => {
+		const el = mount(<Textfield className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

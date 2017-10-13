@@ -43,6 +43,13 @@ describe('Drawer', () => {
 		);
 	});
 
+	it('can have custom classnames', () => {
+		[PermanentDrawer, TemporaryDrawer, PersistentDrawer].forEach(Component => {
+			const el = mount(<Component className={'my-custom-classname'} />);
+			expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+		});
+	});
+
 	/**
 	 * Test the MDC monkey patch temporary drawer click fix
 	 * This should protect from future changes to the material api

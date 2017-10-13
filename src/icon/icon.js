@@ -11,7 +11,7 @@ export class Icon extends React.Component {
 	};
 
 	static propTypes = {
-		use: PropTypes.string,
+		use: PropTypes.node,
 		...IconRoot.propTypes
 	};
 

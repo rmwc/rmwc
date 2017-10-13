@@ -37,4 +37,20 @@ describe('Card', () => {
 		const card = mount(<Card themeDark />);
 		expect(!!~card.html().search('mdc-card--theme-dark')).toEqual(true);
 	});
+
+	it('can have custom classes', () => {
+		[
+			Card,
+			CardMedia,
+			CardPrimary,
+			CardTitle,
+			CardSubtitle,
+			CardSupportingText,
+			CardActions,
+			CardAction
+		].forEach(Component => {
+			const el = mount(<Component className={'my-custom-classname'} />);
+			expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+		});
+	});
 });

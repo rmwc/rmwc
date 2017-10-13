@@ -26,4 +26,9 @@ describe('LinearProgress', () => {
 		const el = mount(<LinearProgress reversed />);
 		expect(!!~el.html().search('mdc-linear-progress--reversed')).toBe(true);
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<LinearProgress className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

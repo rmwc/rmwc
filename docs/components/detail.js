@@ -2,8 +2,10 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from '../common/build-jsx-with-context';
+import Header from './header';
 import * as rmwc from '../../src';
 import * as rmwcElements from '../../elements';
+import content from '../content';
 
 const {
 	Grid,
@@ -26,7 +28,10 @@ export class Detail extends React.Component {
 	state = {};
 
 	render() {
-		const { section } = this.props;
+		const section = content.find(
+			c => c.section === this.props.match.params.section
+		);
+
 		const componentClasses = !Array.isArray(section.class)
 			? [section.class]
 			: section.class;
@@ -60,14 +65,7 @@ export class Detail extends React.Component {
 			<Grid
 				id={'detail-section-' + section.name.toLowerCase().replace(' ', '-')}
 			>
-				<GridCell span="12">
-					<Typography use="display1" tag="h2">
-						{section.name}
-					</Typography>
-					<Typography use="subheading2" tag="h3" wrap>
-						<a href={section.url}>{section.url}</a>
-					</Typography>
-				</GridCell>
+				<Header title={section.name} link={section.url} />
 
 				<GridCell span="12">
 					<div className="demo-example">

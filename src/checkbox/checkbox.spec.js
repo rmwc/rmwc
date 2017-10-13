@@ -27,4 +27,9 @@ describe('Checkbox', () => {
 		const checkbox = mount(<Checkbox label="hello world" />);
 		expect(checkbox.text()).toEqual('hello world');
 	});
+
+	it('can have custom classnames on input', () => {
+		const el = mount(<Checkbox className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });

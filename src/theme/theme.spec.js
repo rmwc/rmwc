@@ -12,4 +12,9 @@ describe('Theme', () => {
 			));
 		}
 	});
+
+	it('can have custom classnames', () => {
+		const el = mount(<Theme use="dark" className={'my-custom-classname'} />);
+		expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+	});
 });
