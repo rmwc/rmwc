@@ -68,13 +68,13 @@ export class App extends React.Component {
 						>
 							<PersistentDrawerContent>
 								<ListItem>
-									<Link to="/">
+									<Link to={`${process.env.PUBLIC_URL}`}>
 										<ListItemText>Get Started</ListItemText>
 									</Link>
 								</ListItem>
 								{content.map((section, i) => (
 									<ListItem key={i}>
-										<Link to={`/${section.section}`}>
+										<Link to={`${process.env.PUBLIC_URL}/${section.section}`}>
 											<ListItemText>{section.name}</ListItemText>
 										</Link>
 									</ListItem>
@@ -83,8 +83,15 @@ export class App extends React.Component {
 						</PersistentDrawer>
 						<main>
 							<Switch>
-								<Route path="/" exact component={Home} />
-								<Route path="/:section" component={Detail} />
+								<Route
+									path={`${process.env.PUBLIC_URL}`}
+									exact
+									component={Home}
+								/>
+								<Route
+									path={`${process.env.PUBLIC_URL}/:section`}
+									component={Detail}
+								/>
 							</Switch>
 						</main>
 					</div>
