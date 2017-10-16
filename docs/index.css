@@ -106,6 +106,36 @@ pre {
 	vertical-align: top;
 }
 
+/**
+ * Submenu
+ */
+.submenu__children {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.3s;
+}
+
+.submenu__children--open {
+	max-height: 300px;
+}
+
+.submenu__icon {
+	transition: transform 0.3s;
+	user-select: none;
+}
+
+.submenu__icon--open {
+	transform: rotate(90deg);
+}
+
+.submenu__children .mdc-list-item {
+	text-indent: 24px;
+}
+
+/**
+ * Data Tables
+ */
+
 .mdl-data-table__select {
 	width: 16px;
 }
@@ -122,10 +152,6 @@ pre {
 .tabledrag-toggle-weight {
 	float: right;
 	margin-right: -12px;
-}
-
-form.vbo-hide .form-wrapper {
-	display: none;
 }
 
 table {

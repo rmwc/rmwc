@@ -16,8 +16,35 @@ import {
 } from '../../src/';
 
 import Detail from './detail';
+import Submenu from './submenu';
 import Home from './home';
 import content from '../content';
+
+const MenuItem = ({ url, label }) => {
+	return (
+		<ListItem>
+			<Link to={url}>
+				<ListItemText>{label}</ListItemText>
+			</Link>
+		</ListItem>
+	);
+};
+
+const MenuItemForSection = ({ sectionKey }) => {
+	const section = content.find(v => v.section === sectionKey);
+	return (
+		<MenuItem
+			label={section.name}
+			url={`${process.env.PUBLIC_URL}/${section.section}`}
+		/>
+	);
+};
+
+const SubmenuWithMenuItems = ({ label, sectionKeys }) => (
+	<Submenu label={label}>
+		{sectionKeys.map(v => <MenuItemForSection key={v} sectionKey={v} />)}
+	</Submenu>
+);
 
 export class App extends React.Component {
 	state = {
@@ -67,24 +94,63 @@ export class App extends React.Component {
 							onClose={() => this.setState({ menuIsOpen: false })}
 						>
 							<PersistentDrawerContent>
-								<ListItem>
-									<Link to={`${process.env.PUBLIC_URL}`}>
-										<ListItemText>Get Started</ListItemText>
-									</Link>
-								</ListItem>
-								{content.map((section, i) => (
-									<ListItem key={i}>
-										<Link to={`${process.env.PUBLIC_URL}/${section.section}`}>
-											<ListItemText>{section.name}</ListItemText>
-										</Link>
-									</ListItem>
+								<MenuItem
+									label="Get Started"
+									url={`${process.env.PUBLIC_URL}`}
+								/>
+								<SubmenuWithMenuItems
+									label="Buttons"
+									sectionKeys={['buttons', 'fabs', 'icon-toggles']}
+								/>
+
+								{['cards', 'dialogs'].map(v => (
+									<MenuItemForSection key={v} sectionKey={v} />
 								))}
+
+								<SubmenuWithMenuItems
+									label="Drawers"
+									sectionKeys={[
+										'permanent-drawer',
+										'persistent-drawer',
+										'temporary-drawer'
+									]}
+								/>
+
+								{['elevation', 'grid-lists'].map(v => (
+									<MenuItemForSection key={v} sectionKey={v} />
+								))}
+
+								<SubmenuWithMenuItems
+									label="Inputs and Controls"
+									sectionKeys={[
+										'checkboxes',
+										'form-fields',
+										'radio-buttons',
+										'select-menus',
+										'sliders',
+										'switches',
+										'textfields'
+									]}
+								/>
+
+								{[
+									'layout-grids',
+									'linear-progress',
+									'lists',
+									'menus',
+									'ripples',
+									'snackbars',
+									'tabs',
+									'theme',
+									'toolbars',
+									'typography'
+								].map(v => <MenuItemForSection key={v} sectionKey={v} />)}
 							</PersistentDrawerContent>
 						</PersistentDrawer>
 						<main>
 							<Switch>
 								<Route
-									path={`${process.env.PUBLIC_URL}`}
+									path={`${process.env.PUBLIC_URL || '/'}`}
 									exact
 									component={Home}
 								/>
