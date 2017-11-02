@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ListItem, ListItemEndDetail, ListItemText, Icon } from '../../src';
+import { ListItem, ListItemEndDetail, ListItemText, Icon } from '../../';
 
 export class Submenu extends React.Component {
 	static propTypes = {

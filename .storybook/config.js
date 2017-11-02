@@ -5,21 +5,21 @@ import materialStyles from 'material-components-web/dist/material-components-web
 import { withKnobs } from '@storybook/addon-knobs';
 
 function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
+	return requireContext.keys().map(requireContext);
 }
 
 function loadStories() {
-  requireAll(require.context('../src/', true, /\.story\.js?$/));
+	requireAll(require.context('../', true, /\.story\.js?$/));
 }
 
 const StylesDecorator = storyFn => (
-  <div className="mdc-typography" style={{ padding: '24px', height: '100%' }}>
-    <style>
-      {normalizeStyles}
-      {materialStyles}
-    </style>
-    {storyFn()}
-  </div>
+	<div className="mdc-typography" style={{ padding: '24px', height: '100%' }}>
+		<style>
+			{normalizeStyles}
+			{materialStyles}
+		</style>
+		{storyFn()}
+	</div>
 );
 
 addDecorator(withKnobs);

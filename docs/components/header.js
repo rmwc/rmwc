@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridCell, Typography } from '../../src';
+import { GridCell, Typography } from '../../';
 
 export const Header = ({ title, description, link }) => (
 	<GridCell span="12" className="header">

@@ -1,12 +1,12 @@
 [![CircleCI](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master.svg?style=shield)](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master) [![npm](https://img.shields.io/npm/v/rmwc.svg)]() [![npm](https://img.shields.io/npm/l/rmwc.svg)]()
 
 # RMWC - React Material Web Components
-A thin React wrapper for Material Design (Web) Components v0.22.0
+A thin React wrapper for Material Design (Web) Components v0.24.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 
 ## Recent updates
-RMWC has been tested and works properly with React 16 and Material Components Web v0.22.0.
+RMWC has been tested and works properly with React 16 and Material Components Web v0.24.0.
 
 ## Goals
 - To create the thinnest, lightest, and spec compliant wrapper around Google Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)

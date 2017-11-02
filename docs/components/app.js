@@ -13,7 +13,7 @@ import {
 	ListItemText,
 	IconButton,
 	Icon
-} from '../../src/';
+} from '../../';
 
 import Detail from './detail';
 import Submenu from './submenu';

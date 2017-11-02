@@ -3,8 +3,17 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from '../common/build-jsx-with-context';
 import Header from './header';
-import * as rmwc from '../../src';
-import * as rmwcElements from '../../elements';
+import * as rmwc from '../../';
+import {
+	DialogRoot,
+	DialogSurface,
+	DialogHeader,
+	DialogHeaderTitle,
+	DialogBody,
+	DialogFooter,
+	DialogFooterButton,
+	DialogBackdrop
+} from '../../Dialog';
 import content from '../content';
 
 const {
@@ -56,8 +65,15 @@ export class Detail extends React.Component {
 		});
 
 		const example = buildJSXWithContext(section.example, this, {
-			...rmwc,
-			...rmwcElements
+			DialogRoot,
+			DialogSurface,
+			DialogHeader,
+			DialogHeaderTitle,
+			DialogBody,
+			DialogFooter,
+			DialogFooterButton,
+			DialogBackdrop,
+			...rmwc
 		});
 		const exampleCodePreview = cleanExampleCode(section.example);
 

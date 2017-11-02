@@ -11,9 +11,7 @@ export default [
 			<Button compact>Compact</Button>
 			<Button unelevated>Unelevated</Button>
 			<Button stroked>Stroked</Button>
-			<Theme use={['secondary-bg', 'text-primary-on-secondary']} wrap>
-				<Button raised>With Theme</Button>
-			</Theme>
+			<Button raised theme={['secondary-bg', 'text-primary-on-secondary']}>With Theme</Button>
 			`
 	},
 	{
@@ -179,8 +177,8 @@ export default [
 				body="You can pass the body prop, or anything you want as children."
 				open={this.state.simpleDialogIsOpen}
 				onClose={evt => this.setState({simpleDialogIsOpen: false})}
-				onAccept={evt => alert('Accepted')}
-				onCancel={evt => alert('Cancelled')}
+				onAccept={evt => console.log('Accepted')}
+				onCancel={evt => console.log('Cancelled')}
 			/>
 
 

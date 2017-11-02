@@ -40,6 +40,10 @@ pre {
 	color: inherit;
 }
 
+ul li {
+	margin: 8px 0;
+}
+
 .demo-content {
 	display: flex;
 	flex: 1;
