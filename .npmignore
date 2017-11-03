@@ -1,0 +1,9 @@
+**/*.spec.js
+**/*.story.js
+build/
+config/
+coverage/
+docs/
+public/
+scripts/
+jsconfig.json
