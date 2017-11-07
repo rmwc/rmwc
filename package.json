@@ -1,6 +1,6 @@
 {
 	"name": "rmwc",
-	"version": "0.0.1-beta6",
+	"version": "0.0.1-beta7",
 	"author": "James Friedman",
 	"private": false,
 	"description": "A thin React wrapper for Material Design (Web) Components",
@@ -35,15 +35,13 @@
 		"babelfy": "node scripts/babelfy.js",
 		"build": "node scripts/build.js",
 		"build:lib": "node scripts/build-lib.js",
-		"deploy:docs":
-			"npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+		"deploy:docs": "npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
 		"changelog": "changelog",
 		"test": "node scripts/test.js --env=jsdom",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"preversion": "npm test -- --coverage",
-		"version":
-			"npm run build:lib && git add -A lib && npm run changelog && git add CHANGELOG.md",
+		"version": "npm run build:lib && git add -A lib && npm run changelog && git add CHANGELOG.md",
 		"postversion": "git push && git push --tags"
 	},
 	"jest": {
@@ -56,7 +54,9 @@
 			"<rootDir>/config/polyfills.js",
 			"<rootDir>/scripts/setupTests.js"
 		],
-		"testMatch": ["<rootDir>/**/?(*.)(spec).js?(x)"],
+		"testMatch": [
+			"<rootDir>/**/?(*.)(spec).js?(x)"
+		],
 		"testEnvironment": "jsdom",
 		"transformIgnorePatterns": [],
 		"testURL": "http://localhost",
@@ -68,7 +68,14 @@
 		"moduleNameMapper": {
 			"^react-native$": "react-native-web"
 		},
-		"moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
+		"moduleFileExtensions": [
+			"web.js",
+			"js",
+			"json",
+			"web.jsx",
+			"jsx",
+			"node"
+		]
 	},
 	"babel": {
 		"presets": [
