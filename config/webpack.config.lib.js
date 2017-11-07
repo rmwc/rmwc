@@ -110,15 +110,24 @@ module.exports = (libraryTarget, filename = 'rmwc') => ({
 			'theme',
 			'toolbar',
 			'typography'
-		].map(name => ({
-			[`@material/${name}`]: {
-				root: `@material/${name}`,
-				commonjs2: `@material/${name}`,
-				commonjs: `@material/${name}`,
-				amd: `@material/${name}`,
-				umd: `@material/${name}`
-			}
-		})),
+		].map(name => {
+			const parts = name.split('-');
+			const upperName =
+				parts.length > 1
+					? `${parts[0]}${parts[1].charAt(0).toUpperCase()}${parts[1].slice(1)}`
+					: name;
+			const moduleName = `@material/${name}/dist/mdc.${upperName}`;
+
+			return {
+				[moduleName]: {
+					root: moduleName,
+					commonjs2: moduleName,
+					commonjs: moduleName,
+					amd: moduleName,
+					umd: moduleName
+				}
+			};
+		}),
 		{
 			react: {
 				root: 'React',

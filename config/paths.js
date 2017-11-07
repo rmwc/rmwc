@@ -53,6 +53,6 @@ module.exports = {
 	servedPath: getServedPath(resolveApp('package.json')),
 
 	appLib: resolveApp('./'),
-	appLibIndex: resolveApp('./index.js'),
+	appLibIndex: resolveApp('./src/index.js'),
 	appLibBuild: resolveApp('lib')
 };
