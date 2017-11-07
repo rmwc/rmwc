@@ -1,20 +1,17 @@
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { simpleComponentFactory } from '../Base/simple-component-factory';
 
-export const GridCell = simpleComponentFactory('GridCell', {
-	classNames: props => [
-		'mdc-layout-grid__cell',
-		{
-			[`mdc-layout-grid__cell--span-${props.span}`]: props.span !== undefined,
-			[`mdc-layout-grid__cell--span-${props.phone}-phone`]:
-				props.phone !== undefined,
-			[`mdc-layout-grid__cell--span-${props.tablet}-tablet`]:
-				props.tablet !== undefined,
-			[`mdc-layout-grid__cell--span-${props.desktop}-desktop`]:
-				props.desktop !== undefined
-		}
-	],
+export var GridCell = simpleComponentFactory('GridCell', {
+	classNames: function classNames(props) {
+		var _ref;
+
+		return ['mdc-layout-grid__cell', (_ref = {}, _defineProperty(_ref, 'mdc-layout-grid__cell--span-' + props.span, props.span !== undefined), _defineProperty(_ref, 'mdc-layout-grid__cell--span-' + props.phone + '-phone', props.phone !== undefined), _defineProperty(_ref, 'mdc-layout-grid__cell--span-' + props.tablet + '-tablet', props.tablet !== undefined), _defineProperty(_ref, 'mdc-layout-grid__cell--span-' + props.desktop + '-desktop', props.desktop !== undefined), _ref)];
+	},
 	propTypes: {
 		span: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -48,20 +45,26 @@ export const GridCell = simpleComponentFactory('GridCell', {
 	consumeProps: ['span', 'phone', 'tablet', 'desktop']
 });
 
-export const GridRoot = simpleComponentFactory('GridRoot', {
+export var GridRoot = simpleComponentFactory('GridRoot', {
 	classNames: 'mdc-layout-grid'
 });
 
-export const GridInner = simpleComponentFactory('GridInner', {
+export var GridInner = simpleComponentFactory('GridInner', {
 	classNames: 'mdc-layout-grid__inner'
 });
 
-export const Grid = props => {
-	const { children, ...rest } = props;
+var Grid = function Grid(props) {
+	var children = props.children,
+	    rest = _objectWithoutProperties(props, ['children']);
 
-	return (
-		<GridRoot {...rest}>
-			<GridInner>{children}</GridInner>
-		</GridRoot>
+	return React.createElement(
+		GridRoot,
+		rest,
+		React.createElement(
+			GridInner,
+			null,
+			children
+		)
 	);
 };
+export { Grid };

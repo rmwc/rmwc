@@ -120,7 +120,7 @@ ul li {
 }
 
 .submenu__children--open {
-	max-height: 300px;
+	max-height: 400px;
 }
 
 .submenu__icon {

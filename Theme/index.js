@@ -5,17 +5,16 @@ import themeOptions from './theme-options';
 
 import simpleComponentFactory from '../Base/simple-component-factory';
 
-export const Theme = simpleComponentFactory('Theme', {
+export var Theme = simpleComponentFactory('Theme', {
 	tag: 'span',
-	classNames: props => {
-		const use = Array.isArray(props.use) ? props.use : [props.use];
-		return use.map(v => `mdc-theme--${v}`);
+	classNames: function classNames(props) {
+		var use = Array.isArray(props.use) ? props.use : [props.use];
+		return use.map(function (v) {
+			return 'mdc-theme--' + v;
+		});
 	},
 	propTypes: {
-		use: PropTypes.oneOfType([
-			PropTypes.oneOf(themeOptions),
-			PropTypes.arrayOf(PropTypes.oneOf(themeOptions))
-		]).isRequired
+		use: PropTypes.oneOfType([PropTypes.oneOf(themeOptions), PropTypes.arrayOf(PropTypes.oneOf(themeOptions))]).isRequired
 	},
 	defaultProps: {
 		use: undefined

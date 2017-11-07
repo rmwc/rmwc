@@ -1,22 +1,23 @@
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import simpleComponentFactory from '../Base/simple-component-factory';
 import Button from '../Button';
 
-export const CardPrimary = simpleComponentFactory('CardPrimary', {
+export var CardPrimary = simpleComponentFactory('CardPrimary', {
 	tag: 'section',
 	classNames: 'mdc-card__primary'
 });
 
-export const CardTitle = simpleComponentFactory('CardTitle', {
+export var CardTitle = simpleComponentFactory('CardTitle', {
 	tag: 'h1',
-	classNames: props => [
-		'mdc-card__title',
-		{
+	classNames: function classNames(props) {
+		return ['mdc-card__title', {
 			'mdc-card__title--large': props.large
-		}
-	],
+		}];
+	},
 	propTypes: {
 		large: PropTypes.bool
 	},
@@ -26,40 +27,36 @@ export const CardTitle = simpleComponentFactory('CardTitle', {
 	consumeProps: ['large']
 });
 
-export const CardSubtitle = simpleComponentFactory('CardSubtitle', {
+export var CardSubtitle = simpleComponentFactory('CardSubtitle', {
 	tag: 'h2',
 	classNames: 'mdc-card__subtitle'
 });
 
-export const CardSupportingText = simpleComponentFactory('CardSupportingText', {
+export var CardSupportingText = simpleComponentFactory('CardSupportingText', {
 	tag: 'section',
 	classNames: 'mdc-card__supporting-text'
 });
 
-export const CardActions = simpleComponentFactory('CardActions', {
+export var CardActions = simpleComponentFactory('CardActions', {
 	tag: 'section',
 	classNames: 'mdc-card__actions'
 });
 
-export const CardMedia = simpleComponentFactory('CardMedia', {
+export var CardMedia = simpleComponentFactory('CardMedia', {
 	tag: 'section',
 	classNames: 'mdc-card__media'
 });
 
-export const CardHorizontalBlock = simpleComponentFactory(
-	'CardHorizontalBlock',
-	{
-		className: 'mdc-card__media'
-	}
-);
+export var CardHorizontalBlock = simpleComponentFactory('CardHorizontalBlock', {
+	className: 'mdc-card__media'
+});
 
-export const Card = simpleComponentFactory('Card', {
-	classNames: props => [
-		'mdc-card',
-		{
+export var Card = simpleComponentFactory('Card', {
+	classNames: function classNames(props) {
+		return ['mdc-card', {
 			'mdc-card--theme-dark': props.themeDark
-		}
-	],
+		}];
+	},
 	propTypes: {
 		themeDark: PropTypes.bool
 	},
@@ -75,24 +72,23 @@ export const Card = simpleComponentFactory('Card', {
 	}
 });
 
-export const CardAction = props => {
-	const { className, children, ...rest } = props;
+var CardAction = function CardAction(props) {
+	var className = props.className,
+	    children = props.children,
+	    rest = _objectWithoutProperties(props, ['className', 'children']);
 
-	const classes = classNames('mdc-card__action', className);
+	var classes = classNames('mdc-card__action', className);
 
-	return (
-		<Button compact className={classes} {...rest}>
-			{children}
-		</Button>
+	return React.createElement(
+		Button,
+		Object.assign({ compact: true, className: classes }, rest),
+		children
 	);
 };
 
-CardAction.propTypes = {
-	...Button.propTypes
-};
+export { CardAction };
+CardAction.propTypes = Object.assign({}, Button.propTypes);
 
-CardAction.defaultProps = {
-	...Button.defaultProps
-};
+CardAction.defaultProps = Object.assign({}, Button.defaultProps);
 
 export default Card;

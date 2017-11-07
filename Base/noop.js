@@ -1,2 +1,2 @@
-export const noop = () => {};
+export var noop = function noop() {};
 export default noop;

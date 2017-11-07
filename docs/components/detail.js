@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
 import buildJSXWithContext from '../common/build-jsx-with-context';
 import Header from './header';
-import * as rmwc from '../../';
+import * as rmwc from '../../src';
 import {
 	DialogRoot,
 	DialogSurface,
@@ -13,7 +13,7 @@ import {
 	DialogFooter,
 	DialogFooterButton,
 	DialogBackdrop
-} from '../../Dialog';
+} from '../../src/Dialog';
 import content from '../content';
 
 const {

@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco as codeStyle } from 'react-syntax-highlighter/dist/styles';
-import * as rmwc from '../../';
+import * as rmwc from '../../src';
 import Header from './header';
 
 const { Grid, GridCell, Typography } = rmwc;
@@ -29,6 +29,10 @@ export const Home = props => (
 			<SyntaxHighlighter style={codeStyle}>
 				{`import React from 'react';
 import { Button } from 'rmwc';
+
+//all of RMWC is only around 15k, but if you only need a few components
+// you can import like so
+import { Button } from 'rmwc/Button';
 
 const HelloWorld = props => <Button>Easy</Button>`}
 			</SyntaxHighlighter>

@@ -8,6 +8,36 @@
 
 # production
 /build
+/Base
+/Button
+/Card
+/Checkbox
+/Dialog
+/Drawer
+/Elevation
+/Fab
+/FormField
+/Grid
+/GridList
+/Icon
+/IconButton
+/IconToggle
+/index.js
+/LinearProgress
+/List
+/Menu
+/Provider
+/Radio
+/Ripple
+/Select
+/Slider
+/Snackbar
+/Switch
+/Tabs
+/Textfield
+/Theme
+/Toolbar
+/Typography
 
 # misc
 .DS_Store

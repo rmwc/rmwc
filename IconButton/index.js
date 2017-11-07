@@ -1,12 +1,14 @@
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Icon from '../Icon';
 import classNames from 'classnames';
 
-export const IconButton = props => {
+var IconButton = function IconButton(props) {
 	// styles ripped from Angular Material https://material.angularjs.org/latest/demo/button
-	const buttonStyle = {
+	var buttonStyle = {
 		marginLeft: '6px',
 		marginRight: '6px',
 		height: '40px',
@@ -17,32 +19,33 @@ export const IconButton = props => {
 		borderRadius: '50%'
 	};
 
-	const { className, children, use, style = {}, ...rest } = props;
-	const mergedStyle = {
-		...buttonStyle,
-		...style
-	};
+	var className = props.className,
+	    children = props.children,
+	    use = props.use,
+	    _props$style = props.style,
+	    style = _props$style === undefined ? {} : _props$style,
+	    rest = _objectWithoutProperties(props, ['className', 'children', 'use', 'style']);
 
-	const iconName = use || children;
-	return (
-		<Button
-			className={classNames('rmwc-icon-button', className)}
-			style={mergedStyle}
-			{...rest}
-		>
-			<Icon use={iconName} />
-		</Button>
+	var mergedStyle = Object.assign({}, buttonStyle, style);
+
+	var iconName = use || children;
+	return React.createElement(
+		Button,
+		Object.assign({
+			className: classNames('rmwc-icon-button', className),
+			style: mergedStyle
+		}, rest),
+		React.createElement(Icon, { use: iconName })
 	);
 };
 
-IconButton.propTypes = {
-	use: PropTypes.node,
-	...Button.propTypes
-};
+export { IconButton };
+IconButton.propTypes = Object.assign({
+	use: PropTypes.node
+}, Button.propTypes);
 
-IconButton.defaultProps = {
-	use: undefined,
-	...Button.defaultProps
-};
+IconButton.defaultProps = Object.assign({
+	use: undefined
+}, Button.defaultProps);
 
 export default IconButton;

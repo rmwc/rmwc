@@ -1,18 +1,20 @@
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { simpleComponentFactory } from '../Base/simple-component-factory';
 
-export const GridListRoot = simpleComponentFactory('GridListRoot', {
-	classNames: props => [
-		'mdc-grid-list',
-		{
+export var GridListRoot = simpleComponentFactory('GridListRoot', {
+	classNames: function classNames(props) {
+		return ['mdc-grid-list', _defineProperty({
 			'mdc-grid-list--tile-gutter-1': props.tileGutter1,
 			'mdc-grid-list--header-caption': props.headerCaption,
 			'mdc-grid-list--twoline-caption': props.twolineCaption,
-			'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,
-			[`mdc-grid-list--tile-aspect-${props.tileAspect}`]: props.tileAspect
-		}
-	],
+			'mdc-grid-list--with-icon-align-start': props.withIconAlignStart
+		}, 'mdc-grid-list--tile-aspect-' + props.tileAspect, props.tileAspect)];
+	},
 	propTypes: {
 		tileGutter1: PropTypes.bool,
 		headerCaption: PropTypes.bool,
@@ -49,79 +51,81 @@ export const GridListRoot = simpleComponentFactory('GridListRoot', {
 			desc: 'One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4'
 		}
 	},
-	consumeProps: [
-		'tileGutter1',
-		'headerCaption',
-		'twolineCaption',
-		'withIconAlignStart',
-		'tileAspect'
-	]
+	consumeProps: ['tileGutter1', 'headerCaption', 'twolineCaption', 'withIconAlignStart', 'tileAspect']
 });
 
-export const GridListTiles = simpleComponentFactory('GridListTiles', {
+export var GridListTiles = simpleComponentFactory('GridListTiles', {
 	tag: 'ul',
 	classNames: 'mdc-grid-list__tiles'
 });
 
-export const GridTile = simpleComponentFactory('GridTile', {
+export var GridTile = simpleComponentFactory('GridTile', {
 	tag: 'li',
 	classNames: 'mdc-grid-tile'
 });
 
-export const GridTilePrimaryRoot = simpleComponentFactory('GridTilePrimary', {
+export var GridTilePrimaryRoot = simpleComponentFactory('GridTilePrimary', {
 	classNames: 'mdc-grid-tile__primary'
 });
 
-export const GridTilePrimaryContent = simpleComponentFactory(
-	'GridTilePrimaryContent',
-	{
-		classNames: 'mdc-grid-tile__primary-content',
-		defaultProps: {
-			wrap: true
-		}
+export var GridTilePrimaryContent = simpleComponentFactory('GridTilePrimaryContent', {
+	classNames: 'mdc-grid-tile__primary-content',
+	defaultProps: {
+		wrap: true
 	}
-);
+});
 
-export const GridTilePrimary = props => {
-	const { children, ...rest } = props;
-	return (
-		<GridTilePrimaryRoot {...rest}>
-			<GridTilePrimaryContent>{children}</GridTilePrimaryContent>
-		</GridTilePrimaryRoot>
+var GridTilePrimary = function GridTilePrimary(props) {
+	var children = props.children,
+	    rest = _objectWithoutProperties(props, ['children']);
+
+	return React.createElement(
+		GridTilePrimaryRoot,
+		rest,
+		React.createElement(
+			GridTilePrimaryContent,
+			null,
+			children
+		)
 	);
 };
 
+export { GridTilePrimary };
 GridTilePrimary.propTypes = GridTilePrimaryRoot.propTypes;
 GridTilePrimary.defaultProps = GridTilePrimaryRoot.defaultProps;
 GridTilePrimary.propMeta = GridTilePrimaryRoot.propMeta;
 
-export const GridTileSecondary = simpleComponentFactory('GridTileSecondary', {
+export var GridTileSecondary = simpleComponentFactory('GridTileSecondary', {
 	tag: 'span',
 	classNames: 'mdc-grid-tile__secondary'
 });
 
-export const GridTileTitle = simpleComponentFactory('GridTileTitle', {
+export var GridTileTitle = simpleComponentFactory('GridTileTitle', {
 	tag: 'span',
 	classNames: 'mdc-grid-tile__title'
 });
 
-export const GridTileTitleSupportText = simpleComponentFactory(
-	'GridTileTitleSupportText',
-	{
-		tag: 'span',
-		classNames: 'mdc-grid-tile__support-text'
-	}
-);
+export var GridTileTitleSupportText = simpleComponentFactory('GridTileTitleSupportText', {
+	tag: 'span',
+	classNames: 'mdc-grid-tile__support-text'
+});
 
-export const GridList = props => {
-	const { children, ...rest } = props;
-	return (
-		<GridListRoot {...rest}>
-			<GridListTiles>{children}</GridListTiles>
-		</GridListRoot>
+var GridList = function GridList(props) {
+	var children = props.children,
+	    rest = _objectWithoutProperties(props, ['children']);
+
+	return React.createElement(
+		GridListRoot,
+		rest,
+		React.createElement(
+			GridListTiles,
+			null,
+			children
+		)
 	);
 };
 
+export { GridList };
 GridList.propTypes = GridListRoot.propTypes;
 GridList.defaultProps = GridListRoot.defaultProps;
 GridList.propMeta = GridListRoot.propMeta;
