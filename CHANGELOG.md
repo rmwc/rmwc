@@ -1,3 +1,9 @@
+#### 0.0.1-beta9 (2017-11-08)
+
+##### Bug Fixes
+
+* **select:** initial values were not being set ([e4f79507](https://github.com/jamesmfriedman/rmwc/commit/e4f7950799a99efee496e80a2f8e92868f68c0ca))
+
 #### 0.0.1-beta8 (2017-11-08)
 
 #### 0.0.1-beta7 (2017-11-07)
