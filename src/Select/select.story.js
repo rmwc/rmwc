@@ -21,4 +21,11 @@ storiesOf('Selects', module)
 			options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
 			onChange={evt => action('onChange: ' + evt.target.value)()}
 		/>
+	))
+	.add('Select with initial value', () => (
+		<Select
+			value={text('value', 'Cookies')}
+			options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
+			onChange={evt => action('onChange: ' + evt.target.value)()}
+		/>
 	));

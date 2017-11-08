@@ -112,7 +112,9 @@ export class Select extends MDCComponentBase {
 		placeholder = placeholder || '\u00a0';
 
 		if (options) {
-			return options[value] !== undefined ? options[value] : placeholder;
+			return options.get(value) !== undefined
+				? options.get(value)
+				: placeholder;
 		}
 
 		return value || placeholder;
