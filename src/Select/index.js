@@ -94,8 +94,8 @@ export class Select extends MDCComponentBase {
 		window.requestAnimationFrame(() => this.MDCApi.foundation_.resize());
 	}
 
-	MDCHandleProps(nextProps) {
-		if (this.props.value !== nextProps.value) {
+	MDCHandleProps(nextProps, initialMount) {
+		if (this.props.value !== nextProps.value || initialMount) {
 			const newIndex = this.MDCApi.options.indexOf(
 				this.MDCApi.nameditem(nextProps.value)
 			);

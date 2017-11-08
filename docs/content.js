@@ -339,6 +339,12 @@ export default [
 				placeholder="Select a food"
 				options={{1: 'Cookies', 2: 'Pizza', 3: 'Icecream'}}
 			/>
+
+			{/* as an array of options */}
+			<Select
+				value={'Pizza'}
+				options={['Cookies', 'Pizza', 'Icecream']}
+			/>
 		`
 	},
 	{

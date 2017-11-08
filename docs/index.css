@@ -110,6 +110,11 @@ ul li {
 	vertical-align: top;
 }
 
+#detail-section-select-menus .demo-example .mdc-select {
+	display: block;
+	margin-bottom: 24px;
+}
+
 /**
  * Submenu
  */
