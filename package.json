@@ -26,9 +26,7 @@
 	"dependencies": {
 		"classnames": "^2.2.x",
 		"material-components-web": "^0.24.0",
-		"prop-types": "^15.6.0",
-		"react": "^16.0.0",
-		"react-dom": "^16.0.0"
+		"prop-types": "^15.6.0"
 	},
 	"scripts": {
 		"start": "node scripts/start.js",
@@ -165,8 +163,10 @@
 		"postcss-flexbugs-fixes": "3.2.0",
 		"postcss-loader": "2.0.6",
 		"promise": "8.0.1",
+		"react": "^16.0.0",
 		"react-addons-test-utils": "^15.6.2",
 		"react-dev-utils": "^4.0.0",
+		"react-dom": "^16.0.0",
 		"react-hot-loader": "^3.0.0",
 		"react-router-dom": "^4.2.2",
 		"react-syntax-highlighter": "^5.7.0",
