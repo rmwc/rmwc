@@ -1,48 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import Button from '../Button';
 import Icon from '../Icon';
-import classNames from 'classnames';
 
-export const IconButton = props => {
-	// styles ripped from Angular Material https://material.angularjs.org/latest/demo/button
-	const buttonStyle = {
-		marginLeft: '6px',
-		marginRight: '6px',
-		height: '40px',
-		minWidth: '0',
-		lineHeight: '24px',
-		padding: '8px',
-		width: '40px',
-		borderRadius: '50%'
-	};
-
-	const { className, children, use, style = {}, ...rest } = props;
-	const mergedStyle = {
-		...buttonStyle,
-		...style
-	};
-
-	const iconName = use || children;
-	return (
-		<Button
-			className={classNames('rmwc-icon-button', className)}
-			style={mergedStyle}
-			{...rest}
-		>
-			<Icon use={iconName} />
-		</Button>
-	);
+type IconButtonPropsT = {
+  /* The icon to use */
+  use?: string,
+  /* Specify the icon to use as a children */
+  children?: React.Node
 };
 
-IconButton.propTypes = {
-	use: PropTypes.node,
-	...Button.propTypes
-};
+export const IconButton = ({ children, use, ...rest }: IconButtonPropsT) => {
+  // styles ripped from Angular Material https://material.angularjs.org/latest/demo/button
+  const buttonStyle = {
+    marginLeft: '6px',
+    marginRight: '6px',
+    height: '40px',
+    minWidth: '0',
+    lineHeight: '24px',
+    padding: '8px',
+    width: '40px',
+    borderRadius: '50%'
+  };
 
-IconButton.defaultProps = {
-	use: undefined,
-	...Button.defaultProps
-};
+  const mergedStyle = {
+    ...buttonStyle,
+    ...(rest.style || {})
+  };
 
+  const iconName = use || children;
+  return (
+    <Button style={mergedStyle} {...rest}>
+      <Icon use={iconName} />
+    </Button>
+  );
+};
 export default IconButton;

@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import classNames from 'classnames';
 import Button from '../Button';
 import { simpleTag } from '../Base';

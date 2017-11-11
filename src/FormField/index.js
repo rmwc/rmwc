@@ -1,37 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// @flow
+import * as React from 'react';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
-import MDCComponentBase from '../Base/mdc-component-base';
+import { simpleTag, withMDC } from '../Base';
 
-export const FormFieldRoot = simpleComponentFactory('FormFieldRoot', {
-	classNames: 'mdc-form-field'
+export const FormFieldRoot = simpleTag({
+  name: 'FormFieldRoot',
+  classNames: 'mdc-form-field'
 });
 
-export class FormField extends MDCComponentBase {
-	static MDCComponentClass = MDCFormField;
-
-	static propTypes = {
-		...MDCComponentBase.propTypes,
-		...FormFieldRoot.propTypes
-	};
-
-	static defaultProps = {
-		...MDCComponentBase.defaultProps,
-		...FormFieldRoot.defaultProps
-	};
-
-	static propMeta = {
-		...MDCComponentBase.propMeta,
-		...FormFieldRoot.propMeta
-	};
-
-	render() {
-		const { apiRef, ...rest } = this.props;
-		return (
-			<FormFieldRoot elementRef={el => this.MDCSetRootElement(el)} {...rest} />
-		);
-	}
-}
+export const FormField = withMDC({
+  mdcConstructor: MDCFormField,
+  mdcElementRef: true
+})(({ mdcElementRef, ...rest }) => (
+  <FormFieldRoot elementRef={mdcElementRef} {...rest} />
+));
 
 export default FormField;

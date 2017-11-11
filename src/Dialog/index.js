@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { MDCDialog } from '@material/dialog/dist/mdc.dialog';
 
 import Button from '../Button';

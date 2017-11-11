@@ -1,41 +1,45 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
+import { simpleTag } from '../Base';
 
-export const IconRoot = simpleComponentFactory('IconRoot', { tag: 'i' });
+import type { RMWCProviderOptionsT } from '../Provider';
 
-export class Icon extends React.Component {
-	static contextTypes = {
-		RMWCOptions: PropTypes.object
-	};
+export const IconRoot = simpleTag({ name: 'IconRoot', tag: 'i' });
 
-	static propTypes = {
-		use: PropTypes.node,
-		...IconRoot.propTypes
-	};
+type IconPropsT = {
+  /* The icon to use */
+  use: string
+};
 
-	static defaultProps = {
-		use: undefined,
-		...IconRoot.defaultProps
-	};
+export class Icon extends React.Component<IconPropsT> {
+  static defaultProps = {
+    use: undefined
+  };
 
-	componentWillMount() {
-		this.providerOptions = getProviderOptions(this.context);
-	}
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
-	render() {
-		const { className, use, children, ...rest } = this.props;
+  static contextTypes = {
+    RMWCOptions: PropTypes.object
+  };
 
-		const { iconPrefix } = this.providerOptions;
-		const content = use || children;
+  providerOptions: RMWCProviderOptionsT;
+  context: Object;
 
-		return (
-			<IconRoot className={iconPrefix + (className || '')} {...rest}>
-				{content}
-			</IconRoot>
-		);
-	}
+  render() {
+    const { use, children, ...rest } = this.props;
+    const { iconPrefix } = this.providerOptions;
+    const content = use || children;
+
+    return (
+      <IconRoot {...rest} className={iconPrefix + (rest.className || '')}>
+        {content}
+      </IconRoot>
+    );
+  }
 }
 
 export default Icon;

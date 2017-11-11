@@ -1,87 +1,71 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { getProviderOptions } from '../Provider';
-import { Ripple } from '../Ripple';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
+import { simpleTag, withRipple } from '../Base';
 
-export const FabRoot = simpleComponentFactory('FabRoot', {
-	tag: 'button',
-	classNames: props => [
-		'mdc-fab',
-		{
-			'mdc-fab--mini': props.mini
-		}
-	],
-	propTypes: {
-		mini: PropTypes.bool
-	},
-	defaultProps: {
-		mini: false
-	},
-	...(process.env.NODE_ENV === 'production'
-		? {}
-		: {
-				propMeta: {
-					mini: {
-						type: 'Boolean',
-						desc: 'Make the Fab smaller.'
-					}
-				}
-			}),
-	consumeProps: ['mini']
+import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
+
+export type FabRootPropsT = {
+  /* Make the Fab smaller. */
+  mini?: boolean
+} & SimpleTagPropsT &
+  WithRipplePropsT;
+
+export const FabRoot = withRipple(
+  simpleTag({
+    name: 'FabRoot',
+    tag: 'button',
+    classNames: props => [
+      'mdc-fab',
+      {
+        'mdc-fab--mini': props.mini
+      }
+    ],
+    defaultProps: {
+      mini: false
+    },
+    consumeProps: ['mini']
+  })
+);
+
+export const FabIcon = simpleTag({
+  name: 'FabIcon',
+  tag: 'span',
+  classNames: 'mdc-fab__icon'
 });
 
-export const FabIcon = simpleComponentFactory('FabIcon', {
-	tag: 'span',
-	classNames: 'mdc-fab__icon'
-});
+type FabPropsT = {
+  children?: React.Node
+} & FabRootPropsT;
 
-export class Fab extends React.Component {
-	static contextTypes = {
-		RMWCOptions: PropTypes.object
-	};
+export class Fab extends React.Component<FabPropsT> {
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
-	static propTypes = {
-		ripple: PropTypes.bool,
-		...FabRoot.propTypes
-	};
+  static contextTypes = {
+    RMWCOptions: PropTypes.object
+  };
 
-	static defaultProps = {
-		ripple: undefined,
-		...FabRoot.defaultProps
-	};
+  providerOptions: RMWCProviderOptionsT;
+  context: Object;
 
-	componentWillMount() {
-		this.providerOptions = getProviderOptions(this.context);
-	}
+  render() {
+    const { buttonDefaultRipple } = this.providerOptions;
+    const { ripple, className, children, ...rest } = this.props;
+    const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
+    const rippleProps = shouldRipple ? { ripple: true } : {};
 
-	render() {
-		const { buttonDefaultRipple } = this.providerOptions;
-		const { ripple, className, children, ...rest } = this.props;
-		const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
-
-		const classes = classNames(this.providerOptions.iconPrefix, className);
-		const button = (
-			<FabRoot className={classes} {...rest}>
-				<FabIcon>{children}</FabIcon>
-			</FabRoot>
-		);
-
-		if (shouldRipple) {
-			return <Ripple>{button}</Ripple>;
-		}
-
-		return button;
-	}
+    const classes = classNames(this.providerOptions.iconPrefix, className);
+    return (
+      <FabRoot className={classes} {...rippleProps} {...rest}>
+        <FabIcon>{children}</FabIcon>
+      </FabRoot>
+    );
+  }
 }
-
-Fab.propMeta = {
-	...FabRoot.propMeta,
-	ripple: {
-		type: 'Boolean',
-		desc: 'Adds or disables a ripple from the Fab.'
-	}
-};
 
 export default Fab;
