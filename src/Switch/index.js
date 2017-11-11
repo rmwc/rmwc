@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import FormField from '../FormField';
 import classNames from 'classnames';
 

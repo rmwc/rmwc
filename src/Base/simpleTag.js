@@ -56,7 +56,13 @@ export const simpleTag = <T>({
 
       // handle elementRefs
       if (elementRef) {
-        safeRest.ref = elementRef;
+        // if the tag is a string, make our ref
+        // otherwise pass elementRef along
+        if (typeof Tag === 'string') {
+          safeRest.ref = elementRef;
+        } else {
+          safeRest.elementRef = elementRef;
+        }
       }
 
       // generate the final classnames for the component

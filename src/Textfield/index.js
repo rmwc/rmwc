@@ -1,124 +1,113 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { MDCTextfield } from '@material/textfield/dist/mdc.textfield';
-import classNames from 'classnames';
-import { propMeta } from '../Base/prop-meta';
 import { noop } from '../Base/noop';
-import MDCComponentBase from '../Base/mdc-component-base';
-import simpleComponentFactory from '../Base/simple-component-factory';
+import { simpleTag, withMDC } from '../Base';
 
-export const TextfieldRoot = simpleComponentFactory('TextfieldRoot', {
-	tag: 'label',
-	classNames: props => [
-		'mdc-textfield',
-		{ 'mdc-textfield--textarea': props.textarea }
-	],
-	consumeProps: ['textarea']
+import type { SimpleTagPropsT } from '../Base';
+
+type TextfieldRootPropsT = {
+  /* Creates a multiline textfield. */
+  textarea: boolean
+} & SimpleTagPropsT;
+
+export const TextfieldRoot: React.ComponentType<
+  TextfieldRootPropsT
+> = simpleTag({
+  name: 'TextfieldRoot',
+  tag: 'label',
+  classNames: props => [
+    'mdc-textfield',
+    { 'mdc-textfield--textarea': props.textarea }
+  ],
+  consumeProps: ['textarea']
 });
 
-export const TextfieldLabel = simpleComponentFactory('TextfieldLabel', {
-	tag: 'span',
-	classNames: props => [
-		'mdc-textfield__label',
-		{
-			'mdc-textfield__label--float-above': props.value
-		}
-	],
-	consumeProps: ['value']
+export const TextfieldLabel = simpleTag({
+  name: 'TextfieldLabel',
+  tag: 'span',
+  classNames: props => [
+    'mdc-textfield__label',
+    {
+      'mdc-textfield__label--float-above': props.value
+    }
+  ],
+  consumeProps: ['value']
 });
 
-export const TextfieldInput = simpleComponentFactory('TextfieldInput', {
-	tag: 'input',
-	classNames: 'mdc-textfield__input',
-	defaultProps: {
-		type: 'text'
-	}
+export const TextfieldInput = simpleTag({
+  name: 'TextfieldInput',
+  tag: 'input',
+  classNames: 'mdc-textfield__input',
+  defaultProps: {
+    type: 'text'
+  }
 });
 
-export const TextfieldTextarea = simpleComponentFactory('TextfieldTextarea', {
-	tag: 'textarea',
-	classNames: 'mdc-textfield__input'
+export const TextfieldTextarea = simpleTag({
+  name: 'TextfieldTextarea',
+  tag: 'textarea',
+  classNames: 'mdc-textfield__input'
 });
 
-export class Textfield extends MDCComponentBase {
-	static MDCComponentClass = MDCTextfield;
+type TextfieldPropsT = {
+  /* A ref for the native input. */
+  inputRef: React.Ref<*>,
+  /* Disables the input. */
+  disabled: boolean,
+  /* A label for the input. */
+  label: React.Node
+} & TextfieldRootPropsT &
+  SimpleTagPropsT;
 
-	static propTypes = {
-		inputRef: PropTypes.func,
-		disabled: PropTypes.bool,
-		label: PropTypes.any,
-		textarea: PropTypes.bool,
-		...MDCComponentBase.propTypes
-	};
+export const Textfield: React.ComponentType<TextfieldPropsT> = withMDC({
+  mdcConstructor: MDCTextfield,
+  mdcElementRef: true,
+  defaultProps: {
+    inputRef: noop,
+    disabled: false,
+    label: undefined,
+    textarea: undefined
+  },
+  onUpdate: (props, nextProps, api, inst) => {
+    if (props && props.textarea !== nextProps.textarea) {
+      inst.mdcComponentReinit();
+    }
+  }
+})(
+  ({
+    label = '',
+    className,
+    inputRef,
+    mdcElementRef,
+    children,
+    textarea,
+    value,
+    ...rest
+  }) => {
+    const tagProps = {
+      elementRef: inputRef,
+      ...rest
+    };
 
-	static defaultProps = {
-		inputRef: noop,
-		disabled: false,
-		label: undefined,
-		textarea: undefined,
-		...MDCComponentBase.defaultProps
-	};
+    const tag = textarea ? (
+      <TextfieldTextarea {...tagProps} />
+    ) : (
+      <TextfieldInput {...tagProps} />
+    );
 
-	static propMeta = propMeta({
-		inputRef: {
-			type: 'Function',
-			desc: 'A ref for the native input.'
-		},
-		disabled: {
-			type: 'Boolean',
-			desc: 'Disables the input.'
-		},
-		label: {
-			type: 'Any',
-			desc: 'A label for the input.'
-		},
-		textarea: {
-			type: 'Boolean',
-			desc: 'Creates a multiline textfield'
-		},
-		...MDCComponentBase.propMeta
-	});
-
-	componentDidUpdate(prevProps) {
-		if (prevProps.textarea !== this.props.textarea) {
-			this.MDCComponentReinit();
-		}
-	}
-
-	render() {
-		const {
-			label = '',
-			className,
-			inputRef,
-			apiRef,
-			children,
-			textarea,
-			...rest
-		} = this.props;
-
-		const tagProps = {
-			elementRef: inputRef,
-			...rest
-		};
-
-		const tag = textarea ? (
-			<TextfieldTextarea {...tagProps} />
-		) : (
-			<TextfieldInput {...tagProps} />
-		);
-
-		return (
-			<TextfieldRoot
-				className={className}
-				textarea={textarea}
-				elementRef={el => this.MDCSetRootElement(el)}
-			>
-				{children}
-				{tag}
-				<TextfieldLabel value={this.props.value}>{label}</TextfieldLabel>
-			</TextfieldRoot>
-		);
-	}
-}
+    return (
+      <TextfieldRoot
+        className={className}
+        textarea={textarea}
+        elementRef={mdcElementRef}
+      >
+        {children}
+        {tag}
+        <TextfieldLabel value={value}>{label}</TextfieldLabel>
+      </TextfieldRoot>
+    );
+  }
+);
 
 export default Textfield;

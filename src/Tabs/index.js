@@ -6,20 +6,18 @@ import { noop, simpleTag } from '../Base';
 import { withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
-export const Tab: React.ComponentType<SimpleTagPropsT> = simpleTag({
+export const Tab = simpleTag({
   name: 'Tab',
   classNames: 'mdc-tab'
 });
 
-export const TabBarRoot: React.ComponentType<SimpleTagPropsT> = simpleTag({
+export const TabBarRoot = simpleTag({
   name: 'TabBarRoot',
   tag: 'nav',
   classNames: 'mdc-tab-bar'
 });
 
-export const TabBarIndicatorEl: React.ComponentType<
-  SimpleTagPropsT
-> = simpleTag({
+export const TabBarIndicatorEl = simpleTag({
   name: 'TabBarIndicatorEl',
   tag: 'span',
   classNames: 'mdc-tab-bar__indicator'
@@ -45,9 +43,11 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     activeTabIndex: 0
   },
   onUpdate: (props, nextProps, api) => {
+    if (!api) {
+      return;
+    }
     if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
       api.activeTabIndex = nextProps.activeTabIndex;
-      console.log(props, nextProps, api);
     }
   }
 })(({ children, activeTabIndex, ...rest }) => (

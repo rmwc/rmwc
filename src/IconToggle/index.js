@@ -28,12 +28,13 @@ export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
   mdcElementRef: true,
   mdcEvents: {
     'MDCIconToggle:change': (evt, props, api) => {
-      props.onChange({
-        ...evt.detail,
-        target: {
-          value: evt.detail.isOn
-        }
-      });
+      props.onChange &&
+        props.onChange({
+          ...evt.detail,
+          target: {
+            value: evt.detail.isOn
+          }
+        });
     }
   },
   onUpdate(props, nextProps, api) {
@@ -41,10 +42,11 @@ export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
       api.on = !!nextProps.value;
     }
   }
-})(({ className, children, value, mdcElementRef, on, off, ...rest }) => {
+})(({ className, children, value, on, off, mdcElementRef, ...rest }) => {
   const ariaPressed = value !== undefined ? !!value : false;
   const toggleOnJSON = JSON.stringify(on);
   const toggleOffJSON = JSON.stringify(off);
+
   return (
     <IconToggleRoot
       elementRef={mdcElementRef}

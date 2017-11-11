@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
-import MDCComponentBase from '../Base/mdc-component-base';
 import { simpleTag, withMDC } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
@@ -79,8 +78,7 @@ export const LinearProgress: React.ComponentType<
     buffer: undefined,
     determinate: true,
     reversed: false,
-    accent: false,
-    ...MDCComponentBase.defaultProps
+    accent: false
   },
   onUpdate: (props, nextProps, api) => {
     ['progress', 'buffer', 'determinate', 'reversed', 'accent'].forEach(key => {

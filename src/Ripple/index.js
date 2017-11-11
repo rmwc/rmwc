@@ -1,54 +1,35 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
-import { propMeta } from '../Base/prop-meta';
 
-export class Ripple extends React.Component {
-  static propTypes = {
-    primary: PropTypes.bool,
-    accent: PropTypes.bool,
-    unbounded: PropTypes.bool
-  };
+type RipplePropsT = {
+  /* Uses the primary palette. */
+  primary: boolean,
+  /* Uses the accent palette. */
+  accent: boolean,
+  /* Make the Ripple unbounded, like the ones used in Checkboxes. */
+  unbounded: boolean
+};
 
+export class Ripple extends React.Component<RipplePropsT> {
   static defaultProps = {
     primary: false,
     accent: false,
     unbounded: false
   };
 
-  static propMeta = propMeta({
-    primary: {
-      type: 'Boolean',
-      desc: 'Uses the primary palette.'
-    },
-    accent: {
-      type: 'Boolean',
-      desc: 'Uses the accent palette.'
-    },
-    unbounded: {
-      type: 'Boolean',
-      desc: 'Make the Ripple unbounded, like the ones used in Checkboxes.'
-    }
-  });
-
   componentDidMount() {
     this.el = ReactDOM.findDOMNode(this);
     this.initRipple();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: RipplePropsT) {
     this.checkProps(nextProps);
   }
 
-  checkProps(nextProps) {
-    if (this.api.unbounded !== nextProps.unbounded) {
-      this.api.unbounded = nextProps.unbounded;
-    }
-  }
-
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: RipplePropsT) {
     const didChange = ['primary', 'accent', 'unbounded'].some(
       key => this.props[key] !== prevProps[key]
     );
@@ -59,9 +40,18 @@ export class Ripple extends React.Component {
     }
   }
 
+  api: Object;
+  el: null | Element | Text;
+
+  checkProps(nextProps: RipplePropsT) {
+    if (this.api.unbounded !== nextProps.unbounded) {
+      this.api.unbounded = nextProps.unbounded;
+    }
+  }
+
   initRipple() {
     // a stupid hack for the test environment where this ends up undefined
-    if (process.env.NODE_ENV === 'test') {
+    if (process.env.NODE_ENV === 'test' && this.el) {
       this.el.dataset = {};
     }
 

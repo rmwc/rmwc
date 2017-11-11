@@ -12,8 +12,13 @@ type WithMDCOpts = {
   mdcEvents?: Object,
   mdcElementRef?: boolean,
   defaultProps?: Object,
-  onMount?: () => mixed,
-  onUpdate?: (currentProps: ?Object, nextProps: Object, api: ?Object) => mixed
+  onMount?: (currentProps: ?Object, api: ?Object, inst: Object) => mixed,
+  onUpdate?: (
+    currentProps: ?Object,
+    nextProps: Object,
+    api: ?Object,
+    inst: Object
+  ) => mixed
 };
 
 /**
@@ -55,7 +60,7 @@ export const withMDC = ({
     }
 
     componentWillUpdate(nextProps: WithMDCPropsT) {
-      onUpdate(this.props, nextProps, this.mdcApi);
+      onUpdate(this.props, nextProps, this.mdcApi, this);
     }
 
     componentWillUnmount() {
@@ -76,13 +81,13 @@ export const withMDC = ({
         this.mdcApi = new MDCConstructor(el);
         this.props.apiRef(this.mdcApi);
       }
-      onMount();
+      onMount(this.props, this.mdcApi, this);
 
       Object.entries(mdcEvents).forEach(([eventName, handler]) => {
         this.mdcRegisterListener(eventName, handler);
       });
 
-      onUpdate(undefined, this.props, this.mdcApi);
+      onUpdate(undefined, this.props, this.mdcApi, this);
     }
 
     mdcComponentReinit() {
