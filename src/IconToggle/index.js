@@ -42,7 +42,7 @@ export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
       api.on = !!nextProps.value;
     }
   }
-})(({ className, children, value, on, off, mdcElementRef, ...rest }) => {
+})(({ children, value, on, off, mdcElementRef, ...rest }) => {
   const ariaPressed = value !== undefined ? !!value : false;
   const toggleOnJSON = JSON.stringify(on);
   const toggleOffJSON = JSON.stringify(off);

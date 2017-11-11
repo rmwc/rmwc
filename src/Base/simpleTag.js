@@ -73,7 +73,13 @@ export const simpleTag = <T>({
       );
 
       // handle wrapping components
-      if ((wrap || defaultWrap) && rest.children) {
+      if (wrap || defaultWrap) {
+        // sometimes we have undfeind children
+        if (!rest.children) return null;
+
+        // make sure we delete our children here
+        // so we dont recrusively clonse ourselves
+        Reflect.deleteProperty(safeRest, 'children');
         const child = React.Children.only(rest.children);
         return React.cloneElement(child, {
           ...child.props,

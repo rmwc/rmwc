@@ -82,7 +82,6 @@ export const Textfield: React.ComponentType<TextfieldPropsT> = withMDC({
     mdcElementRef,
     children,
     textarea,
-    value,
     ...rest
   }) => {
     const tagProps = {
@@ -104,7 +103,7 @@ export const Textfield: React.ComponentType<TextfieldPropsT> = withMDC({
       >
         {children}
         {tag}
-        <TextfieldLabel value={value}>{label}</TextfieldLabel>
+        <TextfieldLabel>{label}</TextfieldLabel>
       </TextfieldRoot>
     );
   }

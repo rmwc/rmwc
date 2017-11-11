@@ -1,10 +1,10 @@
 export default [
-	{
-		name: 'Buttons',
-		section: 'buttons',
-		class: 'Button',
-		url: 'https://material.io/components/web/catalog/buttons/',
-		example: `
+  {
+    name: 'Buttons',
+    section: 'buttons',
+    class: 'Button',
+    url: 'https://material.io/components/web/catalog/buttons/',
+    example: `
 			<Button>Default</Button>
 			<Button raised>Raised</Button>
 			<Button dense>Dense</Button>
@@ -13,37 +13,37 @@ export default [
 			<Button stroked>Stroked</Button>
 			<Button raised theme={['secondary-bg', 'text-primary-on-secondary']}>With Theme</Button>
 			`
-	},
-	{
-		name: 'Fabs',
-		section: 'fabs',
-		class: 'Fab',
-		url:
-			'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
-		example: `
+  },
+  {
+    name: 'Fabs',
+    section: 'fabs',
+    class: 'Fab',
+    url:
+      'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
+    example: `
 			<Fab>favorite</Fab>
 			<Fab mini>favorite</Fab>
 		`
-	},
-	{
-		name: 'Icon Toggles',
-		section: 'icon-toggles',
-		class: 'IconToggle',
-		url:
-			'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
-		example: `
+  },
+  {
+    name: 'Icon Toggles',
+    section: 'icon-toggles',
+    class: 'IconToggle',
+    url:
+      'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
+    example: `
 			<IconToggle
 				on={{label: 'Remove from favorites', content: 'favorite'}}
 				off={{label: 'Add to favorites', content: 'favorite_border'}}
 			/>
 		`
-	},
-	{
-		name: 'Cards',
-		section: 'cards',
-		class: 'Card',
-		url: 'https://material.io/components/web/catalog/cards/',
-		example: `
+  },
+  {
+    name: 'Cards',
+    section: 'cards',
+    class: 'Card',
+    url: 'https://material.io/components/web/catalog/cards/',
+    example: `
 			<Card style={{width: '320px'}}>
 				<CardMedia style={{
 					backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
@@ -62,14 +62,14 @@ export default [
 				</CardActions>
 			</Card>
 		`
-	},
-	{
-		name: 'PermanentDrawer',
-		section: 'permanent-drawer',
-		class: ['PermanentDrawer', 'PermanentDrawerContent'],
-		url:
-			'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
-		example: `
+  },
+  {
+    name: 'PermanentDrawer',
+    section: 'permanent-drawer',
+    class: ['PermanentDrawer', 'PermanentDrawerContent'],
+    url:
+      'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
+    example: `
 			<PermanentDrawer>
 				<PermanentDrawerContent>
 					<List>
@@ -86,18 +86,18 @@ export default [
 				</PermanentDrawerContent>
 			</PermanentDrawer>
 		`
-	},
-	{
-		name: 'PersistentDrawer',
-		section: 'persistent-drawer',
-		class: [
-			'PersistentDrawer',
-			'PersistentDrawerHeader',
-			'PersistentDrawerContent'
-		],
-		url:
-			'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
-		example: `
+  },
+  {
+    name: 'PersistentDrawer',
+    section: 'persistent-drawer',
+    class: [
+      'PersistentDrawer',
+      'PersistentDrawerHeader',
+      'PersistentDrawerContent'
+    ],
+    url:
+      'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
+    example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
 				raised
@@ -125,18 +125,18 @@ export default [
 				</PersistentDrawerContent>
 			</PersistentDrawer>
 		`
-	},
-	{
-		name: 'TemporaryDrawer',
-		section: 'temporary-drawer',
-		class: [
-			'TemporaryDrawer',
-			'TemporaryDrawerHeader',
-			'TemporaryDrawerContent'
-		],
-		url:
-			'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
-		example: `
+  },
+  {
+    name: 'TemporaryDrawer',
+    section: 'temporary-drawer',
+    class: [
+      'TemporaryDrawer',
+      'TemporaryDrawerHeader',
+      'TemporaryDrawerContent'
+    ],
+    url:
+      'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
+    example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
 				raised
@@ -164,13 +164,13 @@ export default [
 				</TemporaryDrawerContent>
 			</TemporaryDrawer>
 		`
-	},
-	{
-		name: 'Dialogs',
-		section: 'dialogs',
-		class: ['Dialog'],
-		url: 'https://material.io/components/web/catalog/dialogs/',
-		example: `
+  },
+  {
+    name: 'Dialogs',
+    section: 'dialogs',
+    class: ['Dialog'],
+    url: 'https://material.io/components/web/catalog/dialogs/',
+    example: `
 			{/** Simple Dialogs for basic usage **/}
 			<Dialog
 				title="This is a simple dialog"
@@ -216,13 +216,13 @@ export default [
 				Open Custom Dialog
 			</Button>
 		`
-	},
-	{
-		name: 'Elevation',
-		section: 'elevation',
-		class: 'Elevation',
-		url: 'https://material.io/components/web/catalog/elevation/',
-		example: `
+  },
+  {
+    name: 'Elevation',
+    section: 'elevation',
+    class: 'Elevation',
+    url: 'https://material.io/components/web/catalog/elevation/',
+    example: `
 			{Array(25).fill().map((val, i) => (
 				<Elevation
 					z={i}
@@ -241,21 +241,21 @@ export default [
 				Hover Me {this.state.elevation || 0}dp
 			</Elevation>
 		`
-	},
-	{
-		name: 'Grid Lists',
-		section: 'grid-lists',
-		class: [
-			'GridList',
-			'GridTile',
-			'GridTilePrimary',
-			'GridTilePrimaryContent',
-			'GridTileSecondary',
-			'GridTileTitle',
-			'GridTileTitleSupportText'
-		],
-		url: 'https://material.io/components/web/catalog/grid-lists/',
-		example: `
+  },
+  {
+    name: 'Grid Lists',
+    section: 'grid-lists',
+    class: [
+      'GridList',
+      'GridTile',
+      'GridTilePrimary',
+      'GridTilePrimaryContent',
+      'GridTileSecondary',
+      'GridTileTitle',
+      'GridTileTitleSupportText'
+    ],
+    url: 'https://material.io/components/web/catalog/grid-lists/',
+    example: `
 			<GridList
 				tileGutter1={this.state.tileGutter1}
 				headerCaption={this.state.headerCaption}
@@ -266,8 +266,8 @@ export default [
 					{Array(4).fill().map((val, i) => (
 						<GridTile key={i}>
 							<GridTilePrimary>
-								<GridTilePrimaryContent wrap>
-									<img src="https://material-components-web.appspot.com/images/1-1.jpg"/>
+								<GridTilePrimaryContent>
+									<img src="https://material-components-web.appspot.com/images/1-1.jpg" alt="test" />
 								</GridTilePrimaryContent>
 							</GridTilePrimary>
 							<GridTileSecondary>
@@ -290,51 +290,51 @@ export default [
 				/>
 			
 		`
-	},
-	{
-		name: 'Checkboxes',
-		section: 'checkboxes',
-		class: 'Checkbox',
-		url:
-			'https://material.io/components/web/catalog/input-controls/checkboxes/',
-		example: `
+  },
+  {
+    name: 'Checkboxes',
+    section: 'checkboxes',
+    class: 'Checkbox',
+    url:
+      'https://material.io/components/web/catalog/input-controls/checkboxes/',
+    example: `
 			<Checkbox>Cookies</Checkbox>
 			<Checkbox>Pizza</Checkbox>
 			<Checkbox>Icecream</Checkbox>
 			<Checkbox indeterminate={true}>Broccoli</Checkbox>
 		`
-	},
-	{
-		name: 'Form Fields',
-		section: 'form-fields',
-		class: 'FormField',
-		url:
-			'https://material.io/components/web/catalog/input-controls/form-fields/',
-		example: `
+  },
+  {
+    name: 'Form Fields',
+    section: 'form-fields',
+    class: 'FormField',
+    url:
+      'https://material.io/components/web/catalog/input-controls/form-fields/',
+    example: `
 			<FormField>
 				<Textfield placeholder="Wrapped Textfield"/>
 			</FormField>
 		`
-	},
-	{
-		name: 'Radio Buttons',
-		section: 'radio-buttons',
-		class: 'Radio',
-		url:
-			'https://material.io/components/web/catalog/input-controls/radio-buttons/',
-		example: `
+  },
+  {
+    name: 'Radio Buttons',
+    section: 'radio-buttons',
+    class: 'Radio',
+    url:
+      'https://material.io/components/web/catalog/input-controls/radio-buttons/',
+    example: `
 			<Radio name="radio">Cookies</Radio>
 			<Radio name="radio">Pizza</Radio>
 			<Radio name="radio">Icecream</Radio>
 		`
-	},
-	{
-		name: 'Select Menus',
-		section: 'select-menus',
-		class: 'Select',
-		url:
-			'https://material.io/components/web/catalog/input-controls/select-menus/',
-		example: `
+  },
+  {
+    name: 'Select Menus',
+    section: 'select-menus',
+    class: 'Select',
+    url:
+      'https://material.io/components/web/catalog/input-controls/select-menus/',
+    example: `
 			<Select
 				placeholder="Select a food"
 				options={{1: 'Cookies', 2: 'Pizza', 3: 'Icecream'}}
@@ -346,13 +346,13 @@ export default [
 				options={['Cookies', 'Pizza', 'Icecream']}
 			/>
 		`
-	},
-	{
-		name: 'Sliders',
-		section: 'sliders',
-		class: 'Slider',
-		url: 'https://material.io/components/web/catalog/input-controls/sliders/',
-		example: `
+  },
+  {
+    name: 'Sliders',
+    section: 'sliders',
+    class: 'Slider',
+    url: 'https://material.io/components/web/catalog/input-controls/sliders/',
+    example: `
 			<Slider
 				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
 				onChange={evt => this.setState({sliderValue: evt.target.value})}
@@ -378,71 +378,71 @@ export default [
 				onChange={evt => this.setState({sliderValue: evt.target.value})}
 			/>
 		`
-	},
-	{
-		name: 'Switches',
-		section: 'switches',
-		class: 'Switch',
-		url: 'https://material.io/components/web/catalog/input-controls/switches/',
-		example: `
+  },
+  {
+    name: 'Switches',
+    section: 'switches',
+    class: 'Switch',
+    url: 'https://material.io/components/web/catalog/input-controls/switches/',
+    example: `
 			<Switch>Cookies</Switch>
 			<Switch>Pizza</Switch>
 			<Switch>Icecream</Switch>
 		`
-	},
-	{
-		name: 'Textfields',
-		section: 'textfields',
-		class: 'Textfield',
-		url:
-			'https://material.io/components/web/catalog/input-controls/text-fields/',
-		example: `
+  },
+  {
+    name: 'Textfields',
+    section: 'textfields',
+    class: 'Textfield',
+    url:
+      'https://material.io/components/web/catalog/input-controls/text-fields/',
+    example: `
 				<Textfield label="Write something..." /> <br/>
 				<Textfield textarea label="Multiline..." rows="8" />
 		`
-	},
-	{
-		name: 'Layout Grids',
-		section: 'layout-grids',
-		class: ['Grid', 'GridCell'],
-		url: 'https://material.io/components/web/catalog/layout-grids/',
-		example: `
+  },
+  {
+    name: 'Layout Grids',
+    section: 'layout-grids',
+    class: ['Grid', 'GridCell'],
+    url: 'https://material.io/components/web/catalog/layout-grids/',
+    example: `
 				<Grid>
 					<GridCell span="4">1</GridCell>
 					<GridCell span="4">2</GridCell>
 					<GridCell span="4">3</GridCell>
 				</Grid>
 		`
-	},
-	{
-		name: 'Linear Progress',
-		section: 'linear-progress',
-		class: 'LinearProgress',
-		url: 'https://material.io/components/web/catalog/linear-progress/',
-		example: `
+  },
+  {
+    name: 'Linear Progress',
+    section: 'linear-progress',
+    class: 'LinearProgress',
+    url: 'https://material.io/components/web/catalog/linear-progress/',
+    example: `
 			<LinearProgress progress={0.5}></LinearProgress>
 			<LinearProgress progress={0.3} accent></LinearProgress>
 			<LinearProgress progress={0.6} buffer={0.8}></LinearProgress>
 			<LinearProgress determinate={false}></LinearProgress>
 			<LinearProgress progress={0.2} reversed></LinearProgress>
 		`
-	},
-	{
-		name: 'Lists',
-		section: 'lists',
-		class: [
-			'List',
-			'ListItem',
-			'ListItemText',
-			'ListItemTextSecondary',
-			'ListItemStartDetail',
-			'ListItemEndDetail',
-			'ListDivider',
-			'ListGroup',
-			'ListGroupSubheader'
-		],
-		url: 'https://material.io/components/web/catalog/layout-grids/',
-		example: `
+  },
+  {
+    name: 'Lists',
+    section: 'lists',
+    class: [
+      'List',
+      'ListItem',
+      'ListItemText',
+      'ListItemTextSecondary',
+      'ListItemStartDetail',
+      'ListItemEndDetail',
+      'ListDivider',
+      'ListGroup',
+      'ListGroupSubheader'
+    ],
+    url: 'https://material.io/components/web/catalog/layout-grids/',
+    example: `
 				<List>
 					<ListItem ripple>
 						<ListItemStartDetail>
@@ -475,13 +475,13 @@ export default [
 					</ListItem>
 				</List>
 		`
-	},
-	{
-		name: 'Menus',
-		section: 'menus',
-		class: ['Menu', 'MenuItem'],
-		url: 'https://material.io/components/web/catalog/lists/',
-		example: `
+  },
+  {
+    name: 'Menus',
+    section: 'menus',
+    class: ['Menu', 'MenuItem'],
+    url: 'https://material.io/components/web/catalog/lists/',
+    example: `
 			<MenuAnchor>
 				<Button
 					raised
@@ -500,13 +500,13 @@ export default [
 				</Menu>
 			</MenuAnchor>
 		`
-	},
-	{
-		name: 'Ripples',
-		section: 'ripples',
-		class: ['Ripple'],
-		url: 'https://material.io/components/web/catalog/ripples/',
-		example: `
+  },
+  {
+    name: 'Ripples',
+    section: 'ripples',
+    class: ['Ripple'],
+    url: 'https://material.io/components/web/catalog/ripples/',
+    example: `
 			<Ripple>
 				<p>Standard Ripple</p>
 			</Ripple>
@@ -523,13 +523,13 @@ export default [
 				<p>Unbounded</p>
 			</Ripple>
 		`
-	},
-	{
-		name: 'Snackbars',
-		section: 'snackbars',
-		class: ['Snackbar'],
-		url: 'https://material.io/components/web/catalog/snackbars/',
-		example: `
+  },
+  {
+    name: 'Snackbars',
+    section: 'snackbars',
+    class: ['Snackbar'],
+    url: 'https://material.io/components/web/catalog/snackbars/',
+    example: `
 				<Button
 					raised
 					onClick={evt => this.setState({snackbarIsOpen: !this.state.snackbarIsOpen})}
@@ -560,13 +560,13 @@ export default [
 					alignStart
 				/>
 		`
-	},
-	{
-		name: 'Tabs',
-		section: 'tabs',
-		class: ['TabBar', 'Tab'],
-		url: 'https://material.io/components/web/catalog/tabs/',
-		example: `
+  },
+  {
+    name: 'Tabs',
+    section: 'tabs',
+    class: ['TabBar', 'Tab'],
+    url: 'https://material.io/components/web/catalog/tabs/',
+    example: `
 			<TabBar
 				activeTabIndex={this.state.activeTabIndex || 0}
 				onChange={evt => this.setState({'activeTabIndex': evt.target.value})}
@@ -576,13 +576,13 @@ export default [
 				<Tab>Icecream</Tab>
 			</TabBar>
 		`
-	},
-	{
-		name: 'Theme',
-		section: 'theme',
-		class: ['Theme'],
-		url: 'https://material.io/components/web/catalog/theme/',
-		example: `
+  },
+  {
+    name: 'Theme',
+    section: 'theme',
+    class: ['Theme'],
+    url: 'https://material.io/components/web/catalog/theme/',
+    example: `
 			<div>
 				<div style={{ backgroundColor: '#ddd' }}>
 					{[
@@ -641,32 +641,32 @@ export default [
 				</div>
 			</div>
 		`
-	},
-	{
-		name: 'Toolbars',
-		section: 'toolbars',
-		class: [
-			'Toolbar',
-			'ToolbarRow',
-			'ToolbarSection',
-			'ToolbarTitle',
-			'ToolbarFixedAdjust'
-		],
-		url: 'https://material.io/components/web/catalog/toolbar/',
-		example: `
+  },
+  {
+    name: 'Toolbars',
+    section: 'toolbars',
+    class: [
+      'Toolbar',
+      'ToolbarRow',
+      'ToolbarSection',
+      'ToolbarTitle',
+      'ToolbarFixedAdjust'
+    ],
+    url: 'https://material.io/components/web/catalog/toolbar/',
+    example: `
 			<Toolbar>
 				<ToolbarRow>
 					<ToolbarTitle>Toolbar</ToolbarTitle>
 				</ToolbarRow>
 			</Toolbar>
 		`
-	},
-	{
-		name: 'Typography',
-		section: 'typography',
-		class: ['Typography'],
-		url: 'https://material.io/components/web/catalog/typography/',
-		example: `
+  },
+  {
+    name: 'Typography',
+    section: 'typography',
+    class: ['Typography'],
+    url: 'https://material.io/components/web/catalog/typography/',
+    example: `
 			<Typography use="display4">display4</Typography>
 			<Typography use="display3">display3</Typography>
 			<Typography use="display2">display2</Typography>
@@ -680,5 +680,5 @@ export default [
 			<Typography use="caption">caption</Typography>
 			<Typography use="button">button</Typography>
 		`
-	}
+  }
 ];
