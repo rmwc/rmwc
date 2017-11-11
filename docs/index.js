@@ -6,20 +6,20 @@ import './index.css';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/app';
 import { unregister } from './registerServiceWorker';
-console.log(App);
+
 const renderApp = Component => {
-	ReactDOM.render(
-		<AppContainer>
-			<Component />
-		</AppContainer>,
-		document.getElementById('root')
-	);
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
+  );
 };
 
 renderApp(App);
 
 if (module.hot) {
-	module.hot.accept(['./components/app'], () => renderApp(App));
+  module.hot.accept(['./components/app'], () => renderApp(App));
 }
 
 unregister();

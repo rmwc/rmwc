@@ -1,55 +1,64 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const providerDefaults = {
-	buttonDefaultRipple: true,
-	iconPrefix: 'material-icons '
+export type RMWCProviderOptionsT = {
+  buttonDefaultRipple: boolean,
+  iconPrefix: string,
+  children?: React.Node
 };
 
-export const getProviderOptions = context => {
-	return context && context.RMWCOptions
-		? context.RMWCOptions
-		: providerDefaults;
+// Default provider options
+const providerDefaults: RMWCProviderOptionsT = {
+  buttonDefaultRipple: true,
+  iconPrefix: 'material-icons '
+};
+
+// A function for safely getting context options
+// this is so we can use the provider defaults even
+// when RMWCProvider isnt being used
+export const getProviderOptions = (context: Object): RMWCProviderOptionsT => {
+  return context && context.RMWCOptions ?
+    context.RMWCOptions :
+    providerDefaults;
 };
 
 /**
  * Provides default options for children
  * Prop override options in providerDefaults with the same name
- * @export
- * @class RMWCProvider
- * @extends {React.Component}
  */
-export class RMWCProvider extends React.Component {
-	static childContextTypes = {
-		RMWCOptions: PropTypes.object
-	};
+export class RMWCProvider extends React.Component<RMWCProviderOptionsT> {
+  constructor(props: RMWCProviderOptionsT) {
+    super(props);
+    this.options = this.buildOptions(props);
+  }
 
-	static propTypes = {
-		RMWCOptions: PropTypes.object
-	};
+  getChildContext() {
+    return {
+      RMWCOptions: this.options
+    };
+  }
 
-	constructor(props, ...args) {
-		super(props, ...args);
-		this.options = this.buildOptions(props);
-	}
+  componentWillUpdate(nextProps: RMWCProviderOptionsT) {
+    this.options = this.buildOptions(nextProps);
+  }
 
-	componentWillUpdate(nextProps) {
-		this.options = this.buildOptions(nextProps);
-	}
+  options: RMWCProviderOptionsT;
 
-	buildOptions(props) {
-		return Object.assign({}, providerDefaults, props || {});
-	}
+  static childContextTypes = {
+    RMWCOptions: PropTypes.object
+  };
 
-	getChildContext() {
-		return {
-			RMWCOptions: this.options
-		};
-	}
+  buildOptions(props: RMWCProviderOptionsT) {
+    return {
+      ...providerDefaults,
+      ...(props || {})
+    };
+  }
 
-	render() {
-		return this.props.children;
-	}
+  render() {
+    return this.props.children;
+  }
 }
 
 export default RMWCProvider;

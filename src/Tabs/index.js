@@ -1,77 +1,60 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { MDCTabBar } from '@material/tabs/dist/mdc.tabs';
-import { propMeta } from '../Base/prop-meta';
-import { noop } from '../Base/noop';
-import MDCComponentBase from '../Base/mdc-component-base';
-import simpleComponentFactory from '../Base/simple-component-factory';
+import { noop, simpleTag } from '../Base';
 
-export const Tab = simpleComponentFactory('Tab', { classNames: 'mdc-tab' });
+import { withMDC } from '../Base';
+import type { SimpleTagPropsT } from '../Base';
 
-export const TabBarRoot = simpleComponentFactory('TabBarRoot', {
-	tag: 'nav',
-	classNames: 'mdc-tab-bar'
+export const Tab: React.ComponentType<SimpleTagPropsT> = simpleTag({
+  name: 'Tab',
+  classNames: 'mdc-tab'
 });
 
-export const TabBarIndicatorEl = simpleComponentFactory('TabBarIndicatorEl', {
-	tag: 'span',
-	classNames: 'mdc-tab-bar__indicator'
+export const TabBarRoot: React.ComponentType<SimpleTagPropsT> = simpleTag({
+  name: 'TabBarRoot',
+  tag: 'nav',
+  classNames: 'mdc-tab-bar'
 });
 
-export class TabBar extends MDCComponentBase {
-	static MDCComponentClass = MDCTabBar;
+export const TabBarIndicatorEl: React.ComponentType<
+  SimpleTagPropsT
+> = simpleTag({
+  name: 'TabBarIndicatorEl',
+  tag: 'span',
+  classNames: 'mdc-tab-bar__indicator'
+});
 
-	static propTypes = {
-		onChange: PropTypes.func,
-		activeTabIndex: PropTypes.number,
-		...MDCComponentBase.propTypes,
-		...TabBarRoot.propTypes
-	};
+type TabBarPropsT = {
+  /* Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
+  onChange: Event => mixed,
+  /* The index of the active tab. */
+  activeTabIndex: number
+} & SimpleTagPropsT;
 
-	static defaultProps = {
-		onChange: noop,
-		activeTabIndex: 0,
-		...TabBarRoot.defaultProps,
-		...MDCComponentBase.defaultProps
-	};
-
-	static propMeta = propMeta({
-		onChange: {
-			type: 'Function',
-			desc:
-				'Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex'
-		},
-		activeTabIndex: {
-			type: 'Integer',
-			desc: 'The index of the active tab'
-		},
-		...TabBarRoot.propMeta,
-		...MDCComponentBase.propMeta
-	});
-
-	MDCComponentDidMount() {
-		this.MDCRegisterListener('MDCTabBar:change', evt => {
-			evt.target.value = this.MDCApi.activeTabIndex;
-			this.props.onChange(evt);
-		});
-	}
-
-	MDCHandleProps(props) {
-		if (props.activeTabIndex !== this.props.activeTabIndex) {
-			this.MDCApi.activeTabIndex = props.activeTabIndex;
-		}
-	}
-
-	render() {
-		const { apiRef, activeTabIndex, children, ...rest } = this.props;
-		return (
-			<TabBarRoot elementRef={el => this.MDCSetRootElement(el)} {...rest}>
-				{children}
-				<TabBarIndicatorEl />
-			</TabBarRoot>
-		);
-	}
-}
+export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
+  mdcConstructor: MDCTabBar,
+  mdcEvents: {
+    'MDCTabBar:change': (evt, props, api) => {
+      evt.target.value = api.activeTabIndex;
+      props.onChange(evt);
+    }
+  },
+  defaultProps: {
+    onChange: noop,
+    activeTabIndex: 0
+  },
+  onUpdate: (props, nextProps, api) => {
+    if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
+      api.activeTabIndex = nextProps.activeTabIndex;
+      console.log(props, nextProps, api);
+    }
+  }
+})(({ children, activeTabIndex, ...rest }) => (
+  <TabBarRoot {...rest}>
+    {children}
+    <TabBarIndicatorEl />
+  </TabBarRoot>
+));
 
 export default TabBar;
