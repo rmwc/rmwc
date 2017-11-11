@@ -123,7 +123,8 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
   }) => {
     if (displayMarkers && !discrete) {
       console.warn(
-        `The 'displayMarkers' prop on rmwc Slider will only work in conjunction with the 'discrete' prop`
+        `The 'displayMarkers' prop on rmwc Slider will 
+        only work in conjunction with the 'discrete' prop`
       );
     }
 

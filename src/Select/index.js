@@ -95,7 +95,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     if ((props && props.value !== nextProps.value) || props === undefined) {
       const newIndex = api.options.indexOf(api.nameditem(nextProps.value));
       api.selectedIndex =
-        newIndex == -1 && props && props.placeholder ? 0 : newIndex;
+        newIndex === -1 && props && props.placeholder ? 0 : newIndex;
     }
 
     window.requestAnimationFrame(() => api && api.foundation_.resize());

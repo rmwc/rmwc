@@ -15,7 +15,9 @@
       "error",
       80,
       {
-        "ignoreComments": true
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true
       }
     ],
     "react/prop-types": "off",

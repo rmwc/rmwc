@@ -1,6 +1,8 @@
 // @flow
 import * as React from 'react';
+/* eslint-disable max-len */
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
+/* eslint-enable max-len */
 import { simpleTag, withMDC } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
