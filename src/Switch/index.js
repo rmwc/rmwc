@@ -6,12 +6,12 @@ import classNames from 'classnames';
 import { simpleTag, withMDCToggle } from '../Base';
 
 export const SwitchRoot = simpleTag({
-  name: 'SwitchRoot',
+  displayName: 'SwitchRoot',
   classNames: 'mdc-switch'
 });
 
 export const SwitchNativeControl = simpleTag({
-  name: 'SwitchNativeControl',
+  displayName: 'SwitchNativeControl',
   tag: 'input',
   classNames: 'mdc-switch__native-control',
   defaultProps: {
@@ -20,17 +20,17 @@ export const SwitchNativeControl = simpleTag({
 });
 
 export const SwitchBackground = simpleTag({
-  name: 'SwitchBackground',
+  displayName: 'SwitchBackground',
   classNames: 'mdc-switch__background'
 });
 
 export const SwitchKnob = simpleTag({
-  name: 'SwitchKnob',
+  displayName: 'SwitchKnob',
   classNames: 'mdc-switch__knob'
 });
 
 export const SwitchLabel = simpleTag({
-  name: 'SwitchLabel',
+  displayName: 'SwitchLabel',
   tag: 'label'
 });
 

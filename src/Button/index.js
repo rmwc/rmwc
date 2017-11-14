@@ -8,22 +8,22 @@ import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
 export type ButtonRootPropsT = {
-  /* Make the Button dense. */
+  /** Make the Button dense. */
   dense?: boolean,
-  /* Make the Button raised. */
+  /** Make the Button raised. */
   raised?: boolean,
-  /* Reduce the Button's padding. */
+  /** Reduce the Button's padding. */
   compact?: boolean,
-  /* Make the button unelevated. */
+  /** Make the button unelevated. */
   unelevated?: boolean,
-  /* Make the button stroked. */
+  /** Make the button stroked. */
   stroked?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
 export const ButtonRoot: React.ComponentType<ButtonRootPropsT> = withRipple(
   simpleTag({
-    name: 'ButtonRoot',
+    displayName: 'ButtonRoot',
     tag: 'button',
     defaultProps: {
       dense: false,
@@ -46,7 +46,18 @@ export const ButtonRoot: React.ComponentType<ButtonRootPropsT> = withRipple(
   })
 );
 
+/**
+ * The Button component.
+ */
 export class Button extends React.Component<ButtonRootPropsT> {
+  static defaultProps = {
+    dense: false,
+    raised: false,
+    compact: false,
+    unelevated: false,
+    stroked: false
+  };
+
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
   }

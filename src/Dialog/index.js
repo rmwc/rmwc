@@ -7,7 +7,7 @@ import { simpleTag, withMDC, noop } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 export const DialogRoot = simpleTag({
-  name: 'DialogRoot',
+  displayName: 'DialogRoot',
   tag: 'aside',
   classNames: 'mdc-dialog',
   defaultProps: {
@@ -16,35 +16,35 @@ export const DialogRoot = simpleTag({
 });
 
 export const DialogBackdrop = simpleTag({
-  name: 'DialogBackdrop',
+  displayName: 'DialogBackdrop',
   classNames: 'mdc-dialog__backdrop'
 });
 
 export const DialogSurface = simpleTag({
-  name: 'DialogSurface',
+  displayName: 'DialogSurface',
   classNames: 'mdc-dialog__surface'
 });
 
 export const DialogHeader = simpleTag({
-  name: 'DialogHeader',
+  displayName: 'DialogHeader',
   tag: 'header',
   classNames: 'mdc-dialog__header'
 });
 
 export const DialogHeaderTitle = simpleTag({
-  name: 'DialogHeaderTitle',
+  displayName: 'DialogHeaderTitle',
   tag: 'h2',
   classNames: 'mdc-dialog__header__title'
 });
 
 export const DialogBody = simpleTag({
-  name: 'DialogBody',
+  displayName: 'DialogBody',
   tag: 'section',
   classNames: 'mdc-dialog__body'
 });
 
 export const DialogFooter = simpleTag({
-  name: 'DialogFooter',
+  displayName: 'DialogFooter',
   tag: 'footer',
   classNames: 'mdc-dialog__footer'
 });
@@ -59,7 +59,7 @@ type DialogFooterButtonT = {
 export const DialogFooterButton: React.ComponentType<
   DialogFooterButtonT
 > = simpleTag({
-  name: 'DialogFooterButton',
+  displayName: 'DialogFooterButton',
   tag: Button,
   classNames: props => [
     'mdc-dialog__footer__button',

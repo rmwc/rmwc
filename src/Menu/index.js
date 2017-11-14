@@ -11,12 +11,12 @@ export const MenuItem = (props: any) => (
 );
 
 export const MenuAnchor = simpleTag({
-  name: 'MenuAnchor',
+  displayName: 'MenuAnchor',
   classNames: 'mdc-menu-anchor'
 });
 
 export const MenuRoot = simpleTag({
-  name: 'MenuRoot',
+  displayName: 'MenuRoot',
   classNames: 'mdc-simple-menu',
   defaultProps: {
     tabIndex: '-1'

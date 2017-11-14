@@ -6,7 +6,7 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 export const SelectRoot = simpleTag({
-  name: 'SelectRoot',
+  displayName: 'SelectRoot',
   classNames: 'mdc-select',
   defaultProps: {
     role: 'listbox',
@@ -15,7 +15,7 @@ export const SelectRoot = simpleTag({
 });
 
 export const SelectSelectedText = simpleTag({
-  name: 'SelectSelectedText',
+  displayName: 'SelectSelectedText',
   tag: 'span',
   classNames: 'mdc-select__selected-text'
 });
@@ -31,12 +31,12 @@ export const SelectLabel = props => (
 );
 
 export const SelectMenu = simpleTag({
-  name: 'SelectMenu',
+  displayName: 'SelectMenu',
   classNames: 'mdc-simple-menu mdc-select__menu'
 });
 
 export const SelectFormField = simpleTag({
-  name: 'SelectMenu',
+  displayName: 'SelectMenu',
   classNames: 'rmwc-select-form-field',
   defaultProps: {
     style: {

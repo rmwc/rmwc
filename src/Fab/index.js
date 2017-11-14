@@ -9,14 +9,14 @@ import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
 export type FabRootPropsT = {
-  /* Make the Fab smaller. */
+  /** Make the Fab smaller. */
   mini?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
 export const FabRoot = withRipple(
   simpleTag({
-    name: 'FabRoot',
+    displayName: 'FabRoot',
     tag: 'button',
     classNames: props => [
       'mdc-fab',
@@ -32,16 +32,12 @@ export const FabRoot = withRipple(
 );
 
 export const FabIcon = simpleTag({
-  name: 'FabIcon',
+  displayName: 'FabIcon',
   tag: 'span',
   classNames: 'mdc-fab__icon'
 });
 
-type FabPropsT = {
-  children?: React.Node
-} & FabRootPropsT;
-
-export class Fab extends React.Component<FabPropsT> {
+export class Fab extends React.Component<FabRootPropsT> {
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
   }

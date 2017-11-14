@@ -17,7 +17,7 @@ type ListItemPropsT = {
 
 export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
   simpleTag({
-    name: 'ListItemRoot',
+    displayName: 'ListItemRoot',
     classNames: props => [
       'mdc-list-item',
       {
@@ -40,19 +40,19 @@ export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
 );
 
 export const ListItemText = simpleTag({
-  name: 'ListItemText',
+  displayName: 'ListItemText',
   tag: 'span',
   classNames: 'mdc-list-item__text'
 });
 
 export const ListItemTextSecondary = simpleTag({
-  name: 'ListItemTextSecondary',
+  displayName: 'ListItemTextSecondary',
   tag: 'span',
   classNames: 'mdc-list-item__text__secondary'
 });
 
 export const ListItemStartDetail = simpleTag({
-  name: 'ListItemStartDetail',
+  displayName: 'ListItemStartDetail',
   classNames: 'mdc-list-item__start-detail',
   defaultProps: {
     wrap: true
@@ -60,7 +60,7 @@ export const ListItemStartDetail = simpleTag({
 });
 
 export const ListItemEndDetail = simpleTag({
-  name: 'ListItemStartDetail',
+  displayName: 'ListItemStartDetail',
   classNames: 'mdc-list-item__end-detail',
   defaultProps: {
     wrap: true
@@ -68,17 +68,17 @@ export const ListItemEndDetail = simpleTag({
 });
 
 export const ListGroup = simpleTag({
-  name: 'ListGroup',
+  displayName: 'ListGroup',
   classNames: 'mdc-list-group'
 });
 
 export const ListGroupSubheader = simpleTag({
-  name: 'ListGroupSubheader',
+  displayName: 'ListGroupSubheader',
   classNames: 'mdc-list-group__subheader'
 });
 
 export const ListDivider = simpleTag({
-  name: 'ListDivider',
+  displayName: 'ListDivider',
   classNames: 'mdc-list-divider'
 });
 
@@ -92,7 +92,7 @@ type ListPropsT = {
 } & SimpleTagPropsT;
 
 export const List: React.ComponentType<ListPropsT> = simpleTag({
-  name: 'List',
+  displayName: 'List',
   classNames: props => [
     'mdc-list',
     {

@@ -9,12 +9,12 @@ import { MDCTemporaryDrawer } from '@material/drawer/dist/mdc.drawer';
  * Drawer Headers
  ***************************************************************************************/
 export const TemporaryDrawerHeaderRoot = simpleTag({
-  name: 'TemporaryDrawerHeader',
+  displayName: 'TemporaryDrawerHeader',
   classNames: 'mdc-temporary-drawer__header'
 });
 
 export const TemporaryDrawerHeaderContent = simpleTag({
-  name: 'TemporaryDrawerHeaderContent',
+  displayName: 'TemporaryDrawerHeaderContent',
   classNames: 'mdc-temporary-drawer__header-content'
 });
 
@@ -33,7 +33,7 @@ export class TemporaryDrawerHeader extends React.Component<*> {
  * Drawer Content
  ***************************************************************************************/
 export const TemporaryDrawerContent = simpleTag({
-  name: 'TemporaryDrawerContent',
+  displayName: 'TemporaryDrawerContent',
 
   tag: List,
   classNames: 'mdc-temporary-drawer__content'
@@ -43,14 +43,14 @@ export const TemporaryDrawerContent = simpleTag({
  * Drawers
  ***************************************************************************************/
 export const TemporaryDrawerRoot = simpleTag({
-  name: 'TemporaryDrawerRoot',
+  displayName: 'TemporaryDrawerRoot',
 
   tag: 'aside',
   classNames: 'mdc-temporary-drawer'
 });
 
 export const TemporaryDrawerDrawer = simpleTag({
-  name: 'TemporaryDrawerDrawer',
+  displayName: 'TemporaryDrawerDrawer',
 
   tag: 'header',
   classNames: 'mdc-temporary-drawer__drawer'

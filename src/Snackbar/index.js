@@ -1,3 +1,6 @@
+/**
+ * Shows in browser notifications
+ */
 // @flow
 import * as React from 'react';
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
@@ -13,7 +16,7 @@ type SnackbarRootT = {
 } & SimpleTagPropsT;
 
 export const SnackbarRoot: React.ComponentType<SnackbarRootT> = simpleTag({
-  name: 'SnackbarRoot',
+  displayName: 'SnackbarRoot',
   classNames: props => [
     'mdc-snackbar',
     {
@@ -30,39 +33,39 @@ export const SnackbarRoot: React.ComponentType<SnackbarRootT> = simpleTag({
 });
 
 export const SnackbarText = simpleTag({
-  name: 'SnackbarText',
+  displayName: 'SnackbarText',
   classNames: 'mdc-snackbar__text'
 });
 
 export const SnackbarActionWrapper = simpleTag({
-  name: 'SnackbarActionWrapper',
+  displayName: 'SnackbarActionWrapper',
   classNames: 'mdc-snackbar__action-wrapper'
 });
 
 export const SnackbarActionButton = simpleTag({
-  name: 'SnackbarActionButton',
+  displayName: 'SnackbarActionButton',
   tag: Button,
   classNames: 'mdc-snackbar__action-button'
 });
 
 type SnackbarPropsT = {
-  /* Show the Snackbar. */
+  /** Show the Snackbar. */
   show?: boolean,
-  /* A callback thats fired when the Snackbar closes. */
+  /** A callback thats fired when the Snackbar closes. */
   onClose?: () => mixed,
-  /* A string or other renderable JSX to be used as the message body. */
+  /** A string or other renderable JSX to be used as the message body. */
   message?: React.Node,
-  /* Milliseconds to show the Snackbar for. */
+  /** Milliseconds to show the Snackbar for. */
   timeout?: number,
-  /* Callback that fires when action is pressed. The actionText property must be set to use this. */
+  /** Callback that fires when action is pressed. The actionText property must be set to use this. */
   actionHandler?: () => mixed,
-  /* Label for the action button. */
+  /** Label for the action button. */
   actionText?: React.Node,
-  /* Lets the Snackbar text overflow onto multiple lines. */
+  /** Lets the Snackbar text overflow onto multiple lines. */
   multiline?: boolean,
-  /* Places the action underneath the message text. */
+  /** Places the action underneath the message text. */
   actionOnBottom?: boolean,
-  /* Whether or not the Snackbar dismisses on the action press. */
+  /** Whether or not the Snackbar dismisses on the action press. */
   dismissesOnAction?: boolean
 };
 
@@ -96,7 +99,10 @@ const showSnackbar = (props, api) => {
   });
 };
 
-export const Snackbar = withMDC({
+/**
+ * @name Snackbar
+ */
+export const Snackbar: React.ComponentType<SnackbarPropsT> = withMDC({
   mdcConstructor: MDCSnackbar,
   mdcElementRef: true,
   defaultProps: {

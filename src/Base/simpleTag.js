@@ -9,7 +9,7 @@ type SimpleTagFactoryT = {
   defaultProps?: Object,
   consumeProps?: string[],
   wrap?: boolean,
-  name?: string
+  displayName?: string
 };
 
 export type SimpleTagPropsT = {
@@ -22,7 +22,7 @@ export type SimpleTagPropsT = {
 };
 
 export const simpleTag = <T>({
-  name = 'SimpleTag',
+  displayName = 'SimpleTag',
   defaultProps = {},
   consumeProps = [],
   tag: defaultTag = 'div',
@@ -30,6 +30,8 @@ export const simpleTag = <T>({
   classNames
 }: SimpleTagFactoryT): React.ComponentType<T & SimpleTagPropsT> => {
   class SimpleTag extends React.Component<T & SimpleTagPropsT> {
+    static displayName = displayName;
+
     static defaultProps = {
       ...defaultProps,
       tag: defaultTag

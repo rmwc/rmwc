@@ -6,7 +6,7 @@ import { simpleTag } from '../Base';
 
 import type { RMWCProviderOptionsT } from '../Provider';
 
-export const IconRoot = simpleTag({ name: 'IconRoot', tag: 'i' });
+export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 
 type IconPropsT = {
   /* The icon to use */

@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { simpleTag, withMDC } from '../Base';
 
 export const IconToggleRoot = simpleTag({
-  name: 'IconToggleRoot',
+  displayName: 'IconToggleRoot',
   tag: Icon,
   classNames: 'mdc-icon-toggle',
   defaultProps: {
@@ -15,15 +15,20 @@ export const IconToggleRoot = simpleTag({
 });
 
 type IconToggleT = {
+  /* prettier-ignore */
   /* An onChange callback that receives an event with event.target.value set to true or false. */
-  onChange?: Object => mixed,
+  onChange?: (evt: Object) => mixed,
   /* An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   on: Object,
   /* An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   off: Object
 };
 
+/**
+ * The IconToggle Component
+ */
 export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
+  displayName: 'IconToggle',
   mdcConstructor: MDCIconToggle,
   mdcElementRef: true,
   mdcEvents: {

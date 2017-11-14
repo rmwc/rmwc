@@ -6,37 +6,37 @@ import { noop } from '../Base/noop';
 import { simpleTag, withMDC } from '../Base';
 
 export const SliderRoot = simpleTag({
-  name: 'SliderRoot',
+  displayName: 'SliderRoot',
   classNames: 'mdc-slider'
 });
 
 export const SliderTrackContainer = simpleTag({
-  name: 'SliderTrackContainer',
+  displayName: 'SliderTrackContainer',
   classNames: 'mdc-slider__track-container'
 });
 
 export const SliderTrack = simpleTag({
-  name: 'SliderTrack',
+  displayName: 'SliderTrack',
   classNames: 'mdc-slider__track'
 });
 
 export const SliderTrackMarkerContainer = simpleTag({
-  name: 'SliderTrackMarkerContainer',
+  displayName: 'SliderTrackMarkerContainer',
   classNames: 'mdc-slider__track-marker-container'
 });
 
 export const SliderThumbContainer = simpleTag({
-  name: 'SliderThumbContainer',
+  displayName: 'SliderThumbContainer',
   classNames: 'mdc-slider__thumb-container'
 });
 
 export const SliderPin = simpleTag({
-  name: 'SliderPin',
+  displayName: 'SliderPin',
   classNames: 'mdc-slider__pin'
 });
 
 export const SliderPinValueMarker = simpleTag({
-  name: 'SliderPinValueMarker',
+  displayName: 'SliderPinValueMarker',
   tag: 'span',
   classNames: 'mdc-slider__pin-value-marker'
 });
@@ -48,7 +48,7 @@ export const SliderThumb = props => (
 );
 
 export const SliderFocusRing = simpleTag({
-  name: 'SliderFocusRing',
+  displayName: 'SliderFocusRing',
   classNames: 'mdc-slider__focus-ring'
 });
 

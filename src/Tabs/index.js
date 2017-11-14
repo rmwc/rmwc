@@ -7,18 +7,18 @@ import { withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 export const Tab = simpleTag({
-  name: 'Tab',
+  displayName: 'Tab',
   classNames: 'mdc-tab'
 });
 
 export const TabBarRoot = simpleTag({
-  name: 'TabBarRoot',
+  displayName: 'TabBarRoot',
   tag: 'nav',
   classNames: 'mdc-tab-bar'
 });
 
 export const TabBarIndicatorEl = simpleTag({
-  name: 'TabBarIndicatorEl',
+  displayName: 'TabBarIndicatorEl',
   tag: 'span',
   classNames: 'mdc-tab-bar__indicator'
 });

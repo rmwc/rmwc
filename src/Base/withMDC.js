@@ -8,10 +8,11 @@ export type WithMDCPropsT = {
 };
 
 type WithMDCOpts = {
+  displayName?: string,
+  defaultProps?: Object,
   mdcConstructor?: Function,
   mdcEvents?: Object,
   mdcElementRef?: boolean,
-  defaultProps?: Object,
   onMount?: (currentProps: ?Object, api: ?Object, inst: Object) => mixed,
   onUpdate?: (
     currentProps: ?Object,
@@ -25,6 +26,7 @@ type WithMDCOpts = {
  * HOC that adds ripples to any component
  */
 export const withMDC = ({
+  displayName = 'withMDC',
   mdcConstructor: MDCConstructor,
   mdcEvents = {},
   mdcElementRef = false,
@@ -39,6 +41,8 @@ export const withMDC = ({
       apiRef: noop,
       ...defaultProps
     };
+
+    static displayName = displayName;
 
     mdcApi = undefined;
     mdcListeners = [];

@@ -9,13 +9,13 @@ import { MDCPersistentDrawer } from '@material/drawer/dist/mdc.drawer';
  * Drawer Headers
  ***************************************************************************************/
 export const PersistentDrawerHeaderRoot = simpleTag({
-  name: 'PersistentDrawerHeader',
+  displayName: 'PersistentDrawerHeader',
 
   classNames: 'mdc-persistent-drawer__header'
 });
 
 export const PersistentDrawerHeaderContent = simpleTag({
-  name: 'PersistentDrawerHeaderContent',
+  displayName: 'PersistentDrawerHeaderContent',
 
   classNames: 'mdc-persistent-drawer__header-content'
 });
@@ -37,7 +37,7 @@ export class PersistentDrawerHeader extends React.Component<*> {
  * Drawer Content
  ***************************************************************************************/
 export const PersistentDrawerContent = simpleTag({
-  name: 'PersistentDrawerContent',
+  displayName: 'PersistentDrawerContent',
 
   tag: List,
   classNames: 'mdc-persistent-drawer__content'
@@ -48,14 +48,14 @@ export const PersistentDrawerContent = simpleTag({
  ***************************************************************************************/
 
 export const PersistentDrawerRoot = simpleTag({
-  name: 'PersistentDrawerRoot',
+  displayName: 'PersistentDrawerRoot',
 
   tag: 'aside',
   classNames: 'mdc-persistent-drawer'
 });
 
 export const PersistentDrawerDrawer = simpleTag({
-  name: 'PersistentDrawerDrawer',
+  displayName: 'PersistentDrawerDrawer',
 
   tag: 'header',
   classNames: 'mdc-persistent-drawer__drawer'

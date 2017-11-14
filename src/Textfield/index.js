@@ -14,7 +14,7 @@ type TextfieldRootPropsT = {
 export const TextfieldRoot: React.ComponentType<
   TextfieldRootPropsT
 > = simpleTag({
-  name: 'TextfieldRoot',
+  displayName: 'TextfieldRoot',
   tag: 'label',
   classNames: props => [
     'mdc-textfield',
@@ -24,7 +24,7 @@ export const TextfieldRoot: React.ComponentType<
 });
 
 export const TextfieldLabel = simpleTag({
-  name: 'TextfieldLabel',
+  displayName: 'TextfieldLabel',
   tag: 'span',
   classNames: props => [
     'mdc-textfield__label',
@@ -36,7 +36,7 @@ export const TextfieldLabel = simpleTag({
 });
 
 export const TextfieldInput = simpleTag({
-  name: 'TextfieldInput',
+  displayName: 'TextfieldInput',
   tag: 'input',
   classNames: 'mdc-textfield__input',
   defaultProps: {
@@ -45,7 +45,7 @@ export const TextfieldInput = simpleTag({
 });
 
 export const TextfieldTextarea = simpleTag({
-  name: 'TextfieldTextarea',
+  displayName: 'TextfieldTextarea',
   tag: 'textarea',
   classNames: 'mdc-textfield__input'
 });

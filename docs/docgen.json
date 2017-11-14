@@ -1,0 +1,27 @@
+{
+  "src/IconToggle/index.js": [
+    {
+      "description": "",
+      "displayName": "IconToggleRoot",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'button'",
+            "computed": false
+          }
+        },
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'0'",
+            "computed": false
+          }
+        }
+      }
+    },
+    {
+      "description": "The IconToggle Component",
+      "methods": []
+    }
+  ]
+}

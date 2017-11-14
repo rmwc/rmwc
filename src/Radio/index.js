@@ -6,12 +6,12 @@ import classNames from 'classnames';
 import { simpleTag, withMDCToggle } from '../Base';
 
 export const RadioRoot = simpleTag({
-  name: 'RadioRoot',
+  displayName: 'RadioRoot',
   classNames: 'mdc-radio'
 });
 
 export const RadioNativeControl = simpleTag({
-  name: 'RadioNativeControl',
+  displayName: 'RadioNativeControl',
   tag: 'input',
   classNames: 'mdc-radio__native-control',
   defaultProps: {
@@ -20,22 +20,22 @@ export const RadioNativeControl = simpleTag({
 });
 
 export const RadioBackground = simpleTag({
-  name: 'RadioBackground',
+  displayName: 'RadioBackground',
   classNames: 'mdc-radio__background'
 });
 
 export const RadioOuterCircle = simpleTag({
-  name: 'RadioOuterCircle',
+  displayName: 'RadioOuterCircle',
   classNames: 'mdc-radio__outer-circle'
 });
 
 export const RadioInnerCircle = simpleTag({
-  name: 'RadioInnerCircle',
+  displayName: 'RadioInnerCircle',
   classNames: 'mdc-radio__inner-circle'
 });
 
 export const RadioLabel = simpleTag({
-  name: 'RadioLabel',
+  displayName: 'RadioLabel',
   tag: 'label'
 });
 

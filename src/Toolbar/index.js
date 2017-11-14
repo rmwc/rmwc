@@ -18,7 +18,7 @@ type ToolbarRootPropsT = {
 } & SimpleTagPropsT;
 
 export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
-  name: 'Toolbar',
+  displayName: 'Toolbar',
   tag: 'header',
   classNames: props => [
     'mdc-toolbar',
@@ -39,7 +39,7 @@ export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
 });
 
 export const ToolbarTitle = simpleTag({
-  name: 'ToolbarTitle',
+  displayName: 'ToolbarTitle',
   classNames: 'mdc-toolbar__title'
 });
 
@@ -55,7 +55,7 @@ type ToolbarSectionPropsT = {
 export const ToolbarSection: React.ComponentType<
   ToolbarSectionPropsT
 > = simpleTag({
-  name: 'ToolbarSection',
+  displayName: 'ToolbarSection',
   tag: 'section',
   classNames: props => [
     'mdc-toolbar__section',
@@ -74,12 +74,12 @@ export const ToolbarSection: React.ComponentType<
 });
 
 export const ToolbarRow = simpleTag({
-  name: 'ToolbarRow',
+  displayName: 'ToolbarRow',
   classNames: 'mdc-toolbar__row'
 });
 
 export const ToolbarFixedAdjust = simpleTag({
-  name: 'ToolbarFixedAdjust',
+  displayName: 'ToolbarFixedAdjust',
   classNames: 'mdc-toolbar-fixed-adjust'
 });
 

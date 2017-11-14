@@ -11,7 +11,7 @@ type ElevationPropsT = {
 } & SimpleTagPropsT;
 
 export const Elevation: React.ComponentType<ElevationPropsT> = simpleTag({
-  name: 'Elevation',
+  displayName: 'Elevation',
   tag: 'div',
   classNames: props => [
     `mdc-elevation--z${props.z}`,

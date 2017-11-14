@@ -6,12 +6,12 @@ import FormField from '../FormField';
 import { simpleTag, withMDCToggle } from '../Base';
 
 export const CheckboxRoot = simpleTag({
-  name: 'CheckboxRoot',
+  displayName: 'CheckboxRoot',
   classNames: 'mdc-checkbox'
 });
 
 export const CheckboxNativeControl = simpleTag({
-  name: 'CheckboxNativeControl',
+  displayName: 'CheckboxNativeControl',
 
   tag: 'input',
   classNames: 'mdc-checkbox__native-control',
@@ -21,12 +21,12 @@ export const CheckboxNativeControl = simpleTag({
 });
 
 export const CheckboxBackground = simpleTag({
-  name: 'CheckboxBackground',
+  displayName: 'CheckboxBackground',
   classNames: 'mdc-checkbox__background'
 });
 
 export const CheckboxCheckmark = simpleTag({
-  name: 'CheckboxCheckmark',
+  displayName: 'CheckboxCheckmark',
   tag: 'svg',
   classNames: 'mdc-checkbox__checkmark',
   defaultProps: {
@@ -35,7 +35,7 @@ export const CheckboxCheckmark = simpleTag({
 });
 
 export const CheckboxCheckmarkPath = simpleTag({
-  name: 'CheckboxCheckmarkPath',
+  displayName: 'CheckboxCheckmarkPath',
   tag: 'path',
   classNames: 'mdc-checkbox__checkmark__path',
   defaultProps: {
@@ -46,12 +46,12 @@ export const CheckboxCheckmarkPath = simpleTag({
 });
 
 export const CheckboxMixedmark = simpleTag({
-  name: 'CheckboxMixedmark',
+  displayName: 'CheckboxMixedmark',
   classNames: 'mdc-checkbox__mixedmark'
 });
 
 export const CheckboxLabel = simpleTag({
-  name: 'CheckboxLabel',
+  displayName: 'CheckboxLabel',
   tag: 'label'
 });
 

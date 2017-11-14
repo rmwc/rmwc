@@ -17,7 +17,7 @@ type GridListRootPropsT = {
 } & SimpleTagPropsT;
 
 export const GridListRoot: React.ComponentType<GridListRootPropsT> = simpleTag({
-  name: 'GridListRoot',
+  displayName: 'GridListRoot',
   classNames: props => [
     'mdc-grid-list',
     {
@@ -45,24 +45,24 @@ export const GridListRoot: React.ComponentType<GridListRootPropsT> = simpleTag({
 });
 
 export const GridListTiles = simpleTag({
-  name: 'GridListTiles',
+  displayName: 'GridListTiles',
   tag: 'ul',
   classNames: 'mdc-grid-list__tiles'
 });
 
 export const GridTile = simpleTag({
-  name: 'GridTile',
+  displayName: 'GridTile',
   tag: 'li',
   classNames: 'mdc-grid-tile'
 });
 
 export const GridTilePrimaryRoot = simpleTag({
-  name: 'GridTilePrimary',
+  displayName: 'GridTilePrimary',
   classNames: 'mdc-grid-tile__primary'
 });
 
 export const GridTilePrimaryContent = simpleTag({
-  name: 'GridTilePrimaryContent',
+  displayName: 'GridTilePrimaryContent',
   classNames: 'mdc-grid-tile__primary-content',
   defaultProps: {
     wrap: true
@@ -76,19 +76,19 @@ export const GridTilePrimary = ({ children, ...rest }: SimpleTagPropsT) => (
 );
 
 export const GridTileSecondary = simpleTag({
-  name: 'GridTileSecondary',
+  displayName: 'GridTileSecondary',
   tag: 'span',
   classNames: 'mdc-grid-tile__secondary'
 });
 
 export const GridTileTitle = simpleTag({
-  name: 'GridTileTitle',
+  displayName: 'GridTileTitle',
   tag: 'span',
   classNames: 'mdc-grid-tile__title'
 });
 
 export const GridTileTitleSupportText = simpleTag({
-  name: 'GridTileTitleSupportText',
+  displayName: 'GridTileTitleSupportText',
 
   tag: 'span',
   classNames: 'mdc-grid-tile__support-text'

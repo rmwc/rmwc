@@ -5,7 +5,7 @@ import themeOptions from './theme-options';
 import { simpleTag } from '../Base';
 
 export const ThemeRoot = simpleTag({
-  name: 'Theme',
+  displayName: 'Theme',
   tag: 'span'
 });
 

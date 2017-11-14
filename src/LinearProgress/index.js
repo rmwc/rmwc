@@ -19,7 +19,7 @@ type LinearProgressRootT = {
 export const LinearProgressRoot: React.ComponentType<
   LinearProgressRootT
 > = simpleTag({
-  name: 'LinearProgressRoot',
+  displayName: 'LinearProgressRoot',
   tag: 'nav',
   classNames: props => [
     'mdc-linear-progress',
@@ -39,27 +39,27 @@ export const LinearProgressRoot: React.ComponentType<
 });
 
 export const LinearProgressBufferingDots = simpleTag({
-  name: 'LinearProgressBufferingDots',
+  displayName: 'LinearProgressBufferingDots',
   classNames: 'mdc-linear-progress__buffering-dots'
 });
 
 export const LinearProgressBuffer = simpleTag({
-  name: 'LinearProgressBuffer',
+  displayName: 'LinearProgressBuffer',
   classNames: 'mdc-linear-progress__buffer'
 });
 
 export const LinearProgressPrimaryBar = simpleTag({
-  name: 'LinearProgressPrimaryBar',
+  displayName: 'LinearProgressPrimaryBar',
   classNames: 'mdc-linear-progress__bar mdc-linear-progress__primary-bar'
 });
 
 export const LinearProgressSecondaryBar = simpleTag({
-  name: 'LinearProgressSecondaryBar',
+  displayName: 'LinearProgressSecondaryBar',
   classNames: 'mdc-linear-progress__bar mdc-linear-progress__secondary-bar'
 });
 
 export const LinearProgressBarInner = simpleTag({
-  name: 'LinearProgressBarInner',
+  displayName: 'LinearProgressBarInner',
   classNames: 'mdc-linear-progress__bar-inner'
 });
 

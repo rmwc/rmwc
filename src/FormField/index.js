@@ -4,7 +4,7 @@ import { MDCFormField } from '@material/form-field/dist/mdc.formField';
 import { simpleTag, withMDC } from '../Base';
 
 export const FormFieldRoot = simpleTag({
-  name: 'FormFieldRoot',
+  displayName: 'FormFieldRoot',
   classNames: 'mdc-form-field'
 });
 

@@ -15,7 +15,7 @@ type GridCellPropsT = {
 } & SimpleTagPropsT;
 
 export const GridCell: React.ComponentType<GridCellPropsT> = simpleTag({
-  name: 'GridCell',
+  displayName: 'GridCell',
   classNames: props => [
     'mdc-layout-grid__cell',
     {
@@ -38,12 +38,12 @@ export const GridCell: React.ComponentType<GridCellPropsT> = simpleTag({
 });
 
 export const GridRoot = simpleTag({
-  name: 'GridRoot',
+  displayName: 'GridRoot',
   classNames: 'mdc-layout-grid'
 });
 
 export const GridInner = simpleTag({
-  name: 'GridInner',
+  displayName: 'GridInner',
   classNames: 'mdc-layout-grid__inner'
 });
 
