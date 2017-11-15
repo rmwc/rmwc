@@ -24,9 +24,9 @@ export const TabBarIndicatorEl = simpleTag({
 });
 
 type TabBarPropsT = {
-  /* Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onChange: Event => mixed,
-  /* The index of the active tab. */
+  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
+  onChange?: (evt: Event) => mixed,
+  /** The index of the active tab. */
   activeTabIndex: number
 } & SimpleTagPropsT;
 
@@ -50,11 +50,20 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       api.activeTabIndex = nextProps.activeTabIndex;
     }
   }
-})(({ children, activeTabIndex, ...rest }) => (
-  <TabBarRoot {...rest}>
-    {children}
-    <TabBarIndicatorEl />
-  </TabBarRoot>
-));
+})(
+  class extends React.Component<TabBarPropsT> {
+    static displayName = 'TabBar';
+
+    render() {
+      const { children, activeTabIndex, ...rest } = this.props;
+      return (
+        <TabBarRoot {...rest}>
+          {children}
+          <TabBarIndicatorEl />
+        </TabBarRoot>
+      );
+    }
+  }
+);
 
 export default TabBar;

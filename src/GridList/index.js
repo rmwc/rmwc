@@ -4,15 +4,15 @@ import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type GridListRootPropsT = {
-  /* Use a 1px gutter. */
+  /** Use a 1px gutter. */
   tileGutter1: boolean,
-  /* Move the caption to the top of the card. */
+  /** Move the caption to the top of the card. */
   headerCaption: boolean,
-  /* Make the caption two lines. */
+  /** Make the caption two lines. */
   twolineCaption: boolean,
-  /* Leaves space for a start aligned icon. */
+  /** Leaves space for a start aligned icon. */
   withIconAlignStart: boolean,
-  /* One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
+  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
   tileAspect: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
 } & SimpleTagPropsT;
 
@@ -94,10 +94,18 @@ export const GridTileTitleSupportText = simpleTag({
   classNames: 'mdc-grid-tile__support-text'
 });
 
-export const GridList = ({ children, ...rest }: GridListRootPropsT) => (
-  <GridListRoot {...rest}>
-    <GridListTiles>{children}</GridListTiles>
-  </GridListRoot>
-);
+/**
+ * Grid List Component
+ */
+export class GridList extends React.Component<GridListRootPropsT> {
+  render() {
+    const { children, ...rest } = this.props;
+    return (
+      <GridListRoot {...rest}>
+        <GridListTiles>{children}</GridListTiles>
+      </GridListRoot>
+    );
+  }
+}
 
 export default GridList;

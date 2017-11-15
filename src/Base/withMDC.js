@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { noop } from './noop';
 
 export type WithMDCPropsT = {
-  apiRef: Object => mixed
+  apiRef: (apiInstance: Object) => mixed
 };
 
 type WithMDCOpts = {
@@ -26,7 +26,6 @@ type WithMDCOpts = {
  * HOC that adds ripples to any component
  */
 export const withMDC = ({
-  displayName = 'withMDC',
   mdcConstructor: MDCConstructor,
   mdcEvents = {},
   mdcElementRef = false,
@@ -42,9 +41,9 @@ export const withMDC = ({
       ...defaultProps
     };
 
-    static displayName = displayName;
+    static displayName = `withMDC(${Component.displayName})`;
 
-    mdcApi = undefined;
+    mdcApi: Object = undefined;
     mdcListeners = [];
     mdcRootElement = undefined;
     elementRefProps = {};
@@ -129,17 +128,8 @@ export const withMDC = ({
       return this.mdcRootElement || ReactDOM.findDOMNode(this);
     }
 
-    mdcHandleProps(props, isInitialMount) {
-      // Use this in the consumer to handle any api props that have changed
-    }
-
-    mdcComponentDidMount() {
-      // Use this in the consumer to handle registering any listeners for mdc
-    }
-
     render() {
       const { apiRef, ...rest } = this.props;
-
       return <Component {...this.elementRefProps} {...rest} />;
     }
   };

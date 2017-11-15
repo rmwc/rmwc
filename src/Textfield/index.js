@@ -7,8 +7,8 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type TextfieldRootPropsT = {
-  /* Creates a multiline textfield. */
-  textarea: boolean
+  /** Creates a multiline textfield. */
+  textarea?: boolean
 } & SimpleTagPropsT;
 
 export const TextfieldRoot: React.ComponentType<
@@ -51,16 +51,16 @@ export const TextfieldTextarea = simpleTag({
 });
 
 type TextfieldPropsT = {
-  /* A ref for the native input. */
-  inputRef: React.Ref<*>,
-  /* Disables the input. */
-  disabled: boolean,
-  /* A label for the input. */
-  label: React.Node
+  /** A ref for the native input. */
+  inputRef?: React.Ref<any>,
+  /** Disables the input. */
+  disabled?: boolean,
+  /** A label for the input. */
+  label?: React.Node
 } & TextfieldRootPropsT &
   SimpleTagPropsT;
 
-export const Textfield: React.ComponentType<TextfieldPropsT> = withMDC({
+export const Textfield = withMDC({
   mdcConstructor: MDCTextfield,
   mdcElementRef: true,
   defaultProps: {
@@ -75,37 +75,42 @@ export const Textfield: React.ComponentType<TextfieldPropsT> = withMDC({
     }
   }
 })(
-  ({
-    label = '',
-    className,
-    inputRef,
-    mdcElementRef,
-    children,
-    textarea,
-    ...rest
-  }) => {
-    const tagProps = {
-      elementRef: inputRef,
-      ...rest
-    };
+  class extends React.Component<TextfieldPropsT> {
+    static displayName = 'Textfield';
+    render() {
+      const {
+        label = '',
+        className,
+        inputRef,
+        mdcElementRef,
+        children,
+        textarea,
+        ...rest
+      } = this.props;
 
-    const tag = textarea ? (
-      <TextfieldTextarea {...tagProps} />
-    ) : (
-      <TextfieldInput {...tagProps} />
-    );
+      const tagProps = {
+        elementRef: inputRef,
+        ...rest
+      };
 
-    return (
-      <TextfieldRoot
-        className={className}
-        textarea={textarea}
-        elementRef={mdcElementRef}
-      >
-        {children}
-        {tag}
-        <TextfieldLabel>{label}</TextfieldLabel>
-      </TextfieldRoot>
-    );
+      const tag = textarea ? (
+        <TextfieldTextarea {...tagProps} />
+      ) : (
+        <TextfieldInput {...tagProps} />
+      );
+
+      return (
+        <TextfieldRoot
+          className={className}
+          textarea={textarea}
+          elementRef={mdcElementRef}
+        >
+          {children}
+          {tag}
+          <TextfieldLabel>{label}</TextfieldLabel>
+        </TextfieldRoot>
+      );
+    }
   }
 );
 

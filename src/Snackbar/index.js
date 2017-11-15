@@ -12,7 +12,7 @@ import type { SimpleTagPropsT } from '../Base';
 
 type SnackbarRootT = {
   /* Aligns the Snackbar to the start of the screen. */
-  alignStart: boolean
+  alignStart?: boolean
 } & SimpleTagPropsT;
 
 export const SnackbarRoot: React.ComponentType<SnackbarRootT> = simpleTag({
@@ -102,7 +102,7 @@ const showSnackbar = (props, api) => {
 /**
  * @name Snackbar
  */
-export const Snackbar: React.ComponentType<SnackbarPropsT> = withMDC({
+export const Snackbar = withMDC({
   mdcConstructor: MDCSnackbar,
   mdcElementRef: true,
   defaultProps: {
@@ -127,39 +127,45 @@ export const Snackbar: React.ComponentType<SnackbarPropsT> = withMDC({
     }
   }
 })(
-  ({
-    show,
-    message,
-    timeout,
-    actionHandler,
-    actionText,
-    multiline,
-    actionOnBottom,
-    mdcElementRef,
-    dismissesOnAction,
-    onClose,
-    ...rest
-  }) => {
-    const isJSX = typeof message === 'object';
-    const snackbarTextStyle = {};
-    if (isJSX) {
-      snackbarTextStyle.display = 'none';
-    }
+  class extends React.Component<SnackbarPropsT> {
+    static displayName = 'Snackbar';
 
-    /**
-     * The double SnackbarText below is a hack to allow for rendering JSX
-     * The real message gets rendered in the hidden container, and the second one is
-     * ignored and shows th rendered content :)
-     */
-    return (
-      <SnackbarRoot elementRef={mdcElementRef} {...rest}>
-        <SnackbarText style={snackbarTextStyle} />
-        {isJSX && <SnackbarText>{message}</SnackbarText>}
-        <SnackbarActionWrapper>
-          <SnackbarActionButton />
-        </SnackbarActionWrapper>
-      </SnackbarRoot>
-    );
+    render() {
+      const {
+        show,
+        message,
+        timeout,
+        actionHandler,
+        actionText,
+        multiline,
+        actionOnBottom,
+        mdcElementRef,
+        dismissesOnAction,
+        onClose,
+        ...rest
+      } = this.props;
+
+      const isJSX = typeof message === 'object';
+      const snackbarTextStyle = {};
+      if (isJSX) {
+        snackbarTextStyle.display = 'none';
+      }
+
+      /**
+       * The double SnackbarText below is a hack to allow for rendering JSX
+       * The real message gets rendered in the hidden container, and the second one is
+       * ignored and shows th rendered content :)
+       */
+      return (
+        <SnackbarRoot elementRef={mdcElementRef} {...rest}>
+          <SnackbarText style={snackbarTextStyle} />
+          {isJSX && <SnackbarText>{message}</SnackbarText>}
+          <SnackbarActionWrapper>
+            <SnackbarActionButton />
+          </SnackbarActionWrapper>
+        </SnackbarRoot>
+      );
+    }
   }
 );
 

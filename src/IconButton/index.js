@@ -30,7 +30,7 @@ export const IconButton = ({ children, use, ...rest }: IconButtonPropsT) => {
 
   const iconName = use || children;
   return (
-    <Button style={mergedStyle} {...rest}>
+    <Button {...rest} style={mergedStyle}>
       <Icon use={iconName} />
     </Button>
   );

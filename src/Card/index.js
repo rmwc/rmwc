@@ -24,7 +24,7 @@ type CardTitlePropsT = {
 } & SimpleTagPropsT;
 
 /** Title for the Card */
-export const CardTitle: React.ComponentType<CardTitlePropsT> = simpleTag({
+export class CardTitle extends simpleTag({
   displayName: 'CardTitle',
   tag: 'h1',
   classNames: props => [
@@ -37,7 +37,11 @@ export const CardTitle: React.ComponentType<CardTitlePropsT> = simpleTag({
     large: false
   },
   consumeProps: ['large']
-});
+})<CardTitlePropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 /** Subtitle for the Card */
 export const CardSubtitle = simpleTag({
@@ -90,7 +94,7 @@ type CardPropsT = {
 } & SimpleTagPropsT;
 
 /** A Card Component */
-export const Card: React.ComponentType<CardPropsT> = simpleTag({
+export class Card extends simpleTag({
   displayName: 'Card',
   classNames: props => [
     'mdc-card',
@@ -102,6 +106,10 @@ export const Card: React.ComponentType<CardPropsT> = simpleTag({
     themeDark: false
   },
   consumeProps: ['themeDark']
-});
+})<CardPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export default Card;

@@ -74,7 +74,6 @@ export class Button extends React.Component<ButtonRootPropsT> {
     const { ripple, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
     const rippleProps = shouldRipple ? { ripple: true } : {};
-
     return <ButtonRoot {...rippleProps} {...rest} />;
   }
 }

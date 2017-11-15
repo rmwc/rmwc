@@ -33,7 +33,7 @@
     "babelfy": "node scripts/babelfy.js",
     "clean": "node scripts/clean.js",
     "docgen":
-      "export NODE_ENV=development && react-docgen ./src/IconToggle --exclude=/\\.\\(story\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./docs/docgen.json",
+      "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./docs/docgen.json",
     "build": "node scripts/build.js",
     "build:lib": "node scripts/build-lib.js",
     "deploy:docs":

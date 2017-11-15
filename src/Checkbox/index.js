@@ -55,52 +55,73 @@ export const CheckboxLabel = simpleTag({
   tag: 'label'
 });
 
+type CheckboxPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** Make the control indeterminate */
+  indeterminate?: boolean,
+  /** A label for the control. */
+  label?: string
+};
+
+/**
+ * A Checkbox component
+ */
 export const Checkbox = withMDCToggle({
   mdcConstructor: MDCCheckbox
 })(
-  ({
-    label = '',
-    id,
-    children,
-    checked,
-    apiRef,
-    indeterminate,
-    mdcElementRef,
-    generatedId,
-    ...rest
-  }) => {
-    const labelId = id || generatedId;
-    const checkedProp = checked !== undefined ? { checked } : {};
-    const classes = classNames({ 'mdc-checkbox--disabled': rest.disabled });
+  class extends React.Component<CheckboxPropsT> {
+    static displayName = 'Checkbox';
 
-    const checkbox = (
-      <CheckboxRoot elementRef={mdcElementRef} className={classes}>
-        <CheckboxNativeControl id={labelId} {...checkedProp} {...rest} />
-        <CheckboxBackground>
-          <CheckboxCheckmark>
-            <CheckboxCheckmarkPath />
-          </CheckboxCheckmark>
-          <CheckboxMixedmark />
-        </CheckboxBackground>
-      </CheckboxRoot>
-    );
+    render() {
+      const {
+        label = '',
+        id,
+        children,
+        checked,
+        apiRef,
+        indeterminate,
+        mdcElementRef,
+        generatedId,
+        ...rest
+      } = this.props;
+      const labelId = id || generatedId;
+      const checkedProp = checked !== undefined ? { checked } : {};
+      const classes = classNames({ 'mdc-checkbox--disabled': rest.disabled });
 
-    /**
-     * We have to conditionally wrap our checkbox in a formfield
-     * If we have a label
-     */
-    if (label.length || children) {
-      return (
-        <FormField>
-          {checkbox}
-          <CheckboxLabel id={labelId + 'label'} htmlFor={labelId}>
-            {label}
-            {children}
-          </CheckboxLabel>
-        </FormField>
+      const checkbox = (
+        <CheckboxRoot elementRef={mdcElementRef} className={classes}>
+          <CheckboxNativeControl id={labelId} {...checkedProp} {...rest} />
+          <CheckboxBackground>
+            <CheckboxCheckmark>
+              <CheckboxCheckmarkPath />
+            </CheckboxCheckmark>
+            <CheckboxMixedmark />
+          </CheckboxBackground>
+        </CheckboxRoot>
       );
-    } else {
-      return checkbox;
+
+      /**
+       * We have to conditionally wrap our checkbox in a formfield
+       * If we have a label
+       */
+      if (label.length || children) {
+        return (
+          <FormField>
+            {checkbox}
+            <CheckboxLabel id={labelId + 'label'} htmlFor={labelId}>
+              {label}
+              {children}
+            </CheckboxLabel>
+          </FormField>
+        );
+      } else {
+        return checkbox;
+      }
     }
   }
 );

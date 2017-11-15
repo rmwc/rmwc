@@ -34,38 +34,62 @@ export const SwitchLabel = simpleTag({
   tag: 'label'
 });
 
+type SwitchPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** A label for the control. */
+  label?: string
+};
+
 export const Switch = withMDCToggle()(
-  ({ label = '', id, children, generatedId, mdcElementRef, ...rest }) => {
-    const labelId = id || generatedId;
+  class extends React.Component<SwitchPropsT> {
+    static displayName = 'Switch';
 
-    const switchTag = (
-      <SwitchRoot
-        elementRef={mdcElementRef}
-        className={classNames({ 'mdc-switch--disabled': rest.disabled })}
-      >
-        <SwitchNativeControl id={labelId} {...rest} />
-        <SwitchBackground>
-          <SwitchKnob />
-        </SwitchBackground>
-      </SwitchRoot>
-    );
+    render() {
+      const {
+        label = '',
+        id,
+        children,
+        generatedId,
+        mdcElementRef,
+        ...rest
+      } = this.props;
 
-    /**
-     * We have to conditionally wrap our checkbox in a formfield
-     * If we have a label
-     */
-    if (label.length || children) {
-      return (
-        <FormField>
-          {switchTag}
-          <SwitchLabel id={labelId + 'label'} htmlFor={labelId}>
-            {label}
-            {children}
-          </SwitchLabel>
-        </FormField>
+      const labelId = id || generatedId;
+
+      const switchTag = (
+        <SwitchRoot
+          elementRef={mdcElementRef}
+          className={classNames({ 'mdc-switch--disabled': rest.disabled })}
+        >
+          <SwitchNativeControl id={labelId} {...rest} />
+          <SwitchBackground>
+            <SwitchKnob />
+          </SwitchBackground>
+        </SwitchRoot>
       );
-    } else {
-      return switchTag;
+
+      /**
+       * We have to conditionally wrap our checkbox in a formfield
+       * If we have a label
+       */
+      if (label.length || children) {
+        return (
+          <FormField>
+            {switchTag}
+            <SwitchLabel id={labelId + 'label'} htmlFor={labelId}>
+              {label}
+              {children}
+            </SwitchLabel>
+          </FormField>
+        );
+      } else {
+        return switchTag;
+      }
     }
   }
 );

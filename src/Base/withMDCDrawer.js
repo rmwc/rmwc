@@ -2,13 +2,13 @@
 import * as React from 'react';
 import { withMDC, noop } from '../Base';
 
-type WithMDCDrawerPropsT = {
+export type WithMDCDrawerPropsT = {
   /* Opens or closes the Drawer. */
   open: boolean,
   /* Callback that fires when the Drawer is closed. */
-  onClose: Event => mixed,
+  onClose: (evt: Event) => mixed,
   /* Callback that fires when the Drawer is opened. */
-  onOpen: Event => mixed
+  onOpen: (evt: Event) => mixed
 };
 
 type WithMDCDrawerOptsT = {
@@ -18,7 +18,7 @@ type WithMDCDrawerOptsT = {
 
 export const withMDCDrawer = (
   { mdcConstructor, drawerConstructorName }: WithMDCDrawerOptsT = {}
-) => Component => {
+) => (Component: React.ComponentType<any>) => {
   return withMDC({
     mdcConstructor,
     mdcEvents: {

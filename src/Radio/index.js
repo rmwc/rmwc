@@ -39,47 +39,62 @@ export const RadioLabel = simpleTag({
   tag: 'label'
 });
 
+type RadioPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** A label for the control. */
+  label?: string
+};
+
 export const Radio = withMDCToggle({ mdcConstructor: MDCRadio })(
-  ({
-    label = '',
-    id,
-    children,
-    apiRef,
-    generatedId,
-    mdcElementRef,
-    ...rest
-  }) => {
-    const labelId = id || generatedId;
+  class extends React.Component<RadioPropsT> {
+    static displayName = 'Radio';
+    render() {
+      const {
+        label = '',
+        id,
+        children,
+        apiRef,
+        generatedId,
+        mdcElementRef,
+        ...rest
+      } = this.props;
+      const labelId = id || generatedId;
 
-    const radio = (
-      <RadioRoot
-        elementRef={mdcElementRef}
-        className={classNames({ 'mdc-radio--disabled': rest.disabled })}
-      >
-        <RadioNativeControl id={labelId} {...rest} />
-        <RadioBackground>
-          <RadioOuterCircle />
-          <RadioInnerCircle />
-        </RadioBackground>
-      </RadioRoot>
-    );
-
-    /**
-     * We have to conditionally wrap our radio in a FormField
-     * If we have a label
-     */
-    if (label.length || children) {
-      return (
-        <FormField>
-          {radio}
-          <RadioLabel id={labelId + 'label'} htmlFor={labelId}>
-            {label}
-            {children}
-          </RadioLabel>
-        </FormField>
+      const radio = (
+        <RadioRoot
+          elementRef={mdcElementRef}
+          className={classNames({ 'mdc-radio--disabled': rest.disabled })}
+        >
+          <RadioNativeControl id={labelId} {...rest} />
+          <RadioBackground>
+            <RadioOuterCircle />
+            <RadioInnerCircle />
+          </RadioBackground>
+        </RadioRoot>
       );
-    } else {
-      return radio;
+
+      /**
+       * We have to conditionally wrap our radio in a FormField
+       * If we have a label
+       */
+      if (label.length || children) {
+        return (
+          <FormField>
+            {radio}
+            <RadioLabel id={labelId + 'label'} htmlFor={labelId}>
+              {label}
+              {children}
+            </RadioLabel>
+          </FormField>
+        );
+      } else {
+        return radio;
+      }
     }
   }
 );

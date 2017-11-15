@@ -5,9 +5,7 @@ import { List, ListItem } from '../List';
 import { simpleTag, withMDC } from '../Base';
 
 export const MenuItem = (props: any) => (
-  <ListItem role="menuitem" tabIndex="0" {...props}>
-    {props.children}
-  </ListItem>
+  <ListItem role="menuitem" tabIndex="0" {...props} />
 );
 
 export const MenuAnchor = simpleTag({
@@ -24,12 +22,12 @@ export const MenuRoot = simpleTag({
 });
 
 type MenuPropsT = {
-  /* Whether or not the Menu is open. */
-  open: boolean,
-  /* Callback that fires when the Menu closes. */
-  onClose: Event => mixed,
-  /* Callback that fires when a Menu item is selected. */
-  onSelected: Event => mixed
+  /** Whether or not the Menu is open. */
+  open?: boolean,
+  /** Callback that fires when the Menu closes. */
+  onClose?: (evt: Event) => mixed,
+  /** Callback that fires when a Menu item is selected. */
+  onSelected?: (evt: Event) => mixed
 };
 
 const handleMenuChange = (evt, props) => {
@@ -37,7 +35,7 @@ const handleMenuChange = (evt, props) => {
   props.onClose(evt);
 };
 
-export const Menu: React.ComponentType<MenuPropsT> = withMDC({
+export const Menu = withMDC({
   mdcConstructor: MDCSimpleMenu,
   mdcElementRef: true,
   mdcEvents: {
@@ -54,10 +52,30 @@ export const Menu: React.ComponentType<MenuPropsT> = withMDC({
       api.open = nextProps.open;
     }
   }
-})(({ children, open, onClose, onSelected, mdcElementRef, ...rest }) => (
-  <MenuRoot elementRef={mdcElementRef} {...rest}>
-    <List className="mdc-simple-menu__items" role="menu" aria-hidden="true">
-      {children}
-    </List>
-  </MenuRoot>
-));
+})(
+  class extends React.Component<MenuPropsT> {
+    static displayName = 'Menu';
+
+    render() {
+      const {
+        children,
+        open,
+        onClose,
+        onSelected,
+        mdcElementRef,
+        ...rest
+      } = this.props;
+      return (
+        <MenuRoot elementRef={mdcElementRef} {...rest}>
+          <List
+            className="mdc-simple-menu__items"
+            role="menu"
+            aria-hidden="true"
+          >
+            {children}
+          </List>
+        </MenuRoot>
+      );
+    }
+  }
+);

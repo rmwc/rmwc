@@ -34,6 +34,99 @@ const findDocDef = name => {
   return flatDocs.find(v => v.displayName === name);
 };
 
+class DocSection extends React.Component {
+  state = {
+    showInherited: false
+  };
+
+  render() {
+    const { def } = this.props;
+    return (
+      <ListGroup>
+        <ListGroupSubheader>{def.name}</ListGroupSubheader>
+        <table>
+          <thead>
+            <tr>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {def.docs &&
+              def.docs.props &&
+              Object.entries(def.docs.props).map(([propName, prop], i) => (
+                <tr key={i}>
+                  <td>{propName}</td>
+                  <td>
+                    {prop.flowType &&
+                      (prop.flowType.raw || prop.flowType.name || '')}
+                  </td>
+                  <td>{prop.required ? 'true' : 'false'}</td>
+                  <td>
+                    {prop.defaultValue ? prop.defaultValue.value : 'undefined'}
+                  </td>
+                  <td>{prop.description || ''}</td>
+                </tr>
+              ))}
+
+            {this.state.showInherited && [
+              <tr key="tag">
+                <td>tag</td>
+                <td>string</td>
+                <td>false</td>
+                <td>div</td>
+                <td>The HTML tag to render in the DOM</td>
+              </tr>,
+              <tr key="wrap">
+                <td>wrap</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>false</td>
+                <td>"collapse" an element onto its children.</td>
+              </tr>,
+              <tr key="elementRef">
+                <td>elementRef</td>
+                <td>React.Ref&lt;any&gt;</td>
+                <td>false</td>
+                <td>undefined</td>
+                <td>
+                  Get a ReactDOM reference to the root child of the component.
+                </td>
+              </tr>,
+              <tr key="theme">
+                <td>theme</td>
+                <td>string | string[]</td>
+                <td>false</td>
+                <td>undefined</td>
+                <td>
+                  A theme option as a string, a space separated string for
+                  multiple values, or an array of valid theme options.
+                </td>
+              </tr>
+            ]}
+            <tr
+              onClick={() =>
+                this.setState({ showInherited: !this.state.showInherited })
+              }
+            >
+              <td colSpan="5">
+                <a>
+                  {this.state.showInherited ?
+                    '...Hide inherited props' :
+                    'Show inherited props...'}
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ListGroup>
+    );
+  }
+}
+
 export class Detail extends React.Component {
   state = {};
 
@@ -87,39 +180,7 @@ export class Detail extends React.Component {
         <GridCell span="12">
           <Card>
             <List>
-              {componentDefs.map((def, i) => (
-                <ListGroup key={i}>
-                  <ListGroupSubheader>{def.name} Props</ListGroupSubheader>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Prop</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {def.docs &&
-                        def.docs.props &&
-                        Object.entries(def.docs.props).map(
-                          ([propName, prop], i) => (
-                            <tr key={i}>
-                              <td>{propName}</td>
-                              <td>{prop.flowType ? prop.flowType.name : ''}</td>
-                              <td>
-                                {prop.defaultValue ?
-                                  prop.defaultValue.value :
-                                  'undefined'}
-                              </td>
-                              <td>{prop.description || ''}</td>
-                            </tr>
-                          )
-                        )}
-                    </tbody>
-                  </table>
-                </ListGroup>
-              ))}
+              {componentDefs.map((def, i) => <DocSection def={def} key={i} />)}
             </List>
           </Card>
         </GridCell>

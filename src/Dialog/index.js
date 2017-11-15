@@ -8,11 +8,11 @@ import type { SimpleTagPropsT } from '../Base';
 
 export const DialogRoot = simpleTag({
   displayName: 'DialogRoot',
-  tag: 'aside',
-  classNames: 'mdc-dialog',
   defaultProps: {
     role: 'alertdialog'
-  }
+  },
+  tag: 'aside',
+  classNames: 'mdc-dialog'
 });
 
 export const DialogBackdrop = simpleTag({
@@ -76,17 +76,17 @@ export const DialogFooterButton: React.ComponentType<
 });
 
 type DialogPropsT = {
-  /* Whether or not the Dialog is showing. */
+  /** Whether or not the Dialog is showing. */
   open: boolean,
-  /* Callback for when the accept Button is pressed. */
-  onAccept: Event => mixed,
-  /* Callback for when the Dialog was closed without acceptance. */
-  onCancel: Event => mixed,
-  /* Callback for when the Dialog closes. */
-  onClose: Event => mixed
+  /** Callback for when the accept Button is pressed. */
+  onAccept: (evt: Event) => mixed,
+  /** Callback for when the Dialog was closed without acceptance. */
+  onCancel: (evt: Event) => mixed,
+  /** Callback for when the Dialog closes. */
+  onClose: (evt: Event) => mixed
 };
 
-export const Dialog: React.ComponentType<DialogPropsT> = withMDC({
+export const Dialog = withMDC({
   mdcConstructor: MDCDialog,
   mdcElementRef: true,
   mdcEvents: {
@@ -111,75 +111,103 @@ export const Dialog: React.ComponentType<DialogPropsT> = withMDC({
     }
   }
 })(
-  ({ open, onAccept, onCancel, onClose, children, mdcElementRef, ...rest }) => {
-    const template = children || <DialogTemplate />;
+  class extends React.Component<DialogPropsT> {
+    static displayName = 'Dialog';
 
-    return React.cloneElement(template, {
-      ...template.props,
-      ...rest,
-      elementRef: mdcElementRef
-    });
+    render() {
+      const {
+        open,
+        onAccept,
+        onCancel,
+        onClose,
+        children,
+        mdcElementRef,
+        ...rest
+      } = this.props;
+      const template = children || <DefaultDialogTemplate />;
+
+      return React.cloneElement(template, {
+        ...template.props,
+        ...rest,
+        elementRef: mdcElementRef
+      });
+    }
   }
 );
 
-type DialogTemplatePropsT = {
+type DefaultDialogTemplatePropsT = {
+  /** A title for the default Dialog template. */
   title?: React.Node,
+  /** Additional Dialog header content for the default Dialog template. */
   header?: React.Node,
+  /** Body content for the default Dialog template, rendered before children. */
   body?: React.Node,
+  /** Additional footer content for the default Dialog template, rendered before any buttons. */
   footer?: React.Node,
+  /** Creates an accept button for the default Dialog template with a given label. You can pass `null` to remove the button.*/
   acceptLabel?: React.Node,
+  /** Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.*/
   cancelLabel?: React.Node,
+  /** Any children will be rendered in the body of the default Dialog template. */
   children?: React.Node
 };
 
-export const DialogTemplate = ({
-  title,
-  header,
-  body,
-  footer,
-  acceptLabel,
-  cancelLabel,
-  children,
-  ...rest
-}: DialogTemplatePropsT) => (
-  <DialogRoot {...rest}>
-    <DialogSurface>
-      {(!!title || !!header) && (
-        <DialogHeader>
-          {!!title && <DialogHeaderTitle>{title}</DialogHeaderTitle>}
-          {!!header && { header }}
-        </DialogHeader>
-      )}
-      {(!!body || children) && (
-        <DialogBody>
-          {body}
-          {children}
-        </DialogBody>
-      )}
+export class DefaultDialogTemplate extends React.Component<
+  DefaultDialogTemplatePropsT
+> {
+  static defaultProps = {
+    title: undefined,
+    header: undefined,
+    body: undefined,
+    footer: undefined,
+    acceptLabel: 'Accept',
+    cancelLabel: 'Cancel'
+  };
 
-      {(!!cancelLabel || !!acceptLabel) && (
-        <DialogFooter>
-          {!!footer && { footer }}
-          {!!cancelLabel && (
-            <DialogFooterButton cancel>Decline</DialogFooterButton>
-          )}
-          {!!acceptLabel && (
-            <DialogFooterButton accept>{acceptLabel}</DialogFooterButton>
-          )}
-        </DialogFooter>
-      )}
-    </DialogSurface>
-    <DialogBackdrop />
-  </DialogRoot>
-);
+  render() {
+    const {
+      title,
+      header,
+      body,
+      footer,
+      acceptLabel,
+      cancelLabel,
+      children,
+      ...rest
+    } = this.props;
 
-DialogTemplate.defaultProps = {
-  title: undefined,
-  header: undefined,
-  body: undefined,
-  footer: undefined,
-  acceptLabel: 'Accept',
-  cancelLabel: 'Cancel'
-};
+    return (
+      <DialogRoot {...rest}>
+        <DialogSurface>
+          {(!!title || !!header) && (
+            <DialogHeader>
+              {!!title && <DialogHeaderTitle>{title}</DialogHeaderTitle>}
+              {!!header && { header }}
+            </DialogHeader>
+          )}
+          {(!!body || children) && (
+            <DialogBody>
+              {body}
+              {children}
+            </DialogBody>
+          )}
+
+          {(!!cancelLabel || !!acceptLabel) && (
+            <DialogFooter>
+              {!!footer && { footer }}
+              {!!cancelLabel && (
+                <DialogFooterButton cancel>{cancelLabel}</DialogFooterButton>
+              )}
+              {!!acceptLabel && (
+                <DialogFooterButton accept>{acceptLabel}</DialogFooterButton>
+              )}
+            </DialogFooter>
+          )}
+        </DialogSurface>
+        <DialogBackdrop />
+      </DialogRoot>
+    );
+  }
+}
 
 export default Dialog;

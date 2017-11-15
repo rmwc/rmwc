@@ -53,21 +53,21 @@ export const SliderFocusRing = simpleTag({
 });
 
 type SliderPropsT = {
-  /* A callback that takes an event with event.target.value set to the Slider's value. */
-  onChange?: Event => mixed,
-  /* The value of the Slider. */
+  /** A callback that takes an event with event.target.value set to the Slider's value. */
+  onChange?: (evt: Event) => mixed,
+  /** The value of the Slider. */
   value?: number | string,
-  /* The minimum value of the Slider. */
+  /** The minimum value of the Slider. */
   min?: number | string,
-  /* The maximum value of the Slider. */
+  /** The maximum value of the Slider. */
   max?: number | string,
-  /* A step to quantize values by. */
+  /** A step to quantize values by. */
   step?: number | string,
-  /* Displays the exact value of the Slider on the knob. */
+  /** Displays the exact value of the Slider on the knob. */
   discrete?: boolean,
-  /* Displays the individual step markers on the Slider track. */
+  /** Displays the individual step markers on the Slider track. */
   displayMarkers?: boolean,
-  /* Disables the control. */
+  /** Disables the control. */
   disabled?: boolean
 };
 
@@ -108,62 +108,67 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
     });
   }
 })(
-  ({
-    value,
-    min,
-    max,
-    discrete,
-    displayMarkers,
-    mdcElementRef,
-    step,
-    onChange,
-    className,
-    disabled,
-    ...rest
-  }) => {
-    if (displayMarkers && !discrete) {
-      console.warn(
-        `The 'displayMarkers' prop on rmwc Slider will 
+  class extends React.Component<SliderPropsT> {
+    static displayName = 'Slider';
+
+    render() {
+      const {
+        value,
+        min,
+        max,
+        discrete,
+        displayMarkers,
+        mdcElementRef,
+        step,
+        onChange,
+        className,
+        disabled,
+        ...rest
+      } = this.props;
+      if (displayMarkers && !discrete) {
+        console.warn(
+          `The 'displayMarkers' prop on rmwc Slider will 
         only work in conjunction with the 'discrete' prop`
+        );
+      }
+
+      const classes = classNames(className, {
+        'mdc-slider--discrete': discrete,
+        'mdc-slider--display-markers': displayMarkers && discrete
+      });
+
+      const dataStep = step ? { 'data-step': step } : {};
+
+      return (
+        <SliderRoot
+          elementRef={mdcElementRef}
+          className={classes}
+          tabIndex="0"
+          role="slider"
+          aria-valuemin={min}
+          aria-valuemax={max}
+          aria-valuenow={value}
+          aria-label="Select Value"
+          {...(disabled ? { 'aria-disabled': disabled } : {})}
+          {...dataStep}
+          {...rest}
+        >
+          <SliderTrackContainer>
+            <SliderTrack />
+            {displayMarkers && <SliderTrackMarkerContainer />}
+          </SliderTrackContainer>
+          <SliderThumbContainer>
+            {discrete && (
+              <SliderPin>
+                <SliderPinValueMarker />
+              </SliderPin>
+            )}
+            <SliderThumb />
+            <SliderFocusRing />
+          </SliderThumbContainer>
+        </SliderRoot>
       );
     }
-
-    const classes = classNames(className, {
-      'mdc-slider--discrete': discrete,
-      'mdc-slider--display-markers': displayMarkers && discrete
-    });
-
-    const dataStep = step ? { 'data-step': step } : {};
-
-    return (
-      <SliderRoot
-        elementRef={mdcElementRef}
-        className={classes}
-        tabIndex="0"
-        role="slider"
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value}
-        aria-label="Select Value"
-        {...(disabled ? { 'aria-disabled': disabled } : {})}
-        {...dataStep}
-        {...rest}
-      >
-        <SliderTrackContainer>
-          <SliderTrack />
-          {displayMarkers && <SliderTrackMarkerContainer />}
-        </SliderTrackContainer>
-        <SliderThumbContainer>
-          {discrete && (
-            <SliderPin>
-              <SliderPinValueMarker />
-            </SliderPin>
-          )}
-          <SliderThumb />
-          <SliderFocusRing />
-        </SliderThumbContainer>
-      </SliderRoot>
-    );
   }
 );
 

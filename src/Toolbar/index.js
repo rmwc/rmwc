@@ -7,18 +7,17 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type ToolbarRootPropsT = {
-  /* Makes the toolbar fixed */
+  /** Makes the toolbar fixed */
   fixed?: boolean,
-  /* Adds a waterfall effect on scroll */
+  /** Adds a waterfall effect on scroll */
   waterfall?: boolean,
-  /* Fixes the last row of a multi-row toolbar */
+  /** Fixes the last row of a multi-row toolbar */
   fixedLastrowOnly?: boolean,
-  /* makes the toolbar flexible */
+  /** makes the toolbar flexible */
   flexible?: boolean
 } & SimpleTagPropsT;
 
 export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
-  displayName: 'Toolbar',
   tag: 'header',
   classNames: props => [
     'mdc-toolbar',
@@ -44,17 +43,15 @@ export const ToolbarTitle = simpleTag({
 });
 
 type ToolbarSectionPropsT = {
-  /* Aligns the ToolbarSection at the start. */
+  /** Aligns the ToolbarSection at the start. */
   alignStart?: boolean,
-  /* Aligns the ToolbarSection at the end. */
+  /** Aligns the ToolbarSection at the end. */
   alignEnd?: boolean,
-  /* Makes the ToolbarSection shrink to fit. */
+  /** Makes the ToolbarSection shrink to fit. */
   shrinkToFit?: boolean
 } & SimpleTagPropsT;
 
-export const ToolbarSection: React.ComponentType<
-  ToolbarSectionPropsT
-> = simpleTag({
+export class ToolbarSection extends simpleTag({
   displayName: 'ToolbarSection',
   tag: 'section',
   classNames: props => [
@@ -71,13 +68,20 @@ export const ToolbarSection: React.ComponentType<
     shrinkToFit: false
   },
   consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
-});
+})<ToolbarSectionPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export const ToolbarRow = simpleTag({
   displayName: 'ToolbarRow',
   classNames: 'mdc-toolbar__row'
 });
 
+/**
+ * This component can be placed after a fixed Toolbar component to fill in the space.
+ */
 export const ToolbarFixedAdjust = simpleTag({
   displayName: 'ToolbarFixedAdjust',
   classNames: 'mdc-toolbar-fixed-adjust'
@@ -100,8 +104,15 @@ export const Toolbar = withMDC({
       inst.mdcComponentReinit();
     }
   }
-})(({ mdcElementRef, ...rest }) => (
-  <ToolbarRoot elementRef={mdcElementRef} {...rest} />
-));
+})(
+  class extends React.Component<ToolbarRootPropsT> {
+    static displayName = 'Toolbar';
+
+    render() {
+      const { mdcElementRef, ...rest } = this.props;
+      return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
+    }
+  }
+);
 
 export default Toolbar;

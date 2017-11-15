@@ -10,7 +10,7 @@ export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 
 type IconPropsT = {
   /* The icon to use */
-  use: string
+  use: React.Node
 };
 
 export class Icon extends React.Component<IconPropsT> {

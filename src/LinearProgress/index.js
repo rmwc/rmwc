@@ -8,12 +8,12 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type LinearProgressRootT = {
-  /* Whether or not the Progress bar is determinate. */
-  determinate: boolean,
-  /* Progress goes from right to left. */
-  reversed: boolean,
-  /* Use the accent color palette. */
-  accent: boolean
+  /** Whether or not the Progress bar is determinate. */
+  determinate?: boolean,
+  /** Progress goes from right to left. */
+  reversed?: boolean,
+  /** Use the accent color palette. */
+  accent?: boolean
 } & SimpleTagPropsT;
 
 export const LinearProgressRoot: React.ComponentType<
@@ -64,10 +64,10 @@ export const LinearProgressBarInner = simpleTag({
 });
 
 type LinearProgressPropsT = {
-  /* Progress float percentage between 0 and 1. */
-  progress: number | string,
-  /* A Progress buffer float percentage between 0 and 1. */
-  buffer: number | string
+  /** Progress float percentage between 0 and 1. */
+  progress?: number | string,
+  /** A Progress buffer float percentage between 0 and 1. */
+  buffer?: number | string
 } & LinearProgressRootT;
 
 export const LinearProgress: React.ComponentType<
@@ -89,17 +89,26 @@ export const LinearProgress: React.ComponentType<
       }
     });
   }
-})(({ progress, buffer, mdcElementRef, ...rest }) => (
-  <LinearProgressRoot elementRef={mdcElementRef} {...rest}>
-    <LinearProgressBufferingDots />
-    <LinearProgressBuffer />
-    <LinearProgressPrimaryBar>
-      <LinearProgressBarInner />
-    </LinearProgressPrimaryBar>
-    <LinearProgressSecondaryBar>
-      <LinearProgressBarInner />
-    </LinearProgressSecondaryBar>
-  </LinearProgressRoot>
-));
+})(
+  class extends React.Component<LinearProgressPropsT> {
+    static displayName = 'LinearProgress';
+
+    render() {
+      const { progress, buffer, mdcElementRef, ...rest } = this.props;
+      return (
+        <LinearProgressRoot elementRef={mdcElementRef} {...rest}>
+          <LinearProgressBufferingDots />
+          <LinearProgressBuffer />
+          <LinearProgressPrimaryBar>
+            <LinearProgressBarInner />
+          </LinearProgressPrimaryBar>
+          <LinearProgressSecondaryBar>
+            <LinearProgressBarInner />
+          </LinearProgressSecondaryBar>
+        </LinearProgressRoot>
+      );
+    }
+  }
+);
 
 export default LinearProgress;

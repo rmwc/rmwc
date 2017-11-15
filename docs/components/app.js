@@ -135,7 +135,7 @@ export class App extends React.Component {
                 />
 
                 {[
-                  'layout-grids',
+                  'layout-grid',
                   'linear-progress',
                   'lists',
                   'menus',

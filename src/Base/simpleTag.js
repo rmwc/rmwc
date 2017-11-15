@@ -5,7 +5,7 @@ import { parseThemeOptions } from './withTheme';
 
 type SimpleTagFactoryT = {
   tag?: string | React.ComponentType<any>,
-  classNames?: string | (Object => mixed),
+  classNames?: string | ((props: Object) => mixed),
   defaultProps?: Object,
   consumeProps?: string[],
   wrap?: boolean,
@@ -21,15 +21,15 @@ export type SimpleTagPropsT = {
   children?: React.Node
 };
 
-export const simpleTag = <T>({
+export const simpleTag = ({
   displayName = 'SimpleTag',
   defaultProps = {},
   consumeProps = [],
   tag: defaultTag = 'div',
   wrap: defaultWrap = false,
   classNames
-}: SimpleTagFactoryT): React.ComponentType<T & SimpleTagPropsT> => {
-  class SimpleTag extends React.Component<T & SimpleTagPropsT> {
+}: SimpleTagFactoryT): any => {
+  class SimpleTag extends React.Component<*> {
     static displayName = displayName;
 
     static defaultProps = {

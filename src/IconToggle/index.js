@@ -16,19 +16,20 @@ export const IconToggleRoot = simpleTag({
 
 type IconToggleT = {
   /* prettier-ignore */
-  /* An onChange callback that receives an event with event.target.value set to true or false. */
+  /** An onChange callback that receives an event with event.target.value set to true or false. */
   onChange?: (evt: Object) => mixed,
-  /* An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   on: Object,
-  /* An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
-  off: Object
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  off: Object,
+  /** Whether the toggle is on or off */
+  value?: boolean
 };
 
 /**
- * The IconToggle Component
+ * Icon Toggle Component
  */
 export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
-  displayName: 'IconToggle',
   mdcConstructor: MDCIconToggle,
   mdcElementRef: true,
   mdcEvents: {
@@ -47,20 +48,27 @@ export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
       api.on = !!nextProps.value;
     }
   }
-})(({ children, value, on, off, mdcElementRef, ...rest }) => {
-  const ariaPressed = value !== undefined ? !!value : false;
-  const toggleOnJSON = JSON.stringify(on);
-  const toggleOffJSON = JSON.stringify(off);
+})(
+  class extends React.Component<IconToggleT> {
+    static displayName = 'IconToggle';
 
-  return (
-    <IconToggleRoot
-      elementRef={mdcElementRef}
-      {...rest}
-      data-toggle-on={toggleOnJSON}
-      data-toggle-off={toggleOffJSON}
-      aria-pressed={ariaPressed}
-    />
-  );
-});
+    render() {
+      const { value, on, off, mdcElementRef, ...rest } = this.props;
+      const ariaPressed = value !== undefined ? !!value : false;
+      const toggleOnJSON = JSON.stringify(on);
+      const toggleOffJSON = JSON.stringify(off);
+
+      return (
+        <IconToggleRoot
+          elementRef={mdcElementRef}
+          {...rest}
+          data-toggle-on={toggleOnJSON}
+          data-toggle-off={toggleOffJSON}
+          aria-pressed={ariaPressed}
+        />
+      );
+    }
+  }
+);
 
 export default IconToggle;

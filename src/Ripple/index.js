@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
 type RipplePropsT = {
-  /* Uses the primary palette. */
-  primary: boolean,
-  /* Uses the accent palette. */
-  accent: boolean,
-  /* Make the Ripple unbounded, like the ones used in Checkboxes. */
-  unbounded: boolean
+  /** Uses the primary palette. */
+  primary?: boolean,
+  /** Uses the accent palette. */
+  accent?: boolean,
+  /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */
+  unbounded?: boolean
 };
 
 export class Ripple extends React.Component<RipplePropsT> {

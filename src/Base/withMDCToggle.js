@@ -6,12 +6,17 @@ type WithMDCToggleOptsT = {
   mdcConstructor?: Function
 };
 
-type WithMDCTogglePropsT = {
-  id: string,
-  disabled: boolean,
-  checked: boolean | string,
-  indeterminate: boolean,
-  label: string
+export type WithMDCTogglePropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** Make the control indeterminate (Checkboxes only). */
+  indeterminate?: boolean,
+  /** A label for the control. */
+  label?: string
 };
 
 export const withMDCToggle = ({ mdcConstructor }: WithMDCToggleOptsT = {}) => (

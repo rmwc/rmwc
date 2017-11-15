@@ -4,18 +4,24 @@ import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type GridCellPropsT = {
-  /* A generic span value for all screen sizes. */
-  span: string | number,
-  /* A span value for phone screen sizes. */
-  phone: string | number,
-  /* A span value for tablet screen sizes. */
-  tablet: string | number,
-  /* A span value for desktop screen sizes. */
-  desktop: string | number
+  /** A generic span value for all screen sizes. */
+  span?: string | number,
+  /** A span value for phone screen sizes. */
+  phone?: string | number,
+  /** A span value for tablet screen sizes. */
+  tablet?: string | number,
+  /** A span value for desktop screen sizes. */
+  desktop?: string | number
 } & SimpleTagPropsT;
 
-export const GridCell: React.ComponentType<GridCellPropsT> = simpleTag({
+export class GridCell extends simpleTag({
   displayName: 'GridCell',
+  defaultProps: {
+    span: undefined,
+    phone: undefined,
+    tablet: undefined,
+    desktop: undefined
+  },
   classNames: props => [
     'mdc-layout-grid__cell',
     {
@@ -28,14 +34,12 @@ export const GridCell: React.ComponentType<GridCellPropsT> = simpleTag({
         props.desktop !== undefined
     }
   ],
-  defaultProps: {
-    span: undefined,
-    phone: undefined,
-    tablet: undefined,
-    desktop: undefined
-  },
   consumeProps: ['span', 'phone', 'tablet', 'desktop']
-});
+})<GridCellPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export const GridRoot = simpleTag({
   displayName: 'GridRoot',

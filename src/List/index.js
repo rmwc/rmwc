@@ -6,17 +6,17 @@ import type { SimpleTagPropsT } from '../Base';
 import type { WithRipplePropsT } from '../Base';
 
 type ListItemPropsT = {
-  /* A modifier for a selected item in Permanent Drawer. */
+  /** A modifier for a selected item in Permanent Drawer. */
   permanentDrawerSelected?: boolean,
-  /* A modifier for a selected item in Persistent Drawer. */
+  /** A modifier for a selected item in Persistent Drawer. */
   persistentDrawerSelected?: boolean,
-  /* A modifier for a selected item in Temporary Drawer. */
+  /** A modifier for a selected item in Temporary Drawer. */
   temporaryDrawerSelected?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
 export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
-  simpleTag({
+  class extends simpleTag({
     displayName: 'ListItemRoot',
     classNames: props => [
       'mdc-list-item',
@@ -36,7 +36,12 @@ export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
       'persistentDrawerSelected',
       'temporaryDrawerSelected'
     ]
-  })
+  })<ListItemPropsT> {
+    static displayName = 'ListItem';
+    render() {
+      return super.render();
+    }
+  }
 );
 
 export const ListItemText = simpleTag({
@@ -83,15 +88,15 @@ export const ListDivider = simpleTag({
 });
 
 type ListPropsT = {
-  /* 'Reduces the padding on List items.' */
+  /** Reduces the padding on List items. */
   dense?: boolean,
-  /* Gives more space for dual lined list items. */
+  /** Gives more space for dual lined list items. */
   twoLine?: boolean,
-  /* Makes the list start detail circular for avatars. */
+  /** Makes the list start detail circular for avatars. */
   avatarList?: boolean
 } & SimpleTagPropsT;
 
-export const List: React.ComponentType<ListPropsT> = simpleTag({
+export class List extends simpleTag({
   displayName: 'List',
   classNames: props => [
     'mdc-list',
@@ -107,6 +112,10 @@ export const List: React.ComponentType<ListPropsT> = simpleTag({
     avatarList: false
   },
   consumeProps: ['dense', 'twoLine', 'avatarList']
-});
+})<ListPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export default List;

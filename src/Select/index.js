@@ -50,15 +50,14 @@ export const SelectFormField = simpleTag({
 });
 
 type SelectPropsT = {
-  /* An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}. */
-
+  /** An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}. */
   options: Object | mixed[],
-  /* A label for the form control. */
-  label: string,
-  /* Placeholder text for the form control. */
-  placeholder: string,
-  /* Disables the form control. */
-  disabled: boolean
+  /** A label for the form control. */
+  label?: string,
+  /** Placeholder text for the form control. */
+  placeholder?: string,
+  /** Disables the form control. */
+  disabled?: boolean
 } & SimpleTagPropsT;
 
 const getDisplayValue = (value, options, placeholder) => {
@@ -95,47 +94,53 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     if ((props && props.value !== nextProps.value) || props === undefined) {
       const newIndex = api.options.indexOf(api.nameditem(nextProps.value));
       api.selectedIndex =
-        newIndex === -1 && props && props.placeholder ? 0 : newIndex;
+        newIndex === -1 && nextProps.placeholder ? 0 : newIndex;
     }
 
     window.requestAnimationFrame(() => api && api.foundation_.resize());
   }
 })(
-  ({
-    placeholder = '',
-    value,
-    label = '',
-    options,
-    mdcElementRef,
-    ...rest
-  }) => {
-    const selectOptions = Array.isArray(options) ?
-      new Map(options.map(val => [val, val])) :
-      new Map(Object.entries(options).map(([val, label]) => [label, val]));
+  class extends React.Component<SelectPropsT> {
+    static displayName = 'Select';
 
-    const displayValue = getDisplayValue(value, selectOptions, placeholder);
+    render() {
+      const {
+        placeholder = '',
+        value,
+        label = '',
+        options,
+        mdcElementRef,
+        ...rest
+      } = this.props;
 
-    return (
-      <SelectRoot elementRef={mdcElementRef} {...rest}>
-        <SelectSelectedText>{displayValue}</SelectSelectedText>
-        {!!label.length && <SelectLabel>{label}</SelectLabel>}
-        <SelectMenu>
-          <List className="mdc-simple-menu__items">
-            {!!placeholder.length && (
-              <ListItem role="option" id="placeholder" aria-disabled="true">
-                {placeholder}
-              </ListItem>
-            )}
-            {options &&
-              Array.from(selectOptions).map(([optionLabel, optionVal], i) => (
-                <ListItem key={i} role="option" id={optionVal} tabIndex="0">
-                  {optionLabel}
+      const selectOptions = Array.isArray(options) ?
+        new Map(options.map(val => [val, val])) :
+        new Map(Object.entries(options).map(([val, label]) => [label, val]));
+
+      const displayValue = getDisplayValue(value, selectOptions, placeholder);
+
+      return (
+        <SelectRoot elementRef={mdcElementRef} {...rest}>
+          <SelectSelectedText>{displayValue}</SelectSelectedText>
+          {!!label.length && <SelectLabel>{label}</SelectLabel>}
+          <SelectMenu>
+            <List className="mdc-simple-menu__items">
+              {!!placeholder.length && (
+                <ListItem role="option" id="placeholder" aria-disabled="true">
+                  {placeholder}
                 </ListItem>
-              ))}
-          </List>
-        </SelectMenu>
-      </SelectRoot>
-    );
+              )}
+              {options &&
+                Array.from(selectOptions).map(([optionLabel, optionVal], i) => (
+                  <ListItem key={i} role="option" id={optionVal} tabIndex="0">
+                    {optionLabel}
+                  </ListItem>
+                ))}
+            </List>
+          </SelectMenu>
+        </SelectRoot>
+      );
+    }
   }
 );
 

@@ -41,7 +41,16 @@ export default [
   {
     name: 'Cards',
     section: 'cards',
-    class: 'Card',
+    class: [
+      'Card',
+      'CardMedia',
+      'CardPrimary',
+      'CardTitle',
+      'CardSubtitle',
+      'CardSupportingText',
+      'CardActions',
+      'CardAction'
+    ],
     url: 'https://material.io/components/web/catalog/cards/',
     example: `
 			<Card style={{width: '320px'}}>
@@ -168,7 +177,18 @@ export default [
   {
     name: 'Dialogs',
     section: 'dialogs',
-    class: ['Dialog'],
+    class: [
+      'Dialog',
+      'DefaultDialogTemplate',
+      'DialogRoot',
+      'DialogSurface',
+      'DialogHeader',
+      'DialogHeaderTitle',
+      'DialogBody',
+      'DialogFooter',
+      'DialogFooterButton',
+      'DialogBackdrop'
+    ],
     url: 'https://material.io/components/web/catalog/dialogs/',
     example: `
 			{/** Simple Dialogs for basic usage **/}
@@ -294,7 +314,7 @@ export default [
   {
     name: 'Checkboxes',
     section: 'checkboxes',
-    class: 'Checkbox',
+    class: ['Checkbox'],
     url:
       'https://material.io/components/web/catalog/input-controls/checkboxes/',
     example: `
@@ -402,10 +422,10 @@ export default [
 		`
   },
   {
-    name: 'Layout Grids',
-    section: 'layout-grids',
+    name: 'Layout Grid',
+    section: 'layout-grid',
     class: ['Grid', 'GridCell'],
-    url: 'https://material.io/components/web/catalog/layout-grids/',
+    url: 'https://material.io/components/web/catalog/layout-grid/',
     example: `
 				<Grid>
 					<GridCell span="4">1</GridCell>
@@ -441,7 +461,7 @@ export default [
       'ListGroup',
       'ListGroupSubheader'
     ],
-    url: 'https://material.io/components/web/catalog/layout-grids/',
+    url: 'https://material.io/components/web/catalog/lists/',
     example: `
 				<List>
 					<ListItem ripple>
@@ -480,7 +500,7 @@ export default [
     name: 'Menus',
     section: 'menus',
     class: ['Menu', 'MenuItem'],
-    url: 'https://material.io/components/web/catalog/lists/',
+    url: 'https://material.io/components/web/catalog/menus/',
     example: `
 			<MenuAnchor>
 				<Button

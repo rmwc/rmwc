@@ -31,11 +31,20 @@ function ignore() {
 
 function isSimpleTag(def) {
   return !!(
-    (def &&
-      def.value &&
-      def.value.callee &&
-      def.value.callee.name === 'simpleTag') ||
-    (def.value.callee.callee && def.value.callee.callee.name === 'withMDC')
+    def &&
+    def.value &&
+    def.value.callee &&
+    def.value.callee.name === 'simpleTag'
+  );
+}
+
+function isWithMDC(def) {
+  return !!(
+    def &&
+    def.value &&
+    def.value.callee &&
+    def.value.callee.callee &&
+    def.value.callee.callee.name.indexOf('withMDC') !== -1
   );
 }
 
@@ -44,7 +53,8 @@ function isComponentDefinition(path) {
     isReactCreateClassCall(path) ||
     isReactComponentClass(path) ||
     isStatelessComponent(path) ||
-    isSimpleTag(path)
+    isSimpleTag(path) ||
+    isWithMDC(path)
   );
 }
 
@@ -63,7 +73,11 @@ function resolveDefinition(definition, types) {
   } else if (isSimpleTag(definition)) {
     var resolvedPath = resolveToValue(definition.get('arguments', 0));
     return resolvedPath;
+  } else if (isWithMDC(definition)) {
+    var resolvedPath = resolveToValue(definition.get('arguments', 0));
+    return resolvedPath;
   }
+
   return null;
 }
 
