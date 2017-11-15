@@ -3,20 +3,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 const glob = require('glob');
 const path = require('path');
 const fs = require('fs-extra');
-const { exec } = require('child_process');
 
 const processAlFiles = files => {
 	files.forEach(f => {
 		const out = f.replace('./src/', './');
-		const dir = path.dirname(out);
-		console.log('Babel:', f, '-> ', out);
-
-		if (!fs.existsSync(dir)) {
-			fs.mkdirSync(dir);
-		}
-
-		const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out}`;
-		exec(cmd);
+		fs.removeSync(out);
 	});
 };
 

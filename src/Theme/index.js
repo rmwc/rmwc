@@ -1,32 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import themeOptions from './theme-options';
+// @flow
+import * as React from 'react';
 
-import simpleComponentFactory from '../Base/simple-component-factory';
+import { simpleTag } from '../Base';
 
-export const Theme = simpleComponentFactory('Theme', {
-	tag: 'span',
-	classNames: props => {
-		const use = Array.isArray(props.use) ? props.use : [props.use];
-		return use.map(v => `mdc-theme--${v}`);
-	},
-	propTypes: {
-		use: PropTypes.oneOfType([
-			PropTypes.oneOf(themeOptions),
-			PropTypes.arrayOf(PropTypes.oneOf(themeOptions))
-		]).isRequired
-	},
-	defaultProps: {
-		use: undefined
-	},
-	propMeta: {
-		use: {
-			type: 'String | Array',
-			desc: 'Alias for the "theme" prop'
-		}
-	},
-	consumeProps: ['use']
+const ThemeRoot = simpleTag({
+  tag: 'span'
 });
 
-export default Theme;
+type ThemePropsT = {
+  /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
+  use: string | string[]
+};
+
+/**
+ * A Theme Component.
+ */
+export const Theme = ({ use, ...rest }: ThemePropsT) => (
+  <ThemeRoot theme={use} {...rest} />
+);
+
+Theme.displayName = 'Theme';

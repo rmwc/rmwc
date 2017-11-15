@@ -1,124 +1,118 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// @flow
+import * as React from 'react';
 import { MDCToolbar } from '@material/toolbar/dist/mdc.toolbar';
 
-import MDCComponentBase from '../Base/mdc-component-base';
-import simpleComponentFactory from '../Base/simple-component-factory';
-import { propMeta } from '../Base/prop-meta';
+import { simpleTag, withMDC } from '../Base';
 
-export const ToolbarRoot = simpleComponentFactory('Toolbar', {
-	tag: 'header',
-	classNames: props => [
-		'mdc-toolbar',
-		{
-			'mdc-toolbar--fixed': props.fixed,
-			'mdc-toolbar--waterfall': props.waterfall,
-			'mdc-toolbar--fixed-lastrow-only': props.fixedLastrowOnly,
-			'mdc-toolbar--flexible': props.flexible
-		}
-	],
-	propTypes: {
-		fixed: PropTypes.bool,
-		waterfall: PropTypes.bool,
-		fixedLastrowOnly: PropTypes.bool,
-		flexible: PropTypes.bool
-	},
-	defaultProps: {
-		fixed: false,
-		waterfall: false,
-		fixedLastrowOnly: false,
-		flexible: false
-	},
-	consumeProps: ['fixed', 'waterfall', 'fixedLastrowOnly', 'flexible']
+import type { SimpleTagPropsT } from '../Base';
+
+type ToolbarRootPropsT = {
+  /** Makes the toolbar fixed */
+  fixed?: boolean,
+  /** Adds a waterfall effect on scroll */
+  waterfall?: boolean,
+  /** Fixes the last row of a multi-row toolbar */
+  fixedLastrowOnly?: boolean,
+  /** makes the toolbar flexible */
+  flexible?: boolean
+} & SimpleTagPropsT;
+
+export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
+  tag: 'header',
+  classNames: props => [
+    'mdc-toolbar',
+    {
+      'mdc-toolbar--fixed': props.fixed,
+      'mdc-toolbar--waterfall': props.waterfall,
+      'mdc-toolbar--fixed-lastrow-only': props.fixedLastrowOnly,
+      'mdc-toolbar--flexible': props.flexible
+    }
+  ],
+  defaultProps: {
+    fixed: false,
+    waterfall: false,
+    fixedLastrowOnly: false,
+    flexible: false
+  },
+  consumeProps: ['fixed', 'waterfall', 'fixedLastrowOnly', 'flexible']
 });
 
-export const ToolbarTitle = simpleComponentFactory('ToolbarTitle', {
-	classNames: 'mdc-toolbar__title'
+export const ToolbarTitle = simpleTag({
+  displayName: 'ToolbarTitle',
+  classNames: 'mdc-toolbar__title'
 });
 
-export const ToolbarSection = simpleComponentFactory('ToolbarSection', {
-	tag: 'section',
-	classNames: props => [
-		'mdc-toolbar__section',
-		{
-			'mdc-toolbar__section--align-start': props.alignStart,
-			'mdc-toolbar__section--align-end': props.alignEnd,
-			'mdc-toolbar__section--shrink-to-fit': props.shrinkToFit
-		}
-	],
-	propTypes: {
-		alignStart: PropTypes.bool,
-		alignEnd: PropTypes.bool,
-		shrinkToFit: PropTypes.bool
-	},
-	defaultProps: {
-		alignStart: false,
-		alignEnd: false,
-		shrinkToFit: false
-	},
-	propMeta: {
-		alignStart: {
-			type: 'Boolean',
-			desc: 'Aligns the ToolbarSection at the start.'
-		},
-		alignEnd: {
-			type: 'Boolean',
-			desc: 'Aligns the ToolbarSection at the end.'
-		},
-		shrinkToFit: {
-			type: 'Boolean',
-			desc: 'Makes the ToolbarSection shrink to fit.'
-		}
-	},
-	consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
-});
+type ToolbarSectionPropsT = {
+  /** Aligns the ToolbarSection at the start. */
+  alignStart?: boolean,
+  /** Aligns the ToolbarSection at the end. */
+  alignEnd?: boolean,
+  /** Makes the ToolbarSection shrink to fit. */
+  shrinkToFit?: boolean
+} & SimpleTagPropsT;
 
-export const ToolbarRow = simpleComponentFactory('ToolbarRow', {
-	classNames: 'mdc-toolbar__row'
-});
-
-export const ToolbarFixedAdjust = simpleComponentFactory('ToolbarFixedAdjust', {
-	classNames: 'mdc-toolbar-fixed-adjust'
-});
-
-export class Toolbar extends MDCComponentBase {
-	static MDCComponentClass = MDCToolbar;
-
-	static propTypes = {
-		...ToolbarRoot.propTypes,
-		...MDCComponentBase.propTypes
-	};
-
-	static defaultProps = {
-		...ToolbarRoot.defaultProps,
-		...MDCComponentBase.defaultProps
-	};
-
-	static propMeta = propMeta({
-		...ToolbarRoot.propMeta,
-		...MDCComponentBase.propMeta
-	});
-
-	componentDidUpdate(prevProps) {
-		const didChange = ['fixedLastrowOnly', 'flexible'].some(
-			key => this.MDCApi[key] !== prevProps[key]
-		);
-		if (didChange) {
-			const firstRow = this.MDCGetRootElement().querySelector(
-				'.mdc-toolbar__row'
-			);
-			firstRow && firstRow.removeAttribute('style');
-			this.MDCComponentReinit();
-		}
-	}
-
-	render() {
-		const { apiRef, ...rest } = this.props;
-		return (
-			<ToolbarRoot elementRef={el => this.MDCSetRootElement(el)} {...rest} />
-		);
-	}
+export class ToolbarSection extends simpleTag({
+  displayName: 'ToolbarSection',
+  tag: 'section',
+  classNames: props => [
+    'mdc-toolbar__section',
+    {
+      'mdc-toolbar__section--align-start': props.alignStart,
+      'mdc-toolbar__section--align-end': props.alignEnd,
+      'mdc-toolbar__section--shrink-to-fit': props.shrinkToFit
+    }
+  ],
+  defaultProps: {
+    alignStart: false,
+    alignEnd: false,
+    shrinkToFit: false
+  },
+  consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
+})<ToolbarSectionPropsT> {
+  render() {
+    return super.render();
+  }
 }
+
+export const ToolbarRow = simpleTag({
+  displayName: 'ToolbarRow',
+  classNames: 'mdc-toolbar__row'
+});
+
+/**
+ * This component can be placed after a fixed Toolbar component to fill in the space.
+ */
+export const ToolbarFixedAdjust = simpleTag({
+  displayName: 'ToolbarFixedAdjust',
+  classNames: 'mdc-toolbar-fixed-adjust'
+});
+
+export const Toolbar = withMDC({
+  mdcConstructor: MDCToolbar,
+  mdcElementRef: true,
+  onUpdate(props, nextProps, api, inst) {
+    const didChange = ['fixedLastrowOnly', 'flexible'].some(key => {
+      if (api && props) {
+        api[key] !== props[key];
+      }
+    });
+    if (didChange) {
+      const firstRow = inst
+        .mdcGetRootElement()
+        .querySelector('.mdc-toolbar__row');
+      firstRow && firstRow.removeAttribute('style');
+      inst.mdcComponentReinit();
+    }
+  }
+})(
+  class extends React.Component<ToolbarRootPropsT> {
+    static displayName = 'Toolbar';
+
+    render() {
+      const { mdcElementRef, ...rest } = this.props;
+      return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
+    }
+  }
+);
 
 export default Toolbar;

@@ -1,167 +1,147 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import MDCComponentBase from '../Base/mdc-component-base';
-import { propMeta } from '../Base/prop-meta';
 import { List, ListItem } from '../List';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
+import { simpleTag, withMDC } from '../Base';
+import type { SimpleTagPropsT } from '../Base';
 
-export const SelectRoot = simpleComponentFactory('SelectRoot', {
-	classNames: 'mdc-select',
-	defaultProps: {
-		role: 'listbox',
-		tabIndex: '0'
-	}
+export const SelectRoot = simpleTag({
+  displayName: 'SelectRoot',
+  classNames: 'mdc-select',
+  defaultProps: {
+    role: 'listbox',
+    tabIndex: '0'
+  }
 });
 
-export const SelectSelectedText = simpleComponentFactory('SelectSelectedText', {
-	tag: 'span',
-	classNames: 'mdc-select__selected-text'
+export const SelectSelectedText = simpleTag({
+  displayName: 'SelectSelectedText',
+  tag: 'span',
+  classNames: 'mdc-select__selected-text'
 });
 
 export const SelectLabel = props => (
-	<div
-		style={{ position: 'absolute', marginTop: '34px', whiteSpace: 'nowrap' }}
-	>
-		<label className="mdc-textfield__label mdc-textfield__label--float-above">
-			{props.children}
-		</label>
-	</div>
+  <div
+    style={{ position: 'absolute', marginTop: '34px', whiteSpace: 'nowrap' }}
+  >
+    <label className="mdc-textfield__label mdc-textfield__label--float-above">
+      {props.children}
+    </label>
+  </div>
 );
 
-export const SelectMenu = simpleComponentFactory('SelectMenu', {
-	classNames: 'mdc-simple-menu mdc-select__menu'
+export const SelectMenu = simpleTag({
+  displayName: 'SelectMenu',
+  classNames: 'mdc-simple-menu mdc-select__menu'
 });
 
-export const SelectFormField = simpleComponentFactory('SelectMenu', {
-	classNames: 'rmwc-select-form-field',
-	defaultProps: {
-		style: {
-			height: '48px',
-			marginTop: '16px',
-			marginBottom: '8px',
-			display: 'inline-flex',
-			alignItems: 'flex-end'
-		}
-	}
+export const SelectFormField = simpleTag({
+  displayName: 'SelectMenu',
+  classNames: 'rmwc-select-form-field',
+  defaultProps: {
+    style: {
+      height: '48px',
+      marginTop: '16px',
+      marginBottom: '8px',
+      display: 'inline-flex',
+      alignItems: 'flex-end'
+    }
+  }
 });
 
-export class Select extends MDCComponentBase {
-	static MDCComponentClass = MDCSelect;
+type SelectPropsT = {
+  /** An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}. */
+  options: Object | mixed[],
+  /** A label for the form control. */
+  label?: string,
+  /** Placeholder text for the form control. */
+  placeholder?: string,
+  /** Disables the form control. */
+  disabled?: boolean
+} & SimpleTagPropsT;
 
-	static propTypes = {
-		options: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-		label: PropTypes.string,
-		placeholder: PropTypes.string,
-		disabled: PropTypes.bool,
-		...MDCComponentBase.propTypes
-	};
+const getDisplayValue = (value, options, placeholder) => {
+  placeholder = placeholder || '\u00a0';
 
-	static defaultProps = {
-		options: undefined,
-		label: undefined,
-		placeholder: undefined,
-		disabled: false,
-		...MDCComponentBase.defaultProps
-	};
+  if (options) {
+    return options.get(value) !== undefined ? options.get(value) : placeholder;
+  }
 
-	static propMeta = propMeta({
-		placeholder: {
-			type: 'String',
-			desc: 'Placeholder text for the form control.'
-		},
-		options: {
-			type: ['Array', 'Object'],
-			desc:
-				'An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}.'
-		},
-		label: {
-			type: 'String',
-			desc: 'A label for the form control.'
-		},
-		disabled: {
-			type: 'Boolean',
-			desc: 'Disables the form control.'
-		},
-		...MDCComponentBase.propMeta
-	});
+  return value || placeholder;
+};
 
-	MDCComponentDidMount() {
-		this.MDCRegisterListener('MDCSelect:change', evt => {
-			evt.target.value = this.MDCApi.value;
-			this.props.onChange && this.props.onChange(evt);
-		});
-		window.requestAnimationFrame(() => this.MDCApi.foundation_.resize());
-	}
+export const Select: React.ComponentType<SelectPropsT> = withMDC({
+  mdcConstructor: MDCSelect,
+  mdcElementRef: true,
+  mdcEvents: {
+    'MDCSelect:change': (evt, props, api) => {
+      evt.target.value = api.value;
+      props.onChange && props.onChange(evt);
+    }
+  },
+  defaultProps: {
+    options: undefined,
+    label: undefined,
+    placeholder: undefined,
+    disabled: false
+  },
+  onMount: (props, api) => {
+    window.requestAnimationFrame(() => api && api.foundation_.resize());
+  },
+  onUpdate: (props, nextProps, api) => {
+    if (!api) return;
 
-	MDCHandleProps(nextProps, initialMount) {
-		if (this.props.value !== nextProps.value || initialMount) {
-			const newIndex = this.MDCApi.options.indexOf(
-				this.MDCApi.nameditem(nextProps.value)
-			);
-			this.MDCApi.selectedIndex =
-				newIndex == -1 && this.props.placeholder ? 0 : newIndex;
-		}
-	}
+    if ((props && props.value !== nextProps.value) || props === undefined) {
+      const newIndex = api.options.indexOf(api.nameditem(nextProps.value));
+      api.selectedIndex =
+        newIndex === -1 && nextProps.placeholder ? 0 : newIndex;
+    }
 
-	componentDidUpdate(prevProps) {
-		this.MDCApi.foundation_.resize();
-	}
+    window.requestAnimationFrame(() => api && api.foundation_.resize());
+  }
+})(
+  class extends React.Component<SelectPropsT> {
+    static displayName = 'Select';
 
-	getDisplayValue(value, options, placeholder) {
-		placeholder = placeholder || '\u00a0';
+    render() {
+      const {
+        placeholder = '',
+        value,
+        label = '',
+        options,
+        mdcElementRef,
+        ...rest
+      } = this.props;
 
-		if (options) {
-			return options.get(value) !== undefined
-				? options.get(value)
-				: placeholder;
-		}
+      const selectOptions = Array.isArray(options) ?
+        new Map(options.map(val => [val, val])) :
+        new Map(Object.entries(options).map(([val, label]) => [label, val]));
 
-		return value || placeholder;
-	}
+      const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
-	render() {
-		const {
-			placeholder = '',
-			value,
-			label = '',
-			options,
-			apiRef,
-			...rest
-		} = this.props;
-
-		const selectOptions = Array.isArray(options)
-			? new Map(options.map(val => [val, val]))
-			: new Map(Object.entries(options).map(([val, label]) => [label, val]));
-
-		const displayValue = this.getDisplayValue(
-			value,
-			selectOptions,
-			placeholder
-		);
-
-		return (
-			<SelectRoot elementRef={el => this.MDCSetRootElement(el)} {...rest}>
-				<SelectSelectedText>{displayValue}</SelectSelectedText>
-				{!!label.length && <SelectLabel>{label}</SelectLabel>}
-				<SelectMenu>
-					<List className="mdc-simple-menu__items">
-						{!!placeholder.length && (
-							<ListItem role="option" id="placeholder" aria-disabled="true">
-								{placeholder}
-							</ListItem>
-						)}
-						{options &&
-							Array.from(selectOptions).map(([optionLabel, optionVal], i) => (
-								<ListItem key={i} role="option" id={optionVal} tabIndex="0">
-									{optionLabel}
-								</ListItem>
-							))}
-					</List>
-				</SelectMenu>
-			</SelectRoot>
-		);
-	}
-}
+      return (
+        <SelectRoot elementRef={mdcElementRef} {...rest}>
+          <SelectSelectedText>{displayValue}</SelectSelectedText>
+          {!!label.length && <SelectLabel>{label}</SelectLabel>}
+          <SelectMenu>
+            <List className="mdc-simple-menu__items">
+              {!!placeholder.length && (
+                <ListItem role="option" id="placeholder" aria-disabled="true">
+                  {placeholder}
+                </ListItem>
+              )}
+              {options &&
+                Array.from(selectOptions).map(([optionLabel, optionVal], i) => (
+                  <ListItem key={i} role="option" id={optionVal} tabIndex="0">
+                    {optionLabel}
+                  </ListItem>
+                ))}
+            </List>
+          </SelectMenu>
+        </SelectRoot>
+      );
+    }
+  }
+);
 
 export default Select;

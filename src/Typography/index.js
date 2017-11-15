@@ -1,49 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import simpleComponentFactory from '../Base/simple-component-factory';
+// @flow
+import * as React from 'react';
+import { simpleTag } from '../Base';
 
-export const Typography = simpleComponentFactory('Typography', {
-	tag: 'span',
-	classNames: props => [
-		{
-			[`mdc-typography--${props.use}`]: props.use,
-			'mdc-typography--adjust-margin': props.adjustMargin
-		}
-	],
-	propTypes: {
-		use: PropTypes.oneOf([
-			'display4',
-			'display3',
-			'display2',
-			'display1',
-			'headline',
-			'title',
-			'subheading2',
-			'subheading1',
-			'body2',
-			'body1',
-			'caption',
-			'button'
-		]).isRequired,
-		adjustMargin: PropTypes.bool
-	},
-	defaultProps: {
-		use: undefined,
-		adjustMargin: false
-	},
-	propMeta: {
-		use: {
-			type: 'String',
-			desc:
-				'The typography style. display4, display3, display2, display1, headline, title, subheading2, subheading1, body2, body1, caption, button.'
-		},
-		adjustMargin: {
-			type: 'Boolean',
-			desc:
-				'Sets adjust margin modifier for Typography. Should be accompanied by a type class.'
-		}
-	},
-	consumeProps: ['use', 'adjustMargin']
-});
+import type { SimpleTagPropsT } from '../Base';
+
+export type TypographyPropsT = {
+  /* prettier-ignore */
+  /** The typography style.*/
+  use: 'display4' | 'display3' | 'display2' | 'display1' | 'headline' | 'title' | 'subheading2' | 'subheading1' | 'body2' | 'body1' | 'caption' | 'button',
+  /** Sets adjust margin modifier for Typography. */
+  adjustMargin?: boolean
+} & SimpleTagPropsT;
+
+/**
+ * The Typography Component
+ */
+export class Typography extends simpleTag({
+  displayName: 'Typography',
+  defaultProps: {
+    use: undefined,
+    adjustMargin: false
+  },
+  tag: 'span',
+  classNames: props => [
+    {
+      [`mdc-typography--${props.use}`]: props.use,
+      'mdc-typography--adjust-margin': props.adjustMargin
+    }
+  ],
+  consumeProps: ['use', 'adjustMargin']
+})<TypographyPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export default Typography;

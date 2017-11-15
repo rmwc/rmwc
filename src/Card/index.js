@@ -1,98 +1,115 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+/**
+ * @module Card
+ */
+import * as React from 'react';
 import classNames from 'classnames';
-import simpleComponentFactory from '../Base/simple-component-factory';
 import Button from '../Button';
+import { simpleTag } from '../Base';
+import type { SimpleTagPropsT } from '../Base';
 
-export const CardPrimary = simpleComponentFactory('CardPrimary', {
-	tag: 'section',
-	classNames: 'mdc-card__primary'
+/**
+ * Primary card content
+ */
+export const CardPrimary: React.ComponentType<SimpleTagPropsT> = simpleTag({
+  displayName: 'CardPrimary',
+  tag: 'section',
+  classNames: 'mdc-card__primary'
 });
 
-export const CardTitle = simpleComponentFactory('CardTitle', {
-	tag: 'h1',
-	classNames: props => [
-		'mdc-card__title',
-		{
-			'mdc-card__title--large': props.large
-		}
-	],
-	propTypes: {
-		large: PropTypes.bool
-	},
-	defaultProps: {
-		large: false
-	},
-	consumeProps: ['large']
+type CardTitlePropsT = {
+  /** Make the title large. */
+  large: boolean
+} & SimpleTagPropsT;
+
+/** Title for the Card */
+export class CardTitle extends simpleTag({
+  displayName: 'CardTitle',
+  tag: 'h1',
+  classNames: props => [
+    'mdc-card__title',
+    {
+      'mdc-card__title--large': props.large
+    }
+  ],
+  defaultProps: {
+    large: false
+  },
+  consumeProps: ['large']
+})<CardTitlePropsT> {
+  render() {
+    return super.render();
+  }
+}
+
+/** Subtitle for the Card */
+export const CardSubtitle = simpleTag({
+  displayName: 'CardSubtitle',
+  tag: 'h2',
+  classNames: 'mdc-card__subtitle'
 });
 
-export const CardSubtitle = simpleComponentFactory('CardSubtitle', {
-	tag: 'h2',
-	classNames: 'mdc-card__subtitle'
+/** Supporting text for the Card. */
+export const CardSupportingText: React.ComponentType<
+  SimpleTagPropsT
+> = simpleTag({
+  displayName: 'CardSupportingText',
+  tag: 'section',
+  classNames: 'mdc-card__supporting-text'
 });
 
-export const CardSupportingText = simpleComponentFactory('CardSupportingText', {
-	tag: 'section',
-	classNames: 'mdc-card__supporting-text'
+/** Action Button for the Card */
+export const CardActions = simpleTag({
+  displayName: 'CardActions',
+  tag: 'section',
+  classNames: 'mdc-card__actions'
 });
 
-export const CardActions = simpleComponentFactory('CardActions', {
-	tag: 'section',
-	classNames: 'mdc-card__actions'
+/** Media for the Card */
+export const CardMedia = simpleTag({
+  displayName: 'CardMedia',
+  tag: 'section',
+  classNames: 'mdc-card__media'
 });
 
-export const CardMedia = simpleComponentFactory('CardMedia', {
-	tag: 'section',
-	classNames: 'mdc-card__media'
+/** Horizontal content for the Card */
+export const CardHorizontalBlock: React.ComponentType<
+  SimpleTagPropsT
+> = simpleTag({
+  displayName: 'CardHorizontalBlock',
+  classNames: 'mdc-card__media'
 });
 
-export const CardHorizontalBlock = simpleComponentFactory(
-	'CardHorizontalBlock',
-	{
-		className: 'mdc-card__media'
-	}
-);
-
-export const Card = simpleComponentFactory('Card', {
-	classNames: props => [
-		'mdc-card',
-		{
-			'mdc-card--theme-dark': props.themeDark
-		}
-	],
-	propTypes: {
-		themeDark: PropTypes.bool
-	},
-	defaultProps: {
-		themeDark: false
-	},
-	consumeProps: ['themeDark'],
-	propMeta: {
-		themeDark: {
-			type: 'Boolean',
-			desc: 'Use the cards dark theme.'
-		}
-	}
-});
-
-export const CardAction = props => {
-	const { className, children, ...rest } = props;
-
-	const classes = classNames('mdc-card__action', className);
-
-	return (
-		<Button compact className={classes} {...rest}>
-			{children}
-		</Button>
-	);
+/** A Card action Button */
+export const CardAction: React.ComponentType<Button> = props => {
+  const { className, ...rest } = props;
+  const classes = classNames('mdc-card__action', className);
+  return <Button compact className={classes} {...rest} />;
 };
 
-CardAction.propTypes = {
-	...Button.propTypes
-};
+type CardPropsT = {
+  /** Use the cards dark theme. */
+  themeDark: boolean
+} & SimpleTagPropsT;
 
-CardAction.defaultProps = {
-	...Button.defaultProps
-};
+/** A Card Component */
+export class Card extends simpleTag({
+  displayName: 'Card',
+  classNames: props => [
+    'mdc-card',
+    {
+      'mdc-card--theme-dark': props.themeDark
+    }
+  ],
+  defaultProps: {
+    themeDark: false
+  },
+  consumeProps: ['themeDark']
+})<CardPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 export default Card;
