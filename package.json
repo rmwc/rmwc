@@ -32,12 +32,14 @@
     "start": "node scripts/start.js",
     "babelfy": "node scripts/babelfy.js",
     "clean": "node scripts/clean.js",
+    "prepublishOnly": "npm run babelfy",
+    "postpublish": "npm run clean",
     "docgen":
       "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./docs/docgen.json",
     "build": "node scripts/build.js",
     "build:lib": "node scripts/build-lib.js",
     "deploy:docs":
-      "npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+      "npm run docgen && npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
     "changelog": "changelog",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
