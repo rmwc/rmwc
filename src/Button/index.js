@@ -1,102 +1,81 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// @flow
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Ripple } from '../Ripple';
 import { getProviderOptions } from '../Provider';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
-import { propMeta } from '../Base/prop-meta';
 
-export const ButtonRoot = simpleComponentFactory('ButtonRoot', {
-	tag: 'button',
-	classNames: props => [
-		'mdc-button',
-		{
-			'mdc-button--dense': props.dense,
-			'mdc-button--raised': props.raised,
-			'mdc-button--compact': props.compact,
-			'mdc-button--unelevated': props.unelevated,
-			'mdc-button--stroked': props.stroked
-		}
-	],
-	propTypes: {
-		dense: PropTypes.bool,
-		raised: PropTypes.bool,
-		compact: PropTypes.bool,
-		unelevated: PropTypes.bool,
-		stroked: PropTypes.bool
-	},
-	defaultProps: {
-		dense: false,
-		raised: false,
-		compact: false,
-		unelevated: false,
-		stroked: false
-	},
-	propMeta: {
-		dense: {
-			type: 'Boolean',
-			desc: 'Make the Button text dense.'
-		},
-		raised: {
-			type: 'Boolean',
-			desc: 'Make the Button raised.'
-		},
-		compact: {
-			type: 'Boolean',
-			desc: "Reduce the Button's padding."
-		},
-		unelevated: {
-			type: 'Boolean',
-			desc: 'Make the button unelevated.'
-		},
-		stroked: {
-			type: 'Boolean',
-			desc: 'Use the stroked palette.'
-		}
-	},
-	consumeProps: ['dense', 'raised', 'compact', 'unelevated', 'stroked']
-});
+import { simpleTag, withRipple } from '../Base';
+import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
 
-export class Button extends React.Component {
-	static contextTypes = {
-		RMWCOptions: PropTypes.object
-	};
+export type ButtonRootPropsT = {
+  /** Make the Button dense. */
+  dense?: boolean,
+  /** Make the Button raised. */
+  raised?: boolean,
+  /** Reduce the Button's padding. */
+  compact?: boolean,
+  /** Make the button unelevated. */
+  unelevated?: boolean,
+  /** Make the button stroked. */
+  stroked?: boolean
+} & SimpleTagPropsT &
+  WithRipplePropsT;
 
-	static propTypes = {
-		ripple: PropTypes.bool,
-		...ButtonRoot.propTypes
-	};
+export const ButtonRoot: React.ComponentType<ButtonRootPropsT> = withRipple(
+  simpleTag({
+    displayName: 'ButtonRoot',
+    tag: 'button',
+    defaultProps: {
+      dense: false,
+      raised: false,
+      compact: false,
+      unelevated: false,
+      stroked: false
+    },
+    consumeProps: ['dense', 'raised', 'compact', 'unelevated', 'stroked'],
+    classNames: props => [
+      'mdc-button',
+      {
+        'mdc-button--dense': props.dense,
+        'mdc-button--raised': props.raised,
+        'mdc-button--compact': props.compact,
+        'mdc-button--unelevated': props.unelevated,
+        'mdc-button--stroked': props.stroked
+      }
+    ]
+  })
+);
 
-	static defaultProps = {
-		ripple: undefined,
-		...ButtonRoot.defaultProps
-	};
+/**
+ * The Button component.
+ */
+export class Button extends React.Component<ButtonRootPropsT> {
+  static defaultProps = {
+    dense: false,
+    raised: false,
+    compact: false,
+    unelevated: false,
+    stroked: false
+  };
 
-	static propMeta = propMeta({
-		...ButtonRoot.propMeta,
-		ripple: {
-			type: 'Boolean',
-			desc: 'Adds or disables a ripple from the Button.'
-		}
-	});
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
-	componentWillMount() {
-		this.providerOptions = getProviderOptions(this.context);
-	}
+  static contextTypes = {
+    RMWCOptions: PropTypes.object
+  };
 
-	render() {
-		const { buttonDefaultRipple } = this.providerOptions;
-		const { ripple, ...rest } = this.props;
-		const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
+  providerOptions: RMWCProviderOptionsT;
+  context: Object;
 
-		const button = <ButtonRoot {...rest} />;
-
-		if (shouldRipple) {
-			return <Ripple>{button}</Ripple>;
-		}
-
-		return button;
-	}
+  render() {
+    const { buttonDefaultRipple } = this.providerOptions;
+    const { ripple, ...rest } = this.props;
+    const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
+    const rippleProps = shouldRipple ? { ripple: true } : {};
+    return <ButtonRoot {...rippleProps} {...rest} />;
+  }
 }
 
 export default Button;

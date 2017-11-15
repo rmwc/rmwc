@@ -1,88 +1,74 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+// @flow
+import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
-import { propMeta } from '../Base/prop-meta';
-import { noop } from '../Base/noop';
-import MDCComponentBase from '../Base/mdc-component-base';
+import { simpleTag, withMDC } from '../Base';
 
-export class IconToggle extends MDCComponentBase {
-	static MDCComponentClass = MDCIconToggle;
+export const IconToggleRoot = simpleTag({
+  displayName: 'IconToggleRoot',
+  tag: Icon,
+  classNames: 'mdc-icon-toggle',
+  defaultProps: {
+    role: 'button',
+    tabIndex: '0'
+  }
+});
 
-	static propTypes = {
-		...MDCComponentBase.propTypes,
-		onChange: PropTypes.func,
-		on: PropTypes.object.isRequired,
-		off: PropTypes.object.isRequired
-	};
+type IconToggleT = {
+  /* prettier-ignore */
+  /** An onChange callback that receives an event with event.target.value set to true or false. */
+  onChange?: (evt: Object) => mixed,
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  on: Object,
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  off: Object,
+  /** Whether the toggle is on or off */
+  value?: boolean
+};
 
-	static defaultProps = {
-		...MDCComponentBase.defaultProps,
-		onChange: noop,
-		on: undefined,
-		off: undefined
-	};
+/**
+ * Icon Toggle Component
+ */
+export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
+  mdcConstructor: MDCIconToggle,
+  mdcElementRef: true,
+  mdcEvents: {
+    'MDCIconToggle:change': (evt, props, api) => {
+      props.onChange &&
+        props.onChange({
+          ...evt.detail,
+          target: {
+            value: evt.detail.isOn
+          }
+        });
+    }
+  },
+  onUpdate(props, nextProps, api) {
+    if (api && nextProps.value !== undefined) {
+      api.on = !!nextProps.value;
+    }
+  }
+})(
+  class extends React.Component<IconToggleT> {
+    static displayName = 'IconToggle';
 
-	static propMeta = propMeta({
-		...MDCComponentBase.propMeta,
-		onChange: {
-			type: 'Function',
-			desc:
-				'An onChange callback that receives an event with event.target.value set to true or false.'
-		},
-		on: {
-			type: 'Object',
-			desc:
-				'An object that can be parsed as valid JSON that gets passed to the MDC constructor.'
-		},
-		off: {
-			type: 'Object',
-			desc:
-				'An object that can be parsed as valid JSON that gets passed to the MDC constructor.'
-		}
-	});
+    render() {
+      const { value, on, off, mdcElementRef, ...rest } = this.props;
+      const ariaPressed = value !== undefined ? !!value : false;
+      const toggleOnJSON = JSON.stringify(on);
+      const toggleOffJSON = JSON.stringify(off);
 
-	MDCComponentDidMount() {
-		if (this.props.onChange) {
-			this.MDCRegisterListener('MDCIconToggle:change', ({ detail }) => {
-				this.props.onChange({
-					...detail,
-					target: {
-						value: detail.isOn
-					}
-				});
-			});
-		}
-	}
-
-	MDCHandleProps(props) {
-		if (props.value !== undefined) {
-			this.api.on = !!props.value;
-		}
-	}
-
-	render() {
-		const { className, children, value, apiRef, on, off, ...rest } = this.props;
-
-		const classes = classNames('mdc-icon-toggle', className);
-
-		const ariaPressed = value !== undefined ? !!value : false;
-		const toggleOnJSON = JSON.stringify(on);
-		const toggleOffJSON = JSON.stringify(off);
-		return (
-			<Icon
-				elementRef={el => this.MDCSetRootElement(el)}
-				className={classes}
-				{...rest}
-				data-toggle-on={toggleOnJSON}
-				data-toggle-off={toggleOffJSON}
-				role="button"
-				aria-pressed={ariaPressed}
-				tabIndex="0"
-			/>
-		);
-	}
-}
+      return (
+        <IconToggleRoot
+          elementRef={mdcElementRef}
+          {...rest}
+          data-toggle-on={toggleOnJSON}
+          data-toggle-off={toggleOffJSON}
+          aria-pressed={ariaPressed}
+        />
+      );
+    }
+  }
+);
 
 export default IconToggle;

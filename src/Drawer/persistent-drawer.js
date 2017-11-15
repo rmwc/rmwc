@@ -1,124 +1,97 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
-import { propMeta } from '../Base/prop-meta';
+// @flow
+import * as React from 'react';
+import { simpleTag } from '../Base';
 import { List } from '../List';
-import { DrawerBase } from '../Base/drawer-component-base';
+import { withMDCDrawer } from '../Base';
 import { MDCPersistentDrawer } from '@material/drawer/dist/mdc.drawer';
 
 /***************************************************************************************
  * Drawer Headers
  ***************************************************************************************/
-export const PersistentDrawerHeaderRoot = simpleComponentFactory(
-	'PersistentDrawerHeader',
-	{
-		classNames: 'mdc-persistent-drawer__header'
-	}
-);
+export const PersistentDrawerHeaderRoot = simpleTag({
+  displayName: 'PersistentDrawerHeader',
+  classNames: 'mdc-persistent-drawer__header'
+});
 
-export const PersistentDrawerHeaderContent = simpleComponentFactory(
-	'PersistentDrawerHeaderContent',
-	{
-		classNames: 'mdc-persistent-drawer__header-content'
-	}
-);
+export const PersistentDrawerHeaderContent = simpleTag({
+  displayName: 'PersistentDrawerHeaderContent',
+  classNames: 'mdc-persistent-drawer__header-content'
+});
 
-export class PersistentDrawerHeader extends React.Component {
-	static propTypes = {
-		...PersistentDrawerHeaderRoot.propTypes
-	};
-
-	static defaultProps = {
-		...PersistentDrawerHeaderRoot.defaultProps
-	};
-
-	static propMeta = propMeta({
-		...PersistentDrawerHeaderRoot.propMeta
-	});
-
-	render() {
-		const { children, ...rest } = this.props;
-		return (
-			<PersistentDrawerHeaderRoot {...rest}>
-				<PersistentDrawerHeaderContent>
-					{children}
-				</PersistentDrawerHeaderContent>
-			</PersistentDrawerHeaderRoot>
-		);
-	}
+export class PersistentDrawerHeader extends React.Component<{}> {
+  render() {
+    const { children, ...rest } = this.props;
+    return (
+      <PersistentDrawerHeaderRoot {...rest}>
+        <PersistentDrawerHeaderContent>
+          {children}
+        </PersistentDrawerHeaderContent>
+      </PersistentDrawerHeaderRoot>
+    );
+  }
 }
 
 /***************************************************************************************
  * Drawer Content
  ***************************************************************************************/
-export const PersistentDrawerContent = simpleComponentFactory(
-	'PersistentDrawerContent',
-	{
-		tag: List,
-		classNames: 'mdc-persistent-drawer__content'
-	}
-);
+export const PersistentDrawerContent = simpleTag({
+  displayName: 'PersistentDrawerContent',
+  tag: List,
+  classNames: 'mdc-persistent-drawer__content'
+});
 
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
 
-export const PersistentDrawerRoot = simpleComponentFactory(
-	'PersistentDrawerRoot',
-	{
-		tag: 'aside',
-		classNames: 'mdc-persistent-drawer'
-	}
+export const PersistentDrawerRoot = simpleTag({
+  displayName: 'PersistentDrawerRoot',
+  tag: 'aside',
+  classNames: 'mdc-persistent-drawer'
+});
+
+export const PersistentDrawerDrawer = simpleTag({
+  displayName: 'PersistentDrawerDrawer',
+  tag: 'header',
+  classNames: 'mdc-persistent-drawer__drawer'
+});
+
+type PersistentDrawerPropsT = {
+  /** Opens or closes the Drawer. */
+  open: boolean,
+  /** Callback that fires when the Drawer is closed. */
+  onClose?: (evt: Event) => mixed,
+  /** Callback that fires when the Drawer is opened. */
+  onOpen?: (evt: Event) => mixed
+};
+
+export const PersistentDrawer = withMDCDrawer({
+  mdcConstructor: MDCPersistentDrawer,
+  mdcElementRef: true,
+  drawerConstructorName: 'MDCPersistentDrawer',
+  defaultProps: {
+    open: false
+  }
+})(
+  class extends React.Component<PersistentDrawerPropsT> {
+    static displayName = 'PersistentDrawer';
+
+    render() {
+      const {
+        children,
+        onOpen,
+        onClose,
+        open,
+        mdcElementRef,
+        ...rest
+      } = this.props;
+      return (
+        <PersistentDrawerRoot elementRef={mdcElementRef} {...rest}>
+          <PersistentDrawerDrawer>{children}</PersistentDrawerDrawer>
+        </PersistentDrawerRoot>
+      );
+    }
+  }
 );
-
-export const PersistentDrawerDrawer = simpleComponentFactory(
-	'PersistentDrawerDrawer',
-	{
-		tag: 'header',
-		classNames: 'mdc-persistent-drawer__drawer'
-	}
-);
-
-export class PersistentDrawer extends DrawerBase {
-	static MDCComponentClass = MDCPersistentDrawer;
-	static drawerConstructorName = 'MDCPersistentDrawer';
-
-	static propTypes = {
-		open: PropTypes.bool,
-		...DrawerBase.propTypes,
-		...PersistentDrawerRoot.propTypes
-	};
-
-	static defaultProps = {
-		open: false,
-		...DrawerBase.defaultProps,
-		...PersistentDrawerRoot.defaultProps
-	};
-
-	static propMeta = propMeta({
-		open: {
-			type: 'Boolean',
-			desc: 'Opens the drawer'
-		},
-		...DrawerBase.propMeta,
-		...PersistentDrawerRoot.propMeta
-	});
-
-	render() {
-		const { children, onOpen, onClose, open, apiRef, ...rest } = this.props;
-
-		return (
-			<PersistentDrawerRoot
-				elementRef={el => this.MDCSetRootElement(el)}
-				{...rest}
-			>
-				<PersistentDrawerDrawer elementRef={el => (this.drawerEl = el)}>
-					{children}
-				</PersistentDrawerDrawer>
-			</PersistentDrawerRoot>
-		);
-	}
-}
 
 export default PersistentDrawer;

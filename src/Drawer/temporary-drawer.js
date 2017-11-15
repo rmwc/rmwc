@@ -1,114 +1,94 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { simpleComponentFactory } from '../Base/simple-component-factory';
-import { propMeta } from '../Base/prop-meta';
+// @flow
+import * as React from 'react';
+import { simpleTag } from '../Base';
 import { List } from '../List';
-import { DrawerBase } from '../Base/drawer-component-base';
+import { withMDCDrawer } from '../Base';
 import { MDCTemporaryDrawer } from '@material/drawer/dist/mdc.drawer';
 
 /***************************************************************************************
  * Drawer Headers
  ***************************************************************************************/
-export const TemporaryDrawerHeaderRoot = simpleComponentFactory(
-	'TemporaryDrawerHeader',
-	{
-		classNames: 'mdc-temporary-drawer__header'
-	}
-);
+export const TemporaryDrawerHeaderRoot = simpleTag({
+  displayName: 'TemporaryDrawerHeader',
+  classNames: 'mdc-temporary-drawer__header'
+});
 
-export const TemporaryDrawerHeaderContent = simpleComponentFactory(
-	'TemporaryDrawerHeaderContent',
-	{
-		classNames: 'mdc-temporary-drawer__header-content'
-	}
-);
+export const TemporaryDrawerHeaderContent = simpleTag({
+  displayName: 'TemporaryDrawerHeaderContent',
+  classNames: 'mdc-temporary-drawer__header-content'
+});
 
-export class TemporaryDrawerHeader extends React.Component {
-	static propTypes = {
-		...TemporaryDrawerHeaderRoot.propTypes
-	};
-
-	static defaultProps = {
-		...TemporaryDrawerHeaderRoot.defaultProps
-	};
-
-	static propMeta = propMeta({
-		...TemporaryDrawerHeaderRoot.propMeta
-	});
-
-	render() {
-		const { children, ...rest } = this.props;
-		return (
-			<TemporaryDrawerHeaderRoot {...rest}>
-				<TemporaryDrawerHeaderContent>{children}</TemporaryDrawerHeaderContent>
-			</TemporaryDrawerHeaderRoot>
-		);
-	}
+export class TemporaryDrawerHeader extends React.Component<{}> {
+  render() {
+    const { children, ...rest } = this.props;
+    return (
+      <TemporaryDrawerHeaderRoot {...rest}>
+        <TemporaryDrawerHeaderContent>{children}</TemporaryDrawerHeaderContent>
+      </TemporaryDrawerHeaderRoot>
+    );
+  }
 }
 
 /***************************************************************************************
  * Drawer Content
  ***************************************************************************************/
-export const TemporaryDrawerContent = simpleComponentFactory(
-	'TemporaryDrawerContent',
-	{
-		tag: List,
-		classNames: 'mdc-temporary-drawer__content'
-	}
-);
+export const TemporaryDrawerContent = simpleTag({
+  displayName: 'TemporaryDrawerContent',
+  tag: List,
+  classNames: 'mdc-temporary-drawer__content'
+});
 
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
-export const TemporaryDrawerRoot = simpleComponentFactory(
-	'TemporaryDrawerRoot',
-	{
-		tag: 'aside',
-		classNames: 'mdc-temporary-drawer'
-	}
+export const TemporaryDrawerRoot = simpleTag({
+  displayName: 'TemporaryDrawerRoot',
+  tag: 'aside',
+  classNames: 'mdc-temporary-drawer'
+});
+
+export const TemporaryDrawerDrawer = simpleTag({
+  displayName: 'TemporaryDrawerDrawer',
+  tag: 'header',
+  classNames: 'mdc-temporary-drawer__drawer'
+});
+
+type TemporaryDrawerPropsT = {
+  /** Opens or closes the Drawer. */
+  open: boolean,
+  /** Callback that fires when the Drawer is closed. */
+  onClose?: (evt: Event) => mixed,
+  /** Callback that fires when the Drawer is opened. */
+  onOpen?: (evt: Event) => mixed
+};
+
+export const TemporaryDrawer = withMDCDrawer({
+  mdcConstructor: MDCTemporaryDrawer,
+  mdcElementRef: true,
+  drawerConstructorName: 'MDCTemporaryDrawer',
+  defaultProps: {
+    open: false
+  }
+})(
+  class extends React.Component<TemporaryDrawerPropsT> {
+    static displayName = 'TemporaryDrawer';
+
+    render() {
+      const {
+        children,
+        onOpen,
+        onClose,
+        open,
+        mdcElementRef,
+        ...rest
+      } = this.props;
+      return (
+        <TemporaryDrawerRoot elementRef={mdcElementRef} {...rest}>
+          <TemporaryDrawerDrawer>{children}</TemporaryDrawerDrawer>
+        </TemporaryDrawerRoot>
+      );
+    }
+  }
 );
-
-export const TemporaryDrawerDrawer = simpleComponentFactory(
-	'TemporaryDrawerDrawer',
-	{
-		tag: 'header',
-		classNames: 'mdc-temporary-drawer__drawer'
-	}
-);
-
-export class TemporaryDrawer extends DrawerBase {
-	static MDCComponentClass = MDCTemporaryDrawer;
-	static drawerConstructorName = 'MDCTemporaryDrawer';
-
-	static propTypes = {
-		...DrawerBase.propTypes,
-		...TemporaryDrawerRoot.propTypes
-	};
-
-	static defaultProps = {
-		...DrawerBase.defaultProps,
-		...TemporaryDrawerRoot.defaultProps
-	};
-
-	static propMeta = propMeta({
-		...DrawerBase.propMeta,
-		...TemporaryDrawerRoot.propMeta
-	});
-
-	render() {
-		const { children, onOpen, onClose, open, apiRef, ...rest } = this.props;
-		return (
-			<TemporaryDrawerRoot
-				elementRef={el => this.MDCSetRootElement(el)}
-				{...rest}
-			>
-				<TemporaryDrawerDrawer elementRef={el => (this.drawerEl = el)}>
-					{children}
-				</TemporaryDrawerDrawer>
-			</TemporaryDrawerRoot>
-		);
-	}
-}
 
 export default TemporaryDrawer;
