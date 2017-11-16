@@ -332,7 +332,13 @@ export default [
       'https://material.io/components/web/catalog/input-controls/form-fields/',
     example: `
 			<FormField>
-				<Textfield placeholder="Wrapped Textfield"/>
+				<input type="text" id="input"/>
+				<label for="input">Input Label</label>
+			</FormField>
+
+			<FormField>
+				<input type="checkbox" id="input"/>
+				<label for="input">Input Label</label>
 			</FormField>
 		`
   },
@@ -393,7 +399,7 @@ export default [
 				step={5}
 			/>
 
-			<Textfield
+			<TextField
 				value={this.state.sliderValue === undefined ? 50 : this.state.sliderValue}
 				onChange={evt => this.setState({sliderValue: evt.target.value})}
 			/>
@@ -411,14 +417,14 @@ export default [
 		`
   },
   {
-    name: 'Textfields',
+    name: 'TextFields',
     section: 'textfields',
-    class: 'Textfield',
+    class: 'TextField',
     url:
       'https://material.io/components/web/catalog/input-controls/text-fields/',
     example: `
-				<Textfield label="Write something..." /> <br/>
-				<Textfield textarea label="Multiline..." rows="8" />
+				<TextField label="Write something..." /> <br/>
+				<TextField textarea label="Multiline..." rows="8" />
 		`
   },
   {
@@ -441,7 +447,6 @@ export default [
     url: 'https://material.io/components/web/catalog/linear-progress/',
     example: `
 			<LinearProgress progress={0.5}></LinearProgress>
-			<LinearProgress progress={0.3} accent></LinearProgress>
 			<LinearProgress progress={0.6} buffer={0.8}></LinearProgress>
 			<LinearProgress determinate={false}></LinearProgress>
 			<LinearProgress progress={0.2} reversed></LinearProgress>
