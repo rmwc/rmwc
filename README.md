@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master.svg?style=shield)](https://circleci.com/gh/jamesmfriedman/rmwc/tree/master) [![npm](https://img.shields.io/npm/v/rmwc.svg)]() [![npm](https://img.shields.io/npm/l/rmwc.svg)]()
 
 # RMWC - React Material Web Components
-A thin React wrapper for Material Design (Web) Components v0.24.0
+A thin React wrapper for Material Design (Web) Components v0.25.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 
