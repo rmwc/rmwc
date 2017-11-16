@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCTextfield } from '@material/textfield/dist/mdc.textfield';
+import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { noop } from '../Base/noop';
 import { simpleTag, withMDC } from '../Base';
 
@@ -60,7 +60,7 @@ type TextFieldPropsT = {
   SimpleTagPropsT;
 
 export const TextField = withMDC({
-  mdcConstructor: MDCTextfield,
+  mdcConstructor: MDCTextField,
   mdcElementRef: true,
   defaultProps: {
     inputRef: noop,

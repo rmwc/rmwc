@@ -2361,7 +2361,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Creates a multiline textfield."
+          "description": "Creates a multiline TextField."
         }
       }
     }
