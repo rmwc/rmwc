@@ -1,3 +1,9 @@
+#### 0.0.1-rc3 (2017-11-16)
+
+##### Bug Fixes
+
+* **TextField:** Classnames are now dashed ([de5805a0](https://github.com/jamesmfriedman/rmwc/commit/de5805a0ff0a392f348c3a507f10ad231d518af9))
+
 #### 0.0.1-rc2 (2017-11-16)
 ##### Docs
 
