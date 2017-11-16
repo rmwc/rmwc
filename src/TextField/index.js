@@ -16,8 +16,8 @@ export const TextFieldRoot: React.ComponentType<
 > = simpleTag({
   displayName: 'TextFieldRoot',
   classNames: props => [
-    'mdc-textfield',
-    { 'mdc-textfield--textarea': props.textarea }
+    'mdc-text-field',
+    { 'mdc-text-field--textarea': props.textarea }
   ],
   consumeProps: ['textarea']
 });
@@ -26,9 +26,9 @@ export const TextFieldLabel = simpleTag({
   displayName: 'TextFieldLabel',
   tag: 'label',
   classNames: props => [
-    'mdc-textfield__label',
+    'mdc-text-field__label',
     {
-      'mdc-textfield__label--float-above': props.value
+      'mdc-text-field__label--float-above': props.value
     }
   ],
   consumeProps: ['value']
@@ -37,7 +37,7 @@ export const TextFieldLabel = simpleTag({
 export const TextFieldInput = simpleTag({
   displayName: 'TextFieldInput',
   tag: 'input',
-  classNames: 'mdc-textfield__input',
+  classNames: 'mdc-text-field__input',
   defaultProps: {
     type: 'text'
   }
@@ -46,7 +46,7 @@ export const TextFieldInput = simpleTag({
 export const TextFieldTextarea = simpleTag({
   displayName: 'TextFieldTextarea',
   tag: 'textarea',
-  classNames: 'mdc-textfield__input'
+  classNames: 'mdc-text-field__input'
 });
 
 type TextFieldPropsT = {
