@@ -1,25 +1,25 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Textfield } from './';
+import { TextField } from './';
 
-describe('Textfield', () => {
+describe('TextField', () => {
   it('renders', () => {
-    mount(<Textfield placeholder="test" />);
+    mount(<TextField placeholder="test" />);
   });
 
   it('can have children', () => {
     mount(
-      <Textfield placeholder="test">
+      <TextField placeholder="test">
         <div>Child</div>
-      </Textfield>
+      </TextField>
     );
   });
 
   it('can have custom classnames', () => {
     const el = mount(
-      <Textfield placeholder="test" className="my-custom-classname">
+      <TextField placeholder="test" className="my-custom-classname">
         <div>Child</div>
-      </Textfield>
+      </TextField>
     );
 
     const html = el.html();
@@ -30,14 +30,14 @@ describe('Textfield', () => {
 
   it('can be bound', () => {
     const el = mount(
-      <Textfield placeholder="test" value="hello world" onChange={evt => {}} />
+      <TextField placeholder="test" value="hello world" onChange={evt => {}} />
     );
     expect(el.find('input').getDOMNode().value).toBe('hello world');
   });
 
   it('can be textarea', () => {
     const el = mount(
-      <Textfield
+      <TextField
         placeholder="test"
         value="hello world"
         textarea
@@ -48,7 +48,7 @@ describe('Textfield', () => {
   });
 
   it('can have custom classnames on input', () => {
-    const el = mount(<Textfield className={'my-custom-classname'} />);
+    const el = mount(<TextField className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 });

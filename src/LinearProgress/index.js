@@ -11,9 +11,7 @@ type LinearProgressRootT = {
   /** Whether or not the Progress bar is determinate. */
   determinate?: boolean,
   /** Progress goes from right to left. */
-  reversed?: boolean,
-  /** Use the accent color palette. */
-  accent?: boolean
+  reversed?: boolean
 } & SimpleTagPropsT;
 
 export const LinearProgressRoot: React.ComponentType<
@@ -79,8 +77,7 @@ export const LinearProgress: React.ComponentType<
     progress: 0,
     buffer: undefined,
     determinate: true,
-    reversed: false,
-    accent: false
+    reversed: false
   },
   onUpdate: (props, nextProps, api) => {
     ['progress', 'buffer', 'determinate', 'reversed', 'accent'].forEach(key => {
