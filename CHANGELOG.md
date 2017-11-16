@@ -1,3 +1,9 @@
+#### 0.0.1-rc4 (2017-11-16)
+
+##### Bug Fixes
+
+* **TextField:** Import name changed :(. ([c5a24c5f](https://github.com/jamesmfriedman/rmwc/commit/c5a24c5f0af8beca44e6973afa1b287f8cab6050))
+
 #### 0.0.1-rc3 (2017-11-16)
 
 ##### Bug Fixes
