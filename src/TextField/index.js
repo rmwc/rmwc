@@ -7,7 +7,7 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type TextFieldRootPropsT = {
-  /** Creates a multiline textfield. */
+  /** Creates a multiline TextField. */
   textarea?: boolean
 } & SimpleTagPropsT;
 
