@@ -1,4 +1,11 @@
 #### 0.0.1-rc2 (2017-11-16)
+##### Docs
+
+* **FormField:** Updated examples relating to FormField usage.
+
+##### BREAKING CHANGES
+
+* **TextField:** Following MDC 25 Change, Renaming Textfield -> TextField
 
 #### 0.0.1-rc1 (2017-11-15)
 
@@ -8,7 +15,7 @@
 
 ##### Bug Fixes
 
-* **select:** initial values were not being set ([e4f79507](https://github.com/jamesmfriedman/rmwc/commit/e4f7950799a99efee496e80a2f8e92868f68c0ca))
+* **Select:** initial values were not being set ([e4f79507](https://github.com/jamesmfriedman/rmwc/commit/e4f7950799a99efee496e80a2f8e92868f68c0ca))
 
 #### 0.0.1-beta8 (2017-11-08)
 
