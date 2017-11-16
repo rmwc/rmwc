@@ -6,7 +6,7 @@ A thin React wrapper for Material Design (Web) Components v0.25.0
 
 
 ## Recent updates
-RMWC has been tested and works properly with React 16 and Material Components Web v0.24.0.
+RMWC has been tested and works properly with React 15 / 16 and Material Components Web v0.25.0.
 
 ## Goals
 - To create the thinnest, lightest, and spec compliant wrapper around Google Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)
