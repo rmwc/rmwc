@@ -24,7 +24,7 @@ describe('TextField', () => {
 
     const html = el.html();
     expect(
-      !!~html.search('mdc-textfield') && !!~html.search('my-custom-classname')
+      !!~html.search('mdc-text-field') && !!~html.search('my-custom-classname')
     ).toEqual(true);
   });
 

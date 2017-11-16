@@ -24,7 +24,7 @@ export const SelectLabel = props => (
   <div
     style={{ position: 'absolute', marginTop: '34px', whiteSpace: 'nowrap' }}
   >
-    <label className="mdc-textfield__label mdc-textfield__label--float-above">
+    <label className="mdc-text-field__label mdc-text-field__label--float-above">
       {props.children}
     </label>
   </div>
