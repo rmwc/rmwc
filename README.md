@@ -35,8 +35,11 @@ There are many different Material UI implementations in both Angular and React. 
  
 **The solution:** Use the Google sanctioned javascript Material Design Components and get out of their way.
 
-## Status: Beta
-RMWC is currently in Beta. All of the Material components are covered and  smoke tests have been written to check rendering and basic functionality. The docs will get a fresh coat of polish and additional documentation with the final release.
+## About Breaking Changes
+As stated in "Why?", the goal of this library is to be unopinionated, and that includes opinions about breaking changes that come downstream from `material-components-web`. In the future, steps may be taken to insulate consumers by providing a deprecation path, but for the time being please make sure you keep eyes on the official [MDC Changelog](https://github.com/material-components/material-components-web/blob/master/CHANGELOG.md) and RMWC will do its best to also keep its changelog up to date.
+
+## Status: RC
+RMWC is currently in RC. All of the MDC components are covered and are being used in various projects. Only bug fixes and doc improvements are planned before an official V1.
 
 - [x] Buttons
   - [x] Standard

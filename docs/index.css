@@ -115,6 +115,11 @@ ul li {
   margin-bottom: 24px;
 }
 
+#detail-section-form-fields .demo-example .mdc-form-field {
+  display: block;
+  margin-bottom: 24px;
+}
+
 /**
  * Submenu
  */

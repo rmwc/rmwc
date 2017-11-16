@@ -6,16 +6,15 @@ import { simpleTag, withMDC } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
 
-type TextfieldRootPropsT = {
+type TextFieldRootPropsT = {
   /** Creates a multiline textfield. */
   textarea?: boolean
 } & SimpleTagPropsT;
 
-export const TextfieldRoot: React.ComponentType<
-  TextfieldRootPropsT
+export const TextFieldRoot: React.ComponentType<
+  TextFieldRootPropsT
 > = simpleTag({
-  displayName: 'TextfieldRoot',
-  tag: 'label',
+  displayName: 'TextFieldRoot',
   classNames: props => [
     'mdc-textfield',
     { 'mdc-textfield--textarea': props.textarea }
@@ -23,9 +22,9 @@ export const TextfieldRoot: React.ComponentType<
   consumeProps: ['textarea']
 });
 
-export const TextfieldLabel = simpleTag({
-  displayName: 'TextfieldLabel',
-  tag: 'span',
+export const TextFieldLabel = simpleTag({
+  displayName: 'TextFieldLabel',
+  tag: 'label',
   classNames: props => [
     'mdc-textfield__label',
     {
@@ -35,8 +34,8 @@ export const TextfieldLabel = simpleTag({
   consumeProps: ['value']
 });
 
-export const TextfieldInput = simpleTag({
-  displayName: 'TextfieldInput',
+export const TextFieldInput = simpleTag({
+  displayName: 'TextFieldInput',
   tag: 'input',
   classNames: 'mdc-textfield__input',
   defaultProps: {
@@ -44,23 +43,23 @@ export const TextfieldInput = simpleTag({
   }
 });
 
-export const TextfieldTextarea = simpleTag({
-  displayName: 'TextfieldTextarea',
+export const TextFieldTextarea = simpleTag({
+  displayName: 'TextFieldTextarea',
   tag: 'textarea',
   classNames: 'mdc-textfield__input'
 });
 
-type TextfieldPropsT = {
+type TextFieldPropsT = {
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,
   /** Disables the input. */
   disabled?: boolean,
   /** A label for the input. */
   label?: React.Node
-} & TextfieldRootPropsT &
+} & TextFieldRootPropsT &
   SimpleTagPropsT;
 
-export const Textfield = withMDC({
+export const TextField = withMDC({
   mdcConstructor: MDCTextfield,
   mdcElementRef: true,
   defaultProps: {
@@ -75,8 +74,8 @@ export const Textfield = withMDC({
     }
   }
 })(
-  class extends React.Component<TextfieldPropsT> {
-    static displayName = 'Textfield';
+  class extends React.Component<TextFieldPropsT> {
+    static displayName = 'TextField';
     render() {
       const {
         label = '',
@@ -94,24 +93,24 @@ export const Textfield = withMDC({
       };
 
       const tag = textarea ? (
-        <TextfieldTextarea {...tagProps} />
+        <TextFieldTextarea {...tagProps} />
       ) : (
-        <TextfieldInput {...tagProps} />
+        <TextFieldInput {...tagProps} />
       );
 
       return (
-        <TextfieldRoot
+        <TextFieldRoot
           className={className}
           textarea={textarea}
           elementRef={mdcElementRef}
         >
           {children}
           {tag}
-          <TextfieldLabel>{label}</TextfieldLabel>
-        </TextfieldRoot>
+          <TextFieldLabel>{label}</TextFieldLabel>
+        </TextFieldRoot>
       );
     }
   }
 );
 
-export default Textfield;
+export default TextField;
