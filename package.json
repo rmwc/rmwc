@@ -25,7 +25,7 @@
   "main": "index.js",
   "dependencies": {
     "classnames": "^2.2.x",
-    "material-components-web": "^0.24.0",
+    "material-components-web": "^0.25.0",
     "prop-types": "^15.6.0"
   },
   "scripts": {
@@ -37,7 +37,7 @@
     "docgen": "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./docs/docgen.json",
     "build": "node scripts/build.js",
     "build:lib": "node scripts/build-lib.js",
-    "deploy:docs": "npm run docgen && npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages",
+    "deploy:docs": "npm run docgen && npm run build:lib && npm run build && git add build -f && git commit -m 'running build' && git subtree split -b gh-pages --prefix build && git push origin gh-pages:gh-pages --force && git branch -D gh-pages && npm run clean",
     "changelog": "changelog",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
