@@ -43,16 +43,43 @@ export const TextFieldInput = simpleTag({
   }
 });
 
-export const TextFieldBottomLine = simpleTag({
-  displayName: 'TextFieldBottomLine',
-  classNames: 'mdc-text-field__bottom-line'
-});
-
 export const TextFieldTextarea = simpleTag({
   displayName: 'TextFieldTextarea',
   tag: 'textarea',
   classNames: 'mdc-text-field__input'
 });
+
+export const TextFieldBottomLine = simpleTag({
+  displayName: 'TextFieldBottomLine',
+  classNames: 'mdc-text-field__bottom-line'
+});
+
+type TextFieldHelpTextPropsT = {
+  /** Make the help text always visible */
+  persistent: boolean,
+  /** Make the help a validation message style */
+  validationMsg: boolean
+};
+
+/**
+ * A help text component
+ */
+export class TextFieldHelpText extends simpleTag({
+  displayName: 'TextFieldHelpText',
+  tag: 'p',
+  classNames: props => [
+    'mdc-text-field-helptext',
+    {
+      'mdc-text-field-helptext--persistent': props.persistent,
+      'mdc-text-field-helptext--validation-msg': props.validationMsg
+    }
+  ],
+  consumeProps: ['persistent', 'validationMsg']
+})<TextFieldHelpTextPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 type TextFieldPropsT = {
   /** A ref for the native input. */

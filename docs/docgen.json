@@ -2325,6 +2325,32 @@
     },
     {
       "description": "",
+      "displayName": "TextFieldBottomLine",
+      "methods": []
+    },
+    {
+      "description": "A help text component",
+      "displayName": "TextFieldHelpText",
+      "methods": [],
+      "props": {
+        "persistent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Make the help text always visible"
+        },
+        "validationMsg": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Make the help a validation message style"
+        }
+      }
+    },
+    {
+      "description": "",
       "displayName": "TextField",
       "methods": [],
       "props": {

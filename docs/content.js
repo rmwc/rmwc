@@ -418,12 +418,15 @@ export default [
   {
     name: 'TextFields',
     section: 'textfields',
-    class: 'TextField',
+    class: ['TextField', 'TextFieldHelpText'],
     url:
       'https://material.io/components/web/catalog/input-controls/text-fields/',
     example: `
-				<TextField label="Write something..." /> <br/>
+				<TextField label="Write something..." />
+				<TextFieldHelpText>Optional help text.</TextFieldHelpText>
+				
 				<TextField textarea label="Multiline..." rows="8" />
+				<TextFieldHelpText persistent validationMsg>The field is required.</TextFieldHelpText>
 		`
   },
   {
