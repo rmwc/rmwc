@@ -86,7 +86,7 @@ export { default as Switch } from './Switch';
 
 export { Tab, TabBar } from './Tabs';
 
-export { default as TextField } from './TextField';
+export { default as TextField, TextFieldHelpText } from './TextField';
 
 export { Theme } from './Theme';
 
