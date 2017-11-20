@@ -1,3 +1,9 @@
+#### 0.0.1-rc6 (2017-11-20)
+
+##### New Features
+
+* **Toolbar:** Adding Toolbar MenuIcon and Icon ([ef1a8522](https://github.com/jamesmfriedman/rmwc/commit/ef1a8522f5d020efc693d642704607996d669f34))
+
 #### 0.0.1-rc5 (2017-11-20)
 
 ##### New Features
