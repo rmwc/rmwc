@@ -332,13 +332,12 @@ export default [
       'https://material.io/components/web/catalog/input-controls/form-fields/',
     example: `
 			<FormField>
-				<input type="text" id="input"/>
-				<label for="input">Input Label</label>
+				<TextField label="Write Something..." id="test" />
 			</FormField>
 
 			<FormField>
 				<input type="checkbox" id="input"/>
-				<label for="input">Input Label</label>
+				<label htmlFor="input">Input Label</label>
 			</FormField>
 		`
   },
