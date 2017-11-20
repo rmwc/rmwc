@@ -1,8 +1,10 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { noop } from '../Base/noop';
 import { simpleTag, withMDC } from '../Base';
+import { Icon } from '../Icon';
 
 import type { SimpleTagPropsT } from '../Base';
 
@@ -56,9 +58,9 @@ export const TextFieldBottomLine = simpleTag({
 
 type TextFieldHelpTextPropsT = {
   /** Make the help text always visible */
-  persistent: boolean,
+  persistent?: boolean,
   /** Make the help a validation message style */
-  validationMsg: boolean
+  validationMsg?: boolean
 };
 
 /**
@@ -81,13 +83,29 @@ export class TextFieldHelpText extends simpleTag({
   }
 }
 
+/**
+ * An Icon in a TextField
+ */
+type TextFieldIcon = {
+  /** The icon to use */
+  use: React.Node
+};
+
+export const TextFieldIcon = (props: TextFieldIcon) => (
+  <Icon {...props} className={(props.className, 'mdc-text-field__icon')} />
+);
+
 type TextFieldPropsT = {
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,
   /** Disables the input. */
   disabled?: boolean,
   /** A label for the input. */
-  label?: React.Node
+  label?: React.Node,
+  /** Add a leading icon */
+  withLeadingIcon?: React.Node,
+  /** Add a trailing icon */
+  withTrailingIcon?: React.Node
 } & TextFieldRootPropsT &
   SimpleTagPropsT;
 
@@ -113,6 +131,8 @@ export const TextField = withMDC({
         label = '',
         className,
         inputRef,
+        withLeadingIcon,
+        withTrailingIcon,
         mdcElementRef,
         children,
         textarea,
@@ -133,13 +153,22 @@ export const TextField = withMDC({
 
       return (
         <TextFieldRoot
-          className={className}
+          className={classNames(className, {
+            'mdc-text-field--with-leading-icon': !!withLeadingIcon,
+            'mdc-text-field--with-trailing-icon': !!withTrailingIcon
+          })}
           textarea={textarea}
           elementRef={mdcElementRef}
         >
+          {withLeadingIcon}
           {children}
           {tag}
-          <TextFieldLabel htmlFor={tagProps.id}>{label}</TextFieldLabel>
+
+          {!!label && (
+            <TextFieldLabel htmlFor={tagProps.id}>{label}</TextFieldLabel>
+          )}
+
+          {withTrailingIcon}
           <TextFieldBottomLine />
         </TextFieldRoot>
       );

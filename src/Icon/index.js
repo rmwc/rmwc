@@ -9,7 +9,7 @@ import type { RMWCProviderOptionsT } from '../Provider';
 export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 
 type IconPropsT = {
-  /* The icon to use */
+  /** The icon to use */
   use: React.Node
 };
 
