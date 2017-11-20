@@ -88,8 +88,9 @@ export const TextField = withMDC({
       } = this.props;
 
       const tagProps = {
+        ...rest,
         elementRef: inputRef,
-        ...rest
+        id: rest.id || Date.now() + Math.random() + ''
       };
 
       const tag = textarea ? (
@@ -106,7 +107,7 @@ export const TextField = withMDC({
         >
           {children}
           {tag}
-          <TextFieldLabel>{label}</TextFieldLabel>
+          <TextFieldLabel htmlFor={tagProps.id}>{label}</TextFieldLabel>
         </TextFieldRoot>
       );
     }
