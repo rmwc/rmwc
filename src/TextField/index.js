@@ -43,6 +43,11 @@ export const TextFieldInput = simpleTag({
   }
 });
 
+export const TextFieldBottomLine = simpleTag({
+  displayName: 'TextFieldBottomLine',
+  classNames: 'mdc-text-field__bottom-line'
+});
+
 export const TextFieldTextarea = simpleTag({
   displayName: 'TextFieldTextarea',
   tag: 'textarea',
@@ -108,6 +113,7 @@ export const TextField = withMDC({
           {children}
           {tag}
           <TextFieldLabel htmlFor={tagProps.id}>{label}</TextFieldLabel>
+          <TextFieldBottomLine />
         </TextFieldRoot>
       );
     }
