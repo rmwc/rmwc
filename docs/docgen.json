@@ -1059,7 +1059,7 @@
             "raw": "React.Node"
           },
           "required": true,
-          "description": "",
+          "description": "The icon to use",
           "defaultValue": {
             "value": "undefined",
             "computed": true
@@ -2337,17 +2337,21 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Make the help text always visible"
         },
         "validationMsg": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Make the help a validation message style"
         }
       }
+    },
+    {
+      "description": "",
+      "methods": []
     },
     {
       "description": "",
@@ -2381,6 +2385,22 @@
           },
           "required": false,
           "description": "A label for the input."
+        },
+        "withLeadingIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Add a leading icon"
+        },
+        "withTrailingIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Add a trailing icon"
         },
         "textarea": {
           "flowType": {
