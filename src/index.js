@@ -99,7 +99,9 @@ export {
   ToolbarRow,
   ToolbarTitle,
   ToolbarSection,
-  ToolbarFixedAdjust
+  ToolbarFixedAdjust,
+  ToolbarMenuIcon,
+  ToolbarIcon
 } from './Toolbar';
 
 export { default as Typography } from './Typography';

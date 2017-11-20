@@ -2351,7 +2351,17 @@
     },
     {
       "description": "",
-      "methods": []
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
     },
     {
       "description": "",
@@ -2523,6 +2533,34 @@
       "description": "This component can be placed after a fixed Toolbar component to fill in the space.",
       "displayName": "ToolbarFixedAdjust",
       "methods": []
+    },
+    {
+      "description": "",
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
+    },
+    {
+      "description": "",
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
     },
     {
       "description": "",

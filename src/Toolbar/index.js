@@ -1,20 +1,20 @@
 // @flow
 import * as React from 'react';
 import { MDCToolbar } from '@material/toolbar/dist/mdc.toolbar';
-
+import { Icon } from '../Icon';
 import { simpleTag, withMDC } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
 
 type ToolbarRootPropsT = {
-  /** Makes the toolbar fixed */
-  fixed?: boolean,
-  /** Adds a waterfall effect on scroll */
-  waterfall?: boolean,
-  /** Fixes the last row of a multi-row toolbar */
-  fixedLastrowOnly?: boolean,
-  /** makes the toolbar flexible */
-  flexible?: boolean
+ /** Makes the toolbar fixed */
+ fixed?: boolean,
+ /** Adds a waterfall effect on scroll */
+ waterfall?: boolean,
+ /** Fixes the last row of a multi-row toolbar */
+ fixedLastrowOnly?: boolean,
+ /** makes the toolbar flexible */
+ flexible?: boolean
 } & SimpleTagPropsT;
 
 export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
@@ -43,12 +43,12 @@ export const ToolbarTitle = simpleTag({
 });
 
 type ToolbarSectionPropsT = {
-  /** Aligns the ToolbarSection at the start. */
-  alignStart?: boolean,
-  /** Aligns the ToolbarSection at the end. */
-  alignEnd?: boolean,
-  /** Makes the ToolbarSection shrink to fit. */
-  shrinkToFit?: boolean
+ /** Aligns the ToolbarSection at the start. */
+ alignStart?: boolean,
+ /** Aligns the ToolbarSection at the end. */
+ alignEnd?: boolean,
+ /** Makes the ToolbarSection shrink to fit. */
+ shrinkToFit?: boolean
 } & SimpleTagPropsT;
 
 export class ToolbarSection extends simpleTag({
@@ -87,6 +87,30 @@ export const ToolbarFixedAdjust = simpleTag({
   classNames: 'mdc-toolbar-fixed-adjust'
 });
 
+/**
+ * A Menu Icon For the Toolbar
+ */
+type ToolbarMenuIconPropsT = {
+ /** The icon to use */
+ use: React.Node
+};
+
+export const ToolbarMenuIcon = (props: ToolbarMenuIconPropsT) => (
+  <Icon {...props} className={(props.className, 'mdc-toolbar__menu-icon')} />
+);
+
+/**
+ * A standard Icon for toolbar actions
+ */
+type ToolbarIconPropsT = {
+ /** The icon to use */
+ use: React.Node
+};
+
+export const ToolbarIcon = (props: ToolbarIconPropsT) => (
+  <Icon {...props} className={(props.className, 'mdc-toolbar__icon')} />
+);
+
 export const Toolbar = withMDC({
   mdcConstructor: MDCToolbar,
   mdcElementRef: true,
@@ -106,12 +130,12 @@ export const Toolbar = withMDC({
   }
 })(
   class extends React.Component<ToolbarRootPropsT> {
-    static displayName = 'Toolbar';
+  static displayName = 'Toolbar';
 
-    render() {
-      const { mdcElementRef, ...rest } = this.props;
-      return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
-    }
+  render() {
+    const { mdcElementRef, ...rest } = this.props;
+    return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
+  }
   }
 );
 
