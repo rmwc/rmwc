@@ -81,8 +81,17 @@ export const withMDC = ({
           }
         }
 
-        this.mdcApi = new MDCConstructor(el);
-        this.props.apiRef(this.mdcApi);
+        try {
+          this.mdcApi = new MDCConstructor(el);
+          this.props.apiRef(this.mdcApi);
+        } catch (err) {
+          console.warn(
+            `${
+              MDCConstructor.name
+            } failed to initialize because of the following error:`,
+            err
+          );
+        }
       }
       onMount(this.props, this.mdcApi, this);
 
