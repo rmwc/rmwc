@@ -12,10 +12,6 @@
 * **withMDC:** catch errors from of MDC constructor ([37b1a3b9](https://github.com/jamesmfriedman/rmwc/commit/37b1a3b99b26a6daf44bbd01d3a536e3a9250303))
 * **browserify:** correcting es2015 modules ([b98a8db7](https://github.com/jamesmfriedman/rmwc/commit/b98a8db7780ffa416c769ec64c28124383fc2f41))
 
-#### 0.0.1-rc5 (2017-11-20)
-
-#### 0.0.1-rc5 (2017-11-20)
-
 ##### New Features
 
 * **TextField:**
