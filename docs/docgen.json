@@ -2412,12 +2412,33 @@
           "required": false,
           "description": "Add a trailing icon"
         },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "By default, props spread to the input. These props are for the component's root container."
+        },
         "textarea": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Creates a multiline TextField."
+          "description": "Makes a multiline TextField."
+        },
+        "fullwidth": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField fullwidth."
+        },
+        "box": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField have a visiual box"
         }
       }
     }
