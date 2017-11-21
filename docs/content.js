@@ -427,9 +427,9 @@ export default [
 
 				<TextField withLeadingIcon={<TextFieldIcon use="search"/>} label="Write something..." /><br/>
 
-				<TextField withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." /><br/>
+				<TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." /><br/>
 				
-				<TextField textarea label="Multiline..." rows="8" />
+				<TextField textarea fullwidth label="Multiline..." rows="8" />
 				<TextFieldHelpText persistent validationMsg>The field is required.</TextFieldHelpText>
 		`
   },
