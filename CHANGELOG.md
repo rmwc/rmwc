@@ -1,3 +1,9 @@
+#### 0.0.1-rc7 (2017-11-21)
+
+##### New Features
+
+* **TextField:** fullwidth and box fixes #31 ([b52d72c2](https://github.com/jamesmfriedman/rmwc/commit/b52d72c2daaedbe091ea79f0c60245c86b58368a))
+
 #### 0.0.1-rc6 (2017-11-20)
 
 ##### New Features
