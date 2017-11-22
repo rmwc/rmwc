@@ -2351,7 +2351,17 @@
     },
     {
       "description": "",
-      "methods": []
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
     },
     {
       "description": "",
@@ -2402,12 +2412,33 @@
           "required": false,
           "description": "Add a trailing icon"
         },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "By default, props spread to the input. These props are for the component's root container."
+        },
         "textarea": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Creates a multiline TextField."
+          "description": "Makes a multiline TextField."
+        },
+        "fullwidth": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField fullwidth."
+        },
+        "box": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField have a visiual box"
         }
       }
     }
@@ -2523,6 +2554,34 @@
       "description": "This component can be placed after a fixed Toolbar component to fill in the space.",
       "displayName": "ToolbarFixedAdjust",
       "methods": []
+    },
+    {
+      "description": "",
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
+    },
+    {
+      "description": "",
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "The icon to use"
+        }
+      }
     },
     {
       "description": "",

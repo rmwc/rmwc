@@ -19,7 +19,7 @@ export default [
     section: 'fabs',
     class: 'Fab',
     url:
-      'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
+   'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
     example: `
 			<Fab>favorite</Fab>
 			<Fab mini>favorite</Fab>
@@ -30,7 +30,7 @@ export default [
     section: 'icon-toggles',
     class: 'IconToggle',
     url:
-      'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
+   'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
     example: `
 			<IconToggle
 				on={{label: 'Remove from favorites', content: 'favorite'}}
@@ -77,7 +77,7 @@ export default [
     section: 'permanent-drawer',
     class: ['PermanentDrawer', 'PermanentDrawerContent'],
     url:
-      'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
+   'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
     example: `
 			<PermanentDrawer>
 				<PermanentDrawerContent>
@@ -105,7 +105,7 @@ export default [
       'PersistentDrawerContent'
     ],
     url:
-      'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
+   'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
     example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
@@ -144,7 +144,7 @@ export default [
       'TemporaryDrawerContent'
     ],
     url:
-      'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
+   'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
     example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
@@ -316,7 +316,7 @@ export default [
     section: 'checkboxes',
     class: ['Checkbox'],
     url:
-      'https://material.io/components/web/catalog/input-controls/checkboxes/',
+   'https://material.io/components/web/catalog/input-controls/checkboxes/',
     example: `
 			<Checkbox>Cookies</Checkbox>
 			<Checkbox>Pizza</Checkbox>
@@ -329,7 +329,7 @@ export default [
     section: 'form-fields',
     class: 'FormField',
     url:
-      'https://material.io/components/web/catalog/input-controls/form-fields/',
+   'https://material.io/components/web/catalog/input-controls/form-fields/',
     example: `
 			<FormField>
 				<TextField label="Write Something..." id="test" />
@@ -346,7 +346,7 @@ export default [
     section: 'radio-buttons',
     class: 'Radio',
     url:
-      'https://material.io/components/web/catalog/input-controls/radio-buttons/',
+   'https://material.io/components/web/catalog/input-controls/radio-buttons/',
     example: `
 			<Radio name="radio">Cookies</Radio>
 			<Radio name="radio">Pizza</Radio>
@@ -358,7 +358,7 @@ export default [
     section: 'select-menus',
     class: 'Select',
     url:
-      'https://material.io/components/web/catalog/input-controls/select-menus/',
+   'https://material.io/components/web/catalog/input-controls/select-menus/',
     example: `
 			<Select
 				placeholder="Select a food"
@@ -420,16 +420,16 @@ export default [
     section: 'textfields',
     class: ['TextField', 'TextFieldHelpText', 'TextFieldIcon'],
     url:
-      'https://material.io/components/web/catalog/input-controls/text-fields/',
+   'https://material.io/components/web/catalog/input-controls/text-fields/',
     example: `
 				<TextField label="Write something..." />
 				<TextFieldHelpText>Optional help text.</TextFieldHelpText>
 
 				<TextField withLeadingIcon={<TextFieldIcon use="search"/>} label="Write something..." /><br/>
 
-				<TextField withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." /><br/>
+				<TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." /><br/>
 				
-				<TextField textarea label="Multiline..." rows="8" />
+				<TextField textarea fullwidth label="Multiline..." rows="8" />
 				<TextFieldHelpText persistent validationMsg>The field is required.</TextFieldHelpText>
 		`
   },
@@ -680,14 +680,41 @@ export default [
       'Toolbar',
       'ToolbarRow',
       'ToolbarSection',
+      'ToolbarMenuIcon',
       'ToolbarTitle',
+      'ToolbarIcon',
       'ToolbarFixedAdjust'
     ],
     url: 'https://material.io/components/web/catalog/toolbar/',
     example: `
+			{/* Minimum usage */}
 			<Toolbar>
 				<ToolbarRow>
 					<ToolbarTitle>Toolbar</ToolbarTitle>
+				</ToolbarRow>
+			</Toolbar>
+
+			{/* With multiple sections */}
+			<Toolbar>
+				<ToolbarRow>
+					<ToolbarSection alignStart>
+						<ToolbarMenuIcon use="menu"/>
+						<ToolbarTitle>Toolbar</ToolbarTitle>
+					</ToolbarSection>
+					<ToolbarSection alignEnd>
+						<ToolbarIcon use="save"/>
+						<ToolbarIcon use="print"/>
+					</ToolbarSection>
+				</ToolbarRow>
+			</Toolbar>
+
+			{/* Multiple rows */}
+			<Toolbar>
+				<ToolbarRow>
+					<ToolbarTitle>Toolbar</ToolbarTitle>
+				</ToolbarRow>
+				<ToolbarRow>
+					<ToolbarTitle>Second Row</ToolbarTitle>
 				</ToolbarRow>
 			</Toolbar>
 		`
