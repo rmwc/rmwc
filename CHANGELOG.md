@@ -1,18 +1,14 @@
-#### 0.0.1-rc5 (2017-11-20)
+#### 0.0.1-rc7 (2017-11-21)
 
 ##### New Features
 
-* **TextField:**
-  * leading and trailing icons ([7c7d5134](https://github.com/jamesmfriedman/rmwc/commit/7c7d51341d8e559d80ebdf3568aadd635f604bee))
-  * bottom line and help text ([5a994f11](https://github.com/jamesmfriedman/rmwc/commit/5a994f1178bc22b8540ca75b89d3ca58f5f1eb11))
+* **TextField:** fullwidth and box fixes #31 ([b52d72c2](https://github.com/jamesmfriedman/rmwc/commit/b52d72c2daaedbe091ea79f0c60245c86b58368a))
 
-##### Bug Fixes
+#### 0.0.1-rc6 (2017-11-20)
 
-* **TextField:** adding missing bottom line ([cd3758c9](https://github.com/jamesmfriedman/rmwc/commit/cd3758c9d26f389d967b6f352b72e6fa802398b0))
-* **withMDC:** catch errors from of MDC constructor ([37b1a3b9](https://github.com/jamesmfriedman/rmwc/commit/37b1a3b99b26a6daf44bbd01d3a536e3a9250303))
-* **browserify:** correcting es2015 modules ([b98a8db7](https://github.com/jamesmfriedman/rmwc/commit/b98a8db7780ffa416c769ec64c28124383fc2f41))
+##### New Features
 
-#### 0.0.1-rc5 (2017-11-20)
+* **Toolbar:** Adding Toolbar MenuIcon and Icon ([ef1a8522](https://github.com/jamesmfriedman/rmwc/commit/ef1a8522f5d020efc693d642704607996d669f34))
 
 #### 0.0.1-rc5 (2017-11-20)
 
