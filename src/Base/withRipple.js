@@ -12,14 +12,19 @@ export type WithRipplePropsT = {
  */
 export const withRipple = (
   Component: React.ComponentType<*>
-): React.ComponentType<*> => ({ ripple, ...rest }: WithRipplePropsT) => {
-  if (ripple) {
-    return (
-      <Ripple>
-        <Component {...rest} />
-      </Ripple>
-    );
-  }
+): React.ComponentType<*> =>
+  class extends React.Component<WithRipplePropsT> {
+    static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
+    render() {
+      const { ripple, ...rest } = this.props;
+      if (ripple) {
+        return (
+          <Ripple>
+            <Component {...rest} />
+          </Ripple>
+        );
+      }
 
-  return <Component {...rest} />;
-};
+      return <Component {...rest} />;
+    }
+  };

@@ -95,10 +95,5 @@ export const simpleTag = ({
     }
   }
 
-  Reflect.defineProperty(SimpleTag, 'name', {
-    value: name,
-    writable: false
-  });
-
   return SimpleTag;
 };
