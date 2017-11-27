@@ -115,6 +115,8 @@ export const Toolbar = withMDC({
   mdcConstructor: MDCToolbar,
   mdcElementRef: true,
   onUpdate(props, nextProps, api, inst) {
+    var toolbarquery = MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+    toolbarquery.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
     const didChange = ['fixedLastrowOnly', 'flexible'].some(key => {
       if (api && props) {
         api[key] !== props[key];
