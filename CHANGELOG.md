@@ -3,7 +3,7 @@
 ##### Bug Fixes
 
 * **Toolbar:** Auto attach ToolbarAdjust #35 ([b2cd36e7](https://github.com/jamesmfriedman/rmwc/commit/b2cd36e7d2faf77178ffa6c6008bf69a5971e2dd))
-* **Drawer:** eventPath failure in Edge #28 ([8063b492](https://github.com/jamesmfriedman/rmwc/commit/8063b492d3bce9d1d17c1654968f5323d9cd46f6))
+* **Drawer:** eventPath failure in Edge #38 ([8063b492](https://github.com/jamesmfriedman/rmwc/commit/8063b492d3bce9d1d17c1654968f5323d9cd46f6))
 * **Base:** remove accidental window.name #33 ([5df57cd8](https://github.com/jamesmfriedman/rmwc/commit/5df57cd8fc245d3e243d0e07f2e38bef2e46f96c))
 
 #### 0.0.1-rc7 (2017-11-21)
