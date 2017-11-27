@@ -7,14 +7,16 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type ToolbarRootPropsT = {
- /** Makes the toolbar fixed */
- fixed?: boolean,
- /** Adds a waterfall effect on scroll */
- waterfall?: boolean,
- /** Fixes the last row of a multi-row toolbar */
- fixedLastrowOnly?: boolean,
- /** makes the toolbar flexible */
- flexible?: boolean
+  /** Makes the toolbar fixed */
+  fixed?: boolean,
+  /** Adds a waterfall effect on scroll */
+  waterfall?: boolean,
+  /** Fixes the last row of a multi-row toolbar */
+  fixedLastrowOnly?: boolean,
+  /** makes the toolbar flexible */
+  flexible?: boolean,
+  /** further defines the background and title movement behavior, use in conjunction with flexible. */
+  flexibleDefaultBehavior?: boolean
 } & SimpleTagPropsT;
 
 export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
@@ -25,16 +27,24 @@ export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
       'mdc-toolbar--fixed': props.fixed,
       'mdc-toolbar--waterfall': props.waterfall,
       'mdc-toolbar--fixed-lastrow-only': props.fixedLastrowOnly,
-      'mdc-toolbar--flexible': props.flexible
+      'mdc-toolbar--flexible': props.flexible,
+      'mdc-toolbar--flexible-default-behavior': props.flexibleDefaultBehavior
     }
   ],
   defaultProps: {
     fixed: false,
     waterfall: false,
     fixedLastrowOnly: false,
-    flexible: false
+    flexible: false,
+    flexibleDefaultBehavior: false
   },
-  consumeProps: ['fixed', 'waterfall', 'fixedLastrowOnly', 'flexible']
+  consumeProps: [
+    'fixed',
+    'waterfall',
+    'fixedLastrowOnly',
+    'flexible',
+    'flexibleDefaultBehavior'
+  ]
 });
 
 export const ToolbarTitle = simpleTag({
@@ -43,12 +53,12 @@ export const ToolbarTitle = simpleTag({
 });
 
 type ToolbarSectionPropsT = {
- /** Aligns the ToolbarSection at the start. */
- alignStart?: boolean,
- /** Aligns the ToolbarSection at the end. */
- alignEnd?: boolean,
- /** Makes the ToolbarSection shrink to fit. */
- shrinkToFit?: boolean
+  /** Aligns the ToolbarSection at the start. */
+  alignStart?: boolean,
+  /** Aligns the ToolbarSection at the end. */
+  alignEnd?: boolean,
+  /** Makes the ToolbarSection shrink to fit. */
+  shrinkToFit?: boolean
 } & SimpleTagPropsT;
 
 export class ToolbarSection extends simpleTag({
@@ -91,8 +101,8 @@ export const ToolbarFixedAdjust = simpleTag({
  * A Menu Icon For the Toolbar
  */
 type ToolbarMenuIconPropsT = {
- /** The icon to use */
- use: React.Node
+  /** The icon to use */
+  use: React.Node
 };
 
 export const ToolbarMenuIcon = (props: ToolbarMenuIconPropsT) => (
@@ -103,8 +113,8 @@ export const ToolbarMenuIcon = (props: ToolbarMenuIconPropsT) => (
  * A standard Icon for toolbar actions
  */
 type ToolbarIconPropsT = {
- /** The icon to use */
- use: React.Node
+  /** The icon to use */
+  use: React.Node
 };
 
 export const ToolbarIcon = (props: ToolbarIconPropsT) => (
@@ -114,28 +124,67 @@ export const ToolbarIcon = (props: ToolbarIconPropsT) => (
 export const Toolbar = withMDC({
   mdcConstructor: MDCToolbar,
   mdcElementRef: true,
+  onMount(props, api, inst) {
+    const el = inst.mdcGetRootElement();
+    if (
+      api &&
+      el &&
+      el.nextSibling &&
+      (el.nextSibling.getAttribute('class') || '').includes(
+        'mdc-toolbar-fixed-adjust'
+      )
+    ) {
+      api.fixedAdjustElement = el.nextSibling;
+    }
+  },
   onUpdate(props, nextProps, api, inst) {
-    const didChange = ['fixedLastrowOnly', 'flexible'].some(key => {
-      if (api && props) {
-        api[key] !== props[key];
+    // MDC cant change these gracefully
+    // if our props change, we have to reinit the component
+    const didChange = [
+      'fixedLastrowOnly',
+      'flexible',
+      'flexibleDefaultBehavior'
+    ].some(key => {
+      if (props && nextProps) {
+        return props[key] !== nextProps[key];
       }
     });
-    if (didChange) {
-      const firstRow = inst
-        .mdcGetRootElement()
-        .querySelector('.mdc-toolbar__row');
-      firstRow && firstRow.removeAttribute('style');
-      inst.mdcComponentReinit();
+
+    if (didChange && api) {
+      // clean up flexible classes
+      const root = api.root_;
+      if (root) {
+        root.classList.remove('mdc-toolbar--flexible-space-maximized');
+        root.classList.remove('mdc-toolbar--flexible-space-minimized');
+      }
+
+      // reset first row height
+      const firstRow = api.firstRowElement_;
+      firstRow && firstRow.style.removeProperty('height');
+
+      // reset the titles style
+      const title = api.titleElement_;
+      title && title.style.removeProperty('font-size');
+
+      // reset fixedAdjustElement
+      api.fixedAdjustElement &&
+        api.fixedAdjustElement.style.removeProperty('height');
+
+      // delay re-init for a frame otherwise MDC doesnt
+      // catch the class and style changes
+      window.requestAnimationFrame(() => {
+        inst.mdcComponentReinit();
+      });
     }
   }
 })(
   class extends React.Component<ToolbarRootPropsT> {
-  static displayName = 'Toolbar';
+    static displayName = 'Toolbar';
 
-  render() {
-    const { mdcElementRef, ...rest } = this.props;
-    return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
-  }
+    render() {
+      const { mdcElementRef, ...rest } = this.props;
+      return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
+    }
   }
 );
 
