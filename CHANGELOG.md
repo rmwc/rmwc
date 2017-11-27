@@ -1,3 +1,9 @@
+#### 0.0.1-rc9 (2017-11-27)
+
+##### Bug Fixes
+
+* **TextField:** corrects floating label regression ([6e8d5fab](https://github.com/jamesmfriedman/rmwc/commit/6e8d5fab0f7e504ac3f607a72ee59379092a5b42))
+
 #### 0.0.1-rc8 (2017-11-27)
 
 ##### Bug Fixes
