@@ -2,6 +2,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Icon } from '../Icon';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 
@@ -33,7 +34,7 @@ export const FabRoot = withRipple(
 
 export const FabIcon = simpleTag({
   displayName: 'FabIcon',
-  tag: 'span',
+  tag: Icon,
   classNames: 'mdc-fab__icon'
 });
 

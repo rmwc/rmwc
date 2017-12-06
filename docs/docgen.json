@@ -1051,7 +1051,110 @@
     {
       "description": "",
       "displayName": "Icon",
-      "methods": [],
+      "methods": [
+        {
+          "name": "getStrategy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "content",
+              "type": {
+                "name": "ReactNode",
+                "raw": "React.Node"
+              }
+            },
+            {
+              "name": "strategy",
+              "type": {
+                "name": "union",
+                "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'auto'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'ligature'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'className'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'url'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'component'"
+                  }
+                ],
+                "alias": "IconStrategyT"
+              }
+            },
+            {
+              "name": "defaultStrategy",
+              "type": {
+                "name": "union",
+                "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'auto'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'ligature'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'className'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'url'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'component'"
+                  }
+                ],
+                "alias": "IconStrategyT"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "name": "union",
+              "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'auto'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'ligature'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'className'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'url'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'component'"
+                }
+              ]
+            }
+          }
+        }
+      ],
       "props": {
         "use": {
           "flowType": {
@@ -1059,11 +1162,55 @@
             "raw": "React.Node"
           },
           "required": true,
-          "description": "The icon to use",
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs",
           "defaultValue": {
             "value": "undefined",
             "computed": true
           }
+        },
+        "strategy": {
+          "flowType": {
+            "name": "union",
+            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'auto'"
+              },
+              {
+                "name": "literal",
+                "value": "'ligature'"
+              },
+              {
+                "name": "literal",
+                "value": "'className'"
+              },
+              {
+                "name": "literal",
+                "value": "'url'"
+              },
+              {
+                "name": "literal",
+                "value": "'component'"
+              }
+            ]
+          },
+          "required": true,
+          "description": "Handle multiple methods of embedding an icon."
+        },
+        "prefix": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-"
+        },
+        "basename": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": "A base className for the icon namespace, i.e. material-icons"
         }
       }
     }
@@ -1328,28 +1475,12 @@
     {
       "description": "",
       "displayName": "ListItemStartDetail",
-      "methods": [],
-      "props": {
-        "wrap": {
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
-        }
-      }
+      "methods": []
     },
     {
       "description": "",
       "displayName": "ListItemStartDetail",
-      "methods": [],
-      "props": {
-        "wrap": {
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
-        }
-      }
+      "methods": []
     },
     {
       "description": "",
@@ -1492,7 +1623,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  buttonDefaultRipple: boolean,\n  iconPrefix: string,\n  children?: React.Node\n}",
+                "raw": "{\n  buttonDefaultRipple: boolean,\n  iconClassNameBase: string,\n  iconClassNamePrefix: string,\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -1503,9 +1634,46 @@
                       }
                     },
                     {
-                      "key": "iconPrefix",
+                      "key": "iconClassNameBase",
                       "value": {
                         "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "iconClassNamePrefix",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "iconStrategy",
+                      "value": {
+                        "name": "union",
+                        "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+                        "elements": [
+                          {
+                            "name": "literal",
+                            "value": "'auto'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'ligature'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'className'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'url'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'component'"
+                          }
+                        ],
                         "required": true
                       }
                     },
@@ -1534,9 +1702,46 @@
           "required": true,
           "description": ""
         },
-        "iconPrefix": {
+        "iconClassNameBase": {
           "flowType": {
             "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "iconClassNamePrefix": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "iconStrategy": {
+          "flowType": {
+            "name": "union",
+            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'auto'"
+              },
+              {
+                "name": "literal",
+                "value": "'ligature'"
+              },
+              {
+                "name": "literal",
+                "value": "'className'"
+              },
+              {
+                "name": "literal",
+                "value": "'url'"
+              },
+              {
+                "name": "literal",
+                "value": "'component'"
+              }
+            ]
           },
           "required": true,
           "description": ""
@@ -2402,7 +2607,7 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Add a leading icon"
+          "description": "Add a leading icon."
         },
         "withTrailingIcon": {
           "flowType": {
@@ -2410,7 +2615,7 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Add a trailing icon"
+          "description": "Add a trailing icon."
         },
         "rootProps": {
           "flowType": {
@@ -2438,7 +2643,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the TextField have a visiual box"
+          "description": "Makes the TextField have a visiual box."
         }
       }
     }
@@ -2505,6 +2710,12 @@
           }
         },
         "flexible": {
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "flexibleDefaultBehavior": {
           "defaultValue": {
             "value": "false",
             "computed": false
@@ -2615,6 +2826,13 @@
           },
           "required": false,
           "description": "makes the toolbar flexible"
+        },
+        "flexibleDefaultBehavior": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "further defines the background and title movement behavior, use in conjunction with flexible."
         }
       }
     }

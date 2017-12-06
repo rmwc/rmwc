@@ -19,7 +19,7 @@ export default [
     section: 'fabs',
     class: 'Fab',
     url:
-   'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
+      'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
     example: `
 			<Fab>favorite</Fab>
 			<Fab mini>favorite</Fab>
@@ -30,7 +30,7 @@ export default [
     section: 'icon-toggles',
     class: 'IconToggle',
     url:
-   'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
+      'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
     example: `
 			<IconToggle
 				on={{label: 'Remove from favorites', content: 'favorite'}}
@@ -77,7 +77,7 @@ export default [
     section: 'permanent-drawer',
     class: ['PermanentDrawer', 'PermanentDrawerContent'],
     url:
-   'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
+      'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
     example: `
 			<PermanentDrawer>
 				<PermanentDrawerContent>
@@ -105,7 +105,7 @@ export default [
       'PersistentDrawerContent'
     ],
     url:
-   'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
+      'https://material.io/components/web/catalog/drawers/#persistent-drawer-usage',
     example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
@@ -144,7 +144,7 @@ export default [
       'TemporaryDrawerContent'
     ],
     url:
-   'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
+      'https://material.io/components/web/catalog/drawers/#temporary-drawer-usage',
     example: `
 			<Button 
 				onClick={() => this.setState({open: !this.state.open})}
@@ -316,7 +316,7 @@ export default [
     section: 'checkboxes',
     class: ['Checkbox'],
     url:
-   'https://material.io/components/web/catalog/input-controls/checkboxes/',
+      'https://material.io/components/web/catalog/input-controls/checkboxes/',
     example: `
 			<Checkbox>Cookies</Checkbox>
 			<Checkbox>Pizza</Checkbox>
@@ -329,7 +329,7 @@ export default [
     section: 'form-fields',
     class: 'FormField',
     url:
-   'https://material.io/components/web/catalog/input-controls/form-fields/',
+      'https://material.io/components/web/catalog/input-controls/form-fields/',
     example: `
 			<FormField>
 				<TextField label="Write Something..." id="test" />
@@ -346,7 +346,7 @@ export default [
     section: 'radio-buttons',
     class: 'Radio',
     url:
-   'https://material.io/components/web/catalog/input-controls/radio-buttons/',
+      'https://material.io/components/web/catalog/input-controls/radio-buttons/',
     example: `
 			<Radio name="radio">Cookies</Radio>
 			<Radio name="radio">Pizza</Radio>
@@ -358,7 +358,7 @@ export default [
     section: 'select-menus',
     class: 'Select',
     url:
-   'https://material.io/components/web/catalog/input-controls/select-menus/',
+      'https://material.io/components/web/catalog/input-controls/select-menus/',
     example: `
 			<Select
 				placeholder="Select a food"
@@ -420,7 +420,7 @@ export default [
     section: 'textfields',
     class: ['TextField', 'TextFieldHelpText', 'TextFieldIcon'],
     url:
-   'https://material.io/components/web/catalog/input-controls/text-fields/',
+      'https://material.io/components/web/catalog/input-controls/text-fields/',
     example: `
 				<TextField label="Write something..." />
 				<TextFieldHelpText>Optional help text.</TextFieldHelpText>
@@ -476,33 +476,21 @@ export default [
     example: `
 				<List>
 					<ListItem ripple>
-						<ListItemStartDetail>
-							<Icon>star_border</Icon>
-						</ListItemStartDetail>
+						<ListItemStartDetail>star_border</ListItemStartDetail>
 						<ListItemText>Cookies</ListItemText>
-						<ListItemEndDetail>
-							<Icon>info</Icon>
-						</ListItemEndDetail>
+						<ListItemEndDetail>info</ListItemEndDetail>
 					</ListItem>
 
 					<ListItem ripple>
-						<ListItemStartDetail>
-							<Icon>favorite_border</Icon>
-						</ListItemStartDetail>
+						<ListItemStartDetail>favorite_border</ListItemStartDetail>
 						<ListItemText>Pizza</ListItemText>
-						<ListItemEndDetail>
-							<Icon>info</Icon>
-						</ListItemEndDetail>
+						<ListItemEndDetail>info</ListItemEndDetail>
 					</ListItem>
 
 					<ListItem ripple>
-						<ListItemStartDetail>
-							<Icon>mood</Icon>
-						</ListItemStartDetail>
+						<ListItemStartDetail>mood</ListItemStartDetail>
 						<ListItemText>Icecream</ListItemText>
-						<ListItemEndDetail>
-							<Icon>info</Icon>
-						</ListItemEndDetail>
+						<ListItemEndDetail>info</ListItemEndDetail>
 					</ListItem>
 				</List>
 		`
@@ -737,6 +725,54 @@ export default [
 			<Typography use="body1">body1</Typography>
 			<Typography use="caption">caption</Typography>
 			<Typography use="button">button</Typography>
+		`
+  },
+  {
+    name: 'Icons',
+    section: 'icons',
+    class: 'Icon',
+    url: 'https://material.io/components/web/catalog/',
+    example: `
+			{/* 
+				Even though MDC does not explicitly define an icon component, 
+				icons are used throughout the api in many different forms. MDC assumes
+				that you're using a font icon with ligatures,
+				but RMWC allows you use any number of various icon strategies and libraries. 
+
+				You must include your own icon library of choice, and use the appropriate
+				method to embed them.
+*/}
+
+{/* 
+			Simple embedding as a child, or with the "use" prop.
+			The icon component will attempt to auto detect how to embed the icon and will
+			default to ligatures (like material-icons).
+*/}
+		<Icon>favorite</Icon>
+    <Icon use="favorite" />
+
+{/* 
+			You can use urls to load images for icons
+*/}
+    <Icon use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
+    <Icon>
+      https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon
+    </Icon>
+
+{/* 
+			You can render JSX, useful for something like inline SVGS or custom cases
+*/}
+    <Icon
+      use={<div style={{ background: 'red', width: '24px', height: '24px', borderRadius: '100px' }} />}
+    />
+    <Icon>
+      <div style={{ background: 'purple', width: '24px', height: '24px' }} />
+    </Icon>
+
+{/* 
+		Or specify your own options
+*/}
+    <Icon use="ionic" prefix="ion-" strategy="className" basename="icon" />
 		`
   }
 ];
