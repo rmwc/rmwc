@@ -1,3 +1,15 @@
+#### 0.0.1-rc10 (2017-12-06)
+
+##### Chores
+
+* **Docs:** module imports fixes #34 ([c8da84ec](https://github.com/jamesmfriedman/rmwc/commit/c8da84ec625fc4f565ba232413bb0814429f441e))
+
+##### New Features
+
+* **Select:** allow children #43 ([986bdac5](https://github.com/jamesmfriedman/rmwc/commit/986bdac54182dcd5e834e5d955185dee60ef75e3))
+* **Icon:** icon enhancements + docs fixes #41 ([b41a20e4](https://github.com/jamesmfriedman/rmwc/commit/b41a20e47e93e2f84282b4432b3556b599d27a58))
+* **Snackbar:** fixes #42 hide extra elements ([e4603043](https://github.com/jamesmfriedman/rmwc/commit/e4603043e302df46073ef6ffcfb1b92ed78f7ac0))
+
 #### 0.0.1-rc9 (2017-11-27)
 
 ##### Bug Fixes
