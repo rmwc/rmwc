@@ -178,6 +178,10 @@ ul li {
   margin-right: -12px;
 }
 
+.header code {
+  color: rgb(0, 0, 128);
+}
+
 table {
   border-collapse: collapse;
   font-size: 13px;

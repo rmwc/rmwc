@@ -2,6 +2,7 @@ export default [
   {
     name: 'Buttons',
     section: 'buttons',
+    module: 'rmwc/Button',
     class: 'Button',
     url: 'https://material.io/components/web/catalog/buttons/',
     example: `
@@ -17,6 +18,7 @@ export default [
   {
     name: 'Fabs',
     section: 'fabs',
+    module: 'rmwc/Fab',
     class: 'Fab',
     url:
       'https://material.io/components/web/catalog/buttons/floating-action-buttons/',
@@ -28,6 +30,7 @@ export default [
   {
     name: 'Icon Toggles',
     section: 'icon-toggles',
+    module: 'rmwc/IconToggle',
     class: 'IconToggle',
     url:
       'https://material.io/components/web/catalog/buttons/icon-toggle-buttons/',
@@ -41,6 +44,7 @@ export default [
   {
     name: 'Cards',
     section: 'cards',
+    module: 'rmwc/Card',
     class: [
       'Card',
       'CardMedia',
@@ -75,6 +79,7 @@ export default [
   {
     name: 'PermanentDrawer',
     section: 'permanent-drawer',
+    module: 'rmwc/Drawer',
     class: ['PermanentDrawer', 'PermanentDrawerContent'],
     url:
       'https://material.io/components/web/catalog/drawers/#permanent-drawer-usage',
@@ -99,6 +104,7 @@ export default [
   {
     name: 'PersistentDrawer',
     section: 'persistent-drawer',
+    module: 'rmwc/Drawer',
     class: [
       'PersistentDrawer',
       'PersistentDrawerHeader',
@@ -138,6 +144,7 @@ export default [
   {
     name: 'TemporaryDrawer',
     section: 'temporary-drawer',
+    module: 'rmwc/Drawer',
     class: [
       'TemporaryDrawer',
       'TemporaryDrawerHeader',
@@ -177,6 +184,7 @@ export default [
   {
     name: 'Dialogs',
     section: 'dialogs',
+    module: 'rmwc/Dialog',
     class: [
       'Dialog',
       'DefaultDialogTemplate',
@@ -240,6 +248,7 @@ export default [
   {
     name: 'Elevation',
     section: 'elevation',
+    module: 'rmwc/Elevation',
     class: 'Elevation',
     url: 'https://material.io/components/web/catalog/elevation/',
     example: `
@@ -265,6 +274,7 @@ export default [
   {
     name: 'Grid Lists',
     section: 'grid-lists',
+    module: 'rmwc/GridList',
     class: [
       'GridList',
       'GridTile',
@@ -314,6 +324,7 @@ export default [
   {
     name: 'Checkboxes',
     section: 'checkboxes',
+    module: 'rmwc/Checkbox',
     class: ['Checkbox'],
     url:
       'https://material.io/components/web/catalog/input-controls/checkboxes/',
@@ -326,6 +337,7 @@ export default [
   },
   {
     name: 'Form Fields',
+    module: 'rmwc/FormField',
     section: 'form-fields',
     class: 'FormField',
     url:
@@ -344,6 +356,7 @@ export default [
   {
     name: 'Radio Buttons',
     section: 'radio-buttons',
+    module: 'rmwc/RadioButton',
     class: 'Radio',
     url:
       'https://material.io/components/web/catalog/input-controls/radio-buttons/',
@@ -356,6 +369,7 @@ export default [
   {
     name: 'Select Menus',
     section: 'select-menus',
+    module: 'rmwc/Select',
     class: 'Select',
     url:
       'https://material.io/components/web/catalog/input-controls/select-menus/',
@@ -375,6 +389,7 @@ export default [
   {
     name: 'Sliders',
     section: 'sliders',
+    module: 'rmwc/Slider',
     class: 'Slider',
     url: 'https://material.io/components/web/catalog/input-controls/sliders/',
     example: `
@@ -407,6 +422,7 @@ export default [
   {
     name: 'Switches',
     section: 'switches',
+    module: 'rmwc/Switch',
     class: 'Switch',
     url: 'https://material.io/components/web/catalog/input-controls/switches/',
     example: `
@@ -418,6 +434,7 @@ export default [
   {
     name: 'TextFields',
     section: 'textfields',
+    module: 'rmwc/TextField',
     class: ['TextField', 'TextFieldHelpText', 'TextFieldIcon'],
     url:
       'https://material.io/components/web/catalog/input-controls/text-fields/',
@@ -436,6 +453,7 @@ export default [
   {
     name: 'Layout Grid',
     section: 'layout-grid',
+    module: 'rmwc/Grid',
     class: ['Grid', 'GridCell'],
     url: 'https://material.io/components/web/catalog/layout-grid/',
     example: `
@@ -449,6 +467,7 @@ export default [
   {
     name: 'Linear Progress',
     section: 'linear-progress',
+    module: 'rmwc/LinearProgress',
     class: 'LinearProgress',
     url: 'https://material.io/components/web/catalog/linear-progress/',
     example: `
@@ -461,6 +480,7 @@ export default [
   {
     name: 'Lists',
     section: 'lists',
+    module: 'rmwc/List',
     class: [
       'List',
       'ListItem',
@@ -498,6 +518,7 @@ export default [
   {
     name: 'Menus',
     section: 'menus',
+    module: 'rmwc/Menu',
     class: ['Menu', 'MenuItem'],
     url: 'https://material.io/components/web/catalog/menus/',
     example: `
@@ -523,6 +544,7 @@ export default [
   {
     name: 'Ripples',
     section: 'ripples',
+    module: 'rmwc/Ripple',
     class: ['Ripple'],
     url: 'https://material.io/components/web/catalog/ripples/',
     example: `
@@ -545,6 +567,7 @@ export default [
   },
   {
     name: 'Snackbars',
+    module: 'rmwc/Snackbar',
     section: 'snackbars',
     class: ['Snackbar'],
     url: 'https://material.io/components/web/catalog/snackbars/',
@@ -582,6 +605,7 @@ export default [
   },
   {
     name: 'Tabs',
+    module: 'rmwc/Tabs',
     section: 'tabs',
     class: ['TabBar', 'Tab'],
     url: 'https://material.io/components/web/catalog/tabs/',
@@ -598,6 +622,7 @@ export default [
   },
   {
     name: 'Theme',
+    module: 'rmwc/Theme',
     section: 'theme',
     class: ['Theme'],
     url: 'https://material.io/components/web/catalog/theme/',
@@ -663,6 +688,7 @@ export default [
   },
   {
     name: 'Toolbars',
+    module: 'rmwc/Toolbar',
     section: 'toolbars',
     class: [
       'Toolbar',
@@ -709,6 +735,7 @@ export default [
   },
   {
     name: 'Typography',
+    module: 'rmwc/Typography',
     section: 'typography',
     class: ['Typography'],
     url: 'https://material.io/components/web/catalog/typography/',
@@ -729,6 +756,7 @@ export default [
   },
   {
     name: 'Icons',
+    module: 'rmwc/Icon',
     section: 'icons',
     class: 'Icon',
     url: 'https://material.io/components/web/catalog/',
