@@ -165,7 +165,11 @@ export class Detail extends React.Component {
       <Grid
         id={'detail-section-' + section.name.toLowerCase().replace(' ', '-')}
       >
-        <Header title={section.name} link={section.url} />
+        <Header
+          title={section.name}
+          link={section.url}
+          module={section.module}
+        />
 
         <GridCell span="12">
           <div className="demo-example">
