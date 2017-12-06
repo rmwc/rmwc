@@ -106,9 +106,10 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     render() {
       const {
         placeholder = '',
+        children,
         value,
         label = '',
-        options,
+        options = [],
         mdcElementRef,
         ...rest
       } = this.props;
@@ -136,6 +137,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
                     {optionLabel}
                   </ListItem>
                 ))}
+              {children}
             </List>
           </SelectMenu>
         </SelectRoot>
