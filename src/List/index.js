@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import { simpleTag, withRipple } from '../Base';
+import { Icon } from '../Icon';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { WithRipplePropsT } from '../Base';
@@ -59,17 +60,13 @@ export const ListItemTextSecondary = simpleTag({
 export const ListItemStartDetail = simpleTag({
   displayName: 'ListItemStartDetail',
   classNames: 'mdc-list-item__start-detail',
-  defaultProps: {
-    wrap: true
-  }
+  tag: Icon
 });
 
 export const ListItemEndDetail = simpleTag({
   displayName: 'ListItemStartDetail',
   classNames: 'mdc-list-item__end-detail',
-  defaultProps: {
-    wrap: true
-  }
+  tag: Icon
 });
 
 export const ListGroup = simpleTag({

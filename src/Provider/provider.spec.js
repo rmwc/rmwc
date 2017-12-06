@@ -22,12 +22,25 @@ describe('Provider', () => {
     expect(!!~dom.html().search('mdc-ripple-surface')).toEqual(false);
   });
 
-  it('can set icon prefix', () => {
+  it('can set icon basename', () => {
     const dom = mount(
-      <RMWCProvider iconPrefix={'my-icon-lib-test'}>
+      <RMWCProvider iconClassNameBase={'my-icon-lib-test'}>
         <Icon />
       </RMWCProvider>
     );
     expect(!!~dom.html().search('my-icon-lib-test')).toEqual(true);
+  });
+
+  it('can set icon prefix', () => {
+    const dom = mount(
+      <RMWCProvider
+        iconClassNamePrefix={'my-icon-lib-test-'}
+        iconStrategy="className"
+      >
+        <Icon use="test" />
+      </RMWCProvider>
+    );
+
+    expect(!!~dom.html().search('my-icon-lib-test-')).toEqual(true);
   });
 });

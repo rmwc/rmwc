@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 
 export type RMWCProviderOptionsT = {
   buttonDefaultRipple: boolean,
-  iconPrefix: string,
+  iconClassNameBase: string,
+  iconClassNamePrefix: string,
+  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',
   children?: React.Node
 };
 
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
   buttonDefaultRipple: true,
-  iconPrefix: 'material-icons '
+  iconClassNameBase: 'material-icons',
+  iconClassNamePrefix: '',
+  iconStrategy: 'auto'
 };
 
 // A function for safely getting context options

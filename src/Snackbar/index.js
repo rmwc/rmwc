@@ -11,8 +11,8 @@ import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 type SnackbarRootT = {
- /* Aligns the Snackbar to the start of the screen. */
- alignStart?: boolean
+  /* Aligns the Snackbar to the start of the screen. */
+  alignStart?: boolean
 } & SimpleTagPropsT;
 
 export const SnackbarRoot: React.ComponentType<SnackbarRootT> = simpleTag({
@@ -49,24 +49,24 @@ export const SnackbarActionButton = simpleTag({
 });
 
 type SnackbarPropsT = {
- /** Show the Snackbar. */
- show?: boolean,
- /** A callback thats fired when the Snackbar closes. */
- onClose?: () => mixed,
- /** A string or other renderable JSX to be used as the message body. */
- message?: React.Node,
- /** Milliseconds to show the Snackbar for. */
- timeout?: number,
- /** Callback that fires when action is pressed. The actionText property must be set to use this. */
- actionHandler?: () => mixed,
- /** Label for the action button. */
- actionText?: React.Node,
- /** Lets the Snackbar text overflow onto multiple lines. */
- multiline?: boolean,
- /** Places the action underneath the message text. */
- actionOnBottom?: boolean,
- /** Whether or not the Snackbar dismisses on the action press. */
- dismissesOnAction?: boolean
+  /** Show the Snackbar. */
+  show?: boolean,
+  /** A callback thats fired when the Snackbar closes. */
+  onClose?: () => mixed,
+  /** A string or other renderable JSX to be used as the message body. */
+  message?: React.Node,
+  /** Milliseconds to show the Snackbar for. */
+  timeout?: number,
+  /** Callback that fires when action is pressed. The actionText property must be set to use this. */
+  actionHandler?: () => mixed,
+  /** Label for the action button. */
+  actionText?: React.Node,
+  /** Lets the Snackbar text overflow onto multiple lines. */
+  multiline?: boolean,
+  /** Places the action underneath the message text. */
+  actionOnBottom?: boolean,
+  /** Whether or not the Snackbar dismisses on the action press. */
+  dismissesOnAction?: boolean
 };
 
 const showSnackbar = (props, api) => {
@@ -81,13 +81,13 @@ const showSnackbar = (props, api) => {
   } = props;
   const timer = setTimeout(() => onClose(), timeout || 2750);
   const wrappedActionHandler =
-  actionHandler && api.dismissesOnAction ?
-    () => {
-      actionHandler();
-      clearTimeout(timer);
-      onClose();
-    } :
-    actionHandler;
+    actionHandler && api.dismissesOnAction ?
+      () => {
+        actionHandler();
+        clearTimeout(timer);
+        onClose();
+      } :
+      actionHandler;
 
   api.show({
     message,
@@ -128,52 +128,52 @@ export const Snackbar = withMDC({
   }
 })(
   class extends React.Component<SnackbarPropsT> {
-  static displayName = 'Snackbar';
+    static displayName = 'Snackbar';
 
-  render() {
-    const {
-      show,
-      message,
-      timeout,
-      actionHandler,
-      actionText,
-      multiline,
-      actionOnBottom,
-      mdcElementRef,
-      dismissesOnAction,
-      onClose,
-      children,
-      ...rest
-    } = this.props;
+    render() {
+      const {
+        show,
+        message,
+        timeout,
+        actionHandler,
+        actionText,
+        multiline,
+        actionOnBottom,
+        mdcElementRef,
+        dismissesOnAction,
+        onClose,
+        children,
+        ...rest
+      } = this.props;
 
-    const isJSX = typeof message === 'object';
-    const snackbarTextStyle = {};
-    if (isJSX) {
-      snackbarTextStyle.display = 'none';
+      const isJSX = typeof message === 'object';
+      const snackbarTextStyle = {};
+      if (isJSX) {
+        snackbarTextStyle.display = 'none';
+      }
+
+      const snackbarActionWrapperStyle = !actionText ?
+        {
+          display: 'none'
+        } :
+        {};
+
+      /**
+       * The double SnackbarText below is a hack to allow for rendering JSX
+       * The real message gets rendered in the hidden container, and the second one is
+       * ignored and shows th rendered content :)
+       */
+      return (
+        <SnackbarRoot elementRef={mdcElementRef} {...rest}>
+          <SnackbarText style={snackbarTextStyle} />
+          {isJSX && <SnackbarText>{message}</SnackbarText>}
+          <SnackbarActionWrapper style={snackbarActionWrapperStyle}>
+            <SnackbarActionButton />
+          </SnackbarActionWrapper>
+          {children}
+        </SnackbarRoot>
+      );
     }
-
-    const snackbarActionWrapperStyle = !actionText ?
-      {
-        display: 'none'
-      } :
-      {};
-
-    /**
-			 * The double SnackbarText below is a hack to allow for rendering JSX
-			 * The real message gets rendered in the hidden container, and the second one is
-			 * ignored and shows th rendered content :)
-			 */
-    return (
-      <SnackbarRoot elementRef={mdcElementRef} {...rest}>
-        <SnackbarText style={snackbarTextStyle} />
-        {isJSX && <SnackbarText>{message}</SnackbarText>}
-        <SnackbarActionWrapper style={snackbarActionWrapperStyle}>
-          <SnackbarActionButton />
-        </SnackbarActionWrapper>
-        {children}
-      </SnackbarRoot>
-    );
-  }
   }
 );
 
