@@ -56,9 +56,7 @@ type DialogFooterButtonT = {
   cancel?: boolean
 } & SimpleTagPropsT;
 
-export const DialogFooterButton: React.ComponentType<
-  DialogFooterButtonT
-> = simpleTag({
+export class DialogFooterButton extends simpleTag({
   displayName: 'DialogFooterButton',
   tag: Button,
   classNames: props => [
@@ -73,7 +71,11 @@ export const DialogFooterButton: React.ComponentType<
     cancel: false
   },
   consumeProps: ['accept', 'cancel']
-});
+})<DialogFooterButtonT> {
+  render() {
+    return super.render();
+  }
+}
 
 type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
