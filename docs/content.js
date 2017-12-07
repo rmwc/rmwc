@@ -48,6 +48,7 @@ export default [
     class: [
       'Card',
       'CardMedia',
+      'CardMediaItem',
       'CardPrimary',
       'CardTitle',
       'CardSubtitle',
