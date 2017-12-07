@@ -11,7 +11,7 @@ export {
   CardMedia
 } from './Card';
 
-export { default as Checkbox } from './Checkbox';
+export { Checkbox } from './Checkbox';
 
 export {
   PersistentDrawer,
@@ -28,13 +28,24 @@ export {
   PermanentDrawerListItem
 } from './Drawer';
 
-export { Dialog, DialogFooterButton } from './Dialog';
+export {
+  Dialog,
+  DialogRoot,
+  DialogBackdrop,
+  DialogSurface,
+  DialogHeader,
+  DialogHeaderTitle,
+  DialogBody,
+  DialogFooter,
+  DefaultDialogTemplate,
+  DialogFooterButton
+} from './Dialog';
 
-export { default as Elevation } from './Elevation';
+export { Elevation } from './Elevation';
 
-export { default as Fab } from './Fab';
+export { Fab } from './Fab';
 
-export { default as FormField } from './FormField';
+export { FormField } from './FormField';
 
 export {
   GridList,
@@ -48,13 +59,13 @@ export {
 
 export { Grid, GridCell } from './Grid';
 
-export { default as Icon } from './Icon';
+export { Icon } from './Icon';
 
-export { default as IconToggle } from './IconToggle';
+export { IconToggle } from './IconToggle';
 
-export { default as IconButton } from './IconButton';
+export { IconButton } from './IconButton';
 
-export { default as LinearProgress } from './LinearProgress';
+export { LinearProgress } from './LinearProgress';
 
 export {
   List,
@@ -70,27 +81,23 @@ export {
 
 export { Menu, MenuItem, MenuAnchor } from './Menu';
 
-export { default as Radio } from './Radio';
+export { Radio } from './Radio';
 
 export { Ripple } from './Ripple';
 
-export { default as RMWCProvider } from './Provider';
+export { RMWCProvider } from './Provider';
 
 export { Select, SelectFormField } from './Select';
 
-export { default as Slider } from './Slider';
+export { Slider } from './Slider';
 
 export { Snackbar } from './Snackbar';
 
-export { default as Switch } from './Switch';
+export { Switch } from './Switch';
 
 export { Tab, TabBar } from './Tabs';
 
-export {
-  default as TextField,
-  TextFieldHelpText,
-  TextFieldIcon
-} from './TextField';
+export { TextField, TextFieldHelpText, TextFieldIcon } from './TextField';
 
 export { Theme } from './Theme';
 
@@ -104,4 +111,4 @@ export {
   ToolbarIcon
 } from './Toolbar';
 
-export { default as Typography } from './Typography';
+export { Typography } from './Typography';
