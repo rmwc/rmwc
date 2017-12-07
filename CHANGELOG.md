@@ -1,3 +1,13 @@
+#### 0.0.1-rc11 (2017-12-07)
+
+##### New Features
+
+* **Card:** Adding missing MediaItem functionality ([76c1a16c](https://github.com/jamesmfriedman/rmwc/commit/76c1a16ccab95806b31c65b4247aaeaa6f7c0ccf))
+
+##### Bug Fixes
+
+* **Dialog:** fixes #47 exports dialog components ([957ba8dc](https://github.com/jamesmfriedman/rmwc/commit/957ba8dc8c11f3abc01ae9db49747d70fdba675a))
+
 #### 0.0.1-rc10 (2017-12-06)
 
 ##### Chores
