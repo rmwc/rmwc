@@ -96,12 +96,49 @@
     {
       "description": "Action Button for the Card",
       "displayName": "CardActions",
-      "methods": []
+      "methods": [],
+      "props": {
+        "vertical": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Allows for vertical alignment of actions."
+        }
+      }
     },
     {
       "description": "Media for the Card",
       "displayName": "CardMedia",
       "methods": []
+    },
+    {
+      "description": "Inidividual Media Item for the Card",
+      "displayName": "CardMediaItem",
+      "methods": [],
+      "props": {
+        "oneDotFiveX": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Sets the media item height to 120px."
+        },
+        "twoX": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Sets the media item height to 160px."
+        },
+        "threeX": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Sets the media item height to 240px."
+        }
+      }
     },
     {
       "description": "Horizontal content for the Card",
@@ -110,7 +147,16 @@
     },
     {
       "description": "A Card action Button",
-      "methods": []
+      "displayName": "CardAction",
+      "methods": [],
+      "props": {
+        "compact": {
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
+        }
+      }
     },
     {
       "description": "A Card Component",
@@ -298,32 +344,21 @@
     {
       "description": "",
       "displayName": "DialogFooterButton",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ],
+      "methods": [],
       "props": {
         "accept": {
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": ""
         },
         "cancel": {
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": ""
         }
       }
     },

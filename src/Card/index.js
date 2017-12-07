@@ -59,12 +59,27 @@ export const CardSupportingText: React.ComponentType<
   classNames: 'mdc-card__supporting-text'
 });
 
+type CardActionsT = {
+  /** Allows for vertical alignment of actions. */
+  vertical: boolean
+};
+
 /** Action Button for the Card */
-export const CardActions = simpleTag({
+export class CardActions extends simpleTag({
   displayName: 'CardActions',
   tag: 'section',
-  classNames: 'mdc-card__actions'
-});
+  classNames: props => [
+    'mdc-card__actions',
+    { 'mdc-card__actions--vertical': props.vertical }
+  ],
+  defaultProps: {
+    vertical: undefined
+  }
+})<CardActionsT> {
+  render() {
+    return super.render();
+  }
+}
 
 /** Media for the Card */
 export const CardMedia = simpleTag({
@@ -73,20 +88,50 @@ export const CardMedia = simpleTag({
   classNames: 'mdc-card__media'
 });
 
+type CardMediaItemT = {
+  /** Sets the media item height to 120px. */
+  oneDotFiveX: boolean,
+  /** Sets the media item height to 160px. */
+  twoX: boolean,
+  /** Sets the media item height to 240px. */
+  threeX: boolean
+};
+
+/** Inidividual Media Item for the Card */
+export class CardMediaItem extends simpleTag({
+  displayName: 'CardMediaItem',
+  tag: 'img',
+  classNames: props => [
+    'mdc-card__media-item',
+    {
+      'mdc-card__media-item--1dot5x	': props.oneDotFiveX,
+      'mdc-card__media-item--2x': props.twoX,
+      'mdc-card__media-item--3x': props.threeX
+    }
+  ]
+})<CardMediaItemT> {
+  render() {
+    return super.render();
+  }
+}
+
 /** Horizontal content for the Card */
 export const CardHorizontalBlock: React.ComponentType<
   SimpleTagPropsT
 > = simpleTag({
   displayName: 'CardHorizontalBlock',
-  classNames: 'mdc-card__media'
+  classNames: 'mdc-card__horizontal-block'
 });
 
 /** A Card action Button */
-export const CardAction: React.ComponentType<Button> = props => {
-  const { className, ...rest } = props;
-  const classes = classNames('mdc-card__action', className);
-  return <Button compact className={classes} {...rest} />;
-};
+export const CardAction = simpleTag({
+  displayName: 'CardAction',
+  tag: Button,
+  classNames: 'mdc-card__action',
+  defaultProps: {
+    compact: true
+  }
+});
 
 type CardPropsT = {
   /** Use the cards dark theme. */
