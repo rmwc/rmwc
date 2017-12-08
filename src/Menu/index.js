@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { MDCSimpleMenu } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
-import { simpleTag, withMDC } from '../Base';
+import { simpleTag, withMDC, noop } from '../Base';
 
 export const MenuItem = (props: any) => (
   <ListItem role="menuitem" tabIndex="0" {...props} />
@@ -46,6 +46,11 @@ export const Menu = withMDC({
       handleMenuChange(evt, props);
       props.onSelected(evt);
     }
+  },
+  defaultProps: {
+    open: false,
+    onSelected: noop,
+    onClose: noop
   },
   onUpdate: (props, nextProps, api) => {
     if (api && nextProps.open !== undefined && api.open !== nextProps.open) {
