@@ -57,7 +57,7 @@ export {
   GridTileTitleSupportText
 } from './GridList';
 
-export { Grid, GridCell } from './Grid';
+export { Grid, GridCell, GridInner } from './Grid';
 
 export { Icon } from './Icon';
 
