@@ -64,7 +64,7 @@ export const TextFieldBottomLine = simpleTag({
   classNames: 'mdc-text-field__bottom-line'
 });
 
-type TextFieldHelpTextPropsT = {
+type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
   persistent?: boolean,
   /** Make the help a validation message style */
@@ -74,18 +74,18 @@ type TextFieldHelpTextPropsT = {
 /**
  * A help text component
  */
-export class TextFieldHelpText extends simpleTag({
-  displayName: 'TextFieldHelpText',
+export class TextFieldHelperText extends simpleTag({
+  displayName: 'TextFieldHelperText',
   tag: 'p',
   classNames: props => [
-    'mdc-text-field-helptext',
+    'mdc-text-field-helper-text',
     {
-      'mdc-text-field-helptext--persistent': props.persistent,
-      'mdc-text-field-helptext--validation-msg': props.validationMsg
+      'mdc-text-field-helper-text--persistent': props.persistent,
+      'mdc-text-field-helper-text--validation-msg': props.validationMsg
     }
   ],
   consumeProps: ['persistent', 'validationMsg']
-})<TextFieldHelpTextPropsT> {
+})<TextFieldHelperTextPropsT> {
   render() {
     return super.render();
   }
