@@ -25,7 +25,7 @@ export const SelectLabel = simpleTag({
   classNames: props => [
     'mdc-select__label',
     {
-      'mdc-select__label--float-above': props.placeholder
+      'mdc-select__label--float-above': props.placeholder || props.value
     }
   ]
 });
@@ -75,10 +75,30 @@ const getDisplayValue = (value, options, placeholder) => {
   placeholder = placeholder || '\u00a0';
 
   if (options) {
-    return options.get(value) !== undefined ? options.get(value) : placeholder;
+    return options.find(v => v.value === value) || placeholder;
   }
 
   return value || placeholder;
+};
+
+const createSelectOptions = options => {
+  // preformatted array
+  if (Array.isArray(options) && options[0] && typeof options[0] !== 'object') {
+    return options;
+  }
+
+  // simple array
+  if (Array.isArray(options)) {
+    return options.map(value => ({ value, label: value }));
+  }
+
+  // value => label objects
+  if (typeof options === 'object') {
+    return Object.entries(options).map(([value, label]) => ({
+      value,
+      label
+    }));
+  }
 };
 
 export const Select: React.ComponentType<SelectPropsT> = withMDC({
@@ -97,7 +117,11 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     disabled: false
   },
   onMount: (props, api) => {
-    window.requestAnimationFrame(() => api && api.foundation_.resize());
+    window.requestAnimationFrame(() => {
+      try {
+        api.foundation_.resize();
+      } catch (err) {}
+    });
   },
   didUpdate: (props, nextProps, api, inst) => {
     if (!api) return;
@@ -148,16 +172,15 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
         ...rest
       } = this.props;
 
-      const selectOptions = Array.isArray(options) ?
-        new Map(options.map(val => [val, val])) :
-        new Map(Object.entries(options).map(([val, label]) => [label, val]));
-
+      const selectOptions = createSelectOptions(options);
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
       return (
         <SelectRoot elementRef={mdcElementRef} {...rest}>
           <SelectSurface>
-            <SelectLabel placeholder={placeholder}>{label}</SelectLabel>
+            <SelectLabel placeholder={placeholder} value={value}>
+              {label}
+            </SelectLabel>
             <SelectSelectedText>{displayValue}</SelectSelectedText>
             <SelectBottomLine />
           </SelectSurface>
@@ -174,9 +197,15 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
                 </ListItem>
               )}
               {options &&
-                Array.from(selectOptions).map(([optionLabel, optionVal], i) => (
-                  <ListItem key={i} role="option" id={optionVal} tabIndex="0">
-                    {optionLabel}
+                selectOptions.map(({ label, ...option }, i) => (
+                  <ListItem
+                    key={i}
+                    role="option"
+                    tabIndex="0"
+                    {...option}
+                    id={option.value}
+                  >
+                    {label}
                   </ListItem>
                 ))}
               {children}

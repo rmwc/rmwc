@@ -18,6 +18,7 @@ storiesOf('Selects', module)
   ))
   .add('Select with array', () => (
     <Select
+      label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
@@ -26,6 +27,7 @@ storiesOf('Selects', module)
   ))
   .add('Select with initial value', () => (
     <Select
+      label={text('label', 'Foods')}
       value={text('value', 'Cookies')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
       onChange={evt => action('onChange: ' + evt.target.value)()}
