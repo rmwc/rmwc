@@ -9,6 +9,7 @@ import { ListItem } from '../List';
 storiesOf('Selects', module)
   .add('Select with object', () => (
     <Select
+      label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
       options={object('options', { 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' })}

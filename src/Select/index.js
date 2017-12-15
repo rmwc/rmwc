@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { List, ListItem } from '../List';
+import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -14,25 +15,35 @@ export const SelectRoot = simpleTag({
   }
 });
 
+export const SelectSurface = simpleTag({
+  displayName: 'SelectSurface',
+  classNames: 'mdc-select__surface'
+});
+
+export const SelectLabel = simpleTag({
+  displayName: 'SelectLabel',
+  classNames: props => [
+    'mdc-select__label',
+    {
+      'mdc-select__label--float-above': props.placeholder
+    }
+  ]
+});
+
 export const SelectSelectedText = simpleTag({
   displayName: 'SelectSelectedText',
-  tag: 'span',
   classNames: 'mdc-select__selected-text'
 });
 
-export const SelectLabel = props => (
-  <div
-    style={{ position: 'absolute', marginTop: '34px', whiteSpace: 'nowrap' }}
-  >
-    <label className="mdc-text-field__label mdc-text-field__label--float-above">
-      {props.children}
-    </label>
-  </div>
-);
+export const SelectBottomLine = simpleTag({
+  displayName: 'SelectBottomLine',
+  classNames: 'mdc-select__bottom-line'
+});
 
 export const SelectMenu = simpleTag({
   displayName: 'SelectMenu',
-  classNames: 'mdc-simple-menu mdc-select__menu'
+  tag: MenuRoot,
+  classNames: 'mdc-select__menu'
 });
 
 export const SelectFormField = simpleTag({
@@ -88,16 +99,39 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
   onMount: (props, api) => {
     window.requestAnimationFrame(() => api && api.foundation_.resize());
   },
-  onUpdate: (props, nextProps, api) => {
+  didUpdate: (props, nextProps, api, inst) => {
     if (!api) return;
 
-    if ((props && props.value !== nextProps.value) || props === undefined) {
+    const valueDidChange = props && props.value !== nextProps.value;
+    const optionsDidChange = props && props.options !== nextProps.options;
+    const isFirstRun = props === undefined;
+    const placeholderDidChange =
+      props && props.placeholder !== nextProps.placeholder;
+
+    if (optionsDidChange) {
+      api.foundation_.selectedIndex = 0;
+      inst.mdcComponentReinit();
+
+      // escape out to avoid errors, didUpdate will run again on component init
+      return;
+    }
+
+    if (
+      valueDidChange ||
+      optionsDidChange ||
+      isFirstRun ||
+      placeholderDidChange
+    ) {
       const newIndex = api.options.indexOf(api.nameditem(nextProps.value));
       api.selectedIndex =
         newIndex === -1 && nextProps.placeholder ? 0 : newIndex;
-    }
 
-    window.requestAnimationFrame(() => api && api.foundation_.resize());
+      window.requestAnimationFrame(() => {
+        try {
+          api.foundation_.resize();
+        } catch (err) {}
+      });
+    }
   }
 })(
   class extends React.Component<SelectPropsT> {
@@ -122,12 +156,20 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
 
       return (
         <SelectRoot elementRef={mdcElementRef} {...rest}>
-          <SelectSelectedText>{displayValue}</SelectSelectedText>
-          {!!label.length && <SelectLabel>{label}</SelectLabel>}
+          <SelectSurface>
+            <SelectLabel placeholder={placeholder}>{label}</SelectLabel>
+            <SelectSelectedText>{displayValue}</SelectSelectedText>
+            <SelectBottomLine />
+          </SelectSurface>
           <SelectMenu>
-            <List className="mdc-simple-menu__items">
+            <MenuItems>
               {!!placeholder.length && (
-                <ListItem role="option" id="placeholder" aria-disabled="true">
+                <ListItem
+                  role="option"
+                  id="placeholder"
+                  aria-disabled="true"
+                  tab-index="0"
+                >
                   {placeholder}
                 </ListItem>
               )}
@@ -138,7 +180,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
                   </ListItem>
                 ))}
               {children}
-            </List>
+            </MenuItems>
           </SelectMenu>
         </SelectRoot>
       );
