@@ -48,4 +48,13 @@ storiesOf('Selects', module)
         Icecream
       </ListItem>
     </Select>
+  ))
+  .add('CSS Select', () => (
+    <Select
+      cssOnly
+      label={text('label', 'Foods')}
+      value={text('value', 'Cookies')}
+      options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
+      onChange={evt => action('onChange: ' + evt.target.value)()}
+    />
   ));

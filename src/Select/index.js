@@ -68,7 +68,9 @@ type SelectPropsT = {
   /** Placeholder text for the form control. */
   placeholder?: string,
   /** Disables the form control. */
-  disabled?: boolean
+  disabled?: boolean,
+  /** Makes a cssOnly select */
+  cssOnly?: boolean
 } & SimpleTagPropsT;
 
 const getDisplayValue = (value, options, placeholder) => {
@@ -81,9 +83,9 @@ const getDisplayValue = (value, options, placeholder) => {
   return value || placeholder;
 };
 
-const createSelectOptions = options => {
+const createSelectOptions = (options): Object[] => {
   // preformatted array
-  if (Array.isArray(options) && options[0] && typeof options[0] !== 'object') {
+  if (Array.isArray(options) && options[0] && typeof options[0] === 'object') {
     return options;
   }
 
@@ -99,6 +101,9 @@ const createSelectOptions = options => {
       label
     }));
   }
+
+  // default, just return
+  return options;
 };
 
 export const Select: React.ComponentType<SelectPropsT> = withMDC({
@@ -111,6 +116,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     }
   },
   defaultProps: {
+    cssOnly: false,
     options: undefined,
     label: undefined,
     placeholder: undefined,
@@ -169,11 +175,31 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
         label = '',
         options = [],
         mdcElementRef,
+        cssOnly,
         ...rest
       } = this.props;
 
       const selectOptions = createSelectOptions(options);
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
+
+      if (cssOnly) {
+        return (
+          <SelectRoot elementRef={mdcElementRef} {...rest}>
+            <SelectSurface tag="select" value={value} onChange={rest.onChange}>
+              {selectOptions &&
+                selectOptions.map(({ label, ...option }, i) => {
+                  console.log(label, option);
+                  return (
+                    <option key={i} {...option} value={option.value}>
+                      {label}
+                    </option>
+                  );
+                })}
+            </SelectSurface>
+            <SelectBottomLine />
+          </SelectRoot>
+        );
+      }
 
       return (
         <SelectRoot elementRef={mdcElementRef} {...rest}>
@@ -196,7 +222,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
                   {placeholder}
                 </ListItem>
               )}
-              {options &&
+              {selectOptions &&
                 selectOptions.map(({ label, ...option }, i) => (
                   <ListItem
                     key={i}
