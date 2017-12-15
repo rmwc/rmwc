@@ -31,7 +31,8 @@ export const withMDC = ({
   mdcElementRef = false,
   defaultProps = {},
   onMount = noop,
-  onUpdate = noop
+  onUpdate = noop,
+  didUpdate = noop
 }: WithMDCOpts) => (
   Component: React.ComponentType<any>
 ): React.ComponentType<any> => {
@@ -64,6 +65,10 @@ export const withMDC = ({
 
     componentWillUpdate(nextProps: WithMDCPropsT) {
       onUpdate(this.props, nextProps, this.mdcApi, this);
+    }
+
+    componentDidUpdate(prevProps: WithMDCPropsT): void {
+      didUpdate(prevProps, this.props, this.mdcApi, this);
     }
 
     componentWillUnmount() {
@@ -100,6 +105,7 @@ export const withMDC = ({
       });
 
       onUpdate(undefined, this.props, this.mdcApi, this);
+      didUpdate(undefined, this.props, this.mdcApi, this);
     }
 
     mdcComponentReinit() {
