@@ -108,6 +108,8 @@ type TextFieldPropsT = {
   inputRef?: React.Ref<any>,
   /** Disables the input. */
   disabled?: boolean,
+  /** Sets the Validity state of the input */
+  valid?: boolean,
   /** A label for the input. */
   label?: React.Node,
   /** Add a leading icon. */
@@ -125,6 +127,7 @@ export const TextField = withMDC({
   defaultProps: {
     inputRef: noop,
     disabled: false,
+    valid: undefined,
     box: undefined,
     fullwidth: undefined,
     label: undefined,
