@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, object, array, number } from '@storybook/addon-knobs';
+import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
 import { ListItem } from '../List';
 import { storyWithState } from '../Base/story-with-state';
@@ -96,7 +96,7 @@ const CSSMultiSelectWithOptgroupsStory = storyWithState(
   }
 );
 
-storiesOf('Selects', module)
+storiesOf('Inputs and Controls', module)
   .add('Select with object', () => (
     <Select
       label={text('label', 'Foods')}
