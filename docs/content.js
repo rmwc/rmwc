@@ -486,7 +486,7 @@ export default [
       'List',
       'ListItem',
       'ListItemText',
-      'ListItemTextSecondary',
+      'ListItemSecondaryText',
       'ListItemStartDetail',
       'ListItemEndDetail',
       'ListDivider',
