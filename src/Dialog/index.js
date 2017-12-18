@@ -40,7 +40,13 @@ export const DialogHeaderTitle = simpleTag({
 export const DialogBody = simpleTag({
   displayName: 'DialogBody',
   tag: 'section',
-  classNames: 'mdc-dialog__body'
+  classNames: props => [
+    'mdc-dialog__body',
+    {
+      'mdc-dialog__body--scrollable': props.scrollable
+    }
+  ],
+  consumeProps: ['scrollable']
 });
 
 export const DialogFooter = simpleTag({
@@ -151,7 +157,9 @@ type DefaultDialogTemplatePropsT = {
   /** Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.*/
   cancelLabel?: React.Node,
   /** Any children will be rendered in the body of the default Dialog template. */
-  children?: React.Node
+  children?: React.Node,
+  /** Allow the body to be scrollable */
+  scrollable?: boolean
 };
 
 export class DefaultDialogTemplate extends React.Component<
@@ -162,6 +170,7 @@ export class DefaultDialogTemplate extends React.Component<
     header: undefined,
     body: undefined,
     footer: undefined,
+    scrollable: undefined,
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel'
   };
@@ -172,6 +181,7 @@ export class DefaultDialogTemplate extends React.Component<
       header,
       body,
       footer,
+      scrollable,
       acceptLabel,
       cancelLabel,
       children,
@@ -188,7 +198,7 @@ export class DefaultDialogTemplate extends React.Component<
             </DialogHeader>
           )}
           {(!!body || children) && (
-            <DialogBody>
+            <DialogBody scrollable={scrollable}>
               {body}
               {children}
             </DialogBody>
