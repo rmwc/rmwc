@@ -12,7 +12,13 @@ export const DialogRoot = simpleTag({
     role: 'alertdialog'
   },
   tag: 'aside',
-  classNames: 'mdc-dialog'
+  classNames: props => [
+    'mdc-dialog',
+    {
+      'mdc-dialog--theme-dark': props.themeDark
+    }
+  ],
+  consumeProps: ['themeDark']
 });
 
 export const DialogBackdrop = simpleTag({
@@ -91,7 +97,9 @@ type DialogPropsT = {
   /** Callback for when the Dialog was closed without acceptance. */
   onCancel: (evt: Event) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: Event) => mixed
+  onClose: (evt: Event) => mixed,
+  /** Use the dark theme */
+  themeDark: boolean
 };
 
 export const Dialog = withMDC({
@@ -109,6 +117,7 @@ export const Dialog = withMDC({
   },
   defaultProps: {
     open: false,
+    themeDark: false,
     onAccept: noop,
     onCancel: noop,
     onClose: noop
