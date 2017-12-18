@@ -7,7 +7,13 @@ import { simpleTag, withMDCToggle } from '../Base';
 
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
-  classNames: 'mdc-checkbox'
+  classNames: props => [
+    'mdc-checkbox',
+    {
+      'mdc-checkbox--theme-dark': props.themeDark
+    }
+  ],
+  consumeProps: ['themeDark']
 });
 
 export const CheckboxNativeControl = simpleTag({
@@ -65,7 +71,9 @@ type CheckboxPropsT = {
   /** Make the control indeterminate */
   indeterminate?: boolean,
   /** A label for the control. */
-  label?: string
+  label?: string,
+  /** Use the dark theme. */
+  themeDark?: boolean
 };
 
 /**
@@ -87,6 +95,7 @@ export const Checkbox = withMDCToggle({
         indeterminate,
         mdcElementRef,
         generatedId,
+        themeDark,
         ...rest
       } = this.props;
       const labelId = id || generatedId;
@@ -94,7 +103,11 @@ export const Checkbox = withMDCToggle({
       const classes = classNames({ 'mdc-checkbox--disabled': rest.disabled });
 
       const checkbox = (
-        <CheckboxRoot elementRef={mdcElementRef} className={classes}>
+        <CheckboxRoot
+          elementRef={mdcElementRef}
+          className={classes}
+          themeDark={themeDark}
+        >
           <CheckboxNativeControl id={labelId} {...checkedProp} {...rest} />
           <CheckboxBackground>
             <CheckboxCheckmark>
