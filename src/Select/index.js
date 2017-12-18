@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { List, ListItem } from '../List';
+import { List, ListItem, ListGroup } from '../List';
 import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
@@ -60,6 +60,11 @@ export const SelectFormField = simpleTag({
   }
 });
 
+export const MultiSelect = simpleTag({
+  tag: List,
+  classNames: 'mdc-multi-select'
+});
+
 type SelectPropsT = {
   /** An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}. */
   options: Object | mixed[],
@@ -73,20 +78,30 @@ type SelectPropsT = {
   cssOnly?: boolean
 } & SimpleTagPropsT;
 
+/**
+ * Get the display value for a select from its formatted options
+ */
 const getDisplayValue = (value, options, placeholder) => {
   placeholder = placeholder || '\u00a0';
 
   if (options) {
-    return options.find(v => v.value === value) || placeholder;
+    const option = options.find(v => v.value === value);
+
+    return option ? option.value : placeholder;
   }
 
   return value || placeholder;
 };
 
+/**
+ * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
+ */
 const createSelectOptions = (options): Object[] => {
   // preformatted array
   if (Array.isArray(options) && options[0] && typeof options[0] === 'object') {
-    return options;
+    return options.map(opt => {
+      return { ...opt, options: createSelectOptions(opt.options) };
+    });
   }
 
   // simple array
@@ -130,10 +145,13 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     });
   },
   didUpdate: (props, nextProps, api, inst) => {
+    // we might be in cssOnly mode, or lacking an api
     if (!api) return;
 
     const valueDidChange = props && props.value !== nextProps.value;
-    const optionsDidChange = props && props.options !== nextProps.options;
+    const optionsDidChange =
+      props &&
+      JSON.stringify(props.options) !== JSON.stringify(nextProps.options);
     const isFirstRun = props === undefined;
     const placeholderDidChange =
       props && props.placeholder !== nextProps.placeholder;
@@ -183,19 +201,51 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
       if (cssOnly) {
+        const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
+        const selectInner = (
+          <SelectInnerRoot tag="select" value={value} {...rest}>
+            {selectOptions &&
+              selectOptions.map(({ label, ...option }, i) => {
+                if (option.options) {
+                  return (
+                    <ListGroup tag="optgroup" label={label} key={label}>
+                      {option.options.map(({ label, ...option }, i) => (
+                        <ListItem
+                          tag="option"
+                          key={label}
+                          {...option}
+                          value={option.value}
+                        >
+                          {label}
+                        </ListItem>
+                      ))}
+                    </ListGroup>
+                  );
+                }
+
+                return (
+                  <ListItem
+                    tag="option"
+                    key={label}
+                    {...option}
+                    value={option.value}
+                  >
+                    {label}
+                  </ListItem>
+                );
+              })}
+            {children}
+          </SelectInnerRoot>
+        );
+
+        // multiple selects dont include the wrapper or underline
+        if (rest.multiple) {
+          return selectInner;
+        }
+
         return (
           <SelectRoot elementRef={mdcElementRef} {...rest}>
-            <SelectSurface tag="select" value={value} onChange={rest.onChange}>
-              {selectOptions &&
-                selectOptions.map(({ label, ...option }, i) => {
-                  console.log(label, option);
-                  return (
-                    <option key={i} {...option} value={option.value}>
-                      {label}
-                    </option>
-                  );
-                })}
-            </SelectSurface>
+            {selectInner}
             <SelectBottomLine />
           </SelectRoot>
         );
@@ -217,6 +267,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
                   role="option"
                   id="placeholder"
                   aria-disabled="true"
+                  disabled
                   tab-index="0"
                 >
                   {placeholder}
