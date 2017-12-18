@@ -21,7 +21,7 @@ export type ButtonRootPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ButtonRoot: React.ComponentType<ButtonRootPropsT> = withRipple(
+export const ButtonRoot = withRipple(
   simpleTag({
     displayName: 'ButtonRoot',
     tag: 'button',
@@ -32,7 +32,14 @@ export const ButtonRoot: React.ComponentType<ButtonRootPropsT> = withRipple(
       unelevated: false,
       stroked: false
     },
-    consumeProps: ['dense', 'raised', 'compact', 'unelevated', 'stroked'],
+    consumeProps: [
+      'dense',
+      'raised',
+      'compact',
+      'unelevated',
+      'stroked',
+      'primary'
+    ],
     classNames: props => [
       'mdc-button',
       {
@@ -55,7 +62,12 @@ export class Button extends React.Component<ButtonRootPropsT> {
     raised: false,
     compact: false,
     unelevated: false,
-    stroked: false
+    stroked: false,
+
+    // fixes for ripples...
+    primary: true, // this corrects the color of the ripple
+    accent: false, // this would adjust the color of the ripple
+    unbounded: false // this would make the ripple unbounded
   };
 
   componentWillMount() {
