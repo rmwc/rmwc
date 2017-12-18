@@ -51,10 +51,10 @@ export const ListItemText = simpleTag({
   classNames: 'mdc-list-item__text'
 });
 
-export const ListItemTextSecondary = simpleTag({
-  displayName: 'ListItemTextSecondary',
+export const ListItemSecondaryText = simpleTag({
+  displayName: 'ListItemSecondaryText',
   tag: 'span',
-  classNames: 'mdc-list-item__text__secondary'
+  classNames: 'mdc-list-item__secondary-text'
 });
 
 export const ListItemStartDetail = simpleTag({

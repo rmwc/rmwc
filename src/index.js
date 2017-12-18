@@ -71,7 +71,7 @@ export {
   List,
   ListItem,
   ListItemText,
-  ListItemTextSecondary,
+  ListItemSecondaryText,
   ListItemStartDetail,
   ListItemEndDetail,
   ListGroup,
