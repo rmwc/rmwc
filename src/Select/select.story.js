@@ -5,6 +5,96 @@ import { action } from '@storybook/addon-actions';
 import { text, object, array, number } from '@storybook/addon-knobs';
 import { Select } from './';
 import { ListItem } from '../List';
+import { storyWithState } from '../Base/story-with-state';
+
+const CSSSelectStory = storyWithState(
+  state => ({
+    label: text('label', state.label || 'Foods'),
+    value: text('value', state.value || 'Cookies'),
+    options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
+  }),
+  function() {
+    return (
+      <Select
+        cssOnly
+        label={this.state.label}
+        value={this.state.value}
+        options={this.state.options}
+        onChange={evt => {
+          this.setState({ value: evt.target.value });
+          action('onChange: ' + evt.target.value)();
+        }}
+      />
+    );
+  }
+);
+
+const CSSSelectWithOptgroupsStory = storyWithState(
+  state => ({
+    label: text('label', state.label || 'Foods'),
+    value: text('value', state.value || 'Cookies'),
+    options: array(
+      'options',
+      state.options || [
+        { label: 'Foods', options: ['Cookies', 'Pizza', 'Icecream'] },
+        { label: 'Animals', options: ['Dogs', 'Cats', 'Birds'] }
+      ]
+    )
+  }),
+  function() {
+    return (
+      <Select
+        {...this.props}
+        cssOnly
+        label={this.state.label}
+        value={this.state.value}
+        options={this.state.options}
+        onChange={evt => {
+          this.setState({ value: evt.target.value });
+          action('onChange: ' + evt.target.value)();
+        }}
+      />
+    );
+  }
+);
+
+const CSSMultiSelectWithOptgroupsStory = storyWithState(
+  state => ({
+    label: text('label', state.label || 'Foods'),
+    value: array('value', state.value || ['Cookies']),
+    options: array(
+      'options',
+      state.options || [
+        { label: 'Foods', options: ['Cookies', 'Pizza', 'Icecream'] },
+        { label: 'Animals', options: ['Dogs', 'Cats', 'Birds'] }
+      ]
+    )
+  }),
+  function() {
+    return (
+      <Select
+        {...this.props}
+        cssOnly
+        multiple
+        size="8"
+        label={this.state.label}
+        value={this.state.value}
+        options={this.state.options}
+        onChange={evt => {
+          this.setState({
+            value: window.Reflect.apply(
+              Array.prototype.slice,
+              evt.target.selectedOptions,
+              []
+            ).map(o => o.value)
+          });
+
+          action('onChange: ' + evt.target.value)();
+        }}
+      />
+    );
+  }
+);
 
 storiesOf('Selects', module)
   .add('Select with object', () => (
@@ -49,12 +139,8 @@ storiesOf('Selects', module)
       </ListItem>
     </Select>
   ))
-  .add('CSS Select', () => (
-    <Select
-      cssOnly
-      label={text('label', 'Foods')}
-      value={text('value', 'Cookies')}
-      options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
-      onChange={evt => action('onChange: ' + evt.target.value)()}
-    />
+  .add('CSS Select', () => <CSSSelectStory />)
+  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />)
+  .add('CSS Multi-select w/ optgroups', () => (
+    <CSSMultiSelectWithOptgroupsStory />
   ));
