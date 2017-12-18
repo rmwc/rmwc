@@ -38,7 +38,9 @@ export const ButtonRoot = withRipple(
       'compact',
       'unelevated',
       'stroked',
-      'primary'
+      'primary',
+      'accent',
+      'unbounded'
     ],
     classNames: props => [
       'mdc-button',
