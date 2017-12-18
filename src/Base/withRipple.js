@@ -17,9 +17,10 @@ export const withRipple = (
     static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
     render() {
       const { ripple, ...rest } = this.props;
+
       if (ripple && !rest.cssOnly) {
         return (
-          <Ripple>
+          <Ripple primary={rest.primary}>
             <Component {...rest} />
           </Ripple>
         );
