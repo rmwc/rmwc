@@ -441,14 +441,14 @@ export default [
       'https://material.io/components/web/catalog/input-controls/text-fields/',
     example: `
 				<TextField label="Write something..." />
-				<TextFieldHelpText>Optional help text.</TextFieldHelpText>
+				<TextFieldHelperText>Optional help text.</TextFieldHelperText>
 
 				<TextField withLeadingIcon={<TextFieldIcon use="search"/>} label="Write something..." /><br/>
 
 				<TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." /><br/>
 				
 				<TextField textarea fullwidth label="Multiline..." rows="8" />
-				<TextFieldHelpText persistent validationMsg>The field is required.</TextFieldHelpText>
+				<TextFieldHelperText persistent validationMsg>The field is required.</TextFieldHelperText>
 		`
   },
   {
