@@ -21,6 +21,16 @@ export const MenuRoot = simpleTag({
   }
 });
 
+export const MenuItems = simpleTag({
+  displayName: 'MenuItems',
+  tag: List,
+  classNames: 'mdc-simple-menu__items',
+  defaultProps: {
+    "role": 'menu',
+    'aria-hidden': 'true'
+  }
+});
+
 type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
@@ -72,13 +82,7 @@ export const Menu = withMDC({
       } = this.props;
       return (
         <MenuRoot elementRef={mdcElementRef} {...rest}>
-          <List
-            className="mdc-simple-menu__items"
-            role="menu"
-            aria-hidden="true"
-          >
-            {children}
-          </List>
+          <MenuItems>{children}</MenuItems>
         </MenuRoot>
       );
     }
