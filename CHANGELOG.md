@@ -2,7 +2,7 @@
 
 ##### Documentation Changes
 
-* **TextFieldHeleprText:** fixed broken export ([ad8449bf](https://github.com/jamesmfriedman/rmwc/commit/ad8449bf5194072fbe68d6eba364fe2778142338))
+* **TextFieldHelperText:** fixed broken export ([ad8449bf](https://github.com/jamesmfriedman/rmwc/commit/ad8449bf5194072fbe68d6eba364fe2778142338))
 
 ##### New Features
 
