@@ -20,7 +20,7 @@ export const withRipple = (
 
       if (ripple && !rest.cssOnly) {
         return (
-          <Ripple primary={rest.primary}>
+          <Ripple>
             <Component {...rest} />
           </Ripple>
         );
