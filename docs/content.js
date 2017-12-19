@@ -395,7 +395,7 @@ export default [
 						label: 'Pizza',
 						value: '2',
 						
-						/** Any additional items will be past to the
+						/** Any additional items will be passed to the
 						 child list item as props */
 
 						'aria-disabled': true,
