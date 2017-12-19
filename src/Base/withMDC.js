@@ -19,7 +19,14 @@ type WithMDCOpts = {
     nextProps: Object,
     api: ?Object,
     inst: Object
-  ) => mixed
+  ) => mixed,
+  didUpdate?: (
+    currentProps: ?Object,
+    nextProps: Object,
+    api: ?Object,
+    inst: Object
+  ) => mixed,
+  cssOnly?: boolean
 };
 
 /**
@@ -31,7 +38,9 @@ export const withMDC = ({
   mdcElementRef = false,
   defaultProps = {},
   onMount = noop,
-  onUpdate = noop
+  onUpdate = noop,
+  didUpdate = noop,
+  shouldInit = () => true
 }: WithMDCOpts) => (
   Component: React.ComponentType<any>
 ): React.ComponentType<any> => {
@@ -66,12 +75,16 @@ export const withMDC = ({
       onUpdate(this.props, nextProps, this.mdcApi, this);
     }
 
+    componentDidUpdate(prevProps: WithMDCPropsT): void {
+      didUpdate(prevProps, this.props, this.mdcApi, this);
+    }
+
     componentWillUnmount() {
       this.mdcComponentDestroy();
     }
 
     mdcComponentInit() {
-      if (MDCConstructor) {
+      if (MDCConstructor && !this.props.cssOnly) {
         const el = this.mdcGetRootElement();
 
         // a stupid hack for the test environment where this ends up undefined
@@ -100,6 +113,7 @@ export const withMDC = ({
       });
 
       onUpdate(undefined, this.props, this.mdcApi, this);
+      didUpdate(undefined, this.props, this.mdcApi, this);
     }
 
     mdcComponentReinit() {

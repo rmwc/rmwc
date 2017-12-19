@@ -71,7 +71,7 @@ export {
   List,
   ListItem,
   ListItemText,
-  ListItemTextSecondary,
+  ListItemSecondaryText,
   ListItemStartDetail,
   ListItemEndDetail,
   ListGroup,
@@ -97,7 +97,7 @@ export { Switch } from './Switch';
 
 export { Tab, TabBar } from './Tabs';
 
-export { TextField, TextFieldHelpText, TextFieldIcon } from './TextField';
+export { TextField, TextFieldHelperText, TextFieldIcon } from './TextField';
 
 export { Theme } from './Theme';
 

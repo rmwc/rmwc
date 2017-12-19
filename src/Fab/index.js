@@ -11,7 +11,9 @@ import type { RMWCProviderOptionsT } from '../Provider';
 
 export type FabRootPropsT = {
   /** Make the Fab smaller. */
-  mini?: boolean
+  mini?: boolean,
+  /** cssOnly Fab. */
+  cssOnly?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -26,9 +28,10 @@ export const FabRoot = withRipple(
       }
     ],
     defaultProps: {
+      cssOnly: false,
       mini: false
     },
-    consumeProps: ['mini']
+    consumeProps: ['mini', 'cssOnly']
   })
 );
 

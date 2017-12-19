@@ -7,6 +7,10 @@ import type { SimpleTagPropsT } from '../Base';
 import type { WithRipplePropsT } from '../Base';
 
 type ListItemPropsT = {
+  /** A modifier for a selected state. */
+  selected?: boolean,
+  /** A modifier for an active state. */
+  activated?: boolean,
   /** A modifier for a selected item in Permanent Drawer. */
   permanentDrawerSelected?: boolean,
   /** A modifier for a selected item in Persistent Drawer. */
@@ -16,12 +20,14 @@ type ListItemPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
+export const ListItem = withRipple(
   class extends simpleTag({
     displayName: 'ListItemRoot',
     classNames: props => [
       'mdc-list-item',
       {
+        'mdc-list-item--selected': props.selected,
+        'mdc-list-item--activated': props.activated,
         'mdc-permanent-drawer--selected': props.permanentDrawerSelected,
         'mdc-persistent-drawer--selected': props.persistentDrawerSelected,
         'mdc-temporary-drawer--selected': props.temporaryDrawerSelected
@@ -33,6 +39,8 @@ export const ListItem: React.ComponentType<ListItemPropsT> = withRipple(
       temporaryDrawerSelected: false
     },
     consumeProps: [
+      'selected',
+      'activated',
       'permanentDrawerSelected',
       'persistentDrawerSelected',
       'temporaryDrawerSelected'
@@ -51,10 +59,10 @@ export const ListItemText = simpleTag({
   classNames: 'mdc-list-item__text'
 });
 
-export const ListItemTextSecondary = simpleTag({
-  displayName: 'ListItemTextSecondary',
+export const ListItemSecondaryText = simpleTag({
+  displayName: 'ListItemSecondaryText',
   tag: 'span',
-  classNames: 'mdc-list-item__text__secondary'
+  classNames: 'mdc-list-item__secondary-text'
 });
 
 export const ListItemStartDetail = simpleTag({

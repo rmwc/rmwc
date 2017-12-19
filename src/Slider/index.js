@@ -94,7 +94,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
     displayMarkers: false,
     disabled: false
   },
-  onUpdate(props, nextProps, api) {
+  onUpdate(props, nextProps, api, inst) {
     if (api && api.value !== nextProps.value) {
       api.value = nextProps.value;
       nextProps.onChange &&
@@ -106,6 +106,17 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
         api[key] = nextProps[key];
       }
     });
+
+    // Reinit on discrete or display marker change
+    if (
+      props &&
+      (props.discrete !== nextProps.discrete ||
+        props.displayMarkers !== nextProps.displayMarkers)
+    ) {
+      window.requestAnimationFrame(() => {
+        inst.mdcComponentReinit();
+      });
+    }
   }
 })(
   class extends React.Component<SliderPropsT> {

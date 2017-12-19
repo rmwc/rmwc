@@ -12,7 +12,13 @@ export const DialogRoot = simpleTag({
     role: 'alertdialog'
   },
   tag: 'aside',
-  classNames: 'mdc-dialog'
+  classNames: props => [
+    'mdc-dialog',
+    {
+      'mdc-dialog--theme-dark': props.themeDark
+    }
+  ],
+  consumeProps: ['themeDark']
 });
 
 export const DialogBackdrop = simpleTag({
@@ -40,7 +46,13 @@ export const DialogHeaderTitle = simpleTag({
 export const DialogBody = simpleTag({
   displayName: 'DialogBody',
   tag: 'section',
-  classNames: 'mdc-dialog__body'
+  classNames: props => [
+    'mdc-dialog__body',
+    {
+      'mdc-dialog__body--scrollable': props.scrollable
+    }
+  ],
+  consumeProps: ['scrollable']
 });
 
 export const DialogFooter = simpleTag({
@@ -85,7 +97,9 @@ type DialogPropsT = {
   /** Callback for when the Dialog was closed without acceptance. */
   onCancel: (evt: Event) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: Event) => mixed
+  onClose: (evt: Event) => mixed,
+  /** Use the dark theme */
+  themeDark: boolean
 };
 
 export const Dialog = withMDC({
@@ -103,6 +117,7 @@ export const Dialog = withMDC({
   },
   defaultProps: {
     open: false,
+    themeDark: false,
     onAccept: noop,
     onCancel: noop,
     onClose: noop
@@ -151,7 +166,9 @@ type DefaultDialogTemplatePropsT = {
   /** Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.*/
   cancelLabel?: React.Node,
   /** Any children will be rendered in the body of the default Dialog template. */
-  children?: React.Node
+  children?: React.Node,
+  /** Allow the body to be scrollable */
+  scrollable?: boolean
 };
 
 export class DefaultDialogTemplate extends React.Component<
@@ -162,6 +179,7 @@ export class DefaultDialogTemplate extends React.Component<
     header: undefined,
     body: undefined,
     footer: undefined,
+    scrollable: undefined,
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel'
   };
@@ -172,6 +190,7 @@ export class DefaultDialogTemplate extends React.Component<
       header,
       body,
       footer,
+      scrollable,
       acceptLabel,
       cancelLabel,
       children,
@@ -188,7 +207,7 @@ export class DefaultDialogTemplate extends React.Component<
             </DialogHeader>
           )}
           {(!!body || children) && (
-            <DialogBody>
+            <DialogBody scrollable={scrollable}>
               {body}
               {children}
             </DialogBody>
