@@ -82,11 +82,7 @@ const CSSMultiSelectWithOptgroupsStory = storyWithState(
         options={this.state.options}
         onChange={evt => {
           this.setState({
-            value: window.Reflect.apply(
-              Array.prototype.slice,
-              evt.target.selectedOptions,
-              []
-            ).map(o => o.value)
+            value: [...evt.target.selectedOptions].map(o => o.value)
           });
 
           action('onChange: ' + evt.target.value)();

@@ -117,8 +117,12 @@ ul li {
 }
 
 #detail-section-select-menus .demo-example .mdc-select {
-  display: block;
   margin-bottom: 24px;
+}
+
+#detail-section-select-menus .demo-example .mdc-select:after {
+  content: '';
+  display: block;
 }
 
 #detail-section-toolbars .demo-example .mdc-toolbar {

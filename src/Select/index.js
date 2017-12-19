@@ -177,7 +177,9 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
       window.requestAnimationFrame(() => {
         try {
           api.foundation_.resize();
-        } catch (err) {}
+        } catch (err) {
+          console.lot(err);
+        }
       });
     }
   }
@@ -204,6 +206,11 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
         const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
         const selectInner = (
           <SelectInnerRoot tag="select" value={value} {...rest}>
+            {!!placeholder.length && (
+              <ListItem tag="option" value="_placeholder" tab-index="0">
+                {placeholder}
+              </ListItem>
+            )}
             {selectOptions &&
               selectOptions.map(({ label, ...option }, i) => {
                 if (option.options) {
@@ -263,13 +270,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
           <SelectMenu>
             <MenuItems>
               {!!placeholder.length && (
-                <ListItem
-                  role="option"
-                  id="placeholder"
-                  aria-disabled="true"
-                  disabled
-                  tab-index="0"
-                >
+                <ListItem role="option" id="_placeholder" tab-index="0">
                   {placeholder}
                 </ListItem>
               )}
