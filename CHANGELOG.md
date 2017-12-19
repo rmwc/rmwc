@@ -1,3 +1,35 @@
+#### 0.0.1-rc12 (2017-12-19)
+
+##### Documentation Changes
+
+* **TextFieldHeleprText:** fixed broken export ([ad8449bf](https://github.com/jamesmfriedman/rmwc/commit/ad8449bf5194072fbe68d6eba364fe2778142338))
+
+##### New Features
+
+* **Checkbox:** themeDark support ([61f485d5](https://github.com/jamesmfriedman/rmwc/commit/61f485d5fac8d74453f77db3add0e63d3779cdc0))
+* **Fab:** add cssOnly support ([951391e0](https://github.com/jamesmfriedman/rmwc/commit/951391e0ec9655daa60f275b2a0ad46ffcc3b394))
+* **Dialog:**
+  * dark theme support ([71a82b21](https://github.com/jamesmfriedman/rmwc/commit/71a82b21a0bcc27ee9f6b2dddf9a944d45502978))
+  * add scrollable body ([2434a8b5](https://github.com/jamesmfriedman/rmwc/commit/2434a8b596e3d5b45ab9bd9398b0dd230df08721))
+* **ListItem:** Added select and activated props ([be462b27](https://github.com/jamesmfriedman/rmwc/commit/be462b270ed908754af14ef34d88f04e27482ba7))
+* **Select:**
+  * allow multiple #44 ([3dba63a6](https://github.com/jamesmfriedman/rmwc/commit/3dba63a6d1af518b57280c47b594cf347a9cb887))
+  * CSSOnly Selects ([3b3669b3](https://github.com/jamesmfriedman/rmwc/commit/3b3669b360834167ffeb7264551cfe97ff3ff91b))
+  * #43 additional props for listItems ([f1b9a8d4](https://github.com/jamesmfriedman/rmwc/commit/f1b9a8d4cc880a5f8d9aec6f5755b9de69d4b817))
+
+##### Bug Fixes
+
+* **Slider:** reinit on props change ([6787f7d1](https://github.com/jamesmfriedman/rmwc/commit/6787f7d1e0850e4bb9f1a63fc0c3644f8398fb49))
+* **Button:** corrects ripple color ([aee2febc](https://github.com/jamesmfriedman/rmwc/commit/aee2febc73a4976595c5de197ba9017e24704d5c))
+* **Select:** fixes #54 async rendering ([d0dbb09b](https://github.com/jamesmfriedman/rmwc/commit/d0dbb09ba4c64ced6bf2aca0371d73c869fddf80))
+* **TextField:** Rename helptext to helper-text to follow mwc ([aaa4aefe](https://github.com/jamesmfriedman/rmwc/commit/aaa4aefe2de94e8c4ed435cf6e1df85bd3dae4ce))
+* **LayoutGrid:** export GridInner ([9deeaf62](https://github.com/jamesmfriedman/rmwc/commit/9deeaf624fbc2f5d2edb4be37d0e228a40706cbf))
+* **menu:** Add missing noop to onClose() & onSelect() callbacks ([282c0f4c](https://github.com/jamesmfriedman/rmwc/commit/282c0f4cf5b5a9fd26575e7b64a036bb045179e8))
+
+##### Other Changes
+
+* **List:** Rename ListItemTextSecondry -> ListSecondaryText ([3fb78a6d](https://github.com/jamesmfriedman/rmwc/commit/3fb78a6d09c87a27d67efa5abdb3f7ebd9c1797a))
+
 #### 0.0.1-rc11 (2017-12-07)
 
 ##### New Features
