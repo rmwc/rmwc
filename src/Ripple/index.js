@@ -88,15 +88,10 @@ export class Ripple extends React.Component<RipplePropsT> {
       return cls.startsWith('mdc-ripple');
     });
 
-    const classes = classNames(
-      'mdc-ripple-surface',
-      child.props.className,
-      ...rippleClasses,
-      {
-        'mdc-ripple-surface--primary': primary,
-        'mdc-ripple-surface--accent': accent
-      }
-    );
+    const classes = classNames(child.props.className, ...rippleClasses, {
+      'mdc-ripple-surface--primary': primary,
+      'mdc-ripple-surface--accent': accent
+    });
 
     const dedupedClasses = Array.from(new Set(classes.split(' '))).join(' ');
 

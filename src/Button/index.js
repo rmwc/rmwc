@@ -64,12 +64,7 @@ export class Button extends React.Component<ButtonRootPropsT> {
     raised: false,
     compact: false,
     unelevated: false,
-    stroked: false,
-
-    // fixes for ripples...
-    primary: true, // this corrects the color of the ripple
-    accent: false, // this would adjust the color of the ripple
-    unbounded: false // this would make the ripple unbounded
+    stroked: false
   };
 
   componentWillMount() {
