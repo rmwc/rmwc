@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCTabBar } from '@material/tabs/dist/mdc.tabs';
+import { MDCTabBar, MDCTabBarScroller } from '@material/tabs/dist/mdc.tabs';
 import { noop, simpleTag } from '../Base';
 
 import { withMDC } from '../Base';
@@ -61,6 +61,76 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
           {children}
           <TabBarIndicatorEl />
         </TabBarRoot>
+      );
+    }
+  }
+);
+
+export const TabBarScrollerRoot = simpleTag({
+  displayName: 'TabBarScrollerRoot',
+  tag: 'div',
+  classNames: 'mdc-tab-bar-scroller'
+});
+
+export const TabBarScrollerIndicatorBackEl = simpleTag({
+  displayName: 'TabBarScrollerIndicatorBackEl',
+  tag: 'div',
+  classNames: [
+    'mdc-tab-bar-scroller__indicator',
+    'mdc-tab-bar-scroller__indicator--back'
+  ]
+});
+export const TabBarScrollerIndicatorForwardEl = simpleTag({
+  displayName: 'TabBarScrollerIndicatorForwardEl',
+  tag: 'div',
+  classNames: [
+    'mdc-tab-bar-scroller__indicator',
+    'mdc-tab-bar-scroller__indicator--forward'
+  ]
+});
+
+export const TabBarScrollerIndicatorInnerEl = simpleTag({
+  displayName: 'TabBarScrollerIndicatorInnerEl',
+  tag: 'a',
+  classNames: ['mdc-tab-bar-scroller__indicator__inner', 'material-icons']
+});
+
+export const TabBarScrollerScrollFrameEl = simpleTag({
+  displayName: 'TabBarScrollerScrollFrameEl',
+  tag: 'div',
+  classNames: 'mdc-tab-bar-scroller__scroll-frame'
+});
+
+export const TabBarScroller: React.ComponentType = withMDC({
+  mdcConstructor: function(el) {
+    if (el) {
+      const tabBarEl = el.querySelector('.mdc-tab-bar');
+      if (tabBarEl) {
+        tabBarEl.classList.add('mdc-tab-bar-scroller__scroll-frame__tabs');
+      }
+    }
+    return new MDCTabBarScroller(el);
+  }
+})(
+  class extends React.Component {
+    static displayName = 'TabBarScroller';
+
+    render() {
+      const { children, ...rest } = this.props;
+      return (
+        <TabBarScrollerRoot {...rest}>
+          <TabBarScrollerIndicatorBackEl>
+            <TabBarScrollerIndicatorInnerEl>
+              navigate_before
+            </TabBarScrollerIndicatorInnerEl>
+          </TabBarScrollerIndicatorBackEl>
+          <TabBarScrollerScrollFrameEl>{children}</TabBarScrollerScrollFrameEl>
+          <TabBarScrollerIndicatorForwardEl>
+            <TabBarScrollerIndicatorInnerEl>
+              navigate_next
+            </TabBarScrollerIndicatorInnerEl>
+          </TabBarScrollerIndicatorForwardEl>
+        </TabBarScrollerRoot>
       );
     }
   }
