@@ -95,7 +95,7 @@ export { Snackbar } from './Snackbar';
 
 export { Switch } from './Switch';
 
-export { Tab, TabBar } from './Tabs';
+export { Tab, TabBar, TabBarScroller } from './Tabs';
 
 export { TextField, TextFieldHelperText, TextFieldIcon } from './TextField';
 
