@@ -49,6 +49,25 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
       api.activeTabIndex = nextProps.activeTabIndex;
     }
+  },
+  didUpdate: (props, nextProps, api, inst) => {
+    if (!api) return;
+
+    const childrenDidChange =
+      props &&
+      props.children &&
+      nextProps &&
+      nextProps.children &&
+      JSON.stringify(props.children.map(({ key }) => key)) !==
+      JSON.stringify(nextProps.children.map(({ key }) => key));
+    // destroy the foundation for all tabs manually to remove all  listeners 
+    if (childrenDidChange && api.tabs_) {
+      api.tabs_.forEach(mdcTab => {
+        mdcTab.foundation_ && mdcTab.foundation_.destroy();
+      });
+
+      inst.mdcComponentReinit();
+    }
   }
 })(
   class extends React.Component<TabBarPropsT> {
@@ -63,7 +82,6 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
         </TabBarRoot>
       );
     }
-  }
-);
+  });
 
 export default TabBar;
