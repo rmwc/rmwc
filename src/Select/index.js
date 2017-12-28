@@ -178,7 +178,7 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
         try {
           api.foundation_.resize();
         } catch (err) {
-          console.lot(err);
+          console.log(err);
         }
       });
     }
