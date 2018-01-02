@@ -71,14 +71,23 @@ RMWC is currently in RC. All of the MDC components are covered and are being
 used in various projects. Only bug fixes and doc improvements are planned before
 an official V1.
 
-* [x] Buttons _ [x] Standard _ [x] FABs \* [x] Icon Toggles
+* [x] Buttons
+   - [x] Standard
+   - [x] FABs
+   - [x] Icon Toggles
 * [x] Cards
 * [x] Dialogs
 * [x] Drawers
 * [x] Elevation
 * [x] Grid Lists
-* [x] Inputs and Controls _ [x] Checkboxes _ [x] Form Fields _ [x] Radio Buttons
-      _ [x] Select Menus _ [x] Sliders _ [x] Switches \* [x] Text Fields
+* [x] Inputs and Controls
+   - [x] Checkboxes
+   - [x] Form Fields
+   - [x] Radio Buttons
+   - [x] Select Menus
+   - [x] Sliders
+   - [x] Switches
+   - [x] Text Fields
 * [x] Layout Grids
 * [x] Linear Progress
 * [x] Lists

@@ -722,7 +722,7 @@ export default [
     name: 'Tabs',
     module: 'rmwc/Tabs',
     section: 'tabs',
-    class: ['TabBar', 'Tab'],
+    class: ['TabBar', 'Tab', 'TabBarScroller'],
     url: 'https://material.io/components/web/catalog/tabs/',
     example: `
 			<TabBar
@@ -733,6 +733,25 @@ export default [
 				<Tab>Pizza</Tab>
 				<Tab>Icecream</Tab>
 			</TabBar>
+			
+			{/* TabBar wrapped in TabBarScroller */}
+			<TabBarScroller>
+				<TabBar
+					activeTabIndex={this.state.activeTabWithScrollerIndex || 0}
+					onChange={evt => this.setState({'activeTabWithScrollerIndex': evt.target.value})}
+				>
+					<Tab>Cookies</Tab>
+					<Tab>Pizza</Tab>
+					<Tab>Icecream</Tab>
+					<Tab>Chocolate</Tab>
+					<Tab>Fishsticks</Tab>
+					<Tab>Ratatouille</Tab>
+					<Tab>Bread</Tab>
+					<Tab>Rolls</Tab>
+					<Tab>Sushi</Tab>
+					<Tab>Cupcake</Tab>
+				</TabBar>
+			</TabBarScroller>
 		`
   },
   {
