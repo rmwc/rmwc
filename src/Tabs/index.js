@@ -59,8 +59,8 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       nextProps &&
       nextProps.children &&
       JSON.stringify(props.children.map(({ key }) => key)) !==
-      JSON.stringify(nextProps.children.map(({ key }) => key));
-    // destroy the foundation for all tabs manually to remove all  listeners 
+        JSON.stringify(nextProps.children.map(({ key }) => key));
+    // destroy the foundation for all tabs manually to remove all  listeners
     if (childrenDidChange && api.tabs_) {
       api.tabs_.forEach(mdcTab => {
         mdcTab.foundation_ && mdcTab.foundation_.destroy();
@@ -82,7 +82,8 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
         </TabBarRoot>
       );
     }
-  });
+  }
+);
 
 export const TabBarScrollerRoot = simpleTag({
   displayName: 'TabBarScrollerRoot',
@@ -90,16 +91,16 @@ export const TabBarScrollerRoot = simpleTag({
   classNames: 'mdc-tab-bar-scroller'
 });
 
-export const TabBarScrollerIndicatorBackEl = simpleTag({
-  displayName: 'TabBarScrollerIndicatorBackEl',
+export const TabBarScrollerIndicatorBack = simpleTag({
+  displayName: 'TabBarScrollerIndicatorBack',
   tag: 'div',
   classNames: [
     'mdc-tab-bar-scroller__indicator',
     'mdc-tab-bar-scroller__indicator--back'
   ]
 });
-export const TabBarScrollerIndicatorForwardEl = simpleTag({
-  displayName: 'TabBarScrollerIndicatorForwardEl',
+export const TabBarScrollerIndicatorForward = simpleTag({
+  displayName: 'TabBarScrollerIndicatorForward',
   tag: 'div',
   classNames: [
     'mdc-tab-bar-scroller__indicator',
@@ -107,19 +108,19 @@ export const TabBarScrollerIndicatorForwardEl = simpleTag({
   ]
 });
 
-export const TabBarScrollerIndicatorInnerEl = simpleTag({
-  displayName: 'TabBarScrollerIndicatorInnerEl',
+export const TabBarScrollerIndicatorInner = simpleTag({
+  displayName: 'TabBarScrollerIndicatorInner',
   tag: 'a',
   classNames: ['mdc-tab-bar-scroller__indicator__inner', 'material-icons']
 });
 
-export const TabBarScrollerScrollFrameEl = simpleTag({
+export const TabBarScrollerScrollFrame = simpleTag({
   displayName: 'TabBarScrollerScrollFrameEl',
   tag: 'div',
   classNames: 'mdc-tab-bar-scroller__scroll-frame'
 });
 
-export const TabBarScroller: React.ComponentType = withMDC({
+export const TabBarScroller = withMDC({
   mdcConstructor: function(el) {
     if (el) {
       const tabBarEl = el.querySelector('.mdc-tab-bar');
@@ -137,17 +138,17 @@ export const TabBarScroller: React.ComponentType = withMDC({
       const { children, ...rest } = this.props;
       return (
         <TabBarScrollerRoot {...rest}>
-          <TabBarScrollerIndicatorBackEl>
-            <TabBarScrollerIndicatorInnerEl>
+          <TabBarScrollerIndicatorBack>
+            <TabBarScrollerIndicatorInner>
               navigate_before
-            </TabBarScrollerIndicatorInnerEl>
-          </TabBarScrollerIndicatorBackEl>
-          <TabBarScrollerScrollFrameEl>{children}</TabBarScrollerScrollFrameEl>
-          <TabBarScrollerIndicatorForwardEl>
-            <TabBarScrollerIndicatorInnerEl>
+            </TabBarScrollerIndicatorInner>
+          </TabBarScrollerIndicatorBack>
+          <TabBarScrollerScrollFrame>{children}</TabBarScrollerScrollFrame>
+          <TabBarScrollerIndicatorForward>
+            <TabBarScrollerIndicatorInner>
               navigate_next
-            </TabBarScrollerIndicatorInnerEl>
-          </TabBarScrollerIndicatorForwardEl>
+            </TabBarScrollerIndicatorInner>
+          </TabBarScrollerIndicatorForward>
         </TabBarScrollerRoot>
       );
     }
