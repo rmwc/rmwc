@@ -5,7 +5,7 @@ import { parseThemeOptions } from './withTheme';
 
 type SimpleTagFactoryT = {
   tag?: string | React.ComponentType<any>,
-  classNames?: string | ((props: Object) => mixed),
+  classNames?: string | string[] | ((props: Object) => mixed),
   defaultProps?: Object,
   consumeProps?: string[],
   wrap?: boolean,
