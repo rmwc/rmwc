@@ -18,7 +18,7 @@ type IconPropsT = {
   /** Handle multiple methods of embedding an icon. */
   strategy: IconStrategyT,
 
-  /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons- */
+  /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy. */
   prefix: string,
 
   /** A base className for the icon namespace, i.e. material-icons */
