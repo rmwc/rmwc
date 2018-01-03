@@ -1,4 +1,10 @@
 {
+  "src/Base/DocumentComponent.js": [
+    {
+      "description": "",
+      "methods": []
+    }
+  ],
   "src/Button/index.js": [
     {
       "description": "The Button component.",
@@ -177,7 +183,20 @@
     {
       "description": "",
       "displayName": "CheckboxRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -293,6 +312,13 @@
           },
           "required": false,
           "description": "A label for the control."
+        },
+        "themeDark": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Use the dark theme."
         }
       }
     }
@@ -301,7 +327,20 @@
     {
       "description": "",
       "displayName": "DialogRoot",
-      "methods": [],
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "role": {
           "defaultValue": {
@@ -334,7 +373,20 @@
     {
       "description": "",
       "displayName": "DialogBody",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -439,6 +491,13 @@
           },
           "required": true,
           "description": "Callback for when the Dialog closes."
+        },
+        "themeDark": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Use the dark theme"
         }
       }
     },
@@ -526,6 +585,17 @@
           },
           "required": false,
           "description": "Any children will be rendered in the body of the default Dialog template."
+        },
+        "scrollable": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Allow the body to be scrollable",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }
@@ -776,6 +846,13 @@
           },
           "required": false,
           "description": "Make the Fab smaller."
+        },
+        "cssOnly": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "cssOnly Fab."
         }
       }
     }
@@ -1474,6 +1551,20 @@
       "displayName": "ListItem",
       "methods": [],
       "props": {
+        "selected": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "A modifier for a selected state."
+        },
+        "activated": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "A modifier for an active state."
+        },
         "permanentDrawerSelected": {
           "flowType": {
             "name": "boolean"
@@ -1579,6 +1670,25 @@
         "tabIndex": {
           "defaultValue": {
             "value": "'-1'",
+            "computed": false
+          }
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "MenuItems",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'menu'",
+            "computed": false
+          }
+        },
+        "aria-hidden": {
+          "defaultValue": {
+            "value": "'true'",
             "computed": false
           }
         }
@@ -1997,11 +2107,35 @@
     },
     {
       "description": "",
+      "displayName": "SelectSurface",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "SelectLabel",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "",
       "displayName": "SelectSelectedText",
       "methods": []
     },
     {
       "description": "",
+      "displayName": "SelectBottomLine",
       "methods": []
     },
     {
@@ -2021,6 +2155,10 @@
           }
         }
       }
+    },
+    {
+      "description": "",
+      "methods": []
     },
     {
       "description": "",
@@ -2063,6 +2201,13 @@
           },
           "required": false,
           "description": "Disables the form control."
+        },
+        "cssOnly": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a cssOnly select"
         }
       }
     }
@@ -2506,6 +2651,36 @@
           "description": "The index of the active tab."
         }
       }
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerRoot",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerIndicatorBack",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerIndicatorForward",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerIndicatorInner",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerScrollFrameEl",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScroller",
+      "methods": []
     }
   ],
   "src/TextField/index.js": [
@@ -2570,7 +2745,7 @@
     },
     {
       "description": "A help text component",
-      "displayName": "TextFieldHelpText",
+      "displayName": "TextFieldHelperText",
       "methods": [],
       "props": {
         "persistent": {
