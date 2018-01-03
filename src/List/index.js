@@ -1,10 +1,13 @@
 // @flow
 import * as React from 'react';
+import PropTypes from 'prop-types';
+import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
 
 type ListItemPropsT = {
   /** A modifier for a selected state. */
@@ -20,8 +23,8 @@ type ListItemPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ListItem = withRipple(
-  class extends simpleTag({
+export const ListItemRoot = withRipple(
+  simpleTag({
     displayName: 'ListItemRoot',
     classNames: props => [
       'mdc-list-item',
@@ -45,13 +48,42 @@ export const ListItem = withRipple(
       'persistentDrawerSelected',
       'temporaryDrawerSelected'
     ]
-  })<ListItemPropsT> {
-    static displayName = 'ListItem';
-    render() {
-      return super.render();
-    }
-  }
+  })
 );
+
+/**
+ * The ListItem component.
+ */
+export class ListItem extends React.Component<ListItemPropsT> {
+  static displayName = 'ListItem';
+
+  static defaultProps = {
+    permanentDrawerSelected: false,
+    persistentDrawerSelected: false,
+    temporaryDrawerSelected: false
+  };
+
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
+
+  static contextTypes = {
+    RMWCOptions: PropTypes.object
+  };
+
+  providerOptions: RMWCProviderOptionsT;
+  context: Object;
+
+  render() {
+    const { listItemDefaultRipple } = this.providerOptions;
+    const { ripple, ...rest } = this.props;
+    const shouldRipple = ripple === undefined ? listItemDefaultRipple : ripple;
+    const rippleProps = shouldRipple ?
+      { ripple: true, needsRippleSurface: false } :
+      {};
+    return <ListItemRoot {...rippleProps} {...rest} />;
+  }
+}
 
 export const ListItemText = simpleTag({
   displayName: 'ListItemText',

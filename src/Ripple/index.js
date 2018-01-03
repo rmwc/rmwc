@@ -17,7 +17,8 @@ export class Ripple extends React.Component<RipplePropsT> {
   static defaultProps = {
     primary: false,
     accent: false,
-    unbounded: false
+    unbounded: false,
+    needsRippleSurface: true
   };
 
   componentDidMount() {
@@ -65,7 +66,7 @@ export class Ripple extends React.Component<RipplePropsT> {
 
   render() {
     const child = React.Children.only(this.props.children);
-    const { accent, primary } = this.props;
+    const { accent, primary, needsRippleSurface } = this.props;
 
     /**
      * Collect the ripple classes so we make sure React doesnt
@@ -89,6 +90,7 @@ export class Ripple extends React.Component<RipplePropsT> {
     });
 
     const classes = classNames(child.props.className, ...rippleClasses, {
+      'mdc-ripple-surface': needsRippleSurface,
       'mdc-ripple-surface--primary': primary,
       'mdc-ripple-surface--accent': accent
     });

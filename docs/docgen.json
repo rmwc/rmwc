@@ -2168,10 +2168,28 @@
         "options": {
           "flowType": {
             "name": "union",
-            "raw": "Object | mixed[]",
+            "raw": "string[] | { [value: string]: string } | mixed[]",
             "elements": [
               {
-                "name": "Object"
+                "name": "unknown"
+              },
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ [value: string]: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": {
+                        "name": "string"
+                      },
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
               },
               {
                 "name": "unknown"
@@ -2179,7 +2197,7 @@
             ]
           },
           "required": true,
-          "description": "An array of values or a map of {value: \"label\"}. Arrays will be converted to a map of {value: value}."
+          "description": "Options accepts flat arrays, value => label maps, and more. See examples for details."
         },
         "label": {
           "flowType": {
@@ -2207,7 +2225,21 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a cssOnly select"
+          "description": "Makes a cssOnly select."
+        },
+        "multiple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a multi-select. Must be used in conjunction with cssOnly."
+        },
+        "size": {
+          "flowType": {
+            "name": "number"
+          },
+          "required": false,
+          "description": "The number of items in show in a multi-select. Use in conjunction with multiple."
         }
       }
     }

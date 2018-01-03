@@ -66,16 +66,20 @@ export const MultiSelect = simpleTag({
 });
 
 type SelectPropsT = {
-  /** An array of values or a map of {value: "label"}. Arrays will be converted to a map of {value: value}. */
-  options: Object | mixed[],
+  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
+  options: string[] | { [value: string]: string } | mixed[],
   /** A label for the form control. */
   label?: string,
   /** Placeholder text for the form control. */
   placeholder?: string,
   /** Disables the form control. */
   disabled?: boolean,
-  /** Makes a cssOnly select */
-  cssOnly?: boolean
+  /** Makes a cssOnly select. */
+  cssOnly?: boolean,
+  /** Makes a multi-select. Must be used in conjunction with cssOnly. */
+  multiple?: boolean,
+  /** The number of items in show in a multi-select. Use in conjunction with multiple. */
+  size?: number
 } & SimpleTagPropsT;
 
 /**
@@ -121,7 +125,7 @@ const createSelectOptions = (options): Object[] => {
   return options;
 };
 
-export const Select: React.ComponentType<SelectPropsT> = withMDC({
+export const Select = withMDC({
   mdcConstructor: MDCSelect,
   mdcElementRef: true,
   mdcEvents: {
@@ -135,7 +139,8 @@ export const Select: React.ComponentType<SelectPropsT> = withMDC({
     options: undefined,
     label: undefined,
     placeholder: undefined,
-    disabled: false
+    disabled: false,
+    multiple: undefined
   },
   onMount: (props, api) => {
     window.requestAnimationFrame(() => {

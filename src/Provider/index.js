@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 export type RMWCProviderOptionsT = {
   buttonDefaultRipple: boolean,
+  listItemDefaultRipple: boolean,
   iconClassNameBase: string,
   iconClassNamePrefix: string,
   iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',
@@ -13,6 +14,7 @@ export type RMWCProviderOptionsT = {
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
   buttonDefaultRipple: true,
+  listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
   iconStrategy: 'auto'

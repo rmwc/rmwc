@@ -14,14 +14,11 @@ import {
   ListItem,
   ListItemText,
   IconButton,
-  ToolbarMenuIcon,
-  ToolbarIcon
+  ToolbarMenuIcon
 } from '../../src';
 
-import Detail from './detail';
 import Submenu from './submenu';
 import Home from './home';
-import content from '../content';
 
 const MenuItem = ({ url, label }) => {
   return (
@@ -32,22 +29,6 @@ const MenuItem = ({ url, label }) => {
     </ListItem>
   );
 };
-
-const MenuItemForSection = ({ sectionKey }) => {
-  const section = content.find(v => v.section === sectionKey);
-  return (
-    <MenuItem
-      label={section.name}
-      url={`${process.env.PUBLIC_URL}/${section.section}`}
-    />
-  );
-};
-
-const SubmenuWithMenuItems = ({ label, sectionKeys }) => (
-  <Submenu label={label}>
-    {sectionKeys.map(v => <MenuItemForSection key={v} sectionKey={v} />)}
-  </Submenu>
-);
 
 export class App extends React.Component {
   state = {
@@ -70,7 +51,7 @@ export class App extends React.Component {
                 menu
               </ToolbarMenuIcon>
               <ToolbarTitle>
-                <Link to={`${process.env.PUBLIC_URL || '/'}`}>ReactMWC</Link>
+                <Link to={`${process.env.PUBLIC_URL || '/'}`}>RMWC</Link>
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
@@ -112,42 +93,6 @@ export class App extends React.Component {
                 }
                 return <MenuItem label={m.label} url={m.url} key={m.label} />;
               })}
-              <SubmenuWithMenuItems
-                label="Drawers"
-                sectionKeys={[
-                  'permanent-drawer',
-                  'persistent-drawer',
-                  'temporary-drawer'
-                ]}
-              />
-              {['elevation', 'grid-lists'].map(v => (
-                <MenuItemForSection key={v} sectionKey={v} />
-              ))}
-              <SubmenuWithMenuItems
-                label="Inputs and Controls"
-                sectionKeys={[
-                  'checkboxes',
-                  'form-fields',
-                  'radio-buttons',
-                  'select-menus',
-                  'sliders',
-                  'switches',
-                  'textfields'
-                ]}
-              />
-              {[
-                'layout-grid',
-                'linear-progress',
-                'lists',
-                'menus',
-                'ripples',
-                'snackbars',
-                'tabs',
-                'theme',
-                'toolbars',
-                'typography',
-                'icons'
-              ].map(v => <MenuItemForSection key={v} sectionKey={v} />)}
             </PersistentDrawerContent>
           </PersistentDrawer>
           <main>
@@ -178,10 +123,6 @@ export class App extends React.Component {
                   />
                 );
               })}
-              <Route
-                path={`${process.env.PUBLIC_URL}/:section`}
-                component={Detail}
-              />
             </Switch>
           </main>
         </div>
