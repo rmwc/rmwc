@@ -126,19 +126,19 @@ module.exports = {
       // 	include: paths.appRoot
       // },
       {
-        test: /\.md$/,
-        loaders: [
-          require.resolve('babel-loader'),
-          require.resolve('react-markdown-loader')
-        ]
-      },
-      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
         oneOf: [
           // "url" loader works just like "file" loader but it also embeds
           // assets smaller than specified size as data URLs to avoid requests.
+          {
+            test: /\.md$/,
+            loaders: [
+              require.resolve('babel-loader'),
+              require.resolve('react-markdown-loader')
+            ]
+          },
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
