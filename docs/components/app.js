@@ -36,7 +36,7 @@ export class App extends React.Component {
   };
 
   render() {
-    const pageId = `page-${window.location.pathname.replace(/\//g, '')}`;
+    const pageId = `page-${window.location.pathname.split('/').pop()}`;
     return (
       <div id={pageId}>
         <Toolbar fixed waterfall>
