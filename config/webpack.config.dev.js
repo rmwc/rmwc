@@ -126,17 +126,17 @@ module.exports = {
       // 	include: paths.appRoot
       // },
       {
-        test: /\.md$/,
-        loaders: [
-          require.resolve('babel-loader'),
-          require.resolve('react-markdown-loader')
-        ]
-      },
-      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
         oneOf: [
+          {
+            test: /\.md$/,
+            loaders: [
+              require.resolve('babel-loader'),
+              require.resolve('react-markdown-loader')
+            ]
+          },
           // "url" loader works like "file" loader except that it embeds assets
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
@@ -207,7 +207,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.md$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]'
