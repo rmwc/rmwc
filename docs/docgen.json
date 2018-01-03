@@ -1315,7 +1315,7 @@
             "name": "string"
           },
           "required": true,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-"
+          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy."
         },
         "basename": {
           "flowType": {
@@ -1547,7 +1547,7 @@
   ],
   "src/List/index.js": [
     {
-      "description": "",
+      "description": "The ListItem component.",
       "displayName": "ListItem",
       "methods": [],
       "props": {
@@ -1570,21 +1570,33 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "A modifier for a selected item in Permanent Drawer."
+          "description": "A modifier for a selected item in Permanent Drawer.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "persistentDrawerSelected": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "A modifier for a selected item in Persistent Drawer."
+          "description": "A modifier for a selected item in Persistent Drawer.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "temporaryDrawerSelected": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "A modifier for a selected item in Temporary Drawer."
+          "description": "A modifier for a selected item in Temporary Drawer.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         }
       }
     },
@@ -1768,11 +1780,18 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  buttonDefaultRipple: boolean,\n  iconClassNameBase: string,\n  iconClassNamePrefix: string,\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',\n  children?: React.Node\n}",
+                "raw": "{\n  buttonDefaultRipple: boolean,\n  listItemDefaultRipple: boolean,\n  iconClassNameBase: string,\n  iconClassNamePrefix: string,\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
                       "key": "buttonDefaultRipple",
+                      "value": {
+                        "name": "boolean",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "listItemDefaultRipple",
                       "value": {
                         "name": "boolean",
                         "required": true
@@ -1841,6 +1860,13 @@
       ],
       "props": {
         "buttonDefaultRipple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": ""
+        },
+        "listItemDefaultRipple": {
           "flowType": {
             "name": "boolean"
           },
@@ -2079,6 +2105,12 @@
           "description": "Lets a ripple grow outside of its bounds, just like on Checkboxes.",
           "defaultValue": {
             "value": "false",
+            "computed": false
+          }
+        },
+        "needsRippleSurface": {
+          "defaultValue": {
+            "value": "true",
             "computed": false
           }
         }
