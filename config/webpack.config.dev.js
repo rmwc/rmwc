@@ -87,7 +87,8 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      "rmwc": path.join(paths.appRoot, 'src')
     },
     plugins: [
       new webpack.ContextReplacementPlugin(
@@ -124,6 +125,13 @@ module.exports = {
       // 	exclude: [paths.appNodeModules],
       // 	include: paths.appRoot
       // },
+      {
+        test: /\.md$/,
+        loaders: [
+          require.resolve('babel-loader'),
+          require.resolve('react-markdown-loader')
+        ]
+      },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
@@ -199,7 +207,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.md$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]'

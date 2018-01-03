@@ -29,7 +29,7 @@ type IconToggleT = {
 /**
  * Icon Toggle Component
  */
-export const IconToggle: React.ComponentType<IconToggleT> = withMDC({
+export const IconToggle = withMDC({
   mdcConstructor: MDCIconToggle,
   mdcElementRef: true,
   mdcEvents: {
