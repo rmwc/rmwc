@@ -28,6 +28,10 @@
     "material-components-web": "^0.27.0",
     "prop-types": "^15.6.0"
   },
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "babelfy": "node scripts/babelfy.js",
@@ -168,11 +172,9 @@
     "postcss-loader": "2.0.6",
     "prettier-eslint": "^8.2.1",
     "promise": "8.0.1",
-    "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dev-utils": "^4.0.0",
     "react-docgen": "^2.20.0",
-    "react-dom": "^16.0.0",
     "react-hot-loader": "^3.0.0",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git",
     "react-router-dom": "^4.2.2",
