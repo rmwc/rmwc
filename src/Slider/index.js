@@ -134,6 +134,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
         onChange,
         className,
         disabled,
+        children,
         ...rest
       } = this.props;
       if (displayMarkers && !discrete) {
@@ -177,6 +178,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
             <SliderThumb />
             <SliderFocusRing />
           </SliderThumbContainer>
+          {children}
         </SliderRoot>
       );
     }
