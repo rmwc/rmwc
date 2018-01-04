@@ -10,9 +10,7 @@ processBuiltFiles(files => {
     let out = f.replace('./src/', './');
 
     if (out === './rmwc.js') {
-      out = path.resolve('./index.js');
-    } else {
-      return;
+      out = './index.js';
     }
 
     const dir = path.dirname(out);
@@ -21,8 +19,8 @@ processBuiltFiles(files => {
       fs.mkdirSync(dir);
     }
 
-    const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out}`;
-    console.log('Babel:', f, '-> ', out, cmd);
+    const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`;
+    console.log('Babel:', f, '-> ', out);
     exec(cmd);
   });
 });
