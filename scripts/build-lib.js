@@ -33,7 +33,7 @@ const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
 const appLib = paths.appPath;
 const appLibIndex = path.resolve(path.join(paths.appSrc, 'rmwc.js'));
-const appLibBuild = path.resolve(path.join(paths.appSrc, 'lib'));
+const appLibBuild = path.resolve(path.join(paths.appPath, 'lib'));
 
 // Remove all content but keep the directory so that
 // if you're in it, you don't end up in Trash
@@ -41,7 +41,7 @@ fs.emptyDirSync(appLibBuild);
 
 [
   // { libraryTarget: 'commonjs2', filename: 'rmwc.commonjs' },
-  { libraryTarget: 'umd', filename: 'rmwc' },
+  { libraryTarget: 'umd', filename: 'rmwc' }
 ].forEach(defs => {
   // First, read the current file sizes in build directory.
   // This lets us display how much they changed later.
@@ -58,32 +58,34 @@ fs.emptyDirSync(appLibBuild);
           console.log(
             '\nSearch for the ' +
               chalk.underline(chalk.yellow('keywords')) +
-              ' to learn more about each warning.',
+              ' to learn more about each warning.'
           );
           console.log(
             'To ignore, add ' +
               chalk.cyan('// eslint-disable-next-line') +
-              ' to the line before.\n',
+              ' to the line before.\n'
           );
         } else {
           console.log(chalk.green('Compiled successfully.\n'));
         }
 
         console.log('File sizes after gzip:\n');
+
         printFileSizesAfterBuild(
           stats,
           previousFileSizes,
           appLibBuild,
           WARN_AFTER_BUNDLE_GZIP_SIZE,
-          WARN_AFTER_CHUNK_GZIP_SIZE,
+          WARN_AFTER_CHUNK_GZIP_SIZE
         );
+
         console.log();
       },
       err => {
         console.log(chalk.red('Failed to compile.\n'));
         printBuildError(err);
         process.exit(1);
-      },
+      }
     );
 
   // Create the production build and print the deployment instructions.
@@ -115,15 +117,15 @@ fs.emptyDirSync(appLibBuild);
           console.log(
             chalk.yellow(
               '\nTreating warnings as errors because process.env.CI = true.\n' +
-                'Most CI servers set it automatically.\n',
-            ),
+                'Most CI servers set it automatically.\n'
+            )
           );
           return reject(new Error(messages.warnings.join('\n\n')));
         }
         return resolve({
           stats,
           previousFileSizes,
-          warnings: messages.warnings,
+          warnings: messages.warnings
         });
       });
     });
