@@ -1,4 +1,4 @@
-import GettingStartedDocs from '../../src/README/getting-started.md';
+import GettingStartedDocs from './getting-started.md';
 import ButtonDocs from '../../src/Button/button.md';
 import FabDocs from '../../src/Fab/fab.md';
 import IconToggleDocs from '../../src/IconToggle/icon-toggle.md';
