@@ -4,7 +4,6 @@
  * @module Card
  */
 import * as React from 'react';
-import classNames from 'classnames';
 import Button from '../Button';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';

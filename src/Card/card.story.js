@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-// import { linkTo } from '@storybook/addon-links';
-// import { Welcome } from '@storybook/react/demo';
 import { boolean } from '@storybook/addon-knobs';
 import {
   Card,
@@ -14,10 +12,8 @@ import {
   CardSubtitle,
   CardSupportingText,
   CardActions,
-  CardAction
+  CardAction,
 } from './';
-
-// storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Cards', module).add('Card', () => (
   <div>
@@ -26,7 +22,7 @@ storiesOf('Cards', module).add('Card', () => (
         style={{
           backgroundImage:
             'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-          height: '12.313rem'
+          height: '12.313rem',
         }}
       />
       <CardPrimary>

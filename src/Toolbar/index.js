@@ -148,6 +148,8 @@ export const Toolbar = withMDC({
       if (props && nextProps) {
         return props[key] !== nextProps[key];
       }
+
+      return false;
     });
 
     if (didChange && api) {
