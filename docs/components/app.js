@@ -11,6 +11,8 @@ import {
   ToolbarFixedAdjust,
   PersistentDrawer,
   PersistentDrawerContent,
+  TemporaryDrawer,
+  TemporaryDrawerContent,
   ListItem,
   ListItemText,
   IconButton,
@@ -31,12 +33,31 @@ const MenuItem = ({ url, label }) => {
 };
 
 export class App extends React.Component {
+  componentDidMount() {
+    window.addEventListener('resize', () => this.doSizeCheck());
+    this.doSizeCheck();
+  }
+
   state = {
-    menuIsOpen: true
+    menuIsOpen: false,
+    isMobile: true
   };
+
+  doSizeCheck() {
+    if (window.screen.width > 640) {
+      this.setState({ isMobile: false, menuIsOpen: true });
+    } else {
+      this.setState({ isMobile: true, menuIsOpen: false });
+    }
+  }
 
   render() {
     const pageId = `page-${window.location.pathname.split('/').pop()}`;
+    const Drawer = this.state.isMobile ? TemporaryDrawer : PersistentDrawer;
+    const DrawerContent = this.state.isMobile ?
+      TemporaryDrawerContent :
+      PersistentDrawerContent;
+
     return (
       <div id={pageId}>
         <Toolbar fixed waterfall>
@@ -74,13 +95,15 @@ export class App extends React.Component {
           </ToolbarRow>
         </Toolbar>
         <ToolbarFixedAdjust />
+
         <div className="demo-content">
-          <PersistentDrawer
+          {/* Nav */}
+          <Drawer
             id="main-nav"
             open={this.state.menuIsOpen}
             onClose={() => this.setState({ menuIsOpen: false })}
           >
-            <PersistentDrawerContent>
+            <DrawerContent>
               {menuContent.map(m => {
                 if (m.options) {
                   return (
@@ -93,9 +116,11 @@ export class App extends React.Component {
                 }
                 return <MenuItem label={m.label} url={m.url} key={m.label} />;
               })}
-            </PersistentDrawerContent>
-          </PersistentDrawer>
-          <main>
+            </DrawerContent>
+          </Drawer>
+          {/* End Nav */}
+
+          <main className="app__content">
             <Switch>
               <Route
                 path={`${process.env.PUBLIC_URL || '/'}`}
