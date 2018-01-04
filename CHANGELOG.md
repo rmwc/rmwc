@@ -1,3 +1,14 @@
+#### 0.0.1-rc13 (2018-01-04)
+
+##### New Features
+
+* **Slider:**  allow children for extensibilty ([cca8b737](https://github.com/jamesmfriedman/rmwc/commit/cca8b73703ec47121185b7ce70b9e24b26eae953))
+* **TabBarScroller:**  Adding TabBarScroller component. ([5361b46d](https://github.com/jamesmfriedman/rmwc/commit/5361b46d97d24a49adc6a8668eb8d6bd6e14eebb))
+
+##### Bug Fixes
+
+* **TabBar:**  reinit when adding/removing tabs dynamically. ([97a30f81](https://github.com/jamesmfriedman/rmwc/commit/97a30f817a026a1e0b74de34d9c851288816419c))
+
 #### 0.0.1-rc12 (2017-12-19)
 
 ##### Documentation Changes
