@@ -1,4 +1,3 @@
-import React from 'react';
 import { simpleTag } from '../Base';
 
 export const PermanentDrawer = simpleTag({

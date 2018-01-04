@@ -275,6 +275,7 @@ export const Select = withMDC({
           <SelectMenu>
             <MenuItems>
               {!!placeholder.length && (
+                // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                 <ListItem role="option" id="_placeholder" tab-index="0">
                   {placeholder}
                 </ListItem>
@@ -283,6 +284,7 @@ export const Select = withMDC({
                 selectOptions.map(({ label, ...option }, i) => (
                   <ListItem
                     key={i}
+                    // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                     role="option"
                     tabIndex="0"
                     {...option}

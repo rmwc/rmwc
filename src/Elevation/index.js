@@ -1,5 +1,4 @@
 // @flow
-import * as React from 'react';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base/simpleTag';
 

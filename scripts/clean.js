@@ -1,18 +1,17 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-const glob = require('glob');
+const processBuiltFiles = require('./process-built-files');
 const path = require('path');
 const fs = require('fs-extra');
 
-const processAlFiles = files => {
-	files.forEach(f => {
-		const out = f.replace('./src/', './');
-		fs.removeSync(out);
-	});
-};
+processBuiltFiles(files => {
+  files.forEach(f => {
+    let out = f.replace('./src/', './');
 
-glob('./src/**/!(*.story.js|*.spec.js)', {}, function(er, files) {
-	files = files.concat('./src/index.js');
-	console.log(files);
-	processAlFiles(files);
+    if (out === './rmwc.js') {
+      out = './index.js';
+    }
+
+    fs.removeSync(out);
+  });
 });

@@ -10,14 +10,14 @@ process.on('unhandledRejection', err => {
 });
 
 // Ensure environment variables are read.
-require('../config/env');
+require('react-scripts/config/env');
 
 const path = require('path');
 const chalk = require('chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
 const configFactory = require('../config/webpack.config.lib');
-const paths = require('../config/paths');
+const paths = require('react-scripts/config/paths');
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
@@ -31,17 +31,21 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
+const appLib = paths.appPath;
+const appLibIndex = path.resolve(path.join(paths.appSrc, 'rmwc.js'));
+const appLibBuild = path.resolve(path.join(paths.appSrc, 'lib'));
+
 // Remove all content but keep the directory so that
 // if you're in it, you don't end up in Trash
-fs.emptyDirSync(paths.appLibBuild);
+fs.emptyDirSync(appLibBuild);
 
 [
   // { libraryTarget: 'commonjs2', filename: 'rmwc.commonjs' },
-  { libraryTarget: 'umd', filename: 'rmwc' }
+  { libraryTarget: 'umd', filename: 'rmwc' },
 ].forEach(defs => {
   // First, read the current file sizes in build directory.
   // This lets us display how much they changed later.
-  measureFileSizesBeforeBuild(paths.appLibBuild)
+  measureFileSizesBeforeBuild(appLibBuild)
     .then(previousFileSizes => {
       // Start the webpack build
       return build(previousFileSizes);
@@ -54,12 +58,12 @@ fs.emptyDirSync(paths.appLibBuild);
           console.log(
             '\nSearch for the ' +
               chalk.underline(chalk.yellow('keywords')) +
-              ' to learn more about each warning.'
+              ' to learn more about each warning.',
           );
           console.log(
             'To ignore, add ' +
               chalk.cyan('// eslint-disable-next-line') +
-              ' to the line before.\n'
+              ' to the line before.\n',
           );
         } else {
           console.log(chalk.green('Compiled successfully.\n'));
@@ -69,9 +73,9 @@ fs.emptyDirSync(paths.appLibBuild);
         printFileSizesAfterBuild(
           stats,
           previousFileSizes,
-          paths.appLibBuild,
+          appLibBuild,
           WARN_AFTER_BUNDLE_GZIP_SIZE,
-          WARN_AFTER_CHUNK_GZIP_SIZE
+          WARN_AFTER_CHUNK_GZIP_SIZE,
         );
         console.log();
       },
@@ -79,14 +83,15 @@ fs.emptyDirSync(paths.appLibBuild);
         console.log(chalk.red('Failed to compile.\n'));
         printBuildError(err);
         process.exit(1);
-      }
+      },
     );
 
   // Create the production build and print the deployment instructions.
   function build(previousFileSizes) {
     console.log('Creating an optimized production build...');
+    const config = configFactory(defs.libraryTarget, defs.filename);
 
-    let compiler = webpack(configFactory(defs.libraryTarget, defs.filename));
+    let compiler = webpack(config);
     return new Promise((resolve, reject) => {
       compiler.run((err, stats) => {
         if (err) {
@@ -110,15 +115,15 @@ fs.emptyDirSync(paths.appLibBuild);
           console.log(
             chalk.yellow(
               '\nTreating warnings as errors because process.env.CI = true.\n' +
-                'Most CI servers set it automatically.\n'
-            )
+                'Most CI servers set it automatically.\n',
+            ),
           );
           return reject(new Error(messages.warnings.join('\n\n')));
         }
         return resolve({
           stats,
           previousFileSizes,
-          warnings: messages.warnings
+          warnings: messages.warnings,
         });
       });
     });

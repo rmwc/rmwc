@@ -1,27 +1,28 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-const glob = require('glob');
+const processBuiltFiles = require('./process-built-files');
 const path = require('path');
 const fs = require('fs-extra');
 const { exec } = require('child_process');
 
-const processAlFiles = files => {
-	files.forEach(f => {
-		const out = f.replace('./src/', './');
-		const dir = path.dirname(out);
-		console.log('Babel:', f, '-> ', out);
+processBuiltFiles(files => {
+  files.forEach(f => {
+    let out = f.replace('./src/', './');
 
-		if (!fs.existsSync(dir)) {
-			fs.mkdirSync(dir);
-		}
+    if (out === './rmwc.js') {
+      out = path.resolve('./index.js');
+    } else {
+      return;
+    }
 
-		const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out}`;
-		exec(cmd);
-	});
-};
+    const dir = path.dirname(out);
 
-glob('./src/**/!(*.story.js|*.spec.js)', {}, function(er, files) {
-	files = files.concat('./src/index.js');
-	console.log(files);
-	processAlFiles(files);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+
+    const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out}`;
+    console.log('Babel:', f, '-> ', out, cmd);
+    exec(cmd);
+  });
 });

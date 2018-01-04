@@ -1,5 +1,5 @@
-import * as rmwc from '../';
+import * as rmwc from '../rmwc';
 
 describe('RMWC', () => {
-	it('works', () => {});
+  it('works', () => {});
 });

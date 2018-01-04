@@ -2,23 +2,19 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-// import { linkTo } from '@storybook/addon-links';
-// import { Welcome } from '@storybook/react/demo';
 import { boolean } from '@storybook/addon-knobs';
 import { PermanentDrawer, PermanentDrawerContent } from './permanent-drawer';
 import {
   PersistentDrawer,
   PersistentDrawerContent,
-  PersistentDrawerHeader
+  PersistentDrawerHeader,
 } from './persistent-drawer';
 import {
   TemporaryDrawer,
   TemporaryDrawerContent,
-  TemporaryDrawerHeader
+  TemporaryDrawerHeader,
 } from './temporary-drawer';
 import { List, ListItem, ListItemText } from '../List';
-
-// storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 const ListItems = props =>
   menuItems.map((section, i) => (
@@ -31,7 +27,7 @@ const menuItems = [
   { displayName: 'Home', icon: '' },
   { displayName: 'Profile', icon: '' },
   { displayName: 'About', icon: '' },
-  { displayName: 'Contact', icon: '' }
+  { displayName: 'Contact', icon: '' },
 ];
 
 storiesOf('Drawers', module)
