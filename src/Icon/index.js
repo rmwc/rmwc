@@ -11,18 +11,18 @@ export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component';
 
-type IconPropsT = {
+export type IconPropsT = {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs */
-  use: React.Node,
+  use?: React.Node,
 
   /** Handle multiple methods of embedding an icon. */
-  strategy: IconStrategyT,
+  strategy?: IconStrategyT,
 
   /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy. */
-  prefix: string,
+  prefix?: string,
 
   /** A base className for the icon namespace, i.e. material-icons */
-  basename: string
+  basename?: string
 };
 
 export class Icon extends React.PureComponent<IconPropsT> {
@@ -40,7 +40,7 @@ export class Icon extends React.PureComponent<IconPropsT> {
 
   getStrategy(
     content: React.Node,
-    strategy: IconStrategyT,
+    strategy?: IconStrategyT,
     defaultStrategy: IconStrategyT
   ): IconStrategyT {
     strategy = strategy || defaultStrategy;
