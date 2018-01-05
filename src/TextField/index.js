@@ -7,6 +7,7 @@ import { simpleTag, withMDC } from '../Base';
 import { Icon } from '../Icon';
 
 import type { SimpleTagPropsT } from '../Base';
+import type { IconPropsT } from '../Icon';
 
 type TextFieldRootPropsT = {
   /** Makes a multiline TextField. */
@@ -97,7 +98,7 @@ export class TextFieldHelperText extends simpleTag({
 type TextFieldIconPropsT = {
   /** The icon to use */
   use: React.Node
-};
+} & IconPropsT;
 
 export const TextFieldIcon = (props: TextFieldIconPropsT) => (
   <Icon {...props} className={(props.className, 'mdc-text-field__icon')} />
@@ -166,6 +167,18 @@ export const TextField = withMDC({
         <TextFieldInput {...tagProps} />
       );
 
+      // handle leading and trailing icons
+      const renderIcon = iconNode => {
+        if (
+          (iconNode && typeof iconNode === 'string') ||
+          (typeof iconNode === 'object' && iconNode.type !== TextFieldIcon)
+        ) {
+          return <TextFieldIcon use={iconNode} />;
+        }
+
+        return iconNode;
+      };
+
       return (
         <TextFieldRoot
           {...rootProps}
@@ -178,17 +191,15 @@ export const TextField = withMDC({
           fullwidth={fullwidth}
           elementRef={mdcElementRef}
         >
-          {withLeadingIcon}
+          {!!withLeadingIcon && renderIcon(withLeadingIcon)}
           {children}
           {tag}
-
           {!!label && (
             <TextFieldLabel htmlFor={tagProps.id} value={tagProps.value}>
               {label}
             </TextFieldLabel>
           )}
-
-          {withTrailingIcon}
+          {!!withTrailingIcon && renderIcon(withTrailingIcon)}
           <TextFieldBottomLine />
         </TextFieldRoot>
       );

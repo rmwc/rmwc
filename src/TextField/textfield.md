@@ -14,8 +14,10 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 {/* Help text can be added to appear on focus. Place it directly after TextField. */}
 <TextFieldHelperText>Optional help text.</TextFieldHelperText>
 
-{/* Leading and trailing icons can be used, they look the best with the box prop. */}
-<TextField box withLeadingIcon={<TextFieldIcon use="search"/>} label="Write something..." />
+{/* Leading and trailing icons can be used, they look the best with the box prop. You can pass anything the Icon component accepts. */}
+<TextField box withLeadingIcon="search" label="Write something..." />
+
+{/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. */}
 <TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." />
 
 {/* You can make the TextField a textarea. */}
