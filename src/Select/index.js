@@ -10,8 +10,7 @@ export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
   classNames: 'mdc-select',
   defaultProps: {
-    role: 'listbox',
-    tabIndex: '0'
+    role: 'listbox'
   }
 });
 
@@ -210,7 +209,7 @@ export const Select = withMDC({
       if (cssOnly) {
         const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
         const selectInner = (
-          <SelectInnerRoot tag="select" value={value} {...rest}>
+          <SelectInnerRoot tabIndex="0" tag="select" value={value} {...rest}>
             {!!placeholder.length && (
               <ListItem tag="option" value="_placeholder" tab-index="0">
                 {placeholder}
@@ -264,7 +263,7 @@ export const Select = withMDC({
       }
 
       return (
-        <SelectRoot elementRef={mdcElementRef} {...rest}>
+        <SelectRoot tabIndex="0" elementRef={mdcElementRef} {...rest}>
           <SelectSurface>
             <SelectLabel placeholder={placeholder} value={value}>
               {label}
