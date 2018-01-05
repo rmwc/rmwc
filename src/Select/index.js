@@ -211,7 +211,7 @@ export const Select = withMDC({
         const selectInner = (
           <SelectInnerRoot tabIndex="0" tag="select" value={value} {...rest}>
             {!!placeholder.length && (
-              <ListItem tag="option" value="_placeholder" tab-index="0">
+              <ListItem tag="option" value="" tab-index="0">
                 {placeholder}
               </ListItem>
             )}
@@ -275,7 +275,7 @@ export const Select = withMDC({
             <MenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-                <ListItem role="option" id="_placeholder" tab-index="0">
+                <ListItem role="option" id="" tab-index="0">
                   {placeholder}
                 </ListItem>
               )}
