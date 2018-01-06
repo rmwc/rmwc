@@ -14,20 +14,27 @@ import {
   TemporaryDrawerContent,
   TemporaryDrawerHeader,
 } from './temporary-drawer';
-import { List, ListItem, ListItemText } from '../List';
+import { 
+  List, 
+  ListItem, 
+  ListItemText,
+  ListItemStartDetail
+} from '../List';
+
 
 const ListItems = props =>
   menuItems.map((section, i) => (
     <ListItem key={i} onClick={props.onItemClick}>
-      <ListItemText>{section.name}</ListItemText>
+      <ListItemStartDetail>{section.icon}</ListItemStartDetail>
+      <ListItemText>{section.displayName}</ListItemText>
     </ListItem>
   ));
 
 const menuItems = [
-  { displayName: 'Home', icon: '' },
-  { displayName: 'Profile', icon: '' },
-  { displayName: 'About', icon: '' },
-  { displayName: 'Contact', icon: '' },
+  { displayName: 'Home', icon: 'home' },
+  { displayName: 'Profile', icon: 'account_circle' },
+  { displayName: 'About', icon: 'info' },
+  { displayName: 'Contact', icon: 'phone' },
 ];
 
 storiesOf('Drawers', module)
