@@ -75,6 +75,12 @@ pre[class*='language-'] {
   margin-bottom: 1.875rem;
 }
 
+/* version # */
+.app__version {
+  align-self: center;
+  opacity: 0.87;
+}
+
 /* code examples */
 .app__content > div .example.render-with-code,
 .example.code-only {
