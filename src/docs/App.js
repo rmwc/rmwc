@@ -57,7 +57,8 @@ export class App extends React.Component {
   }
 
   render() {
-    const pageId = `page-${window.location.pathname.split('/').pop()}`;
+    const pageId = `page-${window.location.pathname.split('/').pop() ||
+      'home'}`;
     const Drawer = this.state.isMobile ? TemporaryDrawer : PersistentDrawer;
     const DrawerContent = this.state.isMobile ?
       TemporaryDrawerContent :

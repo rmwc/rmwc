@@ -1,5 +1,5 @@
 html {
-  background-color: #fafafa;
+  background-color: #f2f2f6;
   max-width: 100vw;
 }
 
@@ -34,6 +34,12 @@ pre[class*='language-'] {
   color: inherit;
   text-decoration: none;
   font-weight: bold;
+  text-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s;
+}
+
+.mdc-toolbar__title a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .app__content {
@@ -49,10 +55,12 @@ pre[class*='language-'] {
   color: inherit;
 }
 
-.app__content > div {
+.app__content > div,
+.container {
   padding: 1rem;
   max-width: 72.5rem;
   margin: 0 auto;
+  display: block;
 }
 
 .app__content > div p code,
@@ -185,20 +193,90 @@ ul li {
   flex: 1;
 }
 
+/* page home */
+#page-home .mdc-layout-grid {
+  padding: 0;
+}
+
+#page-home .app__content header {
+  text-align: center;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 6rem 0;
+  box-sizing: border-box;
+  background-color: #383b4c;
+}
+
+#page-home .app__content header:before {
+  content: '';
+  background-image: linear-gradient(white, transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+}
+
+#page-home .app__content header .container {
+  max-width: 720px;
+  position: relative;
+}
+
+#page-home .app__content .intro__inner {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 0;
+  font-weight: normal;
+}
+
+#page-home .app__content .intro .container {
+  max-width: 720px;
+  text-align: center;
+}
+
+#page-home .app__content .intro p {
+  font-weight: normal;
+}
+
+#page-home .app__content .mdc-layout-grid__cell {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-home .app__content .mdc-layout-grid__cell .mdc-card,
+#page-home .app__content .mdc-layout-grid__cell a {
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+  text-decoration: none;
+  display: flex;
+}
+
+#page-home .app__content .mdc-layout-grid__cell a {
+  text-decoration: none;
+}
+
+/* page icons */
 #page-icons .example > div > i,
 #page-icons .example > div > img {
   margin: 1rem;
   vertical-align: middle;
 }
 
+/* page buttons */
 #page-buttons .example .mdc-button {
   margin: 0.5rem;
 }
 
+/* page drawers */
 #page-drawers .example .run {
   overflow: hidden;
 }
 
+/* page elevation */
 #page-elevation .example [class*='mdc-elevation--'] {
   padding: 1rem;
   margin: 1rem;
@@ -211,6 +289,7 @@ ul li {
   border-radius: 0.25rem;
 }
 
+/* page linear-progress */
 #page-linear-progress .example .mdc-linear-progress {
   margin: 1rem 0;
 }
