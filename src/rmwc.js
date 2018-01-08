@@ -63,8 +63,6 @@ export { Icon } from './Icon';
 
 export { IconToggle } from './IconToggle';
 
-export { IconButton } from './IconButton';
-
 export { LinearProgress } from './LinearProgress';
 
 export {

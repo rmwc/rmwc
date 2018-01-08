@@ -10,18 +10,17 @@ import {
   ToolbarTitle,
   ToolbarFixedAdjust,
   ToolbarMenuIcon,
+  ToolbarIcon
 } from 'rmwc/Toolbar';
 
 import {
   PersistentDrawer,
   PersistentDrawerContent,
   TemporaryDrawer,
-  TemporaryDrawerContent,
+  TemporaryDrawerContent
 } from 'rmwc/Drawer';
 
 import { ListItem, ListItemText } from 'rmwc/List';
-
-import { IconButton } from 'rmwc/IconButton';
 
 import Submenu from './Submenu';
 import Home from './Home';
@@ -44,7 +43,7 @@ export class App extends React.Component {
 
   state = {
     menuIsOpen: false,
-    isMobile: true,
+    isMobile: true
   };
 
   doSizeCheck() {
@@ -58,9 +57,9 @@ export class App extends React.Component {
   render() {
     const pageId = `page-${window.location.pathname.split('/').pop()}`;
     const Drawer = this.state.isMobile ? TemporaryDrawer : PersistentDrawer;
-    const DrawerContent = this.state.isMobile
-      ? TemporaryDrawerContent
-      : PersistentDrawerContent;
+    const DrawerContent = this.state.isMobile ?
+      TemporaryDrawerContent :
+      PersistentDrawerContent;
 
     return (
       <div id={pageId}>
@@ -80,7 +79,7 @@ export class App extends React.Component {
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
-              <IconButton
+              <ToolbarIcon
                 tag="a"
                 href="https://github.com/jamesmfriedman/rmwc"
                 use={
