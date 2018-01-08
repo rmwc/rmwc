@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = function override(config, env) {
+  config.entry.unshift(require.resolve('react-hot-loader/patch'));
+
   // grab the "oneOf" rule
   const rules = config.module.rules[1].oneOf;
 
@@ -23,12 +25,12 @@ module.exports = function override(config, env) {
             // This is a feature of `babel-loader` for webpack (not Babel itself).
             // It enables caching results in ./node_modules/.cache/babel-loader/
             // directory for faster rebuilds.
-            cacheDirectory: true,
-          },
+            cacheDirectory: true
+          }
         },
-        require.resolve('react-markdown-loader'),
-      ],
-    },
+        require.resolve('react-markdown-loader')
+      ]
+    }
   );
 
   // add module aliases

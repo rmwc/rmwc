@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import 'material-components-web/dist/material-components-web.css';
 import 'prismjs/themes/prism.css';
-import './index.css';
+import './docs.css';
 import { AppContainer } from 'react-hot-loader';
 import App from './App';
 import { unregister } from './registerServiceWorker';
@@ -18,7 +18,7 @@ const renderApp = Component => {
         <Component location={window.location.href} />
       </Router>
     </AppContainer>,
-    document.getElementById('root'),
+    document.getElementById('root')
   );
 };
 

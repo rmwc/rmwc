@@ -3,6 +3,8 @@ import { Route, Link, Switch } from 'react-router-dom';
 
 import { menuContent } from './menuContent';
 
+import { version } from 'rmwc/rmwc';
+
 import {
   Toolbar,
   ToolbarRow,
@@ -79,6 +81,7 @@ export class App extends React.Component {
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
+              <span className="app__version">{version}</span>
               <ToolbarIcon
                 tag="a"
                 href="https://github.com/jamesmfriedman/rmwc"
