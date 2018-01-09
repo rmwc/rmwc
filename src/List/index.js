@@ -13,13 +13,7 @@ type ListItemPropsT = {
   /** A modifier for a selected state. */
   selected?: boolean,
   /** A modifier for an active state. */
-  activated?: boolean,
-  /** A modifier for a selected item in Permanent Drawer. */
-  permanentDrawerSelected?: boolean,
-  /** A modifier for a selected item in Persistent Drawer. */
-  persistentDrawerSelected?: boolean,
-  /** A modifier for a selected item in Temporary Drawer. */
-  temporaryDrawerSelected?: boolean
+  activated?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -30,24 +24,14 @@ export const ListItemRoot = withRipple(
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
-        'mdc-list-item--activated': props.activated,
-        'mdc-permanent-drawer--selected': props.permanentDrawerSelected,
-        'mdc-persistent-drawer--selected': props.persistentDrawerSelected,
-        'mdc-temporary-drawer--selected': props.temporaryDrawerSelected
+        'mdc-list-item--activated': props.activated
       }
     ],
     defaultProps: {
-      permanentDrawerSelected: false,
-      persistentDrawerSelected: false,
-      temporaryDrawerSelected: false
+      selected: false,
+      activated: false
     },
-    consumeProps: [
-      'selected',
-      'activated',
-      'permanentDrawerSelected',
-      'persistentDrawerSelected',
-      'temporaryDrawerSelected'
-    ]
+    consumeProps: ['selected', 'activated']
   })
 );
 
@@ -56,12 +40,6 @@ export const ListItemRoot = withRipple(
  */
 export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
-
-  static defaultProps = {
-    permanentDrawerSelected: false,
-    persistentDrawerSelected: false,
-    temporaryDrawerSelected: false
-  };
 
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);

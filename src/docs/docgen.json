@@ -600,147 +600,58 @@
       }
     }
   ],
-  "src/Drawer/permanent-drawer.js": [
+  "src/Drawer/index.js": [
     {
       "description": "",
-      "displayName": "PermanentDrawerRoot",
+      "displayName": "DrawerHeaderRoot",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "PermanentDrawerToolbarSpacer",
+      "displayName": "DrawerHeaderContent",
+      "methods": []
+    },
+    {
+      "description": "A Header for Drawers",
+      "displayName": "DrawerHeader",
+      "methods": []
+    },
+    {
+      "description": "If you are using fixed a Toolbar, this provides space for it.",
+      "displayName": "DrawerToolbarSpacer",
+      "methods": []
+    },
+    {
+      "description": "Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else.",
+      "displayName": "DrawerContent",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "PermanentDrawerContent",
-      "methods": []
-    }
-  ],
-  "src/Drawer/persistent-drawer.js": [
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeader",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeaderContent",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeader",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerContent",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerDrawer",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawer",
-      "methods": [],
-      "props": {
-        "open": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Opens or closes the Drawer."
-        },
-        "onClose": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: Event) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "Event"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
+      "displayName": "DrawerRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
             }
-          },
-          "required": false,
-          "description": "Callback that fires when the Drawer is closed."
-        },
-        "onOpen": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: Event) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "Event"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when the Drawer is opened."
+          ],
+          "returns": null
         }
-      }
-    }
-  ],
-  "src/Drawer/temporary-drawer.js": [
-    {
-      "description": "",
-      "displayName": "TemporaryDrawerHeader",
-      "methods": []
+      ]
     },
     {
       "description": "",
-      "displayName": "TemporaryDrawerHeaderContent",
+      "displayName": "DrawerDrawer",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "TemporaryDrawerHeader",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawerContent",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawerDrawer",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawer",
+      "description": "A Drawer component",
+      "displayName": "Drawer",
       "methods": [],
       "props": {
         "open": {
@@ -1178,6 +1089,7 @@
             },
             {
               "name": "strategy",
+              "optional": true,
               "type": {
                 "name": "union",
                 "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
@@ -1273,7 +1185,7 @@
             "name": "ReactNode",
             "raw": "React.Node"
           },
-          "required": true,
+          "required": false,
           "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs",
           "defaultValue": {
             "value": "undefined",
@@ -1307,45 +1219,22 @@
               }
             ]
           },
-          "required": true,
+          "required": false,
           "description": "Handle multiple methods of embedding an icon."
         },
         "prefix": {
           "flowType": {
             "name": "string"
           },
-          "required": true,
+          "required": false,
           "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy."
         },
         "basename": {
           "flowType": {
             "name": "string"
           },
-          "required": true,
+          "required": false,
           "description": "A base className for the icon namespace, i.e. material-icons"
-        }
-      }
-    }
-  ],
-  "src/IconButton/index.js": [
-    {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": ""
-        },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": ""
         }
       }
     }
@@ -1564,39 +1453,6 @@
           },
           "required": false,
           "description": "A modifier for an active state."
-        },
-        "permanentDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Permanent Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "persistentDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Persistent Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "temporaryDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Temporary Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
         }
       }
     },
@@ -1660,107 +1516,6 @@
           },
           "required": false,
           "description": "Makes the list start detail circular for avatars."
-        }
-      }
-    }
-  ],
-  "src/Menu/index.js": [
-    {
-      "description": "",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "MenuAnchor",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "MenuRoot",
-      "methods": [],
-      "props": {
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'-1'",
-            "computed": false
-          }
-        }
-      }
-    },
-    {
-      "description": "",
-      "displayName": "MenuItems",
-      "methods": [],
-      "props": {
-        "role": {
-          "defaultValue": {
-            "value": "'menu'",
-            "computed": false
-          }
-        },
-        "aria-hidden": {
-          "defaultValue": {
-            "value": "'true'",
-            "computed": false
-          }
-        }
-      }
-    },
-    {
-      "description": "",
-      "displayName": "Menu",
-      "methods": [],
-      "props": {
-        "open": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Whether or not the Menu is open."
-        },
-        "onClose": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: Event) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "Event"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when the Menu closes."
-        },
-        "onSelected": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: Event) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "Event"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when a Menu item is selected."
         }
       }
     }
@@ -2126,12 +1881,6 @@
         "role": {
           "defaultValue": {
             "value": "'listbox'",
-            "computed": false
-          }
-        },
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'0'",
             "computed": false
           }
         }
@@ -3198,6 +2947,12 @@
           "returns": null
         }
       ]
+    }
+  ],
+  "src/docs/Home.js": [
+    {
+      "description": "",
+      "methods": []
     }
   ],
   "src/docs/Submenu.js": [

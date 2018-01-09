@@ -15,12 +15,7 @@ import {
   ToolbarIcon
 } from 'rmwc/Toolbar';
 
-import {
-  PersistentDrawer,
-  PersistentDrawerContent,
-  TemporaryDrawer,
-  TemporaryDrawerContent
-} from 'rmwc/Drawer';
+import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
 import { ListItem, ListItemText } from 'rmwc/List';
 
@@ -49,7 +44,7 @@ export class App extends React.Component {
   };
 
   doSizeCheck() {
-    if (window.screen.width > 640) {
+    if (window.innerWidth > 640) {
       this.setState({ isMobile: false, menuIsOpen: true });
     } else {
       this.setState({ isMobile: true, menuIsOpen: false });
@@ -59,10 +54,6 @@ export class App extends React.Component {
   render() {
     const pageId = `page-${window.location.pathname.split('/').pop() ||
       'home'}`;
-    const Drawer = this.state.isMobile ? TemporaryDrawer : PersistentDrawer;
-    const DrawerContent = this.state.isMobile ?
-      TemporaryDrawerContent :
-      PersistentDrawerContent;
 
     return (
       <div id={pageId}>
@@ -108,6 +99,8 @@ export class App extends React.Component {
           <Drawer
             id="main-nav"
             open={this.state.menuIsOpen}
+            persistent={!this.state.isMobile}
+            temporary={this.state.isMobile}
             onClose={() => this.setState({ menuIsOpen: false })}
           >
             <DrawerContent>

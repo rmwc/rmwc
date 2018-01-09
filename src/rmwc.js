@@ -16,18 +16,14 @@ export {
 export { Checkbox } from './Checkbox';
 
 export {
-  PersistentDrawer,
-  PersistentDrawerHeader,
-  PersistentDrawerContent,
-  PersistentDrawerListItem,
-  TemporaryDrawer,
-  TemporaryDrawerHeader,
-  TemporaryDrawerContent,
-  TemporaryDrawerListItem,
-  PermanentDrawer,
-  PermanentDrawerToolbarSpacer,
-  PermanentDrawerContent,
-  PermanentDrawerListItem
+  DrawerHeaderRoot,
+  DrawerHeaderContent,
+  DrawerHeader,
+  DrawerToolbarSpacer,
+  DrawerContent,
+  DrawerRoot,
+  DrawerDrawer,
+  Drawer
 } from './Drawer';
 
 export {
