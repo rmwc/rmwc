@@ -16,7 +16,7 @@ export const MenuAnchor = simpleTag({
   classNames: 'mdc-menu-anchor'
 });
 
-export const MenuRoot = simpleTag({
+export const SimpleMenuRoot = simpleTag({
   displayName: 'MenuRoot',
   classNames: props => ['mdc-simple-menu'],
   defaultProps: {
@@ -24,7 +24,7 @@ export const MenuRoot = simpleTag({
   }
 });
 
-export const MenuItems = simpleTag({
+export const SimpleMenuItems = simpleTag({
   displayName: 'MenuItems',
   tag: List,
   classNames: 'mdc-simple-menu__items',
@@ -59,7 +59,7 @@ const handleMenuChange = (evt, props) => {
 };
 
 /** A menu component */
-export const Menu = withMDC({
+export const SimpleMenu = withMDC({
   mdcConstructor: MDCSimpleMenu,
   mdcElementRef: true,
   mdcEvents: {
@@ -116,9 +116,9 @@ export const Menu = withMDC({
         ...rest
       } = this.props;
       return (
-        <MenuRoot elementRef={mdcElementRef} {...rest}>
-          <MenuItems>{children}</MenuItems>
-        </MenuRoot>
+        <SimpleMenuRoot elementRef={mdcElementRef} {...rest}>
+          <SimpleMenuItems>{children}</SimpleMenuItems>
+        </SimpleMenuRoot>
       );
     }
   }

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { List, ListItem, ListGroup } from '../List';
-import { MenuRoot, MenuItems } from '../Menu';
+import { SimpleMenuRoot, SimpleMenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -41,7 +41,7 @@ export const SelectBottomLine = simpleTag({
 
 export const SelectMenu = simpleTag({
   displayName: 'SelectMenu',
-  tag: MenuRoot,
+  tag: SimpleMenuRoot,
   classNames: 'mdc-select__menu'
 });
 
@@ -272,7 +272,7 @@ export const Select = withMDC({
             <SelectBottomLine />
           </SelectSurface>
           <SelectMenu>
-            <MenuItems>
+            <SimpleMenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                 <ListItem role="option" id="" tab-index="0">
@@ -293,7 +293,7 @@ export const Select = withMDC({
                   </ListItem>
                 ))}
               {children}
-            </MenuItems>
+            </SimpleMenuItems>
           </SelectMenu>
         </SelectRoot>
       );
