@@ -1,19 +1,18 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuAnchor } from './';
 import { Button } from '../Button';
 import { storyWithState } from '../Base/story-with-state';
 
 const MenuStory = storyWithState(
   state => ({
-    open: boolean('open', state.open || false),
+    open: boolean('open', state.open || false)
   }),
   function() {
     return (
-      <MenuAnchor>
+      <MenuAnchor style={{ position: 'absolute', top: '24px', left: '24px' }}>
         <Button
           raised
           onClick={evt => this.setState({ open: !this.state.open })}
@@ -23,6 +22,20 @@ const MenuStory = storyWithState(
 
         <Menu
           open={this.state.open}
+          anchorCorner={select(
+            'anchorCorner',
+            {
+              BOTTOM_END: 'BOTTOM_END',
+              BOTTOM_LEFT: 'BOTTOM_LEFT',
+              BOTTOM_RIGHT: 'BOTTOM_RIGHT',
+              BOTTOM_START: 'BOTTOM_START',
+              TOP_END: 'TOP_END',
+              TOP_LEFT: 'TOP_LEFT',
+              TOP_RIGHT: 'TOP_RIGHT',
+              TOP_START: 'TOP_START'
+            },
+            'TOP_START'
+          )}
           onClose={evt => this.setState({ open: false })}
         >
           <MenuItem>Cookies</MenuItem>
@@ -31,7 +44,7 @@ const MenuStory = storyWithState(
         </Menu>
       </MenuAnchor>
     );
-  },
+  }
 );
 
 storiesOf('Menus', module).add('Menu', () => <MenuStory />);
