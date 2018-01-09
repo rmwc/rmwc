@@ -13,13 +13,9 @@ describe('List', () => {
     mount(
       <List>
         <ListItem ripple>
-          <ListItemGraphic>
-            <i />
-          </ListItemGraphic>
+          <ListItemGraphic />
           <ListItemText>Cookies</ListItemText>
-          <ListItemMeta>
-            <i />
-          </ListItemMeta>
+          <ListItemMeta />
         </ListItem>
       </List>
     );
