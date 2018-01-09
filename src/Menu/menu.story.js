@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
-import { Menu, MenuItem, MenuAnchor } from './';
+import { SimpleMenu, MenuItem, MenuAnchor } from './';
 import { Button } from '../Button';
 import { storyWithState } from '../Base/story-with-state';
 
@@ -20,7 +20,7 @@ const MenuStory = storyWithState(
           Open Menu
         </Button>
 
-        <Menu
+        <SimpleMenu
           open={this.state.open}
           anchorCorner={select(
             'anchorCorner',
@@ -41,7 +41,7 @@ const MenuStory = storyWithState(
           <MenuItem>Cookies</MenuItem>
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
-        </Menu>
+        </SimpleMenu>
       </MenuAnchor>
     );
   }

@@ -79,7 +79,7 @@ export {
   ListDivider
 } from './List';
 
-export { Menu, MenuItem, MenuAnchor } from './Menu';
+export { SimpleMenu, MenuItem, MenuAnchor } from './Menu';
 
 export { Radio } from './Radio';
 
