@@ -29,10 +29,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "^0.27.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "material-components-web": "^0.27.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -68,7 +65,8 @@
     "react-app-rewired": "^1.4.0",
     "react-hot-loader": "^3.1.3",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17"
   },
   "babel": {
     "presets": [
