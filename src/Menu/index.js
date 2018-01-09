@@ -1,6 +1,9 @@
 // @flow
 import * as React from 'react';
-import { MDCSimpleMenu } from '@material/menu/dist/mdc.menu';
+import {
+  MDCSimpleMenu,
+  MDCSimpleMenuFoundation
+} from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
 import { simpleTag, withMDC, noop } from '../Base';
 
@@ -15,7 +18,7 @@ export const MenuAnchor = simpleTag({
 
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
-  classNames: 'mdc-simple-menu',
+  classNames: props => ['mdc-simple-menu'],
   defaultProps: {
     tabIndex: '-1'
   }
@@ -37,7 +40,17 @@ type MenuPropsT = {
   /** Callback that fires when the Menu closes. */
   onClose?: (evt: Event) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (evt: Event) => mixed
+  onSelected?: (evt: Event) => mixed,
+  /** Manually position the menu to one of the corners. */
+  anchorCorner?:
+    | 'BOTTOM_END'
+    | 'BOTTOM_LEFT'
+    | 'BOTTOM_RIGHT'
+    | 'BOTTOM_START'
+    | 'TOP_END'
+    | 'TOP_LEFT'
+    | 'TOP_RIGHT'
+    | 'TOP_START'
 };
 
 const handleMenuChange = (evt, props) => {
@@ -45,6 +58,7 @@ const handleMenuChange = (evt, props) => {
   props.onClose(evt);
 };
 
+/** A menu component */
 export const Menu = withMDC({
   mdcConstructor: MDCSimpleMenu,
   mdcElementRef: true,
@@ -63,6 +77,26 @@ export const Menu = withMDC({
     onClose: noop
   },
   onUpdate: (props, nextProps, api) => {
+    console.log(
+      api,
+      MDCSimpleMenuFoundation.Corner,
+      MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner],
+      api.foundation_.anchorCorner_
+    );
+    if (
+      api &&
+      MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner] !==
+        api.foundation_.anchorCorner_
+    ) {
+      console.log(
+        'set',
+        MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner]
+      );
+      api.setAnchorCorner(
+        MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner]
+      );
+    }
+
     if (api && nextProps.open !== undefined && api.open !== nextProps.open) {
       api.open = nextProps.open;
     }
@@ -78,6 +112,7 @@ export const Menu = withMDC({
         onClose,
         onSelected,
         mdcElementRef,
+        anchorCorner,
         ...rest
       } = this.props;
       return (
