@@ -1,47 +1,32 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
 import {
-	List,
-	ListItem,
-	ListItemStartDetail,
-	ListItemText,
-	ListItemEndDetail
+  List,
+  ListItem,
+  ListItemGraphic,
+  ListItemText,
+  ListItemMeta
 } from './';
-import { Icon } from '../Icon';
 
 storiesOf('Lists', module).add('List', () => (
-	<List>
-		<ListItem ripple>
-			<ListItemStartDetail>
-				<Icon>star_border</Icon>
-			</ListItemStartDetail>
-			<ListItemText>Cookies</ListItemText>
-			<ListItemEndDetail>
-				<Icon>info</Icon>
-			</ListItemEndDetail>
-		</ListItem>
+  <List>
+    <ListItem ripple>
+      <ListItemGraphic>star_border</ListItemGraphic>
+      <ListItemText>Cookies</ListItemText>
+      <ListItemMeta>info</ListItemMeta>
+    </ListItem>
 
-		<ListItem ripple>
-			<ListItemStartDetail>
-				<Icon>favorite_border</Icon>
-			</ListItemStartDetail>
-			<ListItemText>Pizza</ListItemText>
-			<ListItemEndDetail>
-				<Icon>info</Icon>
-			</ListItemEndDetail>
-		</ListItem>
+    <ListItem ripple>
+      <ListItemGraphic>favorite_border</ListItemGraphic>
+      <ListItemText>Pizza</ListItemText>
+      <ListItemMeta>info</ListItemMeta>
+    </ListItem>
 
-		<ListItem ripple>
-			<ListItemStartDetail>
-				<Icon>mood</Icon>
-			</ListItemStartDetail>
-			<ListItemText>Icecream</ListItemText>
-			<ListItemEndDetail>
-				<Icon>info</Icon>
-			</ListItemEndDetail>
-		</ListItem>
-	</List>
+    <ListItem ripple>
+      <ListItemGraphic>mood</ListItemGraphic>
+      <ListItemText>Icecream</ListItemText>
+      <ListItemMeta>info</ListItemMeta>
+    </ListItem>
+  </List>
 ));
