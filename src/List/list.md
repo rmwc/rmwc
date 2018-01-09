@@ -50,5 +50,5 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="ListItemMeta" />
 <DocumentComponent displayName="ListDivider" />
 <DocumentComponent displayName="ListGroup" />
-<DocumentComponent displayName="ListGroupSubheade" />
+<DocumentComponent displayName="ListGroupSubheader" />
 ```
