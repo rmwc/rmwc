@@ -68,8 +68,8 @@ export {
   ListItem,
   ListItemText,
   ListItemSecondaryText,
-  ListItemStartDetail,
-  ListItemEndDetail,
+  ListItemGraphic,
+  ListItemMeta,
   ListGroup,
   ListGroupSubheader,
   ListDivider

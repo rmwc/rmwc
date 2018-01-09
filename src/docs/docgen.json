@@ -1468,12 +1468,12 @@
     },
     {
       "description": "",
-      "displayName": "ListItemStartDetail",
+      "displayName": "ListItemGraphic",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "ListItemStartDetail",
+      "displayName": "ListItemMeta",
       "methods": []
     },
     {

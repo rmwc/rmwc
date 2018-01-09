@@ -4,8 +4,8 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemStartDetail,
-  ListItemEndDetail
+  ListItemGraphic,
+  ListItemMeta
 } from './';
 
 describe('List', () => {
@@ -13,13 +13,13 @@ describe('List', () => {
     mount(
       <List>
         <ListItem ripple>
-          <ListItemStartDetail>
+          <ListItemGraphic>
             <i />
-          </ListItemStartDetail>
+          </ListItemGraphic>
           <ListItemText>Cookies</ListItemText>
-          <ListItemEndDetail>
+          <ListItemMeta>
             <i />
-          </ListItemEndDetail>
+          </ListItemMeta>
         </ListItem>
       </List>
     );

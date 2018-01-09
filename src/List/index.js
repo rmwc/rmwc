@@ -75,15 +75,15 @@ export const ListItemSecondaryText = simpleTag({
   classNames: 'mdc-list-item__secondary-text'
 });
 
-export const ListItemStartDetail = simpleTag({
-  displayName: 'ListItemStartDetail',
-  classNames: 'mdc-list-item__start-detail',
+export const ListItemGraphic = simpleTag({
+  displayName: 'ListItemGraphic',
+  classNames: 'mdc-list-item__graphic',
   tag: Icon
 });
 
-export const ListItemEndDetail = simpleTag({
-  displayName: 'ListItemStartDetail',
-  classNames: 'mdc-list-item__end-detail',
+export const ListItemMeta = simpleTag({
+  displayName: 'ListItemMeta',
+  classNames: 'mdc-list-item__meta',
   tag: Icon
 });
 
