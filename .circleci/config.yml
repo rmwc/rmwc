@@ -29,7 +29,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
       
-      - run: npm i react && react-dom && npm i
+      - run: npm i react react-dom && npm i
 
       - save_cache:
           paths:
