@@ -8,24 +8,35 @@ export type WithMDCPropsT = {
 };
 
 type WithMDCOpts = {
+  /** Components displayName */
   displayName?: string,
+  /** Components defaultProps */
   defaultProps?: Object,
+  /** a reference to an MDCConstructor */
   mdcConstructor?: Function,
+  /** In some cases, the constructor needs to be determined by props. This function should take props and return an MDCConstrustor or null */
+  getMdcConstructor?: (props: Object) => ?Function,
+  /** MDC events mapped from eventName => handler */
   mdcEvents?: Object,
+  /** Decides wether or not to pass down an elementRef */
   mdcElementRef?: boolean,
+  /** component on mount */
   onMount?: (currentProps: ?Object, api: ?Object, inst: Object) => mixed,
+  /** component on update */
   onUpdate?: (
     currentProps: ?Object,
     nextProps: Object,
     api: ?Object,
     inst: Object
   ) => mixed,
+  /** component did update */
   didUpdate?: (
     currentProps: ?Object,
     nextProps: Object,
     api: ?Object,
     inst: Object
   ) => mixed,
+  /** This is a cssOnly component, it will shortcircuit the constructor */
   cssOnly?: boolean
 };
 
@@ -34,28 +45,23 @@ type WithMDCOpts = {
  */
 export const withMDC = ({
   mdcConstructor: MDCConstructor,
+  getMdcConstructor = () => null,
   mdcEvents = {},
   mdcElementRef = false,
   defaultProps = {},
   onMount = noop,
   onUpdate = noop,
-  didUpdate = noop,
-  shouldInit = () => true
+  didUpdate = noop
 }: WithMDCOpts) => (
   Component: React.ComponentType<any>
 ): React.ComponentType<any> => {
   return class extends React.Component<WithMDCPropsT> {
+    static displayName = `withMDC(${Component.displayName})`;
+
     static defaultProps = {
       apiRef: noop,
       ...defaultProps
     };
-
-    static displayName = `withMDC(${Component.displayName})`;
-
-    mdcApi: Object = undefined;
-    mdcListeners = [];
-    mdcRootElement = undefined;
-    elementRefProps = {};
 
     constructor(props) {
       super(props);
@@ -83,8 +89,16 @@ export const withMDC = ({
       this.mdcComponentDestroy();
     }
 
+    mdcApi: ?Object;
+    mdcListeners = [];
+    mdcRootElement;
+    elementRefProps = {};
+
     mdcComponentInit() {
-      if (MDCConstructor && !this.props.cssOnly) {
+      const MDCConstructorToUse =
+        MDCConstructor || getMdcConstructor(this.props);
+
+      if (MDCConstructorToUse && !this.props.cssOnly) {
         const el = this.mdcGetRootElement();
 
         // a stupid hack for the test environment where this ends up undefined
@@ -95,12 +109,12 @@ export const withMDC = ({
         }
 
         try {
-          this.mdcApi = new MDCConstructor(el);
+          this.mdcApi = new MDCConstructorToUse(el);
           this.props.apiRef(this.mdcApi);
         } catch (err) {
           console.warn(
             `${
-              MDCConstructor.name
+              MDCConstructorToUse.name
             } failed to initialize because of the following error:`,
             err
           );
@@ -108,7 +122,10 @@ export const withMDC = ({
       }
       onMount(this.props, this.mdcApi, this);
 
-      Object.entries(mdcEvents).forEach(([eventName, handler]) => {
+      // register event listeners
+      Object.entries(
+        typeof mdcEvents === 'function' ? mdcEvents(this.props) : mdcEvents
+      ).forEach(([eventName, handler]) => {
         this.mdcRegisterListener(eventName, handler);
       });
 
@@ -124,6 +141,7 @@ export const withMDC = ({
     mdcComponentDestroy() {
       this.mdcUnregisterAllListeners();
       this.mdcApi && this.mdcApi.destroy();
+      this.mdcApi = null;
     }
 
     mdcRegisterListener(

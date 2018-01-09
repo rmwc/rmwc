@@ -77,21 +77,11 @@ export const SimpleMenu = withMDC({
     onClose: noop
   },
   onUpdate: (props, nextProps, api) => {
-    console.log(
-      api,
-      MDCSimpleMenuFoundation.Corner,
-      MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner],
-      api.foundation_.anchorCorner_
-    );
     if (
       api &&
       MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner] !==
         api.foundation_.anchorCorner_
     ) {
-      console.log(
-        'set',
-        MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner]
-      );
       api.setAnchorCorner(
         MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner]
       );

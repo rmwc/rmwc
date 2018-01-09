@@ -78,23 +78,21 @@ const MyComponent = props => (
 
 ### Using CSSModules
 
-Just add your className. If you need to target a node that is not directly exposed by RMWC, you can use the global modifier in your CSS.
+Just add your className. If you need to target a node that is not directly exposed by RMWC, you can use the global modifier in your CSS. In this example, you can target the inner wrapper of a DrawerHeader.
 
 ```jsx
 /** in your JSX */
-import { PersistentDrawerHeader } from 'rmwc/Drawer';
+import { DrawerHeader } from 'rmwc/Drawer';
 import styles from './my-style-sheet.css';
 
 const MyComponent = props => (
-  <PersistentDrawerHeader className={styles.myDrawerHeader}>
-    Hello World
-  </PersistentDrawerHeader>
+  <DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
 );
 ```
 
 ```css
 /** in your CSS */
-.myDrawerHeader :global(.mdc-persistent-drawer__header-content) {
+.myDrawerHeader :global(.mdc-drawer__header-content) {
   color: red;
 }
 ```
