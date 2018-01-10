@@ -16,6 +16,25 @@ describe('Select', () => {
     mount(<Select placeholder="Select a food" options={[1, 2, 3]} />);
   });
 
+  it('can have a tab index', () => {
+    const el = mount(<Select tabIndex="1" options={[1, 2, 3]} />);
+    expect(!!~el.html().search('tabindex="1"')).toEqual(true);
+  });
+
+  it('can be cssOnly', () => {
+    const el = mount(<Select cssOnly options={[1, 2, 3]} />);
+    expect(el.find('select').length).toEqual(1);
+  });
+
+  it('can be disabled', () => {
+    mount(<Select disabled options={[1, 2, 3]} />);
+  });
+
+  it('can be multiple', () => {
+    const el = mount(<Select cssOnly multiple options={[1, 2, 3]} />);
+    expect(el.find('select').prop('multiple')).toBe(true);
+  });
+
   it('can have custom classnames', () => {
     const el = mount(
       <Select
