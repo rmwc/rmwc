@@ -120,6 +120,11 @@ type ListPropsT = {
 
 export class List extends simpleTag({
   displayName: 'List',
+  defaultProps: {
+    dense: undefined,
+    twoLine: undefined,
+    avatarList: undefined
+  },
   classNames: props => [
     'mdc-list',
     {
@@ -128,14 +133,48 @@ export class List extends simpleTag({
       'mdc-list--avatar-list': props.avatarList
     }
   ],
-  defaultProps: {
-    dense: false,
-    twoLine: false,
-    avatarList: false
-  },
   consumeProps: ['dense', 'twoLine', 'avatarList']
 })<ListPropsT> {
   render() {
     return super.render();
   }
 }
+
+type SimpleListItemPropsT = {
+  /** Text for the ListItem. */
+  text?: React.Node,
+  /** Secondary Text for the ListItem. */
+  secondaryText?: React.Node,
+  /** A graphic icon for the ListItem. */
+  graphic?: React.Node,
+  /** A meta icon for the ListItem */
+  meta?: React.Node
+};
+
+export const SimpleListItem = ({
+  text,
+  secondaryText,
+  graphic,
+  meta,
+  children,
+  ...rest
+}: SimpleListItemPropsT) => (
+  <ListItem {...rest}>
+    {!!graphic && <ListItemGraphic>{graphic}</ListItemGraphic>}
+    <ListItemText>
+      {text}
+      {!!secondaryText && (
+        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+      )}
+    </ListItemText>
+    {!!meta && <ListItemMeta>{meta}</ListItemMeta>}
+  </ListItem>
+);
+
+SimpleListItem.displayName = 'SimpleListItem';
+SimpleListItem.defaultProps = {
+  text: undefined,
+  secondaryText: undefined,
+  graphic: undefined,
+  meta: undefined
+};

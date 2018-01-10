@@ -5,7 +5,8 @@ import {
   ListItem,
   ListItemText,
   ListItemGraphic,
-  ListItemMeta
+  ListItemMeta,
+  SimpleListItem
 } from './';
 
 describe('List', () => {
@@ -17,6 +18,19 @@ describe('List', () => {
           <ListItemText>Cookies</ListItemText>
           <ListItemMeta />
         </ListItem>
+      </List>
+    );
+  });
+
+  it('SimpleListItem renders', () => {
+    mount(
+      <List>
+        <SimpleListItem
+          graphic="star_border"
+          text="Cookies"
+          secondaryText="Chocolate chip"
+          meta="info"
+        />
       </List>
     );
   });
