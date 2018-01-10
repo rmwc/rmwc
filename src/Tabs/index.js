@@ -154,5 +154,3 @@ export const TabBarScroller = withMDC({
     }
   }
 );
-
-export default TabBar;

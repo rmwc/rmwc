@@ -107,5 +107,3 @@ export class GridList extends React.Component<GridListRootPropsT> {
     );
   }
 }
-
-export default GridList;
