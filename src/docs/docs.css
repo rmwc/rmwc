@@ -347,6 +347,21 @@ ul li {
   margin-bottom: 1.5rem;
 }
 
+#page-text-fields .run > * {
+  float: left;
+  clear: left;
+}
+
+#page-text-fields .run .mdc-text-field {
+  margin-top: 1.5rem;
+}
+
+#page-text-fields .run:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 /**
  * Submenu
  */

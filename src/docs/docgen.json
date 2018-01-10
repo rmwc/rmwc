@@ -2557,6 +2557,21 @@
       "methods": []
     },
     {
+      "description": "",
+      "displayName": "TextFieldOutline",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TextFieldOutlinePath",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TextFieldIdleOutline",
+      "methods": []
+    },
+    {
       "description": "A help text component",
       "displayName": "TextFieldHelperText",
       "methods": [],
@@ -2616,6 +2631,34 @@
           "required": false,
           "description": "Disables the input."
         },
+        "required": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Mark the input as required."
+        },
+        "dense": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField dense"
+        },
+        "box": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Box in the TextField"
+        },
+        "outlined": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Outline the TextField"
+        },
         "label": {
           "flowType": {
             "name": "ReactNode",
@@ -2660,13 +2703,6 @@
           },
           "required": false,
           "description": "Makes the TextField fullwidth."
-        },
-        "box": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes the TextField have a visiual box."
         }
       }
     }

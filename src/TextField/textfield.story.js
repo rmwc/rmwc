@@ -18,13 +18,17 @@ class TextFieldStory extends React.Component {
   render() {
     return (
       <TextField
+        label={text('label', 'Hello world')}
+        value={text('value', this.state.value)}
+        disabled={boolean('disabled', false)}
+        dense={boolean('dense', false)}
+        required={boolean('required', false)}
+        box={boolean('box', false)}
+        outlined={boolean('outlined', false)}
+        onChange={evt => this.onChange(evt)}
         rows={number('rows', 8)}
         cols={number('cols', 0)}
         textarea={boolean('textarea', false)}
-        disabled={boolean('disabled', false)}
-        value={text('value', this.state.value)}
-        onChange={evt => this.onChange(evt)}
-        label={text('label', 'Hello world')}
       />
     );
   }
