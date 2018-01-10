@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "^0.28.0"
+    "material-components-web": "^0.28.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

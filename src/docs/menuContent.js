@@ -1,4 +1,6 @@
-import GettingStartedDocs from './getting-started.md';
+import InstallationDocs from './installation.md';
+import UsageDocs from './usage.md';
+import MethodologyDocs from './methodology.md';
 import ButtonDocs from '../../src/Button/button.md';
 import FabDocs from '../../src/Fab/fab.md';
 import IconToggleDocs from '../../src/IconToggle/icon-toggle.md';
@@ -29,8 +31,23 @@ import IconDocs from '../../src/Icon/icon.md';
 export const menuContent = [
   {
     label: 'Getting Started',
-    url: `${process.env.PUBLIC_URL}/getting-started`,
-    component: GettingStartedDocs
+    options: [
+      {
+        label: 'Installation',
+        url: `${process.env.PUBLIC_URL}/installation`,
+        component: InstallationDocs
+      },
+      {
+        label: 'Usage and Styling',
+        url: `${process.env.PUBLIC_URL}/usage`,
+        component: UsageDocs
+      },
+      {
+        label: 'Project Methodology',
+        url: `${process.env.PUBLIC_URL}/methodology`,
+        component: MethodologyDocs
+      }
+    ]
   },
   {
     label: 'Buttons',
