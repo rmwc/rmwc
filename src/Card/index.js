@@ -122,7 +122,7 @@ export const CardHorizontalBlock: React.ComponentType<
   classNames: 'mdc-card__horizontal-block'
 });
 
-/** A Card action Button */
+/** A Card action Button. This is an instance of Button and can take all of the same props. */
 export const CardAction = simpleTag({
   displayName: 'CardAction',
   tag: Button,
@@ -155,5 +155,3 @@ export class Card extends simpleTag({
     return super.render();
   }
 }
-
-export default Card;

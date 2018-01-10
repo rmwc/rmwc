@@ -152,7 +152,7 @@
       "methods": []
     },
     {
-      "description": "A Card action Button",
+      "description": "A Card action Button. This is an instance of Button and can take all of the same props.",
       "displayName": "CardAction",
       "methods": [],
       "props": {
