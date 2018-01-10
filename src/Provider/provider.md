@@ -1,6 +1,6 @@
 # RMWC Provider
 
-> This is an optional component provides global configuration for RMWC.
+> This is an optional component that provides global configuration for RMWC.
 
 You can wrap your top level App component with RMWC provider to set global configuration options. Just pass the options in as props.
 
