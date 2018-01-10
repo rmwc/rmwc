@@ -12,6 +12,8 @@ import type { RMWCProviderOptionsT } from '../Provider';
 export type FabRootPropsT = {
   /** Make the Fab smaller. */
   mini?: boolean,
+  /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
+  exited?: boolean,
   /** cssOnly Fab. */
   cssOnly?: boolean
 } & SimpleTagPropsT &
@@ -24,14 +26,15 @@ export const FabRoot = withRipple(
     classNames: props => [
       'mdc-fab',
       {
-        'mdc-fab--mini': props.mini
+        'mdc-fab--mini': props.mini,
+        'mdc-fab--exited': props.exited
       }
     ],
     defaultProps: {
       cssOnly: false,
       mini: false
     },
-    consumeProps: ['mini', 'cssOnly']
+    consumeProps: ['mini', 'cssOnly', 'exited']
   })
 );
 
