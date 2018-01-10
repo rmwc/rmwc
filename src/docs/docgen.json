@@ -71,7 +71,7 @@
   ],
   "src/Card/index.js": [
     {
-      "description": "Primary card content",
+      "description": "",
       "displayName": "CardPrimary",
       "methods": []
     },
@@ -936,6 +936,11 @@
   "src/Grid/index.js": [
     {
       "description": "",
+      "displayName": "GridRoot",
+      "methods": []
+    },
+    {
+      "description": "",
       "displayName": "GridCell",
       "methods": [],
       "props": {
@@ -1007,11 +1012,6 @@
     },
     {
       "description": "",
-      "displayName": "GridRoot",
-      "methods": []
-    },
-    {
-      "description": "",
       "displayName": "GridInner",
       "methods": []
     },
@@ -1078,12 +1078,7 @@
     },
     {
       "description": "",
-      "displayName": "GridTile",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "GridTilePrimary",
+      "displayName": "GridTilePrimaryRoot",
       "methods": []
     },
     {
@@ -1100,21 +1095,27 @@
       }
     },
     {
-      "description": "",
+      "description": "A grid tile",
+      "displayName": "GridTile",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The primary content for a Grid tile",
+      "displayName": "GridTilePrimary",
+      "methods": []
+    },
+    {
+      "description": "The secondary content for a Grid tile",
       "displayName": "GridTileSecondary",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The title for a Grid tile",
       "displayName": "GridTileTitle",
       "methods": []
     },
     {
-      "description": "",
+      "description": "Supporting Text for the Grid Tile",
       "displayName": "GridTileTitleSupportText",
       "methods": []
     },
