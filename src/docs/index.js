@@ -14,7 +14,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const renderApp = Component => {
   ReactDOM.render(
     <AppContainer>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Component location={window.location.href} />
       </Router>
     </AppContainer>,

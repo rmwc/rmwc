@@ -35,17 +35,17 @@ export const menuContent = [
     options: [
       {
         label: 'Installation',
-        url: `${process.env.PUBLIC_URL}/installation`,
+        url: `/installation`,
         component: InstallationDocs
       },
       {
         label: 'Usage and Styling',
-        url: `${process.env.PUBLIC_URL}/usage`,
+        url: `/usage`,
         component: UsageDocs
       },
       {
         label: 'Project Methodology',
-        url: `${process.env.PUBLIC_URL}/methodology`,
+        url: `/methodology`,
         component: MethodologyDocs
       }
     ]
@@ -55,44 +55,44 @@ export const menuContent = [
     options: [
       {
         label: 'Buttons',
-        url: `${process.env.PUBLIC_URL}/buttons`,
+        url: `/buttons`,
         component: ButtonDocs
       },
       {
         label: 'Fabs',
-        url: `${process.env.PUBLIC_URL}/fabs`,
+        url: `/fabs`,
         component: FabDocs
       },
       {
         label: 'Icon Toggles',
-        url: `${process.env.PUBLIC_URL}/icon-toggles`,
+        url: `/icon-toggles`,
         component: IconToggleDocs
       }
     ]
   },
   {
     label: 'Cards',
-    url: `${process.env.PUBLIC_URL}/cards`,
+    url: `/cards`,
     component: CardDocs
   },
   {
     label: 'Dialogs',
-    url: `${process.env.PUBLIC_URL}/dialogs`,
+    url: `/dialogs`,
     component: DialogDocs
   },
   {
     label: 'Drawers',
-    url: `${process.env.PUBLIC_URL}/drawers`,
+    url: `/drawers`,
     component: DrawerDocs
   },
   {
     label: 'Elevation',
-    url: `${process.env.PUBLIC_URL}/elevation`,
+    url: `/elevation`,
     component: ElevationDocs
   },
   {
     label: 'Grid Lists',
-    url: `${process.env.PUBLIC_URL}/grid-lists`,
+    url: `/grid-lists`,
     component: GridListDocs
   },
   {
@@ -100,99 +100,99 @@ export const menuContent = [
     options: [
       {
         label: 'Checkboxes',
-        url: `${process.env.PUBLIC_URL}/checkboxes`,
+        url: `/checkboxes`,
         component: CheckboxDocs
       },
       {
         label: 'FormFields',
-        url: `${process.env.PUBLIC_URL}/form-fields`,
+        url: `/form-fields`,
         component: FormFieldDocs
       },
       {
         label: 'Radio Buttons',
-        url: `${process.env.PUBLIC_URL}/radio-buttons`,
+        url: `/radio-buttons`,
         component: RadioDocs
       },
       {
         label: 'Select Menus',
-        url: `${process.env.PUBLIC_URL}/select-menus`,
+        url: `/select-menus`,
         component: SelectDocs
       },
       {
         label: 'Sliders',
-        url: `${process.env.PUBLIC_URL}/sliders`,
+        url: `/sliders`,
         component: SliderDocs
       },
       {
         label: 'Switches',
-        url: `${process.env.PUBLIC_URL}/switches`,
+        url: `/switches`,
         component: SwitchDocs
       },
       {
         label: 'Text Fields',
-        url: `${process.env.PUBLIC_URL}/text-fields`,
+        url: `/text-fields`,
         component: TextFieldDocs
       }
     ]
   },
   {
     label: 'Layout Grid',
-    url: `${process.env.PUBLIC_URL}/layout-grid`,
+    url: `/layout-grid`,
     component: GridDocs
   },
   {
     label: 'Linear Progress',
-    url: `${process.env.PUBLIC_URL}/linear-progress`,
+    url: `/linear-progress`,
     component: LinearProgressDocs
   },
   {
     label: 'Lists',
-    url: `${process.env.PUBLIC_URL}/lists`,
+    url: `/lists`,
     component: ListDocs
   },
   {
     label: 'Menus',
-    url: `${process.env.PUBLIC_URL}/menus`,
+    url: `/menus`,
     component: MenuDocs
   },
   {
     label: 'Ripples',
-    url: `${process.env.PUBLIC_URL}/ripples`,
+    url: `/ripples`,
     component: RippleDocs
   },
   {
     label: 'Snackbars',
-    url: `${process.env.PUBLIC_URL}/snackbars`,
+    url: `/snackbars`,
     component: SnackbarDocs
   },
   {
     label: 'Tabs',
-    url: `${process.env.PUBLIC_URL}/tabs`,
+    url: `/tabs`,
     component: TabDocs
   },
   {
     label: 'Theme',
-    url: `${process.env.PUBLIC_URL}/theme`,
+    url: `/theme`,
     component: ThemeDocs
   },
   {
     label: 'Toolbars',
-    url: `${process.env.PUBLIC_URL}/toolbars`,
+    url: `/toolbars`,
     component: ToolbarDocs
   },
   {
     label: 'Typography',
-    url: `${process.env.PUBLIC_URL}/typography`,
+    url: `/typography`,
     component: TypographyDocs
   },
   {
     label: 'Icons',
-    url: `${process.env.PUBLIC_URL}/icons`,
+    url: `/icons`,
     component: IconDocs
   },
   {
     label: 'Provider',
-    url: `${process.env.PUBLIC_URL}/provider`,
+    url: `/provider`,
     component: ProviderDocs
   }
 ];

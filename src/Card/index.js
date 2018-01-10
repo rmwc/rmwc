@@ -8,6 +8,9 @@ import Button from '../Button';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
+/****************************************************************
+ * Public
+ ****************************************************************/
 /**
  * Primary card content
  */

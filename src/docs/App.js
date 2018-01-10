@@ -24,7 +24,11 @@ import Home from './Home';
 
 const MenuItem = ({ url, label }) => {
   return (
-    <ListItem>
+    <ListItem
+      activated={
+        window.location.pathname.split('/').pop() === url.split('/').pop()
+      }
+    >
       <Link to={url}>
         <ListItemText>{label}</ListItemText>
       </Link>
