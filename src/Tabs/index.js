@@ -1,8 +1,7 @@
-// @flow
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { MDCTabBar, MDCTabBarScroller } from '@material/tabs/dist/mdc.tabs';
 import { noop, simpleTag } from '../Base';
-
 import { withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -30,60 +29,110 @@ type TabBarPropsT = {
   activeTabIndex: number
 } & SimpleTagPropsT;
 
-export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
+const mdcTabBarEvents = {
+  'MDCTabBar:change': (evt, props, api) => {
+    evt.target.value = api.activeTabIndex;
+    props.onChange(evt);
+  }
+};
+
+export const TabBar_: React.ComponentType<TabBarPropsT> = withMDC({
   mdcConstructor: MDCTabBar,
-  mdcEvents: {
-    'MDCTabBar:change': (evt, props, api) => {
-      evt.target.value = api.activeTabIndex;
-      props.onChange(evt);
-    }
-  },
+  mdcEvents: mdcTabBarEvents,
+
   defaultProps: {
     onChange: noop,
     activeTabIndex: 0
-  },
-  onUpdate: (props, nextProps, api) => {
-    if (!api) {
-      return;
-    }
-    if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
-      api.activeTabIndex = nextProps.activeTabIndex;
-    }
-  },
-  didUpdate: (props, nextProps, api, inst) => {
-    if (!api) return;
-
-    const childrenDidChange =
-      props &&
-      props.children &&
-      nextProps &&
-      nextProps.children &&
-      JSON.stringify(props.children.map(({ key }) => key)) !==
-        JSON.stringify(nextProps.children.map(({ key }) => key));
-    // destroy the foundation for all tabs manually to remove all  listeners
-    if (childrenDidChange && api.tabs_) {
-      api.tabs_.forEach(mdcTab => {
-        mdcTab.foundation_ && mdcTab.foundation_.destroy();
-      });
-
-      inst.mdcComponentReinit();
-    }
   }
 })(
   class extends React.Component<TabBarPropsT> {
     static displayName = 'TabBar';
 
+    static contextTypes = {
+      tabBarScrollerPresent: PropTypes.bool
+    };
+
     render() {
       const { children, activeTabIndex, ...rest } = this.props;
       return (
-        <TabBarRoot {...rest}>
+        <TabBarRoot {...rest}
+          className={
+            this.context.tabBarScrollerPresent &&
+            'mdc-tab-bar-scroller__scroll-frame__tabs'
+          } >
           {children}
-          <TabBarIndicatorEl />
-        </TabBarRoot>
+          < TabBarIndicatorEl />
+        </TabBarRoot >
       );
     }
   }
-);
+  );
+
+export class TabBar extends TabBar_ {
+  static contextTypes = {
+    tabBarApi: PropTypes.object,
+    tabBarScrollerPresent: PropTypes.bool,
+    tabBarScrollerReinit: PropTypes.func
+  };
+
+  mdcComponentInit() {
+    if (!this.context.tabBarScrollerPresent) {
+      super.mdcComponentInit();
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    if (nextContext.tabBarScrollerPresent &&
+      nextContext &&
+      nextContext.tabBarApi &&
+      this.mdcApi !== nextContext.tabBarApi) {
+      //  set TabBar API created by TabBarScroller
+      this.mdcApi = nextContext.tabBarApi;
+      //  set activeTabIndex
+      this.mdcApi.activeTabIndex = nextProps.activeTabIndex;
+      // remove old listeners
+      this.mdcUnregisterAllListeners();
+      // Hook event handlers
+      Object.entries(mdcTabBarEvents).forEach(([eventName, handler]) => {
+        this.mdcRegisterListener(eventName, handler);
+      });
+    } else if (this.mdcApi &&
+      (!this.props || this.props.activeTabIndex !== nextProps.activeTabIndex)) {
+      this.mdcApi.activeTabIndex = nextProps.activeTabIndex;
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.mdcApi) return;
+    // check if tabs have changed
+    const childrenDidChange =
+      prevProps &&
+      prevProps.children &&
+      this.props &&
+      this.props.children &&
+      JSON.stringify(prevProps.children.map(({ key }) => key)) !==
+      JSON.stringify(this.props.children.map(({ key }) => key));
+
+    if (childrenDidChange && this.mdcApi.tabs_) {
+      // destroy the foundation for all tabs 
+      // manually to remove all  listeners 
+      this.mdcApi.tabs_.forEach(mdcTab => {
+        mdcTab.foundation_ && mdcTab.foundation_.destroy();
+      });
+      // when tab scroller is wrapping the component
+      if (this.context.tabBarScrollerPresent) {
+        // destroy the foundation
+        this.mdcComponentDestroy();
+        // trigger reinit on the scroller container
+        this.context.tabBarScrollerReinit();
+      } else {
+        // reinit
+        this.mdcComponentReinit();
+      }
+    }
+  }
+}
+
 
 export const TabBarScrollerRoot = simpleTag({
   displayName: 'TabBarScrollerRoot',
@@ -120,22 +169,13 @@ export const TabBarScrollerScrollFrame = simpleTag({
   classNames: 'mdc-tab-bar-scroller__scroll-frame'
 });
 
-export const TabBarScroller = withMDC({
-  mdcConstructor: function(el) {
-    if (el) {
-      const tabBarEl = el.querySelector('.mdc-tab-bar');
-      if (tabBarEl) {
-        tabBarEl.classList.add('mdc-tab-bar-scroller__scroll-frame__tabs');
-      }
-    }
-    return new MDCTabBarScroller(el);
-  }
+const TabBarScroller_: React.ComponentType = withMDC({
+  mdcConstructor: MDCTabBarScroller
 })(
   class extends React.Component {
-    static displayName = 'TabBarScroller';
-
     render() {
       const { children, ...rest } = this.props;
+
       return (
         <TabBarScrollerRoot {...rest}>
           <TabBarScrollerIndicatorBack>
@@ -152,7 +192,38 @@ export const TabBarScroller = withMDC({
         </TabBarScrollerRoot>
       );
     }
-  }
-);
+  });
 
+export class TabBarScroller extends TabBarScroller_ {
+  static displayName = 'TabBarScroller';
+
+  static childContextTypes = {
+    tabBarScrollerReinit: PropTypes.func,
+    tabBarApi: PropTypes.object,
+    tabBarScrollerPresent: PropTypes.bool
+  }
+
+  constructor(props) {
+    super(props);
+    this.reinitTabScroller = this.reinitTabScroller.bind(this);
+  }
+
+  reinitTabScroller() {
+    super.mdcComponentReinit();
+    this.forceUpdate();
+  }
+
+  getChildContext() {
+    return {
+      tabBarScrollerReinit: this.reinitTabScroller,
+      tabBarApi: this.mdcApi && this.mdcApi.tabBar_,
+      tabBarScrollerPresent: true
+    };
+  }
+
+  mdcComponentInit() {
+    super.mdcComponentInit();
+    this.forceUpdate();
+  }
+}
 export default TabBar;

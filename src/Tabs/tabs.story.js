@@ -5,41 +5,71 @@ import { action } from '@storybook/addon-actions';
 import { number } from '@storybook/addon-knobs';
 import { Tab, TabBar, TabBarScroller } from './';
 import { Button } from '../Button';
+import { Checkbox } from '../Checkbox';
 
 class TabBarStory extends React.Component {
 	state = {
+		withScroller: false,
 		count: 0,
 		activeTabIndex: 0,
 		tabs: ['Cookies', 'Pizza', 'Icecream']
 	};
+
+
+	onToggleWithScroller(evt) {
+		this.setState({ withScroller: !this.state.withScroller });
+		action('withScroller: ' + !this.state.withScroller)();
+	}
 
 	onChange(evt) {
 		this.setState({ activeTabIndex: evt.target.value });
 		action('activeTabIndex: ' + evt.target.value)();
 	}
 	onChangeTabNames(evt) {
-		this.setState({
+		const state = {
 			tabs: this.state.tabs.map((label, index) => index),
 			count: this.state.count + 1
-		});
+		};
+		this.setState(state);
+		action('onChangeTabNames: ' + JSON.stringify(state))();
 	}
 	onAddTab(evt) {
-		this.setState({
+		const state = {
 			tabs: [
 				...this.state.tabs,
 				`Dynamic Tab #${this.state.tabs.length + 1}`
 			]
-		});
+		};
+
+		this.setState(state);
+
+		action('onAddTab: ' + JSON.stringify(state))();
 	}
 	onRemoveLastTab(evt) {
 		const init = this.state.tabs.slice(0, -1);
-		this.setState({
+		const state = {
 			activeTabIndex: 0,
 			tabs: init
-		});
+		};
+
+		this.setState(state);
+		action('onRemoveLastTab: ' + JSON.stringify(state))();
 	}
 
 	render() {
+
+		const tabBar = <TabBar
+			count={this.state.count}
+			activeTabIndex={number(
+				'activeTabIndex',
+				this.state.activeTabIndex
+			)}
+			onChange={evt => this.onChange(evt)}>
+			{this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
+		</TabBar>;
+
+		const finalComponent = this.state.withScroller ? <TabBarScroller>{tabBar}</TabBarScroller> : tabBar;
+
 		return (
 			<div >
 				<div style={{ width: '50%', maxWidth: '480px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
@@ -55,16 +85,11 @@ class TabBarStory extends React.Component {
 						onClick={evt => this.onRemoveLastTab(evt)}>
 						Remove Last Tab
 					</Button>
+					<Checkbox onChange={evt => this.onToggleWithScroller(evt)}>
+						with TabBarScroller
+					</Checkbox>
 				</div>
-				<TabBar
-					count={this.state.count}
-					activeTabIndex={number(
-						'activeTabIndex',
-						this.state.activeTabIndex
-					)}
-					onChange={evt => this.onChange(evt)}>
-					{this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
-				</TabBar>
+				{finalComponent}
 			</div>
 		);
 	}
