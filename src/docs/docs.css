@@ -83,6 +83,10 @@ pre[class*='language-'] {
   margin-bottom: 1.875rem;
 }
 
+.app__content > div > h1:first-child {
+  margin-top: 0.5rem;
+}
+
 /* version # */
 .app__version {
   align-self: center;
@@ -194,6 +198,11 @@ ul li {
 }
 
 /* page home */
+#page-home .app__content {
+  display: flex;
+  flex-direction: column;
+}
+
 #page-home .mdc-layout-grid {
   padding: 0;
 }
@@ -207,6 +216,7 @@ ul li {
   padding: 6rem 0;
   box-sizing: border-box;
   background-color: #383b4c;
+  flex: 1;
 }
 
 #page-home .app__content header:before {

@@ -758,6 +758,13 @@
           "required": false,
           "description": "Make the Fab smaller."
         },
+        "exited": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
+        },
         "cssOnly": {
           "flowType": {
             "name": "boolean"
@@ -1072,7 +1079,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
       "displayName": "Icon",
       "methods": [
         {
@@ -1186,7 +1193,7 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs",
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
           "defaultValue": {
             "value": "undefined",
             "computed": true
@@ -1220,21 +1227,21 @@
             ]
           },
           "required": false,
-          "description": "Handle multiple methods of embedding an icon."
+          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. If not set, 'auto' will be used or defaults set inside of RMWCProvider."
         },
         "prefix": {
           "flowType": {
             "name": "string"
           },
           "required": false,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy."
+          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
         },
         "basename": {
           "flowType": {
             "name": "string"
           },
           "required": false,
-          "description": "A base className for the icon namespace, i.e. material-icons"
+          "description": "A base className for the icon namespace, i.e. material-icons."
         }
       }
     }
@@ -1535,7 +1542,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  buttonDefaultRipple: boolean,\n  listItemDefaultRipple: boolean,\n  iconClassNameBase: string,\n  iconClassNamePrefix: string,\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component'\n}",
                 "signature": {
                   "properties": [
                     {
@@ -1595,14 +1602,6 @@
                         ],
                         "required": true
                       }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
                     }
                   ]
                 },
@@ -1619,28 +1618,44 @@
             "name": "boolean"
           },
           "required": true,
-          "description": ""
+          "description": "Set the buttons ripple effect globally",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "listItemDefaultRipple": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": ""
+          "description": "Set the listItems ripple effect globally",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "iconClassNameBase": {
           "flowType": {
             "name": "string"
           },
           "required": true,
-          "description": ""
+          "description": "Set the iconClassNameBase. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "'material-icons'",
+            "computed": false
+          }
         },
         "iconClassNamePrefix": {
           "flowType": {
             "name": "string"
           },
           "required": true,
-          "description": ""
+          "description": "Set the iconClassNamePrefix. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "''",
+            "computed": false
+          }
         },
         "iconStrategy": {
           "flowType": {
@@ -1670,15 +1685,11 @@
             ]
           },
           "required": true,
-          "description": ""
-        },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": ""
+          "description": "Set the default iconStrategy. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "'auto'",
+            "computed": false
+          }
         }
       }
     }

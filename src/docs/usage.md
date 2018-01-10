@@ -1,5 +1,7 @@
 # Usage
 
+> This document contains basic information on usage on styling.
+
 ## Basic Example
 
 Components should be imported from their relevant module.

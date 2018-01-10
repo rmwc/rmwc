@@ -2,14 +2,19 @@
 
 > Welcome to RMWC, a React wrapper for Material Design (Web) Components.
 
+Required steps
+
 * `npm i rmwc --save` or `yarn add rmwc`
 * [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.).
-* If you would like to use the default Roboto font:
+
+Optional steps
+
+* If you would like to use the default **Roboto font**:
   * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
   * add the class `mdc-typography` to the body `<body className="mdc-typography">...</body>`
-* If you would like to use the material-icons font:
+* If you would like to use the **material-icons** font:
   * add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
-* Import and use components
+* Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
 
 ```jsx
 import { Button } from 'rmwc/Button';
