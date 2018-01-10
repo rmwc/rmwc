@@ -1,32 +1,33 @@
 import InstallationDocs from './installation.md';
 import UsageDocs from './usage.md';
 import MethodologyDocs from './methodology.md';
-import ButtonDocs from '../../src/Button/button.md';
-import FabDocs from '../../src/Fab/fab.md';
-import IconToggleDocs from '../../src/IconToggle/icon-toggle.md';
-import CardDocs from '../../src/Card/card.md';
-import DialogDocs from '../../src/Dialog/dialog.md';
-import DrawerDocs from '../../src/Drawer/drawer.md';
-import ElevationDocs from '../../src/Elevation/elevation.md';
-import GridListDocs from '../../src/GridList/grid-list.md';
-import CheckboxDocs from '../../src/Checkbox/checkbox.md';
-import FormFieldDocs from '../../src/FormField/form-field.md';
-import RadioDocs from '../../src/Radio/radio.md';
-import SelectDocs from '../../src/Select/select.md';
-import SliderDocs from '../../src/Slider/slider.md';
-import SwitchDocs from '../../src/Switch/switch.md';
-import TextFieldDocs from '../../src/TextField/textfield.md';
-import GridDocs from '../../src/Grid/grid.md';
-import LinearProgressDocs from '../../src/LinearProgress/linear-progress.md';
-import ListDocs from '../../src/List/list.md';
-import MenuDocs from '../../src/Menu/menu.md';
-import RippleDocs from '../../src/Ripple/ripple.md';
-import SnackbarDocs from '../../src/Snackbar/snackbar.md';
-import TabDocs from '../../src/Tabs/tabs.md';
-import ThemeDocs from '../../src/Theme/theme.md';
-import ToolbarDocs from '../../src/Toolbar/toolbar.md';
-import TypographyDocs from '../../src/Typography/typography.md';
-import IconDocs from '../../src/Icon/icon.md';
+import ProviderDocs from '../Provider/provider.md';
+import ButtonDocs from '../Button/button.md';
+import FabDocs from '../Fab/fab.md';
+import IconToggleDocs from '../IconToggle/icon-toggle.md';
+import CardDocs from '../Card/card.md';
+import DialogDocs from '../Dialog/dialog.md';
+import DrawerDocs from '../Drawer/drawer.md';
+import ElevationDocs from '../Elevation/elevation.md';
+import GridListDocs from '../GridList/grid-list.md';
+import CheckboxDocs from '../Checkbox/checkbox.md';
+import FormFieldDocs from '../FormField/form-field.md';
+import RadioDocs from '../Radio/radio.md';
+import SelectDocs from '../Select/select.md';
+import SliderDocs from '../Slider/slider.md';
+import SwitchDocs from '../Switch/switch.md';
+import TextFieldDocs from '../TextField/textfield.md';
+import GridDocs from '../Grid/grid.md';
+import LinearProgressDocs from '../LinearProgress/linear-progress.md';
+import ListDocs from '../List/list.md';
+import MenuDocs from '../Menu/menu.md';
+import RippleDocs from '../Ripple/ripple.md';
+import SnackbarDocs from '../Snackbar/snackbar.md';
+import TabDocs from '../Tabs/tabs.md';
+import ThemeDocs from '../Theme/theme.md';
+import ToolbarDocs from '../Toolbar/toolbar.md';
+import TypographyDocs from '../Typography/typography.md';
+import IconDocs from '../Icon/icon.md';
 
 export const menuContent = [
   {
@@ -188,5 +189,10 @@ export const menuContent = [
     label: 'Icons',
     url: `${process.env.PUBLIC_URL}/icons`,
     component: IconDocs
+  },
+  {
+    label: 'Provider',
+    url: `${process.env.PUBLIC_URL}/provider`,
+    component: ProviderDocs
   }
 ];
