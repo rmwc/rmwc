@@ -76,7 +76,8 @@ export class CardActions extends simpleTag({
   ],
   defaultProps: {
     vertical: undefined
-  }
+  },
+  consumeProps: ['vertical']
 })<CardActionsT> {
   render() {
     return super.render();
@@ -110,7 +111,8 @@ export class CardMediaItem extends simpleTag({
       'mdc-card__media-item--2x': props.twoX,
       'mdc-card__media-item--3x': props.threeX
     }
-  ]
+  ],
+  consumeProps: ['oneDotFiveX', 'twoX', 'threeX']
 })<CardMediaItemT> {
   render() {
     return super.render();
