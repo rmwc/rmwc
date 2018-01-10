@@ -100,14 +100,6 @@ export const withMDC = ({
 
       if (MDCConstructorToUse && !this.props.cssOnly) {
         const el = this.mdcGetRootElement();
-
-        // a stupid hack for the test environment where this ends up undefined
-        if (process.env.NODE_ENV === 'test') {
-          if (el) {
-            el.dataset = {};
-          }
-        }
-
         try {
           this.mdcApi = new MDCConstructorToUse(el);
           this.props.apiRef(this.mdcApi);
