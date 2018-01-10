@@ -189,5 +189,3 @@ export const Toolbar = withMDC({
     }
   }
 );
-
-export default Toolbar;

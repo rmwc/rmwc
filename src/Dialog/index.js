@@ -236,5 +236,3 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
     );
   }
 }
-
-export default Dialog;

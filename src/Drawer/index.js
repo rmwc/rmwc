@@ -158,5 +158,3 @@ export const Drawer = withMDC({
     }
   }
 );
-
-export default Drawer;
