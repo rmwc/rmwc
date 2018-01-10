@@ -3,6 +3,17 @@ import * as React from 'react';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
+/****************************************************************
+ * Private
+ ****************************************************************/
+export const GridRoot = simpleTag({
+  displayName: 'GridRoot',
+  classNames: 'mdc-layout-grid'
+});
+
+/****************************************************************
+ * Public
+ ****************************************************************/
 type GridCellPropsT = {
   /** A generic span value for all screen sizes. */
   span?: string | number,
@@ -40,12 +51,6 @@ export class GridCell extends simpleTag({
     return super.render();
   }
 }
-
-export const GridRoot = simpleTag({
-  displayName: 'GridRoot',
-  classNames: 'mdc-layout-grid'
-});
-
 export const GridInner = simpleTag({
   displayName: 'GridInner',
   classNames: 'mdc-layout-grid__inner'
