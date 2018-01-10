@@ -940,7 +940,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "A Grid cell",
       "displayName": "GridCell",
       "methods": [],
       "props": {
@@ -1011,12 +1011,13 @@
       }
     },
     {
-      "description": "",
+      "description": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
       "displayName": "GridInner",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A Grid component",
+      "displayName": "Grid",
       "methods": []
     }
   ],
@@ -1718,6 +1719,163 @@
             "value": "undefined",
             "computed": true
           }
+        }
+      }
+    }
+  ],
+  "src/Menu/index.js": [
+    {
+      "description": "",
+      "displayName": "MenuRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'-1'",
+            "computed": false
+          }
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "MenuItems",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'menu'",
+            "computed": false
+          }
+        },
+        "aria-hidden": {
+          "defaultValue": {
+            "value": "'true'",
+            "computed": false
+          }
+        }
+      }
+    },
+    {
+      "description": "This is just the ListItem component exported from the Menu module for convience.",
+      "displayName": "MenuItem",
+      "methods": []
+    },
+    {
+      "description": "A Menu Anchor. When using the anchorCorner prop of SimpleMenu, you must set MenuAnchors position to absolute.",
+      "displayName": "MenuAnchor",
+      "methods": []
+    },
+    {
+      "description": "A menu component",
+      "displayName": "SimpleMenu",
+      "methods": [],
+      "props": {
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when the Menu closes."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomeLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
         }
       }
     }
@@ -2871,7 +3029,8 @@
       }
     },
     {
-      "description": "",
+      "description": "An Icon in a TextField",
+      "displayName": "TextFieldIcon",
       "methods": [],
       "props": {
         "use": {
@@ -3061,7 +3220,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A Toolbar title",
       "displayName": "ToolbarTitle",
       "methods": []
     },
@@ -3094,7 +3253,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A Toolbar row",
       "displayName": "ToolbarRow",
       "methods": []
     },
@@ -3104,32 +3263,14 @@
       "methods": []
     },
     {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": "The icon to use"
-        }
-      }
+      "description": "A Menu Icon For the Toolbar. This is an instance of the Icon component.",
+      "displayName": "ToolbarMenuIcon",
+      "methods": []
     },
     {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": "The icon to use"
-        }
-      }
+      "description": "A standard Icon for toolbar actions. This is an instance of the Icon component.",
+      "displayName": "ToolbarIcon",
+      "methods": []
     },
     {
       "description": "",

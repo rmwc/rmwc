@@ -110,17 +110,22 @@ export class TextFieldHelperText extends simpleTag({
   }
 }
 
-/**
- * An Icon in a TextField
- */
 type TextFieldIconPropsT = {
   /** The icon to use */
   use: React.Node
 } & IconPropsT;
 
-export const TextFieldIcon = (props: TextFieldIconPropsT) => (
-  <Icon {...props} className={(props.className, 'mdc-text-field__icon')} />
-);
+/**
+ * An Icon in a TextField
+ */
+export class TextFieldIcon extends simpleTag({
+  tag: Icon,
+  classNames: 'mdc-text-field__icon'
+})<TextFieldIconPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 type TextFieldPropsT = {
   /** A ref for the native input. */

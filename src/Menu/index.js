@@ -7,15 +7,9 @@ import {
 import { List, ListItem } from '../List';
 import { simpleTag, withMDC, noop } from '../Base';
 
-export const MenuItem = (props: any) => (
-  <ListItem role="menuitem" tabIndex="0" {...props} />
-);
-
-export const MenuAnchor = simpleTag({
-  displayName: 'MenuAnchor',
-  classNames: 'mdc-menu-anchor'
-});
-
+/****************************************************************
+ * Private
+ ****************************************************************/
 export const SimpleMenuRoot = simpleTag({
   displayName: 'MenuRoot',
   classNames: props => ['mdc-simple-menu'],
@@ -34,7 +28,38 @@ export const SimpleMenuItems = simpleTag({
   }
 });
 
-type MenuPropsT = {
+/****************************************************************
+ * Public
+ ****************************************************************/
+
+/** This is just the ListItem component exported from the Menu module for convience. */
+export const MenuItem = (props: any) => (
+  <ListItem role="menuitem" tabIndex="0" {...props} />
+);
+
+MenuItem.displayName = 'MenuItem';
+
+/** A Menu Anchor. When using the anchorCorner prop of SimpleMenu, you must set MenuAnchors position to absolute. */
+export const MenuAnchor = simpleTag({
+  displayName: 'MenuAnchor',
+  classNames: 'mdc-menu-anchor'
+});
+
+const ANCHOR_CORNER_MAP = {
+  bottomEnd: 'BOTTOM_END',
+  bottomeLeft: 'BOTTOM_LEFT',
+  bottomRight: 'BOTTOM_RIGHT',
+  bottomStart: 'BOTTOM_START',
+  topEnd: 'TOP_END',
+  topLeft: 'TOP_LEFT',
+  topRight: 'TOP_RIGHT',
+  topStart: 'TOP_START'
+};
+
+// prettier-ignore
+type AnchorT = 'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
+
+type SimpleMenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires when the Menu closes. */
@@ -42,15 +67,7 @@ type MenuPropsT = {
   /** Callback that fires when a Menu item is selected. */
   onSelected?: (evt: Event) => mixed,
   /** Manually position the menu to one of the corners. */
-  anchorCorner?:
-    | 'BOTTOM_END'
-    | 'BOTTOM_LEFT'
-    | 'BOTTOM_RIGHT'
-    | 'BOTTOM_START'
-    | 'TOP_END'
-    | 'TOP_LEFT'
-    | 'TOP_RIGHT'
-    | 'TOP_START'
+  anchorCorner?: AnchorT
 };
 
 const handleMenuChange = (evt, props) => {
@@ -79,11 +96,14 @@ export const SimpleMenu = withMDC({
   onUpdate: (props, nextProps, api) => {
     if (
       api &&
-      MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner] !==
-        api.foundation_.anchorCorner_
+      MDCSimpleMenuFoundation.Corner[
+        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+      ] !== api.foundation_.anchorCorner_
     ) {
       api.setAnchorCorner(
-        MDCSimpleMenuFoundation.Corner[nextProps.anchorCorner]
+        MDCSimpleMenuFoundation.Corner[
+          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+        ]
       );
     }
 
@@ -92,8 +112,8 @@ export const SimpleMenu = withMDC({
     }
   }
 })(
-  class extends React.Component<MenuPropsT> {
-    static displayName = 'Menu';
+  class extends React.Component<SimpleMenuPropsT> {
+    static displayName = 'SimpleMenu';
 
     render() {
       const {
