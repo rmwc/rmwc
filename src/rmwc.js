@@ -36,7 +36,8 @@ export {
   DialogBody,
   DialogFooter,
   DefaultDialogTemplate,
-  DialogFooterButton
+  DialogFooterButton,
+  SimpleDialog
 } from './Dialog';
 
 export { Elevation } from './Elevation';

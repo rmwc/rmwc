@@ -2,27 +2,62 @@
 
 > Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
+Material Dialogs are a complex component. RMWC contains an additional non-standard `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the strandard and simple dialog usage.
+
 import from **rmwc/Dialog**  
 [https://material.io/components/web/catalog/dialogs/](https://material.io/components/web/catalog/dialogs/)
+
+## Standard Usage
 
 ```jsx render
 import {
   Dialog,
   DefaultDialogTemplate,
-  DialogRoot,
   DialogSurface,
   DialogHeader,
   DialogHeaderTitle,
   DialogBody,
   DialogFooter,
   DialogFooterButton,
-  DialogBackdrop
+  DialogBackdrop,
 } from 'rmwc/Dialog';
 
 import { Button } from 'rmwc/Button';
 
-{/** Simple Dialogs for basic usage **/}
+{/** Standard dialog usage */}
 <Dialog
+  open={this.state.standardDialogOpen}
+  onClose={evt => this.setState({standardDialogOpen: false})}
+>
+  <DialogSurface>
+    <DialogHeader>
+      <DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
+    </DialogHeader>
+    <DialogBody>This is a standard dialog.</DialogBody>
+    <DialogFooter>
+        <DialogFooterButton cancel>Cancel</DialogFooterButton>
+        <DialogFooterButton accept>Sweet!</DialogFooterButton>
+    </DialogFooter>
+  </DialogSurface>
+  <DialogBackdrop />
+</Dialog>
+
+<Button
+  raised
+  onClick={evt => this.setState({standardDialogOpen: true})}
+>
+  Open standard Dialog
+</Button>
+```
+
+## Simplified Usage
+
+```jsx
+import { SimpleDialog } from 'rmwc/Dialog';
+import { Button } from 'rmwc/Button';
+
+{/** Simple Dialog usage */}
+<SimpleDialog
   title="This is a simple dialog"
   body="You can pass the body prop, or anything you want as children."
   open={this.state.simpleDialogIsOpen}
@@ -32,38 +67,10 @@ import { Button } from 'rmwc/Button';
 />
 
 
-{/** Compose your own **/}
-<Dialog
-  open={this.state.customDialogIsOpen}
-  onClose={evt => this.setState({customDialogIsOpen: false})}
->
-  <DialogRoot>
-    <DialogSurface>
-        <DialogHeader>
-          <DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
-        </DialogHeader>
-        <DialogBody>This is a custom dialog.</DialogBody>
-        <DialogFooter>
-            <DialogFooterButton cancel>Cancel</DialogFooterButton>
-            <DialogFooterButton accept>Sweet!</DialogFooterButton>
-        </DialogFooter>
-    </DialogSurface>
-    <DialogBackdrop />
-  </DialogRoot>
-</Dialog>
-
-
 <Button
-  raised
   onClick={evt => this.setState({simpleDialogIsOpen: true})}
 >
   Open Simple Dialog
-</Button>
-
-<Button
-  onClick={evt => this.setState({customDialogIsOpen: true})}
->
-  Open Custom Dialog
 </Button>
 ```
 
@@ -71,8 +78,6 @@ import { Button } from 'rmwc/Button';
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
 <DocumentComponent displayName="Dialog" />
-<DocumentComponent displayName="DefaultDialogTemplate" />
-<DocumentComponent displayName="DialogRoot" />
 <DocumentComponent displayName="DialogSurface" />
 <DocumentComponent displayName="DialogHeader" />
 <DocumentComponent displayName="DialogHeaderTitle" />
@@ -80,4 +85,5 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="DialogFooter" />
 <DocumentComponent displayName="DialogFooterButton" />
 <DocumentComponent displayName="DialogBackdrop" />
+<DocumentComponent displayName="SimpleDialog" />
 ```

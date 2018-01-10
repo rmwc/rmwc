@@ -63,40 +63,47 @@ export class ListItem extends React.Component<ListItemPropsT> {
   }
 }
 
+/** Text for the ListItem */
 export const ListItemText = simpleTag({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: 'mdc-list-item__text'
 });
 
+/** Secondary text for the ListItem */
 export const ListItemSecondaryText = simpleTag({
   displayName: 'ListItemSecondaryText',
   tag: 'span',
   classNames: 'mdc-list-item__secondary-text'
 });
 
+/** A graphic / icon for the ListItem */
 export const ListItemGraphic = simpleTag({
   displayName: 'ListItemGraphic',
   classNames: 'mdc-list-item__graphic',
   tag: Icon
 });
 
+/** A meta icon for the ListItem */
 export const ListItemMeta = simpleTag({
   displayName: 'ListItemMeta',
   classNames: 'mdc-list-item__meta',
   tag: Icon
 });
 
+/** A container to group ListItems */
 export const ListGroup = simpleTag({
   displayName: 'ListGroup',
   classNames: 'mdc-list-group'
 });
 
+/** A subheader for the ListGroup */
 export const ListGroupSubheader = simpleTag({
   displayName: 'ListGroupSubheader',
   classNames: 'mdc-list-group__subheader'
 });
 
+/** A divider for the List */
 export const ListDivider = simpleTag({
   displayName: 'ListDivider',
   classNames: 'mdc-list-divider'
@@ -132,5 +139,3 @@ export class List extends simpleTag({
     return super.render();
   }
 }
-
-export default List;

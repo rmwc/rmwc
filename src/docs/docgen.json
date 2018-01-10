@@ -351,27 +351,27 @@
       }
     },
     {
-      "description": "",
+      "description": "The Dialog backdrop",
       "displayName": "DialogBackdrop",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog surface",
       "displayName": "DialogSurface",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog header",
       "displayName": "DialogHeader",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog title",
       "displayName": "DialogHeaderTitle",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog body",
       "displayName": "DialogBody",
       "methods": [
         {
@@ -389,12 +389,12 @@
       ]
     },
     {
-      "description": "",
+      "description": "The Dialog footer",
       "displayName": "DialogFooter",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A Dialog footer button",
       "displayName": "DialogFooterButton",
       "methods": [],
       "props": {
@@ -503,7 +503,7 @@
     },
     {
       "description": "",
-      "displayName": "DefaultDialogTemplate",
+      "displayName": "SimpleDialog",
       "methods": [],
       "props": {
         "title": {
@@ -584,7 +584,11 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Any children will be rendered in the body of the default Dialog template."
+          "description": "Any children will be rendered in the body of the default Dialog template.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "scrollable": {
           "flowType": {
@@ -595,6 +599,106 @@
           "defaultValue": {
             "value": "undefined",
             "computed": true
+          }
+        },
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Whether or not the Dialog is showing.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "onAccept": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": true,
+          "description": "Callback for when the accept Button is pressed.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
+        },
+        "onCancel": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": true,
+          "description": "Callback for when the Dialog was closed without acceptance.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": true,
+          "description": "Callback for when the Dialog closes.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
+        },
+        "themeDark": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Use the dark theme",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
           }
         }
       }
