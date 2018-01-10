@@ -14,6 +14,18 @@ const MyComponent = props => <Button>Hello World</Button>;
 
 All components in RMWC are generated from a common factory method. This gives them some extra utility and flexibility when being used. The following props are available on (almost) every component.
 
+### `dir="rtl"`
+
+material-components-web implements right-to-left support for eastern languages. You can pass this prop to any component, please read [material-components-web rtl docs](https://material.io/components/web/catalog/rtl/) for more information.
+
+```jsx
+import { Drawer, DrawerContent } from 'rmwc/Drawer';
+
+<Drawer dir="rtl">
+  <DrawerContent />
+</Drawer>;
+```
+
 ### `tag`
 
 You can use the `tag` prop to specify the DOM element you would like to render.
