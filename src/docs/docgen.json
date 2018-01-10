@@ -2246,7 +2246,7 @@
       "methods": []
     },
     {
-      "description": "@name Snackbar",
+      "description": "A Snackbar component for notifications.",
       "displayName": "Snackbar",
       "methods": [],
       "props": {
@@ -2257,7 +2257,7 @@
           "required": false,
           "description": "Show the Snackbar."
         },
-        "onClose": {
+        "onShow": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -2270,7 +2270,22 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar closes."
+          "description": "A callback thats fired when the Snackbar shows."
+        },
+        "onHide": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => mixed",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "A callback thats fired when the Snackbar hides."
         },
         "message": {
           "flowType": {

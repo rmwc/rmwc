@@ -51,8 +51,10 @@ export const SnackbarActionButton = simpleTag({
 type SnackbarPropsT = {
   /** Show the Snackbar. */
   show?: boolean,
-  /** A callback thats fired when the Snackbar closes. */
-  onClose?: () => mixed,
+  /** A callback thats fired when the Snackbar shows. */
+  onShow?: () => mixed,
+  /** A callback thats fired when the Snackbar hides. */
+  onHide?: () => mixed,
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.Node,
   /** Milliseconds to show the Snackbar for. */
@@ -76,23 +78,13 @@ const showSnackbar = (props, api) => {
     actionHandler,
     actionText,
     multiline,
-    actionOnBottom,
-    onClose
+    actionOnBottom
   } = props;
-  const timer = setTimeout(() => onClose(), timeout || 2750);
-  const wrappedActionHandler =
-    actionHandler && api.dismissesOnAction ?
-      () => {
-        actionHandler();
-        clearTimeout(timer);
-        onClose();
-      } :
-      actionHandler;
 
   api.show({
     message,
     timeout,
-    actionHandler: wrappedActionHandler,
+    actionHandler,
     actionText: actionText || ' ',
     multiline,
     actionOnBottom
@@ -100,14 +92,19 @@ const showSnackbar = (props, api) => {
 };
 
 /**
- * @name Snackbar
+ * A Snackbar component for notifications.
  */
 export const Snackbar = withMDC({
   mdcConstructor: MDCSnackbar,
   mdcElementRef: true,
+  mdcEvents: {
+    'MDCSnackbar:show': (evt, props, api) => props.onShow(evt),
+    'MDCSnackbar:hide': (evt, props, api) => props.onHide(evt)
+  },
   defaultProps: {
     show: false,
-    onClose: noop,
+    onHide: noop,
+    onShow: noop,
     message: undefined,
     timeout: undefined,
     actionHandler: undefined,
@@ -141,7 +138,8 @@ export const Snackbar = withMDC({
         actionOnBottom,
         mdcElementRef,
         dismissesOnAction,
-        onClose,
+        onHide,
+        onShow,
         children,
         ...rest
       } = this.props;
