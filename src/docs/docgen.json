@@ -502,7 +502,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A non-standard SimpleDialog component for ease of use.",
       "displayName": "SimpleDialog",
       "methods": [],
       "props": {
@@ -1568,37 +1568,37 @@
       }
     },
     {
-      "description": "",
+      "description": "Text for the ListItem",
       "displayName": "ListItemText",
       "methods": []
     },
     {
-      "description": "",
+      "description": "Secondary text for the ListItem",
       "displayName": "ListItemSecondaryText",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A graphic / icon for the ListItem",
       "displayName": "ListItemGraphic",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A meta icon for the ListItem",
       "displayName": "ListItemMeta",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A container to group ListItems",
       "displayName": "ListGroup",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A subheader for the ListGroup",
       "displayName": "ListGroupSubheader",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A divider for the List",
       "displayName": "ListDivider",
       "methods": []
     },
@@ -1627,6 +1627,61 @@
           },
           "required": false,
           "description": "Makes the list start detail circular for avatars."
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "SimpleListItem",
+      "methods": [],
+      "props": {
+        "text": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Text for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "secondaryText": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Secondary Text for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "graphic": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "A graphic icon for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "meta": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "A meta icon for the ListItem",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }

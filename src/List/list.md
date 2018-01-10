@@ -2,8 +2,12 @@
 
 > Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
+ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
+
 import from **rmwc/List**  
 [https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
+
+## Standard Usage
 
 ```jsx render
 import {
@@ -12,10 +16,7 @@ import {
   ListItemText,
   ListItemSecondaryText,
   ListItemGraphic,
-  ListItemMeta,
-  ListDivider,
-  ListGroup,
-  ListGroupSubheader
+  ListItemMeta
 } from 'rmwc/List';
 
 <List>
@@ -39,6 +40,21 @@ import {
 </List>
 ```
 
+## Simplified Usage
+
+```jsx render
+import {
+  List,
+  SimpleListItem
+} from 'rmwc/List';
+
+<List twoLine>
+  <SimpleListItem graphic="star_border" text="Cookies" secondaryText="Chocolate chip" meta="info" />
+  <SimpleListItem graphic="favorite_border" text="Pizza" secondaryText="Pepperoni" meta="info" />
+  <SimpleListItem graphic="mood" text="Icecream" secondaryText="Chocolate cookie dough" meta="info" />
+</List>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
@@ -51,4 +67,5 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="ListDivider" />
 <DocumentComponent displayName="ListGroup" />
 <DocumentComponent displayName="ListGroupSubheader" />
+<DocumentComponent displayName="SimpleListItem" />
 ```
