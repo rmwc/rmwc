@@ -851,7 +851,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "A floating action button component",
       "displayName": "Fab",
       "methods": [],
       "props": {
@@ -860,21 +860,33 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the Fab smaller."
+          "description": "Make the Fab smaller.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "exited": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
+          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "cssOnly": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "cssOnly Fab."
+          "description": "cssOnly Fab.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }
@@ -1395,28 +1407,44 @@
             }
           },
           "required": false,
-          "description": "An onChange callback that receives an event with event.target.value set to true or false."
+          "description": "An onChange callback that receives an event with event.target.value set to true or false.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "on": {
           "flowType": {
             "name": "Object"
           },
           "required": true,
-          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor."
+          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "off": {
           "flowType": {
             "name": "Object"
           },
           "required": true,
-          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor."
+          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
-        "value": {
+        "checked": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether the toggle is on or off"
+          "description": "Whether the toggle is on or off",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }

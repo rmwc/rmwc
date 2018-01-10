@@ -7,6 +7,9 @@ import { simpleTag, withRipple } from '../Base';
 import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
+/****************************************************************
+ * Private
+ ****************************************************************/
 export type ButtonRootPropsT = {
   /** Make the Button dense. */
   dense?: boolean,
@@ -54,6 +57,10 @@ export const ButtonRoot = withRipple(
     ]
   })
 );
+
+/****************************************************************
+ * Public
+ ****************************************************************/
 
 /**
  * The Button component.

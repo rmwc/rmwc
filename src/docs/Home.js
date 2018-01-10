@@ -35,9 +35,11 @@ export const Home = () => {
             Components&nbsp;for&nbsp;the&nbsp;Web
           </Typography>
 
-          <Button theme="secondary-bg" raised>
-            Get Started
-          </Button>
+          <Link to="/installation">
+            <Button theme="secondary-bg" raised>
+              Get Started
+            </Button>
+          </Link>
           <Typography tag="h3" use="caption">
             v{version}
           </Typography>
@@ -55,7 +57,7 @@ export const Home = () => {
       <div>
         <Grid>
           <GridCell span={4}>
-            <Link to="/getting-started">
+            <Link to="/installation">
               <Card themeDark theme="primary-bg">
                 <CardPrimary>
                   <CardTitle large>Simple to Use</CardTitle>
@@ -107,7 +109,7 @@ export const Home = () => {
           </GridCell>
 
           <GridCell span={4}>
-            <Link to="/getting-started">
+            <Link to="/usage">
               <Card style={{ backgroundColor: '#283b4c' }} themeDark>
                 <CardPrimary>
                   <CardTitle large>Easy to Customize</CardTitle>

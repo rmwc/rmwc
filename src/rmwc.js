@@ -1,111 +1,29 @@
 export { version } from '../package.json';
 
-export { default as Button } from './Button';
-
-export {
-  Card,
-  CardAction,
-  CardActions,
-  CardPrimary,
-  CardSubtitle,
-  CardSupportingText,
-  CardTitle,
-  CardMedia
-} from './Card';
-
-export { Checkbox } from './Checkbox';
-
-export {
-  DrawerHeaderRoot,
-  DrawerHeaderContent,
-  DrawerHeader,
-  DrawerToolbarSpacer,
-  DrawerContent,
-  DrawerRoot,
-  DrawerDrawer,
-  Drawer
-} from './Drawer';
-
-export {
-  Dialog,
-  DialogRoot,
-  DialogBackdrop,
-  DialogSurface,
-  DialogHeader,
-  DialogHeaderTitle,
-  DialogBody,
-  DialogFooter,
-  DefaultDialogTemplate,
-  DialogFooterButton,
-  SimpleDialog
-} from './Dialog';
-
-export { Elevation } from './Elevation';
-
-export { Fab } from './Fab';
-
-export { FormField } from './FormField';
-
-export {
-  GridList,
-  GridTile,
-  GridTilePrimary,
-  GridTilePrimaryContent,
-  GridTileSecondary,
-  GridTileTitle,
-  GridTileTitleSupportText
-} from './GridList';
-
-export { Grid, GridCell, GridInner } from './Grid';
-
-export { Icon } from './Icon';
-
-export { IconToggle } from './IconToggle';
-
-export { LinearProgress } from './LinearProgress';
-
-export {
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryText,
-  ListItemGraphic,
-  ListItemMeta,
-  ListGroup,
-  ListGroupSubheader,
-  ListDivider
-} from './List';
-
-export { SimpleMenu, MenuItem, MenuAnchor } from './Menu';
-
-export { Radio } from './Radio';
-
-export { Ripple } from './Ripple';
-
-export { RMWCProvider } from './Provider';
-
-export { Select, SelectFormField } from './Select';
-
-export { Slider } from './Slider';
-
-export { Snackbar } from './Snackbar';
-
-export { Switch } from './Switch';
-
-export { Tab, TabBar, TabBarScroller } from './Tabs';
-
-export { TextField, TextFieldHelperText, TextFieldIcon } from './TextField';
-
-export { Theme } from './Theme';
-
-export {
-  Toolbar,
-  ToolbarRow,
-  ToolbarTitle,
-  ToolbarSection,
-  ToolbarFixedAdjust,
-  ToolbarMenuIcon,
-  ToolbarIcon
-} from './Toolbar';
-
-export { Typography } from './Typography';
+export * from './Button';
+export * from './Card';
+export * from './Checkbox';
+export * from './Drawer';
+export * from './Dialog';
+export * from './Elevation';
+export * from './Fab';
+export * from './FormField';
+export * from './GridList';
+export * from './Grid';
+export * from './Icon';
+export * from './IconToggle';
+export * from './LinearProgress';
+export * from './List';
+export * from './Menu';
+export * from './Radio';
+export * from './Ripple';
+export * from './Provider';
+export * from './Select';
+export * from './Slider';
+export * from './Snackbar';
+export * from './Switch';
+export * from './Tabs';
+export * from './TextField';
+export * from './Theme';
+export * from './Toolbar';
+export * from './Typography';
