@@ -5,7 +5,7 @@
 
 # RMWC - React Material Web Components
 
-A thin React wrapper for Material Design (Web) Components v0.27.0
+A thin React wrapper for Material Design (Web) Components v0.28.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
@@ -23,80 +23,33 @@ RMWC has been tested and works properly with React 15 / 16
 
 ## Installation
 
-* `npm install rmwc --save`
-* material-web-components should be installed automatically as a peer
-  dependency. Include
-  `node_modules/material-components-web/dist/material-components-web.css` in
-  your webpage via your method of choice.
+Required steps
+
+* `npm i rmwc --save` or `yarn add rmwc`
+* [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.).
+
+Optional steps
+
+* If you would like to use the default **Roboto font**:
+  * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
+  * add the class `mdc-typography` to the body `<body className="mdc-typography">...</body>`
+* If you would like to use the **material-icons** font:
+  * add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
+* Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
+
+Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
 
 ## Usage
 
-```javascript
-import React from 'react';
-import { Button } from 'rmwc/Button';
-
-const HelloWorld = props => <Button>Easy</Button>;
-```
-
-This example is using ES6 modules imports, but the library will work via
-CommonJS or any other UMD format.
+Read the docs on how to [Usage](https://jamesmfriedman.github.io/rmwc/usage)
 
 ## Why?
 
-There are many different Material UI implementations in both Angular and React.
-The last thing we need is another one... In React land there has been a lot of
-great work done, but you eventually end up in one of the following situations:
-
-* The library is heavy or extremely inflexible (crazy api, opinionated styling)
-* The library is an opinionated representation of material or it isn't very
-  polished
-* The library has been abandoned
-
-**The solution:** Use the Google sanctioned javascript Material Design
-Components and get out of their way.
+Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
 
 ## About Breaking Changes
 
-As stated in "Why?", the goal of this library is to be unopinionated, and that
-includes opinions about breaking changes that come downstream from
-`material-components-web`. In the future, steps may be taken to insulate
-consumers by providing a deprecation path, but for the time being please make
-sure your keep eyes on the official
-[MDC Changelog](https://github.com/material-components/material-components-web/blob/master/CHANGELOG.md)
-and RMWC will do its best to also keep its changelog up to date.
-
-## Status: RC
-
-RMWC is currently in RC. All of the MDC components are covered and are being
-used in various projects. Only bug fixes and doc improvements are planned before
-an official V1.
-
-* [x] Buttons
-   - [x] Standard
-   - [x] FABs
-   - [x] Icon Toggles
-* [x] Cards
-* [x] Dialogs
-* [x] Drawers
-* [x] Elevation
-* [x] Grid Lists
-* [x] Inputs and Controls
-   - [x] Checkboxes
-   - [x] Form Fields
-   - [x] Radio Buttons
-   - [x] Select Menus
-   - [x] Sliders
-   - [x] Switches
-   - [x] Text Fields
-* [x] Layout Grids
-* [x] Linear Progress
-* [x] Lists
-* [x] Menu
-* [x] Ripples
-* [x] Snack Bars
-* [x] Tabs
-* [x] Toolbars
-* [x] Typography
+Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
 
 ## To run the tests
 
