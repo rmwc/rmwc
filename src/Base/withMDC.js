@@ -12,14 +12,18 @@ type WithMDCOpts = {
   displayName?: string,
   /** Components defaultProps */
   defaultProps?: Object,
+  /** Components contextTypes */
+  contextTypes?: Object,
   /** a reference to an MDCConstructor */
   mdcConstructor?: Function,
   /** In some cases, the constructor needs to be determined by props. This function should take props and return an MDCConstrustor or null */
-  getMdcConstructor?: (props: Object) => ?Function,
+  getMdcConstructorOrInstance?: (props: Object, context: Object) => ?Function,
   /** MDC events mapped from eventName => handler */
   mdcEvents?: Object,
   /** Decides wether or not to pass down an elementRef */
   mdcElementRef?: boolean,
+  /** Decides wether or not to pass down an apiRef */
+  mdcApiRef?: boolean,
   /** component on mount */
   onMount?: (currentProps: ?Object, api: ?Object, inst: Object) => mixed,
   /** component on update */
@@ -45,9 +49,11 @@ type WithMDCOpts = {
  */
 export const withMDC = ({
   mdcConstructor: MDCConstructor,
-  getMdcConstructor = () => null,
+  getMdcConstructorOrInstance = () => null,
+  contextTypes,
   mdcEvents = {},
   mdcElementRef = false,
+  mdcApiRef = false,
   defaultProps = {},
   onMount = noop,
   onUpdate = noop,
@@ -89,6 +95,8 @@ export const withMDC = ({
       this.mdcComponentDestroy();
     }
 
+    static contextTypes = contextTypes;
+
     mdcApi: ?Object;
     mdcListeners = [];
     mdcRootElement;
@@ -96,9 +104,17 @@ export const withMDC = ({
 
     mdcComponentInit() {
       const MDCConstructorToUse =
-        MDCConstructor || getMdcConstructor(this.props);
+        MDCConstructor || getMdcConstructorOrInstance(this.props, this.context);
 
-      if (MDCConstructorToUse && !this.props.cssOnly) {
+      // In select cases, getMdcConstructorOrInstance actually needs to handle an instance
+      // if we have an object instead of a function, handle it accordingly.
+      const isInstance =
+        MDCConstructorToUse && typeof MDCConstructorToUse === 'object';
+
+      if (isInstance) {
+        this.mdcApi = MDCConstructorToUse;
+        this.props.apiRef(this.mdcApi);
+      } else if (MDCConstructorToUse && !this.props.cssOnly) {
         const el = this.mdcGetRootElement();
         try {
           this.mdcApi = new MDCConstructorToUse(el);
@@ -163,7 +179,14 @@ export const withMDC = ({
 
     render() {
       const { apiRef, ...rest } = this.props;
-      return <Component {...this.elementRefProps} {...rest} />;
+
+      // This is for cases where we have to pass the api to the subcomponent
+      const apiRefProps = mdcApiRef ?
+        {
+          mdcApiRef: this.mdcApi
+        } :
+        {};
+      return <Component {...apiRefProps} {...this.elementRefProps} {...rest} />;
     }
   };
 };

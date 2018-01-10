@@ -83,7 +83,7 @@ type DrawerPropsT = {
 
 /** A Drawer component */
 export const Drawer = withMDC({
-  getMdcConstructor: props => {
+  getMdcConstructorOrInstance: props => {
     if (props.temporary) {
       return MDCTemporaryDrawer;
     } else if (props.persistent) {

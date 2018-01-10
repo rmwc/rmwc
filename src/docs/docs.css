@@ -269,6 +269,13 @@ ul li {
   text-decoration: none;
 }
 
+/* page tabs */
+#page-tabs .run > .mdc-tab-bar,
+#page-tabs .run > .mdc-tab-bar-scroller {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 /* page icons */
 #page-icons .example > div > i,
 #page-icons .example > div > img {
