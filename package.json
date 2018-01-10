@@ -33,7 +33,8 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build && rm -R docs && mv build docs",
+    "build":
+      "react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
     "test": "react-app-rewired test --env=jsdom",
     "babelfy": "node scripts/babelfy.js",
     "clean": "node scripts/clean.js",
