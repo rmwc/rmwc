@@ -1655,6 +1655,13 @@
           },
           "required": false,
           "description": "Makes the list start detail circular for avatars."
+        },
+        "nonInteractive": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the list non interactive"
         }
       }
     },

@@ -115,7 +115,9 @@ type ListPropsT = {
   /** Gives more space for dual lined list items. */
   twoLine?: boolean,
   /** Makes the list start detail circular for avatars. */
-  avatarList?: boolean
+  avatarList?: boolean,
+  /** Makes the list non interactive */
+  nonInteractive?: boolean
 } & SimpleTagPropsT;
 
 export class List extends simpleTag({
@@ -123,17 +125,19 @@ export class List extends simpleTag({
   defaultProps: {
     dense: undefined,
     twoLine: undefined,
-    avatarList: undefined
+    avatarList: undefined,
+    nonInteractive: undefined
   },
   classNames: props => [
     'mdc-list',
     {
       'mdc-list--dense': props.dense,
       'mdc-list--two-line': props.twoLine,
-      'mdc-list--avatar-list': props.avatarList
+      'mdc-list--avatar-list': props.avatarList,
+      'mdc-list--non-interactive': props.nonInteractive
     }
   ],
-  consumeProps: ['dense', 'twoLine', 'avatarList']
+  consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
 })<ListPropsT> {
   render() {
     return super.render();
