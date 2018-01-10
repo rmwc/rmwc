@@ -48,7 +48,11 @@ export const simpleTag = ({
       } = this.props;
 
       // choose the tag we are going to render
-      const Tag = tag || defaultTag;
+
+      const Component =
+        typeof defaultTag === 'function' && typeof tag === 'string' ?
+          defaultTag :
+          tag || defaultTag;
 
       // consume any props that shouldnt be passed along
       const safeRest = { ...rest };
@@ -56,11 +60,16 @@ export const simpleTag = ({
         Reflect.deleteProperty(safeRest, p);
       });
 
+      // sometimes we are extending a component, we can still honor a text based tag
+      if (typeof defaultTag === 'function' && typeof tag === 'string') {
+        safeRest.tag = tag;
+      }
+
       // handle elementRefs
       if (elementRef) {
         // if the tag is a string, make our ref
         // otherwise pass elementRef along
-        if (typeof Tag === 'string') {
+        if (typeof Component === 'string') {
           safeRest.ref = elementRef;
         } else {
           safeRest.elementRef = elementRef;
@@ -91,7 +100,7 @@ export const simpleTag = ({
       }
 
       // default return
-      return <Tag className={safeClassNames} {...safeRest} />;
+      return <Component className={safeClassNames} {...safeRest} />;
     }
   }
 
