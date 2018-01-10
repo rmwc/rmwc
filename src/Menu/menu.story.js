@@ -25,16 +25,16 @@ const MenuStory = storyWithState(
           anchorCorner={select(
             'anchorCorner',
             {
-              BOTTOM_END: 'BOTTOM_END',
-              BOTTOM_LEFT: 'BOTTOM_LEFT',
-              BOTTOM_RIGHT: 'BOTTOM_RIGHT',
-              BOTTOM_START: 'BOTTOM_START',
-              TOP_END: 'TOP_END',
-              TOP_LEFT: 'TOP_LEFT',
-              TOP_RIGHT: 'TOP_RIGHT',
-              TOP_START: 'TOP_START'
+              bottomEnd: 'BOTTOM_END',
+              bottom: 'BOTTOM_LEFT',
+              bottomRight: 'BOTTOM_RIGHT',
+              bottomStart: 'BOTTOM_START',
+              topEnd: 'TOP_END',
+              topLeft: 'TOP_LEFT',
+              topRight: 'TOP_RIGHT',
+              topStart: 'TOP_START'
             },
-            'TOP_START'
+            'topStart'
           )}
           onClose={evt => this.setState({ open: false })}
         >

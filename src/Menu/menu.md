@@ -31,7 +31,7 @@ import { Button } from 'rmwc/Button';
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
-<DocumentComponent displayName="Menu" />
+<DocumentComponent displayName="SimpleMenu" />
 <DocumentComponent displayName="MenuItem" />
 <DocumentComponent displayName="MenuAnchor" />
 ```

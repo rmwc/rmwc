@@ -25,6 +25,7 @@ type GridCellPropsT = {
   desktop?: string | number
 } & SimpleTagPropsT;
 
+/** A Grid cell */
 export class GridCell extends simpleTag({
   displayName: 'GridCell',
   defaultProps: {
@@ -51,13 +52,18 @@ export class GridCell extends simpleTag({
     return super.render();
   }
 }
+
+/** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
 export const GridInner = simpleTag({
   displayName: 'GridInner',
   classNames: 'mdc-layout-grid__inner'
 });
 
+/** A Grid component */
 export const Grid = ({ children, ...rest }: SimpleTagPropsT) => (
   <GridRoot {...rest}>
     <GridInner>{children}</GridInner>
   </GridRoot>
 );
+
+Grid.displayName = 'Grid';
