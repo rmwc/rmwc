@@ -135,6 +135,7 @@ export const Select = withMDC({
   },
   defaultProps: {
     cssOnly: false,
+    tabIndex: 0,
     options: undefined,
     label: undefined,
     placeholder: undefined,
@@ -195,6 +196,7 @@ export const Select = withMDC({
       const {
         placeholder = '',
         children,
+        tabIndex,
         value,
         label = '',
         options = [],
@@ -209,7 +211,12 @@ export const Select = withMDC({
       if (cssOnly) {
         const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
         const selectInner = (
-          <SelectInnerRoot tabIndex="0" tag="select" value={value} {...rest}>
+          <SelectInnerRoot
+            tabIndex={tabIndex}
+            tag="select"
+            value={value}
+            {...rest}
+          >
             {!!placeholder.length && (
               <ListItem tag="option" value="" tab-index="0">
                 {placeholder}
@@ -263,8 +270,8 @@ export const Select = withMDC({
       }
 
       return (
-        <SelectRoot tabIndex="0" elementRef={mdcElementRef} {...rest}>
-          <SelectSurface>
+        <SelectRoot elementRef={mdcElementRef} {...rest}>
+          <SelectSurface tabIndex={tabIndex}>
             <SelectLabel placeholder={placeholder} value={value}>
               {label}
             </SelectLabel>
