@@ -201,6 +201,34 @@ import {
 </Card>
 ```
 
+___
+Remember to add a dark background to the card, when using the themeDark prop:
+
+```jsx
+<Card themeDark style={{
+  background: '#262626'
+}}>
+```
+
+```jsx render
+{/** 8 */}
+<Card themeDark style={{
+  background: '#262626'
+}}>
+  <CardHorizontalBlock>
+    <CardPrimary>
+      <CardTitle large>(8) Card Title</CardTitle>
+      <CardSubtitle>Subtitle here</CardSubtitle>
+    </CardPrimary>
+    <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
+  </CardHorizontalBlock>
+  <CardActions>
+    <CardAction>Action 1</CardAction>
+    <CardAction>Action 2</CardAction>
+  </CardActions>
+</Card>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
