@@ -2,8 +2,7 @@
 
 > Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
-import from **rmwc/Icon**  
-[https://material.io/components/web/catalog/icon/](https://material.io/components/web/catalog/icon/)
+import from **rmwc/Icon**
 
 Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC providers a declarative way to use icons. Note that RMWC does not ship with any icons of its own, you can include [Material Icons](https://material.io/icons/), any other font icon set, use SVGs, or your own images.
 
