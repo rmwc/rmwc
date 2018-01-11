@@ -202,13 +202,8 @@ import {
 ```
 
 ___
-Remember to add a dark background to the card, when using the themeDark prop:
 
-```jsx
-<Card themeDark style={{
-  background: '#262626'
-}}>
-```
+Remember to add a dark background to the card, when using the themeDark prop:
 
 ```jsx render
 {/** 8 */}
