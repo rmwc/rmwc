@@ -201,12 +201,26 @@ import {
 </Card>
 ```
 
-___
+## Dark Themed Buttons
 
-Remember to add a dark background to the card, when using the themeDark prop:
+Cards can be made dark by adding the `themeDark` prop, or by using the dark theme context. Remember to add a dark background to the card when using the dark theme. The following examples are subtly different but create identical results.
 
 ```jsx render
-{/** 8 */}
+import {
+  Card,
+  CardMedia,
+  CardMediaItem,
+  CardPrimary,
+  CardTitle,
+  CardSubtitle,
+  CardActions,
+  CardAction,
+  CardHorizontalBlock
+} from 'rmwc/Card';
+
+import { Theme } from 'rmwc/Theme';
+
+{/** Using the themeDark prop */}
 <Card themeDark style={{
   background: '#262626'
 }}>
@@ -218,10 +232,27 @@ Remember to add a dark background to the card, when using the themeDark prop:
     <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
   </CardHorizontalBlock>
   <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
+    <CardAction raised>Action 1</CardAction>
   </CardActions>
 </Card>
+
+{/** Using the dark theme context */}
+<Theme use="dark">
+  <Card style={{
+    background: '#262626'
+  }}>
+    <CardHorizontalBlock>
+      <CardPrimary>
+        <CardTitle large>(8) Card Title</CardTitle>
+        <CardSubtitle>Subtitle here</CardSubtitle>
+      </CardPrimary>
+      <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
+    </CardHorizontalBlock>
+    <CardActions>
+      <CardAction raised>Action 1</CardAction>
+    </CardActions>
+  </Card>
+</Theme>
 ```
 
 ```jsx renderOnly
