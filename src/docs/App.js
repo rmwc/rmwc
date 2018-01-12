@@ -73,7 +73,7 @@ export class App extends React.Component {
                 menu
               </ToolbarMenuIcon>
               <ToolbarTitle>
-                <Link to={`${process.env.PUBLIC_URL || '/'}`}>RMWC</Link>
+                <Link to={'/'}>RMWC</Link>
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
@@ -126,11 +126,7 @@ export class App extends React.Component {
 
           <main className="app__content">
             <Switch>
-              <Route
-                path={`${process.env.PUBLIC_URL || '/'}`}
-                exact
-                component={Home}
-              />
+              <Route path={'/'} exact component={Home} />
               {menuContent.map(m => {
                 if (m.options) {
                   return m.options.map(v => (
