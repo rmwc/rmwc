@@ -4,7 +4,7 @@ const isEnumerable = Function.bind.call(
   Object.prototype.propertyIsEnumerable
 );
 const concat = Function.bind.call(Function.call, Array.prototype.concat);
-const keys = Reflect.ownKeys;
+const keys = Object.getOwnPropertyNames;
 
 if (!Object.values) {
   Object.values = function values(O) {
