@@ -22,10 +22,36 @@ describe('Tabs', () => {
     ).toEqual(true);
   });
 
+  it('can have no tabs', () => {
+    mount(<TabBar activeTabIndex={0} onChange={evt => {}} />);
+  });
+
   it('can have custom classnames', () => {
     [TabBar, Tab].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    });
+  });
+
+  it('sets initial active tab', done => {
+    const el1 = mount(
+      <TabBar activeTabIndex={0} onChange={evt => {}}>
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+      </TabBar>
+    );
+
+    const el2 = mount(
+      <TabBar activeTabIndex={1} onChange={evt => {}}>
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+      </TabBar>
+    );
+    // set a timeout because the child tabs render async
+    setTimeout(() => {
+      expect(!!~el1.html().search('mdc-tab--active')).toEqual(true);
+      expect(!!~el2.html().search('mdc-tab--active')).toEqual(true);
+      done();
     });
   });
 

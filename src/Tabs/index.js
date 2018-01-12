@@ -115,14 +115,13 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     onChange: noop,
     activeTabIndex: 0
   },
-
   onUpdate: (props, nextProps, api, inst) => {
     if (!api) return;
 
     if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
-      api.activeTabIndex = api.tabs[nextProps.activeTabIndex] ?
-        nextProps.activeTabIndex :
-        0;
+      api.activeTabIndex = api.tabs[Number(nextProps.activeTabIndex)] ?
+        nextProps.activeTabIndex + '' :
+        undefined;
     }
   },
   didUpdate: (props, nextProps, api, inst) => {

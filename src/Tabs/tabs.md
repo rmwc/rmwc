@@ -9,7 +9,7 @@ import from **rmwc/Tabs**
 import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 
 <TabBar
-  activeTabIndex={this.state.activeTabIndex || 0}
+  activeTabIndex={this.state.activeTabIndex}
   onChange={evt => this.setState({'activeTabIndex': evt.target.value})}
 >
   <Tab>Cookies</Tab>
@@ -18,7 +18,7 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 </TabBar>
 
 <TabBar
-  activeTabIndex={this.state.activeTabIndex2 || 0}
+  activeTabIndex={this.state.activeTabIndex2}
   onChange={evt => this.setState({'activeTabIndex2': evt.target.value})}
 >
   <Tab><TabIcon>star_border</TabIcon></Tab>
@@ -27,7 +27,7 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 </TabBar>
 
 <TabBar
-  activeTabIndex={this.state.activeTabIndex3 || 0}
+  activeTabIndex={this.state.activeTabIndex3}
   onChange={evt => this.setState({'activeTabIndex3': evt.target.value})}
 >
   <Tab><TabIcon>star_border</TabIcon><TabIconText>Featured</TabIconText></Tab>
@@ -38,7 +38,7 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 {/* TabBar wrapped in TabBarScroller */}
 <TabBarScroller>
   <TabBar
-    activeTabIndex={this.state.activeTabIndex4 || 0}
+    activeTabIndex={this.state.activeTabIndex4}
     onChange={evt => this.setState({'activeTabIndex4': evt.target.value})}
   >
     <Tab>Cookies</Tab>
