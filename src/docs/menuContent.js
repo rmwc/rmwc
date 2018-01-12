@@ -1,80 +1,98 @@
-import GettingStartedDocs from './getting-started.md';
-import ButtonDocs from '../../src/Button/button.md';
-import FabDocs from '../../src/Fab/fab.md';
-import IconToggleDocs from '../../src/IconToggle/icon-toggle.md';
-import CardDocs from '../../src/Card/card.md';
-import DialogDocs from '../../src/Dialog/dialog.md';
-import DrawerDocs from '../../src/Drawer/drawer.md';
-import ElevationDocs from '../../src/Elevation/elevation.md';
-import GridListDocs from '../../src/GridList/grid-list.md';
-import CheckboxDocs from '../../src/Checkbox/checkbox.md';
-import FormFieldDocs from '../../src/FormField/form-field.md';
-import RadioDocs from '../../src/Radio/radio.md';
-import SelectDocs from '../../src/Select/select.md';
-import SliderDocs from '../../src/Slider/slider.md';
-import SwitchDocs from '../../src/Switch/switch.md';
-import TextFieldDocs from '../../src/TextField/textfield.md';
-import GridDocs from '../../src/Grid/grid.md';
-import LinearProgressDocs from '../../src/LinearProgress/linear-progress.md';
-import ListDocs from '../../src/List/list.md';
-import MenuDocs from '../../src/Menu/menu.md';
-import RippleDocs from '../../src/Ripple/ripple.md';
-import SnackbarDocs from '../../src/Snackbar/snackbar.md';
-import TabDocs from '../../src/Tabs/tabs.md';
-import ThemeDocs from '../../src/Theme/theme.md';
-import ToolbarDocs from '../../src/Toolbar/toolbar.md';
-import TypographyDocs from '../../src/Typography/typography.md';
-import IconDocs from '../../src/Icon/icon.md';
+import InstallationDocs from './installation.md';
+import UsageDocs from './usage.md';
+import MethodologyDocs from './methodology.md';
+import ProviderDocs from '../Provider/provider.md';
+import ButtonDocs from '../Button/button.md';
+import FabDocs from '../Fab/fab.md';
+import IconToggleDocs from '../IconToggle/icon-toggle.md';
+import CardDocs from '../Card/card.md';
+import DialogDocs from '../Dialog/dialog.md';
+import DrawerDocs from '../Drawer/drawer.md';
+import ElevationDocs from '../Elevation/elevation.md';
+import GridListDocs from '../GridList/grid-list.md';
+import CheckboxDocs from '../Checkbox/checkbox.md';
+import FormFieldDocs from '../FormField/form-field.md';
+import RadioDocs from '../Radio/radio.md';
+import SelectDocs from '../Select/select.md';
+import SliderDocs from '../Slider/slider.md';
+import SwitchDocs from '../Switch/switch.md';
+import TextFieldDocs from '../TextField/textfield.md';
+import GridDocs from '../Grid/grid.md';
+import LinearProgressDocs from '../LinearProgress/linear-progress.md';
+import ListDocs from '../List/list.md';
+import MenuDocs from '../Menu/menu.md';
+import RippleDocs from '../Ripple/ripple.md';
+import SnackbarDocs from '../Snackbar/snackbar.md';
+import TabDocs from '../Tabs/tabs.md';
+import ThemeDocs from '../Theme/theme.md';
+import ToolbarDocs from '../Toolbar/toolbar.md';
+import TypographyDocs from '../Typography/typography.md';
+import IconDocs from '../Icon/icon.md';
 
 export const menuContent = [
   {
     label: 'Getting Started',
-    url: `${process.env.PUBLIC_URL}/getting-started`,
-    component: GettingStartedDocs
+    options: [
+      {
+        label: 'Installation',
+        url: `/installation`,
+        component: InstallationDocs
+      },
+      {
+        label: 'Usage and Styling',
+        url: `/usage`,
+        component: UsageDocs
+      },
+      {
+        label: 'Project Methodology',
+        url: `/methodology`,
+        component: MethodologyDocs
+      }
+    ]
   },
   {
     label: 'Buttons',
     options: [
       {
         label: 'Buttons',
-        url: `${process.env.PUBLIC_URL}/buttons`,
+        url: `/buttons`,
         component: ButtonDocs
       },
       {
         label: 'Fabs',
-        url: `${process.env.PUBLIC_URL}/fabs`,
+        url: `/fabs`,
         component: FabDocs
       },
       {
         label: 'Icon Toggles',
-        url: `${process.env.PUBLIC_URL}/icon-toggles`,
+        url: `/icon-toggles`,
         component: IconToggleDocs
       }
     ]
   },
   {
     label: 'Cards',
-    url: `${process.env.PUBLIC_URL}/cards`,
+    url: `/cards`,
     component: CardDocs
   },
   {
     label: 'Dialogs',
-    url: `${process.env.PUBLIC_URL}/dialogs`,
+    url: `/dialogs`,
     component: DialogDocs
   },
   {
     label: 'Drawers',
-    url: `${process.env.PUBLIC_URL}/drawers`,
+    url: `/drawers`,
     component: DrawerDocs
   },
   {
     label: 'Elevation',
-    url: `${process.env.PUBLIC_URL}/elevation`,
+    url: `/elevation`,
     component: ElevationDocs
   },
   {
     label: 'Grid Lists',
-    url: `${process.env.PUBLIC_URL}/grid-lists`,
+    url: `/grid-lists`,
     component: GridListDocs
   },
   {
@@ -82,94 +100,99 @@ export const menuContent = [
     options: [
       {
         label: 'Checkboxes',
-        url: `${process.env.PUBLIC_URL}/checkboxes`,
+        url: `/checkboxes`,
         component: CheckboxDocs
       },
       {
         label: 'FormFields',
-        url: `${process.env.PUBLIC_URL}/form-fields`,
+        url: `/form-fields`,
         component: FormFieldDocs
       },
       {
         label: 'Radio Buttons',
-        url: `${process.env.PUBLIC_URL}/radio-buttons`,
+        url: `/radio-buttons`,
         component: RadioDocs
       },
       {
         label: 'Select Menus',
-        url: `${process.env.PUBLIC_URL}/select-menus`,
+        url: `/select-menus`,
         component: SelectDocs
       },
       {
         label: 'Sliders',
-        url: `${process.env.PUBLIC_URL}/sliders`,
+        url: `/sliders`,
         component: SliderDocs
       },
       {
         label: 'Switches',
-        url: `${process.env.PUBLIC_URL}/switches`,
+        url: `/switches`,
         component: SwitchDocs
       },
       {
         label: 'Text Fields',
-        url: `${process.env.PUBLIC_URL}/text-fields`,
+        url: `/text-fields`,
         component: TextFieldDocs
       }
     ]
   },
   {
     label: 'Layout Grid',
-    url: `${process.env.PUBLIC_URL}/layout-grid`,
+    url: `/layout-grid`,
     component: GridDocs
   },
   {
     label: 'Linear Progress',
-    url: `${process.env.PUBLIC_URL}/linear-progress`,
+    url: `/linear-progress`,
     component: LinearProgressDocs
   },
   {
     label: 'Lists',
-    url: `${process.env.PUBLIC_URL}/lists`,
+    url: `/lists`,
     component: ListDocs
   },
   {
     label: 'Menus',
-    url: `${process.env.PUBLIC_URL}/menus`,
+    url: `/menus`,
     component: MenuDocs
   },
   {
     label: 'Ripples',
-    url: `${process.env.PUBLIC_URL}/ripples`,
+    url: `/ripples`,
     component: RippleDocs
   },
   {
     label: 'Snackbars',
-    url: `${process.env.PUBLIC_URL}/snackbars`,
+    url: `/snackbars`,
     component: SnackbarDocs
   },
   {
     label: 'Tabs',
-    url: `${process.env.PUBLIC_URL}/tabs`,
+    url: `/tabs`,
     component: TabDocs
   },
   {
     label: 'Theme',
-    url: `${process.env.PUBLIC_URL}/theme`,
+    url: `/theme`,
     component: ThemeDocs
   },
   {
     label: 'Toolbars',
-    url: `${process.env.PUBLIC_URL}/toolbars`,
+    url: `/toolbars`,
     component: ToolbarDocs
   },
   {
     label: 'Typography',
-    url: `${process.env.PUBLIC_URL}/typography`,
+    url: `/typography`,
     component: TypographyDocs
   },
   {
     label: 'Icons',
-    url: `${process.env.PUBLIC_URL}/icons`,
+    url: `/icons`,
     component: IconDocs
+  },
+  {
+    label: 'Provider',
+    url: `/provider`,
+    component: ProviderDocs
   }
 ];

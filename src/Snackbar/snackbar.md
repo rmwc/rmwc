@@ -12,7 +12,7 @@ import { Button } from 'rmwc/Button';
 {/* A standard snackbar */}
 <Snackbar
   show={this.state.snackbarIsOpen}
-  onClose={evt => this.setState({snackbarIsOpen: false})}
+  onHide={evt => this.setState({snackbarIsOpen: false})}
   message="This is a new message"
   actionText="Action"
   actionHandler={() => alert('Action clicked')}
@@ -28,7 +28,7 @@ import { Button } from 'rmwc/Button';
 {/* A snackbar that is start aligned on larger devices. */}
 <Snackbar
   show={this.state.snackbarStartIsOpen}
-  onClose={evt => this.setState({snackbarStartIsOpen: false})}
+  onHide={evt => this.setState({snackbarStartIsOpen: false})}
   message="Start aligned"
   actionText="Dismiss"
   actionHandler={() => {}}

@@ -7,13 +7,14 @@ import from **rmwc/Drawer**
 
 ## Permanent Drawers
 
-These are drawers that are permanently fixed inside of a view. Note that the children of `PermanentDrawerContent` can be anything, it doesn't have to be a list.
+These are drawers that are permanently fixed inside of a view.
 [https://material.io/components/web/catalog/drawers/#permanent-drawer-usage](https://material.io/components/web/catalog/drawers/#permanent-drawer-usage)
 
 ```jsx render
 import {
-  PermanentDrawer,
-  PermanentDrawerContent
+  Drawer,
+  DrawerHeader,
+  DrawerContent
 } from 'rmwc/Drawer';
 
 import {
@@ -22,61 +23,52 @@ import {
   ListItemText
 } from 'rmwc/List';
 
-<PermanentDrawer>
-  <PermanentDrawerContent>
-    <List>
-      <ListItem>
-        <ListItemText>Cookies</ListItemText>
-      </ListItem>
-      <ListItem>
-        <ListItemText>Pizza</ListItemText>
-      </ListItem>
-      <ListItem>
-        <ListItemText>Icecream</ListItemText>
-      </ListItem>
-    </List>
-  </PermanentDrawerContent>
-</PermanentDrawer>
-```
-
-```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
-
-<DocumentComponent displayName="PermanentDrawer" />
-<DocumentComponent displayName="PermanentDrawerContent" />
+<Drawer permanent>
+  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+    DrawerHeader
+  </DrawerHeader>
+  <DrawerContent>
+    <ListItem>
+      <ListItemText>Cookies</ListItemText>
+    </ListItem>
+    <ListItem>
+      <ListItemText>Pizza</ListItemText>
+    </ListItem>
+    <ListItem>
+      <ListItemText>Icecream</ListItemText>
+    </ListItem>
+  </DrawerContent>
+</Drawer>
 ```
 
 ---
 
 ## Persistent Drawers
 
-These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when clsoed. Note that `PermanentDrawerContent` is actually an instance of `List`, but its children are do not have to be `ListItem`.
+These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when clsoed.
 [https://material.io/components/web/catalog/drawers/#persistent-drawer-usage](https://material.io/components/web/catalog/drawers/#persistent-drawer-usage)
 
 ```jsx render
 import {
-  PersistentDrawer,
-  PersistentDrawerHeader,
-  PersistentDrawerContent
+  Drawer,
+  DrawerHeader,
+  DrawerContent
 } from 'rmwc/Drawer';
 
 import {
-  List,
   ListItem,
   ListItemText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
 
-<PersistentDrawer
-  open={this.state.open === undefined ? true : this.state.open}
-  onClose={() => this.setState({open: false})}
->
-  <PersistentDrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
-    PersistentDrawerHeader
-  </PersistentDrawerHeader>
-  <PersistentDrawerContent>
-    <ListItem>
+
+<Drawer persistent open={this.state.persistentOpen == undefined ? true : this.state.persistentOpen}>
+  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+    DrawerHeader
+  </DrawerHeader>
+  <DrawerContent>
+   <ListItem>
       <ListItemText>Cookies</ListItemText>
     </ListItem>
     <ListItem>
@@ -85,55 +77,47 @@ import { Button } from 'rmwc/Button';
     <ListItem>
       <ListItemText>Icecream</ListItemText>
     </ListItem>
-  </PersistentDrawerContent>
-</PersistentDrawer>
+  </DrawerContent>
+</Drawer>
 
 <Button
-  onClick={() => this.setState({open: this.state.open === undefined ? false : !this.state.open})}
+  onClick={() => this.setState({persistentOpen: this.state.persistentOpen === undefined ? false : !this.state.persistentOpen})}
   raised
 >
   Toggle Drawer
 </Button>
 ```
 
-```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
-
-<DocumentComponent displayName="PersistentDrawer" />
-<DocumentComponent displayName="PersistentDrawerHeader" />
-<DocumentComponent displayName="PersistentDrawerContent" />
-```
-
 ---
 
 ## Temporary Drawers
 
-These are drawers that can be temporarily displayed fixed on the side of the entire viewport. Note that `TemporaryDrawerContent` is actually an instance of `List`, but its children are do not have to be `ListItem`.
+These are drawers that can be temporarily displayed fixed on the side of the entire viewport.
 [https://material.io/components/web/catalog/drawers/#temporary-drawer-usage](https://material.io/components/web/catalog/drawers/#temporary-drawer-usage)
 
 ```jsx render
 import {
-  TemporaryDrawer,
-  TemporaryDrawerHeader,
-  TemporaryDrawerContent
+  Drawer,
+  DrawerHeader,
+  DrawerContent
 } from 'rmwc/Drawer';
 
 import {
-  List,
   ListItem,
   ListItemText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
 
-<TemporaryDrawer
+<Drawer
+  temporary
   open={this.state.tempOpen}
   onClose={() => this.setState({tempOpen: false})}
 >
-  <TemporaryDrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
-    PersistentDrawerHeader
-  </TemporaryDrawerHeader>
-  <TemporaryDrawerContent>
+  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+    DrawerHeader
+  </DrawerHeader>
+  <DrawerContent>
     <ListItem>
       <ListItemText>Cookies</ListItemText>
     </ListItem>
@@ -143,8 +127,8 @@ import { Button } from 'rmwc/Button';
     <ListItem>
       <ListItemText>Icecream</ListItemText>
     </ListItem>
-  </TemporaryDrawerContent>
-</TemporaryDrawer>
+  </DrawerContent>
+</Drawer>
 
 <Button
   onClick={() => this.setState({tempOpen: !this.state.tempOpen})}
@@ -157,7 +141,8 @@ import { Button } from 'rmwc/Button';
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
-<DocumentComponent displayName="TemporaryDrawer" />
-<DocumentComponent displayName="TemporaryDrawerHeader" />
-<DocumentComponent displayName="TemporaryDrawerContent" />
+<DocumentComponent displayName="Drawer" />
+<DocumentComponent displayName="DrawerToolbarSpacer" />
+<DocumentComponent displayName="DrawerHeader" />
+<DocumentComponent displayName="DrawerContent" />
 ```

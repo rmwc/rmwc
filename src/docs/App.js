@@ -3,6 +3,8 @@ import { Route, Link, Switch } from 'react-router-dom';
 
 import { menuContent } from './menuContent';
 
+import { version } from 'rmwc/rmwc';
+
 import {
   Toolbar,
   ToolbarRow,
@@ -10,25 +12,23 @@ import {
   ToolbarTitle,
   ToolbarFixedAdjust,
   ToolbarMenuIcon,
+  ToolbarIcon
 } from 'rmwc/Toolbar';
 
-import {
-  PersistentDrawer,
-  PersistentDrawerContent,
-  TemporaryDrawer,
-  TemporaryDrawerContent,
-} from 'rmwc/Drawer';
+import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
 import { ListItem, ListItemText } from 'rmwc/List';
-
-import { IconButton } from 'rmwc/IconButton';
 
 import Submenu from './Submenu';
 import Home from './Home';
 
 const MenuItem = ({ url, label }) => {
   return (
-    <ListItem>
+    <ListItem
+      activated={
+        window.location.pathname.split('/').pop() === url.split('/').pop()
+      }
+    >
       <Link to={url}>
         <ListItemText>{label}</ListItemText>
       </Link>
@@ -44,11 +44,11 @@ export class App extends React.Component {
 
   state = {
     menuIsOpen: false,
-    isMobile: true,
+    isMobile: true
   };
 
   doSizeCheck() {
-    if (window.screen.width > 640) {
+    if (window.innerWidth > 640) {
       this.setState({ isMobile: false, menuIsOpen: true });
     } else {
       this.setState({ isMobile: true, menuIsOpen: false });
@@ -56,11 +56,8 @@ export class App extends React.Component {
   }
 
   render() {
-    const pageId = `page-${window.location.pathname.split('/').pop()}`;
-    const Drawer = this.state.isMobile ? TemporaryDrawer : PersistentDrawer;
-    const DrawerContent = this.state.isMobile
-      ? TemporaryDrawerContent
-      : PersistentDrawerContent;
+    const pageId = `page-${window.location.pathname.split('/').pop() ||
+      'home'}`;
 
     return (
       <div id={pageId}>
@@ -80,7 +77,8 @@ export class App extends React.Component {
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
-              <IconButton
+              <span className="app__version">{version}</span>
+              <ToolbarIcon
                 tag="a"
                 href="https://github.com/jamesmfriedman/rmwc"
                 use={
@@ -105,6 +103,8 @@ export class App extends React.Component {
           <Drawer
             id="main-nav"
             open={this.state.menuIsOpen}
+            persistent={!this.state.isMobile}
+            temporary={this.state.isMobile}
             onClose={() => this.setState({ menuIsOpen: false })}
           >
             <DrawerContent>

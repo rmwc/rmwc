@@ -12,19 +12,22 @@ export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component';
 
 export type IconPropsT = {
-  /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs */
+  /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   use?: React.Node,
 
-  /** Handle multiple methods of embedding an icon. */
+  /** Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. If not set, 'auto' will be used or defaults set inside of RMWCProvider. */
   strategy?: IconStrategyT,
 
-  /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy. */
+  /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. */
   prefix?: string,
 
-  /** A base className for the icon namespace, i.e. material-icons */
+  /** A base className for the icon namespace, i.e. material-icons. */
   basename?: string
 };
 
+/**
+ * An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.
+ */
 export class Icon extends React.PureComponent<IconPropsT> {
   static defaultProps = {
     use: undefined

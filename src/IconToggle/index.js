@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
-import { simpleTag, withMDC } from '../Base';
+import { simpleTag, withMDC, noop } from '../Base';
 
 export const IconToggleRoot = simpleTag({
   displayName: 'IconToggleRoot',
@@ -23,7 +23,7 @@ type IconToggleT = {
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   off: Object,
   /** Whether the toggle is on or off */
-  value?: boolean
+  checked?: boolean
 };
 
 /**
@@ -38,23 +38,30 @@ export const IconToggle = withMDC({
         props.onChange({
           ...evt.detail,
           target: {
-            value: evt.detail.isOn
+            checked: evt.detail.isOn
           }
         });
     }
   },
   onUpdate(props, nextProps, api) {
-    if (api && nextProps.value !== undefined) {
-      api.on = !!nextProps.value;
+    if (api && nextProps.checked !== undefined) {
+      api.on = !!nextProps.checked;
     }
   }
 })(
   class extends React.Component<IconToggleT> {
     static displayName = 'IconToggle';
 
+    static defaultProps = {
+      onChange: noop,
+      on: undefined,
+      off: undefined,
+      checked: undefined
+    };
+
     render() {
-      const { value, on, off, mdcElementRef, ...rest } = this.props;
-      const ariaPressed = value !== undefined ? !!value : false;
+      const { checked, on, off, mdcElementRef, ...rest } = this.props;
+      const ariaPressed = checked !== undefined ? !!checked : false;
       const toggleOnJSON = JSON.stringify(on);
       const toggleOffJSON = JSON.stringify(off);
 

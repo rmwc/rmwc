@@ -31,9 +31,12 @@ const SnackbarStory = storyWithState(
         multiline={this.state.multiline}
         actionText={this.state.actionText}
         timeout={this.state.timeout}
-        onClose={() => {
+        onHide={() => {
           this.setState({ show: false });
-          action('onClose')();
+          action('onHide')();
+        }}
+        onShow={() => {
+          action('onShow')();
         }}
         actionHandler={action('actionHandler')}
       />

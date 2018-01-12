@@ -13,13 +13,7 @@ type ListItemPropsT = {
   /** A modifier for a selected state. */
   selected?: boolean,
   /** A modifier for an active state. */
-  activated?: boolean,
-  /** A modifier for a selected item in Permanent Drawer. */
-  permanentDrawerSelected?: boolean,
-  /** A modifier for a selected item in Persistent Drawer. */
-  persistentDrawerSelected?: boolean,
-  /** A modifier for a selected item in Temporary Drawer. */
-  temporaryDrawerSelected?: boolean
+  activated?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -30,24 +24,14 @@ export const ListItemRoot = withRipple(
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
-        'mdc-list-item--activated': props.activated,
-        'mdc-permanent-drawer--selected': props.permanentDrawerSelected,
-        'mdc-persistent-drawer--selected': props.persistentDrawerSelected,
-        'mdc-temporary-drawer--selected': props.temporaryDrawerSelected
+        'mdc-list-item--activated': props.activated
       }
     ],
     defaultProps: {
-      permanentDrawerSelected: false,
-      persistentDrawerSelected: false,
-      temporaryDrawerSelected: false
+      selected: false,
+      activated: false
     },
-    consumeProps: [
-      'selected',
-      'activated',
-      'permanentDrawerSelected',
-      'persistentDrawerSelected',
-      'temporaryDrawerSelected'
-    ]
+    consumeProps: ['selected', 'activated']
   })
 );
 
@@ -56,12 +40,6 @@ export const ListItemRoot = withRipple(
  */
 export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
-
-  static defaultProps = {
-    permanentDrawerSelected: false,
-    persistentDrawerSelected: false,
-    temporaryDrawerSelected: false
-  };
 
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
@@ -85,40 +63,47 @@ export class ListItem extends React.Component<ListItemPropsT> {
   }
 }
 
+/** Text for the ListItem */
 export const ListItemText = simpleTag({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: 'mdc-list-item__text'
 });
 
+/** Secondary text for the ListItem */
 export const ListItemSecondaryText = simpleTag({
   displayName: 'ListItemSecondaryText',
   tag: 'span',
   classNames: 'mdc-list-item__secondary-text'
 });
 
-export const ListItemStartDetail = simpleTag({
-  displayName: 'ListItemStartDetail',
-  classNames: 'mdc-list-item__start-detail',
+/** A graphic / icon for the ListItem */
+export const ListItemGraphic = simpleTag({
+  displayName: 'ListItemGraphic',
+  classNames: 'mdc-list-item__graphic',
   tag: Icon
 });
 
-export const ListItemEndDetail = simpleTag({
-  displayName: 'ListItemStartDetail',
-  classNames: 'mdc-list-item__end-detail',
+/** A meta icon for the ListItem */
+export const ListItemMeta = simpleTag({
+  displayName: 'ListItemMeta',
+  classNames: 'mdc-list-item__meta',
   tag: Icon
 });
 
+/** A container to group ListItems */
 export const ListGroup = simpleTag({
   displayName: 'ListGroup',
   classNames: 'mdc-list-group'
 });
 
+/** A subheader for the ListGroup */
 export const ListGroupSubheader = simpleTag({
   displayName: 'ListGroupSubheader',
   classNames: 'mdc-list-group__subheader'
 });
 
+/** A divider for the List */
 export const ListDivider = simpleTag({
   displayName: 'ListDivider',
   classNames: 'mdc-list-divider'
@@ -130,29 +115,70 @@ type ListPropsT = {
   /** Gives more space for dual lined list items. */
   twoLine?: boolean,
   /** Makes the list start detail circular for avatars. */
-  avatarList?: boolean
+  avatarList?: boolean,
+  /** Makes the list non interactive */
+  nonInteractive?: boolean
 } & SimpleTagPropsT;
 
 export class List extends simpleTag({
   displayName: 'List',
+  defaultProps: {
+    dense: undefined,
+    twoLine: undefined,
+    avatarList: undefined,
+    nonInteractive: undefined
+  },
   classNames: props => [
     'mdc-list',
     {
       'mdc-list--dense': props.dense,
       'mdc-list--two-line': props.twoLine,
-      'mdc-list--avatar-list': props.avatarList
+      'mdc-list--avatar-list': props.avatarList,
+      'mdc-list--non-interactive': props.nonInteractive
     }
   ],
-  defaultProps: {
-    dense: false,
-    twoLine: false,
-    avatarList: false
-  },
-  consumeProps: ['dense', 'twoLine', 'avatarList']
+  consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
 })<ListPropsT> {
   render() {
     return super.render();
   }
 }
 
-export default List;
+type SimpleListItemPropsT = {
+  /** Text for the ListItem. */
+  text?: React.Node,
+  /** Secondary Text for the ListItem. */
+  secondaryText?: React.Node,
+  /** A graphic icon for the ListItem. */
+  graphic?: React.Node,
+  /** A meta icon for the ListItem */
+  meta?: React.Node
+};
+
+export const SimpleListItem = ({
+  text,
+  secondaryText,
+  graphic,
+  meta,
+  children,
+  ...rest
+}: SimpleListItemPropsT) => (
+  <ListItem {...rest}>
+    {!!graphic && <ListItemGraphic>{graphic}</ListItemGraphic>}
+    <ListItemText>
+      {text}
+      {!!secondaryText && (
+        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+      )}
+    </ListItemText>
+    {!!meta && <ListItemMeta>{meta}</ListItemMeta>}
+  </ListItem>
+);
+
+SimpleListItem.displayName = 'SimpleListItem';
+SimpleListItem.defaultProps = {
+  text: undefined,
+  secondaryText: undefined,
+  graphic: undefined,
+  meta: undefined
+};

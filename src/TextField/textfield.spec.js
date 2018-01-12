@@ -51,4 +51,24 @@ describe('TextField', () => {
     const el = mount(<TextField className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
+
+  it('can be box', () => {
+    mount(<TextField box />);
+  });
+
+  it('can be dense', () => {
+    mount(<TextField dense />);
+  });
+
+  it('can be outlined', () => {
+    mount(<TextField outlined />);
+  });
+
+  it('can be disabled', () => {
+    mount(<TextField disabled />);
+  });
+
+  it('can be required', () => {
+    mount(<TextField required />);
+  });
 });

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { List, ListItem, ListGroup } from '../List';
-import { MenuRoot, MenuItems } from '../Menu';
+import { SimpleMenuRoot, SimpleMenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -41,7 +41,7 @@ export const SelectBottomLine = simpleTag({
 
 export const SelectMenu = simpleTag({
   displayName: 'SelectMenu',
-  tag: MenuRoot,
+  tag: SimpleMenuRoot,
   classNames: 'mdc-select__menu'
 });
 
@@ -135,6 +135,7 @@ export const Select = withMDC({
   },
   defaultProps: {
     cssOnly: false,
+    tabIndex: 0,
     options: undefined,
     label: undefined,
     placeholder: undefined,
@@ -195,6 +196,7 @@ export const Select = withMDC({
       const {
         placeholder = '',
         children,
+        tabIndex,
         value,
         label = '',
         options = [],
@@ -209,7 +211,12 @@ export const Select = withMDC({
       if (cssOnly) {
         const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
         const selectInner = (
-          <SelectInnerRoot tabIndex="0" tag="select" value={value} {...rest}>
+          <SelectInnerRoot
+            tabIndex={tabIndex}
+            tag="select"
+            value={value}
+            {...rest}
+          >
             {!!placeholder.length && (
               <ListItem tag="option" value="" tab-index="0">
                 {placeholder}
@@ -263,8 +270,8 @@ export const Select = withMDC({
       }
 
       return (
-        <SelectRoot tabIndex="0" elementRef={mdcElementRef} {...rest}>
-          <SelectSurface>
+        <SelectRoot elementRef={mdcElementRef} {...rest}>
+          <SelectSurface tabIndex={tabIndex}>
             <SelectLabel placeholder={placeholder} value={value}>
               {label}
             </SelectLabel>
@@ -272,7 +279,7 @@ export const Select = withMDC({
             <SelectBottomLine />
           </SelectSurface>
           <SelectMenu>
-            <MenuItems>
+            <SimpleMenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                 <ListItem role="option" id="" tab-index="0">
@@ -293,7 +300,7 @@ export const Select = withMDC({
                   </ListItem>
                 ))}
               {children}
-            </MenuItems>
+            </SimpleMenuItems>
           </SelectMenu>
         </SelectRoot>
       );

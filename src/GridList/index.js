@@ -3,6 +3,9 @@ import * as React from 'react';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
+/****************************************************************
+ * Private
+ ****************************************************************/
 type GridListRootPropsT = {
   /** Use a 1px gutter. */
   tileGutter1: boolean,
@@ -50,14 +53,8 @@ export const GridListTiles = simpleTag({
   classNames: 'mdc-grid-list__tiles'
 });
 
-export const GridTile = simpleTag({
-  displayName: 'GridTile',
-  tag: 'li',
-  classNames: 'mdc-grid-tile'
-});
-
 export const GridTilePrimaryRoot = simpleTag({
-  displayName: 'GridTilePrimary',
+  displayName: 'GridTilePrimaryRoot',
   classNames: 'mdc-grid-tile__primary'
 });
 
@@ -68,25 +65,41 @@ export const GridTilePrimaryContent = simpleTag({
     wrap: true
   }
 });
+/****************************************************************
+ * Public
+ ****************************************************************/
 
+/** A grid tile  */
+export const GridTile = simpleTag({
+  displayName: 'GridTile',
+  tag: 'li',
+  classNames: 'mdc-grid-tile'
+});
+
+/** The primary content for a Grid tile */
 export const GridTilePrimary = ({ children, ...rest }: SimpleTagPropsT) => (
   <GridTilePrimaryRoot {...rest}>
     <GridTilePrimaryContent>{children}</GridTilePrimaryContent>
   </GridTilePrimaryRoot>
 );
 
+GridTilePrimary.displayName = 'GridTilePrimary';
+
+/** The secondary content for a Grid tile */
 export const GridTileSecondary = simpleTag({
   displayName: 'GridTileSecondary',
   tag: 'span',
   classNames: 'mdc-grid-tile__secondary'
 });
 
+/** The title for a Grid tile */
 export const GridTileTitle = simpleTag({
   displayName: 'GridTileTitle',
   tag: 'span',
   classNames: 'mdc-grid-tile__title'
 });
 
+/** Supporting Text for the Grid Tile */
 export const GridTileTitleSupportText = simpleTag({
   displayName: 'GridTileTitleSupportText',
 
@@ -107,5 +120,3 @@ export class GridList extends React.Component<GridListRootPropsT> {
     );
   }
 }
-
-export default GridList;

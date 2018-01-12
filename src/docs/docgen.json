@@ -71,7 +71,7 @@
   ],
   "src/Card/index.js": [
     {
-      "description": "Primary card content",
+      "description": "",
       "displayName": "CardPrimary",
       "methods": []
     },
@@ -152,7 +152,7 @@
       "methods": []
     },
     {
-      "description": "A Card action Button",
+      "description": "A Card action Button. This is an instance of Button and can take all of the same props.",
       "displayName": "CardAction",
       "methods": [],
       "props": {
@@ -351,27 +351,27 @@
       }
     },
     {
-      "description": "",
+      "description": "The Dialog backdrop",
       "displayName": "DialogBackdrop",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog surface",
       "displayName": "DialogSurface",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog header",
       "displayName": "DialogHeader",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog title",
       "displayName": "DialogHeaderTitle",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The Dialog body",
       "displayName": "DialogBody",
       "methods": [
         {
@@ -389,12 +389,12 @@
       ]
     },
     {
-      "description": "",
+      "description": "The Dialog footer",
       "displayName": "DialogFooter",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A Dialog footer button",
       "displayName": "DialogFooterButton",
       "methods": [],
       "props": {
@@ -502,8 +502,8 @@
       }
     },
     {
-      "description": "",
-      "displayName": "DefaultDialogTemplate",
+      "description": "A non-standard SimpleDialog component for ease of use.",
+      "displayName": "SimpleDialog",
       "methods": [],
       "props": {
         "title": {
@@ -584,7 +584,11 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Any children will be rendered in the body of the default Dialog template."
+          "description": "Any children will be rendered in the body of the default Dialog template.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "scrollable": {
           "flowType": {
@@ -596,69 +600,69 @@
             "value": "undefined",
             "computed": true
           }
-        }
-      }
-    }
-  ],
-  "src/Drawer/permanent-drawer.js": [
-    {
-      "description": "",
-      "displayName": "PermanentDrawerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PermanentDrawerToolbarSpacer",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PermanentDrawerContent",
-      "methods": []
-    }
-  ],
-  "src/Drawer/persistent-drawer.js": [
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeader",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeaderContent",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerHeader",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerContent",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawerDrawer",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "PersistentDrawer",
-      "methods": [],
-      "props": {
+        },
         "open": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": "Opens or closes the Drawer."
+          "description": "Whether or not the Dialog is showing.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "onAccept": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": true,
+          "description": "Callback for when the accept Button is pressed.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
+        },
+        "onCancel": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": true,
+          "description": "Callback for when the Dialog was closed without acceptance.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "onClose": {
           "flowType": {
@@ -679,68 +683,79 @@
               }
             }
           },
-          "required": false,
-          "description": "Callback that fires when the Drawer is closed."
+          "required": true,
+          "description": "Callback for when the Dialog closes.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
-        "onOpen": {
+        "themeDark": {
           "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: Event) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "Event"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
+            "name": "boolean"
           },
-          "required": false,
-          "description": "Callback that fires when the Drawer is opened."
+          "required": true,
+          "description": "Use the dark theme",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         }
       }
     }
   ],
-  "src/Drawer/temporary-drawer.js": [
+  "src/Drawer/index.js": [
     {
       "description": "",
-      "displayName": "TemporaryDrawerHeader",
+      "displayName": "DrawerHeaderRoot",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TemporaryDrawerHeaderContent",
+      "displayName": "DrawerHeaderContent",
+      "methods": []
+    },
+    {
+      "description": "A Header for Drawers",
+      "displayName": "DrawerHeader",
+      "methods": []
+    },
+    {
+      "description": "If you are using fixed a Toolbar, this provides space for it.",
+      "displayName": "DrawerToolbarSpacer",
+      "methods": []
+    },
+    {
+      "description": "Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else.",
+      "displayName": "DrawerContent",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TemporaryDrawerHeader",
-      "methods": []
+      "displayName": "DrawerRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
-      "displayName": "TemporaryDrawerContent",
+      "displayName": "DrawerDrawer",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "TemporaryDrawerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawerDrawer",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TemporaryDrawer",
+      "description": "A Drawer component",
+      "displayName": "Drawer",
       "methods": [],
       "props": {
         "open": {
@@ -836,7 +851,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "A floating action button component",
       "displayName": "Fab",
       "methods": [],
       "props": {
@@ -845,14 +860,33 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the Fab smaller."
+          "description": "Make the Fab smaller.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "exited": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "cssOnly": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "cssOnly Fab."
+          "description": "cssOnly Fab.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }
@@ -902,6 +936,11 @@
   "src/Grid/index.js": [
     {
       "description": "",
+      "displayName": "GridRoot",
+      "methods": []
+    },
+    {
+      "description": "A Grid cell",
       "displayName": "GridCell",
       "methods": [],
       "props": {
@@ -972,17 +1011,13 @@
       }
     },
     {
-      "description": "",
-      "displayName": "GridRoot",
-      "methods": []
-    },
-    {
-      "description": "",
+      "description": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
       "displayName": "GridInner",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A Grid component",
+      "displayName": "Grid",
       "methods": []
     }
   ],
@@ -1044,12 +1079,7 @@
     },
     {
       "description": "",
-      "displayName": "GridTile",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "GridTilePrimary",
+      "displayName": "GridTilePrimaryRoot",
       "methods": []
     },
     {
@@ -1066,21 +1096,27 @@
       }
     },
     {
-      "description": "",
+      "description": "A grid tile",
+      "displayName": "GridTile",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The primary content for a Grid tile",
+      "displayName": "GridTilePrimary",
+      "methods": []
+    },
+    {
+      "description": "The secondary content for a Grid tile",
       "displayName": "GridTileSecondary",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The title for a Grid tile",
       "displayName": "GridTileTitle",
       "methods": []
     },
     {
-      "description": "",
+      "description": "Supporting Text for the Grid Tile",
       "displayName": "GridTileTitleSupportText",
       "methods": []
     },
@@ -1161,7 +1197,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
       "displayName": "Icon",
       "methods": [
         {
@@ -1178,6 +1214,7 @@
             },
             {
               "name": "strategy",
+              "optional": true,
               "type": {
                 "name": "union",
                 "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
@@ -1273,8 +1310,8 @@
             "name": "ReactNode",
             "raw": "React.Node"
           },
-          "required": true,
-          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs",
+          "required": false,
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
           "defaultValue": {
             "value": "undefined",
             "computed": true
@@ -1307,45 +1344,22 @@
               }
             ]
           },
-          "required": true,
-          "description": "Handle multiple methods of embedding an icon."
+          "required": false,
+          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. If not set, 'auto' will be used or defaults set inside of RMWCProvider."
         },
         "prefix": {
           "flowType": {
             "name": "string"
           },
-          "required": true,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the className strategy."
+          "required": false,
+          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
         },
         "basename": {
           "flowType": {
             "name": "string"
           },
-          "required": true,
-          "description": "A base className for the icon namespace, i.e. material-icons"
-        }
-      }
-    }
-  ],
-  "src/IconButton/index.js": [
-    {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "string"
-          },
           "required": false,
-          "description": ""
-        },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": ""
+          "description": "A base className for the icon namespace, i.e. material-icons."
         }
       }
     }
@@ -1395,28 +1409,44 @@
             }
           },
           "required": false,
-          "description": "An onChange callback that receives an event with event.target.value set to true or false."
+          "description": "An onChange callback that receives an event with event.target.value set to true or false.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "on": {
           "flowType": {
             "name": "Object"
           },
           "required": true,
-          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor."
+          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "off": {
           "flowType": {
             "name": "Object"
           },
           "required": true,
-          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor."
+          "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
-        "value": {
+        "checked": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether the toggle is on or off"
+          "description": "Whether the toggle is on or off",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }
@@ -1564,74 +1594,41 @@
           },
           "required": false,
           "description": "A modifier for an active state."
-        },
-        "permanentDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Permanent Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "persistentDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Persistent Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "temporaryDrawerSelected": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "A modifier for a selected item in Temporary Drawer.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
         }
       }
     },
     {
-      "description": "",
+      "description": "Text for the ListItem",
       "displayName": "ListItemText",
       "methods": []
     },
     {
-      "description": "",
+      "description": "Secondary text for the ListItem",
       "displayName": "ListItemSecondaryText",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "ListItemStartDetail",
+      "description": "A graphic / icon for the ListItem",
+      "displayName": "ListItemGraphic",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "ListItemStartDetail",
+      "description": "A meta icon for the ListItem",
+      "displayName": "ListItemMeta",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A container to group ListItems",
       "displayName": "ListGroup",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A subheader for the ListGroup",
       "displayName": "ListGroupSubheader",
       "methods": []
     },
     {
-      "description": "",
+      "description": "A divider for the List",
       "displayName": "ListDivider",
       "methods": []
     },
@@ -1660,6 +1657,68 @@
           },
           "required": false,
           "description": "Makes the list start detail circular for avatars."
+        },
+        "nonInteractive": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the list non interactive"
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "SimpleListItem",
+      "methods": [],
+      "props": {
+        "text": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Text for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "secondaryText": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Secondary Text for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "graphic": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "A graphic icon for the ListItem.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "meta": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "A meta icon for the ListItem",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       }
     }
@@ -1667,17 +1726,21 @@
   "src/Menu/index.js": [
     {
       "description": "",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "MenuAnchor",
-      "methods": []
-    },
-    {
-      "description": "",
       "displayName": "MenuRoot",
-      "methods": [],
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "tabIndex": {
           "defaultValue": {
@@ -1707,8 +1770,18 @@
       }
     },
     {
-      "description": "",
-      "displayName": "Menu",
+      "description": "This is just the ListItem component exported from the Menu module for convience.",
+      "displayName": "MenuItem",
+      "methods": []
+    },
+    {
+      "description": "A Menu Anchor. When using the anchorCorner prop of SimpleMenu, you must set MenuAnchors position to absolute.",
+      "displayName": "MenuAnchor",
+      "methods": []
+    },
+    {
+      "description": "A menu component",
+      "displayName": "SimpleMenu",
       "methods": [],
       "props": {
         "open": {
@@ -1761,6 +1834,48 @@
           },
           "required": false,
           "description": "Callback that fires when a Menu item is selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomeLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
         }
       }
     }
@@ -1780,7 +1895,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  buttonDefaultRipple: boolean,\n  listItemDefaultRipple: boolean,\n  iconClassNameBase: string,\n  iconClassNamePrefix: string,\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component'\n}",
                 "signature": {
                   "properties": [
                     {
@@ -1840,14 +1955,6 @@
                         ],
                         "required": true
                       }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
                     }
                   ]
                 },
@@ -1864,28 +1971,44 @@
             "name": "boolean"
           },
           "required": true,
-          "description": ""
+          "description": "Set the buttons ripple effect globally",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "listItemDefaultRipple": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": ""
+          "description": "Set the listItems ripple effect globally",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "iconClassNameBase": {
           "flowType": {
             "name": "string"
           },
           "required": true,
-          "description": ""
+          "description": "Set the iconClassNameBase. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "'material-icons'",
+            "computed": false
+          }
         },
         "iconClassNamePrefix": {
           "flowType": {
             "name": "string"
           },
           "required": true,
-          "description": ""
+          "description": "Set the iconClassNamePrefix. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "''",
+            "computed": false
+          }
         },
         "iconStrategy": {
           "flowType": {
@@ -1915,15 +2038,11 @@
             ]
           },
           "required": true,
-          "description": ""
-        },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": ""
+          "description": "Set the default iconStrategy. Read the icon docs for more info.",
+          "defaultValue": {
+            "value": "'auto'",
+            "computed": false
+          }
         }
       }
     }
@@ -2126,12 +2245,6 @@
         "role": {
           "defaultValue": {
             "value": "'listbox'",
-            "computed": false
-          }
-        },
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'0'",
             "computed": false
           }
         }
@@ -2497,7 +2610,7 @@
       "methods": []
     },
     {
-      "description": "@name Snackbar",
+      "description": "A Snackbar component for notifications.",
       "displayName": "Snackbar",
       "methods": [],
       "props": {
@@ -2508,7 +2621,7 @@
           "required": false,
           "description": "Show the Snackbar."
         },
-        "onClose": {
+        "onShow": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -2521,7 +2634,22 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar closes."
+          "description": "A callback thats fired when the Snackbar shows."
+        },
+        "onHide": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => mixed",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "A callback thats fired when the Snackbar hides."
         },
         "message": {
           "flowType": {
@@ -2667,21 +2795,77 @@
   "src/Tabs/index.js": [
     {
       "description": "",
+      "displayName": "TabBarRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "TabBarIndicator",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerRoot",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerIndicatorBack",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerIndicatorInner",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TabBarScrollerScrollFrameEl",
+      "methods": []
+    },
+    {
+      "description": "A Tab component",
       "displayName": "Tab",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "TabBarRoot",
+      "description": "A Tab icon. This is an instance of the Icon component.",
+      "displayName": "TabIcon",
       "methods": []
     },
     {
-      "description": "",
-      "displayName": "TabBarIndicatorEl",
+      "description": "Text that goes under a Tab icon",
+      "displayName": "TabIconText",
       "methods": []
     },
     {
-      "description": "",
+      "description": "The TabBar component",
       "displayName": "TabBar",
       "methods": [],
       "props": {
@@ -2717,34 +2901,35 @@
       }
     },
     {
-      "description": "",
-      "displayName": "TabBarScrollerRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerIndicatorBack",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerIndicatorForward",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerIndicatorInner",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerScrollFrameEl",
-      "methods": []
-    },
-    {
-      "description": "",
+      "description": "The TabBar Scroll container",
       "displayName": "TabBarScroller",
-      "methods": []
+      "methods": [],
+      "props": {
+        "indicatorForward": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
+          "defaultValue": {
+            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
+            "computed": false
+          }
+        },
+        "indicatorBack": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The back indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
+          "defaultValue": {
+            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
+            "computed": false
+          }
+        }
+      }
     }
   ],
   "src/TextField/index.js": [
@@ -2808,6 +2993,21 @@
       "methods": []
     },
     {
+      "description": "",
+      "displayName": "TextFieldOutline",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TextFieldOutlinePath",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "TextFieldIdleOutline",
+      "methods": []
+    },
+    {
       "description": "A help text component",
       "displayName": "TextFieldHelperText",
       "methods": [],
@@ -2829,7 +3029,8 @@
       }
     },
     {
-      "description": "",
+      "description": "An Icon in a TextField",
+      "displayName": "TextFieldIcon",
       "methods": [],
       "props": {
         "use": {
@@ -2866,6 +3067,34 @@
           },
           "required": false,
           "description": "Disables the input."
+        },
+        "required": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Mark the input as required."
+        },
+        "dense": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField dense"
+        },
+        "box": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Box in the TextField"
+        },
+        "outlined": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Outline the TextField"
         },
         "label": {
           "flowType": {
@@ -2911,13 +3140,6 @@
           },
           "required": false,
           "description": "Makes the TextField fullwidth."
-        },
-        "box": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes the TextField have a visiual box."
         }
       }
     }
@@ -2998,7 +3220,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A Toolbar title",
       "displayName": "ToolbarTitle",
       "methods": []
     },
@@ -3031,7 +3253,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A Toolbar row",
       "displayName": "ToolbarRow",
       "methods": []
     },
@@ -3041,32 +3263,14 @@
       "methods": []
     },
     {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": "The icon to use"
-        }
-      }
+      "description": "A Menu Icon For the Toolbar. This is an instance of the Icon component.",
+      "displayName": "ToolbarMenuIcon",
+      "methods": []
     },
     {
-      "description": "",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": "The icon to use"
-        }
-      }
+      "description": "A standard Icon for toolbar actions. This is an instance of the Icon component.",
+      "displayName": "ToolbarIcon",
+      "methods": []
     },
     {
       "description": "",
@@ -3198,6 +3402,12 @@
           "returns": null
         }
       ]
+    }
+  ],
+  "src/docs/Home.js": [
+    {
+      "description": "",
+      "methods": []
     }
   ],
   "src/docs/Submenu.js": [

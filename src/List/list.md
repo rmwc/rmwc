@@ -2,8 +2,12 @@
 
 > Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
+ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
+
 import from **rmwc/List**  
 [https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
+
+## Standard Usage
 
 ```jsx render
 import {
@@ -11,31 +15,43 @@ import {
   ListItem,
   ListItemText,
   ListItemSecondaryText,
-  ListItemStartDetail,
-  ListItemEndDetail,
-  ListDivider,
-  ListGroup,
-  ListGroupSubheader
+  ListItemGraphic,
+  ListItemMeta
 } from 'rmwc/List';
 
 <List>
   <ListItem>
-    <ListItemStartDetail>star_border</ListItemStartDetail>
+    <ListItemGraphic>star_border</ListItemGraphic>
     <ListItemText>Cookies</ListItemText>
-    <ListItemEndDetail>info</ListItemEndDetail>
+    <ListItemMeta>info</ListItemMeta>
   </ListItem>
 
   <ListItem>
-    <ListItemStartDetail>favorite_border</ListItemStartDetail>
+    <ListItemGraphic>favorite_border</ListItemGraphic>
     <ListItemText>Pizza</ListItemText>
-    <ListItemEndDetail>info</ListItemEndDetail>
+    <ListItemMeta>info</ListItemMeta>
   </ListItem>
 
   <ListItem>
-    <ListItemStartDetail>mood</ListItemStartDetail>
+    <ListItemGraphic>mood</ListItemGraphic>
     <ListItemText>Icecream</ListItemText>
-    <ListItemEndDetail>info</ListItemEndDetail>
+    <ListItemMeta>info</ListItemMeta>
   </ListItem>
+</List>
+```
+
+## Simplified Usage
+
+```jsx render
+import {
+  List,
+  SimpleListItem
+} from 'rmwc/List';
+
+<List twoLine>
+  <SimpleListItem graphic="star_border" text="Cookies" secondaryText="Chocolate chip" meta="info" />
+  <SimpleListItem graphic="favorite_border" text="Pizza" secondaryText="Pepperoni" meta="info" />
+  <SimpleListItem graphic="mood" text="Icecream" secondaryText="Chocolate cookie dough" meta="info" />
 </List>
 ```
 
@@ -46,9 +62,10 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="ListItem" />
 <DocumentComponent displayName="ListItemText" />
 <DocumentComponent displayName="ListItemSecondaryText" />
-<DocumentComponent displayName="ListItemStartDetail" />
-<DocumentComponent displayName="ListItemEndDetail" />
+<DocumentComponent displayName="ListItemGraphic" />
+<DocumentComponent displayName="ListItemMeta" />
 <DocumentComponent displayName="ListDivider" />
 <DocumentComponent displayName="ListGroup" />
-<DocumentComponent displayName="ListGroupSubheade" />
+<DocumentComponent displayName="ListGroupSubheader" />
+<DocumentComponent displayName="SimpleListItem" />
 ```
