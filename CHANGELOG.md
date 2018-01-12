@@ -4,11 +4,11 @@
 
 * **IconToggle:**  Changed “value” to more idiomatic “checked” prop [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([03c8eeca](https://github.com/jamesmfriedman/rmwc/commit/03c8eecaa309de6d57fb839229e3ee1cfbf2577c))
 * **default exports:**  Removed default exports from modules that export more than one usable component. [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([abf940bb](https://github.com/jamesmfriedman/rmwc/commit/abf940bb9891fd7f432a11289a1cbab04847325b))
-* **Dialog:**  Made Dialog standard and moved defaultDialogTemplate to a new SimpleDialog component [breaking] [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([f6524eda](https://github.com/jamesmfriedman/rmwc/commit/f6524eda2ac0789345b0d94bdc2945969ce7db5b))
+* **Dialog:**  The Dialog component is now standard composable component. An existing DefaultDialogTemplate has been turned into a SimpleDialog component [breaking] [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([f6524eda](https://github.com/jamesmfriedman/rmwc/commit/f6524eda2ac0789345b0d94bdc2945969ce7db5b))
 * **Snackbar:**  removed non-standard onClose handler, replaced with new onShow and onHide events from MDC [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([4174bfbd](https://github.com/jamesmfriedman/rmwc/commit/4174bfbdbddf9f4e3406aeb79afd183ad65c02ef))
-* **List:**  MDC breakign change, renaming ListItemStartDetail -> ListItemGraphic, ListItemEndDetail -> ListItemMeta [#86](https://github.com/jamesmfriedman/rmwc/pull/86), [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([a03c9fd8](https://github.com/jamesmfriedman/rmwc/commit/a03c9fd8f7ed5ab5be69c01a74485d59ec9b50f4))
-* **Drawer:**  Simplified and consolidated all Drawer types into one component, matching breaking changes from MDC. [#86](https://github.com/jamesmfriedman/rmwc/pull/86) [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([4c224aed](https://github.com/jamesmfriedman/rmwc/commit/4c224aedd3ee30fe4f14abbedaad8546a7033f36))
-* **Menu:**  corrected name to match MDC, Menu -> SimpleMenu, MenuItems -> SimpleMenuItems ([e8a2aafb](https://github.com/jamesmfriedman/rmwc/commit/e8a2aafb4c71692cb1f988edd0c88d1e16799517))
+* **List:**  MDC breaking change, renaming ListItemStartDetail -> ListItemGraphic, ListItemEndDetail -> ListItemMeta [#86](https://github.com/jamesmfriedman/rmwc/pull/86), [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([a03c9fd8](https://github.com/jamesmfriedman/rmwc/commit/a03c9fd8f7ed5ab5be69c01a74485d59ec9b50f4))
+* **Drawer:**  MDC breaking change, Simplified and consolidated all Drawer types into one component. [#86](https://github.com/jamesmfriedman/rmwc/pull/86) [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([4c224aed](https://github.com/jamesmfriedman/rmwc/commit/4c224aedd3ee30fe4f14abbedaad8546a7033f36))
+* **Menu:**  Corrected name to match MDC, Menu -> SimpleMenu, MenuItems -> SimpleMenuItems ([e8a2aafb](https://github.com/jamesmfriedman/rmwc/commit/e8a2aafb4c71692cb1f988edd0c88d1e16799517))
 
 ##### Documentation Changes
 
@@ -31,21 +31,21 @@
 
 ##### New Features
 
-* **Tabs:**  Fixes known issues, addis TabIcon and TabIconText [#77](https://github.com/jamesmfriedman/rmwc/pull/77) [#75](https://github.com/jamesmfriedman/rmwc/pull/75) [#73](https://github.com/jamesmfriedman/rmwc/pull/73) ([124db29d](https://github.com/jamesmfriedman/rmwc/commit/124db29dedb64c99ff5b1e7063c08baefdd68bc1))
+* **Tabs:**  Fixes known issues, adds TabIcon and TabIconText [#77](https://github.com/jamesmfriedman/rmwc/pull/77) [#75](https://github.com/jamesmfriedman/rmwc/pull/75) [#73](https://github.com/jamesmfriedman/rmwc/pull/73) ([124db29d](https://github.com/jamesmfriedman/rmwc/commit/124db29dedb64c99ff5b1e7063c08baefdd68bc1))
 * **SimpleListItem:**  Added a convenience wrapper for ListItems. ([cde5661a](https://github.com/jamesmfriedman/rmwc/commit/cde5661ab6210f64739e0f7d98bfdeeadd57078e))
-* **Fab:**  added exited option [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([0297803b](https://github.com/jamesmfriedman/rmwc/commit/0297803b99467729b3b9ca6ae6ce7df5d747e422))
+* **Fab:**  added exited prop [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([0297803b](https://github.com/jamesmfriedman/rmwc/commit/0297803b99467729b3b9ca6ae6ce7df5d747e422))
 * **TextField:**  added dense and outlined TextFields [#86](https://github.com/jamesmfriedman/rmwc/pull/86), [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([45ccbb5f](https://github.com/jamesmfriedman/rmwc/commit/45ccbb5f46cb5c730d20d6bd782445433bd74343))
 * **SimpleMenu:**  adding anchorCorner [#83](https://github.com/jamesmfriedman/rmwc/pull/83) [#77](https://github.com/jamesmfriedman/rmwc/pull/77) ([0981b3df](https://github.com/jamesmfriedman/rmwc/commit/0981b3dfdb4f3c306fe38be746f728b85514803e))
 * **TextFields:**  Simplified icon usage ([f25e9230](https://github.com/jamesmfriedman/rmwc/commit/f25e92305a4c654fd50944273848bdaab6c791ea))
 
 ##### Bug Fixes
 
-* **simpleTag:**  Corrects issue when extending components and then overriding their tags ([c68f8b6e](https://github.com/jamesmfriedman/rmwc/commit/c68f8b6e2c45589a48fe81915a2b1f66d4fc0094))
-* **Card:**  consuming props ([8d7a9027](https://github.com/jamesmfriedman/rmwc/commit/8d7a902705baf23c396ca63b60de128f10d95bc2))
+* **simpleTag:**  Corrects issue when extending components and then specifying a tag ([c68f8b6e](https://github.com/jamesmfriedman/rmwc/commit/c68f8b6e2c45589a48fe81915a2b1f66d4fc0094))
+* **Card:**  consuming props so they dont end up as unhandled Dom attributes ([8d7a9027](https://github.com/jamesmfriedman/rmwc/commit/8d7a902705baf23c396ca63b60de128f10d95bc2))
 * **Select:**
   *  moved tabIndex in accordance with MDC breaking change. ([9a2c8123](https://github.com/jamesmfriedman/rmwc/commit/9a2c8123eb17ef5bf0fb35b32068bd097b7e6987))
   *  Placeholder value should be blank [#63](https://github.com/jamesmfriedman/rmwc/pull/63) ([6997d060](https://github.com/jamesmfriedman/rmwc/commit/6997d0606e70663f49678cecb23b93167032c563))
-  *  cssOnly tabIndex issue on Selects [#79](https://github.com/jamesmfriedman/rmwc/pull/79) ([a6b487f5](https://github.com/jamesmfriedman/rmwc/commit/a6b487f5269eed9eeb80b1c72ec063292bfde168))
+  *  Fixes cssOnly tabIndex issue on Selects [#79](https://github.com/jamesmfriedman/rmwc/pull/79) ([a6b487f5](https://github.com/jamesmfriedman/rmwc/commit/a6b487f5269eed9eeb80b1c72ec063292bfde168))
 * **drawer:**  list items don't show name and icon in story ([97c0bad8](https://github.com/jamesmfriedman/rmwc/commit/97c0bad8d9dddc6df8da2cfe1b4e15152a05e8ad))
 
 ##### Tests
