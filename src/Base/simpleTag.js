@@ -57,7 +57,7 @@ export const simpleTag = ({
       // consume any props that shouldnt be passed along
       const safeRest = { ...rest };
       consumeProps.forEach(p => {
-        Reflect.deleteProperty(safeRest, p);
+        delete safeRest[p];
       });
 
       // sometimes we are extending a component, we can still honor a text based tag
@@ -90,7 +90,7 @@ export const simpleTag = ({
 
         // make sure we delete our children here
         // so we dont recrusively clonse ourselves
-        Reflect.deleteProperty(safeRest, 'children');
+        delete safeRest.children;
         const child = React.Children.only(rest.children);
         return React.cloneElement(child, {
           ...child.props,
