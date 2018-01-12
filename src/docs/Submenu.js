@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ListItem, ListItemEndDetail, ListItemText } from 'rmwc/List';
+import { ListItem, ListItemMeta, ListItemText } from 'rmwc/List';
 import { Icon } from 'rmwc/Icon';
 
 export class Submenu extends React.Component {
   static propTypes = {
-    label: PropTypes.node,
+    label: PropTypes.node
   };
 
   state = {
-    isOpen: false,
+    isOpen: false
   };
 
   render() {
@@ -19,19 +19,19 @@ export class Submenu extends React.Component {
       <div className="submenu">
         <ListItem onClick={() => this.setState({ isOpen: !this.state.isOpen })}>
           <ListItemText>{label}</ListItemText>
-          <ListItemEndDetail>
+          <ListItemMeta>
             <Icon
               className={classNames('submenu__icon', {
-                'submenu__icon--open': this.state.isOpen,
+                'submenu__icon--open': this.state.isOpen
               })}
             >
               chevron_right
             </Icon>
-          </ListItemEndDetail>
+          </ListItemMeta>
         </ListItem>
         <div
           className={classNames('submenu__children', {
-            'submenu__children--open': this.state.isOpen,
+            'submenu__children--open': this.state.isOpen
           })}
         >
           {children}

@@ -58,7 +58,7 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="GridList" />
 <DocumentComponent displayName="GridTile" />
 <DocumentComponent displayName="GridTilePrimary" />
-<DocumentComponent displayName="GridTilePrimaryContent" />
 <DocumentComponent displayName="GridTileSecondary" />
+<DocumentComponent displayName="GridTileTitleSupportText" />
 <DocumentComponent displayName="GridTileTitle" />
 ```

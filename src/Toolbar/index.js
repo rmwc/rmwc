@@ -47,6 +47,7 @@ export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
   ]
 });
 
+/** A Toolbar title  */
 export const ToolbarTitle = simpleTag({
   displayName: 'ToolbarTitle',
   classNames: 'mdc-toolbar__title'
@@ -84,6 +85,7 @@ export class ToolbarSection extends simpleTag({
   }
 }
 
+/** A Toolbar row  */
 export const ToolbarRow = simpleTag({
   displayName: 'ToolbarRow',
   classNames: 'mdc-toolbar__row'
@@ -98,28 +100,22 @@ export const ToolbarFixedAdjust = simpleTag({
 });
 
 /**
- * A Menu Icon For the Toolbar
+ * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
-type ToolbarMenuIconPropsT = {
-  /** The icon to use */
-  use: React.Node
-};
-
-export const ToolbarMenuIcon = (props: ToolbarMenuIconPropsT) => (
-  <Icon {...props} className={(props.className, 'mdc-toolbar__menu-icon')} />
-);
+export const ToolbarMenuIcon = simpleTag({
+  displayName: 'ToolbarMenuIcon',
+  tag: Icon,
+  classNames: 'mdc-toolbar__menu-icon'
+});
 
 /**
- * A standard Icon for toolbar actions
+ * A standard Icon for toolbar actions. This is an instance of the Icon component.
  */
-type ToolbarIconPropsT = {
-  /** The icon to use */
-  use: React.Node
-};
-
-export const ToolbarIcon = (props: ToolbarIconPropsT) => (
-  <Icon {...props} className={(props.className, 'mdc-toolbar__icon')} />
-);
+export const ToolbarIcon = simpleTag({
+  displayName: 'ToolbarIcon',
+  tag: Icon,
+  classNames: 'mdc-toolbar__icon'
+});
 
 export const Toolbar = withMDC({
   mdcConstructor: MDCToolbar,
@@ -189,5 +185,3 @@ export const Toolbar = withMDC({
     }
   }
 );
-
-export default Toolbar;

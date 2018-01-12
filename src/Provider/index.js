@@ -3,18 +3,22 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 export type RMWCProviderOptionsT = {
+  /** Set the buttons ripple effect globally */
   buttonDefaultRipple: boolean,
+  /** Set the listItems ripple effect globally */
   listItemDefaultRipple: boolean,
+  /** Set the iconClassNameBase. Read the icon docs for more info. */
   iconClassNameBase: string,
+  /** Set the iconClassNamePrefix. Read the icon docs for more info. */
   iconClassNamePrefix: string,
-  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component',
-  children?: React.Node
+  /** Set the default iconStrategy. Read the icon docs for more info. */
+  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component'
 };
 
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
   buttonDefaultRipple: true,
-  listItemDefaultRipple: false,
+  listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
   iconStrategy: 'auto'
@@ -34,6 +38,8 @@ export const getProviderOptions = (context: Object): RMWCProviderOptionsT => {
  * Prop override options in providerDefaults with the same name
  */
 export class RMWCProvider extends React.Component<RMWCProviderOptionsT> {
+  static defaultProps = providerDefaults;
+
   constructor(props: RMWCProviderOptionsT) {
     super(props);
     this.options = this.buildOptions(props);

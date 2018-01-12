@@ -8,6 +8,9 @@ import Button from '../Button';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
+/****************************************************************
+ * Public
+ ****************************************************************/
 /**
  * Primary card content
  */
@@ -73,7 +76,8 @@ export class CardActions extends simpleTag({
   ],
   defaultProps: {
     vertical: undefined
-  }
+  },
+  consumeProps: ['vertical']
 })<CardActionsT> {
   render() {
     return super.render();
@@ -107,7 +111,8 @@ export class CardMediaItem extends simpleTag({
       'mdc-card__media-item--2x': props.twoX,
       'mdc-card__media-item--3x': props.threeX
     }
-  ]
+  ],
+  consumeProps: ['oneDotFiveX', 'twoX', 'threeX']
 })<CardMediaItemT> {
   render() {
     return super.render();
@@ -122,7 +127,7 @@ export const CardHorizontalBlock: React.ComponentType<
   classNames: 'mdc-card__horizontal-block'
 });
 
-/** A Card action Button */
+/** A Card action Button. This is an instance of Button and can take all of the same props. */
 export const CardAction = simpleTag({
   displayName: 'CardAction',
   tag: Button,
@@ -155,5 +160,3 @@ export class Card extends simpleTag({
     return super.render();
   }
 }
-
-export default Card;

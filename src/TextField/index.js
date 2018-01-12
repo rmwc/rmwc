@@ -27,10 +27,12 @@ export const TextFieldRoot: React.ComponentType<
     {
       'mdc-text-field--textarea': props.textarea,
       'mdc-text-field--fullwidth': props.fullwidth,
-      'mdc-text-field--box': props.box
+      'mdc-text-field--box': props.box,
+      'mdc-text-field--outlined': props.outlined,
+      'mdc-text-field--dense': props.dense
     }
   ],
-  consumeProps: ['textarea', 'box', 'fullwidth']
+  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense']
 });
 
 export const TextFieldLabel = simpleTag({
@@ -65,6 +67,22 @@ export const TextFieldBottomLine = simpleTag({
   classNames: 'mdc-text-field__bottom-line'
 });
 
+export const TextFieldOutline = simpleTag({
+  displayName: 'TextFieldOutline',
+  classNames: 'mdc-text-field__outline'
+});
+
+export const TextFieldOutlinePath = simpleTag({
+  displayName: 'TextFieldOutlinePath',
+  tag: 'path',
+  classNames: 'mdc-text-field__outline-path'
+});
+
+export const TextFieldIdleOutline = simpleTag({
+  displayName: 'TextFieldIdleOutline',
+  classNames: 'mdc-text-field__idle-outline'
+});
+
 type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
   persistent?: boolean,
@@ -92,23 +110,36 @@ export class TextFieldHelperText extends simpleTag({
   }
 }
 
-/**
- * An Icon in a TextField
- */
 type TextFieldIconPropsT = {
   /** The icon to use */
   use: React.Node
 } & IconPropsT;
 
-export const TextFieldIcon = (props: TextFieldIconPropsT) => (
-  <Icon {...props} className={(props.className, 'mdc-text-field__icon')} />
-);
+/**
+ * An Icon in a TextField
+ */
+export class TextFieldIcon extends simpleTag({
+  tag: Icon,
+  classNames: 'mdc-text-field__icon'
+})<TextFieldIconPropsT> {
+  render() {
+    return super.render();
+  }
+}
 
 type TextFieldPropsT = {
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,
   /** Disables the input. */
   disabled?: boolean,
+  /** Mark the input as required. */
+  required?: boolean,
+  /** Makes the TextField dense */
+  dense?: boolean,
+  /** Box in the TextField */
+  box?: boolean,
+  /** Outline the TextField */
+  outlined?: boolean,
   /** A label for the input. */
   label?: React.Node,
   /** Add a leading icon. */
@@ -125,14 +156,22 @@ export const TextField = withMDC({
   mdcElementRef: true,
   defaultProps: {
     inputRef: noop,
-    disabled: false,
+    disabled: undefined,
+    required: undefined,
+    dense: undefined,
     box: undefined,
+    outlined: undefined,
     fullwidth: undefined,
     label: undefined,
     textarea: undefined
   },
-  onUpdate: (props, nextProps, api, inst) => {
-    if (props && props.textarea !== nextProps.textarea) {
+  didUpdate: (props, nextProps, api, inst) => {
+    if (
+      props &&
+      (props.textarea !== nextProps.textarea ||
+        props.outlined !== nextProps.outlined ||
+        props.dense !== nextProps.dense)
+    ) {
       inst.mdcComponentReinit();
     }
   }
@@ -145,7 +184,9 @@ export const TextField = withMDC({
         className,
         inputRef,
         box,
+        outlined,
         fullwidth,
+        dense,
         withLeadingIcon,
         withTrailingIcon,
         mdcElementRef,
@@ -188,6 +229,8 @@ export const TextField = withMDC({
           })}
           textarea={textarea}
           box={box}
+          dense={dense}
+          outlined={outlined}
           fullwidth={fullwidth}
           elementRef={mdcElementRef}
         >
@@ -200,7 +243,16 @@ export const TextField = withMDC({
             </TextFieldLabel>
           )}
           {!!withTrailingIcon && renderIcon(withTrailingIcon)}
-          <TextFieldBottomLine />
+
+          {outlined && (
+            <TextFieldOutline>
+              <svg>
+                <TextFieldOutlinePath />
+              </svg>
+            </TextFieldOutline>
+          )}
+
+          {outlined ? <TextFieldIdleOutline /> : <TextFieldBottomLine />}
         </TextFieldRoot>
       );
     }

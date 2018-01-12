@@ -1,25 +1,160 @@
-export {
-  PermanentDrawer,
-  PermanentDrawerToolbarSpacer,
-  PermanentDrawerContent
-} from './permanent-drawer';
+// @flow
+import * as React from 'react';
+import { simpleTag } from '../Base';
+import { List } from '../List';
+import { withMDC, noop } from '../Base';
+import {
+  MDCPersistentDrawer,
+  MDCTemporaryDrawer
+} from '@material/drawer/dist/mdc.drawer';
 
-export {
-  PersistentDrawerHeaderRoot,
-  PersistentDrawerHeaderContent,
-  PersistentDrawerHeader,
-  PersistentDrawerContent,
-  PersistentDrawerRoot,
-  PersistentDrawerDrawer,
-  PersistentDrawer
-} from './persistent-drawer';
+/***************************************************************************************
+ * Drawer Headers
+ ***************************************************************************************/
+export const DrawerHeaderRoot = simpleTag({
+  displayName: 'DrawerHeaderRoot',
+  classNames: 'mdc-drawer__header'
+});
 
-export {
-  TemporaryDrawerHeaderRoot,
-  TemporaryDrawerHeaderContent,
-  TemporaryDrawerHeader,
-  TemporaryDrawerContent,
-  TemporaryDrawerRoot,
-  TemporaryDrawerDrawer,
-  TemporaryDrawer
-} from './temporary-drawer';
+export const DrawerHeaderContent = simpleTag({
+  displayName: 'DrawerHeaderContent',
+  classNames: 'mdc-drawer__header-content'
+});
+
+/** A Header for Drawers */
+export class DrawerHeader extends React.Component<{}> {
+  render() {
+    const { children, ...rest } = this.props;
+    return (
+      <DrawerHeaderRoot {...rest}>
+        <DrawerHeaderContent>{children}</DrawerHeaderContent>
+      </DrawerHeaderRoot>
+    );
+  }
+}
+
+/** If you are using fixed a Toolbar, this provides space for it. */
+export const DrawerToolbarSpacer = simpleTag({
+  displayName: 'DrawerToolbarSpacer',
+  classNames: 'mdc-drawer__toolbar-spacer'
+});
+
+/***************************************************************************************
+ * Drawer Content
+ ***************************************************************************************/
+/** Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else. */
+export const DrawerContent = simpleTag({
+  displayName: 'DrawerContent',
+  tag: List,
+  classNames: 'mdc-drawer__content'
+});
+
+/***************************************************************************************
+ * Drawers
+ ***************************************************************************************/
+export const DrawerRoot = simpleTag({
+  displayName: 'DrawerRoot',
+  tag: 'aside',
+  classNames: props => [
+    'mdc-drawer',
+    {
+      'mdc-drawer--permanent': props.permanent,
+      'mdc-drawer--persistent': props.persistent,
+      'mdc-drawer--temporary': props.temporary
+    }
+  ],
+  consumeProps: ['permanent', 'persistent', 'temporary']
+});
+
+export const DrawerDrawer = simpleTag({
+  displayName: 'DrawerDrawer',
+  tag: 'nav',
+  classNames: 'mdc-drawer__drawer'
+});
+
+type DrawerPropsT = {
+  /** Opens or closes the Drawer. */
+  open: boolean,
+  /** Callback that fires when the Drawer is closed. */
+  onClose?: (evt: Event) => mixed,
+  /** Callback that fires when the Drawer is opened. */
+  onOpen?: (evt: Event) => mixed
+};
+
+/** A Drawer component */
+export const Drawer = withMDC({
+  getMdcConstructorOrInstance: props => {
+    if (props.temporary) {
+      return MDCTemporaryDrawer;
+    } else if (props.persistent) {
+      return MDCPersistentDrawer;
+    }
+
+    return null;
+  },
+  defaultProps: {
+    open: false,
+    onOpen: noop,
+    onClose: noop,
+    permanent: false,
+    persistent: false,
+    temporary: false
+  },
+  mdcElementRef: true,
+  mdcEvents: props => {
+    let drawerConstructorName;
+
+    if (props.temporary) {
+      drawerConstructorName = 'MDCTemporaryDrawer';
+    } else if (props.persistent) {
+      drawerConstructorName = 'MDCPersistentDrawer';
+    } else {
+      // we dont have a valid event namespace, escape out
+      return {};
+    }
+
+    return {
+      [`${drawerConstructorName}:open`]: (evt, props) => props.onOpen(evt),
+      [`${drawerConstructorName}:close`]: (evt, props) => props.onClose(evt)
+    };
+  },
+  onUpdate(props, nextProps, api, inst) {
+    if (
+      props &&
+      ['permanent', 'persistent', 'temporary'].some(
+        p => props[p] !== nextProps[p]
+      )
+    ) {
+      inst.mdcComponentDestroy();
+      return;
+    }
+
+    if (api && api.open !== !!nextProps.open) {
+      api.open = !!nextProps.open;
+    }
+  },
+  didUpdate(props, nextProps, api, inst) {
+    if (
+      props &&
+      ['permanent', 'persistent', 'temporary'].some(
+        p => props[p] !== nextProps[p]
+      )
+    ) {
+      inst.mdcComponentInit();
+      return;
+    }
+  }
+})(
+  class extends React.Component<DrawerPropsT> {
+    static displayName = 'Drawer';
+
+    render() {
+      const { children, onOpen, onClose, mdcElementRef, ...rest } = this.props;
+      return (
+        <DrawerRoot elementRef={mdcElementRef} {...rest}>
+          <DrawerDrawer>{children}</DrawerDrawer>
+        </DrawerRoot>
+      );
+    }
+  }
+);

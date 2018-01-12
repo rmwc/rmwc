@@ -20,6 +20,9 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 {/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. */}
 <TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="Write something..." />
 
+{/* An outlined TextField */}
+<TextField outlined label="Write something..." />
+
 {/* You can make the TextField a textarea. */}
 <TextField textarea fullwidth label="Multiline..." rows="8" />
 

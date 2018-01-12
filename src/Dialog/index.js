@@ -21,28 +21,33 @@ export const DialogRoot = simpleTag({
   consumeProps: ['themeDark']
 });
 
+/** The Dialog backdrop */
 export const DialogBackdrop = simpleTag({
   displayName: 'DialogBackdrop',
   classNames: 'mdc-dialog__backdrop'
 });
 
+/** The Dialog surface */
 export const DialogSurface = simpleTag({
   displayName: 'DialogSurface',
   classNames: 'mdc-dialog__surface'
 });
 
+/** The Dialog header */
 export const DialogHeader = simpleTag({
   displayName: 'DialogHeader',
   tag: 'header',
   classNames: 'mdc-dialog__header'
 });
 
+/** The Dialog title */
 export const DialogHeaderTitle = simpleTag({
   displayName: 'DialogHeaderTitle',
   tag: 'h2',
   classNames: 'mdc-dialog__header__title'
 });
 
+/** The Dialog body */
 export const DialogBody = simpleTag({
   displayName: 'DialogBody',
   tag: 'section',
@@ -55,6 +60,7 @@ export const DialogBody = simpleTag({
   consumeProps: ['scrollable']
 });
 
+/** The Dialog footer */
 export const DialogFooter = simpleTag({
   displayName: 'DialogFooter',
   tag: 'footer',
@@ -68,6 +74,7 @@ type DialogFooterButtonT = {
   cancel?: boolean
 } & SimpleTagPropsT;
 
+/** A Dialog footer button */
 export class DialogFooterButton extends simpleTag({
   displayName: 'DialogFooterButton',
   tag: Button,
@@ -137,22 +144,16 @@ export const Dialog = withMDC({
         onAccept,
         onCancel,
         onClose,
-        children,
         mdcElementRef,
         ...rest
       } = this.props;
-      const template = children || <DefaultDialogTemplate />;
 
-      return React.cloneElement(template, {
-        ...template.props,
-        ...rest,
-        elementRef: mdcElementRef
-      });
+      return <DialogRoot elementRef={mdcElementRef} {...rest} />;
     }
   }
 );
 
-type DefaultDialogTemplatePropsT = {
+type SimpleDialogPropsT = {
   /** A title for the default Dialog template. */
   title?: React.Node,
   /** Additional Dialog header content for the default Dialog template. */
@@ -169,11 +170,10 @@ type DefaultDialogTemplatePropsT = {
   children?: React.Node,
   /** Allow the body to be scrollable */
   scrollable?: boolean
-};
+} & DialogPropsT;
 
-export class DefaultDialogTemplate extends React.Component<
-  DefaultDialogTemplatePropsT
-> {
+/** A non-standard SimpleDialog component for ease of use. */
+export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
   static defaultProps = {
     title: undefined,
     header: undefined,
@@ -181,7 +181,13 @@ export class DefaultDialogTemplate extends React.Component<
     footer: undefined,
     scrollable: undefined,
     acceptLabel: 'Accept',
-    cancelLabel: 'Cancel'
+    cancelLabel: 'Cancel',
+    open: false,
+    themeDark: false,
+    onAccept: noop,
+    onCancel: noop,
+    onClose: noop,
+    children: undefined
   };
 
   render() {
@@ -198,7 +204,7 @@ export class DefaultDialogTemplate extends React.Component<
     } = this.props;
 
     return (
-      <DialogRoot {...rest}>
+      <Dialog {...rest}>
         <DialogSurface>
           {(!!title || !!header) && (
             <DialogHeader>
@@ -226,9 +232,7 @@ export class DefaultDialogTemplate extends React.Component<
           )}
         </DialogSurface>
         <DialogBackdrop />
-      </DialogRoot>
+      </Dialog>
     );
   }
 }
-
-export default Dialog;

@@ -4,8 +4,9 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemStartDetail,
-  ListItemEndDetail
+  ListItemGraphic,
+  ListItemMeta,
+  SimpleListItem
 } from './';
 
 describe('List', () => {
@@ -13,14 +14,23 @@ describe('List', () => {
     mount(
       <List>
         <ListItem ripple>
-          <ListItemStartDetail>
-            <i />
-          </ListItemStartDetail>
+          <ListItemGraphic />
           <ListItemText>Cookies</ListItemText>
-          <ListItemEndDetail>
-            <i />
-          </ListItemEndDetail>
+          <ListItemMeta />
         </ListItem>
+      </List>
+    );
+  });
+
+  it('SimpleListItem renders', () => {
+    mount(
+      <List>
+        <SimpleListItem
+          graphic="star_border"
+          text="Cookies"
+          secondaryText="Chocolate chip"
+          meta="info"
+        />
       </List>
     );
   });

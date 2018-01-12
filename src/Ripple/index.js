@@ -51,11 +51,6 @@ export class Ripple extends React.Component<RipplePropsT> {
   }
 
   initRipple() {
-    // a stupid hack for the test environment where this ends up undefined
-    if (process.env.NODE_ENV === 'test' && this.el) {
-      this.el.dataset = {};
-    }
-
     this.api = new MDCRipple(this.el);
     this.checkProps(this.props);
   }
