@@ -110,7 +110,11 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       props.onChange(evt);
     }
   },
-  contextTypes: { isTabScroller: PropTypes.bool, tabBarApi: PropTypes.any },
+  contextTypes: {
+    isTabScroller: PropTypes.bool,
+    tabBarApi: PropTypes.any,
+    reinitTabBarScroller: PropTypes.func
+  },
   defaultProps: {
     onChange: noop,
     activeTabIndex: 0
@@ -125,14 +129,16 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     }
   },
   didUpdate: (props, nextProps, api, inst) => {
-    if (!api) {
+    if (inst.context.tabBarApi && api !== inst.context.tabBarApi) {
       // if we dont have an api, it might be being held hostage by the TabBar scroller
       // Grab it if its available from the context and re-init the component
-      if (inst.context.tabBarApi) {
-        inst.mdcComponentReinit();
-      }
+      inst.mdcComponentDestroy();
+      inst.mdcComponentReinit();
       return;
     }
+
+    // exit if we have no api
+    if (!api) return;
 
     const childrenDidChange =
       props &&
@@ -142,17 +148,35 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       JSON.stringify(props.children.map(({ key }) => key)) !==
         JSON.stringify(nextProps.children.map(({ key }) => key));
 
-    // destroy the foundation for all tabs manually to remove all  listeners
-    if (childrenDidChange && api.tabs) {
-      api.tabs.forEach(mdcTab => {
-        mdcTab.foundation_ && mdcTab.foundation_.destroy();
-      });
+    const tabsLengthMismatch =
+      React.Children.toArray(nextProps.children).filter(
+        c => c.type.displayName === 'Tab'
+      ).length !== api.tabs.length;
 
-      inst.mdcComponentReinit();
+    // Children changing is a pain...
+    // We have to perform a lot of cleanup and sometimes we have to reinit
+    // A parent tab bar scroller
+    if (childrenDidChange || tabsLengthMismatch) {
+      // destroy the foundation for all tabs manually to remove all  listeners
+      if (api.tabs) {
+        api.tabs.forEach(mdcTab => {
+          mdcTab.foundation_ && mdcTab.foundation_.destroy();
+        });
+      }
+      // when tab scroller is wrapping the component
+      if (inst.context.isTabScroller) {
+        // destroy the foundation
+        inst.mdcComponentDestroy();
+        // trigger reinit on the scroller container
+        inst.context.reinitTabBarScroller();
+      } else {
+        // reinit
+        inst.mdcComponentReinit();
+      }
     }
   }
 })(
-  class extends React.PureComponent<TabBarPropsT> {
+  class extends React.Component<TabBarPropsT> {
     static displayName = 'TabBar';
 
     static contextTypes = {
@@ -185,7 +209,8 @@ type TabBarScrollerStateT = {
 /** The TabBar Scroll container */
 export const TabBarScroller = withMDC({
   mdcConstructor: MDCTabBarScroller,
-  mdcApiRef: true
+  mdcApiRef: true,
+  mdcComponentReinit: true
 })(
   class extends React.Component<TabBarScrollerPropsT, TabBarScrollerStateT> {
     static displayName = 'TabBarScroller';
@@ -220,7 +245,11 @@ export const TabBarScroller = withMDC({
      * We have to jump through some context hoops to get the tabBar api instance back to the TabBar
      */
     getChildContext() {
-      return { isTabScroller: true, tabBarApi: this.state.tabBarApi };
+      return {
+        isTabScroller: true,
+        tabBarApi: this.state.tabBarApi,
+        reinitTabBarScroller: () => this.reinitTabBarScroller()
+      };
     }
 
     componentWillReceiveProps(props) {
@@ -240,12 +269,18 @@ export const TabBarScroller = withMDC({
 
     static childContextTypes = {
       isTabScroller: PropTypes.bool,
-      tabBarApi: PropTypes.any
+      tabBarApi: PropTypes.any,
+      reinitTabBarScroller: PropTypes.func
     };
+
+    reinitTabBarScroller() {
+      this.props.mdcComponentReinit();
+    }
 
     render() {
       const {
         children,
+        mdcComponentReinit,
         indicatorForward,
         indicatorBack,
         mdcApiRef,
