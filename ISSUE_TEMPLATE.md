@@ -29,7 +29,8 @@ Follow the template below to ensure the quickest and most accurate response to y
 ### What are the steps to reproduce the bug?
 
 > Please write the steps which need to be taken in order to reproduce the bug. These steps should be
-> as detailed as possible, e.g.
+> as detailed as possible. If possible please use this sandbox (https://codesandbox.io/s/p7lm5oyn3m) and try
+> to reproduce the bug. It makes it much easier to resolve issues.  
 
 
 ### What is the expected behavior?
