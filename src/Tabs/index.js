@@ -132,7 +132,6 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     if (inst.context.tabBarApi && api !== inst.context.tabBarApi) {
       // if we dont have an api, it might be being held hostage by the TabBar scroller
       // Grab it if its available from the context and re-init the component
-      inst.mdcComponentDestroy();
       inst.mdcComponentReinit();
       return;
     }
@@ -210,7 +209,19 @@ type TabBarScrollerStateT = {
 export const TabBarScroller = withMDC({
   mdcConstructor: MDCTabBarScroller,
   mdcApiRef: true,
-  mdcComponentReinit: true
+  mdcComponentReinit: true,
+  onUpdate: (currentProps, nextProps, api, inst) => {    
+    // componentWillReceiveProps is not called
+    // when the component is first mounted.
+    // We need to force react to call getChildContext
+    // after the api becomes available.
+
+    // invoked from mdcComponentInit currentProps is undefined
+    if (currentProps === undefined) {
+      // trigger an update
+      inst.setState({}); // or inst.forceUpdate()
+    }
+  }
 })(
   class extends React.Component<TabBarScrollerPropsT, TabBarScrollerStateT> {
     static displayName = 'TabBarScroller';
@@ -243,29 +254,17 @@ export const TabBarScroller = withMDC({
     /**
      * The tab bar scroller inits the tabBar for us
      * We have to jump through some context hoops to get the tabBar api instance back to the TabBar
+     * mdcApiRef.tabBar is passed directly through props to the context
      */
     getChildContext() {
       return {
         isTabScroller: true,
-        tabBarApi: this.state.tabBarApi,
+        tabBarApi: this.props &&
+          this.props.mdcApiRef &&
+          this.props.mdcApiRef.tabBar,
         reinitTabBarScroller: () => this.reinitTabBarScroller()
       };
     }
-
-    componentWillReceiveProps(props) {
-      if (
-        props &&
-        props.mdcApiRef &&
-        props.mdcApiRef.tabBar &&
-        props.mdcApiRef.tabBar !== this.state.tabBarApi
-      ) {
-        this.setState({ tabBarApi: props.mdcApiRef.tabBar });
-      }
-    }
-
-    state = {
-      tabBarApi: null
-    };
 
     static childContextTypes = {
       isTabScroller: PropTypes.bool,
