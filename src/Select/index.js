@@ -175,7 +175,10 @@ export const Select = withMDC({
       isFirstRun ||
       placeholderDidChange
     ) {
-      const newIndex = api.options.indexOf(api.nameditem(nextProps.value));
+      // if value = null, MDC will show the first option. This behaviour is not desired
+      let value = nextProps.value === null ? undefined : nextProps.value;
+
+      const newIndex = api.options.indexOf(api.nameditem(value));
       api.selectedIndex =
         newIndex === -1 && nextProps.placeholder ? 0 : newIndex;
 
