@@ -20,8 +20,10 @@ type WithMDCOpts = {
   getMdcConstructorOrInstance?: (props: Object, context: Object) => ?Function,
   /** MDC events mapped from eventName => handler */
   mdcEvents?: Object,
-  /** Decides wether or not to pass down an elementRef */
+  /** Decides wether or not to pass down an elementRef prop */
   mdcElementRef?: boolean,
+  /** Decides wether or not to pass down an mdcComponentReinit prop */
+  mdcComponentReinit?: boolean,
   /** Decides wether or not to pass down an apiRef */
   mdcApiRef?: boolean,
   /** component on mount */
@@ -54,6 +56,7 @@ export const withMDC = ({
   mdcEvents = {},
   mdcElementRef = false,
   mdcApiRef = false,
+  mdcComponentReinit = false,
   defaultProps = {},
   onMount = noop,
   onUpdate = noop,
@@ -77,6 +80,8 @@ export const withMDC = ({
           mdcElementRef: this.mdcSetRootElement
         } :
         {};
+
+      this.mdcComponentReinit = this.mdcComponentReinit.bind(this);
     }
 
     componentDidMount(): void {
@@ -114,7 +119,7 @@ export const withMDC = ({
       if (isInstance) {
         this.mdcApi = MDCConstructorToUse;
         this.props.apiRef(this.mdcApi);
-      } else if (MDCConstructorToUse && !this.props.cssOnly) {
+      } else if (MDCConstructorToUse && (this.props && !this.props.cssOnly)) {
         const el = this.mdcGetRootElement();
         try {
           this.mdcApi = new MDCConstructorToUse(el);
@@ -186,7 +191,19 @@ export const withMDC = ({
           mdcApiRef: this.mdcApi
         } :
         {};
-      return <Component {...apiRefProps} {...this.elementRefProps} {...rest} />;
+
+      const mdcComponentReinitProp = mdcComponentReinit ?
+        { mdcComponentReinit: this.mdcComponentReinit } :
+        {};
+
+      return (
+        <Component
+          {...mdcComponentReinitProp}
+          {...apiRefProps}
+          {...this.elementRefProps}
+          {...rest}
+        />
+      );
     }
   };
 };
