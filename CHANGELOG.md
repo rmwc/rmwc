@@ -1,3 +1,22 @@
+#### 1.0.1 (2018-01-19)
+
+##### Documentation Changes
+
+* **Card:**
+  *  clearing up examples ([27c18c7f](https://github.com/jamesmfriedman/rmwc/commit/27c18c7fe223476f789b59d15c3b9b1ac7ec6efb))
+  *  Fixing typo ([a9cb439c](https://github.com/jamesmfriedman/rmwc/commit/a9cb439c579ede5e3ebe5243630c9169830369f8))
+* **Tests:**  Added documentation for [#96](https://github.com/jamesmfriedman/rmwc/pull/96) ([f6718945](https://github.com/jamesmfriedman/rmwc/commit/f6718945008d4bd8c391d12a9564d03f4304ff54))
+
+##### New Features
+
+* **Icon:**  Added custom icon rendering hooks ([b51e777c](https://github.com/jamesmfriedman/rmwc/commit/b51e777cf0ab783707b6203b589d4185712c564f))
+
+##### Bug Fixes
+
+* **TabBarScroller:**  Support for dynamic tabs ([1ed982ed](https://github.com/jamesmfriedman/rmwc/commit/1ed982ed58d4e6128553609eab9537f035c28dea))
+* **#95:**  Removes reliance on Reflect ([cb26c769](https://github.com/jamesmfriedman/rmwc/commit/cb26c769b4500b2f04a99b27291c651b46af9465))
+* **TabBar:**  activeTabIndex doesn't set active tab of 0 on load [#94](https://github.com/jamesmfriedman/rmwc/pull/94) ([efdc130e](https://github.com/jamesmfriedman/rmwc/commit/efdc130e28062da68df69afeebc3094d98fb57cf))
+
 #### 1.0.0 (2018-01-12)
 
 ##### Breaking Changes
