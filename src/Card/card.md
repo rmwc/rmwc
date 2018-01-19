@@ -201,7 +201,7 @@ import {
 </Card>
 ```
 
-## Dark Themed Buttons
+## Dark Themed Cards
 
 Cards can be made dark by adding the `themeDark` prop, or by using the dark theme context. Remember to add a dark background to the card when using the dark theme. The following examples are subtly different but create identical results.
 
