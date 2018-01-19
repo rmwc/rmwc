@@ -226,7 +226,7 @@ import { Theme } from 'rmwc/Theme';
 }}>
   <CardHorizontalBlock>
     <CardPrimary>
-      <CardTitle large>(8) Card Title</CardTitle>
+      <CardTitle large>themeDark Prop</CardTitle>
       <CardSubtitle>Subtitle here</CardSubtitle>
     </CardPrimary>
     <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
@@ -243,7 +243,7 @@ import { Theme } from 'rmwc/Theme';
   }}>
     <CardHorizontalBlock>
       <CardPrimary>
-        <CardTitle large>(8) Card Title</CardTitle>
+        <CardTitle large>Dark Theme Context</CardTitle>
         <CardSubtitle>Subtitle here</CardSubtitle>
       </CardPrimary>
       <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
