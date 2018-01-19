@@ -1199,111 +1199,7 @@
     {
       "description": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
       "displayName": "Icon",
-      "methods": [
-        {
-          "name": "getStrategy",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "content",
-              "type": {
-                "name": "ReactNode",
-                "raw": "React.Node"
-              }
-            },
-            {
-              "name": "strategy",
-              "optional": true,
-              "type": {
-                "name": "union",
-                "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "'auto'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'ligature'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'className'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'url'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'component'"
-                  }
-                ],
-                "alias": "IconStrategyT"
-              }
-            },
-            {
-              "name": "defaultStrategy",
-              "type": {
-                "name": "union",
-                "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "'auto'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'ligature'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'className'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'url'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'component'"
-                  }
-                ],
-                "alias": "IconStrategyT"
-              }
-            }
-          ],
-          "returns": {
-            "type": {
-              "name": "union",
-              "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
-              "elements": [
-                {
-                  "name": "literal",
-                  "value": "'auto'"
-                },
-                {
-                  "name": "literal",
-                  "value": "'ligature'"
-                },
-                {
-                  "name": "literal",
-                  "value": "'className'"
-                },
-                {
-                  "name": "literal",
-                  "value": "'url'"
-                },
-                {
-                  "name": "literal",
-                  "value": "'component'"
-                }
-              ]
-            }
-          }
-        }
-      ],
+      "methods": [],
       "props": {
         "use": {
           "flowType": {
@@ -1320,7 +1216,7 @@
         "strategy": {
           "flowType": {
             "name": "union",
-            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
             "elements": [
               {
                 "name": "literal",
@@ -1341,11 +1237,15 @@
               {
                 "name": "literal",
                 "value": "'component'"
+              },
+              {
+                "name": "literal",
+                "value": "'custom'"
               }
             ]
           },
           "required": false,
-          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. If not set, 'auto' will be used or defaults set inside of RMWCProvider."
+          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
         },
         "prefix": {
           "flowType": {
@@ -1360,6 +1260,29 @@
           },
           "required": false,
           "description": "A base className for the icon namespace, i.e. material-icons."
+        },
+        "render": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(content: mixed) => React.Node",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "content",
+                  "type": {
+                    "name": "mixed"
+                  }
+                }
+              ],
+              "return": {
+                "name": "ReactNode",
+                "raw": "React.Node"
+              }
+            }
+          },
+          "required": false,
+          "description": "A render function to use when using the 'custom' strategy."
         }
       }
     }
@@ -1895,42 +1818,42 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component'\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (content: mixed) => mixed\n}",
                 "signature": {
                   "properties": [
                     {
                       "key": "buttonDefaultRipple",
                       "value": {
                         "name": "boolean",
-                        "required": true
+                        "required": false
                       }
                     },
                     {
                       "key": "listItemDefaultRipple",
                       "value": {
                         "name": "boolean",
-                        "required": true
+                        "required": false
                       }
                     },
                     {
                       "key": "iconClassNameBase",
                       "value": {
                         "name": "string",
-                        "required": true
+                        "required": false
                       }
                     },
                     {
                       "key": "iconClassNamePrefix",
                       "value": {
                         "name": "string",
-                        "required": true
+                        "required": false
                       }
                     },
                     {
                       "key": "iconStrategy",
                       "value": {
                         "name": "union",
-                        "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+                        "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
                         "elements": [
                           {
                             "name": "literal",
@@ -1951,9 +1874,35 @@
                           {
                             "name": "literal",
                             "value": "'component'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'custom'"
                           }
                         ],
-                        "required": true
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "iconRender",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(content: mixed) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "content",
+                              "type": {
+                                "name": "mixed"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
                       }
                     }
                   ]
@@ -1970,7 +1919,7 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Set the buttons ripple effect globally",
           "defaultValue": {
             "value": "true",
@@ -1981,7 +1930,7 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Set the listItems ripple effect globally",
           "defaultValue": {
             "value": "true",
@@ -1992,7 +1941,7 @@
           "flowType": {
             "name": "string"
           },
-          "required": true,
+          "required": false,
           "description": "Set the iconClassNameBase. Read the icon docs for more info.",
           "defaultValue": {
             "value": "'material-icons'",
@@ -2003,7 +1952,7 @@
           "flowType": {
             "name": "string"
           },
-          "required": true,
+          "required": false,
           "description": "Set the iconClassNamePrefix. Read the icon docs for more info.",
           "defaultValue": {
             "value": "''",
@@ -2013,7 +1962,7 @@
         "iconStrategy": {
           "flowType": {
             "name": "union",
-            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component'",
+            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
             "elements": [
               {
                 "name": "literal",
@@ -2034,14 +1983,44 @@
               {
                 "name": "literal",
                 "value": "'component'"
+              },
+              {
+                "name": "literal",
+                "value": "'custom'"
               }
             ]
           },
-          "required": true,
+          "required": false,
           "description": "Set the default iconStrategy. Read the icon docs for more info.",
           "defaultValue": {
             "value": "'auto'",
             "computed": false
+          }
+        },
+        "iconRender": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(content: mixed) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "content",
+                  "type": {
+                    "name": "mixed"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Sets a default render function to be used when the iconStrategy is custom",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
           }
         }
       }
@@ -2903,7 +2882,15 @@
     {
       "description": "The TabBar Scroll container",
       "displayName": "TabBarScroller",
-      "methods": [],
+      "methods": [
+        {
+          "name": "reinitTabBarScroller",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
       "props": {
         "indicatorForward": {
           "flowType": {

@@ -2,17 +2,22 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
+// prettier-ignore
+type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
+
 export type RMWCProviderOptionsT = {
   /** Set the buttons ripple effect globally */
-  buttonDefaultRipple: boolean,
+  buttonDefaultRipple?: boolean,
   /** Set the listItems ripple effect globally */
-  listItemDefaultRipple: boolean,
+  listItemDefaultRipple?: boolean,
   /** Set the iconClassNameBase. Read the icon docs for more info. */
-  iconClassNameBase: string,
+  iconClassNameBase?: string,
   /** Set the iconClassNamePrefix. Read the icon docs for more info. */
-  iconClassNamePrefix: string,
+  iconClassNamePrefix?: string,
   /** Set the default iconStrategy. Read the icon docs for more info. */
-  iconStrategy: 'auto' | 'ligature' | 'className' | 'url' | 'component'
+  iconStrategy?: IconStrategyT,
+  /** Sets a default render function to be used when the iconStrategy is custom */
+  iconRender?: (content: mixed) => mixed
 };
 
 // Default provider options
@@ -21,7 +26,8 @@ const providerDefaults: RMWCProviderOptionsT = {
   listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
-  iconStrategy: 'auto'
+  iconStrategy: 'auto',
+  iconRender: undefined
 };
 
 // A function for safely getting context options
