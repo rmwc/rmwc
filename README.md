@@ -5,7 +5,7 @@
 
 # RMWC - React Material Web Components
 
-A thin React wrapper for Material Design (Web) Components v0.28.0
+A React wrapper for Material Design (Web) Components v0.28.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
