@@ -55,6 +55,19 @@ import '@material/button/dist/mdc.button.min.css';
 
 ## Known Issues
 
+* Issue: Testing with Enzyme using the full mount() api and JSDOM. JDOM doesn't fully include the dataset api for data-attributes which are leveraged heavily in MDC.
+  * Solution: Add dataset to the HTMLElement.
+
+```javascript
+// src/setupTests.js
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() });
+
+// Add this line
+window.HTMLElement.prototype.dataset = {};
+```
+
 * Issue: postcss-cssnext messes up CSS variables. This can cause broken styles and extreme slowdowns when using web developer tools like the Chrome inspector. You'll know if you're having this issue because dev tools and the browser will slow to a crawl.
   * Solution: set customProperties to false. This may require ejecting or other workarounds if you are using Create React App. [See issue #65](https://github.com/jamesmfriedman/rmwc/issues/65).
 
