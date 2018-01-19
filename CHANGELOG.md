@@ -1,4 +1,7 @@
 #### 1.0.2 (2018-01-19)
+##### Critical Issue
+
+* **peerDependencies:**  Updated 16.0.0 to 16.x.x. Fixed versions were causing installation issues.
 
 #### 1.0.1 (2018-01-19)
 
