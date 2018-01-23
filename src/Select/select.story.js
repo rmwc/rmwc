@@ -58,40 +58,6 @@ const CSSSelectWithOptgroupsStory = storyWithState(
   }
 );
 
-const CSSMultiSelectWithOptgroupsStory = storyWithState(
-  state => ({
-    label: text('label', state.label || 'Foods'),
-    value: array('value', state.value || ['Cookies']),
-    options: array(
-      'options',
-      state.options || [
-        { label: 'Foods', options: ['Cookies', 'Pizza', 'Icecream'] },
-        { label: 'Animals', options: ['Dogs', 'Cats', 'Birds'] }
-      ]
-    )
-  }),
-  function() {
-    return (
-      <Select
-        {...this.props}
-        cssOnly
-        multiple
-        size="8"
-        label={this.state.label}
-        value={this.state.value}
-        options={this.state.options}
-        onChange={evt => {
-          this.setState({
-            value: [...evt.target.selectedOptions].map(o => o.value)
-          });
-
-          action('onChange: ' + evt.target.value)();
-        }}
-      />
-    );
-  }
-);
-
 storiesOf('Inputs and Controls', module)
   .add('Select with object', () => (
     <Select
@@ -136,7 +102,4 @@ storiesOf('Inputs and Controls', module)
     </Select>
   ))
   .add('CSS Select', () => <CSSSelectStory />)
-  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />)
-  .add('CSS Multi-select w/ optgroups', () => (
-    <CSSMultiSelectWithOptgroupsStory />
-  ));
+  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />);
