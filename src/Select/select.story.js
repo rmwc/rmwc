@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, object, array } from '@storybook/addon-knobs';
+import { text, object, array, boolean } from '@storybook/addon-knobs';
 import { Select } from './';
 import { ListItem } from '../List';
 import { storyWithState } from '../Base/story-with-state';
@@ -17,6 +17,30 @@ const CSSSelectStory = storyWithState(
     return (
       <Select
         cssOnly
+        label={this.state.label}
+        value={this.state.value}
+        options={this.state.options}
+        onChange={evt => {
+          this.setState({ value: evt.target.value });
+          action('onChange: ' + evt.target.value)();
+        }}
+      />
+    );
+  }
+);
+
+const MutatingSelect = storyWithState(
+  state => ({
+    cssOnly: boolean('cssOnly', state.cssOnly || false),
+    value: text('value', state.value || 'Cookies'),
+    label: text('label', state.label || 'Label'),
+    options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
+  }),
+  function() {
+    return (
+      <Select
+        {...this.props}
+        cssOnly={this.state.cssOnly}
         label={this.state.label}
         value={this.state.value}
         options={this.state.options}
@@ -102,4 +126,5 @@ storiesOf('Inputs and Controls', module)
     </Select>
   ))
   .add('CSS Select', () => <CSSSelectStory />)
-  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />);
+  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />)
+  .add('Mutating Select', () => <MutatingSelect />);

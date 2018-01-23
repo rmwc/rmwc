@@ -140,6 +140,15 @@ export const Select = withMDC({
     });
   },
   didUpdate: (props, nextProps, api, inst) => {
+    const cssOnlyDidChange = props && !!props.cssOnly !== !!nextProps.cssOnly;
+    if (cssOnlyDidChange) {
+      window.requestAnimationFrame(() => {
+        inst.mdcComponentReinit();
+      });
+      // escape out to avoid errors, didUpdate will run again on component init
+      return;
+    }
+
     // we might be in cssOnly mode, or lacking an api
     if (!api) return;
 
