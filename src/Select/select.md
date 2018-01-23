@@ -118,32 +118,6 @@ For certain platforms or usecases, a pure CSS select may be preferrable. Use the
     }
   ]}
 />
-
-{/*
-  cssOnly Multi-select
-  MDC only supports multiple on css only selects.
-  Does not support labels or placeholders
-*/}
-<Select
-  cssOnly
-  multiple
-  size="8"
-  value={this.state.multi || []}
-  onChange={evt =>  this.setState({
-    multi: [...evt.target.selectedOptions].map(o => o.value)
-  })}
-  options={[
-    {
-      label: 'Foods',
-      /* Options can be any value Select input: simply arrays, value => label objects, or formatted arrays. */
-      options: ['Cookies', 'Pizza', 'Icecream']
-    },
-    {
-      label: 'Animals',
-      options: ['Dogs', 'Cats', 'Birds']
-    }
-  ]}
-/>
 ```
 
 ```jsx renderOnly

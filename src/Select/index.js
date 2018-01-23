@@ -59,11 +59,6 @@ export const SelectFormField = simpleTag({
   }
 });
 
-export const MultiSelect = simpleTag({
-  tag: List,
-  classNames: 'mdc-multi-select'
-});
-
 type SelectPropsT = {
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
   options: string[] | { [value: string]: string } | mixed[],
@@ -74,11 +69,7 @@ type SelectPropsT = {
   /** Disables the form control. */
   disabled?: boolean,
   /** Makes a cssOnly select. */
-  cssOnly?: boolean,
-  /** Makes a multi-select. Must be used in conjunction with cssOnly. */
-  multiple?: boolean,
-  /** The number of items in show in a multi-select. Use in conjunction with multiple. */
-  size?: number
+  cssOnly?: boolean
 } & SimpleTagPropsT;
 
 /**
@@ -139,8 +130,7 @@ export const Select = withMDC({
     options: undefined,
     label: undefined,
     placeholder: undefined,
-    disabled: false,
-    multiple: undefined
+    disabled: false
   },
   onMount: (props, api) => {
     window.requestAnimationFrame(() => {
@@ -212,61 +202,51 @@ export const Select = withMDC({
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
       if (cssOnly) {
-        const SelectInnerRoot = rest.multiple ? MultiSelect : SelectSurface;
-        const selectInner = (
-          <SelectInnerRoot
-            tabIndex={tabIndex}
-            tag="select"
-            value={value}
-            {...rest}
-          >
-            {!!placeholder.length && (
-              <ListItem tag="option" value="" tab-index="0">
-                {placeholder}
-              </ListItem>
-            )}
-            {selectOptions &&
-              selectOptions.map(({ label, ...option }, i) => {
-                if (option.options) {
-                  return (
-                    <ListGroup tag="optgroup" label={label} key={label}>
-                      {option.options.map(({ label, ...option }, i) => (
-                        <ListItem
-                          tag="option"
-                          key={label}
-                          {...option}
-                          value={option.value}
-                        >
-                          {label}
-                        </ListItem>
-                      ))}
-                    </ListGroup>
-                  );
-                }
-
-                return (
-                  <ListItem
-                    tag="option"
-                    key={label}
-                    {...option}
-                    value={option.value}
-                  >
-                    {label}
-                  </ListItem>
-                );
-              })}
-            {children}
-          </SelectInnerRoot>
-        );
-
-        // multiple selects dont include the wrapper or underline
-        if (rest.multiple) {
-          return selectInner;
-        }
-
         return (
           <SelectRoot elementRef={mdcElementRef} {...rest}>
-            {selectInner}
+            <SelectSurface
+              tabIndex={tabIndex}
+              tag="select"
+              value={value}
+              {...rest}
+            >
+              {!!placeholder.length && (
+                <ListItem tag="option" value="" tab-index="0">
+                  {placeholder}
+                </ListItem>
+              )}
+              {selectOptions &&
+                selectOptions.map(({ label, ...option }, i) => {
+                  if (option.options) {
+                    return (
+                      <ListGroup tag="optgroup" label={label} key={label}>
+                        {option.options.map(({ label, ...option }, i) => (
+                          <ListItem
+                            tag="option"
+                            key={label}
+                            {...option}
+                            value={option.value}
+                          >
+                            {label}
+                          </ListItem>
+                        ))}
+                      </ListGroup>
+                    );
+                  }
+
+                  return (
+                    <ListItem
+                      tag="option"
+                      key={label}
+                      {...option}
+                      value={option.value}
+                    >
+                      {label}
+                    </ListItem>
+                  );
+                })}
+              {children}
+            </SelectSurface>
             <SelectBottomLine />
           </SelectRoot>
         );
