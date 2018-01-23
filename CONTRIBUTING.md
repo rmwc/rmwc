@@ -17,9 +17,7 @@ Once node is installed, simply clone our repo (or your fork of it) and run `npm 
 
 ```
 git@github.com:jamesmfriedman/rmwc.git # or a path to your fork
-cd rmwc
-npm i
-npm i react react-dom --no-save
+cd rmwc && npm i
 ```
 
 ### Building Components
