@@ -13,11 +13,13 @@ You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC
 > **NOTE**: If you expect to commit updated or new dependencies, please ensure you are using npm 5, which will
 > also update `package-lock.json` correctly when you install or upgrade packages.
 
-Once node is installed, simply clone our repo (or your fork of it) and run `npm install`
+Once node is installed, simply clone our repo (or your fork of it) and run `npm install`. You'll notice you have to install react and react-dom with the no-save option. These are peer dependencies that are not installed automatically.
 
 ```
 git@github.com:jamesmfriedman/rmwc.git # or a path to your fork
-cd rmwc && npm i
+cd rmwc
+npm i
+npm i react react-dom --no-save
 ```
 
 ### Building Components
