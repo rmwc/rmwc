@@ -53,6 +53,34 @@ import 'material-components-web/dist/material-components-web.min.css';
 import '@material/button/dist/mdc.button.min.css';
 ```
 
+### Additional configuration when using CSS Modules
+
+The material components CSS is intended to be a global CSS dependency which is the opposite of what CSS modules do. If you are using CSS modules, the simplest way to get the material CSS loaded is to have two separate CSS loaders in your webpack configuration, one for CSS modules, and another for global CSS. This is a well documented issue when using global CSS in CSS module projects and is not specific to RMWC.
+
+Please note if you are using Create React App, you'll have to make these changes in both `webpack.config.dev.js` and `webpack.config.prod.js`.
+
+```javascript
+// An abbreviated example
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        // exclude material css from being loaded by CSS modules
+        exclude: ['./node_modules/material-components-web', './node_modules/@material],
+        use: [ 'style-loader', 'css-loader?modules=true' ]
+      },
+      {
+        test: /\.css$/,
+        // only turn on standard global CSS loader for the material directories
+        include: ['./node_modules/material-components-web', './node_modules/@material],
+        use: [ 'style-loader', 'css-loader' ]
+      }
+    ]
+  }
+}
+```
+
 ## Known Issues
 
 * Issue: Testing with Enzyme using the full mount() api and JSDOM. JDOM doesn't fully include the dataset api for data-attributes which are leveraged heavily in MDC.
