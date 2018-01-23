@@ -3,7 +3,7 @@
 > Text fields allow users to input, edit, and select text.
 
 import from **rmwc/TextField**  
-[https://material.io/components/web/catalog/input-controls/text-fields/](https://material.io/components/web/catalog/input-controls/text-fields/)
+[https://material.io/components/web/catalog/input-controls/text-field/](https://material.io/components/web/catalog/input-controls/text-field/)
 
 ```jsx render
 import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
