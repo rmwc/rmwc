@@ -5,12 +5,12 @@
 
 # RMWC - React Material Web Components
 
-A React wrapper for Material Design (Web) Components v0.28.0
+A React (15 / 16) wrapper for Material Design (Web) Components v0.29.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
 
-RMWC has been tested and works properly with React 15 / 16
+MDC 0.29.0 has minimal impact on RMWC. The only breaking change is removal of the Select multiple component. If you were using the Select multiple component, guidance is to use a list with checkboxes, or manage your own component.
 
 ## Goals
 
