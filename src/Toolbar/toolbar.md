@@ -47,6 +47,26 @@ import {
 </Toolbar>
 ```
 
+## Fixed Toolbars
+
+When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` component to fill in the appropriate space.
+
+```jsx codeOnly
+import {
+  Toolbar,
+  ToolbarRow,
+  ToolbarTitle,
+  ToolbarFixedAdjust,
+} from 'rmwc/Toolbar';
+
+<Toolbar fixed>
+  <ToolbarRow>
+    <ToolbarTitle>Toolbar</ToolbarTitle>
+  </ToolbarRow>
+</Toolbar>
+<ToolbarFixedAdjust />
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
@@ -56,4 +76,5 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 <DocumentComponent displayName="ToolbarTitle" />
 <DocumentComponent displayName="ToolbarMenuIcon" />
 <DocumentComponent displayName="ToolbarIcon" />
+<DocumentComponent displayName="ToolbarFixedAdjust" />
 ```
