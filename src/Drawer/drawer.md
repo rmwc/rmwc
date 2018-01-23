@@ -24,7 +24,7 @@ import {
 } from 'rmwc/List';
 
 <Drawer permanent>
-  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+  <DrawerHeader>
     DrawerHeader
   </DrawerHeader>
   <DrawerContent>
@@ -64,7 +64,7 @@ import { Button } from 'rmwc/Button';
 
 
 <Drawer persistent open={this.state.persistentOpen == undefined ? true : this.state.persistentOpen}>
-  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+  <DrawerHeader>
     DrawerHeader
   </DrawerHeader>
   <DrawerContent>
@@ -114,7 +114,7 @@ import { Button } from 'rmwc/Button';
   open={this.state.tempOpen}
   onClose={() => this.setState({tempOpen: false})}
 >
-  <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+  <DrawerHeader>
     DrawerHeader
   </DrawerHeader>
   <DrawerContent>
