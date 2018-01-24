@@ -53,9 +53,9 @@ export const SliderFocusRing = simpleTag({
 });
 
 type SliderPropsT = {
-  /** A callback which fires on changing values that takes an event with event.target.value set to the Slider's value. */
+  /** A callback that fires when the Slider stops sliding which takes an event with event.target.value set to the Slider's value. */
   onChange?: (evt: Event) => mixed,
-  /** A callback which fires on sliding that takes an event with event.target.value set to the Slider's value. */
+  /** A callback that fires continuously while the Slider is slidng that takes an event with event.target.value set to the Slider's value. */
   onInput?: (evt: Event) => mixed,
   /** The value of the Slider. */
   value?: number | string,
