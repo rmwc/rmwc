@@ -156,7 +156,7 @@ const MyComponent = props => (
 }
 ```
 
-### Using CSSModules
+### Using CSS Modules
 
 Just add your className. If you need to target a node that is not directly exposed by RMWC, you can use the global modifier in your CSS. In this example, you can target the inner wrapper of a DrawerHeader.
 
@@ -202,9 +202,9 @@ import { Card } from 'rmwc/Card';
 
 {
   /*
-      This is an example of a dark theme context.
-      All children with applicable styles will be switched to dark mode
-  */
+        This is an example of a dark theme context.
+        All children with applicable styles will be switched to dark mode
+    */
 }
 <Theme tag="div" use="dark">
   <Card>...</Card>
@@ -212,9 +212,9 @@ import { Card } from 'rmwc/Card';
 
 {
   /*
-      This is an example of a dark theme prop.
-      Not all components support this, look at the docs to see which ones.
-  */
+        This is an example of a dark theme prop.
+        Not all components support this, look at the docs to see which ones.
+    */
 }
 <Card themeDark>...</Card>;
 ```
