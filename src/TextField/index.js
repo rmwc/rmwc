@@ -24,6 +24,7 @@ export const TextFieldRoot: React.ComponentType<
   displayName: 'TextFieldRoot',
   classNames: props => [
     'mdc-text-field',
+    'mdc-text-field--upgraded',
     {
       'mdc-text-field--textarea': props.textarea,
       'mdc-text-field--fullwidth': props.fullwidth,
