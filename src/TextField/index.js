@@ -43,10 +43,10 @@ export const TextFieldLabel = simpleTag({
   classNames: props => [
     'mdc-text-field__label',
     {
-      'mdc-text-field__label--float-above': props.value
+      'mdc-text-field__label--float-above': props.value || props.focused
     }
   ],
-  consumeProps: ['value']
+  consumeProps: ['value', 'focused']
 });
 
 export const TextFieldInput = simpleTag({
@@ -158,6 +158,7 @@ type TextFieldPropsT = {
 export const TextField = withMDC({
   mdcConstructor: MDCTextField,
   mdcElementRef: true,
+  mdcApiRef: true,
   defaultProps: {
     inputRef: noop,
     disabled: undefined,
@@ -188,6 +189,7 @@ export const TextField = withMDC({
         label = '',
         className,
         inputRef,
+        mdcApiRef,
         box,
         outlined,
         fullwidth,
@@ -245,7 +247,11 @@ export const TextField = withMDC({
           {children}
           {tag}
           {!!label && (
-            <TextFieldLabel htmlFor={tagProps.id} value={tagProps.value}>
+            <TextFieldLabel
+              focused={mdcApiRef && mdcApiRef.foundation_.isFocused_}
+              htmlFor={tagProps.id}
+              value={tagProps.value}
+            >
               {label}
             </TextFieldLabel>
           )}
