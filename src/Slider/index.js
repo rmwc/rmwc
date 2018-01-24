@@ -53,8 +53,10 @@ export const SliderFocusRing = simpleTag({
 });
 
 type SliderPropsT = {
-  /** A callback that takes an event with event.target.value set to the Slider's value. */
+  /** A callback which fires on changing values that takes an event with event.target.value set to the Slider's value. */
   onChange?: (evt: Event) => mixed,
+  /** A callback which fires on sliding that takes an event with event.target.value set to the Slider's value. */
+  onInput?: (evt: Event) => mixed,
   /** The value of the Slider. */
   value?: number | string,
   /** The minimum value of the Slider. */
@@ -77,7 +79,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
   mdcEvents: {
     'MDCSlider:input': (evt, props, api) => {
       evt.target.value = api.value;
-      props.onChange && props.onChange(evt);
+      props.onInput && props.onInput(evt);
     },
     'MDCSlider:change': (evt, props, api) => {
       evt.target.value = api.value;
@@ -86,6 +88,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
   },
   defaultProps: {
     onChange: noop,
+    onInput: noop,
     value: 0,
     min: 0,
     max: 100,
@@ -132,6 +135,7 @@ export const Slider: React.ComponentType<SliderPropsT> = withMDC({
         mdcElementRef,
         step,
         onChange,
+        onInput,
         className,
         disabled,
         children,
