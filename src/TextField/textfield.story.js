@@ -28,6 +28,8 @@ class TextFieldStory extends React.Component {
         onChange={evt => this.onChange(evt)}
         rows={number('rows', 8)}
         cols={number('cols', 0)}
+        withLeadingIcon={text('withLeadingIcon', '')}
+        withTrailingIcon={text('withTrailingIcon', '')}
         textarea={boolean('textarea', false)}
       />
     );
