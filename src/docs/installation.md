@@ -81,22 +81,22 @@ module.exports = {
 }
 ```
 
-## Known Issues
+## Test Setup for Jest and Enzyme
 
-* Issue: Testing with Enzyme using the full mount() api and JSDOM. JDOM doesn't fully include the dataset api for data-attributes which are leveraged heavily in MDC.
-  * Solution: Add dataset and validity to the HTMLElement.
-  * If you find any more of these cases, please file an issue.
+Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. The quick fix is to monkey patch the missing items onto the fake DOM elements in your setupTests file.
 
 ```javascript
 // src/setupTests.js
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import rmwcTestPolyfill from 'rmwc/Base/testPolyfill';
 Enzyme.configure({ adapter: new Adapter() });
 
-// Add these lines
-window.HTMLElement.prototype.dataset = {};
-window.HTMLInputElement.prototype.validity = {};
+//import and run this to fix the the MDC errors
+rmwcTestPolyfill();
 ```
+
+## Known Issues
 
 * Issue: postcss-cssnext messes up CSS variables. This can cause broken styles and extreme slowdowns when using web developer tools like the Chrome inspector. You'll know if you're having this issue because dev tools and the browser will slow to a crawl.
   * Solution: set customProperties to false. This may require ejecting or other workarounds if you are using Create React App. [See issue #65](https://github.com/jamesmfriedman/rmwc/issues/65).
