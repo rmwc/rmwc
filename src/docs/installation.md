@@ -61,24 +61,33 @@ Please note if you are using Create React App, you'll have to make these changes
 
 ```javascript
 // An abbreviated example
+const path = require('path');
 module.exports = {
   module: {
     rules: [
       {
         test: /\.css$/,
         // exclude material css from being loaded by CSS modules
-        exclude: ['./node_modules/material-components-web', './node_modules/@material],
-        use: [ 'style-loader', 'css-loader?modules=true' ]
+        // These paths are specific to your system, so change accordingly
+        exclude: [
+          path.resolve('./node_modules/material-components-web'),
+          path.resolve('./node_modules/@material')
+        ],
+        use: ['style-loader', 'css-loader?modules=true']
       },
       {
         test: /\.css$/,
         // only turn on standard global CSS loader for the material directories
-        include: ['./node_modules/material-components-web', './node_modules/@material],
-        use: [ 'style-loader', 'css-loader' ]
+        // These paths are the same as above and specific to your system, so change accordingly
+        include: [
+          path.resolve('./node_modules/material-components-web'),
+          path.resolve('./node_modules/@material')
+        ],
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
-}
+};
 ```
 
 ## Test Setup for Jest and Enzyme
