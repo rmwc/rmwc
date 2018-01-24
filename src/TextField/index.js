@@ -30,10 +30,11 @@ export const TextFieldRoot: React.ComponentType<
       'mdc-text-field--fullwidth': props.fullwidth,
       'mdc-text-field--box': props.box,
       'mdc-text-field--outlined': props.outlined,
-      'mdc-text-field--dense': props.dense
+      'mdc-text-field--dense': props.dense,
+      'mdc-text-field--invalid': props.invalid
     }
   ],
-  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense']
+  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid']
 });
 
 export const TextFieldLabel = simpleTag({
@@ -135,6 +136,8 @@ type TextFieldPropsT = {
   disabled?: boolean,
   /** Mark the input as required. */
   required?: boolean,
+  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */
+  invalid?: boolean,
   /** Makes the TextField dense */
   dense?: boolean,
   /** Box in the TextField */
@@ -159,6 +162,7 @@ export const TextField = withMDC({
     inputRef: noop,
     disabled: undefined,
     required: undefined,
+    invalid: undefined,
     dense: undefined,
     box: undefined,
     outlined: undefined,
@@ -188,6 +192,7 @@ export const TextField = withMDC({
         outlined,
         fullwidth,
         dense,
+        invalid,
         withLeadingIcon,
         withTrailingIcon,
         mdcElementRef,
@@ -224,6 +229,7 @@ export const TextField = withMDC({
       return (
         <TextFieldRoot
           {...rootProps}
+          invalid={invalid}
           className={classNames(className, rootProps.className, {
             'mdc-text-field--with-leading-icon': !!withLeadingIcon,
             'mdc-text-field--with-trailing-icon': !!withTrailingIcon
