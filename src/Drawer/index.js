@@ -152,7 +152,7 @@ export const Drawer = withMDC({
       const { children, onOpen, onClose, mdcElementRef, ...rest } = this.props;
       return (
         <DrawerRoot elementRef={mdcElementRef} {...rest}>
-          <DrawerDrawer>{children}</DrawerDrawer>
+          {rest.permanent ? children : <DrawerDrawer>{children}</DrawerDrawer>}
         </DrawerRoot>
       );
     }
