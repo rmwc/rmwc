@@ -250,7 +250,6 @@ ul li {
   position: relative;
   padding: 6rem 0;
   box-sizing: border-box;
-  background-color: #383b4c;
   flex: 1;
 }
 
@@ -559,4 +558,16 @@ table th {
 .mdc-theme--dark .app__content > div table code,
 .mdc-theme--dark .app__content > div ul code {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+#page-home.mdc-theme--dark .app__content {
+  color: white;
+}
+
+#page-home.mdc-theme--dark .app__content header {
+  background-color: #0c0c0c !important;
+}
+
+#page-home.mdc-theme--dark .app__content .mdc-theme--background.mdc-card {
+  background-color: rgba(255, 255, 255, 0.1);
 }
