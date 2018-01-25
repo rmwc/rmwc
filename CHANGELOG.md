@@ -1,3 +1,38 @@
+#### 1.1.0 (2018-01-25)
+
+##### Breaking Changes
+
+* **Select:**  Removing multi-select from MDC breaking change. ([3625e86c](https://github.com/jamesmfriedman/rmwc/commit/3625e86c3aca109f0cdf64c60c0b16e7d38a9128))
+
+##### Documentation Changes
+
+* **General:**  fixing a layout bug ([4061c3db](https://github.com/jamesmfriedman/rmwc/commit/4061c3db29a2bba9659e99638b2da80fc63a1b86))
+* **Icon:**  removing incorrect example ([0c1fa46c](https://github.com/jamesmfriedman/rmwc/commit/0c1fa46cd32bb23c1cb73bb4862a51074ce24949))
+* **CSSModules:**
+  *  Updating webpack loader example ([26967abc](https://github.com/jamesmfriedman/rmwc/commit/26967abc27018ea81c2b5dbb8d98b6d2ab039f1c))
+  *  Extra configuration documentation [#113](https://github.com/jamesmfriedman/rmwc/pull/113) ([d722564c](https://github.com/jamesmfriedman/rmwc/commit/d722564c34c8eb6f43afd408e2d9dc73ce8ab70f))
+* **Usage:**  fixing typo ([1d5ca408](https://github.com/jamesmfriedman/rmwc/commit/1d5ca4084aa7cfda2bb7e9f8cef8744939259f82))
+* **DarkMode:**  documenting dark mode and adding a global toggle to docs. ([1627c6fe](https://github.com/jamesmfriedman/rmwc/commit/1627c6fe4e7fddc81787b54cc48b00452e85a4b4))
+* **Contributing:**  Updating to show installation with peer dependencies ([e927698b](https://github.com/jamesmfriedman/rmwc/commit/e927698b30f22b8c0d22839778b72f53231e229f))
+* **Testing:**  Added another enzyme mount issue case [#96](https://github.com/jamesmfriedman/rmwc/pull/96) ([63c2694d](https://github.com/jamesmfriedman/rmwc/commit/63c2694d1ca4c45b63eb29d655839ae3aa4dc7c5))
+* **Toolbar:**  Documenting ToolbarFixedAdjust [#110](https://github.com/jamesmfriedman/rmwc/pull/110) ([f0ee1f15](https://github.com/jamesmfriedman/rmwc/commit/f0ee1f1510306f4ac89ae7940feec3908ff263c1))
+
+##### New Features
+
+* **TextFields:**  ability to set a TextField as invalid [#72](https://github.com/jamesmfriedman/rmwc/pull/72) ([42405cf7](https://github.com/jamesmfriedman/rmwc/commit/42405cf7b712a036ada41770f87a7403236e9061))
+* **Tests:**  updating installation guide for tests, adding Test polyfill [#103](https://github.com/jamesmfriedman/rmwc/pull/103) ([f2844be4](https://github.com/jamesmfriedman/rmwc/commit/f2844be4a7e2bc00e1f4c99350b5f7631e2f0d93))
+
+##### Bug Fixes
+
+* **Drawer:**  Permanent drawers should no longer contain an inner wrapper ([053c8cdb](https://github.com/jamesmfriedman/rmwc/commit/053c8cdb82cd6ae77825dbeaf5dc0feba2c7b282))
+* **TabBar:**  TabBar would get stuck in re-init loop if Tab children were wrapped with HOC, related to styled components [#116](https://github.com/jamesmfriedman/rmwc/pull/116) ([5dd4d9b5](https://github.com/jamesmfriedman/rmwc/commit/5dd4d9b506ca00bc985bc0a967eafc163bda10fe))
+* **ParcelJS:**  Move babel config to babelrc and don’t publish babelrc to npm [#123](https://github.com/jamesmfriedman/rmwc/pull/123) ([1968f5e8](https://github.com/jamesmfriedman/rmwc/commit/1968f5e8b5552beba05840f8f823f9dd97983852))
+* **TextField:**
+  *  Corrects issue where label would not float after input was interacted with and then value was set to “” fixed [#122](https://github.com/jamesmfriedman/rmwc/pull/122) ([9d886b68](https://github.com/jamesmfriedman/rmwc/commit/9d886b6859068c0dbddc436f49bd9750cb6bc469))
+  *  prevent react from removing mdc-text-field--upgraded on re-renders ([360ffc4a](https://github.com/jamesmfriedman/rmwc/commit/360ffc4aea82c48586ffb59d2431c3e2e9877b60))
+* **slider:**  add onInput for sliding cb ([e32cefd7](https://github.com/jamesmfriedman/rmwc/commit/e32cefd7f07a0350e809ac3821843a1c46c04e9f))
+* **Select:**  Reinit on cssOnly change [#108](https://github.com/jamesmfriedman/rmwc/pull/108) ([def6d0fa](https://github.com/jamesmfriedman/rmwc/commit/def6d0fa4b826fba486f5f887d6709764541fabe))
+
 #### 1.0.2 (2018-01-19)
 ##### Critical Issue
 
