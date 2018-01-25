@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent } from './menuContent';
 
@@ -15,6 +15,9 @@ import {
   ToolbarIcon
 } from 'rmwc/Toolbar';
 
+import { Switch } from 'rmwc/Switch';
+import { Theme } from 'rmwc/Theme';
+
 import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
 import { ListItem, ListItemText } from 'rmwc/List';
@@ -25,6 +28,7 @@ import Home from './Home';
 const MenuItem = ({ url, label }) => {
   return (
     <ListItem
+      onClick={() => window.scrollTo(0, 0)}
       activated={
         window.location.pathname.split('/').pop() === url.split('/').pop()
       }
@@ -44,7 +48,8 @@ export class App extends React.Component {
 
   state = {
     menuIsOpen: false,
-    isMobile: true
+    isMobile: true,
+    isDark: false
   };
 
   doSizeCheck() {
@@ -60,8 +65,13 @@ export class App extends React.Component {
       'home'}`;
 
     return (
-      <div id={pageId}>
-        <Toolbar fixed waterfall>
+      <Theme
+        className="app__root"
+        tag="div"
+        id={pageId}
+        use={this.state.isDark && 'dark'}
+      >
+        <Toolbar fixed waterfall theme="dark">
           <ToolbarRow>
             <ToolbarSection alignStart>
               <ToolbarMenuIcon
@@ -77,7 +87,18 @@ export class App extends React.Component {
               </ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
-              <span className="app__version">{version}</span>
+              {!this.state.isMobile && (
+                <React.Fragment>
+                  <Switch
+                    rootProps={{ className: 'app__dark-mode-switch' }}
+                    label="Dark Mode"
+                    onChange={evt =>
+                      this.setState({ isDark: evt.target.checked })
+                    }
+                  />
+                  <span className="app__version">{version}</span>
+                </React.Fragment>
+              )}
               <ToolbarIcon
                 tag="a"
                 href="https://github.com/jamesmfriedman/rmwc"
@@ -125,7 +146,7 @@ export class App extends React.Component {
           {/* End Nav */}
 
           <main className="app__content">
-            <Switch>
+            <RouterSwitch>
               <Route path={'/'} exact component={Home} />
               {menuContent.map(m => {
                 if (m.options) {
@@ -148,10 +169,10 @@ export class App extends React.Component {
                   />
                 );
               })}
-            </Switch>
+            </RouterSwitch>
           </main>
         </div>
-      </div>
+      </Theme>
     );
   }
 }

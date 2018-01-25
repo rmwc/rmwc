@@ -38,8 +38,6 @@ This will render a child component inside of the icon. This is useful for all so
 
 ```jsx render
 import { Icon } from 'rmwc/Icon';
-<Icon>favorite</Icon>
-
 <Icon
   strategy="component"
   use={<div style={{ background: 'green', width: '24px', height: '24px', borderRadius: '100px' }} />}
@@ -124,7 +122,7 @@ ReactDOM.render(
   <RMWCProvider iconStrategy="custom" iconRender={iconRenderHandler}>
     <App />
   </RMWCProvider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // 4) Now anywhere in your app that an Icon instance is used, it will be

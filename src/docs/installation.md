@@ -53,20 +53,59 @@ import 'material-components-web/dist/material-components-web.min.css';
 import '@material/button/dist/mdc.button.min.css';
 ```
 
-## Known Issues
+### Additional configuration when using CSS Modules
 
-* Issue: Testing with Enzyme using the full mount() api and JSDOM. JDOM doesn't fully include the dataset api for data-attributes which are leveraged heavily in MDC.
-  * Solution: Add dataset to the HTMLElement.
+The material components CSS is intended to be a global CSS dependency which is the opposite of what CSS modules do. If you are using CSS modules, the simplest way to get the material CSS loaded is to have two separate CSS loaders in your webpack configuration, one for CSS modules, and another for global CSS. This is a well documented issue when using global CSS in CSS module projects and is not specific to RMWC.
+
+Please note if you are using Create React App, you'll have to make these changes in both `webpack.config.dev.js` and `webpack.config.prod.js`.
+
+```javascript
+// An abbreviated example
+const path = require('path');
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        // exclude material css from being loaded by CSS modules
+        // These paths are specific to your system, so change accordingly
+        exclude: [
+          path.resolve('./node_modules/material-components-web'),
+          path.resolve('./node_modules/@material')
+        ],
+        use: ['style-loader', 'css-loader?modules=true']
+      },
+      {
+        test: /\.css$/,
+        // only turn on standard global CSS loader for the material directories
+        // These paths are the same as above and specific to your system, so change accordingly
+        include: [
+          path.resolve('./node_modules/material-components-web'),
+          path.resolve('./node_modules/@material')
+        ],
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
+};
+```
+
+## Test Setup for Jest and Enzyme
+
+Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. The quick fix is to monkey patch the missing items onto the fake DOM elements in your setupTests file.
 
 ```javascript
 // src/setupTests.js
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import rmwcTestPolyfill from 'rmwc/Base/testPolyfill';
 Enzyme.configure({ adapter: new Adapter() });
 
-// Add this line
-window.HTMLElement.prototype.dataset = {};
+//import and run this to fix the the MDC errors
+rmwcTestPolyfill();
 ```
+
+## Known Issues
 
 * Issue: postcss-cssnext messes up CSS variables. This can cause broken styles and extreme slowdowns when using web developer tools like the Chrome inspector. You'll know if you're having this issue because dev tools and the browser will slow to a crawl.
   * Solution: set customProperties to false. This may require ejecting or other workarounds if you are using Create React App. [See issue #65](https://github.com/jamesmfriedman/rmwc/issues/65).
@@ -76,9 +115,9 @@ postcss([
   cssnext({
     features: {
       customProperties: {
-        preserve: true,
-      },
-    },
-  }),
+        preserve: true
+      }
+    }
+  })
 ]);
 ```

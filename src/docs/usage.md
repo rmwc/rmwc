@@ -156,7 +156,7 @@ const MyComponent = props => (
 }
 ```
 
-### Using CSSModules
+### Using CSS Modules
 
 Just add your className. If you need to target a node that is not directly exposed by RMWC, you can use the global modifier in your CSS. In this example, you can target the inner wrapper of a DrawerHeader.
 
@@ -189,3 +189,32 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 ### SASS customization
 
 Additional customization can be done through your own SASS build. This is a feature of the `material-components-web`, not RMWC. If you want your own custom SASS build, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+
+## Dark Mode
+
+`material-components-web` ships with a built in Dark mode for most components. This can be enabled by using a dark theme context, or by using a `themeDark` prop on components that support it. Your mileage may vary. Some components respond perfectly whlie others will need to be manually styled.
+
+Note that RMWC does not control any of this logic or styling. The dark theme switch in the docs is available for you to get a general sense of the default behavior of components in the dark mode context. For more details, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+
+```jsx
+import { Theme } from 'rmwc/Theme';
+import { Card } from 'rmwc/Card';
+
+{
+  /*
+        This is an example of a dark theme context.
+        All children with applicable styles will be switched to dark mode
+    */
+}
+<Theme tag="div" use="dark">
+  <Card>...</Card>
+</Theme>;
+
+{
+  /*
+        This is an example of a dark theme prop.
+        Not all components support this, look at the docs to see which ones.
+    */
+}
+<Card themeDark>...</Card>;
+```

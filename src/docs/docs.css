@@ -9,7 +9,6 @@ body,
   min-height: 100vh;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 #root > div {
@@ -45,6 +44,18 @@ pre[class*='language-'] {
 .app__content {
   flex: 1 1 auto;
   max-width: 100%;
+  transition: margin-left 0.3s, max-width 0.3s;
+  will-change: margin-left;
+  will-change: max-width;
+}
+
+.app__dark-mode-switch {
+  align-self: center;
+  margin-right: 1.5rem;
+}
+
+.app__dark-mode-switch .mdc-switch-label {
+  margin-left: 0.25rem;
 }
 
 .mdc-persistent-drawer--open + .app__content {
@@ -94,7 +105,7 @@ pre[class*='language-'] {
 }
 
 /* code examples */
-.app__content > div .example.render-with-code,
+.example.render-with-code,
 .example.code-only {
   border: 0.0625rem solid rgba(0, 0, 0, 0.15);
   border-radius: 0.3125rem;
@@ -145,7 +156,7 @@ ul {
 }
 
 .app__content > div blockquote {
-  color: #212121;
+  opacity: 0.87;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 2rem;
@@ -159,12 +170,30 @@ ul {
 }
 
 .app__content > div h3 {
-  color: #212121;
+  opacity: 0.87;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 2rem;
   margin-bottom: 1.25rem;
   max-width: 58.75rem;
+}
+
+#main-nav.mdc-drawer--persistent {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+}
+
+#main-nav .mdc-drawer__drawer {
+  overflow-y: auto;
+}
+
+#main-nav .mdc-drawer__content {
+  padding-bottom: 88px;
 }
 
 #main-nav .mdc-list-item:before {
@@ -188,6 +217,11 @@ ul {
   color: inherit;
 }
 
+#main-nav.mdc-drawer--persistent.mdc-drawer--open + .app__content {
+  margin-left: 240px;
+  max-width: calc(100% - 240px);
+}
+
 ul li {
   margin: 0.5rem 0;
 }
@@ -195,6 +229,7 @@ ul li {
 .demo-content {
   display: flex;
   flex: 1;
+  position: relative;
 }
 
 /* page home */
@@ -326,6 +361,7 @@ ul li {
   align-items: center;
   justify-content: center;
   border-radius: 0.25rem;
+  background-color: white;
 }
 
 /* page linear-progress */
@@ -477,4 +513,50 @@ table th {
   .app__content > div {
     padding: 3.75rem 1.5rem;
   }
+}
+
+/** Dark mode */
+.app__root.mdc-theme--dark {
+  background: #212121;
+}
+
+.mdc-theme--dark .example.render-with-code,
+.mdc-theme--dark .example.code-only {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.mdc-theme--dark code[class*='language-'],
+.mdc-theme--dark pre[class*='language-'] {
+  text-shadow: 0 1px black;
+  color: inherit;
+}
+
+.mdc-theme--dark .app__content > div .example .run + .source {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.mdc-theme--dark .example.render-with-code,
+.mdc-theme--dark .example.code-only {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.mdc-theme--dark .app__content > div > p,
+.mdc-theme--dark .app__content > div > ul,
+.mdc-theme--dark .app__content > div > blockquote,
+.mdc-theme--dark .app__content .source,
+.mdc-theme--dark .app__content .document-component,
+.mdc-theme--dark .app__content > div > h3 {
+  color: var(--mdc-theme-text-primary-on-primary-dark);
+}
+
+.mdc-theme--dark .app__content > div > h1,
+.mdc-theme--dark .app__content > div > h2,
+.mdc-theme--dark .app__content > div .document-component h2 {
+  color: var(--mdc-theme-primary-dark);
+}
+
+.mdc-theme--dark .app__content > div p code,
+.mdc-theme--dark .app__content > div table code,
+.mdc-theme--dark .app__content > div ul code {
+  background-color: rgba(0, 0, 0, 0.2);
 }
