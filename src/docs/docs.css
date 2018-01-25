@@ -44,8 +44,9 @@ pre[class*='language-'] {
 .app__content {
   flex: 1 1 auto;
   max-width: 100%;
-  transition: margin-left 0.3s;
+  transition: margin-left 0.3s, max-width 0.3s;
   will-change: margin-left;
+  will-change: max-width;
 }
 
 .app__dark-mode-switch {
@@ -218,6 +219,7 @@ ul {
 
 #main-nav.mdc-drawer--persistent.mdc-drawer--open + .app__content {
   margin-left: 240px;
+  max-width: calc(100% - 240px);
 }
 
 ul li {
