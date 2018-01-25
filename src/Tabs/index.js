@@ -148,9 +148,7 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
         JSON.stringify(nextProps.children.map(({ key }) => key));
 
     const tabsLengthMismatch =
-      React.Children.toArray(nextProps.children).filter(
-        c => c.type.displayName === 'Tab'
-      ).length !== api.tabs.length;
+      React.Children.toArray(nextProps.children).length !== api.tabs.length;
 
     // Children changing is a pain...
     // We have to perform a lot of cleanup and sometimes we have to reinit
@@ -210,7 +208,7 @@ export const TabBarScroller = withMDC({
   mdcConstructor: MDCTabBarScroller,
   mdcApiRef: true,
   mdcComponentReinit: true,
-  onUpdate: (currentProps, nextProps, api, inst) => {    
+  onUpdate: (currentProps, nextProps, api, inst) => {
     // componentWillReceiveProps is not called
     // when the component is first mounted.
     // We need to force react to call getChildContext
@@ -259,9 +257,8 @@ export const TabBarScroller = withMDC({
     getChildContext() {
       return {
         isTabScroller: true,
-        tabBarApi: this.props &&
-          this.props.mdcApiRef &&
-          this.props.mdcApiRef.tabBar,
+        tabBarApi:
+          this.props && this.props.mdcApiRef && this.props.mdcApiRef.tabBar,
         reinitTabBarScroller: () => this.reinitTabBarScroller()
       };
     }
