@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, object, array } from '@storybook/addon-knobs';
+import { text, object, array, boolean } from '@storybook/addon-knobs';
 import { Select } from './';
 import { ListItem } from '../List';
 import { storyWithState } from '../Base/story-with-state';
@@ -17,6 +17,30 @@ const CSSSelectStory = storyWithState(
     return (
       <Select
         cssOnly
+        label={this.state.label}
+        value={this.state.value}
+        options={this.state.options}
+        onChange={evt => {
+          this.setState({ value: evt.target.value });
+          action('onChange: ' + evt.target.value)();
+        }}
+      />
+    );
+  }
+);
+
+const MutatingSelect = storyWithState(
+  state => ({
+    cssOnly: boolean('cssOnly', state.cssOnly || false),
+    value: text('value', state.value || 'Cookies'),
+    label: text('label', state.label || 'Label'),
+    options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
+  }),
+  function() {
+    return (
+      <Select
+        {...this.props}
+        cssOnly={this.state.cssOnly}
         label={this.state.label}
         value={this.state.value}
         options={this.state.options}
@@ -51,40 +75,6 @@ const CSSSelectWithOptgroupsStory = storyWithState(
         options={this.state.options}
         onChange={evt => {
           this.setState({ value: evt.target.value });
-          action('onChange: ' + evt.target.value)();
-        }}
-      />
-    );
-  }
-);
-
-const CSSMultiSelectWithOptgroupsStory = storyWithState(
-  state => ({
-    label: text('label', state.label || 'Foods'),
-    value: array('value', state.value || ['Cookies']),
-    options: array(
-      'options',
-      state.options || [
-        { label: 'Foods', options: ['Cookies', 'Pizza', 'Icecream'] },
-        { label: 'Animals', options: ['Dogs', 'Cats', 'Birds'] }
-      ]
-    )
-  }),
-  function() {
-    return (
-      <Select
-        {...this.props}
-        cssOnly
-        multiple
-        size="8"
-        label={this.state.label}
-        value={this.state.value}
-        options={this.state.options}
-        onChange={evt => {
-          this.setState({
-            value: [...evt.target.selectedOptions].map(o => o.value)
-          });
-
           action('onChange: ' + evt.target.value)();
         }}
       />
@@ -137,6 +127,4 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('CSS Select', () => <CSSSelectStory />)
   .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />)
-  .add('CSS Multi-select w/ optgroups', () => (
-    <CSSMultiSelectWithOptgroupsStory />
-  ));
+  .add('Mutating Select', () => <MutatingSelect />);

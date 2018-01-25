@@ -31,7 +31,8 @@ export const SwitchKnob = simpleTag({
 
 export const SwitchLabel = simpleTag({
   displayName: 'SwitchLabel',
-  tag: 'label'
+  tag: 'label',
+  classNames: 'mdc-switch-label'
 });
 
 type SwitchPropsT = {
@@ -42,7 +43,9 @@ type SwitchPropsT = {
   /** Toggle the control on and off. */
   checked?: boolean | string,
   /** A label for the control. */
-  label?: string
+  label?: string,
+  /** Props for the root element. By default, props spread to the input. */
+  rootProps?: Object
 };
 
 export const Switch = withMDCToggle()(
@@ -56,15 +59,20 @@ export const Switch = withMDCToggle()(
         children,
         generatedId,
         mdcElementRef,
+        rootProps = {},
         ...rest
       } = this.props;
 
       const labelId = id || generatedId;
+      const hasLabel = label.length || children;
 
       const switchTag = (
         <SwitchRoot
+          {...(!hasLabel ? rootProps : {})}
           elementRef={mdcElementRef}
-          className={classNames({ 'mdc-switch--disabled': rest.disabled })}
+          className={classNames(hasLabel || rootProps.className, {
+            'mdc-switch--disabled': rest.disabled
+          })}
         >
           <SwitchNativeControl id={labelId} {...rest} />
           <SwitchBackground>
@@ -77,9 +85,9 @@ export const Switch = withMDCToggle()(
        * We have to conditionally wrap our checkbox in a formfield
        * If we have a label
        */
-      if (label.length || children) {
+      if (hasLabel) {
         return (
-          <FormField>
+          <FormField {...rootProps} className={rootProps.className}>
             {switchTag}
             <SwitchLabel id={labelId + 'label'} htmlFor={labelId}>
               {label}

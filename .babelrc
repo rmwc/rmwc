@@ -1,0 +1,30 @@
+{
+  "presets": ["react-app", ["es2015"]],
+  "plugins": [
+    "react-hot-loader/babel",
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-class-properties",
+      {
+        "spec": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "transform-es2015-modules-commonjs",
+          {
+            "loose": true
+          }
+        ]
+      ]
+    }
+  }
+}
