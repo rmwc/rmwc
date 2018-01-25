@@ -2282,10 +2282,6 @@
     },
     {
       "description": "",
-      "methods": []
-    },
-    {
-      "description": "",
       "displayName": "Select",
       "methods": [],
       "props": {
@@ -2350,20 +2346,6 @@
           },
           "required": false,
           "description": "Makes a cssOnly select."
-        },
-        "multiple": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes a multi-select. Must be used in conjunction with cssOnly."
-        },
-        "size": {
-          "flowType": {
-            "name": "number"
-          },
-          "required": false,
-          "description": "The number of items in show in a multi-select. Use in conjunction with multiple."
         }
       }
     }
@@ -2438,7 +2420,29 @@
             }
           },
           "required": false,
-          "description": "A callback that takes an event with event.target.value set to the Slider's value."
+          "description": "A callback that fires when the Slider stops sliding which takes an event with event.target.value set to the Slider's value."
+        },
+        "onInput": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "A callback that fires continuously while the Slider is slidng that takes an event with event.target.value set to the Slider's value."
         },
         "value": {
           "flowType": {
@@ -2767,6 +2771,13 @@
           },
           "required": false,
           "description": "A label for the control."
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "Props for the root element. By default, props spread to the input."
         }
       }
     }
@@ -3061,6 +3072,13 @@
           },
           "required": false,
           "description": "Mark the input as required."
+        },
+        "invalid": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used."
         },
         "dense": {
           "flowType": {
