@@ -147,10 +147,7 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       JSON.stringify(props.children.map(({ key }) => key)) !==
         JSON.stringify(nextProps.children.map(({ key }) => key));
 
-    const tabsLengthMismatch =
-      React.Children.toArray(nextProps.children).filter(
-        c => c.type.displayName === 'Tab'
-      ).length !== api.tabs.length;
+    const tabsLengthMismatch = React.Children.toArray(nextProps.children).length !== api.tabs.length;
 
     // Children changing is a pain...
     // We have to perform a lot of cleanup and sometimes we have to reinit
