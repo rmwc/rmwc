@@ -28,6 +28,7 @@ import ThemeDocs from '../Theme/theme.md';
 import ToolbarDocs from '../Toolbar/toolbar.md';
 import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
+import StyledComponentsDocs from './styled-components.md';
 
 export const menuContent = [
   {
@@ -48,6 +49,16 @@ export const menuContent = [
         url: `/methodology`,
         component: MethodologyDocs
       }
+    ]
+  },
+  {
+    label: 'Library Integrations',
+    options: [
+      {
+        label: 'Styled Components',
+        url: `/styled-components`,
+        component: StyledComponentsDocs
+      },
     ]
   },
   {
