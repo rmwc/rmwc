@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build":
-      "react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
+      "npm run docgen && react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
     "test": "react-app-rewired test --env=jsdom",
     "babelfy": "node scripts/babelfy.js",
     "clean": "node scripts/clean.js",
@@ -44,12 +44,12 @@
       "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/docs/docgen.json",
     "build:lib": "node scripts/build-lib.js",
     "deploy:docs":
-      "npm run docgen && npm run build && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
+      "npm run build && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",
     "preversion": "npm test -- --coverage",
     "version":
-      "npm run changelog && git add CHANGELOG.md && npm run build:lib && git add -A lib",
+      "npm run changelog && git add CHANGELOG.md && npm run build:lib && git add -A lib && npm run build && git add docs -f",
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
