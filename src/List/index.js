@@ -172,6 +172,7 @@ export const SimpleListItem = ({
       )}
     </ListItemText>
     {!!meta && <ListItemMeta>{meta}</ListItemMeta>}
+    {children}
   </ListItem>
 );
 

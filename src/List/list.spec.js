@@ -35,6 +35,20 @@ describe('List', () => {
     );
   });
 
+  it('SimpleListItem can have children', () => {
+    const el = mount(
+      <SimpleListItem
+        graphic="star_border"
+        text="Cookies"
+        secondaryText="Chocolate chip"
+        meta="info"
+      >
+        <aside>Test</aside>
+      </SimpleListItem>
+    );
+    expect(el.find('aside').length).toBe(1);
+  });
+
   it('can have custom classnames', () => {
     [List, ListItem, ListItemText].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
