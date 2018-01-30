@@ -1,3 +1,9 @@
+#### 1.1.1 (2018-01-30)
+
+##### Bug Fixes
+
+* **SimpleListItem:**  rendering child items ([952ac17b](https://github.com/jamesmfriedman/rmwc/commit/952ac17ba2a716b61175e9749911da89fceb0435))
+
 #### 1.1.0 (2018-01-25)
 
 ##### Breaking Changes
