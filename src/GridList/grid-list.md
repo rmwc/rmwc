@@ -9,6 +9,7 @@ import from **rmwc/GridList**
 import {
   GridList,
   GridTile,
+  GridTileIcon,
   GridTilePrimary,
   GridTilePrimaryContent,
   GridTileSecondary,
@@ -33,6 +34,7 @@ import { Select } from 'rmwc/Select';
         </GridTilePrimaryContent>
       </GridTilePrimary>
       <GridTileSecondary>
+        <GridTileIcon>info</GridTileIcon>
         <GridTileTitle>Tile {i + 1}</GridTileTitle>
       </GridTileSecondary>
     </GridTile>
@@ -57,6 +59,7 @@ import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
 <DocumentComponent displayName="GridList" />
 <DocumentComponent displayName="GridTile" />
+<DocumentComponent displayName="GridTileIcon" />
 <DocumentComponent displayName="GridTilePrimary" />
 <DocumentComponent displayName="GridTileSecondary" />
 <DocumentComponent displayName="GridTileTitleSupportText" />
