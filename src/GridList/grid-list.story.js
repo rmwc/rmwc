@@ -10,6 +10,7 @@ import {
   GridTilePrimaryContent,
   GridTileSecondary,
   GridTileTitle,
+  GridTileIcon
 } from './';
 
 const cells = Array(24).fill();
@@ -46,6 +47,7 @@ storiesOf('GridLists', module).add('Grid List', () => {
               </GridTilePrimaryContent>
             </GridTilePrimary>
             <GridTileSecondary>
+              <GridTileIcon>info</GridTileIcon>
               <GridTileTitle>Tile {i + 1}</GridTileTitle>
             </GridTileSecondary>
           </GridTile>
