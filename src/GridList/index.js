@@ -54,8 +54,9 @@ export const GridListTiles = simpleTag({
   classNames: 'mdc-grid-list__tiles'
 });
 
-export const GridTilePrimaryRoot = simpleTag({
-  displayName: 'GridTilePrimaryRoot',
+/** The primary content for a Grid tile */
+export const GridTilePrimary = simpleTag({
+  displayName: 'GridTilePrimary',
   classNames: 'mdc-grid-tile__primary'
 });
 
@@ -76,15 +77,6 @@ export const GridTile = simpleTag({
   tag: 'li',
   classNames: 'mdc-grid-tile'
 });
-
-/** The primary content for a Grid tile */
-export const GridTilePrimary = ({ children, ...rest }: SimpleTagPropsT) => (
-  <GridTilePrimaryRoot {...rest}>
-    <GridTilePrimaryContent>{children}</GridTilePrimaryContent>
-  </GridTilePrimaryRoot>
-);
-
-GridTilePrimary.displayName = 'GridTilePrimary';
 
 /** The secondary content for a Grid tile */
 export const GridTileSecondary = simpleTag({
