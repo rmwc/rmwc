@@ -78,7 +78,13 @@ type DrawerPropsT = {
   /** Callback that fires when the Drawer is closed. */
   onClose?: (evt: Event) => mixed,
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: Event) => mixed
+  onOpen?: (evt: Event) => mixed,
+  /** Makes a permanent drawer. */
+  permanent?: boolean,
+  /** Makes a persistent drawer. */
+  persistent?: boolean,
+  /** Makes a temporary drawer. */
+  temporary?: boolean
 };
 
 /** A Drawer component */
