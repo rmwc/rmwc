@@ -808,6 +808,27 @@
           },
           "required": false,
           "description": "Callback that fires when the Drawer is opened."
+        },
+        "permanent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a permanent drawer."
+        },
+        "persistent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a persistent drawer."
+        },
+        "temporary": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a temporary drawer."
         }
       }
     }
