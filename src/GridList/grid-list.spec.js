@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import {
 	GridList,
 	GridTile,
+	GridTileIcon,
 	GridTilePrimary,
 	GridTilePrimaryContent,
 	GridTileSecondary,
@@ -20,6 +21,7 @@ describe('GridList', () => {
 						</GridTilePrimaryContent>
 					</GridTilePrimary>
 					<GridTileSecondary>
+						<GridTileIcon>info</GridTileIcon>
 						<GridTileTitle>Tile</GridTileTitle>
 					</GridTileSecondary>
 				</GridTile>
@@ -46,6 +48,7 @@ describe('GridList', () => {
 		[
 			GridList,
 			GridTile,
+			GridTileIcon,
 			//GridTilePrimary,	Apparently these cant have custom classes, look into why
 			//GridTilePrimaryContent,
 			GridTileSecondary,

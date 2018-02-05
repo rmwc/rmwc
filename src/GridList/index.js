@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import Icon from '../Icon';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -90,6 +91,13 @@ export const GridTileSecondary = simpleTag({
   displayName: 'GridTileSecondary',
   tag: 'span',
   classNames: 'mdc-grid-tile__secondary'
+});
+
+/** The icon for a Grid tile. This is an instance of Icon and can take all of the same props. */
+export const GridTileIcon = simpleTag({
+  displayName: 'GridTileIcon',
+  tag: Icon,
+  classNames: 'mdc-grid-tile__icon'
 });
 
 /** The title for a Grid tile */
