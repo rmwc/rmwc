@@ -5,6 +5,7 @@ import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { noop } from '../Base/noop';
 import { simpleTag, withMDC } from '../Base';
 import { Icon } from '../Icon';
+import { randomId } from '../Base/randomId';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
@@ -207,7 +208,7 @@ export const TextField = withMDC({
       const tagProps = {
         ...rest,
         elementRef: inputRef,
-        id: rest.id || Date.now() + Math.random() + ''
+        id: rest.id || randomId('text-field')
       };
 
       const tag = textarea ? (
