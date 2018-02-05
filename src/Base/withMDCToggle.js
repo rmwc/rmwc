@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import { withMDC } from './withMDC';
+import { randomId } from './randomId';
 
 type WithMDCToggleOptsT = {
   mdcConstructor?: Function
@@ -39,11 +40,11 @@ export const withMDCToggle = ({ mdcConstructor }: WithMDCToggleOptsT = {}) => (
     }
   })(
     class extends React.Component<WithMDCTogglePropsT> {
-      generatedId: string;
-
       componentWillMount() {
-        this.generatedId = Date.now() + Math.random() + '';
+        this.generatedId = randomId('toggle');
       }
+
+      generatedId: string;
 
       render() {
         return <Component {...this.props} generatedId={this.generatedId} />;

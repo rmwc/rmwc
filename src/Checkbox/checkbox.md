@@ -10,7 +10,7 @@ import { Checkbox } from 'rmwc/Checkbox';
 
 {/* Controlled with change handlers */}
 <Checkbox
-  checked={this.state.cookiesChecked}
+  checked={this.state.cookiesChecked || false}
   onChange={evt => this.setState({cookiesChecked: evt.target.checked})}>
   Cookies
 </Checkbox>
