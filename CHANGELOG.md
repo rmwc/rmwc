@@ -1,3 +1,14 @@
+#### 1.1.2 (2018-02-05)
+
+##### New Features
+
+* **GridList:**  add GridTileIcon ([060b2fad](https://github.com/jamesmfriedman/rmwc/commit/060b2fadea75a8f742d7ac989db973c277c521a5))
+
+##### Bug Fixes
+
+* **TextField:**  Corrects an issues with test snapshotting [#137](https://github.com/jamesmfriedman/rmwc/pull/137) ([cee345b6](https://github.com/jamesmfriedman/rmwc/commit/cee345b61dce4322fadaac0d08126df8775334e8))
+* **GridList:**  Removing redundant GridTilePrimaryContent node. ([263ec45e](https://github.com/jamesmfriedman/rmwc/commit/263ec45eed47bc6f5ac507f3fd4e41b1e498c4dc))
+
 #### 1.1.1 (2018-01-30)
 
 ##### Bug Fixes
