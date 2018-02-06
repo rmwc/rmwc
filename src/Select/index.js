@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { List, ListItem, ListGroup } from '../List';
-import { SimpleMenuRoot, SimpleMenuItems } from '../Menu';
+import { List, ListItem } from '../List';
+import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
@@ -41,7 +41,7 @@ export const SelectBottomLine = simpleTag({
 
 export const SelectMenu = simpleTag({
   displayName: 'SelectMenu',
-  tag: SimpleMenuRoot,
+  tag: MenuRoot,
   classNames: 'mdc-select__menu'
 });
 
@@ -67,9 +67,7 @@ type SelectPropsT = {
   /** Placeholder text for the form control. */
   placeholder?: string,
   /** Disables the form control. */
-  disabled?: boolean,
-  /** Makes a cssOnly select. */
-  cssOnly?: boolean
+  disabled?: boolean
 } & SimpleTagPropsT;
 
 /**
@@ -125,7 +123,6 @@ export const Select = withMDC({
     }
   },
   defaultProps: {
-    cssOnly: false,
     tabIndex: 0,
     options: undefined,
     label: undefined,
@@ -140,16 +137,7 @@ export const Select = withMDC({
     });
   },
   didUpdate: (props, nextProps, api, inst) => {
-    const cssOnlyDidChange = props && !!props.cssOnly !== !!nextProps.cssOnly;
-    if (cssOnlyDidChange) {
-      window.requestAnimationFrame(() => {
-        inst.mdcComponentReinit();
-      });
-      // escape out to avoid errors, didUpdate will run again on component init
-      return;
-    }
-
-    // we might be in cssOnly mode, or lacking an api
+    // we might be lacking an api
     if (!api) return;
 
     const valueDidChange = props && props.value !== nextProps.value;
@@ -203,63 +191,11 @@ export const Select = withMDC({
         label = '',
         options = [],
         mdcElementRef,
-        cssOnly,
         ...rest
       } = this.props;
 
       const selectOptions = createSelectOptions(options);
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
-
-      if (cssOnly) {
-        return (
-          <SelectRoot elementRef={mdcElementRef} {...rest}>
-            <SelectSurface
-              tabIndex={tabIndex}
-              tag="select"
-              value={value}
-              {...rest}
-            >
-              {!!placeholder.length && (
-                <ListItem tag="option" value="" tab-index="0">
-                  {placeholder}
-                </ListItem>
-              )}
-              {selectOptions &&
-                selectOptions.map(({ label, ...option }, i) => {
-                  if (option.options) {
-                    return (
-                      <ListGroup tag="optgroup" label={label} key={label}>
-                        {option.options.map(({ label, ...option }, i) => (
-                          <ListItem
-                            tag="option"
-                            key={label}
-                            {...option}
-                            value={option.value}
-                          >
-                            {label}
-                          </ListItem>
-                        ))}
-                      </ListGroup>
-                    );
-                  }
-
-                  return (
-                    <ListItem
-                      tag="option"
-                      key={label}
-                      {...option}
-                      value={option.value}
-                    >
-                      {label}
-                    </ListItem>
-                  );
-                })}
-              {children}
-            </SelectSurface>
-            <SelectBottomLine />
-          </SelectRoot>
-        );
-      }
 
       return (
         <SelectRoot elementRef={mdcElementRef} {...rest}>
@@ -271,7 +207,7 @@ export const Select = withMDC({
             <SelectBottomLine />
           </SelectSurface>
           <SelectMenu>
-            <SimpleMenuItems>
+            <MenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                 <ListItem role="option" id="" tab-index="0">
@@ -292,7 +228,7 @@ export const Select = withMDC({
                   </ListItem>
                 ))}
               {children}
-            </SimpleMenuItems>
+            </MenuItems>
           </SelectMenu>
         </SelectRoot>
       );
