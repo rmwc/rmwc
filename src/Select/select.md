@@ -84,42 +84,6 @@ import { ListItem } from 'rmwc/List';
 </Select>
 ```
 
-## CSS only Selects
-
-For certain platforms or usecases, a pure CSS select may be preferrable. Use the `cssOnly` prop to create one.
-
-```jsx render
-{/*
-  cssOnly Selects
-  MDC doesnt have a label prop for css only selects, but RMWC has a placeholder prop you can use.
-*/}
-<Select
-  cssOnly
-  placeholder="-- cssOnly --"
-  options={['Cookies', 'Pizza', 'Icecream']}
-/>
-
-{/*
-  cssOnly Selects with option groups
-  MDC only supports option groups on css only selects.
-*/}
-<Select
-  cssOnly
-  placeholder="-- cssOnly w/ optGroups --"
-  options={[
-    {
-      label: 'Foods',
-      /* Options can be any value Select input: simply arrays, value => label objects, or formatted arrays. */
-      options: ['Cookies', 'Pizza', 'Icecream']
-    },
-    {
-      label: 'Animals',
-      options: ['Dogs', 'Cats', 'Birds']
-    }
-  ]}
-/>
-```
-
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
