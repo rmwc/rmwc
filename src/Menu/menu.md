@@ -6,18 +6,18 @@ import from **rmwc/Menu**
 [https://material.io/components/web/catalog/menus/](https://material.io/components/web/catalog/menus/)
 
 ```jsx render
-import { SimpleMenu, MenuItem, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuItem, MenuAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 <MenuAnchor>
-  <SimpleMenu
+  <Menu
     open={this.state.menuIsOpen}
     onClose={evt => this.setState({menuIsOpen: false})}
   >
     <MenuItem>Cookies</MenuItem>
     <MenuItem>Pizza</MenuItem>
     <MenuItem>Icecream</MenuItem>
-  </SimpleMenu>
+  </Menu>
 
   <Button
     raised
@@ -31,7 +31,7 @@ import { Button } from 'rmwc/Button';
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
-<DocumentComponent displayName="SimpleMenu" />
+<DocumentComponent displayName="Menu" />
 <DocumentComponent displayName="MenuItem" />
 <DocumentComponent displayName="MenuAnchor" />
 ```
