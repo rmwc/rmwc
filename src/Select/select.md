@@ -52,8 +52,9 @@ import { Select } from 'rmwc/Select';
   options={{'1': 'Cookies', '2': 'Pizza', '3': 'Icecream'}}
 />
 
-{/* a simple array of options, value will be the same as label */}
+{/* a simple array of options with box styling, value will be the same as label */}
 <Select
+  box
   label="Simple Array"
   placeholder="-- Select One --"
   options={['Cookies', 'Pizza', 'Icecream']}

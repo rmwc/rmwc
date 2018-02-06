@@ -6,9 +6,22 @@ import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
-export const SelectRoot = simpleTag({
+type SelectRootPropsT = {
+  /** Makes the Select have a visiual box. */
+  box?: boolean
+} & SimpleTagPropsT;
+
+export const SelectRoot: React.ComponentType<
+  SelectRootPropsT
+> = simpleTag({
   displayName: 'SelectRoot',
-  classNames: 'mdc-select',
+  classNames: props => [
+    'mdc-select',
+    {
+      'mdc-select--box': props.box
+    }
+  ],
+  consumeProps: ['box'],
   defaultProps: {
     role: 'listbox'
   }
@@ -68,7 +81,8 @@ type SelectPropsT = {
   placeholder?: string,
   /** Disables the form control. */
   disabled?: boolean
-} & SimpleTagPropsT;
+} & SelectRootPropsT & 
+  SimpleTagPropsT;
 
 /**
  * Get the display value for a select from its formatted options
@@ -127,7 +141,8 @@ export const Select = withMDC({
     options: undefined,
     label: undefined,
     placeholder: undefined,
-    disabled: false
+    disabled: false,
+    box: undefined
   },
   onMount: (props, api) => {
     window.requestAnimationFrame(() => {
@@ -190,6 +205,7 @@ export const Select = withMDC({
         value,
         label = '',
         options = [],
+        box,
         mdcElementRef,
         ...rest
       } = this.props;
@@ -198,7 +214,7 @@ export const Select = withMDC({
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
       return (
-        <SelectRoot elementRef={mdcElementRef} {...rest}>
+        <SelectRoot box={box} elementRef={mdcElementRef} {...rest}>
           <SelectSurface tabIndex={tabIndex}>
             <SelectLabel placeholder={placeholder} value={value}>
               {label}
