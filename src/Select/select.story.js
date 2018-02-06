@@ -33,6 +33,7 @@ const MutatingSelect = storyWithState(
 storiesOf('Inputs and Controls', module)
   .add('Select with object', () => (
     <Select
+      box={boolean('box', true)}
       label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
@@ -42,6 +43,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with array', () => (
     <Select
+      box={boolean('box', false)}
       label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
@@ -51,6 +53,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with initial value', () => (
     <Select
+      box={boolean('box', false)}
       label={text('label', 'Foods')}
       value={text('value', 'Cookies')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
@@ -59,6 +62,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with children', () => (
     <Select
+      box={boolean('box', false)}
       value={text('value', 'Cookies')}
       onChange={evt => action('onChange: ' + evt.target.value)()}
     >
