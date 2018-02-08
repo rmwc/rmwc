@@ -22,7 +22,6 @@ const MenuStory = storyWithState(
 
         <Menu
           open={this.state.open}
-          startOpen={boolean('startOpen', true)}
           anchorCorner={select(
             'anchorCorner',
             {
