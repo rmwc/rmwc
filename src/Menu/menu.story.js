@@ -8,7 +8,7 @@ import { storyWithState } from '../Base/story-with-state';
 
 const MenuStory = storyWithState(
   state => ({
-    open: boolean('open', state.open || false)
+    open: boolean('open', state.open || true)
   }),
   function() {
     return (
@@ -22,6 +22,7 @@ const MenuStory = storyWithState(
 
         <Menu
           open={this.state.open}
+          startOpen={boolean('startOpen', true)}
           anchorCorner={select(
             'anchorCorner',
             {
