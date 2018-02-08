@@ -43,7 +43,7 @@ export const CheckboxCheckmark = simpleTag({
 export const CheckboxCheckmarkPath = simpleTag({
   displayName: 'CheckboxCheckmarkPath',
   tag: 'path',
-  classNames: 'mdc-checkbox__checkmark__path',
+  classNames: 'mdc-checkbox__checkmark-path',
   defaultProps: {
     fill: 'none',
     stroke: 'white',
