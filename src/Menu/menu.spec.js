@@ -8,7 +8,7 @@ describe('Menu', () => {
       <MenuAnchor>
         <button>Test</button>
 
-        <Menu open onClose={() => {}}>
+        <Menu open startOpen onClose={() => {}}>
           <MenuItem>Cookies</MenuItem>
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
