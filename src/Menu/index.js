@@ -12,13 +12,7 @@ import { simpleTag, withMDC, noop } from '../Base';
  ****************************************************************/
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
-  classNames: props => [
-    'mdc-menu',
-    {
-      'mdc-menu--open': props.startOpen
-    }
-  ],
-  consumeProps: ['startOpen'],
+  classNames: props => ['mdc-menu'],
   defaultProps: {
     tabIndex: '-1'
   }
@@ -68,8 +62,6 @@ type AnchorT = 'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'to
 type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
-  /** Weather to start the menu in an opening state */
-  startOpen?: boolean,
   /** Callback that fires when the Menu closes. */
   onClose?: (evt: Event) => mixed,
   /** Callback that fires when a Menu item is selected. */
@@ -98,11 +90,17 @@ export const Menu = withMDC({
   },
   defaultProps: {
     open: false,
-    startOpen: false,
     onSelected: noop,
     onClose: noop
   },
-  onUpdate: (props, nextProps, api, _this) => {
+  onMount: (props, api) => {
+    if (props.open) {
+      api.quickOpen = true;
+      api.open = true;
+      api.quickOpen = false;
+    }
+  },
+  onUpdate: (props, nextProps, api) => {
     if (
       api &&
       MDCMenuFoundation.Corner[
@@ -128,7 +126,6 @@ export const Menu = withMDC({
       const {
         children,
         open,
-        startOpen,
         onClose,
         onSelected,
         mdcElementRef,
@@ -137,7 +134,7 @@ export const Menu = withMDC({
       } = this.props;
 
       return (
-        <MenuRoot startOpen={startOpen} elementRef={mdcElementRef} {...rest}>
+        <MenuRoot elementRef={mdcElementRef} {...rest}>
           <MenuItems>{children}</MenuItems>
         </MenuRoot>
       );
