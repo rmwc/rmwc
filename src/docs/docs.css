@@ -121,7 +121,7 @@ pre[class*='language-'] {
   margin-bottom: 0;
 }
 
-.app__content > div .example .run {
+.app__content > div .example:not(.render-only) .run {
   padding: 1rem;
 }
 
@@ -144,10 +144,6 @@ pre[class*='language-'] {
   border: 0;
   border-top: 0.0625rem solid rgba(0, 0, 0, 0.12);
   margin: 5rem 0;
-}
-
-.document-component {
-  margin: -1rem;
 }
 
 p,
