@@ -29,6 +29,7 @@ import ToolbarDocs from '../Toolbar/toolbar.md';
 import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
 import StyledComponentsDocs from './styled-components.md';
+import ChipDocs from '../Chip/chip.md';
 
 export const menuContent = [
   {
@@ -58,7 +59,7 @@ export const menuContent = [
         label: 'Styled Components',
         url: `/styled-components`,
         component: StyledComponentsDocs
-      },
+      }
     ]
   },
   {
@@ -85,6 +86,11 @@ export const menuContent = [
     label: 'Cards',
     url: `/cards`,
     component: CardDocs
+  },
+  {
+    label: 'Chips',
+    url: `/chips`,
+    component: ChipDocs
   },
   {
     label: 'Dialogs',
