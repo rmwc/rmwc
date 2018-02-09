@@ -12,17 +12,17 @@ import {
   CardSubtitle,
   CardSupportingText,
   CardActions,
-  CardAction,
+  CardAction
 } from './';
 
 storiesOf('Cards', module).add('Card', () => (
   <div>
-    <Card style={{ width: '320px' }} themeDark={boolean('themeDark', false)}>
+    <Card style={{ width: '320px' }}>
       <CardMedia
         style={{
           backgroundImage:
             'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-          height: '12.313rem',
+          height: '12.313rem'
         }}
       />
       <CardPrimary>

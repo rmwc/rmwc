@@ -172,36 +172,14 @@
     {
       "description": "A Card Component",
       "displayName": "Card",
-      "methods": [],
-      "props": {
-        "themeDark": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Use the cards dark theme."
-        }
-      }
+      "methods": []
     }
   ],
   "src/Checkbox/index.js": [
     {
       "description": "",
       "displayName": "CheckboxRoot",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ]
+      "methods": []
     },
     {
       "description": "",
@@ -317,13 +295,6 @@
           },
           "required": false,
           "description": "A label for the control."
-        },
-        "themeDark": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Use the dark theme."
         }
       }
     }
@@ -354,20 +325,7 @@
     {
       "description": "",
       "displayName": "DialogRoot",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ],
+      "methods": [],
       "props": {
         "role": {
           "defaultValue": {
@@ -518,13 +476,6 @@
           },
           "required": true,
           "description": "Callback for when the Dialog closes."
-        },
-        "themeDark": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Use the dark theme"
         }
       }
     },
@@ -715,17 +666,6 @@
           "defaultValue": {
             "value": "noop",
             "computed": true
-          }
-        },
-        "themeDark": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Use the dark theme",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
           }
         }
       }
@@ -3048,7 +2988,7 @@
     },
     {
       "description": "",
-      "displayName": "TextFieldBottomLine",
+      "displayName": "LineRipple",
       "methods": []
     },
     {

@@ -163,7 +163,7 @@ export default {
       {props.children}
       <TextFieldIcon use={props.icon} />
     </SelectIconRow>
-  ),
+  )
 };
 ```
 
@@ -178,16 +178,16 @@ You can then import this and use it like so:
     options={[
       {
         label: 'Solid',
-        value: 'solid',
+        value: 'solid'
       },
       {
         label: 'Liquid',
-        value: 'liquid',
+        value: 'liquid'
       },
       {
         label: 'Unit',
-        value: 'unit',
-      },
+        value: 'unit'
+      }
     ]}
     value={unit_type}
   />
@@ -209,9 +209,7 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 
 ## Dark Mode
 
-`material-components-web` ships with a built in Dark mode for most components. This can be enabled by using a dark theme context, or by using a `themeDark` prop on components that support it. Your mileage may vary. Some components respond perfectly whlie others will need to be manually styled.
-
-Note that RMWC does not control any of this logic or styling. The dark theme switch in the docs is available for you to get a general sense of the default behavior of components in the dark mode context. For more details, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+Earlier versions of `material-components-web` shipped with a built in Dark Mode but it has since be removed. Please refer to the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
 
 ```jsx
 import { Theme } from 'rmwc/Theme';
@@ -219,9 +217,9 @@ import { Card } from 'rmwc/Card';
 
 {
   /*
-                  This is an example of a dark theme context.
-                  All children with applicable styles will be switched to dark mode
-                */
+                    This is an example of a dark theme context.
+                    All children with applicable styles will be switched to dark mode
+                  */
 }
 <Theme tag="div" use="dark">
   <Card>...</Card>
@@ -229,9 +227,9 @@ import { Card } from 'rmwc/Card';
 
 {
   /*
-                  This is an example of a dark theme prop.
-                  Not all components support this, look at the docs to see which ones.
-                */
+                    This is an example of a dark theme prop.
+                    Not all components support this, look at the docs to see which ones.
+                  */
 }
 <Card themeDark>...</Card>;
 ```

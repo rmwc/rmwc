@@ -112,38 +112,6 @@ import {
   </CardActions>
 </Card>
 
-{/** 6 */}
-<Card themeDark style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)',
-    backgroundSize: 'cover',
-    height: '21.875rem'
-  }}>
-  <CardPrimary>
-    <CardTitle large>(6) Card Title</CardTitle>
-    <CardSubtitle>Subtitle here</CardSubtitle>
-  </CardPrimary>
-  <CardSupportingText>
-  </CardSupportingText>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 7 */}
-<Card themeDark>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)',
-    backgroundSize: 'cover',
-    height: '10rem'
-  }}>
-    <CardTitle large>(7) Card Title</CardTitle>
-  </CardMedia>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-  </CardActions>
-</Card>
-
 {/** 8 */}
 <Card>
   <CardHorizontalBlock>
@@ -199,60 +167,6 @@ import {
     </CardActions>
   </CardHorizontalBlock>
 </Card>
-```
-
-## Dark Themed Cards
-
-Cards can be made dark by adding the `themeDark` prop, or by using the dark theme context. Remember to add a dark background to the card when using the dark theme. The following examples are subtly different but create identical results.
-
-```jsx render
-import {
-  Card,
-  CardMedia,
-  CardMediaItem,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
-  CardActions,
-  CardAction,
-  CardHorizontalBlock
-} from 'rmwc/Card';
-
-import { Theme } from 'rmwc/Theme';
-
-{/** Using the themeDark prop */}
-<Card themeDark style={{
-  background: '#262626'
-}}>
-  <CardHorizontalBlock>
-    <CardPrimary>
-      <CardTitle large>themeDark Prop</CardTitle>
-      <CardSubtitle>Subtitle here</CardSubtitle>
-    </CardPrimary>
-    <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-  </CardHorizontalBlock>
-  <CardActions>
-    <CardAction raised>Action 1</CardAction>
-  </CardActions>
-</Card>
-
-{/** Using the dark theme context */}
-<Theme use="dark">
-  <Card style={{
-    background: '#262626'
-  }}>
-    <CardHorizontalBlock>
-      <CardPrimary>
-        <CardTitle large>Dark Theme Context</CardTitle>
-        <CardSubtitle>Subtitle here</CardSubtitle>
-      </CardPrimary>
-      <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-    </CardHorizontalBlock>
-    <CardActions>
-      <CardAction raised>Action 1</CardAction>
-    </CardActions>
-  </Card>
-</Theme>
 ```
 
 ```jsx renderOnly
