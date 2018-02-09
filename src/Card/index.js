@@ -137,24 +137,12 @@ export const CardAction = simpleTag({
   }
 });
 
-type CardPropsT = {
-  /** Use the cards dark theme. */
-  themeDark: boolean
-} & SimpleTagPropsT;
+type CardPropsT = SimpleTagPropsT;
 
 /** A Card Component */
 export class Card extends simpleTag({
   displayName: 'Card',
-  classNames: props => [
-    'mdc-card',
-    {
-      'mdc-card--theme-dark': props.themeDark
-    }
-  ],
-  defaultProps: {
-    themeDark: false
-  },
-  consumeProps: ['themeDark']
+  classNames: 'mdc-card'
 })<CardPropsT> {
   render() {
     return super.render();

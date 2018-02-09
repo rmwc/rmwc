@@ -33,11 +33,6 @@ describe('Card', () => {
     );
   });
 
-  it('can be dark', () => {
-    const card = mount(<Card themeDark />);
-    expect(!!~card.html().search('mdc-card--theme-dark')).toEqual(true);
-  });
-
   it('can have custom classes', () => {
     [
       Card,
