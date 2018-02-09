@@ -7,6 +7,11 @@
   ],
   "src/Button/index.js": [
     {
+      "description": "An icon that goes inside of buttons. This is an instance of the Icon component.",
+      "displayName": "ButtonIcon",
+      "methods": []
+    },
+    {
       "description": "The Button component.",
       "displayName": "Button",
       "methods": [],
@@ -321,6 +326,28 @@
           "description": "Use the dark theme."
         }
       }
+    }
+  ],
+  "src/Chip/index.js": [
+    {
+      "description": "",
+      "displayName": "ChipRoot",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "ChipText",
+      "methods": []
+    },
+    {
+      "description": "A container for multiple Chip components.",
+      "displayName": "ChipSet",
+      "methods": []
+    },
+    {
+      "description": "A chip component.",
+      "displayName": "Chip",
+      "methods": []
     }
   ],
   "src/Dialog/index.js": [
@@ -1719,13 +1746,13 @@
       "methods": []
     },
     {
-      "description": "A Menu Anchor. When using the anchorCorner prop of SimpleMenu, you must set MenuAnchors position to absolute.",
+      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute.",
       "displayName": "MenuAnchor",
       "methods": []
     },
     {
       "description": "A menu component",
-      "displayName": "SimpleMenu",
+      "displayName": "Menu",
       "methods": [],
       "props": {
         "open": {
@@ -2240,7 +2267,20 @@
     {
       "description": "",
       "displayName": "SelectRoot",
-      "methods": [],
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "role": {
           "defaultValue": {
@@ -2361,12 +2401,12 @@
           "required": false,
           "description": "Disables the form control."
         },
-        "cssOnly": {
+        "box": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a cssOnly select."
+          "description": "Makes the Select have a visiual box."
         }
       }
     }
