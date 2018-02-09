@@ -65,9 +65,9 @@ export const TextFieldTextarea = simpleTag({
   classNames: 'mdc-text-field__input'
 });
 
-export const TextFieldBottomLine = simpleTag({
-  displayName: 'TextFieldBottomLine',
-  classNames: 'mdc-text-field__bottom-line'
+export const LineRipple = simpleTag({
+  displayName: 'LineRipple',
+  classNames: 'mdc-line-ripple'
 });
 
 export const TextFieldOutline = simpleTag({
@@ -266,7 +266,7 @@ export const TextField = withMDC({
             </TextFieldOutline>
           )}
 
-          {outlined ? <TextFieldIdleOutline /> : <TextFieldBottomLine />}
+          {outlined ? <TextFieldIdleOutline /> : <LineRipple />}
         </TextFieldRoot>
       );
     }
