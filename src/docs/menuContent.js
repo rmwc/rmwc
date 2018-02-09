@@ -1,4 +1,5 @@
 import InstallationDocs from './installation.md';
+import StylingDocs from './styling.md';
 import UsageDocs from './usage.md';
 import MethodologyDocs from './methodology.md';
 import ProviderDocs from '../Provider/provider.md';
@@ -28,7 +29,6 @@ import ThemeDocs from '../Theme/theme.md';
 import ToolbarDocs from '../Toolbar/toolbar.md';
 import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
-import StyledComponentsDocs from './styled-components.md';
 
 export const menuContent = [
   {
@@ -40,25 +40,20 @@ export const menuContent = [
         component: InstallationDocs
       },
       {
-        label: 'Usage and Styling',
+        label: 'Usage',
         url: `/usage`,
         component: UsageDocs
+      },
+      {
+        label: 'Styling',
+        url: `/styling`,
+        component: StylingDocs
       },
       {
         label: 'Project Methodology',
         url: `/methodology`,
         component: MethodologyDocs
       }
-    ]
-  },
-  {
-    label: 'Library Integrations',
-    options: [
-      {
-        label: 'Styled Components',
-        url: `/styled-components`,
-        component: StyledComponentsDocs
-      },
     ]
   },
   {
