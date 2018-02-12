@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MenuAnchor, Menu, MenuItem } from './';
+import { MenuAnchor, Menu, MenuItem, SimpleMenu } from './';
 
 describe('Menu', () => {
   it('renders', () => {
@@ -14,6 +14,16 @@ describe('Menu', () => {
           <MenuItem>Icecream</MenuItem>
         </Menu>
       </MenuAnchor>
+    );
+  });
+
+  it('SimpleMenu renders', () => {
+    mount(
+      <SimpleMenu handle={<button>Test</button>}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </SimpleMenu>
     );
   });
 

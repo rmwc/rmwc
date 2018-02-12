@@ -15,6 +15,8 @@ import {
   ToolbarIcon
 } from 'rmwc/Toolbar';
 
+import { Ripple } from 'rmwc/Ripple';
+
 import { Theme } from 'rmwc/Theme';
 
 import { Drawer, DrawerContent } from 'rmwc/Drawer';
@@ -67,14 +69,16 @@ export class App extends React.Component {
         <Toolbar fixed waterfall>
           <ToolbarRow>
             <ToolbarSection alignStart>
-              <ToolbarMenuIcon
-                style={{ color: 'inherit', alignSelf: 'center' }}
-                onClick={evt =>
-                  this.setState({ menuIsOpen: !this.state.menuIsOpen })
-                }
-              >
-                menu
-              </ToolbarMenuIcon>
+              <Ripple unbounded>
+                <ToolbarMenuIcon
+                  style={{ color: 'inherit', alignSelf: 'center' }}
+                  onClick={evt =>
+                    this.setState({ menuIsOpen: !this.state.menuIsOpen })
+                  }
+                >
+                  menu
+                </ToolbarMenuIcon>
+              </Ripple>
               <ToolbarTitle>
                 <Link to={'/'}>RMWC</Link>
               </ToolbarTitle>

@@ -1,9 +1,6 @@
 // @flow
 import * as React from 'react';
-import {
-  MDCMenu,
-  MDCMenuFoundation
-} from '@material/menu/dist/mdc.menu';
+import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
 import { simpleTag, withMDC, noop } from '../Base';
 
@@ -103,14 +100,11 @@ export const Menu = withMDC({
   onUpdate: (props, nextProps, api) => {
     if (
       api &&
-      MDCMenuFoundation.Corner[
-        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== api.foundation_.anchorCorner_
+      MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]] !==
+        api.foundation_.anchorCorner_
     ) {
       api.setAnchorCorner(
-        MDCMenuFoundation.Corner[
-          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-        ]
+        MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]]
       );
     }
 
@@ -141,3 +135,77 @@ export const Menu = withMDC({
     }
   }
 );
+
+type SimpleMenuPropsT = {
+  /** An element that will open the menu when clicked  */
+  handle: React.Node,
+  /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
+  rootProps: Object
+} & MenuPropsT;
+
+type SimpleMenuStateT = {
+  open: boolean
+};
+
+/**
+ * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor
+ */
+export class SimpleMenu extends React.Component<
+  SimpleMenuPropsT,
+  SimpleMenuStateT
+> {
+  static displayName = 'SimpleMenu';
+
+  componentWillMount() {
+    this.syncWithOpenProp(this.props.open);
+  }
+
+  componentWillReceiveProps(nextProps: SimpleMenuPropsT) {
+    this.syncWithOpenProp(nextProps.open);
+  }
+
+  state = {
+    open: false
+  };
+
+  syncWithOpenProp(open?: boolean) {
+    if (open !== undefined && this.state.open !== open) {
+      this.setState({ open });
+    }
+  }
+
+  render() {
+    const {
+      handle,
+      onClose,
+      children,
+      rootProps = {},
+      open,
+      ...rest
+    } = this.props;
+    const wrappedHandle = React.cloneElement(handle, {
+      ...handle.props,
+      onClick: evt => {
+        this.setState({ open: true });
+        if (handle.props.onClick) {
+          handle.props.onClick(evt);
+        }
+      }
+    });
+
+    const wrappedOnClose = evt => {
+      this.setState({ open: false });
+      if (onClose) {
+        onClose(evt);
+      }
+    };
+    return (
+      <MenuAnchor {...rootProps}>
+        <Menu onClose={wrappedOnClose} open={this.state.open} {...rest}>
+          {children}
+        </Menu>
+        {wrappedHandle}
+      </MenuAnchor>
+    );
+  }
+}

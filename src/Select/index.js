@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { List, ListItem } from '../List';
+import { ListItem } from '../List';
 import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
@@ -11,9 +11,7 @@ type SelectRootPropsT = {
   box?: boolean
 } & SimpleTagPropsT;
 
-export const SelectRoot: React.ComponentType<
-  SelectRootPropsT
-> = simpleTag({
+export const SelectRoot: React.ComponentType<SelectRootPropsT> = simpleTag({
   displayName: 'SelectRoot',
   classNames: props => [
     'mdc-select',
@@ -81,7 +79,7 @@ type SelectPropsT = {
   placeholder?: string,
   /** Disables the form control. */
   disabled?: boolean
-} & SelectRootPropsT & 
+} & SelectRootPropsT &
   SimpleTagPropsT;
 
 /**
