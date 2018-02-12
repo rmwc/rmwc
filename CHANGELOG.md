@@ -1,3 +1,9 @@
+#### 1.1.3 (2018-02-12)
+
+##### Bug Fixes
+
+* **TextField:**  Corrects issue with the invalid prop not syncing ([70b06db8](https://github.com/jamesmfriedman/rmwc/commit/70b06db80d2ec2684e1f9cde89d16fda6f35c87f))
+
 #### 1.1.2 (2018-02-05)
 
 ##### New Features
