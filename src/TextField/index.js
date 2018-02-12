@@ -192,7 +192,7 @@ export const TextField = withMDC({
     api.foundation_.setValid(!props.invalid);
   }
 })(
-  class extends React.Component<TextFieldPropsT> {
+  class extends React.PureComponent<TextFieldPropsT> {
     static displayName = 'TextField';
     render() {
       const {
