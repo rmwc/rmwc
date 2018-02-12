@@ -4,147 +4,153 @@
  * @module Card
  */
 import * as React from 'react';
-import Button from '../Button';
+import classNames from 'classnames';
+import { Button } from '../Button';
+import { Ripple } from '../Ripple';
+import { Icon } from '../Icon';
+import { IconToggle } from '../IconToggle';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 /****************************************************************
  * Public
  ****************************************************************/
-/**
- * Primary card content
- */
-export const CardPrimary: React.ComponentType<SimpleTagPropsT> = simpleTag({
-  displayName: 'CardPrimary',
-  tag: 'section',
-  classNames: 'mdc-card__primary'
-});
-
-type CardTitlePropsT = {
-  /** Make the title large. */
-  large: boolean
+type CardPropsT = {
+  /** Removes the shadow and displays a hairline stroke instead */
+  stroked: boolean
 } & SimpleTagPropsT;
 
-/** Title for the Card */
-export class CardTitle extends simpleTag({
-  displayName: 'CardTitle',
-  tag: 'h1',
+/** A Card Component */
+export class Card extends simpleTag({
+  displayName: 'Card',
   classNames: props => [
-    'mdc-card__title',
+    'mdc-card',
     {
-      'mdc-card__title--large': props.large
+      'mdc-card--stroked': props.stroked
     }
   ],
-  defaultProps: {
-    large: false
-  },
-  consumeProps: ['large']
-})<CardTitlePropsT> {
+  consumeProps: ['stroked']
+})<CardPropsT> {
   render() {
     return super.render();
   }
 }
 
-/** Subtitle for the Card */
-export const CardSubtitle = simpleTag({
-  displayName: 'CardSubtitle',
-  tag: 'h2',
-  classNames: 'mdc-card__subtitle'
-});
+type CardMediaPropsT = {
+  /** Automatically scales the media area’s height to equal its width */
+  square: boolean,
+  /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */
+  sixteenByNine: boolean
+};
 
-/** Supporting text for the Card. */
-export const CardSupportingText: React.ComponentType<
-  SimpleTagPropsT
-> = simpleTag({
-  displayName: 'CardSupportingText',
+/** Media area that displays a custom background-image with background-size: cover */
+export class CardMedia extends simpleTag({
+  displayName: 'CardMedia',
   tag: 'section',
-  classNames: 'mdc-card__supporting-text'
+  classNames: props => [
+    'mdc-card__media',
+    {
+      'mdc-card__media--square': props.square,
+      'mdc-card__media--16-9': props.sixteenByNine
+    }
+  ],
+  consumeProps: ['square', 'sixteenByNine']
+})<CardMediaPropsT> {
+  render() {
+    return super.render();
+  }
+}
+
+/** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
+export const CardMediaContent = simpleTag({
+  displayName: 'CardMediaContent',
+  classNames: 'mdc-card__media-content'
 });
 
 type CardActionsT = {
-  /** Allows for vertical alignment of actions. */
-  vertical: boolean
-};
+  /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
+  fullBleed: boolean
+} & SimpleTagPropsT;
 
-/** Action Button for the Card */
+/** Row containing action buttons and/or icons */
 export class CardActions extends simpleTag({
   displayName: 'CardActions',
   tag: 'section',
   classNames: props => [
     'mdc-card__actions',
-    { 'mdc-card__actions--vertical': props.vertical }
+    { 'mdc-card__actions--full-bleed': props.fullBleed }
   ],
-  defaultProps: {
-    vertical: undefined
-  },
-  consumeProps: ['vertical']
+  consumeProps: ['fullBleed']
 })<CardActionsT> {
   render() {
     return super.render();
   }
 }
 
-/** Media for the Card */
-export const CardMedia = simpleTag({
-  displayName: 'CardMedia',
-  tag: 'section',
-  classNames: 'mdc-card__media'
+/** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
+export const CardActionButtons = simpleTag({
+  displayName: 'CardActionButtons',
+  classNames: 'mdc-card__action-buttons'
 });
 
-type CardMediaItemT = {
-  /** Sets the media item height to 120px. */
-  oneDotFiveX: boolean,
-  /** Sets the media item height to 160px. */
-  twoX: boolean,
-  /** Sets the media item height to 240px. */
-  threeX: boolean
+/** A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons */
+export const CardActionIcons = simpleTag({
+  displayName: 'CardActionIcons',
+  classNames: 'mdc-card__action-icons'
+});
+
+type CardActionPropsT = {
+  /** An action icon with no text. This is an instance of the Icon component. */
+  icon: boolean,
+  /** An toggleable action icon with no text. This is an instance of the IconToggle component. */
+  iconToggle: boolean
 };
 
-/** Inidividual Media Item for the Card */
-export class CardMediaItem extends simpleTag({
-  displayName: 'CardMediaItem',
-  tag: 'img',
-  classNames: props => [
-    'mdc-card__media-item',
-    {
-      'mdc-card__media-item--1dot5x	': props.oneDotFiveX,
-      'mdc-card__media-item--2x': props.twoX,
-      'mdc-card__media-item--3x': props.threeX
-    }
-  ],
-  consumeProps: ['oneDotFiveX', 'twoX', 'threeX']
-})<CardMediaItemT> {
-  render() {
-    return super.render();
+/** A Card action Button. Will return a Button component by default. */
+export const CardAction = ({
+  button,
+  icon,
+  iconToggle,
+  ...rest
+}: CardActionPropsT) => {
+  if (icon) {
+    return (
+      <Ripple unbounded>
+        <Icon
+          {...rest}
+          className={classNames(
+            rest.className,
+            'mdc-card__action',
+            'mdc-card__action--icon'
+          )}
+        />
+      </Ripple>
+    );
   }
-}
 
-/** Horizontal content for the Card */
-export const CardHorizontalBlock: React.ComponentType<
-  SimpleTagPropsT
-> = simpleTag({
-  displayName: 'CardHorizontalBlock',
-  classNames: 'mdc-card__horizontal-block'
-});
-
-/** A Card action Button. This is an instance of Button and can take all of the same props. */
-export const CardAction = simpleTag({
-  displayName: 'CardAction',
-  tag: Button,
-  classNames: 'mdc-card__action',
-  defaultProps: {
-    compact: true
+  if (iconToggle) {
+    return (
+      <IconToggle
+        {...rest}
+        className={classNames(
+          rest.className,
+          'mdc-card__action',
+          'mdc-card__action--icon'
+        )}
+      />
+    );
   }
-});
 
-type CardPropsT = SimpleTagPropsT;
+  return (
+    <Button
+      {...rest}
+      className={classNames(
+        rest.className,
+        'mdc-card__action',
+        'mdc-card__action--button'
+      )}
+    />
+  );
+};
 
-/** A Card Component */
-export class Card extends simpleTag({
-  displayName: 'Card',
-  classNames: 'mdc-card'
-})<CardPropsT> {
-  render() {
-    return super.render();
-  }
-}
+CardAction.displayName = 'CardAction';
