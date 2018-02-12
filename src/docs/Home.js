@@ -109,7 +109,7 @@ export const Home = () => {
           </GridCell>
 
           <GridCell span={4}>
-            <Link to="/usage">
+            <Link to="/styling">
               <Card style={{ backgroundColor: '#283b4c' }} themeDark>
                 <CardPrimary>
                   <CardTitle large>Easy to Customize</CardTitle>
