@@ -156,7 +156,7 @@ ul {
   font-size: inherit;
 }
 
-.app__content > div h3 {
+.app__content > div > h3 {
   opacity: 0.87;
   font-size: 1.25rem;
   font-weight: 400;
@@ -302,28 +302,6 @@ ul li {
 #page-icons .example > div > img {
   margin: 1rem;
   vertical-align: middle;
-}
-
-/* page cards */
-@media (min-width: 60rem) {
-  #page-cards .example.render-with-code .run {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 16px;
-  }
-}
-
-@media (min-width: 90rem) {
-  #page-cards .example.render-with-code .run {
-    grid-template-columns: auto auto auto;
-  }
-}
-
-#page-cards .run .mdc-card {
-  min-width: 360px;
-  max-width: 400px;
-  margin: 16px 0;
-  align-self: flex-start;
 }
 
 /* page buttons */

@@ -76,103 +76,89 @@
   ],
   "src/Card/index.js": [
     {
-      "description": "",
-      "displayName": "CardPrimary",
-      "methods": []
-    },
-    {
-      "description": "Title for the Card",
-      "displayName": "CardTitle",
+      "description": "A Card Component",
+      "displayName": "Card",
       "methods": [],
       "props": {
-        "large": {
+        "stroked": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": "Make the title large."
+          "description": "Removes the shadow and displays a hairline stroke instead"
         }
       }
     },
     {
-      "description": "Subtitle for the Card",
-      "displayName": "CardSubtitle",
+      "description": "Media area that displays a custom background-image with background-size: cover",
+      "displayName": "CardMedia",
+      "methods": [],
+      "props": {
+        "square": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Automatically scales the media area’s height to equal its width"
+        },
+        "sixteenByNine": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
+        }
+      }
+    },
+    {
+      "description": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image",
+      "displayName": "CardMediaContent",
       "methods": []
     },
     {
-      "description": "Supporting text for the Card.",
-      "displayName": "CardSupportingText",
-      "methods": []
-    },
-    {
-      "description": "Action Button for the Card",
+      "description": "Row containing action buttons and/or icons",
       "displayName": "CardActions",
       "methods": [],
       "props": {
-        "vertical": {
+        "fullBleed": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": "Allows for vertical alignment of actions."
+          "description": "Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width"
         }
       }
     },
     {
-      "description": "Media for the Card",
-      "displayName": "CardMedia",
+      "description": "A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons",
+      "displayName": "CardActionButtons",
       "methods": []
     },
     {
-      "description": "Inidividual Media Item for the Card",
-      "displayName": "CardMediaItem",
-      "methods": [],
-      "props": {
-        "oneDotFiveX": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Sets the media item height to 120px."
-        },
-        "twoX": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Sets the media item height to 160px."
-        },
-        "threeX": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": true,
-          "description": "Sets the media item height to 240px."
-        }
-      }
-    },
-    {
-      "description": "Horizontal content for the Card",
-      "displayName": "CardHorizontalBlock",
+      "description": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons",
+      "displayName": "CardActionIcons",
       "methods": []
     },
     {
-      "description": "A Card action Button. This is an instance of Button and can take all of the same props.",
+      "description": "A Card action Button. Will return a Button component by default.",
       "displayName": "CardAction",
       "methods": [],
       "props": {
-        "compact": {
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
+        "icon": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "An action icon with no text. This is an instance of the Icon component."
+        },
+        "iconToggle": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "An toggleable action icon with no text. This is an instance of the IconToggle component."
         }
       }
-    },
-    {
-      "description": "A Card Component",
-      "displayName": "Card",
-      "methods": []
     }
   ],
   "src/Checkbox/index.js": [
@@ -1695,6 +1681,137 @@
       "displayName": "Menu",
       "methods": [],
       "props": {
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when the Menu closes."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomeLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        }
+      }
+    },
+    {
+      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor",
+      "displayName": "SimpleMenu",
+      "methods": [
+        {
+          "name": "syncWithOpenProp",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "open",
+              "optional": true,
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "handle": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "An element that will open the menu when clicked"
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": true,
+          "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
+        },
         "open": {
           "flowType": {
             "name": "boolean"

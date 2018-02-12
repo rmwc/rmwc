@@ -15,7 +15,6 @@ import {
   ToolbarIcon
 } from 'rmwc/Toolbar';
 
-import { Switch } from 'rmwc/Switch';
 import { Theme } from 'rmwc/Theme';
 
 import { Drawer, DrawerContent } from 'rmwc/Drawer';
