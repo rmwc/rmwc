@@ -181,6 +181,15 @@ export const TextField = withMDC({
     ) {
       inst.mdcComponentReinit();
     }
+    if (
+      props &&
+      (props.invalid !== nextProps.invalid)
+    ) {
+      api.foundation_.setValid(!nextProps.invalid);
+    }
+  },
+  onMount: (props, api, inst) => {
+    api.foundation_.setValid(!props.invalid);
   }
 })(
   class extends React.Component<TextFieldPropsT> {
