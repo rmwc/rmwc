@@ -3,7 +3,7 @@
 > Chips represent complex entities in small blocks, such as a contact.
 
 import from **rmwc/Chip**  
-[https://material.io/components/web/catalog/buttons/](https://material.io/components/web/catalog/buttons/)
+[https://material.io/components/web/catalog/chips/](https://material.io/components/web/catalog/chips/)
 
 ```jsx render
 import { Chip, ChipSet } from 'rmwc/Chip';
