@@ -7,7 +7,6 @@ body,
 #root {
   display: block;
   min-height: 100vh;
-  font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -23,6 +22,7 @@ pre[class*='language-'] {
   background-color: transparent;
   border-radius: 0.375rem;
   -webkit-overflow-scrolling: touch;
+  font-size: 0.875rem;
 }
 
 .mdc-temporary-drawer__drawer {
@@ -47,15 +47,6 @@ pre[class*='language-'] {
   transition: margin-left 0.3s, max-width 0.3s;
   will-change: margin-left;
   will-change: max-width;
-}
-
-.app__dark-mode-switch {
-  align-self: center;
-  margin-right: 1.5rem;
-}
-
-.app__dark-mode-switch .mdc-switch-label {
-  margin-left: 0.25rem;
 }
 
 .mdc-persistent-drawer--open + .app__content {
@@ -149,6 +140,7 @@ pre[class*='language-'] {
 p,
 ul {
   line-height: 1.4;
+  font-size: 0.875rem;
 }
 
 .app__content > div blockquote {
@@ -165,7 +157,7 @@ ul {
   font-size: inherit;
 }
 
-.app__content > div h3 {
+.app__content > div > h3 {
   opacity: 0.87;
   font-size: 1.25rem;
   font-weight: 400;
@@ -311,28 +303,6 @@ ul li {
 #page-icons .example > div > img {
   margin: 1rem;
   vertical-align: middle;
-}
-
-/* page cards */
-@media (min-width: 60rem) {
-  #page-cards .example.render-with-code .run {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 16px;
-  }
-}
-
-@media (min-width: 90rem) {
-  #page-cards .example.render-with-code .run {
-    grid-template-columns: auto auto auto;
-  }
-}
-
-#page-cards .run .mdc-card {
-  min-width: 360px;
-  max-width: 400px;
-  margin: 16px 0;
-  align-self: flex-start;
 }
 
 /* page buttons */
@@ -508,62 +478,4 @@ table th {
   .app__content > div {
     padding: 3.75rem 1.5rem;
   }
-}
-
-/** Dark mode */
-.app__root.mdc-theme--dark {
-  background: #212121;
-}
-
-.mdc-theme--dark .example.render-with-code,
-.mdc-theme--dark .example.code-only {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.mdc-theme--dark code[class*='language-'],
-.mdc-theme--dark pre[class*='language-'] {
-  text-shadow: 0 1px black;
-  color: inherit;
-}
-
-.mdc-theme--dark .app__content > div .example .run + .source {
-  border-top-color: rgba(0, 0, 0, 0.5);
-}
-
-.mdc-theme--dark .example.render-with-code,
-.mdc-theme--dark .example.code-only {
-  border-color: rgba(0, 0, 0, 0.3);
-}
-
-.mdc-theme--dark .app__content > div > p,
-.mdc-theme--dark .app__content > div > ul,
-.mdc-theme--dark .app__content > div > blockquote,
-.mdc-theme--dark .app__content .source,
-.mdc-theme--dark .app__content .document-component,
-.mdc-theme--dark .app__content > div > h3 {
-  color: var(--mdc-theme-text-primary-on-primary-dark);
-}
-
-.mdc-theme--dark .app__content > div > h1,
-.mdc-theme--dark .app__content > div > h2,
-.mdc-theme--dark .app__content > div .document-component h2 {
-  color: var(--mdc-theme-primary-dark);
-}
-
-.mdc-theme--dark .app__content > div p code,
-.mdc-theme--dark .app__content > div table code,
-.mdc-theme--dark .app__content > div ul code {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-#page-home.mdc-theme--dark .app__content {
-  color: white;
-}
-
-#page-home.mdc-theme--dark .app__content header {
-  background-color: #0c0c0c !important;
-}
-
-#page-home.mdc-theme--dark .app__content .mdc-theme--background.mdc-card {
-  background-color: rgba(255, 255, 255, 0.1);
 }

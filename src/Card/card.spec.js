@@ -3,49 +3,52 @@ import { mount } from 'enzyme';
 import {
   Card,
   CardMedia,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
-  CardSupportingText,
+  CardMediaContent,
   CardActions,
+  CardActionButtons,
+  CardActionIcons,
   CardAction
 } from './';
 
 describe('Card', () => {
   it('renders', () => {
     mount(
-      <Card style={{ width: '320px' }}>
-        <CardMedia
-          style={{
-            height: '12.313rem'
-          }}
-        />
-        <CardPrimary>
-          <CardTitle large>Card Title</CardTitle>
-          <CardSubtitle>Subtitle here</CardSubtitle>
-        </CardPrimary>
-        <CardSupportingText />
+      <Card style={{ width: '21rem' }}>
+        <CardMedia sixteenByNine />
+        <div style={{ padding: '0 1rem 1rem 1rem' }}>
+          <h2>Our Changing Planet</h2>
+          <h3>by Kurt Wagner</h3>
+          <div>
+            Visit ten places on our planet that are undergoing the biggest
+            changes today.
+          </div>
+        </div>
         <CardActions>
-          <CardAction>Action 1</CardAction>
-          <CardAction>Action 2</CardAction>
+          <CardActionButtons>
+            <CardAction>Read</CardAction>
+            <CardAction>Bookmark</CardAction>
+          </CardActionButtons>
+          <CardActionIcons>
+            <CardAction
+              iconToggle
+              on={{ label: 'Remove from favorites', content: 'favorite' }}
+              off={{ label: 'Add to favorites', content: 'favorite_border' }}
+            />
+            <CardAction icon use="share" />
+            <CardAction icon use="more_vert" />
+          </CardActionIcons>
         </CardActions>
       </Card>
     );
-  });
-
-  it('can be dark', () => {
-    const card = mount(<Card themeDark />);
-    expect(!!~card.html().search('mdc-card--theme-dark')).toEqual(true);
   });
 
   it('can have custom classes', () => {
     [
       Card,
       CardMedia,
-      CardPrimary,
-      CardTitle,
-      CardSubtitle,
-      CardSupportingText,
+      CardMediaContent,
+      CardActionButtons,
+      CardActionIcons,
       CardActions,
       CardAction
     ].forEach(Component => {

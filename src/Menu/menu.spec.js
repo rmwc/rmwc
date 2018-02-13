@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MenuAnchor, SimpleMenu, MenuItem } from './';
+import { MenuAnchor, Menu, MenuItem, SimpleMenu } from './';
 
 describe('Menu', () => {
   it('renders', () => {
@@ -8,17 +8,27 @@ describe('Menu', () => {
       <MenuAnchor>
         <button>Test</button>
 
-        <SimpleMenu open onClose={() => {}}>
+        <Menu open onClose={() => {}}>
           <MenuItem>Cookies</MenuItem>
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
-        </SimpleMenu>
+        </Menu>
       </MenuAnchor>
     );
   });
 
+  it('SimpleMenu renders', () => {
+    mount(
+      <SimpleMenu handle={<button>Test</button>}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </SimpleMenu>
+    );
+  });
+
   it('can have custom classnames', () => {
-    [MenuAnchor, SimpleMenu, MenuItem].forEach(Component => {
+    [MenuAnchor, Menu, MenuItem].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

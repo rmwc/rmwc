@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 
 import { simpleTag, withRipple } from '../Base';
+import { Icon } from '../Icon';
+
 import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
@@ -61,6 +63,13 @@ export const ButtonRoot = withRipple(
 /****************************************************************
  * Public
  ****************************************************************/
+
+/** An icon that goes inside of buttons. This is an instance of the Icon component. */
+export const ButtonIcon = simpleTag({
+  displayName: 'ButtonIcon',
+  tag: Icon,
+  classNames: 'mdc-button__icon'
+});
 
 /**
  * The Button component.
