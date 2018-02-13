@@ -8,11 +8,11 @@ Icons are not part of the official material-components-web spec, but they are re
 
 Note, the `use` prop is identical in functionality to passing `children` in all strategies.
 
-# Setup
+## Setup
 
 `RMWCProvider` provides options for setting global defaults for your icon setup. After finding the appropriate stategy to use, you'll likely want to set the defaults here. Please see the "Provider" section for more detail.
 
-# Ligatures
+## Ligatures
 
 This is for icon fonts that support ligatures like material-icons. This is the default strategy if nothing is set and doesn't require any additional setup if you are using material-icons.
 
@@ -23,7 +23,7 @@ import { Icon } from 'rmwc/Icon';
 <Icon strategy="ligature" use="star" />
 ```
 
-# Urls
+## Urls
 
 This is for icons that are http based and will be loaded directly into an `<img>` tag.
 
@@ -32,7 +32,7 @@ import { Icon } from 'rmwc/Icon';
 <Icon stategy="url" use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
 ```
 
-# Components (Inline SVGs)
+## Components (Inline SVGs)
 
 This will render a child component inside of the icon. This is useful for all sorts of customizations and for rendering inline svgs. The following example shows rendering an svg, as well as an arbitrary div.
 
@@ -49,7 +49,7 @@ import { Icon } from 'rmwc/Icon';
 </Icon>
 ```
 
-# Classnames
+## Classnames
 
 Some font icon sets like Ion Icons and Glyph Icons render based on a className that is set. RMWC docs doesn't include extra icon fonts so there is no example to render, but the below code should give you an approximation.
 
@@ -71,7 +71,7 @@ import { Icon } from 'rmwc/Icon';
 />;
 ```
 
-# Custom Rendering
+## Custom Rendering
 
 Sometimes, you just need to do you own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with RMWC. If none of the other strategies are what you need, then you can hijack the whole thing.
 
@@ -122,7 +122,7 @@ ReactDOM.render(
   <RMWCProvider iconStrategy="custom" iconRender={iconRenderHandler}>
     <App />
   </RMWCProvider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // 4) Now anywhere in your app that an Icon instance is used, it will be
