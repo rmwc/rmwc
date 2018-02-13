@@ -19,7 +19,7 @@ import {
   DialogBody,
   DialogFooter,
   DialogFooterButton,
-  DialogBackdrop,
+  DialogBackdrop
 } from 'rmwc/Dialog';
 
 import { Button } from 'rmwc/Button';
@@ -52,7 +52,7 @@ import { Button } from 'rmwc/Button';
 
 ## Simplified Usage
 
-```jsx
+```jsx render
 import { SimpleDialog } from 'rmwc/Dialog';
 import { Button } from 'rmwc/Button';
 
@@ -68,6 +68,7 @@ import { Button } from 'rmwc/Button';
 
 
 <Button
+  raised
   onClick={evt => this.setState({simpleDialogIsOpen: true})}
 >
   Open Simple Dialog
