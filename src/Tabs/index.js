@@ -144,8 +144,10 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
       props.children &&
       nextProps &&
       nextProps.children &&
-      JSON.stringify(props.children.map(({ key }) => key)) !==
-        JSON.stringify(nextProps.children.map(({ key }) => key));
+      JSON.stringify(React.Children.map(props.children, ({ key }) => key)) !==
+        JSON.stringify(
+          React.Children.map(nextProps.children, ({ key }) => key)
+        );
 
     const tabsLengthMismatch =
       React.Children.toArray(nextProps.children).length !== api.tabs.length;

@@ -5,19 +5,23 @@
 import from **rmwc/Menu**  
 [https://material.io/components/web/catalog/menus/](https://material.io/components/web/catalog/menus/)
 
+## Default Usage
+
+You can compose a menu with the given components, and manually manage the open state.
+
 ```jsx render
-import { SimpleMenu, MenuItem, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuItem, MenuAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 <MenuAnchor>
-  <SimpleMenu
+  <Menu
     open={this.state.menuIsOpen}
     onClose={evt => this.setState({menuIsOpen: false})}
   >
     <MenuItem>Cookies</MenuItem>
     <MenuItem>Pizza</MenuItem>
     <MenuItem>Icecream</MenuItem>
-  </SimpleMenu>
+  </Menu>
 
   <Button
     raised
@@ -28,10 +32,28 @@ import { Button } from 'rmwc/Button';
 </MenuAnchor>
 ```
 
+## Simplified usage
+
+RMWC provides a non-standard convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
+
+```jsx render
+import { SimpleMenu, MenuItem } from 'rmwc/Menu';
+import { Button } from 'rmwc/Button';
+
+<SimpleMenu
+  handle={ <Button raised>Open Simple Menu</Button> }
+>
+  <MenuItem>Cookies</MenuItem>
+  <MenuItem>Pizza</MenuItem>
+  <MenuItem>Icecream</MenuItem>
+</SimpleMenu>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
-<DocumentComponent displayName="SimpleMenu" />
+<DocumentComponent displayName="Menu" />
 <DocumentComponent displayName="MenuItem" />
 <DocumentComponent displayName="MenuAnchor" />
+<DocumentComponent displayName="SimpleMenu" />
 ```

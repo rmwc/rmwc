@@ -2,270 +2,187 @@
 
 > A card is a sheet of material that serves as an entry point to more detailed information.
 
-Material Card layouts can be very complex and there isn't a one size fits all solution. The structures below were copied from the [material-components-web card demo page](https://material-components-web.appspot.com/card.html).
+`material-web-components` provides a light framework for structuring cards, but the actual content layout will require a bit of custom CSS.
 
 import from **rmwc/Card**  
 [https://material.io/components/web/catalog/cards/](https://material.io/components/web/catalog/cards/)
 
+## Fully Featured Example
+
 ```jsx render
 import {
   Card,
   CardMedia,
-  CardMediaItem,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
-  CardSupportingText,
-  CardActions,
   CardAction,
-  CardHorizontalBlock
+  CardActions,
+  CardActionButtons,
+  CardActionIcons
 } from 'rmwc/Card';
 
-{/** 1 */}
-<Card>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-    backgroundSize: 'cover',
-    height: '12.313rem'
-  }}>
-  </CardMedia>
-  <CardSupportingText>
-    (1) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-  </CardSupportingText>
-</Card>
+import { Typography } from 'rmwc/Typography';
 
-{/** 2 */}
-<Card>
-  <CardPrimary>
-    <CardTitle>(2) Title</CardTitle>
-    <CardSubtitle>Subhead</CardSubtitle>
-  </CardPrimary>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-    backgroundSize: 'cover',
-    height: '12.313rem'
-  }}>
-  </CardMedia>
-  <CardSupportingText>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-  </CardSupportingText>
+<Card style={{width: '21rem'}}>
+  <CardMedia sixteenByNine style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)'}}/>
+  <div style={{padding: '0 1rem 1rem 1rem'}}>
+    <Typography use="title" tag="h2">Our Changing Planet</Typography>
+    <Typography
+      use="subheading1"
+      tag="h3"
+      theme="text-secondary-on-background"
+      style={{marginTop: '-1rem'}}
+    >
+      by Kurt Wagner
+    </Typography>
+    <Typography use="body1" tag="div" theme="text-secondary-on-background">Visit ten places on our planet that are undergoing the biggest changes today.</Typography>
+  </div>
   <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
+    <CardActionButtons>
+      <CardAction>Read</CardAction>
+      <CardAction>Bookmark</CardAction>
+    </CardActionButtons>
+    <CardActionIcons>
+      <CardAction
+        iconToggle
+        on={{label: 'Remove from favorites', content: 'favorite'}}
+        off={{label: 'Add to favorites', content: 'favorite_border'}}
+      />
+      <CardAction icon use="share" />
+      <CardAction icon use="more_vert" />
+    </CardActionIcons>
   </CardActions>
-</Card>
-
-
-{/** 3 */}
-<Card>
-  <CardPrimary>
-    <CardTitle>(3) Title</CardTitle>
-    <CardSubtitle>Subhead</CardSubtitle>
-  </CardPrimary>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-    backgroundSize: 'cover',
-    height: '12.313rem'
-  }}>
-  </CardMedia>
-  <CardActions vertical>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 4 */}
-<Card>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)',
-    backgroundSize: 'cover',
-    height: '12.313rem'
-  }}>
-  </CardMedia>
-  <CardPrimary>
-    <CardTitle large>(4) Card Title</CardTitle>
-    <CardSubtitle>Subtitle here</CardSubtitle>
-  </CardPrimary>
-  <CardSupportingText>
-  </CardSupportingText>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 5 */}
-<Card>
-  <CardPrimary>
-    <CardTitle large>(5) Card Title</CardTitle>
-    <CardSubtitle>Subtitle here</CardSubtitle>
-  </CardPrimary>
-  <CardSupportingText>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-  </CardSupportingText>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 6 */}
-<Card themeDark style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)',
-    backgroundSize: 'cover',
-    height: '21.875rem'
-  }}>
-  <CardPrimary>
-    <CardTitle large>(6) Card Title</CardTitle>
-    <CardSubtitle>Subtitle here</CardSubtitle>
-  </CardPrimary>
-  <CardSupportingText>
-  </CardSupportingText>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 7 */}
-<Card themeDark>
-  <CardMedia style={{
-    backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)',
-    backgroundSize: 'cover',
-    height: '10rem'
-  }}>
-    <CardTitle large>(7) Card Title</CardTitle>
-  </CardMedia>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-  </CardActions>
-</Card>
-
-{/** 8 */}
-<Card>
-  <CardHorizontalBlock>
-    <CardPrimary>
-      <CardTitle large>(8) Card Title</CardTitle>
-      <CardSubtitle>Subtitle here</CardSubtitle>
-    </CardPrimary>
-    <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-  </CardHorizontalBlock>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 9 */}
-<Card>
-  <CardHorizontalBlock>
-    <CardPrimary>
-      <CardTitle large>(9) Card Title</CardTitle>
-      <CardSubtitle>Subtitle here</CardSubtitle>
-    </CardPrimary>
-    <CardMediaItem oneDotFiveX src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-  </CardHorizontalBlock>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 10 */}
-<Card>
-  <CardHorizontalBlock>
-    <CardPrimary>
-      <CardTitle large>(10) Card Title</CardTitle>
-      <CardSubtitle>Subtitle here</CardSubtitle>
-    </CardPrimary>
-    <CardMediaItem twoX src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-  </CardHorizontalBlock>
-  <CardActions>
-    <CardAction>Action 1</CardAction>
-    <CardAction>Action 2</CardAction>
-  </CardActions>
-</Card>
-
-{/** 11 */}
-<Card>
-  <CardHorizontalBlock>
-    <CardMediaItem threeX src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-    <CardActions vertical>
-      <CardAction>(11)</CardAction>
-      <CardAction>A2</CardAction>
-    </CardActions>
-  </CardHorizontalBlock>
 </Card>
 ```
 
-## Dark Themed Cards
+## Article Preview Example
 
-Cards can be made dark by adding the `themeDark` prop, or by using the dark theme context. Remember to add a dark background to the card when using the dark theme. The following examples are subtly different but create identical results.
+```jsx render
+import {
+  Card,
+  CardAction,
+  CardActions
+} from 'rmwc/Card';
+
+import {
+  ListDivider,
+} from 'rmwc/List';
+
+import {
+  Icon,
+} from 'rmwc/Icon';
+
+import { Typography } from 'rmwc/Typography';
+
+<Card stroked style={{width: '21rem'}}>
+  <Typography
+    use="subheading2"
+    tag="div"
+    style={{padding: '0.5rem 1rem'}}
+    theme="text-secondary-on-background"
+  >
+    Headlines
+  </Typography>
+
+  <ListDivider />
+
+  <div style={{padding: '1rem'}}>
+    <Typography use="headline" tag="div">Copper on the rise</Typography>
+    <Typography
+      use="body1"
+      tag="p"
+      theme="text-secondary-on-background"
+    >
+    Copper price soars amid global market optimism and increased demand.</Typography>
+  </div>
+
+  <ListDivider />
+
+  <div style={{padding: '1rem'}}>
+    <Typography use="headline" tag="div">U.S. tech startups rebound</Typography>
+    <Typography
+      use="body1"
+      tag="p"
+      theme="text-secondary-on-background"
+    >
+      Favorable business conditions have allowed startups to secure more fundraising deals compared to last year.
+    </Typography>
+  </div>
+
+  <ListDivider />
+
+  <div style={{padding: '1rem'}}>
+    <Typography use="headline" tag="div">Asia's clean energy ambitions</Typography>
+    <Typography
+      use="body1"
+      tag="p"
+      theme="text-secondary-on-background"
+    >
+      China plans to invest billions of dollars for the development of over 300 clean energy projects in Southeast Asia.
+    </Typography>
+  </div>
+
+  <ListDivider />
+
+  <CardActions fullBleed>
+    <CardAction>All Business Headlines <Icon use="arrow_forward"/></CardAction>
+  </CardActions>
+</Card>
+```
+
+## Mini Card Example
 
 ```jsx render
 import {
   Card,
   CardMedia,
-  CardMediaItem,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
-  CardActions,
+  CardMediaContent,
   CardAction,
-  CardHorizontalBlock
+  CardActionIcons,
+  CardActions
 } from 'rmwc/Card';
 
-import { Theme } from 'rmwc/Theme';
 
-{/** Using the themeDark prop */}
-<Card themeDark style={{
-  background: '#262626'
-}}>
-  <CardHorizontalBlock>
-    <CardPrimary>
-      <CardTitle large>themeDark Prop</CardTitle>
-      <CardSubtitle>Subtitle here</CardSubtitle>
-    </CardPrimary>
-    <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-  </CardHorizontalBlock>
+<Card style={{width: '12.5rem'}}>
+  <CardMedia square style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)'}}>
+    <CardMediaContent>
+      <Typography
+        use="subheading2"
+        tag="div"
+        theme="text-primary-on-dark"
+        style={{
+          padding: '0.5rem 1rem',
+          backgroundImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+          bottom: '0',
+          left: '0',
+          right: '0',
+          position: 'absolute'
+        }}
+      >
+        Vacation Photos
+      </Typography>
+    </CardMediaContent>
+  </CardMedia>
   <CardActions>
-    <CardAction raised>Action 1</CardAction>
+    <CardActionIcons>
+      <CardAction
+        iconToggle
+        on={{label: 'Remove from favorites', content: 'favorite'}}
+        off={{label: 'Add to favorites', content: 'favorite_border'}}
+      />
+      <CardAction icon use="bookmark_border"/>
+      <CardAction icon use="share"/>
+    </CardActionIcons>
   </CardActions>
 </Card>
-
-{/** Using the dark theme context */}
-<Theme use="dark">
-  <Card style={{
-    background: '#262626'
-  }}>
-    <CardHorizontalBlock>
-      <CardPrimary>
-        <CardTitle large>Dark Theme Context</CardTitle>
-        <CardSubtitle>Subtitle here</CardSubtitle>
-      </CardPrimary>
-      <CardMediaItem src="https://material-components-web.appspot.com/images/1-1.jpg"/>
-    </CardHorizontalBlock>
-    <CardActions>
-      <CardAction raised>Action 1</CardAction>
-    </CardActions>
-  </Card>
-</Theme>
 ```
 
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
 <DocumentComponent displayName="Card" />
-<DocumentComponent displayName="CardHorizontalBlock" />
 <DocumentComponent displayName="CardMedia" />
-<DocumentComponent displayName="CardMediaItem" />
-<DocumentComponent displayName="CardPrimary" />
-<DocumentComponent displayName="CardTitle" />
-<DocumentComponent displayName="CardSubtitle" />
-<DocumentComponent displayName="CardSupportingText" />
+<DocumentComponent displayName="CardMediaContent" />
 <DocumentComponent displayName="CardActions" />
+<DocumentComponent displayName="CardActionButtons" />
+<DocumentComponent displayName="CardActionIcons" />
 <DocumentComponent displayName="CardAction" />
 ```

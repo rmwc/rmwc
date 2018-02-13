@@ -3,6 +3,7 @@ export { version } from '../package.json';
 export * from './Button';
 export * from './Card';
 export * from './Checkbox';
+export * from './Chip';
 export * from './Drawer';
 export * from './Dialog';
 export * from './Elevation';

@@ -15,7 +15,8 @@ import {
   ToolbarIcon
 } from 'rmwc/Toolbar';
 
-import { Switch } from 'rmwc/Switch';
+import { Ripple } from 'rmwc/Ripple';
+
 import { Theme } from 'rmwc/Theme';
 
 import { Drawer, DrawerContent } from 'rmwc/Drawer';
@@ -48,8 +49,7 @@ export class App extends React.Component {
 
   state = {
     menuIsOpen: false,
-    isMobile: true,
-    isDark: false
+    isMobile: true
   };
 
   doSizeCheck() {
@@ -65,23 +65,20 @@ export class App extends React.Component {
       'home'}`;
 
     return (
-      <Theme
-        className="app__root"
-        tag="div"
-        id={pageId}
-        use={this.state.isDark && 'dark'}
-      >
-        <Toolbar fixed waterfall theme="dark">
+      <Theme className="app__root" tag="div" id={pageId}>
+        <Toolbar fixed waterfall>
           <ToolbarRow>
             <ToolbarSection alignStart>
-              <ToolbarMenuIcon
-                style={{ color: 'inherit', alignSelf: 'center' }}
-                onClick={evt =>
-                  this.setState({ menuIsOpen: !this.state.menuIsOpen })
-                }
-              >
-                menu
-              </ToolbarMenuIcon>
+              <Ripple unbounded>
+                <ToolbarMenuIcon
+                  style={{ color: 'inherit', alignSelf: 'center' }}
+                  onClick={evt =>
+                    this.setState({ menuIsOpen: !this.state.menuIsOpen })
+                  }
+                >
+                  menu
+                </ToolbarMenuIcon>
+              </Ripple>
               <ToolbarTitle>
                 <Link to={'/'}>RMWC</Link>
               </ToolbarTitle>
@@ -89,13 +86,6 @@ export class App extends React.Component {
             <ToolbarSection alignEnd>
               {!this.state.isMobile && (
                 <React.Fragment>
-                  <Switch
-                    rootProps={{ className: 'app__dark-mode-switch' }}
-                    label="Dark Mode"
-                    onChange={evt =>
-                      this.setState({ isDark: evt.target.checked })
-                    }
-                  />
                   <span className="app__version">{version}</span>
                 </React.Fragment>
               )}

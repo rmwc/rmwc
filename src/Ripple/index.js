@@ -94,7 +94,8 @@ export class Ripple extends React.Component<RipplePropsT> {
 
     return React.cloneElement(child, {
       ...child.props,
-      className: dedupedClasses
+      "className": dedupedClasses,
+      'data-mdc-ripple-is-unbounded': true
     });
   }
 }
