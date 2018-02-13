@@ -173,7 +173,6 @@ ul {
   height: calc(100vh - 56px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  z-index: 1;
 }
 
 #main-nav .mdc-drawer__drawer {
