@@ -344,20 +344,16 @@
     {
       "description": "The Dialog body",
       "displayName": "DialogBody",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
+      "methods": [],
+      "props": {
+        "scrollable": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Make it scrollable."
         }
-      ]
+      }
     },
     {
       "description": "The Dialog footer",
@@ -374,14 +370,14 @@
             "name": "boolean"
           },
           "required": false,
-          "description": ""
+          "description": "Make it an accept button."
         },
         "cancel": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": ""
+          "description": "Make it a cancel button."
         }
       }
     },
