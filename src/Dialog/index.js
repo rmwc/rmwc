@@ -72,9 +72,9 @@ export const DialogFooter = simpleTag({
 });
 
 type DialogFooterButtonT = {
-  /* Make it an accept Button. */
+  /** Make it an accept button. */
   accept?: boolean,
-  /* Make it a cancel button. */
+  /** Make it a cancel button. */
   cancel?: boolean
 } & SimpleTagPropsT;
 

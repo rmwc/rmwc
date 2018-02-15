@@ -370,14 +370,14 @@
             "name": "boolean"
           },
           "required": false,
-          "description": ""
+          "description": "Make it an accept button."
         },
         "cancel": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": ""
+          "description": "Make it a cancel button."
         }
       }
     },
