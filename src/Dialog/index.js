@@ -41,8 +41,14 @@ export const DialogHeaderTitle = simpleTag({
   classNames: 'mdc-dialog__header__title'
 });
 
+
+type DialogBodyT = {
+  /** Make it scrollable. */
+  scrollable?: boolean
+} & SimpleTagPropsT;
+
 /** The Dialog body */
-export const DialogBody = simpleTag({
+export class DialogBody extends simpleTag({
   displayName: 'DialogBody',
   tag: 'section',
   classNames: props => [
@@ -52,7 +58,11 @@ export const DialogBody = simpleTag({
     }
   ],
   consumeProps: ['scrollable']
-});
+})<DialogBodyT> {
+  render() {
+    return super.render();
+  }
+}
 
 /** The Dialog footer */
 export const DialogFooter = simpleTag({
@@ -62,9 +72,9 @@ export const DialogFooter = simpleTag({
 });
 
 type DialogFooterButtonT = {
-  /* Make it an accept Button. */
+  /** Make it an accept button. */
   accept?: boolean,
-  /* Make it a cancel button. */
+  /** Make it a cancel button. */
   cancel?: boolean
 } & SimpleTagPropsT;
 
