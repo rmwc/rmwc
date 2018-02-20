@@ -218,14 +218,15 @@ export const TextField = withMDC({
 
       const tagProps = {
         ...rest,
+        disabled: disabled,
         elementRef: inputRef,
         id: rest.id || randomId('text-field')
       };
 
       const tag = textarea ? (
-        <TextFieldTextarea disabled={disabled} {...tagProps} />
+        <TextFieldTextarea {...tagProps} />
       ) : (
-        <TextFieldInput disabled={disabled} {...tagProps} />
+        <TextFieldInput {...tagProps} />
       );
 
       // handle leading and trailing icons
