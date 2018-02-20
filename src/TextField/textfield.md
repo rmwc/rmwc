@@ -28,6 +28,9 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 
 {/* You can optionally make HelperText always visible with the persistent prop. */}
 <TextFieldHelperText persistent validationMsg>The field is required.</TextFieldHelperText>
+
+{/* Disabled text field. */}
+<TextField disabled label="Disabled..." />
 ```
 
 ```jsx renderOnly
