@@ -32,10 +32,11 @@ export const TextFieldRoot: React.ComponentType<
       'mdc-text-field--box': props.box,
       'mdc-text-field--outlined': props.outlined,
       'mdc-text-field--dense': props.dense,
-      'mdc-text-field--invalid': props.invalid
+      'mdc-text-field--invalid': props.invalid,
+      'mdc-text-field--disabled': props.disabled,
     }
   ],
-  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid']
+  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid', 'disabled']
 });
 
 export const TextFieldLabel = simpleTag({
@@ -205,6 +206,7 @@ export const TextField = withMDC({
         fullwidth,
         dense,
         invalid,
+        disabled,
         withLeadingIcon,
         withTrailingIcon,
         mdcElementRef,
@@ -249,6 +251,7 @@ export const TextField = withMDC({
           textarea={textarea}
           box={box}
           dense={dense}
+          disabled={disabled}
           outlined={outlined}
           fullwidth={fullwidth}
           elementRef={mdcElementRef}
