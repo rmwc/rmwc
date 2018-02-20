@@ -223,9 +223,9 @@ export const TextField = withMDC({
       };
 
       const tag = textarea ? (
-        <TextFieldTextarea {...tagProps} />
+        <TextFieldTextarea disabled={disabled} {...tagProps} />
       ) : (
-        <TextFieldInput {...tagProps} />
+        <TextFieldInput disabled={disabled} {...tagProps} />
       );
 
       // handle leading and trailing icons
