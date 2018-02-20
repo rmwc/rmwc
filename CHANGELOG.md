@@ -1,3 +1,19 @@
+#### 1.2.1 (2018-02-20)
+
+##### Chores
+
+* **Dialog:**  Add scrollable prop type defintion to DialogBody ([15b8b481](https://github.com/jamesmfriedman/rmwc/commit/15b8b481cdb2c901aa91992fe79b85e5a5722070))
+
+##### Documentation Changes
+
+* **TextField:**  Adding disabled example ([8c00ad2a](https://github.com/jamesmfriedman/rmwc/commit/8c00ad2a79027a2ccb409e03eaa1e839b21f15ca))
+* **Dialog:**  Fix issue with description docgen of DialogFooterButton ([64e02268](https://github.com/jamesmfriedman/rmwc/commit/64e02268f615b156ac7c6a387bce6fda79e60b86))
+* **Chips:**  Fixing chips link ([5111ed80](https://github.com/jamesmfriedman/rmwc/commit/5111ed8050b9a254c9d8833fd6c3416abfd8d9e4))
+
+##### Bug Fixes
+
+* **textfield:**  add mdc class on disabled textfields ([b7c8fccf](https://github.com/jamesmfriedman/rmwc/commit/b7c8fccfd2ef96da689d05a20f484eb18d8789ea))
+
 #### 1.2.0 (2018-02-13)
 
 ##### Breaking Changes
