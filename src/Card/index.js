@@ -67,6 +67,12 @@ export const CardMediaContent = simpleTag({
   classNames: 'mdc-card__media-content'
 });
 
+/** The main clickable area fro the primary content of the card */
+export const CardPrimaryAction = simpleTag({
+  displayName: 'CardPrimaryAction',
+  classNames: 'mdc-card__primary-action'
+});
+
 type CardActionsT = {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
   fullBleed: boolean

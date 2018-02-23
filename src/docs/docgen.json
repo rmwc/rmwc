@@ -116,6 +116,11 @@
       "methods": []
     },
     {
+      "description": "The main clickable area fro the primary content of the card",
+      "displayName": "CardPrimaryAction",
+      "methods": []
+    },
+    {
       "description": "Row containing action buttons and/or icons",
       "displayName": "CardActions",
       "methods": [],
