@@ -12,6 +12,7 @@ import from **rmwc/Card**
 ```jsx render
 import {
   Card,
+  CardPrimaryAction,
   CardMedia,
   CardAction,
   CardActions,
@@ -22,19 +23,21 @@ import {
 import { Typography } from 'rmwc/Typography';
 
 <Card style={{width: '21rem'}}>
-  <CardMedia sixteenByNine style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)'}}/>
-  <div style={{padding: '0 1rem 1rem 1rem'}}>
-    <Typography use="title" tag="h2">Our Changing Planet</Typography>
-    <Typography
-      use="subheading1"
-      tag="h3"
-      theme="text-secondary-on-background"
-      style={{marginTop: '-1rem'}}
-    >
-      by Kurt Wagner
-    </Typography>
-    <Typography use="body1" tag="div" theme="text-secondary-on-background">Visit ten places on our planet that are undergoing the biggest changes today.</Typography>
-  </div>
+  <CardPrimaryAction>
+    <CardMedia sixteenByNine style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)'}}/>
+    <div style={{padding: '0 1rem 1rem 1rem'}}>
+      <Typography use="title" tag="h2">Our Changing Planet</Typography>
+      <Typography
+        use="subheading1"
+        tag="h3"
+        theme="text-secondary-on-background"
+        style={{marginTop: '-1rem'}}
+      >
+        by Kurt Wagner
+      </Typography>
+      <Typography use="body1" tag="div" theme="text-secondary-on-background">Visit ten places on our planet that are undergoing the biggest changes today.</Typography>
+    </div>
+  </CardPrimaryAction>
   <CardActions>
     <CardActionButtons>
       <CardAction>Read</CardAction>
@@ -58,6 +61,7 @@ import { Typography } from 'rmwc/Typography';
 ```jsx render
 import {
   Card,
+  CardPrimaryAction,
   CardAction,
   CardActions
 } from 'rmwc/Card';
@@ -84,41 +88,47 @@ import { Typography } from 'rmwc/Typography';
 
   <ListDivider />
 
-  <div style={{padding: '1rem'}}>
-    <Typography use="headline" tag="div">Copper on the rise</Typography>
-    <Typography
-      use="body1"
-      tag="p"
-      theme="text-secondary-on-background"
-    >
-    Copper price soars amid global market optimism and increased demand.</Typography>
-  </div>
+  <CardPrimaryAction>
+    <div style={{padding: '1rem'}}>
+      <Typography use="headline" tag="div">Copper on the rise</Typography>
+      <Typography
+        use="body1"
+        tag="p"
+        theme="text-secondary-on-background"
+      >
+      Copper price soars amid global market optimism and increased demand.</Typography>
+    </div>
+  </CardPrimaryAction>
 
   <ListDivider />
 
-  <div style={{padding: '1rem'}}>
-    <Typography use="headline" tag="div">U.S. tech startups rebound</Typography>
-    <Typography
-      use="body1"
-      tag="p"
-      theme="text-secondary-on-background"
-    >
-      Favorable business conditions have allowed startups to secure more fundraising deals compared to last year.
-    </Typography>
-  </div>
+  <CardPrimaryAction>
+    <div style={{padding: '1rem'}}>
+      <Typography use="headline" tag="div">U.S. tech startups rebound</Typography>
+      <Typography
+        use="body1"
+        tag="p"
+        theme="text-secondary-on-background"
+      >
+        Favorable business conditions have allowed startups to secure more fundraising deals compared to last year.
+      </Typography>
+    </div>
+  </CardPrimaryAction>
 
   <ListDivider />
 
-  <div style={{padding: '1rem'}}>
-    <Typography use="headline" tag="div">Asia's clean energy ambitions</Typography>
-    <Typography
-      use="body1"
-      tag="p"
-      theme="text-secondary-on-background"
-    >
-      China plans to invest billions of dollars for the development of over 300 clean energy projects in Southeast Asia.
-    </Typography>
-  </div>
+  <CardPrimaryAction>
+    <div style={{padding: '1rem'}}>
+      <Typography use="headline" tag="div">Asia's clean energy ambitions</Typography>
+      <Typography
+        use="body1"
+        tag="p"
+        theme="text-secondary-on-background"
+      >
+        China plans to invest billions of dollars for the development of over 300 clean energy projects in Southeast Asia.
+      </Typography>
+    </div>
+  </CardPrimaryAction>
 
   <ListDivider />
 
@@ -133,6 +143,7 @@ import { Typography } from 'rmwc/Typography';
 ```jsx render
 import {
   Card,
+  CardPrimaryAction,
   CardMedia,
   CardMediaContent,
   CardAction,
@@ -142,25 +153,27 @@ import {
 
 
 <Card style={{width: '12.5rem'}}>
-  <CardMedia square style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)'}}>
-    <CardMediaContent>
-      <Typography
-        use="subheading2"
-        tag="div"
-        theme="text-primary-on-dark"
-        style={{
-          padding: '0.5rem 1rem',
-          backgroundImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
-          bottom: '0',
-          left: '0',
-          right: '0',
-          position: 'absolute'
-        }}
-      >
-        Vacation Photos
-      </Typography>
-    </CardMediaContent>
-  </CardMedia>
+  <CardPrimaryAction>
+    <CardMedia square style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)'}}>
+      <CardMediaContent>
+        <Typography
+          use="subheading2"
+          tag="div"
+          theme="text-primary-on-dark"
+          style={{
+            padding: '0.5rem 1rem',
+            backgroundImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            position: 'absolute'
+          }}
+        >
+          Vacation Photos
+        </Typography>
+      </CardMediaContent>
+    </CardMedia>
+  </CardPrimaryAction>
   <CardActions>
     <CardActionIcons>
       <CardAction
@@ -179,6 +192,7 @@ import {
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
 <DocumentComponent displayName="Card" />
+<DocumentComponent displayName="CardPrimaryAction" />
 <DocumentComponent displayName="CardMedia" />
 <DocumentComponent displayName="CardMediaContent" />
 <DocumentComponent displayName="CardActions" />
