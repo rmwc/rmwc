@@ -5,12 +5,19 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for Material Design (Web) Components v0.30.0
+A React (15 / 16) wrapper for Material Design (Web) Components v0.31.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
 
-RMWC has been updated to MDC 0.30.0 which has several new features but some breaking changes.
+RMWC has been updated to MDC 0.31.0 which contains bug fixes, but few major changes
+
+* Feature: ChipIcon
+  There are now leading and trailing icons for the chip component. This resulted in a minor breaking change, you now have to wrap the text inside of your chip with a ChipText component. See the docs.
+* Feature: CardPrimaryAction
+  This makes the primary area of a card clickable with a ripple.
+
+If you are updating from 1.1.x to MDC 0.30.0
 
 * Feature: Chip
   There is a new Chip and ChipSet component for you to use.
