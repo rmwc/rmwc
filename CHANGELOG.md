@@ -1,3 +1,21 @@
+#### 1.3.0 (2018-02-26)
+
+##### Breaking Changes
+
+* **ChipIcon:**  Added ChipIcon component which required splitting apart the Chip and ChipText component. If you were using Chips before, wrap the interior content with ChipText. ([6d3eef96](https://github.com/jamesmfriedman/rmwc/commit/6d3eef9690c69638f4f446559307cc809fdfe58a))
+
+##### Chores
+
+* **Chip:**  Updating storybook stories ([dfa7d48e](https://github.com/jamesmfriedman/rmwc/commit/dfa7d48ecf8d8521f45df2c1d3344ced9742d0bf))
+
+##### Documentation Changes
+
+* **ChipIcon:**  Adding interactive description. ([71e0506e](https://github.com/jamesmfriedman/rmwc/commit/71e0506ebb2b049eb226f3c2e0dabf54809f35bd))
+
+##### New Features
+
+* **CardPrimaryAction:**  Adding CardPrimaryAction container. ([f2ac2a39](https://github.com/jamesmfriedman/rmwc/commit/f2ac2a398a17072f3d0a4ff759d5693a985bc1a9))
+
 #### 1.2.1 (2018-02-20)
 
 ##### Chores
