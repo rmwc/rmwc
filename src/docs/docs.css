@@ -120,6 +120,15 @@ pre[class*='language-'] {
   border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
 }
 
+.document-component,
+.document-component h2 {
+  font-size: 14px;
+}
+
+.document-component h3 {
+  margin-top: 24px;
+}
+
 .app__content > div > h2,
 .app__content > div .document-component h2 {
   padding-top: 3rem;

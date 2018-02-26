@@ -116,6 +116,11 @@
       "methods": []
     },
     {
+      "description": "The main clickable area fro the primary content of the card",
+      "displayName": "CardPrimaryAction",
+      "methods": []
+    },
+    {
       "description": "Row containing action buttons and/or icons",
       "displayName": "CardActions",
       "methods": [],
@@ -287,23 +292,39 @@
   ],
   "src/Chip/index.js": [
     {
-      "description": "",
-      "displayName": "ChipRoot",
+      "description": "A chip component.",
+      "displayName": "Chip",
       "methods": []
     },
     {
-      "description": "",
+      "description": "Text for a chip.",
       "displayName": "ChipText",
       "methods": []
     },
     {
-      "description": "A container for multiple Chip components.",
-      "displayName": "ChipSet",
-      "methods": []
+      "description": "Icons inside of a chip. This is an instance of the Icon component.",
+      "displayName": "ChipIcon",
+      "methods": [],
+      "props": {
+        "leading": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Make it a leading icon"
+        },
+        "trailing": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": "Make it a trailing icon"
+        }
+      }
     },
     {
-      "description": "A chip component.",
-      "displayName": "Chip",
+      "description": "A container for multiple Chip components.",
+      "displayName": "ChipSet",
       "methods": []
     }
   ],
