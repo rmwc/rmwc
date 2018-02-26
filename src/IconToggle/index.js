@@ -1,11 +1,20 @@
 // @flow
 import * as React from 'react';
-import {
-  MDCIconToggle,
-  MDCIconToggleFoundation
-} from '@material/icon-toggle/dist/mdc.iconToggle';
+import { MDCIconToggleFoundation } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, withMDCFoundation, noop } from '../Base';
+
+type IconTogglePropsT = {
+  /* prettier-ignore */
+  /** An onChange callback that receives an event with event.target.value set to true or false. */
+  onChange?: (evt: Object) => mixed,
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  on: Object,
+  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
+  off: Object,
+  /** Whether the toggle is on or off */
+  checked?: boolean
+};
 
 export const IconToggleRoot = simpleTag({
   displayName: 'IconToggleRoot',
@@ -19,15 +28,15 @@ export const IconToggleRoot = simpleTag({
 
 export const IconToggle = withMDCFoundation({
   constructor: MDCIconToggleFoundation,
-  defaultFoundationHandlers: [
+  defaultHandlers: [
     'addClass',
     'removeClass',
     'registerInteractionHandler',
     'deregisterInteractionHandler'
   ],
-  foundation: inst => ({
+  adapter: inst => ({
     setText: text => (inst.root_.textContent = text),
-    getTabIndex: () => /* number */ inst.root_.tabIndex,
+    getTabIndex: (): number => inst.root_.tabIndex,
     setTabIndex: tabIndex => (inst.root_.tabIndex = tabIndex),
     getAttr: (name, value) => inst.root_.getAttribute(name, value),
     setAttr: (name, value) => inst.root_.setAttribute(name, value),
@@ -35,9 +44,18 @@ export const IconToggle = withMDCFoundation({
     notifyChange: evtData =>
       inst.props.onChange &&
       inst.props.onChange(MDCIconToggleFoundation.strings.CHANGE_EVENT, evtData)
-  })
+  }),
+  syncWithProps: (inst, props) => {
+    if (props.checked !== inst.foundation.isOn()) {
+      inst.foundation.toggle(!!props.checked);
+    }
+
+    if (props.disabled !== inst.foundation.isDisabled()) {
+      inst.foundation.setDisabled(!!props.disabled);
+    }
+  }
 })(
-  class extends React.Component<IconToggleT> {
+  class extends React.Component<IconTogglePropsT> {
     static displayName = 'IconToggle';
 
     static defaultProps = {

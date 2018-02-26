@@ -1,6 +1,17 @@
 // @flow
 import * as React from 'react';
 
+type FoundationT = {
+  /** The Foundation constructor */
+  constructor: Function,
+  /** The implemented foundation adapter  */
+  adapter: (inst: React.Component<*, *>) => Object,
+  /** Common handlers for the adapter  */
+  defaultHandlers: string[],
+  /** Syncs the react and foundation state  */
+  syncWithProps: (inst: React.Component<*, *>, props: *) => mixed
+};
+
 type FoundationStateT = {
   classes: Set<string>
 };
@@ -37,12 +48,13 @@ const getDefaultFoundationHandlers = (handlersArray, inst) => {
 
 export const withMDCFoundation = ({
   constructor: FoundationConstructor,
-  foundation: componentFoundation,
-  defaultFoundationHandlers = []
-}) => {
-  return Component =>
-    class extends React.Component<{}, FoundationStateT> {
-      constructor(props) {
+  adapter,
+  defaultHandlers = [],
+  syncWithProps
+}: FoundationT) => {
+  return <T>(Component: React.ComponentType<T>) =>
+    class extends React.Component<T, FoundationStateT> {
+      constructor(props: T) {
         super(props);
 
         this.handleElementRef = this.handleElementRef.bind(this);
@@ -50,7 +62,13 @@ export const withMDCFoundation = ({
 
       componentDidMount() {
         this.foundation.init();
+        syncWithProps && syncWithProps(this, this.props);
       }
+
+      componentWillReceiveProps(nextProps: T) {
+        syncWithProps && syncWithProps(this, nextProps);
+      }
+
       componentWillUnmount() {
         this.foundation.destroy();
       }
@@ -62,17 +80,17 @@ export const withMDCFoundation = ({
       };
 
       foundation = new FoundationConstructor({
-        ...getDefaultFoundationHandlers(defaultFoundationHandlers, this),
-        ...componentFoundation(this)
+        ...getDefaultFoundationHandlers(defaultHandlers, this),
+        ...adapter(this)
       });
 
-      handleElementRef(ref) {
+      handleElementRef(ref: window.DOMElement) {
         this.root_ = ref;
       }
 
       render() {
         const { ...rest } = this.props;
-        const { classes } = this.props;
+
         return (
           <Component
             elementRef={this.handleElementRef}
