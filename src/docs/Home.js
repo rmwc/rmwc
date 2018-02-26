@@ -5,16 +5,7 @@ import { Link } from 'react-router-dom';
 import { version } from 'rmwc/rmwc';
 import { Typography } from 'rmwc/Typography';
 
-import {
-  Card,
-  CardMedia,
-  CardPrimary,
-  CardTitle,
-  CardSubtitle,
-  CardSupportingText,
-  CardActions,
-  CardAction
-} from 'rmwc/Card';
+import { Card, CardMedia, CardActions, CardAction } from 'rmwc/Card';
 
 import { Grid, GridCell } from 'rmwc/Grid';
 
@@ -58,12 +49,13 @@ export const Home = () => {
         <Grid>
           <GridCell span={4}>
             <Link to="/installation">
-              <Card themeDark theme="primary-bg">
-                <CardPrimary>
-                  <CardTitle large>Simple to Use</CardTitle>
-                  <CardSubtitle>Get started in 5 minutes.</CardSubtitle>
-                </CardPrimary>
-                <CardSupportingText />
+              <Card theme="primary-bg text-primary-on-primary">
+                <div style={{ padding: '1rem' }}>
+                  <Typography use="title" tag="div">
+                    Simple to Use
+                  </Typography>
+                  <Typography use="body1">Get started in 5 minutes.</Typography>
+                </div>
                 <CardMedia
                   style={{
                     backgroundSize: 'fill',
@@ -87,13 +79,13 @@ export const Home = () => {
               tag="a"
               href="https://material.io/components/web/"
             >
-              <CardPrimary>
-                <CardTitle large>Material Accuracy</CardTitle>
-                <CardSubtitle>
-                  This is Google's official library, wrapped in React.
-                </CardSubtitle>
-              </CardPrimary>
-              <CardSupportingText />
+              <div style={{ padding: '1rem' }}>
+                <Typography use="title" tag="div">
+                  Material Accuracy
+                </Typography>
+                <div>This is Google's official library, wrapped in React.</div>
+              </div>
+
               <CardMedia
                 style={{
                   backgroundSize: 'cover',
@@ -110,14 +102,19 @@ export const Home = () => {
 
           <GridCell span={4}>
             <Link to="/styling">
-              <Card style={{ backgroundColor: '#283b4c' }} themeDark>
-                <CardPrimary>
-                  <CardTitle large>Easy to Customize</CardTitle>
-                  <CardSubtitle>
+              <Card
+                style={{ backgroundColor: '#283b4c' }}
+                theme="text-primary-on-dark"
+              >
+                <div style={{ padding: '1rem' }}>
+                  <Typography use="title" tag="div">
+                    Easy to Customize
+                  </Typography>
+                  <Typography use="body1">
                     Integrate with a variety of CSS worfklows.
-                  </CardSubtitle>
-                </CardPrimary>
-                <CardSupportingText />
+                  </Typography>
+                </div>
+
                 <CardMedia
                   style={{
                     backgroundImage:

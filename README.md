@@ -5,12 +5,34 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for Material Design (Web) Components v0.29.0
+A React (15 / 16) wrapper for Material Design (Web) Components v0.31.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
 
-MDC 0.29.0 has minimal impact on RMWC. The only breaking change is removal of the Select multiple component. If you were using the Select multiple component, guidance is to use a list with checkboxes, or manage your own component.
+RMWC has been updated to MDC 0.31.0 which contains bug fixes, but few major changes
+
+* Feature: ChipIcon
+  There are now leading and trailing icons for the chip component. This resulted in a minor breaking change, you now have to wrap the text inside of your chip with a ChipText component. See the docs.
+* Feature: CardPrimaryAction
+  This makes the primary area of a card clickable with a ripple.
+
+If you are updating from 1.1.x to MDC 0.30.0
+
+* Feature: Chip
+  There is a new Chip and ChipSet component for you to use.
+* Feature: Standard and Box Select
+  There are new stylings for the Select component
+* Feature: ButtonIcon
+  You can now use the ButtonIcon component to render an Icon inside of a Button
+* Breaking Change: cssOnly Select Removal
+  MDC has completely removed cssOnly selects. If you relied on the cssOnly Select for mobile, guidance is to wrap the select in your own component that returns a standard CSS select.
+* Breaking Change: Menu
+  MDC renamed SimpleMenu has been renamed to Menu. In addition to this, RMWC uses the "Simple"Component naming convention and has added a SimpleMenu component that manages state. To upgrade, just rename your exising SimpleMenu components to Menu, or see the new SimpleMenu usage and adjust accordingly.
+* Breaking Change: Cards
+  MDC has completely reworked their card layouts to be much more minimal. Guidance on this is to use your own CSS to style the content appropriately.
+* Breaking Change: Dark Theme
+  The automatic dark theme styling and themeDark props have been entirely removed from MDC. Guidance on this is to use your own CSS to style things in a dark theme context.
 
 ## Goals
 

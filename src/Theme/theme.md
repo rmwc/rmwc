@@ -20,7 +20,6 @@ import { Theme } from 'rmwc/Theme';
       'secondary-light',
       'secondary-dark',
       'background',
-      'dark',
       'primary-bg',
       'primary-light-bg',
       'primary-dark-bg',

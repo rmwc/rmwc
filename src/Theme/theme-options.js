@@ -1,5 +1,4 @@
 export const themeOptions = [
-  'dark',
   'primary',
   'primary-light',
   'primary-dark',

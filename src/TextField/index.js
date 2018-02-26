@@ -32,10 +32,11 @@ export const TextFieldRoot: React.ComponentType<
       'mdc-text-field--box': props.box,
       'mdc-text-field--outlined': props.outlined,
       'mdc-text-field--dense': props.dense,
-      'mdc-text-field--invalid': props.invalid
+      'mdc-text-field--invalid': props.invalid,
+      'mdc-text-field--disabled': props.disabled,
     }
   ],
-  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid']
+  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid', 'disabled']
 });
 
 export const TextFieldLabel = simpleTag({
@@ -65,9 +66,9 @@ export const TextFieldTextarea = simpleTag({
   classNames: 'mdc-text-field__input'
 });
 
-export const TextFieldBottomLine = simpleTag({
-  displayName: 'TextFieldBottomLine',
-  classNames: 'mdc-text-field__bottom-line'
+export const LineRipple = simpleTag({
+  displayName: 'LineRipple',
+  classNames: 'mdc-line-ripple'
 });
 
 export const TextFieldOutline = simpleTag({
@@ -192,7 +193,7 @@ export const TextField = withMDC({
     api.foundation_.setValid(!props.invalid);
   }
 })(
-  class extends React.Component<TextFieldPropsT> {
+  class extends React.PureComponent<TextFieldPropsT> {
     static displayName = 'TextField';
     render() {
       const {
@@ -205,6 +206,7 @@ export const TextField = withMDC({
         fullwidth,
         dense,
         invalid,
+        disabled,
         withLeadingIcon,
         withTrailingIcon,
         mdcElementRef,
@@ -216,6 +218,7 @@ export const TextField = withMDC({
 
       const tagProps = {
         ...rest,
+        disabled: disabled,
         elementRef: inputRef,
         id: rest.id || randomId('text-field')
       };
@@ -249,6 +252,7 @@ export const TextField = withMDC({
           textarea={textarea}
           box={box}
           dense={dense}
+          disabled={disabled}
           outlined={outlined}
           fullwidth={fullwidth}
           elementRef={mdcElementRef}
@@ -275,7 +279,7 @@ export const TextField = withMDC({
             </TextFieldOutline>
           )}
 
-          {outlined ? <TextFieldIdleOutline /> : <TextFieldBottomLine />}
+          {outlined ? <TextFieldIdleOutline /> : <LineRipple />}
         </TextFieldRoot>
       );
     }
