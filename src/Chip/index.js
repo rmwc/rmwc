@@ -23,7 +23,7 @@ type ChipIconPropsT = {
   trailing: boolean
 };
 
-/** Icons inside of a chip. This is an instance of the Icon component. */
+/** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
 export class ChipIcon extends simpleTag({
   displayName: 'ChipIcon',
   tag: Icon,

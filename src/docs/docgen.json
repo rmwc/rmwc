@@ -302,7 +302,7 @@
       "methods": []
     },
     {
-      "description": "Icons inside of a chip. This is an instance of the Icon component.",
+      "description": "Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex=\"0\" and role=\"button\".",
       "displayName": "ChipIcon",
       "methods": [],
       "props": {
