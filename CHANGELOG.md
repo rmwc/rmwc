@@ -1,3 +1,79 @@
+#### 1.3.0 (2018-02-26)
+
+##### Breaking Changes
+
+* **ChipIcon:**  Added ChipIcon component which required splitting apart the Chip and ChipText component. If you were using Chips before, wrap the interior content with ChipText. ([6d3eef96](https://github.com/jamesmfriedman/rmwc/commit/6d3eef9690c69638f4f446559307cc809fdfe58a))
+
+##### Chores
+
+* **Chip:**  Updating storybook stories ([dfa7d48e](https://github.com/jamesmfriedman/rmwc/commit/dfa7d48ecf8d8521f45df2c1d3344ced9742d0bf))
+
+##### Documentation Changes
+
+* **ChipIcon:**  Adding interactive description. ([71e0506e](https://github.com/jamesmfriedman/rmwc/commit/71e0506ebb2b049eb226f3c2e0dabf54809f35bd))
+
+##### New Features
+
+* **CardPrimaryAction:**  Adding CardPrimaryAction container. ([f2ac2a39](https://github.com/jamesmfriedman/rmwc/commit/f2ac2a398a17072f3d0a4ff759d5693a985bc1a9))
+
+#### 1.2.1 (2018-02-20)
+
+##### Chores
+
+* **Dialog:**  Add scrollable prop type defintion to DialogBody ([15b8b481](https://github.com/jamesmfriedman/rmwc/commit/15b8b481cdb2c901aa91992fe79b85e5a5722070))
+
+##### Documentation Changes
+
+* **TextField:**  Adding disabled example ([8c00ad2a](https://github.com/jamesmfriedman/rmwc/commit/8c00ad2a79027a2ccb409e03eaa1e839b21f15ca))
+* **Dialog:**  Fix issue with description docgen of DialogFooterButton ([64e02268](https://github.com/jamesmfriedman/rmwc/commit/64e02268f615b156ac7c6a387bce6fda79e60b86))
+* **Chips:**  Fixing chips link ([5111ed80](https://github.com/jamesmfriedman/rmwc/commit/5111ed8050b9a254c9d8833fd6c3416abfd8d9e4))
+
+##### Bug Fixes
+
+* **textfield:**  add mdc class on disabled textfields ([b7c8fccf](https://github.com/jamesmfriedman/rmwc/commit/b7c8fccfd2ef96da689d05a20f484eb18d8789ea))
+
+#### 1.2.0 (2018-02-13)
+
+##### Breaking Changes
+
+* **Card:**  matching MDC30 complete revamp of cards ([356a19ab](https://github.com/jamesmfriedman/rmwc/commit/356a19ab48808492399691e16b6157dd67058ca6))
+* **DarkTheme:**  removing dark theme following its removal from material-components-web ([a4714dfe](https://github.com/jamesmfriedman/rmwc/commit/a4714dfe8b4ba9654836797da097837463b711c8))
+* **select:**  remove cssOnly select ([f6990466](https://github.com/jamesmfriedman/rmwc/commit/f69904665f87667dc536a5ab9b0894ddb76370a4))
+
+##### Chores
+
+* **TextField:**  rename mdc-text-field__bottom-line -> mdc-line-ripple ([add1cba4](https://github.com/jamesmfriedman/rmwc/commit/add1cba48132007629a64f8c736f7101eb223d7a))
+
+##### Documentation Changes
+
+* **Icon:**  Fixing inconsistent headers ([ffbc0292](https://github.com/jamesmfriedman/rmwc/commit/ffbc02921a43b7ebb87fcd79456025bf8fe36d51))
+* **Theme:**  Removing dark from the theme examples ([a0511f8b](https://github.com/jamesmfriedman/rmwc/commit/a0511f8b3fb935696ece2516edced4ab8c7cbd04))
+* **SnackBar:**  Fix z-index issue which was cutting off start aligned SnackBars ([8dc07c79](https://github.com/jamesmfriedman/rmwc/commit/8dc07c79247b1588ae80efd311a38f69f3603d55))
+* **Dialog:**  Rendering SimpleDialog example ([10c9efca](https://github.com/jamesmfriedman/rmwc/commit/10c9efca3596e0828e8d17f686631ea29203b949))
+
+##### New Features
+
+* **SimpleMenu:**  Adding SimpleMenu component that auto manages open state ([7b65488e](https://github.com/jamesmfriedman/rmwc/commit/7b65488e20648557325d106850d85d545e3f731e))
+* **ButtonIcon:**  Adding ButtonIcon component. ([ca9cf996](https://github.com/jamesmfriedman/rmwc/commit/ca9cf99640d82f916dc02f6051f63070eadabc82))
+* **Chip:**  Adding chip component ([967fb60e](https://github.com/jamesmfriedman/rmwc/commit/967fb60e48fc96d270718bc23ee222a228e18851))
+* **menu:**  property to intialize the menu with a open state ([2b0855bb](https://github.com/jamesmfriedman/rmwc/commit/2b0855bb64eaf66c675059f7fd3b754fc8782d8c))
+* **select:**  add box attribute to select ([5eba4853](https://github.com/jamesmfriedman/rmwc/commit/5eba4853813895142965b326a52dd9265210b544))
+
+##### Bug Fixes
+
+* **Ripple:**  corrects an issue where the Ripple would not respect unbounded ([2d7cabe2](https://github.com/jamesmfriedman/rmwc/commit/2d7cabe2cd245771d6601d1b8cf2ceb6ccdefc9a))
+* **TabBar:**  Corrects an issue where a children check would fail if there was only one Tab [#142](https://github.com/jamesmfriedman/rmwc/pull/142) ([82217f85](https://github.com/jamesmfriedman/rmwc/commit/82217f85b0005de30413f8e166fa03b977ddd2fe))
+* **TextField:**  Corrects an issue where uncontrolled TextFields could get out of sync with MDC ([a58d5830](https://github.com/jamesmfriedman/rmwc/commit/a58d583060037b89e02297d223c09d47d6b60b24))
+* **checkbox:**  change mdc-checkbox__checkmark__path to mdc-checkbox__checkmark-path ([da3e8fe5](https://github.com/jamesmfriedman/rmwc/commit/da3e8fe5ad69d85cddc917f82d20bfea363802a5))
+* **select:**  remove cssOnly select ([04a10b20](https://github.com/jamesmfriedman/rmwc/commit/04a10b20bc330023efd365edc31307d8d062d0ca))
+* **menu:**  remove simple tags from menu ([ea267753](https://github.com/jamesmfriedman/rmwc/commit/ea267753bbc730dfecb9f29ecbda3c55fc4682e7))
+
+##### Other Changes
+
+*  issues 143 ([932b0fc5](https://github.com/jamesmfriedman/rmwc/commit/932b0fc5e7f9569bc9476f5f89c10003b9486e06))
+*  on mounting open without animation ([cc05e8a0](https://github.com/jamesmfriedman/rmwc/commit/cc05e8a04ee68570fa37dbcdee8747debe1ea47a))
+* **select:**  add box attribute to select ([9fbb3118](https://github.com/jamesmfriedman/rmwc/commit/9fbb3118ca5ca66162f817e70a60534a4477fb4c))
+
 #### 1.1.3 (2018-02-12)
 
 ##### Bug Fixes

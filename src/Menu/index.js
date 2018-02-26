@@ -1,27 +1,24 @@
 // @flow
 import * as React from 'react';
-import {
-  MDCSimpleMenu,
-  MDCSimpleMenuFoundation
-} from '@material/menu/dist/mdc.menu';
+import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
 import { simpleTag, withMDC, noop } from '../Base';
 
 /****************************************************************
  * Private
  ****************************************************************/
-export const SimpleMenuRoot = simpleTag({
+export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
-  classNames: props => ['mdc-simple-menu'],
+  classNames: props => ['mdc-menu'],
   defaultProps: {
     tabIndex: '-1'
   }
 });
 
-export const SimpleMenuItems = simpleTag({
+export const MenuItems = simpleTag({
   displayName: 'MenuItems',
   tag: List,
-  classNames: 'mdc-simple-menu__items',
+  classNames: 'mdc-list mdc-menu__items',
   defaultProps: {
     "role": 'menu',
     'aria-hidden': 'true'
@@ -39,7 +36,7 @@ export const MenuItem = (props: any) => (
 
 MenuItem.displayName = 'MenuItem';
 
-/** A Menu Anchor. When using the anchorCorner prop of SimpleMenu, you must set MenuAnchors position to absolute. */
+/** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute. */
 export const MenuAnchor = simpleTag({
   displayName: 'MenuAnchor',
   classNames: 'mdc-menu-anchor'
@@ -59,7 +56,7 @@ const ANCHOR_CORNER_MAP = {
 // prettier-ignore
 type AnchorT = 'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
-type SimpleMenuPropsT = {
+type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires when the Menu closes. */
@@ -76,14 +73,14 @@ const handleMenuChange = (evt, props) => {
 };
 
 /** A menu component */
-export const SimpleMenu = withMDC({
-  mdcConstructor: MDCSimpleMenu,
+export const Menu = withMDC({
+  mdcConstructor: MDCMenu,
   mdcElementRef: true,
   mdcEvents: {
-    'MDCSimpleMenu:cancel': (evt, props, api) => {
+    'MDCMenu:cancel': (evt, props, api) => {
       handleMenuChange(evt, props);
     },
-    'MDCSimpleMenu:selected': (evt, props, api) => {
+    'MDCMenu:selected': (evt, props, api) => {
       handleMenuChange(evt, props);
       props.onSelected(evt);
     }
@@ -93,17 +90,21 @@ export const SimpleMenu = withMDC({
     onSelected: noop,
     onClose: noop
   },
+  onMount: (props, api) => {
+    if (props.open) {
+      api.quickOpen = true;
+      api.open = true;
+      api.quickOpen = false;
+    }
+  },
   onUpdate: (props, nextProps, api) => {
     if (
       api &&
-      MDCSimpleMenuFoundation.Corner[
-        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== api.foundation_.anchorCorner_
+      MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]] !==
+        api.foundation_.anchorCorner_
     ) {
       api.setAnchorCorner(
-        MDCSimpleMenuFoundation.Corner[
-          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-        ]
+        MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]]
       );
     }
 
@@ -112,8 +113,8 @@ export const SimpleMenu = withMDC({
     }
   }
 })(
-  class extends React.Component<SimpleMenuPropsT> {
-    static displayName = 'SimpleMenu';
+  class extends React.Component<MenuPropsT> {
+    static displayName = 'Menu';
 
     render() {
       const {
@@ -125,11 +126,86 @@ export const SimpleMenu = withMDC({
         anchorCorner,
         ...rest
       } = this.props;
+
       return (
-        <SimpleMenuRoot elementRef={mdcElementRef} {...rest}>
-          <SimpleMenuItems>{children}</SimpleMenuItems>
-        </SimpleMenuRoot>
+        <MenuRoot elementRef={mdcElementRef} {...rest}>
+          <MenuItems>{children}</MenuItems>
+        </MenuRoot>
       );
     }
   }
 );
+
+type SimpleMenuPropsT = {
+  /** An element that will open the menu when clicked  */
+  handle: React.Node,
+  /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
+  rootProps: Object
+} & MenuPropsT;
+
+type SimpleMenuStateT = {
+  open: boolean
+};
+
+/**
+ * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor
+ */
+export class SimpleMenu extends React.Component<
+  SimpleMenuPropsT,
+  SimpleMenuStateT
+> {
+  static displayName = 'SimpleMenu';
+
+  componentWillMount() {
+    this.syncWithOpenProp(this.props.open);
+  }
+
+  componentWillReceiveProps(nextProps: SimpleMenuPropsT) {
+    this.syncWithOpenProp(nextProps.open);
+  }
+
+  state = {
+    open: false
+  };
+
+  syncWithOpenProp(open?: boolean) {
+    if (open !== undefined && this.state.open !== open) {
+      this.setState({ open });
+    }
+  }
+
+  render() {
+    const {
+      handle,
+      onClose,
+      children,
+      rootProps = {},
+      open,
+      ...rest
+    } = this.props;
+    const wrappedHandle = React.cloneElement(handle, {
+      ...handle.props,
+      onClick: evt => {
+        this.setState({ open: true });
+        if (handle.props.onClick) {
+          handle.props.onClick(evt);
+        }
+      }
+    });
+
+    const wrappedOnClose = evt => {
+      this.setState({ open: false });
+      if (onClose) {
+        onClose(evt);
+      }
+    };
+    return (
+      <MenuAnchor {...rootProps}>
+        <Menu onClose={wrappedOnClose} open={this.state.open} {...rest}>
+          {children}
+        </Menu>
+        {wrappedHandle}
+      </MenuAnchor>
+    );
+  }
+}

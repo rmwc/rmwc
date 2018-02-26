@@ -52,8 +52,9 @@ import { Select } from 'rmwc/Select';
   options={{'1': 'Cookies', '2': 'Pizza', '3': 'Icecream'}}
 />
 
-{/* a simple array of options, value will be the same as label */}
+{/* a simple array of options with box styling, value will be the same as label */}
 <Select
+  box
   label="Simple Array"
   placeholder="-- Select One --"
   options={['Cookies', 'Pizza', 'Icecream']}
@@ -82,42 +83,6 @@ import { ListItem } from 'rmwc/List';
     Icecream
   </ListItem>
 </Select>
-```
-
-## CSS only Selects
-
-For certain platforms or usecases, a pure CSS select may be preferrable. Use the `cssOnly` prop to create one.
-
-```jsx render
-{/*
-  cssOnly Selects
-  MDC doesnt have a label prop for css only selects, but RMWC has a placeholder prop you can use.
-*/}
-<Select
-  cssOnly
-  placeholder="-- cssOnly --"
-  options={['Cookies', 'Pizza', 'Icecream']}
-/>
-
-{/*
-  cssOnly Selects with option groups
-  MDC only supports option groups on css only selects.
-*/}
-<Select
-  cssOnly
-  placeholder="-- cssOnly w/ optGroups --"
-  options={[
-    {
-      label: 'Foods',
-      /* Options can be any value Select input: simply arrays, value => label objects, or formatted arrays. */
-      options: ['Cookies', 'Pizza', 'Icecream']
-    },
-    {
-      label: 'Animals',
-      options: ['Dogs', 'Cats', 'Birds']
-    }
-  ]}
-/>
 ```
 
 ```jsx renderOnly

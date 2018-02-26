@@ -12,13 +12,7 @@ export const DialogRoot = simpleTag({
     role: 'alertdialog'
   },
   tag: 'aside',
-  classNames: props => [
-    'mdc-dialog',
-    {
-      'mdc-dialog--theme-dark': props.themeDark
-    }
-  ],
-  consumeProps: ['themeDark']
+  classNames: 'mdc-dialog'
 });
 
 /** The Dialog backdrop */
@@ -47,8 +41,14 @@ export const DialogHeaderTitle = simpleTag({
   classNames: 'mdc-dialog__header__title'
 });
 
+
+type DialogBodyT = {
+  /** Make it scrollable. */
+  scrollable?: boolean
+} & SimpleTagPropsT;
+
 /** The Dialog body */
-export const DialogBody = simpleTag({
+export class DialogBody extends simpleTag({
   displayName: 'DialogBody',
   tag: 'section',
   classNames: props => [
@@ -58,7 +58,11 @@ export const DialogBody = simpleTag({
     }
   ],
   consumeProps: ['scrollable']
-});
+})<DialogBodyT> {
+  render() {
+    return super.render();
+  }
+}
 
 /** The Dialog footer */
 export const DialogFooter = simpleTag({
@@ -68,9 +72,9 @@ export const DialogFooter = simpleTag({
 });
 
 type DialogFooterButtonT = {
-  /* Make it an accept Button. */
+  /** Make it an accept button. */
   accept?: boolean,
-  /* Make it a cancel button. */
+  /** Make it a cancel button. */
   cancel?: boolean
 } & SimpleTagPropsT;
 
@@ -104,9 +108,7 @@ type DialogPropsT = {
   /** Callback for when the Dialog was closed without acceptance. */
   onCancel: (evt: Event) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: Event) => mixed,
-  /** Use the dark theme */
-  themeDark: boolean
+  onClose: (evt: Event) => mixed
 };
 
 export const Dialog = withMDC({
@@ -124,7 +126,6 @@ export const Dialog = withMDC({
   },
   defaultProps: {
     open: false,
-    themeDark: false,
     onAccept: noop,
     onCancel: noop,
     onClose: noop
@@ -183,7 +184,6 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel',
     open: false,
-    themeDark: false,
     onAccept: noop,
     onCancel: noop,
     onClose: noop,

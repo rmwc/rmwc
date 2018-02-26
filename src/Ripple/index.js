@@ -61,7 +61,7 @@ export class Ripple extends React.Component<RipplePropsT> {
 
   render() {
     const child = React.Children.only(this.props.children);
-    const { accent, primary, needsRippleSurface } = this.props;
+    const { accent, primary, needsRippleSurface, unbounded } = this.props;
 
     /**
      * Collect the ripple classes so we make sure React doesnt
@@ -94,6 +94,7 @@ export class Ripple extends React.Component<RipplePropsT> {
 
     return React.cloneElement(child, {
       ...child.props,
+      ...(unbounded ? { 'data-mdc-ripple-is-unbounded': true } : {}),
       className: dedupedClasses
     });
   }

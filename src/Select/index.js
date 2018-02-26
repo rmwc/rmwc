@@ -1,14 +1,25 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { List, ListItem, ListGroup } from '../List';
-import { SimpleMenuRoot, SimpleMenuItems } from '../Menu';
+import { ListItem } from '../List';
+import { MenuRoot, MenuItems } from '../Menu';
 import { simpleTag, withMDC } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
-export const SelectRoot = simpleTag({
+type SelectRootPropsT = {
+  /** Makes the Select have a visiual box. */
+  box?: boolean
+} & SimpleTagPropsT;
+
+export const SelectRoot: React.ComponentType<SelectRootPropsT> = simpleTag({
   displayName: 'SelectRoot',
-  classNames: 'mdc-select',
+  classNames: props => [
+    'mdc-select',
+    {
+      'mdc-select--box': props.box
+    }
+  ],
+  consumeProps: ['box'],
   defaultProps: {
     role: 'listbox'
   }
@@ -41,7 +52,7 @@ export const SelectBottomLine = simpleTag({
 
 export const SelectMenu = simpleTag({
   displayName: 'SelectMenu',
-  tag: SimpleMenuRoot,
+  tag: MenuRoot,
   classNames: 'mdc-select__menu'
 });
 
@@ -67,10 +78,9 @@ type SelectPropsT = {
   /** Placeholder text for the form control. */
   placeholder?: string,
   /** Disables the form control. */
-  disabled?: boolean,
-  /** Makes a cssOnly select. */
-  cssOnly?: boolean
-} & SimpleTagPropsT;
+  disabled?: boolean
+} & SelectRootPropsT &
+  SimpleTagPropsT;
 
 /**
  * Get the display value for a select from its formatted options
@@ -125,12 +135,12 @@ export const Select = withMDC({
     }
   },
   defaultProps: {
-    cssOnly: false,
     tabIndex: 0,
     options: undefined,
     label: undefined,
     placeholder: undefined,
-    disabled: false
+    disabled: false,
+    box: undefined
   },
   onMount: (props, api) => {
     window.requestAnimationFrame(() => {
@@ -140,16 +150,7 @@ export const Select = withMDC({
     });
   },
   didUpdate: (props, nextProps, api, inst) => {
-    const cssOnlyDidChange = props && !!props.cssOnly !== !!nextProps.cssOnly;
-    if (cssOnlyDidChange) {
-      window.requestAnimationFrame(() => {
-        inst.mdcComponentReinit();
-      });
-      // escape out to avoid errors, didUpdate will run again on component init
-      return;
-    }
-
-    // we might be in cssOnly mode, or lacking an api
+    // we might be lacking an api
     if (!api) return;
 
     const valueDidChange = props && props.value !== nextProps.value;
@@ -202,67 +203,16 @@ export const Select = withMDC({
         value,
         label = '',
         options = [],
+        box,
         mdcElementRef,
-        cssOnly,
         ...rest
       } = this.props;
 
       const selectOptions = createSelectOptions(options);
       const displayValue = getDisplayValue(value, selectOptions, placeholder);
 
-      if (cssOnly) {
-        return (
-          <SelectRoot elementRef={mdcElementRef} {...rest}>
-            <SelectSurface
-              tabIndex={tabIndex}
-              tag="select"
-              value={value}
-              {...rest}
-            >
-              {!!placeholder.length && (
-                <ListItem tag="option" value="" tab-index="0">
-                  {placeholder}
-                </ListItem>
-              )}
-              {selectOptions &&
-                selectOptions.map(({ label, ...option }, i) => {
-                  if (option.options) {
-                    return (
-                      <ListGroup tag="optgroup" label={label} key={label}>
-                        {option.options.map(({ label, ...option }, i) => (
-                          <ListItem
-                            tag="option"
-                            key={label}
-                            {...option}
-                            value={option.value}
-                          >
-                            {label}
-                          </ListItem>
-                        ))}
-                      </ListGroup>
-                    );
-                  }
-
-                  return (
-                    <ListItem
-                      tag="option"
-                      key={label}
-                      {...option}
-                      value={option.value}
-                    >
-                      {label}
-                    </ListItem>
-                  );
-                })}
-              {children}
-            </SelectSurface>
-            <SelectBottomLine />
-          </SelectRoot>
-        );
-      }
-
       return (
-        <SelectRoot elementRef={mdcElementRef} {...rest}>
+        <SelectRoot box={box} elementRef={mdcElementRef} {...rest}>
           <SelectSurface tabIndex={tabIndex}>
             <SelectLabel placeholder={placeholder} value={value}>
               {label}
@@ -271,7 +221,7 @@ export const Select = withMDC({
             <SelectBottomLine />
           </SelectSurface>
           <SelectMenu>
-            <SimpleMenuItems>
+            <MenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
                 <ListItem role="option" id="" tab-index="0">
@@ -292,7 +242,7 @@ export const Select = withMDC({
                   </ListItem>
                 ))}
               {children}
-            </SimpleMenuItems>
+            </MenuItems>
           </SelectMenu>
         </SelectRoot>
       );

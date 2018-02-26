@@ -7,31 +7,9 @@ import { Select } from './';
 import { ListItem } from '../List';
 import { storyWithState } from '../Base/story-with-state';
 
-const CSSSelectStory = storyWithState(
-  state => ({
-    label: text('label', state.label || 'Foods'),
-    value: text('value', state.value || 'Cookies'),
-    options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
-  }),
-  function() {
-    return (
-      <Select
-        cssOnly
-        label={this.state.label}
-        value={this.state.value}
-        options={this.state.options}
-        onChange={evt => {
-          this.setState({ value: evt.target.value });
-          action('onChange: ' + evt.target.value)();
-        }}
-      />
-    );
-  }
-);
 
 const MutatingSelect = storyWithState(
   state => ({
-    cssOnly: boolean('cssOnly', state.cssOnly || false),
     value: text('value', state.value || 'Cookies'),
     label: text('label', state.label || 'Label'),
     options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
@@ -40,36 +18,6 @@ const MutatingSelect = storyWithState(
     return (
       <Select
         {...this.props}
-        cssOnly={this.state.cssOnly}
-        label={this.state.label}
-        value={this.state.value}
-        options={this.state.options}
-        onChange={evt => {
-          this.setState({ value: evt.target.value });
-          action('onChange: ' + evt.target.value)();
-        }}
-      />
-    );
-  }
-);
-
-const CSSSelectWithOptgroupsStory = storyWithState(
-  state => ({
-    label: text('label', state.label || 'Foods'),
-    value: text('value', state.value || 'Cookies'),
-    options: array(
-      'options',
-      state.options || [
-        { label: 'Foods', options: ['Cookies', 'Pizza', 'Icecream'] },
-        { label: 'Animals', options: ['Dogs', 'Cats', 'Birds'] }
-      ]
-    )
-  }),
-  function() {
-    return (
-      <Select
-        {...this.props}
-        cssOnly
         label={this.state.label}
         value={this.state.value}
         options={this.state.options}
@@ -85,6 +33,7 @@ const CSSSelectWithOptgroupsStory = storyWithState(
 storiesOf('Inputs and Controls', module)
   .add('Select with object', () => (
     <Select
+      box={boolean('box', true)}
       label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
@@ -94,6 +43,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with array', () => (
     <Select
+      box={boolean('box', false)}
       label={text('label', 'Foods')}
       value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
@@ -103,6 +53,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with initial value', () => (
     <Select
+      box={boolean('box', false)}
       label={text('label', 'Foods')}
       value={text('value', 'Cookies')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
@@ -111,6 +62,7 @@ storiesOf('Inputs and Controls', module)
   ))
   .add('Select with children', () => (
     <Select
+      box={boolean('box', false)}
       value={text('value', 'Cookies')}
       onChange={evt => action('onChange: ' + evt.target.value)()}
     >
@@ -125,6 +77,4 @@ storiesOf('Inputs and Controls', module)
       </ListItem>
     </Select>
   ))
-  .add('CSS Select', () => <CSSSelectStory />)
-  .add('CSS Select w/ optgroups', () => <CSSSelectWithOptgroupsStory />)
   .add('Mutating Select', () => <MutatingSelect />);
