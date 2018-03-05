@@ -4,7 +4,7 @@
 
 import from **rmwc/Icon**
 
-Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own, you can include [Material Icons](https://material.io/icons/), any other font icon set, use SVGs, or your own images.
+Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. You can include [Material Icons](https://material.io/icons/), any other font icon set, use SVGs, or your own images.
 
 Note, the `use` prop is identical in functionality to passing `children` in all strategies.
 
@@ -23,9 +23,9 @@ import { Icon } from 'rmwc/Icon';
 <Icon strategy="ligature" use="star" />
 ```
 
-## Urls
+## URLs
 
-This is for icons that are http based and will be loaded directly into an `<img>` tag.
+This is for icons that are accessible via HTTP(S) and will be loaded directly into an `<img>` tag.
 
 ```jsx render
 import { Icon } from 'rmwc/Icon';
@@ -34,7 +34,7 @@ import { Icon } from 'rmwc/Icon';
 
 ## Components (Inline SVGs)
 
-This will render a child component inside of the icon. This is useful for all sorts of customizations and for rendering inline svgs. The following example shows rendering an svg, as well as an arbitrary div.
+This will render a child component inside of the icon. This is useful for all sorts of customizations and for rendering inline SVGs. The following example shows rendering an SVG, as well as an arbitrary `div`.
 
 ```jsx render
 import { Icon } from 'rmwc/Icon';
@@ -73,7 +73,7 @@ import { Icon } from 'rmwc/Icon';
 
 ## Custom Rendering
 
-Sometimes, you just need to do you own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with RMWC. If none of the other strategies are what you need, then you can hijack the whole thing.
+Sometimes, you just need to do your own thing. Maybe you have a legacy project that already has icons and you want to incorporate them with RMWC. If none of the other strategies are what you need, then you can hijack the whole thing.
 
 A simplistic example...
 
