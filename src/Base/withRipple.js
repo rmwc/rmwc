@@ -4,25 +4,26 @@ import { Ripple } from '../Ripple';
 
 export type WithRipplePropsT = {
   /* Adds a ripple effect to the component */
-  ripple?: boolean,
-  /* Used internally to decide whether or not to use the mdc-ripple-surface class. */
-  needsRippleSurface?: boolean
+  ripple?: boolean
 };
 
 /**
  * HOC that adds ripples to any component
  */
-export const withRipple = (
+export const withRipple = ({ unbounded: defaultUnbounded }) => (
   Component: React.ComponentType<*>
 ): React.ComponentType<*> =>
   class extends React.Component<WithRipplePropsT> {
     static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
+    static defaultProps = {
+      ripple: true
+    };
     render() {
-      const { ripple, needsRippleSurface, ...rest } = this.props;
+      const { ripple, ...rest } = this.props;
 
       if (ripple && !rest.cssOnly) {
         return (
-          <Ripple needsRippleSurface={needsRippleSurface}>
+          <Ripple {...rest} unbounded={defaultUnbounded || rest.unbounded}>
             <Component {...rest} />
           </Ripple>
         );

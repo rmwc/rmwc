@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 
 type FoundationT = {
   /** The Foundation constructor */
@@ -7,9 +8,9 @@ type FoundationT = {
   /** The implemented foundation adapter  */
   adapter: (inst: React.Component<*, *>) => Object,
   /** Common handlers for the adapter  */
-  defaultHandlers: string[],
+  defaultHandlers?: string[],
   /** Syncs the react and foundation state  */
-  syncWithProps: (inst: React.Component<*, *>, props: *) => mixed
+  syncWithProps?: (inst: React.Component<*, *>, props: *) => mixed
 };
 
 type FoundationStateT = {
@@ -48,25 +49,29 @@ const getDefaultFoundationHandlers = (handlersArray, inst) => {
 
 export const withMDCFoundation = ({
   constructor: FoundationConstructor,
+  displayName,
   adapter,
   defaultHandlers = [],
   syncWithProps
 }: FoundationT) => {
   return <T>(Component: React.ComponentType<T>) =>
     class extends React.Component<T, FoundationStateT> {
+      static displayName = `withMDCFoundation(${Component.displayName ||
+        'Unknown'})`;
+
       constructor(props: T) {
         super(props);
-
         this.handleElementRef = this.handleElementRef.bind(this);
       }
 
       componentDidMount() {
-        this.foundation.init();
+        const api = this.foundation.init();
+        this.props.apiRef && this.props.apiRef(this.foundation);
         syncWithProps && syncWithProps(this, this.props);
       }
 
       componentWillReceiveProps(nextProps: T) {
-        syncWithProps && syncWithProps(this, nextProps);
+        this.root_ && syncWithProps && syncWithProps(this, nextProps);
       }
 
       componentWillUnmount() {
@@ -86,16 +91,17 @@ export const withMDCFoundation = ({
 
       handleElementRef(ref: window.DOMElement) {
         this.root_ = ref;
+        this.props.elementRef && this.props.elementRef(ref);
       }
 
       render() {
-        const { ...rest } = this.props;
+        const { className, ...rest } = this.props;
 
         return (
           <Component
-            elementRef={this.handleElementRef}
             {...rest}
-            className={[...this.state.classes].join(' ')}
+            elementRef={this.handleElementRef}
+            className={classNames(className, [...this.state.classes])}
           />
         );
       }

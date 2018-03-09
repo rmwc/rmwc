@@ -1,103 +1,179 @@
 // @flow
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+import { MDCRippleFoundation } from '@material/ripple/dist/mdc.ripple';
+import { withMDCFoundation } from '../Base/withMDCFoundation';
+import * as util from './util';
 
-type RipplePropsT = {
-  /** Uses the primary palette. */
-  primary?: boolean,
-  /** Uses the accent palette. */
-  accent?: boolean,
-  /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */
-  unbounded?: boolean
-};
+const MATCHES = util.getMatchesProperty(HTMLElement.prototype);
 
-export class Ripple extends React.Component<RipplePropsT> {
-  static defaultProps = {
-    primary: false,
-    accent: false,
-    unbounded: false,
-    needsRippleSurface: true
-  };
+export const Ripple = withMDCFoundation({
+  constructor: MDCRippleFoundation,
+  defaultHandlers: ['addClass', 'removeClass'],
+  adapter: instance => ({
+    browserSupportsCssVars: () => util.supportsCssVariables(window),
+    isUnbounded: () => instance.props.unbounded,
+    isSurfaceActive: () => instance.root_[MATCHES](':active'),
+    isSurfaceDisabled: () => instance.props.disabled,
+    containsEventTarget: target => instance.root_.contains(target),
+    registerInteractionHandler: (evtType, handler) =>
+      instance.root_.addEventListener(evtType, handler, util.applyPassive()),
+    deregisterInteractionHandler: (evtType, handler) =>
+      instance.root_.removeEventListener(evtType, handler, util.applyPassive()),
+    registerDocumentInteractionHandler: (evtType, handler) =>
+      window.document.documentElement.addEventListener(
+        evtType,
+        handler,
+        util.applyPassive()
+      ),
+    deregisterDocumentInteractionHandler: (evtType, handler) =>
+      window.document.documentElement.removeEventListener(
+        evtType,
+        handler,
+        util.applyPassive()
+      ),
+    registerResizeHandler: handler =>
+      window.addEventListener('resize', handler),
+    deregisterResizeHandler: handler =>
+      window.removeEventListener('resize', handler),
+    updateCssVariable: (varName, value) =>
+      instance.root_ && instance.root_.style.setProperty(varName, value),
 
-  componentDidMount() {
-    this.el = ReactDOM.findDOMNode(this);
-    this.initRipple();
-  }
-
-  componentWillReceiveProps(nextProps: RipplePropsT) {
-    this.checkProps(nextProps);
-  }
-
-  componentDidUpdate(prevProps: RipplePropsT) {
-    const didChange = ['primary', 'accent', 'unbounded'].some(
-      key => this.props[key] !== prevProps[key]
-    );
-    if (didChange) {
-      this.destroyRipple();
-      this.initRipple();
-      this.forceUpdate();
+    computeBoundingRect: () => instance.root_.getBoundingClientRect(),
+    getWindowPageOffset: () => ({
+      x: window.pageXOffset,
+      y: window.pageYOffset
+    })
+  }),
+  syncWithProps: (inst, props) => {
+    if (props.unbounded !== inst.foundation.adapter_.isUnbounded()) {
+      inst.foundation.setUnbounded(!!props.unbounded);
     }
   }
+})(
+  class extends React.Component {
+    static displayName = 'Ripple';
 
-  api: Object;
-  el: null | Element | Text;
+    constructor(props) {
+      super(props);
+    }
 
-  checkProps(nextProps: RipplePropsT) {
-    if (this.api.unbounded !== nextProps.unbounded) {
-      this.api.unbounded = nextProps.unbounded;
+    render() {
+      const {
+        children,
+        className,
+        primary,
+        accent,
+        unbounded,
+        ...rest
+      } = this.props;
+
+      return React.cloneElement(children, {
+        ...children.props,
+        ...rest,
+        className: classNames(className, {
+          'mdc-ripple-surface--primary': primary,
+          'mdc-ripple-surface--accent': accent
+        })
+      });
     }
   }
+);
 
-  initRipple() {
-    this.api = new MDCRipple(this.el);
-    this.checkProps(this.props);
-  }
+// type RipplePropsT = {
+//   /** Uses the primary palette. */
+//   primary?: boolean,
+//   /** Uses the accent palette. */
+//   accent?: boolean,
+//   /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */
+//   unbounded?: boolean
+// };
 
-  destroyRipple() {
-    this.api.destroy();
-  }
+// export class Ripple extends React.Component<RipplePropsT> {
+//   static defaultProps = {
+//     primary: false,
+//     accent: false,
+//     unbounded: false,
+//     needsRippleSurface: true
+//   };
 
-  render() {
-    const child = React.Children.only(this.props.children);
-    const { accent, primary, needsRippleSurface, unbounded } = this.props;
+//   componentDidMount() {
+//     this.el = ReactDOM.findDOMNode(this);
+//     this.initRipple();
+//   }
 
-    /**
-     * Collect the ripple classes so we make sure React doesnt
-     * destroy them when we re-render.
-     */
-    const rippleClasses = (this.el ?
-      this.el.getAttribute('class').split(' ') :
-      []
-    ).filter(cls => {
-      if (
-        ~[
-          'mdc-ripple-surface--primary',
-          'mdc-ripple-surface--accent',
-          'mdc-ripple-surface'
-        ].indexOf(cls)
-      ) {
-        return false;
-      }
+//   componentWillReceiveProps(nextProps: RipplePropsT) {
+//     this.checkProps(nextProps);
+//   }
 
-      return cls.startsWith('mdc-ripple');
-    });
+//   componentDidUpdate(prevProps: RipplePropsT) {
+//     const didChange = ['primary', 'accent', 'unbounded'].some(
+//       key => this.props[key] !== prevProps[key]
+//     );
+//     if (didChange) {
+//       this.destroyRipple();
+//       this.initRipple();
+//       this.forceUpdate();
+//     }
+//   }
 
-    const classes = classNames(child.props.className, ...rippleClasses, {
-      'mdc-ripple-surface': needsRippleSurface,
-      'mdc-ripple-surface--primary': primary,
-      'mdc-ripple-surface--accent': accent
-    });
+//   api: Object;
+//   el: null | Element | Text;
 
-    const dedupedClasses = Array.from(new Set(classes.split(' '))).join(' ');
+//   checkProps(nextProps: RipplePropsT) {
+//     if (this.api.unbounded !== nextProps.unbounded) {
+//       this.api.unbounded = nextProps.unbounded;
+//     }
+//   }
 
-    return React.cloneElement(child, {
-      ...child.props,
-      ...(unbounded ? { 'data-mdc-ripple-is-unbounded': true } : {}),
-      className: dedupedClasses
-    });
-  }
-}
+//   initRipple() {
+//     this.api = new MDCRipple(this.el);
+//     this.checkProps(this.props);
+//   }
 
-export default Ripple;
+//   destroyRipple() {
+//     this.api.destroy();
+//   }
+
+//   render() {
+//     const child = React.Children.only(this.props.children);
+//     const { accent, primary, needsRippleSurface, unbounded } = this.props;
+
+//     /**
+//      * Collect the ripple classes so we make sure React doesnt
+//      * destroy them when we re-render.
+//      */
+//     const rippleClasses = (this.el ?
+//       this.el.getAttribute('class').split(' ') :
+//       []
+//     ).filter(cls => {
+//       if (
+//         ~[
+//           'mdc-ripple-surface--primary',
+//           'mdc-ripple-surface--accent',
+//           'mdc-ripple-surface'
+//         ].indexOf(cls)
+//       ) {
+//         return false;
+//       }
+
+//       return cls.startsWith('mdc-ripple');
+//     });
+
+//     const classes = classNames(child.props.className, ...rippleClasses, {
+//       'mdc-ripple-surface': needsRippleSurface,
+//       'mdc-ripple-surface--primary': primary,
+//       'mdc-ripple-surface--accent': accent
+//     });
+
+//     const dedupedClasses = Array.from(new Set(classes.split(' '))).join(' ');
+
+//     return React.cloneElement(child, {
+//       ...child.props,
+//       ...(unbounded ? { 'data-mdc-ripple-is-unbounded': true } : {}),
+//       className: dedupedClasses
+//     });
+//   }
+// }
+
+// export default Ripple;
