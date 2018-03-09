@@ -3,6 +3,7 @@ import * as React from 'react';
 import { MDCIconToggleFoundation } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, withMDCFoundation, noop } from '../Base';
+import { withRipple } from '../Base/withRipple';
 
 type IconTogglePropsT = {
   /* prettier-ignore */
@@ -16,15 +17,17 @@ type IconTogglePropsT = {
   checked?: boolean
 };
 
-export const IconToggleRoot = simpleTag({
-  displayName: 'IconToggleRoot',
-  tag: Icon,
-  classNames: 'mdc-icon-toggle',
-  defaultProps: {
-    role: 'button',
-    tabIndex: '0'
-  }
-});
+export const IconToggleRoot = withRipple({ unbounded: true })(
+  simpleTag({
+    displayName: 'IconToggleRoot',
+    tag: Icon,
+    classNames: 'mdc-icon-toggle',
+    defaultProps: {
+      role: 'button',
+      tabIndex: '0'
+    }
+  })
+);
 
 export const IconToggle = withMDCFoundation({
   constructor: MDCIconToggleFoundation,
@@ -66,14 +69,13 @@ export const IconToggle = withMDCFoundation({
     };
 
     render() {
-      const { checked, on, off, mdcElementRef, ...rest } = this.props;
+      const { checked, on, off, ...rest } = this.props;
       const ariaPressed = checked !== undefined ? !!checked : false;
       const toggleOnJSON = JSON.stringify(on);
       const toggleOffJSON = JSON.stringify(off);
 
       return (
         <IconToggleRoot
-          elementRef={mdcElementRef}
           {...rest}
           data-toggle-on={toggleOnJSON}
           data-toggle-off={toggleOffJSON}
