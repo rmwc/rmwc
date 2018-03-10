@@ -5,6 +5,8 @@ import classNames from 'classnames';
 type FoundationT = {
   /** The Foundation constructor */
   constructor: Function,
+  /** Refs to handle */
+  refs?: string[],
   /** The implemented foundation adapter  */
   adapter: (inst: React.Component<*, *>) => Object,
   /** Common handlers for the adapter  */
@@ -19,6 +21,7 @@ type FoundationStateT = {
 
 const getDefaultFoundationHandlers = (handlersArray, inst) => {
   const handlers = {
+    hasClass: className => inst.root_.classList.contains(className),
     addClass: className =>
       inst.setState(prevState => ({
         classes: prevState.classes.add(className)
@@ -49,8 +52,8 @@ const getDefaultFoundationHandlers = (handlersArray, inst) => {
 
 export const withMDCFoundation = ({
   constructor: FoundationConstructor,
-  displayName,
   adapter,
+  refs = ['root_'],
   defaultHandlers = [],
   syncWithProps
 }: FoundationT) => {
@@ -61,7 +64,22 @@ export const withMDCFoundation = ({
 
       constructor(props: T) {
         super(props);
-        this.handleElementRef = this.handleElementRef.bind(this);
+
+        this.refHandlers = refs.reduce((acc, r) => {
+          const propName =
+            this.props.elementRef && this.props.elementRef.refName === r ?
+              'elementRef' :
+              r;
+
+          acc[propName] = ref => {
+            this[r] = ref;
+            this.props[propName] && this.props[propName](ref);
+          };
+
+          acc[propName].refName = r;
+
+          return acc;
+        }, {});
       }
 
       componentDidMount() {
@@ -89,6 +107,8 @@ export const withMDCFoundation = ({
         ...adapter(this)
       });
 
+      refHandlers = {};
+
       handleElementRef(ref: window.DOMElement) {
         this.root_ = ref;
         this.props.elementRef && this.props.elementRef(ref);
@@ -96,11 +116,11 @@ export const withMDCFoundation = ({
 
       render() {
         const { className, ...rest } = this.props;
-
+        console.log(this.refHandlers);
         return (
           <Component
             {...rest}
-            elementRef={this.handleElementRef}
+            {...this.refHandlers}
             className={classNames(className, [...this.state.classes])}
           />
         );
