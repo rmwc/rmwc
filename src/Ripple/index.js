@@ -10,16 +10,16 @@ const MATCHES = util.getMatchesProperty(HTMLElement.prototype);
 export const Ripple = withMDCFoundation({
   constructor: MDCRippleFoundation,
   defaultHandlers: ['addClass', 'removeClass'],
-  adapter: instance => ({
+  adapter: inst => ({
     browserSupportsCssVars: () => util.supportsCssVariables(window),
-    isUnbounded: () => instance.props.unbounded,
-    isSurfaceActive: () => instance.root_[MATCHES](':active'),
-    isSurfaceDisabled: () => instance.props.disabled,
-    containsEventTarget: target => instance.root_.contains(target),
+    isUnbounded: () => inst.props.unbounded,
+    isSurfaceActive: () => inst.root_[MATCHES](':active'),
+    isSurfaceDisabled: () => inst.props.disabled,
+    containsEventTarget: target => inst.root_.contains(target),
     registerInteractionHandler: (evtType, handler) =>
-      instance.root_.addEventListener(evtType, handler, util.applyPassive()),
+      inst.root_.addEventListener(evtType, handler, util.applyPassive()),
     deregisterInteractionHandler: (evtType, handler) =>
-      instance.root_.removeEventListener(evtType, handler, util.applyPassive()),
+      inst.root_.removeEventListener(evtType, handler, util.applyPassive()),
     registerDocumentInteractionHandler: (evtType, handler) =>
       window.document.documentElement.addEventListener(
         evtType,
@@ -37,9 +37,9 @@ export const Ripple = withMDCFoundation({
     deregisterResizeHandler: handler =>
       window.removeEventListener('resize', handler),
     updateCssVariable: (varName, value) =>
-      instance.root_ && instance.root_.style.setProperty(varName, value),
+      inst.root_ && inst.root_.style.setProperty(varName, value),
 
-    computeBoundingRect: () => instance.root_.getBoundingClientRect(),
+    computeBoundingRect: () => inst.root_.getBoundingClientRect(),
     getWindowPageOffset: () => ({
       x: window.pageXOffset,
       y: window.pageYOffset
@@ -67,7 +67,7 @@ export const Ripple = withMDCFoundation({
         unbounded,
         ...rest
       } = this.props;
-
+      console.log(rest);
       return React.cloneElement(children, {
         ...children.props,
         ...rest,
