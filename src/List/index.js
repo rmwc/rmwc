@@ -17,7 +17,7 @@ type ListItemPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ListItemRoot = withRipple(
+export const ListItemRoot = withRipple()(
   simpleTag({
     displayName: 'ListItemRoot',
     classNames: props => [

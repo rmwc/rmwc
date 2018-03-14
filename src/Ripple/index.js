@@ -1,179 +1,48 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-import { MDCRippleFoundation } from '@material/ripple/dist/mdc.ripple';
-import { withMDCFoundation } from '../Base/withMDCFoundation';
-import * as util from './util';
+import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
 
-const MATCHES = util.getMatchesProperty(HTMLElement.prototype);
+export class Ripple extends withFoundation({
+  constructor: MDCRipple,
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass()
+  }
+})<> {
+  static displayName = 'Ripple';
 
-export const Ripple = withMDCFoundation({
-  constructor: MDCRippleFoundation,
-  defaultHandlers: ['addClass', 'removeClass'],
-  adapter: inst => ({
-    browserSupportsCssVars: () => util.supportsCssVariables(window),
-    isUnbounded: () => inst.props.unbounded,
-    isSurfaceActive: () => inst.root_[MATCHES](':active'),
-    isSurfaceDisabled: () => inst.props.disabled,
-    containsEventTarget: target => inst.root_.contains(target),
-    registerInteractionHandler: (evtType, handler) =>
-      inst.root_.addEventListener(evtType, handler, util.applyPassive()),
-    deregisterInteractionHandler: (evtType, handler) =>
-      inst.root_.removeEventListener(evtType, handler, util.applyPassive()),
-    registerDocumentInteractionHandler: (evtType, handler) =>
-      window.document.documentElement.addEventListener(
-        evtType,
-        handler,
-        util.applyPassive()
-      ),
-    deregisterDocumentInteractionHandler: (evtType, handler) =>
-      window.document.documentElement.removeEventListener(
-        evtType,
-        handler,
-        util.applyPassive()
-      ),
-    registerResizeHandler: handler =>
-      window.addEventListener('resize', handler),
-    deregisterResizeHandler: handler =>
-      window.removeEventListener('resize', handler),
-    updateCssVariable: (varName, value) =>
-      inst.root_ && inst.root_.style.setProperty(varName, value),
+  syncWithProps(nextProps) {
+    if (this.unbounded !== nextProps.unbounded) {
+      this.unbounded = nextProps.unbounded;
+    }
 
-    computeBoundingRect: () => inst.root_.getBoundingClientRect(),
-    getWindowPageOffset: () => ({
-      x: window.pageXOffset,
-      y: window.pageYOffset
-    })
-  }),
-  syncWithProps: (inst, props) => {
-    if (props.unbounded !== inst.foundation.adapter_.isUnbounded()) {
-      inst.foundation.setUnbounded(!!props.unbounded);
+    if (this.disabled !== nextProps.disabled) {
+      this.disabled = nextProps.disabled;
     }
   }
-})(
-  class extends React.Component {
-    static displayName = 'Ripple';
 
-    constructor(props) {
-      super(props);
-    }
+  render() {
+    const {
+      children,
+      className,
+      primary,
+      accent,
+      unbounded,
+      ...rest
+    } = this.props;
 
-    render() {
-      const {
-        children,
-        className,
-        primary,
-        accent,
-        unbounded,
-        ...rest
-      } = this.props;
-      console.log(rest);
-      return React.cloneElement(children, {
-        ...children.props,
-        ...rest,
-        className: classNames(className, {
-          'mdc-ripple-surface--primary': primary,
-          'mdc-ripple-surface--accent': accent
-        })
-      });
-    }
+    return React.cloneElement(children, {
+      ...children.props,
+      ...rest,
+      elementRef: this.foundationRefs.root_,
+      className: classNames(className, [...this.state.classes], {
+        'mdc-ripple-surface--primary': primary,
+        'mdc-ripple-surface--accent': accent
+      })
+    });
   }
-);
+}
 
-// type RipplePropsT = {
-//   /** Uses the primary palette. */
-//   primary?: boolean,
-//   /** Uses the accent palette. */
-//   accent?: boolean,
-//   /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */
-//   unbounded?: boolean
-// };
-
-// export class Ripple extends React.Component<RipplePropsT> {
-//   static defaultProps = {
-//     primary: false,
-//     accent: false,
-//     unbounded: false,
-//     needsRippleSurface: true
-//   };
-
-//   componentDidMount() {
-//     this.el = ReactDOM.findDOMNode(this);
-//     this.initRipple();
-//   }
-
-//   componentWillReceiveProps(nextProps: RipplePropsT) {
-//     this.checkProps(nextProps);
-//   }
-
-//   componentDidUpdate(prevProps: RipplePropsT) {
-//     const didChange = ['primary', 'accent', 'unbounded'].some(
-//       key => this.props[key] !== prevProps[key]
-//     );
-//     if (didChange) {
-//       this.destroyRipple();
-//       this.initRipple();
-//       this.forceUpdate();
-//     }
-//   }
-
-//   api: Object;
-//   el: null | Element | Text;
-
-//   checkProps(nextProps: RipplePropsT) {
-//     if (this.api.unbounded !== nextProps.unbounded) {
-//       this.api.unbounded = nextProps.unbounded;
-//     }
-//   }
-
-//   initRipple() {
-//     this.api = new MDCRipple(this.el);
-//     this.checkProps(this.props);
-//   }
-
-//   destroyRipple() {
-//     this.api.destroy();
-//   }
-
-//   render() {
-//     const child = React.Children.only(this.props.children);
-//     const { accent, primary, needsRippleSurface, unbounded } = this.props;
-
-//     /**
-//      * Collect the ripple classes so we make sure React doesnt
-//      * destroy them when we re-render.
-//      */
-//     const rippleClasses = (this.el ?
-//       this.el.getAttribute('class').split(' ') :
-//       []
-//     ).filter(cls => {
-//       if (
-//         ~[
-//           'mdc-ripple-surface--primary',
-//           'mdc-ripple-surface--accent',
-//           'mdc-ripple-surface'
-//         ].indexOf(cls)
-//       ) {
-//         return false;
-//       }
-
-//       return cls.startsWith('mdc-ripple');
-//     });
-
-//     const classes = classNames(child.props.className, ...rippleClasses, {
-//       'mdc-ripple-surface': needsRippleSurface,
-//       'mdc-ripple-surface--primary': primary,
-//       'mdc-ripple-surface--accent': accent
-//     });
-
-//     const dedupedClasses = Array.from(new Set(classes.split(' '))).join(' ');
-
-//     return React.cloneElement(child, {
-//       ...child.props,
-//       ...(unbounded ? { 'data-mdc-ripple-is-unbounded': true } : {}),
-//       className: dedupedClasses
-//     });
-//   }
-// }
-
-// export default Ripple;
+export default Ripple;

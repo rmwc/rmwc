@@ -10,13 +10,13 @@ storiesOf('Buttons', module)
     <Fab
       mini={boolean('mini', false)}
       ripple={boolean('ripple', true)}
-      onClick={action('clicked')}
+      onClick={action('onClick')}
     >
       favorite
     </Fab>
   ))
   .add('cssOnly Fab', () => (
-    <Fab cssOnly mini={boolean('mini', false)} onClick={action('clicked')}>
+    <Fab cssOnly mini={boolean('mini', false)} onClick={action('onClick')}>
       favorite
     </Fab>
   ));

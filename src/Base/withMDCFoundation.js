@@ -67,7 +67,7 @@ export const withMDCFoundation = ({
 
         this.refHandlers = refs.reduce((acc, r) => {
           const propName =
-            this.props.elementRef && this.props.elementRef.refName === r ?
+            this.props.elementRef && this.props.elementRef.refName_ === r ?
               'elementRef' :
               r;
 
@@ -76,7 +76,7 @@ export const withMDCFoundation = ({
             this.props[propName] && this.props[propName](ref);
           };
 
-          acc[propName].refName = r;
+          acc[propName].refName_ = r;
 
           return acc;
         }, {});
@@ -116,7 +116,7 @@ export const withMDCFoundation = ({
 
       render() {
         const { className, ...rest } = this.props;
-        console.log(this.refHandlers);
+
         return (
           <Component
             {...rest}
