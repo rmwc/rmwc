@@ -14,8 +14,8 @@ import {
 
 type IconTogglePropsT = {
   /* prettier-ignore */
-  /** An onChange callback that receives an event with event.target.value set to true or false. */
-  onChange?: (evt: Object) => mixed,
+  /** An onChange callback that receives a custom event. */
+  onChange?: (evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   on: Object,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
@@ -55,12 +55,23 @@ export class IconToggle extends withFoundation({
     checked: undefined
   };
 
+  componentDidMount() {
+    super.componentDidMount();
+    this.foundation_.toggle(!!this.foundation_.isOn());
+  }
+
   syncWithProps(nextProps: IconTogglePropsT) {
-    if (nextProps.checked !== this.foundation_.isOn()) {
+    if (
+      nextProps.checked !== undefined &&
+      this.foundation_.isOn() !== nextProps.checked
+    ) {
       this.foundation_.toggle(!!nextProps.checked);
     }
 
-    if (nextProps.disabled !== this.foundation_.isDisabled()) {
+    if (
+      nextProps.disabled !== undefined &&
+      nextProps.disabled !== this.foundation_.isDisabled()
+    ) {
       this.foundation_.setDisabled(!!nextProps.disabled);
     }
   }
