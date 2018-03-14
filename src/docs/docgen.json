@@ -2,6 +2,7 @@
   "src/Base/DocumentComponent.js": [
     {
       "description": "",
+      "displayName": "DocumentComponent",
       "methods": []
     }
   ],
@@ -181,7 +182,8 @@
           "defaultValue": {
             "value": "'checkbox'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -199,7 +201,8 @@
           "defaultValue": {
             "value": "'0 0 24 24'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -212,19 +215,22 @@
           "defaultValue": {
             "value": "'none'",
             "computed": false
-          }
+          },
+          "required": false
         },
         "stroke": {
           "defaultValue": {
             "value": "'white'",
             "computed": false
-          }
+          },
+          "required": false
         },
         "d": {
           "defaultValue": {
             "value": "'M1.73,12.91 8.1,19.28 22.79,4.59'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -338,7 +344,8 @@
           "defaultValue": {
             "value": "'alertdialog'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -586,7 +593,7 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Whether or not the Dialog is showing.",
           "defaultValue": {
             "value": "false",
@@ -612,7 +619,7 @@
               }
             }
           },
-          "required": true,
+          "required": false,
           "description": "Callback for when the accept Button is pressed.",
           "defaultValue": {
             "value": "noop",
@@ -638,7 +645,7 @@
               }
             }
           },
-          "required": true,
+          "required": false,
           "description": "Callback for when the Dialog was closed without acceptance.",
           "defaultValue": {
             "value": "noop",
@@ -664,7 +671,7 @@
               }
             }
           },
-          "required": true,
+          "required": false,
           "description": "Callback for when the Dialog closes.",
           "defaultValue": {
             "value": "noop",
@@ -905,7 +912,8 @@
           "defaultValue": {
             "value": "undefined",
             "computed": true
-          }
+          },
+          "required": false
         }
       }
     },
@@ -1035,31 +1043,36 @@
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "headerCaption": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "twolineCaption": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "withIconAlignStart": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "tileAspect": {
           "defaultValue": {
             "value": "'1x1'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -1082,7 +1095,8 @@
           "defaultValue": {
             "value": "true",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -1281,39 +1295,160 @@
   "src/IconToggle/index.js": [
     {
       "description": "",
-      "displayName": "IconToggleRoot",
-      "methods": [],
-      "props": {
-        "role": {
-          "defaultValue": {
-            "value": "'button'",
-            "computed": false
-          }
-        },
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'0'",
-            "computed": false
-          }
-        }
-      }
-    },
-    {
-      "description": "Icon Toggle Component",
       "displayName": "IconToggle",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "onChange",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{type: 'MDCIconToggle:change', detail: {isOn: boolean}}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "type",
+                                      "value": {
+                                        "name": "literal",
+                                        "value": "'MDCIconToggle:change'",
+                                        "required": true
+                                      }
+                                    },
+                                    {
+                                      "key": "detail",
+                                      "value": {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{isOn: boolean}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "isOn",
+                                              "value": {
+                                                "name": "boolean",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "on",
+                      "value": {
+                        "name": "Object",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "off",
+                      "value": {
+                        "name": "Object",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "checked",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "disabled",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "IconTogglePropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "onChange": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Object) => mixed",
+            "raw": "(evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Object"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{type: 'MDCIconToggle:change', detail: {isOn: boolean}}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "type",
+                          "value": {
+                            "name": "literal",
+                            "value": "'MDCIconToggle:change'",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{isOn: boolean}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "isOn",
+                                  "value": {
+                                    "name": "boolean",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -1323,7 +1458,7 @@
             }
           },
           "required": false,
-          "description": "An onChange callback that receives an event with event.target.value set to true or false.",
+          "description": "An onChange callback that receives a custom event.",
           "defaultValue": {
             "value": "noop",
             "computed": true
@@ -1333,7 +1468,7 @@
           "flowType": {
             "name": "Object"
           },
-          "required": true,
+          "required": false,
           "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
           "defaultValue": {
             "value": "undefined",
@@ -1344,7 +1479,7 @@
           "flowType": {
             "name": "Object"
           },
-          "required": true,
+          "required": false,
           "description": "An object that can be parsed as valid JSON that gets passed to the MDC constructor.",
           "defaultValue": {
             "value": "undefined",
@@ -1361,6 +1496,13 @@
             "value": "undefined",
             "computed": true
           }
+        },
+        "disabled": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Disables the iconToggle"
         }
       }
     }
@@ -1388,25 +1530,29 @@
           "defaultValue": {
             "value": "'progressbar'",
             "computed": false
-          }
+          },
+          "required": false
         },
         "determinate": {
           "defaultValue": {
             "value": "true",
             "computed": false
-          }
+          },
+          "required": false
         },
         "reversed": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "accent": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -1660,7 +1806,8 @@
           "defaultValue": {
             "value": "'-1'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -1673,13 +1820,15 @@
           "defaultValue": {
             "value": "'menu'",
             "computed": false
-          }
+          },
+          "required": false
         },
         "aria-hidden": {
           "defaultValue": {
             "value": "'true'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -2163,7 +2312,8 @@
           "defaultValue": {
             "value": "'radio'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -2238,103 +2388,18 @@
       "displayName": "Ripple",
       "methods": [
         {
-          "name": "checkProps",
+          "name": "syncWithProps",
           "docblock": null,
           "modifiers": [],
           "params": [
             {
               "name": "nextProps",
-              "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** Uses the primary palette. */\n  primary?: boolean,\n  /** Uses the accent palette. */\n  accent?: boolean,\n  /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */\n  unbounded?: boolean\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "primary",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "accent",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "unbounded",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    }
-                  ]
-                },
-                "alias": "RipplePropsT"
-              }
+              "type": null
             }
           ],
           "returns": null
-        },
-        {
-          "name": "initRipple",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
-        },
-        {
-          "name": "destroyRipple",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
         }
-      ],
-      "props": {
-        "primary": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Uses the primary palette.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "accent": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Uses the accent palette.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "unbounded": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Lets a ripple grow outside of its bounds, just like on Checkboxes.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "needsRippleSurface": {
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
-        }
-      }
+      ]
     }
   ],
   "src/Select/index.js": [
@@ -2360,7 +2425,8 @@
           "defaultValue": {
             "value": "'listbox'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -2411,7 +2477,8 @@
           "defaultValue": {
             "value": "{\n  height: '48px',\n  marginTop: '16px',\n  marginBottom: '8px',\n  display: 'inline-flex',\n  alignItems: 'flex-end'\n}",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -2426,7 +2493,13 @@
             "raw": "string[] | { [value: string]: string } | mixed[]",
             "elements": [
               {
-                "name": "unknown"
+                "name": "Array",
+                "elements": [
+                  {
+                    "name": "string"
+                  }
+                ],
+                "raw": "string[]"
               },
               {
                 "name": "signature",
@@ -2447,7 +2520,13 @@
                 }
               },
               {
-                "name": "unknown"
+                "name": "Array",
+                "elements": [
+                  {
+                    "name": "mixed"
+                  }
+                ],
+                "raw": "mixed[]"
               }
             ]
           },
@@ -2523,6 +2602,7 @@
     },
     {
       "description": "",
+      "displayName": "SliderThumb",
       "methods": []
     },
     {
@@ -2690,25 +2770,29 @@
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "aria-live": {
           "defaultValue": {
             "value": "'assertive'",
             "computed": false
-          }
+          },
+          "required": false
         },
         "aria-atomic": {
           "defaultValue": {
             "value": "true",
             "computed": false
-          }
+          },
+          "required": false
         },
         "aria-hidden": {
           "defaultValue": {
             "value": "true",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -2846,7 +2930,8 @@
           "defaultValue": {
             "value": "'checkbox'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -3111,7 +3196,8 @@
           "defaultValue": {
             "value": "'text'",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -3299,7 +3385,13 @@
                 "name": "string"
               },
               {
-                "name": "unknown"
+                "name": "Array",
+                "elements": [
+                  {
+                    "name": "string"
+                  }
+                ],
+                "raw": "string[]"
               }
             ]
           },
@@ -3331,31 +3423,36 @@
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "waterfall": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "fixedLastrowOnly": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "flexible": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         },
         "flexibleDefaultBehavior": {
           "defaultValue": {
             "value": "false",
             "computed": false
-          }
+          },
+          "required": false
         }
       }
     },
@@ -3547,6 +3644,7 @@
   "src/docs/Home.js": [
     {
       "description": "",
+      "displayName": "Home",
       "methods": []
     }
   ],

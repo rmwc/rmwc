@@ -178,6 +178,9 @@ export const withFoundation = ({
       )}`;
 
       this.props[propName] && this.props[propName](evt);
+
+      // MDC can change state internally, if we are triggering a handler, resync with our props
+      this.syncWithProps(this.props);
     }
   }
 
