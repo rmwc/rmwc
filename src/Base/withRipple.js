@@ -10,7 +10,7 @@ export type WithRipplePropsT = {
 /**
  * HOC that adds ripples to any component
  */
-export const withRipple = ({ unbounded: defaultUnbounded }) => (
+export const withRipple = ({ unbounded: defaultUnbounded } = {}) => (
   Component: React.ComponentType<*>
 ): React.ComponentType<*> =>
   class extends React.Component<WithRipplePropsT> {

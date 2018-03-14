@@ -2,7 +2,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-function copyProperties(target, source) {
+/************************************************************************
+ * Utils
+ ***********************************************************************/
+
+/** Copies all known properties from source to target. This is being used in here for class merging. */
+const copyProperties = (target, source) => {
   const allPropertyNames = Object.getOwnPropertyNames(source).concat(
     Object.getOwnPropertySymbols(source)
   );
@@ -10,7 +15,7 @@ function copyProperties(target, source) {
   allPropertyNames.forEach(propertyName => {
     if (
       propertyName.match(
-        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/
+        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length|destroy)$/
       )
     ) {
       return;
@@ -21,121 +26,138 @@ function copyProperties(target, source) {
       Object.getOwnPropertyDescriptor(source, propertyName)
     );
   });
-}
+};
 
-export const foundationFactory = ({
+/************************************************************************
+ * Handler Factories
+ ***********************************************************************/
+export const addClass = () =>
+  function(className: string) {
+    this.safeSetState(prevState => ({
+      classes: prevState.classes.add(className)
+    }));
+  };
+
+export const removeClass = () =>
+  function(className: string) {
+    this.safeSetState(prevState => ({
+      classes: prevState.classes.delete(className) ?
+        prevState.classes :
+        prevState.classes
+    }));
+  };
+
+export const registerInteractionHandler = (refName: string = 'root_') =>
+  function(type: string, handler: Function) {
+    this[refName] && this[refName].addEventListener(type, handler);
+  };
+
+export const deregisterInteractionHandler = (refName: string = 'root_') =>
+  function(type: string, handler: Function) {
+    this[refName] && this[refName].removeEventListener(type, handler);
+  };
+
+/************************************************************************
+ * HOC
+ ***********************************************************************/
+type FoundationT = {
+  constructor: Function,
+  adapter: {
+    [functionName: string]: Function
+  },
+  refs?: string[]
+};
+
+type FoundationStateT = {
+  classes: Set<string>
+};
+
+export const withFoundation = ({
   constructor: FoundationConstructor,
-  adapter,
-  refs = ['root_'],
-  defaultHandlers = [],
-  syncWithProps = () => {}
-}) => Component => {
-  class MyFoundation extends React.Component {
-    constructor(props) {
+  adapter = {},
+  refs = ['root_']
+}: FoundationT) => {
+  class Foundation<P, S> extends React.Component<P, S & FoundationStateT> {
+    constructor(props: *) {
       super(props);
-      console.log(this);
 
-      this.refHandlers = refs.reduce((acc, r) => {
+      this.foundationRefs = refs.reduce((acc, r) => {
+        // Here we gracefully merge two refs together if one was passed down the chain
         const propName =
-          this.props.elementRef && this.props.elementRef.refName === r ?
+          this.props.elementRef && this.props.elementRef.refName_ === r ?
             'elementRef' :
             r;
 
-        acc[propName] = ref => {
-          this[r] = ref;
-          this.props[propName] && this.props[propName](ref);
+        acc[r] = ref => {
+          // React will return a null ref when unmounting which will
+          // in turn make our adapters error out. Make sure we only set a ref if its truthy.
+          if (ref) {
+            this[r] = ref;
+            this.props[propName] && this.props[propName](ref);
+          }
         };
 
-        acc[propName].refName = r;
+        // Store the refname on the object so we can reference it later and merge two of the same references together
+        acc[r].refName_ = r;
 
         return acc;
       }, {});
 
       this.foundation_ = this.getDefaultFoundation();
 
-      const handlers = {
-        hasClass: className => this.root_.classList.contains(className),
-        addClass: className =>
-          this.setState(prevState => ({
-            classes: prevState.classes.add(className)
-          })),
-        removeClass: className =>
-          this.setState(prevState => ({
-            classes: prevState.classes.delete(className) ?
-              prevState.classes :
-              prevState.classes
-          })),
-        registerInteractionHandler: (type, handler) => {
-          if (this.root_) {
-            this.root_.addEventListener(type, handler);
-          }
-        },
-        deregisterInteractionHandler: (type, handler) => {
-          if (this.root_) {
-            this.root_.removeEventListener(type, handler);
-          }
-        }
-      };
-
-      defaultHandlers.forEach(handler => {
-        this.foundation_[handler] = handlers[handler];
-        this.foundation_[handler] = this.foundation_[handler].bind(
-          this.foudnation_
-        );
+      Object.entries(adapter).forEach(([handlerName, handler]) => {
+        this.foundation_.adapter_[handlerName] = handler.bind(this);
       });
+
+      this.syncWithProps = this.syncWithProps.bind(this);
+    }
+
+    componentDidMount() {
+      this.foundation_.init();
+      this.syncWithProps(this.props);
+    }
+
+    componentWillReceiveProps(nextProps: P) {
+      this.foundation_ && this.syncWithProps(nextProps);
+    }
+
+    componentWillUnmount() {
+      this.destroy();
+    }
+
+    safeSetState(...args) {
+      this.foundation_ && this.setState(...args);
     }
 
     state = {
       classes: new Set()
     };
 
-    componentDidMount() {
-      this.foundation_.init();
-      this.isInit = true;
-    }
+    foundation_: Object;
 
-    componentWillReceiveProps(nextProps: T) {
-      this.isInit && syncWithProps && syncWithProps(this, nextProps);
-    }
-
-    componentWillUnmount() {
-      this.foundation_.destroy();
-    }
+    foundationRefs: { [string]: (ref: window.DomElement) => mixed };
 
     destroy() {
       // Subclasses may implement this method to release any resources / deregister any listeners they have
       // attached. An example of this might be deregistering a resize event from the window object.
       this.foundation_.destroy();
+      this.foundation_ = undefined;
+
+      // We need to hold onto our refs until all child components are unmounted
+      // Here we just wait an extra frame and set them to null so garbage collection will take over.
+      window.requestAnimationFrame(() => {
+        refs.forEach(refName => {
+          this[refName] = null;
+        });
+      });
     }
 
-    /**
-     * Wrapper method to add an event listener to the component's root element. This is most useful when
-     * listening for custom events.
-     * @param {string} evtType
-     * @param {!Function} handler
-     */
-    listen(evtType, handler) {
-      this.root_.addEventListener(evtType, handler);
-    }
-
-    /**
-     * Wrapper method to remove an event listener to the component's root element. This is most useful when
-     * unlistening for custom events.
-     * @param {string} evtType
-     * @param {!Function} handler
-     */
-    unlisten(evtType, handler) {
-      this.root_.removeEventListener(evtType, handler);
-    }
+    syncWithProps(nextProps: P) {}
 
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,
-     * with the given data.
-     * @param {string} evtType
-     * @param {!Object} evtData
-     * @param {boolean=} shouldBubble
      */
-    emit(evtType, evtData, shouldBubble = false) {
+    emit(evtType: string, evtData: Object, shouldBubble: boolean = false) {
       let evt;
       if (typeof CustomEvent === 'function') {
         evt = new CustomEvent(evtType, {
@@ -147,22 +169,19 @@ export const foundationFactory = ({
         evt.initCustomEvent(evtType, shouldBubble, false, evtData);
       }
 
-      this.root_.dispatchEvent(evt);
-    }
+      const baseName = evtType
+        .split(':')
+        .slice(-1)
+        .pop();
+      const propName = `on${baseName.charAt(0).toUpperCase()}${baseName.slice(
+        1
+      )}`;
 
-    render() {
-      const { className, ...rest } = this.props;
-      return (
-        <Component
-          className={classNames(className, [...this.state.classes])}
-          {...rest}
-          {...this.refHandlers}
-        />
-      );
+      this.props[propName] && this.props[propName](evt);
     }
   }
 
-  copyProperties(MyFoundation.prototype, FoundationConstructor.prototype);
+  copyProperties(Foundation.prototype, FoundationConstructor.prototype);
 
-  return MyFoundation;
+  return Foundation;
 };

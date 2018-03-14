@@ -26,7 +26,7 @@ export type ButtonRootPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ButtonRoot = withRipple(
+export const ButtonRoot = withRipple()(
   simpleTag({
     displayName: 'ButtonRoot',
     tag: 'button',
@@ -98,10 +98,8 @@ export class Button extends React.Component<ButtonRootPropsT> {
     const { buttonDefaultRipple } = this.providerOptions;
     const { ripple, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
-    const rippleProps = shouldRipple ?
-      { ripple: true, needsRippleSurface: false } :
-      {};
-    return <ButtonRoot {...rippleProps} {...rest} />;
+
+    return <ButtonRoot ripple={shouldRipple} {...rest} />;
   }
 }
 

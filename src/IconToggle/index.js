@@ -4,7 +4,13 @@ import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop } from '../Base';
 import { withRipple } from '../Base/withRipple';
-import { foundationFactory } from '../Base/MDCFoundation';
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  registerInteractionHandler,
+  deregisterInteractionHandler
+} from '../Base/MDCFoundation';
 
 type IconTogglePropsT = {
   /* prettier-ignore */
@@ -15,7 +21,9 @@ type IconTogglePropsT = {
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   off: Object,
   /** Whether the toggle is on or off */
-  checked?: boolean
+  checked?: boolean,
+  /** Disables the iconToggle */
+  disabled?: boolean
 };
 
 export const IconToggleRoot = withRipple({ unbounded: true })(
@@ -30,51 +38,50 @@ export const IconToggleRoot = withRipple({ unbounded: true })(
   })
 );
 
-export const IconToggle = foundationFactory({
+export class IconToggle extends withFoundation({
   constructor: MDCIconToggle,
-  defaultHandlers: [
-    'addClass',
-    'removeClass',
-    'registerInteractionHandler',
-    'deregisterInteractionHandler'
-  ],
-  syncWithProps: (inst, props) => {
-    if (props.checked !== inst.foundation_.isOn()) {
-      inst.foundation_.toggle(!!props.checked);
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass(),
+    registerInteractionHandler: registerInteractionHandler(),
+    deregisterInteractionHandler: deregisterInteractionHandler()
+  }
+})<IconTogglePropsT, {}> {
+  static displayName = 'IconToggle';
+  static defaultProps = {
+    onChange: noop,
+    on: undefined,
+    off: undefined,
+    checked: undefined
+  };
+
+  syncWithProps(nextProps: IconTogglePropsT) {
+    if (nextProps.checked !== this.foundation_.isOn()) {
+      this.foundation_.toggle(!!nextProps.checked);
     }
 
-    if (props.disabled !== inst.foundation_.isDisabled()) {
-      inst.foundation_.setDisabled(!!props.disabled);
+    if (nextProps.disabled !== this.foundation_.isDisabled()) {
+      this.foundation_.setDisabled(!!nextProps.disabled);
     }
   }
-})(
-  class extends React.Component<IconTogglePropsT> {
-    static displayName = 'IconToggle';
 
-    static defaultProps = {
-      onChange: noop,
-      on: undefined,
-      off: undefined,
-      checked: undefined
-    };
+  render() {
+    const { checked, on, off, ...rest } = this.props;
+    const ariaPressed = checked !== undefined ? !!checked : false;
+    const toggleOnJSON = JSON.stringify(on);
+    const toggleOffJSON = JSON.stringify(off);
 
-    render() {
-      const { checked, on, off, root_, ...rest } = this.props;
-      const ariaPressed = checked !== undefined ? !!checked : false;
-      const toggleOnJSON = JSON.stringify(on);
-      const toggleOffJSON = JSON.stringify(off);
-
-      return (
-        <IconToggleRoot
-          {...rest}
-          elementRef={root_}
-          data-toggle-on={toggleOnJSON}
-          data-toggle-off={toggleOffJSON}
-          aria-pressed={ariaPressed}
-        />
-      );
-    }
+    return (
+      <IconToggleRoot
+        {...rest}
+        className={(rest.className || null, [...this.state.classes])}
+        elementRef={this.foundationRefs.root_}
+        data-toggle-on={toggleOnJSON}
+        data-toggle-off={toggleOffJSON}
+        aria-pressed={ariaPressed}
+      />
+    );
   }
-);
+}
 
-// export default IconToggle;
+export default IconToggle;
