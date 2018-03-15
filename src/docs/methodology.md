@@ -32,7 +32,7 @@ Block -> Component
 Element -> Components / Children
 Modifier -> Props
 
-Hers a TextField example of before and after.
+Here's a TextField example in raw MDC and with RMWC.
 
 ```jsx
 // The example is from material-components-web
@@ -60,11 +60,11 @@ Hers a TextField example of before and after.
 
 ## Convenient additions
 
-Even though this is meant to be an unopinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, whats the point? Any non-standard item will be called out in the docs.
+Even though this is meant to be an unopinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, what's the point? Any non-standard item will be called out in the docs.
 
 ## Something missing from RMWC?
 
-RMWC wraps the entire [material-components-web](https://github.com/material-components/material-components-web) package in React, but because they are different projects with different maintainers, sometimes things can be missed. A lot of components from [material-components-web](https://github.com/material-components/material-components-web) don't require javascript. For these, you can simply use the classNames in your own project. Of course, RMWC wants to cover the entire codebase, so if you see something missing or incorrect, please [file an issue](https://github.com/jamesmfriedman/rmwc/issues/new).
+MWC wraps the entire [material-components-web](https://github.com/material-components/material-components-web) package in React, but because they are different projects with different maintainers, sometimes things can be missed. A lot of components from [material-components-web](https://github.com/material-components/material-components-web) don't require JavaScript. For these, you can simply use the classNames in your own project. Of course, RMWC wants to cover the entire codebase, so if you see something missing or incorrect, please [file an issue](https://github.com/jamesmfriedman/rmwc/issues/new).
 
 ```jsx
 /** This will give you a CSS only button and skip RMWC all together */
