@@ -1,11 +1,11 @@
-# Layout Grid
+# Lists
 
 > Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
-ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
-
 import from **rmwc/List**  
 [https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
+
+ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
 
 ## Standard Usage
 
@@ -35,7 +35,7 @@ import {
   <ListItem>
     <ListItemGraphic>mood</ListItemGraphic>
     <ListItemText>Icecream</ListItemText>
-    <ListItemMeta>info</ListItemMeta>
+    <ListItemMeta tag="span" basename="">Text!</ListItemMeta>
   </ListItem>
 </List>
 ```
