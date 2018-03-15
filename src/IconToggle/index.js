@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop } from '../Base';
@@ -77,7 +78,7 @@ export class IconToggle extends withFoundation({
     return (
       <IconToggleRoot
         {...rest}
-        className={(rest.className || null, [...this.state.classes])}
+        className={classNames(rest.className || null, [...this.state.classes])}
         elementRef={this.foundationRefs.root_}
         data-toggle-on={toggleOnJSON}
         data-toggle-off={toggleOffJSON}

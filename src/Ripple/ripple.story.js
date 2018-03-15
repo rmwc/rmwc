@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Ripple } from './';
 
@@ -10,7 +9,7 @@ const rippleStyle = {
   height: '240px',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'center'
 };
 
 storiesOf('Ripples', module).add('Ripple', () => (

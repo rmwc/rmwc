@@ -2,6 +2,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+import { simpleTag } from '../Base';
 import {
   withFoundation,
   addClass,
@@ -55,11 +56,21 @@ export class Ripple extends withFoundation({
       ...rest
     } = this.props;
 
-    return React.cloneElement(children, {
-      ...children.props,
+    const { root_ } = this.foundationRefs;
+
+    const child = React.Children.only(children);
+    const refProp = { [child.type.isSimpleTag ? 'elementRef' : 'ref']: root_ };
+    const unboundedProp = unbounded ?
+      { 'data-mdc-ripple-is-unbounded': true } :
+      {};
+
+    return React.cloneElement(child, {
+      ...child.props,
       ...rest,
-      elementRef: this.foundationRefs.root_,
+      ...refProp,
+      ...unboundedProp,
       className: classNames(className, [...this.state.classes], {
+        'mdc-ripple-surface': !child.type.isSimpleTag,
         'mdc-ripple-surface--primary': primary,
         'mdc-ripple-surface--accent': accent
       })
