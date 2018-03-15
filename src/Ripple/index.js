@@ -2,7 +2,23 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
-import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
+
+type RipplePropsT = {
+  /** Makes the ripple unbounded */
+  unbounded?: boolean,
+  /** Makes the ripple primary */
+  primary?: boolean,
+  /** Makes the ripple an accent color*/
+  accent?: boolean,
+  /** makes the ripple disabled */
+  disabled?: boolean
+};
 
 export class Ripple extends withFoundation({
   constructor: MDCRipple,
@@ -10,17 +26,23 @@ export class Ripple extends withFoundation({
     addClass: addClass(),
     removeClass: removeClass()
   }
-})<> {
+})<RipplePropsT> {
   static displayName = 'Ripple';
 
-  syncWithProps(nextProps) {
-    if (this.unbounded !== nextProps.unbounded) {
-      this.unbounded = nextProps.unbounded;
-    }
+  syncWithProps(nextProps: RipplePropsT) {
+    // unbounded
+    syncFoundationProp(
+      nextProps.unbounded,
+      this.unbounded,
+      () => (this.unbounded = nextProps.unbounded)
+    );
 
-    if (this.disabled !== nextProps.disabled) {
-      this.disabled = nextProps.disabled;
-    }
+    //disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
   }
 
   render() {
