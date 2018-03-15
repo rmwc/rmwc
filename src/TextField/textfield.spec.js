@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { TextField } from './';
 
-return;
 describe('TextField', () => {
   it('renders', () => {
     mount(<TextField placeholder="test" />);
