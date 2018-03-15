@@ -44,7 +44,17 @@ const MenuItem = ({ url, label }) => {
 export class App extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', () => this.doSizeCheck());
-    this.doSizeCheck();
+    this.doSizeCheck(true);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // a hack to help components layout that depend on window events
+    // The size of the content changes on drawer open and close
+    if (prevState.menuIsOpen !== this.state.menuIsOpen) {
+      setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+      }, 300);
+    }
   }
 
   state = {
@@ -52,11 +62,16 @@ export class App extends React.Component {
     isMobile: true
   };
 
-  doSizeCheck() {
-    if (window.innerWidth > 640) {
-      this.setState({ isMobile: false, menuIsOpen: true });
-    } else {
-      this.setState({ isMobile: true, menuIsOpen: false });
+  doSizeCheck(initial) {
+    const isMobile = window.innerWidth < 640;
+    const menuIsOpen =
+      initial && window.innerWidth > 640 ? true : this.state.menuIsOpen;
+
+    if (
+      this.state.isMobile !== isMobile ||
+      this.state.menuIsOpen !== menuIsOpen
+    ) {
+      this.setState({ isMobile, menuIsOpen });
     }
   }
 

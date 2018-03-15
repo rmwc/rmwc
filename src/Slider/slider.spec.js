@@ -4,8 +4,7 @@ import { Slider } from './';
 
 describe('Slider', () => {
   it('renders', () => {
-    const el = mount(<Slider value={50} onChange={() => {}} />);
-    expect(!!~el.html().search('mdc-slider')).toBe(true);
+    mount(<Slider />);
   });
 
   it('can be discrete', () => {

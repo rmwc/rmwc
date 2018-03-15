@@ -2568,7 +2568,20 @@
     {
       "description": "",
       "displayName": "SliderRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -2613,19 +2626,298 @@
     {
       "description": "",
       "displayName": "Slider",
-      "methods": [],
+      "methods": [
+        {
+          "name": "discrete",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": {
+            "type": {
+              "name": "boolean"
+            }
+          }
+        },
+        {
+          "name": "discrete",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "isDiscrete",
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "displayMarkers",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": {
+            "type": {
+              "name": "boolean"
+            }
+          }
+        },
+        {
+          "name": "displayMarkers",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "isDisplayMarkers",
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } }) => mixed,\n  /** A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "onChange",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: { detail: { value: number } }) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ detail: { value: number } }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "detail",
+                                      "value": {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ value: number }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onInput",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: { detail: { value: number } }) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ detail: { value: number } }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "detail",
+                                      "value": {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ value: number }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "value",
+                      "value": {
+                        "name": "union",
+                        "raw": "number | string",
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "string"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "min",
+                      "value": {
+                        "name": "union",
+                        "raw": "number | string",
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "string"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "max",
+                      "value": {
+                        "name": "union",
+                        "raw": "number | string",
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "string"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "step",
+                      "value": {
+                        "name": "union",
+                        "raw": "number | string",
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "string"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "discrete",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "displayMarkers",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "disabled",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "SliderPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "onChange": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: { detail: { value: number } }) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { value: number } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ value: number }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "value",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -2635,19 +2927,45 @@
             }
           },
           "required": false,
-          "description": "A callback that fires when the Slider stops sliding which takes an event with event.target.value set to the Slider's value."
+          "description": "A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value."
         },
         "onInput": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: { detail: { value: number } }) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { value: number } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ value: number }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "value",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -2657,7 +2975,7 @@
             }
           },
           "required": false,
-          "description": "A callback that fires continuously while the Slider is slidng that takes an event with event.target.value set to the Slider's value."
+          "description": "A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value."
         },
         "value": {
           "flowType": {
