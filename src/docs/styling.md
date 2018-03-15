@@ -196,7 +196,7 @@ You can then import this and use it like so:
 
 ## Theming with runtime CSS variables.
 
-You can easily theme the library at runtime using CSS variables. Inspect the `<html>` node in your web inspector and you should a list of variables you can modify on the `:root` selector.
+You can easily theme the library at runtime using CSS variables. Inspect the `<html>` node in your web inspector and you should see a list of variables you can modify on the `:root` selector.
 
 ```css
 /** in your CSS */
