@@ -80,7 +80,8 @@ export class Ripple extends withFoundation({
         child.props.className,
         [...this.state.classes],
         {
-          'mdc-ripple-surface': !child.type.isSimpleTag,
+          'mdc-ripple-surface':
+            rest.surface !== undefined ? rest.surface : true,
           'mdc-ripple-surface--primary': primary,
           'mdc-ripple-surface--accent': accent
         }
