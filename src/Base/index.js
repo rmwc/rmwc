@@ -11,6 +11,4 @@ export type { WithThemePropsT } from './withTheme';
 export { withMDC } from './withMDC';
 export { withMDCToggle } from './withMDCToggle';
 
-export { withMDCFoundation } from './withMDCFoundation';
-
 export { noop } from './noop';

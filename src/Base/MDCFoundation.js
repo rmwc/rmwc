@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import classNames from 'classnames';
 
 /************************************************************************
  * Utils
@@ -77,7 +76,7 @@ export const deregisterInteractionHandler = (refName: string = 'root_') =>
  ***********************************************************************/
 type FoundationT = {
   constructor: Function,
-  adapter: {
+  adapter?: {
     [functionName: string]: Function
   },
   refs?: string[]
