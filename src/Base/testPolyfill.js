@@ -1,3 +1,5 @@
+import MutationObserverPolyfill from 'mutation-observer';
+
 export default () => {
   Object.defineProperty(window.HTMLElement.prototype, 'dataset', {
     writable: true,
@@ -16,4 +18,6 @@ export default () => {
       measureText: () => ({ width: 0 })
     })
   });
+
+  window.MutationObserver = window.MutationObserver || MutationObserverPolyfill;
 };

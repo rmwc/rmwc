@@ -17,6 +17,7 @@
 /Drawer
 /Elevation
 /Fab
+/FloatingLabel
 /FormField
 /Grid
 /GridList
@@ -25,6 +26,7 @@
 /IconToggle
 /index.js
 /LinearProgress
+/LineRipple
 /List
 /Menu
 /Provider
