@@ -973,6 +973,26 @@
       }
     }
   ],
+  "src/FloatingLabel/index.js": [
+    {
+      "description": "",
+      "displayName": "FloatingLabel",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    }
+  ],
   "src/FormField/index.js": [
     {
       "description": "",
@@ -1391,7 +1411,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
+                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
                 "signature": {
                   "properties": [
                     {
@@ -1399,7 +1419,7 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed",
+                        "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
                         "signature": {
                           "arguments": [
                             {
@@ -1407,17 +1427,9 @@
                               "type": {
                                 "name": "signature",
                                 "type": "object",
-                                "raw": "{type: 'MDCIconToggle:change', detail: {isOn: boolean}}",
+                                "raw": "{detail: {isOn: boolean}}",
                                 "signature": {
                                   "properties": [
-                                    {
-                                      "key": "type",
-                                      "value": {
-                                        "name": "literal",
-                                        "value": "'MDCIconToggle:change'",
-                                        "required": true
-                                      }
-                                    },
                                     {
                                       "key": "detail",
                                       "value": {
@@ -1492,7 +1504,7 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed",
+            "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
             "signature": {
               "arguments": [
                 {
@@ -1500,17 +1512,9 @@
                   "type": {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{type: 'MDCIconToggle:change', detail: {isOn: boolean}}",
+                    "raw": "{detail: {isOn: boolean}}",
                     "signature": {
                       "properties": [
-                        {
-                          "key": "type",
-                          "value": {
-                            "name": "literal",
-                            "value": "'MDCIconToggle:change'",
-                            "required": true
-                          }
-                        },
                         {
                           "key": "detail",
                           "value": {
@@ -1589,6 +1593,13 @@
           "description": "Disables the iconToggle"
         }
       }
+    }
+  ],
+  "src/LineRipple/index.js": [
+    {
+      "description": "",
+      "displayName": "LineRipple",
+      "methods": []
     }
   ],
   "src/LinearProgress/index.js": [
@@ -3640,24 +3651,6 @@
     },
     {
       "description": "",
-      "displayName": "TextFieldLabel",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ]
-    },
-    {
-      "description": "",
       "displayName": "TextFieldInput",
       "methods": [],
       "props": {
@@ -3673,11 +3666,6 @@
     {
       "description": "",
       "displayName": "TextFieldTextarea",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "LineRipple",
       "methods": []
     },
     {
