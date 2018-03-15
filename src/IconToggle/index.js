@@ -6,10 +6,9 @@ import { simpleTag, noop } from '../Base';
 import { withRipple } from '../Base/withRipple';
 import {
   withFoundation,
+  syncFoundationProp,
   addClass,
-  removeClass,
-  registerInteractionHandler,
-  deregisterInteractionHandler
+  removeClass
 } from '../Base/MDCFoundation';
 
 type IconTogglePropsT = {
@@ -42,9 +41,7 @@ export class IconToggle extends withFoundation({
   constructor: MDCIconToggle,
   adapter: {
     addClass: addClass(),
-    removeClass: removeClass(),
-    registerInteractionHandler: registerInteractionHandler(),
-    deregisterInteractionHandler: deregisterInteractionHandler()
+    removeClass: removeClass()
   }
 })<IconTogglePropsT, {}> {
   static displayName = 'IconToggle';
@@ -55,25 +52,20 @@ export class IconToggle extends withFoundation({
     checked: undefined
   };
 
-  componentDidMount() {
-    super.componentDidMount();
-    this.foundation_.toggle(!!this.foundation_.isOn());
-  }
-
   syncWithProps(nextProps: IconTogglePropsT) {
-    if (
-      nextProps.checked !== undefined &&
-      this.foundation_.isOn() !== nextProps.checked
-    ) {
-      this.foundation_.toggle(!!nextProps.checked);
-    }
+    // checked
+    syncFoundationProp(
+      nextProps.checked,
+      this.on,
+      () => (this.on = nextProps.checked)
+    );
 
-    if (
-      nextProps.disabled !== undefined &&
-      nextProps.disabled !== this.foundation_.isDisabled()
-    ) {
-      this.foundation_.setDisabled(!!nextProps.disabled);
-    }
+    // disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
   }
 
   render() {
