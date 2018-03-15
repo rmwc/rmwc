@@ -1768,7 +1768,7 @@
       "methods": []
     },
     {
-      "description": "A meta icon for the ListItem",
+      "description": "A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag=\"span\" and basename=\"\" to ensure proper rendering. See the examples above.",
       "displayName": "ListItemMeta",
       "methods": []
     },

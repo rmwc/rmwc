@@ -82,7 +82,7 @@ export const ListItemGraphic = simpleTag({
   tag: Icon
 });
 
-/** A meta icon for the ListItem */
+/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
 export const ListItemMeta = simpleTag({
   displayName: 'ListItemMeta',
   classNames: 'mdc-list-item__meta',
