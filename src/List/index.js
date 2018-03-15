@@ -56,10 +56,8 @@ export class ListItem extends React.Component<ListItemPropsT> {
     const { listItemDefaultRipple } = this.providerOptions;
     const { ripple, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? listItemDefaultRipple : ripple;
-    const rippleProps = shouldRipple ?
-      { ripple: true, needsRippleSurface: false } :
-      {};
-    return <ListItemRoot {...rippleProps} {...rest} />;
+
+    return <ListItemRoot ripple={shouldRipple} {...rest} />;
   }
 }
 

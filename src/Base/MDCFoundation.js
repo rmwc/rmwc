@@ -28,23 +28,38 @@ const copyProperties = (target, source) => {
   });
 };
 
+/** Simplifies reduant checks for syncWithProps */
+export const syncFoundationProp = (
+  prop: mixed,
+  foundationValue: mixed,
+  callback: () => mixed
+) => {
+  if (prop !== undefined && prop !== foundationValue) {
+    callback();
+  }
+};
+
 /************************************************************************
  * Handler Factories
  ***********************************************************************/
 export const addClass = () =>
   function(className: string) {
-    this.safeSetState(prevState => ({
-      classes: prevState.classes.add(className)
-    }));
+    if (!this.state.classes.has(className)) {
+      this.safeSetState(prevState => ({
+        classes: prevState.classes.add(className)
+      }));
+    }
   };
 
 export const removeClass = () =>
   function(className: string) {
-    this.safeSetState(prevState => ({
-      classes: prevState.classes.delete(className) ?
-        prevState.classes :
-        prevState.classes
-    }));
+    if (this.state.classes.has(className)) {
+      this.safeSetState(prevState => ({
+        classes: prevState.classes.delete(className) ?
+          prevState.classes :
+          prevState.classes
+      }));
+    }
   };
 
 export const registerInteractionHandler = (refName: string = 'root_') =>
@@ -76,7 +91,7 @@ export const withFoundation = ({
   constructor: FoundationConstructor,
   adapter = {},
   refs = ['root_']
-}: FoundationT) => {
+}: FoundationT): $Shape<constructor> => {
   class Foundation<P, S> extends React.Component<P, S & FoundationStateT> {
     constructor(props: *) {
       super(props);
@@ -114,6 +129,7 @@ export const withFoundation = ({
 
     componentDidMount() {
       this.foundation_.init();
+      this.initialSyncWithDOM();
       this.syncWithProps(this.props);
     }
 
@@ -153,6 +169,7 @@ export const withFoundation = ({
     }
 
     syncWithProps(nextProps: P) {}
+    initialSyncWithDOM() {}
 
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,

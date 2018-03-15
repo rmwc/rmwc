@@ -1,14 +1,26 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-import { MDCSliderFoundation } from '@material/slider/dist/mdc.slider';
-import { noop } from '../Base/noop';
-import { strings } from './constants';
-import { simpleTag, withMDCFoundation } from '../Base';
+import { MDCSlider } from '@material/slider/dist/mdc.slider';
+import { simpleTag } from '../Base';
+
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
 
 export const SliderRoot = simpleTag({
   displayName: 'SliderRoot',
-  classNames: 'mdc-slider'
+  classNames: props => [
+    'mdc-slider',
+    {
+      'mdc-slider--discrete': props.discrete,
+      'mdc-slider--display-markers': props.displayMarkers && props.discrete
+    }
+  ],
+  consumeProps: ['discrete', 'displayMarkers']
 });
 
 export const SliderTrackContainer = simpleTag({
@@ -54,10 +66,10 @@ export const SliderFocusRing = simpleTag({
 });
 
 type SliderPropsT = {
-  /** A callback that fires when the Slider stops sliding which takes an event with event.target.value set to the Slider's value. */
-  onChange?: (evt: Event) => mixed,
-  /** A callback that fires continuously while the Slider is slidng that takes an event with event.target.value set to the Slider's value. */
-  onInput?: (evt: Event) => mixed,
+  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
+  onChange?: (evt: { detail: { value: number } }) => mixed,
+  /** A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value. */
+  onInput?: (evt: { detail: { value: number } }) => mixed,
   /** The value of the Slider. */
   value?: number | string,
   /** The minimum value of the Slider. */
@@ -74,8 +86,8 @@ type SliderPropsT = {
   disabled?: boolean
 };
 
-export const Slider = withMDCFoundation({
-  constructor: MDCSliderFoundation,
+export class Slider extends withFoundation({
+  constructor: MDCSlider,
   refs: [
     'root_',
     'thumbContainer_',
@@ -83,203 +95,152 @@ export const Slider = withMDCFoundation({
     'pinValueMarker_',
     'trackMarkerContainer_'
   ],
-  defaultProps: {
-    onChange: noop,
-    onInput: noop
-  },
-  defaultHandlers: [
-    'hasClass',
-    'addClass',
-    'removeClass',
-    'registerInteractionHandler',
-    'deregisterInteractionHandler'
-  ],
-  adapter: inst => ({
-    hasClass: className => inst.root_.classList.contains(className),
-    addClass: className => inst.root_.classList.add(className),
-    removeClass: className => inst.root_.classList.remove(className),
-    getAttribute: name => inst.root_.getAttribute(name),
-    setAttribute: (name, value) => inst.root_.setAttribute(name, value),
-    removeAttribute: name => inst.root_.removeAttribute(name),
-    computeBoundingRect: () => inst.root_.getBoundingClientRect(),
-    getTabIndex: () => inst.root_.tabIndex,
-    registerInteractionHandler: (type, handler) => {
-      inst.root_.addEventListener(type, handler);
-    },
-    deregisterInteractionHandler: (type, handler) => {
-      inst.root_.removeEventListener(type, handler);
-    },
-    registerThumbContainerInteractionHandler: (type, handler) => {
-      inst.thumbContainer_.addEventListener(type, handler);
-    },
-    deregisterThumbContainerInteractionHandler: (type, handler) => {
-      inst.thumbContainer_.removeEventListener(type, handler);
-    },
-    registerBodyInteractionHandler: (type, handler) => {
-      window.document.body.addEventListener(type, handler);
-    },
-    deregisterBodyInteractionHandler: (type, handler) => {
-      window.document.body.removeEventListener(type, handler);
-    },
-    registerResizeHandler: handler => {
-      window.addEventListener('resize', handler);
-    },
-    deregisterResizeHandler: handler => {
-      window.removeEventListener('resize', handler);
-    },
-    notifyInput: () => {
-      inst.props.onChange(strings.INPUT_EVENT, this);
-    },
-    notifyChange: () => {
-      inst.props.onInput(strings.CHANGE_EVENT, this);
-    },
-    setThumbContainerStyleProperty: (propertyName, value) => {
-      inst.thumbContainer_.style.setProperty(propertyName, value);
-    },
-    setTrackStyleProperty: (propertyName, value) => {
-      inst.track_.style.setProperty(propertyName, value);
-    },
-    setMarkerValue: value => {
-      inst.pinValueMarker_.innerText = value;
-    },
-    appendTrackMarkers: numMarkers => {
-      const frag = document.createDocumentFragment();
-      for (let i = 0; i < numMarkers; i++) {
-        const marker = document.createElement('div');
-        marker.classList.add('mdc-slider__track-marker');
-        frag.appendChild(marker);
-      }
-      inst.trackMarkerContainer_.appendChild(frag);
-    },
-    removeTrackMarkers: () => {
-      while (inst.trackMarkerContainer_.firstChild) {
-        inst.trackMarkerContainer_.removeChild(
-          inst.trackMarkerContainer_.firstChild
-        );
-      }
-    },
-    setLastTrackMarkersStyleProperty: (propertyName, value) => {
-      // We remove and append new nodes, thus, the last track marker must be dynamically found.
-      const lastTrackMarker = inst.root_.querySelector(
-        strings.LAST_TRACK_MARKER_SELECTOR
-      );
-      lastTrackMarker.style.setProperty(propertyName, value);
-    },
-    isRTL: () => getComputedStyle(inst.root_).direction === 'rtl'
-  }),
-  syncWithProps: (inst, props) => {
-    const origValueNow = parseFloat(
-      this.root_.getAttribute(strings.ARIA_VALUENOW)
-    );
-    this.min =
-      parseFloat(this.root_.getAttribute(strings.ARIA_VALUEMIN)) || this.min;
-    this.max =
-      parseFloat(this.root_.getAttribute(strings.ARIA_VALUEMAX)) || this.max;
-    this.step =
-      parseFloat(this.root_.getAttribute(strings.STEP_DATA_ATTR)) || this.step;
-    this.value = origValueNow || this.value;
-    this.disabled =
-      this.root_.hasAttribute(strings.ARIA_DISABLED) &&
-      this.root_.getAttribute(strings.ARIA_DISABLED) !== 'false';
-    this.foundation_.setupTrackMarker();
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass()
+  }
+})<SliderPropsT, {}> {
+  static displayName = 'Slider';
+
+  get discrete(): boolean {
+    return this.foundation_.isDiscrete_;
   }
 
-  // onUpdate(props, nextProps, api, inst) {
-  //   if (api && api.value !== nextProps.value) {
-  //     api.value = nextProps.value;
-  //     nextProps.onChange &&
-  //       nextProps.onChange({ target: { value: api.value } });
-  //   }
+  set discrete(isDiscrete: boolean) {
+    this.foundation_.isDiscrete_ = isDiscrete;
+  }
 
-  //   ['min', 'max', 'step', 'disabled'].forEach(key => {
-  //     if (api) {
-  //       api[key] = nextProps[key];
-  //     }
-  //   });
+  get displayMarkers(): boolean {
+    return this.foundation_.hasTrackMarker_;
+  }
 
-  //   // Reinit on discrete or display marker change
-  //   if (
-  //     props &&
-  //     (props.discrete !== nextProps.discrete ||
-  //       props.displayMarkers !== nextProps.displayMarkers)
-  //   ) {
-  //     window.requestAnimationFrame(() => {
-  //       inst.mdcComponentReinit();
-  //     });
-  //   }
-  // }
-})(
-  class extends React.Component<SliderPropsT> {
-    static displayName = 'Slider';
+  set displayMarkers(isDisplayMarkers: boolean) {
+    this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+  }
 
-    render() {
-      const {
-        value,
-        min,
-        max,
-        discrete,
-        displayMarkers,
-        step,
-        onChange,
-        onInput,
-        className,
-        disabled,
-        children,
-        root_,
-        thumbContainer_,
-        track_,
-        pinValueMarker_,
-        trackMarkerContainer_,
-        ...rest
-      } = this.props;
-      if (displayMarkers && !discrete) {
-        console.warn(
-          `The 'displayMarkers' prop on rmwc Slider will 
+  syncWithProps(nextProps: SliderPropsT) {
+    // value
+    syncFoundationProp(
+      nextProps.value,
+      this.value,
+      () => (this.value = nextProps.value)
+    );
+
+    // max
+    syncFoundationProp(
+      nextProps.max,
+      this.max,
+      () => (this.max = nextProps.max)
+    );
+
+    // min
+    syncFoundationProp(
+      nextProps.min,
+      this.min,
+      () => (this.min = nextProps.min)
+    );
+
+    // step
+    syncFoundationProp(
+      nextProps.step,
+      this.step,
+      () => (this.step = nextProps.step)
+    );
+
+    // disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
+
+    // discrete
+    syncFoundationProp(
+      nextProps.discrete,
+      this.discrete,
+      () => (this.discrete = !!nextProps.discrete)
+    );
+
+    //eslint-disable-next-line eqeqeq
+    if (this.discrete && this.foundation_.getStep() == 0) {
+      this.step = 1;
+    }
+
+    // displayMarkers
+    syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
+      this.displayMarkers = !!nextProps.displayMarkers;
+      window.requestAnimationFrame(() => this.foundation_.setupTrackMarker());
+    });
+  }
+
+  render() {
+    const {
+      value,
+      min,
+      max,
+      discrete,
+      displayMarkers,
+      step,
+      disabled,
+      onChange,
+      onInput,
+      className,
+      children,
+      ...rest
+    } = this.props;
+
+    const {
+      root_,
+      thumbContainer_,
+      track_,
+      pinValueMarker_,
+      trackMarkerContainer_
+    } = this.foundationRefs;
+
+    if (displayMarkers && !discrete) {
+      console.warn(
+        `The 'displayMarkers' prop on rmwc Slider will 
         only work in conjunction with the 'discrete' prop`
-        );
-      }
-
-      const classes = classNames(className, {
-        'mdc-slider--discrete': discrete,
-        'mdc-slider--display-markers': displayMarkers && discrete
-      });
-
-      const dataStep = step ? { 'data-step': step } : {};
-
-      return (
-        <SliderRoot
-          className={classes}
-          tabIndex="0"
-          role="slider"
-          aria-valuemin={min}
-          aria-valuemax={max}
-          aria-valuenow={value}
-          aria-label="Select Value"
-          elementRef={root_}
-          {...(disabled ? { 'aria-disabled': disabled } : {})}
-          {...dataStep}
-          {...rest}
-        >
-          <SliderTrackContainer>
-            <SliderTrack elementRef={track_} />
-            {displayMarkers && (
-              <SliderTrackMarkerContainer elementRef={trackMarkerContainer_} />
-            )}
-          </SliderTrackContainer>
-          <SliderThumbContainer elementRef={thumbContainer_}>
-            {discrete && (
-              <SliderPin>
-                <SliderPinValueMarker elementRef={pinValueMarker_} />
-              </SliderPin>
-            )}
-            <SliderThumb />
-            <SliderFocusRing />
-          </SliderThumbContainer>
-          {children}
-        </SliderRoot>
       );
     }
+
+    const dataStep = step ? { 'data-step': step } : {};
+
+    return (
+      <SliderRoot
+        className={classNames(className, [...this.state.classes])}
+        tabIndex="0"
+        role="slider"
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={value}
+        aria-label="Select Value"
+        elementRef={root_}
+        discrete={discrete}
+        displayMarkers={displayMarkers}
+        {...(disabled ? { 'aria-disabled': disabled } : {})}
+        {...dataStep}
+        {...rest}
+      >
+        <SliderTrackContainer>
+          <SliderTrack elementRef={track_} />
+          {displayMarkers && (
+            <SliderTrackMarkerContainer elementRef={trackMarkerContainer_} />
+          )}
+        </SliderTrackContainer>
+        <SliderThumbContainer elementRef={thumbContainer_}>
+          {discrete && (
+            <SliderPin>
+              <SliderPinValueMarker elementRef={pinValueMarker_} />
+            </SliderPin>
+          )}
+          <SliderThumb />
+          <SliderFocusRing />
+        </SliderThumbContainer>
+        {children}
+      </SliderRoot>
+    );
   }
-);
+}
 
 export default Slider;
