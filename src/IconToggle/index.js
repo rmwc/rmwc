@@ -15,7 +15,7 @@ import {
 type IconTogglePropsT = {
   /* prettier-ignore */
   /** An onChange callback that receives a custom event. */
-  onChange?: (evt: {type: 'MDCIconToggle:change', detail: {isOn: boolean}}) => mixed,
+  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   on: Object,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
