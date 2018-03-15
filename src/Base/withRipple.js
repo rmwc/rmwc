@@ -4,15 +4,21 @@ import { Ripple } from '../Ripple';
 
 export type WithRipplePropsT = {
   /* Adds a ripple effect to the component */
-  ripple?: boolean
+  ripple?: boolean,
+  /* Some components need to disable the ripple-surface class */
+  surface?: boolean
 };
 
 /**
  * HOC that adds ripples to any component
  */
-export const withRipple = ({ unbounded: defaultUnbounded } = {}) => (
-  Component: React.ComponentType<*>
-): React.ComponentType<*> =>
+export const withRipple = ({
+  unbounded: defaultUnbounded,
+  surface: defaultSurface = true
+}: {
+  unbounded?: boolean,
+  surface?: boolean
+} = {}) => (Component: React.ComponentType<*>): React.ComponentType<*> =>
   class extends React.Component<WithRipplePropsT> {
     static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
     static defaultProps = {
@@ -23,7 +29,11 @@ export const withRipple = ({ unbounded: defaultUnbounded } = {}) => (
 
       if (ripple && !rest.cssOnly) {
         return (
-          <Ripple {...rest} unbounded={defaultUnbounded || rest.unbounded}>
+          <Ripple
+            {...rest}
+            unbounded={rest.unbounded || defaultUnbounded}
+            surface={rest.surface || defaultSurface}
+          >
             <Component {...rest} />
           </Ripple>
         );

@@ -23,7 +23,7 @@ export type FabRootPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const FabRoot = withRipple()(
+export const FabRoot = withRipple({ surface: false })(
   simpleTag({
     displayName: 'FabRoot',
     tag: 'button',

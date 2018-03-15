@@ -26,7 +26,7 @@ export type ButtonRootPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ButtonRoot = withRipple()(
+export const ButtonRoot = withRipple({ surface: false })(
   simpleTag({
     displayName: 'ButtonRoot',
     tag: 'button',
