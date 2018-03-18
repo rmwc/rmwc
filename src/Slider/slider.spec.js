@@ -41,6 +41,14 @@ describe('Slider', () => {
     expect(value).toEqual(1);
   });
 
+  it('handles apiRef', () => {
+    let api = null;
+
+    mount(<Slider apiRef={ref => (api = ref)} />);
+
+    expect(api).toBeTruthy();
+  });
+
   it('can have custom classnames', () => {
     const el = mount(<Slider className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);

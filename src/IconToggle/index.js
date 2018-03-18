@@ -70,7 +70,7 @@ export class IconToggle extends withFoundation({
   }
 
   render() {
-    const { checked, on, off, ...rest } = this.props;
+    const { checked, on, off, apiRef, ...rest } = this.props;
     const ariaPressed = checked !== undefined ? !!checked : false;
     const toggleOnJSON = JSON.stringify(on);
     const toggleOffJSON = JSON.stringify(off);

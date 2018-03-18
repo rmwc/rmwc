@@ -37,6 +37,20 @@ describe('IconToggle', () => {
     expect(value).toEqual(1);
   });
 
+  it('handles apiRef', () => {
+    let api = null;
+
+    const el = mount(
+      <IconToggle
+        apiRef={ref => (api = ref)}
+        on={{ label: 'Remove from favorites', content: 'favorite' }}
+        off={{ label: 'Add to favorites', content: 'favorite_border' }}
+      />
+    );
+
+    expect(api).toBeTruthy();
+  });
+
   it('can have custom classnames', () => {
     const el = mount(
       <IconToggle

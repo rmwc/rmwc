@@ -23,6 +23,9 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 {/* An outlined TextField */}
 <TextField outlined label="Write something..." />
 
+{/* A fullWidth input. */}
+<TextField fullwidth placeholder="Full Width..."/>
+
 {/* You can make the TextField a textarea. */}
 <TextField textarea fullwidth label="Multiline..." rows="8" />
 
