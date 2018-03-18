@@ -186,6 +186,7 @@ export class Slider extends withFoundation({
       onInput,
       className,
       children,
+      apiRef,
       ...rest
     } = this.props;
 

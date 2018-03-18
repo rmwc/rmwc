@@ -130,6 +130,9 @@ export const withFoundation = ({
       this.foundation_.init();
       this.initialSyncWithDOM();
       this.syncWithProps(this.props);
+
+      // if we have an apiRef prop, pass them the api
+      this.props.apiRef && this.props.apiRef(this.foundation_);
     }
 
     componentWillReceiveProps(nextProps: P) {

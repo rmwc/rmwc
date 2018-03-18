@@ -41,7 +41,12 @@ export class Chip extends withFoundation({
   static displayName = 'Chip';
 
   render() {
-    const { onInteraction, onTrailingIconInteraction, ...rest } = this.props;
+    const {
+      onInteraction,
+      onTrailingIconInteraction,
+      apiRef,
+      ...rest
+    } = this.props;
     const { root_ } = this.foundationRefs;
     return (
       <ChipRoot

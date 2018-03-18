@@ -29,6 +29,19 @@ describe('Chip', () => {
     inst.foundation_.adapter_.notifyTrailingIconInteraction();
     expect(value).toEqual(1);
   });
+
+  it('handles apiRef', () => {
+    let api = null;
+
+    mount(
+      <Chip apiRef={ref => (api = ref)}>
+        <ChipIcon use="favorite" />
+        <ChipText>One</ChipText>
+      </Chip>
+    );
+
+    expect(api).toBeTruthy();
+  });
 });
 
 describe('ChipIcon', () => {
