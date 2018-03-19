@@ -1,3 +1,37 @@
+#### 1.4.0 (2018-03-19)
+
+##### Breaking Changes
+
+* **Slider:**  The Slider has been directly implemented with MDC Foundation. Please use evt.detail.value instead of evt.target.value. ([1a80fa02](https://github.com/jamesmfriedman/rmwc/commit/1a80fa02d9ceb74c0bbe85a73dfcf156a59ae691))
+* **IconToggle:**  IconToggle has been directly integrated with the MDCFoundation and the onChange callback will contain their synthetic event. See https://material.io/components/web/catalog/buttons/icon-toggle-buttons/ notifyChange ([2701c34e](https://github.com/jamesmfriedman/rmwc/commit/2701c34e02084a7988ff695cbc7acc269e542024))
+
+##### Chores
+
+* **Docs:**  fixing typos ([1ec60560](https://github.com/jamesmfriedman/rmwc/commit/1ec60560fa008edc757b4a4c33e33b8e6998e4ab))
+* **FloatingLabel, LineRipple:**  Making resuasble component ([e6f8f136](https://github.com/jamesmfriedman/rmwc/commit/e6f8f136d61bd4f048f119217ed146977238df99))
+* **Test:**  Improving tests for IconToggle and Slider ([9e61e547](https://github.com/jamesmfriedman/rmwc/commit/9e61e547dc7ac5ac063c2fc5584a68bef2ed7685))
+* **Ripple:**  Update typing ([82186b3b](https://github.com/jamesmfriedman/rmwc/commit/82186b3b6c597a47395774244ae31716db856015))
+* **IconToggle:**  cleaning up prop sync ([8f2c40ed](https://github.com/jamesmfriedman/rmwc/commit/8f2c40ed7c5b1c6acf08671d03f2f8177fc55441))
+
+##### Documentation Changes
+
+* **Readme:**  Updating recent changes ([ab2aa2ce](https://github.com/jamesmfriedman/rmwc/commit/ab2aa2ce619bef3742507c6145bf1a77d7d52fb5))
+* **IconToggle:**  updating documentation ([e013da67](https://github.com/jamesmfriedman/rmwc/commit/e013da673af157283c6993c978c66a7690ddeb95))
+
+##### New Features
+
+* **ListItem:**  adds the ability to specify text only for list item meta content [#162](https://github.com/jamesmfriedman/rmwc/pull/162) ([30cdfee9](https://github.com/jamesmfriedman/rmwc/commit/30cdfee94beb72cbb972328ca70c6a839ebb9a74))
+* **Flow:**  potential fix for exporting flow types and publishing es6 src [#159](https://github.com/jamesmfriedman/rmwc/pull/159) ([2d0f85af](https://github.com/jamesmfriedman/rmwc/commit/2d0f85af518454ec751ceb7839196a4df94c63bf))
+* **Chip:**  Implemented with Foundation adapter, upgraded to current spec. ([cc909ce0](https://github.com/jamesmfriedman/rmwc/commit/cc909ce0d708f88bea375fd86b09e23607284220))
+
+##### Bug Fixes
+
+* **CardPrimaryAction:**  Adding missing ripple. ([f9e28343](https://github.com/jamesmfriedman/rmwc/commit/f9e283436188c82047fb4152d58f644484987e93))
+* **Ripple:**
+  *  Correcting issues with mdc-ripple-surface class ([06c6686b](https://github.com/jamesmfriedman/rmwc/commit/06c6686bb1c0890c3a9820d7cfe0d2f3e5af1b11))
+  *  Correcting issues with standalone ripple use ([147fd2dd](https://github.com/jamesmfriedman/rmwc/commit/147fd2dd2f56bed400e7d849b43e28497cd61ee9))
+* **IconToggle:**  Implemented via foundation ([f77e8dd4](https://github.com/jamesmfriedman/rmwc/commit/f77e8dd444778296326f0762d9035369a2f8f4e7))
+
 #### 1.3.0 (2018-02-26)
 
 ##### Breaking Changes
