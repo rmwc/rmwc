@@ -17,7 +17,7 @@ type ListItemPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const ListItemRoot = withRipple(
+export const ListItemRoot = withRipple()(
   simpleTag({
     displayName: 'ListItemRoot',
     classNames: props => [
@@ -56,10 +56,8 @@ export class ListItem extends React.Component<ListItemPropsT> {
     const { listItemDefaultRipple } = this.providerOptions;
     const { ripple, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? listItemDefaultRipple : ripple;
-    const rippleProps = shouldRipple ?
-      { ripple: true, needsRippleSurface: false } :
-      {};
-    return <ListItemRoot {...rippleProps} {...rest} />;
+
+    return <ListItemRoot ripple={shouldRipple} {...rest} />;
   }
 }
 
@@ -84,7 +82,7 @@ export const ListItemGraphic = simpleTag({
   tag: Icon
 });
 
-/** A meta icon for the ListItem */
+/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
 export const ListItemMeta = simpleTag({
   displayName: 'ListItemMeta',
   classNames: 'mdc-list-item__meta',

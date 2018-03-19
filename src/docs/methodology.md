@@ -32,7 +32,7 @@ Block -> Component
 Element -> Components / Children
 Modifier -> Props
 
-Hers a TextField example of before and after.
+Here's a TextField example in raw MDC and with RMWC.
 
 ```jsx
 // The example is from material-components-web
@@ -60,7 +60,7 @@ Hers a TextField example of before and after.
 
 ## Convenient additions
 
-Even though this is meant to be an unopinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, whats the point? Any non-standard item will be called out in the docs.
+Even though this is meant to be an unopinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, what's the point? Any non-standard item will be called out in the docs.
 
 ## Something missing from RMWC?
 

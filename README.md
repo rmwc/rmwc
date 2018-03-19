@@ -5,12 +5,36 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for Material Design (Web) Components v0.31.0
+A React (15 / 16) wrapper for Material Design (Web) Components v0.32.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 ## Recent updates
 
-RMWC has been updated to MDC 0.31.0 which contains bug fixes, but few major changes
+RMWC is moving towards a direct implementation with MDC's Foundation classes. This means direct code reuse from the material-components-web implementation which will result in better performance, reliability, less bugs, and easier releases for RMWC. These will be rolled out a few at a time every release and will contain minimal breaking changes.
+
+MDC has been upgraded to 0.32.0
+
+* Slider
+
+  * Implemented the foundation adapter.
+  * BREAKING CHANGE: onInput and onChange now use MDC's custom events and have evt.detail.value instead of evt.target.value.
+
+* IconToggle
+
+  * Implemented the foundation adapter.
+  * BREAKING CHANGE: onChange now uses MDC's custom event and has evt.detail.isOn instead of evt.target.value.
+
+* Chip
+
+  * Implemented the foundation adapter.
+  * Updated to add chip selected state.
+  * Added additional custom event handlers from the foundation
+
+* Ripple
+  * Implemented the foundation adapter.
+  * Corrected issues with unbounded ripples
+
+Notes from 0.31.0
 
 * Feature: ChipIcon
   There are now leading and trailing icons for the chip component. This resulted in a minor breaking change, you now have to wrap the text inside of your chip with a ChipText component. See the docs.

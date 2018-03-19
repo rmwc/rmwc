@@ -4,8 +4,11 @@ import classNames from 'classnames';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { noop } from '../Base/noop';
 import { simpleTag, withMDC } from '../Base';
-import { Icon } from '../Icon';
 import { randomId } from '../Base/randomId';
+
+import { Icon } from '../Icon';
+import { LineRipple } from '../LineRipple';
+import { FloatingLabel } from '../FloatingLabel';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
@@ -33,22 +36,18 @@ export const TextFieldRoot: React.ComponentType<
       'mdc-text-field--outlined': props.outlined,
       'mdc-text-field--dense': props.dense,
       'mdc-text-field--invalid': props.invalid,
-      'mdc-text-field--disabled': props.disabled,
+      'mdc-text-field--disabled': props.disabled
     }
   ],
-  consumeProps: ['textarea', 'box', 'fullwidth', 'outlined', 'dense', 'invalid', 'disabled']
-});
-
-export const TextFieldLabel = simpleTag({
-  displayName: 'TextFieldLabel',
-  tag: 'label',
-  classNames: props => [
-    'mdc-text-field__label',
-    {
-      'mdc-text-field__label--float-above': props.value || props.focused
-    }
-  ],
-  consumeProps: ['value', 'focused']
+  consumeProps: [
+    'textarea',
+    'box',
+    'fullwidth',
+    'outlined',
+    'dense',
+    'invalid',
+    'disabled'
+  ]
 });
 
 export const TextFieldInput = simpleTag({
@@ -64,11 +63,6 @@ export const TextFieldTextarea = simpleTag({
   displayName: 'TextFieldTextarea',
   tag: 'textarea',
   classNames: 'mdc-text-field__input'
-});
-
-export const LineRipple = simpleTag({
-  displayName: 'LineRipple',
-  classNames: 'mdc-line-ripple'
 });
 
 export const TextFieldOutline = simpleTag({
@@ -182,10 +176,7 @@ export const TextField = withMDC({
     ) {
       inst.mdcComponentReinit();
     }
-    if (
-      props &&
-      (props.invalid !== nextProps.invalid)
-    ) {
+    if (props && props.invalid !== nextProps.invalid) {
       api.foundation_.setValid(!nextProps.invalid);
     }
   },
@@ -261,13 +252,13 @@ export const TextField = withMDC({
           {children}
           {tag}
           {!!label && (
-            <TextFieldLabel
+            <FloatingLabel
               focused={mdcApiRef && mdcApiRef.foundation_.isFocused_}
               htmlFor={tagProps.id}
               value={tagProps.value}
             >
               {label}
-            </TextFieldLabel>
+            </FloatingLabel>
           )}
           {!!withTrailingIcon && renderIcon(withTrailingIcon)}
 

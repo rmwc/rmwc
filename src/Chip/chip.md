@@ -5,11 +5,13 @@
 import from **rmwc/Chip**  
 [https://material.io/components/web/catalog/chips/](https://material.io/components/web/catalog/chips/)
 
+Please note that in MDC, the ChipSet code contains logic for selecting single and multiple chips (filter and choice chip sets). This doesn't fit well with React's uni-directional data flow. Instead it is recommended to write your own filtering and selection logic and just apply the `selected` prop to the `Chip` component directly.
+
 ```jsx render
 import { Chip, ChipText, ChipIcon, ChipSet } from 'rmwc/Chip';
 
 <ChipSet>
-  <Chip><ChipText>Cookies</ChipText></Chip>
+  <Chip selected><ChipText>Cookies</ChipText></Chip>
   <Chip><ChipText>Pizza</ChipText></Chip>
   <Chip><ChipText>Icecream</ChipText></Chip>
 </ChipSet>

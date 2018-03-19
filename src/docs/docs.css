@@ -323,6 +323,15 @@ ul li {
   overflow: hidden;
 }
 
+/* page ripples */
+#page-ripples .example .run p {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* page elevation */
 #page-elevation .example [class*='mdc-elevation--'] {
   padding: 1rem;

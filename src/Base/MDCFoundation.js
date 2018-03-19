@@ -1,0 +1,209 @@
+// @flow
+import * as React from 'react';
+
+/************************************************************************
+ * Utils
+ ***********************************************************************/
+
+/** Copies all known properties from source to target. This is being used in here for class merging. */
+const copyProperties = (target, source) => {
+  const allPropertyNames = Object.getOwnPropertyNames(source).concat(
+    Object.getOwnPropertySymbols(source)
+  );
+
+  allPropertyNames.forEach(propertyName => {
+    if (
+      propertyName.match(
+        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length|destroy)$/
+      )
+    ) {
+      return;
+    }
+    Object.defineProperty(
+      target,
+      propertyName,
+      Object.getOwnPropertyDescriptor(source, propertyName)
+    );
+  });
+};
+
+/** Simplifies reduant checks for syncWithProps */
+export const syncFoundationProp = (
+  prop: mixed,
+  foundationValue: mixed,
+  callback: () => mixed
+) => {
+  if (prop !== undefined && prop !== foundationValue) {
+    callback();
+  }
+};
+
+/************************************************************************
+ * Handler Factories
+ ***********************************************************************/
+export const addClass = () =>
+  function(className: string) {
+    if (!this.state.classes.has(className)) {
+      this.safeSetState(prevState => ({
+        classes: prevState.classes.add(className)
+      }));
+    }
+  };
+
+export const removeClass = () =>
+  function(className: string) {
+    if (this.state.classes.has(className)) {
+      this.safeSetState(prevState => ({
+        classes: prevState.classes.delete(className) ?
+          prevState.classes :
+          prevState.classes
+      }));
+    }
+  };
+
+export const registerInteractionHandler = (refName: string = 'root_') =>
+  function(type: string, handler: Function) {
+    this[refName] && this[refName].addEventListener(type, handler);
+  };
+
+export const deregisterInteractionHandler = (refName: string = 'root_') =>
+  function(type: string, handler: Function) {
+    this[refName] && this[refName].removeEventListener(type, handler);
+  };
+
+/************************************************************************
+ * HOC
+ ***********************************************************************/
+type FoundationT = {
+  constructor: Function,
+  adapter?: {
+    [functionName: string]: Function
+  },
+  refs?: string[]
+};
+
+type FoundationStateT = {
+  classes: Set<string>
+};
+
+export const withFoundation = ({
+  constructor: FoundationConstructor,
+  adapter = {},
+  refs = ['root_']
+}: FoundationT): $Shape<constructor> => {
+  class Foundation<P, S> extends React.Component<P, S & FoundationStateT> {
+    constructor(props: *) {
+      super(props);
+
+      this.foundationRefs = refs.reduce((acc, r) => {
+        // Here we gracefully merge two refs together if one was passed down the chain
+        const propName =
+          this.props.elementRef && this.props.elementRef.refName_ === r ?
+            'elementRef' :
+            r;
+
+        acc[r] = ref => {
+          // React will return a null ref when unmounting which will
+          // in turn make our adapters error out. Make sure we only set a ref if its truthy.
+          if (ref) {
+            this[r] = ref;
+            this.props[propName] && this.props[propName](ref);
+          }
+        };
+
+        // Store the refname on the object so we can reference it later and merge two of the same references together
+        acc[r].refName_ = r;
+
+        return acc;
+      }, {});
+
+      this.foundation_ = this.getDefaultFoundation();
+
+      Object.entries(adapter).forEach(([handlerName, handler]) => {
+        this.foundation_.adapter_[handlerName] = handler.bind(this);
+      });
+
+      this.syncWithProps = this.syncWithProps.bind(this);
+    }
+
+    componentDidMount() {
+      this.foundation_.init();
+      this.initialSyncWithDOM();
+      this.syncWithProps(this.props);
+
+      // this method should be deprecated in the future in favor of standard refs
+      this.props.apiRef && this.props.apiRef(this);
+    }
+
+    componentWillReceiveProps(nextProps: P) {
+      this.foundation_ && this.syncWithProps(nextProps);
+    }
+
+    componentWillUnmount() {
+      this.destroy();
+    }
+
+    safeSetState(...args) {
+      this.foundation_ && this.setState(...args);
+    }
+
+    state = {
+      classes: new Set()
+    };
+
+    foundation_: Object;
+
+    foundationRefs: { [string]: (ref: window.DomElement) => mixed };
+
+    destroy() {
+      // Subclasses may implement this method to release any resources / deregister any listeners they have
+      // attached. An example of this might be deregistering a resize event from the window object.
+      this.foundation_.destroy();
+      this.foundation_ = undefined;
+
+      // We need to hold onto our refs until all child components are unmounted
+      // Here we just wait an extra frame and set them to null so garbage collection will take over.
+      window.requestAnimationFrame(() => {
+        refs.forEach(refName => {
+          this[refName] = null;
+        });
+      });
+    }
+
+    syncWithProps(nextProps: P) {}
+    initialSyncWithDOM() {}
+
+    /**
+     * Fires a cross-browser-compatible custom event from the component root of the given type,
+     */
+    emit(evtType: string, evtData: Object, shouldBubble: boolean = false) {
+      let evt;
+      if (typeof CustomEvent === 'function') {
+        evt = new CustomEvent(evtType, {
+          detail: evtData,
+          bubbles: shouldBubble
+        });
+      } else {
+        evt = document.createEvent('CustomEvent');
+        evt.initCustomEvent(evtType, shouldBubble, false, evtData);
+      }
+
+      const baseName = evtType
+        .split(':')
+        .slice(-1)
+        .pop();
+      const propName = `on${baseName.charAt(0).toUpperCase()}${baseName.slice(
+        1
+      )}`;
+
+      this.props[propName] && this.props[propName](evt);
+
+      // MDC can change state internally, if we are triggering a handler, resync with our props
+      this.syncWithProps(this.props);
+    }
+  }
+
+  copyProperties(Foundation.prototype, FoundationConstructor.prototype);
+
+  return Foundation;
+};
