@@ -17,12 +17,25 @@ storiesOf('Chips', module)
       </Chip>
     </ChipSet>
   ))
+  .add('Chip selected', () => (
+    <ChipSet>
+      <Chip selected>
+        <ChipText>Cookies</ChipText>
+      </Chip>
+      <Chip>
+        <ChipText>Pizza</ChipText>
+      </Chip>
+      <Chip>
+        <ChipText>Icecream</ChipText>
+      </Chip>
+    </ChipSet>
+  ))
   .add('Chip with icons', () => (
     <ChipSet>
       <Chip>
         <ChipIcon use="star_border" leading />
         <ChipText>Cookies</ChipText>
-        <ChipIcon use="close" trailing />
+        <ChipIcon tabIndex={0} use="close" trailing />
       </Chip>
       <Chip>
         <ChipIcon use="favorite_border" leading />

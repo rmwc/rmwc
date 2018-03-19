@@ -5,7 +5,6 @@ config/
 coverage/
 docs/
 public/
-src/
 scripts/
 jsconfig.json
 .babelrc

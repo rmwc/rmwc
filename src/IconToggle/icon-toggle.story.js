@@ -7,10 +7,11 @@ import { IconToggle } from './';
 
 storiesOf('Buttons', module).add('IconToggle', () => (
   <IconToggle
+    onChange={action('onChange')}
     on={object('on', { label: 'Remove from favorites', content: 'favorite' })}
     off={object('off', {
       label: 'Add to favorites',
-      content: 'favorite_border',
+      content: 'favorite_border'
     })}
   />
 ));

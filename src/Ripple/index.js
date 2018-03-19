@@ -1,101 +1,92 @@
 // @flow
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
+
 type RipplePropsT = {
-  /** Uses the primary palette. */
+  /** Makes the ripple unbounded */
+  unbounded?: boolean,
+  /** Makes the ripple primary */
   primary?: boolean,
-  /** Uses the accent palette. */
+  /** Makes the ripple an accent color*/
   accent?: boolean,
-  /** Lets a ripple grow outside of its bounds, just like on Checkboxes. */
-  unbounded?: boolean
+  /** makes the ripple disabled */
+  disabled?: boolean
 };
 
-export class Ripple extends React.Component<RipplePropsT> {
-  static defaultProps = {
-    primary: false,
-    accent: false,
-    unbounded: false,
-    needsRippleSurface: true
-  };
-
-  componentDidMount() {
-    this.el = ReactDOM.findDOMNode(this);
-    this.initRipple();
+export class Ripple extends withFoundation({
+  constructor: MDCRipple,
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass()
   }
+})<RipplePropsT> {
+  static displayName = 'Ripple';
 
-  componentWillReceiveProps(nextProps: RipplePropsT) {
-    this.checkProps(nextProps);
-  }
-
-  componentDidUpdate(prevProps: RipplePropsT) {
-    const didChange = ['primary', 'accent', 'unbounded'].some(
-      key => this.props[key] !== prevProps[key]
+  syncWithProps(nextProps: RipplePropsT) {
+    // unbounded
+    syncFoundationProp(
+      nextProps.unbounded,
+      this.unbounded,
+      () => (this.unbounded = nextProps.unbounded)
     );
-    if (didChange) {
-      this.destroyRipple();
-      this.initRipple();
-      this.forceUpdate();
-    }
-  }
 
-  api: Object;
-  el: null | Element | Text;
-
-  checkProps(nextProps: RipplePropsT) {
-    if (this.api.unbounded !== nextProps.unbounded) {
-      this.api.unbounded = nextProps.unbounded;
-    }
-  }
-
-  initRipple() {
-    this.api = new MDCRipple(this.el);
-    this.checkProps(this.props);
-  }
-
-  destroyRipple() {
-    this.api.destroy();
+    //disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
   }
 
   render() {
-    const child = React.Children.only(this.props.children);
-    const { accent, primary, needsRippleSurface, unbounded } = this.props;
+    const {
+      children,
+      className,
+      primary,
+      accent,
+      unbounded,
+      surface,
+      apiRef,
+      ...rest
+    } = this.props;
 
-    /**
-     * Collect the ripple classes so we make sure React doesnt
-     * destroy them when we re-render.
-     */
-    const rippleClasses = (this.el ?
-      this.el.getAttribute('class').split(' ') :
-      []
-    ).filter(cls => {
-      if (
-        ~[
-          'mdc-ripple-surface--primary',
-          'mdc-ripple-surface--accent',
-          'mdc-ripple-surface'
-        ].indexOf(cls)
-      ) {
-        return false;
-      }
+    const { root_ } = this.foundationRefs;
 
-      return cls.startsWith('mdc-ripple');
-    });
+    const child = React.Children.only(children);
 
-    const classes = classNames(child.props.className, ...rippleClasses, {
-      'mdc-ripple-surface': needsRippleSurface,
-      'mdc-ripple-surface--primary': primary,
-      'mdc-ripple-surface--accent': accent
-    });
+    // a little tricky... We only want to pass a ref if we are dealing with a dom element, aka div, p, aside
+    // Otherwise we have a class, and we want to pass elementRef down the chain.
+    const refProp = {
+      [typeof child.type !== 'string' ? 'elementRef' : 'ref']: root_
+    };
 
-    const dedupedClasses = Array.from(new Set(classes.split(' '))).join(' ');
+    const unboundedProp = unbounded ?
+      { 'data-mdc-ripple-is-unbounded': true } :
+      {};
 
     return React.cloneElement(child, {
       ...child.props,
-      ...(unbounded ? { 'data-mdc-ripple-is-unbounded': true } : {}),
-      className: dedupedClasses
+      ...rest,
+      ...refProp,
+      ...unboundedProp,
+      className: classNames(
+        className,
+        child.props.className,
+        [...this.state.classes],
+        {
+          'mdc-ripple-surface': surface !== undefined ? surface : true,
+          'mdc-ripple-surface--primary': primary,
+          'mdc-ripple-surface--accent': accent
+        }
+      )
     });
   }
 }

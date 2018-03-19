@@ -37,6 +37,8 @@ export const simpleTag = ({
       tag: defaultTag
     };
 
+    static isSimpleTag = true;
+
     render() {
       const {
         tag,

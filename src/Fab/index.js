@@ -23,7 +23,7 @@ export type FabRootPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-export const FabRoot = withRipple(
+export const FabRoot = withRipple({ surface: false })(
   simpleTag({
     displayName: 'FabRoot',
     tag: 'button',
@@ -74,13 +74,10 @@ export class Fab extends React.Component<FabRootPropsT> {
     const { buttonDefaultRipple } = this.providerOptions;
     const { ripple, className, children, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
-    const rippleProps = shouldRipple ?
-      { ripple: true, needsRippleSurface: false } :
-      {};
-
     const classes = classNames(this.providerOptions.iconPrefix, className);
+
     return (
-      <FabRoot className={classes} {...rippleProps} {...rest}>
+      <FabRoot className={classes} ripple={shouldRipple} {...rest}>
         <FabIcon>{children}</FabIcon>
       </FabRoot>
     );

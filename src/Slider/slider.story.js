@@ -5,30 +5,43 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number } from '@storybook/addon-knobs';
 import { Slider } from './';
 
-class SliderStory extends React.Component {
-	state = {
-		value: 0
-	};
+import { storyWithState } from '../Base/story-with-state';
 
-	onChange(evt) {
-		this.setState({ value: evt.target.value });
-		action('onChange: ' + evt.target.value)();
-	}
+const SliderStory = storyWithState(
+  state => ({
+    value: number('value', state.value || 0),
+    min: number('min', state.min || 0),
+    max: number('max', state.max || 100),
+    step: number('step', state.step || 0),
+    discrete: boolean('discrete', state.discrete || false),
+    displayMarkers: boolean('displayMarkers', state.displayMarkers || false),
+    disabled: boolean('disabled', state.disabled || false)
+  }),
+  function() {
+    return (
+      <Slider
+        value={this.state.value}
+        min={this.state.min}
+        max={this.state.max}
+        step={this.state.step}
+        discrete={this.state.discrete}
+        displayMarkers={this.state.displayMarkers}
+        disabled={this.state.disabled}
+        onChange={evt => {
+          this.setState({ value: evt.detail.value });
+          action('onChange')(evt);
+        }}
+        onInput={evt => {
+          this.setState({ value: evt.detail.value });
+          action('onInput')(evt);
+        }}
+      />
+    );
+  }
+);
 
-	render() {
-		return (
-			<Slider
-				value={number('value', this.state.value)}
-				min={number('min', 0)}
-				max={number('max', 100)}
-				step={number('step', 1)}
-				discrete={boolean('discrete', false)}
-				displayMarkers={boolean('displayMarkers', false)}
-				disabled={boolean('disabled', false)}
-				onChange={evt => this.onChange(evt)}
-			/>
-		);
-	}
-}
-
-storiesOf('Inputs and Controls', module).add('Slider', () => <SliderStory />);
+storiesOf('Inputs and Controls', module)
+  .add('Slider', () => (
+    <Slider onChange={action('onChange')} onInput={action('onInput')} />
+  ))
+  .add('Slider Controlled', () => <SliderStory />);

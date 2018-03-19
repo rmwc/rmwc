@@ -3,41 +3,53 @@ import { mount } from 'enzyme';
 import { Ripple } from './';
 
 describe('Ripple', () => {
-	it('renders', () => {
-		mount(
-			<Ripple>
-				<div />
-			</Ripple>
-		);
-	});
+  it('renders', () => {
+    mount(
+      <Ripple>
+        <div />
+      </Ripple>
+    );
+  });
 
-	it('can be primary', () => {
-		const el = mount(
-			<Ripple primary>
-				<div />
-			</Ripple>
-		);
+  it('can be primary', () => {
+    const el = mount(
+      <Ripple primary>
+        <div />
+      </Ripple>
+    );
 
-		expect(!!~el.html().search('mdc-ripple-surface--primary')).toBe(true);
-	});
+    expect(!!~el.html().search('mdc-ripple-surface--primary')).toBe(true);
+  });
 
-	it('can be accent', () => {
-		const el = mount(
-			<Ripple accent>
-				<div />
-			</Ripple>
-		);
+  it('can be accent', () => {
+    const el = mount(
+      <Ripple accent>
+        <div />
+      </Ripple>
+    );
 
-		expect(!!~el.html().search('mdc-ripple-surface--accent')).toBe(true);
-	});
+    expect(!!~el.html().search('mdc-ripple-surface--accent')).toBe(true);
+  });
 
-	it('can be unbounded', () => {
-		const el = mount(
-			<Ripple unbounded>
-				<div />
-			</Ripple>
-		);
+  it('handles apiRef', () => {
+    let api = null;
 
-		expect(!!~el.html().search('mdc-ripple-upgraded--unbounded')).toBe(true);
-	});
+    mount(
+      <Ripple apiRef={ref => (api = ref)}>
+        <div />
+      </Ripple>
+    );
+
+    expect(api).toBeTruthy();
+  });
+
+  it('can be unbounded', () => {
+    const el = mount(
+      <Ripple unbounded>
+        <div />
+      </Ripple>
+    );
+
+    expect(!!~el.html().search('mdc-ripple-upgraded--unbounded')).toBe(true);
+  });
 });

@@ -121,9 +121,8 @@ export const CardAction = ({
 }: CardActionPropsT) => {
   if (icon) {
     return (
-      <Ripple unbounded>
+      <Ripple unbounded {...rest}>
         <Icon
-          {...rest}
           className={classNames(
             rest.className,
             'mdc-card__action',
