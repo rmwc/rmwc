@@ -9,7 +9,7 @@ import { Button } from '../Button';
 import { Ripple } from '../Ripple';
 import { Icon } from '../Icon';
 import { IconToggle } from '../IconToggle';
-import { simpleTag } from '../Base';
+import { simpleTag, withRipple } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
 /****************************************************************
@@ -68,10 +68,12 @@ export const CardMediaContent = simpleTag({
 });
 
 /** The main clickable area fro the primary content of the card */
-export const CardPrimaryAction = simpleTag({
-  displayName: 'CardPrimaryAction',
-  classNames: 'mdc-card__primary-action'
-});
+export const CardPrimaryAction = withRipple({ surface: false })(
+  simpleTag({
+    displayName: 'CardPrimaryAction',
+    classNames: 'mdc-card__primary-action'
+  })
+);
 
 type CardActionsT = {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
