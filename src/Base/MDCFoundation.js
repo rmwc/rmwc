@@ -117,16 +117,15 @@ export const withFoundation = ({
         return acc;
       }, {});
 
+      this.syncWithProps = this.syncWithProps.bind(this);
+    }
+
+    componentDidMount() {
       this.foundation_ = this.getDefaultFoundation();
 
       Object.entries(adapter).forEach(([handlerName, handler]) => {
         this.foundation_.adapter_[handlerName] = handler.bind(this);
       });
-
-      this.syncWithProps = this.syncWithProps.bind(this);
-    }
-
-    componentDidMount() {
       this.foundation_.init();
       this.initialSyncWithDOM();
       this.syncWithProps(this.props);
