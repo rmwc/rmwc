@@ -65,7 +65,6 @@
     "flow-bin": "^0.62.0",
     "generate-changelog": "^1.7.0",
     "mutation-observer": "^1.0.3",
-    "mutationobserver-shim": "^0.3.2",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.7.1",
     "prismjs": "^1.9.0",
