@@ -49,6 +49,10 @@ describe('Slider', () => {
     expect(api).toBeTruthy();
   });
 
+  it.only('handles min > 100', () => {
+    mount(<Slider min={101} max={200} />);
+  });
+
   it('can have custom classnames', () => {
     const el = mount(<Slider className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
