@@ -212,7 +212,6 @@ export class Slider extends withFoundation({
         className={classNames(className, [...this.state.classes])}
         tabIndex="0"
         role="slider"
-        aria-valuemin={min}
         aria-valuemax={max}
         aria-valuenow={value}
         aria-label="Select Value"
