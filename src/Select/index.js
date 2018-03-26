@@ -224,7 +224,7 @@ export const Select = withMDC({
             <MenuItems>
               {!!placeholder.length && (
                 // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-                <ListItem role="option" id="" tab-index="0">
+                <ListItem role="option" id="" tabIndex="0">
                   {placeholder}
                 </ListItem>
               )}
