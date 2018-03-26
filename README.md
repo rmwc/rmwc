@@ -12,6 +12,12 @@ A React (15 / 16) wrapper for Material Design (Web) Components v0.32.0
 
 RMWC is moving towards a direct implementation with MDC's Foundation classes. This means direct code reuse from the material-components-web implementation which will result in better performance, reliability, less bugs, and easier releases for RMWC. These will be rolled out a few at a time every release and will contain minimal breaking changes.
 
+Patch 1.4.1
+
+* Fixes issues with SSR and foundation components
+* Contains a workaround for a MDC bug in Slider
+* Contains fixes in Select for React 15.x.
+
 MDC has been upgraded to 0.32.0
 
 * Slider
