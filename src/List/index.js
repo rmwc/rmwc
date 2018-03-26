@@ -31,7 +31,7 @@ export const ListItemRoot = withRipple()(
       selected: false,
       activated: false
     },
-    consumeProps: ['selected', 'activated']
+    consumeProps: ['selected', 'activated', 'options'] //options is from the select element
   })
 );
 
