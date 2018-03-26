@@ -37,7 +37,7 @@ import { Select } from 'rmwc/Select';
        child ListItem as props */
 
       'aria-disabled': true,
-      'tab-index': -1
+      'tabIndex': -1
     },
     {
       label: 'Icecream',

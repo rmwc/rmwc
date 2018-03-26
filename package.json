@@ -35,6 +35,7 @@
     "start": "react-app-rewired start",
     "build": "npm run docgen && react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
     "test": "react-app-rewired test --env=jsdom",
+    "test:ssr": "react-app-rewired test --env=jsdom",
     "babelfy": "node scripts/babelfy.js",
     "clean": "node scripts/clean.js",
     "prepublishOnly": "npm run babelfy",
@@ -73,6 +74,6 @@
     "react-hot-loader": "^3.1.3",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "^1.1.1"
   }
 }
