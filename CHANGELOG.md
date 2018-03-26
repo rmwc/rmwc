@@ -1,3 +1,15 @@
+#### 1.4.1 (2018-03-26)
+
+##### Bug Fixes
+
+* **Select:**
+  *  incorrect tabIndex attribute ([f6e81c39](https://github.com/jamesmfriedman/rmwc/commit/f6e81c39e744a7f216b8253baf232af3105ff770))
+  *  Unknown attribute ‘options’ in older versions of react. ([443015ab](https://github.com/jamesmfriedman/rmwc/commit/443015ab9e6876f9603bd2bd4d49c6748f048889))
+* **Slider:**
+  *  Temporary workaround for MDC issue where min values greater than 100 ([da228d41](https://github.com/jamesmfriedman/rmwc/commit/da228d417b6fdf405812abe4123ef1dc89e2cb44))
+  *  Temporary workaround for MDC issue where min values greater than 100 ([c90e899a](https://github.com/jamesmfriedman/rmwc/commit/c90e899ac2bc72613876f51ab0b003db26acd719))
+* **SSR:**  Corrects server side rendering for foundation based components ([93c2487e](https://github.com/jamesmfriedman/rmwc/commit/93c2487e2b8a0e8784b0228319732b638f72ca93))
+
 #### 1.4.0 (2018-03-19)
 
 ##### Breaking Changes
