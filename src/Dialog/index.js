@@ -1,10 +1,14 @@
 // @flow
 import * as React from 'react';
-import { MDCDialog } from '@material/dialog/dist/mdc.dialog';
+import { MDCDialog, util } from '@material/dialog/dist/mdc.dialog';
 
 import Button from '../Button';
 import { simpleTag, withMDC, noop } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
+import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+
+import { withFoundation } from '../Base/MDCFoundation';
+
 
 export const DialogRoot = simpleTag({
   displayName: 'DialogRoot',
@@ -111,48 +115,51 @@ type DialogPropsT = {
   onClose: (evt: Event) => mixed
 };
 
-export const Dialog = withMDC({
-  mdcConstructor: MDCDialog,
-  mdcElementRef: true,
-  mdcEvents: {
-    'MDCDialog:accept': (evt, props) => {
-      props.onAccept(evt);
-      props.onClose(evt);
-    },
-    'MDCDialog:cancel': (evt, props) => {
-      props.onCancel(evt);
-      props.onClose(evt);
+export class Dialog extends withFoundation({
+  constructor: MDCDialog,
+  refs: [
+    'root_'
+  ],
+  adapter: {}
+})<DialogPropsT, {}> {
+  static displayName = 'Dialog';
+
+  componentDidMount(){
+    super.componentDidMount()
+
+    this.footerBtnRipples_ = [];
+    const footerBtns = this.root_.querySelectorAll('.mdc-dialog__footer__button');
+    for (let i = 0, footerBtn; footerBtn = footerBtns[i]; i++) {
+      this.footerBtnRipples_.push(new MDCRipple(footerBtn));
     }
-  },
-  defaultProps: {
-    open: false,
-    onAccept: noop,
-    onCancel: noop,
-    onClose: noop
-  },
-  onUpdate: (props, nextProps, api) => {
-    if (api && api.open !== !!nextProps.open) {
-      nextProps.open ? api.show() : api.close();
+
+    this.focusTrap_ = util.createFocusTrapInstance(this.dialogSurface_, this.acceptButton_);
+  }
+
+  componentWillReceiveProps(newProps){
+    super.componentWillReceiveProps(newProps);
+
+    if(newProps.open){
+      this.show();
     }
   }
-})(
-  class extends React.Component<DialogPropsT> {
-    static displayName = 'Dialog';
 
-    render() {
-      const {
-        open,
-        onAccept,
-        onCancel,
-        onClose,
-        mdcElementRef,
-        ...rest
-      } = this.props;
+  render() {
+    const {
+      open,
+      onAccept,
+      onCancel,
+      onClose,
+      mdcElementRef,
+      ...rest
+    } = this.props;
 
-      return <DialogRoot elementRef={mdcElementRef} {...rest} />;
-    }
+    const { root_ }  = this.foundationRefs;
+
+    return <DialogRoot elementRef={root_} {...rest} />;
   }
-);
+}
+
 
 type SimpleDialogPropsT = {
   /** A title for the default Dialog template. */
