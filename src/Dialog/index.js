@@ -7,7 +7,10 @@ import { simpleTag, withMDC, noop } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
-import { withFoundation } from '../Base/MDCFoundation';
+import {
+  withFoundation,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
 
 
 export const DialogRoot = simpleTag({
@@ -124,8 +127,8 @@ export class Dialog extends withFoundation({
 })<DialogPropsT, {}> {
   static displayName = 'Dialog';
 
-  componentDidMount(){
-    super.componentDidMount()
+  componentDidMount() {
+    super.componentDidMount();
 
     this.footerBtnRipples_ = [];
     const footerBtns = this.root_.querySelectorAll('.mdc-dialog__footer__button');
@@ -136,10 +139,8 @@ export class Dialog extends withFoundation({
     this.focusTrap_ = util.createFocusTrapInstance(this.dialogSurface_, this.acceptButton_);
   }
 
-  componentWillReceiveProps(newProps){
-    super.componentWillReceiveProps(newProps);
-
-    if(newProps.open){
+  syncWithProps(nextProps: DialogPropsT) {
+    if (nextProps.open) {
       this.show();
     }
   }
@@ -154,7 +155,7 @@ export class Dialog extends withFoundation({
       ...rest
     } = this.props;
 
-    const { root_ }  = this.foundationRefs;
+    const { root_ } = this.foundationRefs;
 
     return <DialogRoot elementRef={root_} {...rest} />;
   }
