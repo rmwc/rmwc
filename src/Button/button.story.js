@@ -11,7 +11,6 @@ storiesOf('Buttons', module).add('Button', () => (
     stroked={boolean('stroked', false)}
     dense={boolean('dense', false)}
     raised={boolean('raised', false)}
-    compact={boolean('compact', false)}
     ripple={boolean('ripple', true)}
     onClick={action('onClick')}
   >

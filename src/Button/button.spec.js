@@ -28,11 +28,6 @@ describe('Button', () => {
     expect(!!~btn.html().search('mdc-button--dense')).toEqual(true);
   });
 
-  it('can be compact', () => {
-    const btn = mount(<Button compact />);
-    expect(!!~btn.html().search('mdc-button--compact')).toEqual(true);
-  });
-
   it('can ripple', () => {
     const btn = mount(<Button ripple />);
     expect(!!~btn.html().search('mdc-button')).toEqual(true);
