@@ -4,9 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, object, array, boolean } from '@storybook/addon-knobs';
 import { Select } from './';
-import { ListItem } from '../List';
 import { storyWithState } from '../Base/story-with-state';
-
 
 const MutatingSelect = storyWithState(
   state => ({
@@ -35,20 +33,16 @@ storiesOf('Inputs and Controls', module)
     <Select
       box={boolean('box', true)}
       label={text('label', 'Foods')}
-      value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
       options={object('options', { 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' })}
-      onChange={evt => action('onChange: ' + evt.target.value)()}
     />
   ))
   .add('Select with array', () => (
     <Select
       box={boolean('box', false)}
       label={text('label', 'Foods')}
-      value={text('value', '')}
       placeholder={text('placeholder', 'Select a Food')}
       options={array('options', ['Cookies', 'Pizza', 'Icecream'])}
-      onChange={evt => action('onChange: ' + evt.target.value)()}
     />
   ))
   .add('Select with initial value', () => (
@@ -60,21 +54,17 @@ storiesOf('Inputs and Controls', module)
       onChange={evt => action('onChange: ' + evt.target.value)()}
     />
   ))
-  .add('Select with children', () => (
+  .add('Select with many values', () => (
     <Select
       box={boolean('box', false)}
-      value={text('value', 'Cookies')}
-      onChange={evt => action('onChange: ' + evt.target.value)()}
-    >
-      <ListItem role="option" id="Cookies" tabIndex="0">
-        Cookies
-      </ListItem>
-      <ListItem role="option" id="Pizza" tabIndex="0">
-        Pizza
-      </ListItem>
-      <ListItem role="option" id="Icecream" tabIndex="0">
-        Icecream
-      </ListItem>
+      options={[...Array(100)].map(() => Math.random().toString(16))}
+    />
+  ))
+  .add('Select with children', () => (
+    <Select box={boolean('box', false)}>
+      <option value="Cookies">Cookies</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Icecream">Icecream</option>
     </Select>
   ))
   .add('Mutating Select', () => <MutatingSelect />);

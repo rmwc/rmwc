@@ -44,20 +44,28 @@ export const syncFoundationProp = (
 export const addClass = () =>
   function(className: string) {
     if (!this.state.classes.has(className)) {
-      this.safeSetState(prevState => ({
-        classes: prevState.classes.add(className)
-      }));
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
+      window.requestAnimationFrame(() => {
+        this.safeSetState(prevState => ({
+          classes: prevState.classes.add(className)
+        }));
+      });
     }
   };
 
 export const removeClass = () =>
   function(className: string) {
     if (this.state.classes.has(className)) {
-      this.safeSetState(prevState => ({
-        classes: prevState.classes.delete(className) ?
-          prevState.classes :
-          prevState.classes
-      }));
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
+      window.requestAnimationFrame(() => {
+        this.safeSetState(prevState => ({
+          classes: prevState.classes.delete(className) ?
+            prevState.classes :
+            prevState.classes
+        }));
+      });
     }
   };
 
@@ -126,6 +134,7 @@ export const withFoundation = ({
       Object.entries(adapter).forEach(([handlerName, handler]) => {
         this.foundation_.adapter_[handlerName] = handler.bind(this);
       });
+      this.initialize();
       this.foundation_.init();
       this.initialSyncWithDOM();
       this.syncWithProps(this.props);
@@ -170,6 +179,7 @@ export const withFoundation = ({
     }
 
     syncWithProps(nextProps: P) {}
+    initialize() {}
     initialSyncWithDOM() {}
 
     /**
