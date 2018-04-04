@@ -39,17 +39,6 @@
             "computed": false
           }
         },
-        "compact": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Reduce the Button's padding.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
         "unelevated": {
           "flowType": {
             "name": "boolean"
@@ -2622,28 +2611,21 @@
     },
     {
       "description": "",
-      "displayName": "SelectMenu",
+      "displayName": "SelectNativeControl",
       "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "SelectMenu",
-      "methods": [],
-      "props": {
-        "style": {
-          "defaultValue": {
-            "value": "{\n  height: '48px',\n  marginTop: '16px',\n  marginBottom: '8px',\n  display: 'inline-flex',\n  alignItems: 'flex-end'\n}",
-            "computed": false
-          },
-          "required": false
-        }
-      }
     },
     {
       "description": "",
       "displayName": "Select",
       "methods": [],
       "props": {
+        "value": {
+          "flowType": {
+            "name": "mixed"
+          },
+          "required": false,
+          "description": "The value for a controlled select."
+        },
         "options": {
           "flowType": {
             "name": "union",
@@ -2687,7 +2669,7 @@
               }
             ]
           },
-          "required": true,
+          "required": false,
           "description": "Options accepts flat arrays, value => label maps, and more. See examples for details."
         },
         "label": {

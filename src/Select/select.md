@@ -71,17 +71,16 @@ import { ListItem } from 'rmwc/List';
 
 <Select
   label="Manually Built"
-  value={'Pizza'}
 >
-  <ListItem role="option" id="Cookies" tabIndex="0">
+  <option value="Cookies">
     Cookies
-  </ListItem>
-  <ListItem role="option" id="Pizza" tabIndex="0">
+  </option>
+  <option value="Pizza">
     Pizza
-  </ListItem>
-  <ListItem role="option" id="Icecream" tabIndex="0">
+  </option>
+  <option value="Icecream">
     Icecream
-  </ListItem>
+  </option>
 </Select>
 ```
 

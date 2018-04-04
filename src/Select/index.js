@@ -1,17 +1,12 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { ListItem } from '../List';
-import { MenuRoot, MenuItems } from '../Menu';
-import { simpleTag, withMDC } from '../Base';
+import classNames from 'classnames';
+import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
+import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
 
-type SelectRootPropsT = {
-  /** Makes the Select have a visiual box. */
-  box?: boolean
-} & SimpleTagPropsT;
-
-export const SelectRoot: React.ComponentType<SelectRootPropsT> = simpleTag({
+export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
   classNames: props => [
     'mdc-select',
@@ -32,12 +27,7 @@ export const SelectSurface = simpleTag({
 
 export const SelectLabel = simpleTag({
   displayName: 'SelectLabel',
-  classNames: props => [
-    'mdc-select__label',
-    {
-      'mdc-select__label--float-above': props.placeholder || props.value
-    }
-  ]
+  classNames: props => ['mdc-select__label']
 });
 
 export const SelectSelectedText = simpleTag({
@@ -50,52 +40,27 @@ export const SelectBottomLine = simpleTag({
   classNames: 'mdc-select__bottom-line'
 });
 
-export const SelectMenu = simpleTag({
-  displayName: 'SelectMenu',
-  tag: MenuRoot,
-  classNames: 'mdc-select__menu'
-});
-
-export const SelectFormField = simpleTag({
-  displayName: 'SelectMenu',
-  classNames: 'rmwc-select-form-field',
-  defaultProps: {
-    style: {
-      height: '48px',
-      marginTop: '16px',
-      marginBottom: '8px',
-      display: 'inline-flex',
-      alignItems: 'flex-end'
-    }
-  }
+export const SelectNativeControl = simpleTag({
+  displayName: 'SelectNativeControl',
+  tag: 'select',
+  classNames: 'mdc-select__native-control'
 });
 
 type SelectPropsT = {
+  /** The value for a controlled select. */
+  value?: mixed,
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
-  options: string[] | { [value: string]: string } | mixed[],
+  options?: string[] | { [value: string]: string } | mixed[],
   /** A label for the form control. */
   label?: string,
   /** Placeholder text for the form control. */
   placeholder?: string,
   /** Disables the form control. */
-  disabled?: boolean
-} & SelectRootPropsT &
-  SimpleTagPropsT;
-
-/**
- * Get the display value for a select from its formatted options
- */
-const getDisplayValue = (value, options, placeholder) => {
-  placeholder = placeholder || '\u00a0';
-
-  if (options) {
-    const option = options.find(v => v.value === value);
-
-    return option ? option.value : placeholder;
-  }
-
-  return value || placeholder;
-};
+  disabled?: boolean,
+  /** Makes the Select have a visiual box. */
+  box?: boolean
+  /** Props for the root element. By default, additonal props spread to the native select element.  */
+} & SimpleTagPropsT;
 
 /**
  * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
@@ -125,129 +90,70 @@ const createSelectOptions = (options): Object[] => {
   return options;
 };
 
-export const Select = withMDC({
-  mdcConstructor: MDCSelect,
-  mdcElementRef: true,
-  mdcEvents: {
-    'MDCSelect:change': (evt, props, api) => {
-      evt.target.value = api.value;
-      props.onChange && props.onChange(evt);
-    }
-  },
-  defaultProps: {
-    tabIndex: 0,
-    options: undefined,
-    label: undefined,
-    placeholder: undefined,
-    disabled: false,
-    box: undefined
-  },
-  onMount: (props, api) => {
-    window.requestAnimationFrame(() => {
-      try {
-        api.foundation_.resize();
-      } catch (err) {}
-    });
-  },
-  didUpdate: (props, nextProps, api, inst) => {
-    // we might be lacking an api
-    if (!api) return;
-
-    const valueDidChange = props && props.value !== nextProps.value;
-    const optionsDidChange =
-      props &&
-      JSON.stringify(props.options) !== JSON.stringify(nextProps.options);
-    const isFirstRun = props === undefined;
-    const placeholderDidChange =
-      props && props.placeholder !== nextProps.placeholder;
-
-    if (optionsDidChange) {
-      api.foundation_.selectedIndex = 0;
-      inst.mdcComponentReinit();
-
-      // escape out to avoid errors, didUpdate will run again on component init
-      return;
-    }
-
-    if (
-      valueDidChange ||
-      optionsDidChange ||
-      isFirstRun ||
-      placeholderDidChange
-    ) {
-      // if value = null, MDC will show the first option. This behaviour is not desired
-      const value = nextProps.value === null ? undefined : nextProps.value;
-
-      const newIndex = api.options.indexOf(api.nameditem(value));
-      api.selectedIndex =
-        newIndex === -1 && nextProps.placeholder ? 0 : newIndex;
-
-      window.requestAnimationFrame(() => {
-        try {
-          api.foundation_.resize();
-        } catch (err) {
-          console.log(err);
-        }
-      });
+export class Select extends withFoundation({
+  constructor: MDCSelect,
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass(),
+    getValue: function() {
+      const value = this.nativeControl_.value;
+      return value === '' ? ' ' : value;
     }
   }
-})(
-  class extends React.Component<SelectPropsT> {
-    static displayName = 'Select';
+})<SelectPropsT> {
+  static displayName = 'Select';
 
-    render() {
-      const {
-        placeholder = '',
-        children,
-        tabIndex,
-        value,
-        label = '',
-        options = [],
-        box,
-        mdcElementRef,
-        ...rest
-      } = this.props;
+  render() {
+    const {
+      placeholder = '',
+      children,
+      value,
+      label = '',
+      options = [],
+      box,
+      rootProps = {},
+      ...rest
+    } = this.props;
 
-      const selectOptions = createSelectOptions(options);
-      const displayValue = getDisplayValue(value, selectOptions, placeholder);
+    const { root_ } = this.foundationRefs;
+    const selectOptions = createSelectOptions(options);
 
-      return (
-        <SelectRoot box={box} elementRef={mdcElementRef} {...rest}>
-          <SelectSurface tabIndex={tabIndex}>
-            <SelectLabel placeholder={placeholder} value={value}>
-              {label}
-            </SelectLabel>
-            <SelectSelectedText>{displayValue}</SelectSelectedText>
-            <SelectBottomLine />
-          </SelectSurface>
-          <SelectMenu>
-            <MenuItems>
-              {!!placeholder.length && (
-                // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-                <ListItem role="option" id="" tabIndex="0">
-                  {placeholder}
-                </ListItem>
-              )}
-              {selectOptions &&
-                selectOptions.map(({ label, ...option }, i) => (
-                  <ListItem
-                    key={i}
-                    // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-                    role="option"
-                    tabIndex="0"
-                    {...option}
-                    id={option.value}
-                  >
-                    {label}
-                  </ListItem>
-                ))}
-              {children}
-            </MenuItems>
-          </SelectMenu>
-        </SelectRoot>
-      );
-    }
+    return (
+      <SelectRoot
+        {...rootProps}
+        box={box}
+        elementRef={root_}
+        className={classNames(rootProps.className, [...this.state.classes])}
+      >
+        <SelectNativeControl {...rest} value={value}>
+          {!!placeholder.length && <option value="">{placeholder}</option>}
+          {selectOptions &&
+            selectOptions.map(({ label, ...option }, i) => {
+              if (option.options) {
+                return (
+                  <optgroup tag="optgroup" label={label} key={label}>
+                    {option.options.map(({ label, ...option }, i) => (
+                      <option key={label} {...option} value={option.value}>
+                        {label}
+                      </option>
+                    ))}
+                  </optgroup>
+                );
+              }
+
+              return (
+                <option key={label} {...option} value={option.value}>
+                  {label}
+                </option>
+              );
+            })}
+          {children}
+        </SelectNativeControl>
+        <SelectLabel>{label}</SelectLabel>
+        <SelectBottomLine />
+      </SelectRoot>
+    );
   }
-);
+}
 
 export default Select;

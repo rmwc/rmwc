@@ -16,9 +16,37 @@ describe('Select', () => {
     mount(<Select placeholder="Select a food" options={[1, 2, 3]} />);
   });
 
+  it('can accept formatted options array', () => {
+    mount(
+      <Select
+        placeholder="Select a food"
+        options={[
+          {
+            label: 'Cookies',
+            value: '1'
+          },
+          {
+            "label": 'Pizza',
+            "value": '2',
+            'aria-disabled': true,
+            "tabIndex": -1
+          },
+          {
+            label: 'Icecream',
+            value: '3'
+          }
+        ]}
+      />
+    );
+  });
+
   it('can have a tab index', () => {
     const el = mount(<Select tabIndex="1" options={[1, 2, 3]} />);
     expect(!!~el.html().search('tabindex="1"')).toEqual(true);
+  });
+
+  it('can have custom rootProps', () => {
+    mount(<Select rootProps={{ name: 'test' }} />);
   });
 
   it('can be disabled', () => {
