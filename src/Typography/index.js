@@ -6,9 +6,7 @@ import type { SimpleTagPropsT } from '../Base';
 export type TypographyPropsT = {
   /* prettier-ignore */
   /** The typography style.*/
-  use: 'display4' | 'display3' | 'display2' | 'display1' | 'headline' | 'title' | 'subheading2' | 'subheading1' | 'body2' | 'body1' | 'caption' | 'button',
-  /** Sets adjust margin modifier for Typography. */
-  adjustMargin?: boolean
+  use: 'display4' | 'display3' | 'display2' | 'display1' | 'headline' | 'title' | 'subheading2' | 'subheading1' | 'body2' | 'body1' | 'caption' | 'button'
 } & SimpleTagPropsT;
 
 /**
@@ -17,17 +15,15 @@ export type TypographyPropsT = {
 export class Typography extends simpleTag({
   displayName: 'Typography',
   defaultProps: {
-    use: undefined,
-    adjustMargin: false
+    use: undefined
   },
   tag: 'span',
   classNames: props => [
     {
-      [`mdc-typography--${props.use}`]: props.use,
-      'mdc-typography--adjust-margin': props.adjustMargin
+      [`mdc-typography--${props.use}`]: props.use
     }
   ],
-  consumeProps: ['use', 'adjustMargin']
+  consumeProps: ['use']
 })<TypographyPropsT> {
   render() {
     return super.render();

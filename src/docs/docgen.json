@@ -117,11 +117,6 @@
       "methods": []
     },
     {
-      "description": "The main clickable area fro the primary content of the card",
-      "displayName": "CardPrimaryAction",
-      "methods": []
-    },
-    {
       "description": "Row containing action buttons and/or icons",
       "displayName": "CardActions",
       "methods": [],
@@ -4072,13 +4067,6 @@
           },
           "required": true,
           "description": "The typography style."
-        },
-        "adjustMargin": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Sets adjust margin modifier for Typography."
         }
       }
     }
