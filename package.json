@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "0.32.0"
+    "material-components-web": "0.34.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
