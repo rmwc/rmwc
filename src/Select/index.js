@@ -123,7 +123,7 @@ export class Select extends withFoundation({
         {...rootProps}
         box={box}
         elementRef={root_}
-        className={classNames(rootProps.className, [...this.state.classes])}
+        className={this.classes}
       >
         <SelectNativeControl {...rest} value={value}>
           {!!placeholder.length && <option value="">{placeholder}</option>}

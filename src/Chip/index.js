@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import classNames from 'classnames';
 import { Icon } from '../Icon';
 import { simpleTag, withRipple } from '../Base';
 import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
@@ -53,7 +52,7 @@ export class Chip extends withFoundation({
         tabIndex={0}
         {...rest}
         elementRef={root_}
-        className={classNames(this.props.className, [...this.state.classes])}
+        className={this.classes}
       />
     );
   }

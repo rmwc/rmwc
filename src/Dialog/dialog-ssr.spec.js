@@ -1,5 +1,8 @@
+/**
+ * @jest-environment node
+ */
 import React from 'react';
-import { mount } from 'enzyme';
+import { renderToString as mount } from 'react-dom/server';
 import {
   Dialog,
   DialogSurface,

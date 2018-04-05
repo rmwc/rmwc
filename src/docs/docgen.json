@@ -480,7 +480,102 @@
     {
       "description": "",
       "displayName": "Dialog",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept: (evt: Event) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel: (evt: Event) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose: (evt: Event) => mixed\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "open",
+                      "value": {
+                        "name": "boolean",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "onAccept",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "onCancel",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "onClose",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": true
+                      }
+                    }
+                  ]
+                },
+                "alias": "DialogPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "open": {
           "flowType": {
