@@ -1011,7 +1011,20 @@
     {
       "description": "",
       "displayName": "GridRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "A Grid cell",
@@ -1032,7 +1045,7 @@
             ]
           },
           "required": false,
-          "description": "A generic span value for all screen sizes."
+          "description": "Default number of columns to span."
         },
         "phone": {
           "flowType": {
@@ -1048,7 +1061,7 @@
             ]
           },
           "required": false,
-          "description": "A span value for phone screen sizes."
+          "description": "Number of columns to span on a phone."
         },
         "tablet": {
           "flowType": {
@@ -1064,7 +1077,7 @@
             ]
           },
           "required": false,
-          "description": "A span value for tablet screen sizes."
+          "description": "Number of columns to span on a tablet."
         },
         "desktop": {
           "flowType": {
@@ -1080,7 +1093,45 @@
             ]
           },
           "required": false,
-          "description": "A span value for desktop screen sizes."
+          "description": "Number of columns to span on a desktop."
+        },
+        "order": {
+          "flowType": {
+            "name": "union",
+            "raw": "string | number",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Specifies the order of the cell."
+        },
+        "align": {
+          "flowType": {
+            "name": "union",
+            "raw": "'top' | 'middle' | 'bottom'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'top'"
+              },
+              {
+                "name": "literal",
+                "value": "'middle'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Specifies the alignment of cell"
         }
       }
     },
@@ -1092,7 +1143,34 @@
     {
       "description": "A Grid component",
       "displayName": "Grid",
-      "methods": []
+      "methods": [],
+      "props": {
+        "fixedColumnWidth": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Specifies the grid should have fixed column width."
+        },
+        "align": {
+          "flowType": {
+            "name": "union",
+            "raw": "'left' | 'right'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'left'"
+              },
+              {
+                "name": "literal",
+                "value": "'right'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Specifies the alignment of the whole grid."
+        }
+      }
     }
   ],
   "src/GridList/index.js": [
@@ -3706,12 +3784,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n}",
+                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3889,7 +3967,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used."
+          "description": "Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used."
         },
         "dense": {
           "flowType": {
