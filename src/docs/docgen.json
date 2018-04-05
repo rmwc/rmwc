@@ -340,6 +340,11 @@
       }
     },
     {
+      "description": "A checkmark for chip selection and filtering.",
+      "displayName": "ChipCheckmark",
+      "methods": []
+    },
+    {
       "description": "Text for a chip.",
       "displayName": "ChipText",
       "methods": []
@@ -371,21 +376,21 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Make it a leading icon"
         },
         "trailing": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Make it a trailing icon"
         }
       }
     },
     {
-      "description": "A container for multiple Chip components.",
-      "displayName": "ChipSet",
+      "description": "",
+      "displayName": "ChipSetRoot",
       "methods": [
         {
           "name": "classNames",
@@ -400,6 +405,73 @@
           "returns": null
         }
       ]
+    },
+    {
+      "description": "A container for multiple Chip components.",
+      "displayName": "ChipSet",
+      "methods": [],
+      "props": {
+        "choice": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Creates a choice chipset"
+        },
+        "filter": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Creates a filter chipset"
+        }
+      }
+    },
+    {
+      "description": "A non-standard abbreviated way for rendering chips.",
+      "displayName": "SimpleChip",
+      "methods": [],
+      "props": {
+        "text": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Text for your Chip"
+        },
+        "leadingIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Instance of an Icon Component"
+        },
+        "trailingIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Instance of an Icon Component"
+        },
+        "checkmark": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Includes a checkmark for the selected state"
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Additional children will be rendered in the text area"
+        }
+      }
     }
   ],
   "src/Dialog/index.js": [
@@ -1553,89 +1625,98 @@
             {
               "name": "nextProps",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "onChange",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{detail: {isOn: boolean}}",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "detail",
-                                      "value": {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{isOn: boolean}",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "isOn",
-                                              "value": {
-                                                "name": "boolean",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        },
-                                        "required": true
-                                      }
+                "name": "intersection",
+                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{detail: {isOn: boolean}}",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{isOn: boolean}",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "isOn",
+                                                  "value": {
+                                                    "name": "boolean",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
                                     }
-                                  ]
+                                  }
                                 }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "on",
-                      "value": {
-                        "name": "Object",
-                        "required": true
-                      }
-                    },
-                    {
-                      "key": "off",
-                      "value": {
-                        "name": "Object",
-                        "required": true
-                      }
-                    },
-                    {
-                      "key": "checked",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "disabled",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
+                        {
+                          "key": "on",
+                          "value": {
+                            "name": "Object",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "off",
+                          "value": {
+                            "name": "Object",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "IconTogglePropsT"
               }
             }
@@ -3528,6 +3609,13 @@
           },
           "required": false,
           "description": "Whether or not the Snackbar dismisses on the action press."
+        },
+        "alignStart": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": ""
         }
       }
     }
