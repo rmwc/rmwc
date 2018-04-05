@@ -1,7 +1,60 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { Chip, ChipText, ChipIcon, ChipSet } from './';
+import {
+  Chip,
+  ChipText,
+  ChipIcon,
+  ChipSet,
+  ChipCheckmark,
+  SimpleChip
+} from './';
+
+class ChipFiltering extends React.Component {
+  state = {
+    selected: new Set()
+  };
+
+  toggle(value) {
+    this.state.selected.has(value) ?
+      this.state.selected.delete(value) :
+      this.state.selected.add(value);
+
+    this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <ChipSet filter>
+        <Chip
+          selected={this.state.selected.has(1)}
+          onClick={() => this.toggle(1)}
+        >
+          <ChipCheckmark />
+          <ChipText>Cookies</ChipText>
+          <ChipIcon tabIndex={0} use="close" trailing />
+        </Chip>
+        <Chip
+          selected={this.state.selected.has(2)}
+          onClick={() => this.toggle(2)}
+        >
+          <ChipCheckmark />
+          <ChipText>Pizza</ChipText>
+          <ChipIcon use="close" trailing />
+        </Chip>
+        <Chip
+          selected={this.state.selected.has(3)}
+          onClick={() => this.toggle(3)}
+        >
+          <ChipIcon use="favorite" leading />
+          <ChipCheckmark />
+          <ChipText>Icecream</ChipText>
+          <ChipIcon use="close" trailing />
+        </Chip>
+      </ChipSet>
+    );
+  }
+}
 
 storiesOf('Chips', module)
   .add('Chip', () => (
@@ -48,4 +101,8 @@ storiesOf('Chips', module)
         <ChipIcon use="close" trailing />
       </Chip>
     </ChipSet>
+  ))
+  .add('Chip filtering', () => <ChipFiltering />)
+  .add('SimpleChip', () => (
+    <SimpleChip leadingIcon="face" trailingIcon="close" text="test" checkmark />
   ));

@@ -1,12 +1,13 @@
 // @flow
 import type { SimpleTagPropsT } from '../Base';
+import type { IconPropsT } from '../Icon';
 
 import * as React from 'react';
 import { Icon } from '../Icon';
 import { simpleTag, withRipple } from '../Base';
 import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
 
-import { MDCChip } from '@material/chips/dist/mdc.chips';
+import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
 
 /** A chip component. */
 export const ChipRoot = withRipple()(
@@ -59,6 +60,20 @@ export class Chip extends withFoundation({
   }
 }
 
+/** A checkmark for chip selection and filtering. */
+export const ChipCheckmark = () => (
+  <div className="mdc-chip__checkmark">
+    <svg className="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+      <path
+        className="mdc-chip__checkmark-path"
+        fill="none"
+        stroke="black"
+        d="M1.73,12.91 8.1,19.28 22.79,4.59"
+      />
+    </svg>
+  </div>
+);
+
 /** Text for a chip. */
 export const ChipText = simpleTag({
   displayName: 'ChipText',
@@ -84,10 +99,11 @@ export const ChipIconRoot = simpleTag({
 
 export type ChipIconPropsT = {
   /** Make it a leading icon */
-  leading: boolean,
+  leading?: boolean,
   /** Make it a trailing icon */
-  trailing: boolean
-} & SimpleTagPropsT;
+  trailing?: boolean
+} & SimpleTagPropsT &
+  IconPropsT;
 export const ChipIcon = (props: ChipIconPropsT) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')
@@ -102,9 +118,8 @@ export const ChipIcon = (props: ChipIconPropsT) => {
 
 ChipIcon.displayName = 'ChipIcon';
 
-/** A container for multiple Chip components. */
-export const ChipSet = simpleTag({
-  displayName: 'ChipSet',
+export const ChipSetRoot = simpleTag({
+  displayName: 'ChipSetRoot',
   classNames: props => [
     'mdc-chip-set',
     {
@@ -114,3 +129,68 @@ export const ChipSet = simpleTag({
   ],
   consumeProps: ['filter', 'choice']
 });
+
+export type ChipSetPropsT = {
+  /** Creates a choice chipset */
+  choice?: boolean,
+  /** Creates a filter chipset */
+  filter?: boolean
+};
+
+/** A container for multiple Chip components. */
+export class ChipSet extends withFoundation({
+  constructor: MDCChipSet,
+  adapter: {}
+})<ChipSetPropsT> {
+  render() {
+    const { ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+    return <ChipSetRoot {...rest} elementRef={root_} />;
+  }
+}
+export type SimpleChipPropsT = {
+  /** Text for your Chip */
+  text?: React.Node,
+  /** Instance of an Icon Component */
+  leadingIcon?: React.Node,
+  /** Instance of an Icon Component */
+  trailingIcon?: React.Node,
+  /** Includes a checkmark for the selected state */
+  checkmark?: boolean,
+  /** Additional children will be rendered in the text area */
+  children?: React.Node
+};
+
+// handle leading and trailing icons
+const renderChipIcon = (iconNode, props) => {
+  if (
+    (iconNode && typeof iconNode === 'string') ||
+    (typeof iconNode === 'object' && iconNode.type !== ChipIcon)
+  ) {
+    return <ChipIcon use={iconNode} {...props} />;
+  }
+
+  return iconNode;
+};
+
+/** A non-standard abbreviated way for rendering chips. */
+export const SimpleChip = ({
+  text,
+  leadingIcon,
+  trailingIcon,
+  checkmark,
+  children,
+  ...rest
+}: SimpleChipPropsT) => (
+  <Chip {...rest}>
+    {!!leadingIcon && renderChipIcon(leadingIcon, { leading: true })}
+    {!!checkmark && <ChipCheckmark />}
+    <ChipText>
+      {text}
+      {children}
+    </ChipText>
+    {!!trailingIcon && renderChipIcon(trailingIcon, { trailing: true })}
+  </Chip>
+);
+
+SimpleChip.displayName = 'SimpleChip';

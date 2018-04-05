@@ -26,11 +26,89 @@ import { Chip, ChipText, ChipIcon, ChipSet } from 'rmwc/Chip';
 </ChipSet>
 ```
 
+## Simplified Usage
+
+RMWC contains a non-standard SimpleChip component that allows for an abbreviated syntax.
+
+```jsx render
+import {
+  ChipSet,
+  SimpleChip
+} from 'rmwc/Chip';
+
+<ChipSet>
+  <SimpleChip
+    checkmark
+    selected
+    trailingIcon="close"
+    text="Cookie Monster"
+  />
+
+  <SimpleChip
+    leadingIcon="face"
+    trailingIcon="close"
+    text="Pizza Monster"
+  />
+
+  <SimpleChip
+    leadingIcon="face"
+    trailingIcon="close"
+    text="Icecream Monster"
+  />
+</ChipSet>
+```
+
+## Filtering
+
+Reacts Unidrectional data-flow doesn't fit well with the built in chip set functionality, but creating your own is fairly straight forward.
+
+```jsx render
+import {
+  Chip,
+  ChipIcon,
+  ChipText,
+  ChipCheckmark,
+  ChipSet,
+  SimpleChip
+} from 'rmwc/Chip';
+
+<ChipSet filter>
+  <Chip
+    selected={this.state.cookies}
+    onClick={() => this.setState({cookies: !this.state.cookies})}
+  >
+    <ChipCheckmark />
+    <ChipText>Cookies</ChipText>
+    <ChipIcon tabIndex={0} use="close" trailing />
+  </Chip>
+  <Chip
+    selected={this.state.pizza}
+    onClick={() => this.setState({pizza: !this.state.pizza})}
+  >
+    <ChipIcon use="local_pizza" leading />
+    <ChipCheckmark />
+    <ChipText>Pizza</ChipText>
+    <ChipIcon use="close" trailing />
+  </Chip>
+  {/* You can use simple chips as well */}
+  <SimpleChip
+    selected={this.state.icecream}
+    onClick={() => this.setState({icecream: !this.state.icecream})}
+    checkmark
+    leadingIcon="favorite_border"
+    trailingIcon="close"
+    text="Icecream"
+  />
+</ChipSet>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
 
 <DocumentComponent displayName="Chip" />
 <DocumentComponent displayName="ChipText" />
 <DocumentComponent displayName="ChipIcon" />
+<DocumentComponent displayName="ChipCheckmark" />
 <DocumentComponent displayName="ChipSet" />
+<DocumentComponent displayName="SimpleChip" />
 ```

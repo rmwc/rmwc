@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Chip, ChipText, ChipIcon, ChipSet } from './';
+import { Chip, ChipText, ChipIcon, ChipSet, SimpleChip } from './';
 
 describe('Chip', () => {
   it('renders', () => {
@@ -41,6 +41,19 @@ describe('Chip', () => {
     );
 
     expect(api).toBeTruthy();
+  });
+});
+
+describe('SimpleChip', () => {
+  it('renders', () => {
+    mount(
+      <SimpleChip
+        leadingIcon="face"
+        trailingIcon="close"
+        text="test"
+        checkmark
+      />
+    );
   });
 });
 
