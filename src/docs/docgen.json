@@ -961,20 +961,7 @@
     {
       "description": "",
       "displayName": "FloatingLabel",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ]
+      "methods": []
     }
   ],
   "src/FormField/index.js": [
@@ -3647,17 +3634,27 @@
     },
     {
       "description": "",
-      "displayName": "TextFieldOutline",
+      "displayName": "NotchedOutline",
+      "methods": [],
+      "props": {
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "NotchedOutlinePath",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TextFieldOutlinePath",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TextFieldIdleOutline",
+      "displayName": "NotchedOutlineIdle",
       "methods": []
     },
     {
@@ -3699,8 +3696,167 @@
     {
       "description": "",
       "displayName": "TextField",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "textarea",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "fullwidth",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "box",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "inputRef",
+                          "value": {
+                            "name": "ReactRef",
+                            "raw": "React.Ref<any>",
+                            "elements": [
+                              {
+                                "name": "any"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "required",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "invalid",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "dense",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "box",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "outlined",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "withLeadingIcon",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "withTrailingIcon",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "rootProps",
+                          "value": {
+                            "name": "Object",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "TextFieldPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
+        "textarea": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes a multiline TextField."
+        },
+        "fullwidth": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField fullwidth."
+        },
+        "box": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the TextField have a visiual box."
+        },
         "inputRef": {
           "flowType": {
             "name": "ReactRef",
@@ -3742,13 +3898,6 @@
           "required": false,
           "description": "Makes the TextField dense"
         },
-        "box": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Box in the TextField"
-        },
         "outlined": {
           "flowType": {
             "name": "boolean"
@@ -3786,20 +3935,6 @@
           },
           "required": false,
           "description": "By default, props spread to the input. These props are for the component's root container."
-        },
-        "textarea": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes a multiline TextField."
-        },
-        "fullwidth": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes the TextField fullwidth."
         }
       }
     }

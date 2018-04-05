@@ -2,8 +2,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
-import { noop } from '../Base/noop';
-import { simpleTag, withMDC } from '../Base';
+import { simpleTag } from '../Base';
 import { randomId } from '../Base/randomId';
 
 import { Icon } from '../Icon';
@@ -12,19 +11,14 @@ import { FloatingLabel } from '../FloatingLabel';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
 
-type TextFieldRootPropsT = {
-  /** Makes a multiline TextField. */
-  textarea?: boolean,
-  /** Makes the TextField fullwidth. */
-  fullwidth?: boolean,
-  /** Makes the TextField have a visiual box. */
-  box?: boolean
-} & SimpleTagPropsT;
-
-export const TextFieldRoot: React.ComponentType<
-  TextFieldRootPropsT
-> = simpleTag({
+export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',
   classNames: props => [
     'mdc-text-field',
@@ -36,7 +30,9 @@ export const TextFieldRoot: React.ComponentType<
       'mdc-text-field--outlined': props.outlined,
       'mdc-text-field--dense': props.dense,
       'mdc-text-field--invalid': props.invalid,
-      'mdc-text-field--disabled': props.disabled
+      'mdc-text-field--disabled': props.disabled,
+      'mdc-text-field--with-leading-icon': props.withLeadingIcon,
+      'mdc-text-field--with-trailing-icon': props.withTrailingIcon
     }
   ],
   consumeProps: [
@@ -46,7 +42,9 @@ export const TextFieldRoot: React.ComponentType<
     'outlined',
     'dense',
     'invalid',
-    'disabled'
+    'disabled',
+    'withLeadingIcon',
+    'withTrailingIcon'
   ]
 });
 
@@ -65,21 +63,24 @@ export const TextFieldTextarea = simpleTag({
   classNames: 'mdc-text-field__input'
 });
 
-export const TextFieldOutline = simpleTag({
-  displayName: 'TextFieldOutline',
-  classNames: 'mdc-text-field__outline'
-});
+export const NotchedOutline = ({
+  children,
+  ...rest
+}: {
+  children: React.Node
+}) => (
+  <div {...rest} className="mdc-notched-outline">
+    <svg>{children}</svg>
+  </div>
+);
 
-export const TextFieldOutlinePath = simpleTag({
-  displayName: 'TextFieldOutlinePath',
-  tag: 'path',
-  classNames: 'mdc-text-field__outline-path'
-});
+export const NotchedOutlinePath = ({ ...rest }: {}) => (
+  <path {...rest} className="mdc-notched-outline__path" />
+);
 
-export const TextFieldIdleOutline = simpleTag({
-  displayName: 'TextFieldIdleOutline',
-  classNames: 'mdc-text-field__idle-outline'
-});
+export const NotchedOutlineIdle = ({ ...rest }: {}) => (
+  <div {...rest} className="mdc-notched-outline__idle" />
+);
 
 type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
@@ -126,13 +127,19 @@ export class TextFieldIcon extends simpleTag({
 }
 
 type TextFieldPropsT = {
+  /** Makes a multiline TextField. */
+  textarea?: boolean,
+  /** Makes the TextField fullwidth. */
+  fullwidth?: boolean,
+  /** Makes the TextField have a visiual box. */
+  box?: boolean,
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,
   /** Disables the input. */
   disabled?: boolean,
   /** Mark the input as required. */
   required?: boolean,
-  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required and pattern is used.  */
+  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean,
   /** Makes the TextField dense */
   dense?: boolean,
@@ -148,133 +155,118 @@ type TextFieldPropsT = {
   withTrailingIcon?: React.Node,
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object
-} & TextFieldRootPropsT &
-  SimpleTagPropsT;
+} & SimpleTagPropsT;
 
-export const TextField = withMDC({
-  mdcConstructor: MDCTextField,
-  mdcElementRef: true,
-  mdcApiRef: true,
-  defaultProps: {
-    inputRef: noop,
-    disabled: undefined,
-    required: undefined,
-    invalid: undefined,
-    dense: undefined,
-    box: undefined,
-    outlined: undefined,
-    fullwidth: undefined,
-    label: undefined,
-    textarea: undefined
-  },
-  didUpdate: (props, nextProps, api, inst) => {
-    if (
-      props &&
-      (props.textarea !== nextProps.textarea ||
-        props.outlined !== nextProps.outlined ||
-        props.dense !== nextProps.dense)
-    ) {
-      inst.mdcComponentReinit();
-    }
-    if (props && props.invalid !== nextProps.invalid) {
-      api.foundation_.setValid(!nextProps.invalid);
-    }
-  },
-  onMount: (props, api, inst) => {
-    api.foundation_.setValid(!props.invalid);
+export class TextField extends withFoundation({
+  constructor: MDCTextField,
+  adpater: {
+    addClass: addClass(),
+    removeClass: removeClass(),
+    getValue: () => {}
   }
-})(
-  class extends React.PureComponent<TextFieldPropsT> {
-    static displayName = 'TextField';
-    render() {
-      const {
-        label = '',
-        className,
-        inputRef,
-        mdcApiRef,
-        box,
-        outlined,
-        fullwidth,
-        dense,
-        invalid,
-        disabled,
-        withLeadingIcon,
-        withTrailingIcon,
-        mdcElementRef,
-        children,
-        textarea,
-        rootProps = {},
-        ...rest
-      } = this.props;
+})<TextFieldPropsT> {
+  static displayName = 'TextField';
 
-      const tagProps = {
-        ...rest,
-        disabled: disabled,
-        elementRef: inputRef,
-        id: rest.id || randomId('text-field')
-      };
+  syncWithProps(nextProps: TextFieldPropsT) {
+    // invalid | valid
+    syncFoundationProp(
+      nextProps.invalid,
+      !this.valid,
+      () => (this.valid = !nextProps.invalid)
+    );
 
-      const tag = textarea ? (
-        <TextFieldTextarea {...tagProps} />
-      ) : (
-        <TextFieldInput {...tagProps} />
-      );
+    // value
+    syncFoundationProp(nextProps.value, !this.value, () => {
+      this.value = nextProps.value;
+    });
 
-      // handle leading and trailing icons
-      const renderIcon = iconNode => {
-        if (
-          (iconNode && typeof iconNode === 'string') ||
-          (typeof iconNode === 'object' && iconNode.type !== TextFieldIcon)
-        ) {
-          return <TextFieldIcon use={iconNode} />;
-        }
-
-        return iconNode;
-      };
-
-      return (
-        <TextFieldRoot
-          {...rootProps}
-          invalid={invalid}
-          className={classNames(className, rootProps.className, {
-            'mdc-text-field--with-leading-icon': !!withLeadingIcon,
-            'mdc-text-field--with-trailing-icon': !!withTrailingIcon
-          })}
-          textarea={textarea}
-          box={box}
-          dense={dense}
-          disabled={disabled}
-          outlined={outlined}
-          fullwidth={fullwidth}
-          elementRef={mdcElementRef}
-        >
-          {!!withLeadingIcon && renderIcon(withLeadingIcon)}
-          {children}
-          {tag}
-          {!!label && (
-            <FloatingLabel
-              focused={mdcApiRef && mdcApiRef.foundation_.isFocused_}
-              htmlFor={tagProps.id}
-              value={tagProps.value}
-            >
-              {label}
-            </FloatingLabel>
-          )}
-          {!!withTrailingIcon && renderIcon(withTrailingIcon)}
-
-          {outlined && (
-            <TextFieldOutline>
-              <svg>
-                <TextFieldOutlinePath />
-              </svg>
-            </TextFieldOutline>
-          )}
-
-          {outlined ? <TextFieldIdleOutline /> : <LineRipple />}
-        </TextFieldRoot>
-      );
-    }
+    // disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
   }
-);
+
+  render() {
+    const {
+      label = '',
+      className,
+      inputRef,
+      box,
+      outlined,
+      fullwidth,
+      dense,
+      invalid,
+      disabled,
+      withLeadingIcon,
+      withTrailingIcon,
+      children,
+      textarea,
+      rootProps = {},
+      ...rest
+    } = this.props;
+
+    const { root_ } = this.foundationRefs;
+
+    const tagProps = {
+      ...rest,
+      disabled: disabled,
+      elementRef: inputRef,
+      id: rest.id || randomId('text-field')
+    };
+
+    const tag = textarea ? (
+      <TextFieldTextarea {...tagProps} />
+    ) : (
+      <TextFieldInput {...tagProps} />
+    );
+
+    // handle leading and trailing icons
+    const renderIcon = iconNode => {
+      if (
+        (iconNode && typeof iconNode === 'string') ||
+        (typeof iconNode === 'object' && iconNode.type !== TextFieldIcon)
+      ) {
+        return <TextFieldIcon use={iconNode} />;
+      }
+
+      return iconNode;
+    };
+
+    return (
+      <TextFieldRoot
+        {...rootProps}
+        invalid={invalid}
+        className={classNames(className, rootProps.className)}
+        withLeadingIcon={!!withLeadingIcon}
+        withTrailingIcon={!!withTrailingIcon}
+        textarea={textarea}
+        box={box}
+        dense={dense}
+        disabled={disabled}
+        outlined={outlined}
+        fullwidth={fullwidth}
+        elementRef={root_}
+      >
+        {!!withLeadingIcon && renderIcon(withLeadingIcon)}
+        {children}
+        {tag}
+        {!!label && (
+          <FloatingLabel htmlFor={tagProps.id}>{label}</FloatingLabel>
+        )}
+        {!!withTrailingIcon && renderIcon(withTrailingIcon)}
+
+        {outlined && (
+          <NotchedOutline>
+            <NotchedOutlinePath />
+          </NotchedOutline>
+        )}
+
+        {outlined ? <NotchedOutlineIdle /> : <LineRipple />}
+      </TextFieldRoot>
+    );
+  }
+}
 
 export default TextField;

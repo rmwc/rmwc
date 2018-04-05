@@ -129,18 +129,7 @@ export const withFoundation = ({
     }
 
     componentDidMount() {
-      this.foundation_ = this.getDefaultFoundation();
-
-      Object.entries(adapter).forEach(([handlerName, handler]) => {
-        this.foundation_.adapter_[handlerName] = handler.bind(this);
-      });
-      this.initialize();
-      this.foundation_.init();
-      this.initialSyncWithDOM();
-      this.syncWithProps(this.props);
-
-      // this method should be deprecated in the future in favor of standard refs
-      this.props.apiRef && this.props.apiRef(this);
+      this.initFoundation();
     }
 
     componentWillReceiveProps(nextProps: P) {
@@ -162,6 +151,21 @@ export const withFoundation = ({
     foundation_: Object;
 
     foundationRefs: { [string]: (ref: window.DomElement) => mixed };
+
+    initFoundation() {
+      this.foundation_ = this.getDefaultFoundation();
+
+      Object.entries(adapter).forEach(([handlerName, handler]) => {
+        this.foundation_.adapter_[handlerName] = handler.bind(this);
+      });
+      this.initialize();
+      this.foundation_.init();
+      this.initialSyncWithDOM();
+      this.syncWithProps(this.props);
+
+      // this method should be deprecated in the future in favor of standard refs
+      this.props.apiRef && this.props.apiRef(this);
+    }
 
     destroy() {
       // Subclasses may implement this method to release any resources / deregister any listeners they have
