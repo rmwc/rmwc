@@ -64,6 +64,7 @@
     "eslint-plugin-flowtype": "^2.41.0",
     "flow-bin": "^0.62.0",
     "generate-changelog": "^1.7.0",
+    "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.7.1",
