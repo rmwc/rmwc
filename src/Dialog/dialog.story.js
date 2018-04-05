@@ -68,6 +68,7 @@ const SimpleDialogStory = storyWithState(
           this.setState({ open: false });
           action('onClose')();
         }}
+        scrollable={this.state.scrollable}
         acceptLabel={this.state.acceptLabel}
         cancelLabel={this.state.cancelLabel}
         onAccept={action('onAccept')}

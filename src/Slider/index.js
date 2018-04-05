@@ -209,7 +209,7 @@ export class Slider extends withFoundation({
 
     return (
       <SliderRoot
-        className={classNames(className, [...this.state.classes])}
+        className={this.classes}
         tabIndex="0"
         role="slider"
         aria-valuemax={max}

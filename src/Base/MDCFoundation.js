@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 
 /************************************************************************
  * Utils
@@ -152,6 +153,10 @@ export const withFoundation = ({
 
     foundationRefs: { [string]: (ref: window.DomElement) => mixed };
 
+    get classes() {
+      return classNames(this.props.className, [...this.state.classes]);
+    }
+
     initFoundation() {
       this.foundation_ = this.getDefaultFoundation();
 
@@ -213,6 +218,8 @@ export const withFoundation = ({
 
       // MDC can change state internally, if we are triggering a handler, resync with our props
       this.syncWithProps(this.props);
+
+      return evt;
     }
   }
 
