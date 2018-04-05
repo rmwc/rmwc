@@ -2,20 +2,15 @@
  * Shows in browser notifications
  */
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 import { noop } from '../Base/noop';
 import Button from '../Button';
 import { simpleTag, withMDC } from '../Base';
 
-import type { SimpleTagPropsT } from '../Base';
-
-type SnackbarRootT = {
-  /* Aligns the Snackbar to the start of the screen. */
-  alignStart?: boolean
-} & SimpleTagPropsT;
-
-export const SnackbarRoot: React.ComponentType<SnackbarRootT> = simpleTag({
+export const SnackbarRoot = simpleTag({
   displayName: 'SnackbarRoot',
   classNames: props => [
     'mdc-snackbar',
@@ -48,7 +43,7 @@ export const SnackbarActionButton = simpleTag({
   classNames: 'mdc-snackbar__action-button'
 });
 
-type SnackbarPropsT = {
+export type SnackbarPropsT = {
   /** Show the Snackbar. */
   show?: boolean,
   /** A callback thats fired when the Snackbar shows. */
@@ -68,8 +63,10 @@ type SnackbarPropsT = {
   /** Places the action underneath the message text. */
   actionOnBottom?: boolean,
   /** Whether or not the Snackbar dismisses on the action press. */
-  dismissesOnAction?: boolean
-};
+  dismissesOnAction?: boolean,
+  /* Aligns the Snackbar to the start of the screen. */
+  alignStart?: boolean
+} & SimpleTagPropsT;
 
 const showSnackbar = (props, api) => {
   const {

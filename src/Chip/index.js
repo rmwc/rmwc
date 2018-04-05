@@ -1,4 +1,5 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
 
 import * as React from 'react';
 import { Icon } from '../Icon';
@@ -21,14 +22,14 @@ export const ChipRoot = withRipple()(
   })
 );
 
-type ChipPropsT = {
+export type ChipPropsT = {
   /** A custom event you can use from MCW. You can also just use onClick instead. */
   onInteraction?: (evt: Event) => mixed,
   /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */
   onTrailingIconInteraction?: (evt: Event) => mixed,
   /** makes the Chip appear selected. */
   selected?: boolean
-};
+} & SimpleTagPropsT;
 
 export class Chip extends withFoundation({
   constructor: MDCChip,
@@ -81,12 +82,12 @@ export const ChipIconRoot = simpleTag({
   consumeProps: ['trailing', 'leading']
 });
 
-type ChipIconPropsT = {
+export type ChipIconPropsT = {
   /** Make it a leading icon */
   leading: boolean,
   /** Make it a trailing icon */
   trailing: boolean
-};
+} & SimpleTagPropsT;
 export const ChipIcon = (props: ChipIconPropsT) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')

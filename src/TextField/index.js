@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import classNames from 'classnames';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { simpleTag } from '../Base';
 import { randomId } from '../Base/randomId';
@@ -82,7 +81,7 @@ export const NotchedOutlineIdle = ({ ...rest }: {}) => (
   <div {...rest} className="mdc-notched-outline__idle" />
 );
 
-type TextFieldHelperTextPropsT = {
+export type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
   persistent?: boolean,
   /** Make the help a validation message style */
@@ -109,7 +108,7 @@ export class TextFieldHelperText extends simpleTag({
   }
 }
 
-type TextFieldIconPropsT = {
+export type TextFieldIconPropsT = {
   /** The icon to use */
   use: React.Node
 } & IconPropsT;
@@ -126,7 +125,7 @@ export class TextFieldIcon extends simpleTag({
   }
 }
 
-type TextFieldPropsT = {
+export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
   textarea?: boolean,
   /** Makes the TextField fullwidth. */

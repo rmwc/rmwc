@@ -1,15 +1,15 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+import type { WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
 
-import type { SimpleTagPropsT } from '../Base';
-import type { WithRipplePropsT } from '../Base';
-import type { RMWCProviderOptionsT } from '../Provider';
-
-type ListItemPropsT = {
+export type ListItemPropsT = {
   /** A modifier for a selected state. */
   selected?: boolean,
   /** A modifier for an active state. */
@@ -107,7 +107,7 @@ export const ListDivider = simpleTag({
   classNames: 'mdc-list-divider'
 });
 
-type ListPropsT = {
+export type ListPropsT = {
   /** Reduces the padding on List items. */
   dense?: boolean,
   /** Gives more space for dual lined list items. */
@@ -142,7 +142,7 @@ export class List extends simpleTag({
   }
 }
 
-type SimpleListItemPropsT = {
+export type SimpleListItemPropsT = {
   /** Text for the ListItem. */
   text?: React.Node,
   /** Secondary Text for the ListItem. */

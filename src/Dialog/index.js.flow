@@ -1,2 +1,2 @@
 // @flow
-export * from './';
+export * from 'rmwc/src/Dialog';

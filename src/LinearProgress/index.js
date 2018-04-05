@@ -1,22 +1,13 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 /* eslint-disable max-len */
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 /* eslint-enable max-len */
 import { simpleTag, withMDC } from '../Base';
 
-import type { SimpleTagPropsT } from '../Base';
-
-type LinearProgressRootT = {
-  /** Whether or not the Progress bar is determinate. */
-  determinate?: boolean,
-  /** Progress goes from right to left. */
-  reversed?: boolean
-} & SimpleTagPropsT;
-
-export const LinearProgressRoot: React.ComponentType<
-  LinearProgressRootT
-> = simpleTag({
+export const LinearProgressRoot = simpleTag({
   displayName: 'LinearProgressRoot',
   tag: 'nav',
   classNames: props => [
@@ -61,12 +52,16 @@ export const LinearProgressBarInner = simpleTag({
   classNames: 'mdc-linear-progress__bar-inner'
 });
 
-type LinearProgressPropsT = {
+export type LinearProgressPropsT = {
   /** Progress float percentage between 0 and 1. */
   progress?: number | string,
   /** A Progress buffer float percentage between 0 and 1. */
-  buffer?: number | string
-} & LinearProgressRootT;
+  buffer?: number | string,
+  /** Whether or not the Progress bar is determinate. */
+  determinate?: boolean,
+  /** Progress goes from right to left. */
+  reversed?: boolean
+} & SimpleTagPropsT;
 
 export const LinearProgress: React.ComponentType<
   LinearProgressPropsT

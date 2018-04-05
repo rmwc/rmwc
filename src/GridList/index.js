@@ -7,20 +7,7 @@ import type { SimpleTagPropsT } from '../Base';
 /****************************************************************
  * Private
  ****************************************************************/
-type GridListRootPropsT = {
-  /** Use a 1px gutter. */
-  tileGutter1: boolean,
-  /** Move the caption to the top of the card. */
-  headerCaption: boolean,
-  /** Make the caption two lines. */
-  twolineCaption: boolean,
-  /** Leaves space for a start aligned icon. */
-  withIconAlignStart: boolean,
-  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
-  tileAspect: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
-} & SimpleTagPropsT;
-
-export const GridListRoot: React.ComponentType<GridListRootPropsT> = simpleTag({
+export const GridListRoot = simpleTag({
   displayName: 'GridListRoot',
   classNames: props => [
     'mdc-grid-list',
@@ -107,10 +94,23 @@ export const GridTileTitleSupportText = simpleTag({
   classNames: 'mdc-grid-tile__support-text'
 });
 
+export type GridListPropsT = {
+  /** Use a 1px gutter. */
+  tileGutter1: boolean,
+  /** Move the caption to the top of the card. */
+  headerCaption: boolean,
+  /** Make the caption two lines. */
+  twolineCaption: boolean,
+  /** Leaves space for a start aligned icon. */
+  withIconAlignStart: boolean,
+  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
+  tileAspect: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
+} & SimpleTagPropsT;
+
 /**
  * Grid List Component
  */
-export class GridList extends React.Component<GridListRootPropsT> {
+export class GridList extends React.Component<GridListPropsT> {
   render() {
     const { children, ...rest } = this.props;
     return (

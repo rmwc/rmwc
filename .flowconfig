@@ -7,5 +7,6 @@
 [lints]
 
 [options]
+module.name_mapper='^rmwc' ->'<PROJECT_ROOT>'
 
 [strict]

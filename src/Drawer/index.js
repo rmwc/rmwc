@@ -1,4 +1,6 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { simpleTag } from '../Base';
 import { List } from '../List';
@@ -72,7 +74,7 @@ export const DrawerDrawer = simpleTag({
   classNames: 'mdc-drawer__drawer'
 });
 
-type DrawerPropsT = {
+export type DrawerPropsT = {
   /** Opens or closes the Drawer. */
   open: boolean,
   /** Callback that fires when the Drawer is closed. */
@@ -85,7 +87,7 @@ type DrawerPropsT = {
   persistent?: boolean,
   /** Makes a temporary drawer. */
   temporary?: boolean
-};
+} & SimpleTagPropsT;
 
 /** A Drawer component */
 export const Drawer = withMDC({

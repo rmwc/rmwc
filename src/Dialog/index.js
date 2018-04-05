@@ -1,4 +1,6 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import {
   MDCDialog,
@@ -7,7 +9,7 @@ import {
 
 import Button from '../Button';
 import { simpleTag, noop } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+
 import {
   withFoundation,
   syncFoundationProp,

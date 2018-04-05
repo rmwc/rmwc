@@ -11,7 +11,7 @@ import {
   syncFoundationProp
 } from '../Base/MDCFoundation';
 
-type RipplePropsT = {
+export type RipplePropsT = {
   /** Makes the ripple unbounded */
   unbounded?: boolean,
   /** Makes the ripple primary */
