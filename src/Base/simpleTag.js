@@ -91,7 +91,7 @@ export const simpleTag = ({
         if (!rest.children) return null;
 
         // make sure we delete our children here
-        // so we dont recrusively clonse ourselves
+        // so we dont recrusively clone ourselves
         delete safeRest.children;
         const child = React.Children.only(rest.children);
         return React.cloneElement(child, {
