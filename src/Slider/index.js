@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import classNames from 'classnames';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 import { simpleTag } from '../Base';
 
@@ -65,7 +64,7 @@ export const SliderFocusRing = simpleTag({
   classNames: 'mdc-slider__focus-ring'
 });
 
-type SliderPropsT = {
+export type SliderPropsT = {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
   onChange?: (evt: { detail: { value: number } }) => mixed,
   /** A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value. */

@@ -22,7 +22,7 @@ export const GridRoot = simpleTag({
 /****************************************************************
  * Public
  ****************************************************************/
-type GridCellPropsT = {
+export type GridCellPropsT = {
   /** Default number of columns to span. */
   span?: string | number,
   /** Number of columns to span on a phone. */
@@ -76,7 +76,7 @@ export const GridInner = simpleTag({
   classNames: 'mdc-layout-grid__inner'
 });
 
-type GridPropsT = {
+export type GridPropsT = {
   /** Specifies the grid should have fixed column width. */
   fixedColumnWidth?: boolean,
   /** Specifies the alignment of the whole grid. */

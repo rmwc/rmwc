@@ -20,8 +20,8 @@ describe('Dialog', () => {
         body="You can pass the body prop, or anything you want as children."
         open
         onClose={evt => {}}
-        onAccept={evt => alert('Accepted')}
-        onCancel={evt => alert('Cancelled')}
+        onAccept={evt => console.log('Accepted')}
+        onCancel={evt => console.log('Cancelled')}
       />
     );
   });

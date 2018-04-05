@@ -6,20 +6,7 @@ import { simpleTag, withMDC } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
 
-type ToolbarRootPropsT = {
-  /** Makes the toolbar fixed */
-  fixed?: boolean,
-  /** Adds a waterfall effect on scroll */
-  waterfall?: boolean,
-  /** Fixes the last row of a multi-row toolbar */
-  fixedLastrowOnly?: boolean,
-  /** makes the toolbar flexible */
-  flexible?: boolean,
-  /** further defines the background and title movement behavior, use in conjunction with flexible. */
-  flexibleDefaultBehavior?: boolean
-} & SimpleTagPropsT;
-
-export const ToolbarRoot: React.ComponentType<ToolbarRootPropsT> = simpleTag({
+export const ToolbarRoot = simpleTag({
   tag: 'header',
   classNames: props => [
     'mdc-toolbar',
@@ -117,6 +104,19 @@ export const ToolbarIcon = simpleTag({
   classNames: 'mdc-toolbar__icon'
 });
 
+export type ToolbarPropsT = {
+  /** Makes the toolbar fixed */
+  fixed?: boolean,
+  /** Adds a waterfall effect on scroll */
+  waterfall?: boolean,
+  /** Fixes the last row of a multi-row toolbar */
+  fixedLastrowOnly?: boolean,
+  /** makes the toolbar flexible */
+  flexible?: boolean,
+  /** further defines the background and title movement behavior, use in conjunction with flexible. */
+  flexibleDefaultBehavior?: boolean
+} & SimpleTagPropsT;
+
 export const Toolbar = withMDC({
   mdcConstructor: MDCToolbar,
   mdcElementRef: true,
@@ -176,7 +176,7 @@ export const Toolbar = withMDC({
     }
   }
 })(
-  class extends React.Component<ToolbarRootPropsT> {
+  class extends React.Component<ToolbarPropsT> {
     static displayName = 'Toolbar';
 
     render() {

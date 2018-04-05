@@ -2,7 +2,7 @@
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base/simpleTag';
 
-type ElevationPropsT = {
+export type ElevationPropsT = {
   /** A number from 0 - 24 for different levels of elevation */
   z?: number | string,
   /** Allows for smooth transitions between elevations when the z value changes. */

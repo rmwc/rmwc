@@ -18,7 +18,8 @@ export type SimpleTagPropsT = {
   wrap?: boolean,
   elementRef?: React.Ref<*>,
   theme?: string | string[],
-  children?: React.Node
+  children?: React.Node,
+  className?: string
 };
 
 export const simpleTag = ({

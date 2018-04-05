@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import classNames from 'classnames';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
@@ -46,7 +45,7 @@ export const SelectNativeControl = simpleTag({
   classNames: 'mdc-select__native-control'
 });
 
-type SelectPropsT = {
+export type SelectPropsT = {
   /** The value for a controlled select. */
   value?: mixed,
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */

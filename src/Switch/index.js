@@ -35,7 +35,7 @@ export const SwitchLabel = simpleTag({
   classNames: 'mdc-switch-label'
 });
 
-type SwitchPropsT = {
+export type SwitchPropsT = {
   /** A DOM ID for the toggle. */
   id?: string,
   /** Disables the control. */

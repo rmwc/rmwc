@@ -1,6 +1,7 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
-import classNames from 'classnames';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop } from '../Base';
@@ -12,7 +13,7 @@ import {
   removeClass
 } from '../Base/MDCFoundation';
 
-type IconTogglePropsT = {
+export type IconTogglePropsT = {
   /* prettier-ignore */
   /** An onChange callback that receives a custom event. */
   onChange?: (evt: {detail: {isOn: boolean}}) => mixed,
@@ -24,7 +25,7 @@ type IconTogglePropsT = {
   checked?: boolean,
   /** Disables the iconToggle */
   disabled?: boolean
-};
+} & SimpleTagPropsT;
 
 export const IconToggleRoot = withRipple({ unbounded: true })(
   simpleTag({
