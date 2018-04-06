@@ -1,3 +1,32 @@
+#### 1.5.0 (2018-04-06)
+
+##### Breaking Changes
+
+* **Select:**  MDC switched to using native select elements. RMWC selects should be fine with a few caveats. Props now spread to the native select by default, and a rootProps prop has been added. Also, if you were relying on MDC’s ListItem as the children, they are now standard HTML option elements. [#179](https://github.com/jamesmfriedman/rmwc/pull/179) ([d7300093](https://github.com/jamesmfriedman/rmwc/commit/d7300093561b8f4222e1256ef9a69de8cb1468a0))
+* **Button:**  MDC breaking change, removed compact buttons ([8d0fbcf9](https://github.com/jamesmfriedman/rmwc/commit/8d0fbcf90c9845089bdb9bc76f2cab92b62cd033))
+* **Typography:**  MDC breaking change, removing adjustMargin ([f18f8542](https://github.com/jamesmfriedman/rmwc/commit/f18f85425fdf915e075f60ef2c45be3b20133e10))
+
+##### Chores
+
+* **Flow:**  FlowType improvements, [#159](https://github.com/jamesmfriedman/rmwc/pull/159) ([eccfb749](https://github.com/jamesmfriedman/rmwc/commit/eccfb749935fc75234691b2ad43b58377462206c))
+
+##### Documentation Changes
+
+* **Cleanup:**  small tweaks to docs for release ([a64f218b](https://github.com/jamesmfriedman/rmwc/commit/a64f218bc1d13aa15045a613551af6c2d5f32b96))
+* **Node Version:**  Adding node version 7 as a requirement in contributing [#129](https://github.com/jamesmfriedman/rmwc/pull/129) [#179](https://github.com/jamesmfriedman/rmwc/pull/179) ([c541d960](https://github.com/jamesmfriedman/rmwc/commit/c541d960ad15034e2b055cfaa04ea1701f250864))
+* **Select:**  Adding optgroup documentation. ([3774d663](https://github.com/jamesmfriedman/rmwc/commit/3774d663fc366aadd3301845074321f061873420))
+
+##### New Features
+
+* **Chips:**  Added chip filtering. [#179](https://github.com/jamesmfriedman/rmwc/pull/179) ([487ede3b](https://github.com/jamesmfriedman/rmwc/commit/487ede3bdc3c0f94fbcb6f14f1b75d3c17af2ab7))
+* **Dialog:**  Implementing via foundation [#179](https://github.com/jamesmfriedman/rmwc/pull/179) [#177](https://github.com/jamesmfriedman/rmwc/pull/177) ([3a072b2e](https://github.com/jamesmfriedman/rmwc/commit/3a072b2e37aa7086052e146e66824eed2940ac57))
+* **Grid:**  Added alignment and ordering props [#179](https://github.com/jamesmfriedman/rmwc/pull/179) closes [#178](https://github.com/jamesmfriedman/rmwc/pull/178) ([b5070705](https://github.com/jamesmfriedman/rmwc/commit/b50707052ada4cbdab8711832aff90bd6de69889))
+
+##### Bug Fixes
+
+* **TextField:**  Implements TextField foundation. [#179](https://github.com/jamesmfriedman/rmwc/pull/179) Closes [#128](https://github.com/jamesmfriedman/rmwc/pull/128), [#156](https://github.com/jamesmfriedman/rmwc/pull/156) ([bde5cd3f](https://github.com/jamesmfriedman/rmwc/commit/bde5cd3fb6d100f2596aa7fd7776884ca5ed52fa))
+* **Ripple:**  Corrects an issue where Ripple would not properly handle using the tag prop with non RMWC components. [#176](https://github.com/jamesmfriedman/rmwc/pull/176) ([9fb80192](https://github.com/jamesmfriedman/rmwc/commit/9fb8019252efe5e0fd972f73e454c92dc79adbb6))
+
 #### 1.4.1 (2018-03-26)
 
 ##### Bug Fixes
