@@ -56,9 +56,12 @@ export type SelectPropsT = {
   placeholder?: string,
   /** Disables the form control. */
   disabled?: boolean,
-  /** Makes the Select have a visiual box. */
-  box?: boolean
-  /** Props for the root element. By default, additonal props spread to the native select element.  */
+  /** Makes the Select have a visual box. */
+  box?: boolean,
+  /** Props for the root element. By default, additional props spread to the native select element.  */
+  rootProps?: Object,
+  /** A className for the root element. */
+  className?: string
 } & SimpleTagPropsT;
 
 /**
@@ -110,6 +113,7 @@ export class Select extends withFoundation({
       label = '',
       options = [],
       box,
+      className,
       rootProps = {},
       ...rest
     } = this.props;
