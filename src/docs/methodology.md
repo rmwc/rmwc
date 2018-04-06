@@ -8,7 +8,7 @@
 * To utilize the Foundation javascript classes and expose their api for consumption
 * To be as unobtrusive and sensible as possible.
 
-# Why?
+## Why?
 
 There are many different Material UI implementations in both Angular and React. The last thing we need is another one... In React land there has been a lot of great work done, but you eventually end up in one of the following situations:
 
@@ -18,7 +18,7 @@ There are many different Material UI implementations in both Angular and React. 
 
 RMWC's goal is to use the Google sanctioned javascript Material Design Components which are designed, developed, and maintained by Google.
 
-# Breaking Changes
+## Breaking Changes
 
 As stated in "Why?", the goal of this library is to be unopinionated, and that includes opinions about breaking changes that come downstream from material-components-web. In the future, steps may be taken to insulate consumers by providing a deprecation path, but for the time being please make sure your keep eyes on the official MDC Changelog and RMWC will do its best to also keep its changelog up to date.
 

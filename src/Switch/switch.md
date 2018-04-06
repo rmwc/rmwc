@@ -12,7 +12,7 @@ import { Switch } from 'rmwc/Switch';
 
 {/* Controlled with change handler */}
 <Switch
-  checked={this.state.cookiesChecked}
+  checked={!!this.state.cookiesChecked}
   onChange={evt => this.setState({cookiesChecked: evt.target.checked})}>
   Cookies
 </Switch>

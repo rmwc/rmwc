@@ -1,11 +1,26 @@
 export default () => {
   if (global.window) {
-    Object.defineProperty(window.HTMLElement.prototype, 'dataset', {
-      writable: true,
-      value: {}
-    });
+    const { ValidityState } = require('hyperform');
 
-    Object.defineProperty(window.HTMLInputElement.prototype, 'validity', {
+    const defineValidity = {
+      get() {
+        return ValidityState(this);
+      },
+      configurable: true
+    };
+
+    Object.defineProperty(
+      global.HTMLInputElement.prototype,
+      'validity',
+      defineValidity
+    );
+    Object.defineProperty(
+      global.HTMLTextAreaElement.prototype,
+      'validity',
+      defineValidity
+    );
+
+    Object.defineProperty(window.HTMLElement.prototype, 'dataset', {
       writable: true,
       value: {}
     });

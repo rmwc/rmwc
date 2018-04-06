@@ -74,16 +74,16 @@ describe('TextField', () => {
 
   it('sync validlity with textfield foundation during prop initialization', () => {
     let inst = mount(<TextField invalid />).instance();
-    expect(inst.mdcApi.foundation_.isValid()).toBe(false);
+    expect(inst.foundation_.isValid()).toBe(false);
     inst = mount(<TextField invalid={false} />).instance();
-    expect(inst.mdcApi.foundation_.isValid()).toBe(true);
+    expect(inst.foundation_.isValid()).toBe(true);
   });
 
   it('sync validlity with textfield foundation during prop modification', () => {
     const wrapper = mount(<TextField invalid />);
     const inst = wrapper.instance();
-    expect(inst.mdcApi.foundation_.isValid()).toBe(false);
+    expect(inst.foundation_.isValid()).toBe(false);
     wrapper.setProps({ invalid: false });
-    expect(inst.mdcApi.foundation_.isValid()).toBe(true);
+    expect(inst.foundation_.isValid()).toBe(true);
   });
 });

@@ -7,11 +7,6 @@ describe('Typography', () => {
     mount(<Typography use="body1" />);
   });
 
-  it('can be adjustMargin', () => {
-    const el = mount(<Typography use="body1" adjustMargin />);
-    expect(!!~el.html().search('mdc-typography--adjust-margin')).toBe(true);
-  });
-
   it('can have custom classnames', () => {
     const el = mount(
       <Typography use="body1" className={'my-custom-classname'} />

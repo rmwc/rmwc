@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import {
   Dialog,
-  DialogRoot,
   DialogSurface,
   DialogHeader,
   DialogHeaderTitle,
@@ -21,8 +20,8 @@ describe('Dialog', () => {
         body="You can pass the body prop, or anything you want as children."
         open
         onClose={evt => {}}
-        onAccept={evt => alert('Accepted')}
-        onCancel={evt => alert('Cancelled')}
+        onAccept={evt => console.log('Accepted')}
+        onCancel={evt => console.log('Cancelled')}
       />
     );
   });
@@ -34,7 +33,7 @@ describe('Dialog', () => {
           <DialogHeader>
             <DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
           </DialogHeader>
-          <DialogBody>This is a custom dialog.</DialogBody>
+          <DialogBody scrollable>This is a custom dialog.</DialogBody>
           <DialogFooter>
             <DialogFooterButton cancel>Cancel</DialogFooterButton>
             <DialogFooterButton accept>Sweet!</DialogFooterButton>

@@ -8,7 +8,7 @@ We strive to make developing RMWC as frictionless as possible, both for ourselve
 
 ### Setting up your development environment
 
-You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC. We test using both the latest node versions, so use the latest where possible.
+You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC. We test using the latest node versions, so use the latest where possible. The dev environment is verified to work with Node versions 7 and up.
 
 > **NOTE**: If you expect to commit updated or new dependencies, please ensure you are using npm 5, which will
 > also update `package-lock.json` correctly when you install or upgrade packages.

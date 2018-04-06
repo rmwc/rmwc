@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '../FormField';
 import { simpleTag, withMDCToggle } from '../Base';
+import type { SimpleTagPropsT } from '../Base';
 
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
@@ -55,7 +56,7 @@ export const CheckboxLabel = simpleTag({
   tag: 'label'
 });
 
-type CheckboxPropsT = {
+export type CheckboxPropsT = {
   /** A DOM ID for the toggle. */
   id?: string,
   /** Disables the control. */
@@ -66,7 +67,7 @@ type CheckboxPropsT = {
   indeterminate?: boolean,
   /** A label for the control. */
   label?: string
-};
+} & SimpleTagPropsT;
 
 /**
  * A Checkbox component

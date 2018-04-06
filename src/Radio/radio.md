@@ -43,21 +43,21 @@ import { Radio } from 'rmwc/Radio';
   label="Cookies"
   value="cookies"
   name="myRadioGroup"
-  onChange={evt => this.setState({value: evt.target.value})}
+  onChange={evt => console.log(evt.target.value)}
 />
 
 <Radio
   label="Pizza"
   value="pizza"
   name="myRadioGroup"
-  onChange={evt => this.setState({value: evt.target.value})}
+  onChange={evt => console.log(evt.target.value)}
 />
 
 <Radio
   label="Icecream"
   value="icecream"
   name="myRadioGroup"
-  onChange={evt => this.setState({value: evt.target.value})}
+  onChange={evt => console.log(evt.target.value)}
 />
 ```
 

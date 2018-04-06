@@ -18,7 +18,8 @@ export type SimpleTagPropsT = {
   wrap?: boolean,
   elementRef?: React.Ref<*>,
   theme?: string | string[],
-  children?: React.Node
+  children?: React.Node,
+  className?: string
 };
 
 export const simpleTag = ({
@@ -91,7 +92,7 @@ export const simpleTag = ({
         if (!rest.children) return null;
 
         // make sure we delete our children here
-        // so we dont recrusively clonse ourselves
+        // so we dont recrusively clone ourselves
         delete safeRest.children;
         const child = React.Children.only(rest.children);
         return React.cloneElement(child, {

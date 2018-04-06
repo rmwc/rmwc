@@ -15,7 +15,7 @@ import type { SimpleTagPropsT } from '../Base';
 /****************************************************************
  * Public
  ****************************************************************/
-type CardPropsT = {
+export type CardPropsT = {
   /** Removes the shadow and displays a hairline stroke instead */
   stroked: boolean
 } & SimpleTagPropsT;
@@ -36,7 +36,7 @@ export class Card extends simpleTag({
   }
 }
 
-type CardMediaPropsT = {
+export type CardMediaPropsT = {
   /** Automatically scales the media area’s height to equal its width */
   square: boolean,
   /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */
@@ -75,7 +75,7 @@ export const CardPrimaryAction = withRipple({ surface: false })(
   })
 );
 
-type CardActionsT = {
+export type CardActionsT = {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
   fullBleed: boolean
 } & SimpleTagPropsT;
@@ -107,18 +107,19 @@ export const CardActionIcons = simpleTag({
   classNames: 'mdc-card__action-icons'
 });
 
-type CardActionPropsT = {
+export type CardActionPropsT = {
   /** An action icon with no text. This is an instance of the Icon component. */
   icon: boolean,
   /** An toggleable action icon with no text. This is an instance of the IconToggle component. */
   iconToggle: boolean
-};
+} & SimpleTagPropsT;
 
 /** A Card action Button. Will return a Button component by default. */
 export const CardAction = ({
   button,
   icon,
   iconToggle,
+  className,
   ...rest
 }: CardActionPropsT) => {
   if (icon) {
@@ -126,7 +127,7 @@ export const CardAction = ({
       <Ripple unbounded {...rest}>
         <Icon
           className={classNames(
-            rest.className,
+            className,
             'mdc-card__action',
             'mdc-card__action--icon'
           )}
@@ -140,7 +141,7 @@ export const CardAction = ({
       <IconToggle
         {...rest}
         className={classNames(
-          rest.className,
+          className,
           'mdc-card__action',
           'mdc-card__action--icon'
         )}
@@ -152,7 +153,7 @@ export const CardAction = ({
     <Button
       {...rest}
       className={classNames(
-        rest.className,
+        className,
         'mdc-card__action',
         'mdc-card__action--button'
       )}

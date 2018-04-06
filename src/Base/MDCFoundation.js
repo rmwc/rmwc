@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classNames from 'classnames';
 
 /************************************************************************
  * Utils
@@ -44,20 +45,28 @@ export const syncFoundationProp = (
 export const addClass = () =>
   function(className: string) {
     if (!this.state.classes.has(className)) {
-      this.safeSetState(prevState => ({
-        classes: prevState.classes.add(className)
-      }));
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
+      window.requestAnimationFrame(() => {
+        this.safeSetState(prevState => ({
+          classes: prevState.classes.add(className)
+        }));
+      });
     }
   };
 
 export const removeClass = () =>
   function(className: string) {
     if (this.state.classes.has(className)) {
-      this.safeSetState(prevState => ({
-        classes: prevState.classes.delete(className) ?
-          prevState.classes :
-          prevState.classes
-      }));
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
+      window.requestAnimationFrame(() => {
+        this.safeSetState(prevState => ({
+          classes: prevState.classes.delete(className) ?
+            prevState.classes :
+            prevState.classes
+        }));
+      });
     }
   };
 
@@ -121,17 +130,7 @@ export const withFoundation = ({
     }
 
     componentDidMount() {
-      this.foundation_ = this.getDefaultFoundation();
-
-      Object.entries(adapter).forEach(([handlerName, handler]) => {
-        this.foundation_.adapter_[handlerName] = handler.bind(this);
-      });
-      this.foundation_.init();
-      this.initialSyncWithDOM();
-      this.syncWithProps(this.props);
-
-      // this method should be deprecated in the future in favor of standard refs
-      this.props.apiRef && this.props.apiRef(this);
+      this.initFoundation();
     }
 
     componentWillReceiveProps(nextProps: P) {
@@ -154,6 +153,25 @@ export const withFoundation = ({
 
     foundationRefs: { [string]: (ref: window.DomElement) => mixed };
 
+    get classes() {
+      return classNames(this.props.className, [...this.state.classes]);
+    }
+
+    initFoundation() {
+      this.foundation_ = this.getDefaultFoundation();
+
+      Object.entries(adapter).forEach(([handlerName, handler]) => {
+        this.foundation_.adapter_[handlerName] = handler.bind(this);
+      });
+      this.initialize();
+      this.foundation_.init();
+      this.initialSyncWithDOM();
+      this.syncWithProps(this.props);
+
+      // this method should be deprecated in the future in favor of standard refs
+      this.props.apiRef && this.props.apiRef(this);
+    }
+
     destroy() {
       // Subclasses may implement this method to release any resources / deregister any listeners they have
       // attached. An example of this might be deregistering a resize event from the window object.
@@ -170,6 +188,7 @@ export const withFoundation = ({
     }
 
     syncWithProps(nextProps: P) {}
+    initialize() {}
     initialSyncWithDOM() {}
 
     /**
@@ -199,6 +218,8 @@ export const withFoundation = ({
 
       // MDC can change state internally, if we are triggering a handler, resync with our props
       this.syncWithProps(this.props);
+
+      return evt;
     }
   }
 

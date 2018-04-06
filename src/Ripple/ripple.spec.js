@@ -50,6 +50,6 @@ describe('Ripple', () => {
       </Ripple>
     );
 
-    expect(!!~el.html().search('mdc-ripple-upgraded--unbounded')).toBe(true);
+    expect(!!~el.html().search('data-mdc-ripple-is-unbounded')).toBe(true);
   });
 });
