@@ -12,57 +12,13 @@ A React (15 / 16) wrapper for Material Design (Web) Components v0.32.0
 
 RMWC is moving towards a direct implementation with MDC's Foundation classes. This means direct code reuse from the material-components-web implementation which will result in better performance, reliability, less bugs, and easier releases for RMWC. These will be rolled out a few at a time every release and will contain minimal breaking changes.
 
-Patch 1.4.1
+MDC has been upgraded to 0.34.0
 
-* Fixes issues with SSR and foundation components
-* Contains a workaround for a MDC bug in Slider
-* Contains fixes in Select for React 15.x.
+The biggest changes in this release are related to Selects. MDC has switched to using standard CSS select elements. This shouldn't break anything in RMWC unless you were using any custom UI to render your List Items. Also, the light and dark variants of primary and secondary theme colors have been removed.
 
-MDC has been upgraded to 0.32.0
+Other than that, there has been some additional housekeeping to improve the developer experience including publishing the unminified ES6 code, exposing the built in FlowTypes, and more testing around server side rendering.
 
-* Slider
-
-  * Implemented the foundation adapter.
-  * BREAKING CHANGE: onInput and onChange now use MDC's custom events and have evt.detail.value instead of evt.target.value.
-
-* IconToggle
-
-  * Implemented the foundation adapter.
-  * BREAKING CHANGE: onChange now uses MDC's custom event and has evt.detail.isOn instead of evt.target.value.
-
-* Chip
-
-  * Implemented the foundation adapter.
-  * Updated to add chip selected state.
-  * Added additional custom event handlers from the foundation
-
-* Ripple
-  * Implemented the foundation adapter.
-  * Corrected issues with unbounded ripples
-
-Notes from 0.31.0
-
-* Feature: ChipIcon
-  There are now leading and trailing icons for the chip component. This resulted in a minor breaking change, you now have to wrap the text inside of your chip with a ChipText component. See the docs.
-* Feature: CardPrimaryAction
-  This makes the primary area of a card clickable with a ripple.
-
-If you are updating from 1.1.x to MDC 0.30.0
-
-* Feature: Chip
-  There is a new Chip and ChipSet component for you to use.
-* Feature: Standard and Box Select
-  There are new stylings for the Select component
-* Feature: ButtonIcon
-  You can now use the ButtonIcon component to render an Icon inside of a Button
-* Breaking Change: cssOnly Select Removal
-  MDC has completely removed cssOnly selects. If you relied on the cssOnly Select for mobile, guidance is to wrap the select in your own component that returns a standard CSS select.
-* Breaking Change: Menu
-  MDC renamed SimpleMenu has been renamed to Menu. In addition to this, RMWC uses the "Simple"Component naming convention and has added a SimpleMenu component that manages state. To upgrade, just rename your exising SimpleMenu components to Menu, or see the new SimpleMenu usage and adjust accordingly.
-* Breaking Change: Cards
-  MDC has completely reworked their card layouts to be much more minimal. Guidance on this is to use your own CSS to style the content appropriately.
-* Breaking Change: Dark Theme
-  The automatic dark theme styling and themeDark props have been entirely removed from MDC. Guidance on this is to use your own CSS to style things in a dark theme context.
+View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
 ## Goals
 

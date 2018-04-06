@@ -84,7 +84,7 @@ export const TabIconText = simpleTag({
   classNames: 'mdc-tab__icon-text'
 });
 
-type TabBarPropsT = {
+export type TabBarPropsT = {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
   onChange?: (evt: Event) => mixed,
   /** The index of the active tab. */
@@ -194,14 +194,14 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
   }
 );
 
-type TabBarScrollerPropsT = {
+export type TabBarScrollerPropsT = {
   /** The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons. */
   indicatorForward?: React.Node,
   /** The back indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.  */
   indicatorBack?: React.Node
 };
 
-type TabBarScrollerStateT = {
+export type TabBarScrollerStateT = {
   tabBarApi: ?mixed
 };
 

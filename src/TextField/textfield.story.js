@@ -18,6 +18,7 @@ class TextFieldStory extends React.Component {
   render() {
     return (
       <TextField
+        pattern="[A-Za-z]{3}"
         label={text('label', 'Hello world')}
         value={text('value', this.state.value)}
         disabled={boolean('disabled', false)}
@@ -25,6 +26,7 @@ class TextFieldStory extends React.Component {
         required={boolean('required', false)}
         box={boolean('box', false)}
         outlined={boolean('outlined', false)}
+        invalid={boolean('invalid', undefined)}
         onChange={evt => this.onChange(evt)}
         rows={number('rows', 8)}
         cols={number('cols', 0)}
@@ -36,6 +38,24 @@ class TextFieldStory extends React.Component {
   }
 }
 
-storiesOf('Inputs and Controls', module).add('TextField', () => (
-  <TextFieldStory />
-));
+class TextFieldUncontrolledStory extends React.Component {
+  state = {
+    counter: 0
+  };
+  render() {
+    return (
+      <div>
+        <TextField label="Hello" />
+        <button
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Force Re-render {this.state.counter}
+        </button>
+      </div>
+    );
+  }
+}
+
+storiesOf('Inputs and Controls', module)
+  .add('TextField (Controlled)', () => <TextFieldStory />)
+  .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />);

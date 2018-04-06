@@ -39,7 +39,7 @@ export const RadioLabel = simpleTag({
   tag: 'label'
 });
 
-type RadioPropsT = {
+export type RadioPropsT = {
   /** A DOM ID for the toggle. */
   id?: string,
   /** Disables the control. */

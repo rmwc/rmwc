@@ -1,10 +1,21 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
-import { MDCDialog } from '@material/dialog/dist/mdc.dialog';
+import {
+  MDCDialog,
+  MDCDialogFoundation
+} from '@material/dialog/dist/mdc.dialog';
 
 import Button from '../Button';
-import { simpleTag, withMDC, noop } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+import { simpleTag, noop } from '../Base';
+
+import {
+  withFoundation,
+  syncFoundationProp,
+  addClass,
+  removeClass
+} from '../Base/MDCFoundation';
 
 export const DialogRoot = simpleTag({
   displayName: 'DialogRoot',
@@ -41,8 +52,7 @@ export const DialogHeaderTitle = simpleTag({
   classNames: 'mdc-dialog__header__title'
 });
 
-
-type DialogBodyT = {
+export type DialogBodyT = {
   /** Make it scrollable. */
   scrollable?: boolean
 } & SimpleTagPropsT;
@@ -71,7 +81,7 @@ export const DialogFooter = simpleTag({
   classNames: 'mdc-dialog__footer'
 });
 
-type DialogFooterButtonT = {
+export type DialogFooterButtonT = {
   /** Make it an accept button. */
   accept?: boolean,
   /** Make it a cancel button. */
@@ -100,7 +110,7 @@ export class DialogFooterButton extends simpleTag({
   }
 }
 
-type DialogPropsT = {
+export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
   /** Callback for when the accept Button is pressed. */
@@ -111,50 +121,39 @@ type DialogPropsT = {
   onClose: (evt: Event) => mixed
 };
 
-export const Dialog = withMDC({
-  mdcConstructor: MDCDialog,
-  mdcElementRef: true,
-  mdcEvents: {
-    'MDCDialog:accept': (evt, props) => {
-      props.onAccept(evt);
-      props.onClose(evt);
+export class Dialog extends withFoundation({
+  constructor: MDCDialog,
+  adapter: {
+    addClass: addClass(),
+    removeClass: removeClass(),
+    notifyAccept: function() {
+      const evt = this.emit(MDCDialogFoundation.strings.ACCEPT_EVENT);
+      this.props.onClose && this.props.onClose(evt);
     },
-    'MDCDialog:cancel': (evt, props) => {
-      props.onCancel(evt);
-      props.onClose(evt);
-    }
-  },
-  defaultProps: {
-    open: false,
-    onAccept: noop,
-    onCancel: noop,
-    onClose: noop
-  },
-  onUpdate: (props, nextProps, api) => {
-    if (api && api.open !== !!nextProps.open) {
-      nextProps.open ? api.show() : api.close();
+    notifyCancel: function() {
+      const evt = this.emit(MDCDialogFoundation.strings.CANCEL_EVENT);
+      this.props.onClose && this.props.onClose(evt);
     }
   }
-})(
-  class extends React.Component<DialogPropsT> {
-    static displayName = 'Dialog';
+})<DialogPropsT> {
+  static displayName = 'Dialog';
 
-    render() {
-      const {
-        open,
-        onAccept,
-        onCancel,
-        onClose,
-        mdcElementRef,
-        ...rest
-      } = this.props;
-
-      return <DialogRoot elementRef={mdcElementRef} {...rest} />;
-    }
+  syncWithProps(nextProps: DialogPropsT) {
+    // open
+    syncFoundationProp(nextProps.open, this.open, () => {
+      nextProps.open ? this.show() : this.close();
+    });
   }
-);
 
-type SimpleDialogPropsT = {
+  render() {
+    const { open, onAccept, onCancel, onClose, ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+
+    return <DialogRoot {...rest} elementRef={root_} className={this.classes} />;
+  }
+}
+
+export type SimpleDialogPropsT = {
   /** A title for the default Dialog template. */
   title?: React.Node,
   /** Additional Dialog header content for the default Dialog template. */

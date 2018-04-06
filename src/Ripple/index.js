@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
@@ -10,7 +11,7 @@ import {
   syncFoundationProp
 } from '../Base/MDCFoundation';
 
-type RipplePropsT = {
+export type RipplePropsT = {
   /** Makes the ripple unbounded */
   unbounded?: boolean,
   /** Makes the ripple primary */
@@ -30,7 +31,17 @@ export class Ripple extends withFoundation({
 })<RipplePropsT> {
   static displayName = 'Ripple';
 
+  componentDidMount() {
+    // Ripples can be used with many types of components
+    // we need to use ReactDOM as an escape hatch to just find the DOMnode
+    this.root_ = ReactDOM.findDOMNode(this);
+    super.componentDidMount();
+  }
+
   syncWithProps(nextProps: RipplePropsT) {
+    // We dont know how React might have changed our dom node, Regrab it.
+    this.root_ = ReactDOM.findDOMNode(this);
+
     // unbounded
     syncFoundationProp(
       nextProps.unbounded,
@@ -58,15 +69,7 @@ export class Ripple extends withFoundation({
       ...rest
     } = this.props;
 
-    const { root_ } = this.foundationRefs;
-
     const child = React.Children.only(children);
-
-    // a little tricky... We only want to pass a ref if we are dealing with a dom element, aka div, p, aside
-    // Otherwise we have a class, and we want to pass elementRef down the chain.
-    const refProp = {
-      [typeof child.type !== 'string' ? 'elementRef' : 'ref']: root_
-    };
 
     const unboundedProp = unbounded ?
       { 'data-mdc-ripple-is-unbounded': true } :
@@ -75,7 +78,6 @@ export class Ripple extends withFoundation({
     return React.cloneElement(child, {
       ...child.props,
       ...rest,
-      ...refProp,
       ...unboundedProp,
       className: classNames(
         className,

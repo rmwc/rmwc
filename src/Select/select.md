@@ -67,21 +67,74 @@ If you want full control over the child `ListItems`, you can manually build the 
 
 ```jsx render
 import { Select } from 'rmwc/Select';
-import { ListItem } from 'rmwc/List';
 
 <Select
   label="Manually Built"
-  value={'Pizza'}
 >
-  <ListItem role="option" id="Cookies" tabIndex="0">
+  <option value="Cookies">
     Cookies
-  </ListItem>
-  <ListItem role="option" id="Pizza" tabIndex="0">
+  </option>
+  <option value="Pizza">
     Pizza
-  </ListItem>
-  <ListItem role="option" id="Icecream" tabIndex="0">
+  </option>
+  <option value="Icecream">
     Icecream
-  </ListItem>
+  </option>
+</Select>
+```
+
+## Option Groups
+
+You can build a select with optgroup.
+
+```jsx render
+import { Select } from 'rmwc/Select';
+
+<Select
+  label="Formatted"
+  options={[
+    {
+      label: 'Dinner',
+      options: [
+        {
+          label: 'Pizza',
+          value: '2',
+        }
+      ]
+    },
+    {
+      label: 'Dessert',
+      options: [
+        {
+          label: 'Cookies',
+          value: '1'
+        },
+
+        {
+          label: 'Icecream',
+          value: '3'
+        }
+      ]
+    }
+  ]}
+/>
+
+<Select
+  label="Manually Built"
+>
+  <optgroup label="Dinner">
+    <option value="Pizza">
+      Pizza
+    </option>
+  </optgroup>
+  <optgroup label="Dessert">
+    <option value="Cookies">
+      Cookies
+    </option>
+    <option value="Icecream">
+      Icecream
+    </option>
+  </optgroup>
 </Select>
 ```
 

@@ -14,18 +14,10 @@ import { Theme } from 'rmwc/Theme';
   <div style={{ backgroundColor: '#ddd' }}>
     {[
       'primary',
-      'primary-light',
-      'primary-dark',
       'secondary',
-      'secondary-light',
-      'secondary-dark',
       'background',
       'primary-bg',
-      'primary-light-bg',
-      'primary-dark-bg',
       'secondary-bg',
-      'secondary-light-bg',
-      'secondary-dark-bg',
       'text-primary-on-background',
       'text-secondary-on-background',
       'text-hint-on-background',

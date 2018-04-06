@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-components-web": "0.32.0"
+    "material-components-web": "0.34.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -64,6 +64,7 @@
     "eslint-plugin-flowtype": "^2.41.0",
     "flow-bin": "^0.62.0",
     "generate-changelog": "^1.7.0",
+    "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.7.1",
@@ -75,5 +76,18 @@
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/**/*.flow.js",
+      "!src/**/*.story.js",
+      "!src/index.js",
+      "!src/rmwc.js",
+      "!src/Base/DocumentComponent.js",
+      "!src/Base/story-with-state.js",
+      "!src/docs/*",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }

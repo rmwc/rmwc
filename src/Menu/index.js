@@ -56,7 +56,7 @@ const ANCHOR_CORNER_MAP = {
 // prettier-ignore
 type AnchorT = 'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
-type MenuPropsT = {
+export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires when the Menu closes. */
@@ -136,14 +136,14 @@ export const Menu = withMDC({
   }
 );
 
-type SimpleMenuPropsT = {
+export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
   handle: React.Node,
   /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
   rootProps: Object
 } & MenuPropsT;
 
-type SimpleMenuStateT = {
+export type SimpleMenuStateT = {
   open: boolean
 };
 
