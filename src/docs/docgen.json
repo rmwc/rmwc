@@ -2939,7 +2939,21 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the Select have a visiual box."
+          "description": "Makes the Select have a visual box."
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "Props for the root element. By default, additional props spread to the native select element."
+        },
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "A className for the root element."
         }
       }
     }
