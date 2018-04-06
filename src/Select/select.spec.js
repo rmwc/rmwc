@@ -49,8 +49,14 @@ describe('Select', () => {
     mount(<Select rootProps={{ name: 'test' }} />);
   });
 
-  it('can be disabled', () => {
-    mount(<Select disabled options={[1, 2, 3]} />);
+  it('can be disabled', done => {
+    const el = mount(<Select disabled={false} options={[1, 2, 3]} />);
+    expect(el.html().includes('mdc-select--disabled')).toBe(false);
+    el.setProps({ disabled: true });
+    setTimeout(() => {
+      expect(el.html().includes('mdc-select--disabled')).toBe(true);
+      done();
+    });
   });
 
   it('can be box', () => {

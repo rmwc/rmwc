@@ -249,6 +249,10 @@ ul li {
   flex: 1;
 }
 
+#page-home .app__content header a {
+  text-decoration: none;
+}
+
 #page-home .app__content header:before {
   content: '';
   background-image: linear-gradient(white, transparent);

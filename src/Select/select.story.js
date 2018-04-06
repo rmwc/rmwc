@@ -10,12 +10,17 @@ const MutatingSelect = storyWithState(
   state => ({
     value: text('value', state.value || 'Cookies'),
     label: text('label', state.label || 'Label'),
-    options: array('options', state.options || ['Cookies', 'Pizza', 'Icecream'])
+    options: array(
+      'options',
+      state.options || ['Cookies', 'Pizza', 'Icecream']
+    ),
+    disabled: boolean('disabled', state.disabled || false)
   }),
   function() {
     return (
       <Select
         {...this.props}
+        disabled={this.state.disabled}
         label={this.state.label}
         value={this.state.value}
         options={this.state.options}
