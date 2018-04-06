@@ -158,10 +158,9 @@ export type TextFieldPropsT = {
 
 export class TextField extends withFoundation({
   constructor: MDCTextField,
-  adpater: {
+  adapter: {
     addClass: addClass(),
-    removeClass: removeClass(),
-    getValue: () => {}
+    removeClass: removeClass()
   }
 })<TextFieldPropsT> {
   static displayName = 'TextField';
