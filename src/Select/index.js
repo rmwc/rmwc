@@ -3,7 +3,12 @@ import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
-import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
+import {
+  withFoundation,
+  addClass,
+  removeClass,
+  syncFoundationProp
+} from '../Base/MDCFoundation';
 
 export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
@@ -104,6 +109,15 @@ export class Select extends withFoundation({
   }
 })<SelectPropsT> {
   static displayName = 'Select';
+
+  syncWithProps(nextProps: SelectPropsT) {
+    //disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
+  }
 
   render() {
     const {

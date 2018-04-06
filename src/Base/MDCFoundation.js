@@ -47,7 +47,7 @@ export const addClass = () =>
     if (!this.state.classes.has(className)) {
       // The animation frame corrects an issue where MDC would set a class
       // on a form element and cause re-render before the new value could actually be set from the onChange
-      window.requestAnimationFrame(() => {
+      setTimeout(() => {
         this.safeSetState(prevState => ({
           classes: prevState.classes.add(className)
         }));
@@ -60,7 +60,7 @@ export const removeClass = () =>
     if (this.state.classes.has(className)) {
       // The animation frame corrects an issue where MDC would set a class
       // on a form element and cause re-render before the new value could actually be set from the onChange
-      window.requestAnimationFrame(() => {
+      setTimeout(() => {
         this.safeSetState(prevState => ({
           classes: prevState.classes.delete(className) ?
             prevState.classes :
