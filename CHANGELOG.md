@@ -1,3 +1,9 @@
+#### 1.5.2 (2018-04-06)
+
+##### Bug Fixes
+
+* **Select:**  Corrects issue with syncing of disabled prop ([44fae50b](https://github.com/jamesmfriedman/rmwc/commit/44fae50b7e3dbc097c2fcb2e1774470531ff5721))
+
 #### 1.5.1 (2018-04-06)
 
 ##### Bug Fixes
