@@ -1,3 +1,9 @@
+#### 1.5.1 (2018-04-06)
+
+##### Bug Fixes
+
+* **Select:**  Don’t spread className to native control ([54c6fc31](https://github.com/jamesmfriedman/rmwc/commit/54c6fc31b3c4fb0561470de80cf20338dee426d1))
+
 #### 1.5.0 (2018-04-06)
 
 ##### Breaking Changes
