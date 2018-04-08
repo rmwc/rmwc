@@ -85,7 +85,9 @@ describe('Icon', () => {
         use="CUSTOM"
       />
     );
-    expect(el.html()).toBe(`<div>Customized-CUSTOM</div>`);
+    expect(el.html().replace(/<!--.+?-->/g, '')).toBe(
+      `<div>Customized-CUSTOM</div>`
+    );
 
     const el2 = mount(
       <Icon
@@ -95,6 +97,8 @@ describe('Icon', () => {
         CUSTOM
       </Icon>
     );
-    expect(el2.html()).toBe(`<div>Customized-CUSTOM</div>`);
+    expect(el2.html().replace(/<!--.+?-->/g, '')).toBe(
+      `<div>Customized-CUSTOM</div>`
+    );
   });
 });

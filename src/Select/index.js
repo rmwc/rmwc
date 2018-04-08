@@ -145,11 +145,11 @@ export class Select extends withFoundation({
         <SelectNativeControl {...rest} value={value}>
           {!!placeholder.length && <option value="">{placeholder}</option>}
           {selectOptions &&
-            selectOptions.map(({ label, ...option }, i) => {
-              if (option.options) {
+            selectOptions.map(({ label, options, ...option }, i) => {
+              if (options) {
                 return (
                   <optgroup tag="optgroup" label={label} key={label}>
-                    {option.options.map(({ label, ...option }, i) => (
+                    {options.map(({ label, ...option }, i) => (
                       <option key={label} {...option} value={option.value}>
                         {label}
                       </option>

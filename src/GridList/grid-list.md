@@ -55,7 +55,7 @@ import { Select } from 'rmwc/Select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="GridList" />
 <DocumentComponent displayName="GridTile" />

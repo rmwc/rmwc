@@ -8,3 +8,4 @@ public/
 scripts/
 jsconfig.json
 .babelrc
+vendors

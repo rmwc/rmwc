@@ -60,6 +60,7 @@ export const Radio = withMDCToggle({ mdcConstructor: MDCRadio })(
         children,
         apiRef,
         generatedId,
+        indeterminate,
         mdcElementRef,
         ...rest
       } = this.props;

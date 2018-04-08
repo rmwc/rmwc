@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuAnchor } from './';
 import { Button } from '../Button';
-import { storyWithState } from '../Base/story-with-state';
+import { storyWithState } from '../Base/utils/story-with-state';
 
 const MenuStory = storyWithState(
   state => ({
