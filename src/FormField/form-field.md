@@ -17,7 +17,7 @@ import { FormField } from 'rmwc/FormField';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="FormField" />
 ```

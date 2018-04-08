@@ -18,7 +18,7 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Button" />
 <DocumentComponent displayName="ButtonIcon" />
