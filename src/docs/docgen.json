@@ -2868,12 +2868,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | mixed[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | mixed[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | mixed[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
+                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | mixed[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3051,7 +3051,7 @@
             "name": "string"
           },
           "required": false,
-          "description": "Placeholder text for the form control."
+          "description": "Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label."
         },
         "disabled": {
           "flowType": {

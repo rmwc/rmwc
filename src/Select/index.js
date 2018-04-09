@@ -57,7 +57,7 @@ export type SelectPropsT = {
   options?: string[] | { [value: string]: string } | mixed[],
   /** A label for the form control. */
   label?: string,
-  /** Placeholder text for the form control. */
+  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
   placeholder?: string,
   /** Disables the form control. */
   disabled?: boolean,
@@ -104,7 +104,7 @@ export class Select extends withFoundation({
     removeClass: removeClass(),
     getValue: function() {
       const value = this.nativeControl_.value;
-      return value === '' ? ' ' : value;
+      return value === '' && this.props.placeholder ? ' ' : value;
     }
   }
 })<SelectPropsT> {
@@ -121,7 +121,7 @@ export class Select extends withFoundation({
 
   render() {
     const {
-      placeholder = '',
+      placeholder,
       children,
       value,
       label = '',
@@ -142,8 +142,12 @@ export class Select extends withFoundation({
         elementRef={root_}
         className={this.classes}
       >
-        <SelectNativeControl {...rest} value={value}>
-          {!!placeholder.length && <option value="">{placeholder}</option>}
+        <SelectNativeControl {...rest} value={value} defaultValue="">
+          {(!!placeholder || placeholder === '') && (
+            <option value="" disabled={placeholder === ''}>
+              {placeholder}
+            </option>
+          )}
           {selectOptions &&
             selectOptions.map(({ label, options, ...option }, i) => {
               if (options) {
