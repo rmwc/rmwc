@@ -58,6 +58,7 @@ export const Switch = withMDCToggle()(
         id,
         children,
         generatedId,
+        indeterminate,
         mdcElementRef,
         rootProps = {},
         ...rest

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 import { simpleTag } from '../Base';
-import { randomId } from '../Base/randomId';
+import { randomId } from '../Base/utils/randomId';
 
 import { Icon } from '../Icon';
 import { LineRipple } from '../LineRipple';

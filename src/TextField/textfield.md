@@ -37,7 +37,7 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="TextField" />
 <DocumentComponent displayName="TextFieldIcon" />

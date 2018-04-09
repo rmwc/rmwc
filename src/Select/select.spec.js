@@ -12,6 +12,21 @@ describe('Select', () => {
     );
   });
 
+  it('can have empty placeholder', () => {
+    const el = mount(
+      <Select
+        placeholder=""
+        options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
+      />
+    );
+
+    // make sure the label is not floating
+    expect(el.html().includes('mdc-select__label--float-above')).toBe(false);
+
+    // make sure we have 4 options
+    expect(el.find('option').length).toBe(4);
+  });
+
   it('can accept options array', () => {
     mount(<Select placeholder="Select a food" options={[1, 2, 3]} />);
   });
