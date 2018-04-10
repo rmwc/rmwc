@@ -1,9 +1,7 @@
 const fs = require('fs-extra');
 const childProcess = require('child_process');
 
-//export REACT_TEST_VERSION=15.5.x && react-app-rewired test --env=jsdom
-
-fs.readdir('vendors', function(err, files) {
+fs.readdir('react-versions', function(err, files) {
   const reactVersions = files.filter(f => f.startsWith('react-'));
 
   reactVersions.forEach(reactVersion => {

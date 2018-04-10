@@ -8,4 +8,4 @@ public/
 scripts/
 jsconfig.json
 .babelrc
-vendors
+react-versions
