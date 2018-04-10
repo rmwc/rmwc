@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { Radio } from './';
-import { storyWithState } from '../Base/story-with-state';
+import { storyWithState } from '../Base/utils/story-with-state';
 
 const RadioStory = storyWithState(
 	state => ({

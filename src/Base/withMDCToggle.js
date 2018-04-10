@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { withMDC } from './withMDC';
-import { randomId } from './randomId';
+import { randomId } from './utils/randomId';
 
 type WithMDCToggleOptsT = {
   mdcConstructor?: Function

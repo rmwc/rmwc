@@ -6,7 +6,7 @@ import type { SimpleTagPropsT } from '../Base';
 
 import * as React from 'react';
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
-import { noop } from '../Base/noop';
+import { noop } from '../Base/utils/noop';
 import Button from '../Button';
 import { simpleTag, withMDC } from '../Base';
 

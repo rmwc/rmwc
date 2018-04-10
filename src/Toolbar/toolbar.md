@@ -68,7 +68,7 @@ import {
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Toolbar" />
 <DocumentComponent displayName="ToolbarRow" />
