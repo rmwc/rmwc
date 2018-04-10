@@ -55,4 +55,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Webstorm
-.idea
+.ideanode_modules/
