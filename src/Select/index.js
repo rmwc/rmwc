@@ -142,7 +142,11 @@ export class Select extends withFoundation({
         elementRef={root_}
         className={this.classes}
       >
-        <SelectNativeControl {...rest} value={value} defaultValue="">
+        <SelectNativeControl
+          {...rest}
+          value={value}
+          defaultValue={value ? undefined : ''}
+        >
           {(!!placeholder || placeholder === '') && (
             <option value="" disabled={placeholder === ''}>
               {placeholder}
