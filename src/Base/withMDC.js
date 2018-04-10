@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { noop } from './noop';
+import { noop } from './utils/noop';
 
 export type WithMDCPropsT = {
   apiRef: (apiInstance: Object) => mixed

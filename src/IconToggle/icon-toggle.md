@@ -13,7 +13,7 @@ import { IconToggle } from 'rmwc/IconToggle';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 import { IconToggle } from 'rmwc/IconToggle';
 
 <DocumentComponent component={IconToggle} displayName="IconToggle" />

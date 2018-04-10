@@ -63,7 +63,7 @@ export class GridCell extends simpleTag({
         props.desktop !== undefined
     }
   ],
-  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order']
+  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']
 })<GridCellPropsT> {
   render() {
     return super.render();

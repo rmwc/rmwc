@@ -7,7 +7,7 @@ import from **rmwc/Select**
 
 ## Data Driven Selects
 
-To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements.
+To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
 
 ```jsx render
 import { Select } from 'rmwc/Select';
@@ -24,6 +24,7 @@ import { Select } from 'rmwc/Select';
   value={this.state.value}
   onChange={evt => this.setState({value: evt.target.value})}
   label="Array"
+  placeholder=""
   options={[
     {
       label: 'Cookies',
@@ -69,8 +70,10 @@ If you want full control over the child `ListItems`, you can manually build the 
 import { Select } from 'rmwc/Select';
 
 <Select
-  label="Manually Built"
+  label="Manual"
+  defaultValue=""
 >
+  <option value="" disabled></option>
   <option value="Cookies">
     Cookies
   </option>
@@ -139,7 +142,7 @@ import { Select } from 'rmwc/Select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from 'rmwc/Base/DocumentComponent';
+import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Select" />
 ```

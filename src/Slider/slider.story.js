@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number } from '@storybook/addon-knobs';
 import { Slider } from './';
 
-import { storyWithState } from '../Base/story-with-state';
+import { storyWithState } from '../Base/utils/story-with-state';
 
 const SliderStory = storyWithState(
   state => ({
