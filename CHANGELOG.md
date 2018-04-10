@@ -1,3 +1,17 @@
+#### 1.5.3 (2018-04-10)
+
+##### Documentation Changes
+
+* **Readme:**  Adding react version coverage ([d9334e2a](https://github.com/jamesmfriedman/rmwc/commit/d9334e2a54dbd04032abd8dde8a75ecfd11b54dc))
+
+##### New Features
+
+* **Test:**  Testing in multiple versions of react ([512828d9](https://github.com/jamesmfriedman/rmwc/commit/512828d910675104f272b32371b4ade84c270005))
+
+##### Bug Fixes
+
+* **Select:**  don’t specify value and default value ([0604c299](https://github.com/jamesmfriedman/rmwc/commit/0604c299c143eac14963a01666d3a89378282774))
+
 #### 1.5.2 (2018-04-06)
 
 ##### Bug Fixes
