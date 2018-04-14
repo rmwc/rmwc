@@ -44,7 +44,7 @@ export const MenuAnchor = simpleTag({
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
-  bottomeLeft: 'BOTTOM_LEFT',
+  bottomLeft: 'BOTTOM_LEFT',
   bottomRight: 'BOTTOM_RIGHT',
   bottomStart: 'BOTTOM_START',
   topEnd: 'TOP_END',
@@ -54,7 +54,7 @@ const ANCHOR_CORNER_MAP = {
 };
 
 // prettier-ignore
-type AnchorT = 'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
+type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
 export type MenuPropsT = {
   /** Whether or not the Menu is open. */
