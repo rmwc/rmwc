@@ -5,6 +5,19 @@ import classNames from 'classnames';
 /************************************************************************
  * Utils
  ***********************************************************************/
+const requestFrames = (
+  callback,
+  frameCount: number,
+  currentFrame?: number = 0
+) => {
+  if (currentFrame < frameCount) {
+    window.requestAnimationFrame(() =>
+      requestFrames(callback, frameCount, currentFrame + 1)
+    );
+  } else {
+    callback();
+  }
+};
 
 /** Copies all known properties from source to target. This is being used in here for class merging. */
 const copyProperties = (target, source) => {
@@ -178,14 +191,12 @@ export const withFoundation = ({
       this.foundation_ = undefined;
 
       // We need to hold onto our refs until all child components are unmounted
-      // Here we just wait an extra frame and set them to null so garbage collection will take over.
-      window.requestAnimationFrame(() =>
-        window.requestAnimationFrame(() => {
-          refs.forEach(refName => {
-            this[refName] = undefined;
-          });
-        })
-      );
+      // Here we just wait a few frames and set them to null so garbage collection will take over.
+      requestFrames(() => {
+        refs.forEach(refName => {
+          this[refName] = undefined;
+        });
+      }, 3);
     }
 
     syncWithProps(nextProps: P) {}
