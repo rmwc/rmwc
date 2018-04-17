@@ -174,15 +174,18 @@ export const withFoundation = ({
 
     destroyComponent() {
       this.destroy();
+      this.foundation_.destroy();
       this.foundation_ = undefined;
 
       // We need to hold onto our refs until all child components are unmounted
       // Here we just wait an extra frame and set them to null so garbage collection will take over.
-      window.requestAnimationFrame(() => {
-        refs.forEach(refName => {
-          this[refName] = null;
-        });
-      });
+      window.requestAnimationFrame(() =>
+        window.requestAnimationFrame(() => {
+          refs.forEach(refName => {
+            this[refName] = undefined;
+          });
+        })
+      );
     }
 
     syncWithProps(nextProps: P) {}

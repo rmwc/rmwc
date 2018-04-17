@@ -203,7 +203,7 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 /** Use your browser's css inspector and inspect the HTML element to see other variables to override. */
 :root {
   --mdc-theme-primary: pink;
-  --mdc-theme-primary: blue;
+  --mdc-theme-secondary: blue;
 }
 ```
 
