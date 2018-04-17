@@ -79,7 +79,8 @@
     "react-hot-loader": "^4.0.1",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^1.1.4",
+    "storybook": "^1.0.0"
   },
   "jest": {
     "resolver": "./scripts/jest-resolver.js",

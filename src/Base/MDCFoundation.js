@@ -15,7 +15,7 @@ const copyProperties = (target, source) => {
   allPropertyNames.forEach(propertyName => {
     if (
       propertyName.match(
-        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length|destroy)$/
+        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/
       )
     ) {
       return;
@@ -138,7 +138,7 @@ export const withFoundation = ({
     }
 
     componentWillUnmount() {
-      this.destroy();
+      this.destroyComponent();
     }
 
     safeSetState(...args) {
@@ -172,10 +172,8 @@ export const withFoundation = ({
       this.props.apiRef && this.props.apiRef(this);
     }
 
-    destroy() {
-      // Subclasses may implement this method to release any resources / deregister any listeners they have
-      // attached. An example of this might be deregistering a resize event from the window object.
-      this.foundation_.destroy();
+    destroyComponent() {
+      this.destroy();
       this.foundation_ = undefined;
 
       // We need to hold onto our refs until all child components are unmounted
@@ -190,6 +188,7 @@ export const withFoundation = ({
     syncWithProps(nextProps: P) {}
     initialize() {}
     initialSyncWithDOM() {}
+    destroy() {}
 
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,

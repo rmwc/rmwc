@@ -27,17 +27,15 @@ export type IconTogglePropsT = {
   disabled?: boolean
 } & SimpleTagPropsT;
 
-export const IconToggleRoot = withRipple({ unbounded: true })(
-  simpleTag({
-    displayName: 'IconToggleRoot',
-    tag: Icon,
-    classNames: 'mdc-icon-toggle',
-    defaultProps: {
-      role: 'button',
-      tabIndex: '0'
-    }
-  })
-);
+export const IconToggleRoot = simpleTag({
+  displayName: 'IconToggleRoot',
+  tag: Icon,
+  classNames: 'mdc-icon-toggle',
+  defaultProps: {
+    role: 'button',
+    tabIndex: '0'
+  }
+});
 
 export class IconToggle extends withFoundation({
   constructor: MDCIconToggle,
@@ -53,6 +51,11 @@ export class IconToggle extends withFoundation({
     off: undefined,
     checked: undefined
   };
+
+  initialize() {
+    this.ripple_ = this.initRipple_();
+    super.initialize();
+  }
 
   syncWithProps(nextProps: IconTogglePropsT) {
     // checked
