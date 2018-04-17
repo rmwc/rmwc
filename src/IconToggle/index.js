@@ -5,7 +5,6 @@ import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop } from '../Base';
-import { withRipple } from '../Base/withRipple';
 import {
   withFoundation,
   syncFoundationProp,

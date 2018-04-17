@@ -8,7 +8,6 @@ import { simpleTag } from '../Base';
 import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
 
 import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
-import { strings } from '@material/chips/chip/constants';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
 /** A chip component. */
@@ -42,7 +41,7 @@ export class Chip extends withFoundation({
   static displayName = 'Chip';
 
   initialize() {
-    this.leadingIcon_ = this.root_.querySelector(strings.LEADING_ICON_SELECTOR);
+    this.leadingIcon_ = this.root_.querySelector('.mdc-chip__icon--leading');
     this.ripple_ = new MDCRipple(this.root_);
     super.initialize();
   }
