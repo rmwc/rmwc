@@ -4,24 +4,23 @@ import type { IconPropsT } from '../Icon';
 
 import * as React from 'react';
 import { Icon } from '../Icon';
-import { simpleTag, withRipple } from '../Base';
+import { simpleTag } from '../Base';
 import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
 
 import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
+import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
 /** A chip component. */
-export const ChipRoot = withRipple()(
-  simpleTag({
-    displayName: 'ChipRoot',
-    classNames: props => [
-      'mdc-chip',
-      {
-        'mdc-chip--selected': props.selected
-      }
-    ],
-    consumeProps: ['selected']
-  })
-);
+export const ChipRoot = simpleTag({
+  displayName: 'ChipRoot',
+  classNames: props => [
+    'mdc-chip',
+    {
+      'mdc-chip--selected': props.selected
+    }
+  ],
+  consumeProps: ['selected']
+});
 
 export type ChipPropsT = {
   /** A custom event you can use from MCW. You can also just use onClick instead. */
@@ -40,6 +39,12 @@ export class Chip extends withFoundation({
   }
 })<ChipPropsT> {
   static displayName = 'Chip';
+
+  initialize() {
+    this.leadingIcon_ = this.root_.querySelector('.mdc-chip__icon--leading');
+    this.ripple_ = new MDCRipple(this.root_);
+    super.initialize();
+  }
 
   render() {
     const {

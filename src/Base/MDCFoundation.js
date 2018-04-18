@@ -5,6 +5,19 @@ import classNames from 'classnames';
 /************************************************************************
  * Utils
  ***********************************************************************/
+const requestFrames = (
+  callback,
+  frameCount: number,
+  currentFrame?: number = 0
+) => {
+  if (currentFrame < frameCount) {
+    window.requestAnimationFrame(() =>
+      requestFrames(callback, frameCount, currentFrame + 1)
+    );
+  } else {
+    callback();
+  }
+};
 
 /** Copies all known properties from source to target. This is being used in here for class merging. */
 const copyProperties = (target, source) => {
@@ -15,7 +28,7 @@ const copyProperties = (target, source) => {
   allPropertyNames.forEach(propertyName => {
     if (
       propertyName.match(
-        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length|destroy)$/
+        /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/
       )
     ) {
       return;
@@ -138,7 +151,7 @@ export const withFoundation = ({
     }
 
     componentWillUnmount() {
-      this.destroy();
+      this.destroyComponent();
     }
 
     safeSetState(...args) {
@@ -172,24 +185,24 @@ export const withFoundation = ({
       this.props.apiRef && this.props.apiRef(this);
     }
 
-    destroy() {
-      // Subclasses may implement this method to release any resources / deregister any listeners they have
-      // attached. An example of this might be deregistering a resize event from the window object.
+    destroyComponent() {
+      this.destroy();
       this.foundation_.destroy();
       this.foundation_ = undefined;
 
       // We need to hold onto our refs until all child components are unmounted
-      // Here we just wait an extra frame and set them to null so garbage collection will take over.
-      window.requestAnimationFrame(() => {
+      // Here we just wait a few frames and set them to null so garbage collection will take over.
+      requestFrames(() => {
         refs.forEach(refName => {
-          this[refName] = null;
+          this[refName] = undefined;
         });
-      });
+      }, 3);
     }
 
     syncWithProps(nextProps: P) {}
     initialize() {}
     initialSyncWithDOM() {}
+    destroy() {}
 
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,

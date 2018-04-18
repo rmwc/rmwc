@@ -10,7 +10,7 @@
 * [SASS Customization](#sass-customization)
 
 ```jsx renderOnly
-<div id="css"/>
+<div id="css" />
 ```
 
 ## Using Standard CSS
@@ -38,7 +38,7 @@ const MyComponent = props => (
 ```
 
 ```jsx renderOnly
-<div id="css-modules"/>
+<div id="css-modules" />
 ```
 
 ## Using CSS Modules
@@ -63,7 +63,7 @@ const MyComponent = props => (
 ```
 
 ```jsx renderOnly
-<div id="styled-components"/>
+<div id="styled-components" />
 ```
 
 ## Using the Styled Components library
@@ -163,7 +163,7 @@ export default {
       {props.children}
       <TextFieldIcon use={props.icon} />
     </SelectIconRow>
-  ),
+  )
 };
 ```
 
@@ -178,16 +178,16 @@ You can then import this and use it like so:
     options={[
       {
         label: 'Solid',
-        value: 'solid',
+        value: 'solid'
       },
       {
         label: 'Liquid',
-        value: 'liquid',
+        value: 'liquid'
       },
       {
         label: 'Unit',
-        value: 'unit',
-      },
+        value: 'unit'
+      }
     ]}
     value={unit_type}
   />
@@ -199,12 +199,16 @@ You can then import this and use it like so:
 You can easily theme the library at runtime using CSS variables. Inspect the `<html>` node in your web inspector and you should see a list of variables you can modify on the `:root` selector.
 
 ```css
-/** in your CSS */
---mdc-theme-primary: pink;
+/** in your main global CSS or style tag */
+/** Use your browser's css inspector and inspect the HTML element to see other variables to override. */
+:root {
+  --mdc-theme-primary: pink;
+  --mdc-theme-secondary: blue;
+}
 ```
 
 ```jsx renderOnly
-<div id="dark-mode"/>
+<div id="dark-mode" />
 ```
 
 ## Dark Mode
@@ -212,7 +216,7 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 Earlier versions of `material-components-web` shipped with a built in Dark Mode but it has since be removed. Please refer to the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
 
 ```jsx renderOnly
-<div id="sass-customization"/>
+<div id="sass-customization" />
 ```
 
 ## SASS customization
