@@ -120,6 +120,8 @@ export class TextFieldIcon extends simpleTag({
   tag: Icon,
   classNames: 'mdc-text-field__icon'
 })<TextFieldIconPropsT> {
+  static displayName = 'TextFieldIcon';
+
   render() {
     return super.render();
   }
@@ -224,7 +226,8 @@ export class TextField extends withFoundation({
     const renderIcon = iconNode => {
       if (
         (iconNode && typeof iconNode === 'string') ||
-        (typeof iconNode === 'object' && iconNode.type !== TextFieldIcon)
+        (iconNode.type &&
+          iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
         return <TextFieldIcon use={iconNode} />;
       }
