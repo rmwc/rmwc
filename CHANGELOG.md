@@ -1,3 +1,16 @@
+#### 1.5.4 (2018-04-19)
+
+##### Documentation Changes
+
+* **Styling:**  adding a little more clarity to css runtime vars [#212](https://github.com/jamesmfriedman/rmwc/pull/212) ([8421c37c](https://github.com/jamesmfriedman/rmwc/commit/8421c37cb7524a724654544cc0faf46b9f22c69d))
+
+##### Bug Fixes
+
+* **TextField:**  corrects issue with trailing icon alignment when using custom icon rendering. ([9890736c](https://github.com/jamesmfriedman/rmwc/commit/9890736c518bff8ebb8affb211ec80ec2747c126))
+* **Foundation:**
+  *  foundation destroy must be explicitly called, fixing ripple tear down bug. ([eb8d126e](https://github.com/jamesmfriedman/rmwc/commit/eb8d126e04632828fd4dd1825cec201d4f9010e6))
+  *  Component destroy was not being copied onto the new prototype and called resulting in memory leaks. ([70ff32ce](https://github.com/jamesmfriedman/rmwc/commit/70ff32cefbf94670f19c91f29b11dc3e5d8cf2c3))
+
 #### 1.5.3 (2018-04-10)
 
 ##### Documentation Changes
