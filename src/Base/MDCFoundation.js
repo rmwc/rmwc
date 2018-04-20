@@ -61,7 +61,7 @@ export const addClass = () =>
       // The animation frame corrects an issue where MDC would set a class
       // on a form element and cause re-render before the new value could actually be set from the onChange
       setTimeout(() => {
-        this.safeSetState(prevState => ({
+        this._safeSetState(prevState => ({
           classes: prevState.classes.add(className)
         }));
       });
@@ -74,7 +74,7 @@ export const removeClass = () =>
       // The animation frame corrects an issue where MDC would set a class
       // on a form element and cause re-render before the new value could actually be set from the onChange
       setTimeout(() => {
-        this.safeSetState(prevState => ({
+        this._safeSetState(prevState => ({
           classes: prevState.classes.delete(className) ?
             prevState.classes :
             prevState.classes
@@ -147,14 +147,18 @@ export const withFoundation = ({
     }
 
     componentWillReceiveProps(nextProps: P) {
-      this.foundation_ && this.syncWithProps(nextProps);
+      this._safeSyncWithProps(nextProps);
     }
 
     componentWillUnmount() {
       this.destroyComponent();
     }
 
-    safeSetState(...args) {
+    _safeSyncWithProps(props: P) {
+      this.foundation_ && this.syncWithProps(props);
+    }
+
+    _safeSetState(...args) {
       this.foundation_ && this.setState(...args);
     }
 
@@ -179,7 +183,7 @@ export const withFoundation = ({
       this.initialize();
       this.foundation_.init();
       this.initialSyncWithDOM();
-      this.syncWithProps(this.props);
+      this._safeSyncWithProps(this.props);
 
       // this method should be deprecated in the future in favor of standard refs
       this.props.apiRef && this.props.apiRef(this);
@@ -230,7 +234,7 @@ export const withFoundation = ({
       this.props[propName] && this.props[propName](evt);
 
       // MDC can change state internally, if we are triggering a handler, resync with our props
-      this.syncWithProps(this.props);
+      this._safeSyncWithProps(this.props);
 
       return evt;
     }
