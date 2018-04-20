@@ -1,3 +1,9 @@
+#### 1.5.5 (2018-04-20)
+
+##### Bug Fixes
+
+* **Foundation:**  corrects issues with prop syncing from an event when a component removes itself. [#215](https://github.com/jamesmfriedman/rmwc/pull/215) ([3a5ec764](https://github.com/jamesmfriedman/rmwc/commit/3a5ec7648ce8b448c7e8edf652fb6722a4db4e9c))
+
 #### 1.5.4 (2018-04-19)
 
 ##### Documentation Changes
