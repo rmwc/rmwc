@@ -79,16 +79,11 @@ export class Ripple extends withFoundation({
       ...child.props,
       ...rest,
       ...unboundedProp,
-      className: classNames(
-        className,
-        child.props.className,
-        [...this.state.classes],
-        {
-          'mdc-ripple-surface': surface !== undefined ? surface : true,
-          'mdc-ripple-surface--primary': primary,
-          'mdc-ripple-surface--accent': accent
-        }
-      )
+      className: classNames(child.props.className, [...this.state.classes], {
+        'mdc-ripple-surface': surface !== undefined ? surface : true,
+        'mdc-ripple-surface--primary': primary,
+        'mdc-ripple-surface--accent': accent
+      })
     });
   }
 }

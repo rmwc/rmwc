@@ -13,6 +13,7 @@ storiesOf('Buttons', module).add('Button', () => (
     raised={boolean('raised', false)}
     ripple={boolean('ripple', true)}
     onClick={action('onClick')}
+    className="test"
   >
     Button
   </Button>
