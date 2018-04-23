@@ -30,7 +30,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "material-components-web": "0.34.1",
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "hyperform": "^0.9.9",
+    "mutation-observer": "^1.0.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -67,8 +69,6 @@
     "eslint-plugin-flowtype": "^2.46.1",
     "flow-bin": "^0.62.0",
     "generate-changelog": "^1.7.0",
-    "hyperform": "^0.9.9",
-    "mutation-observer": "^1.0.3",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.7.1",
     "prismjs": "^1.9.0",
