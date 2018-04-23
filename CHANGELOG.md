@@ -1,3 +1,11 @@
+#### 1.5.6 (2018-04-23)
+
+##### Bug Fixes
+
+* **TextField:**  Corrects issue with syncing props quickly [#216](https://github.com/jamesmfriedman/rmwc/pull/216) ([12182722](https://github.com/jamesmfriedman/rmwc/commit/1218272222cf6d20fee598e4c6992761f62f8cfa))
+* **dependencies:**  Adds hyperform and mutation as explicit dependency since they are required for testPolyfill [#217](https://github.com/jamesmfriedman/rmwc/pull/217) ([72176dac](https://github.com/jamesmfriedman/rmwc/commit/72176dac3ee9e0292ef726466814ff70d0cde3c9))
+* **className:**  Removes redundant classNames on ripple elements [#218](https://github.com/jamesmfriedman/rmwc/pull/218) ([22be2ab5](https://github.com/jamesmfriedman/rmwc/commit/22be2ab5fcbb6f3eaa2d097a05b016e4ff3d6b6f))
+
 #### 1.5.5 (2018-04-20)
 
 ##### Bug Fixes
