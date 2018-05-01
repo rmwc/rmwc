@@ -56,6 +56,7 @@ storiesOf('TopAppBar', module)
     </div>
   ))
   .add('fixed', () => <ToolbarStory fixed />)
+  .add('dense', () => <ToolbarStory dense />)
   .add('short', () => <ToolbarStory short />)
   .add('shortCollapsed', () => <ToolbarStory shortCollapsed />)
   .add('prominent', () => <ToolbarStory prominent />);
