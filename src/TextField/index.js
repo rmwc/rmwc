@@ -10,12 +10,7 @@ import { FloatingLabel } from '../FloatingLabel';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',
@@ -162,10 +157,7 @@ export type TextFieldPropsT = {
 
 export class TextField extends withFoundation({
   constructor: MDCTextField,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<TextFieldPropsT> {
   static displayName = 'TextField';
 

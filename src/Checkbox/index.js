@@ -5,12 +5,7 @@ import * as React from 'react';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '../FormField';
 import { simpleTag } from '../Base';
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 import { randomId } from '../Base/utils/randomId';
 
 export const CheckboxRoot = simpleTag({

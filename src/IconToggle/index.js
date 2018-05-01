@@ -5,12 +5,7 @@ import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop } from '../Base';
-import {
-  withFoundation,
-  syncFoundationProp,
-  addClass,
-  removeClass
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export type IconTogglePropsT = {
   /* prettier-ignore */
@@ -38,10 +33,7 @@ export const IconToggleRoot = simpleTag({
 
 export class IconToggle extends withFoundation({
   constructor: MDCIconToggle,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<IconTogglePropsT, {}> {
   static displayName = 'IconToggle';
   static defaultProps = {

@@ -6,7 +6,7 @@ import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
 
 import { Icon } from '../Icon';
 import { simpleTag } from '../Base';
-import { addClass, removeClass, withFoundation } from '../Base/MDCFoundation';
+import { withFoundation } from '../Base/MDCFoundation';
 
 export const TopAppBarRoot = simpleTag({
   displayName: 'TopAppBarRoot',
@@ -94,10 +94,7 @@ type TopAppAppBarPropsT = {
 /** A TopAppBar component */
 export class TopAppBar extends withFoundation({
   constructor: MDCTopAppBar,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<TopAppAppBarPropsT, {}> {
   static displayName = 'TopAppBar';
 

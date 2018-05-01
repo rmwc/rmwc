@@ -5,7 +5,6 @@ import { simpleTag } from '../Base';
 
 import {
   withFoundation,
-  addClass,
   removeClass,
   syncFoundationProp
 } from '../Base/MDCFoundation';
@@ -94,10 +93,7 @@ export class Slider extends withFoundation({
     'pinValueMarker_',
     'trackMarkerContainer_'
   ],
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<SliderPropsT, {}> {
   static displayName = 'Slider';
 

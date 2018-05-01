@@ -3,12 +3,7 @@ import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
@@ -100,8 +95,6 @@ const createSelectOptions = (options): Object[] => {
 export class Select extends withFoundation({
   constructor: MDCSelect,
   adapter: {
-    addClass: addClass(),
-    removeClass: removeClass(),
     getValue: function() {
       const value = this.nativeControl_.value;
       return value === '' && this.props.placeholder ? ' ' : value;

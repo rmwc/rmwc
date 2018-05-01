@@ -4,12 +4,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export type RipplePropsT = {
   /** Makes the ripple unbounded */
@@ -24,22 +19,19 @@ export type RipplePropsT = {
 
 export class Ripple extends withFoundation({
   constructor: MDCRipple,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<RipplePropsT> {
   static displayName = 'Ripple';
 
   componentDidMount() {
     // Ripples can be used with many types of components
-    // we need to use ReactDOM as an escape hatch to just find the DOMnode
+    // we need to use ReactDOM as an escape hatch to just find the DOMNode
     this.root_ = ReactDOM.findDOMNode(this);
     super.componentDidMount();
   }
 
   syncWithProps(nextProps: RipplePropsT) {
-    // We dont know how React might have changed our dom node, Regrab it.
+    // We dont know how React might have changed our dom node, re-grab it.
     this.root_ = ReactDOM.findDOMNode(this);
 
     // unbounded
@@ -71,9 +63,9 @@ export class Ripple extends withFoundation({
 
     const child = React.Children.only(children);
 
-    const unboundedProp = unbounded ?
-      { 'data-mdc-ripple-is-unbounded': true } :
-      {};
+    const unboundedProp = unbounded
+      ? { 'data-mdc-ripple-is-unbounded': true }
+      : {};
 
     return React.cloneElement(child, {
       ...child.props,
