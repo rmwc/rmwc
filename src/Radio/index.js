@@ -4,10 +4,12 @@ import { MDCRadio } from '@material/radio/dist/mdc.radio';
 import FormField from '../FormField';
 import classNames from 'classnames';
 import { simpleTag, withMDCToggle } from '../Base';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { randomId } from '../Base/utils/randomId';
 
 export const RadioRoot = simpleTag({
   displayName: 'RadioRoot',
-  classNames: 'mdc-radio'
+  classNames: props => ['mdc-radio', { 'mdc-radio--disabled': props.disabled }]
 });
 
 export const RadioNativeControl = simpleTag({
@@ -46,64 +48,99 @@ export type RadioPropsT = {
   disabled?: boolean,
   /** Toggle the control on and off. */
   checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
   /** A label for the control. */
   label?: string,
   /** Children to render */
   children?: React.Node
 };
 
-export const Radio = withMDCToggle({ mdcConstructor: MDCRadio })(
-  class extends React.Component<RadioPropsT> {
-    static displayName = 'Radio';
-    render() {
-      const {
-        label = '',
-        id,
-        children,
-        // $FlowFixMe
-        indeterminate,
-        // $FlowFixMe
-        apiRef,
-        // $FlowFixMe
-        generatedId,
-        // $FlowFixMe
-        mdcElementRef,
-        ...rest
-      } = this.props;
-      const labelId = id || generatedId;
+export class Radio extends withFoundation({
+  constructor: MDCRadio,
+  adapter: {}
+})<RadioPropsT> {
+  static displayName = 'Radio';
 
-      const radio = (
-        <RadioRoot
-          elementRef={mdcElementRef}
-          className={classNames({ 'mdc-radio--disabled': rest.disabled })}
-        >
-          <RadioNativeControl id={labelId} {...rest} />
-          <RadioBackground>
-            <RadioOuterCircle />
-            <RadioInnerCircle />
-          </RadioBackground>
-        </RadioRoot>
+  constructor(props: RadioPropsT) {
+    super(props);
+    this.generatedId = randomId('radio');
+  }
+
+  componentDidMount() {
+    super.componentDidMount();
+    this.ripple_ = this.initRipple_();
+  }
+
+  syncWithProps(nextProps: RadioPropsT) {
+    // checked
+    syncFoundationProp(
+      nextProps.checked,
+      this.checked,
+      () => (this.checked = nextProps.checked)
+    );
+
+    // disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
+
+    // value
+    syncFoundationProp(
+      nextProps.value,
+      this.value,
+      () => (this.value = nextProps.value)
+    );
+  }
+
+  render() {
+    const {
+      label = '',
+      id,
+      children,
+      // $FlowFixMe
+      indeterminate,
+      // $FlowFixMe
+      apiRef,
+      // $FlowFixMe
+      generatedId,
+      // $FlowFixMe
+      mdcElementRef,
+      ...rest
+    } = this.props;
+    const labelId = id || this.generatedId;
+    const { root_ } = this.foundationRefs;
+
+    const radio = (
+      <RadioRoot elementRef={root_} disabled={rest.disabled}>
+        <RadioNativeControl id={labelId} {...rest} />
+        <RadioBackground>
+          <RadioOuterCircle />
+          <RadioInnerCircle />
+        </RadioBackground>
+      </RadioRoot>
+    );
+
+    /**
+     * We have to conditionally wrap our radio in a FormField
+     * If we have a label
+     */
+    if (label.length || children) {
+      return (
+        <FormField>
+          {radio}
+          <RadioLabel id={labelId + 'label'} htmlFor={labelId}>
+            {label}
+            {children}
+          </RadioLabel>
+        </FormField>
       );
-
-      /**
-       * We have to conditionally wrap our radio in a FormField
-       * If we have a label
-       */
-      if (label.length || children) {
-        return (
-          <FormField>
-            {radio}
-            <RadioLabel id={labelId + 'label'} htmlFor={labelId}>
-              {label}
-              {children}
-            </RadioLabel>
-          </FormField>
-        );
-      } else {
-        return radio;
-      }
+    } else {
+      return radio;
     }
   }
-);
+}
 
 export default Radio;
