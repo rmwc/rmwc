@@ -18,9 +18,9 @@ describe('Button', () => {
     expect(!!~btn.html().search('mdc-button--unelevated')).toEqual(true);
   });
 
-  it('can be stroked', () => {
-    const btn = mount(<Button stroked />);
-    expect(!!~btn.html().search('mdc-button--stroked')).toEqual(true);
+  it('can be outlined', () => {
+    const btn = mount(<Button outlined />);
+    expect(!!~btn.html().search('mdc-button--outlined')).toEqual(true);
   });
 
   it('can be dense', () => {

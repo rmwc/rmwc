@@ -50,12 +50,12 @@
             "computed": false
           }
         },
-        "stroked": {
+        "outlined": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the button stroked.",
+          "description": "Make the button outlined.",
           "defaultValue": {
             "value": "false",
             "computed": false
@@ -282,9 +282,35 @@
   ],
   "src/Chip/index.js": [
     {
+      "description": "A chip component.",
+      "displayName": "ChipRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
       "description": "",
       "displayName": "Chip",
-      "methods": [],
+      "methods": [
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
       "props": {
         "onInteraction": {
           "flowType": {
@@ -1615,8 +1641,36 @@
   "src/IconToggle/index.js": [
     {
       "description": "",
+      "displayName": "IconToggleRoot",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'button'",
+            "computed": false
+          },
+          "required": false
+        },
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'0'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "",
       "displayName": "IconToggle",
       "methods": [
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
         {
           "name": "syncWithProps",
           "docblock": null,
@@ -2221,7 +2275,7 @@
         "anchorCorner": {
           "flowType": {
             "name": "union",
-            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
             "elements": [
               {
                 "name": "literal",
@@ -2229,7 +2283,7 @@
               },
               {
                 "name": "literal",
-                "value": "'bottomeLeft'"
+                "value": "'bottomLeft'"
               },
               {
                 "name": "literal",
@@ -2352,7 +2406,7 @@
         "anchorCorner": {
           "flowType": {
             "name": "union",
-            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
             "elements": [
               {
                 "name": "literal",
@@ -2360,7 +2414,7 @@
               },
               {
                 "name": "literal",
-                "value": "'bottomeLeft'"
+                "value": "'bottomLeft'"
               },
               {
                 "name": "literal",

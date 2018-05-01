@@ -20,13 +20,13 @@ export const ButtonRoot = withRipple({ surface: false })(
       dense: false,
       raised: false,
       unelevated: false,
-      stroked: false
+      outlined: false
     },
     consumeProps: [
       'dense',
       'raised',
       'unelevated',
-      'stroked',
+      'outlined',
       'primary',
       'accent',
       'unbounded'
@@ -37,7 +37,7 @@ export const ButtonRoot = withRipple({ surface: false })(
         'mdc-button--dense': props.dense,
         'mdc-button--raised': props.raised,
         'mdc-button--unelevated': props.unelevated,
-        'mdc-button--stroked': props.stroked
+        'mdc-button--outlined': props.outlined
       }
     ]
   })
@@ -61,8 +61,8 @@ export type ButtonPropsT = {
   raised?: boolean,
   /** Make the button unelevated. */
   unelevated?: boolean,
-  /** Make the button stroked. */
-  stroked?: boolean
+  /** Make the button outlined. */
+  outlined?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -74,7 +74,7 @@ export class Button extends React.Component<ButtonPropsT> {
     dense: false,
     raised: false,
     unelevated: false,
-    stroked: false
+    outlined: false
   };
 
   componentWillMount() {

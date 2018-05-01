@@ -13,7 +13,7 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 <Button raised>Raised</Button>
 <Button dense>Dense</Button>
 <Button unelevated>Unelevated</Button>
-<Button stroked>Stroked</Button>
+<Button outlined>Outlined</Button>
 <Button raised theme="secondary-bg text-primary-on-secondary">With Theme</Button>
 ```
 
