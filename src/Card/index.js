@@ -16,8 +16,8 @@ import type { SimpleTagPropsT } from '../Base';
  * Public
  ****************************************************************/
 export type CardPropsT = {
-  /** Removes the shadow and displays a hairline stroke instead */
-  stroked: boolean
+  /** Removes the shadow and displays a hairline outline instead */
+  outlined: boolean
 } & SimpleTagPropsT;
 
 /** A Card Component */
@@ -26,10 +26,10 @@ export class Card extends simpleTag({
   classNames: props => [
     'mdc-card',
     {
-      'mdc-card--stroked': props.stroked
+      'mdc-card--outlined': props.outlined
     }
   ],
-  consumeProps: ['stroked']
+  consumeProps: ['outlined']
 })<CardPropsT> {
   render() {
     return super.render();

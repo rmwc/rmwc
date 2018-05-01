@@ -70,12 +70,12 @@
       "displayName": "Card",
       "methods": [],
       "props": {
-        "stroked": {
+        "outlined": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": "Removes the shadow and displays a hairline stroke instead"
+          "description": "Removes the shadow and displays a hairline outline instead"
         }
       }
     },

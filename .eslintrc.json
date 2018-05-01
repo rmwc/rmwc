@@ -1,16 +1,5 @@
 {
-  "extends": "react",
-  "plugins": ["react", "jsx-a11y", "import"],
-  "env": {
-    "browser": true,
-    "node": true,
-    "commonjs": true,
-    "es6": true,
-    "jasmine": true
-  },
-  "globals": {
-    "React": true
-  },
+  "extends": "react-app",
   "rules": {
     "space-before-function-paren": "off",
     "indent": ["error", 2],

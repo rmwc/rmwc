@@ -21,21 +21,31 @@ import {
 } from 'rmwc/Card';
 
 import { Typography } from 'rmwc/Typography';
-
-<Card style={{width: '21rem'}}>
+<Card style={{ width: '21rem' }}>
   <CardPrimaryAction>
-    <CardMedia sixteenByNine style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/16-9.jpg)'}}/>
-    <div style={{padding: '0 1rem 1rem 1rem'}}>
-      <Typography use="title" tag="h2">Our Changing Planet</Typography>
+    <CardMedia
+      sixteenByNine
+      style={{
+        backgroundImage:
+          'url(https://material-components-web.appspot.com/images/16-9.jpg)'
+      }}
+    />
+    <div style={{ padding: '0 1rem 1rem 1rem' }}>
+      <Typography use="title" tag="h2">
+        Our Changing Planet
+      </Typography>
       <Typography
         use="subheading1"
         tag="h3"
         theme="text-secondary-on-background"
-        style={{marginTop: '-1rem'}}
+        style={{ marginTop: '-1rem' }}
       >
         by Kurt Wagner
       </Typography>
-      <Typography use="body1" tag="div" theme="text-secondary-on-background">Visit ten places on our planet that are undergoing the biggest changes today.</Typography>
+      <Typography use="body1" tag="div" theme="text-secondary-on-background">
+        Visit ten places on our planet that are undergoing the biggest changes
+        today.
+      </Typography>
     </div>
   </CardPrimaryAction>
   <CardActions>
@@ -46,8 +56,8 @@ import { Typography } from 'rmwc/Typography';
     <CardActionIcons>
       <CardAction
         iconToggle
-        on={{label: 'Remove from favorites', content: 'favorite'}}
-        off={{label: 'Add to favorites', content: 'favorite_border'}}
+        on={{ label: 'Remove from favorites', content: 'favorite' }}
+        off={{ label: 'Add to favorites', content: 'favorite_border' }}
       />
       <CardAction icon use="share" />
       <CardAction icon use="more_vert" />
@@ -59,28 +69,15 @@ import { Typography } from 'rmwc/Typography';
 ## Article Preview Example
 
 ```jsx render
-import {
-  Card,
-  CardPrimaryAction,
-  CardAction,
-  CardActions
-} from 'rmwc/Card';
-
-import {
-  ListDivider,
-} from 'rmwc/List';
-
-import {
-  Icon,
-} from 'rmwc/Icon';
-
+import { Card, CardPrimaryAction, CardAction, CardActions } from 'rmwc/Card';
+import { ListDivider } from 'rmwc/List';
+import { Icon } from 'rmwc/Icon';
 import { Typography } from 'rmwc/Typography';
-
-<Card stroked style={{width: '21rem'}}>
+<Card outlined style={{ width: '21rem' }}>
   <Typography
     use="subheading2"
     tag="div"
-    style={{padding: '0.5rem 1rem'}}
+    style={{ padding: '0.5rem 1rem' }}
     theme="text-secondary-on-background"
   >
     Headlines
@@ -89,28 +86,12 @@ import { Typography } from 'rmwc/Typography';
   <ListDivider />
 
   <CardPrimaryAction>
-    <div style={{padding: '1rem'}}>
-      <Typography use="headline" tag="div">Copper on the rise</Typography>
-      <Typography
-        use="body1"
-        tag="p"
-        theme="text-secondary-on-background"
-      >
-      Copper price soars amid global market optimism and increased demand.</Typography>
-    </div>
-  </CardPrimaryAction>
-
-  <ListDivider />
-
-  <CardPrimaryAction>
-    <div style={{padding: '1rem'}}>
-      <Typography use="headline" tag="div">U.S. tech startups rebound</Typography>
-      <Typography
-        use="body1"
-        tag="p"
-        theme="text-secondary-on-background"
-      >
-        Favorable business conditions have allowed startups to secure more fundraising deals compared to last year.
+    <div style={{ padding: '1rem' }}>
+      <Typography use="headline" tag="div">
+        Copper on the rise
+      </Typography>
+      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+        Copper price soars amid global market optimism and increased demand.
       </Typography>
     </div>
   </CardPrimaryAction>
@@ -118,14 +99,27 @@ import { Typography } from 'rmwc/Typography';
   <ListDivider />
 
   <CardPrimaryAction>
-    <div style={{padding: '1rem'}}>
-      <Typography use="headline" tag="div">Asia's clean energy ambitions</Typography>
-      <Typography
-        use="body1"
-        tag="p"
-        theme="text-secondary-on-background"
-      >
-        China plans to invest billions of dollars for the development of over 300 clean energy projects in Southeast Asia.
+    <div style={{ padding: '1rem' }}>
+      <Typography use="headline" tag="div">
+        U.S. tech startups rebound
+      </Typography>
+      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+        Favorable business conditions have allowed startups to secure more
+        fundraising deals compared to last year.
+      </Typography>
+    </div>
+  </CardPrimaryAction>
+
+  <ListDivider />
+
+  <CardPrimaryAction>
+    <div style={{ padding: '1rem' }}>
+      <Typography use="headline" tag="div">
+        Asia's clean energy ambitions
+      </Typography>
+      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+        China plans to invest billions of dollars for the development of over
+        300 clean energy projects in Southeast Asia.
       </Typography>
     </div>
   </CardPrimaryAction>
@@ -133,7 +127,9 @@ import { Typography } from 'rmwc/Typography';
   <ListDivider />
 
   <CardActions fullBleed>
-    <CardAction>All Business Headlines <Icon use="arrow_forward"/></CardAction>
+    <CardAction>
+      All Business Headlines <Icon use="arrow_forward" />
+    </CardAction>
   </CardActions>
 </Card>
 ```
@@ -150,11 +146,15 @@ import {
   CardActionIcons,
   CardActions
 } from 'rmwc/Card';
-
-
-<Card style={{width: '12.5rem'}}>
+<Card style={{ width: '12.5rem' }}>
   <CardPrimaryAction>
-    <CardMedia square style={{backgroundImage: 'url(https://material-components-web.appspot.com/images/1-1.jpg)'}}>
+    <CardMedia
+      square
+      style={{
+        backgroundImage:
+          'url(https://material-components-web.appspot.com/images/1-1.jpg)'
+      }}
+    >
       <CardMediaContent>
         <Typography
           use="subheading2"
@@ -162,7 +162,8 @@ import {
           theme="text-primary-on-dark"
           style={{
             padding: '0.5rem 1rem',
-            backgroundImage: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+            backgroundImage:
+              'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
             bottom: '0',
             left: '0',
             right: '0',
@@ -178,11 +179,11 @@ import {
     <CardActionIcons>
       <CardAction
         iconToggle
-        on={{label: 'Remove from favorites', content: 'favorite'}}
-        off={{label: 'Add to favorites', content: 'favorite_border'}}
+        on={{ label: 'Remove from favorites', content: 'favorite' }}
+        off={{ label: 'Add to favorites', content: 'favorite_border' }}
       />
-      <CardAction icon use="bookmark_border"/>
-      <CardAction icon use="share"/>
+      <CardAction icon use="bookmark_border" />
+      <CardAction icon use="share" />
     </CardActionIcons>
   </CardActions>
 </Card>
