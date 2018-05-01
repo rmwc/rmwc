@@ -4576,6 +4576,131 @@
       }
     }
   ],
+  "src/TopAppBar/index.js": [
+    {
+      "description": "",
+      "displayName": "TopAppBarRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "A row for the app bar.",
+      "displayName": "TopAppBarRow",
+      "methods": []
+    },
+    {
+      "description": "A section for the app bar.",
+      "displayName": "TopAppBarSection",
+      "methods": [],
+      "props": {
+        "alignStart": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Aligns the section to the start."
+        },
+        "alignEnd": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Aligns the section to the end."
+        }
+      }
+    },
+    {
+      "description": "A navigation icon fro the top app bar. This is an instance of the Icon component.",
+      "displayName": "TopAppBarNavigationIcon",
+      "methods": []
+    },
+    {
+      "description": "Action items for the top app bar. This is an instance of the Icon component.",
+      "displayName": "TopAppBarActionItem",
+      "methods": []
+    },
+    {
+      "description": "A title for the top app bar.",
+      "displayName": "TopAppBarTitle",
+      "methods": []
+    },
+    {
+      "description": "A TopAppBar component",
+      "displayName": "TopAppBar",
+      "methods": [],
+      "props": {
+        "onNav": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Emits when the navigation icon is clicked."
+        },
+        "fixed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a fixed top app bar."
+        },
+        "prominent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a prominent top app bar."
+        },
+        "short": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a short top app bar."
+        },
+        "shortCollapsed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to always be collapsed."
+        },
+        "dense": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to be dense."
+        }
+      }
+    }
+  ],
   "src/Typography/index.js": [
     {
       "description": "The Typography Component",

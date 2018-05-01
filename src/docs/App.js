@@ -6,14 +6,13 @@ import { menuContent } from './menuContent';
 import { version } from 'rmwc/rmwc';
 
 import {
-  Toolbar,
-  ToolbarRow,
-  ToolbarSection,
-  ToolbarTitle,
-  ToolbarFixedAdjust,
-  ToolbarMenuIcon,
-  ToolbarIcon
-} from 'rmwc/Toolbar';
+  TopAppBar,
+  TopAppBarRow,
+  TopAppBarSection,
+  TopAppBarTitle,
+  TopAppBarNavigationIcon,
+  TopAppBarActionItem
+} from 'rmwc/TopAppBar';
 
 import { Ripple } from 'rmwc/Ripple';
 
@@ -81,30 +80,29 @@ export class App extends React.Component {
 
     return (
       <Theme className="app__root" tag="div" id={pageId}>
-        <Toolbar fixed waterfall>
-          <ToolbarRow>
-            <ToolbarSection alignStart>
-              <Ripple unbounded>
-                <ToolbarMenuIcon
-                  style={{ color: 'inherit', alignSelf: 'center' }}
-                  onClick={evt =>
-                    this.setState({ menuIsOpen: !this.state.menuIsOpen })
-                  }
-                >
-                  menu
-                </ToolbarMenuIcon>
-              </Ripple>
-              <ToolbarTitle>
-                <Link to={'/'}>RMWC</Link>
-              </ToolbarTitle>
-            </ToolbarSection>
-            <ToolbarSection alignEnd>
+        <TopAppBar fixed className="app__top-app-bar">
+          <TopAppBarRow>
+            <TopAppBarSection alignStart>
+              <TopAppBarNavigationIcon
+                style={{ color: 'inherit', alignSelf: 'center' }}
+                onClick={evt =>
+                  this.setState({ menuIsOpen: !this.state.menuIsOpen })
+                }
+              >
+                menu
+              </TopAppBarNavigationIcon>
+
+              <TopAppBarTitle tag={Link} to="/">
+                RMWC
+              </TopAppBarTitle>
+            </TopAppBarSection>
+            <TopAppBarSection alignEnd>
               {!this.state.isMobile && (
                 <React.Fragment>
                   <span className="app__version">{version}</span>
                 </React.Fragment>
               )}
-              <ToolbarIcon
+              <TopAppBarActionItem
                 tag="a"
                 href="https://github.com/jamesmfriedman/rmwc"
                 use={
@@ -119,10 +117,9 @@ export class App extends React.Component {
                   </svg>
                 }
               />
-            </ToolbarSection>
-          </ToolbarRow>
-        </Toolbar>
-        <ToolbarFixedAdjust />
+            </TopAppBarSection>
+          </TopAppBarRow>
+        </TopAppBar>
 
         <div className="demo-content">
           {/* Nav */}

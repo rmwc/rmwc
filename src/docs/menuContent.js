@@ -30,6 +30,7 @@ import ToolbarDocs from '../Toolbar/toolbar.md';
 import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
 import ChipDocs from '../Chip/chip.md';
+import TopAppBarDocs from '../TopAppBar/top-app-bar.md';
 
 export const menuContent = [
   {
@@ -192,6 +193,12 @@ export const menuContent = [
     url: `/toolbars`,
     component: ToolbarDocs
   },
+  {
+    label: 'Top App Bar',
+    url: `/top-app-bar`,
+    component: TopAppBarDocs
+  },
+
   {
     label: 'Typography',
     url: `/typography`,

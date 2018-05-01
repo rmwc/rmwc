@@ -29,24 +29,13 @@ pre[class*='language-'] {
   will-change: initial;
 }
 
-.mdc-toolbar__title a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
-  transition: text-shadow 0.3s;
-}
-
-.mdc-toolbar__title a:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
 .app__content {
   flex: 1 1 auto;
   max-width: 100%;
   transition: margin-left 0.3s, max-width 0.3s;
   will-change: margin-left;
   will-change: max-width;
+  margin-top: 64px;
 }
 
 .mdc-persistent-drawer--open + .app__content {
@@ -175,11 +164,27 @@ ul {
   max-width: 58.75rem;
 }
 
+.app__top-app-bar {
+  z-index: 4;
+}
+
+.app__top-app-bar .mdc-top-app-bar__title {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s;
+}
+
+.app__top-app-bar .mdc-top-app-bar__title:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 #main-nav.mdc-drawer--persistent {
   position: fixed;
-  top: 56px;
+  top: 64px;
   left: 0;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 64px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
