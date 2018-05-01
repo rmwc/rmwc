@@ -47,7 +47,9 @@ export type RadioPropsT = {
   /** Toggle the control on and off. */
   checked?: boolean | string,
   /** A label for the control. */
-  label?: string
+  label?: string,
+  /** Children to render */
+  children?: React.Node
 };
 
 export const Radio = withMDCToggle({ mdcConstructor: MDCRadio })(
@@ -58,9 +60,13 @@ export const Radio = withMDCToggle({ mdcConstructor: MDCRadio })(
         label = '',
         id,
         children,
-        apiRef,
-        generatedId,
+        // $FlowFixMe
         indeterminate,
+        // $FlowFixMe
+        apiRef,
+        // $FlowFixMe
+        generatedId,
+        // $FlowFixMe
         mdcElementRef,
         ...rest
       } = this.props;

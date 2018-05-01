@@ -16,7 +16,7 @@ type WithMDCOpts = {
   contextTypes?: Object,
   /** a reference to an MDCConstructor */
   mdcConstructor?: Function,
-  /** In some cases, the constructor needs to be determined by props. This function should take props and return an MDCConstrustor or null */
+  /** In some cases, the constructor needs to be determined by props. This function should take props and return an MDCConstructor or null */
   getMdcConstructorOrInstance?: (props: Object, context: Object) => ?Function,
   /** MDC events mapped from eventName => handler */
   mdcEvents?: Object,
@@ -65,22 +65,23 @@ export const withMDC = ({
   Component: React.ComponentType<any>
 ): React.ComponentType<any> => {
   return class extends React.Component<WithMDCPropsT> {
-    static displayName = `withMDC(${Component.displayName})`;
+    static displayName = `withMDC(${String(Component.displayName)})`;
 
     static defaultProps = {
       apiRef: noop,
       ...defaultProps
     };
 
-    constructor(props) {
-      super(props);
+    constructor(props: WithMDCPropsT) {
+      super((props: WithMDCPropsT));
+      //$FlowFixMe
       this.mdcSetRootElement = this.mdcSetRootElement.bind(this);
-      this.elementRefProps = mdcElementRef ?
-        {
+      this.elementRefProps = mdcElementRef
+        ? {
           mdcElementRef: this.mdcSetRootElement
-        } :
-        {};
-
+        }
+        : {};
+      //$FlowFixMe
       this.mdcComponentReinit = this.mdcComponentReinit.bind(this);
     }
 
@@ -104,7 +105,7 @@ export const withMDC = ({
 
     mdcApi: ?Object;
     mdcListeners = [];
-    mdcRootElement;
+    mdcRootElement: window.DOMElement;
     elementRefProps = {};
 
     mdcComponentInit() {
@@ -118,7 +119,8 @@ export const withMDC = ({
 
       if (isInstance) {
         this.mdcApi = MDCConstructorToUse;
-        this.props.apiRef(this.mdcApi);
+        this.mdcApi && this.props.apiRef(this.mdcApi);
+        //$FlowFixMe
       } else if (MDCConstructorToUse && (this.props && !this.props.cssOnly)) {
         const el = this.mdcGetRootElement();
         try {
@@ -139,7 +141,8 @@ export const withMDC = ({
       Object.entries(
         typeof mdcEvents === 'function' ? mdcEvents(this.props) : mdcEvents
       ).forEach(([eventName, handler]) => {
-        this.mdcRegisterListener(eventName, handler);
+        typeof handler === 'function' &&
+          this.mdcRegisterListener(eventName, handler);
       });
 
       onUpdate(undefined, this.props, this.mdcApi, this);
@@ -159,7 +162,7 @@ export const withMDC = ({
 
     mdcRegisterListener(
       eventName: string,
-      func: (Event, Object, Object) => mixed
+      func: (Event, Object, ?Object) => mixed
     ) {
       const wrappedHandler = (evt: Event) => func(evt, this.props, this.mdcApi);
       this.mdcApi && this.mdcApi.listen(eventName, wrappedHandler);
@@ -186,15 +189,15 @@ export const withMDC = ({
       const { apiRef, ...rest } = this.props;
 
       // This is for cases where we have to pass the api to the subcomponent
-      const apiRefProps = mdcApiRef ?
-        {
+      const apiRefProps = mdcApiRef
+        ? {
           mdcApiRef: this.mdcApi
-        } :
-        {};
+        }
+        : {};
 
-      const mdcComponentReinitProp = mdcComponentReinit ?
-        { mdcComponentReinit: this.mdcComponentReinit } :
-        {};
+      const mdcComponentReinitProp = mdcComponentReinit
+        ? { mdcComponentReinit: this.mdcComponentReinit }
+        : {};
 
       return (
         <Component

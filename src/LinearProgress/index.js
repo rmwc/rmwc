@@ -86,6 +86,7 @@ export const LinearProgress: React.ComponentType<
     static displayName = 'LinearProgress';
 
     render() {
+      //$FlowFixMe
       const { progress, buffer, mdcElementRef, ...rest } = this.props;
       return (
         <LinearProgressRoot elementRef={mdcElementRef} {...rest}>

@@ -20,7 +20,7 @@ export const MenuItems = simpleTag({
   tag: List,
   classNames: 'mdc-list mdc-menu__items',
   defaultProps: {
-    "role": 'menu',
+    role: 'menu',
     'aria-hidden': 'true'
   }
 });
@@ -29,7 +29,7 @@ export const MenuItems = simpleTag({
  * Public
  ****************************************************************/
 
-/** This is just the ListItem component exported from the Menu module for convience. */
+/** This is just the ListItem component exported from the Menu module for convenience. */
 export const MenuItem = (props: any) => (
   <ListItem role="menuitem" tabIndex="0" {...props} />
 );
@@ -64,7 +64,9 @@ export type MenuPropsT = {
   /** Callback that fires when a Menu item is selected. */
   onSelected?: (evt: Event) => mixed,
   /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT
+  anchorCorner?: AnchorT,
+  /** Children to render */
+  children?: React.Node
 };
 
 const handleMenuChange = (evt, props) => {
@@ -91,9 +93,13 @@ export const Menu = withMDC({
     onClose: noop
   },
   onMount: (props, api) => {
+    //$FlowFixMe
     if (props.open) {
+      //$FlowFixMe
       api.quickOpen = true;
+      //$FlowFixMe
       api.open = true;
+      //$FlowFixMe
       api.quickOpen = false;
     }
   },
@@ -122,6 +128,7 @@ export const Menu = withMDC({
         open,
         onClose,
         onSelected,
+        //$FlowFixMe
         mdcElementRef,
         anchorCorner,
         ...rest
@@ -138,9 +145,11 @@ export const Menu = withMDC({
 
 export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
-  handle: React.Node,
+  handle: React.Element<*>,
   /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
-  rootProps: Object
+  rootProps: Object,
+  /** Children to render */
+  children?: React.Node
 } & MenuPropsT;
 
 export type SimpleMenuStateT = {

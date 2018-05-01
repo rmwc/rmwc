@@ -45,7 +45,9 @@ export type SwitchPropsT = {
   /** A label for the control. */
   label?: string,
   /** Props for the root element. By default, props spread to the input. */
-  rootProps?: Object
+  rootProps?: Object,
+  /** Any children to render. */
+  children: React.Node
 };
 
 export const Switch = withMDCToggle()(
@@ -57,8 +59,11 @@ export const Switch = withMDCToggle()(
         label = '',
         id,
         children,
+        // $FlowFixMe
         generatedId,
+        // $FlowFixMe
         indeterminate,
+        // $FlowFixMe
         mdcElementRef,
         rootProps = {},
         ...rest

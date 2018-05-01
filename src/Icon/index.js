@@ -74,18 +74,18 @@ const getIconStrategy = (content, strategy, defaultStrategy) => {
 export type IconPropsT = {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   use?: React.Node,
-
+  /** The icon to use, specified as children instead of the "use" prop. */
+  children?: React.Node,
   /** Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider. */
   strategy?: IconStrategyT,
-
   /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. */
   prefix?: string,
-
   /** A base className for the icon namespace, i.e. material-icons. */
   basename?: string,
-
   /** A render function to use when using the 'custom' strategy. */
-  render?: (content: mixed) => React.Node
+  render?: (content: mixed) => React.Node,
+  /** A custom className to add.. */
+  className?: string
 };
 
 /**
@@ -107,7 +107,7 @@ export class Icon extends React.PureComponent<IconPropsT> {
   providerOptions: RMWCProviderOptionsT;
   context: Object;
 
-  render() {
+  render(): React.Node {
     const {
       use,
       children,
@@ -130,20 +130,24 @@ export class Icon extends React.PureComponent<IconPropsT> {
     const prefixToUse = prefix || defaultPrefix;
     const basenameToUse = basename === undefined ? defaultBasename : basename;
     const iconClassName =
-      strategyToUse === 'className' && typeof content === 'string' ?
-        `${prefixToUse}${content}` :
-        null;
+      strategyToUse === 'className' && typeof content === 'string'
+        ? `${String(prefixToUse)}${content}`
+        : null;
 
     const renderToUse =
-      strategyToUse === 'custom' ?
-        render || defaultCustomRender :
+      strategyToUse === 'custom'
+        ? render || defaultCustomRender
+        : // $FlowFixMe
         iconRenderMap[strategyToUse];
 
     if (!renderToUse) {
-      console.error(`Icon: rendering not implemented for ${strategyToUse}.`);
+      console.error(
+        `Icon: rendering not implemented for ${String(strategyToUse)}.`
+      );
       return null;
     }
 
+    //$FlowFixMe
     return renderToUse({
       ...rest,
       content,

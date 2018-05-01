@@ -27,21 +27,19 @@ const copyProperties = (target, source) => {
 
   allPropertyNames.forEach(propertyName => {
     if (
-      propertyName.match(
+      String(propertyName).match(
+        // eslint-disable-next-line max-len
         /^(?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length)$/
       )
     ) {
       return;
     }
-    Object.defineProperty(
-      target,
-      propertyName,
-      Object.getOwnPropertyDescriptor(source, propertyName)
-    );
+    const value = Object.getOwnPropertyDescriptor(source, propertyName);
+    value !== undefined && Object.defineProperty(target, propertyName, value);
   });
 };
 
-/** Simplifies reduant checks for syncWithProps */
+/** Simplifies redundant checks for syncWithProps */
 export const syncFoundationProp = (
   prop: mixed,
   foundationValue: mixed,
@@ -76,22 +74,12 @@ export const removeClass = () =>
         // The animation frame corrects an issue where MDC would set a class
         // on a form element and cause re-render before the new value could actually be set from the onChange
         this._safeSetState(prevState => ({
-          classes: prevState.classes.delete(className) ?
-            prevState.classes :
-            prevState.classes
+          classes: prevState.classes.delete(className)
+            ? prevState.classes
+            : prevState.classes
         }));
       }
     });
-  };
-
-export const registerInteractionHandler = (refName: string = 'root_') =>
-  function(type: string, handler: Function) {
-    this[refName] && this[refName].addEventListener(type, handler);
-  };
-
-export const deregisterInteractionHandler = (refName: string = 'root_') =>
-  function(type: string, handler: Function) {
-    this[refName] && this[refName].removeEventListener(type, handler);
   };
 
 /************************************************************************
@@ -114,21 +102,25 @@ export const withFoundation = ({
   adapter = {},
   refs = ['root_']
 }: FoundationT): $Shape<constructor> => {
-  class Foundation<P, S> extends React.Component<P, S & FoundationStateT> {
+  class Foundation<P: Object, S: any> extends React.Component<
+    P,
+    S & FoundationStateT
+  > {
     constructor(props: *) {
       super(props);
 
       this.foundationRefs = refs.reduce((acc, r) => {
         // Here we gracefully merge two refs together if one was passed down the chain
         const propName =
-          this.props.elementRef && this.props.elementRef.refName_ === r ?
-            'elementRef' :
-            r;
+          this.props.elementRef && this.props.elementRef.refName_ === r
+            ? 'elementRef'
+            : r;
 
         acc[r] = ref => {
           // React will return a null ref when unmounting which will
           // in turn make our adapters error out. Make sure we only set a ref if its truthy.
           if (ref) {
+            //$FlowFixMe
             this[r] = ref;
             this.props[propName] && this.props[propName](ref);
           }
@@ -140,6 +132,7 @@ export const withFoundation = ({
         return acc;
       }, {});
 
+      //$FlowFixMe
       this.syncWithProps = this.syncWithProps.bind(this);
     }
 
@@ -167,7 +160,7 @@ export const withFoundation = ({
       classes: new Set()
     };
 
-    foundation_: Object;
+    foundation_: ?Object;
 
     foundationRefs: { [string]: (ref: window.DomElement) => mixed };
 
@@ -179,10 +172,12 @@ export const withFoundation = ({
       this.foundation_ = this.getDefaultFoundation();
 
       Object.entries(adapter).forEach(([handlerName, handler]) => {
+        //$FlowFixMe
         this.foundation_.adapter_[handlerName] = handler.bind(this);
       });
+
       this.initialize();
-      this.foundation_.init();
+      this.foundation_ && this.foundation_.init();
       this.initialSyncWithDOM();
       this._safeSyncWithProps(this.props);
 
@@ -192,14 +187,15 @@ export const withFoundation = ({
 
     destroyComponent() {
       this.destroy();
-      this.foundation_.destroy();
+      this.foundation_ && this.foundation_.destroy();
       this.foundation_ = undefined;
 
       // We need to hold onto our refs until all child components are unmounted
       // Here we just wait a few frames and set them to null so garbage collection will take over.
       requestFrames(() => {
         refs.forEach(refName => {
-          this[refName] = undefined;
+          //$FlowFixMe
+          this[refName] && (this[refName] = undefined);
         });
       }, 3);
     }
@@ -208,6 +204,9 @@ export const withFoundation = ({
     initialize() {}
     initialSyncWithDOM() {}
     destroy() {}
+    getDefaultFoundation() {
+      return {};
+    }
 
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,
@@ -234,7 +233,7 @@ export const withFoundation = ({
 
       this.props[propName] && this.props[propName](evt);
 
-      // MDC can change state internally, if we are triggering a handler, resync with our props
+      // MDC can change state internally, if we are triggering a handler, re-sync with our props
       this._safeSyncWithProps(this.props);
 
       return evt;

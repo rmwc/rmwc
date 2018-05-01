@@ -130,9 +130,11 @@ export class TextFieldIcon extends simpleTag({
 export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
   textarea?: boolean,
+  /** Sets the value for controlled TextFields. */
+  value?: string | number,
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean,
-  /** Makes the TextField have a visiual box. */
+  /** Makes the TextField have a visual box. */
   box?: boolean,
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,

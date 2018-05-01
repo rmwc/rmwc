@@ -1,8 +1,4 @@
 // @flow
-
-/**
- * @module Card
- */
 import * as React from 'react';
 import classNames from 'classnames';
 import { Button } from '../Button';
@@ -109,9 +105,9 @@ export const CardActionIcons = simpleTag({
 
 export type CardActionPropsT = {
   /** An action icon with no text. This is an instance of the Icon component. */
-  icon: boolean,
+  icon?: boolean,
   /** An toggleable action icon with no text. This is an instance of the IconToggle component. */
-  iconToggle: boolean
+  iconToggle?: boolean
 } & SimpleTagPropsT;
 
 /** A Card action Button. Will return a Button component by default. */

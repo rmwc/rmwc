@@ -123,9 +123,9 @@ export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
     if (!api) return;
 
     if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
-      api.activeTabIndex = api.tabs[Number(nextProps.activeTabIndex)] ?
-        nextProps.activeTabIndex + '' :
-        undefined;
+      api.activeTabIndex = api.tabs[Number(nextProps.activeTabIndex)]
+        ? nextProps.activeTabIndex + ''
+        : undefined;
     }
   },
   didUpdate: (props, nextProps, api, inst) => {
@@ -198,7 +198,9 @@ export type TabBarScrollerPropsT = {
   /** The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons. */
   indicatorForward?: React.Node,
   /** The back indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.  */
-  indicatorBack?: React.Node
+  indicatorBack?: React.Node,
+  /** Children to render */
+  children?: React.Node
 };
 
 export type TabBarScrollerStateT = {
@@ -260,6 +262,7 @@ export const TabBarScroller = withMDC({
       return {
         isTabScroller: true,
         tabBarApi:
+          // $FlowFixMe
           this.props && this.props.mdcApiRef && this.props.mdcApiRef.tabBar,
         reinitTabBarScroller: () => this.reinitTabBarScroller()
       };
@@ -272,15 +275,18 @@ export const TabBarScroller = withMDC({
     };
 
     reinitTabBarScroller() {
+      // $FlowFixMe
       this.props.mdcComponentReinit();
     }
 
     render() {
       const {
         children,
-        mdcComponentReinit,
         indicatorForward,
         indicatorBack,
+        // $FlowFixMe
+        mdcComponentReinit,
+        // $FlowFixMe
         mdcApiRef,
         ...rest
       } = this.props;

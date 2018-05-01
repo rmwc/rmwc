@@ -150,7 +150,9 @@ export type SimpleListItemPropsT = {
   /** A graphic icon for the ListItem. */
   graphic?: React.Node,
   /** A meta icon for the ListItem */
-  meta?: React.Node
+  meta?: React.Node,
+  /** Children to render */
+  children?: React.Node
 };
 
 export const SimpleListItem = ({

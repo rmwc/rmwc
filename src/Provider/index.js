@@ -3,6 +3,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 // prettier-ignore
+// eslint-disable-next-line max-len
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
 export type RMWCProviderOptionsT = {
@@ -17,7 +18,9 @@ export type RMWCProviderOptionsT = {
   /** Set the default iconStrategy. Read the icon docs for more info. */
   iconStrategy?: IconStrategyT,
   /** Sets a default render function to be used when the iconStrategy is custom */
-  iconRender?: (content: mixed) => mixed
+  iconRender?: (content: mixed) => mixed,
+  /** Children to render */
+  children?: React.Node
 };
 
 // Default provider options
@@ -32,11 +35,11 @@ const providerDefaults: RMWCProviderOptionsT = {
 
 // A function for safely getting context options
 // this is so we can use the provider defaults even
-// when RMWCProvider isnt being used
+// when RMWCProvider inst being used
 export const getProviderOptions = (context: Object): RMWCProviderOptionsT => {
-  return context && context.RMWCOptions ?
-    context.RMWCOptions :
-    providerDefaults;
+  return context && context.RMWCOptions
+    ? context.RMWCOptions
+    : providerDefaults;
 };
 
 /**

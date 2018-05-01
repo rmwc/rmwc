@@ -14,8 +14,6 @@ import {
   TopAppBarActionItem
 } from 'rmwc/TopAppBar';
 
-import { Ripple } from 'rmwc/Ripple';
-
 import { Theme } from 'rmwc/Theme';
 
 import { Drawer, DrawerContent } from 'rmwc/Drawer';

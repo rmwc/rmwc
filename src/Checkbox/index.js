@@ -84,9 +84,12 @@ export const Checkbox = withMDCToggle({
         id,
         children,
         checked,
-        apiRef,
         indeterminate,
+        //$FlowFixMe
+        apiRef,
+        //$FlowFixMe
         mdcElementRef,
+        //$FlowFixMe
         generatedId,
         ...rest
       } = this.props;

@@ -7,10 +7,24 @@
     // words - list of words to be always considered correct
     "words": [
         "alertdialog",
+        "checkboxes",
+        "deregister",
+        "eqeqeq",
+        "fabs",
+        "lastrow",
+        "listbox",
+        "refname",
+        "reinit",
         "rmwc",
+        "scroll",
+        "scroller",
         "Snackbar",
+        "snackbars",
+        "submenu",
         "Textfield",
-        "unelevated"
+        "truthy",
+        "unelevated",
+        "unmounting"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.

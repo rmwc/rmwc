@@ -2,16 +2,16 @@
 
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { version } from 'rmwc/rmwc';
-import { Typography } from 'rmwc/Typography';
+import { version } from '../rmwc';
+import { Typography } from '../Typography';
 
-import { Card, CardMedia, CardActions, CardAction } from 'rmwc/Card';
+import { Card, CardMedia, CardActions, CardAction } from '../Card';
 
-import { Grid, GridCell } from 'rmwc/Grid';
+import { Grid, GridCell } from '../Grid';
 
-import { Button } from 'rmwc/Button';
+import { Button } from '../Button';
 
-import { Theme } from 'rmwc/Theme';
+import { Theme } from '../Theme';
 
 export const Home = () => {
   return (
@@ -40,8 +40,8 @@ export const Home = () => {
       <aside tag="aside" className="intro">
         <div className="intro__inner">
           <Typography tag="p" use="title" className="container">
-            RMWC was created to be the most performant, unopinionated, and
-            simple implemenation of Material Design in React.
+            RMWC was created to be the most performant, un-opinionated, and
+            simple implementation of Material Design in React.
           </Typography>
         </div>
       </aside>
@@ -111,7 +111,7 @@ export const Home = () => {
                     Easy to Customize
                   </Typography>
                   <Typography use="body1">
-                    Integrate with a variety of CSS worfklows.
+                    Integrate with a variety of CSS workflows.
                   </Typography>
                 </div>
 

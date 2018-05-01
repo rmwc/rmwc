@@ -31,6 +31,7 @@ export const FormField = withMDC({
   class extends React.Component<FormFieldRootPropsT> {
     static displayName = 'FormField';
     render() {
+      //$FlowFixMe
       const { mdcElementRef, ...rest } = this.props;
       return <FormFieldRoot elementRef={mdcElementRef} {...rest} />;
     }

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import docgen from '../../docs/docgen';
 
@@ -19,43 +18,43 @@ export const DocumentComponent = ({ displayName }) => {
       {docs && !!docs.description && <p>{docs.description}</p>}
       {docs &&
         docs.props && (
-          <div>
-            <h3>Props</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Default</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(docs.props).map(([propName, prop], i) => (
-                  <tr key={i}>
-                    <td className={prop.required ? 'required' : ''}>
-                      <code>{propName}</code>
-                    </td>
-                    <td>
-                      <code>
-                        {prop.flowType &&
+        <div>
+          <h3>Props</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(docs.props).map(([propName, prop], i) => (
+                <tr key={i}>
+                  <td className={prop.required ? 'required' : ''}>
+                    <code>{propName}</code>
+                  </td>
+                  <td>
+                    <code>
+                      {prop.flowType &&
                           (prop.flowType.raw || prop.flowType.name || '')}
-                      </code>
-                    </td>
-                    <td>
-                      {prop.defaultValue ? (
-                        <code>{prop.defaultValue.value}</code>
-                      ) : (
-                        ''
-                      )}
-                    </td>
-                    <td>{prop.description || ''}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+                    </code>
+                  </td>
+                  <td>
+                    {prop.defaultValue ? (
+                      <code>{prop.defaultValue.value}</code>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>{prop.description || ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };

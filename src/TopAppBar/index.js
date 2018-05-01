@@ -89,7 +89,7 @@ type TopAppAppBarPropsT = {
   shortCollapsed?: boolean,
   /** Styles the top app bar to be dense. */
   dense?: boolean
-};
+} & SimpleTagPropsT;
 
 /** A TopAppBar component */
 export class TopAppBar extends withFoundation({
