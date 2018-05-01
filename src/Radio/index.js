@@ -2,8 +2,7 @@
 import * as React from 'react';
 import { MDCRadio } from '@material/radio/dist/mdc.radio';
 import FormField from '../FormField';
-import classNames from 'classnames';
-import { simpleTag, withMDCToggle } from '../Base';
+import { simpleTag } from '../Base';
 import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 import { randomId } from '../Base/utils/randomId';
 

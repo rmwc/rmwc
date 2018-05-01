@@ -3,11 +3,7 @@ import * as React from 'react';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 import { simpleTag } from '../Base';
 
-import {
-  withFoundation,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const SliderRoot = simpleTag({
   displayName: 'SliderRoot',
