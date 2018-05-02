@@ -2025,6 +2025,54 @@
       }
     }
   ],
+  "src/ImageList/index.js": [
+    {
+      "description": "Indicates the root Image List element.",
+      "displayName": "ImageList",
+      "methods": [],
+      "props": {
+        "masonry": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Indicates that this Image List should use the Masonry variant."
+        },
+        "withTextProtection": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image)."
+        }
+      }
+    },
+    {
+      "description": "Indicates each item in an Image List.",
+      "displayName": "ImageListItem",
+      "methods": []
+    },
+    {
+      "description": "Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio.",
+      "displayName": "ImageListImageAspectContainer",
+      "methods": []
+    },
+    {
+      "description": "Indicates the image element in each item.",
+      "displayName": "ImageListImage",
+      "methods": []
+    },
+    {
+      "description": "Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels.",
+      "displayName": "ImageListSupporting",
+      "methods": []
+    },
+    {
+      "description": "Optional. Indicates the text label in each item, if the Image List contains text labels.",
+      "displayName": "ImageListLabel",
+      "methods": []
+    }
+  ],
   "src/LineRipple/index.js": [
     {
       "description": "",

@@ -25,6 +25,10 @@ pre[class*='language-'] {
   font-size: 0.875rem;
 }
 
+body ul li {
+  margin: 0;
+}
+
 .mdc-temporary-drawer__drawer {
   will-change: initial;
 }
