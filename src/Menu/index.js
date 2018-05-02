@@ -2,7 +2,8 @@
 import * as React from 'react';
 import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
-import { simpleTag, withMDC, noop } from '../Base';
+import { simpleTag } from '../Base';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 /****************************************************************
  * Private
@@ -59,89 +60,89 @@ type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'top
 export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
-  /** Callback that fires when the Menu closes. */
+  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
   onClose?: (evt: Event) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (evt: Event) => mixed,
+  onSelected?: (evt: { detail: { index: number, item: HTMLElement } }) => mixed,
+  /** Callback that fires when the menu is closed with nothing selected. */
+  onCancel?: (evt: Event) => mixed,
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT,
   /** Children to render */
   children?: React.Node
 };
 
-const handleMenuChange = (evt, props) => {
-  evt.target.value = false;
-  props.onClose(evt);
-};
-
 /** A menu component */
-export const Menu = withMDC({
-  mdcConstructor: MDCMenu,
-  mdcElementRef: true,
-  mdcEvents: {
-    'MDCMenu:cancel': (evt, props, api) => {
-      handleMenuChange(evt, props);
+export class Menu extends withFoundation({
+  constructor: MDCMenu,
+  adapter: {
+    notifySelected: function(evtData) {
+      const evt = this.emit(MDCMenuFoundation.strings.SELECTED_EVENT, {
+        index: evtData.index,
+        item: this.items[evtData.index]
+      });
+      this.props.onClose && this.props.onClose(evt);
     },
-    'MDCMenu:selected': (evt, props, api) => {
-      handleMenuChange(evt, props);
-      props.onSelected(evt);
+    notifyCancel: function() {
+      this.foundation_.close(); // fixes a bug in MDC
+      const evt = this.emit(MDCMenuFoundation.strings.CANCEL_EVENT, {});
+      this.props.onClose && this.props.onClose(evt);
     }
-  },
-  defaultProps: {
-    open: false,
-    onSelected: noop,
-    onClose: noop
-  },
-  onMount: (props, api) => {
-    //$FlowFixMe
-    if (props.open) {
-      //$FlowFixMe
-      api.quickOpen = true;
-      //$FlowFixMe
-      api.open = true;
-      //$FlowFixMe
-      api.quickOpen = false;
-    }
-  },
-  onUpdate: (props, nextProps, api) => {
+  }
+})<MenuPropsT> {
+  static displayName = 'Menu';
+
+  initialSyncWithDom() {
+    this.quickOpen = true;
+  }
+
+  initFoundation() {
+    super.initFoundation();
+    // wait a few frames to set our quickOpen back to false after the foundation is init
+    setTimeout(() => {
+      this.quickOpen = false;
+    }, 100);
+  }
+
+  syncWithProps(nextProps: MenuPropsT) {
+    // open
+    syncFoundationProp(
+      nextProps.open,
+      this.open,
+      () => (this.open = nextProps.open)
+    );
+
+    // anchorCorner
     if (
-      api &&
+      nextProps.anchorCorner !== undefined &&
       MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]] !==
-        api.foundation_.anchorCorner_
+        this.foundation_.anchorCorner_
     ) {
-      api.setAnchorCorner(
+      this.setAnchorCorner(
         MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]]
       );
     }
-
-    if (api && nextProps.open !== undefined && api.open !== nextProps.open) {
-      api.open = nextProps.open;
-    }
   }
-})(
-  class extends React.Component<MenuPropsT> {
-    static displayName = 'Menu';
 
-    render() {
-      const {
-        children,
-        open,
-        onClose,
-        onSelected,
-        //$FlowFixMe
-        mdcElementRef,
-        anchorCorner,
-        ...rest
-      } = this.props;
+  render() {
+    const {
+      children,
+      open,
+      onClose,
+      onSelected,
+      anchorCorner,
+      ...rest
+    } = this.props;
 
-      return (
-        <MenuRoot elementRef={mdcElementRef} {...rest}>
-          <MenuItems>{children}</MenuItems>
-        </MenuRoot>
-      );
-    }
+    const { root_ } = this.foundationRefs;
+
+    return (
+      <MenuRoot elementRef={root_} {...rest}>
+        <MenuItems>{children}</MenuItems>
+      </MenuRoot>
+    );
   }
-);
+}
 
 export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */

@@ -1,21 +1,22 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs';
-import { Menu, MenuItem, MenuAnchor } from './';
+import { select } from '@storybook/addon-knobs';
+import { Menu, MenuItem, MenuAnchor, SimpleMenu } from './';
 import { Button } from '../Button';
-import { storyWithState } from '../Base/utils/story-with-state';
 
-const MenuStory = storyWithState(
-  state => ({
-    open: boolean('open', state.open || true)
-  }),
-  function() {
+class MenuStory extends React.Component {
+  state = {
+    open: false
+  };
+  render() {
     return (
       <MenuAnchor style={{ position: 'absolute', top: '24px', left: '24px' }}>
         <Button
           raised
-          onClick={evt => this.setState({ open: !this.state.open })}
+          onClick={evt => {
+            this.setState({ open: !this.state.open });
+          }}
         >
           Open Menu
         </Button>
@@ -36,7 +37,9 @@ const MenuStory = storyWithState(
             },
             'topStart'
           )}
-          onClose={evt => this.setState({ open: false })}
+          onClose={evt => {
+            this.setState({ open: false });
+          }}
         >
           <MenuItem>Cookies</MenuItem>
           <MenuItem>Pizza</MenuItem>
@@ -45,6 +48,14 @@ const MenuStory = storyWithState(
       </MenuAnchor>
     );
   }
-);
+}
 
-storiesOf('Menus', module).add('Menu', () => <MenuStory />);
+storiesOf('Menus', module)
+  .add('Menu', () => <MenuStory />)
+  .add('SimpleMenu', () => (
+    <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
+      <MenuItem>Cookies</MenuItem>
+      <MenuItem>Pizza</MenuItem>
+      <MenuItem>Icecream</MenuItem>
+    </SimpleMenu>
+  ));
