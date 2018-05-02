@@ -2787,8 +2787,13 @@
       "props": {
         "handle": {
           "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
+            "name": "ReactElement",
+            "raw": "React.Element<any>",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ]
           },
           "required": true,
           "description": "An element that will open the menu when clicked"

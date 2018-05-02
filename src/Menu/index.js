@@ -88,7 +88,6 @@ export class Menu extends withFoundation({
         item: this.items[evtData.index]
       });
       this.props.onClose && this.props.onClose(evt);
-      console.log('Selected');
     },
     notifyCancel: function() {
       const evt = this.emit(MDCMenuFoundation.strings.CANCEL_EVENT, {});
@@ -138,7 +137,7 @@ export class Menu extends withFoundation({
 
 export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
-  handle: React.Node,
+  handle: React.Element<any>,
   /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
   rootProps: Object,
   /** Children to render */

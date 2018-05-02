@@ -5,7 +5,7 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for Material Design (Web) Components v0.34.0
+A React (15 / 16) wrapper for the official Material Design (Web) Components v0.35.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 RMWC is tested in all versions of React ranging from 15.5.x to 16.3.x;
@@ -14,11 +14,24 @@ RMWC is tested in all versions of React ranging from 15.5.x to 16.3.x;
 
 RMWC is moving towards a direct implementation with MDC's Foundation classes. This means direct code reuse from the material-components-web implementation which will result in better performance, reliability, less bugs, and easier releases for RMWC. These will be rolled out a few at a time every release and will contain minimal breaking changes.
 
-MDC has been upgraded to 0.34.0
+RMWC has been upgraded to use MDC 0.35.0
 
-The biggest changes in this release are related to Selects. MDC has switched to using standard CSS select elements. This shouldn't break anything in RMWC unless you were using any custom UI to render your List Items. Also, the light and dark variants of primary and secondary theme colors have been removed.
+For MDC 35, the team at google has refactored Typography and Themes. Make sure to view the Changelog for more details.
 
-Other than that, there has been some additional housekeeping to improve the developer experience including publishing the unminified ES6 code, exposing the built in FlowTypes, and more testing around server side rendering.
+BREAKING CHANGES
+- Typography classes have been renamed. Please see this commit for a mapping of old to new -> https://github.com/jamesmfriedman/rmwc/commit/8d77666bd87380a824028c071a8597cdb647b1ad
+
+- Themes have been refactored and there are less classNames now. Please see this commit for a mapping of old to new -> https://github.com/jamesmfriedman/rmwc/commit/86fa087a2864f3198435cb5288ca793ee6f84b08
+
+- Cards and Buttons `stroked` prop is now called `outlined`
+
+New Features
+- A new a Shape component
+- A new ImageList component
+- A new TopAppBar component
+- 100% Flow code compliance. Should expose some flow auto-complete and type checking if you're using it.
+- More testing around server-side-rendering
+
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
