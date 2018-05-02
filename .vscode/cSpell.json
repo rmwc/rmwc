@@ -13,6 +13,7 @@
         "fabs",
         "lastrow",
         "listbox",
+        "mdc's",
         "refname",
         "reinit",
         "rmwc",
@@ -24,6 +25,7 @@
         "Textfield",
         "truthy",
         "unelevated",
+        "unminified",
         "unmounting"
     ],
     // flagWords - list of words to be always considered incorrect

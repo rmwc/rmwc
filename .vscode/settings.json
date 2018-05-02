@@ -13,6 +13,7 @@
     "fabs",
     "lastrow",
     "listbox",
+    "mdc's",
     "refname",
     "reinit",
     "rmwc",
@@ -22,6 +23,7 @@
     "submenu",
     "truthy",
     "unelevated",
+    "unminified",
     "unmounting"
   ]
 }
