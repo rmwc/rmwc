@@ -57,7 +57,3 @@ export const ImageListLabel = simpleTag({
   displayName: 'ImageListLabel',
   classNames: 'mdc-image-list__label'
 });
-
-`
-
-`;
