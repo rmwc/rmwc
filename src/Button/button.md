@@ -14,7 +14,7 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 <Button dense>Dense</Button>
 <Button unelevated>Unelevated</Button>
 <Button outlined>Outlined</Button>
-<Button raised theme="secondary-bg text-primary-on-secondary">With Theme</Button>
+<Button raised theme="secondary-bg on-secondary">With Theme</Button>
 ```
 
 ```jsx renderOnly

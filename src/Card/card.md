@@ -87,7 +87,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardPrimaryAction>
     <div style={{ padding: '1rem' }}>
-      <Typography use="display5" tag="div">
+      <Typography use="headline5" tag="div">
         Copper on the rise
       </Typography>
       <Typography use="body1" tag="p" theme="text-secondary-on-background">
@@ -100,7 +100,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardPrimaryAction>
     <div style={{ padding: '1rem' }}>
-      <Typography use="display5" tag="div">
+      <Typography use="headline5" tag="div">
         U.S. tech startups rebound
       </Typography>
       <Typography use="body1" tag="p" theme="text-secondary-on-background">
@@ -114,7 +114,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardPrimaryAction>
     <div style={{ padding: '1rem' }}>
-      <Typography use="headline" tag="div">
+      <Typography use="headline5" tag="div">
         Asia's clean energy ambitions
       </Typography>
       <Typography use="body1" tag="p" theme="text-secondary-on-background">

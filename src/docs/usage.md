@@ -58,7 +58,7 @@ The theming functionality from material-components-web is baked into every compo
 ```jsx
 import { Button } from 'rmwc/Button';
 
-<Button raised theme="secondary-bg text-primary-on-secondary">
+<Button raised theme="secondary-bg on-secondary">
   With Theme
 </Button>;
 ```

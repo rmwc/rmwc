@@ -16,7 +16,7 @@ import { Theme } from '../Theme';
 export const Home = () => {
   return (
     <React.Fragment>
-      <Theme tag="header" use="primary-bg text-primary-on-primary">
+      <Theme tag="header" use="primary-bg on-primary">
         <div className="container">
           <Typography use="headline3" tag="h1">
             React Material Web Components
@@ -49,7 +49,7 @@ export const Home = () => {
         <Grid>
           <GridCell span={4}>
             <Link to="/installation">
-              <Card theme="primary-bg text-primary-on-primary">
+              <Card theme="primary-bg on-primary">
                 <div style={{ padding: '1rem' }}>
                   <Typography use="headline6" tag="div">
                     Simple to Use
