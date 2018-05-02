@@ -327,6 +327,11 @@ ul li {
   margin: 0.5rem;
 }
 
+/* page shapes */
+#page-shape .example .mdc-shape-container {
+  margin: 0.5rem;
+}
+
 /* page drawers */
 #page-drawers .example .run {
   overflow: hidden;

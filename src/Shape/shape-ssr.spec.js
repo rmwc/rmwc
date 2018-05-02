@@ -3,10 +3,10 @@
  */
 import React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Radio } from './';
+import { ShapeContainer } from './';
 
-describe('Radio SSR', () => {
+describe('ShapeContainer SSR', () => {
   test('renders', () => {
-    mount(<Radio />);
+    mount(<ShapeContainer corner="10" backgroundColor="red" />);
   });
 });

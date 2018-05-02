@@ -31,6 +31,7 @@ import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
 import ChipDocs from '../Chip/chip.md';
 import TopAppBarDocs from '../TopAppBar/top-app-bar.md';
+import ShapeDocs from '../Shape/shape.md';
 
 export const menuContent = [
   {
@@ -172,6 +173,11 @@ export const menuContent = [
     label: 'Ripples',
     url: `/ripples`,
     component: RippleDocs
+  },
+  {
+    label: 'Shape',
+    url: '/shape',
+    component: ShapeDocs
   },
   {
     label: 'Snackbars',
