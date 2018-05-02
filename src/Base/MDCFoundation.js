@@ -55,31 +55,27 @@ export const syncFoundationProp = (
  ***********************************************************************/
 export const addClass = () =>
   function(className: string) {
-    setTimeout(() => {
-      if (!this.state.classes.has(className)) {
-        // The animation frame corrects an issue where MDC would set a class
-        // on a form element and cause re-render before the new value could actually be set from the onChange
+    if (!this.state.classes.has(className)) {
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
 
-        this._safeSetState(prevState => ({
-          classes: prevState.classes.add(className)
-        }));
-      }
-    });
+      this._safeSetState(prevState => ({
+        classes: prevState.classes.add(className)
+      }));
+    }
   };
 
 export const removeClass = () =>
   function(className: string) {
-    setTimeout(() => {
-      if (this.state.classes.has(className)) {
-        // The animation frame corrects an issue where MDC would set a class
-        // on a form element and cause re-render before the new value could actually be set from the onChange
-        this._safeSetState(prevState => ({
-          classes: prevState.classes.delete(className)
-            ? prevState.classes
-            : prevState.classes
-        }));
-      }
-    });
+    if (this.state.classes.has(className)) {
+      // The animation frame corrects an issue where MDC would set a class
+      // on a form element and cause re-render before the new value could actually be set from the onChange
+      this._safeSetState(prevState => ({
+        classes: prevState.classes.delete(className)
+          ? prevState.classes
+          : prevState.classes
+      }));
+    }
   };
 
 /************************************************************************

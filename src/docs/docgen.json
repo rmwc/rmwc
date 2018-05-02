@@ -2364,6 +2364,601 @@
       }
     }
   ],
+  "src/Menu/index.js": [
+    {
+      "description": "",
+      "displayName": "MenuRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'-1'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "MenuItems",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'menu'",
+            "computed": false
+          },
+          "required": false
+        },
+        "aria-hidden": {
+          "defaultValue": {
+            "value": "'true'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "This is just the ListItem component exported from the Menu module for convenience.",
+      "displayName": "MenuItem",
+      "methods": []
+    },
+    {
+      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute.",
+      "displayName": "MenuAnchor",
+      "methods": []
+    },
+    {
+      "description": "A menu component",
+      "displayName": "Menu",
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: Event) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: { detail: { index: number, item: HTMLElement } }) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: Event) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Children to render */\n  children?: React.Node\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "open",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onClose",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onSelected",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ detail: { index: number, item: HTMLElement } }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "detail",
+                                      "value": {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ index: number, item: HTMLElement }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "index",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            },
+                                            {
+                                              "key": "item",
+                                              "value": {
+                                                "name": "HTMLElement",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onCancel",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "anchorCorner",
+                      "value": {
+                        "name": "union",
+                        "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                        "elements": [
+                          {
+                            "name": "literal",
+                            "value": "'bottomEnd'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomLeft'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomRight'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomStart'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topEnd'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topLeft'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topRight'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topStart'"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "MenuPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { index: number, item: HTMLElement } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ index: number, item: HTMLElement }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "index",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                },
+                                {
+                                  "key": "item",
+                                  "value": {
+                                    "name": "HTMLElement",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "onCancel": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when the menu is closed with nothing selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
+        }
+      }
+    },
+    {
+      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor",
+      "displayName": "SimpleMenu",
+      "methods": [
+        {
+          "name": "syncWithOpenProp",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "open",
+              "optional": true,
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "handle": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "An element that will open the menu when clicked"
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": true,
+          "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
+        },
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { index: number, item: HTMLElement } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ index: number, item: HTMLElement }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "index",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                },
+                                {
+                                  "key": "item",
+                                  "value": {
+                                    "name": "HTMLElement",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "onCancel": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when the menu is closed with nothing selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        }
+      }
+    }
+  ],
   "src/Provider/index.js": [
     {
       "description": "Provides default options for children\nProp override options in providerDefaults with the same name",
@@ -2933,24 +3528,6 @@
       "description": "",
       "displayName": "SelectSurface",
       "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "SelectLabel",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ]
     },
     {
       "description": "",

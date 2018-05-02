@@ -76,15 +76,21 @@ export type MenuPropsT = {
 export class Menu extends withFoundation({
   constructor: MDCMenu,
   adapter: {
+    registerBodyClickHandler: function(handler) {
+      // Corrects a sync issue with MDC, it was registering even though the menu was closed
+      // This has to do with the necessity to sync the foundation and react whenever an event fires
+      // $FlowFixMe
+      this.open && document.body.addEventListener('click', handler);
+    },
     notifySelected: function(evtData) {
       const evt = this.emit(MDCMenuFoundation.strings.SELECTED_EVENT, {
         index: evtData.index,
         item: this.items[evtData.index]
       });
       this.props.onClose && this.props.onClose(evt);
+      console.log('Selected');
     },
     notifyCancel: function() {
-      this.foundation_.close(); // fixes a bug in MDC
       const evt = this.emit(MDCMenuFoundation.strings.CANCEL_EVENT, {});
       this.props.onClose && this.props.onClose(evt);
     }
@@ -92,25 +98,11 @@ export class Menu extends withFoundation({
 })<MenuPropsT> {
   static displayName = 'Menu';
 
-  initialSyncWithDom() {
-    this.quickOpen = true;
-  }
-
-  initFoundation() {
-    super.initFoundation();
-    // wait a few frames to set our quickOpen back to false after the foundation is init
-    setTimeout(() => {
-      this.quickOpen = false;
-    }, 100);
-  }
-
   syncWithProps(nextProps: MenuPropsT) {
     // open
-    syncFoundationProp(
-      nextProps.open,
-      this.open,
-      () => (this.open = nextProps.open)
-    );
+    syncFoundationProp(nextProps.open, this.open, () => {
+      this.open = nextProps.open;
+    });
 
     // anchorCorner
     if (
@@ -137,7 +129,7 @@ export class Menu extends withFoundation({
     const { root_ } = this.foundationRefs;
 
     return (
-      <MenuRoot elementRef={root_} {...rest}>
+      <MenuRoot {...rest} elementRef={root_}>
         <MenuItems>{children}</MenuItems>
       </MenuRoot>
     );
@@ -146,7 +138,7 @@ export class Menu extends withFoundation({
 
 export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
-  handle: React.Element<*>,
+  handle: React.Node,
   /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
   rootProps: Object,
   /** Children to render */
@@ -211,7 +203,7 @@ export class SimpleMenu extends React.Component<
     };
     return (
       <MenuAnchor {...rootProps}>
-        <Menu onClose={wrappedOnClose} open={this.state.open} {...rest}>
+        <Menu {...rest} onClose={wrappedOnClose} open={this.state.open}>
           {children}
         </Menu>
         {wrappedHandle}
