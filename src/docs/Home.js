@@ -18,10 +18,10 @@ export const Home = () => {
     <React.Fragment>
       <Theme tag="header" use="primary-bg text-primary-on-primary">
         <div className="container">
-          <Typography use="display2" tag="h1">
+          <Typography use="headline3" tag="h1">
             React Material Web Components
           </Typography>
-          <Typography use="headline" tag="h2">
+          <Typography use="headline5" tag="h2">
             A React wrapper for Google's official Material
             Components&nbsp;for&nbsp;the&nbsp;Web
           </Typography>
@@ -39,7 +39,7 @@ export const Home = () => {
 
       <aside tag="aside" className="intro">
         <div className="intro__inner">
-          <Typography tag="p" use="title" className="container">
+          <Typography tag="p" use="headline6" className="container">
             RMWC was created to be the most performant, un-opinionated, and
             simple implementation of Material Design in React.
           </Typography>
@@ -51,7 +51,7 @@ export const Home = () => {
             <Link to="/installation">
               <Card theme="primary-bg text-primary-on-primary">
                 <div style={{ padding: '1rem' }}>
-                  <Typography use="title" tag="div">
+                  <Typography use="headline6" tag="div">
                     Simple to Use
                   </Typography>
                   <Typography use="body1">Get started in 5 minutes.</Typography>
@@ -80,7 +80,7 @@ export const Home = () => {
               href="https://material.io/components/web/"
             >
               <div style={{ padding: '1rem' }}>
-                <Typography use="title" tag="div">
+                <Typography use="headline6" tag="div">
                   Material Accuracy
                 </Typography>
                 <div>This is Google's official library, wrapped in React.</div>
@@ -107,7 +107,7 @@ export const Home = () => {
                 theme="text-primary-on-dark"
               >
                 <div style={{ padding: '1rem' }}>
-                  <Typography use="title" tag="div">
+                  <Typography use="headline6" tag="div">
                     Easy to Customize
                   </Typography>
                   <Typography use="body1">

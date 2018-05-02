@@ -31,11 +31,11 @@ import { Typography } from 'rmwc/Typography';
       }}
     />
     <div style={{ padding: '0 1rem 1rem 1rem' }}>
-      <Typography use="title" tag="h2">
+      <Typography use="headline6" tag="h2">
         Our Changing Planet
       </Typography>
       <Typography
-        use="subheading1"
+        use="subtitle2"
         tag="h3"
         theme="text-secondary-on-background"
         style={{ marginTop: '-1rem' }}
@@ -75,7 +75,7 @@ import { Icon } from 'rmwc/Icon';
 import { Typography } from 'rmwc/Typography';
 <Card outlined style={{ width: '21rem' }}>
   <Typography
-    use="subheading2"
+    use="subtitle1"
     tag="div"
     style={{ padding: '0.5rem 1rem' }}
     theme="text-secondary-on-background"
@@ -87,7 +87,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardPrimaryAction>
     <div style={{ padding: '1rem' }}>
-      <Typography use="headline" tag="div">
+      <Typography use="display5" tag="div">
         Copper on the rise
       </Typography>
       <Typography use="body1" tag="p" theme="text-secondary-on-background">
@@ -100,7 +100,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardPrimaryAction>
     <div style={{ padding: '1rem' }}>
-      <Typography use="headline" tag="div">
+      <Typography use="display5" tag="div">
         U.S. tech startups rebound
       </Typography>
       <Typography use="body1" tag="p" theme="text-secondary-on-background">

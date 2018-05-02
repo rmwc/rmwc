@@ -38,7 +38,7 @@ import { Button } from 'rmwc/Button';
 
 // renders an h1
 const Example1 = props => (
-  <Typography tag="h1" use="display1">
+  <Typography tag="h1" use="headline4">
     Hello World
   </Typography>
 );

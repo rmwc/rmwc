@@ -8,18 +8,19 @@ import from **rmwc/Typography**
 ```jsx render
 import { Typography } from 'rmwc/Typography';
 
-<Typography use="display4">display4</Typography>
-<Typography use="display3">display3</Typography>
-<Typography use="display2">display2</Typography>
-<Typography use="display1">display1</Typography>
-<Typography use="headline">headline</Typography>
-<Typography use="title">title</Typography>
-<Typography use="subheading2">subheading2</Typography>
-<Typography use="subheading1">subheading1</Typography>
-<Typography use="body2">body2</Typography>
+<Typography use="headline1">headline1</Typography>
+<Typography use="headline2">headline2</Typography>
+<Typography use="headline3">headline3</Typography>
+<Typography use="headline4">headline4</Typography>
+<Typography use="headline5">headline5</Typography>
+<Typography use="headline6">headline6</Typography>
+<Typography use="subtitle1">subtitle1</Typography>
+<Typography use="subtitle2">subtitle2</Typography>
 <Typography use="body1">body1</Typography>
+<Typography use="body2">body2</Typography>
 <Typography use="caption">caption</Typography>
 <Typography use="button">button</Typography>
+<Typography use="overline">overline</Typography>
 ```
 
 ```jsx renderOnly
