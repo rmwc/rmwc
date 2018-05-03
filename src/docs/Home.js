@@ -2,26 +2,26 @@
 
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { version } from 'rmwc/rmwc';
-import { Typography } from 'rmwc/Typography';
+import { version } from '../rmwc';
+import { Typography } from '../Typography';
 
-import { Card, CardMedia, CardActions, CardAction } from 'rmwc/Card';
+import { Card, CardMedia, CardActions, CardAction } from '../Card';
 
-import { Grid, GridCell } from 'rmwc/Grid';
+import { Grid, GridCell } from '../Grid';
 
-import { Button } from 'rmwc/Button';
+import { Button } from '../Button';
 
-import { Theme } from 'rmwc/Theme';
+import { Theme } from '../Theme';
 
 export const Home = () => {
   return (
     <React.Fragment>
-      <Theme tag="header" use="primary-bg text-primary-on-primary">
+      <Theme tag="header" use="primary-bg on-primary">
         <div className="container">
-          <Typography use="display2" tag="h1">
+          <Typography use="headline3" tag="h1">
             React Material Web Components
           </Typography>
-          <Typography use="headline" tag="h2">
+          <Typography use="headline5" tag="h2">
             A React wrapper for Google's official Material
             Components&nbsp;for&nbsp;the&nbsp;Web
           </Typography>
@@ -39,9 +39,9 @@ export const Home = () => {
 
       <aside tag="aside" className="intro">
         <div className="intro__inner">
-          <Typography tag="p" use="title" className="container">
-            RMWC was created to be the most performant, unopinionated, and
-            simple implemenation of Material Design in React.
+          <Typography tag="p" use="headline6" className="container">
+            RMWC was created to be the most performant, un-opinionated, and
+            simple implementation of Material Design in React.
           </Typography>
         </div>
       </aside>
@@ -49,9 +49,9 @@ export const Home = () => {
         <Grid>
           <GridCell span={4}>
             <Link to="/installation">
-              <Card theme="primary-bg text-primary-on-primary">
+              <Card theme="primary-bg on-primary">
                 <div style={{ padding: '1rem' }}>
-                  <Typography use="title" tag="div">
+                  <Typography use="headline6" tag="div">
                     Simple to Use
                   </Typography>
                   <Typography use="body1">Get started in 5 minutes.</Typography>
@@ -80,7 +80,7 @@ export const Home = () => {
               href="https://material.io/components/web/"
             >
               <div style={{ padding: '1rem' }}>
-                <Typography use="title" tag="div">
+                <Typography use="headline6" tag="div">
                   Material Accuracy
                 </Typography>
                 <div>This is Google's official library, wrapped in React.</div>
@@ -107,11 +107,11 @@ export const Home = () => {
                 theme="text-primary-on-dark"
               >
                 <div style={{ padding: '1rem' }}>
-                  <Typography use="title" tag="div">
+                  <Typography use="headline6" tag="div">
                     Easy to Customize
                   </Typography>
                   <Typography use="body1">
-                    Integrate with a variety of CSS worfklows.
+                    Integrate with a variety of CSS workflows.
                   </Typography>
                 </div>
 

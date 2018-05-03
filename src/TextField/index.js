@@ -10,12 +10,7 @@ import { FloatingLabel } from '../FloatingLabel';
 
 import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',
@@ -130,9 +125,11 @@ export class TextFieldIcon extends simpleTag({
 export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
   textarea?: boolean,
+  /** Sets the value for controlled TextFields. */
+  value?: string | number,
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean,
-  /** Makes the TextField have a visiual box. */
+  /** Makes the TextField have a visual box. */
   box?: boolean,
   /** A ref for the native input. */
   inputRef?: React.Ref<any>,
@@ -160,10 +157,7 @@ export type TextFieldPropsT = {
 
 export class TextField extends withFoundation({
   constructor: MDCTextField,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<TextFieldPropsT> {
   static displayName = 'TextField';
 
@@ -204,6 +198,7 @@ export class TextField extends withFoundation({
       children,
       textarea,
       rootProps = {},
+      apiRef,
       ...rest
     } = this.props;
 

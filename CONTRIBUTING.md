@@ -45,7 +45,7 @@ RMWC has a process which runs the components through Babel, and moves them into 
 To "build" the library for distribution
 
 ```
-npm run babelfy
+npm run build
 ```
 
 To build the umd module
@@ -57,12 +57,12 @@ npm run build:lib
 To build the docs
 
 ```
-npm run build
+npm run build:docs
 ```
 
 #### Running Tests
 
-Make sure you have the devDepenedencies installed and then just use `npm test`. This should launch the tests in watch mode and continuously look for changed files to run.
+Make sure you have the devDependencies installed and then just use `npm test`. This should launch the tests in watch mode and continuously look for changed files to run.
 
 ```
 npm test

@@ -24,7 +24,7 @@ export const DrawerHeaderContent = simpleTag({
 });
 
 /** A Header for Drawers */
-export class DrawerHeader extends React.Component<{}> {
+export class DrawerHeader extends React.Component<{ children?: React.Node }> {
   render() {
     const { children, ...rest } = this.props;
     return (
@@ -130,7 +130,7 @@ export const Drawer = withMDC({
     if (
       props &&
       ['permanent', 'persistent', 'temporary'].some(
-        p => props[p] !== nextProps[p]
+        p => props && props[p] !== nextProps[p]
       )
     ) {
       inst.mdcComponentDestroy();
@@ -145,7 +145,7 @@ export const Drawer = withMDC({
     if (
       props &&
       ['permanent', 'persistent', 'temporary'].some(
-        p => props[p] !== nextProps[p]
+        p => props && props[p] !== nextProps[p]
       )
     ) {
       inst.mdcComponentInit();
@@ -157,6 +157,7 @@ export const Drawer = withMDC({
     static displayName = 'Drawer';
 
     render() {
+      // $FlowFixMe
       const { children, onOpen, onClose, mdcElementRef, ...rest } = this.props;
       return (
         <DrawerRoot elementRef={mdcElementRef} {...rest}>

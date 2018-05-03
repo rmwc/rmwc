@@ -67,7 +67,7 @@ storiesOf('Cards', module)
     </Card>
   ))
   .add('Article', () => (
-    <Card stroked style={{ width: '21rem' }}>
+    <Card outlined style={{ width: '21rem' }}>
       <Typography
         use="subheading2"
         tag="div"

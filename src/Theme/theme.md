@@ -36,16 +36,8 @@ import { Theme } from 'rmwc/Theme';
   </div>
   <div style={{ backgroundColor: '#333' }}>
     {[
-      'text-primary-on-primary',
-      'text-secondary-on-primary',
-      'text-hint-on-primary',
-      'text-disabled-on-primary',
-      'text-icon-on-primary',
-      'text-primary-on-secondary',
-      'text-secondary-on-secondary',
-      'text-hint-on-secondary',
-      'text-disabled-on-secondary',
-      'text-icon-on-secondary',
+      'on-primary',
+      'on-secondary',
       'text-primary-on-dark',
       'text-secondary-on-dark',
       'text-hint-on-dark',

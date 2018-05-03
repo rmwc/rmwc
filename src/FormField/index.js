@@ -1,7 +1,8 @@
 // @flow
 import * as React from 'react';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
-import { simpleTag, withMDC } from '../Base';
+import { simpleTag } from '../Base';
+import { withFoundation } from '../Base/MDCFoundation';
 
 type FormFieldRootPropsT = {
   /** Position the input after the label. */
@@ -24,17 +25,17 @@ export const FormFieldRoot: React.ComponentType<
   consumeProps: ['alignEnd']
 });
 
-export const FormField = withMDC({
-  mdcConstructor: MDCFormField,
-  mdcElementRef: true
-})(
-  class extends React.Component<FormFieldRootPropsT> {
-    static displayName = 'FormField';
-    render() {
-      const { mdcElementRef, ...rest } = this.props;
-      return <FormFieldRoot elementRef={mdcElementRef} {...rest} />;
-    }
+export class FormField extends withFoundation({
+  constructor: MDCFormField,
+  adapter: {}
+})<FormFieldRootPropsT> {
+  static displayName = 'FormField';
+  render() {
+    //$FlowFixMe
+    const { apiRef, ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+    return <FormFieldRoot {...rest} elementRef={root_} />;
   }
-);
+}
 
 export default FormField;

@@ -3,12 +3,9 @@ import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { FloatingLabel } from '../FloatingLabel';
+import { LineRipple } from '../LineRipple';
 
 export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
@@ -27,11 +24,6 @@ export const SelectRoot = simpleTag({
 export const SelectSurface = simpleTag({
   displayName: 'SelectSurface',
   classNames: 'mdc-select__surface'
-});
-
-export const SelectLabel = simpleTag({
-  displayName: 'SelectLabel',
-  classNames: props => ['mdc-select__label']
 });
 
 export const SelectSelectedText = simpleTag({
@@ -100,8 +92,6 @@ const createSelectOptions = (options): Object[] => {
 export class Select extends withFoundation({
   constructor: MDCSelect,
   adapter: {
-    addClass: addClass(),
-    removeClass: removeClass(),
     getValue: function() {
       const value = this.nativeControl_.value;
       return value === '' && this.props.placeholder ? ' ' : value;
@@ -129,6 +119,7 @@ export class Select extends withFoundation({
       box,
       className,
       rootProps = {},
+      apiRef,
       ...rest
     } = this.props;
 
@@ -174,8 +165,8 @@ export class Select extends withFoundation({
             })}
           {children}
         </SelectNativeControl>
-        <SelectLabel>{label}</SelectLabel>
-        <SelectBottomLine />
+        <FloatingLabel>{label}</FloatingLabel>
+        <LineRipple />
       </SelectRoot>
     );
   }

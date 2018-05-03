@@ -1,14 +1,22 @@
 // @flow
-import React from 'react';
-import classNames from 'classnames';
+import type { SimpleTagPropsT } from '../Base';
+
+import * as React from 'react';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '../FormField';
-import { simpleTag, withMDCToggle } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+import { simpleTag } from '../Base';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { randomId } from '../Base/utils/randomId';
 
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
-  classNames: 'mdc-checkbox'
+  classNames: props => [
+    'mdc-checkbox',
+    {
+      'mdc-checkbox--disabled': props.disabled
+    }
+  ],
+  consumeProps: ['disabled']
 });
 
 export const CheckboxNativeControl = simpleTag({
@@ -63,6 +71,8 @@ export type CheckboxPropsT = {
   disabled?: boolean,
   /** Toggle the control on and off. */
   checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
   /** Make the control indeterminate */
   indeterminate?: boolean,
   /** A label for the control. */
@@ -72,59 +82,100 @@ export type CheckboxPropsT = {
 /**
  * A Checkbox component
  */
-export const Checkbox = withMDCToggle({
-  mdcConstructor: MDCCheckbox
-})(
-  class extends React.Component<CheckboxPropsT> {
-    static displayName = 'Checkbox';
+export class Checkbox extends withFoundation({
+  constructor: MDCCheckbox,
+  adapter: {}
+})<CheckboxPropsT> {
+  static displayName = 'Checkbox';
 
-    render() {
-      const {
-        label = '',
-        id,
-        children,
-        checked,
-        apiRef,
-        indeterminate,
-        mdcElementRef,
-        generatedId,
-        ...rest
-      } = this.props;
-      const labelId = id || generatedId;
-      const checkedProp = checked !== undefined ? { checked } : {};
-      const classes = classNames({ 'mdc-checkbox--disabled': rest.disabled });
+  constructor(props: CheckboxPropsT) {
+    super(props);
+    this.generatedId = randomId('checkbox');
+  }
 
-      const checkbox = (
-        <CheckboxRoot elementRef={mdcElementRef} className={classes}>
-          <CheckboxNativeControl id={labelId} {...checkedProp} {...rest} />
-          <CheckboxBackground>
-            <CheckboxCheckmark>
-              <CheckboxCheckmarkPath />
-            </CheckboxCheckmark>
-            <CheckboxMixedmark />
-          </CheckboxBackground>
-        </CheckboxRoot>
+  componentDidMount() {
+    super.componentDidMount();
+    this.ripple_ = this.initRipple_();
+  }
+
+  syncWithProps(nextProps: CheckboxPropsT) {
+    // checked
+    syncFoundationProp(
+      nextProps.checked,
+      this.checked,
+      () => (this.checked = nextProps.checked)
+    );
+
+    // indeterminate
+    syncFoundationProp(
+      nextProps.indeterminate,
+      this.indeterminate,
+      () => (this.indeterminate = nextProps.indeterminate)
+    );
+
+    // disabled
+    syncFoundationProp(
+      nextProps.disabled,
+      this.disabled,
+      () => (this.disabled = nextProps.disabled)
+    );
+
+    // value
+    syncFoundationProp(
+      nextProps.value,
+      this.value,
+      () => (this.value = nextProps.value)
+    );
+  }
+
+  render() {
+    const {
+      label = '',
+      id,
+      children,
+      checked,
+      indeterminate,
+      apiRef,
+      ...rest
+    } = this.props;
+
+    const { root_ } = this.foundationRefs;
+    const labelId = id || this.generatedId;
+
+    const checkbox = (
+      <CheckboxRoot
+        elementRef={root_}
+        disabled={rest.disabled}
+        className={this.classes}
+      >
+        <CheckboxNativeControl id={labelId} checked={checked} {...rest} />
+        <CheckboxBackground>
+          <CheckboxCheckmark>
+            <CheckboxCheckmarkPath />
+          </CheckboxCheckmark>
+          <CheckboxMixedmark />
+        </CheckboxBackground>
+      </CheckboxRoot>
+    );
+
+    /**
+     * We have to conditionally wrap our checkbox in a formfield
+     * If we have a label
+     */
+    if (label.length || children) {
+      return (
+        <FormField>
+          {checkbox}
+          <CheckboxLabel id={labelId + 'label'} htmlFor={labelId}>
+            {label}
+            {children}
+          </CheckboxLabel>
+        </FormField>
       );
-
-      /**
-       * We have to conditionally wrap our checkbox in a formfield
-       * If we have a label
-       */
-      if (label.length || children) {
-        return (
-          <FormField>
-            {checkbox}
-            <CheckboxLabel id={labelId + 'label'} htmlFor={labelId}>
-              {label}
-              {children}
-            </CheckboxLabel>
-          </FormField>
-        );
-      } else {
-        return checkbox;
-      }
+    } else {
+      return checkbox;
     }
   }
-);
+}
 
 export default Checkbox;

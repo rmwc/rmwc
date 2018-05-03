@@ -19,7 +19,7 @@ export const SnackbarRoot = simpleTag({
     }
   ],
   defaultProps: {
-    "alignStart": false,
+    alignStart: false,
     'aria-live': 'assertive',
     'aria-atomic': true,
     'aria-hidden': true
@@ -115,7 +115,7 @@ export const Snackbar = withMDC({
       const { show, dismissesOnAction } = nextProps;
       api.dismissesOnAction = dismissesOnAction;
 
-      if ((props === undefined || show !== props.show) && show) {
+      if ((!props || show !== props.show) && show) {
         showSnackbar(nextProps, api);
       }
     }
@@ -133,11 +133,12 @@ export const Snackbar = withMDC({
         actionText,
         multiline,
         actionOnBottom,
-        mdcElementRef,
         dismissesOnAction,
         onHide,
         onShow,
         children,
+        // $FlowFixMe
+        mdcElementRef,
         ...rest
       } = this.props;
 
@@ -147,11 +148,11 @@ export const Snackbar = withMDC({
         snackbarTextStyle.display = 'none';
       }
 
-      const snackbarActionWrapperStyle = !actionText ?
-        {
+      const snackbarActionWrapperStyle = !actionText
+        ? {
           display: 'none'
-        } :
-        {};
+        }
+        : {};
 
       /**
        * The double SnackbarText below is a hack to allow for rendering JSX

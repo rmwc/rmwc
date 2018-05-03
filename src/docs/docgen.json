@@ -50,12 +50,12 @@
             "computed": false
           }
         },
-        "stroked": {
+        "outlined": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the button stroked.",
+          "description": "Make the button outlined.",
           "defaultValue": {
             "value": "false",
             "computed": false
@@ -70,12 +70,12 @@
       "displayName": "Card",
       "methods": [],
       "props": {
-        "stroked": {
+        "outlined": {
           "flowType": {
             "name": "boolean"
           },
           "required": true,
-          "description": "Removes the shadow and displays a hairline stroke instead"
+          "description": "Removes the shadow and displays a hairline outline instead"
         }
       }
     },
@@ -138,14 +138,14 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "An action icon with no text. This is an instance of the Icon component."
         },
         "iconToggle": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "An toggleable action icon with no text. This is an instance of the IconToggle component."
         }
       }
@@ -155,7 +155,20 @@
     {
       "description": "",
       "displayName": "CheckboxRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -231,7 +244,101 @@
     {
       "description": "A Checkbox component",
       "displayName": "Checkbox",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "id",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "value",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string | number",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              },
+                              {
+                                "name": "number"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "indeterminate",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "CheckboxPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "id": {
           "flowType": {
@@ -263,6 +370,25 @@
           "required": false,
           "description": "Toggle the control on and off."
         },
+        "value": {
+          "flowType": {
+            "name": "union",
+            "raw": "boolean | string | number",
+            "elements": [
+              {
+                "name": "boolean"
+              },
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The value of the control."
+        },
         "indeterminate": {
           "flowType": {
             "name": "boolean"
@@ -282,9 +408,35 @@
   ],
   "src/Chip/index.js": [
     {
+      "description": "A chip component.",
+      "displayName": "ChipRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
       "description": "",
       "displayName": "Chip",
-      "methods": [],
+      "methods": [
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
       "props": {
         "onInteraction": {
           "flowType": {
@@ -930,7 +1082,17 @@
     {
       "description": "A Header for Drawers",
       "displayName": "DrawerHeader",
-      "methods": []
+      "methods": [],
+      "props": {
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": ""
+        }
+      }
     },
     {
       "description": "If you are using fixed a Toolbar, this provides space for it.",
@@ -1538,6 +1700,14 @@
             "computed": true
           }
         },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use, specified as children instead of the \"use\" prop."
+        },
         "strategy": {
           "flowType": {
             "name": "union",
@@ -1608,6 +1778,13 @@
           },
           "required": false,
           "description": "A render function to use when using the 'custom' strategy."
+        },
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "A custom className to add.."
         }
       }
     }
@@ -1615,8 +1792,36 @@
   "src/IconToggle/index.js": [
     {
       "description": "",
+      "displayName": "IconToggleRoot",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'button'",
+            "computed": false
+          },
+          "required": false
+        },
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'0'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "",
       "displayName": "IconToggle",
       "methods": [
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
         {
           "name": "syncWithProps",
           "docblock": null,
@@ -1818,6 +2023,54 @@
           "description": "Disables the iconToggle"
         }
       }
+    }
+  ],
+  "src/ImageList/index.js": [
+    {
+      "description": "Indicates the root Image List element.",
+      "displayName": "ImageList",
+      "methods": [],
+      "props": {
+        "masonry": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Indicates that this Image List should use the Masonry variant."
+        },
+        "withTextProtection": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image)."
+        }
+      }
+    },
+    {
+      "description": "Indicates each item in an Image List.",
+      "displayName": "ImageListItem",
+      "methods": []
+    },
+    {
+      "description": "Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio.",
+      "displayName": "ImageListImageAspectContainer",
+      "methods": []
+    },
+    {
+      "description": "Indicates the image element in each item.",
+      "displayName": "ImageListImage",
+      "methods": []
+    },
+    {
+      "description": "Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels.",
+      "displayName": "ImageListSupporting",
+      "methods": []
+    },
+    {
+      "description": "Optional. Indicates the text label in each item, if the Image List contains text labels.",
+      "displayName": "ImageListLabel",
+      "methods": []
     }
   ],
   "src/LineRipple/index.js": [
@@ -2099,6 +2352,14 @@
             "value": "undefined",
             "computed": true
           }
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         }
       }
     }
@@ -2153,7 +2414,7 @@
       }
     },
     {
-      "description": "This is just the ListItem component exported from the Menu module for convience.",
+      "description": "This is just the ListItem component exported from the Menu module for convenience.",
       "displayName": "MenuItem",
       "methods": []
     },
@@ -2165,7 +2426,185 @@
     {
       "description": "A menu component",
       "displayName": "Menu",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: Event) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: { detail: { index: number, item: HTMLElement } }) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: Event) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Children to render */\n  children?: React.Node\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "open",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onClose",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onSelected",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ detail: { index: number, item: HTMLElement } }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "detail",
+                                      "value": {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ index: number, item: HTMLElement }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "index",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            },
+                                            {
+                                              "key": "item",
+                                              "value": {
+                                                "name": "HTMLElement",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "onCancel",
+                      "value": {
+                        "name": "signature",
+                        "type": "function",
+                        "raw": "(evt: Event) => mixed",
+                        "signature": {
+                          "arguments": [
+                            {
+                              "name": "evt",
+                              "type": {
+                                "name": "Event"
+                              }
+                            }
+                          ],
+                          "return": {
+                            "name": "mixed"
+                          }
+                        },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "anchorCorner",
+                      "value": {
+                        "name": "union",
+                        "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                        "elements": [
+                          {
+                            "name": "literal",
+                            "value": "'bottomEnd'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomLeft'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomRight'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'bottomStart'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topEnd'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topLeft'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topRight'"
+                          },
+                          {
+                            "name": "literal",
+                            "value": "'topStart'"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "MenuPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "open": {
           "flowType": {
@@ -2194,9 +2633,64 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when the Menu closes."
+          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
         },
         "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { index: number, item: HTMLElement } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ index: number, item: HTMLElement }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "index",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                },
+                                {
+                                  "key": "item",
+                                  "value": {
+                                    "name": "HTMLElement",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "onCancel": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -2216,12 +2710,12 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when a Menu item is selected."
+          "description": "Callback that fires when the menu is closed with nothing selected."
         },
         "anchorCorner": {
           "flowType": {
             "name": "union",
-            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
             "elements": [
               {
                 "name": "literal",
@@ -2229,7 +2723,7 @@
               },
               {
                 "name": "literal",
-                "value": "'bottomeLeft'"
+                "value": "'bottomLeft'"
               },
               {
                 "name": "literal",
@@ -2259,6 +2753,14 @@
           },
           "required": false,
           "description": "Manually position the menu to one of the corners."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         }
       }
     },
@@ -2285,8 +2787,13 @@
       "props": {
         "handle": {
           "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
+            "name": "ReactElement",
+            "raw": "React.Element<any>",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ]
           },
           "required": true,
           "description": "An element that will open the menu when clicked"
@@ -2297,6 +2804,14 @@
           },
           "required": true,
           "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         },
         "open": {
           "flowType": {
@@ -2325,9 +2840,64 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when the Menu closes."
+          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
         },
         "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { index: number, item: HTMLElement } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ index: number, item: HTMLElement }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "index",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                },
+                                {
+                                  "key": "item",
+                                  "value": {
+                                    "name": "HTMLElement",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "onCancel": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -2347,12 +2917,12 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when a Menu item is selected."
+          "description": "Callback that fires when the menu is closed with nothing selected."
         },
         "anchorCorner": {
           "flowType": {
             "name": "union",
-            "raw": "'bottomEnd' | 'bottomeLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
             "elements": [
               {
                 "name": "literal",
@@ -2360,7 +2930,7 @@
               },
               {
                 "name": "literal",
-                "value": "'bottomeLeft'"
+                "value": "'bottomLeft'"
               },
               {
                 "name": "literal",
@@ -2409,7 +2979,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (content: mixed) => mixed\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (content: mixed) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -2493,6 +3063,14 @@
                             "name": "mixed"
                           }
                         },
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
                         "required": false
                       }
                     }
@@ -2613,6 +3191,14 @@
             "value": "undefined",
             "computed": true
           }
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         }
       }
     }
@@ -2621,7 +3207,20 @@
     {
       "description": "",
       "displayName": "RadioRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -2660,7 +3259,93 @@
     {
       "description": "",
       "displayName": "Radio",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** A label for the control. */\n  label?: string,\n  /** Children to render */\n  children?: React.Node\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "id",
+                      "value": {
+                        "name": "string",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "disabled",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "checked",
+                      "value": {
+                        "name": "union",
+                        "raw": "boolean | string",
+                        "elements": [
+                          {
+                            "name": "boolean"
+                          },
+                          {
+                            "name": "string"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "value",
+                      "value": {
+                        "name": "union",
+                        "raw": "boolean | string | number",
+                        "elements": [
+                          {
+                            "name": "boolean"
+                          },
+                          {
+                            "name": "string"
+                          },
+                          {
+                            "name": "number"
+                          }
+                        ],
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "label",
+                      "value": {
+                        "name": "string",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "RadioPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "id": {
           "flowType": {
@@ -2692,12 +3377,39 @@
           "required": false,
           "description": "Toggle the control on and off."
         },
+        "value": {
+          "flowType": {
+            "name": "union",
+            "raw": "boolean | string | number",
+            "elements": [
+              {
+                "name": "boolean"
+              },
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The value of the control."
+        },
         "label": {
           "flowType": {
             "name": "string"
           },
           "required": false,
           "description": "A label for the control."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         }
       }
     }
@@ -2821,24 +3533,6 @@
       "description": "",
       "displayName": "SelectSurface",
       "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "SelectLabel",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": null
-            }
-          ],
-          "returns": null
-        }
-      ]
     },
     {
       "description": "",
@@ -3084,6 +3778,151 @@
       }
     }
   ],
+  "src/Shape/index.js": [
+    {
+      "description": "A container for shaping other components.",
+      "displayName": "ShapeContainer",
+      "methods": [],
+      "props": {
+        "backgroundColor": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "The background fill color for the corner",
+          "defaultValue": {
+            "value": "'#fff'",
+            "computed": false
+          }
+        },
+        "corner": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The corner length. Will be used for all sides that are left unset."
+        },
+        "topLeftCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The top left corner length."
+        },
+        "topRightCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The top right corner length."
+        },
+        "bottomRightCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The bottom right corner length."
+        },
+        "bottomLeftCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "The bottom left corner length."
+        },
+        "outlineWidth": {
+          "flowType": {
+            "name": "union",
+            "raw": "number | string",
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Sets the width of an outlined corner."
+        },
+        "outlineColor": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "Sets the color outlined corner."
+        },
+        "outlineStyle": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "Sets the border style of an outlined corner."
+        },
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "Custom className to add"
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render."
+        }
+      }
+    }
+  ],
   "src/Slider/index.js": [
     {
       "description": "",
@@ -3207,7 +4046,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } }) => mixed,\n  /** A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } }) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
                 "signature": {
                   "properties": [
                     {
@@ -3495,7 +4334,7 @@
             }
           },
           "required": false,
-          "description": "A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value."
+          "description": "A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value."
         },
         "value": {
           "flowType": {
@@ -3764,7 +4603,20 @@
     {
       "description": "",
       "displayName": "SwitchRoot",
-      "methods": []
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
     },
     {
       "description": "",
@@ -3843,6 +4695,14 @@
           },
           "required": false,
           "description": "Props for the root element. By default, props spread to the input."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": true,
+          "description": "Any children to render."
         }
       }
     }
@@ -3991,6 +4851,14 @@
             "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
             "computed": false
           }
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
         }
       }
     }
@@ -4107,18 +4975,34 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visiual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n}",
+                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Box in the TextField */\n  box?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object\n}",
                     "signature": {
                       "properties": [
                         {
                           "key": "textarea",
                           "value": {
                             "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "value",
+                          "value": {
+                            "name": "union",
+                            "raw": "string | number",
+                            "elements": [
+                              {
+                                "name": "string"
+                              },
+                              {
+                                "name": "number"
+                              }
+                            ],
                             "required": false
                           }
                         },
@@ -4244,6 +5128,22 @@
           "required": false,
           "description": "Makes a multiline TextField."
         },
+        "value": {
+          "flowType": {
+            "name": "union",
+            "raw": "string | number",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Sets the value for controlled TextFields."
+        },
         "fullwidth": {
           "flowType": {
             "name": "boolean"
@@ -4256,7 +5156,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the TextField have a visiual box."
+          "description": "Makes the TextField have a visual box."
         },
         "inputRef": {
           "flowType": {
@@ -4522,6 +5422,131 @@
       }
     }
   ],
+  "src/TopAppBar/index.js": [
+    {
+      "description": "",
+      "displayName": "TopAppBarRoot",
+      "methods": [
+        {
+          "name": "classNames",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "props",
+              "type": null
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "A row for the app bar.",
+      "displayName": "TopAppBarRow",
+      "methods": []
+    },
+    {
+      "description": "A section for the app bar.",
+      "displayName": "TopAppBarSection",
+      "methods": [],
+      "props": {
+        "alignStart": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Aligns the section to the start."
+        },
+        "alignEnd": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Aligns the section to the end."
+        }
+      }
+    },
+    {
+      "description": "A navigation icon fro the top app bar. This is an instance of the Icon component.",
+      "displayName": "TopAppBarNavigationIcon",
+      "methods": []
+    },
+    {
+      "description": "Action items for the top app bar. This is an instance of the Icon component.",
+      "displayName": "TopAppBarActionItem",
+      "methods": []
+    },
+    {
+      "description": "A title for the top app bar.",
+      "displayName": "TopAppBarTitle",
+      "methods": []
+    },
+    {
+      "description": "A TopAppBar component",
+      "displayName": "TopAppBar",
+      "methods": [],
+      "props": {
+        "onNav": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Emits when the navigation icon is clicked."
+        },
+        "fixed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a fixed top app bar."
+        },
+        "prominent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a prominent top app bar."
+        },
+        "short": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a short top app bar."
+        },
+        "shortCollapsed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to always be collapsed."
+        },
+        "dense": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to be dense."
+        }
+      }
+    }
+  ],
   "src/Typography/index.js": [
     {
       "description": "The Typography Component",
@@ -4531,47 +5556,47 @@
         "use": {
           "flowType": {
             "name": "union",
-            "raw": "'display4' | 'display3' | 'display2' | 'display1' | 'headline' | 'title' | 'subheading2' | 'subheading1' | 'body2' | 'body1' | 'caption' | 'button'",
+            "raw": "'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'",
             "elements": [
               {
                 "name": "literal",
-                "value": "'display4'"
+                "value": "'headline1'"
               },
               {
                 "name": "literal",
-                "value": "'display3'"
+                "value": "'headline2'"
               },
               {
                 "name": "literal",
-                "value": "'display2'"
+                "value": "'headline3'"
               },
               {
                 "name": "literal",
-                "value": "'display1'"
+                "value": "'headline4'"
               },
               {
                 "name": "literal",
-                "value": "'headline'"
+                "value": "'headline5'"
               },
               {
                 "name": "literal",
-                "value": "'title'"
+                "value": "'headline6'"
               },
               {
                 "name": "literal",
-                "value": "'subheading2'"
+                "value": "'subtitle1'"
               },
               {
                 "name": "literal",
-                "value": "'subheading1'"
-              },
-              {
-                "name": "literal",
-                "value": "'body2'"
+                "value": "'subtitle2'"
               },
               {
                 "name": "literal",
                 "value": "'body1'"
+              },
+              {
+                "name": "literal",
+                "value": "'body2'"
               },
               {
                 "name": "literal",
@@ -4580,6 +5605,10 @@
               {
                 "name": "literal",
                 "value": "'button'"
+              },
+              {
+                "name": "literal",
+                "value": "'overline'"
               }
             ]
           },

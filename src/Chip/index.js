@@ -5,7 +5,7 @@ import type { IconPropsT } from '../Icon';
 import * as React from 'react';
 import { Icon } from '../Icon';
 import { simpleTag } from '../Base';
-import { withFoundation, addClass, removeClass } from '../Base/MDCFoundation';
+import { withFoundation } from '../Base/MDCFoundation';
 
 import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
@@ -33,10 +33,7 @@ export type ChipPropsT = {
 
 export class Chip extends withFoundation({
   constructor: MDCChip,
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<ChipPropsT> {
   static displayName = 'Chip';
 
@@ -114,9 +111,9 @@ export const ChipIcon = (props: ChipIconPropsT) => {
     p.startsWith('on')
   );
   const trailingProps =
-    props.trailing || hasInteractionHandler ?
-      { role: 'button', tabIndex: 0 } :
-      {};
+    props.trailing || hasInteractionHandler
+      ? { role: 'button', tabIndex: 0 }
+      : {};
 
   return <ChipIconRoot {...trailingProps} {...props} />;
 };
@@ -148,7 +145,7 @@ export class ChipSet extends withFoundation({
   adapter: {}
 })<ChipSetPropsT> {
   render() {
-    const { ...rest } = this.props;
+    const { apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
     return <ChipSetRoot {...rest} elementRef={root_} />;
   }

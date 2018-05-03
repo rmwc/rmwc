@@ -26,10 +26,12 @@ export const simpleTag = ({
   displayName = 'SimpleTag',
   defaultProps = {},
   consumeProps = [],
-  tag: defaultTag = 'div',
+  tag,
   wrap: defaultWrap = false,
   classNames
 }: SimpleTagFactoryT): any => {
+  const defaultTag = tag || 'div';
+
   class SimpleTag extends React.Component<*> {
     static displayName = displayName;
 
@@ -53,9 +55,9 @@ export const simpleTag = ({
       // choose the tag we are going to render
 
       const Component =
-        typeof defaultTag === 'function' && typeof tag === 'string' ?
-          defaultTag :
-          tag || defaultTag;
+        typeof defaultTag === 'function' && typeof tag === 'string'
+          ? defaultTag
+          : tag || defaultTag;
 
       // consume any props that shouldnt be passed along
       const safeRest = { ...rest };
@@ -88,11 +90,11 @@ export const simpleTag = ({
 
       // handle wrapping components
       if (wrap || defaultWrap) {
-        // sometimes we have undfeind children
+        // sometimes we have undefined children
         if (!rest.children) return null;
 
         // make sure we delete our children here
-        // so we dont recrusively clone ourselves
+        // so we dont recursively clone ourselves
         delete safeRest.children;
         const child = React.Children.only(rest.children);
         return React.cloneElement(child, {

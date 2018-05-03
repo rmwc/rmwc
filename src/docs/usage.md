@@ -38,7 +38,7 @@ import { Button } from 'rmwc/Button';
 
 // renders an h1
 const Example1 = props => (
-  <Typography tag="h1" use="display1">
+  <Typography tag="h1" use="headline4">
     Hello World
   </Typography>
 );
@@ -58,7 +58,7 @@ The theming functionality from material-components-web is baked into every compo
 ```jsx
 import { Button } from 'rmwc/Button';
 
-<Button raised theme="secondary-bg text-primary-on-secondary">
+<Button raised theme="secondary-bg on-secondary">
   With Theme
 </Button>;
 ```

@@ -3,12 +3,7 @@ import * as React from 'react';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 import { simpleTag } from '../Base';
 
-import {
-  withFoundation,
-  addClass,
-  removeClass,
-  syncFoundationProp
-} from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const SliderRoot = simpleTag({
   displayName: 'SliderRoot',
@@ -53,7 +48,7 @@ export const SliderPinValueMarker = simpleTag({
   classNames: 'mdc-slider__pin-value-marker'
 });
 
-export const SliderThumb = props => (
+export const SliderThumb = () => (
   <svg className="mdc-slider__thumb" width="21" height="21">
     <circle cx="10.5" cy="10.5" r="7.875" />
   </svg>
@@ -67,7 +62,7 @@ export const SliderFocusRing = simpleTag({
 export type SliderPropsT = {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
   onChange?: (evt: { detail: { value: number } }) => mixed,
-  /** A callback that fires continuously while the Slider is slidng that takes an event with event.detail.value set to the Slider's value. */
+  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
   onInput?: (evt: { detail: { value: number } }) => mixed,
   /** The value of the Slider. */
   value?: number | string,
@@ -94,10 +89,7 @@ export class Slider extends withFoundation({
     'pinValueMarker_',
     'trackMarkerContainer_'
   ],
-  adapter: {
-    addClass: addClass(),
-    removeClass: removeClass()
-  }
+  adapter: {}
 })<SliderPropsT, {}> {
   static displayName = 'Slider';
 
@@ -210,6 +202,7 @@ export class Slider extends withFoundation({
       <SliderRoot
         className={this.classes}
         tabIndex="0"
+        //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
         role="slider"
         aria-valuemax={max}
         aria-valuenow={value}

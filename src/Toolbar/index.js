@@ -168,7 +168,7 @@ export const Toolbar = withMDC({
       api.fixedAdjustElement &&
         api.fixedAdjustElement.style.removeProperty('height');
 
-      // delay re-init for a frame otherwise MDC doesnt
+      // delay re-init for a frame otherwise MDC doesn't
       // catch the class and style changes
       window.requestAnimationFrame(() => {
         inst.mdcComponentReinit();
@@ -180,6 +180,7 @@ export const Toolbar = withMDC({
     static displayName = 'Toolbar';
 
     render() {
+      //$FlowFixMe
       const { mdcElementRef, ...rest } = this.props;
       return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
     }

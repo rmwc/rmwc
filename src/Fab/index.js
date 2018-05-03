@@ -74,7 +74,10 @@ export class Fab extends React.Component<FabRootPropsT> {
     const { buttonDefaultRipple } = this.providerOptions;
     const { ripple, className, children, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
-    const classes = classNames(this.providerOptions.iconPrefix, className);
+    const classes = classNames(
+      this.providerOptions.iconClassNamePrefix,
+      className
+    );
 
     return (
       <FabRoot className={classes} ripple={shouldRipple} {...rest}>

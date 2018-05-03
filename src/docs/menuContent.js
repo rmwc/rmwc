@@ -30,6 +30,9 @@ import ToolbarDocs from '../Toolbar/toolbar.md';
 import TypographyDocs from '../Typography/typography.md';
 import IconDocs from '../Icon/icon.md';
 import ChipDocs from '../Chip/chip.md';
+import TopAppBarDocs from '../TopAppBar/top-app-bar.md';
+import ShapeDocs from '../Shape/shape.md';
+import ImageListDocs from '../ImageList/image-list.md';
 
 export const menuContent = [
   {
@@ -108,6 +111,11 @@ export const menuContent = [
     component: GridListDocs
   },
   {
+    label: 'Image Lists',
+    url: `/image-lists`,
+    component: ImageListDocs
+  },
+  {
     label: 'Inputs and Controls',
     options: [
       {
@@ -173,6 +181,11 @@ export const menuContent = [
     component: RippleDocs
   },
   {
+    label: 'Shape',
+    url: '/shape',
+    component: ShapeDocs
+  },
+  {
     label: 'Snackbars',
     url: `/snackbars`,
     component: SnackbarDocs
@@ -192,6 +205,12 @@ export const menuContent = [
     url: `/toolbars`,
     component: ToolbarDocs
   },
+  {
+    label: 'Top App Bar',
+    url: `/top-app-bar`,
+    component: TopAppBarDocs
+  },
+
   {
     label: 'Typography',
     url: `/typography`,

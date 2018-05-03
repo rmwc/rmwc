@@ -8,7 +8,7 @@ import { Button } from './';
 storiesOf('Buttons', module).add('Button', () => (
   <Button
     unelevated={boolean('unelevated', false)}
-    stroked={boolean('stroked', false)}
+    outlined={boolean('outlined', false)}
     dense={boolean('dense', false)}
     raised={boolean('raised', false)}
     ripple={boolean('ripple', true)}

@@ -37,8 +37,10 @@ processBuiltFiles(files => {
     }
 
     const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`;
+    const copyFlowCmd = `cp ${f} ${out}.flow`;
     console.log('Babel:', f, '-> ', out);
     exec(cmd);
+    exec(copyFlowCmd);
   });
 
   console.log('Writing version...');

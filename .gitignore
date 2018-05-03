@@ -24,6 +24,7 @@
 /Icon
 /IconButton
 /IconToggle
+/ImageList
 /index.js
 /LinearProgress
 /LineRipple
@@ -33,6 +34,7 @@
 /Radio
 /Ripple
 /Select
+/Shape
 /Slider
 /Snackbar
 /Switch
@@ -40,6 +42,7 @@
 /TextField
 /Theme
 /Toolbar
+/TopAppBar
 /Typography
 react-versions
 
