@@ -1,3 +1,40 @@
+#### 1.6.0 (2018-05-03)
+
+##### Breaking Changes
+
+* **Theme:**  MDC breaking change, they refactored their theme option names [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([86fa087a](https://github.com/jamesmfriedman/rmwc/commit/86fa087a2864f3198435cb5288ca793ee6f84b08))
+* **Typography:**  MDC breaking change, updates almost all typography names. [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([8d77666b](https://github.com/jamesmfriedman/rmwc/commit/8d77666bd87380a824028c071a8597cdb647b1ad))
+* **Card:**  MDC breaking change, `stroked` prop changed to `outlined` [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([62ab4157](https://github.com/jamesmfriedman/rmwc/commit/62ab4157a418acc0076eca95103df849a947f16b))
+* **Button:**  MDC breaking change, stroked renamed to oulined [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([979b1fc1](https://github.com/jamesmfriedman/rmwc/commit/979b1fc13cb8ab9b9742ad0f5f2c71e45958ef05))
+
+##### Chores
+
+* **Select:**  Updates label and bottom line to new components [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([ef6806da](https://github.com/jamesmfriedman/rmwc/commit/ef6806da550731bc5b0cfb695e71c9421b358b30))
+* **Menu:**  Implementing Menu via MDC foundation integration. [#210](https://github.com/jamesmfriedman/rmwc/pull/210) [#196](https://github.com/jamesmfriedman/rmwc/pull/196) ([8661541d](https://github.com/jamesmfriedman/rmwc/commit/8661541d162c7a47b8bc2406149bbf9dcc8d01c5))
+* **FormField:**  Converting to foundation component [#210](https://github.com/jamesmfriedman/rmwc/pull/210) [#194](https://github.com/jamesmfriedman/rmwc/pull/194) ([495fda32](https://github.com/jamesmfriedman/rmwc/commit/495fda3200f487440b71c531019ea353d7cd9a54))
+* **Typography:**  adding SSR test ([1c18a555](https://github.com/jamesmfriedman/rmwc/commit/1c18a55575a128f16ba5f219cf7f7c4607dbc2de))
+* **Switch:**  Code cleanup and SSR test [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([b706f671](https://github.com/jamesmfriedman/rmwc/commit/b706f67191df3590a6042168c9a79673ea3790c8))
+* **Radio:**  Implemented via Foundation [#210](https://github.com/jamesmfriedman/rmwc/pull/210) [#192](https://github.com/jamesmfriedman/rmwc/pull/192) ([9bc4b5ea](https://github.com/jamesmfriedman/rmwc/commit/9bc4b5ea38b482845cb183d7260551e26cdfa0e8))
+* **Foundation:**  Removing class adapter handling due to repetitive renders [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([caa23edc](https://github.com/jamesmfriedman/rmwc/commit/caa23edc61f8cc762f0a9feade141a76b7f98833))
+* **Checkbox:**  Implements Checkbox via Foundation [#210](https://github.com/jamesmfriedman/rmwc/pull/210) [#191](https://github.com/jamesmfriedman/rmwc/pull/191) ([1c6edfae](https://github.com/jamesmfriedman/rmwc/commit/1c6edfaea3c33af5c26506e2519819470c908842))
+* **FlowType:**  Fixes all flow type issues through codebase, adds flow check to test suite, correctly exports .flow definition files for 3rd party comsumption [#210](https://github.com/jamesmfriedman/rmwc/pull/210) [#159](https://github.com/jamesmfriedman/rmwc/pull/159) [#40](https://github.com/jamesmfriedman/rmwc/pull/40) ([1158af9e](https://github.com/jamesmfriedman/rmwc/commit/1158af9ea1a9d701520ba0bca9c6377f2c247873))
+* **TopAppBar:**  adding class adapter methods and dense story ([88abec3c](https://github.com/jamesmfriedman/rmwc/commit/88abec3ce9ab3ef8175f6cf6130824ac797667dd))
+
+##### Documentation Changes
+
+* **Readme:**  Updating Readme for latest release. [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([a5dd8338](https://github.com/jamesmfriedman/rmwc/commit/a5dd83382924fa5539cf7ed0abc2da8bcc8da40f))
+
+##### New Features
+
+* **ImageList:**  Adding new MDC ImageList component. [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([3b8f0504](https://github.com/jamesmfriedman/rmwc/commit/3b8f0504cf5cec0f60130dee7e8f05d844e8ab68))
+* **ShapeContainer:**  Adding new ShapeContainer component and docs [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([748294e6](https://github.com/jamesmfriedman/rmwc/commit/748294e6219d9e79a83f84f33f4cf63b5feedbac))
+* **TopAppBar:**  New top app bar component added [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([fc082b67](https://github.com/jamesmfriedman/rmwc/commit/fc082b67696ff5bfe211f933564d831712f28793))
+
+##### Bug Fixes
+
+* **Base:**  Removing apiRef from spread props [#210](https://github.com/jamesmfriedman/rmwc/pull/210) ([94dab63a](https://github.com/jamesmfriedman/rmwc/commit/94dab63a175271af77916666bfa02423bf6fdca5))
+* **Menu:**  Corrects sync issue causing double click handlers and jittery animations ([285404c3](https://github.com/jamesmfriedman/rmwc/commit/285404c3ea21b82d42b87a4439aeeca782007390))
+
 #### 1.5.6 (2018-04-23)
 
 ##### Bug Fixes
