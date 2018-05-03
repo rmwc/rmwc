@@ -119,6 +119,7 @@ export class Select extends withFoundation({
       box,
       className,
       rootProps = {},
+      apiRef,
       ...rest
     } = this.props;
 

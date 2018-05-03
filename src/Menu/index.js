@@ -120,6 +120,7 @@ export class Menu extends withFoundation({
       children,
       open,
       onClose,
+      onCancel,
       onSelected,
       anchorCorner,
       ...rest

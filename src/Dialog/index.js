@@ -139,7 +139,7 @@ export class Dialog extends withFoundation({
   }
 
   render() {
-    const { open, onAccept, onCancel, onClose, ...rest } = this.props;
+    const { open, onAccept, onCancel, onClose, apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
 
     return <DialogRoot {...rest} elementRef={root_} className={this.classes} />;

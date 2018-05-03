@@ -32,7 +32,7 @@ export class FormField extends withFoundation({
   static displayName = 'FormField';
   render() {
     //$FlowFixMe
-    const { ...rest } = this.props;
+    const { apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
     return <FormFieldRoot {...rest} elementRef={root_} />;
   }

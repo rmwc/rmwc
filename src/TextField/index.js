@@ -198,6 +198,7 @@ export class TextField extends withFoundation({
       children,
       textarea,
       rootProps = {},
+      apiRef,
       ...rest
     } = this.props;
 

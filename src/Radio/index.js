@@ -105,8 +105,6 @@ export class Radio extends withFoundation({
       apiRef,
       // $FlowFixMe
       generatedId,
-      // $FlowFixMe
-      mdcElementRef,
       ...rest
     } = this.props;
     const labelId = id || this.generatedId;

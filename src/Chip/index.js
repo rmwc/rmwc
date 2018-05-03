@@ -145,7 +145,7 @@ export class ChipSet extends withFoundation({
   adapter: {}
 })<ChipSetPropsT> {
   render() {
-    const { ...rest } = this.props;
+    const { apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
     return <ChipSetRoot {...rest} elementRef={root_} />;
   }
