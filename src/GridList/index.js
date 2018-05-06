@@ -96,15 +96,15 @@ export const GridTileTitleSupportText = simpleTag({
 
 export type GridListPropsT = {
   /** Use a 1px gutter. */
-  tileGutter1: boolean,
+  tileGutter1?: boolean,
   /** Move the caption to the top of the card. */
-  headerCaption: boolean,
+  headerCaption?: boolean,
   /** Make the caption two lines. */
-  twolineCaption: boolean,
+  twolineCaption?: boolean,
   /** Leaves space for a start aligned icon. */
-  withIconAlignStart: boolean,
+  withIconAlignStart?: boolean,
   /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
-  tileAspect: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
+  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
 } & SimpleTagPropsT;
 
 /**

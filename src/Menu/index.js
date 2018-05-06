@@ -140,7 +140,7 @@ export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
   handle: React.Element<any>,
   /** By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor.   */
-  rootProps: Object,
+  rootProps?: Object,
   /** Children to render */
   children?: React.Node
 } & MenuPropsT;
