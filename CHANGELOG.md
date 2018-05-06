@@ -1,3 +1,9 @@
+#### 1.6.1 (2018-05-06)
+
+##### Bug Fixes
+
+* **Flow:**  Correcting optional types ([a11b4a01](https://github.com/jamesmfriedman/rmwc/commit/a11b4a01a0ec1b45834b712890f0d79bb915a5d5))
+
 #### 1.6.0 (2018-05-03)
 
 ##### Breaking Changes
