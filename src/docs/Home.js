@@ -60,7 +60,7 @@ export const Home = () => {
                   style={{
                     backgroundSize: 'fill',
                     backgroundImage:
-                      'url(https://material.io/static/images/hub/gallery-poster.svg)',
+                      'url(https://material.io/assets/1KmITLHaWxyCaX9IbEu3WL9piFpb03LHs/making-more-material-1x1-small.png)',
                     height: '12.313rem'
                   }}
                 />
@@ -90,7 +90,7 @@ export const Home = () => {
                 style={{
                   backgroundSize: 'cover',
                   backgroundImage:
-                    'url(https://material.io/static/images/hub/material_components_dark.svg)',
+                    'url(https://material.io/assets/1LfChVuVWhT-wkH9MQKc9Ugvoz9A-CMvh/tools-gallery-1x1-large.png)',
                   height: '12.313rem'
                 }}
               />
@@ -103,7 +103,7 @@ export const Home = () => {
           <GridCell span={4}>
             <Link to="/styling">
               <Card
-                style={{ backgroundColor: '#283b4c' }}
+                style={{ backgroundColor: '#212121' }}
                 theme="text-primary-on-dark"
               >
                 <div style={{ padding: '1rem' }}>
@@ -117,8 +117,9 @@ export const Home = () => {
 
                 <CardMedia
                   style={{
+                    backgroundSize: 'cover',
                     backgroundImage:
-                      'url(https://material.io/static/images/hub/color-tool.svg)',
+                      'url(https://material.io/assets/1KaOG1QEZWBZTKIP93WDPAHTDplrgri6j/material-poster.png)',
                     height: '12.313rem'
                   }}
                 />

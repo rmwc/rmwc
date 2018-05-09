@@ -1616,28 +1616,28 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Use a 1px gutter."
         },
         "headerCaption": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Move the caption to the top of the card."
         },
         "twolineCaption": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Make the caption two lines."
         },
         "withIconAlignStart": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Leaves space for a start aligned icon."
         },
         "tileAspect": {
@@ -1671,7 +1671,7 @@
               }
             ]
           },
-          "required": true,
+          "required": false,
           "description": "One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4."
         }
       }
@@ -2802,7 +2802,7 @@
           "flowType": {
             "name": "Object"
           },
-          "required": true,
+          "required": false,
           "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
         },
         "children": {
@@ -4788,13 +4788,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: SyntheticInputEvent<EventTarget>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "SyntheticInputEvent",
+                    "elements": [
+                      {
+                        "name": "EventTarget"
+                      }
+                    ],
+                    "raw": "SyntheticInputEvent<EventTarget>"
                   }
                 }
               ],
