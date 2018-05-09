@@ -5474,7 +5474,7 @@
       }
     },
     {
-      "description": "A navigation icon fro the top app bar. This is an instance of the Icon component.",
+      "description": "A navigation icon for the top app bar. This is an instance of the Icon component.",
       "displayName": "TopAppBarNavigationIcon",
       "methods": []
     },
