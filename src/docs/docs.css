@@ -39,7 +39,7 @@ body ul li {
   transition: margin-left 0.3s, max-width 0.3s;
   will-change: margin-left;
   will-change: max-width;
-  margin-top: 64px;
+  margin-top: 54px;
 }
 
 .mdc-persistent-drawer--open + .app__content {
@@ -501,6 +501,12 @@ table {
 
 table th {
   font-weight: bold;
+}
+
+@media (min-width: 37.5rem) {
+  .app__content {
+    margin-top: 64px;
+  }
 }
 
 @media (min-width: 48rem) {

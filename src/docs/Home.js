@@ -90,7 +90,7 @@ export const Home = () => {
                 style={{
                   backgroundSize: 'cover',
                   backgroundImage:
-                    'url(https://material.io/assets/1LfChVuVWhT-wkH9MQKc9Ugvoz9A-CMvh/tools-gallery-1x1-large.png)',
+                    'url(https://material.io/assets/1n0USi3jGBT9CHS9YH-1x7L0grDc_MToO/gm-2x1-large.png)',
                   height: '12.313rem'
                 }}
               />
