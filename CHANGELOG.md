@@ -1,3 +1,13 @@
+#### 1.6.2 (2018-05-09)
+
+##### Documentation Changes
+
+* **Home:**  correcting header css issue ([c1964721](https://github.com/jamesmfriedman/rmwc/commit/c19647214712b2c5bec5619430faccf0ea2ed26d))
+
+##### Bug Fixes
+
+* **MDC:**  Bumping version to 0.35.1 ([a464d0c6](https://github.com/jamesmfriedman/rmwc/commit/a464d0c6f0936b44f1c6d0b744d0af14409ac830))
+
 #### 1.6.1 (2018-05-06)
 
 ##### Bug Fixes
