@@ -1,3 +1,13 @@
+#### 1.6.3 (2018-05-14)
+
+##### Chores
+
+* **Docs:**  fixing typos ([1e2df56d](https://github.com/jamesmfriedman/rmwc/commit/1e2df56d5d0ff5bfa57f075eebc2c8316c488363))
+
+##### Bug Fixes
+
+* **Switch:**  makes children FlowType for switch optional. ([4f7ec1db](https://github.com/jamesmfriedman/rmwc/commit/4f7ec1db14a0c6a38f33b5dbe39b367180ba0764))
+
 #### 1.6.2 (2018-05-09)
 
 ##### Documentation Changes
