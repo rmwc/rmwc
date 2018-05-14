@@ -54,7 +54,7 @@ export type SwitchPropsT = {
   /** Props for the root element. By default, props spread to the input. */
   rootProps?: Object,
   /** Any children to render. */
-  children: React.Node
+  children?: React.Node
 };
 
 export class Switch extends React.Component<SwitchPropsT> {
