@@ -63,7 +63,7 @@ export const CardMediaContent = simpleTag({
   classNames: 'mdc-card__media-content'
 });
 
-/** The main clickable area fro the primary content of the card */
+/** The main clickable area for the primary content of the card */
 export const CardPrimaryAction = withRipple({ surface: false })(
   simpleTag({
     displayName: 'CardPrimaryAction',

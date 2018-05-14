@@ -56,7 +56,7 @@ export class TopAppBarSection extends simpleTag({
   }
 }
 
-/** A navigation icon fro the top app bar. This is an instance of the Icon component. */
+/** A navigation icon for the top app bar. This is an instance of the Icon component. */
 export const TopAppBarNavigationIcon = simpleTag({
   displayName: 'TopAppBarNavigationIcon',
   classNames: 'mdc-top-app-bar__navigation-icon',
