@@ -1,3 +1,9 @@
+#### 1.6.4 (2018-05-25)
+
+##### Chores
+
+* **MDC:**  Upgrading to 0.35.2 ([7ed0545b](https://github.com/jamesmfriedman/rmwc/commit/7ed0545bdfb5ac97cc86d54eac1dad9adea9d85b))
+
 #### 1.6.3 (2018-05-14)
 
 ##### Chores
