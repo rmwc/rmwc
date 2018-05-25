@@ -18,7 +18,7 @@ export type RMWCProviderOptionsT = {
   /** Set the default iconStrategy. Read the icon docs for more info. */
   iconStrategy?: IconStrategyT,
   /** Sets a default render function to be used when the iconStrategy is custom */
-  iconRender?: (content: mixed) => mixed,
+  iconRender?: (props: {content: React.Node, className: string}) => mixed,
   /** Children to render */
   children?: React.Node
 };
