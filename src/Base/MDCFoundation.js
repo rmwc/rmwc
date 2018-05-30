@@ -22,7 +22,7 @@ const requestFrames = (
 /** Copies all known properties from source to target. This is being used in here for class merging. */
 const copyProperties = (target, source) => {
   const allPropertyNames = Object.getOwnPropertyNames(source).concat(
-    Object.getOwnPropertySymbols(source)
+    Object.getOwnPropertySymbols ? Object.getOwnPropertySymbols(source) : []
   );
 
   allPropertyNames.forEach(propertyName => {
