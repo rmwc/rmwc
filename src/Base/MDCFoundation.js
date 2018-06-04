@@ -176,6 +176,7 @@ export const withFoundation = ({
     initFoundation() {
       this.foundation_ = this.getDefaultFoundation();
 
+      // bind custom adapter methods passed into the factory
       Object.entries(adapter).forEach(([handlerName, handler]) => {
         //$FlowFixMe
         this.foundation_.adapter_[handlerName] = handler.bind(this);

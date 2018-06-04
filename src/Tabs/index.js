@@ -1,16 +1,13 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import {
   MDCTab,
   MDCTabBar,
   MDCTabBarScroller
 } from '@material/tabs/dist/mdc.tabs';
 import { Icon } from '../Icon';
-import { noop, simpleTag } from '../Base';
-
-import { withMDC } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+import { simpleTag } from '../Base';
 import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 function recursiveMap(children, fn) {
