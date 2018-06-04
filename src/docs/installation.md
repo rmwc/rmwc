@@ -90,6 +90,10 @@ module.exports = {
 };
 ```
 
+## Flow Typed Setup
+
+There are no additional steps to get Flow to work with your code. If you run into issues, please make sure you are running the most recent version of flow-bin.
+
 ## Test Setup for Jest and Enzyme
 
 Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. The quick fix is to monkey patch the missing items onto the fake DOM elements in your setupTests file.
