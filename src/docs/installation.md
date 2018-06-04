@@ -24,7 +24,7 @@ const MyComponent = props => <Button>Hello World</Button>;
 
 ## Bundle size considerations
 
-RMWC is small, about 15KB gzipped, but the entire [material-components-web](https://github.com/material-components/material-components-web) package is quite large. If you care about your end use bundle size, pay attention to this!
+RMWC is under 90K gzipped, but the entire [material-components-web](https://github.com/material-components/material-components-web) package is quite large. If you care about your end use bundle size, pay attention to this!
 
 ```jsx
 /** GOOD example, only the `Button` component will be imported */
