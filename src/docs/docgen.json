@@ -1128,7 +1128,7 @@
       "methods": []
     },
     {
-      "description": "A Drawer component",
+      "description": "",
       "displayName": "Drawer",
       "methods": [],
       "props": {
@@ -2157,7 +2157,84 @@
     {
       "description": "",
       "displayName": "LinearProgress",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "progress",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "buffer",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "determinate",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "reversed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "LinearProgressPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "progress": {
           "flowType": {
@@ -2173,7 +2250,11 @@
             ]
           },
           "required": false,
-          "description": "Progress float percentage between 0 and 1."
+          "description": "Progress float percentage between 0 and 1.",
+          "defaultValue": {
+            "value": "0",
+            "computed": false
+          }
         },
         "buffer": {
           "flowType": {
@@ -2189,21 +2270,33 @@
             ]
           },
           "required": false,
-          "description": "A Progress buffer float percentage between 0 and 1."
+          "description": "A Progress buffer float percentage between 0 and 1.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "determinate": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether or not the Progress bar is determinate."
+          "description": "Whether or not the Progress bar is determinate.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "reversed": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Progress goes from right to left."
+          "description": "Progress goes from right to left.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         }
       }
     }
@@ -4533,14 +4626,55 @@
     {
       "description": "A Snackbar component for notifications.",
       "displayName": "Snackbar",
-      "methods": [],
+      "methods": [
+        {
+          "name": "isShowing",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
+          "name": "isShowing",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "isShowing",
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "MDCSnackbar",
+                "alias": "MDCSnackbar"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "show": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Show the Snackbar."
+          "description": "Show the Snackbar.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "onShow": {
           "flowType": {
@@ -4555,7 +4689,11 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar shows."
+          "description": "A callback thats fired when the Snackbar shows.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "onHide": {
           "flowType": {
@@ -4570,7 +4708,11 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar hides."
+          "description": "A callback thats fired when the Snackbar hides.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "message": {
           "flowType": {
@@ -4578,14 +4720,22 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "A string or other renderable JSX to be used as the message body."
+          "description": "A string or other renderable JSX to be used as the message body.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "timeout": {
           "flowType": {
             "name": "number"
           },
           "required": false,
-          "description": "Milliseconds to show the Snackbar for."
+          "description": "Milliseconds to show the Snackbar for.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "actionHandler": {
           "flowType": {
@@ -4600,7 +4750,11 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when action is pressed. The actionText property must be set to use this."
+          "description": "Callback that fires when action is pressed. The actionText property must be set to use this.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "actionText": {
           "flowType": {
@@ -4608,28 +4762,44 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Label for the action button."
+          "description": "Label for the action button.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "multiline": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Lets the Snackbar text overflow onto multiple lines."
+          "description": "Lets the Snackbar text overflow onto multiple lines.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "actionOnBottom": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Places the action underneath the message text."
+          "description": "Places the action underneath the message text.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "dismissesOnAction": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether or not the Snackbar dismisses on the action press."
+          "description": "Whether or not the Snackbar dismisses on the action press.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "alignStart": {
           "flowType": {
