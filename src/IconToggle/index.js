@@ -4,8 +4,7 @@ import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
-import { simpleTag, noop } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { simpleTag, noop, withFoundation, syncFoundationProp } from '../Base';
 
 export type IconTogglePropsT = {
   /* prettier-ignore */

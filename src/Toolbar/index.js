@@ -1,10 +1,11 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { MDCToolbar } from '@material/toolbar/dist/mdc.toolbar';
 import { Icon } from '../Icon';
-import { simpleTag, withMDC } from '../Base';
-
-import type { SimpleTagPropsT } from '../Base';
+import { simpleTag } from '../Base';
+import { withFoundation } from '../Base/withFoundation';
 
 export const ToolbarRoot = simpleTag({
   tag: 'header',
@@ -117,72 +118,28 @@ export type ToolbarPropsT = {
   flexibleDefaultBehavior?: boolean
 } & SimpleTagPropsT;
 
-export const Toolbar = withMDC({
-  mdcConstructor: MDCToolbar,
-  mdcElementRef: true,
-  onMount(props, api, inst) {
-    const el = inst.mdcGetRootElement();
+export class Toolbar extends withFoundation({
+  constructor: MDCToolbar,
+  adapter: {}
+})<ToolbarPropsT> {
+  static displayName = 'Toolbar';
+
+  componentDidMount() {
+    super.componentDidMount();
     if (
-      api &&
-      el &&
-      el.nextSibling &&
-      (el.nextSibling.getAttribute('class') || '').includes(
+      this.root_ &&
+      this.root_.nextSibling &&
+      (this.root_.nextSibling.getAttribute('class') || '').includes(
         'mdc-toolbar-fixed-adjust'
       )
     ) {
-      api.fixedAdjustElement = el.nextSibling;
-    }
-  },
-  onUpdate(props, nextProps, api, inst) {
-    // MDC cant change these gracefully
-    // if our props change, we have to reinit the component
-    const didChange = [
-      'fixedLastrowOnly',
-      'flexible',
-      'flexibleDefaultBehavior'
-    ].some(key => {
-      if (props && nextProps) {
-        return props[key] !== nextProps[key];
-      }
-
-      return false;
-    });
-
-    if (didChange && api) {
-      // clean up flexible classes
-      const root = api.root_;
-      if (root) {
-        root.classList.remove('mdc-toolbar--flexible-space-maximized');
-        root.classList.remove('mdc-toolbar--flexible-space-minimized');
-      }
-
-      // reset first row height
-      const firstRow = api.firstRowElement_;
-      firstRow && firstRow.style.removeProperty('height');
-
-      // reset the titles style
-      const title = api.titleElement_;
-      title && title.style.removeProperty('font-size');
-
-      // reset fixedAdjustElement
-      api.fixedAdjustElement &&
-        api.fixedAdjustElement.style.removeProperty('height');
-
-      // delay re-init for a frame otherwise MDC doesn't
-      // catch the class and style changes
-      window.requestAnimationFrame(() => {
-        inst.mdcComponentReinit();
-      });
+      this.fixedAdjustElement = this.root_.nextSibling;
     }
   }
-})(
-  class extends React.Component<ToolbarPropsT> {
-    static displayName = 'Toolbar';
 
-    render() {
-      //$FlowFixMe
-      const { mdcElementRef, ...rest } = this.props;
-      return <ToolbarRoot elementRef={mdcElementRef} {...rest} />;
-    }
+  render() {
+    const { ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+    return <ToolbarRoot elementRef={root_} {...rest} />;
   }
-);
+}

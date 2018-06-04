@@ -8,7 +8,8 @@ export type { WithRipplePropsT } from './withRipple';
 export { withTheme } from './withTheme';
 export type { WithThemePropsT } from './withTheme';
 
-export { withMDC } from './withMDC';
-export { withMDCToggle } from './withMDCToggle';
-
 export { noop } from './utils/noop';
+
+export { randomId } from './utils/randomId';
+
+export { withFoundation, syncFoundationProp } from './withFoundation';

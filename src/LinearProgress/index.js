@@ -5,8 +5,7 @@ import * as React from 'react';
 /* eslint-disable max-len */
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 /* eslint-enable max-len */
-import { simpleTag } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 export const LinearProgressRoot = simpleTag({
   displayName: 'LinearProgressRoot',

@@ -5,7 +5,7 @@ import type { IconPropsT } from '../Icon';
 import * as React from 'react';
 import { Icon } from '../Icon';
 import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/MDCFoundation';
+import { withFoundation } from '../Base/withFoundation';
 
 import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';

@@ -7,10 +7,8 @@ import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
-import { noop } from '../Base/utils/noop';
 import Button from '../Button';
-import { simpleTag, withMDC } from '../Base';
-import { syncFoundationProp, withFoundation } from '../Base/MDCFoundation';
+import { simpleTag, syncFoundationProp, withFoundation, noop } from '../Base';
 
 export const SnackbarRoot = simpleTag({
   displayName: 'SnackbarRoot',

@@ -72,14 +72,14 @@ describe('TextField', () => {
     mount(<TextField required />);
   });
 
-  it('sync validlity with textfield foundation during prop initialization', () => {
+  it('sync validity with textfield foundation during prop initialization', () => {
     let inst = mount(<TextField invalid />).instance();
     expect(inst.foundation_.isValid()).toBe(false);
     inst = mount(<TextField invalid={false} />).instance();
     expect(inst.foundation_.isValid()).toBe(true);
   });
 
-  it('sync validlity with textfield foundation during prop modification', () => {
+  it('sync validity with textfield foundation during prop modification', () => {
     const wrapper = mount(<TextField invalid />);
     const inst = wrapper.instance();
     expect(inst.foundation_.isValid()).toBe(false);

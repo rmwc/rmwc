@@ -9,7 +9,7 @@ import {
   MDCPersistentDrawer,
   MDCTemporaryDrawer
 } from '@material/drawer/dist/mdc.drawer';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
 /***************************************************************************************
  * Drawer Headers
@@ -167,71 +167,3 @@ export const Drawer = (props: DrawerPropsT) => {
 };
 
 Drawer.displayName = 'Drawer';
-
-// /** A Drawer component */
-// export const Drawer = withMDC({
-//   getMdcConstructorOrInstance: props => {
-//     if (props.temporary) {
-//       return MDCTemporaryDrawer;
-//     } else if (props.persistent) {
-//       return MDCPersistentDrawer;
-//     }
-
-//     return null;
-//   },
-//   defaultProps: {
-//     open: false,
-//     onOpen: noop,
-//     onClose: noop,
-//     permanent: false,
-//     persistent: false,
-//     temporary: false
-//   },
-//   mdcElementRef: true,
-//   mdcEvents: props => {
-//     let drawerConstructorName;
-
-//     if (props.temporary) {
-//       drawerConstructorName = 'MDCTemporaryDrawer';
-//     } else if (props.persistent) {
-//       drawerConstructorName = 'MDCPersistentDrawer';
-//     } else {
-//       // we dont have a valid event namespace, escape out
-//       return {};
-//     }
-
-//     return {
-//       [`${drawerConstructorName}:open`]: (evt, props) => props.onOpen(evt),
-//       [`${drawerConstructorName}:close`]: (evt, props) => props.onClose(evt)
-//     };
-//   },
-//   onUpdate(props, nextProps, api, inst) {
-//     if (
-//       props &&
-//       ['permanent', 'persistent', 'temporary'].some(
-//         p => props && props[p] !== nextProps[p]
-//       )
-//     ) {
-//       inst.mdcComponentDestroy();
-//       return;
-//     }
-
-//     if (api && api.open !== !!nextProps.open) {
-//       api.open = !!nextProps.open;
-//     }
-//   },
-//   didUpdate(props, nextProps, api, inst) {
-//     if (
-//       props &&
-//       ['permanent', 'persistent', 'temporary'].some(
-//         p => props && props[p] !== nextProps[p]
-//       )
-//     ) {
-//       inst.mdcComponentInit();
-//       return;
-//     }
-//   }
-// })(
-//   class extends React.Component<DrawerPropsT> {
-
-// );

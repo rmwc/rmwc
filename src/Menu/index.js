@@ -2,8 +2,7 @@
 import * as React from 'react';
 import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
-import { simpleTag } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 /****************************************************************
  * Private

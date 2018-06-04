@@ -5,8 +5,7 @@ import * as React from 'react';
 import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
 
 import { Icon } from '../Icon';
-import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation } from '../Base';
 
 export const TopAppBarRoot = simpleTag({
   displayName: 'TopAppBarRoot',

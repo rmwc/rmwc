@@ -1,8 +1,7 @@
 // @flow
 import * as React from 'react';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
-import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation } from '../Base';
 
 type FormFieldRootPropsT = {
   /** Position the input after the label. */

@@ -25,5 +25,6 @@
     "unelevated",
     "unminified",
     "unmounting"
-  ]
+  ],
+  "cSpell.allowCompoundWords": true
 }

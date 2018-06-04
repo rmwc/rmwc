@@ -14,7 +14,7 @@ describe('LinearProgress', () => {
   });
 
   it('can buffer', () => {
-    const el = mount(<LinearProgress buffer={0.8} />);
+    mount(<LinearProgress buffer={0.8} />);
   });
 
   it('can be indeterminate', () => {

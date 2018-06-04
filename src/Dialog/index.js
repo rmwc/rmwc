@@ -10,7 +10,7 @@ import {
 import Button from '../Button';
 import { simpleTag, noop } from '../Base';
 
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
 export const DialogRoot = simpleTag({
   displayName: 'DialogRoot',

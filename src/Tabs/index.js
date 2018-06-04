@@ -7,8 +7,7 @@ import {
   MDCTabBarScroller
 } from '@material/tabs/dist/mdc.tabs';
 import { Icon } from '../Icon';
-import { simpleTag } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 function recursiveMap(children, fn) {
   return React.Children.map(children, child => {
