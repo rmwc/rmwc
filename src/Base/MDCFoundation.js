@@ -142,6 +142,15 @@ export const withFoundation = ({
 
     componentWillUnmount() {
       this.destroyComponent();
+
+      // We need to hold onto our refs until all child components are unmounted
+      // Here we just wait a few frames and set them to null so garbage collection will take over.
+      requestFrames(() => {
+        refs.forEach(refName => {
+          //$FlowFixMe
+          this[refName] && (this[refName] = undefined);
+        });
+      }, 3);
     }
 
     _safeSyncWithProps(props: P) {
@@ -185,15 +194,6 @@ export const withFoundation = ({
       this.destroy();
       this.foundation_ && this.foundation_.destroy();
       this.foundation_ = undefined;
-
-      // We need to hold onto our refs until all child components are unmounted
-      // Here we just wait a few frames and set them to null so garbage collection will take over.
-      requestFrames(() => {
-        refs.forEach(refName => {
-          //$FlowFixMe
-          this[refName] && (this[refName] = undefined);
-        });
-      }, 3);
     }
 
     syncWithProps(nextProps: P) {}
@@ -233,6 +233,16 @@ export const withFoundation = ({
       this._safeSyncWithProps(this.props);
 
       return evt;
+    }
+
+    listen(evtType, handler) {
+      //$FlowFixMe
+      this.root_.addEventListener(evtType, handler);
+    }
+
+    unlisten(evtType, handler) {
+      //$FlowFixMe
+      this.root_.removeEventListener(evtType, handler);
     }
   }
 

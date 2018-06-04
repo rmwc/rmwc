@@ -2979,7 +2979,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (content: mixed) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: {content: React.Node, className: string}) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -3049,13 +3049,34 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(content: mixed) => mixed",
+                        "raw": "(props: {content: React.Node, className: string}) => mixed",
                         "signature": {
                           "arguments": [
                             {
-                              "name": "content",
+                              "name": "props",
                               "type": {
-                                "name": "mixed"
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{content: React.Node, className: string}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "content",
+                                      "value": {
+                                        "name": "ReactNode",
+                                        "raw": "React.Node",
+                                        "required": true
+                                      }
+                                    },
+                                    {
+                                      "key": "className",
+                                      "value": {
+                                        "name": "string",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
                               }
                             }
                           ],
@@ -3170,13 +3191,34 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(content: mixed) => mixed",
+            "raw": "(props: {content: React.Node, className: string}) => mixed",
             "signature": {
               "arguments": [
                 {
-                  "name": "content",
+                  "name": "props",
                   "type": {
-                    "name": "mixed"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{content: React.Node, className: string}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "content",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "className",
+                          "value": {
+                            "name": "string",
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -4701,7 +4743,7 @@
             "name": "ReactNode",
             "raw": "React.Node"
           },
-          "required": true,
+          "required": false,
           "description": "Any children to render."
         }
       }
@@ -4782,25 +4824,131 @@
     {
       "description": "The TabBar component",
       "displayName": "TabBar",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { activeTabIndex: number } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ activeTabIndex: number }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "activeTabIndex",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "activeTabIndex",
+                          "value": {
+                            "name": "number",
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "TabBarPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "onChange": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: SyntheticInputEvent<EventTarget>) => mixed",
+            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "SyntheticInputEvent",
-                    "elements": [
-                      {
-                        "name": "EventTarget"
-                      }
-                    ],
-                    "raw": "SyntheticInputEvent<EventTarget>"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { activeTabIndex: number } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ activeTabIndex: number }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "activeTabIndex",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -4826,7 +4974,7 @@
       "displayName": "TabBarScroller",
       "methods": [
         {
-          "name": "reinitTabBarScroller",
+          "name": "initialize",
           "docblock": null,
           "modifiers": [],
           "params": [],
