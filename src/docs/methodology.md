@@ -26,7 +26,7 @@ With that said, you can each release of RMWC is bound to a specific release of m
 
 ## Basic Layout
 
-Material Components web uses BEM sytnax to style and script their components. RMWC directly inherits MDC's naming conventions, so if you can read one, you can infer the other.
+Material Components web uses BEM syntax to style and script their components. RMWC directly inherits MDC's naming conventions, so if you can read one, you can infer the other.
 
 Block -> Component
 Element -> Components / Children
