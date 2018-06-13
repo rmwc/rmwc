@@ -4181,7 +4181,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } }) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: CustomEventT<{ detail: { value: number } }>) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
                 "signature": {
                   "properties": [
                     {
@@ -4189,39 +4189,45 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: { detail: { value: number } }) => mixed",
+                        "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ detail: { value: number } }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "detail",
-                                      "value": {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ value: number }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "value",
-                                              "value": {
-                                                "name": "number",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        },
-                                        "required": true
-                                      }
+                                "name": "CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { value: number } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ value: number }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "value",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
                                     }
-                                  ]
-                                }
+                                  }
+                                ],
+                                "raw": "CustomEventT<{ detail: { value: number } }>"
                               }
                             }
                           ],
@@ -4379,39 +4385,45 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { value: number } }) => mixed",
+            "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { value: number } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ value: number }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "value",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { value: number } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ value: number }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "value",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      }
+                    ],
+                    "raw": "CustomEventT<{ detail: { value: number } }>"
                   }
                 }
               ],

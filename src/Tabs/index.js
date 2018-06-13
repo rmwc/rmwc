@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 import * as React from 'react';
 import {
   MDCTab,
@@ -103,7 +103,9 @@ export const TabIconText = simpleTag({
 
 export type TabBarPropsT = {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,
+  onChange?: (
+    evt: { detail: { activeTabIndex: number } } & CustomEventT
+  ) => mixed,
   /** The index of the active tab. */
   activeTabIndex: number
 } & SimpleTagPropsT;

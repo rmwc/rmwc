@@ -1,4 +1,6 @@
 // @flow
+import type { CustomEventT } from '../Base';
+
 import * as React from 'react';
 import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
 import { List, ListItem } from '../List';
@@ -62,7 +64,9 @@ export type MenuPropsT = {
   /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
   onClose?: (evt: Event) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (evt: { detail: { index: number, item: HTMLElement } }) => mixed,
+  onSelected?: (
+    evt: { detail: { index: number, item: HTMLElement } } & CustomEventT
+  ) => mixed,
   /** Callback that fires when the menu is closed with nothing selected. */
   onCancel?: (evt: Event) => mixed,
   /** Manually position the menu to one of the corners. */

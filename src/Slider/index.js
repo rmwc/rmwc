@@ -1,4 +1,6 @@
 // @flow
+import type { CustomEventT } from '../Base';
+
 import * as React from 'react';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
@@ -59,9 +61,9 @@ export const SliderFocusRing = simpleTag({
 
 export type SliderPropsT = {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
-  onChange?: (evt: { detail: { value: number } }) => mixed,
+  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
   /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
-  onInput?: (evt: { detail: { value: number } }) => mixed,
+  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
   /** The value of the Slider. */
   value?: number | string,
   /** The minimum value of the Slider. */
@@ -88,7 +90,7 @@ export class Slider extends withFoundation({
     'trackMarkerContainer_'
   ],
   adapter: {}
-})<SliderPropsT, {}> {
+})<SliderPropsT> {
   static displayName = 'Slider';
 
   get discrete(): boolean {
