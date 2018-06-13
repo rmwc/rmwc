@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 
 // prettier-ignore
 // eslint-disable-next-line max-len
@@ -18,7 +18,7 @@ export type RMWCProviderOptionsT = {
   /** Set the default iconStrategy. Read the icon docs for more info. */
   iconStrategy?: IconStrategyT,
   /** Sets a default render function to be used when the iconStrategy is custom */
-  iconRender?: (props: {content: React.Node, className: string}) => mixed,
+  iconRender?: (props: { content: React.Node, className: string }) => mixed,
   /** Children to render */
   children?: React.Node
 };
@@ -36,7 +36,7 @@ const providerDefaults: RMWCProviderOptionsT = {
 // A function for safely getting context options
 // this is so we can use the provider defaults even
 // when RMWCProvider inst being used
-export const getProviderOptions = (context: Object): RMWCProviderOptionsT => {
+export const getProviderOptions = (context: any): RMWCProviderOptionsT => {
   return context && context.RMWCOptions
     ? context.RMWCOptions
     : providerDefaults;

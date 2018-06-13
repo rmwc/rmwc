@@ -126,12 +126,7 @@ export class Select extends withFoundation({
     const selectOptions = createSelectOptions(options);
 
     return (
-      <SelectRoot
-        {...rootProps}
-        box={box}
-        elementRef={root_}
-        className={this.classes}
-      >
+      <SelectRoot {...rootProps} box={box} elementRef={root_}>
         <SelectNativeControl
           {...rest}
           value={value}

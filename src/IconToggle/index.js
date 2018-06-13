@@ -72,7 +72,6 @@ export class IconToggle extends withFoundation({
     return (
       <IconToggleRoot
         {...rest}
-        className={this.classes}
         elementRef={this.foundationRefs.root_}
         data-toggle-on={toggleOnJSON}
         data-toggle-off={toggleOffJSON}

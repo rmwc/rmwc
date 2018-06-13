@@ -1,14 +1,14 @@
 // @flow
+import type { SimpleTagPropsT } from './simpleTag';
 import * as React from 'react';
-import classNames from 'classnames';
 
 /************************************************************************
  * Utils
  ***********************************************************************/
 const requestFrames = (
-  callback,
+  callback: () => any,
   frameCount: number,
-  currentFrame?: number = 0
+  currentFrame: number = 0
 ) => {
   if (currentFrame < frameCount) {
     window.requestAnimationFrame(() =>
@@ -20,10 +20,8 @@ const requestFrames = (
 };
 
 /** Copies all known properties from source to target. This is being used in here for class merging. */
-const copyProperties = (target, source) => {
-  const allPropertyNames = Object.getOwnPropertyNames(source).concat(
-    Object.getOwnPropertySymbols ? Object.getOwnPropertySymbols(source) : []
-  );
+const copyProperties = (target: Object, source: Object) => {
+  const allPropertyNames = Object.getOwnPropertyNames(source);
 
   allPropertyNames.forEach(propertyName => {
     if (
@@ -43,40 +41,12 @@ const copyProperties = (target, source) => {
 export const syncFoundationProp = (
   prop: mixed,
   foundationValue: mixed,
-  callback: () => mixed
+  callback: () => any
 ) => {
   if (prop !== undefined && prop !== foundationValue) {
     callback();
   }
 };
-
-/************************************************************************
- * Handler Factories
- ***********************************************************************/
-export const addClass = () =>
-  function(className: string) {
-    if (!this.state.classes.has(className)) {
-      // The animation frame corrects an issue where MDC would set a class
-      // on a form element and cause re-render before the new value could actually be set from the onChange
-
-      this._safeSetState(prevState => ({
-        classes: prevState.classes.add(className)
-      }));
-    }
-  };
-
-export const removeClass = () =>
-  function(className: string) {
-    if (this.state.classes.has(className)) {
-      // The animation frame corrects an issue where MDC would set a class
-      // on a form element and cause re-render before the new value could actually be set from the onChange
-      this._safeSetState(prevState => ({
-        classes: prevState.classes.delete(className)
-          ? prevState.classes
-          : prevState.classes
-      }));
-    }
-  };
 
 /************************************************************************
  * HOC
@@ -89,36 +59,45 @@ type FoundationT = {
   refs?: string[]
 };
 
-type FoundationStateT = {
-  classes: Set<string>
-};
+type FoundationPropsT<P> = P & SimpleTagPropsT;
 
 export const withFoundation = ({
   constructor: FoundationConstructor,
   adapter = {},
   refs = ['root_']
-}: FoundationT): $Shape<constructor> => {
-  class Foundation<P: Object, S: any> extends React.Component<
-    P,
-    S & FoundationStateT
-  > {
-    constructor(props: *) {
+}: FoundationT) => {
+  class Foundation<P> extends React.Component<FoundationPropsT<P>> {
+    foundation_: {
+      adapter_: Object,
+      init: Function,
+      destroy: Function
+    } | null;
+
+    foundationRefs: { [name: string]: (ref: HTMLElement) => mixed };
+
+    root_: Element | Text | null;
+
+    props: FoundationPropsT<P>;
+
+    constructor(props: FoundationPropsT<P>) {
       super(props);
 
       this.foundationRefs = refs.reduce((acc, r) => {
         // Here we gracefully merge two refs together if one was passed down the chain
         const propName =
-          this.props.elementRef && this.props.elementRef.refName_ === r
+          props.elementRef && props.elementRef.refName_ === r
             ? 'elementRef'
             : r;
 
-        acc[r] = ref => {
+        acc[r] = (ref: any) => {
           // React will return a null ref when unmounting which will
           // in turn make our adapters error out. Make sure we only set a ref if its truthy.
           if (ref) {
             //$FlowFixMe
             this[r] = ref;
-            this.props[propName] && this.props[propName](ref);
+            props[propName] &&
+              typeof props === 'object' &&
+              props[propName](ref);
           }
         };
 
@@ -136,7 +115,7 @@ export const withFoundation = ({
       this.initFoundation();
     }
 
-    componentWillReceiveProps(nextProps: P) {
+    componentWillReceiveProps(nextProps: FoundationPropsT<P>) {
       this._safeSyncWithProps(nextProps);
     }
 
@@ -153,34 +132,19 @@ export const withFoundation = ({
       }, 3);
     }
 
-    _safeSyncWithProps(props: P) {
+    _safeSyncWithProps(props: Object) {
       this.foundation_ && this.syncWithProps(props);
-    }
-
-    _safeSetState(...args) {
-      this.foundation_ && this.setState(...args);
-    }
-
-    state = {
-      classes: new Set()
-    };
-
-    foundation_: ?Object;
-
-    foundationRefs: { [string]: (ref: window.DomElement) => mixed };
-
-    get classes() {
-      return classNames(this.props.className, [...this.state.classes]);
     }
 
     initFoundation() {
       this.foundation_ = this.getDefaultFoundation();
 
       // bind custom adapter methods passed into the factory
-      Object.entries(adapter).forEach(([handlerName, handler]) => {
+      for (const handlerName in adapter) {
+        const handler = adapter[handlerName];
         //$FlowFixMe
         this.foundation_.adapter_[handlerName] = handler.bind(this);
-      });
+      }
 
       this.initialize();
       this.foundation_ && this.foundation_.init();
@@ -188,21 +152,25 @@ export const withFoundation = ({
       this._safeSyncWithProps(this.props);
 
       // this method should be deprecated in the future in favor of standard refs
-      this.props.apiRef && this.props.apiRef(this);
+      //typeof this.props.apiRef === 'function' && this.props.apiRef(this);
     }
 
     destroyComponent() {
       this.destroy();
       this.foundation_ && this.foundation_.destroy();
-      this.foundation_ = undefined;
+      this.foundation_ = null;
     }
 
-    syncWithProps(nextProps: P) {}
+    syncWithProps(nextProps: Object) {}
     initialize() {}
     initialSyncWithDOM() {}
     destroy() {}
     getDefaultFoundation() {
-      return {};
+      return {
+        adapter_: {},
+        init: () => {},
+        destroy: () => {}
+      };
     }
 
     /**
@@ -220,10 +188,11 @@ export const withFoundation = ({
         evt.initCustomEvent(evtType, shouldBubble, false, evtData);
       }
 
-      const baseName = evtType
-        .split(':')
-        .slice(-1)
-        .pop();
+      const baseName =
+        evtType
+          .split(':')
+          .slice(-1)
+          .pop() || '';
       const propName = `on${baseName.charAt(0).toUpperCase()}${baseName.slice(
         1
       )}`;
@@ -236,14 +205,12 @@ export const withFoundation = ({
       return evt;
     }
 
-    listen(evtType, handler) {
-      //$FlowFixMe
-      this.root_.addEventListener(evtType, handler);
+    listen(evtType: string, handler: any) {
+      //this.root_ && this.root_.addEventListener(evtType, handler);
     }
 
-    unlisten(evtType, handler) {
-      //$FlowFixMe
-      this.root_.removeEventListener(evtType, handler);
+    unlisten(evtType: string, handler: any) {
+      //this.root_ && this.root_.removeEventListener(evtType, handler);
     }
   }
 

@@ -143,11 +143,7 @@ export class Checkbox extends withFoundation({
     const labelId = id || this.generatedId;
 
     const checkbox = (
-      <CheckboxRoot
-        elementRef={root_}
-        disabled={rest.disabled}
-        className={this.classes}
-      >
+      <CheckboxRoot elementRef={root_} disabled={rest.disabled}>
         <CheckboxNativeControl id={labelId} checked={checked} {...rest} />
         <CheckboxBackground>
           <CheckboxCheckmark>

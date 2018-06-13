@@ -20,7 +20,7 @@ export const withRipple = ({
 }: {
   unbounded?: boolean,
   surface?: boolean
-} = {}) => (Component: React.ComponentType<*>): React.ComponentType<*> =>
+} = {}) => (Component: React.ComponentType<*>) =>
   class extends React.Component<WithRipplePropsT> {
     static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
     static defaultProps = {

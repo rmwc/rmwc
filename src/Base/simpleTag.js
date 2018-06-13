@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { default as classNamesFunc } from 'classnames';
+import * as classNamesFunc from 'classnames';
 import { parseThemeOptions } from './withTheme';
 
 type SimpleTagFactoryT = {
@@ -16,10 +16,10 @@ export type SimpleTagPropsT = {
   tag?: string | React.ComponentType<any>,
   className?: string,
   wrap?: boolean,
-  elementRef?: React.Ref<*>,
+  elementRef?: any,
   theme?: string | string[],
   children?: React.Node,
-  className?: string
+  apiRef?: <S>(api: S) => S
 };
 
 export const simpleTag = ({

@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 import { Button } from '../Button';
 import { Ripple } from '../Ripple';
 import { Icon } from '../Icon';

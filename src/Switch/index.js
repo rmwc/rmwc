@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import FormField from '../FormField';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 
 import { simpleTag } from '../Base';
 import { randomId } from '../Base/utils/randomId';

@@ -200,7 +200,6 @@ export class Slider extends withFoundation({
 
     return (
       <SliderRoot
-        className={this.classes}
         tabIndex="0"
         //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
         role="slider"

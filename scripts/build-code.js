@@ -3,7 +3,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 const processBuiltFiles = require('./process-built-files');
 const path = require('path');
 const fs = require('fs-extra');
-const { exec } = require('child_process');
+const { exec, execSync } = require('child_process');
 
 const fixPackageDotJSONPath = () => {
   fs.readFile('./index.js', 'utf8', function(err, data) {
@@ -16,6 +16,42 @@ const fixPackageDotJSONPath = () => {
       if (err) return console.log(err);
     });
   });
+};
+
+// Babels and copies the file to its new directory
+const writeBuiltFile = (inputFile, outputFile) => {
+  const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${inputFile} -o ${outputFile} --copy-files`;
+  exec(cmd);
+};
+
+// Writes a flow version of the file
+const writeFlowFile = (inputFile, outputFile) => {
+  const copyFlowCmd = `cp ${inputFile} ${outputFile}.flow`;
+  exec(copyFlowCmd);
+};
+
+// Writes a typescript version of the file
+const writeTypescriptFile = (inputFile, outputFile) => {
+  const out = outputFile.replace('.js', '.tsx');
+  const copyTypescriptCmd = `cp ${inputFile} ${out}`;
+
+  if (out.includes('.tsx')) {
+    execSync(copyTypescriptCmd);
+    fs.readFile(out, 'utf8', (err, content) => {
+      const newContent = content
+        .replace(/\/\/\s?@flow/g, '')
+        .replace(/\<\*\>/g, '<any>')
+        .replace(/:\s\*/g, ': any')
+        .replace(/React.Node/g, 'React.ReactNode')
+        .replace(/\smixed/g, ' any')
+        .replace(/export type \{/g, 'export {')
+        .replace(/import type \{/g, 'import {');
+
+      fs.writeFile(out, newContent, 'utf8', err => {
+        if (err) return console.log(err);
+      });
+    });
+  }
 };
 
 processBuiltFiles(files => {
@@ -36,11 +72,10 @@ processBuiltFiles(files => {
       fs.mkdirSync(dir);
     }
 
-    const cmd = `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`;
-    const copyFlowCmd = `cp ${f} ${out}.flow`;
     console.log('Babel:', f, '-> ', out);
-    exec(cmd);
-    exec(copyFlowCmd);
+    writeBuiltFile(f, out);
+    writeFlowFile(f, out);
+    writeTypescriptFile(f, out);
   });
 
   console.log('Writing version...');

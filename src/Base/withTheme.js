@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 
 export type WithThemePropsT = {
   theme?: string | string[],
@@ -10,7 +10,9 @@ export type WithThemePropsT = {
 /**
  * Actually parses the theme options
  */
-export const parseThemeOptions = (theme: ?(string | string[])): string[] => {
+export const parseThemeOptions = (
+  theme: string | string[] | null
+): string[] => {
   if (theme) {
     const themeItems = Array.isArray(theme) ? theme : theme.split(' ');
     return themeItems.map(v => `mdc-theme--${v}`);
@@ -31,7 +33,7 @@ export const withTheme = (Component: React.ComponentType<*>) => {
     return <Component className={className} {...rest} />;
   };
 
-  HOC.displayName = 'withTheme';
+  //HOC.displayName = 'withTheme';
 
   return HOC;
 };

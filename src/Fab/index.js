@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 import { Icon } from '../Icon';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';

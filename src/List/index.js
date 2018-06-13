@@ -4,7 +4,7 @@ import type { WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';

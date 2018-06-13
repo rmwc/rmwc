@@ -51,14 +51,7 @@ export class Chip extends withFoundation({
       ...rest
     } = this.props;
     const { root_ } = this.foundationRefs;
-    return (
-      <ChipRoot
-        tabIndex={0}
-        {...rest}
-        elementRef={root_}
-        className={this.classes}
-      />
-    );
+    return <ChipRoot tabIndex={0} {...rest} elementRef={root_} />;
   }
 }
 

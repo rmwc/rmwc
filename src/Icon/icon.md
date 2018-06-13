@@ -101,8 +101,8 @@ import { MyIconComponent } from '../Icon';
 
 // 3) Instead, you should set the custom strategy to be your default
 // and add your own handling with RMWCProvider
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import App from './App'; // your main app component
 import { RMWCProvider } from 'rmwc/Provider';
 import { MyIconComponent } from '../Icon';

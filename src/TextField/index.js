@@ -236,7 +236,6 @@ export class TextField extends withFoundation({
       <TextFieldRoot
         {...rootProps}
         invalid={invalid}
-        className={this.classes}
         withLeadingIcon={!!withLeadingIcon}
         withTrailingIcon={!!withTrailingIcon}
         textarea={textarea}

@@ -7,8 +7,8 @@ import from **rmwc/Provider**
 You can wrap your top level App component with RMWC provider to set global configuration options. Just pass the options in as props.
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import App from './App'; // your main app component
 import { RMWCProvider } from 'rmwc/Provider';
 
