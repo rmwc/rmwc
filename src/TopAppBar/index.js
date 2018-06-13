@@ -75,6 +75,12 @@ export const TopAppBarTitle = simpleTag({
   classNames: 'mdc-top-app-bar__title'
 });
 
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export const TopAppBarFixedAdjust = simpleTag({
+  displayName: 'TopAppBarFixedAdjust',
+  classNames: 'mdc-top-app-bar--fixed-adjust'
+});
+
 type TopAppAppBarPropsT = {
   /** Emits when the navigation icon is clicked. */
   onNav?: (evt: Event) => mixed,

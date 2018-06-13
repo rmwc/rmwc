@@ -63,4 +63,5 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="TopAppBarTitle" />
 <DocumentComponent displayName="TopAppBarNavigationIcon" />
 <DocumentComponent displayName="TopAppBarActionItem" />
+<DocumentComponent displayName="TopAppBarFixedAdjust" />
 ```

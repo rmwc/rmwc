@@ -5807,6 +5807,11 @@
       "methods": []
     },
     {
+      "description": "An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar.",
+      "displayName": "TopAppBarFixedAdjust",
+      "methods": []
+    },
+    {
       "description": "A TopAppBar component",
       "displayName": "TopAppBar",
       "methods": [],
