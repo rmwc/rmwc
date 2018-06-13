@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
 import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
@@ -83,7 +83,7 @@ export const TopAppBarFixedAdjust = simpleTag({
 
 type TopAppAppBarPropsT = {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: Event) => mixed,
+  onNav?: (evt: CustomEventT) => mixed,
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean,
   /** Styles the top app bar as a prominent top app bar. */

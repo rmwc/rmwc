@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
 import { simpleTag } from '../Base';
@@ -79,9 +79,9 @@ export type DrawerPropsT = {
   /** Opens or closes the Drawer. */
   open: boolean,
   /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: Event) => mixed,
+  onClose?: (evt: CustomEventT) => mixed,
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: Event) => mixed,
+  onOpen?: (evt: CustomEventT) => mixed,
   /** Makes a permanent drawer. */
   permanent?: boolean,
   /** Makes a persistent drawer. */

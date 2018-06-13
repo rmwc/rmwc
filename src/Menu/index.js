@@ -62,13 +62,13 @@ export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
-  onClose?: (evt: Event) => mixed,
+  onClose?: (evt: CustomEventT) => mixed,
   /** Callback that fires when a Menu item is selected. */
   onSelected?: (
     evt: { detail: { index: number, item: HTMLElement } } & CustomEventT
   ) => mixed,
   /** Callback that fires when the menu is closed with nothing selected. */
-  onCancel?: (evt: Event) => mixed,
+  onCancel?: (evt: CustomEventT) => mixed,
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT,
   /** Children to render */

@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
 import {
@@ -109,11 +109,11 @@ export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
   /** Callback for when the accept Button is pressed. */
-  onAccept: (evt: Event) => mixed,
+  onAccept: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog was closed without acceptance. */
-  onCancel: (evt: Event) => mixed,
+  onCancel: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: Event) => mixed
+  onClose: (evt: CustomEventT) => mixed
 };
 
 export class Dialog extends withFoundation({
