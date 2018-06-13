@@ -7,7 +7,8 @@ import {
   TopAppBarSection,
   TopAppBarNavigationIcon,
   TopAppBarActionItem,
-  TopAppBarTitle
+  TopAppBarTitle,
+  TopAppBarFixedAdjust
 } from './';
 
 describe('TopAppBar', () => {
@@ -31,9 +32,12 @@ describe('TopAppBar', () => {
 
   test('can be fixed', () => {
     const el = mount(
-      <TopAppBar fixed>
-        <TopAppBarNavigationIcon use="menu" />
-      </TopAppBar>
+      <div>
+        <TopAppBar fixed>
+          <TopAppBarNavigationIcon use="menu" />
+        </TopAppBar>
+        <TopAppBarFixedAdjust />
+      </div>
     );
     expect(el.html().includes('mdc-top-app-bar--fixed')).toBe(true);
   });

@@ -5,8 +5,7 @@ import * as React from 'react';
 import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
 
 import { Icon } from '../Icon';
-import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation } from '../Base';
 
 export const TopAppBarRoot = simpleTag({
   displayName: 'TopAppBarRoot',
@@ -74,6 +73,12 @@ export const TopAppBarActionItem = simpleTag({
 export const TopAppBarTitle = simpleTag({
   displayName: 'TopAppBarTitle',
   classNames: 'mdc-top-app-bar__title'
+});
+
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export const TopAppBarFixedAdjust = simpleTag({
+  displayName: 'TopAppBarFixedAdjust',
+  classNames: 'mdc-top-app-bar--fixed-adjust'
 });
 
 type TopAppAppBarPropsT = {

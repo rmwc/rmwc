@@ -4,11 +4,12 @@ import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
 import { simpleTag } from '../Base';
 import { List } from '../List';
-import { withMDC, noop } from '../Base';
+import { noop } from '../Base';
 import {
   MDCPersistentDrawer,
   MDCTemporaryDrawer
 } from '@material/drawer/dist/mdc.drawer';
+import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
 /***************************************************************************************
  * Drawer Headers
@@ -89,81 +90,80 @@ export type DrawerPropsT = {
   temporary?: boolean
 } & SimpleTagPropsT;
 
-/** A Drawer component */
-export const Drawer = withMDC({
-  getMdcConstructorOrInstance: props => {
-    if (props.temporary) {
-      return MDCTemporaryDrawer;
-    } else if (props.persistent) {
-      return MDCPersistentDrawer;
-    }
+const slidableDrawerFactory = (MDCConstructor, displayName) =>
+  class extends withFoundation({
+    constructor: MDCConstructor,
+    adapter: {}
+  })<DrawerPropsT> {
+    static displayName = displayName;
 
-    return null;
-  },
-  defaultProps: {
-    open: false,
-    onOpen: noop,
-    onClose: noop,
-    permanent: false,
-    persistent: false,
-    temporary: false
-  },
-  mdcElementRef: true,
-  mdcEvents: props => {
-    let drawerConstructorName;
-
-    if (props.temporary) {
-      drawerConstructorName = 'MDCTemporaryDrawer';
-    } else if (props.persistent) {
-      drawerConstructorName = 'MDCPersistentDrawer';
-    } else {
-      // we dont have a valid event namespace, escape out
-      return {};
-    }
-
-    return {
-      [`${drawerConstructorName}:open`]: (evt, props) => props.onOpen(evt),
-      [`${drawerConstructorName}:close`]: (evt, props) => props.onClose(evt)
+    static defaultProps = {
+      open: false,
+      onOpen: noop,
+      onClose: noop
     };
-  },
-  onUpdate(props, nextProps, api, inst) {
-    if (
-      props &&
-      ['permanent', 'persistent', 'temporary'].some(
-        p => props && props[p] !== nextProps[p]
-      )
-    ) {
-      inst.mdcComponentDestroy();
-      return;
-    }
 
-    if (api && api.open !== !!nextProps.open) {
-      api.open = !!nextProps.open;
+    syncWithProps(nextProps: DrawerPropsT) {
+      // Open
+      // MDC calls notify change before actually setting the Open value
+      // which causes an infinite loop for reacts uni-directional data flow
+      // The set timeout gives us a frame before we re-evaluate whether we are open
+      setTimeout(() => {
+        this.foundation_ &&
+          syncFoundationProp(
+            nextProps.open,
+            this.open,
+            () => (this.open = nextProps.open)
+          );
+      });
     }
-  },
-  didUpdate(props, nextProps, api, inst) {
-    if (
-      props &&
-      ['permanent', 'persistent', 'temporary'].some(
-        p => props && props[p] !== nextProps[p]
-      )
-    ) {
-      inst.mdcComponentInit();
-      return;
-    }
-  }
-})(
-  class extends React.Component<DrawerPropsT> {
-    static displayName = 'Drawer';
 
     render() {
-      // $FlowFixMe
-      const { children, onOpen, onClose, mdcElementRef, ...rest } = this.props;
+      const { children, onOpen, onClose, open, ...rest } = this.props;
+      const { root_ } = this.foundationRefs;
       return (
-        <DrawerRoot elementRef={mdcElementRef} {...rest}>
-          {rest.permanent ? children : <DrawerDrawer>{children}</DrawerDrawer>}
+        <DrawerRoot elementRef={root_} {...rest}>
+          <DrawerDrawer>{children}</DrawerDrawer>
         </DrawerRoot>
       );
     }
-  }
+  };
+
+const TemporaryDrawer = slidableDrawerFactory(
+  MDCTemporaryDrawer,
+  'TemporaryDrawer'
 );
+
+const PersistentDrawer = slidableDrawerFactory(
+  MDCPersistentDrawer,
+  'PersistentDrawer'
+);
+
+class PermanentDrawer extends React.Component<DrawerPropsT> {
+  static displayName = 'PermanentDrawer';
+
+  static defaultProps = {
+    open: false,
+    onOpen: noop,
+    onClose: noop
+  };
+
+  render() {
+    const { children, onOpen, onClose, ...rest } = this.props;
+    return <DrawerRoot {...rest}>{children}</DrawerRoot>;
+  }
+}
+
+export const Drawer = (props: DrawerPropsT) => {
+  if (props.persistent) {
+    return <PersistentDrawer {...props} />;
+  }
+
+  if (props.temporary) {
+    return <TemporaryDrawer {...props} />;
+  }
+
+  return <PermanentDrawer {...props} />;
+};
+
+Drawer.displayName = 'Drawer';

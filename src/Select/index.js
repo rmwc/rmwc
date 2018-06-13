@@ -1,9 +1,8 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { simpleTag } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 import { FloatingLabel } from '../FloatingLabel';
 import { LineRipple } from '../LineRipple';
 

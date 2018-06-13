@@ -47,10 +47,11 @@ describe('Tabs', () => {
         <Tab>2</Tab>
       </TabBar>
     );
+
     // set a timeout because the child tabs render async
     setTimeout(() => {
-      expect(!!~el1.html().search('mdc-tab--active')).toEqual(true);
-      expect(!!~el2.html().search('mdc-tab--active')).toEqual(true);
+      expect(el1.html().includes('mdc-tab--active')).toEqual(true);
+      expect(el2.html().includes('mdc-tab--active')).toEqual(true);
       done();
     });
   });

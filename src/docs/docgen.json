@@ -1128,7 +1128,7 @@
       "methods": []
     },
     {
-      "description": "A Drawer component",
+      "description": "",
       "displayName": "Drawer",
       "methods": [],
       "props": {
@@ -2157,7 +2157,84 @@
     {
       "description": "",
       "displayName": "LinearProgress",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "progress",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "buffer",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "determinate",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "reversed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "LinearProgressPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "progress": {
           "flowType": {
@@ -2173,7 +2250,11 @@
             ]
           },
           "required": false,
-          "description": "Progress float percentage between 0 and 1."
+          "description": "Progress float percentage between 0 and 1.",
+          "defaultValue": {
+            "value": "0",
+            "computed": false
+          }
         },
         "buffer": {
           "flowType": {
@@ -2189,21 +2270,33 @@
             ]
           },
           "required": false,
-          "description": "A Progress buffer float percentage between 0 and 1."
+          "description": "A Progress buffer float percentage between 0 and 1.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "determinate": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether or not the Progress bar is determinate."
+          "description": "Whether or not the Progress bar is determinate.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "reversed": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Progress goes from right to left."
+          "description": "Progress goes from right to left.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         }
       }
     }
@@ -2979,7 +3072,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (content: mixed) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: {content: React.Node, className: string}) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -3049,13 +3142,34 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(content: mixed) => mixed",
+                        "raw": "(props: {content: React.Node, className: string}) => mixed",
                         "signature": {
                           "arguments": [
                             {
-                              "name": "content",
+                              "name": "props",
                               "type": {
-                                "name": "mixed"
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{content: React.Node, className: string}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "content",
+                                      "value": {
+                                        "name": "ReactNode",
+                                        "raw": "React.Node",
+                                        "required": true
+                                      }
+                                    },
+                                    {
+                                      "key": "className",
+                                      "value": {
+                                        "name": "string",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                }
                               }
                             }
                           ],
@@ -3170,13 +3284,34 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(content: mixed) => mixed",
+            "raw": "(props: {content: React.Node, className: string}) => mixed",
             "signature": {
               "arguments": [
                 {
-                  "name": "content",
+                  "name": "props",
                   "type": {
-                    "name": "mixed"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{content: React.Node, className: string}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "content",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "className",
+                          "value": {
+                            "name": "string",
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -4046,7 +4181,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } }) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: CustomEventT<{ detail: { value: number } }>) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
                 "signature": {
                   "properties": [
                     {
@@ -4054,39 +4189,45 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: { detail: { value: number } }) => mixed",
+                        "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ detail: { value: number } }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "detail",
-                                      "value": {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ value: number }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "value",
-                                              "value": {
-                                                "name": "number",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        },
-                                        "required": true
-                                      }
+                                "name": "CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { value: number } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ value: number }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "value",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
                                     }
-                                  ]
-                                }
+                                  }
+                                ],
+                                "raw": "CustomEventT<{ detail: { value: number } }>"
                               }
                             }
                           ],
@@ -4244,39 +4385,45 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { value: number } }) => mixed",
+            "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { value: number } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ value: number }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "value",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { value: number } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ value: number }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "value",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      }
+                    ],
+                    "raw": "CustomEventT<{ detail: { value: number } }>"
                   }
                 }
               ],
@@ -4491,14 +4638,55 @@
     {
       "description": "A Snackbar component for notifications.",
       "displayName": "Snackbar",
-      "methods": [],
+      "methods": [
+        {
+          "name": "isShowing",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
+          "name": "isShowing",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "isShowing",
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "MDCSnackbar",
+                "alias": "MDCSnackbar"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "show": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Show the Snackbar."
+          "description": "Show the Snackbar.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "onShow": {
           "flowType": {
@@ -4513,7 +4701,11 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar shows."
+          "description": "A callback thats fired when the Snackbar shows.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "onHide": {
           "flowType": {
@@ -4528,7 +4720,11 @@
             }
           },
           "required": false,
-          "description": "A callback thats fired when the Snackbar hides."
+          "description": "A callback thats fired when the Snackbar hides.",
+          "defaultValue": {
+            "value": "noop",
+            "computed": true
+          }
         },
         "message": {
           "flowType": {
@@ -4536,14 +4732,22 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "A string or other renderable JSX to be used as the message body."
+          "description": "A string or other renderable JSX to be used as the message body.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "timeout": {
           "flowType": {
             "name": "number"
           },
           "required": false,
-          "description": "Milliseconds to show the Snackbar for."
+          "description": "Milliseconds to show the Snackbar for.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "actionHandler": {
           "flowType": {
@@ -4558,7 +4762,11 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when action is pressed. The actionText property must be set to use this."
+          "description": "Callback that fires when action is pressed. The actionText property must be set to use this.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "actionText": {
           "flowType": {
@@ -4566,28 +4774,44 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Label for the action button."
+          "description": "Label for the action button.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         },
         "multiline": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Lets the Snackbar text overflow onto multiple lines."
+          "description": "Lets the Snackbar text overflow onto multiple lines.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "actionOnBottom": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Places the action underneath the message text."
+          "description": "Places the action underneath the message text.",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
         },
         "dismissesOnAction": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether or not the Snackbar dismisses on the action press."
+          "description": "Whether or not the Snackbar dismisses on the action press.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         },
         "alignStart": {
           "flowType": {
@@ -4701,7 +4925,7 @@
             "name": "ReactNode",
             "raw": "React.Node"
           },
-          "required": true,
+          "required": false,
           "description": "Any children to render."
         }
       }
@@ -4782,25 +5006,131 @@
     {
       "description": "The TabBar component",
       "displayName": "TabBar",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { activeTabIndex: number } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ activeTabIndex: number }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "activeTabIndex",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "activeTabIndex",
+                          "value": {
+                            "name": "number",
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "TabBarPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "onChange": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: SyntheticInputEvent<EventTarget>) => mixed",
+            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "SyntheticInputEvent",
-                    "elements": [
-                      {
-                        "name": "EventTarget"
-                      }
-                    ],
-                    "raw": "SyntheticInputEvent<EventTarget>"
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{ detail: { activeTabIndex: number } }",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "detail",
+                          "value": {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{ activeTabIndex: number }",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "activeTabIndex",
+                                  "value": {
+                                    "name": "number",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            },
+                            "required": true
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -4826,7 +5156,7 @@
       "displayName": "TabBarScroller",
       "methods": [
         {
-          "name": "reinitTabBarScroller",
+          "name": "initialize",
           "docblock": null,
           "modifiers": [],
           "params": [],
@@ -5486,6 +5816,11 @@
     {
       "description": "A title for the top app bar.",
       "displayName": "TopAppBarTitle",
+      "methods": []
+    },
+    {
+      "description": "An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar.",
+      "displayName": "TopAppBarFixedAdjust",
       "methods": []
     },
     {

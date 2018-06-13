@@ -5,7 +5,7 @@ import * as React from 'react';
 /* eslint-disable max-len */
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 /* eslint-enable max-len */
-import { simpleTag, withMDC } from '../Base';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 export const LinearProgressRoot = simpleTag({
   displayName: 'LinearProgressRoot',
@@ -63,45 +63,65 @@ export type LinearProgressPropsT = {
   reversed?: boolean
 } & SimpleTagPropsT;
 
-export const LinearProgress: React.ComponentType<
-  LinearProgressPropsT
-> = withMDC({
-  mdcConstructor: MDCLinearProgress,
-  mdcElementRef: true,
-  defaultProps: {
+export class LinearProgress extends withFoundation({
+  constructor: MDCLinearProgress,
+  adapter: {}
+})<LinearProgressPropsT> {
+  static displayName = 'LinearProgress';
+
+  static defaultProps = {
     progress: 0,
     buffer: undefined,
     determinate: true,
     reversed: false
-  },
-  onUpdate: (props, nextProps, api) => {
-    ['progress', 'buffer', 'determinate', 'reversed', 'accent'].forEach(key => {
-      if (api && nextProps[key] !== undefined && api[key] !== nextProps[key]) {
-        api[key] = nextProps[key];
-      }
-    });
-  }
-})(
-  class extends React.Component<LinearProgressPropsT> {
-    static displayName = 'LinearProgress';
+  };
 
-    render() {
-      //$FlowFixMe
-      const { progress, buffer, mdcElementRef, ...rest } = this.props;
-      return (
-        <LinearProgressRoot elementRef={mdcElementRef} {...rest}>
-          <LinearProgressBufferingDots />
-          <LinearProgressBuffer />
-          <LinearProgressPrimaryBar>
-            <LinearProgressBarInner />
-          </LinearProgressPrimaryBar>
-          <LinearProgressSecondaryBar>
-            <LinearProgressBarInner />
-          </LinearProgressSecondaryBar>
-        </LinearProgressRoot>
-      );
-    }
+  syncWithProps(nextProps: LinearProgressPropsT) {
+    // progress
+    syncFoundationProp(
+      nextProps.progress,
+      this.progress,
+      () => (this.progress = nextProps.progress)
+    );
+
+    // buffer
+    syncFoundationProp(
+      nextProps.buffer,
+      this.buffer,
+      () => (this.buffer = nextProps.buffer)
+    );
+
+    // determinate
+    syncFoundationProp(
+      nextProps.determinate,
+      this.determinate,
+      () => (this.determinate = nextProps.determinate)
+    );
+
+    // reversed
+    syncFoundationProp(
+      nextProps.reversed,
+      this.reversed,
+      () => (this.reversed = nextProps.reversed)
+    );
   }
-);
+
+  render() {
+    const { progress, buffer, ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+    return (
+      <LinearProgressRoot elementRef={root_} {...rest}>
+        <LinearProgressBufferingDots />
+        <LinearProgressBuffer />
+        <LinearProgressPrimaryBar>
+          <LinearProgressBarInner />
+        </LinearProgressPrimaryBar>
+        <LinearProgressSecondaryBar>
+          <LinearProgressBarInner />
+        </LinearProgressSecondaryBar>
+      </LinearProgressRoot>
+    );
+  }
+}
 
 export default LinearProgress;

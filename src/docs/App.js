@@ -154,7 +154,12 @@ export class App extends React.Component {
                     <Route
                       path={v.url}
                       exact
-                      component={v.component}
+                      render={() => {
+                        document.title = `RMWC | React Material Web Components | ${
+                          v.label
+                        }`;
+                        return <v.component />;
+                      }}
                       key={v.label + 'sub'}
                     />
                   ));
@@ -165,7 +170,12 @@ export class App extends React.Component {
                     path={m.url}
                     exact
                     key={m.label}
-                    component={m.component}
+                    render={() => {
+                      document.title = `RMWC | React Material Web Components | ${
+                        m.label
+                      }`;
+                      return <m.component />;
+                    }}
                   />
                 );
               })}

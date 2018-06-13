@@ -11,7 +11,7 @@ class TabBarStory extends React.Component {
   state = {
     withScroller: false,
     count: 0,
-    activeTabIndex: 0,
+    activeTabIndex: 1,
     tabs: ['Cookies', 'Pizza', 'Icecream']
   };
 
@@ -21,8 +21,8 @@ class TabBarStory extends React.Component {
   }
 
   onChange(evt) {
-    this.setState({ activeTabIndex: evt.target.value });
-    action('activeTabIndex: ' + evt.target.value)();
+    this.setState({ activeTabIndex: evt.detail.activeTabIndex });
+    action('activeTabIndex: ' + evt.detail.activeTabIndex)();
   }
   onChangeTabNames(evt) {
     const state = {
@@ -44,7 +44,6 @@ class TabBarStory extends React.Component {
   onRemoveLastTab(evt) {
     const init = this.state.tabs.slice(0, -1);
     const state = {
-      activeTabIndex: 0,
       tabs: init
     };
 
@@ -56,7 +55,7 @@ class TabBarStory extends React.Component {
     const tabBar = (
       <TabBar
         count={this.state.count}
-        activeTabIndex={number('activeTabIndex', this.state.activeTabIndex)}
+        activeTabIndex={this.state.activeTabIndex}
         onChange={evt => this.onChange(evt)}
       >
         {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
@@ -104,8 +103,8 @@ class TabBarScrollerStory extends React.Component {
   };
 
   onChange(evt) {
-    this.setState({ activeTabIndex: evt.target.value });
-    action('activeTabIndex: ' + evt.target.value)();
+    this.setState({ activeTabIndex: evt.detail.activeTabIndex });
+    action('activeTabIndex: ' + evt.detail.activeTabIndex)();
   }
 
   render() {

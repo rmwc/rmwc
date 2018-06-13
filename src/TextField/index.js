@@ -1,16 +1,18 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+import type { IconPropsT } from '../Icon';
 import * as React from 'react';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
-import { simpleTag } from '../Base';
-import { randomId } from '../Base/utils/randomId';
+import {
+  simpleTag,
+  withFoundation,
+  syncFoundationProp,
+  randomId
+} from '../Base';
 
 import { Icon } from '../Icon';
 import { LineRipple } from '../LineRipple';
 import { FloatingLabel } from '../FloatingLabel';
-
-import type { SimpleTagPropsT } from '../Base';
-import type { IconPropsT } from '../Icon';
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
 
 export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',

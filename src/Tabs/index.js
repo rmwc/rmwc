@@ -1,12 +1,29 @@
 // @flow
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { MDCTabBar, MDCTabBarScroller } from '@material/tabs/dist/mdc.tabs';
+import {
+  MDCTab,
+  MDCTabBar,
+  MDCTabBarScroller
+} from '@material/tabs/dist/mdc.tabs';
 import { Icon } from '../Icon';
-import { noop, simpleTag } from '../Base';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
-import { withMDC } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+function recursiveMap(children, fn) {
+  return React.Children.map(children, child => {
+    if (!React.isValidElement(child)) {
+      return child;
+    }
+
+    if (child.props.children) {
+      child = React.cloneElement(child, {
+        children: recursiveMap(child.props.children, fn)
+      });
+    }
+
+    return fn(child);
+  });
+}
 
 /******************************************************
  * Private
@@ -86,113 +103,83 @@ export const TabIconText = simpleTag({
 
 export type TabBarPropsT = {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onChange?: (evt: SyntheticInputEvent<EventTarget>) => mixed,
+  onChange?: (
+    evt: { detail: { activeTabIndex: number } } & CustomEventT
+  ) => mixed,
   /** The index of the active tab. */
   activeTabIndex: number
 } & SimpleTagPropsT;
 
 /** The TabBar component */
-export const TabBar: React.ComponentType<TabBarPropsT> = withMDC({
-  getMdcConstructorOrInstance: (props, context) => {
-    // TabBarScroller handles the TabBar instantiation for us
-    // if we double instantiate, we end up with errors.
-    // Here we are seeing if TabBarScroller passed us the api instance
-    // via context
-    if (context && context.isTabScroller) {
-      return context.tabBarApi;
-    }
+export class TabBar extends withFoundation({
+  constructor: MDCTabBar,
+  adapter: {}
+})<TabBarPropsT> {
+  static displayName = 'TabBar';
 
-    return MDCTabBar;
-  },
-  mdcEvents: {
-    'MDCTabBar:change': (evt, props, api) => {
-      evt.target.value = api.activeTabIndex;
-      props.onChange(evt);
-    }
-  },
-  contextTypes: {
-    isTabScroller: PropTypes.bool,
-    tabBarApi: PropTypes.any,
-    reinitTabBarScroller: PropTypes.func
-  },
-  defaultProps: {
-    onChange: noop,
-    activeTabIndex: 0
-  },
-  onUpdate: (props, nextProps, api, inst) => {
-    if (!api) return;
+  syncWithProps(nextProps: TabBarPropsT) {
+    syncFoundationProp(
+      nextProps.activeTabIndex,
+      this.activeTabIndex,
+      () => (this.activeTabIndex = nextProps.activeTabIndex)
+    );
+  }
 
-    if (!props || nextProps.activeTabIndex !== props.activeTabIndex) {
-      api.activeTabIndex = api.tabs[Number(nextProps.activeTabIndex)]
-        ? nextProps.activeTabIndex + ''
-        : undefined;
-    }
-  },
-  didUpdate: (props, nextProps, api, inst) => {
-    if (inst.context.tabBarApi && api !== inst.context.tabBarApi) {
-      // if we dont have an api, it might be being held hostage by the TabBar scroller
-      // Grab it if its available from the context and re-init the component
-      inst.mdcComponentReinit();
-      return;
-    }
+  componentDidMount() {
+    super.componentDidMount();
 
-    // exit if we have no api
-    if (!api) return;
+    // This corrects an issue where passing in 0 or no activeTabIndex
+    // causes the first tab of the set to not be active
+    if (
+      this.props.activeTabIndex === 0 ||
+      this.props.activeTabIndex === undefined
+    ) {
+      window.requestAnimationFrame(() => {
+        this.foundation_.adapter_.setTabActiveAtIndex(0, true);
+      });
+    }
+  }
 
+  componentDidUpdate(prevProps: TabBarPropsT) {
+    // Children changing is a pain...
+    // We have to perform a lot of cleanup and sometimes we have to reinit
     const childrenDidChange =
-      props &&
-      props.children &&
-      nextProps &&
-      nextProps.children &&
-      JSON.stringify(React.Children.map(props.children, ({ key }) => key)) !==
+      prevProps &&
+      prevProps.children &&
+      this.props &&
+      this.props.children &&
+      JSON.stringify(
+        React.Children.map(prevProps.children, ({ key }) => key)
+      ) !==
         JSON.stringify(
-          React.Children.map(nextProps.children, ({ key }) => key)
+          React.Children.map(this.props.children, ({ key }) => key)
         );
 
     const tabsLengthMismatch =
-      React.Children.toArray(nextProps.children).length !== api.tabs.length;
+      React.Children.toArray(this.props.children).length !== this.tabs.length;
 
-    // Children changing is a pain...
-    // We have to perform a lot of cleanup and sometimes we have to reinit
-    // A parent tab bar scroller
     if (childrenDidChange || tabsLengthMismatch) {
-      // destroy the foundation for all tabs manually to remove all  listeners
-      if (api.tabs) {
-        api.tabs.forEach(mdcTab => {
-          mdcTab.foundation_ && mdcTab.foundation_.destroy();
-        });
-      }
-      // when tab scroller is wrapping the component
-      if (inst.context.isTabScroller) {
-        // destroy the foundation
-        inst.mdcComponentDestroy();
-        // trigger reinit on the scroller container
-        inst.context.reinitTabBarScroller();
-      } else {
-        // reinit
-        inst.mdcComponentReinit();
-      }
+      this.tabs.forEach(mdcTab => {
+        mdcTab.foundation_ && mdcTab.foundation_.destroy();
+      });
+      this.tabs_ = this.gatherTabs_(el => new MDCTab(el));
+      this.layout();
+      this.syncWithProps(this.props);
     }
   }
-})(
-  class extends React.Component<TabBarPropsT> {
-    static displayName = 'TabBar';
 
-    static contextTypes = {
-      isTabScroller: PropTypes.bool
-    };
+  render() {
+    const { children, activeTabIndex, apiRef, ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
 
-    render() {
-      const { children, activeTabIndex, ...rest } = this.props;
-      return (
-        <TabBarRoot isTabScroller={this.context.isTabScroller} {...rest}>
-          {children}
-          <TabBarIndicator />
-        </TabBarRoot>
-      );
-    }
+    return (
+      <TabBarRoot {...rest} elementRef={root_}>
+        {children}
+        <TabBarIndicator />
+      </TabBarRoot>
+    );
   }
-);
+}
 
 export type TabBarScrollerPropsT = {
   /** The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons. */
@@ -203,104 +190,71 @@ export type TabBarScrollerPropsT = {
   children?: React.Node
 };
 
-export type TabBarScrollerStateT = {
-  tabBarApi: ?mixed
-};
-
 /** The TabBar Scroll container */
-export const TabBarScroller = withMDC({
-  mdcConstructor: MDCTabBarScroller,
-  mdcApiRef: true,
-  mdcComponentReinit: true,
-  onUpdate: (currentProps, nextProps, api, inst) => {
-    // componentWillReceiveProps is not called
-    // when the component is first mounted.
-    // We need to force react to call getChildContext
-    // after the api becomes available.
+export class TabBarScroller extends withFoundation({
+  constructor: MDCTabBarScroller,
+  adapter: {}
+})<TabBarScrollerPropsT> {
+  static displayName = 'TabBarScroller';
 
-    // invoked from mdcComponentInit currentProps is undefined
-    if (currentProps === undefined) {
-      // trigger an update
-      inst.setState({}); // or inst.forceUpdate()
-    }
+  static defaultProps = {
+    indicatorForward: (
+      <svg
+        style={{ fill: 'currentColor' }}
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    ),
+    indicatorBack: (
+      <svg
+        style={{ fill: 'currentColor' }}
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    )
+  };
+
+  initialize() {
+    super.initialize(() => this.tabBarApi);
   }
-})(
-  class extends React.Component<TabBarScrollerPropsT, TabBarScrollerStateT> {
-    static displayName = 'TabBarScroller';
 
-    static defaultProps = {
-      indicatorForward: (
-        <svg
-          style={{ fill: 'currentColor' }}
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-          <path d="M0 0h24v24H0z" fill="none" />
-        </svg>
-      ),
-      indicatorBack: (
-        <svg
-          style={{ fill: 'currentColor' }}
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-          <path d="M0 0h24v24H0z" fill="none" />
-        </svg>
-      )
-    };
-
-    /**
-     * The tab bar scroller inits the tabBar for us
-     * We have to jump through some context hoops to get the tabBar api instance back to the TabBar
-     * mdcApiRef.tabBar is passed directly through props to the context
-     */
-    getChildContext() {
-      return {
-        isTabScroller: true,
-        tabBarApi:
-          // $FlowFixMe
-          this.props && this.props.mdcApiRef && this.props.mdcApiRef.tabBar,
-        reinitTabBarScroller: () => this.reinitTabBarScroller()
-      };
-    }
-
-    static childContextTypes = {
-      isTabScroller: PropTypes.bool,
-      tabBarApi: PropTypes.any,
-      reinitTabBarScroller: PropTypes.func
-    };
-
-    reinitTabBarScroller() {
-      // $FlowFixMe
-      this.props.mdcComponentReinit();
-    }
-
-    render() {
-      const {
-        children,
-        indicatorForward,
-        indicatorBack,
-        // $FlowFixMe
-        mdcComponentReinit,
-        // $FlowFixMe
-        mdcApiRef,
-        ...rest
-      } = this.props;
-      return (
-        <TabBarScrollerRoot {...rest}>
-          <TabBarScrollerIndicator back>
-            <TabBarScrollerIndicatorInner use={indicatorBack} />
-          </TabBarScrollerIndicator>
-          <TabBarScrollerScrollFrame>{children}</TabBarScrollerScrollFrame>
-          <TabBarScrollerIndicator forward>
-            <TabBarScrollerIndicatorInner use={indicatorForward} />
-          </TabBarScrollerIndicator>
-        </TabBarScrollerRoot>
-      );
-    }
+  componentDidUpdate() {
+    this.layout();
   }
-);
+
+  render() {
+    const { children, indicatorForward, indicatorBack, ...rest } = this.props;
+    const { root_ } = this.foundationRefs;
+    const newChildren = recursiveMap(children, child => {
+      if (child.type.displayName && child.type.displayName === 'TabBar') {
+        return React.cloneElement(child, {
+          ...child.props,
+          isTabScroller: true,
+          ref: tabBarApi => (this.tabBarApi = tabBarApi)
+        });
+      }
+
+      return child;
+    });
+
+    return (
+      <TabBarScrollerRoot {...rest} elementRef={root_}>
+        <TabBarScrollerIndicator back>
+          <TabBarScrollerIndicatorInner use={indicatorBack} />
+        </TabBarScrollerIndicator>
+        <TabBarScrollerScrollFrame>{newChildren}</TabBarScrollerScrollFrame>
+        <TabBarScrollerIndicator forward>
+          <TabBarScrollerIndicatorInner use={indicatorForward} />
+        </TabBarScrollerIndicator>
+      </TabBarScrollerRoot>
+    );
+  }
+}

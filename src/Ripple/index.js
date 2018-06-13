@@ -3,8 +3,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
-
-import { withFoundation, syncFoundationProp } from '../Base/MDCFoundation';
+import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
 export type RipplePropsT = {
   /** Makes the ripple unbounded */
