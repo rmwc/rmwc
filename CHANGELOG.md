@@ -1,3 +1,30 @@
+#### 1.7.0 (2018-06-13)
+
+##### Breaking Changes
+
+* **Tabs:**  Converted TabBar, Tab, and TabBar scroller to Foundation. evt.target.value is now evt.detail.activeTabIndex to match MDCs custom event api. ([3b613d51](https://github.com/jamesmfriedman/rmwc/commit/3b613d5110d01264aa1162ca778b4ef78fb173fa))
+
+##### Chores
+
+* **CustomEvent:**
+  *  Fixing missing types ([05b2e3e6](https://github.com/jamesmfriedman/rmwc/commit/05b2e3e65ff1cdf99590c6b5fb1c70cb329f5295))
+  *  properly typing CustomEvents ([2cbf25c7](https://github.com/jamesmfriedman/rmwc/commit/2cbf25c7d36ed126bd3f2a26eb1296d81cb07096))
+* **SEO:**  adding some basic SEO enhancements fixes [#166](https://github.com/jamesmfriedman/rmwc/pull/166) ([d4164ac4](https://github.com/jamesmfriedman/rmwc/commit/d4164ac49e1d42316d75e94a16dc1737a51a397f))
+* **MDC:**  Upgrading MDC version to 36 [#239](https://github.com/jamesmfriedman/rmwc/pull/239) ([fbc463b3](https://github.com/jamesmfriedman/rmwc/commit/fbc463b337b22751624c9fcc18e09e2cf7244b31))
+* **Foundation:**  removal of dead code and final cleanup [#239](https://github.com/jamesmfriedman/rmwc/pull/239) ([6bc9eda6](https://github.com/jamesmfriedman/rmwc/commit/6bc9eda69a2960046a4c8553b1d9e4d6af323191))
+* **LinearProgress:**  Refactor to Foundation pattern [#239](https://github.com/jamesmfriedman/rmwc/pull/239) [#195](https://github.com/jamesmfriedman/rmwc/pull/195) [#141](https://github.com/jamesmfriedman/rmwc/pull/141) ([84a02f03](https://github.com/jamesmfriedman/rmwc/commit/84a02f034f4ed12be825a0c384614986cd8ef033))
+* **Snackbar:**  Refactor to MDC Foundation [#197](https://github.com/jamesmfriedman/rmwc/pull/197) [#141](https://github.com/jamesmfriedman/rmwc/pull/141) [#239](https://github.com/jamesmfriedman/rmwc/pull/239) ([6c29300f](https://github.com/jamesmfriedman/rmwc/commit/6c29300f2d4aac2b647bb82d715efb8f69182f27))
+* **Drawer:**  Refactor Drawer to Foundation component [#193](https://github.com/jamesmfriedman/rmwc/pull/193) [#239](https://github.com/jamesmfriedman/rmwc/pull/239) ([089ef66e](https://github.com/jamesmfriedman/rmwc/commit/089ef66e158511c0b64e51b20106f8f1d5d2bd8f))
+
+##### Documentation Changes
+
+* **Flow:**  Documenting flow-typed setup [#231](https://github.com/jamesmfriedman/rmwc/pull/231) ([a58ec529](https://github.com/jamesmfriedman/rmwc/commit/a58ec529574a61a7bc2913b73e160e4efed0421a))
+* **Bundle Size:**  correcting bundle size in docs ([5410f1ea](https://github.com/jamesmfriedman/rmwc/commit/5410f1ea910b908cb3ca6fffc7a4e7d20c9d175b))
+
+##### New Features
+
+* **TopAppBarFixedAdjust:**  Adding TopAppBarFixedAdjust component fixes [#245](https://github.com/jamesmfriedman/rmwc/pull/245) ([cd1d0cff](https://github.com/jamesmfriedman/rmwc/commit/cd1d0cff6f1a5ba189830daf809fd9a317dd65dd))
+
 #### 1.6.4 (2018-05-25)
 
 ##### Chores
