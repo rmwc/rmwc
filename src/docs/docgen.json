@@ -715,7 +715,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept: (evt: Event) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel: (evt: Event) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose: (evt: Event) => mixed\n}",
+                "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept: (evt: CustomEventT) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel: (evt: CustomEventT) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose: (evt: CustomEventT) => mixed\n}",
                 "signature": {
                   "properties": [
                     {
@@ -730,13 +730,13 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: Event) => mixed",
+                        "raw": "(evt: CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "Event"
+                                "name": "CustomEventT"
                               }
                             }
                           ],
@@ -752,13 +752,13 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: Event) => mixed",
+                        "raw": "(evt: CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "Event"
+                                "name": "CustomEventT"
                               }
                             }
                           ],
@@ -774,13 +774,13 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: Event) => mixed",
+                        "raw": "(evt: CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "Event"
+                                "name": "CustomEventT"
                               }
                             }
                           ],
@@ -812,13 +812,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -834,13 +834,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -856,13 +856,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -991,13 +991,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -1017,13 +1017,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -1043,13 +1043,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -1143,13 +1143,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -1165,13 +1165,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -1831,12 +1831,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}} & CustomEventT) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}}) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
+                    "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}} & CustomEventT) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1844,39 +1844,48 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
+                            "raw": "(evt: {detail: {isOn: boolean}} & CustomEventT) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{detail: {isOn: boolean}}",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{isOn: boolean}",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "isOn",
-                                                  "value": {
-                                                    "name": "boolean",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                                    "name": "intersection",
+                                    "raw": "{detail: {isOn: boolean}} & CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{detail: {isOn: boolean}}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "detail",
+                                              "value": {
+                                                "name": "signature",
+                                                "type": "object",
+                                                "raw": "{isOn: boolean}",
+                                                "signature": {
+                                                  "properties": [
+                                                    {
+                                                      "key": "isOn",
+                                                      "value": {
+                                                        "name": "boolean",
+                                                        "required": true
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
+                                      },
+                                      {
+                                        "name": "CustomEventT"
+                                      }
+                                    ]
                                   }
                                 }
                               ],
@@ -1934,39 +1943,48 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: {detail: {isOn: boolean}}) => mixed",
+            "raw": "(evt: {detail: {isOn: boolean}} & CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{detail: {isOn: boolean}}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{isOn: boolean}",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "isOn",
-                                  "value": {
-                                    "name": "boolean",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                    "name": "intersection",
+                    "raw": "{detail: {isOn: boolean}} & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{detail: {isOn: boolean}}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{isOn: boolean}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "isOn",
+                                      "value": {
+                                        "name": "boolean",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
@@ -2530,7 +2548,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: Event) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: { detail: { index: number, item: HTMLElement } }) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: Event) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Children to render */\n  children?: React.Node\n}",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (\n    evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n  ) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Children to render */\n  children?: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -2545,13 +2563,13 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: Event) => mixed",
+                        "raw": "(evt: CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "Event"
+                                "name": "CustomEventT"
                               }
                             }
                           ],
@@ -2567,46 +2585,55 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+                        "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ detail: { index: number, item: HTMLElement } }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "detail",
-                                      "value": {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ index: number, item: HTMLElement }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "index",
-                                              "value": {
-                                                "name": "number",
-                                                "required": true
-                                              }
+                                "name": "intersection",
+                                "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { index: number, item: HTMLElement } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ index: number, item: HTMLElement }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "index",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                },
+                                                {
+                                                  "key": "item",
+                                                  "value": {
+                                                    "name": "HTMLElement",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
                                             },
-                                            {
-                                              "key": "item",
-                                              "value": {
-                                                "name": "HTMLElement",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        },
-                                        "required": true
-                                      }
+                                            "required": true
+                                          }
+                                        }
+                                      ]
                                     }
-                                  ]
-                                }
+                                  },
+                                  {
+                                    "name": "CustomEventT"
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -2622,13 +2649,13 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: Event) => mixed",
+                        "raw": "(evt: CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "Event"
+                                "name": "CustomEventT"
                               }
                             }
                           ],
@@ -2710,13 +2737,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -2732,46 +2759,55 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { index: number, item: HTMLElement } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ index: number, item: HTMLElement }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "index",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
+                    "name": "intersection",
+                    "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { index: number, item: HTMLElement } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ index: number, item: HTMLElement }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "index",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    },
+                                    {
+                                      "key": "item",
+                                      "value": {
+                                        "name": "HTMLElement",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
                                 },
-                                {
-                                  "key": "item",
-                                  "value": {
-                                    "name": "HTMLElement",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
@@ -2787,13 +2823,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -2917,13 +2953,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -2939,46 +2975,55 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { index: number, item: HTMLElement } }) => mixed",
+            "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { index: number, item: HTMLElement } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ index: number, item: HTMLElement }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "index",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
+                    "name": "intersection",
+                    "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { index: number, item: HTMLElement } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ index: number, item: HTMLElement }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "index",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    },
+                                    {
+                                      "key": "item",
+                                      "value": {
+                                        "name": "HTMLElement",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
                                 },
-                                {
-                                  "key": "item",
-                                  "value": {
-                                    "name": "HTMLElement",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
@@ -2994,13 +3039,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
@@ -4181,7 +4226,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: CustomEventT<{ detail: { value: number } }>) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } }) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
                 "signature": {
                   "properties": [
                     {
@@ -4189,13 +4234,14 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
+                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "CustomEventT",
+                                "name": "intersection",
+                                "raw": "{ detail: { value: number } } & CustomEventT",
                                 "elements": [
                                   {
                                     "name": "signature",
@@ -4225,9 +4271,11 @@
                                         }
                                       ]
                                     }
+                                  },
+                                  {
+                                    "name": "CustomEventT"
                                   }
-                                ],
-                                "raw": "CustomEventT<{ detail: { value: number } }>"
+                                ]
                               }
                             }
                           ],
@@ -4243,39 +4291,48 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: { detail: { value: number } }) => mixed",
+                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ detail: { value: number } }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "detail",
-                                      "value": {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ value: number }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "value",
-                                              "value": {
-                                                "name": "number",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        },
-                                        "required": true
-                                      }
+                                "name": "intersection",
+                                "raw": "{ detail: { value: number } } & CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "signature",
+                                    "type": "object",
+                                    "raw": "{ detail: { value: number } }",
+                                    "signature": {
+                                      "properties": [
+                                        {
+                                          "key": "detail",
+                                          "value": {
+                                            "name": "signature",
+                                            "type": "object",
+                                            "raw": "{ value: number }",
+                                            "signature": {
+                                              "properties": [
+                                                {
+                                                  "key": "value",
+                                                  "value": {
+                                                    "name": "number",
+                                                    "required": true
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "required": true
+                                          }
+                                        }
+                                      ]
                                     }
-                                  ]
-                                }
+                                  },
+                                  {
+                                    "name": "CustomEventT"
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -4385,13 +4442,14 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT<{ detail: { value: number } }>) => mixed",
+            "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT",
+                    "name": "intersection",
+                    "raw": "{ detail: { value: number } } & CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
@@ -4421,9 +4479,11 @@
                             }
                           ]
                         }
+                      },
+                      {
+                        "name": "CustomEventT"
                       }
-                    ],
-                    "raw": "CustomEventT<{ detail: { value: number } }>"
+                    ]
                   }
                 }
               ],
@@ -4439,39 +4499,48 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { value: number } }) => mixed",
+            "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { value: number } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ value: number }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "value",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                    "name": "intersection",
+                    "raw": "{ detail: { value: number } } & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { value: number } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ value: number }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "value",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
@@ -5016,12 +5085,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: { detail: { activeTabIndex: number } }) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
                     "signature": {
                       "properties": [
                         {
@@ -5029,39 +5098,48 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
+                            "raw": "(\n  evt: { detail: { activeTabIndex: number } } & CustomEventT\n) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { activeTabIndex: number } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ activeTabIndex: number }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "activeTabIndex",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                                    "name": "intersection",
+                                    "raw": "{ detail: { activeTabIndex: number } } & CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ detail: { activeTabIndex: number } }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "detail",
+                                              "value": {
+                                                "name": "signature",
+                                                "type": "object",
+                                                "raw": "{ activeTabIndex: number }",
+                                                "signature": {
+                                                  "properties": [
+                                                    {
+                                                      "key": "activeTabIndex",
+                                                      "value": {
+                                                        "name": "number",
+                                                        "required": true
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
+                                      },
+                                      {
+                                        "name": "CustomEventT"
+                                      }
+                                    ]
                                   }
                                 }
                               ],
@@ -5098,39 +5176,48 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { activeTabIndex: number } }) => mixed",
+            "raw": "(\n  evt: { detail: { activeTabIndex: number } } & CustomEventT\n) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{ detail: { activeTabIndex: number } }",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "detail",
-                          "value": {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{ activeTabIndex: number }",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "activeTabIndex",
-                                  "value": {
-                                    "name": "number",
-                                    "required": true
-                                  }
-                                }
-                              ]
-                            },
-                            "required": true
-                          }
+                    "name": "intersection",
+                    "raw": "{ detail: { activeTabIndex: number } } & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { activeTabIndex: number } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ activeTabIndex: number }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "activeTabIndex",
+                                      "value": {
+                                        "name": "number",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
                         }
-                      ]
-                    }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
@@ -5832,13 +5919,13 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: Event) => mixed",
+            "raw": "(evt: CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "Event"
+                    "name": "CustomEventT"
                   }
                 }
               ],
