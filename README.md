@@ -5,7 +5,7 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for the official Material Design (Web) Components v0.35.0
+A React (15 / 16) wrapper for the official Material Design (Web) Components v0.36.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
@@ -17,23 +17,7 @@ Features:
 
 ## Recent updates
 
-For MDC 35, the team at google has refactored Typography and Themes. Make sure to view the Changelog for more details.
-
-BREAKING CHANGES
-
-* Typography classes have been renamed. Please see this commit for a mapping of old to new -> https://github.com/jamesmfriedman/rmwc/commit/8d77666bd87380a824028c071a8597cdb647b1ad
-
-* Themes have been refactored and there are less classNames now. Please see this commit for a mapping of old to new -> https://github.com/jamesmfriedman/rmwc/commit/86fa087a2864f3198435cb5288ca793ee6f84b08
-
-* Cards and Buttons `stroked` prop is now called `outlined`
-
-New Features
-
-* A new a Shape component
-* A new ImageList component
-* A new TopAppBar component
-* 100% Flow code compliance. Should expose some flow auto-complete and type checking if you're using it.
-* More testing around server-side-rendering
+MDC 36 is a simple upgraded containing mostly bugfixes and there are minimal breaking changes. 
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
