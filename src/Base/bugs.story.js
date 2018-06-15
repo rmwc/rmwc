@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { TextField, Button } from '../rmwc';
+import { TextField, Button, Checkbox } from '../rmwc';
 
 class Bug216 extends React.Component {
   constructor(props) {
@@ -66,4 +66,33 @@ class Bug216 extends React.Component {
   }
 }
 
-storiesOf('Bugs', module).add('216', () => <Bug216 />);
+storiesOf('Bugs', module)
+  .add('#216', () => <Bug216 />)
+  .add('#247', () => (
+    <React.Fragment>
+      <label>
+        <input
+          type="checkbox"
+          checked={true}
+          onChange={e => console.log('change', e.target.checked)}
+        />
+        Native
+      </label>
+
+      <Checkbox
+        checked={true}
+        onChange={e => console.log('change', e.target.checked)}
+        label="True controlled"
+      />
+
+      <Checkbox
+        checked={false}
+        onChange={e => console.log('change', e.target.checked)}
+        label="False controlled"
+      />
+      <Checkbox
+        onChange={e => console.log('change', e.target.checked)}
+        label="Uncontrolled"
+      />
+    </React.Fragment>
+  ));

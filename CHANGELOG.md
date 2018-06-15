@@ -1,3 +1,9 @@
+#### 1.7.1 (2018-06-15)
+
+##### Bug Fixes
+
+* **Checkbox:**  Corrects controlled syncronicity issue fixes [#247](https://github.com/jamesmfriedman/rmwc/pull/247) ([dbb87b78](https://github.com/jamesmfriedman/rmwc/commit/dbb87b789f3bf34a90d15bf6e79a1ebcca2e2a6b))
+
 #### 1.7.0 (2018-06-13)
 
 ##### Breaking Changes
