@@ -88,6 +88,8 @@ export class Checkbox extends withFoundation({
 })<CheckboxPropsT> {
   static displayName = 'Checkbox';
 
+  boundChangeHandler: (props: CheckboxPropsT) => mixed;
+
   constructor(props: CheckboxPropsT) {
     super(props);
     this.generatedId = randomId('checkbox');
@@ -96,6 +98,25 @@ export class Checkbox extends withFoundation({
   componentDidMount() {
     super.componentDidMount();
     this.ripple_ = this.initRipple_();
+
+    // Fixes bug #247
+    // Basically we need to do the following hacks
+    // - register syncWithProps so it runs on change
+    // - deregister the original change handler and reregister so it
+    //   runs after sync with props
+    this.boundChangeHandler = () => this.syncWithProps(this.props);
+    this.foundation_.adapter_.deregisterChangeHandler(
+      this.foundation_.changeHandler_
+    );
+    this.foundation_.adapter_.registerChangeHandler(this.boundChangeHandler);
+    this.foundation_.adapter_.registerChangeHandler(
+      this.foundation_.changeHandler_
+    );
+  }
+
+  componentWillUnmount() {
+    this.foundation_.adapter_.deregisterChangeHandler(this.boundChangeHandler);
+    super.componentWillUnmount();
   }
 
   syncWithProps(nextProps: CheckboxPropsT) {
