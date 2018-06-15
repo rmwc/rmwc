@@ -76,11 +76,17 @@ export class LinearProgress extends withFoundation({
     reversed: false
   };
 
+  progress: number | string;
+  buffer: number | string;
+  determinate: boolean;
+  reversed: boolean;
+
   syncWithProps(nextProps: LinearProgressPropsT) {
     // progress
     syncFoundationProp(
       nextProps.progress,
       this.progress,
+      //$FlowFixMe
       () => (this.progress = nextProps.progress)
     );
 
@@ -88,6 +94,7 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.buffer,
       this.buffer,
+      //$FlowFixMe
       () => (this.buffer = nextProps.buffer)
     );
 
@@ -95,6 +102,7 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.determinate,
       this.determinate,
+      //$FlowFixMe
       () => (this.determinate = nextProps.determinate)
     );
 
@@ -102,6 +110,7 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.reversed,
       this.reversed,
+      //$FlowFixMe
       () => (this.reversed = nextProps.reversed)
     );
   }

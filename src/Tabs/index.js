@@ -117,6 +117,12 @@ export class TabBar extends withFoundation({
 })<TabBarPropsT> {
   static displayName = 'TabBar';
 
+  activeTabIndex: number;
+  tabs: any;
+  tabs_: any;
+  gatherTabs_: Function;
+  layout: Function;
+
   syncWithProps(nextProps: TabBarPropsT) {
     syncFoundationProp(
       nextProps.activeTabIndex,
@@ -135,7 +141,8 @@ export class TabBar extends withFoundation({
       this.props.activeTabIndex === undefined
     ) {
       window.requestAnimationFrame(() => {
-        this.foundation_.adapter_.setTabActiveAtIndex(0, true);
+        this.foundation_ &&
+          this.foundation_.adapter_.setTabActiveAtIndex(0, true);
       });
     }
   }
@@ -221,6 +228,9 @@ export class TabBarScroller extends withFoundation({
       </svg>
     )
   };
+
+  tabBarApi: Object;
+  layout: Function;
 
   initialize() {
     super.initialize(() => this.tabBarApi);

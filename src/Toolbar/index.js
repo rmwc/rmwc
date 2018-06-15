@@ -123,12 +123,14 @@ export class Toolbar extends withFoundation({
   adapter: {}
 })<ToolbarPropsT> {
   static displayName = 'Toolbar';
+  fixedAdjustElement: any;
 
   componentDidMount() {
     super.componentDidMount();
     if (
       this.root_ &&
       this.root_.nextSibling &&
+      //$FlowFixMe
       (this.root_.nextSibling.getAttribute('class') || '').includes(
         'mdc-toolbar-fixed-adjust'
       )

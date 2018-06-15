@@ -33,7 +33,7 @@ export const IconToggleRoot = simpleTag({
 export class IconToggle extends withFoundation({
   constructor: MDCIconToggle,
   adapter: {}
-})<IconTogglePropsT, {}> {
+})<IconTogglePropsT> {
   static displayName = 'IconToggle';
   static defaultProps = {
     onChange: noop,
@@ -41,6 +41,11 @@ export class IconToggle extends withFoundation({
     off: undefined,
     checked: undefined
   };
+
+  on: boolean;
+  disabled: boolean;
+  initRipple_: Function;
+  ripple_: any;
 
   initialize() {
     this.ripple_ = this.initRipple_();
@@ -52,14 +57,14 @@ export class IconToggle extends withFoundation({
     syncFoundationProp(
       nextProps.checked,
       this.on,
-      () => (this.on = nextProps.checked)
+      () => (this.on = !!nextProps.checked)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
   }
 

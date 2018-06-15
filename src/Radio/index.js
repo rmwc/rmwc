@@ -1,4 +1,6 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { MDCRadio } from '@material/radio/dist/mdc.radio';
 import FormField from '../FormField';
@@ -52,13 +54,20 @@ export type RadioPropsT = {
   label?: string,
   /** Children to render */
   children?: React.Node
-};
+} & SimpleTagPropsT;
 
 export class Radio extends withFoundation({
   constructor: MDCRadio,
   adapter: {}
 })<RadioPropsT> {
   static displayName = 'Radio';
+
+  generatedId: string;
+  ripple_: any;
+  initRipple_: Function;
+  checked: boolean;
+  disabled: boolean;
+  value: any;
 
   constructor(props: RadioPropsT) {
     super(props);
@@ -75,14 +84,14 @@ export class Radio extends withFoundation({
     syncFoundationProp(
       nextProps.checked,
       this.checked,
-      () => (this.checked = nextProps.checked)
+      () => (this.checked = !!nextProps.checked)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
 
     // value

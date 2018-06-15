@@ -103,6 +103,8 @@ const slidableDrawerFactory = (MDCConstructor, displayName) =>
       onClose: noop
     };
 
+    open: boolean;
+
     syncWithProps(nextProps: DrawerPropsT) {
       // Open
       // MDC calls notify change before actually setting the Open value

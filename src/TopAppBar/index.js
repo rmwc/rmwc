@@ -100,7 +100,7 @@ type TopAppAppBarPropsT = {
 export class TopAppBar extends withFoundation({
   constructor: MDCTopAppBar,
   adapter: {}
-})<TopAppAppBarPropsT, {}> {
+})<TopAppAppBarPropsT> {
   static displayName = 'TopAppBar';
 
   render() {

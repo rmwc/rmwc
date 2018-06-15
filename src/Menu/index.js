@@ -100,14 +100,18 @@ export class Menu extends withFoundation({
 })<MenuPropsT> {
   static displayName = 'Menu';
 
+  open: boolean;
+  setAnchorCorner: Function;
+
   syncWithProps(nextProps: MenuPropsT) {
     // open
     syncFoundationProp(nextProps.open, this.open, () => {
-      this.open = nextProps.open;
+      this.open = !!nextProps.open;
     });
 
     // anchorCorner
     if (
+      this.foundation_ &&
       nextProps.anchorCorner !== undefined &&
       MDCMenuFoundation.Corner[ANCHOR_CORNER_MAP[nextProps.anchorCorner]] !==
         this.foundation_.anchorCorner_

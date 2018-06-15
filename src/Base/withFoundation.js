@@ -68,9 +68,10 @@ export const withFoundation = ({
 }: FoundationT) => {
   class Foundation<P> extends React.Component<FoundationPropsT<P>> {
     foundation_: {
-      adapter_: Object,
+      adapter_: any,
       init: Function,
-      destroy: Function
+      destroy: Function,
+      [key: string]: any
     } | null;
 
     foundationRefs: { [name: string]: (ref: HTMLElement) => mixed };
@@ -162,7 +163,7 @@ export const withFoundation = ({
     }
 
     syncWithProps(nextProps: Object) {}
-    initialize() {}
+    initialize(...args: any) {}
     initialSyncWithDOM() {}
     destroy() {}
     getDefaultFoundation() {

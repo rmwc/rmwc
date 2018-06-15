@@ -45,7 +45,7 @@ export type SelectPropsT = {
   /** The value for a controlled select. */
   value?: mixed,
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
-  options?: string[] | { [value: string]: string } | mixed[],
+  options?: string[] | { [value: string]: string } | any[],
   /** A label for the form control. */
   label?: string,
   /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
@@ -67,6 +67,9 @@ const createSelectOptions = (options): Object[] => {
   // preformatted array
   if (Array.isArray(options) && options[0] && typeof options[0] === 'object') {
     return options.map(opt => {
+      if (typeof opt !== 'object') {
+        throw new Error(`Encountered non object for Select ${opt}`);
+      }
       return { ...opt, options: createSelectOptions(opt.options) };
     });
   }
@@ -99,12 +102,14 @@ export class Select extends withFoundation({
 })<SelectPropsT> {
   static displayName = 'Select';
 
+  disabled: boolean;
+
   syncWithProps(nextProps: SelectPropsT) {
     //disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
   }
 

@@ -154,7 +154,9 @@ export type TextFieldPropsT = {
   /** Add a trailing icon. */
   withTrailingIcon?: React.Node,
   /** By default, props spread to the input. These props are for the component's root container. */
-  rootProps?: Object
+  rootProps?: Object,
+  /** An ID for the DOM element */
+  id?: string
 } & SimpleTagPropsT;
 
 export class TextField extends withFoundation({
@@ -162,6 +164,10 @@ export class TextField extends withFoundation({
   adapter: {}
 })<TextFieldPropsT> {
   static displayName = 'TextField';
+
+  valid: boolean;
+  value: any;
+  disabled: boolean;
 
   syncWithProps(nextProps: TextFieldPropsT) {
     // invalid | valid
@@ -180,7 +186,7 @@ export class TextField extends withFoundation({
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
   }
 
@@ -223,6 +229,7 @@ export class TextField extends withFoundation({
     const renderIcon = iconNode => {
       if (
         (iconNode && typeof iconNode === 'string') ||
+        //$FlowFixMe
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {

@@ -93,20 +93,30 @@ export class Slider extends withFoundation({
 })<SliderPropsT> {
   static displayName = 'Slider';
 
+  value: any;
+  min: number | string;
+  max: number | string;
+  step: number | string;
+  disabled: boolean;
+
   get discrete(): boolean {
-    return this.foundation_.isDiscrete_;
+    return !!(this.foundation_ && this.foundation_.isDiscrete_);
   }
 
   set discrete(isDiscrete: boolean) {
-    this.foundation_.isDiscrete_ = isDiscrete;
+    if (this.foundation_) {
+      this.foundation_.isDiscrete_ = isDiscrete;
+    }
   }
 
   get displayMarkers(): boolean {
-    return this.foundation_.hasTrackMarker_;
+    return !!this.foundation_ && this.foundation_.hasTrackMarker_;
   }
 
   set displayMarkers(isDisplayMarkers: boolean) {
-    this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+    if (this.foundation_) {
+      this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+    }
   }
 
   syncWithProps(nextProps: SliderPropsT) {
@@ -121,28 +131,28 @@ export class Slider extends withFoundation({
     syncFoundationProp(
       nextProps.max,
       this.max,
-      () => (this.max = nextProps.max)
+      () => (this.max = +nextProps.max)
     );
 
     // min
     syncFoundationProp(
       nextProps.min,
       this.min,
-      () => (this.min = nextProps.min)
+      () => (this.min = +nextProps.min)
     );
 
     // step
     syncFoundationProp(
       nextProps.step,
       this.step,
-      () => (this.step = nextProps.step)
+      () => (this.step = +nextProps.step)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
 
     // discrete
@@ -153,14 +163,16 @@ export class Slider extends withFoundation({
     );
 
     //eslint-disable-next-line eqeqeq
-    if (this.discrete && this.foundation_.getStep() == 0) {
+    if (this.discrete && this.foundation_ && this.foundation_.getStep() == 0) {
       this.step = 1;
     }
 
     // displayMarkers
     syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
       this.displayMarkers = !!nextProps.displayMarkers;
-      window.requestAnimationFrame(() => this.foundation_.setupTrackMarker());
+      window.requestAnimationFrame(
+        () => this.foundation_ && this.foundation_.setupTrackMarker()
+      );
     });
   }
 

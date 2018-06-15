@@ -37,8 +37,13 @@ export class Chip extends withFoundation({
 })<ChipPropsT> {
   static displayName = 'Chip';
 
+  leadingIcon_: any;
+  ripple_: any;
+
   initialize() {
-    this.leadingIcon_ = this.root_.querySelector('.mdc-chip__icon--leading');
+    this.leadingIcon_ =
+      //$FlowFixMe
+      this.root_ && this.root_.querySelector('.mdc-chip__icon--leading');
     this.ripple_ = new MDCRipple(this.root_);
     super.initialize();
   }

@@ -109,11 +109,11 @@ export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
   /** Callback for when the accept Button is pressed. */
-  onAccept: (evt: CustomEventT) => mixed,
+  onAccept?: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog was closed without acceptance. */
-  onCancel: (evt: CustomEventT) => mixed,
+  onCancel?: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: CustomEventT) => mixed
+  onClose?: (evt: CustomEventT) => mixed
 };
 
 export class Dialog extends withFoundation({
@@ -130,6 +130,10 @@ export class Dialog extends withFoundation({
   }
 })<DialogPropsT> {
   static displayName = 'Dialog';
+
+  show: Function;
+  close: Function;
+  open: boolean;
 
   syncWithProps(nextProps: DialogPropsT) {
     // open
@@ -192,11 +196,12 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
       acceptLabel,
       cancelLabel,
       children,
+      open,
       ...rest
     } = this.props;
 
     return (
-      <Dialog {...rest}>
+      <Dialog open={open} {...rest}>
         <DialogSurface>
           {(!!title || !!header) && (
             <DialogHeader>

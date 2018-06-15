@@ -104,6 +104,8 @@ export class Snackbar extends withFoundation({
   };
 
   isShowing_ = false;
+  dismissesOnAction: boolean;
+  show: Function;
 
   get isShowing() {
     return this.isShowing_;
