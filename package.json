@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "author": "James Friedman",
   "private": false,
   "description": "A thin React wrapper for Material Design (Web) Components",
@@ -37,8 +37,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build:docs":
-      "npm run docgen && react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
+    "build:docs": "npm run docgen && react-app-rewired build && rm -R docs && mv build docs && cp docs/index.html docs/404.html",
     "build:code": "node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
     "build": "npm run build:code && npm run build:lib && npm run build:docs",
@@ -48,15 +47,12 @@
     "clean": "node scripts/clean.js",
     "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",
-    "docgen":
-      "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/docs/docgen.json",
-    "deploy:docs":
-      "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
+    "docgen": "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/docs/docgen.json",
+    "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",
     "preversion": "npm test -- --coverage",
-    "version":
-      "npm run changelog && git add CHANGELOG.md && npm run build:lib && git add -A lib && npm run build && git add docs -f",
+    "version": "npm run changelog && git add CHANGELOG.md && npm run build:lib && git add -A lib && npm run build && git add docs -f",
     "postversion": "git push && git push --tags",
     "flow": "flow"
   },
@@ -91,8 +87,7 @@
     "react-docgen": "^2.20.1",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.1",
-    "react-markdown-loader":
-      "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
+    "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.4",
     "storybook": "^1.0.0",
