@@ -6,9 +6,34 @@ import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 import { FloatingLabel } from '../FloatingLabel';
 import { LineRipple } from '../LineRipple';
 
+type FormattedOption = {
+  label: string,
+  value: string,
+  options?: FormattedOption[]
+};
+
+export type SelectPropsT = {
+  /** The value for a controlled select. */
+  value?: mixed,
+  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
+  options?: string[] | { [value: string]: string } | any[],
+  /** A label for the form control. */
+  label?: string,
+  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
+  placeholder?: string,
+  /** Disables the form control. */
+  disabled?: boolean,
+  /** Makes the Select have a visual box. */
+  box?: boolean,
+  /** Props for the root element. By default, additional props spread to the native select element.  */
+  rootProps?: Object,
+  /** A className for the root element. */
+  className?: string
+} & SimpleTagPropsT;
+
 export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',
-  classNames: props => [
+  classNames: (props: SelectPropsT) => [
     'mdc-select',
     {
       'mdc-select--box': props.box
@@ -41,29 +66,10 @@ export const SelectNativeControl = simpleTag({
   classNames: 'mdc-select__native-control'
 });
 
-export type SelectPropsT = {
-  /** The value for a controlled select. */
-  value?: mixed,
-  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
-  options?: string[] | { [value: string]: string } | any[],
-  /** A label for the form control. */
-  label?: string,
-  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
-  placeholder?: string,
-  /** Disables the form control. */
-  disabled?: boolean,
-  /** Makes the Select have a visual box. */
-  box?: boolean,
-  /** Props for the root element. By default, additional props spread to the native select element.  */
-  rootProps?: Object,
-  /** A className for the root element. */
-  className?: string
-} & SimpleTagPropsT;
-
 /**
  * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
  */
-const createSelectOptions = (options): Object[] => {
+const createSelectOptions = (options): FormattedOption[] => {
   // preformatted array
   if (Array.isArray(options) && options[0] && typeof options[0] === 'object') {
     return options.map(opt => {
@@ -81,9 +87,9 @@ const createSelectOptions = (options): Object[] => {
 
   // value => label objects
   if (typeof options === 'object') {
-    return Object.entries(options).map(([value, label]) => ({
+    return Object.keys(options).map(value => ({
       value,
-      label
+      label: options[value]
     }));
   }
 
@@ -131,7 +137,12 @@ export class Select extends withFoundation({
     const selectOptions = createSelectOptions(options);
 
     return (
-      <SelectRoot {...rootProps} box={box} elementRef={root_}>
+      <SelectRoot
+        {...rootProps}
+        box={box}
+        elementRef={root_}
+        className={className}
+      >
         <SelectNativeControl
           {...rest}
           value={value}
@@ -146,7 +157,7 @@ export class Select extends withFoundation({
             selectOptions.map(({ label, options, ...option }, i) => {
               if (options) {
                 return (
-                  <optgroup tag="optgroup" label={label} key={label}>
+                  <optgroup label={label} key={label}>
                     {options.map(({ label, ...option }, i) => (
                       <option key={label} {...option} value={option.value}>
                         {label}

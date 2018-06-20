@@ -7,9 +7,27 @@ import FormField from '../FormField';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 import { randomId } from '../Base/utils/randomId';
 
+export type RadioPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
+  /** A label for the control. */
+  label?: string,
+  /** Children to render */
+  children?: React.Node
+} & SimpleTagPropsT;
+
 export const RadioRoot = simpleTag({
   displayName: 'RadioRoot',
-  classNames: props => ['mdc-radio', { 'mdc-radio--disabled': props.disabled }]
+  classNames: (props: RadioPropsT) => [
+    'mdc-radio',
+    { 'mdc-radio--disabled': props.disabled }
+  ]
 });
 
 export const RadioNativeControl = simpleTag({
@@ -40,21 +58,6 @@ export const RadioLabel = simpleTag({
   displayName: 'RadioLabel',
   tag: 'label'
 });
-
-export type RadioPropsT = {
-  /** A DOM ID for the toggle. */
-  id?: string,
-  /** Disables the control. */
-  disabled?: boolean,
-  /** Toggle the control on and off. */
-  checked?: boolean | string,
-  /** The value of the control. */
-  value?: boolean | string | number,
-  /** A label for the control. */
-  label?: string,
-  /** Children to render */
-  children?: React.Node
-} & SimpleTagPropsT;
 
 export class Radio extends withFoundation({
   constructor: MDCRadio,
@@ -103,18 +106,7 @@ export class Radio extends withFoundation({
   }
 
   render() {
-    const {
-      label = '',
-      id,
-      children,
-      // $FlowFixMe
-      indeterminate,
-      // $FlowFixMe
-      apiRef,
-      // $FlowFixMe
-      generatedId,
-      ...rest
-    } = this.props;
+    const { label = '', id, children, apiRef, ...rest } = this.props;
     const labelId = id || this.generatedId;
     const { root_ } = this.foundationRefs;
 

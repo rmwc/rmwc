@@ -8,9 +8,24 @@ import { simpleTag } from '../Base';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 import { randomId } from '../Base/utils/randomId';
 
+export type CheckboxPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
+  /** Make the control indeterminate */
+  indeterminate?: boolean,
+  /** A label for the control. */
+  label?: string
+} & SimpleTagPropsT;
+
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
-  classNames: props => [
+  classNames: (props: CheckboxPropsT) => [
     'mdc-checkbox',
     {
       'mdc-checkbox--disabled': props.disabled
@@ -63,21 +78,6 @@ export const CheckboxLabel = simpleTag({
   displayName: 'CheckboxLabel',
   tag: 'label'
 });
-
-export type CheckboxPropsT = {
-  /** A DOM ID for the toggle. */
-  id?: string,
-  /** Disables the control. */
-  disabled?: boolean,
-  /** Toggle the control on and off. */
-  checked?: boolean | string,
-  /** The value of the control. */
-  value?: boolean | string | number,
-  /** Make the control indeterminate */
-  indeterminate?: boolean,
-  /** A label for the control. */
-  label?: string
-} & SimpleTagPropsT;
 
 /**
  * A Checkbox component

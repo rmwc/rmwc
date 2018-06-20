@@ -32,7 +32,7 @@ export const MenuItems = simpleTag({
  ****************************************************************/
 
 /** This is just the ListItem component exported from the Menu module for convenience. */
-export const MenuItem = (props: any) => (
+export const MenuItem: React.ComponentType<any> = (props: any) => (
   <ListItem role="menuitem" tabIndex="0" {...props} />
 );
 

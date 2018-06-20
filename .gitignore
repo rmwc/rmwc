@@ -53,6 +53,7 @@ react-versions
 .env.development.local
 .env.test.local
 .env.production.local
+*.d.ts
 
 npm-debug.log*
 yarn-debug.log*

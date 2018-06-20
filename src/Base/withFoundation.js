@@ -66,7 +66,7 @@ export const withFoundation = ({
   adapter = {},
   refs = ['root_']
 }: FoundationT) => {
-  class Foundation<P> extends React.Component<FoundationPropsT<P>> {
+  const F = class Foundation<P> extends React.Component<FoundationPropsT<P>> {
     foundation_: {
       adapter_: any,
       init: Function,
@@ -153,7 +153,7 @@ export const withFoundation = ({
       this._safeSyncWithProps(this.props);
 
       // this method should be deprecated in the future in favor of standard refs
-      //typeof this.props.apiRef === 'function' && this.props.apiRef(this);
+      typeof this.props.apiRef === 'function' && this.props.apiRef(this);
     }
 
     destroyComponent() {
@@ -163,7 +163,7 @@ export const withFoundation = ({
     }
 
     syncWithProps(nextProps: Object) {}
-    initialize(...args: any) {}
+    initialize(...args: any[]) {}
     initialSyncWithDOM() {}
     destroy() {}
     getDefaultFoundation() {
@@ -213,9 +213,9 @@ export const withFoundation = ({
     unlisten(evtType: string, handler: any) {
       //this.root_ && this.root_.removeEventListener(evtType, handler);
     }
-  }
+  };
 
-  copyProperties(Foundation.prototype, FoundationConstructor.prototype);
+  copyProperties(F.prototype, FoundationConstructor.prototype);
 
-  return Foundation;
+  return F;
 };

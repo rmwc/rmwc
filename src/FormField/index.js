@@ -1,4 +1,6 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
 import { simpleTag, withFoundation } from '../Base';
@@ -6,7 +8,7 @@ import { simpleTag, withFoundation } from '../Base';
 type FormFieldRootPropsT = {
   /** Position the input after the label. */
   alignEnd?: boolean
-};
+} & SimpleTagPropsT;
 
 export const FormFieldRoot: React.ComponentType<
   FormFieldRootPropsT
@@ -15,7 +17,7 @@ export const FormFieldRoot: React.ComponentType<
   defaultProps: {
     alignEnd: undefined
   },
-  classNames: props => [
+  classNames: (props: FormFieldRootPropsT) => [
     'mdc-form-field',
     {
       'mdc-form-field--align-end': props.alignEnd

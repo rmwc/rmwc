@@ -54,9 +54,8 @@ export type DialogBodyT = {
 
 /** The Dialog body */
 export class DialogBody extends simpleTag({
-  displayName: 'DialogBody',
   tag: 'section',
-  classNames: props => [
+  classNames: (props: DialogBodyT) => [
     'mdc-dialog__body',
     {
       'mdc-dialog__body--scrollable': props.scrollable
@@ -64,6 +63,8 @@ export class DialogBody extends simpleTag({
   ],
   consumeProps: ['scrollable']
 })<DialogBodyT> {
+  static displayName = 'DialogBody';
+
   render() {
     return super.render();
   }
@@ -85,9 +86,8 @@ export type DialogFooterButtonT = {
 
 /** A Dialog footer button */
 export class DialogFooterButton extends simpleTag({
-  displayName: 'DialogFooterButton',
   tag: Button,
-  classNames: props => [
+  classNames: (props: DialogFooterButtonT) => [
     'mdc-dialog__footer__button',
     {
       'mdc-dialog__footer__button--cancel': props.cancel,
@@ -100,6 +100,8 @@ export class DialogFooterButton extends simpleTag({
   },
   consumeProps: ['accept', 'cancel']
 })<DialogFooterButtonT> {
+  static displayName = 'DialogFooterButton';
+
   render() {
     return super.render();
   }

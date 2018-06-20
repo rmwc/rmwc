@@ -3,15 +3,19 @@ import * as React from 'react';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
-/****************************************************************
- * Private
- ****************************************************************/
+export type GridPropsT = {
+  /** Specifies the grid should have fixed column width. */
+  fixedColumnWidth?: boolean,
+  /** Specifies the alignment of the whole grid. */
+  align?: 'left' | 'right'
+} & SimpleTagPropsT;
+
 export const GridRoot = simpleTag({
   displayName: 'GridRoot',
-  classNames: props => [
+  classNames: (props: GridPropsT) => [
     'mdc-layout-grid',
     {
-      [`mdc-layout-grid__cell--align-${props.align}`]:
+      [`mdc-layout-grid__cell--align-${props.align || ''}`]:
         props.align !== undefined,
       'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth
     }
@@ -19,9 +23,6 @@ export const GridRoot = simpleTag({
   consumeProps: ['fixedColumnWidth', 'align']
 });
 
-/****************************************************************
- * Public
- ****************************************************************/
 export type GridCellPropsT = {
   /** Default number of columns to span. */
   span?: string | number,
@@ -47,19 +48,20 @@ export class GridCell extends simpleTag({
     desktop: undefined,
     order: undefined
   },
-  classNames: props => [
+  classNames: (props: GridCellPropsT) => [
     'mdc-layout-grid__cell',
     {
-      [`mdc-layout-grid__cell--order-${props.order}`]:
+      [`mdc-layout-grid__cell--order-${props.order || ''}`]:
         props.order !== undefined,
-      [`mdc-layout-grid__cell--align-${props.align}`]:
+      [`mdc-layout-grid__cell--align-${props.align || ''}`]:
         props.align !== undefined,
-      [`mdc-layout-grid__cell--span-${props.span}`]: props.span !== undefined,
-      [`mdc-layout-grid__cell--span-${props.phone}-phone`]:
+      [`mdc-layout-grid__cell--span-${props.span || ''}`]:
+        props.span !== undefined,
+      [`mdc-layout-grid__cell--span-${props.phone || ''}-phone`]:
         props.phone !== undefined,
-      [`mdc-layout-grid__cell--span-${props.tablet}-tablet`]:
+      [`mdc-layout-grid__cell--span-${props.tablet || ''}-tablet`]:
         props.tablet !== undefined,
-      [`mdc-layout-grid__cell--span-${props.desktop}-desktop`]:
+      [`mdc-layout-grid__cell--span-${props.desktop || ''}-desktop`]:
         props.desktop !== undefined
     }
   ],
@@ -76,15 +78,11 @@ export const GridInner = simpleTag({
   classNames: 'mdc-layout-grid__inner'
 });
 
-export type GridPropsT = {
-  /** Specifies the grid should have fixed column width. */
-  fixedColumnWidth?: boolean,
-  /** Specifies the alignment of the whole grid. */
-  align?: 'left' | 'right'
-} & SimpleTagPropsT;
-
 /** A Grid component */
-export const Grid = ({ children, ...rest }: GridPropsT) => (
+export const Grid: React.ComponentType<GridPropsT> = ({
+  children,
+  ...rest
+}: GridPropsT) => (
   <GridRoot {...rest}>
     <GridInner>{children}</GridInner>
   </GridRoot>

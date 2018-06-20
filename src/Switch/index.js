@@ -1,14 +1,29 @@
 // @flow
 import * as React from 'react';
 import FormField from '../FormField';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
 import { simpleTag } from '../Base';
 import { randomId } from '../Base/utils/randomId';
 
+export type SwitchPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** A label for the control. */
+  label?: string,
+  /** Props for the root element. By default, props spread to the input. */
+  rootProps?: any,
+  /** Any children to render. */
+  children?: React.Node
+};
+
 export const SwitchRoot = simpleTag({
   displayName: 'SwitchRoot',
-  classNames: props => [
+  classNames: (props: SwitchPropsT) => [
     'mdc-switch',
     {
       'mdc-switch--disabled': props.disabled
@@ -41,21 +56,6 @@ export const SwitchLabel = simpleTag({
   tag: 'label',
   classNames: 'mdc-switch-label'
 });
-
-export type SwitchPropsT = {
-  /** A DOM ID for the toggle. */
-  id?: string,
-  /** Disables the control. */
-  disabled?: boolean,
-  /** Toggle the control on and off. */
-  checked?: boolean | string,
-  /** A label for the control. */
-  label?: string,
-  /** Props for the root element. By default, props spread to the input. */
-  rootProps?: Object,
-  /** Any children to render. */
-  children?: React.Node
-};
 
 export class Switch extends React.Component<SwitchPropsT> {
   static displayName = 'Switch';

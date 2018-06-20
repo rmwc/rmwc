@@ -55,10 +55,25 @@ export const DrawerContent = simpleTag({
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
+export type DrawerPropsT = {
+  /** Opens or closes the Drawer. */
+  open: boolean,
+  /** Callback that fires when the Drawer is closed. */
+  onClose?: (evt: CustomEventT) => mixed,
+  /** Callback that fires when the Drawer is opened. */
+  onOpen?: (evt: CustomEventT) => mixed,
+  /** Makes a permanent drawer. */
+  permanent?: boolean,
+  /** Makes a persistent drawer. */
+  persistent?: boolean,
+  /** Makes a temporary drawer. */
+  temporary?: boolean
+} & SimpleTagPropsT;
+
 export const DrawerRoot = simpleTag({
   displayName: 'DrawerRoot',
   tag: 'aside',
-  classNames: props => [
+  classNames: (props: DrawerPropsT) => [
     'mdc-drawer',
     {
       'mdc-drawer--permanent': props.permanent,
@@ -74,21 +89,6 @@ export const DrawerDrawer = simpleTag({
   tag: 'nav',
   classNames: 'mdc-drawer__drawer'
 });
-
-export type DrawerPropsT = {
-  /** Opens or closes the Drawer. */
-  open: boolean,
-  /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: CustomEventT) => mixed,
-  /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: CustomEventT) => mixed,
-  /** Makes a permanent drawer. */
-  permanent?: boolean,
-  /** Makes a persistent drawer. */
-  persistent?: boolean,
-  /** Makes a temporary drawer. */
-  temporary?: boolean
-} & SimpleTagPropsT;
 
 const slidableDrawerFactory = (MDCConstructor, displayName) =>
   class extends withFoundation({
@@ -156,7 +156,9 @@ class PermanentDrawer extends React.Component<DrawerPropsT> {
   }
 }
 
-export const Drawer = (props: DrawerPropsT) => {
+export const Drawer: React.ComponentType<DrawerPropsT> = (
+  props: DrawerPropsT
+) => {
   if (props.persistent) {
     return <PersistentDrawer {...props} />;
   }

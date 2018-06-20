@@ -1,7 +1,6 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const processBuiltFiles = require('./process-built-files');
-const path = require('path');
 const fs = require('fs-extra');
 
 processBuiltFiles(files => {
@@ -13,5 +12,8 @@ processBuiltFiles(files => {
     }
 
     fs.removeSync(out);
+    fs.removeSync(out + '.flow');
+    fs.removeSync(out.replace('.js', '.tsx'));
+    fs.removeSync(out.replace('.js', '.d.ts'));
   });
 });

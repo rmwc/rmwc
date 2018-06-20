@@ -24,10 +24,10 @@ const MyComponent = props => <Button>Hello World</Button>;
 
 ## Bundle size considerations
 
-RMWC is under 90K gzipped, but the entire [material-components-web](https://github.com/material-components/material-components-web) package is quite large. If you care about your end use bundle size, pay attention to this!
+All of RMWC is under 90K gzipped, but the entire [material-components-web](https://github.com/material-components/material-components-web) package is quite large. If you care about your end use bundle size, pay attention to this!
 
 ```jsx
-/** GOOD example, only the `Button` component will be imported */
+/** GOOD example, only the `Button` component will be imported. This supports tree shaking. */
 import { Button } from 'rmwc/Button';
 ```
 
@@ -90,11 +90,15 @@ module.exports = {
 };
 ```
 
-## Flow Typed Setup
+## Flow and Typescript Setup
 
 There are no additional steps to get Flow to work with your code. If you run into issues, please make sure you are running the most recent version of flow-bin.
 
-## Test Setup for Jest and Enzyme
+Typescript is currently in Beta and is being transpiled directly from the Flow types, so they'll always be up to date. If you encounter any issues, please report it on issue [https://github.com/jamesmfriedman/rmwc/issues/40](https://github.com/jamesmfriedman/rmwc/issues/40).
+
+## Testing with RMWC
+
+RMWC works the best with Jest and Enzyme. material-components-web requires a browser like environment to properly test and a testing library thats supports React Refs. At this time, react-test-renderer is **not** supported.
 
 Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. The quick fix is to monkey patch the missing items onto the fake DOM elements in your setupTests file.
 

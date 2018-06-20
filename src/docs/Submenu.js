@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { ListItem, ListItemMeta, ListItemText } from 'rmwc/List';
 import { Icon } from 'rmwc/Icon';
 

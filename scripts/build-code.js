@@ -4,18 +4,12 @@ const processBuiltFiles = require('./process-built-files');
 const path = require('path');
 const fs = require('fs-extra');
 const { exec, execSync } = require('child_process');
+const glob = require('glob');
 
-const fixPackageDotJSONPath = () => {
-  fs.readFile('./index.js', 'utf8', function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
-    var result = data.replace(/\.\.\/package\.json/g, './package.json');
-
-    fs.writeFile('./index.js', result, 'utf8', function(err) {
-      if (err) return console.log(err);
-    });
-  });
+const fixPackageDotJSONPath = filename => {
+  const data = fs.readFileSync(filename, 'utf8');
+  var result = data.replace(/\.\.\/package\.json/g, './package.json');
+  fs.writeFileSync(filename, result, 'utf8');
 };
 
 // Babels and copies the file to its new directory
@@ -37,20 +31,18 @@ const writeTypescriptFile = (inputFile, outputFile) => {
 
   if (out.includes('.tsx')) {
     execSync(copyTypescriptCmd);
-    fs.readFile(out, 'utf8', (err, content) => {
-      const newContent = content
-        .replace(/\/\/\s?@flow/g, '')
-        .replace(/\<\*\>/g, '<any>')
-        .replace(/:\s\*/g, ': any')
-        .replace(/React.Node/g, 'React.ReactNode')
-        .replace(/\smixed/g, ' any')
-        .replace(/export type \{/g, 'export {')
-        .replace(/import type \{/g, 'import {');
+    const content = fs.readFileSync(out, 'utf8');
+    const newContent = content
+      .replace(/\/\/\s?@flow/g, '')
+      .replace(/<\*>/g, '<any>')
+      .replace(/:\s\*/g, ': any')
+      .replace(/React.Node/g, 'React.ReactNode')
+      .replace(/React.Element/g, 'React.ReactElement')
+      .replace(/\smixed/g, ' any')
+      .replace(/export type \{/g, 'export {')
+      .replace(/import type \{/g, 'import {');
 
-      fs.writeFile(out, newContent, 'utf8', err => {
-        if (err) return console.log(err);
-      });
-    });
+    fs.writeFileSync(out, newContent, 'utf8');
   }
 };
 
@@ -64,6 +56,14 @@ processBuiltFiles(files => {
 
     if (out === './rmwc.js') {
       out = './index.js';
+      execSync(
+        `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`
+      );
+      fixPackageDotJSONPath(out);
+      writeFlowFile(f, out);
+      writeTypescriptFile(f, out);
+      fixPackageDotJSONPath(out.replace('.js', '.tsx'));
+      return;
     }
 
     const dir = path.dirname(out);
@@ -78,12 +78,12 @@ processBuiltFiles(files => {
     writeTypescriptFile(f, out);
   });
 
-  console.log('Writing version...');
-  const listener = stats => {
-    if (stats.size) {
-      fixPackageDotJSONPath();
-      fs.unwatchFile('./index.js', listener);
-    }
-  };
-  fs.watchFile('./index.js', listener);
+  console.log('Compiling Typescript...');
+  const compileTypescriptCmd = `./node_modules/.bin/tsc`;
+  execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
+
+  glob('./**/*.tsx', {}, function(er, files) {
+    console.log(files);
+    files.forEach(fs.unlinkSync);
+  });
 });

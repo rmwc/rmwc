@@ -8,11 +8,6 @@ describe('LinearProgress', () => {
     expect(el.html().includes('mdc-linear-progress')).toBe(true);
   });
 
-  it('can be accent', () => {
-    const el = mount(<LinearProgress accent />);
-    expect(el.html().includes('mdc-linear-progress--accent')).toBe(true);
-  });
-
   it('can buffer', () => {
     mount(<LinearProgress buffer={0.8} />);
   });

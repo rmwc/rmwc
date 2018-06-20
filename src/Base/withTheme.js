@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
 export type WithThemePropsT = {
   theme?: string | string[],
@@ -24,7 +24,11 @@ export const parseThemeOptions = (
  * HOC that adds themeability to any component
  */
 export const withTheme = (Component: React.ComponentType<*>) => {
-  const HOC = ({ theme, className, ...rest }: WithThemePropsT) => {
+  const HOC: React.ComponentType<*> = ({
+    theme,
+    className,
+    ...rest
+  }: WithThemePropsT) => {
     if (theme) {
       const classes = classNames(className, parseThemeOptions(theme));
       return <Component className={classes} {...rest} />;
@@ -33,7 +37,7 @@ export const withTheme = (Component: React.ComponentType<*>) => {
     return <Component className={className} {...rest} />;
   };
 
-  //HOC.displayName = 'withTheme';
+  HOC.displayName = 'withTheme';
 
   return HOC;
 };

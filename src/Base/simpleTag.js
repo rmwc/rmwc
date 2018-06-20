@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import * as classNamesFunc from 'classnames';
+import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './withTheme';
 
 type SimpleTagFactoryT = {
@@ -9,7 +9,8 @@ type SimpleTagFactoryT = {
   defaultProps?: Object,
   consumeProps?: string[],
   wrap?: boolean,
-  displayName?: string
+  displayName?: string,
+  className?: string
 };
 
 export type SimpleTagPropsT = {
@@ -29,10 +30,12 @@ export const simpleTag = ({
   tag,
   wrap: defaultWrap = false,
   classNames
-}: SimpleTagFactoryT): any => {
+}: SimpleTagFactoryT) => {
   const defaultTag = tag || 'div';
 
-  class SimpleTag extends React.Component<*> {
+  const S = class SimpleTag<P> extends React.Component<
+    P & SimpleTagPropsT & any
+  > {
     static displayName = displayName;
 
     static defaultProps = {
@@ -84,7 +87,7 @@ export const simpleTag = ({
       // generate the final classnames for the component
       const safeClassNames = classNamesFunc(
         className,
-        parseThemeOptions(theme),
+        parseThemeOptions(theme || null),
         typeof classNames === 'function' ? classNames(rest) : classNames
       );
 
@@ -107,7 +110,7 @@ export const simpleTag = ({
       // default return
       return <Component className={safeClassNames} {...safeRest} />;
     }
-  }
+  };
 
-  return SimpleTag;
+  return S;
 };

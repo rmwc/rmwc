@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 

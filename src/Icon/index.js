@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag } from '../Base';

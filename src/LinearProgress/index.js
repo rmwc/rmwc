@@ -7,15 +7,25 @@ import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProg
 /* eslint-enable max-len */
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
+export type LinearProgressPropsT = {
+  /** Progress float percentage between 0 and 1. */
+  progress?: number | string,
+  /** A Progress buffer float percentage between 0 and 1. */
+  buffer?: number | string,
+  /** Whether or not the Progress bar is determinate. */
+  determinate?: boolean,
+  /** Progress goes from right to left. */
+  reversed?: boolean
+} & SimpleTagPropsT;
+
 export const LinearProgressRoot = simpleTag({
   displayName: 'LinearProgressRoot',
   tag: 'nav',
-  classNames: props => [
+  classNames: (props: LinearProgressPropsT) => [
     'mdc-linear-progress',
     {
       'mdc-linear-progress--indeterminate': !props.determinate,
-      'mdc-linear-progress--reversed': props.reversed,
-      'mdc-linear-progress--accent': props.accent
+      'mdc-linear-progress--reversed': props.reversed
     }
   ],
   defaultProps: {
@@ -52,17 +62,6 @@ export const LinearProgressBarInner = simpleTag({
   classNames: 'mdc-linear-progress__bar-inner'
 });
 
-export type LinearProgressPropsT = {
-  /** Progress float percentage between 0 and 1. */
-  progress?: number | string,
-  /** A Progress buffer float percentage between 0 and 1. */
-  buffer?: number | string,
-  /** Whether or not the Progress bar is determinate. */
-  determinate?: boolean,
-  /** Progress goes from right to left. */
-  reversed?: boolean
-} & SimpleTagPropsT;
-
 export class LinearProgress extends withFoundation({
   constructor: MDCLinearProgress,
   adapter: {}
@@ -76,17 +75,16 @@ export class LinearProgress extends withFoundation({
     reversed: false
   };
 
-  progress: number | string;
-  buffer: number | string;
-  determinate: boolean;
-  reversed: boolean;
+  progress: any;
+  buffer: any;
+  determinate: any;
+  reversed: any;
 
   syncWithProps(nextProps: LinearProgressPropsT) {
     // progress
     syncFoundationProp(
       nextProps.progress,
       this.progress,
-      //$FlowFixMe
       () => (this.progress = nextProps.progress)
     );
 
@@ -94,7 +92,6 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.buffer,
       this.buffer,
-      //$FlowFixMe
       () => (this.buffer = nextProps.buffer)
     );
 
@@ -102,7 +99,6 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.determinate,
       this.determinate,
-      //$FlowFixMe
       () => (this.determinate = nextProps.determinate)
     );
 
@@ -110,7 +106,6 @@ export class LinearProgress extends withFoundation({
     syncFoundationProp(
       nextProps.reversed,
       this.reversed,
-      //$FlowFixMe
       () => (this.reversed = nextProps.reversed)
     );
   }

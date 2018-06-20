@@ -1,4 +1,6 @@
 // @flow
+// eslint-disable-next-line no-unused-vars
+import * as React from 'react';
 import { simpleTag } from '../Base';
 
 import type { SimpleTagPropsT } from '../Base';
@@ -18,7 +20,7 @@ export class Typography extends simpleTag({
     use: undefined
   },
   tag: 'span',
-  classNames: props => [
+  classNames: (props: TypographyPropsT) => [
     {
       [`mdc-typography--${props.use}`]: props.use
     }

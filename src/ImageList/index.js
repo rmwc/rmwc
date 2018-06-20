@@ -1,4 +1,6 @@
 // @flow
+// eslint-disable-next-line no-unused-vars
+import * as React from 'react';
 import { simpleTag } from '../Base';
 
 type ImageListPropsT = {
@@ -12,7 +14,7 @@ type ImageListPropsT = {
 export class ImageList extends simpleTag({
   displayName: 'ImageList',
   tag: 'ul',
-  classNames: props => [
+  classNames: (props: ImageListPropsT) => [
     'mdc-image-list',
     {
       'mdc-image-list--masonry': props.masonry,

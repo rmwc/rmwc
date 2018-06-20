@@ -41,10 +41,10 @@ describe('Select', () => {
             value: '1'
           },
           {
-            "label": 'Pizza',
-            "value": '2',
+            label: 'Pizza',
+            value: '2',
             'aria-disabled': true,
-            "tabIndex": -1
+            tabIndex: -1
           },
           {
             label: 'Icecream',
@@ -85,6 +85,7 @@ describe('Select', () => {
         options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
       />
     );
+
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 });
