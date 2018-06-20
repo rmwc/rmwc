@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export const storyWithState = (getState, Component) =>
   class extends React.Component {

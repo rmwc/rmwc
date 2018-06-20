@@ -15,8 +15,9 @@ export type ThemePropsT = {
 /**
  * A Theme Component.
  */
-export const Theme = ({ use, ...rest }: ThemePropsT) => (
-  <ThemeRoot theme={use} {...rest} />
-);
+export const Theme: React.ComponentType<ThemePropsT> = ({
+  use,
+  ...rest
+}: ThemePropsT) => <ThemeRoot theme={use} {...rest} />;
 
 Theme.displayName = 'Theme';

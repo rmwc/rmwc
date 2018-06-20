@@ -19,14 +19,14 @@ export type CustomEventT = {
   cancelBubble: boolean,
   cancelable: boolean,
   composed: boolean,
-  currentTarget: ?window.HTMLElement,
+  currentTarget: HTMLElement | null,
   defaultPrevented: boolean,
   eventPhase: number,
   isTrusted: boolean,
-  path: window.HTMLElement[],
+  path: HTMLElement[],
   returnValue: boolean,
-  srcElement: ?window.HTMLElement,
-  target: ?window.HTMLElement,
+  srcElement: HTMLElement | null,
+  target: HTMLElement | null,
   timeStamp: number,
   type: string
 };

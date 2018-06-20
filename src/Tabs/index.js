@@ -9,29 +9,40 @@ import {
 import { Icon } from '../Icon';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
-function recursiveMap(children, fn) {
-  return React.Children.map(children, child => {
-    if (!React.isValidElement(child)) {
-      return child;
-    }
+function recursiveMap(children: React.Node, fn) {
+  return React.Children.map(
+    children,
+    //$FlowFixMe
+    (child: React.Element<{ children: any }>) => {
+      if (!React.isValidElement(child)) {
+        return child;
+      }
 
-    if (child.props.children) {
-      child = React.cloneElement(child, {
-        children: recursiveMap(child.props.children, fn)
-      });
-    }
+      if ('children' in child.props) {
+        //$FlowFixMe
+        child = React.cloneElement(child, {
+          children: recursiveMap(child.props.children, fn)
+        });
+      }
 
-    return fn(child);
-  });
+      return fn(child);
+    }
+  );
 }
 
-/******************************************************
- * Private
- *******************************************************/
+export type TabBarPropsT = {
+  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
+  onChange?: (
+    evt: { detail: { activeTabIndex: number } } & CustomEventT
+  ) => mixed,
+  /** The index of the active tab. */
+  activeTabIndex: number
+} & SimpleTagPropsT;
+
 export const TabBarRoot = simpleTag({
   displayName: 'TabBarRoot',
   tag: 'nav',
-  classNames: props => [
+  classNames: (props: TabBarPropsT & { isTabScroller?: boolean }) => [
     'mdc-tab-bar',
     {
       'mdc-tab-bar-scroller__scroll-frame__tabs': props.isTabScroller
@@ -55,7 +66,7 @@ export const TabBarScrollerRoot = simpleTag({
 export const TabBarScrollerIndicator = simpleTag({
   displayName: 'TabBarScrollerIndicatorBack',
   tag: 'div',
-  classNames: props => [
+  classNames: (props: { back?: boolean, forward?: boolean }) => [
     'mdc-tab-bar-scroller__indicator',
     {
       'mdc-tab-bar-scroller__indicator--back': props.back,
@@ -101,21 +112,18 @@ export const TabIconText = simpleTag({
   classNames: 'mdc-tab__icon-text'
 });
 
-export type TabBarPropsT = {
-  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onChange?: (
-    evt: { detail: { activeTabIndex: number } } & CustomEventT
-  ) => mixed,
-  /** The index of the active tab. */
-  activeTabIndex: number
-} & SimpleTagPropsT;
-
 /** The TabBar component */
 export class TabBar extends withFoundation({
   constructor: MDCTabBar,
   adapter: {}
 })<TabBarPropsT> {
   static displayName = 'TabBar';
+
+  activeTabIndex: number;
+  tabs: any;
+  tabs_: any;
+  gatherTabs_: Function;
+  layout: Function;
 
   syncWithProps(nextProps: TabBarPropsT) {
     syncFoundationProp(
@@ -135,7 +143,8 @@ export class TabBar extends withFoundation({
       this.props.activeTabIndex === undefined
     ) {
       window.requestAnimationFrame(() => {
-        this.foundation_.adapter_.setTabActiveAtIndex(0, true);
+        this.foundation_ &&
+          this.foundation_.adapter_.setTabActiveAtIndex(0, true);
       });
     }
   }
@@ -149,10 +158,16 @@ export class TabBar extends withFoundation({
       this.props &&
       this.props.children &&
       JSON.stringify(
-        React.Children.map(prevProps.children, ({ key }) => key)
+        React.Children.map(
+          prevProps.children,
+          (child: any) => 'key' in child && child.key
+        )
       ) !==
         JSON.stringify(
-          React.Children.map(this.props.children, ({ key }) => key)
+          React.Children.map(
+            this.props.children,
+            (child: any) => 'key' in child && child.key
+          )
         );
 
     const tabsLengthMismatch =
@@ -221,6 +236,9 @@ export class TabBarScroller extends withFoundation({
       </svg>
     )
   };
+
+  tabBarApi: Object;
+  layout: Function;
 
   initialize() {
     super.initialize(() => this.tabBarApi);

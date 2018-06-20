@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import { LinearProgress } from './';
 
@@ -6,11 +6,6 @@ describe('LinearProgress', () => {
   it('renders', () => {
     const el = mount(<LinearProgress progress={0.5} />);
     expect(el.html().includes('mdc-linear-progress')).toBe(true);
-  });
-
-  it('can be accent', () => {
-    const el = mount(<LinearProgress accent />);
-    expect(el.html().includes('mdc-linear-progress--accent')).toBe(true);
   });
 
   it('can buffer', () => {

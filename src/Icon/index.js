@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag } from '../Base';
 
@@ -12,19 +12,19 @@ export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
 // prettier-ignore
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
-const renderLigature = ({ content, ...rest }) => {
+const renderLigature = ({ content, ...rest }: { content: React.Node }) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
 };
 
-const renderClassName = ({ content, ...rest }) => {
+const renderClassName = ({ content, ...rest }: { content: React.Node }) => {
   return <IconRoot {...rest} />;
 };
 
-const renderUrl = ({ content, ...rest }) => {
+const renderUrl = ({ content, ...rest }: { content: string }) => {
   return <IconRoot tag="img" src={content} {...rest} />;
 };
 
-const renderComponent = ({ content, ...rest }) => {
+const renderComponent = ({ content, ...rest }: { content: React.Node }) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
 };
 
@@ -32,13 +32,14 @@ const iconRenderMap = {
   ligature: renderLigature,
   className: renderClassName,
   url: renderUrl,
-  component: renderComponent
+  component: renderComponent,
+  auto: undefined
 };
 
 /**
  * Given content, tries to figure out an appropriate strategy for it
  */
-const processAutoStrategy = (content): IconStrategyT => {
+const processAutoStrategy = (content: React.Node): IconStrategyT => {
   // check for URLS
   if (
     typeof content === 'string' &&
@@ -61,7 +62,11 @@ const processAutoStrategy = (content): IconStrategyT => {
 /**
  * Get the actual icon strategy to use
  */
-const getIconStrategy = (content, strategy, defaultStrategy) => {
+const getIconStrategy = (
+  content: React.Node,
+  strategy?: string,
+  defaultStrategy?: string
+) => {
   strategy = strategy || defaultStrategy;
 
   if (strategy === 'auto') {
@@ -137,8 +142,9 @@ export class Icon extends React.PureComponent<IconPropsT> {
     const renderToUse =
       strategyToUse === 'custom'
         ? render || defaultCustomRender
-        : // $FlowFixMe
-        iconRenderMap[strategyToUse];
+        : !!strategyToUse && iconRenderMap[strategyToUse] !== undefined
+          ? iconRenderMap[strategyToUse]
+          : undefined;
 
     if (!renderToUse) {
       console.error(

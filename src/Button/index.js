@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 
 import { simpleTag, withRipple } from '../Base';
@@ -8,6 +8,18 @@ import { Icon } from '../Icon';
 
 import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
+
+export type ButtonPropsT = {
+  /** Make the Button dense. */
+  dense?: boolean,
+  /** Make the Button raised. */
+  raised?: boolean,
+  /** Make the button unelevated. */
+  unelevated?: boolean,
+  /** Make the button outlined. */
+  outlined?: boolean
+} & SimpleTagPropsT &
+  WithRipplePropsT;
 
 /****************************************************************
  * Private
@@ -31,7 +43,7 @@ export const ButtonRoot = withRipple({ surface: false })(
       'accent',
       'unbounded'
     ],
-    classNames: props => [
+    classNames: (props: ButtonPropsT) => [
       'mdc-button',
       {
         'mdc-button--dense': props.dense,
@@ -53,18 +65,6 @@ export const ButtonIcon = simpleTag({
   tag: Icon,
   classNames: 'mdc-button__icon'
 });
-
-export type ButtonPropsT = {
-  /** Make the Button dense. */
-  dense?: boolean,
-  /** Make the Button raised. */
-  raised?: boolean,
-  /** Make the button unelevated. */
-  unelevated?: boolean,
-  /** Make the button outlined. */
-  outlined?: boolean
-} & SimpleTagPropsT &
-  WithRipplePropsT;
 
 /**
  * The Button component.

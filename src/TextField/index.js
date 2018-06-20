@@ -14,9 +14,42 @@ import { Icon } from '../Icon';
 import { LineRipple } from '../LineRipple';
 import { FloatingLabel } from '../FloatingLabel';
 
+export type TextFieldPropsT = {
+  /** Makes a multiline TextField. */
+  textarea?: boolean,
+  /** Sets the value for controlled TextFields. */
+  value?: string | number,
+  /** Makes the TextField fullwidth. */
+  fullwidth?: boolean,
+  /** Makes the TextField have a visual box. */
+  box?: boolean,
+  /** A ref for the native input. */
+  inputRef?: React.Ref<any>,
+  /** Disables the input. */
+  disabled?: boolean,
+  /** Mark the input as required. */
+  required?: boolean,
+  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
+  invalid?: boolean,
+  /** Makes the TextField dense */
+  dense?: boolean,
+  /** Outline the TextField */
+  outlined?: boolean,
+  /** A label for the input. */
+  label?: React.Node,
+  /** Add a leading icon. */
+  withLeadingIcon?: React.Node,
+  /** Add a trailing icon. */
+  withTrailingIcon?: React.Node,
+  /** By default, props spread to the input. These props are for the component's root container. */
+  rootProps?: Object,
+  /** An ID for the DOM element */
+  id?: string
+} & SimpleTagPropsT;
+
 export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',
-  classNames: props => [
+  classNames: (props: TextFieldPropsT) => [
     'mdc-text-field',
     'mdc-text-field--upgraded',
     {
@@ -91,7 +124,7 @@ export type TextFieldHelperTextPropsT = {
 export class TextFieldHelperText extends simpleTag({
   displayName: 'TextFieldHelperText',
   tag: 'p',
-  classNames: props => [
+  classNames: (props: TextFieldHelperTextPropsT) => [
     'mdc-text-field-helper-text',
     {
       'mdc-text-field-helper-text--persistent': props.persistent,
@@ -124,44 +157,15 @@ export class TextFieldIcon extends simpleTag({
   }
 }
 
-export type TextFieldPropsT = {
-  /** Makes a multiline TextField. */
-  textarea?: boolean,
-  /** Sets the value for controlled TextFields. */
-  value?: string | number,
-  /** Makes the TextField fullwidth. */
-  fullwidth?: boolean,
-  /** Makes the TextField have a visual box. */
-  box?: boolean,
-  /** A ref for the native input. */
-  inputRef?: React.Ref<any>,
-  /** Disables the input. */
-  disabled?: boolean,
-  /** Mark the input as required. */
-  required?: boolean,
-  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
-  invalid?: boolean,
-  /** Makes the TextField dense */
-  dense?: boolean,
-  /** Box in the TextField */
-  box?: boolean,
-  /** Outline the TextField */
-  outlined?: boolean,
-  /** A label for the input. */
-  label?: React.Node,
-  /** Add a leading icon. */
-  withLeadingIcon?: React.Node,
-  /** Add a trailing icon. */
-  withTrailingIcon?: React.Node,
-  /** By default, props spread to the input. These props are for the component's root container. */
-  rootProps?: Object
-} & SimpleTagPropsT;
-
 export class TextField extends withFoundation({
   constructor: MDCTextField,
   adapter: {}
 })<TextFieldPropsT> {
   static displayName = 'TextField';
+
+  valid: boolean;
+  value: any;
+  disabled: boolean;
 
   syncWithProps(nextProps: TextFieldPropsT) {
     // invalid | valid
@@ -180,7 +184,7 @@ export class TextField extends withFoundation({
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
   }
 
@@ -223,6 +227,7 @@ export class TextField extends withFoundation({
     const renderIcon = iconNode => {
       if (
         (iconNode && typeof iconNode === 'string') ||
+        //$FlowFixMe
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
@@ -236,7 +241,6 @@ export class TextField extends withFoundation({
       <TextFieldRoot
         {...rootProps}
         invalid={invalid}
-        className={this.classes}
         withLeadingIcon={!!withLeadingIcon}
         withTrailingIcon={!!withTrailingIcon}
         textarea={textarea}
@@ -246,6 +250,7 @@ export class TextField extends withFoundation({
         outlined={outlined}
         fullwidth={fullwidth}
         elementRef={root_}
+        className={className}
       >
         {!!withLeadingIcon && renderIcon(withLeadingIcon)}
         {children}

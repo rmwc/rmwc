@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
@@ -19,8 +19,11 @@ export type RipplePropsT = {
 export class Ripple extends withFoundation({
   constructor: MDCRipple,
   adapter: {}
-})<RipplePropsT> {
+})<RipplePropsT & { surface?: boolean }> {
   static displayName = 'Ripple';
+
+  unbounded: boolean;
+  disabled: boolean;
 
   componentDidMount() {
     // Ripples can be used with many types of components
@@ -37,14 +40,14 @@ export class Ripple extends withFoundation({
     syncFoundationProp(
       nextProps.unbounded,
       this.unbounded,
-      () => (this.unbounded = nextProps.unbounded)
+      () => (this.unbounded = !!nextProps.unbounded)
     );
 
     //disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
   }
 
@@ -70,7 +73,7 @@ export class Ripple extends withFoundation({
       ...child.props,
       ...rest,
       ...unboundedProp,
-      className: classNames(child.props.className, [...this.state.classes], {
+      className: classNames(child.props.className, {
         'mdc-ripple-surface': surface !== undefined ? surface : true,
         'mdc-ripple-surface--primary': primary,
         'mdc-ripple-surface--accent': accent

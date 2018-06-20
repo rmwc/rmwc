@@ -4,7 +4,7 @@ import type { WithRipplePropsT } from '../Base';
 import type { RMWCProviderOptionsT } from '../Provider';
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
@@ -20,7 +20,7 @@ export type ListItemPropsT = {
 export const ListItemRoot = withRipple()(
   simpleTag({
     displayName: 'ListItemRoot',
-    classNames: props => [
+    classNames: (props: ListItemPropsT) => [
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
@@ -126,7 +126,7 @@ export class List extends simpleTag({
     avatarList: undefined,
     nonInteractive: undefined
   },
-  classNames: props => [
+  classNames: (props: ListPropsT) => [
     'mdc-list',
     {
       'mdc-list--dense': props.dense,
@@ -155,7 +155,7 @@ export type SimpleListItemPropsT = {
   children?: React.Node
 };
 
-export const SimpleListItem = ({
+export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   text,
   secondaryText,
   graphic,
@@ -177,9 +177,3 @@ export const SimpleListItem = ({
 );
 
 SimpleListItem.displayName = 'SimpleListItem';
-SimpleListItem.defaultProps = {
-  text: undefined,
-  secondaryText: undefined,
-  graphic: undefined,
-  meta: undefined
-};

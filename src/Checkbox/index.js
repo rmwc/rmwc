@@ -8,9 +8,24 @@ import { simpleTag } from '../Base';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 import { randomId } from '../Base/utils/randomId';
 
+export type CheckboxPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
+  /** Make the control indeterminate */
+  indeterminate?: boolean,
+  /** A label for the control. */
+  label?: string
+} & SimpleTagPropsT;
+
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
-  classNames: props => [
+  classNames: (props: CheckboxPropsT) => [
     'mdc-checkbox',
     {
       'mdc-checkbox--disabled': props.disabled
@@ -64,21 +79,6 @@ export const CheckboxLabel = simpleTag({
   tag: 'label'
 });
 
-export type CheckboxPropsT = {
-  /** A DOM ID for the toggle. */
-  id?: string,
-  /** Disables the control. */
-  disabled?: boolean,
-  /** Toggle the control on and off. */
-  checked?: boolean | string,
-  /** The value of the control. */
-  value?: boolean | string | number,
-  /** Make the control indeterminate */
-  indeterminate?: boolean,
-  /** A label for the control. */
-  label?: string
-} & SimpleTagPropsT;
-
 /**
  * A Checkbox component
  */
@@ -88,7 +88,14 @@ export class Checkbox extends withFoundation({
 })<CheckboxPropsT> {
   static displayName = 'Checkbox';
 
+  generatedId: string;
   boundChangeHandler: (props: CheckboxPropsT) => mixed;
+  initRipple_: Function;
+  ripple_: any;
+  checked: boolean;
+  indeterminate: boolean;
+  disabled: boolean;
+  value: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);
@@ -102,20 +109,27 @@ export class Checkbox extends withFoundation({
     // Fixes bug #247
     // Basically we need to do the following hacks
     // - register syncWithProps so it runs on change
-    // - deregister the original change handler and reregister so it
+    // - deregister the original change handler and re-register so it
     //   runs after sync with props
     this.boundChangeHandler = () => this.syncWithProps(this.props);
-    this.foundation_.adapter_.deregisterChangeHandler(
-      this.foundation_.changeHandler_
-    );
-    this.foundation_.adapter_.registerChangeHandler(this.boundChangeHandler);
-    this.foundation_.adapter_.registerChangeHandler(
-      this.foundation_.changeHandler_
-    );
+
+    this.foundation_ &&
+      this.foundation_.adapter_.deregisterChangeHandler(
+        this.foundation_.changeHandler_
+      );
+    this.foundation_ &&
+      this.foundation_.adapter_.registerChangeHandler(this.boundChangeHandler);
+    this.foundation_ &&
+      this.foundation_.adapter_.registerChangeHandler(
+        this.foundation_.changeHandler_
+      );
   }
 
   componentWillUnmount() {
-    this.foundation_.adapter_.deregisterChangeHandler(this.boundChangeHandler);
+    this.foundation_ &&
+      this.foundation_.adapter_.deregisterChangeHandler(
+        this.boundChangeHandler
+      );
     super.componentWillUnmount();
   }
 
@@ -124,21 +138,21 @@ export class Checkbox extends withFoundation({
     syncFoundationProp(
       nextProps.checked,
       this.checked,
-      () => (this.checked = nextProps.checked)
+      () => (this.checked = !!nextProps.checked)
     );
 
     // indeterminate
     syncFoundationProp(
       nextProps.indeterminate,
       this.indeterminate,
-      () => (this.indeterminate = nextProps.indeterminate)
+      () => (this.indeterminate = !!nextProps.indeterminate)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
 
     // value
@@ -164,11 +178,7 @@ export class Checkbox extends withFoundation({
     const labelId = id || this.generatedId;
 
     const checkbox = (
-      <CheckboxRoot
-        elementRef={root_}
-        disabled={rest.disabled}
-        className={this.classes}
-      >
+      <CheckboxRoot elementRef={root_} disabled={rest.disabled}>
         <CheckboxNativeControl id={labelId} checked={checked} {...rest} />
         <CheckboxBackground>
           <CheckboxCheckmark>

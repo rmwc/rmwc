@@ -18,7 +18,7 @@ const mdcShapeAngledCornerOutline = (
   rootId: string,
   outlineWidth: number | string,
   outlineColor: string,
-  outlineStyle: ?string
+  outlineStyle: string | null
 ) => {
   return `
     #${rootId} .mdc-shape-container__corner:before {
@@ -141,9 +141,7 @@ export class ShapeContainer extends React.Component<ShapeContainerPropsT> {
         <style>
           {mdcShapeAngledCorner(
             rootId,
-            //$FlowFixMe
-            backgroundColor,
-            //$FlowFixMe
+            backgroundColor || '',
             topLeftCorner || corner || 0,
             topRightCorner || corner || 0,
             bottomRightCorner || corner || 0,
@@ -155,7 +153,7 @@ export class ShapeContainer extends React.Component<ShapeContainerPropsT> {
               rootId,
               outlineWidth,
               outlineColor,
-              outlineStyle
+              outlineStyle || null
             )}
         </style>
         {children}

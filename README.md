@@ -11,9 +11,10 @@ A React (15 / 16) wrapper for the official Material Design (Web) Components v0.3
 Features:
 
 * [x] Uses Google's official material-components-web library
-* [x] Tested in all versions of React ranging from 15.5.x to 16.3.x
-* [x] Built in Flow Types, no extra configuration needed
-* [x] Supports server side rendering
+* [x] Tested in all versions of React ranging from 15.5.x to 16.4.x
+* [x] First class Flow Type Support, no extra configuration needed
+* [x] First class Typescript support (Beta)
+* [x] Server side rendering support
 
 ## Recent updates
 

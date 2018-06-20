@@ -1,7 +1,7 @@
 import './polyfills';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import 'material-components-web/dist/material-components-web.css';
 import 'prismjs/themes/prism.css';

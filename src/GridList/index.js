@@ -4,19 +4,29 @@ import Icon from '../Icon';
 import { simpleTag } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
 
-/****************************************************************
- * Private
- ****************************************************************/
+export type GridListPropsT = {
+  /** Use a 1px gutter. */
+  tileGutter1?: boolean,
+  /** Move the caption to the top of the card. */
+  headerCaption?: boolean,
+  /** Make the caption two lines. */
+  twolineCaption?: boolean,
+  /** Leaves space for a start aligned icon. */
+  withIconAlignStart?: boolean,
+  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
+  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
+} & SimpleTagPropsT;
+
 export const GridListRoot = simpleTag({
   displayName: 'GridListRoot',
-  classNames: props => [
+  classNames: (props: GridListPropsT) => [
     'mdc-grid-list',
     {
       'mdc-grid-list--tile-gutter-1': props.tileGutter1,
       'mdc-grid-list--header-caption': props.headerCaption,
       'mdc-grid-list--twoline-caption': props.twolineCaption,
       'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,
-      [`mdc-grid-list--tile-aspect-${props.tileAspect}`]: props.tileAspect
+      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect
     }
   ],
   defaultProps: {
@@ -89,23 +99,9 @@ export const GridTileTitle = simpleTag({
 /** Supporting Text for the Grid Tile */
 export const GridTileTitleSupportText = simpleTag({
   displayName: 'GridTileTitleSupportText',
-
   tag: 'span',
   classNames: 'mdc-grid-tile__support-text'
 });
-
-export type GridListPropsT = {
-  /** Use a 1px gutter. */
-  tileGutter1?: boolean,
-  /** Move the caption to the top of the card. */
-  headerCaption?: boolean,
-  /** Make the caption two lines. */
-  twolineCaption?: boolean,
-  /** Leaves space for a start aligned icon. */
-  withIconAlignStart?: boolean,
-  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
-  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'
-} & SimpleTagPropsT;
 
 /**
  * Grid List Component

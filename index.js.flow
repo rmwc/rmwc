@@ -1,4 +1,4 @@
-export { version } from '../package.json';
+export const { version } = require('../package.json');
 
 export * from './Button';
 export * from './Card';

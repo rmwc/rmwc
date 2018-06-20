@@ -10,9 +10,34 @@ import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
 import Button from '../Button';
 import { simpleTag, syncFoundationProp, withFoundation, noop } from '../Base';
 
+export type SnackbarPropsT = {
+  /** Show the Snackbar. */
+  show?: boolean,
+  /** A callback thats fired when the Snackbar shows. */
+  onShow?: () => mixed,
+  /** A callback thats fired when the Snackbar hides. */
+  onHide?: () => mixed,
+  /** A string or other renderable JSX to be used as the message body. */
+  message?: React.Node,
+  /** Milliseconds to show the Snackbar for. */
+  timeout?: number,
+  /** Callback that fires when action is pressed. The actionText property must be set to use this. */
+  actionHandler?: () => mixed,
+  /** Label for the action button. */
+  actionText?: React.Node,
+  /** Lets the Snackbar text overflow onto multiple lines. */
+  multiline?: boolean,
+  /** Places the action underneath the message text. */
+  actionOnBottom?: boolean,
+  /** Whether or not the Snackbar dismisses on the action press. */
+  dismissesOnAction?: boolean,
+  /* Aligns the Snackbar to the start of the screen. */
+  alignStart?: boolean
+} & SimpleTagPropsT;
+
 export const SnackbarRoot = simpleTag({
   displayName: 'SnackbarRoot',
-  classNames: props => [
+  classNames: (props: SnackbarPropsT) => [
     'mdc-snackbar',
     {
       'mdc-snackbar--align-start': props.alignStart
@@ -42,31 +67,6 @@ export const SnackbarActionButton = simpleTag({
   tag: Button,
   classNames: 'mdc-snackbar__action-button'
 });
-
-export type SnackbarPropsT = {
-  /** Show the Snackbar. */
-  show?: boolean,
-  /** A callback thats fired when the Snackbar shows. */
-  onShow?: () => mixed,
-  /** A callback thats fired when the Snackbar hides. */
-  onHide?: () => mixed,
-  /** A string or other renderable JSX to be used as the message body. */
-  message?: React.Node,
-  /** Milliseconds to show the Snackbar for. */
-  timeout?: number,
-  /** Callback that fires when action is pressed. The actionText property must be set to use this. */
-  actionHandler?: () => mixed,
-  /** Label for the action button. */
-  actionText?: React.Node,
-  /** Lets the Snackbar text overflow onto multiple lines. */
-  multiline?: boolean,
-  /** Places the action underneath the message text. */
-  actionOnBottom?: boolean,
-  /** Whether or not the Snackbar dismisses on the action press. */
-  dismissesOnAction?: boolean,
-  /* Aligns the Snackbar to the start of the screen. */
-  alignStart?: boolean
-} & SimpleTagPropsT;
 
 /**
  * A Snackbar component for notifications.
@@ -104,6 +104,8 @@ export class Snackbar extends withFoundation({
   };
 
   isShowing_ = false;
+  dismissesOnAction: boolean;
+  show: Function;
 
   get isShowing() {
     return this.isShowing_;
@@ -160,7 +162,7 @@ export class Snackbar extends withFoundation({
     const { root_ } = this.foundationRefs;
 
     const isJSX = typeof message === 'object';
-    const snackbarTextStyle = {};
+    const snackbarTextStyle: { display?: string } = {};
     if (isJSX) {
       snackbarTextStyle.display = 'none';
     }

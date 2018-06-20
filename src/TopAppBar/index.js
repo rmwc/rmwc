@@ -7,10 +7,25 @@ import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
 import { Icon } from '../Icon';
 import { simpleTag, withFoundation } from '../Base';
 
+type TopAppAppBarPropsT = {
+  /** Emits when the navigation icon is clicked. */
+  onNav?: (evt: CustomEventT) => mixed,
+  /** Styles the top app bar as a fixed top app bar. */
+  fixed?: boolean,
+  /** Styles the top app bar as a prominent top app bar. */
+  prominent?: boolean,
+  /** Styles the top app bar as a short top app bar. */
+  short?: boolean,
+  /** Styles the top app bar to always be collapsed. */
+  shortCollapsed?: boolean,
+  /** Styles the top app bar to be dense. */
+  dense?: boolean
+} & SimpleTagPropsT;
+
 export const TopAppBarRoot = simpleTag({
   displayName: 'TopAppBarRoot',
   tag: 'header',
-  classNames: props => [
+  classNames: (props: TopAppAppBarPropsT) => [
     'mdc-top-app-bar',
     {
       'mdc-top-app-bar--fixed': props.fixed,
@@ -39,7 +54,7 @@ type TopAppBarSectionPropsT = {
 /** A section for the app bar. */
 export class TopAppBarSection extends simpleTag({
   tag: 'section',
-  classNames: props => [
+  classNames: (props: TopAppBarSectionPropsT) => [
     'mdc-top-app-bar__section',
     {
       'mdc-top-app-bar__section--align-Start': props.alignStart,
@@ -81,33 +96,16 @@ export const TopAppBarFixedAdjust = simpleTag({
   classNames: 'mdc-top-app-bar--fixed-adjust'
 });
 
-type TopAppAppBarPropsT = {
-  /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: CustomEventT) => mixed,
-  /** Styles the top app bar as a fixed top app bar. */
-  fixed?: boolean,
-  /** Styles the top app bar as a prominent top app bar. */
-  prominent?: boolean,
-  /** Styles the top app bar as a short top app bar. */
-  short?: boolean,
-  /** Styles the top app bar to always be collapsed. */
-  shortCollapsed?: boolean,
-  /** Styles the top app bar to be dense. */
-  dense?: boolean
-} & SimpleTagPropsT;
-
 /** A TopAppBar component */
 export class TopAppBar extends withFoundation({
   constructor: MDCTopAppBar,
   adapter: {}
-})<TopAppAppBarPropsT, {}> {
+})<TopAppAppBarPropsT> {
   static displayName = 'TopAppBar';
 
   render() {
     const { onNav, apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
-    return (
-      <TopAppBarRoot {...rest} elementRef={root_} className={this.classes} />
-    );
+    return <TopAppBarRoot {...rest} elementRef={root_} />;
   }
 }

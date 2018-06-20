@@ -7,9 +7,22 @@ import { Icon } from '../Icon';
 import { simpleTag } from '../Base';
 import { withFoundation } from '../Base/withFoundation';
 
+export type ToolbarPropsT = {
+  /** Makes the toolbar fixed */
+  fixed?: boolean,
+  /** Adds a waterfall effect on scroll */
+  waterfall?: boolean,
+  /** Fixes the last row of a multi-row toolbar */
+  fixedLastrowOnly?: boolean,
+  /** makes the toolbar flexible */
+  flexible?: boolean,
+  /** further defines the background and title movement behavior, use in conjunction with flexible. */
+  flexibleDefaultBehavior?: boolean
+} & SimpleTagPropsT;
+
 export const ToolbarRoot = simpleTag({
   tag: 'header',
-  classNames: props => [
+  classNames: (props: ToolbarPropsT) => [
     'mdc-toolbar',
     {
       'mdc-toolbar--fixed': props.fixed,
@@ -51,9 +64,8 @@ type ToolbarSectionPropsT = {
 } & SimpleTagPropsT;
 
 export class ToolbarSection extends simpleTag({
-  displayName: 'ToolbarSection',
   tag: 'section',
-  classNames: props => [
+  classNames: (props: ToolbarSectionPropsT) => [
     'mdc-toolbar__section',
     {
       'mdc-toolbar__section--align-start': props.alignStart,
@@ -68,6 +80,8 @@ export class ToolbarSection extends simpleTag({
   },
   consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
 })<ToolbarSectionPropsT> {
+  static displayName = 'ToolbarSection';
+
   render() {
     return super.render();
   }
@@ -105,24 +119,13 @@ export const ToolbarIcon = simpleTag({
   classNames: 'mdc-toolbar__icon'
 });
 
-export type ToolbarPropsT = {
-  /** Makes the toolbar fixed */
-  fixed?: boolean,
-  /** Adds a waterfall effect on scroll */
-  waterfall?: boolean,
-  /** Fixes the last row of a multi-row toolbar */
-  fixedLastrowOnly?: boolean,
-  /** makes the toolbar flexible */
-  flexible?: boolean,
-  /** further defines the background and title movement behavior, use in conjunction with flexible. */
-  flexibleDefaultBehavior?: boolean
-} & SimpleTagPropsT;
-
 export class Toolbar extends withFoundation({
   constructor: MDCToolbar,
   adapter: {}
 })<ToolbarPropsT> {
   static displayName = 'Toolbar';
+  fixedAdjustElement: any;
+  root_: any;
 
   componentDidMount() {
     super.componentDidMount();

@@ -1,13 +1,33 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import { MDCRadio } from '@material/radio/dist/mdc.radio';
 import FormField from '../FormField';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 import { randomId } from '../Base/utils/randomId';
 
+export type RadioPropsT = {
+  /** A DOM ID for the toggle. */
+  id?: string,
+  /** Disables the control. */
+  disabled?: boolean,
+  /** Toggle the control on and off. */
+  checked?: boolean | string,
+  /** The value of the control. */
+  value?: boolean | string | number,
+  /** A label for the control. */
+  label?: string,
+  /** Children to render */
+  children?: React.Node
+} & SimpleTagPropsT;
+
 export const RadioRoot = simpleTag({
   displayName: 'RadioRoot',
-  classNames: props => ['mdc-radio', { 'mdc-radio--disabled': props.disabled }]
+  classNames: (props: RadioPropsT) => [
+    'mdc-radio',
+    { 'mdc-radio--disabled': props.disabled }
+  ]
 });
 
 export const RadioNativeControl = simpleTag({
@@ -39,26 +59,18 @@ export const RadioLabel = simpleTag({
   tag: 'label'
 });
 
-export type RadioPropsT = {
-  /** A DOM ID for the toggle. */
-  id?: string,
-  /** Disables the control. */
-  disabled?: boolean,
-  /** Toggle the control on and off. */
-  checked?: boolean | string,
-  /** The value of the control. */
-  value?: boolean | string | number,
-  /** A label for the control. */
-  label?: string,
-  /** Children to render */
-  children?: React.Node
-};
-
 export class Radio extends withFoundation({
   constructor: MDCRadio,
   adapter: {}
 })<RadioPropsT> {
   static displayName = 'Radio';
+
+  generatedId: string;
+  ripple_: any;
+  initRipple_: Function;
+  checked: boolean;
+  disabled: boolean;
+  value: any;
 
   constructor(props: RadioPropsT) {
     super(props);
@@ -75,14 +87,14 @@ export class Radio extends withFoundation({
     syncFoundationProp(
       nextProps.checked,
       this.checked,
-      () => (this.checked = nextProps.checked)
+      () => (this.checked = !!nextProps.checked)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
 
     // value
@@ -94,18 +106,7 @@ export class Radio extends withFoundation({
   }
 
   render() {
-    const {
-      label = '',
-      id,
-      children,
-      // $FlowFixMe
-      indeterminate,
-      // $FlowFixMe
-      apiRef,
-      // $FlowFixMe
-      generatedId,
-      ...rest
-    } = this.props;
+    const { label = '', id, children, apiRef, ...rest } = this.props;
     const labelId = id || this.generatedId;
     const { root_ } = this.foundationRefs;
 

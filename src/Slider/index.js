@@ -5,9 +5,30 @@ import * as React from 'react';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
+export type SliderPropsT = {
+  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
+  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
+  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
+  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
+  /** The value of the Slider. */
+  value?: number | string,
+  /** The minimum value of the Slider. */
+  min?: number | string,
+  /** The maximum value of the Slider. */
+  max?: number | string,
+  /** A step to quantize values by. */
+  step?: number | string,
+  /** Displays the exact value of the Slider on the knob. */
+  discrete?: boolean,
+  /** Displays the individual step markers on the Slider track. */
+  displayMarkers?: boolean,
+  /** Disables the control. */
+  disabled?: boolean
+};
+
 export const SliderRoot = simpleTag({
   displayName: 'SliderRoot',
-  classNames: props => [
+  classNames: (props: SliderPropsT) => [
     'mdc-slider',
     {
       'mdc-slider--discrete': props.discrete,
@@ -59,27 +80,6 @@ export const SliderFocusRing = simpleTag({
   classNames: 'mdc-slider__focus-ring'
 });
 
-export type SliderPropsT = {
-  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
-  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
-  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
-  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,
-  /** The value of the Slider. */
-  value?: number | string,
-  /** The minimum value of the Slider. */
-  min?: number | string,
-  /** The maximum value of the Slider. */
-  max?: number | string,
-  /** A step to quantize values by. */
-  step?: number | string,
-  /** Displays the exact value of the Slider on the knob. */
-  discrete?: boolean,
-  /** Displays the individual step markers on the Slider track. */
-  displayMarkers?: boolean,
-  /** Disables the control. */
-  disabled?: boolean
-};
-
 export class Slider extends withFoundation({
   constructor: MDCSlider,
   refs: [
@@ -93,20 +93,30 @@ export class Slider extends withFoundation({
 })<SliderPropsT> {
   static displayName = 'Slider';
 
+  value: any;
+  min: number | string;
+  max: number | string;
+  step: number | string;
+  disabled: boolean;
+
   get discrete(): boolean {
-    return this.foundation_.isDiscrete_;
+    return !!(this.foundation_ && this.foundation_.isDiscrete_);
   }
 
   set discrete(isDiscrete: boolean) {
-    this.foundation_.isDiscrete_ = isDiscrete;
+    if (this.foundation_) {
+      this.foundation_.isDiscrete_ = isDiscrete;
+    }
   }
 
   get displayMarkers(): boolean {
-    return this.foundation_.hasTrackMarker_;
+    return !!this.foundation_ && this.foundation_.hasTrackMarker_;
   }
 
   set displayMarkers(isDisplayMarkers: boolean) {
-    this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+    if (this.foundation_) {
+      this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+    }
   }
 
   syncWithProps(nextProps: SliderPropsT) {
@@ -121,28 +131,29 @@ export class Slider extends withFoundation({
     syncFoundationProp(
       nextProps.max,
       this.max,
-      () => (this.max = nextProps.max)
+      () => (this.max = nextProps.max !== undefined ? +nextProps.max : this.max)
     );
 
     // min
     syncFoundationProp(
       nextProps.min,
       this.min,
-      () => (this.min = nextProps.min)
+      () => (this.min = nextProps.min !== undefined ? +nextProps.min : this.min)
     );
 
     // step
     syncFoundationProp(
       nextProps.step,
       this.step,
-      () => (this.step = nextProps.step)
+      () =>
+        (this.step = nextProps.step !== undefined ? +nextProps.step : this.step)
     );
 
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
-      () => (this.disabled = nextProps.disabled)
+      () => (this.disabled = !!nextProps.disabled)
     );
 
     // discrete
@@ -153,14 +164,16 @@ export class Slider extends withFoundation({
     );
 
     //eslint-disable-next-line eqeqeq
-    if (this.discrete && this.foundation_.getStep() == 0) {
+    if (this.discrete && this.foundation_ && this.foundation_.getStep() == 0) {
       this.step = 1;
     }
 
     // displayMarkers
     syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
       this.displayMarkers = !!nextProps.displayMarkers;
-      window.requestAnimationFrame(() => this.foundation_.setupTrackMarker());
+      window.requestAnimationFrame(
+        () => this.foundation_ && this.foundation_.setupTrackMarker()
+      );
     });
   }
 
@@ -200,7 +213,6 @@ export class Slider extends withFoundation({
 
     return (
       <SliderRoot
-        className={this.classes}
         tabIndex="0"
         //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
         role="slider"

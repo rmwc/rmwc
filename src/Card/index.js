@@ -19,7 +19,7 @@ export type CardPropsT = {
 /** A Card Component */
 export class Card extends simpleTag({
   displayName: 'Card',
-  classNames: props => [
+  classNames: (props: CardPropsT) => [
     'mdc-card',
     {
       'mdc-card--outlined': props.outlined
@@ -43,7 +43,7 @@ export type CardMediaPropsT = {
 export class CardMedia extends simpleTag({
   displayName: 'CardMedia',
   tag: 'section',
-  classNames: props => [
+  classNames: (props: CardMediaPropsT) => [
     'mdc-card__media',
     {
       'mdc-card__media--square': props.square,
@@ -80,7 +80,7 @@ export type CardActionsT = {
 export class CardActions extends simpleTag({
   displayName: 'CardActions',
   tag: 'section',
-  classNames: props => [
+  classNames: (props: CardActionsT) => [
     'mdc-card__actions',
     { 'mdc-card__actions--full-bleed': props.fullBleed }
   ],
@@ -106,13 +106,18 @@ export const CardActionIcons = simpleTag({
 export type CardActionPropsT = {
   /** An action icon with no text. This is an instance of the Icon component. */
   icon?: boolean,
+  /** The use prop when using an icon. */
+  use?: React.Node,
   /** An toggleable action icon with no text. This is an instance of the IconToggle component. */
-  iconToggle?: boolean
+  iconToggle?: boolean,
+  /** The on prop when using an iconToggle. */
+  on?: Object,
+  /** The off prop when using an iconToggle. */
+  off?: Object
 } & SimpleTagPropsT;
 
 /** A Card action Button. Will return a Button component by default. */
-export const CardAction = ({
-  button,
+export const CardAction: React.ComponentType<CardActionPropsT> = ({
   icon,
   iconToggle,
   className,
@@ -120,8 +125,10 @@ export const CardAction = ({
 }: CardActionPropsT) => {
   if (icon) {
     return (
-      <Ripple unbounded {...rest}>
+      <Ripple unbounded>
         <Icon
+          {...rest}
+          use={rest.use}
           className={classNames(
             className,
             'mdc-card__action',
@@ -133,9 +140,14 @@ export const CardAction = ({
   }
 
   if (iconToggle) {
+    if (!rest.on || !rest.off) {
+      throw Error('You must specify `on` and `off` when using the IconToggle');
+    }
     return (
       <IconToggle
         {...rest}
+        on={rest.on}
+        off={rest.off}
         className={classNames(
           className,
           'mdc-card__action',

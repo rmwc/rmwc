@@ -54,9 +54,8 @@ export type DialogBodyT = {
 
 /** The Dialog body */
 export class DialogBody extends simpleTag({
-  displayName: 'DialogBody',
   tag: 'section',
-  classNames: props => [
+  classNames: (props: DialogBodyT) => [
     'mdc-dialog__body',
     {
       'mdc-dialog__body--scrollable': props.scrollable
@@ -64,6 +63,8 @@ export class DialogBody extends simpleTag({
   ],
   consumeProps: ['scrollable']
 })<DialogBodyT> {
+  static displayName = 'DialogBody';
+
   render() {
     return super.render();
   }
@@ -85,9 +86,8 @@ export type DialogFooterButtonT = {
 
 /** A Dialog footer button */
 export class DialogFooterButton extends simpleTag({
-  displayName: 'DialogFooterButton',
   tag: Button,
-  classNames: props => [
+  classNames: (props: DialogFooterButtonT) => [
     'mdc-dialog__footer__button',
     {
       'mdc-dialog__footer__button--cancel': props.cancel,
@@ -100,6 +100,8 @@ export class DialogFooterButton extends simpleTag({
   },
   consumeProps: ['accept', 'cancel']
 })<DialogFooterButtonT> {
+  static displayName = 'DialogFooterButton';
+
   render() {
     return super.render();
   }
@@ -109,11 +111,11 @@ export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
   /** Callback for when the accept Button is pressed. */
-  onAccept: (evt: CustomEventT) => mixed,
+  onAccept?: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog was closed without acceptance. */
-  onCancel: (evt: CustomEventT) => mixed,
+  onCancel?: (evt: CustomEventT) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose: (evt: CustomEventT) => mixed
+  onClose?: (evt: CustomEventT) => mixed
 };
 
 export class Dialog extends withFoundation({
@@ -131,6 +133,10 @@ export class Dialog extends withFoundation({
 })<DialogPropsT> {
   static displayName = 'Dialog';
 
+  show: Function;
+  close: Function;
+  open: boolean;
+
   syncWithProps(nextProps: DialogPropsT) {
     // open
     syncFoundationProp(nextProps.open, this.open, () => {
@@ -142,7 +148,7 @@ export class Dialog extends withFoundation({
     const { open, onAccept, onCancel, onClose, apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
 
-    return <DialogRoot {...rest} elementRef={root_} className={this.classes} />;
+    return <DialogRoot {...rest} elementRef={root_} />;
   }
 }
 
@@ -192,11 +198,12 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
       acceptLabel,
       cancelLabel,
       children,
+      open,
       ...rest
     } = this.props;
 
     return (
-      <Dialog {...rest}>
+      <Dialog open={open} {...rest}>
         <DialogSurface>
           {(!!title || !!header) && (
             <DialogHeader>
