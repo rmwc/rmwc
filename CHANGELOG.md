@@ -1,3 +1,10 @@
+#### 1.7.3 (2018-06-22)
+
+##### Bug Fixes
+
+* **Tabs:**  Corrects a regression with the tab onChange handler not firing. ([81e251a0](https://github.com/jamesmfriedman/rmwc/commit/81e251a02e268724fc341b08c2f8ae3463412bca))
+* **Checkbox:**  Corrects controlled syncronicity issue fixes [#247](https://github.com/jamesmfriedman/rmwc/pull/247) ([dbb87b78](https://github.com/jamesmfriedman/rmwc/commit/dbb87b789f3bf34a90d15bf6e79a1ebcca2e2a6b))
+
 #### 1.7.2 (2018-06-20)
 
 #### 1.7.1 (2018-06-15)
