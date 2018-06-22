@@ -206,12 +206,14 @@ export const withFoundation = ({
       return evt;
     }
 
-    listen(evtType: string, handler: any) {
-      //this.root_ && this.root_.addEventListener(evtType, handler);
+    listen(evtType: string, handler: Function) {
+      const root: any = this.root_;
+      root && root.addEventListener(evtType, handler);
     }
 
-    unlisten(evtType: string, handler: any) {
-      //this.root_ && this.root_.removeEventListener(evtType, handler);
+    unlisten(evtType: string, handler: Function) {
+      const root: any = this.root_;
+      root && root.removeEventListener(evtType, handler);
     }
   };
 
