@@ -2145,6 +2145,118 @@
       }
     }
   ],
+  "src/Icon/index.js": [
+    {
+      "description": "",
+      "displayName": "IconRoot",
+      "methods": []
+    },
+    {
+      "description": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
+      "displayName": "Icon",
+      "methods": [],
+      "props": {
+        "use": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use, specified as children instead of the \"use\" prop."
+        },
+        "strategy": {
+          "flowType": {
+            "name": "union",
+            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'auto'"
+              },
+              {
+                "name": "literal",
+                "value": "'ligature'"
+              },
+              {
+                "name": "literal",
+                "value": "'className'"
+              },
+              {
+                "name": "literal",
+                "value": "'url'"
+              },
+              {
+                "name": "literal",
+                "value": "'component'"
+              },
+              {
+                "name": "literal",
+                "value": "'custom'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
+        },
+        "prefix": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
+        },
+        "basename": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "A base className for the icon namespace, i.e. material-icons."
+        },
+        "render": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(content: mixed) => React.Node",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "content",
+                  "type": {
+                    "name": "mixed"
+                  }
+                }
+              ],
+              "return": {
+                "name": "ReactNode",
+                "raw": "React.Node"
+              }
+            }
+          },
+          "required": false,
+          "description": "A render function to use when using the 'custom' strategy."
+        },
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": "A custom className to add.."
+        }
+      }
+    }
+  ],
   "src/IconToggle/index.js": [
     {
       "description": "",

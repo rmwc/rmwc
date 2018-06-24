@@ -64,8 +64,8 @@ const processAutoStrategy = (content: React.Node): IconStrategyT => {
  */
 const getIconStrategy = (
   content: React.Node,
-  strategy?: string,
-  defaultStrategy?: string
+  strategy: string | null,
+  defaultStrategy: string | null
 ) => {
   strategy = strategy || defaultStrategy;
 
@@ -97,17 +97,19 @@ export type IconPropsT = {
  * An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.
  */
 export class Icon extends React.PureComponent<IconPropsT> {
+  static displayName = 'Icon';
+
   static defaultProps = {
     use: undefined
+  };
+
+  static contextTypes = {
+    RMWCOptions: PropTypes.object
   };
 
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
   }
-
-  static contextTypes = {
-    RMWCOptions: PropTypes.object
-  };
 
   providerOptions: RMWCProviderOptionsT;
   context: Object;
@@ -131,7 +133,11 @@ export class Icon extends React.PureComponent<IconPropsT> {
     } = this.providerOptions;
 
     const content = use || children;
-    const strategyToUse = getIconStrategy(content, strategy, defaultStrategy);
+    const strategyToUse = getIconStrategy(
+      content,
+      strategy || null,
+      defaultStrategy || null
+    );
     const prefixToUse = prefix || defaultPrefix;
     const basenameToUse = basename === undefined ? defaultBasename : basename;
     const iconClassName =
