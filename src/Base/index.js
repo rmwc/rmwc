@@ -29,4 +29,4 @@ export type CustomEventT = {
   target: HTMLElement | null,
   timeStamp: number,
   type: string
-};
+} & SyntheticEvent<EventTarget>;

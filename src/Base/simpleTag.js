@@ -21,7 +21,8 @@ export type SimpleTagPropsT = {
   theme?: string | string[],
   children?: React.Node,
   apiRef?: <S>(api: S) => S
-};
+  //$FlowFixMe
+} & React.HTMLProps<any>;
 
 export const simpleTag = ({
   displayName = 'SimpleTag',

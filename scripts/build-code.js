@@ -37,6 +37,7 @@ const writeTypescriptFile = (inputFile, outputFile) => {
       .replace(/<\*>/g, '<any>')
       .replace(/:\s\*/g, ': any')
       .replace(/React.Node/g, 'React.ReactNode')
+      .replace(/SyntheticEvent/g, 'React.SyntheticEvent')
       .replace(/React.Element/g, 'React.ReactElement')
       .replace(/\smixed/g, ' any')
       .replace(/export type \{/g, 'export {')
