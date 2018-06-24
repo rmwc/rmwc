@@ -1,3 +1,13 @@
+#### 1.7.4 (2018-06-24)
+
+##### Documentation Changes
+
+* **Icon:**  Fixing Icon docs ([e4ab32e4](https://github.com/jamesmfriedman/rmwc/commit/e4ab32e4069380d5a577c77528df132b77b998da))
+
+##### Bug Fixes
+
+* **Typescript:**  Default HTML attributes ([8c186b24](https://github.com/jamesmfriedman/rmwc/commit/8c186b24e75842392a9a4cde4018f0d49475d016))
+
 #### 1.7.3 (2018-06-22)
 
 ##### Bug Fixes
