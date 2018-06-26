@@ -1,3 +1,9 @@
+#### 1.7.5 (2018-06-26)
+
+##### Bug Fixes
+
+* **Typescript:**  Correcting types for DrawerHeader and TabBar ([1aa4eb6f](https://github.com/jamesmfriedman/rmwc/commit/1aa4eb6f5d82e565bb46be88b50d536f5132d4a2))
+
 #### 1.7.4 (2018-06-24)
 
 ##### Documentation Changes
