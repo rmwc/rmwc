@@ -36,7 +36,7 @@ export type TabBarPropsT = {
     evt: { detail: { activeTabIndex: number } } & CustomEventT
   ) => mixed,
   /** The index of the active tab. */
-  activeTabIndex: number
+  activeTabIndex?: number
 } & SimpleTagPropsT;
 
 export const TabBarRoot = simpleTag({
@@ -129,7 +129,11 @@ export class TabBar extends withFoundation({
     syncFoundationProp(
       nextProps.activeTabIndex,
       this.activeTabIndex,
-      () => (this.activeTabIndex = nextProps.activeTabIndex)
+      () =>
+        (this.activeTabIndex =
+          nextProps.activeTabIndex !== undefined
+            ? nextProps.activeTabIndex
+            : this.activeTabIndex)
     );
   }
 

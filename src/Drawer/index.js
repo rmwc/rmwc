@@ -25,7 +25,7 @@ export const DrawerHeaderContent = simpleTag({
 });
 
 /** A Header for Drawers */
-export class DrawerHeader extends React.Component<{ children?: React.Node }> {
+export class DrawerHeader extends React.Component<SimpleTagPropsT> {
   render() {
     const { children, ...rest } = this.props;
     return (
