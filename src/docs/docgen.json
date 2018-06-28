@@ -1312,17 +1312,7 @@
     {
       "description": "A Header for Drawers",
       "displayName": "DrawerHeader",
-      "methods": [],
-      "props": {
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": ""
-        }
-      }
+      "methods": []
     },
     {
       "description": "If you are using fixed a Toolbar, this provides space for it.",
@@ -6135,12 +6125,12 @@
                 "elements": [
                   {
                     "name": "intersection",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
+                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                         "signature": {
                           "properties": [
                             {
@@ -6204,7 +6194,7 @@
                               "key": "activeTabIndex",
                               "value": {
                                 "name": "number",
-                                "required": true
+                                "required": false
                               }
                             }
                           ]
@@ -6327,12 +6317,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                     "signature": {
                       "properties": [
                         {
@@ -6396,7 +6386,7 @@
                           "key": "activeTabIndex",
                           "value": {
                             "name": "number",
-                            "required": true
+                            "required": false
                           }
                         }
                       ]
@@ -6475,7 +6465,7 @@
           "flowType": {
             "name": "number"
           },
-          "required": true,
+          "required": false,
           "description": "The index of the active tab."
         }
       }
