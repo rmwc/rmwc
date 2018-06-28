@@ -1,3 +1,9 @@
+#### 1.7.6 (2018-06-28)
+
+##### Bug Fixes
+
+* **Typescript:**  adding in material-components-web types ([b8433a86](https://github.com/jamesmfriedman/rmwc/commit/b8433a860258694bc9d79136fa1c12fcba8523d1))
+
 #### 1.7.5 (2018-06-26)
 
 ##### Bug Fixes
