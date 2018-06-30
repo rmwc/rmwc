@@ -45,7 +45,7 @@ import {
 
 ## Persistent Drawers
 
-These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when clsoed.
+These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when closed.
 [https://material.io/components/web/catalog/drawers/#persistent-drawer-usage](https://material.io/components/web/catalog/drawers/#persistent-drawer-usage)
 
 ```jsx render
