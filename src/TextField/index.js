@@ -43,8 +43,8 @@ export type TextFieldPropsT = {
   withTrailingIcon?: React.Node,
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object,
-  /** An ID for the DOM element */
-  id?: string
+  /** The type of input field to render */
+  type?: string
 } & SimpleTagPropsT;
 
 export const TextFieldRoot = simpleTag({

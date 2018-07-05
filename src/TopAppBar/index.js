@@ -9,7 +9,7 @@ import { simpleTag, withFoundation } from '../Base';
 
 type TopAppAppBarPropsT = {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: CustomEventT) => mixed,
+  onNav?: (evt: CustomEventT<void>) => mixed,
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean,
   /** Styles the top app bar as a prominent top app bar. */

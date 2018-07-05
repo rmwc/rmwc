@@ -1,5 +1,6 @@
 // @flow
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
+
 import * as React from 'react';
 import {
   MDCTab,
@@ -30,11 +31,13 @@ function recursiveMap(children: React.Node, fn) {
   );
 }
 
+export type TabBarEventDetailT = {
+    activeTabIndex: number;
+};
+
 export type TabBarPropsT = {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onChange?: (
-    evt: { detail: { activeTabIndex: number } } & CustomEventT
-  ) => mixed,
+  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,
   /** The index of the active tab. */
   activeTabIndex?: number
 } & SimpleTagPropsT;
