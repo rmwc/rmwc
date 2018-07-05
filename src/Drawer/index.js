@@ -57,11 +57,11 @@ export const DrawerContent = simpleTag({
  ***************************************************************************************/
 export type DrawerPropsT = {
   /** Opens or closes the Drawer. */
-  open: boolean,
+  open?: boolean,
   /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: CustomEventT) => mixed,
+  onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: CustomEventT) => mixed,
+  onOpen?: (evt: CustomEventT<void>) => mixed,
   /** Makes a permanent drawer. */
   permanent?: boolean,
   /** Makes a persistent drawer. */
@@ -115,7 +115,7 @@ const slidableDrawerFactory = (MDCConstructor, displayName) =>
           syncFoundationProp(
             nextProps.open,
             this.open,
-            () => (this.open = nextProps.open)
+            () => (this.open = nextProps.open || false)
           );
       });
     }

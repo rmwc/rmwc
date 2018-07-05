@@ -17,7 +17,9 @@ export type ButtonPropsT = {
   /** Make the button unelevated. */
   unelevated?: boolean,
   /** Make the button outlined. */
-  outlined?: boolean
+  outlined?: boolean,
+  /** make the button un-clickable */
+  disabled?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
