@@ -1556,6 +1556,11 @@
       "methods": []
     },
     {
+      "description": "",
+      "displayName": "FabLabel",
+      "methods": []
+    },
+    {
       "description": "A floating action button component",
       "displayName": "Fab",
       "methods": [],
@@ -1565,33 +1570,36 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the Fab smaller.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "Make the Fab smaller."
+        },
+        "icon": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "The icon to use for the fab."
+        },
+        "label": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Make the Fab extended with a label."
         },
         "exited": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
         },
         "cssOnly": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "cssOnly Fab.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "cssOnly Fab."
         }
       }
     }

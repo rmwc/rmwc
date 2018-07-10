@@ -45,7 +45,7 @@ export const DocumentComponent = ({ displayName }) => {
                     {prop.defaultValue ? (
                       <code>{prop.defaultValue.value}</code>
                     ) : (
-                      ''
+                      <code>undefined</code>
                     )}
                   </td>
                   <td>{prop.description || ''}</td>

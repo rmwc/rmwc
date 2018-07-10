@@ -16,6 +16,10 @@ import type { RMWCProviderOptionsT } from '../Provider';
 export type FabPropsT = {
   /** Make the Fab smaller. */
   mini?: boolean,
+  /** The icon to use for the fab. */
+  icon?: boolean,
+  /** Make the Fab extended with a label. */
+  label?: React.Node,
   /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
   exited?: boolean,
   /** cssOnly Fab. */
@@ -31,14 +35,15 @@ export const FabRoot = withRipple({ surface: false })(
       'mdc-fab',
       {
         'mdc-fab--mini': props.mini,
-        'mdc-fab--exited': props.exited
+        'mdc-fab--exited': props.exited,
+        'mdc-fab--extended': props.label
       }
     ],
     defaultProps: {
       cssOnly: false,
       mini: false
     },
-    consumeProps: ['mini', 'cssOnly', 'exited']
+    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']
   })
 );
 
@@ -48,17 +53,16 @@ export const FabIcon = simpleTag({
   classNames: 'mdc-fab__icon'
 });
 
+export const FabLabel = simpleTag({
+  displayName: 'FabLabel',
+  classNames: 'mdc-fab__label'
+});
+
 /**
  * Public
  */
 /** A floating action button component */
 export class Fab extends React.Component<FabPropsT> {
-  static defaultProps = {
-    mini: undefined,
-    exited: undefined,
-    cssOnly: undefined
-  };
-
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
   }
@@ -72,7 +76,7 @@ export class Fab extends React.Component<FabPropsT> {
 
   render() {
     const { buttonDefaultRipple } = this.providerOptions;
-    const { ripple, className, children, ...rest } = this.props;
+    const { ripple, className, children, icon, label, ...rest } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
     const classes = classNames(
       this.providerOptions.iconClassNamePrefix,
@@ -80,8 +84,14 @@ export class Fab extends React.Component<FabPropsT> {
     );
 
     return (
-      <FabRoot className={classes} ripple={shouldRipple} {...rest}>
-        <FabIcon>{children}</FabIcon>
+      <FabRoot
+        className={classes}
+        ripple={shouldRipple}
+        label={label}
+        {...rest}
+      >
+        <FabIcon>{children || icon}</FabIcon>
+        {!!label && <FabLabel>{label}</FabLabel>}
       </FabRoot>
     );
   }
