@@ -5,6 +5,31 @@
 import from **rmwc/Select**  
 [https://material.io/components/web/catalog/input-controls/select-menus/](https://material.io/components/web/catalog/input-controls/select-menus/)
 
+## Select Styles
+Selects come in three different styles: standard, box, and outlined.
+
+```jsx render
+<Select
+  label="Standard"
+  placeholder=""
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Boxed"
+  box
+  placeholder=""
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Outlined"
+  outlined
+  placeholder=""
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+```
+
 ## Data Driven Selects
 
 To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
@@ -13,6 +38,7 @@ To fit common use cases, RMWC Select provides a data driven method for rendering
 import { Select } from 'rmwc/Select';
 
 {/*
+  A controlled select
   Using a formatted array of options
   [
     {label: string, value: string, ...props},
@@ -47,7 +73,10 @@ import { Select } from 'rmwc/Select';
   ]}
 />
 
-{/*  A simple value => label map */}
+{/*  
+  An uncontrolled select
+  A simple value => label map */
+}
 <Select
   label="Object map"
   options={{'1': 'Cookies', '2': 'Pizza', '3': 'Icecream'}}
@@ -55,13 +84,11 @@ import { Select } from 'rmwc/Select';
 
 {/* a simple array of options with box styling, value will be the same as label */}
 <Select
-  box
   label="Simple Array"
   placeholder="-- Select One --"
   options={['Cookies', 'Pizza', 'Icecream']}
 />
 ```
-
 ## Manually building the list
 
 If you want full control over the child `ListItems`, you can manually build the list yourself.

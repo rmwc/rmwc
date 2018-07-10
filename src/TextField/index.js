@@ -13,6 +13,7 @@ import {
 import { Icon } from '../Icon';
 import { LineRipple } from '../LineRipple';
 import { FloatingLabel } from '../FloatingLabel';
+import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
 
 export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
@@ -91,25 +92,6 @@ export const TextFieldTextarea = simpleTag({
   tag: 'textarea',
   classNames: 'mdc-text-field__input'
 });
-
-export const NotchedOutline = ({
-  children,
-  ...rest
-}: {
-  children: React.Node
-}) => (
-  <div {...rest} className="mdc-notched-outline">
-    <svg>{children}</svg>
-  </div>
-);
-
-export const NotchedOutlinePath = ({ ...rest }: {}) => (
-  <path {...rest} className="mdc-notched-outline__path" />
-);
-
-export const NotchedOutlineIdle = ({ ...rest }: {}) => (
-  <div {...rest} className="mdc-notched-outline__idle" />
-);
 
 export type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
@@ -260,12 +242,7 @@ export class TextField extends withFoundation({
         )}
         {!!withTrailingIcon && renderIcon(withTrailingIcon)}
 
-        {outlined && (
-          <NotchedOutline>
-            <NotchedOutlinePath />
-          </NotchedOutline>
-        )}
-
+        {!!outlined && <NotchedOutline />}
         {outlined ? <NotchedOutlineIdle /> : <LineRipple />}
       </TextFieldRoot>
     );

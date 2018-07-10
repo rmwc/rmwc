@@ -31,6 +31,11 @@ describe('Select', () => {
     mount(<Select placeholder="Select a food" options={[1, 2, 3]} />);
   });
 
+  it('can be outlined', () => {
+    const el = mount(<Select outlined options={[1, 2, 3]} />);
+    expect(el.html().includes('mdc-select--outlined')).toBe(true);
+  });
+
   it('can accept formatted options array', () => {
     mount(
       <Select
