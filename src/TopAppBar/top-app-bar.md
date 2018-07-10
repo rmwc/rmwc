@@ -54,6 +54,22 @@ import {
 </TopAppBar>
 ```
 
+## Simplified Usage
+
+```jsx
+import { SimpleTopAppBar } from 'rmwc/TopAppBar';
+
+<SimpleTopAppBar
+  title="test"
+  navigationIcon={{ onClick: () => console.log('Navigate') }}
+  actionItems={[
+    { onClick: () => console.log('Do Something'), use: 'file_download' },
+    { onClick: () => console.log('Do Something'), use: 'print' },
+    { onClick: () => console.log('Do Something'), use: 'bookmark' }
+  ]}
+/>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
@@ -64,4 +80,5 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="TopAppBarNavigationIcon" />
 <DocumentComponent displayName="TopAppBarActionItem" />
 <DocumentComponent displayName="TopAppBarFixedAdjust" />
+<DocumentComponent displayName="SimpleTopAppBar" />
 ```

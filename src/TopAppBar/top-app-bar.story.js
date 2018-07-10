@@ -9,7 +9,8 @@ import {
   TopAppBarSection,
   TopAppBarNavigationIcon,
   TopAppBarActionItem,
-  TopAppBarTitle
+  TopAppBarTitle,
+  SimpleTopAppBar
 } from './';
 
 const ToolbarStory = props => (
@@ -59,4 +60,17 @@ storiesOf('TopAppBar', module)
   .add('dense', () => <ToolbarStory dense />)
   .add('short', () => <ToolbarStory short />)
   .add('shortCollapsed', () => <ToolbarStory shortCollapsed />)
-  .add('prominent', () => <ToolbarStory prominent />);
+  .add('prominent', () => <ToolbarStory prominent />)
+  .add('SimpleTopAppBar', () => (
+    <div style={{ margin: '-24px' }}>
+      <SimpleTopAppBar
+        title="test"
+        navigationIcon={{ onClick: () => console.log('Navigate') }}
+        actionItems={[
+          { onClick: () => console.log('Do Something'), use: 'file_download' },
+          { onClick: () => console.log('Do Something'), use: 'print' },
+          { onClick: () => console.log('Do Something'), use: 'bookmark' }
+        ]}
+      />
+    </div>
+  ));
