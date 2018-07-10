@@ -82,10 +82,18 @@ export const GridInner = simpleTag({
 export const Grid: React.ComponentType<GridPropsT> = ({
   children,
   ...rest
-}: GridPropsT) => (
-  <GridRoot {...rest}>
-    <GridInner>{children}</GridInner>
-  </GridRoot>
-);
+}: GridPropsT) => {
+  const needsInnerGrid = !(
+    children &&
+    //$FlowFixMe
+    children.type &&
+    children.type.displayName === 'GridInner'
+  );
+  return (
+    <GridRoot {...rest}>
+      {!!needsInnerGrid ? <GridInner>{children}</GridInner> : children}
+    </GridRoot>
+  );
+};
 
 Grid.displayName = 'Grid';

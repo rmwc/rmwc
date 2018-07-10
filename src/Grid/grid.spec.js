@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Grid, GridCell } from './';
+import { Grid, GridCell, GridInner } from './';
 
 describe('Grid', () => {
   it('renders', () => {
@@ -12,6 +12,20 @@ describe('Grid', () => {
 
   it('can be fixedColumnWidth', () => {
     mount(<Grid fixedColumnWidth />);
+  });
+
+  it('automatically renders inner grid', () => {
+    const el = mount(<Grid />);
+    expect(el.html().includes('mdc-layout-grid__inner')).toBe(true);
+  });
+
+  it('can have a custom GridInner component', () => {
+    const el = mount(
+      <Grid>
+        <GridInner />
+      </Grid>
+    );
+    expect(el.html().match(/mdc-layout-grid__inner/g).length).toBe(1);
   });
 
   it('can be align', () => {
