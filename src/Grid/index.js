@@ -83,11 +83,11 @@ export const Grid: React.ComponentType<GridPropsT> = ({
   children,
   ...rest
 }: GridPropsT) => {
+  const child: any = children;
   const needsInnerGrid = !(
-    children &&
-    //$FlowFixMe
-    children.type &&
-    children.type.displayName === 'GridInner'
+    child &&
+    typeof child === 'object' &&
+    (child.type || {}).displayName === 'GridInner'
   );
   return (
     <GridRoot {...rest}>

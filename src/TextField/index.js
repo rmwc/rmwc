@@ -206,10 +206,9 @@ export class TextField extends withFoundation({
     );
 
     // handle leading and trailing icons
-    const renderIcon = iconNode => {
+    const renderIcon = (iconNode: any) => {
       if (
         (iconNode && typeof iconNode === 'string') ||
-        //$FlowFixMe
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
@@ -243,7 +242,7 @@ export class TextField extends withFoundation({
         {!!withTrailingIcon && renderIcon(withTrailingIcon)}
 
         {!!outlined && <NotchedOutline />}
-        {outlined ? <NotchedOutlineIdle /> : <LineRipple />}
+        {!!outlined ? <NotchedOutlineIdle /> : <LineRipple />}
       </TextFieldRoot>
     );
   }
