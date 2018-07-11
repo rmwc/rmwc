@@ -114,7 +114,7 @@ export type ListPropsT = {
   twoLine?: boolean,
   /** Makes the list start detail circular for avatars. */
   avatarList?: boolean,
-  /** Makes the list non interactive */
+  /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean
 } & SimpleTagPropsT;
 

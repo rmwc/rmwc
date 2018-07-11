@@ -2937,7 +2937,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the list non interactive"
+          "description": "Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems."
         }
       }
     },
