@@ -18,6 +18,8 @@ export type ButtonPropsT = {
   unelevated?: boolean,
   /** Make the button outlined. */
   outlined?: boolean,
+  /** make the button disabled */
+  disabled?: boolean,
   /** Enable / disable the ripple. */
   ripple?: boolean
 } & SimpleTagPropsT &

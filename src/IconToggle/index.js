@@ -6,10 +6,14 @@ import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
 import { Icon } from '../Icon';
 import { simpleTag, noop, withFoundation, syncFoundationProp } from '../Base';
 
+export type IconToggleChangeEventDetailT = {
+    isOn: boolean;
+};
+
 export type IconTogglePropsT = {
   /* prettier-ignore */
   /** An onChange callback that receives a custom event. */
-  onChange?: (evt: {detail: {isOn: boolean}} & CustomEventT) => mixed,
+  onChange?: (evt: CustomEventT<IconToggleChangeEventDetailT>) => mixed,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */
   on: Object,
   /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */

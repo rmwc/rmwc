@@ -1,5 +1,5 @@
 // @flow
-import type { CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
 import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
@@ -58,22 +58,23 @@ const ANCHOR_CORNER_MAP = {
 // prettier-ignore
 type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
+export type SelectedEventDetailT = {
+  index: number,
+  item: HTMLElement
+};
+
 export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
-  onClose?: (evt: CustomEventT) => mixed,
+  onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (
-    evt: { detail: { index: number, item: HTMLElement } } & CustomEventT
-  ) => mixed,
+  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
   /** Callback that fires when the menu is closed with nothing selected. */
-  onCancel?: (evt: CustomEventT) => mixed,
+  onCancel?: (evt: CustomEventT<void>) => mixed,
   /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT,
-  /** Children to render */
-  children?: React.Node
-};
+  anchorCorner?: AnchorT
+} & SimpleTagPropsT;
 
 /** A menu component */
 export class Menu extends withFoundation({

@@ -21,7 +21,7 @@ export type IconButtonPropsT = {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean,
   /** An onChange callback that receives a custom event. */
-  onChange?: (evt: { detail: { isOn: boolean } } & CustomEventT) => mixed,
+  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,
   /** Makes the button disabled */
   disabled?: boolean
 } & SimpleTagPropsT &
