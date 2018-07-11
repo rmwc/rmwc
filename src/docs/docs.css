@@ -3,6 +3,10 @@ html {
   max-width: 100vw;
 }
 
+img {
+  vertical-align: top;
+}
+
 body,
 #root {
   display: block;
@@ -321,6 +325,7 @@ ul li {
 
 /* page icons */
 #page-icons .example > div > i,
+#page-icons .example > div > .material-icons,
 #page-icons .example > div > img {
   margin: 1rem;
   vertical-align: middle;

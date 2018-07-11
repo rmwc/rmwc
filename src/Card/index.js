@@ -1,12 +1,11 @@
 // @flow
-import * as React from 'react';
-import classNames from 'classnames';
-import { Button } from '../Button';
-import { Ripple } from '../Ripple';
-import { Icon } from '../Icon';
-import { IconToggle } from '../IconToggle';
-import { simpleTag, withRipple } from '../Base';
 import type { SimpleTagPropsT } from '../Base';
+import type { IconButtonPropsT } from '../IconButton';
+
+import * as React from 'react';
+import { Button } from '../Button';
+import { simpleTag, withRipple } from '../Base';
+import { IconButton } from '../IconButton';
 
 /****************************************************************
  * Public
@@ -104,69 +103,33 @@ export const CardActionIcons = simpleTag({
 });
 
 export type CardActionPropsT = {
-  /** An action icon with no text. This is an instance of the Icon component. */
-  icon?: boolean,
-  /** The use prop when using an icon. */
-  use?: React.Node,
-  /** An toggleable action icon with no text. This is an instance of the IconToggle component. */
-  iconToggle?: boolean,
-  /** The on prop when using an iconToggle. */
-  on?: Object,
-  /** The off prop when using an iconToggle. */
-  off?: Object
-} & SimpleTagPropsT;
+  /** Forces the action to be an icon. In most cases, this will be determined for you. */
+  isIcon?: boolean
+} & IconButtonPropsT;
 
-/** A Card action Button. Will return a Button component by default. */
-export const CardAction: React.ComponentType<CardActionPropsT> = ({
-  icon,
-  iconToggle,
-  className,
-  ...rest
-}: CardActionPropsT) => {
-  if (icon) {
-    return (
-      <Ripple unbounded>
-        <Icon
-          {...rest}
-          use={rest.use}
-          className={classNames(
-            className,
-            'mdc-card__action',
-            'mdc-card__action--icon'
-          )}
-        />
-      </Ripple>
+const CardActionIcon = simpleTag({
+  tag: IconButton,
+  classNames: ['mdc-card__action', 'mdc-card__action--icon']
+});
+
+const CardActionButton = simpleTag({
+  tag: Button,
+  classNames: ['mdc-card__action', 'mdc-card__action--button']
+});
+
+/** A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component. */
+export class CardAction extends React.Component<CardActionPropsT> {
+  static displayName = 'CardAction';
+
+  render() {
+    const { isIcon, ...rest } = this.props;
+    const { onContent, offContent, use } = this.props;
+    return isIcon || onContent || offContent || use ? (
+      <CardActionIcon {...rest} />
+    ) : (
+      <CardActionButton {...rest} />
     );
   }
-
-  if (iconToggle) {
-    if (!rest.on || !rest.off) {
-      throw Error('You must specify `on` and `off` when using the IconToggle');
-    }
-    return (
-      <IconToggle
-        {...rest}
-        on={rest.on}
-        off={rest.off}
-        className={classNames(
-          className,
-          'mdc-card__action',
-          'mdc-card__action--icon'
-        )}
-      />
-    );
-  }
-
-  return (
-    <Button
-      {...rest}
-      className={classNames(
-        className,
-        'mdc-card__action',
-        'mdc-card__action--button'
-      )}
-    />
-  );
-};
+}
 
 CardAction.displayName = 'CardAction';

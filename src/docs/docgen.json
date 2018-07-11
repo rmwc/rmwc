@@ -141,45 +141,16 @@
       "methods": []
     },
     {
-      "description": "A Card action Button. Will return a Button component by default.",
+      "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
       "displayName": "CardAction",
       "methods": [],
       "props": {
-        "icon": {
+        "isIcon": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "An action icon with no text. This is an instance of the Icon component."
-        },
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The use prop when using an icon."
-        },
-        "iconToggle": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "An toggleable action icon with no text. This is an instance of the IconToggle component."
-        },
-        "on": {
-          "flowType": {
-            "name": "Object"
-          },
-          "required": false,
-          "description": "The on prop when using an iconToggle."
-        },
-        "off": {
-          "flowType": {
-            "name": "Object"
-          },
-          "required": false,
-          "description": "The off prop when using an iconToggle."
+          "description": "Forces the action to be an icon. In most cases, this will be determined for you."
         }
       }
     }
@@ -2165,114 +2136,324 @@
       }
     }
   ],
-  "src/Icon/index.js": [
+  "src/IconButton/index.js": [
     {
       "description": "",
-      "displayName": "IconRoot",
-      "methods": []
-    },
-    {
-      "description": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
-      "displayName": "Icon",
+      "displayName": "IconButtonRoot",
       "methods": [],
       "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+        "role": {
           "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+            "value": "'button'",
+            "computed": false
+          },
+          "required": false
         },
-        "children": {
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'0'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "IconButton",
+      "methods": [
+        {
+          "name": "on",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
+          "name": "on",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "isOn",
+              "type": {
+                "name": "boolean"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "isOn",
+          "docblock": "Takes into account our checked prop",
+          "modifiers": [],
+          "params": [],
+          "returns": null,
+          "description": "Takes into account our checked prop"
+        },
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: { detail: { isOn: boolean } } & CustomEventT) => mixed\n} & SimpleTagPropsT &\n  IconPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: { detail: { isOn: boolean } } & CustomEventT) => mixed\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onContent",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onLabel",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "offContent",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "offLabel",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: { detail: { isOn: boolean } } & CustomEventT) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "intersection",
+                                    "raw": "{ detail: { isOn: boolean } } & CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ detail: { isOn: boolean } }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "detail",
+                                              "value": {
+                                                "name": "signature",
+                                                "type": "object",
+                                                "raw": "{ isOn: boolean }",
+                                                "signature": {
+                                                  "properties": [
+                                                    {
+                                                      "key": "isOn",
+                                                      "value": {
+                                                        "name": "boolean",
+                                                        "required": true
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "name": "CustomEventT"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "IconPropsT"
+                  }
+                ],
+                "alias": "IconButtonPropsT"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "renderIcon",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
+      "props": {
+        "label": {
           "flowType": {
             "name": "ReactNode",
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The icon to use, specified as children instead of the \"use\" prop."
+          "description": "A label for non-toggleable buttons"
         },
-        "strategy": {
+        "onContent": {
           "flowType": {
-            "name": "union",
-            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'auto'"
-              },
-              {
-                "name": "literal",
-                "value": "'ligature'"
-              },
-              {
-                "name": "literal",
-                "value": "'className'"
-              },
-              {
-                "name": "literal",
-                "value": "'url'"
-              },
-              {
-                "name": "literal",
-                "value": "'component'"
-              },
-              {
-                "name": "literal",
-                "value": "'custom'"
-              }
-            ]
+            "name": "ReactNode",
+            "raw": "React.Node"
           },
           "required": false,
-          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
+          "description": "The icon to use when a toggleable button is on."
         },
-        "prefix": {
+        "onLabel": {
           "flowType": {
-            "name": "string"
+            "name": "ReactNode",
+            "raw": "React.Node"
           },
           "required": false,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
+          "description": "The label to use when a toggleable button is on."
         },
-        "basename": {
+        "offContent": {
           "flowType": {
-            "name": "string"
+            "name": "ReactNode",
+            "raw": "React.Node"
           },
           "required": false,
-          "description": "A base className for the icon namespace, i.e. material-icons."
+          "description": "The icon to use when a toggleable button is off."
         },
-        "render": {
+        "offLabel": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The label to use when a toggleable button is off."
+        },
+        "checked": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Controls the on / off state of the a toggleable button."
+        },
+        "onChange": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(content: mixed) => React.Node",
+            "raw": "(evt: { detail: { isOn: boolean } } & CustomEventT) => mixed",
             "signature": {
               "arguments": [
                 {
-                  "name": "content",
+                  "name": "evt",
                   "type": {
-                    "name": "mixed"
+                    "name": "intersection",
+                    "raw": "{ detail: { isOn: boolean } } & CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ detail: { isOn: boolean } }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "detail",
+                              "value": {
+                                "name": "signature",
+                                "type": "object",
+                                "raw": "{ isOn: boolean }",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "isOn",
+                                      "value": {
+                                        "name": "boolean",
+                                        "required": true
+                                      }
+                                    }
+                                  ]
+                                },
+                                "required": true
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "CustomEventT"
+                      }
+                    ]
                   }
                 }
               ],
               "return": {
-                "name": "ReactNode",
-                "raw": "React.Node"
+                "name": "mixed"
               }
             }
           },
           "required": false,
-          "description": "A render function to use when using the 'custom' strategy."
-        },
-        "className": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": "A custom className to add.."
+          "description": "An onChange callback that receives a custom event."
         }
       }
     }

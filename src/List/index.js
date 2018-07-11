@@ -14,8 +14,6 @@ export type ListItemPropsT = {
   selected?: boolean,
   /** A modifier for an active state. */
   activated?: boolean,
-  /** A modifier for an active state. */
-  activated?: boolean,
   /** Enable / disable the ripple. */
   ripple?: boolean
 } & SimpleTagPropsT &

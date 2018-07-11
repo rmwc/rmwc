@@ -21,10 +21,15 @@ const renderClassName = ({ content, ...rest }: { content: React.Node }) => {
 };
 
 const renderUrl = ({ content, ...rest }: { content: string }) => {
-  return <IconRoot tag="img" src={content} {...rest} />;
+  return <IconRoot {...rest} tag="img" src={content} />;
 };
 
-const renderComponent = ({ content, ...rest }: { content: React.Node }) => {
+const renderComponent = ({
+  content,
+  ...rest
+}: {
+  content: React.Element<*>
+}) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
 };
 
@@ -62,7 +67,7 @@ const processAutoStrategy = (content: React.Node): IconStrategyT => {
 /**
  * Get the actual icon strategy to use
  */
-const getIconStrategy = (
+export const getIconStrategy = (
   content: React.Node,
   strategy: string | null,
   defaultStrategy: string | null
