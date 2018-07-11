@@ -15,6 +15,8 @@ export type ChipPropsT = {
   onInteraction?: (evt: Event) => mixed,
   /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */
   onTrailingIconInteraction?: (evt: Event) => mixed,
+  /** A custom event for when the chip is removed. */
+  onRemoval?: (evt: Event) => mixed,
   /** makes the Chip appear selected. */
   selected?: boolean
 } & SimpleTagPropsT;
@@ -53,6 +55,7 @@ export class Chip extends withFoundation({
     const {
       onInteraction,
       onTrailingIconInteraction,
+      onRemoval,
       apiRef,
       ...rest
     } = this.props;
