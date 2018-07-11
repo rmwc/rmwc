@@ -31,12 +31,14 @@ export const MenuItems = simpleTag({
  * Public
  ****************************************************************/
 
-/** This is just the ListItem component exported from the Menu module for convenience. */
-export const MenuItem: React.ComponentType<any> = (props: any) => (
-  <ListItem role="menuitem" tabIndex="0" {...props} />
-);
+/** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
+export class MenuItem extends React.Component<any> {
+  static displayName = 'MenuItem';
 
-MenuItem.displayName = 'MenuItem';
+  render() {
+    return <ListItem role="menuitem" tabIndex={0} {...this.props} />;
+  }
+}
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute. */
 export const MenuAnchor = simpleTag({
@@ -106,8 +108,11 @@ export class Menu extends withFoundation({
 
   syncWithProps(nextProps: MenuPropsT) {
     // open
-    syncFoundationProp(nextProps.open, this.open, () => {
-      this.open = !!nextProps.open;
+    // timeout corrects an issue the synchronicity of the events from MDCMenu
+    setTimeout(() => {
+      syncFoundationProp(nextProps.open, this.open, () => {
+        this.open = !!nextProps.open;
+      });
     });
 
     // anchorCorner
@@ -204,7 +209,7 @@ export class SimpleMenu extends React.Component<
     });
 
     const wrappedOnClose = evt => {
-      this.setState({ open: false });
+      this.setState({ open: open || false });
       if (onClose) {
         onClose(evt);
       }

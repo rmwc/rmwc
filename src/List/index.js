@@ -166,14 +166,14 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   ...rest
 }: SimpleListItemPropsT) => (
   <ListItem {...rest}>
-    {!!graphic && <ListItemGraphic>{graphic}</ListItemGraphic>}
+    {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
     <ListItemText>
       {text}
-      {!!secondaryText && (
+      {secondaryText !== undefined && (
         <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
       )}
     </ListItemText>
-    {!!meta && <ListItemMeta>{meta}</ListItemMeta>}
+    {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
     {children}
   </ListItem>
 );

@@ -3304,7 +3304,7 @@
       }
     },
     {
-      "description": "",
+      "description": "This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role=\"menuitem\"` and `tabIndex=\"0\"` to the components for accessibility.",
       "displayName": "MenuItem",
       "methods": []
     },
@@ -3326,12 +3326,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected? : (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected? : (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3385,7 +3385,7 @@
                                       {
                                         "name": "signature",
                                         "type": "object",
-                                        "raw": "{\n        index: number;\n        item: HTMLElement;\n}",
+                                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
                                         "signature": {
                                           "properties": [
                                             {
@@ -3552,7 +3552,7 @@
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n        index: number;\n        item: HTMLElement;\n}",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
                         "signature": {
                           "properties": [
                             {
@@ -3756,7 +3756,7 @@
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n        index: number;\n        item: HTMLElement;\n}",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
                         "signature": {
                           "properties": [
                             {
