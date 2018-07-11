@@ -15,6 +15,15 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 <Button unelevated>Unelevated</Button>
 <Button outlined>Outlined</Button>
 <Button raised theme="secondary-bg on-secondary">With Theme</Button>
+
+{/*
+  Modify the Buttons Ripple.
+  This example uses "accent" to control the color of the Ripple.
+  See the documentation on Ripples.
+  */
+}
+<Button flat theme="secondary" accent>With Theme</Button>
+<Button flat ripple={false}>No Ripple</Button>
 ```
 
 ```jsx renderOnly

@@ -13,7 +13,7 @@
       "methods": []
     },
     {
-      "description": "The Button component.",
+      "description": "The Button component. Buttons also accepts all of the props from the Ripple component.",
       "displayName": "Button",
       "methods": [],
       "props": {
@@ -58,6 +58,17 @@
           "description": "Make the button outlined.",
           "defaultValue": {
             "value": "false",
+            "computed": false
+          }
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
+          "defaultValue": {
+            "value": "true",
             "computed": false
           }
         }
@@ -1600,6 +1611,17 @@
           },
           "required": false,
           "description": "cssOnly Fab."
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         }
       }
     }
@@ -2868,6 +2890,17 @@
           },
           "required": false,
           "description": "A modifier for an active state."
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
         }
       }
     },

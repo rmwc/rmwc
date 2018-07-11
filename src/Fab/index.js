@@ -23,7 +23,9 @@ export type FabPropsT = {
   /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
   exited?: boolean,
   /** cssOnly Fab. */
-  cssOnly?: boolean
+  cssOnly?: boolean,
+  /** Enable / disable the ripple. */
+  ripple?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -63,13 +65,17 @@ export const FabLabel = simpleTag({
  */
 /** A floating action button component */
 export class Fab extends React.Component<FabPropsT> {
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
-
   static contextTypes = {
     RMWCOptions: PropTypes.object
   };
+
+  static defaultProps = {
+    ripple: true
+  };
+
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
   providerOptions: RMWCProviderOptionsT;
   context: Object;

@@ -13,7 +13,11 @@ export type ListItemPropsT = {
   /** A modifier for a selected state. */
   selected?: boolean,
   /** A modifier for an active state. */
-  activated?: boolean
+  activated?: boolean,
+  /** A modifier for an active state. */
+  activated?: boolean,
+  /** Enable / disable the ripple. */
+  ripple?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -27,10 +31,6 @@ export const ListItemRoot = withRipple()(
         'mdc-list-item--activated': props.activated
       }
     ],
-    defaultProps: {
-      selected: false,
-      activated: false
-    },
     consumeProps: ['selected', 'activated', 'options'] //options is from the select element
   })
 );
@@ -41,13 +41,17 @@ export const ListItemRoot = withRipple()(
 export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
 
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
+  static defaultProps = {
+    ripple: true
+  };
 
   static contextTypes = {
     RMWCOptions: PropTypes.object
   };
+
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
   providerOptions: RMWCProviderOptionsT;
   context: Object;

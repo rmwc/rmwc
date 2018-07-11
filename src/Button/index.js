@@ -17,7 +17,9 @@ export type ButtonPropsT = {
   /** Make the button unelevated. */
   unelevated?: boolean,
   /** Make the button outlined. */
-  outlined?: boolean
+  outlined?: boolean,
+  /** Enable / disable the ripple. */
+  ripple?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -67,14 +69,15 @@ export const ButtonIcon = simpleTag({
 });
 
 /**
- * The Button component.
+ * The Button component. Buttons also accepts all of the props from the Ripple component.
  */
 export class Button extends React.Component<ButtonPropsT> {
   static defaultProps = {
-    dense: false,
+    ripple: true,
     raised: false,
     unelevated: false,
-    outlined: false
+    outlined: false,
+    dense: false
   };
 
   componentWillMount() {
