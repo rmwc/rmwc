@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+  <script type="text/javascript">
+    if (window.location.search.indexOf('p=') !== -1) {
+      const params = window.location.search
+        .slice(1)
+        .split('&')
+        .reduce((acc, part) => {
+          const [key, val] = part.split('=', 2);
+          acc[key] = val;
+          return acc;
+        }, {});
+
+      if (params.p) {
+        window.history.pushState(null, window.document.title, params.p);
+      }
+    }
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
