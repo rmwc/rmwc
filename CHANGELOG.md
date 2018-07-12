@@ -1,3 +1,28 @@
+#### 1.8.0 (2018-07-12)
+
+##### Breaking Changes
+
+* **IconButton:**  New IconButton component has been added. IconToggles still exist but are now deprecated. The breaking changes are related to Cards and CardAction which now use the IconButton component instead of Icontoggle. [#267](https://github.com/jamesmfriedman/rmwc/pull/267) [#242](https://github.com/jamesmfriedman/rmwc/pull/242) ([e2abba59](https://github.com/jamesmfriedman/rmwc/commit/e2abba599057b9565aeda8825c830287f30df68a))
+
+##### Documentation Changes
+
+* **ThemePicker:**  added a global theme picker to the docs [#90](https://github.com/jamesmfriedman/rmwc/pull/90) ([5ff0f0e8](https://github.com/jamesmfriedman/rmwc/commit/5ff0f0e8642976a83f6f6d49509a915a572344f9))
+* **Ripple:**  Adding documentation on disabling Ripples [#249](https://github.com/jamesmfriedman/rmwc/pull/249) ([420dbe93](https://github.com/jamesmfriedman/rmwc/commit/420dbe930505a465e3423938d62303a03c007bb1))
+* **Tests:**  Updated documentation on testing [#250](https://github.com/jamesmfriedman/rmwc/pull/250) ([cec3ec69](https://github.com/jamesmfriedman/rmwc/commit/cec3ec69b15a3210baace00c99ea110c0383c7ae))
+* **List:**  Update nonInteractive description. [#264](https://github.com/jamesmfriedman/rmwc/pull/264) ([6146fc15](https://github.com/jamesmfriedman/rmwc/commit/6146fc159c2ede2d1a035314836ed2aec67e6da0))
+
+##### New Features
+
+* **Chip:**  Adding onRemove. ([20e8771d](https://github.com/jamesmfriedman/rmwc/commit/20e8771d7664847c7501f6e4be3c87bbdd2c32e4))
+* **TopAppBar:**  Adding SimpleTopAppBar [#257](https://github.com/jamesmfriedman/rmwc/pull/257) ([3c351234](https://github.com/jamesmfriedman/rmwc/commit/3c351234ac596049876a5b941e10d065d96614f1))
+* **Grid:**  Add a custom GridInner component [#266](https://github.com/jamesmfriedman/rmwc/pull/266) ([6ffa9c54](https://github.com/jamesmfriedman/rmwc/commit/6ffa9c5451d053cc8c106f1ef600c5d20511dc06))
+* **Select:**  adding outlined Select [#267](https://github.com/jamesmfriedman/rmwc/pull/267) ([53441918](https://github.com/jamesmfriedman/rmwc/commit/53441918ceda78d1a0e10c962f6bfc986e0f2dcb))
+* **Fab:**  Adding extended Fabs [#267](https://github.com/jamesmfriedman/rmwc/pull/267) ([aebe0735](https://github.com/jamesmfriedman/rmwc/commit/aebe073562fa16f2ca77249e7075925d75d5e891))
+
+##### Bug Fixes
+
+* **docs:**  Fixed typo in "closed". ([d555733a](https://github.com/jamesmfriedman/rmwc/commit/d555733a268184b609e3001aba0786dce576f5a9))
+
 #### 1.7.6 (2018-06-28)
 
 ##### Bug Fixes
