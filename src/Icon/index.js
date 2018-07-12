@@ -1,17 +1,16 @@
 // @flow
 import type { SimpleTagPropsT } from '../Base/simpleTag';
 import type { RMWCProviderOptionsT } from '../Provider';
+import type { IconStrategyT } from './utils';
 
 import * as React from 'react';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag } from '../Base';
+import { getIconStrategy } from './utils';
 
 export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
-
-// prettier-ignore
-type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
 const renderLigature = ({ content, ...rest }: { content: React.Node }) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
@@ -29,7 +28,7 @@ const renderComponent = ({
   content,
   ...rest
 }: {
-  content: React.Element<*>
+  content: React.Element<any>
 }) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
 };
@@ -40,46 +39,6 @@ const iconRenderMap = {
   url: renderUrl,
   component: renderComponent,
   auto: undefined
-};
-
-/**
- * Given content, tries to figure out an appropriate strategy for it
- */
-const processAutoStrategy = (content: React.Node): IconStrategyT => {
-  // check for URLS
-  if (
-    typeof content === 'string' &&
-    (content.startsWith('/') ||
-      content.startsWith('http://') ||
-      content.startsWith('https://'))
-  ) {
-    return 'url';
-  }
-
-  // handle JSX components
-  if (typeof content === 'object') {
-    return 'component';
-  }
-
-  // we dont know what it is, default to ligature for compat with material icons
-  return 'ligature';
-};
-
-/**
- * Get the actual icon strategy to use
- */
-export const getIconStrategy = (
-  content: React.Node,
-  strategy: string | null,
-  defaultStrategy: string | null
-) => {
-  strategy = strategy || defaultStrategy;
-
-  if (strategy === 'auto') {
-    return processAutoStrategy(content);
-  }
-
-  return strategy;
 };
 
 export type IconPropsT = {

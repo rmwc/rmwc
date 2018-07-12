@@ -85,7 +85,7 @@
     "prismjs": "^1.9.0",
     "react": "^16.2.0",
     "react-app-rewired": "^1.5.2",
-    "react-docgen": "^2.20.1",
+    "react-docgen": "^2.21.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.1",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",

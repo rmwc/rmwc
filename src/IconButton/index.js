@@ -4,7 +4,8 @@ import type { IconPropsT } from '../Icon';
 
 import * as React from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button/dist/mdc.iconButton';
-import { Icon, getIconStrategy } from '../Icon';
+import { Icon } from '../Icon';
+import { getIconStrategy } from '../Icon/utils';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 export type IconButtonPropsT = {

@@ -26,7 +26,7 @@ import {
   ListItemMeta
 } from 'rmwc/List';
 
-import { Menu, MenuItem, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 import Submenu from './Submenu';
