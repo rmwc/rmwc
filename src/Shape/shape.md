@@ -10,11 +10,11 @@ import { ShapeContainer } from 'rmwc/Shape';
 import { Button } from 'rmwc/Button';
 import { Card, CardPrimaryAction, CardMedia } from 'rmwc/Card';
 
-<ShapeContainer corner="10">
+<ShapeContainer corner="10" backgroundColor="#f2f2f2">
   <Button unelevated>Button</Button>
 </ShapeContainer>
 
-<ShapeContainer corner="5">
+<ShapeContainer corner="5" backgroundColor="#f2f2f2">
   <Button unelevated>Button</Button>
 </ShapeContainer>
 
@@ -23,6 +23,7 @@ import { Card, CardPrimaryAction, CardMedia } from 'rmwc/Card';
   bottomRightCorner="10"
   outlineWidth="2"
   outlineColor="var(--mdc-theme-primary)"
+  backgroundColor="#f2f2f2"
 >
   <Button outlined>Button</Button>
 </ShapeContainer>
@@ -32,6 +33,7 @@ import { Card, CardPrimaryAction, CardMedia } from 'rmwc/Card';
   bottomRightCorner="30"
   outlineWidth="1"
   outlineColor="#e0e0e0"
+  backgroundColor="#f2f2f2"
 >
   <Card outlined>
     <CardPrimaryAction>

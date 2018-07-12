@@ -223,6 +223,7 @@ class ThemePicker extends React.Component {
             <span style={{ color: '#690' }}>:root</span> {'{'}
             {Object.entries(getTheme(selectedThemeName)).map(([t, val]) => (
               <div
+                key={t}
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',

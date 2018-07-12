@@ -22,8 +22,8 @@ import { Button, ButtonIcon } from 'rmwc/Button';
   See the documentation on Ripples.
   */
 }
-<Button flat theme="secondary" accent>With Theme</Button>
-<Button flat ripple={false}>No Ripple</Button>
+<Button theme="secondary" accent>With Theme</Button>
+<Button ripple={false}>No Ripple</Button>
 ```
 
 ```jsx renderOnly
