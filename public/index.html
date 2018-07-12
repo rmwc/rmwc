@@ -14,7 +14,7 @@
         }, {});
 
       if (params.p) {
-        window.history.pushState(null, window.document.title, params.p);
+        window.history.replaceState(null, window.document.title, params.p);
       }
     }
   </script>
