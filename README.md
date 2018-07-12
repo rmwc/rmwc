@@ -5,7 +5,7 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for the official Material Design (Web) Components v0.36.0
+A React (15 / 16) wrapper for the official Material Design (Web) Components v0.37.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
@@ -18,7 +18,7 @@ Features:
 
 ## Recent updates
 
-MDC 36 is a simple upgraded containing mostly bugfixes and there are minimal breaking changes. 
+MDC 37 adds extended Fabs and IconButtons. The major breaking change to look out for is CardActions now use IconButtons. The docs now feature a ThemePicker as well to help show customization of the framework.
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
