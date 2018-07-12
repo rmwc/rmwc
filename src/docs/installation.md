@@ -5,7 +5,8 @@
 Required steps
 
 * `npm i rmwc --save` or `yarn add rmwc`
-* [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.).
+* [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. 
+* Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.). 
 
 Optional steps
 
@@ -98,11 +99,9 @@ Typescript is currently in Beta and is being transpiled directly from the Flow t
 
 ## Testing with RMWC
 
-RMWC works the best with Jest and Enzyme. material-components-web requires a browser like environment to properly test and a testing library thats supports React Refs. At this time, react-test-renderer is **not** supported because of its inability to support React refs.
+RMWC works the best with Jest and Enzyme. material-components-web requires a browser like environment to properly test and a testing library thats supports React Refs. At this time, react-test-renderer is **not** supported.
 
-Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. 
-
-RMWC contains a polyfill to fix any gaps in your tests DOM environment. Just import the polyfill and run it during your test setup phase.
+Jest uses JSDOM by default which is a browser-like environment. If you are using the full Enzyme mount api, you'll quickly run into errors from the material-components-web library saying things like "Cannot read property 'whatever' of undefined. The quick fix is to monkey patch the missing items onto the fake DOM elements in your setupTests file.
 
 ```javascript
 // src/setupTests.js
@@ -111,20 +110,23 @@ import Adapter from 'enzyme-adapter-react-16';
 import rmwcTestPolyfill from 'rmwc/Base/testPolyfill';
 Enzyme.configure({ adapter: new Adapter() });
 
-//import and run this to polyfill your tests DOM environment
+//import and run this to fix the the MDC errors
 rmwcTestPolyfill();
 ```
 
+## Known Issues
+
+* Issue: postcss-cssnext messes up CSS variables. This can cause broken styles and extreme slowdowns when using web developer tools like the Chrome inspector. You'll know if you're having this issue because dev tools and the browser will slow to a crawl.
+  * Solution: set customProperties to false. This may require ejecting or other workarounds if you are using Create React App. [See issue #65](https://github.com/jamesmfriedman/rmwc/issues/65).
+
 ```javascript
-// sample Enzyme / Jest test
-import { Button } from 'rmwc/Button';
-import { mount } from 'enzyme';
-
-describe('MyComponent', () => {
-  it('renders', () => {
-    const btn = mount(<Button />);
-    expect(btn.html().includes('mdc-button')).toBe(true);
-  });
-});
+postcss([
+  cssnext({
+    features: {
+      customProperties: {
+        preserve: true
+      }
+    }
+  })
+]);
 ```
-

@@ -231,7 +231,7 @@ class ThemePicker extends React.Component {
                 }}
               >
                 <span>
-                  <span style={{ color: '#07a' }}>&nbsp;&nbsp;{t}:</span> {val}
+                  <span style={{ color: '#07a' }}>&nbsp;&nbsp;{t}:</span> {val};
                 </span>
 
                 <ColorBlock color={val} size="1" />
