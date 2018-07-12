@@ -350,7 +350,6 @@ export class App extends React.Component {
 
           <main className="app__content">
             <RouterSwitch>
-              <Route path={'/'} exact component={Home} />
               {menuContent.map(m => {
                 if (m.options) {
                   return m.options.map(v => (
@@ -382,6 +381,7 @@ export class App extends React.Component {
                   />
                 );
               })}
+              <Route path="/" exact component={Home} />
             </RouterSwitch>
           </main>
         </div>
