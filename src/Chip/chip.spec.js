@@ -30,6 +30,14 @@ describe('Chip', () => {
     expect(value).toEqual(1);
   });
 
+  it('handles onRemoval', () => {
+    let value = 0;
+    const el = mount(<Chip onRemoval={() => value++} />);
+    const inst = el.instance();
+    inst.foundation_.adapter_.notifyRemoval();
+    expect(value).toEqual(1);
+  });
+
   it('handles apiRef', () => {
     let api = null;
 

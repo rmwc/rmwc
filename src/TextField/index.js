@@ -13,6 +13,7 @@ import {
 import { Icon } from '../Icon';
 import { LineRipple } from '../LineRipple';
 import { FloatingLabel } from '../FloatingLabel';
+import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
 
 export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
@@ -43,8 +44,8 @@ export type TextFieldPropsT = {
   withTrailingIcon?: React.Node,
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object,
-  /** An ID for the DOM element */
-  id?: string
+  /** The type of input field to render */
+  type?: string
 } & SimpleTagPropsT;
 
 export const TextFieldRoot = simpleTag({
@@ -91,25 +92,6 @@ export const TextFieldTextarea = simpleTag({
   tag: 'textarea',
   classNames: 'mdc-text-field__input'
 });
-
-export const NotchedOutline = ({
-  children,
-  ...rest
-}: {
-  children: React.Node
-}) => (
-  <div {...rest} className="mdc-notched-outline">
-    <svg>{children}</svg>
-  </div>
-);
-
-export const NotchedOutlinePath = ({ ...rest }: {}) => (
-  <path {...rest} className="mdc-notched-outline__path" />
-);
-
-export const NotchedOutlineIdle = ({ ...rest }: {}) => (
-  <div {...rest} className="mdc-notched-outline__idle" />
-);
 
 export type TextFieldHelperTextPropsT = {
   /** Make the help text always visible */
@@ -214,7 +196,7 @@ export class TextField extends withFoundation({
       ...rest,
       disabled: disabled,
       elementRef: inputRef,
-      id: rest.id || randomId('text-field')
+      id: rest['id'] || randomId('text-field')
     };
 
     const tag = textarea ? (
@@ -224,10 +206,9 @@ export class TextField extends withFoundation({
     );
 
     // handle leading and trailing icons
-    const renderIcon = iconNode => {
+    const renderIcon = (iconNode: any) => {
       if (
         (iconNode && typeof iconNode === 'string') ||
-        //$FlowFixMe
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
@@ -260,13 +241,8 @@ export class TextField extends withFoundation({
         )}
         {!!withTrailingIcon && renderIcon(withTrailingIcon)}
 
-        {outlined && (
-          <NotchedOutline>
-            <NotchedOutlinePath />
-          </NotchedOutline>
-        )}
-
-        {outlined ? <NotchedOutlineIdle /> : <LineRipple />}
+        {!!outlined && <NotchedOutline />}
+        {!!outlined ? <NotchedOutlineIdle /> : <LineRipple />}
       </TextFieldRoot>
     );
   }

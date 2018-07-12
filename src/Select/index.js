@@ -5,6 +5,7 @@ import { MDCSelect } from '@material/select/dist/mdc.select';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 import { FloatingLabel } from '../FloatingLabel';
 import { LineRipple } from '../LineRipple';
+import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
 
 type FormattedOption = {
   label: string,
@@ -21,6 +22,8 @@ export type SelectPropsT = {
   label?: string,
   /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
   placeholder?: string,
+  /** Makes the select outlined. */
+  outlined?: boolean,
   /** Disables the form control. */
   disabled?: boolean,
   /** Makes the Select have a visual box. */
@@ -36,10 +39,11 @@ export const SelectRoot = simpleTag({
   classNames: (props: SelectPropsT) => [
     'mdc-select',
     {
+      'mdc-select--outlined': props.outlined,
       'mdc-select--box': props.box
     }
   ],
-  consumeProps: ['box'],
+  consumeProps: ['box', 'outlined'],
   defaultProps: {
     role: 'listbox'
   }
@@ -124,6 +128,7 @@ export class Select extends withFoundation({
       placeholder,
       children,
       value,
+      outlined,
       label = '',
       options = [],
       box,
@@ -140,13 +145,14 @@ export class Select extends withFoundation({
       <SelectRoot
         {...rootProps}
         box={box}
+        outlined={outlined}
         elementRef={root_}
         className={className}
       >
         <SelectNativeControl
           {...rest}
           value={value}
-          defaultValue={value ? undefined : ''}
+          defaultValue={value !== undefined ? undefined : ''}
         >
           {(!!placeholder || placeholder === '') && (
             <option value="" disabled={placeholder === ''}>
@@ -176,7 +182,8 @@ export class Select extends withFoundation({
           {children}
         </SelectNativeControl>
         <FloatingLabel>{label}</FloatingLabel>
-        <LineRipple />
+        {!!outlined && <NotchedOutline />}
+        {!!outlined ? <NotchedOutlineIdle /> : <LineRipple />}
       </SelectRoot>
     );
   }

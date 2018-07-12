@@ -6,8 +6,9 @@ import from **rmwc/Fab**
 ```jsx render
 import { Fab } from 'rmwc/Fab';
 
-<Fab>favorite</Fab>
-<Fab mini>favorite</Fab>
+<Fab icon="favorite" />
+<Fab icon="favorite" mini />
+<Fab icon="favorite" label="Love It!" />
 ```
 
 ```jsx renderOnly

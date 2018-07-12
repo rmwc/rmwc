@@ -15,14 +15,12 @@ type SimpleTagFactoryT = {
 
 export type SimpleTagPropsT = {
   tag?: string | React.ComponentType<any>,
-  className?: string,
   wrap?: boolean,
   elementRef?: any,
   theme?: string | string[],
-  children?: React.Node,
   apiRef?: <S>(api: S) => S
   //$FlowFixMe
-} & React.HTMLProps<any>;
+} & React.HTMLAttributes<any>;
 
 export const simpleTag = ({
   displayName = 'SimpleTag',

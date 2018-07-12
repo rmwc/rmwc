@@ -9,7 +9,7 @@ import { simpleTag, withFoundation } from '../Base';
 
 type TopAppAppBarPropsT = {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: CustomEventT) => mixed,
+  onNav?: (evt: CustomEventT<void>) => mixed,
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean,
   /** Styles the top app bar as a prominent top app bar. */
@@ -107,5 +107,57 @@ export class TopAppBar extends withFoundation({
     const { onNav, apiRef, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
     return <TopAppBarRoot {...rest} elementRef={root_} />;
+  }
+}
+
+export type SimpleTopAppBarPropsT = {
+  /** The title for the App Bar. */
+  title?: React.Node,
+  /** An array of props that will be used to create TopAppBarActionItems. */
+  actionItems?: Object[],
+  /** Props for the NavigationIcon, this is an instance of the Icon component. */
+  navigationIcon?: Object,
+  /** Additional content to place in the start section. */
+  startContent?: React.Node,
+  /** Additional content to place in the end section. */
+  endContent?: React.Node
+} & TopAppAppBarPropsT;
+
+/** A simplified syntax for creating an AppBar. */
+export class SimpleTopAppBar extends React.Component<SimpleTopAppBarPropsT> {
+  static displayName = 'SimpleTopAppBar';
+
+  render() {
+    const {
+      title,
+      actionItems,
+      navigationIcon,
+      startContent,
+      endContent,
+      ...rest
+    } = this.props;
+    return (
+      <TopAppBar {...rest}>
+        <TopAppBarRow>
+          <TopAppBarSection alignStart>
+            {!!navigationIcon && (
+              <TopAppBarNavigationIcon use="menu" {...navigationIcon} />
+            )}
+            {!!title && <TopAppBarTitle>Title</TopAppBarTitle>}
+            {startContent}
+          </TopAppBarSection>
+
+          {(!!actionItems || endContent) && (
+            <TopAppBarSection alignEnd>
+              {endContent}
+              {!!actionItems &&
+                actionItems.map((actionItemProps, index) => (
+                  <TopAppBarActionItem {...actionItemProps} key={index} />
+                ))}
+            </TopAppBarSection>
+          )}
+        </TopAppBarRow>
+      </TopAppBar>
+    );
   }
 }

@@ -13,7 +13,9 @@ export type ListItemPropsT = {
   /** A modifier for a selected state. */
   selected?: boolean,
   /** A modifier for an active state. */
-  activated?: boolean
+  activated?: boolean,
+  /** Enable / disable the ripple. */
+  ripple?: boolean
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
@@ -27,10 +29,6 @@ export const ListItemRoot = withRipple()(
         'mdc-list-item--activated': props.activated
       }
     ],
-    defaultProps: {
-      selected: false,
-      activated: false
-    },
     consumeProps: ['selected', 'activated', 'options'] //options is from the select element
   })
 );
@@ -41,13 +39,17 @@ export const ListItemRoot = withRipple()(
 export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
 
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
+  static defaultProps = {
+    ripple: true
+  };
 
   static contextTypes = {
     RMWCOptions: PropTypes.object
   };
+
+  componentWillMount() {
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
   providerOptions: RMWCProviderOptionsT;
   context: Object;
@@ -114,7 +116,7 @@ export type ListPropsT = {
   twoLine?: boolean,
   /** Makes the list start detail circular for avatars. */
   avatarList?: boolean,
-  /** Makes the list non interactive */
+  /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean
 } & SimpleTagPropsT;
 
@@ -164,14 +166,14 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   ...rest
 }: SimpleListItemPropsT) => (
   <ListItem {...rest}>
-    {!!graphic && <ListItemGraphic>{graphic}</ListItemGraphic>}
+    {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
     <ListItemText>
       {text}
-      {!!secondaryText && (
+      {secondaryText !== undefined && (
         <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
       )}
     </ListItemText>
-    {!!meta && <ListItemMeta>{meta}</ListItemMeta>}
+    {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
     {children}
   </ListItem>
 );

@@ -6,7 +6,7 @@ import { Icon } from '../Icon';
 
 describe('Provider', () => {
   it('renders', () => {
-    const dom = mount(
+    mount(
       <RMWCProvider>
         <div />
       </RMWCProvider>

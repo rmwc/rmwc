@@ -5,7 +5,7 @@ import MethodologyDocs from './methodology.md';
 import ProviderDocs from '../Provider/provider.md';
 import ButtonDocs from '../Button/button.md';
 import FabDocs from '../Fab/fab.md';
-import IconToggleDocs from '../IconToggle/icon-toggle.md';
+import IconButtonDocs from '../IconButton/icon-button.md';
 import CardDocs from '../Card/card.md';
 import DialogDocs from '../Dialog/dialog.md';
 import DrawerDocs from '../Drawer/drawer.md';
@@ -74,9 +74,9 @@ export const menuContent = [
         component: FabDocs
       },
       {
-        label: 'Icon Toggles',
-        url: `/icon-toggles`,
-        component: IconToggleDocs
+        label: 'Icon Buttons',
+        url: `/icon-buttons`,
+        component: IconButtonDocs
       }
     ]
   },

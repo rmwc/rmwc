@@ -55,12 +55,13 @@ import { Typography } from 'rmwc/Typography';
     </CardActionButtons>
     <CardActionIcons>
       <CardAction
-        iconToggle
-        on={{ label: 'Remove from favorites', content: 'favorite' }}
-        off={{ label: 'Add to favorites', content: 'favorite_border' }}
+        onLabel="Remove from favorites"
+        onContent="favorite"
+        offLabel="Add to favorites"
+        offContent="favorite_border"
       />
-      <CardAction icon use="share" />
-      <CardAction icon use="more_vert" />
+      <CardAction use="share" />
+      <CardAction use="more_vert" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -178,12 +179,13 @@ import {
   <CardActions>
     <CardActionIcons>
       <CardAction
-        iconToggle
-        on={{ label: 'Remove from favorites', content: 'favorite' }}
-        off={{ label: 'Add to favorites', content: 'favorite_border' }}
+        onLabel="Remove from favorites"
+        onContent="favorite"
+        offLabel="Add to favorites"
+        offContent="favorite_border"
       />
-      <CardAction icon use="bookmark_border" />
-      <CardAction icon use="share" />
+      <CardAction use="bookmark_border" />
+      <CardAction use="share" />
     </CardActionIcons>
   </CardActions>
 </Card>

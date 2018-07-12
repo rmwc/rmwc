@@ -111,11 +111,11 @@ export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
   /** Callback for when the accept Button is pressed. */
-  onAccept?: (evt: CustomEventT) => mixed,
+  onAccept?: (evt: CustomEventT<void>) => mixed,
   /** Callback for when the Dialog was closed without acceptance. */
-  onCancel?: (evt: CustomEventT) => mixed,
+  onCancel?: (evt: CustomEventT<void>) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: CustomEventT) => mixed
+  onClose?: (evt: CustomEventT<void>) => mixed
 };
 
 export class Dialog extends withFoundation({

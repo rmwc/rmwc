@@ -1,16 +1,16 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base/simpleTag';
+import type { RMWCProviderOptionsT } from '../Provider';
+import type { IconStrategyT } from './utils';
+
 import * as React from 'react';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag } from '../Base';
-
-import type { RMWCProviderOptionsT } from '../Provider';
+import { getIconStrategy } from './utils';
 
 export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
-
-// prettier-ignore
-type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
 const renderLigature = ({ content, ...rest }: { content: React.Node }) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
@@ -21,10 +21,15 @@ const renderClassName = ({ content, ...rest }: { content: React.Node }) => {
 };
 
 const renderUrl = ({ content, ...rest }: { content: string }) => {
-  return <IconRoot tag="img" src={content} {...rest} />;
+  return <IconRoot {...rest} tag="img" src={content} />;
 };
 
-const renderComponent = ({ content, ...rest }: { content: React.Node }) => {
+const renderComponent = ({
+  content,
+  ...rest
+}: {
+  content: React.Element<any>
+}) => {
   return <IconRoot {...rest}>{content}</IconRoot>;
 };
 
@@ -36,51 +41,9 @@ const iconRenderMap = {
   auto: undefined
 };
 
-/**
- * Given content, tries to figure out an appropriate strategy for it
- */
-const processAutoStrategy = (content: React.Node): IconStrategyT => {
-  // check for URLS
-  if (
-    typeof content === 'string' &&
-    (content.startsWith('/') ||
-      content.startsWith('http://') ||
-      content.startsWith('https://'))
-  ) {
-    return 'url';
-  }
-
-  // handle JSX components
-  if (typeof content === 'object') {
-    return 'component';
-  }
-
-  // we dont know what it is, default to ligature for compat with material icons
-  return 'ligature';
-};
-
-/**
- * Get the actual icon strategy to use
- */
-const getIconStrategy = (
-  content: React.Node,
-  strategy: string | null,
-  defaultStrategy: string | null
-) => {
-  strategy = strategy || defaultStrategy;
-
-  if (strategy === 'auto') {
-    return processAutoStrategy(content);
-  }
-
-  return strategy;
-};
-
 export type IconPropsT = {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   use?: React.Node,
-  /** The icon to use, specified as children instead of the "use" prop. */
-  children?: React.Node,
   /** Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider. */
   strategy?: IconStrategyT,
   /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. */
@@ -88,10 +51,8 @@ export type IconPropsT = {
   /** A base className for the icon namespace, i.e. material-icons. */
   basename?: string,
   /** A render function to use when using the 'custom' strategy. */
-  render?: (content: mixed) => React.Node,
-  /** A custom className to add.. */
-  className?: string
-};
+  render?: (content: mixed) => React.Node
+} & SimpleTagPropsT;
 
 /**
  * An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.

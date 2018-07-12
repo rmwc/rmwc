@@ -13,7 +13,7 @@
       "methods": []
     },
     {
-      "description": "The Button component.",
+      "description": "The Button component. Buttons also accepts all of the props from the Ripple component.",
       "displayName": "Button",
       "methods": [],
       "props": {
@@ -60,6 +60,32 @@
             "value": "false",
             "computed": false
           }
+        },
+        "disabled": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "make the button disabled"
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
+        }
+      },
+      "context": {
+        "RMWCOptions": {
+          "type": {
+            "name": "object"
+          },
+          "required": false
         }
       }
     }
@@ -130,45 +156,16 @@
       "methods": []
     },
     {
-      "description": "A Card action Button. Will return a Button component by default.",
+      "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
       "displayName": "CardAction",
       "methods": [],
       "props": {
-        "icon": {
+        "isIcon": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "An action icon with no text. This is an instance of the Icon component."
-        },
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The use prop when using an icon."
-        },
-        "iconToggle": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "An toggleable action icon with no text. This is an instance of the IconToggle component."
-        },
-        "on": {
-          "flowType": {
-            "name": "Object"
-          },
-          "required": false,
-          "description": "The on prop when using an iconToggle."
-        },
-        "off": {
-          "flowType": {
-            "name": "Object"
-          },
-          "required": false,
-          "description": "The off prop when using an iconToggle."
+          "description": "Forces the action to be an icon. In most cases, this will be determined for you."
         }
       }
     }
@@ -523,12 +520,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A custom event you can use from MCW. You can also just use onClick instead. */\n  onInteraction?: (evt: Event) => mixed,\n  /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */\n  onTrailingIconInteraction?: (evt: Event) => mixed,\n  /** makes the Chip appear selected. */\n  selected?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A custom event you can use from MCW. You can also just use onClick instead. */\n  onInteraction?: (evt: Event) => mixed,\n  /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */\n  onTrailingIconInteraction?: (evt: Event) => mixed,\n  /** A custom event for when the chip is removed. */\n  onRemoval?: (evt: Event) => mixed,\n  /** makes the Chip appear selected. */\n  selected?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** A custom event you can use from MCW. You can also just use onClick instead. */\n  onInteraction?: (evt: Event) => mixed,\n  /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */\n  onTrailingIconInteraction?: (evt: Event) => mixed,\n  /** makes the Chip appear selected. */\n  selected?: boolean\n}",
+                    "raw": "{\n  /** A custom event you can use from MCW. You can also just use onClick instead. */\n  onInteraction?: (evt: Event) => mixed,\n  /** A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead. */\n  onTrailingIconInteraction?: (evt: Event) => mixed,\n  /** A custom event for when the chip is removed. */\n  onRemoval?: (evt: Event) => mixed,\n  /** makes the Chip appear selected. */\n  selected?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -555,6 +552,28 @@
                         },
                         {
                           "key": "onTrailingIconInteraction",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: Event) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "Event"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onRemoval",
                           "value": {
                             "name": "signature",
                             "type": "function",
@@ -653,6 +672,28 @@
           },
           "required": false,
           "description": "A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead."
+        },
+        "onRemoval": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: Event) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "A custom event for when the chip is removed."
         },
         "selected": {
           "flowType": {
@@ -945,7 +986,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept?: (evt: CustomEventT) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel?: (evt: CustomEventT) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT) => mixed\n}",
+                "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed\n}",
                 "signature": {
                   "properties": [
                     {
@@ -960,13 +1001,19 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: CustomEventT) => mixed",
+                        "raw": "(evt: CustomEventT<void>) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "CustomEventT"
+                                "name": "CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "void"
+                                  }
+                                ],
+                                "raw": "CustomEventT<void>"
                               }
                             }
                           ],
@@ -982,13 +1029,19 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: CustomEventT) => mixed",
+                        "raw": "(evt: CustomEventT<void>) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "CustomEventT"
+                                "name": "CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "void"
+                                  }
+                                ],
+                                "raw": "CustomEventT<void>"
                               }
                             }
                           ],
@@ -1004,13 +1057,19 @@
                       "value": {
                         "name": "signature",
                         "type": "function",
-                        "raw": "(evt: CustomEventT) => mixed",
+                        "raw": "(evt: CustomEventT<void>) => mixed",
                         "signature": {
                           "arguments": [
                             {
                               "name": "evt",
                               "type": {
-                                "name": "CustomEventT"
+                                "name": "CustomEventT",
+                                "elements": [
+                                  {
+                                    "name": "void"
+                                  }
+                                ],
+                                "raw": "CustomEventT<void>"
                               }
                             }
                           ],
@@ -1042,13 +1101,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1064,13 +1129,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1086,13 +1157,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1221,13 +1298,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1247,13 +1330,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1273,13 +1362,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1337,19 +1432,19 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Opens or closes the Drawer. */\n  open: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n}",
+                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
                           "key": "open",
                           "value": {
                             "name": "boolean",
-                            "required": true
+                            "required": false
                           }
                         },
                         {
@@ -1357,13 +1452,19 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: CustomEventT) => mixed",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "CustomEventT"
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
                                   }
                                 }
                               ],
@@ -1379,13 +1480,19 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: CustomEventT) => mixed",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "CustomEventT"
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
                                   }
                                 }
                               ],
@@ -1446,20 +1553,26 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Opens or closes the Drawer."
         },
         "onClose": {
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1475,13 +1588,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -1556,6 +1675,11 @@
       "methods": []
     },
     {
+      "description": "",
+      "displayName": "FabLabel",
+      "methods": []
+    },
+    {
       "description": "A floating action button component",
       "displayName": "Fab",
       "methods": [],
@@ -1565,33 +1689,55 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Make the Fab smaller.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "Make the Fab smaller."
+        },
+        "icon": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "The icon to use for the fab."
+        },
+        "label": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Make the Fab extended with a label."
         },
         "exited": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
         },
         "cssOnly": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "cssOnly Fab.",
+          "description": "cssOnly Fab."
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
           "defaultValue": {
-            "value": "undefined",
-            "computed": true
+            "value": "true",
+            "computed": false
           }
+        }
+      },
+      "context": {
+        "RMWCOptions": {
+          "type": {
+            "name": "object"
+          },
+          "required": false
         }
       }
     }
@@ -2158,44 +2304,9 @@
             "computed": true
           }
         },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use, specified as children instead of the \"use\" prop."
-        },
         "strategy": {
           "flowType": {
-            "name": "union",
-            "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'auto'"
-              },
-              {
-                "name": "literal",
-                "value": "'ligature'"
-              },
-              {
-                "name": "literal",
-                "value": "'className'"
-              },
-              {
-                "name": "literal",
-                "value": "'url'"
-              },
-              {
-                "name": "literal",
-                "value": "'component'"
-              },
-              {
-                "name": "literal",
-                "value": "'custom'"
-              }
-            ]
+            "name": "IconStrategyT"
           },
           "required": false,
           "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
@@ -2236,13 +2347,290 @@
           },
           "required": false,
           "description": "A render function to use when using the 'custom' strategy."
+        }
+      },
+      "context": {
+        "RMWCOptions": {
+          "type": {
+            "name": "object"
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "src/IconButton/index.js": [
+    {
+      "description": "",
+      "displayName": "IconButtonRoot",
+      "methods": [],
+      "props": {
+        "role": {
+          "defaultValue": {
+            "value": "'button'",
+            "computed": false
+          },
+          "required": false
         },
-        "className": {
+        "tabIndex": {
+          "defaultValue": {
+            "value": "'0'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "IconButton",
+      "methods": [
+        {
+          "name": "isOn",
+          "docblock": "Takes into account our checked prop",
+          "modifiers": [],
+          "params": [],
+          "returns": null,
+          "description": "Takes into account our checked prop"
+        },
+        {
+          "name": "initialize",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n} & SimpleTagPropsT &\n  IconPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onContent",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onLabel",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "offContent",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "offLabel",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{ isOn: boolean }",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "isOn",
+                                              "value": {
+                                                "name": "boolean",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<{ isOn: boolean }>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "IconPropsT"
+                  }
+                ],
+                "alias": "IconButtonPropsT"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "renderIcon",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
+      "props": {
+        "label": {
           "flowType": {
-            "name": "string"
+            "name": "ReactNode",
+            "raw": "React.Node"
           },
           "required": false,
-          "description": "A custom className to add.."
+          "description": "A label for non-toggleable buttons"
+        },
+        "onContent": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use when a toggleable button is on."
+        },
+        "onLabel": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The label to use when a toggleable button is on."
+        },
+        "offContent": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use when a toggleable button is off."
+        },
+        "offLabel": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The label to use when a toggleable button is off."
+        },
+        "checked": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Controls the on / off state of the a toggleable button."
+        },
+        "onChange": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{ isOn: boolean }",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "isOn",
+                              "value": {
+                                "name": "boolean",
+                                "required": true
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "raw": "CustomEventT<{ isOn: boolean }>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "An onChange callback that receives a custom event."
+        },
+        "disabled": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the button disabled"
         }
       }
     }
@@ -2289,12 +2677,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}} & CustomEventT) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<IconToggleChangeEventDetailT>) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: {detail: {isOn: boolean}} & CustomEventT) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
+                    "raw": "{\n  /* prettier-ignore */\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<IconToggleChangeEventDetailT>) => mixed,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  on: Object,\n  /** An object that can be parsed as valid JSON that gets passed to the MDC constructor. */\n  off: Object,\n  /** Whether the toggle is on or off */\n  checked?: boolean,\n  /** Disables the iconToggle */\n  disabled?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -2302,48 +2690,32 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: {detail: {isOn: boolean}} & CustomEventT) => mixed",
+                            "raw": "(evt: CustomEventT<IconToggleChangeEventDetailT>) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "intersection",
-                                    "raw": "{detail: {isOn: boolean}} & CustomEventT",
+                                    "name": "CustomEventT",
                                     "elements": [
                                       {
                                         "name": "signature",
                                         "type": "object",
-                                        "raw": "{detail: {isOn: boolean}}",
+                                        "raw": "{\n    isOn: boolean;\n}",
                                         "signature": {
                                           "properties": [
                                             {
-                                              "key": "detail",
+                                              "key": "isOn",
                                               "value": {
-                                                "name": "signature",
-                                                "type": "object",
-                                                "raw": "{isOn: boolean}",
-                                                "signature": {
-                                                  "properties": [
-                                                    {
-                                                      "key": "isOn",
-                                                      "value": {
-                                                        "name": "boolean",
-                                                        "required": true
-                                                      }
-                                                    }
-                                                  ]
-                                                },
+                                                "name": "boolean",
                                                 "required": true
                                               }
                                             }
                                           ]
                                         }
-                                      },
-                                      {
-                                        "name": "CustomEventT"
                                       }
-                                    ]
+                                    ],
+                                    "raw": "CustomEventT<IconToggleChangeEventDetailT>"
                                   }
                                 }
                               ],
@@ -2401,48 +2773,32 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: {detail: {isOn: boolean}} & CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<IconToggleChangeEventDetailT>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{detail: {isOn: boolean}} & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{detail: {isOn: boolean}}",
+                        "raw": "{\n    isOn: boolean;\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "isOn",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{isOn: boolean}",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "isOn",
-                                      "value": {
-                                        "name": "boolean",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "boolean",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<IconToggleChangeEventDetailT>"
                   }
                 }
               ],
@@ -2860,6 +3216,25 @@
           },
           "required": false,
           "description": "A modifier for an active state."
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple.",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
+        }
+      },
+      "context": {
+        "RMWCOptions": {
+          "type": {
+            "name": "object"
+          },
+          "required": false
         }
       }
     },
@@ -2929,7 +3304,7 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes the list non interactive"
+          "description": "Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems."
         }
       }
     },
@@ -3031,7 +3406,7 @@
       }
     },
     {
-      "description": "",
+      "description": "This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role=\"menuitem\"` and `tabIndex=\"0\"` to the components for accessibility.",
       "displayName": "MenuItem",
       "methods": []
     },
@@ -3052,178 +3427,175 @@
             {
               "name": "nextProps",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (\n    evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n  ) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Children to render */\n  children?: React.Node\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "open",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "onClose",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "CustomEventT"
-                              }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                "name": "intersection",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "open",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "onSelected",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "intersection",
-                                "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
-                                "elements": [
-                                  {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { index: number, item: HTMLElement } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ index: number, item: HTMLElement }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "index",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                },
-                                                {
-                                                  "key": "item",
-                                                  "value": {
-                                                    "name": "HTMLElement",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "name": "CustomEventT"
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
                                   }
-                                ]
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "onCancel",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "CustomEventT"
+                        {
+                          "key": "onSelected",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "index",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            },
+                                            {
+                                              "key": "item",
+                                              "value": {
+                                                "name": "HTMLElement",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<SelectedEventDetailT>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "anchorCorner",
-                      "value": {
-                        "name": "union",
-                        "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
-                        "elements": [
-                          {
-                            "name": "literal",
-                            "value": "'bottomEnd'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'bottomLeft'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'bottomRight'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'bottomStart'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'topEnd'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'topLeft'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'topRight'"
-                          },
-                          {
-                            "name": "literal",
-                            "value": "'topStart'"
+                        {
+                          "key": "onCancel",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
+                        },
+                        {
+                          "key": "anchorCorner",
+                          "value": {
+                            "name": "union",
+                            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                            "elements": [
+                              {
+                                "name": "literal",
+                                "value": "'bottomEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomStart'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topStart'"
+                              }
+                            ],
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "MenuPropsT"
               }
             }
@@ -3243,13 +3615,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -3265,55 +3643,39 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
+            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{ detail: { index: number, item: HTMLElement } }",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "index",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ index: number, item: HTMLElement }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "index",
-                                      "value": {
-                                        "name": "number",
-                                        "required": true
-                                      }
-                                    },
-                                    {
-                                      "key": "item",
-                                      "value": {
-                                        "name": "HTMLElement",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "number",
+                                "required": true
+                              }
+                            },
+                            {
+                              "key": "item",
+                              "value": {
+                                "name": "HTMLElement",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<SelectedEventDetailT>"
                   }
                 }
               ],
@@ -3329,13 +3691,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -3388,14 +3756,6 @@
           },
           "required": false,
           "description": "Manually position the menu to one of the corners."
-        },
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "Children to render"
         }
       }
     },
@@ -3459,13 +3819,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -3481,55 +3847,39 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(\n  evt: { detail: { index: number, item: HTMLElement } } & CustomEventT\n) => mixed",
+            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{ detail: { index: number, item: HTMLElement } } & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{ detail: { index: number, item: HTMLElement } }",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "index",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ index: number, item: HTMLElement }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "index",
-                                      "value": {
-                                        "name": "number",
-                                        "required": true
-                                      }
-                                    },
-                                    {
-                                      "key": "item",
-                                      "value": {
-                                        "name": "HTMLElement",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "number",
+                                "required": true
+                              }
+                            },
+                            {
+                              "key": "item",
+                              "value": {
+                                "name": "HTMLElement",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<SelectedEventDetailT>"
                   }
                 }
               ],
@@ -3545,13 +3895,19 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],
@@ -3606,6 +3962,18 @@
           "description": "Manually position the menu to one of the corners."
         }
       }
+    }
+  ],
+  "src/NotchedOutline/index.js": [
+    {
+      "description": "",
+      "displayName": "NotchedOutline",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "NotchedOutlineIdle",
+      "methods": []
     }
   ],
   "src/Provider/index.js": [
@@ -3885,6 +4253,14 @@
           },
           "required": false,
           "description": "Children to render"
+        }
+      },
+      "childContext": {
+        "RMWCOptions": {
+          "type": {
+            "name": "object"
+          },
+          "required": false
         }
       }
     }
@@ -4299,12 +4675,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
+                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
                     "signature": {
                       "properties": [
                         {
@@ -4371,6 +4747,13 @@
                           "key": "placeholder",
                           "value": {
                             "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "outlined",
+                          "value": {
+                            "name": "boolean",
                             "required": false
                           }
                         },
@@ -4459,12 +4842,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
+                    "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
                     "signature": {
                       "properties": [
                         {
@@ -4531,6 +4914,13 @@
                           "key": "placeholder",
                           "value": {
                             "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "outlined",
+                          "value": {
+                            "name": "boolean",
                             "required": false
                           }
                         },
@@ -4643,6 +5033,13 @@
           },
           "required": false,
           "description": "Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label."
+        },
+        "outlined": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Makes the select outlined."
         },
         "disabled": {
           "flowType": {
@@ -4833,212 +5230,189 @@
             {
               "name": "props",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "onChange",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "intersection",
-                                "raw": "{ detail: { value: number } } & CustomEventT",
-                                "elements": [
-                                  {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { value: number } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ value: number }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "value",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                "name": "intersection",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  value: number\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "name": "CustomEventT"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<{\n  value: number\n}>"
                                   }
-                                ]
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "onInput",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "intersection",
-                                "raw": "{ detail: { value: number } } & CustomEventT",
-                                "elements": [
-                                  {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { value: number } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ value: number }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "value",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                        {
+                          "key": "onInput",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  value: number\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "name": "CustomEventT"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<{\n  value: number\n}>"
                                   }
-                                ]
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "value",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        {
+                          "key": "value",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "min",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "min",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "max",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "max",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "step",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "step",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "discrete",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "displayMarkers",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "disabled",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
+                        },
+                        {
+                          "key": "discrete",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "displayMarkers",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "SliderPropsT"
               }
             }
@@ -5149,212 +5523,189 @@
             {
               "name": "nextProps",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (evt: { detail: { value: number } } & CustomEventT) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "onChange",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "intersection",
-                                "raw": "{ detail: { value: number } } & CustomEventT",
-                                "elements": [
-                                  {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { value: number } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ value: number }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "value",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                "name": "intersection",
+                "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "onChange",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  value: number\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "name": "CustomEventT"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<{\n  value: number\n}>"
                                   }
-                                ]
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "onInput",
-                      "value": {
-                        "name": "signature",
-                        "type": "function",
-                        "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
-                        "signature": {
-                          "arguments": [
-                            {
-                              "name": "evt",
-                              "type": {
-                                "name": "intersection",
-                                "raw": "{ detail: { value: number } } & CustomEventT",
-                                "elements": [
-                                  {
-                                    "name": "signature",
-                                    "type": "object",
-                                    "raw": "{ detail: { value: number } }",
-                                    "signature": {
-                                      "properties": [
-                                        {
-                                          "key": "detail",
-                                          "value": {
-                                            "name": "signature",
-                                            "type": "object",
-                                            "raw": "{ value: number }",
-                                            "signature": {
-                                              "properties": [
-                                                {
-                                                  "key": "value",
-                                                  "value": {
-                                                    "name": "number",
-                                                    "required": true
-                                                  }
-                                                }
-                                              ]
-                                            },
-                                            "required": true
-                                          }
+                        {
+                          "key": "onInput",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  value: number\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "value",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
                                         }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "name": "CustomEventT"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<{\n  value: number\n}>"
                                   }
-                                ]
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
                               }
-                            }
-                          ],
-                          "return": {
-                            "name": "mixed"
+                            },
+                            "required": false
                           }
                         },
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "value",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        {
+                          "key": "value",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "min",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "min",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "max",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "max",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "step",
-                      "value": {
-                        "name": "union",
-                        "raw": "number | string",
-                        "elements": [
-                          {
-                            "name": "number"
-                          },
-                          {
-                            "name": "string"
+                        },
+                        {
+                          "key": "step",
+                          "value": {
+                            "name": "union",
+                            "raw": "number | string",
+                            "elements": [
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "discrete",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "displayMarkers",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "disabled",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
+                        },
+                        {
+                          "key": "discrete",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "displayMarkers",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "SliderPropsT"
               }
             }
@@ -5367,48 +5718,32 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
+            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{ detail: { value: number } } & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{ detail: { value: number } }",
+                        "raw": "{\n  value: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "value",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ value: number }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "value",
-                                      "value": {
-                                        "name": "number",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "number",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<{\n  value: number\n}>"
                   }
                 }
               ],
@@ -5424,48 +5759,32 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: { detail: { value: number } } & CustomEventT) => mixed",
+            "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{ detail: { value: number } } & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{ detail: { value: number } }",
+                        "raw": "{\n  value: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "value",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ value: number }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "value",
-                                      "value": {
-                                        "name": "number",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "number",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<{\n  value: number\n}>"
                   }
                 }
               ],
@@ -6125,12 +6444,12 @@
                 "elements": [
                   {
                     "name": "intersection",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                         "signature": {
                           "properties": [
                             {
@@ -6138,48 +6457,32 @@
                               "value": {
                                 "name": "signature",
                                 "type": "function",
-                                "raw": "(\n  evt: { detail: { activeTabIndex: number } } & CustomEventT\n) => mixed",
+                                "raw": "(evt: CustomEventT<TabBarEventDetailT>) => mixed",
                                 "signature": {
                                   "arguments": [
                                     {
                                       "name": "evt",
                                       "type": {
-                                        "name": "intersection",
-                                        "raw": "{ detail: { activeTabIndex: number } } & CustomEventT",
+                                        "name": "CustomEventT",
                                         "elements": [
                                           {
                                             "name": "signature",
                                             "type": "object",
-                                            "raw": "{ detail: { activeTabIndex: number } }",
+                                            "raw": "{\n    activeTabIndex: number;\n}",
                                             "signature": {
                                               "properties": [
                                                 {
-                                                  "key": "detail",
+                                                  "key": "activeTabIndex",
                                                   "value": {
-                                                    "name": "signature",
-                                                    "type": "object",
-                                                    "raw": "{ activeTabIndex: number }",
-                                                    "signature": {
-                                                      "properties": [
-                                                        {
-                                                          "key": "activeTabIndex",
-                                                          "value": {
-                                                            "name": "number",
-                                                            "required": true
-                                                          }
-                                                        }
-                                                      ]
-                                                    },
+                                                    "name": "number",
                                                     "required": true
                                                   }
                                                 }
                                               ]
                                             }
-                                          },
-                                          {
-                                            "name": "CustomEventT"
                                           }
-                                        ]
+                                        ],
+                                        "raw": "CustomEventT<TabBarEventDetailT>"
                                       }
                                     }
                                   ],
@@ -6317,12 +6620,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (\n    evt: { detail: { activeTabIndex: number } } & CustomEventT\n  ) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                     "signature": {
                       "properties": [
                         {
@@ -6330,48 +6633,32 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(\n  evt: { detail: { activeTabIndex: number } } & CustomEventT\n) => mixed",
+                            "raw": "(evt: CustomEventT<TabBarEventDetailT>) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "intersection",
-                                    "raw": "{ detail: { activeTabIndex: number } } & CustomEventT",
+                                    "name": "CustomEventT",
                                     "elements": [
                                       {
                                         "name": "signature",
                                         "type": "object",
-                                        "raw": "{ detail: { activeTabIndex: number } }",
+                                        "raw": "{\n    activeTabIndex: number;\n}",
                                         "signature": {
                                           "properties": [
                                             {
-                                              "key": "detail",
+                                              "key": "activeTabIndex",
                                               "value": {
-                                                "name": "signature",
-                                                "type": "object",
-                                                "raw": "{ activeTabIndex: number }",
-                                                "signature": {
-                                                  "properties": [
-                                                    {
-                                                      "key": "activeTabIndex",
-                                                      "value": {
-                                                        "name": "number",
-                                                        "required": true
-                                                      }
-                                                    }
-                                                  ]
-                                                },
+                                                "name": "number",
                                                 "required": true
                                               }
                                             }
                                           ]
                                         }
-                                      },
-                                      {
-                                        "name": "CustomEventT"
                                       }
-                                    ]
+                                    ],
+                                    "raw": "CustomEventT<TabBarEventDetailT>"
                                   }
                                 }
                               ],
@@ -6408,48 +6695,32 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(\n  evt: { detail: { activeTabIndex: number } } & CustomEventT\n) => mixed",
+            "raw": "(evt: CustomEventT<TabBarEventDetailT>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "intersection",
-                    "raw": "{ detail: { activeTabIndex: number } } & CustomEventT",
+                    "name": "CustomEventT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{ detail: { activeTabIndex: number } }",
+                        "raw": "{\n    activeTabIndex: number;\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "detail",
+                              "key": "activeTabIndex",
                               "value": {
-                                "name": "signature",
-                                "type": "object",
-                                "raw": "{ activeTabIndex: number }",
-                                "signature": {
-                                  "properties": [
-                                    {
-                                      "key": "activeTabIndex",
-                                      "value": {
-                                        "name": "number",
-                                        "required": true
-                                      }
-                                    }
-                                  ]
-                                },
+                                "name": "number",
                                 "required": true
                               }
                             }
                           ]
                         }
-                      },
-                      {
-                        "name": "CustomEventT"
                       }
-                    ]
+                    ],
+                    "raw": "CustomEventT<TabBarEventDetailT>"
                   }
                 }
               ],
@@ -6532,12 +6803,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** An ID for the DOM element */\n  id?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** An ID for the DOM element */\n  id?: string\n}",
+                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n}",
                     "signature": {
                       "properties": [
                         {
@@ -6657,7 +6928,7 @@
                           }
                         },
                         {
-                          "key": "id",
+                          "key": "type",
                           "value": {
                             "name": "string",
                             "required": false
@@ -6695,31 +6966,6 @@
     {
       "description": "",
       "displayName": "TextFieldTextarea",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "NotchedOutline",
-      "methods": [],
-      "props": {
-        "children": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "displayName": "NotchedOutlinePath",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "NotchedOutlineIdle",
       "methods": []
     },
     {
@@ -6771,12 +7017,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** An ID for the DOM element */\n  id?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** An ID for the DOM element */\n  id?: string\n}",
+                    "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n}",
                     "signature": {
                       "properties": [
                         {
@@ -6896,7 +7142,7 @@
                           }
                         },
                         {
-                          "key": "id",
+                          "key": "type",
                           "value": {
                             "name": "string",
                             "required": false
@@ -7033,12 +7279,12 @@
           "required": false,
           "description": "By default, props spread to the input. These props are for the component's root container."
         },
-        "id": {
+        "type": {
           "flowType": {
             "name": "string"
           },
           "required": false,
-          "description": "An ID for the DOM element"
+          "description": "The type of input field to render"
         }
       }
     }
@@ -7292,12 +7538,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n}",
+                    "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -7305,13 +7551,19 @@
                           "value": {
                             "name": "signature",
                             "type": "function",
-                            "raw": "(evt: CustomEventT) => mixed",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
                             "signature": {
                               "arguments": [
                                 {
                                   "name": "evt",
                                   "type": {
-                                    "name": "CustomEventT"
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
                                   }
                                 }
                               ],
@@ -7427,13 +7679,133 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(evt: CustomEventT) => mixed",
+            "raw": "(evt: CustomEventT<void>) => mixed",
             "signature": {
               "arguments": [
                 {
                   "name": "evt",
                   "type": {
-                    "name": "CustomEventT"
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Emits when the navigation icon is clicked."
+        },
+        "fixed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a fixed top app bar."
+        },
+        "prominent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a prominent top app bar."
+        },
+        "short": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar as a short top app bar."
+        },
+        "shortCollapsed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to always be collapsed."
+        },
+        "dense": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Styles the top app bar to be dense."
+        }
+      }
+    },
+    {
+      "description": "A simplified syntax for creating an AppBar.",
+      "displayName": "SimpleTopAppBar",
+      "methods": [],
+      "props": {
+        "title": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The title for the App Bar."
+        },
+        "actionItems": {
+          "flowType": {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "Object"
+              }
+            ],
+            "raw": "Object[]"
+          },
+          "required": false,
+          "description": "An array of props that will be used to create TopAppBarActionItems."
+        },
+        "navigationIcon": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "Props for the NavigationIcon, this is an instance of the Icon component."
+        },
+        "startContent": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Additional content to place in the start section."
+        },
+        "endContent": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Additional content to place in the end section."
+        },
+        "onNav": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
                   }
                 }
               ],

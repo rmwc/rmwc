@@ -1,5 +1,5 @@
 // @flow
-import type { CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
 import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
@@ -31,12 +31,14 @@ export const MenuItems = simpleTag({
  * Public
  ****************************************************************/
 
-/** This is just the ListItem component exported from the Menu module for convenience. */
-export const MenuItem: React.ComponentType<any> = (props: any) => (
-  <ListItem role="menuitem" tabIndex="0" {...props} />
-);
+/** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
+export class MenuItem extends React.Component<any> {
+  static displayName = 'MenuItem';
 
-MenuItem.displayName = 'MenuItem';
+  render() {
+    return <ListItem role="menuitem" tabIndex={0} {...this.props} />;
+  }
+}
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute. */
 export const MenuAnchor = simpleTag({
@@ -58,22 +60,23 @@ const ANCHOR_CORNER_MAP = {
 // prettier-ignore
 type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
+export type SelectedEventDetailT = {
+  index: number,
+  item: HTMLElement
+};
+
 export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
   /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
-  onClose?: (evt: CustomEventT) => mixed,
+  onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (
-    evt: { detail: { index: number, item: HTMLElement } } & CustomEventT
-  ) => mixed,
+  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
   /** Callback that fires when the menu is closed with nothing selected. */
-  onCancel?: (evt: CustomEventT) => mixed,
+  onCancel?: (evt: CustomEventT<void>) => mixed,
   /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT,
-  /** Children to render */
-  children?: React.Node
-};
+  anchorCorner?: AnchorT
+} & SimpleTagPropsT;
 
 /** A menu component */
 export class Menu extends withFoundation({
@@ -105,8 +108,11 @@ export class Menu extends withFoundation({
 
   syncWithProps(nextProps: MenuPropsT) {
     // open
-    syncFoundationProp(nextProps.open, this.open, () => {
-      this.open = !!nextProps.open;
+    // timeout corrects an issue the synchronicity of the events from MDCMenu
+    setTimeout(() => {
+      syncFoundationProp(nextProps.open, this.open, () => {
+        this.open = !!nextProps.open;
+      });
     });
 
     // anchorCorner
@@ -203,7 +209,7 @@ export class SimpleMenu extends React.Component<
     });
 
     const wrappedOnClose = evt => {
-      this.setState({ open: false });
+      this.setState({ open: open || false });
       if (onClose) {
         onClose(evt);
       }
