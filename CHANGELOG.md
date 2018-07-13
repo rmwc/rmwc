@@ -1,3 +1,13 @@
+#### 1.8.1 (2018-07-13)
+
+##### New Features
+
+* **ThemeProvider:**  Adds ThemeProvider based on comment from [#90](https://github.com/jamesmfriedman/rmwc/pull/90) ([ad035684](https://github.com/jamesmfriedman/rmwc/commit/ad035684d4a3a7b1f2ad1db4279d145b7c965c91))
+
+##### Bug Fixes
+
+* **TopAppBar:**  Corrects static title on SimpleTopAppBar. ([f4d04f77](https://github.com/jamesmfriedman/rmwc/commit/f4d04f773aa8e682a8ea6b63096fd1fae667e17f))
+
 #### 1.8.0 (2018-07-12)
 
 ##### Breaking Changes
