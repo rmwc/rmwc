@@ -7412,7 +7412,7 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors."
         }
       }
@@ -7426,103 +7426,12 @@
           "flowType": {
             "name": "signature",
             "type": "object",
-            "raw": "{ [key: ThemeOptionT]: string }",
+            "raw": "{ [key: string]: string }",
             "signature": {
               "properties": [
                 {
                   "key": {
-                    "name": "union",
-                    "raw": "'primary' | 'secondary' | 'background' | 'surface' | 'onPrimary' | 'onSecondary' | 'onSurface' | 'textPrimaryOnBackground' | 'textSecondaryOnBackground' | 'textHintOnBackground' | 'textDisabledOnBackground' | 'textIconOnBackground' | 'textPrimaryOnLight' | 'textSecondaryOnLight' | 'textHintOnLight' | 'textDisabledOnLight' | 'textIconOnLight' | 'textPrimaryOnDark' | 'textSecondaryOnDark' | 'textHintOnDark' | 'textDisabledOnDark' | 'textIconOnDark'",
-                    "elements": [
-                      {
-                        "name": "literal",
-                        "value": "'primary'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'secondary'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'background'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'surface'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'onPrimary'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'onSecondary'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'onSurface'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textPrimaryOnBackground'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textSecondaryOnBackground'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textHintOnBackground'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textDisabledOnBackground'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textIconOnBackground'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textPrimaryOnLight'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textSecondaryOnLight'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textHintOnLight'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textDisabledOnLight'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textIconOnLight'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textPrimaryOnDark'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textSecondaryOnDark'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textHintOnDark'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textDisabledOnDark'"
-                      },
-                      {
-                        "name": "literal",
-                        "value": "'textIconOnDark'"
-                      }
-                    ]
+                    "name": "string"
                   },
                   "value": {
                     "name": "string",
