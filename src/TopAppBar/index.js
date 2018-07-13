@@ -115,8 +115,8 @@ export type SimpleTopAppBarPropsT = {
   title?: React.Node,
   /** An array of props that will be used to create TopAppBarActionItems. */
   actionItems?: Object[],
-  /** Props for the NavigationIcon, this is an instance of the Icon component. */
-  navigationIcon?: Object,
+  /** Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions.*/
+  navigationIcon?: Object | boolean,
   /** Additional content to place in the start section. */
   startContent?: React.Node,
   /** Additional content to place in the end section. */
@@ -141,9 +141,12 @@ export class SimpleTopAppBar extends React.Component<SimpleTopAppBarPropsT> {
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             {!!navigationIcon && (
-              <TopAppBarNavigationIcon use="menu" {...navigationIcon} />
+              <TopAppBarNavigationIcon
+                use="menu"
+                {...(typeof navigationIcon === 'boolean' ? {} : navigationIcon)}
+              />
             )}
-            {!!title && <TopAppBarTitle>Title</TopAppBarTitle>}
+            {!!title && <TopAppBarTitle>{title}</TopAppBarTitle>}
             {startContent}
           </TopAppBarSection>
 

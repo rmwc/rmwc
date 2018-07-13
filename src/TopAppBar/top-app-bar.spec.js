@@ -8,7 +8,8 @@ import {
   TopAppBarNavigationIcon,
   TopAppBarActionItem,
   TopAppBarTitle,
-  TopAppBarFixedAdjust
+  TopAppBarFixedAdjust,
+  SimpleTopAppBar
 } from './';
 
 describe('TopAppBar', () => {
@@ -76,5 +77,29 @@ describe('TopAppBar', () => {
       </TopAppBar>
     );
     expect(el.html().includes('mdc-top-app-bar--short-collapsed')).toBe(true);
+  });
+
+  test('SimpleTopApPBar', () => {
+    const el = mount(
+      <SimpleTopAppBar
+        title="TestTitle"
+        navigationIcon
+        startContent="TestStartContent"
+        endContent="TestEndContent"
+        actionItems={[{ use: 'star_outline' }]}
+      />
+    );
+    // has title
+    expect(el.html().includes('TestTitle')).toBe(true);
+
+    // has the navigation icon
+    expect(el.html().includes('mdc-top-app-bar__navigation-icon')).toBe(true);
+
+    // has content
+    expect(el.html().includes('TestStartContent')).toBe(true);
+    expect(el.html().includes('TestEndContent')).toBe(true);
+
+    // has action item
+    expect(el.html().includes('star_outline')).toBe(true);
   });
 });
