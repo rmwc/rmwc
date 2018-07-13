@@ -214,6 +214,7 @@ export class SimpleMenu extends React.Component<
         onClose(evt);
       }
     };
+
     return (
       <MenuAnchor {...rootProps}>
         <Menu {...rest} onClose={wrappedOnClose} open={this.state.open}>

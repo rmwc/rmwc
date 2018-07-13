@@ -18,13 +18,21 @@ describe('Menu', () => {
   });
 
   it('SimpleMenu renders', () => {
-    mount(
-      <SimpleMenu handle={<button>Test</button>}>
+    let val = 0;
+
+    const el = mount(
+      <SimpleMenu handle={<button>Test</button>} open onClose={() => val++}>
         <MenuItem>Cookies</MenuItem>
         <MenuItem>Pizza</MenuItem>
         <MenuItem>Icecream</MenuItem>
       </SimpleMenu>
     );
+
+    el
+      .find(Menu)
+      .instance()
+      .foundation_.adapter_.notifyCancel();
+    expect(val).toBe(1);
   });
 
   it('can have custom classnames', () => {

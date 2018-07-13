@@ -95,8 +95,8 @@ export class IconButton extends withFoundation({
     const iconContent =
       this.isOn() && onContent ? onContent : offContent || use || children;
     const strategy = getIconStrategy(iconContent, 'auto', null);
-
-    if (['url', 'component'].indexOf(strategy || '') !== -1) {
+    const opts: mixed[] = ['url', 'component'];
+    if (opts.indexOf(strategy) !== -1) {
       return <Icon {...rest} use={iconContent} />;
     }
 

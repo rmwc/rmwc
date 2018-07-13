@@ -11,6 +11,22 @@ describe('', () => {
         label="Tweet it!"
       />
     );
+    mount(<IconButton use={<div />} label="Tweet it!" />);
+  });
+
+  it('handles prop changes', () => {
+    const el = mount(
+      <IconButton
+        onLabel="Remove from favorites"
+        onContent="favorite"
+        offLabel="Add to favorites"
+        offContent="favorite_border"
+        checked={false}
+      />
+    );
+    el.setProps({ checked: true }, () => {
+      expect(el.instance().on).toBe(true);
+    });
   });
 
   it('renders as toggle', () => {

@@ -196,7 +196,6 @@ export class Slider extends withFoundation({
       disabled,
       onChange,
       onInput,
-      className,
       children,
       apiRef,
       ...rest
