@@ -44,6 +44,7 @@
     "pretest": "node scripts/pretest.js",
     "test": "flow && npm run build:code && node scripts/test.js",
     "test:watch": "react-app-rewired test --env=jsdom",
+    "test:coverage": "react-app-rewired test --env=jsdom --coverage",
     "clean": "node scripts/clean.js",
     "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",

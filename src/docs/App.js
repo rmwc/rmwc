@@ -15,6 +15,7 @@ import {
 } from 'rmwc/TopAppBar';
 
 import { Theme } from 'rmwc/Theme';
+import { TabBar, Tab } from 'rmwc/Tabs';
 
 import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
@@ -31,6 +32,9 @@ import { Button } from 'rmwc/Button';
 
 import Submenu from './Submenu';
 import Home from './Home';
+
+const toCamel = str =>
+  str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -153,11 +157,19 @@ const ColorBlock = ({ color, size = 1.5 }) => (
 
 class ThemePicker extends React.Component {
   state = {
-    open: false
+    open: false,
+    activeTabIndex: 0
   };
+
+  componentDidUpdate() {
+    window.requestAnimationFrame(() =>
+      window.dispatchEvent(new Event('resize'))
+    );
+  }
 
   render() {
     const { selectedThemeName, onThemeClick } = this.props;
+    const selectedTheme = getTheme(selectedThemeName);
     return (
       <MenuAnchor>
         <Menu
@@ -199,7 +211,17 @@ class ThemePicker extends React.Component {
               </ListItem>
             );
           })}
-
+          <TabBar
+            onClick={evt => this.setState({ open: true })}
+            style={{ margin: '1rem auto -1rem auto' }}
+            activeTabIndex={this.state.activeTabIndex}
+            onChange={evt =>
+              this.setState({ activeTabIndex: evt.detail.activeTabIndex })
+            }
+          >
+            <Tab>ThemeProvider</Tab>
+            <Tab>CSS</Tab>
+          </TabBar>
           <ListItem
             onClick={evt => this.setState({ open: true })}
             ripple={false}
@@ -213,31 +235,83 @@ class ThemePicker extends React.Component {
               cursor: 'text'
             }}
           >
-            <div style={{ whiteSpace: 'normal' }}>
-              <b>Theme your App!</b>
-              <br />
-              Copy and paste these rules into your main css file, or a style tag
-              in your app and customize to your liking.<br />
-              <br />
-            </div>
-            <span style={{ color: '#690' }}>:root</span> {'{'}
-            {Object.entries(getTheme(selectedThemeName)).map(([t, val]) => (
-              <div
-                key={t}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center'
-                }}
-              >
-                <span>
-                  <span style={{ color: '#07a' }}>&nbsp;&nbsp;{t}:</span> {val};
-                </span>
+            {this.state.activeTabIndex === 0 ? (
+              <div>
+                <div style={{ whiteSpace: 'normal' }}>
+                  <b>Theme your App!</b>
+                  <br />
+                  Place this tag around the root of your App, or anywhere you
+                  want to apply a custom theme.<br />
+                  <br />
+                </div>
+                <span className="token keyword">import</span> {'{'}{' '}
+                ThemeProvider {'}'} <span className="token keyword">from</span>{' '}
+                <span className="token string">'rmwc/ThemeProvider';</span>
+                <br />
+                <br />
+                <span className="token punctuation">&lt;</span>
+                <span className="token tag">ThemeProvider </span>
+                <span className="token attr-name">options</span>={'{'}
+                {Object.entries(selectedTheme).map(([t, val], index, arr) => (
+                  <div
+                    key={t}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <span>
+                      <span style={{ color: '#07a' }}>
+                        &nbsp;&nbsp;{toCamel(t.split('--mdc-theme-')[1])}:
+                      </span>{' '}
+                      '{val}'{index < arr.length - 1 ? ',' : ''}
+                    </span>
 
-                <ColorBlock color={val} size="1" />
+                    <ColorBlock color={val} size="1" />
+                  </div>
+                ))}
+                {'}'}
+                <span className="token punctuation">&gt;</span>
+                <br />
+                &nbsp;&nbsp;<span className="token punctuation">&lt;</span>
+                <span className="token tag">App </span>
+                <span className="token punctuation">/&gt;</span>
+                <br />
+                <span className="token punctuation">&lt;/</span>
+                <span className="token tag">ThemeProvider </span>
+                <span className="token punctuation">&gt;</span>
               </div>
-            ))}
-            {'}'}
+            ) : (
+              <div>
+                <div style={{ whiteSpace: 'normal' }}>
+                  <b>Theme your App!</b>
+                  <br />
+                  Copy and paste these rules into your main css file, or a style
+                  tag in your app and customize to your liking.<br />
+                  <br />
+                </div>
+                <span style={{ color: '#690' }}>:root</span> {'{'}
+                {Object.entries(selectedTheme).map(([t, val]) => (
+                  <div
+                    key={t}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <span>
+                      <span style={{ color: '#07a' }}>&nbsp;&nbsp;{t}:</span>{' '}
+                      {val};
+                    </span>
+
+                    <ColorBlock color={val} size="1" />
+                  </div>
+                ))}
+                {'}'}
+              </div>
+            )}
           </ListItem>
           <div style={{ padding: '1rem' }}>
             <Button>Done</Button>

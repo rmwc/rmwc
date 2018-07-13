@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
+import { toDashCase } from './utils/to-dash-case';
 
 export type WithThemePropsT = {
   theme?: string | string[],
@@ -15,7 +16,7 @@ export const parseThemeOptions = (
 ): string[] => {
   if (theme) {
     const themeItems = Array.isArray(theme) ? theme : theme.split(' ');
-    return themeItems.map(v => `mdc-theme--${v}`);
+    return themeItems.map(v => `mdc-theme--${toDashCase(v)}`);
   }
   return [];
 };

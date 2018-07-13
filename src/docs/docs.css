@@ -395,13 +395,18 @@ ul li {
   padding: 1rem;
 }
 
-#page-theme .example [class*='mdc-theme--'] {
+#page-theme .example.render-only [class*='mdc-theme--'] {
   padding: 1rem;
   margin: 0.25rem;
   display: inline-block;
   width: 6rem;
   height: 6rem;
   vertical-align: top;
+  word-break: break-all;
+}
+
+#page-theme .example.render-with-code .run > * {
+  margin: 1rem;
 }
 
 #page-select-menus .example .mdc-select,

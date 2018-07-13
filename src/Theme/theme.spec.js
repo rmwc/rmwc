@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Theme } from './';
+import { Theme, ThemeProvider } from './';
 import themeOptions from './theme-options';
 
 describe('Theme', () => {
@@ -19,5 +19,15 @@ describe('Theme', () => {
       <Theme use="on-primary" className="my-custom-classname" />
     );
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+  });
+
+  test('ThemeProvider renders', () => {
+    themeOptions.map((theme, i) =>
+      mount(
+        <ThemeProvider options={{ primary: 'red' }}>
+          <div />
+        </ThemeProvider>
+      )
+    );
   });
 });
