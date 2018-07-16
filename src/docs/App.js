@@ -246,12 +246,12 @@ class ThemePicker extends React.Component {
                 </div>
                 <span className="token keyword">import</span> {'{'}{' '}
                 ThemeProvider {'}'} <span className="token keyword">from</span>{' '}
-                <span className="token string">'rmwc/ThemeProvider';</span>
+                <span className="token string">'rmwc/Theme';</span>
                 <br />
                 <br />
                 <span className="token punctuation">&lt;</span>
                 <span className="token tag">ThemeProvider </span>
-                <span className="token attr-name">options</span>={'{'}
+                <span className="token attr-name">options</span>={'{{'}
                 {Object.entries(selectedTheme).map(([t, val], index, arr) => (
                   <div
                     key={t}
@@ -271,7 +271,7 @@ class ThemePicker extends React.Component {
                     <ColorBlock color={val} size="1" />
                   </div>
                 ))}
-                {'}'}
+                {'}}'}
                 <span className="token punctuation">&gt;</span>
                 <br />
                 &nbsp;&nbsp;<span className="token punctuation">&lt;</span>
