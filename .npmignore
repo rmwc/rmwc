@@ -7,5 +7,7 @@ docs/
 public/
 scripts/
 jsconfig.json
+tsconfig.json
 .babelrc
 vendors
+react-versions
