@@ -1,3 +1,9 @@
+#### 1.8.2 (2018-07-16)
+
+##### Bug Fixes
+
+* **Build:**  ignoring test react-versions which was bloating published npm version ([2c08f022](https://github.com/jamesmfriedman/rmwc/commit/2c08f022a98ccd3a08eef517d316725572e97b85))
+
 #### 1.8.1 (2018-07-13)
 
 ##### New Features
