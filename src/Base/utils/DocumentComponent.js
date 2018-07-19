@@ -9,8 +9,30 @@ const findDocDef = name => {
   return flatDocs.find(v => v.displayName === name);
 };
 
-export const DocumentComponent = ({ displayName }) => {
-  const docs = findDocDef(displayName);
+/**
+ * Merges together docs from a handful of components
+ * This is a workaround for showing extension because the AST cant pick up definitions across files
+ */
+const getComposedDefs = names =>
+  names
+    .map(findDocDef)
+    .filter(Boolean)
+    .reduce((acc, def) => {
+      return {
+        ...def,
+        ...acc,
+        props:
+          def.props || acc.props
+            ? {
+              ...(def.props || {}),
+              ...(acc.props || {})
+            }
+            : null
+      };
+    }, {});
+
+export const DocumentComponent = ({ displayName, composes = [] }) => {
+  const docs = getComposedDefs([displayName, ...composes]);
 
   return (
     <div className="document-component">
