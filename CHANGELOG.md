@@ -1,3 +1,14 @@
+#### 1.8.3 (2018-07-19)
+
+##### Documentation Changes
+
+* **Composition:**  added the ability to show a components extended props (mainly for icons). Not implementing until the Icon component gets a makeover. ([9d57240b](https://github.com/jamesmfriedman/rmwc/commit/9d57240bcebc9e68de00906906ab12dbfd285461))
+
+##### Bug Fixes
+
+* **Switch:**  Corrects type issue with Switch component. ([f07df980](https://github.com/jamesmfriedman/rmwc/commit/f07df9801f6cf554021f11fa414754a856cfc952))
+* **Version:**  Corrects a potential issue with MCW versioning, making sure to only grab the most recent patch since minor versions in their code can be breaking. ([24af877e](https://github.com/jamesmfriedman/rmwc/commit/24af877e4441c1eb05f6d7f36721b12c11de1a37))
+
 #### 1.8.2 (2018-07-16)
 
 ##### Bug Fixes
