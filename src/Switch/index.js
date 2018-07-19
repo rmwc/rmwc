@@ -1,4 +1,6 @@
 // @flow
+import type { SimpleTagPropsT } from '../Base';
+
 import * as React from 'react';
 import FormField from '../FormField';
 import classNames from 'classnames';
@@ -19,7 +21,7 @@ export type SwitchPropsT = {
   rootProps?: any,
   /** Any children to render. */
   children?: React.Node
-};
+} & SimpleTagPropsT;
 
 export const SwitchRoot = simpleTag({
   displayName: 'SwitchRoot',
