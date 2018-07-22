@@ -8,6 +8,7 @@
 -   [Runtime Color Theming](#runtime-color-theming)
 -   [Dark Mode Support](#dark-mode)
 -   [SASS Customization](#sass-customization)
+-   [Theme and ThemeProvider](#theme-themeprovider)
 
 ```jsx renderOnly
 <div id="css" />
@@ -29,11 +30,11 @@ const MyComponent = (props) => (
 ```css
 /** in your CSS */
 .my-custom-className {
-	color: red;
+	  color: red;
 }
 
 .mdc-button {
-	font-weight: bold;
+	  font-weight: bold;
 }
 ```
 
@@ -58,7 +59,7 @@ const MyComponent = (props) => (
 ```css
 /** in your CSS */
 .myDrawerHeader :global(.mdc-drawer__header-content) {
-	color: red;
+	  color: red;
 }
 ```
 
@@ -77,7 +78,7 @@ import styled from "styled-components";
 import { Button } from "rmwc/Button";
 
 const StyledButton = styled(Button)`
-	// Your Styles Here.
+  // Your Styles Here.
 `;
 ```
 
@@ -92,14 +93,14 @@ import { Button } from "rmwc/Button";
 const StyledButton = styled(({ isFullWidth, ...otherProps }) => (
 	<Button {...otherProps} />
 ))`
-	${(props) =>
-		props.isFullWidth
-			? css`
-					// Styles for full width here
-			  `
-			: css`
-					// Styles for non full width here.
-			  `};
+  ${(props) =>
+	props.isFullWidth
+		? css`
+          // Styles for full width here
+        `
+		: css`
+          // Styles for non full width here.
+        `};
 `;
 ```
 
@@ -129,7 +130,7 @@ const StyledSelect = styled(({ label, ...otherProps }) => (
 		{...otherProps}
 	/>
 ))`
-	// Your Styles Here.
+  // Your Styles Here.
 `;
 ```
 
@@ -147,13 +148,13 @@ import { Select } from "rmwc/Select";
 const BaseSelect = styled(({ label, ...otherProps }) => (
 	<Select label={label} />
 ))`
-	// ...
+  // ...
 `;
 
 const SelectIconRow = styled(({ children, filter, ...otherProps }) => (
 	<div {...otherProps}>{children}</div>
 ))`
-	// ...
+  // ...
 `;
 
 export default {
@@ -162,8 +163,9 @@ export default {
 
 	SelectIcon: (props) => (
 		<SelectIconRow filter={props.filter} value={props.value}>
-			{props.children}
-			<TextFieldIcon use={props.icon} />
+			      {props.children}
+			      <TextFieldIcon use={props.icon} />
+
 		</SelectIconRow>
 	)
 };
@@ -173,7 +175,7 @@ You can then import this and use it like so:
 
 ```jsx
 <inputs.SelectIcon value={unit_type} icon="label">
-	<inputs.Select
+	  <inputs.Select
 		label="Type"
 		name="unit_type"
 		onChange={(event) => this.onChange(event, "unit_type")}
@@ -208,8 +210,8 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 /** in your main global CSS or style tag */
 /** Use your browser's css inspector and inspect the HTML element to see other variables to override. */
 :root {
-	--mdc-theme-primary: pink;
-	--mdc-theme-secondary: blue;
+	  --mdc-theme-primary: pink;
+	  --mdc-theme-secondary: blue;
 }
 ```
 
@@ -228,3 +230,11 @@ Earlier versions of `material-components-web` shipped with a built in Dark Mode 
 ## SASS customization
 
 Additional customization can be done through your own SASS build. This is a feature of the `material-components-web`, not RMWC. If you want your own custom SASS build, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+
+```jsx renderOnly
+<div id="theme-themeprovider" />
+```
+
+## Theme and ThemeProvider
+
+Build on MDC Theme, RMWC has two theming components for extra easy useage. See component page [Theme](/theme).
