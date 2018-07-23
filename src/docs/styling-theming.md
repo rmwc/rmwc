@@ -2,13 +2,13 @@
 
 > RMWC doesn't include any styles of its own, but there are multiple ways you can style and customize your components.
 
--   [Standard CSS](#css)
--   [CSS Modules](#css-modules)
--   [Styled Components](#styled-components)
--   [Runtime Color Theming](#runtime-color-theming)
--   [Dark Mode Support](#dark-mode)
--   [SASS Customization](#sass-customization)
--   [Theme and ThemeProvider](#theme-themeprovider)
+- [Standard CSS](#css)
+- [CSS Modules](#css-modules)
+- [Styled Components](#styled-components)
+- [Runtime Color Theming](#runtime-color-theming)
+- [Dark Mode Support](#dark-mode)
+- [SASS Customization](#sass-customization)
+- [Theme and ThemeProvider](#theme-themeprovider)
 
 ```jsx renderOnly
 <div id="css" />
@@ -22,19 +22,19 @@ All of the components have the `material-components-web` classNames on them and 
 /** in your JSX */
 import { Button } from 'rmwc/Button';
 
-const MyComponent = (props) => (
-	<Button className="my-custom-classname">Hello World</Button>
+const MyComponent = props => (
+  <Button className="my-custom-classname">Hello World</Button>
 );
 ```
 
 ```css
 /** in your CSS */
 .my-custom-className {
-	  color: red;
+    color: red;
 }
 
 .mdc-button {
-	  font-weight: bold;
+    font-weight: bold;
 }
 ```
 
@@ -51,15 +51,15 @@ Just add your className. If you need to target a node that is not directly expos
 import { DrawerHeader } from 'rmwc/Drawer';
 import styles from './my-style-sheet.css';
 
-const MyComponent = (props) => (
-	<DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
+const MyComponent = props => (
+  <DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
 );
 ```
 
 ```css
 /** in your CSS */
 .myDrawerHeader :global(.mdc-drawer__header-content) {
-	  color: red;
+    color: red;
 }
 ```
 
@@ -91,14 +91,14 @@ import styled, { css } from 'styled-components';
 import { Button } from 'rmwc/Button';
 
 const StyledButton = styled(({ isFullWidth, ...otherProps }) => (
-	<Button {...otherProps} />
+  <Button {...otherProps} />
 ))`
-  ${(props) =>
-	props.isFullWidth
-		? css`
+  ${props =>
+  props.isFullWidth
+    ? css`
           // Styles for full width here
         `
-		: css`
+    : css`
           // Styles for non full width here.
         `};
 `;
@@ -121,14 +121,12 @@ import styled from 'styled-components';
 import { Select } from 'rmwc/Select';
 
 const StyledSelect = styled(({ label, ...otherProps }) => (
-	<Select
-		cssOnly={window.matchMedia('(max-width: 767px)').matches}
-		label={window.matchMedia('(min-width: 768px)').matches ? label : ''}
-		placeholder={
-			window.matchMedia('(max-width: 767px)').matches ? label : ''
-		}
-		{...otherProps}
-	/>
+  <Select
+    cssOnly={window.matchMedia('(max-width: 767px)').matches}
+    label={window.matchMedia('(min-width: 768px)').matches ? label : ''}
+    placeholder={window.matchMedia('(max-width: 767px)').matches ? label : ''}
+    {...otherProps}
+  />
 ))`
   // Your Styles Here.
 `;
@@ -146,27 +144,27 @@ import { TextFieldIcon } from 'rmwc/TextField';
 import { Select } from 'rmwc/Select';
 
 const BaseSelect = styled(({ label, ...otherProps }) => (
-	<Select label={label} />
+  <Select label={label} />
 ))`
   // ...
 `;
 
 const SelectIconRow = styled(({ children, filter, ...otherProps }) => (
-	<div {...otherProps}>{children}</div>
+  <div {...otherProps}>{children}</div>
 ))`
   // ...
 `;
 
 export default {
-	Select: BaseSelect,
-	SelectIconRow,
+  Select: BaseSelect,
+  SelectIconRow,
 
-	SelectIcon: (props) => (
-		<SelectIconRow filter={props.filter} value={props.value}>
-			      {props.children}
-			      <TextFieldIcon use={props.icon} />
-		</SelectIconRow>
-	)
+  SelectIcon: props => (
+    <SelectIconRow filter={props.filter} value={props.value}>
+            {props.children}
+            <TextFieldIcon use={props.icon} />
+    </SelectIconRow>
+  )
 };
 ```
 
@@ -174,26 +172,26 @@ You can then import this and use it like so:
 
 ```jsx
 <inputs.SelectIcon value={unit_type} icon="label">
-	  <inputs.Select
-		label="Type"
-		name="unit_type"
-		onChange={(event) => this.onChange(event, 'unit_type')}
-		options={[
-			{
-				label: 'Solid',
-				value: 'solid'
-			},
-			{
-				label: 'Liquid',
-				value: 'liquid'
-			},
-			{
-				label: 'Unit',
-				value: 'unit'
-			}
-		]}
-		value={unit_type}
-	/>
+    <inputs.Select
+    label="Type"
+    name="unit_type"
+    onChange={event => this.onChange(event, 'unit_type')}
+    options={[
+      {
+        label: 'Solid',
+        value: 'solid'
+      },
+      {
+        label: 'Liquid',
+        value: 'liquid'
+      },
+      {
+        label: 'Unit',
+        value: 'unit'
+      }
+    ]}
+    value={unit_type}
+  />
 </inputs.SelectIcon>
 ```
 
@@ -209,8 +207,8 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 /** in your main global CSS or style tag */
 /** Use your browser's css inspector and inspect the HTML element to see other variables to override. */
 :root {
-	  --mdc-theme-primary: pink;
-	  --mdc-theme-secondary: blue;
+    --mdc-theme-primary: pink;
+    --mdc-theme-secondary: blue;
 }
 ```
 
