@@ -20,7 +20,7 @@ All of the components have the `material-components-web` classNames on them and 
 
 ```jsx
 /** in your JSX */
-import { Button } from "rmwc/Button";
+import { Button } from 'rmwc/Button';
 
 const MyComponent = (props) => (
 	<Button className="my-custom-classname">Hello World</Button>
@@ -48,8 +48,8 @@ Just add your className. If you need to target a node that is not directly expos
 
 ```jsx
 /** in your JSX */
-import { DrawerHeader } from "rmwc/Drawer";
-import styles from "./my-style-sheet.css";
+import { DrawerHeader } from 'rmwc/Drawer';
+import styles from './my-style-sheet.css';
 
 const MyComponent = (props) => (
 	<DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
@@ -74,8 +74,8 @@ const MyComponent = (props) => (
 Using RMWC with `styled-components` is a breeze. For most use cases the following code works well.
 
 ```jsx
-import styled from "styled-components";
-import { Button } from "rmwc/Button";
+import styled from 'styled-components';
+import { Button } from 'rmwc/Button';
 
 const StyledButton = styled(Button)`
   // Your Styles Here.
@@ -87,8 +87,8 @@ const StyledButton = styled(Button)`
 You will eventually want some condition styles based on props passed into the component.
 
 ```jsx
-import styled, { css } from "styled-components";
-import { Button } from "rmwc/Button";
+import styled, { css } from 'styled-components';
+import { Button } from 'rmwc/Button';
 
 const StyledButton = styled(({ isFullWidth, ...otherProps }) => (
 	<Button {...otherProps} />
@@ -117,15 +117,15 @@ If you pass an invalid prop to a dom node, in this case `isFullWidth`, React wil
 You can take this to the next level with `Select` with the following code.
 
 ```jsx
-import styled from "styled-components";
-import { Select } from "rmwc/Select";
+import styled from 'styled-components';
+import { Select } from 'rmwc/Select';
 
 const StyledSelect = styled(({ label, ...otherProps }) => (
 	<Select
-		cssOnly={window.matchMedia("(max-width: 767px)").matches}
-		label={window.matchMedia("(min-width: 768px)").matches ? label : ""}
+		cssOnly={window.matchMedia('(max-width: 767px)').matches}
+		label={window.matchMedia('(min-width: 768px)').matches ? label : ''}
 		placeholder={
-			window.matchMedia("(max-width: 767px)").matches ? label : ""
+			window.matchMedia('(max-width: 767px)').matches ? label : ''
 		}
 		{...otherProps}
 	/>
@@ -141,9 +141,9 @@ Here we are toggling the use of `cssOnly`, `label`, and `placeholder` with a js 
 Lets say you want an icon in `Select` just like you can have it on `TextField`.
 
 ```jsx
-import styled, { css } from "styled-components";
-import { TextFieldIcon } from "rmwc/TextField";
-import { Select } from "rmwc/Select";
+import styled, { css } from 'styled-components';
+import { TextFieldIcon } from 'rmwc/TextField';
+import { Select } from 'rmwc/Select';
 
 const BaseSelect = styled(({ label, ...otherProps }) => (
 	<Select label={label} />
@@ -165,7 +165,6 @@ export default {
 		<SelectIconRow filter={props.filter} value={props.value}>
 			      {props.children}
 			      <TextFieldIcon use={props.icon} />
-
 		</SelectIconRow>
 	)
 };
@@ -178,19 +177,19 @@ You can then import this and use it like so:
 	  <inputs.Select
 		label="Type"
 		name="unit_type"
-		onChange={(event) => this.onChange(event, "unit_type")}
+		onChange={(event) => this.onChange(event, 'unit_type')}
 		options={[
 			{
-				label: "Solid",
-				value: "solid"
+				label: 'Solid',
+				value: 'solid'
 			},
 			{
-				label: "Liquid",
-				value: "liquid"
+				label: 'Liquid',
+				value: 'liquid'
 			},
 			{
-				label: "Unit",
-				value: "unit"
+				label: 'Unit',
+				value: 'unit'
 			}
 		]}
 		value={unit_type}
