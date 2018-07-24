@@ -1,5 +1,5 @@
 import InstallationDocs from './installation.md';
-import StylingDocs from './styling.md';
+import StylingThemingDocs from './styling-theming.md';
 import UsageDocs from './usage.md';
 import MethodologyDocs from './methodology.md';
 import ProviderDocs from '../Provider/provider.md';
@@ -49,9 +49,9 @@ export const menuContent = [
         component: UsageDocs
       },
       {
-        label: 'Styling',
-        url: `/styling`,
-        component: StylingDocs
+        label: 'Styling and Theming',
+        url: `/styling-theming`,
+        component: StylingThemingDocs
       },
       {
         label: 'Project Methodology',
