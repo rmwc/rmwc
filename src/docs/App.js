@@ -21,7 +21,7 @@ import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
 import {
   ListItem,
-  ListItemText,
+  ListItemPrimaryText,
   ListGroupSubheader,
   ListItemGraphic,
   ListItemMeta
@@ -98,9 +98,7 @@ const MainMenuItem = ({ url, label }) => {
         window.location.pathname.split('/').pop() === url.split('/').pop()
       }
     >
-      <Link to={url}>
-        <ListItemText>{label}</ListItemText>
-      </Link>
+      <Link to={url}>{label}</Link>
     </ListItem>
   );
 };
@@ -201,7 +199,7 @@ class ThemePicker extends React.Component {
                 <ListItemGraphic
                   use={themeName === selectedThemeName ? 'check' : ''}
                 />
-                <ListItemText>{themeName}</ListItemText>
+                <ListItemPrimaryText>{themeName}</ListItemPrimaryText>
                 <ListItemMeta basename="" tag="span">
                   <ColorBlock color={theme['--mdc-theme-primary']} />
                   <ColorBlock color={theme['--mdc-theme-secondary']} />

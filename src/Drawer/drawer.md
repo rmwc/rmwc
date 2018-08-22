@@ -20,7 +20,7 @@ import {
 import {
   List,
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
 <Drawer permanent>
@@ -29,13 +29,13 @@ import {
   </DrawerHeader>
   <DrawerContent>
     <ListItem>
-      <ListItemText>Cookies</ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Pizza</ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Icecream</ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
     </ListItem>
   </DrawerContent>
 </Drawer>
@@ -57,7 +57,7 @@ import {
 
 import {
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
@@ -69,13 +69,13 @@ import { Button } from 'rmwc/Button';
   </DrawerHeader>
   <DrawerContent>
    <ListItem>
-      <ListItemText>Cookies</ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Pizza</ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Icecream</ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
     </ListItem>
   </DrawerContent>
 </Drawer>
@@ -104,7 +104,7 @@ import {
 
 import {
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
@@ -119,13 +119,13 @@ import { Button } from 'rmwc/Button';
   </DrawerHeader>
   <DrawerContent>
     <ListItem>
-      <ListItemText>Cookies</ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Pizza</ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
     </ListItem>
     <ListItem>
-      <ListItemText>Icecream</ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
     </ListItem>
   </DrawerContent>
 </Drawer>

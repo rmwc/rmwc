@@ -36,7 +36,7 @@ import {
   SimpleChip
 } from 'rmwc/Chip';
 
-<ChipSet>
+<ChipSet choice>
   <SimpleChip
     checkmark
     selected

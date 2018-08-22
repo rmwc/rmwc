@@ -11,11 +11,11 @@ describe('simpleTag', () => {
   it('Tag can be another component', () => {
     const Link = ({ to, ...rest }) => <a href="#" {...rest} />;
     const ListItemGraphic = 'div';
-    const ListItemText = 'div';
+    const ListItemPrimaryText = 'div';
     mount(
       <ListItem tag={Link} to="/">
         <ListItemGraphic>home</ListItemGraphic>
-        <ListItemText>Home</ListItemText>
+        <ListItemPrimaryText>Home</ListItemPrimaryText>
       </ListItem>
     );
   });

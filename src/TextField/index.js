@@ -3,6 +3,7 @@ import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
 import * as React from 'react';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
+
 import {
   simpleTag,
   withFoundation,

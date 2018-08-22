@@ -63,11 +63,18 @@ export class ListItem extends React.Component<ListItemPropsT> {
   }
 }
 
-/** Text for the ListItem */
+/** Text Wrapper for the ListItem */
 export const ListItemText = simpleTag({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: 'mdc-list-item__text'
+});
+
+/** Primary Text for the ListItem */
+export const ListItemPrimaryText = simpleTag({
+  displayName: 'ListItemPrimaryText',
+  tag: 'span',
+  classNames: 'mdc-list-item__primary-text'
 });
 
 /** Secondary text for the ListItem */
@@ -164,18 +171,34 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   meta,
   children,
   ...rest
-}: SimpleListItemPropsT) => (
-  <ListItem {...rest}>
-    {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
-    <ListItemText>
-      {text}
-      {secondaryText !== undefined && (
-        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+}: SimpleListItemPropsT) => {
+  const primaryTextToRender =
+    text && secondaryText !== undefined ? (
+      <ListItemPrimaryText>{text}</ListItemPrimaryText>
+    ) : (
+      text || null
+    );
+
+  const secondaryTextToRender =
+    secondaryText !== undefined ? (
+      <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+    ) : null;
+
+  return (
+    <ListItem {...rest}>
+      {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
+      {secondaryTextToRender !== null ? (
+        <ListItemText>
+          {primaryTextToRender}
+          {secondaryTextToRender}
+        </ListItemText>
+      ) : (
+        primaryTextToRender
       )}
-    </ListItemText>
-    {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
-    {children}
-  </ListItem>
-);
+      {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
+      {children}
+    </ListItem>
+  );
+};
 
 SimpleListItem.displayName = 'SimpleListItem';

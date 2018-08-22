@@ -1,6 +1,6 @@
 # Lists
 
-> Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+> Lists are continuous, vertical indexes of text or images.
 
 import from **rmwc/List**  
 [https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
@@ -12,31 +12,13 @@ ListItems can be verbose to import and render. A non-standard 'SimpleListItem' h
 ```jsx render
 import {
   List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryText,
-  ListItemGraphic,
-  ListItemMeta
+  ListItem
 } from 'rmwc/List';
 
 <List>
-  <ListItem>
-    <ListItemGraphic>star_border</ListItemGraphic>
-    <ListItemText>Cookies</ListItemText>
-    <ListItemMeta>info</ListItemMeta>
-  </ListItem>
-
-  <ListItem>
-    <ListItemGraphic>favorite_border</ListItemGraphic>
-    <ListItemText>Pizza</ListItemText>
-    <ListItemMeta>info</ListItemMeta>
-  </ListItem>
-
-  <ListItem>
-    <ListItemGraphic>mood</ListItemGraphic>
-    <ListItemText>Icecream</ListItemText>
-    <ListItemMeta tag="span" basename="">Text!</ListItemMeta>
-  </ListItem>
+  <ListItem>Cookies</ListItem>
+  <ListItem>Pizza</ListItem>
+  <ListItem>Icecream</ListItem>
 </List>
 ```
 
@@ -55,12 +37,107 @@ import {
 </List>
 ```
 
+## Two Line
+When using the `twoLine` prop, you have to wrap the contents of the `ListItem` in `ListItemText`.
+
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemPrimaryText,
+  ListItemSecondaryText
+} from 'rmwc/List';
+
+<List twoLine>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+      <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
+      <ListItemSecondaryText>$1.99 a slice</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
+      <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+</List>
+```
+
+## Leading and Trailing Icons
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemGraphic,
+  ListItemMeta
+} from 'rmwc/List';
+
+<List>
+  <ListItem>
+    <ListItemGraphic use="favorite"/>
+    Leading
+  </ListItem>
+  <ListItem>
+    Trailing
+    <ListItemMeta use="star"/>
+  </ListItem>
+  <ListItem>
+    <ListItemGraphic use="wifi"/>
+    Leading and Trailing
+    <ListItemMeta use="info"/>
+  </ListItem>
+</List>
+```
+
+## Avatar List with Dividers
+```jsx render
+import {
+  List,
+  ListGroup,
+  ListDivider,
+  ListItem,
+  ListItemGraphic,
+  ListItemMeta,
+} from 'rmwc/List';
+
+<List twoLine avatarList>
+  <ListGroup>
+    <ListItem>
+      <ListItemGraphic use="person" style={{backgroundColor: 'lightgray'}} />
+      Bruce Wayne
+      <ListItemMeta use="info"/>
+    </ListItem>
+    <ListItem>
+      <ListItemGraphic use="person" style={{backgroundColor: 'coral'}} />
+      Clark Kent
+      <ListItemMeta use="info"/>
+    </ListItem>
+  </ListGroup>
+  <ListDivider />
+  <ListGroup>
+    <ListItem>
+      <ListItemGraphic use="person" style={{backgroundColor: 'lightblue'}} />
+      Diana Prince
+      <ListItemMeta use="info"/>
+    </ListItem>
+  </ListGroup>
+</List>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="List" />
 <DocumentComponent displayName="ListItem" />
-<DocumentComponent displayName="ListItemText" />
+<DocumentComponent displayName="ListItemPrimaryText" />
 <DocumentComponent displayName="ListItemSecondaryText" />
 <DocumentComponent displayName="ListItemGraphic" />
 <DocumentComponent displayName="ListItemMeta" />

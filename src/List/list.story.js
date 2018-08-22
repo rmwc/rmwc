@@ -5,7 +5,7 @@ import {
   List,
   ListItem,
   ListItemGraphic,
-  ListItemText,
+  ListItemPrimaryText,
   ListItemMeta
 } from './';
 
@@ -13,19 +13,19 @@ storiesOf('Lists', module).add('List', () => (
   <List>
     <ListItem ripple>
       <ListItemGraphic>star_border</ListItemGraphic>
-      <ListItemText>Cookies</ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
       <ListItemMeta>info</ListItemMeta>
     </ListItem>
 
     <ListItem ripple>
       <ListItemGraphic>favorite_border</ListItemGraphic>
-      <ListItemText>Pizza</ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
       <ListItemMeta>info</ListItemMeta>
     </ListItem>
 
     <ListItem ripple>
       <ListItemGraphic>mood</ListItemGraphic>
-      <ListItemText>Icecream</ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
       <ListItemMeta tag="span" basename="">
         $1.00
       </ListItemMeta>

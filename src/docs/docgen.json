@@ -3,7 +3,16 @@
     {
       "description": "",
       "displayName": "DocumentComponent",
-      "methods": []
+      "methods": [],
+      "props": {
+        "composes": {
+          "defaultValue": {
+            "value": "[]",
+            "computed": false
+          },
+          "required": false
+        }
+      }
     }
   ],
   "src/Button/index.js": [
@@ -3239,8 +3248,13 @@
       }
     },
     {
-      "description": "Text for the ListItem",
+      "description": "Text Wrapper for the ListItem",
       "displayName": "ListItemText",
+      "methods": []
+    },
+    {
+      "description": "Primary Text for the ListItem",
+      "displayName": "ListItemPrimaryText",
       "methods": []
     },
     {
@@ -6270,65 +6284,74 @@
             {
               "name": "props",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "id",
-                      "value": {
-                        "name": "string",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "disabled",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "checked",
-                      "value": {
-                        "name": "union",
-                        "raw": "boolean | string",
-                        "elements": [
-                          {
-                            "name": "boolean"
-                          },
-                          {
-                            "name": "string"
+                "name": "intersection",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "id",
+                          "value": {
+                            "name": "string",
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "label",
-                      "value": {
-                        "name": "string",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "rootProps",
-                      "value": {
-                        "name": "any",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "rootProps",
+                          "value": {
+                            "name": "any",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "SwitchPropsT"
               }
             }

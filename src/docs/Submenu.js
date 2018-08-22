@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ListItem, ListItemMeta, ListItemText } from 'rmwc/List';
+import { ListItem, ListItemMeta } from 'rmwc/List';
 import { Icon } from 'rmwc/Icon';
 
 export class Submenu extends React.Component {
@@ -18,7 +18,7 @@ export class Submenu extends React.Component {
     return (
       <div className="submenu">
         <ListItem onClick={() => this.setState({ isOpen: !this.state.isOpen })}>
-          <ListItemText>{label}</ListItemText>
+          <span>{label}</span>
           <ListItemMeta>
             <Icon
               className={classNames('submenu__icon', {

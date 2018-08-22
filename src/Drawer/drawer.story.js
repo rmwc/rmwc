@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Drawer, DrawerHeader, DrawerContent } from './';
-import { ListItem, ListItemText, ListItemGraphic } from '../List';
+import { ListItem, ListItemPrimaryText, ListItemGraphic } from '../List';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },
@@ -17,7 +17,7 @@ const ListItems = props =>
   menuItems.map((section, i) => (
     <ListItem key={i} onClick={props.onItemClick}>
       <ListItemGraphic>{section.icon}</ListItemGraphic>
-      <ListItemText>{section.displayName}</ListItemText>
+      <ListItemPrimaryText>{section.displayName}</ListItemPrimaryText>
     </ListItem>
   ));
 storiesOf('Drawers', module).add('Drawer', () => (
