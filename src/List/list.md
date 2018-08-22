@@ -132,6 +132,33 @@ import {
 </List>
 ```
 
+
+## Selectable
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemGraphic,
+} from 'rmwc/List';
+
+import { Checkbox } from 'rmwc/Checkbox';
+
+<List>
+  <ListItem onClick={() => this.setState({cookiesChecked: !this.state.cookiesChecked})}>
+    <ListItemGraphic use={<Checkbox checked={this.state.cookiesChecked}/>}/>
+    Cookies
+  </ListItem>
+  <ListItem onClick={() => this.setState({pizzaChecked: !this.state.pizzaChecked})}>
+    <ListItemGraphic use={<Checkbox checked={this.state.pizzaChecked}/>}/>
+    Pizza
+  </ListItem>
+  <ListItem onClick={() => this.setState({iceCreamChecked: !this.state.iceCreamChecked})}>
+    <ListItemGraphic use={<Checkbox checked={this.state.iceCreamChecked}/>}/>
+    Icecream
+  </ListItem>
+</List>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
