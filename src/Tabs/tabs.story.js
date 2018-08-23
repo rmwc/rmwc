@@ -2,10 +2,8 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { number } from '@storybook/addon-knobs';
 import { Tab, TabBar } from './';
 import { Button } from '../Button';
-import { Checkbox } from '../Checkbox';
 
 class TabBarStory extends React.Component {
   state = {
@@ -67,6 +65,13 @@ class TabBarStory extends React.Component {
           >
             Remove Last Tab
           </Button>{' '}
+          <input
+            type="number"
+            value={this.state.activeTabIndex}
+            onChange={evt => {
+              this.setState({ activeTabIndex: Number(evt.target.value || 0) });
+            }}
+          />
         </div>
         <TabBar
           activeTabIndex={this.state.activeTabIndex}

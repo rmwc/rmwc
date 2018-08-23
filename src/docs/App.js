@@ -213,8 +213,8 @@ class ThemePicker extends React.Component {
             onClick={evt => this.setState({ open: true })}
             style={{ margin: '1rem auto -1rem auto' }}
             activeTabIndex={this.state.activeTabIndex}
-            onChange={evt =>
-              this.setState({ activeTabIndex: evt.detail.activeTabIndex })
+            onActivated={evt =>
+              this.setState({ activeTabIndex: evt.detail.index })
             }
           >
             <Tab>ThemeProvider</Tab>

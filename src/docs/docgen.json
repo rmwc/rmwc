@@ -6376,7 +6376,17 @@
     },
     {
       "description": "",
-      "displayName": "SwitchBackground",
+      "displayName": "SwitchTrack",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "SwitchThumbUnderlay",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "SwitchThumb",
       "methods": []
     },
     {
@@ -6392,7 +6402,90 @@
     {
       "description": "",
       "displayName": "Switch",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "id",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "rootProps",
+                          "value": {
+                            "name": "any",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "SwitchPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "id": {
           "flowType": {
@@ -6467,16 +6560,16 @@
                 "elements": [
                   {
                     "name": "intersection",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "onChange",
+                              "key": "onActivated",
                               "value": {
                                 "name": "signature",
                                 "type": "function",
@@ -6491,11 +6584,11 @@
                                           {
                                             "name": "signature",
                                             "type": "object",
-                                            "raw": "{\n    activeTabIndex: number;\n}",
+                                            "raw": "{\n  index: number\n}",
                                             "signature": {
                                               "properties": [
                                                 {
-                                                  "key": "activeTabIndex",
+                                                  "key": "index",
                                                   "value": {
                                                     "name": "number",
                                                     "required": true
@@ -6557,77 +6650,17 @@
     },
     {
       "description": "",
-      "displayName": "TabBarIndicator",
+      "displayName": "TabScroller",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TabBarScrollerRoot",
+      "displayName": "TabScrollerScrollArea",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TabBarScrollerIndicatorBack",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{ back?: boolean, forward?: boolean }",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "back",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "forward",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ],
-          "returns": null
-        }
-      ]
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerIndicatorInner",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerScrollFrameEl",
-      "methods": []
-    },
-    {
-      "description": "A Tab component",
-      "displayName": "Tab",
-      "methods": []
-    },
-    {
-      "description": "A Tab icon. This is an instance of the Icon component.",
-      "displayName": "TabIcon",
-      "methods": []
-    },
-    {
-      "description": "Text that goes under a Tab icon",
-      "displayName": "TabIconText",
+      "displayName": "TabScrollerScrollContent",
       "methods": []
     },
     {
@@ -6643,16 +6676,16 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                     "signature": {
                       "properties": [
                         {
-                          "key": "onChange",
+                          "key": "onActivated",
                           "value": {
                             "name": "signature",
                             "type": "function",
@@ -6667,11 +6700,11 @@
                                       {
                                         "name": "signature",
                                         "type": "object",
-                                        "raw": "{\n    activeTabIndex: number;\n}",
+                                        "raw": "{\n  index: number\n}",
                                         "signature": {
                                           "properties": [
                                             {
-                                              "key": "activeTabIndex",
+                                              "key": "index",
                                               "value": {
                                                 "name": "number",
                                                 "required": true
@@ -6711,10 +6744,17 @@
             }
           ],
           "returns": null
+        },
+        {
+          "name": "getTabElements_",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
         }
       ],
       "props": {
-        "onChange": {
+        "onActivated": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -6729,11 +6769,11 @@
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n    activeTabIndex: number;\n}",
+                        "raw": "{\n  index: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "activeTabIndex",
+                              "key": "index",
                               "value": {
                                 "name": "number",
                                 "required": true
@@ -6765,41 +6805,92 @@
       }
     },
     {
-      "description": "The TabBar Scroll container",
-      "displayName": "TabBarScroller",
+      "description": "",
+      "displayName": "TabRoot",
       "methods": [
         {
-          "name": "initialize",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
-          "params": [],
+          "params": [
+            {
+              "name": "props",
+              "type": {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "label",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "icon",
+                      "value": {
+                        "name": "ReactNode",
+                        "raw": "React.Node",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "stacked",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "restrictIndicator",
+                      "value": {
+                        "name": "boolean",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "alias": "TabPropsT"
+              }
+            }
+          ],
           "returns": null
         }
-      ],
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "TabIndicator",
+      "methods": []
+    },
+    {
+      "description": "A Tab icon. This is an instance of the Icon component.",
+      "displayName": "TabIcon",
+      "methods": []
+    },
+    {
+      "description": "A Tab component",
+      "displayName": "Tab",
+      "methods": [],
       "props": {
-        "indicatorForward": {
+        "label": {
           "flowType": {
             "name": "ReactNode",
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
-          "defaultValue": {
-            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
-            "computed": false
-          }
-        },
-        "indicatorBack": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The back indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
-          "defaultValue": {
-            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
-            "computed": false
-          }
+          "description": "A label for the tab."
         },
         "children": {
           "flowType": {
@@ -6807,7 +6898,29 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Children to render"
+          "description": "The label for the tab, passed as children."
+        },
+        "icon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use for the tab."
+        },
+        "stacked": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Stacks the icon on top of the text label"
+        },
+        "restrictIndicator": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Restricts the indicator to the content"
         }
       }
     }
