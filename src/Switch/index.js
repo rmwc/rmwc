@@ -72,7 +72,8 @@ export const SwitchLabel = simpleTag({
 });
 
 export class Switch extends withFoundation({
-  constructor: MDCSwitch
+  constructor: MDCSwitch,
+  adapter: {}
 })<SwitchPropsT> {
   static displayName = 'Switch';
 
@@ -109,13 +110,14 @@ export class Switch extends withFoundation({
 
     const labelId = id || this.generatedId;
     const hasLabel = label.length || children;
+    const { root_ } = this.foundationRefs;
 
     const switchTag = (
       <SwitchRoot
         {...(!hasLabel ? rootProps : {})}
         disabled={rest.disabled}
         className={classNames(hasLabel || rootProps.className)}
-        elementRef={this.foundationRefs.root_}
+        elementRef={root_}
       >
         <SwitchTrack />
         <SwitchThumbUnderlay>

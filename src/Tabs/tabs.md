@@ -10,7 +10,7 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 
 <TabBar
   activeTabIndex={this.state.activeTabIndex}
-  onChange={evt => this.setState({'activeTabIndex': evt.detail.activeTabIndex})}
+  onActivated={evt => this.setState({'activeTabIndex': evt.detail.index})}
 >
   <Tab>Cookies</Tab>
   <Tab>Pizza</Tab>
@@ -19,40 +19,56 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 
 <TabBar
   activeTabIndex={this.state.activeTabIndex2}
-  onChange={evt => this.setState({'activeTabIndex2': evt.detail.activeTabIndex})}
+  onActivated={evt => this.setState({'activeTabIndex2': evt.detail.index})}
 >
-  <Tab><TabIcon>star_border</TabIcon></Tab>
-  <Tab><TabIcon>favorite_border</TabIcon></Tab>
-  <Tab><TabIcon>mood</TabIcon></Tab>
+  <Tab
+    icon="star_border"
+    label="Cookies"
+  />
+  <Tab
+    icon="favorite_border"
+    label="Pizza"
+  />
+  <Tab
+    icon="mood"
+    label="Icecream"
+  />
 </TabBar>
 
 <TabBar
   activeTabIndex={this.state.activeTabIndex3}
-  onChange={evt => this.setState({'activeTabIndex3': evt.detail.activeTabIndex})}
+  onActivated={evt => this.setState({'activeTabIndex3': evt.detail.index})}
 >
-  <Tab><TabIcon>star_border</TabIcon><TabIconText>Featured</TabIconText></Tab>
-  <Tab><TabIcon>favorite_border</TabIcon><TabIconText>Favorites</TabIconText></Tab>
-  <Tab><TabIcon>mood</TabIcon><TabIconText>Feedback</TabIconText></Tab>
+  <Tab icon="star_border" />
+  <Tab icon="favorite_border" />
+  <Tab icon="mood" />
 </TabBar>
 
-{/* TabBar wrapped in TabBarScroller */}
-<TabBarScroller>
-  <TabBar
-    activeTabIndex={this.state.activeTabIndex4}
-    onChange={evt => this.setState({'activeTabIndex4': evt.detail.activeTabIndex})}
-  >
-    <Tab>Cookies</Tab>
-    <Tab>Pizza</Tab>
-    <Tab>Icecream</Tab>
-    <Tab>Chocolate</Tab>
-    <Tab>Fishsticks</Tab>
-    <Tab>Ratatouille</Tab>
-    <Tab>Bread</Tab>
-    <Tab>Rolls</Tab>
-    <Tab>Sushi</Tab>
-    <Tab>Cupcake</Tab>
-  </TabBar>
-</TabBarScroller>
+<TabBar
+  activeTabIndex={this.state.activeTabIndex4}
+  onActivated={evt => this.setState({'activeTabIndex4': evt.detail.index})}
+>
+  <Tab stacked restrictIndicator icon="star_border" label="Cookies" />
+  <Tab stacked restrictIndicator icon="favorite_border" label="Pizza" />
+  <Tab stacked restrictIndicator icon="mood" label="Icecream" />
+</TabBar>
+
+{/* Tabs automatically scroll with lots of content. */}
+<TabBar
+  activeTabIndex={this.state.activeTabIndex5}
+  onActivated={evt => this.setState({'activeTabIndex5': evt.detail.index})}
+>
+  <Tab>Cookies</Tab>
+  <Tab>Pizza</Tab>
+  <Tab>Icecream</Tab>
+  <Tab>Chocolate</Tab>
+  <Tab>Fishsticks</Tab>
+  <Tab>Ratatouille</Tab>
+  <Tab>Bread</Tab>
+  <Tab>Rolls</Tab>
+  <Tab>Sushi</Tab>
+  <Tab>Cupcake</Tab>
+</TabBar>
 ```
 
 ```jsx renderOnly

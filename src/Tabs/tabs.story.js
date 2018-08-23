@@ -3,16 +3,16 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { number } from '@storybook/addon-knobs';
-import { Tab, TabBar, TabBarScroller } from './';
+import { Tab, TabBar } from './';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 
 class TabBarStory extends React.Component {
   state = {
     withScroller: false,
-    count: 0,
-    activeTabIndex: 1,
-    tabs: ['Cookies', 'Pizza', 'Icecream']
+    activeTabIndex: 0,
+    tabs: ['Cookies', 'Pizza', 'Icecream'],
+    icons: ['star', 'favorite', 'info']
   };
 
   onToggleWithScroller(evt) {
@@ -21,13 +21,12 @@ class TabBarStory extends React.Component {
   }
 
   onChange(evt) {
-    this.setState({ activeTabIndex: evt.detail.activeTabIndex });
-    action('activeTabIndex: ' + evt.detail.activeTabIndex)();
+    this.setState({ activeTabIndex: evt.detail.index });
+    action('index: ' + evt.detail.index)();
   }
   onChangeTabNames(evt) {
     const state = {
-      tabs: this.state.tabs.map((label, index) => index),
-      count: this.state.count + 1
+      tabs: this.state.tabs.map((label, index) => index)
     };
     this.setState(state);
     action('onChangeTabNames: ' + JSON.stringify(state))();
@@ -52,22 +51,6 @@ class TabBarStory extends React.Component {
   }
 
   render() {
-    const tabBar = (
-      <TabBar
-        count={this.state.count}
-        activeTabIndex={this.state.activeTabIndex}
-        onChange={evt => this.onChange(evt)}
-      >
-        {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
-      </TabBar>
-    );
-
-    const finalComponent = this.state.withScroller ? (
-      <TabBarScroller>{tabBar}</TabBarScroller>
-    ) : (
-      tabBar
-    );
-
     return (
       <div>
         <div>
@@ -84,52 +67,34 @@ class TabBarStory extends React.Component {
           >
             Remove Last Tab
           </Button>{' '}
-          <Checkbox
-            checked={this.state.withScroller}
-            onChange={evt => this.onToggleWithScroller(evt)}
-          >
-            with TabBarScroller
-          </Checkbox>
         </div>
-        {finalComponent}
+        <TabBar
+          activeTabIndex={this.state.activeTabIndex}
+          onActivated={evt => this.onChange(evt)}
+        >
+          {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
+        </TabBar>
+
+        <TabBar>
+          {this.state.tabs.map((label, index) => (
+            <Tab key={label} label={label} icon={this.state.icons[index]} />
+          ))}
+        </TabBar>
+
+        <TabBar>
+          {this.state.tabs.map((label, index) => (
+            <Tab
+              stacked
+              restrictIndicator
+              key={label}
+              label={label}
+              icon={this.state.icons[index]}
+            />
+          ))}
+        </TabBar>
       </div>
     );
   }
 }
 
-class TabBarScrollerStory extends React.Component {
-  state = {
-    activeTabIndex: 0
-  };
-
-  onChange(evt) {
-    this.setState({ activeTabIndex: evt.detail.activeTabIndex });
-    action('activeTabIndex: ' + evt.detail.activeTabIndex)();
-  }
-
-  render() {
-    return (
-      <TabBarScroller>
-        <TabBar
-          activeTabIndex={number('activeTabIndex', this.state.activeTabIndex)}
-          onChange={evt => this.onChange(evt)}
-        >
-          <Tab>Cookies</Tab>
-          <Tab>Pizza</Tab>
-          <Tab>Icecream</Tab>
-          <Tab>Chocolate</Tab>
-          <Tab>Fishsticks</Tab>
-          <Tab>Ratatouille</Tab>
-          <Tab>Bread</Tab>
-          <Tab>Rolls</Tab>
-          <Tab>Sushi</Tab>
-          <Tab>Cupcake</Tab>
-        </TabBar>
-      </TabBarScroller>
-    );
-  }
-}
-
-storiesOf('Tabs', module)
-  .add('TabBar', () => <TabBarStory />)
-  .add('TabBarScroller', () => <TabBarScrollerStory />);
+storiesOf('Tabs', module).add('TabBar', () => <TabBarStory />);
