@@ -20,12 +20,13 @@ export type RMWCProviderOptionsT = {
   /** Sets a default render function to be used when the iconStrategy is custom */
   iconRender?: (props: { content: React.Node, className: string }) => mixed,
   /** Children to render */
-  children?: React.Node
+  children: React.Node
 };
 
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
   buttonDefaultRipple: true,
+  children: undefined,
   listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
