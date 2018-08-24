@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { MenuAnchor, Menu, MenuItem, SimpleMenu } from './';
+import { MenuSurfaceAnchor, Menu, MenuItem, SimpleMenu } from './';
 
 describe('Menu', () => {
   it('renders', () => {
     mount(
-      <MenuAnchor>
+      <MenuSurfaceAnchor>
         <button>Test</button>
 
         <Menu open onClose={() => {}}>
@@ -13,7 +13,7 @@ describe('Menu', () => {
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
         </Menu>
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
     );
   });
 
@@ -31,12 +31,12 @@ describe('Menu', () => {
     el
       .find(Menu)
       .instance()
-      .foundation_.adapter_.notifyCancel();
+      .menuSurface_.foundation_.adapter_.notifyClose();
     expect(val).toBe(1);
   });
 
   it('can have custom classnames', () => {
-    [MenuAnchor, Menu, MenuItem].forEach(Component => {
+    [MenuSurfaceAnchor, Menu, MenuItem].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

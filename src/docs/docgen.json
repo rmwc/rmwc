@@ -3425,8 +3425,8 @@
       "methods": []
     },
     {
-      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute.",
-      "displayName": "MenuAnchor",
+      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute.",
+      "displayName": "MenuSurfaceAnchor",
       "methods": []
     },
     {
@@ -3442,12 +3442,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3534,34 +3534,6 @@
                           }
                         },
                         {
-                          "key": "onCancel",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<void>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "void"
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<void>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
                           "key": "anchorCorner",
                           "value": {
                             "name": "union",
@@ -3614,6 +3586,34 @@
               }
             }
           ],
+          "returns": null
+        },
+        {
+          "name": "onCloseHandler_",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "evt",
+              "type": {
+                "name": "CustomEventT",
+                "elements": [
+                  {
+                    "name": "void"
+                  }
+                ],
+                "raw": "CustomEventT<void>",
+                "alias": "CustomEventT"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
           "returns": null
         }
       ],
@@ -3701,34 +3701,6 @@
           "required": false,
           "description": "Callback that fires when a Menu item is selected."
         },
-        "onCancel": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: CustomEventT<void>) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "CustomEventT",
-                    "elements": [
-                      {
-                        "name": "void"
-                      }
-                    ],
-                    "raw": "CustomEventT<void>"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when the menu is closed with nothing selected."
-        },
         "anchorCorner": {
           "flowType": {
             "name": "union",
@@ -3774,7 +3746,7 @@
       }
     },
     {
-      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor",
+      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
       "displayName": "SimpleMenu",
       "methods": [
         {
@@ -3812,7 +3784,7 @@
             "name": "Object"
           },
           "required": false,
-          "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
+          "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
         },
         "children": {
           "flowType": {
@@ -3904,34 +3876,6 @@
           },
           "required": false,
           "description": "Callback that fires when a Menu item is selected."
-        },
-        "onCancel": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: CustomEventT<void>) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "CustomEventT",
-                    "elements": [
-                      {
-                        "name": "void"
-                      }
-                    ],
-                    "raw": "CustomEventT<void>"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when the menu is closed with nothing selected."
         },
         "anchorCorner": {
           "flowType": {
@@ -6743,13 +6687,6 @@
               }
             }
           ],
-          "returns": null
-        },
-        {
-          "name": "getTabElements_",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
           "returns": null
         }
       ],

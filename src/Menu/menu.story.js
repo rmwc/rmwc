@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
-import { Menu, MenuItem, MenuAnchor, SimpleMenu } from './';
+import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu } from './';
 import { Button } from '../Button';
 
 class MenuStory extends React.Component {
@@ -11,7 +11,9 @@ class MenuStory extends React.Component {
   };
   render() {
     return (
-      <MenuAnchor style={{ position: 'absolute', top: '24px', left: '24px' }}>
+      <MenuSurfaceAnchor
+        style={{ position: 'absolute', top: '24px', left: '24px' }}
+      >
         <Button
           raised
           onClick={evt => {
@@ -38,6 +40,7 @@ class MenuStory extends React.Component {
             'topStart'
           )}
           onClose={evt => {
+            console.log('Close');
             this.setState({ open: false });
           }}
         >
@@ -45,7 +48,7 @@ class MenuStory extends React.Component {
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
         </Menu>
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
     );
   }
 }

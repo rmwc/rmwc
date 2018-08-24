@@ -83,7 +83,7 @@ export class TabBar extends withFoundation({
         nextProps.activeTabIndex,
         this.foundation_ && this.foundation_.adapter_.getActiveTabIndex(),
         () => {
-          this.activateTab(nextProps.activeTabIndex);
+          this.foundation_ && this.activateTab(nextProps.activeTabIndex);
         }
       );
     });
@@ -136,13 +136,6 @@ export class TabBar extends withFoundation({
       this.tabList_ = this.getTabElements_().map(el => this.tabFactory_(el));
       this.syncWithProps(this.props);
     }
-  }
-
-  getTabElements_() {
-    const arr: any = [];
-    return arr.slice.call(
-      this.root_.querySelectorAll(MDCTabBarFoundation.strings.TAB_SELECTOR)
-    );
   }
 
   render() {

@@ -3,12 +3,12 @@
  */
 import * as React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { MenuAnchor, Menu, MenuItem, SimpleMenu } from './';
+import { MenuSurfaceAnchor, Menu, MenuItem, SimpleMenu } from './';
 
 describe('Menu', () => {
   it('renders', () => {
     mount(
-      <MenuAnchor>
+      <MenuSurfaceAnchor>
         <button>Test</button>
 
         <Menu open onClose={() => {}}>
@@ -16,7 +16,7 @@ describe('Menu', () => {
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
         </Menu>
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
     );
   });
 

@@ -27,7 +27,7 @@ import {
   ListItemMeta
 } from 'rmwc/List';
 
-import { Menu, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuSurfaceAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 import Submenu from './Submenu';
@@ -169,7 +169,7 @@ class ThemePicker extends React.Component {
     const { selectedThemeName, onThemeClick } = this.props;
     const selectedTheme = getTheme(selectedThemeName);
     return (
-      <MenuAnchor>
+      <MenuSurfaceAnchor>
         <Menu
           open={this.state.open}
           onCancel={() => this.setState({ open: false })}
@@ -320,7 +320,7 @@ class ThemePicker extends React.Component {
           theme="on-primary"
           use="color_lens"
         />
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
     );
   }
 }

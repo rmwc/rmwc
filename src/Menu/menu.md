@@ -10,10 +10,10 @@ import from **rmwc/Menu**
 You can compose a menu with the given components, and manually manage the open state.
 
 ```jsx render
-import { Menu, MenuItem, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuItem, MenuSurfaceAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
-<MenuAnchor>
+<MenuSurfaceAnchor>
   <Menu
     open={this.state.menuIsOpen}
     onClose={evt => this.setState({menuIsOpen: false})}
@@ -29,7 +29,7 @@ import { Button } from 'rmwc/Button';
   >
     Open Menu
   </Button>
-</MenuAnchor>
+</MenuSurfaceAnchor>
 ```
 
 ## Simplified usage
@@ -54,6 +54,6 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Menu" />
 <DocumentComponent displayName="MenuItem" />
-<DocumentComponent displayName="MenuAnchor" />
+<DocumentComponent displayName="MenuSurfaceAnchor" />
 <DocumentComponent displayName="SimpleMenu" />
 ```
