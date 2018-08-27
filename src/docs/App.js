@@ -21,13 +21,12 @@ import { Drawer, DrawerContent } from 'rmwc/Drawer';
 
 import {
   ListItem,
-  ListItemPrimaryText,
   ListGroupSubheader,
   ListItemGraphic,
   ListItemMeta
 } from 'rmwc/List';
 
-import { Menu, MenuSurfaceAnchor } from 'rmwc/Menu';
+import { MenuSurface, MenuSurfaceAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 import Submenu from './Submenu';
@@ -170,15 +169,19 @@ class ThemePicker extends React.Component {
     const selectedTheme = getTheme(selectedThemeName);
     return (
       <MenuSurfaceAnchor>
-        <Menu
+        <MenuSurface
+          style={{ maxWidth: '100vw', width: '400px' }}
           open={this.state.open}
-          onCancel={() => this.setState({ open: false })}
+          onClose={() => {
+            this.setState({ open: false });
+          }}
         >
           <ListGroupSubheader>Themes</ListGroupSubheader>
           {Object.keys(THEMES).map(themeName => {
             const theme = getTheme(themeName);
             return (
               <ListItem
+                style={{ cursor: 'pointer' }}
                 key={themeName}
                 role="menuitem"
                 tabIndex="0"
@@ -199,7 +202,7 @@ class ThemePicker extends React.Component {
                 <ListItemGraphic
                   use={themeName === selectedThemeName ? 'check' : ''}
                 />
-                <ListItemPrimaryText>{themeName}</ListItemPrimaryText>
+                {themeName}
                 <ListItemMeta basename="" tag="span">
                   <ColorBlock color={theme['--mdc-theme-primary']} />
                   <ColorBlock color={theme['--mdc-theme-secondary']} />
@@ -314,7 +317,7 @@ class ThemePicker extends React.Component {
           <div style={{ padding: '1rem' }}>
             <Button>Done</Button>
           </div>
-        </Menu>
+        </MenuSurface>
         <TopAppBarActionItem
           onClick={() => this.setState({ open: !this.state.open })}
           theme="on-primary"

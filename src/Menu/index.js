@@ -2,13 +2,30 @@
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
-import { MDCMenu, MDCMenuFoundation } from '@material/menu/dist/mdc.menu';
-import { MDCMenuSurfaceFoundation } from '@material/menu-surface/dist/mdc.menuSurface';
+import { MDCMenu } from '@material/menu/dist/mdc.menu';
+import {
+  MDCMenuSurface,
+  MDCMenuSurfaceFoundation
+} from '@material/menu-surface/dist/mdc.menuSurface';
 import { List, ListItem } from '../List';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
+const ANCHOR_CORNER_MAP = {
+  bottomEnd: 'BOTTOM_END',
+  bottomLeft: 'BOTTOM_LEFT',
+  bottomRight: 'BOTTOM_RIGHT',
+  bottomStart: 'BOTTOM_START',
+  topEnd: 'TOP_END',
+  topLeft: 'TOP_LEFT',
+  topRight: 'TOP_RIGHT',
+  topStart: 'TOP_START'
+};
+
+// prettier-ignore
+type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
+
 /****************************************************************
- * Private
+ * Menu
  ****************************************************************/
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
@@ -28,10 +45,6 @@ export const MenuItems = simpleTag({
   }
 });
 
-/****************************************************************
- * Public
- ****************************************************************/
-
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export class MenuItem extends React.Component<any> {
   static displayName = 'MenuItem';
@@ -40,26 +53,6 @@ export class MenuItem extends React.Component<any> {
     return <ListItem role="menuitem" tabIndex={0} {...this.props} />;
   }
 }
-
-/** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
-export const MenuSurfaceAnchor = simpleTag({
-  displayName: 'MenuSurfaceAnchor',
-  classNames: 'mdc-menu-surface--anchor'
-});
-
-const ANCHOR_CORNER_MAP = {
-  bottomEnd: 'BOTTOM_END',
-  bottomLeft: 'BOTTOM_LEFT',
-  bottomRight: 'BOTTOM_RIGHT',
-  bottomStart: 'BOTTOM_START',
-  topEnd: 'TOP_END',
-  topLeft: 'TOP_LEFT',
-  topRight: 'TOP_RIGHT',
-  topStart: 'TOP_START'
-};
-
-// prettier-ignore
-type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
 
 export type SelectedEventDetailT = {
   index: number,
@@ -96,8 +89,6 @@ export class Menu extends withFoundation({
 
   syncWithProps(nextProps: MenuPropsT) {
     // open
-    // timeout corrects an issue the synchronicity of the events from MDCMenu
-
     syncFoundationProp(nextProps.open, this.open, () => {
       this.open = !!nextProps.open;
     });
@@ -128,6 +119,11 @@ export class Menu extends withFoundation({
 
   onCloseHandler_(evt: CustomEventT<void>) {
     this.props.onClose && this.props.onClose(evt);
+
+    // little hack. We need to broadcast an CustomEvent from this component
+    // in order to keep MDC and React in sync.
+    // Otherwise, the internal state of the component can change and not be reflected in React
+    this.emit('RESYNC', {});
   }
 
   destroy() {
@@ -158,6 +154,119 @@ export class Menu extends withFoundation({
   }
 }
 
+/****************************************************************
+ * MenuSurface
+ ****************************************************************/
+type MenuSurfacePropsT = {
+  /** Opens the menu. */
+  open?: boolean,
+  /** Make the menu position fixed. */
+  fixed?: boolean,
+  /** Manually position the menu to one of the corners. */
+  anchorCorner?: AnchorT,
+  /** Callback for when the menu is opened. */
+  onOpen?: (evt: CustomEventT<void>) => mixed,
+  /** Callback for when the menu is closed. */
+  onClose?: (evt: CustomEventT<void>) => mixed,
+  /** Children to render. */
+  children?: React.Node
+} & SimpleTagPropsT;
+
+export const MenuSurfaceRoot = simpleTag({
+  displayName: 'MenuSurfaceRoot',
+  classNames: (props: MenuSurfacePropsT) => [
+    'mdc-menu-surface',
+    {
+      'mdc-menu-surface--fixed': props.fixed
+    }
+  ],
+  consumeProps: ['fixed']
+});
+
+export class MenuSurface extends withFoundation({
+  constructor: MDCMenuSurface,
+  adapter: {
+    notifyClose: function() {
+      const evt = this.emit(
+        MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
+        {},
+        undefined,
+        false
+      );
+
+      this.props.onClose && this.props.onClose(evt);
+      this._safeSyncWithProps(this.props);
+    },
+    notifyOpen: function() {
+      const evt = this.emit(
+        MDCMenuSurfaceFoundation.strings.OPENED_EVENT,
+        {},
+        undefined,
+        false
+      );
+
+      this.props.onOpen && this.props.onOpen(evt);
+      this._safeSyncWithProps(this.props);
+    }
+  }
+})<MenuSurfacePropsT> {
+  open: boolean;
+  foundation_: any;
+  setAnchorCorner: Function;
+
+  syncWithProps(nextProps: MenuSurfacePropsT) {
+    //open
+    syncFoundationProp(nextProps.open, this.open, () => {
+      this.open = !!nextProps.open;
+    });
+
+    // anchorCorner
+    if (
+      nextProps.anchorCorner !== undefined &&
+      MDCMenuSurfaceFoundation.Corner[
+        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+      ] !== this.foundation_.anchorCorner_
+    ) {
+      this.setAnchorCorner(
+        MDCMenuSurfaceFoundation.Corner[
+          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+        ]
+      );
+    }
+  }
+
+  render() {
+    const {
+      children,
+      open,
+      anchorCorner,
+      onOpen,
+      onClose,
+      ...rest
+    } = this.props;
+
+    const { root_ } = this.foundationRefs;
+    return (
+      <MenuSurfaceRoot {...rest} elementRef={root_}>
+        {children}
+      </MenuSurfaceRoot>
+    );
+  }
+}
+
+/****************************************************************
+ * MenuSurfaceAnchor
+ ****************************************************************/
+
+/** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
+export const MenuSurfaceAnchor = simpleTag({
+  displayName: 'MenuSurfaceAnchor',
+  classNames: 'mdc-menu-surface--anchor'
+});
+
+/****************************************************************
+ * Simple Menu
+ ****************************************************************/
 export type SimpleMenuPropsT = {
   /** An element that will open the menu when clicked  */
   handle: React.Element<any>,
@@ -171,66 +280,85 @@ export type SimpleMenuStateT = {
   open: boolean
 };
 
+const simpleMenuFactory = (
+  MenuComponent
+): React.ComponentType<SimpleMenuPropsT> =>
+  class extends React.Component<SimpleMenuPropsT, SimpleMenuStateT> {
+    static displayName = 'SimpleMenu';
+
+    componentWillMount() {
+      this.syncWithOpenProp(this.props.open);
+    }
+
+    componentWillReceiveProps(nextProps: SimpleMenuPropsT) {
+      this.syncWithOpenProp(nextProps.open);
+    }
+
+    state = {
+      open: false
+    };
+
+    syncWithOpenProp(open?: boolean) {
+      if (open !== undefined && this.state.open !== open) {
+        this.setState({ open });
+      }
+    }
+
+    render() {
+      const {
+        handle,
+        onClose,
+        children,
+        rootProps = {},
+        open,
+        ...rest
+      } = this.props;
+      const wrappedHandle = React.cloneElement(handle, {
+        ...handle.props,
+        onClick: evt => {
+          this.setState({ open: true });
+          if (handle.props.onClick) {
+            handle.props.onClick(evt);
+          }
+        }
+      });
+
+      const wrappedOnClose = evt => {
+        this.setState({ open: open || false });
+        if (onClose) {
+          onClose(evt);
+        }
+      };
+
+      return (
+        <MenuSurfaceAnchor {...rootProps}>
+          <MenuComponent
+            {...rest}
+            onClose={wrappedOnClose}
+            open={this.state.open}
+          >
+            {children}
+          </MenuComponent>
+          {wrappedHandle}
+        </MenuSurfaceAnchor>
+      );
+    }
+  };
+
+const SimpleMenuRoot = simpleMenuFactory(Menu);
+
 /**
  * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
  */
-export class SimpleMenu extends React.Component<
-  SimpleMenuPropsT,
-  SimpleMenuStateT
-> {
-  static displayName = 'SimpleMenu';
+export const SimpleMenu = (props: SimpleMenuPropsT) => (
+  <SimpleMenuRoot {...props} />
+);
 
-  componentWillMount() {
-    this.syncWithOpenProp(this.props.open);
-  }
+const SimpleMenuSurfaceRoot = simpleMenuFactory(MenuSurface);
 
-  componentWillReceiveProps(nextProps: SimpleMenuPropsT) {
-    this.syncWithOpenProp(nextProps.open);
-  }
-
-  state = {
-    open: false
-  };
-
-  syncWithOpenProp(open?: boolean) {
-    if (open !== undefined && this.state.open !== open) {
-      this.setState({ open });
-    }
-  }
-
-  render() {
-    const {
-      handle,
-      onClose,
-      children,
-      rootProps = {},
-      open,
-      ...rest
-    } = this.props;
-    const wrappedHandle = React.cloneElement(handle, {
-      ...handle.props,
-      onClick: evt => {
-        this.setState({ open: true });
-        if (handle.props.onClick) {
-          handle.props.onClick(evt);
-        }
-      }
-    });
-
-    const wrappedOnClose = evt => {
-      this.setState({ open: open || false });
-      if (onClose) {
-        onClose(evt);
-      }
-    };
-
-    return (
-      <MenuSurfaceAnchor {...rootProps}>
-        <Menu {...rest} onClose={wrappedOnClose} open={this.state.open}>
-          {children}
-        </Menu>
-        {wrappedHandle}
-      </MenuSurfaceAnchor>
-    );
-  }
-}
+/**
+ * The same as SimpleMenu, but a generic surface.
+ */
+export const SimpleMenuSurface = (props: SimpleMenuPropsT) => (
+  <SimpleMenuSurfaceRoot {...props} />
+);

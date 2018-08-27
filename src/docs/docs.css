@@ -327,6 +327,12 @@ ul li {
   margin-bottom: 3rem;
 }
 
+/* page menus */
+#page-menus .example .mdc-menu-surface--anchor {
+  display: inline-block;
+  margin: 1rem;
+}
+
 /* page icons */
 #page-icons .example > div > i,
 #page-icons .example > div > .material-icons,

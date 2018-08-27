@@ -2338,7 +2338,7 @@
           "flowType": {
             "name": "signature",
             "type": "function",
-            "raw": "(content: mixed) => React.Node",
+            "raw": "(content: mixed) => React.Node | null",
             "signature": {
               "arguments": [
                 {
@@ -2349,8 +2349,17 @@
                 }
               ],
               "return": {
-                "name": "ReactNode",
-                "raw": "React.Node"
+                "name": "union",
+                "raw": "React.Node | null",
+                "elements": [
+                  {
+                    "name": "ReactNode",
+                    "raw": "React.Node"
+                  },
+                  {
+                    "name": "unknown"
+                  }
+                ]
               }
             }
           },
@@ -3425,11 +3434,6 @@
       "methods": []
     },
     {
-      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute.",
-      "displayName": "MenuSurfaceAnchor",
-      "methods": []
-    },
-    {
       "description": "A menu component",
       "displayName": "Menu",
       "methods": [
@@ -3746,25 +3750,608 @@
       }
     },
     {
-      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
-      "displayName": "SimpleMenu",
+      "description": "",
+      "displayName": "MenuSurfaceRoot",
       "methods": [
         {
-          "name": "syncWithOpenProp",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
           "params": [
             {
-              "name": "open",
-              "optional": true,
+              "name": "props",
               "type": {
-                "name": "boolean"
+                "name": "intersection",
+                "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "open",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "fixed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "anchorCorner",
+                          "value": {
+                            "name": "union",
+                            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                            "elements": [
+                              {
+                                "name": "literal",
+                                "value": "'bottomEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomStart'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topStart'"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onOpen",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "MenuSurfacePropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "MenuSurface",
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "open",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "fixed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "anchorCorner",
+                          "value": {
+                            "name": "union",
+                            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                            "elements": [
+                              {
+                                "name": "literal",
+                                "value": "'bottomEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomStart'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topStart'"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onOpen",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "MenuSurfacePropsT"
               }
             }
           ],
           "returns": null
         }
       ],
+      "props": {
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Opens the menu."
+        },
+        "fixed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Make the menu position fixed."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        },
+        "onOpen": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is opened."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is closed."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render."
+        }
+      }
+    },
+    {
+      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute.",
+      "displayName": "MenuSurfaceAnchor",
+      "methods": []
+    },
+    {
+      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
+      "displayName": "SimpleMenu",
+      "methods": [],
+      "props": {
+        "handle": {
+          "flowType": {
+            "name": "ReactElement",
+            "raw": "React.Element<any>",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ]
+          },
+          "required": true,
+          "description": "An element that will open the menu when clicked"
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
+        },
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "index",
+                              "value": {
+                                "name": "number",
+                                "required": true
+                              }
+                            },
+                            {
+                              "key": "item",
+                              "value": {
+                                "name": "HTMLElement",
+                                "required": true
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "raw": "CustomEventT<SelectedEventDetailT>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        }
+      }
+    },
+    {
+      "description": "A Simplified menu surface component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
+      "displayName": "SimpleMenuSurface",
+      "methods": [],
       "props": {
         "handle": {
           "flowType": {
@@ -3949,7 +4536,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: { content: React.Node, className: string }) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: { content: React.Node, className: string }) => mixed,\n  /** Children to render */\n  children: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -4062,7 +4649,7 @@
                       "value": {
                         "name": "ReactNode",
                         "raw": "React.Node",
-                        "required": false
+                        "required": true
                       }
                     }
                   ]
@@ -4210,7 +4797,11 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Children to render"
+          "description": "Children to render",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       },
       "childContext": {

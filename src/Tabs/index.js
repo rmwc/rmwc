@@ -2,10 +2,7 @@
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
-import {
-  MDCTabBar,
-  MDCTabBarFoundation
-} from '@material/tab-bar/dist/mdc.tabBar';
+import { MDCTabBar } from '@material/tab-bar/dist/mdc.tabBar';
 import { Icon } from '../Icon';
 import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 

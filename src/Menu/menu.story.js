@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
-import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu } from './';
+import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
 import { Button } from '../Button';
 
 class MenuStory extends React.Component {
@@ -40,7 +40,6 @@ class MenuStory extends React.Component {
             'topStart'
           )}
           onClose={evt => {
-            console.log('Close');
             this.setState({ open: false });
           }}
         >
@@ -53,8 +52,60 @@ class MenuStory extends React.Component {
   }
 }
 
+class MenuSurfaceStory extends React.Component {
+  state = {
+    open: false
+  };
+  render() {
+    return (
+      <MenuSurfaceAnchor>
+        <Button
+          raised
+          onClick={evt => {
+            this.setState({ open: !this.state.open });
+          }}
+        >
+          Open Menu
+        </Button>
+
+        <MenuSurface
+          open={this.state.open}
+          anchorCorner={select(
+            'anchorCorner',
+            {
+              bottomEnd: 'BOTTOM_END',
+              bottom: 'BOTTOM_LEFT',
+              bottomRight: 'BOTTOM_RIGHT',
+              bottomStart: 'BOTTOM_START',
+              topEnd: 'TOP_END',
+              topLeft: 'TOP_LEFT',
+              topRight: 'TOP_RIGHT',
+              topStart: 'TOP_START'
+            },
+            'topStart'
+          )}
+          onOpen={evt => {}}
+          onClose={evt => {
+            this.setState({ open: false });
+          }}
+        >
+          This is the new menu surface component
+        </MenuSurface>
+      </MenuSurfaceAnchor>
+    );
+  }
+}
+
 storiesOf('Menus', module)
   .add('Menu', () => <MenuStory />)
+  .add('MenuSurface', () => <MenuSurfaceStory />)
+  .add('Menu: Always Open', () => (
+    <Menu open={true}>
+      <MenuItem>Cookies</MenuItem>
+      <MenuItem>Pizza</MenuItem>
+      <MenuItem>Icecream</MenuItem>
+    </Menu>
+  ))
   .add('SimpleMenu', () => (
     <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
       <MenuItem>Cookies</MenuItem>

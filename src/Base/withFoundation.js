@@ -177,7 +177,12 @@ export const withFoundation = ({
     /**
      * Fires a cross-browser-compatible custom event from the component root of the given type,
      */
-    emit(evtType: string, evtData: Object, shouldBubble: boolean = false) {
+    emit(
+      evtType: string,
+      evtData: Object,
+      shouldBubble: boolean = false,
+      sync: boolean = true
+    ) {
       let evt;
       if (typeof CustomEvent === 'function') {
         evt = new CustomEvent(evtType, {
@@ -189,6 +194,7 @@ export const withFoundation = ({
         evt.initCustomEvent(evtType, shouldBubble, false, evtData);
       }
 
+      // Custom handling for React
       const baseName =
         evtType
           .split(':')
@@ -201,7 +207,8 @@ export const withFoundation = ({
       this.props[propName] && this.props[propName](evt);
 
       // MDC can change state internally, if we are triggering a handler, re-sync with our props
-      this._safeSyncWithProps(this.props);
+      sync && this._safeSyncWithProps(this.props);
+      this.root_ && this.root_.dispatchEvent(evt);
 
       return evt;
     }
