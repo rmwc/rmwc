@@ -152,6 +152,10 @@ export class TextField extends withFoundation({
 
   syncWithProps(nextProps: TextFieldPropsT) {
     // invalid | valid
+    (this.foundation_: any).setUseNativeValidation(
+      nextProps.invalid === undefined
+    );
+
     syncFoundationProp(
       nextProps.invalid,
       !this.valid,
@@ -175,6 +179,7 @@ export class TextField extends withFoundation({
     const {
       label = '',
       className,
+      style,
       inputRef,
       box,
       outlined,
@@ -233,6 +238,7 @@ export class TextField extends withFoundation({
         fullwidth={fullwidth}
         elementRef={root_}
         className={className}
+        style={style}
       >
         {!!withLeadingIcon && renderIcon(withLeadingIcon)}
         {children}

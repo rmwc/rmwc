@@ -17,11 +17,14 @@ import { Switch } from 'rmwc/Switch';
   Cookies
 </Switch>
 
-{/* Standard Switch */}
-<Switch>Pizza</Switch>
+{/* Uncontrolled Switch */}
+<Switch defaultChecked>Pizza</Switch>
 
 {/* Using the label prop */}
 <Switch label="Icecream" />
+
+{/* Disabled */}
+<Switch disabled label="Disabled" />
 ```
 
 ```jsx renderOnly
