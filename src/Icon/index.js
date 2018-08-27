@@ -51,7 +51,7 @@ export type IconPropsT = {
   /** A base className for the icon namespace, i.e. material-icons. */
   basename?: string,
   /** A render function to use when using the 'custom' strategy. */
-  render?: (content: mixed) => React.Node
+  render?: (content: mixed) => React.Node | null
 } & SimpleTagPropsT;
 
 /**
