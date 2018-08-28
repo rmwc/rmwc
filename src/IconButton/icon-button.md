@@ -14,7 +14,7 @@ import { IconButton } from 'rmwc/IconButton';
 <IconButton icon="star" label="Rate this!" />
 <IconButton
   icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  label="Tweet it!"
+  aria-label="Tweet it!"
 />
 
 ```
@@ -26,37 +26,29 @@ When being used as a toggle, `onContent` and `offContent` behave the same as the
 ```jsx render
 {/* Uncontrolled */}
 <IconButton
-  onLabel="Remove from favorites"
-  onContent="favorite"
-  offLabel="Add to favorites"
-  offContent="favorite_border"
+  icon="favorite_border"
+  onIcon="favorite"
 />
 
 {/* Controlled */}
 <IconButton
   checked={this.state.isChecked}
   onClick={() => this.setState({isChecked: !this.state.isChecked})}
-  onLabel="Remove from favorites"
-  onContent="star"
-  offLabel="Add to favorites"
-  offContent="star_border"
+  onIcon="star"
+  icon="star_border"
 />
 
 <IconButton
   onChange={(evt) => console.log(evt.detail)}
-  onLabel="Switch to Facebook"
-  onContent="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  offLabel="Switch to Twitter"
-  offContent="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
+  onIcon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  icon="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
 />
 
 <IconButton
-  onLabel="Stop"
-  onContent={
+  onIcon={
     <div style={{ background: 'red', width: '24px', height: '24px'}} />
   }
-  offLabel="Play"
-  offContent={
+  icon={
     <div style={{ background: 'green', width: '24px', height: '24px', borderRadius: '50%' }} />
   }
 />

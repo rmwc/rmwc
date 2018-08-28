@@ -341,6 +341,11 @@ ul li {
   vertical-align: middle;
 }
 
+/* page icon-buttons */
+#page-icon-buttons .example > div .mdc-icon-button {
+  vertical-align: top;
+}
+
 /* page buttons */
 #page-buttons .example .mdc-button {
   margin: 0.5rem;
