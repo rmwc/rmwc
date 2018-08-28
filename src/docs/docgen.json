@@ -167,16 +167,7 @@
     {
       "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
       "displayName": "CardAction",
-      "methods": [],
-      "props": {
-        "isIcon": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Forces the action to be an icon. In most cases, this will be determined for you."
-        }
-      }
+      "methods": []
     }
   ],
   "src/Checkbox/index.js": [

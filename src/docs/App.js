@@ -18,12 +18,7 @@ import {
 import { Theme } from 'rmwc/Theme';
 import { TabBar, Tab } from 'rmwc/Tabs';
 
-import {
-  Drawer,
-  DrawerContent,
-  DrawerScrim,
-  DrawerAppContent
-} from 'rmwc/Drawer';
+import { Drawer, DrawerContent, DrawerAppContent } from 'rmwc/Drawer';
 
 import {
   ListItem,

@@ -55,10 +55,8 @@ import { Typography } from 'rmwc/Typography';
     </CardActionButtons>
     <CardActionIcons>
       <CardAction
-        onLabel="Remove from favorites"
-        onContent="favorite"
-        offLabel="Add to favorites"
-        offContent="favorite_border"
+        onIcon="favorite"
+        icon="favorite_border"
       />
       <CardAction icon="share" />
       <CardAction icon="more_vert" />
@@ -179,10 +177,8 @@ import {
   <CardActions>
     <CardActionIcons>
       <CardAction
-        onLabel="Remove from favorites"
-        onContent="favorite"
-        offLabel="Add to favorites"
-        offContent="favorite_border"
+        onIcon="favorite"
+        icon="favorite_border"
       />
       <CardAction icon="bookmark_border" />
       <CardAction icon="share" />
@@ -201,5 +197,5 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="CardActions" />
 <DocumentComponent displayName="CardActionButtons" />
 <DocumentComponent displayName="CardActionIcons" />
-<DocumentComponent displayName="CardAction" />
+<DocumentComponent displayName="CardAction" composes={['IconButton', 'Icon', 'Button']}/>
 ```

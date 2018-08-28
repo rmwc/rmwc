@@ -94,7 +94,6 @@ class IconButtonToggle extends withFoundation({
 
   syncWithProps(nextProps: IconButtonPropsT) {
     // checked
-    console.log(nextProps.checked, this.on);
     syncFoundationProp(nextProps.checked, this.on, () => {
       this.on = !!nextProps.checked;
     });

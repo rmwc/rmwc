@@ -102,10 +102,7 @@ export const CardActionIcons = simpleTag({
   classNames: 'mdc-card__action-icons'
 });
 
-export type CardActionPropsT = {
-  /** Forces the action to be an icon. In most cases, this will be determined for you. */
-  isIcon?: boolean
-} & IconButtonPropsT;
+export type CardActionPropsT = IconButtonPropsT;
 
 const CardActionIcon = simpleTag({
   tag: IconButton,
@@ -122,12 +119,10 @@ export class CardAction extends React.Component<CardActionPropsT> {
   static displayName = 'CardAction';
 
   render() {
-    const { isIcon, ...rest } = this.props;
-    const { onContent, offContent, use } = this.props;
-    return isIcon || onContent || offContent || use ? (
-      <CardActionIcon {...rest} />
+    return this.props.icon ? (
+      <CardActionIcon {...this.props} />
     ) : (
-      <CardActionButton {...rest} />
+      <CardActionButton {...this.props} />
     );
   }
 }
