@@ -60,8 +60,8 @@ storiesOf('Cards', module)
             on={{ label: 'Remove from favorites', content: 'favorite' }}
             off={{ label: 'Add to favorites', content: 'favorite_border' }}
           />
-          <CardAction icon use="share" />
-          <CardAction icon use="more_vert" />
+          <CardAction icon="share" />
+          <CardAction icon="more_vert" />
         </CardActionIcons>
       </CardActions>
     </Card>
@@ -122,7 +122,7 @@ storiesOf('Cards', module)
 
       <CardActions fullBleed>
         <CardAction>
-          All Business Headlines <Icon use="arrow_forward" />
+          All Business Headlines <Icon icon="arrow_forward" />
         </CardAction>
       </CardActions>
     </Card>
@@ -164,8 +164,8 @@ storiesOf('Cards', module)
             on={{ label: 'Remove from favorites', content: 'favorite' }}
             off={{ label: 'Add to favorites', content: 'favorite_border' }}
           />
-          <CardAction icon use="bookmark_border" />
-          <CardAction icon use="share" />
+          <CardAction icon="bookmark_border" />
+          <CardAction icon="share" />
         </CardActionIcons>
       </CardActions>
     </Card>

@@ -144,5 +144,5 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="Drawer" />
 <DocumentComponent displayName="DrawerToolbarSpacer" />
 <DocumentComponent displayName="DrawerHeader" />
-<DocumentComponent displayName="DrawerContent" />
+<DocumentComponent displayName="DrawerContent" composes={['List']} />
 ```

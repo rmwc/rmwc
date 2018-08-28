@@ -174,7 +174,7 @@ const renderChipIcon = (iconNode, props) => {
     (iconNode && typeof iconNode === 'string') ||
     (typeof iconNode === 'object' && iconNode.type !== ChipIcon)
   ) {
-    return <ChipIcon use={iconNode} {...props} />;
+    return <ChipIcon icon={iconNode} {...props} />;
   }
 
   return iconNode;

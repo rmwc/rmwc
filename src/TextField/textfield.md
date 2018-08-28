@@ -20,7 +20,7 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 <TextField box withLeadingIcon="search" label="box withLeadingIcon..." />
 
 {/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. */}
-<TextField box withTrailingIcon={<TextFieldIcon use="close"/>} label="box withTrailingIcon..." />
+<TextField box withTrailingIcon={<TextFieldIcon icon="close"/>} label="box withTrailingIcon..." />
 
 {/* An outlined TextField */}
 <TextField outlined label="outlined..." />

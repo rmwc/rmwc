@@ -19,9 +19,9 @@ import { Chip, ChipText, ChipIcon, ChipSet } from 'rmwc/Chip';
 {/* With Icons */}
 <ChipSet>
   <Chip>
-    <ChipIcon leading use="favorite" />
+    <ChipIcon leading icon="favorite" />
     <ChipText>Cookies</ChipText>
-    <ChipIcon trailing use="close" />
+    <ChipIcon trailing icon="close" />
   </Chip>
 </ChipSet>
 ```
@@ -79,16 +79,16 @@ import {
   >
     <ChipCheckmark />
     <ChipText>Cookies</ChipText>
-    <ChipIcon tabIndex={0} use="close" trailing />
+    <ChipIcon tabIndex={0} icon="close" trailing />
   </Chip>
   <Chip
     selected={this.state.pizza}
     onClick={() => this.setState({pizza: !this.state.pizza})}
   >
-    <ChipIcon use="local_pizza" leading />
+    <ChipIcon icon="local_pizza" leading />
     <ChipCheckmark />
     <ChipText>Pizza</ChipText>
-    <ChipIcon use="close" trailing />
+    <ChipIcon icon="close" trailing />
   </Chip>
   {/* You can use simple chips as well */}
   <SimpleChip
@@ -107,7 +107,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Chip" />
 <DocumentComponent displayName="ChipText" />
-<DocumentComponent displayName="ChipIcon" />
+<DocumentComponent displayName="ChipIcon" composes={['Icon']} />
 <DocumentComponent displayName="ChipCheckmark" />
 <DocumentComponent displayName="ChipSet" />
 <DocumentComponent displayName="SimpleChip" />

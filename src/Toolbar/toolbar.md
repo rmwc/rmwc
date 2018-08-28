@@ -26,12 +26,12 @@ import {
 <Toolbar>
   <ToolbarRow>
     <ToolbarSection alignStart>
-      <ToolbarMenuIcon use="menu"/>
+      <ToolbarMenuIcon icon="menu"/>
       <ToolbarTitle>Toolbar</ToolbarTitle>
     </ToolbarSection>
     <ToolbarSection alignEnd>
-      <ToolbarIcon use="save"/>
-      <ToolbarIcon use="print"/>
+      <ToolbarIcon icon="save"/>
+      <ToolbarIcon icon="print"/>
     </ToolbarSection>
   </ToolbarRow>
 </Toolbar>
@@ -74,7 +74,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="ToolbarRow" />
 <DocumentComponent displayName="ToolbarSection" />
 <DocumentComponent displayName="ToolbarTitle" />
-<DocumentComponent displayName="ToolbarMenuIcon" />
-<DocumentComponent displayName="ToolbarIcon" />
+<DocumentComponent displayName="ToolbarMenuIcon" composes={['Icon']}/>
+<DocumentComponent displayName="ToolbarIcon" composes={['Icon']} />
 <DocumentComponent displayName="ToolbarFixedAdjust" />
 ```

@@ -97,7 +97,7 @@ export class IconButton extends withFoundation({
     const strategy = getIconStrategy(iconContent, 'auto', null);
     const opts: mixed[] = ['url', 'component'];
     if (opts.indexOf(strategy) !== -1) {
-      return <Icon {...rest} use={iconContent} />;
+      return <Icon {...rest} icon={iconContent} />;
     }
 
     return iconContent;
@@ -122,7 +122,7 @@ export class IconButton extends withFoundation({
       <IconButtonRoot
         tag="button"
         {...rest}
-        use={this.renderIcon()}
+        icon={this.renderIcon()}
         elementRef={this.foundationRefs.root_}
         aria-label={ariaLabel}
         aria-pressed={ariaPressed}

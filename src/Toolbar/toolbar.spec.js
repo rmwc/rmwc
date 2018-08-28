@@ -17,11 +17,11 @@ describe('Toolbar', () => {
         <Toolbar>
           <ToolbarRow>
             <ToolbarSection>
-              <ToolbarMenuIcon use="menu" />
+              <ToolbarMenuIcon icon="menu" />
               <ToolbarTitle>Toolbar</ToolbarTitle>
             </ToolbarSection>
             <ToolbarSection alignEnd>
-              <ToolbarIcon use="print" />
+              <ToolbarIcon icon="print" />
             </ToolbarSection>
           </ToolbarRow>
         </Toolbar>

@@ -7,7 +7,7 @@ describe('Chip', () => {
     mount(
       <ChipSet>
         <Chip>
-          <ChipIcon use="favorite" />
+          <ChipIcon icon="favorite" />
           <ChipText>One</ChipText>
         </Chip>
       </ChipSet>
@@ -43,7 +43,7 @@ describe('Chip', () => {
 
     mount(
       <Chip apiRef={ref => (api = ref)}>
-        <ChipIcon use="favorite" />
+        <ChipIcon icon="favorite" />
         <ChipText>One</ChipText>
       </Chip>
     );
@@ -67,14 +67,14 @@ describe('SimpleChip', () => {
 
 describe('ChipIcon', () => {
   it('renders', () => {
-    mount(<ChipIcon use="favorite" />);
+    mount(<ChipIcon icon="favorite" />);
   });
 
   it('can be leading', () => {
-    mount(<ChipIcon leading use="favorite" />);
+    mount(<ChipIcon leading icon="favorite" />);
   });
 
   it('can be trailing', () => {
-    mount(<ChipIcon trailing use="favorite" />);
+    mount(<ChipIcon trailing icon="favorite" />);
   });
 });

@@ -14,5 +14,5 @@ import { Fab } from 'rmwc/Fab';
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
-<DocumentComponent displayName="Fab" />
+<DocumentComponent displayName="Fab" composes={['Icon']} />
 ```

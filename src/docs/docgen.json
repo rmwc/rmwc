@@ -1700,13 +1700,6 @@
           "required": false,
           "description": "Make the Fab smaller."
         },
-        "icon": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "The icon to use for the fab."
-        },
         "label": {
           "flowType": {
             "name": "ReactNode",
@@ -1721,13 +1714,6 @@
           },
           "required": false,
           "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
-        },
-        "cssOnly": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "cssOnly Fab."
         },
         "ripple": {
           "flowType": {
@@ -2301,70 +2287,20 @@
       "displayName": "Icon",
       "methods": [],
       "props": {
-        "use": {
+        "icon": {
           "flowType": {
             "name": "ReactNode",
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
         },
-        "strategy": {
+        "iconOptions": {
           "flowType": {
-            "name": "IconStrategyT"
+            "name": "IconOptionsT"
           },
           "required": false,
-          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
-        },
-        "prefix": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
-        },
-        "basename": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": "A base className for the icon namespace, i.e. material-icons."
-        },
-        "render": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(content: mixed) => React.Node | null",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "content",
-                  "type": {
-                    "name": "mixed"
-                  }
-                }
-              ],
-              "return": {
-                "name": "union",
-                "raw": "React.Node | null",
-                "elements": [
-                  {
-                    "name": "ReactNode",
-                    "raw": "React.Node"
-                  },
-                  {
-                    "name": "unknown"
-                  }
-                ]
-              }
-            }
-          },
-          "required": false,
-          "description": "A render function to use when using the 'custom' strategy."
+          "description": "Additional Icon Options. See the Icon component documentation."
         }
       },
       "context": {
@@ -3279,7 +3215,24 @@
     {
       "description": "A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag=\"span\" and basename=\"\" to ensure proper rendering. See the examples above.",
       "displayName": "ListItemMeta",
-      "methods": []
+      "methods": [],
+      "props": {
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
+        "icon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": ""
+        }
+      }
     },
     {
       "description": "A container to group ListItems",
@@ -4349,7 +4302,7 @@
       }
     },
     {
-      "description": "A Simplified menu surface component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
+      "description": "The same as SimpleMenu, but a generic surface.",
       "displayName": "SimpleMenuSurface",
       "methods": [],
       "props": {

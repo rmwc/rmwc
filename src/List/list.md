@@ -82,17 +82,17 @@ import {
 
 <List>
   <ListItem>
-    <ListItemGraphic use="favorite"/>
+    <ListItemGraphic icon="favorite"/>
     Leading
   </ListItem>
   <ListItem>
     Trailing
-    <ListItemMeta use="star"/>
+    <ListItemMeta icon="star"/>
   </ListItem>
   <ListItem>
-    <ListItemGraphic use="wifi"/>
+    <ListItemGraphic icon="wifi"/>
     Leading and Trailing
-    <ListItemMeta use="info"/>
+    <ListItemMeta icon="info"/>
   </ListItem>
 </List>
 ```
@@ -111,22 +111,22 @@ import {
 <List twoLine avatarList>
   <ListGroup>
     <ListItem>
-      <ListItemGraphic use="person" style={{backgroundColor: 'lightgray'}} />
+      <ListItemGraphic icon="person" style={{backgroundColor: 'lightgray'}} />
       Bruce Wayne
-      <ListItemMeta use="info"/>
+      <ListItemMeta icon="info"/>
     </ListItem>
     <ListItem>
-      <ListItemGraphic use="person" style={{backgroundColor: 'coral'}} />
+      <ListItemGraphic icon="person" style={{backgroundColor: 'coral'}} />
       Clark Kent
-      <ListItemMeta use="info"/>
+      <ListItemMeta icon="info"/>
     </ListItem>
   </ListGroup>
   <ListDivider />
   <ListGroup>
     <ListItem>
-      <ListItemGraphic use="person" style={{backgroundColor: 'lightblue'}} />
+      <ListItemGraphic icon="person" style={{backgroundColor: 'lightblue'}} />
       Diana Prince
-      <ListItemMeta use="info"/>
+      <ListItemMeta icon="info"/>
     </ListItem>
   </ListGroup>
 </List>
@@ -145,15 +145,15 @@ import { Checkbox } from 'rmwc/Checkbox';
 
 <List>
   <ListItem onClick={() => this.setState({cookiesChecked: !this.state.cookiesChecked})}>
-    <ListItemGraphic use={<Checkbox checked={this.state.cookiesChecked}/>}/>
+    <ListItemGraphic icon={<Checkbox checked={this.state.cookiesChecked}/>}/>
     Cookies
   </ListItem>
   <ListItem onClick={() => this.setState({pizzaChecked: !this.state.pizzaChecked})}>
-    <ListItemGraphic use={<Checkbox checked={this.state.pizzaChecked}/>}/>
+    <ListItemGraphic icon={<Checkbox checked={this.state.pizzaChecked}/>}/>
     Pizza
   </ListItem>
   <ListItem onClick={() => this.setState({iceCreamChecked: !this.state.iceCreamChecked})}>
-    <ListItemGraphic use={<Checkbox checked={this.state.iceCreamChecked}/>}/>
+    <ListItemGraphic icon={<Checkbox checked={this.state.iceCreamChecked}/>}/>
     Icecream
   </ListItem>
 </List>

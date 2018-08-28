@@ -9,7 +9,7 @@ import from **rmwc/Button**
 import { Button, ButtonIcon } from 'rmwc/Button';
 
 <Button>Default</Button>
-<Button><ButtonIcon use="favorite" /> With Icon</Button>
+<Button><ButtonIcon icon="favorite" /> With Icon</Button>
 <Button raised>Raised</Button>
 <Button dense>Dense</Button>
 <Button unelevated>Unelevated</Button>
@@ -31,5 +31,5 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Button" />
-<DocumentComponent displayName="ButtonIcon" />
+<DocumentComponent displayName="ButtonIcon" composes={['Icon']} />
 ```

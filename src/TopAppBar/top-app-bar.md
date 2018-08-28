@@ -21,7 +21,7 @@ import {
 <TopAppBar>
   <TopAppBarRow>
     <TopAppBarSection>
-      <TopAppBarNavigationIcon use="menu" />
+      <TopAppBarNavigationIcon icon="menu" />
     </TopAppBarSection>
   </TopAppBarRow>
 </TopAppBar>
@@ -30,7 +30,7 @@ import {
 <TopAppBar>
   <TopAppBarRow>
     <TopAppBarSection alignStart>
-      <TopAppBarNavigationIcon use="menu" />
+      <TopAppBarNavigationIcon icon="menu" />
       <TopAppBarTitle>Title</TopAppBarTitle>
     </TopAppBarSection>
     <TopAppBarSection alignEnd>
@@ -77,8 +77,8 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="TopAppBarRow" />
 <DocumentComponent displayName="TopAppBarSection" />
 <DocumentComponent displayName="TopAppBarTitle" />
-<DocumentComponent displayName="TopAppBarNavigationIcon" />
-<DocumentComponent displayName="TopAppBarActionItem" />
+<DocumentComponent displayName="TopAppBarNavigationIcon" composes={['Icon']} />
+<DocumentComponent displayName="TopAppBarActionItem" composes={['Icon']} />
 <DocumentComponent displayName="TopAppBarFixedAdjust" />
 <DocumentComponent displayName="SimpleTopAppBar" />
 ```

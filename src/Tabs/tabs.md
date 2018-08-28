@@ -88,5 +88,5 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="TabBar" />
-<DocumentComponent displayName="Tab" />
+<DocumentComponent displayName="Tab" composes={['Icon']} />
 ```

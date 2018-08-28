@@ -4,14 +4,14 @@ import { IconButton } from './';
 
 describe('', () => {
   it('renders', () => {
-    mount(<IconButton use="star" label="Rate this!" />);
+    mount(<IconButton icon="star" label="Rate this!" />);
     mount(
       <IconButton
-        use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+        icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
         label="Tweet it!"
       />
     );
-    mount(<IconButton use={<div />} label="Tweet it!" />);
+    mount(<IconButton icon={<div />} label="Tweet it!" />);
   });
 
   it('handles prop changes', () => {
@@ -73,7 +73,7 @@ describe('', () => {
   it('can have custom classnames', () => {
     const el = mount(
       <IconButton
-        use="star"
+        icon="star"
         label="Rate this!"
         className={'my-custom-classname'}
       />

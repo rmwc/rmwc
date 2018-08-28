@@ -35,7 +35,7 @@ describe('TopAppBar', () => {
     const el = mount(
       <div>
         <TopAppBar fixed>
-          <TopAppBarNavigationIcon use="menu" />
+          <TopAppBarNavigationIcon icon="menu" />
         </TopAppBar>
         <TopAppBarFixedAdjust />
       </div>
@@ -46,7 +46,7 @@ describe('TopAppBar', () => {
   test('can be prominent', () => {
     const el = mount(
       <TopAppBar prominent>
-        <TopAppBarNavigationIcon use="menu" />
+        <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
     expect(el.html().includes('mdc-top-app-bar--prominent')).toBe(true);
@@ -55,7 +55,7 @@ describe('TopAppBar', () => {
   test('can be short', () => {
     const el = mount(
       <TopAppBar short>
-        <TopAppBarNavigationIcon use="menu" />
+        <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
     expect(el.html().includes('mdc-top-app-bar--short')).toBe(true);
@@ -64,7 +64,7 @@ describe('TopAppBar', () => {
   test('can be dense', () => {
     const el = mount(
       <TopAppBar dense>
-        <TopAppBarNavigationIcon use="menu" />
+        <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
     expect(el.html().includes('mdc-top-app-bar--dense')).toBe(true);
@@ -73,7 +73,7 @@ describe('TopAppBar', () => {
   test('can be shortCollapsed', () => {
     const el = mount(
       <TopAppBar shortCollapsed>
-        <TopAppBarNavigationIcon use="menu" />
+        <TopAppBarNavigationIcon icon="menu" />
       </TopAppBar>
     );
     expect(el.html().includes('mdc-top-app-bar--short-collapsed')).toBe(true);

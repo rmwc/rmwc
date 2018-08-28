@@ -11,9 +11,9 @@ import from **rmwc/IconToggle**
 ```jsx render
 import { IconButton } from 'rmwc/IconButton';
 
-<IconButton use="star" label="Rate this!" />
+<IconButton icon="star" label="Rate this!" />
 <IconButton
-  use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
   label="Tweet it!"
 />
 

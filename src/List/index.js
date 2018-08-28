@@ -5,6 +5,7 @@ import type { RMWCProviderOptionsT } from '../Provider';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
@@ -91,12 +92,27 @@ export const ListItemGraphic = simpleTag({
   tag: Icon
 });
 
-/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
-export const ListItemMeta = simpleTag({
-  displayName: 'ListItemMeta',
-  classNames: 'mdc-list-item__meta',
-  tag: Icon
+const ListItemMetaRoot = simpleTag({
+  displayName: 'ListItemMetaRoot',
+  tag: 'span'
 });
+
+/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
+export const ListItemMeta = ({
+  className,
+  icon,
+  ...rest
+}: {
+  className?: string,
+  icon?: React.Node
+}) => {
+  const classes = classNames('mdc-list-item__meta', className);
+  if (icon) {
+    return <Icon icon={icon} className={classes} {...rest} />;
+  }
+
+  return <ListItemMetaRoot className={classes} {...rest} />;
+};
 
 /** A container to group ListItems */
 export const ListGroup = simpleTag({
@@ -186,7 +202,7 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
 
   return (
     <ListItem {...rest}>
-      {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
+      {graphic !== undefined && <ListItemGraphic icon={graphic} />}
       {secondaryTextToRender !== null ? (
         <ListItemText>
           {primaryTextToRender}
@@ -195,7 +211,7 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
       ) : (
         primaryTextToRender
       )}
-      {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
+      {meta !== undefined && <ListItemMeta icon={meta} />}
       {children}
     </ListItem>
   );

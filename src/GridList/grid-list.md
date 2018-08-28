@@ -34,7 +34,7 @@ import { Select } from 'rmwc/Select';
         </GridTilePrimaryContent>
       </GridTilePrimary>
       <GridTileSecondary>
-        <GridTileIcon>info</GridTileIcon>
+        <GridTileIcon icon="info" />
         <GridTileTitle>Tile {i + 1}</GridTileTitle>
       </GridTileSecondary>
     </GridTile>
@@ -59,7 +59,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="GridList" />
 <DocumentComponent displayName="GridTile" />
-<DocumentComponent displayName="GridTileIcon" />
+<DocumentComponent displayName="GridTileIcon" composes={['Icon']}/>
 <DocumentComponent displayName="GridTilePrimary" />
 <DocumentComponent displayName="GridTileSecondary" />
 <DocumentComponent displayName="GridTileTitleSupportText" />

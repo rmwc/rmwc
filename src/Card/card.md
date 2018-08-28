@@ -60,8 +60,8 @@ import { Typography } from 'rmwc/Typography';
         offLabel="Add to favorites"
         offContent="favorite_border"
       />
-      <CardAction use="share" />
-      <CardAction use="more_vert" />
+      <CardAction icon="share" />
+      <CardAction icon="more_vert" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -129,7 +129,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardActions fullBleed>
     <CardAction>
-      All Business Headlines <Icon use="arrow_forward" />
+      All Business Headlines <Icon icon="arrow_forward" />
     </CardAction>
   </CardActions>
 </Card>
@@ -184,8 +184,8 @@ import {
         offLabel="Add to favorites"
         offContent="favorite_border"
       />
-      <CardAction use="bookmark_border" />
-      <CardAction use="share" />
+      <CardAction icon="bookmark_border" />
+      <CardAction icon="share" />
     </CardActionIcons>
   </CardActions>
 </Card>

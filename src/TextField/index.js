@@ -218,7 +218,7 @@ export class TextField extends withFoundation({
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
-        return <TextFieldIcon use={iconNode} />;
+        return <TextFieldIcon icon={iconNode} />;
       }
 
       return iconNode;

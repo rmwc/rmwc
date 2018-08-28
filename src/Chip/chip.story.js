@@ -16,9 +16,9 @@ class ChipFiltering extends React.Component {
   };
 
   toggle(value) {
-    this.state.selected.has(value) ?
-      this.state.selected.delete(value) :
-      this.state.selected.add(value);
+    this.state.selected.has(value)
+      ? this.state.selected.delete(value)
+      : this.state.selected.add(value);
 
     this.forceUpdate();
   }
@@ -32,7 +32,7 @@ class ChipFiltering extends React.Component {
         >
           <ChipCheckmark />
           <ChipText>Cookies</ChipText>
-          <ChipIcon tabIndex={0} use="close" trailing />
+          <ChipIcon tabIndex={0} icon="close" trailing />
         </Chip>
         <Chip
           selected={this.state.selected.has(2)}
@@ -40,16 +40,16 @@ class ChipFiltering extends React.Component {
         >
           <ChipCheckmark />
           <ChipText>Pizza</ChipText>
-          <ChipIcon use="close" trailing />
+          <ChipIcon icon="close" trailing />
         </Chip>
         <Chip
           selected={this.state.selected.has(3)}
           onClick={() => this.toggle(3)}
         >
-          <ChipIcon use="favorite" leading />
+          <ChipIcon icon="favorite" leading />
           <ChipCheckmark />
           <ChipText>Icecream</ChipText>
-          <ChipIcon use="close" trailing />
+          <ChipIcon icon="close" trailing />
         </Chip>
       </ChipSet>
     );
@@ -86,19 +86,19 @@ storiesOf('Chips', module)
   .add('Chip with icons', () => (
     <ChipSet>
       <Chip>
-        <ChipIcon use="star_border" leading />
+        <ChipIcon icon="star_border" leading />
         <ChipText>Cookies</ChipText>
-        <ChipIcon tabIndex={0} use="close" trailing />
+        <ChipIcon tabIndex={0} icon="close" trailing />
       </Chip>
       <Chip>
-        <ChipIcon use="favorite_border" leading />
+        <ChipIcon icon="favorite_border" leading />
         <ChipText>Pizza</ChipText>
-        <ChipIcon use="close" trailing />
+        <ChipIcon icon="close" trailing />
       </Chip>
       <Chip>
-        <ChipIcon use="mood" leading />
+        <ChipIcon icon="mood" leading />
         <ChipText>Icecream</ChipText>
-        <ChipIcon use="close" trailing />
+        <ChipIcon icon="close" trailing />
       </Chip>
     </ChipSet>
   ))

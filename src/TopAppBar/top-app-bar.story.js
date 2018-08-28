@@ -50,7 +50,7 @@ storiesOf('TopAppBar', module)
       <TopAppBar>
         <TopAppBarRow>
           <TopAppBarSection>
-            <TopAppBarNavigationIcon use="menu" />
+            <TopAppBarNavigationIcon icon="menu" />
           </TopAppBarSection>
         </TopAppBarRow>
       </TopAppBar>

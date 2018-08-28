@@ -1,5 +1,6 @@
 // @flow
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { IconPropsT } from '../Icon';
 
 import * as React from 'react';
 import { MDCTabBar } from '@material/tab-bar/dist/mdc.tabBar';
@@ -171,7 +172,7 @@ export type TabPropsT = {
   stacked?: boolean,
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean
-};
+} & IconPropsT;
 
 export const TabRoot = simpleTag({
   displayName: 'TabRoot',
@@ -207,6 +208,7 @@ export const Tab = ({
   children,
   label,
   icon,
+  iconOptions,
   stacked,
   restrictIndicator,
   ...rest
@@ -214,7 +216,7 @@ export const Tab = ({
   return (
     <TabRoot stacked={stacked} {...rest}>
       <div className="mdc-tab__content">
-        {!!icon && <TabIcon use={icon} />}
+        {!!icon && <TabIcon icon={icon} iconOptions={iconOptions} />}
         {(children !== undefined || label !== undefined) && (
           <span className="mdc-tab__text-label">
             {label}

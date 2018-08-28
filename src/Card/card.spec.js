@@ -38,8 +38,8 @@ describe('Card', () => {
               offLabel="Add to favorites"
               offContent="favorite_border"
             />
-            <CardAction use="share" />
-            <CardAction use="more_vert" />
+            <CardAction icon="share" />
+            <CardAction icon="more_vert" />
           </CardActionIcons>
         </CardActions>
       </Card>

@@ -31,6 +31,19 @@ const getComposedDefs = names =>
       };
     }, {});
 
+const renderRaw = (raw: string) =>
+  raw.split('\n').map((s, i) => (
+    <React.Fragment key={i}>
+      {i !== 0 && <br />}
+      {s.split('  ').map((v, i) => (
+        <React.Fragment key={i}>
+          {i !== 0 && <React.Fragment>&nbsp;&nbsp;</React.Fragment>}
+          {v}
+        </React.Fragment>
+      ))}
+    </React.Fragment>
+  ));
+
 export const DocumentComponent = ({ displayName, composes = [] }) => {
   const docs = getComposedDefs([displayName, ...composes]);
 
@@ -60,7 +73,9 @@ export const DocumentComponent = ({ displayName, composes = [] }) => {
                   <td>
                     <code>
                       {prop.flowType &&
-                          (prop.flowType.raw || prop.flowType.name || '')}
+                          renderRaw(
+                            prop.flowType.raw || prop.flowType.name || ''
+                          )}
                     </code>
                   </td>
                   <td>

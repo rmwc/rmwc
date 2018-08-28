@@ -115,9 +115,7 @@ const AppBar = ({ onNavClick, children }) => (
   <TopAppBar fixed className="app__top-app-bar">
     <TopAppBarRow>
       <TopAppBarSection alignStart>
-        <TopAppBarNavigationIcon onClick={onNavClick}>
-          menu
-        </TopAppBarNavigationIcon>
+        <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
 
         <TopAppBarTitle tag={Link} to="/">
           RMWC
@@ -129,7 +127,7 @@ const AppBar = ({ onNavClick, children }) => (
         <TopAppBarActionItem
           tag="a"
           href="https://github.com/jamesmfriedman/rmwc"
-          use={<GithubIcon />}
+          icon={<GithubIcon />}
         />
       </TopAppBarSection>
     </TopAppBarRow>
@@ -200,10 +198,10 @@ class ThemePicker extends React.Component {
                   }}
                 />
                 <ListItemGraphic
-                  use={themeName === selectedThemeName ? 'check' : ''}
+                  icon={themeName === selectedThemeName ? 'check' : ''}
                 />
                 {themeName}
-                <ListItemMeta basename="" tag="span">
+                <ListItemMeta>
                   <ColorBlock color={theme['--mdc-theme-primary']} />
                   <ColorBlock color={theme['--mdc-theme-secondary']} />
                   <ColorBlock color={theme['--mdc-theme-background']} />
@@ -321,7 +319,7 @@ class ThemePicker extends React.Component {
         <TopAppBarActionItem
           onClick={() => this.setState({ open: !this.state.open })}
           theme="on-primary"
-          use="color_lens"
+          icon="color_lens"
         />
       </MenuSurfaceAnchor>
     );
