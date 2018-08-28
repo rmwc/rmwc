@@ -11,13 +11,19 @@ import {
   TopAppBarSection,
   TopAppBarTitle,
   TopAppBarNavigationIcon,
-  TopAppBarActionItem
+  TopAppBarActionItem,
+  TopAppBarFixedAdjust
 } from 'rmwc/TopAppBar';
 
 import { Theme } from 'rmwc/Theme';
 import { TabBar, Tab } from 'rmwc/Tabs';
 
-import { Drawer, DrawerContent } from 'rmwc/Drawer';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerScrim,
+  DrawerAppContent
+} from 'rmwc/Drawer';
 
 import {
   ListItem,
@@ -92,12 +98,14 @@ const getTheme = themeName => {
 const MainMenuItem = ({ url, label }) => {
   return (
     <ListItem
+      tag={Link}
+      to={url}
       onClick={() => window.scrollTo(0, 0)}
       activated={
         window.location.pathname.split('/').pop() === url.split('/').pop()
       }
     >
-      <Link to={url}>{label}</Link>
+      <span>{label}</span>
     </ListItem>
   );
 };
@@ -112,26 +120,29 @@ const GithubIcon = () => (
 );
 
 const AppBar = ({ onNavClick, children }) => (
-  <TopAppBar fixed className="app__top-app-bar">
-    <TopAppBarRow>
-      <TopAppBarSection alignStart>
-        <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
+  <React.Fragment>
+    <TopAppBar fixed className="app__top-app-bar">
+      <TopAppBarRow>
+        <TopAppBarSection alignStart>
+          <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
 
-        <TopAppBarTitle tag={Link} to="/">
-          RMWC
-        </TopAppBarTitle>
-        <span className="app__version">{version}</span>
-      </TopAppBarSection>
-      <TopAppBarSection alignEnd>
-        {children}
-        <TopAppBarActionItem
-          tag="a"
-          href="https://github.com/jamesmfriedman/rmwc"
-          icon={<GithubIcon />}
-        />
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
+          <TopAppBarTitle tag={Link} to="/">
+            RMWC
+          </TopAppBarTitle>
+          <span className="app__version">{version}</span>
+        </TopAppBarSection>
+        <TopAppBarSection alignEnd>
+          {children}
+          <TopAppBarActionItem
+            tag="a"
+            href="https://github.com/jamesmfriedman/rmwc"
+            icon={<GithubIcon />}
+          />
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
+  </React.Fragment>
 );
 
 const ColorBlock = ({ color, size = 1.5 }) => (
@@ -337,22 +348,24 @@ const ThemeStyleTag = ({ themeName }) => (
 );
 
 const Nav = props => (
-  <Drawer id="main-nav" {...props}>
-    <DrawerContent>
-      {menuContent.map(m => {
-        if (m.options) {
-          return (
-            <Submenu label={m.label} key={m.label}>
-              {m.options.map(v => (
-                <MainMenuItem key={v.label} label={v.label} url={v.url} />
-              ))}
-            </Submenu>
-          );
-        }
-        return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
-      })}
-    </DrawerContent>
-  </Drawer>
+  <React.Fragment>
+    <Drawer id="main-nav" {...props}>
+      <DrawerContent>
+        {menuContent.map(m => {
+          if (m.options) {
+            return (
+              <Submenu label={m.label} key={m.label}>
+                {m.options.map(v => (
+                  <MainMenuItem key={v.label} label={v.label} url={v.url} />
+                ))}
+              </Submenu>
+            );
+          }
+          return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
+        })}
+      </DrawerContent>
+    </Drawer>
+  </React.Fragment>
 );
 
 export class App extends React.Component {
@@ -416,12 +429,12 @@ export class App extends React.Component {
         <div className="demo-content">
           <Nav
             open={this.state.menuIsOpen}
-            persistent={!this.state.isMobile}
-            temporary={this.state.isMobile}
+            dismissible={!this.state.isMobile}
+            modal={this.state.isMobile}
             onClose={() => this.setState({ menuIsOpen: false })}
           />
 
-          <main className="app__content">
+          <DrawerAppContent tag="main" className="app__content">
             <RouterSwitch>
               {menuContent.map(m => {
                 if (m.options) {
@@ -456,7 +469,7 @@ export class App extends React.Component {
               })}
               <Route path="/" exact component={Home} />
             </RouterSwitch>
-          </main>
+          </DrawerAppContent>
         </div>
       </Theme>
     );

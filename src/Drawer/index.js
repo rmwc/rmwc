@@ -2,44 +2,31 @@
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
 
 import * as React from 'react';
+import './polyfill';
 import { simpleTag } from '../Base';
-import { List } from '../List';
 import { noop } from '../Base';
-import {
-  MDCPersistentDrawer,
-  MDCTemporaryDrawer
-} from '@material/drawer/dist/mdc.drawer';
+import { MDCDrawer } from '@material/drawer/dist/mdc.drawer';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
 /***************************************************************************************
  * Drawer Headers
  ***************************************************************************************/
-export const DrawerHeaderRoot = simpleTag({
-  displayName: 'DrawerHeaderRoot',
+/** An optional header for the Drawer. */
+export const DrawerHeader = simpleTag({
+  displayName: 'DrawerHeader',
   classNames: 'mdc-drawer__header'
 });
 
-export const DrawerHeaderContent = simpleTag({
-  displayName: 'DrawerHeaderContent',
-  classNames: 'mdc-drawer__header-content'
+/** An title for the DrawerHeader. */
+export const DrawerTitle = simpleTag({
+  displayName: 'DrawerTitle',
+  classNames: 'mdc-drawer__title'
 });
 
-/** A Header for Drawers */
-export class DrawerHeader extends React.Component<SimpleTagPropsT> {
-  render() {
-    const { children, ...rest } = this.props;
-    return (
-      <DrawerHeaderRoot {...rest}>
-        <DrawerHeaderContent>{children}</DrawerHeaderContent>
-      </DrawerHeaderRoot>
-    );
-  }
-}
-
-/** If you are using fixed a Toolbar, this provides space for it. */
-export const DrawerToolbarSpacer = simpleTag({
-  displayName: 'DrawerToolbarSpacer',
-  classNames: 'mdc-drawer__toolbar-spacer'
+/** A subtitle for the DrawerHeader. */
+export const DrawerSubtitle = simpleTag({
+  displayName: 'DrawerSubtitle',
+  classNames: 'mdc-drawer__subtitle'
 });
 
 /***************************************************************************************
@@ -48,8 +35,26 @@ export const DrawerToolbarSpacer = simpleTag({
 /** Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else. */
 export const DrawerContent = simpleTag({
   displayName: 'DrawerContent',
-  tag: List,
   classNames: 'mdc-drawer__content'
+});
+
+/***************************************************************************************
+ * Drawer Scrim
+ ***************************************************************************************/
+/**
+ * Protects the app's UI from interactions while a modal drawer is open.
+ * This is automatically included if you're using React 16 and above.
+ * For React 15, you must manually include it immediately after a modal Drawer.
+ * */
+export const DrawerScrim = () => <div className="mdc-drawer-scrim" />;
+
+/***************************************************************************************
+ * DrawerAppContent
+ ***************************************************************************************/
+/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
+export const DrawerAppContent = simpleTag({
+  displayName: 'DrawerAppContent',
+  classNames: 'mdc-drawer-app-content'
 });
 
 /***************************************************************************************
@@ -62,12 +67,10 @@ export type DrawerPropsT = {
   onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when the Drawer is opened. */
   onOpen?: (evt: CustomEventT<void>) => mixed,
-  /** Makes a permanent drawer. */
-  permanent?: boolean,
-  /** Makes a persistent drawer. */
-  persistent?: boolean,
-  /** Makes a temporary drawer. */
-  temporary?: boolean
+  /** Makes a dismissible drawer. */
+  dismissible?: boolean,
+  /** Makes a modal / temporary drawer. */
+  modal?: boolean
 } & SimpleTagPropsT;
 
 export const DrawerRoot = simpleTag({
@@ -76,18 +79,11 @@ export const DrawerRoot = simpleTag({
   classNames: (props: DrawerPropsT) => [
     'mdc-drawer',
     {
-      'mdc-drawer--permanent': props.permanent,
-      'mdc-drawer--persistent': props.persistent,
-      'mdc-drawer--temporary': props.temporary
+      'mdc-drawer--dismissible': props.dismissible,
+      'mdc-drawer--modal': props.modal
     }
   ],
-  consumeProps: ['permanent', 'persistent', 'temporary']
-});
-
-export const DrawerDrawer = simpleTag({
-  displayName: 'DrawerDrawer',
-  tag: 'nav',
-  classNames: 'mdc-drawer__drawer'
+  consumeProps: ['dismissible', 'modal']
 });
 
 const slidableDrawerFactory = (MDCConstructor, displayName) =>
@@ -105,6 +101,10 @@ const slidableDrawerFactory = (MDCConstructor, displayName) =>
 
     open: boolean;
 
+    initialize() {
+      //override to kill some abhorrent MDCWeb functionality...
+    }
+
     syncWithProps(nextProps: DrawerPropsT) {
       // Open
       // MDC calls notify change before actually setting the Open value
@@ -121,53 +121,38 @@ const slidableDrawerFactory = (MDCConstructor, displayName) =>
     }
 
     render() {
-      const { children, onOpen, onClose, open, ...rest } = this.props;
+      const { onOpen, onClose, open, ...rest } = this.props;
       const { root_ } = this.foundationRefs;
-      return (
-        <DrawerRoot elementRef={root_} {...rest}>
-          <DrawerDrawer>{children}</DrawerDrawer>
-        </DrawerRoot>
-      );
+
+      return <DrawerRoot elementRef={root_} {...rest} />;
     }
   };
 
-const TemporaryDrawer = slidableDrawerFactory(
-  MDCTemporaryDrawer,
-  'TemporaryDrawer'
-);
+const ModalDrawer = slidableDrawerFactory(MDCDrawer, 'ModalDrawer');
 
-const PersistentDrawer = slidableDrawerFactory(
-  MDCPersistentDrawer,
-  'PersistentDrawer'
-);
-
-class PermanentDrawer extends React.Component<DrawerPropsT> {
-  static displayName = 'PermanentDrawer';
-
-  static defaultProps = {
-    open: false,
-    onOpen: noop,
-    onClose: noop
-  };
-
-  render() {
-    const { children, onOpen, onClose, ...rest } = this.props;
-    return <DrawerRoot {...rest}>{children}</DrawerRoot>;
-  }
-}
+const DismissibleDrawer = slidableDrawerFactory(MDCDrawer, 'dismissibleDrawer');
 
 export const Drawer: React.ComponentType<DrawerPropsT> = (
   props: DrawerPropsT
 ) => {
-  if (props.persistent) {
-    return <PersistentDrawer {...props} />;
+  if (props.dismissible) {
+    return <DismissibleDrawer {...props} />;
   }
 
-  if (props.temporary) {
-    return <TemporaryDrawer {...props} />;
+  if (props.modal) {
+    if (React.Fragment !== undefined) {
+      return (
+        <React.Fragment>
+          <ModalDrawer {...props} />
+          <DrawerScrim />
+        </React.Fragment>
+      );
+    } else {
+      return <ModalDrawer {...props} />;
+    }
   }
 
-  return <PermanentDrawer {...props} />;
+  return <DrawerRoot {...props} />;
 };
 
 Drawer.displayName = 'Drawer';

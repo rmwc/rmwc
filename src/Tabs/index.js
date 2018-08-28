@@ -79,10 +79,8 @@ export class TabBar extends withFoundation({
     window.requestAnimationFrame(() => {
       syncFoundationProp(
         nextProps.activeTabIndex,
-        this.foundation_ && this.foundation_.adapter_.getActiveTabIndex(),
-        () => {
-          this.foundation_ && this.activateTab(nextProps.activeTabIndex);
-        }
+        this.activeTabIndex,
+        () => (this.activeTabIndex = Number(nextProps.activeTabIndex))
       );
     });
   }

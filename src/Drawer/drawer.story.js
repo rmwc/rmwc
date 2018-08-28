@@ -3,8 +3,14 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { Drawer, DrawerHeader, DrawerContent } from './';
-import { ListItem, ListItemPrimaryText, ListItemGraphic } from '../List';
+import {
+  Drawer,
+  DrawerHeader,
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle
+} from './';
+import { List, ListItem, ListItemGraphic } from '../List';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },
@@ -17,23 +23,25 @@ const ListItems = props =>
   menuItems.map((section, i) => (
     <ListItem key={i} onClick={props.onItemClick}>
       <ListItemGraphic>{section.icon}</ListItemGraphic>
-      <ListItemPrimaryText>{section.displayName}</ListItemPrimaryText>
+      {section.displayName}
     </ListItem>
   ));
 storiesOf('Drawers', module).add('Drawer', () => (
   <div style={{ margin: '-24px' }}>
     <Drawer
-      permanent={boolean('permanent', true)}
-      temporary={boolean('temporary', false)}
-      persistent={boolean('persistent', false)}
+      modal={boolean('modal', false)}
+      dismissible={boolean('dismissible', false)}
       open={boolean('open', true)}
       onClose={action('onClose')}
     >
       <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
-        DrawerHeader
+        <DrawerTitle>DrawerTitle</DrawerTitle>
+        <DrawerSubtitle>DrawerSubtitle</DrawerSubtitle>
       </DrawerHeader>
       <DrawerContent>
-        <ListItems onItemClick={action('onClick')} />
+        <List>
+          <ListItems onItemClick={action('onClick')} />
+        </List>
       </DrawerContent>
     </Drawer>
   </div>

@@ -1,39 +1,65 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Drawer, DrawerContent, DrawerHeader } from './';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerSubtitle,
+  DrawerScrim,
+  DrawerAppContent
+} from './';
 
 describe('Drawer', () => {
-  it('permanent Drawer renders', () => {
+  it('Drawer renders', () => {
     mount(
-      <Drawer permanent>
-        <DrawerHeader />
+      <Drawer>
+        <DrawerHeader>
+          <DrawerTitle>Title</DrawerTitle>
+          <DrawerSubtitle>Subtitle</DrawerSubtitle>
+        </DrawerHeader>
         <DrawerContent />
       </Drawer>
     );
   });
 
-  it('persistent Drawer renders', () => {
+  it('dismissible Drawer renders', () => {
     mount(
-      <Drawer persistent>
-        <DrawerHeader />
-        <DrawerContent />
-      </Drawer>
+      <React.Fragment>
+        <Drawer dismissible>
+          <DrawerHeader>
+            <DrawerTitle>Title</DrawerTitle>
+            <DrawerSubtitle>Subtitle</DrawerSubtitle>
+          </DrawerHeader>
+          <DrawerContent />
+        </Drawer>
+        <DrawerAppContent>Test</DrawerAppContent>
+      </React.Fragment>
     );
   });
 
-  it('temporary Drawer renders', () => {
+  it('modal Drawer renders', () => {
     mount(
-      <Drawer temporary>
-        <DrawerHeader />
-        <DrawerContent />
-      </Drawer>
+      <React.Fragment>
+        <Drawer modal>
+          <DrawerHeader>
+            <DrawerTitle>Title</DrawerTitle>
+            <DrawerSubtitle>Subtitle</DrawerSubtitle>
+          </DrawerHeader>
+          <DrawerContent />
+        </Drawer>
+        <DrawerScrim />
+      </React.Fragment>
     );
   });
 
   it('can open', done => {
     const el = mount(
-      <Drawer persistent>
-        <DrawerHeader />
+      <Drawer dismissible>
+        <DrawerHeader>
+          <DrawerTitle>Title</DrawerTitle>
+          <DrawerSubtitle>Subtitle</DrawerSubtitle>
+        </DrawerHeader>
         <DrawerContent />
       </Drawer>
     );
@@ -46,9 +72,11 @@ describe('Drawer', () => {
     });
   });
   it('can have custom classnames', () => {
-    [Drawer, DrawerHeader, DrawerContent].forEach(Component => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
-    });
+    [Drawer, DrawerHeader, DrawerContent, DrawerTitle, DrawerSubtitle].forEach(
+      Component => {
+        const el = mount(<Component className={'my-custom-classname'} />);
+        expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      }
+    );
   });
 });

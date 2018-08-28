@@ -185,30 +185,7 @@ export const MenuSurfaceRoot = simpleTag({
 
 export class MenuSurface extends withFoundation({
   constructor: MDCMenuSurface,
-  adapter: {
-    notifyClose: function() {
-      const evt = this.emit(
-        MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
-        {},
-        undefined,
-        false
-      );
-
-      this.props.onClose && this.props.onClose(evt);
-      this._safeSyncWithProps(this.props);
-    },
-    notifyOpen: function() {
-      const evt = this.emit(
-        MDCMenuSurfaceFoundation.strings.OPENED_EVENT,
-        {},
-        undefined,
-        false
-      );
-
-      this.props.onOpen && this.props.onOpen(evt);
-      this._safeSyncWithProps(this.props);
-    }
-  }
+  adapter: {}
 })<MenuSurfacePropsT> {
   open: boolean;
   foundation_: any;

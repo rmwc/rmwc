@@ -1404,28 +1404,33 @@
   ],
   "src/Drawer/index.js": [
     {
-      "description": "",
-      "displayName": "DrawerHeaderRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "DrawerHeaderContent",
-      "methods": []
-    },
-    {
-      "description": "A Header for Drawers",
+      "description": "An optional header for the Drawer.",
       "displayName": "DrawerHeader",
       "methods": []
     },
     {
-      "description": "If you are using fixed a Toolbar, this provides space for it.",
-      "displayName": "DrawerToolbarSpacer",
+      "description": "An title for the DrawerHeader.",
+      "displayName": "DrawerTitle",
+      "methods": []
+    },
+    {
+      "description": "A subtitle for the DrawerHeader.",
+      "displayName": "DrawerSubtitle",
       "methods": []
     },
     {
       "description": "Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else.",
       "displayName": "DrawerContent",
+      "methods": []
+    },
+    {
+      "description": "Protects the app's UI from interactions while a modal drawer is open.\nThis is automatically included if you're using React 16 and above.\nFor React 15, you must manually include it immediately after a modal Drawer.",
+      "displayName": "DrawerScrim",
+      "methods": []
+    },
+    {
+      "description": "For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes.",
+      "displayName": "DrawerAppContent",
       "methods": []
     },
     {
@@ -1441,12 +1446,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n}",
+                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1513,21 +1518,14 @@
                           }
                         },
                         {
-                          "key": "permanent",
+                          "key": "dismissible",
                           "value": {
                             "name": "boolean",
                             "required": false
                           }
                         },
                         {
-                          "key": "persistent",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "temporary",
+                          "key": "modal",
                           "value": {
                             "name": "boolean",
                             "required": false
@@ -1547,11 +1545,6 @@
           "returns": null
         }
       ]
-    },
-    {
-      "description": "",
-      "displayName": "DrawerDrawer",
-      "methods": []
     },
     {
       "description": "",
@@ -1621,26 +1614,19 @@
           "required": false,
           "description": "Callback that fires when the Drawer is opened."
         },
-        "permanent": {
+        "dismissible": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a permanent drawer."
+          "description": "Makes a dismissible drawer."
         },
-        "persistent": {
+        "modal": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a persistent drawer."
-        },
-        "temporary": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes a temporary drawer."
+          "description": "Makes a modal / temporary drawer."
         }
       }
     }
@@ -2192,7 +2178,7 @@
       "methods": []
     },
     {
-      "description": "The icon for a Grid tile. This is an instance of Icon and can take all of the same props.",
+      "description": "The icon for a Grid tile. This is an instance of Icon component.",
       "displayName": "GridTileIcon",
       "methods": []
     },
@@ -2316,221 +2302,42 @@
   "src/IconButton/index.js": [
     {
       "description": "",
-      "displayName": "IconButtonRoot",
-      "methods": [],
-      "props": {
-        "role": {
-          "defaultValue": {
-            "value": "'button'",
-            "computed": false
-          },
-          "required": false
-        },
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'0'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    },
-    {
-      "description": "",
-      "displayName": "IconButton",
+      "displayName": "IconButtonIcon",
       "methods": [
         {
-          "name": "isOn",
-          "docblock": "Takes into account our checked prop",
-          "modifiers": [],
-          "params": [],
-          "returns": null,
-          "description": "Takes into account our checked prop"
-        },
-        {
-          "name": "initialize",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
-        },
-        {
-          "name": "syncWithProps",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
           "params": [
             {
-              "name": "nextProps",
+              "name": "props",
               "type": {
-                "name": "intersection",
-                "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n} & SimpleTagPropsT &\n  IconPropsT",
-                "elements": [
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "label",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onContent",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onLabel",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "offContent",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "offLabel",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "checked",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onChange",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ isOn: boolean }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "isOn",
-                                              "value": {
-                                                "name": "boolean",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<{ isOn: boolean }>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "disabled",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        }
-                      ]
+                "name": "signature",
+                "type": "object",
+                "raw": "{ on: boolean }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "on",
+                      "value": {
+                        "name": "boolean",
+                        "required": true
+                      }
                     }
-                  },
-                  {
-                    "name": "SimpleTagPropsT"
-                  },
-                  {
-                    "name": "IconPropsT"
-                  }
-                ],
-                "alias": "IconButtonPropsT"
+                  ]
+                }
               }
             }
           ],
           "returns": null
-        },
-        {
-          "name": "renderIcon",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
         }
-      ],
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "IconButton",
+      "methods": [],
       "props": {
-        "label": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "A label for non-toggleable buttons"
-        },
-        "onContent": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use when a toggleable button is on."
-        },
-        "onLabel": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The label to use when a toggleable button is on."
-        },
-        "offContent": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use when a toggleable button is off."
-        },
-        "offLabel": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The label to use when a toggleable button is off."
-        },
         "checked": {
           "flowType": {
             "name": "boolean"
@@ -2585,6 +2392,21 @@
           },
           "required": false,
           "description": "Makes the button disabled"
+        },
+        "onIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "If specified, renders a toggle with this icon as the on state."
+        },
+        "onIconOptions": {
+          "flowType": {
+            "name": "IconOptionsT"
+          },
+          "required": false,
+          "description": "Options for the onIcon"
         }
       }
     }
@@ -3181,6 +3003,13 @@
             "value": "true",
             "computed": false
           }
+        },
+        "tabIndex": {
+          "defaultValue": {
+            "value": "0",
+            "computed": false
+          },
+          "required": false
         }
       },
       "context": {
@@ -7297,51 +7126,60 @@
             {
               "name": "props",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "label",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "icon",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "stacked",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "restrictIndicator",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
+                "name": "intersection",
+                "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n} & IconPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "icon",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "stacked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "restrictIndicator",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "IconPropsT"
+                  }
+                ],
                 "alias": "TabPropsT"
               }
             }

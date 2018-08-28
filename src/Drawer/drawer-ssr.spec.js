@@ -3,33 +3,64 @@
  */
 import * as React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Drawer, DrawerContent, DrawerHeader } from './';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerSubtitle,
+  DrawerScrim
+} from './';
 
 describe('Drawer SSR', () => {
-  it('permanent Drawer renders', () => {
+  it('Drawer renders', () => {
     mount(
-      <Drawer permanent>
-        <DrawerHeader />
+      <Drawer>
+        <DrawerHeader>
+          <DrawerTitle>Title</DrawerTitle>
+          <DrawerSubtitle>Subtitle</DrawerSubtitle>
+        </DrawerHeader>
         <DrawerContent />
       </Drawer>
     );
   });
 
-  it('persistent Drawer renders', () => {
+  it('dismissible Drawer renders', () => {
     mount(
-      <Drawer persistent>
-        <DrawerHeader />
+      <Drawer dismissible>
+        <DrawerHeader>
+          <DrawerTitle>Title</DrawerTitle>
+          <DrawerSubtitle>Subtitle</DrawerSubtitle>
+        </DrawerHeader>
         <DrawerContent />
       </Drawer>
     );
   });
 
-  it('temporary Drawer renders', () => {
-    mount(
-      <Drawer temporary>
-        <DrawerHeader />
-        <DrawerContent />
-      </Drawer>
-    );
+  it('modal Drawer renders', () => {
+    if (React.Fragment !== undefined) {
+      mount(
+        <Drawer modal>
+          <DrawerHeader>
+            <DrawerTitle>Title</DrawerTitle>
+            <DrawerSubtitle>Subtitle</DrawerSubtitle>
+          </DrawerHeader>
+          <DrawerContent />
+        </Drawer>
+      );
+    } else {
+      mount(
+        <div>
+          <Drawer modal>
+            <DrawerHeader>
+              <DrawerTitle>Title</DrawerTitle>
+              <DrawerSubtitle>Subtitle</DrawerSubtitle>
+            </DrawerHeader>
+            <DrawerContent />
+          </Drawer>
+          <DrawerScrim />
+        </div>
+      );
+    }
   });
 });

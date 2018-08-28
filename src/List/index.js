@@ -41,7 +41,8 @@ export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
 
   static defaultProps = {
-    ripple: true
+    ripple: true,
+    tabIndex: 0
   };
 
   static contextTypes = {

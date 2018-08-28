@@ -204,7 +204,14 @@ export const withFoundation = ({
         1
       )}`;
 
-      this.props[propName] && this.props[propName](evt);
+      // covers calling variations of events. onOpened, onClosed -> onOpen, onClose
+      if (this.props[propName]) {
+        this.props[propName](evt);
+      } else if (this.props[propName.slice(0, -1)]) {
+        this.props[propName.slice(0, -1)](evt);
+      } else if (this.props[propName.slice(0, -2)]) {
+        this.props[propName.slice(0, -2)](evt);
+      }
 
       // MDC can change state internally, if we are triggering a handler, re-sync with our props
       sync && this._safeSyncWithProps(this.props);
