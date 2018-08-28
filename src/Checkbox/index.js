@@ -96,6 +96,9 @@ export class Checkbox extends withFoundation({
   indeterminate: boolean;
   disabled: boolean;
   value: any;
+  handleChange_: Function;
+  foundation_: any;
+  nativeCb_: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);
@@ -111,26 +114,19 @@ export class Checkbox extends withFoundation({
     // - register syncWithProps so it runs on change
     // - deregister the original change handler and re-register so it
     //   runs after sync with props
-    this.boundChangeHandler = () => this.syncWithProps(this.props);
+    this.nativeCb_.removeEventListener('change', this.handleChange_);
 
-    this.foundation_ &&
-      this.foundation_.adapter_.deregisterChangeHandler(
-        this.foundation_.changeHandler_
-      );
-    this.foundation_ &&
-      this.foundation_.adapter_.registerChangeHandler(this.boundChangeHandler);
-    this.foundation_ &&
-      this.foundation_.adapter_.registerChangeHandler(
-        this.foundation_.changeHandler_
-      );
+    this.handleChange_ = () => {
+      this.syncWithProps(this.props);
+      this.foundation_.handleChange();
+    };
+
+    this.nativeCb_.addEventListener('change', this.handleChange_);
   }
 
-  componentWillUnmount() {
-    this.foundation_ &&
-      this.foundation_.adapter_.deregisterChangeHandler(
-        this.boundChangeHandler
-      );
-    super.componentWillUnmount();
+  destroy() {
+    super.destroy();
+    this.nativeCb_.removeEventListener('change', this.handleChange_);
   }
 
   syncWithProps(nextProps: CheckboxPropsT) {
