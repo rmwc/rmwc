@@ -82,7 +82,7 @@ import { Radio } from 'rmwc/Radio';
 
 {/* Specify as many options as you want. */}
 <ThemeProvider options={{
-  primary: 'magenta',
+  primary: 'lightpink',
   secondary: 'black',
   onPrimary: '#000',
   textPrimaryOnBackground: 'black'

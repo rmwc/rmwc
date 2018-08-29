@@ -15,7 +15,8 @@ import {
   TopAppBarFixedAdjust
 } from 'rmwc/TopAppBar';
 
-import { Theme } from 'rmwc/Theme';
+import { ThemeProvider } from 'rmwc/Theme';
+import { getAutoColorsForTheme } from 'rmwc/Theme/utils';
 import { TabBar, Tab } from 'rmwc/Tabs';
 
 import { Drawer, DrawerContent, DrawerAppContent } from 'rmwc/Drawer';
@@ -40,7 +41,10 @@ const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
   '--mdc-theme-secondary': '#03dac4',
   '--mdc-theme-background': '#fff',
-  '--mdc-theme-surface': '#fff',
+  '--mdc-theme-surface': '#fff'
+};
+
+const TEXT_DEFAULTS = {
   '--mdc-theme-on-primary': '#fff',
   '--mdc-theme-on-secondary': '#fff',
   '--mdc-theme-on-surface': '#000',
@@ -64,7 +68,8 @@ const DEFAULT_THEME = {
 const THEMES = {
   Baseline: {
     '--mdc-theme-primary': '#6200ee',
-    '--mdc-theme-secondary': '#03dac4'
+    '--mdc-theme-secondary':
+      '#03dac4' /** Any theme option pointing to a valid CSS value. */
   },
   Crane: {
     '--mdc-theme-primary': '#5d1049',
@@ -76,18 +81,52 @@ const THEMES = {
   },
   Shrine: {
     '--mdc-theme-primary': '#ffdbcf',
-    '--mdc-theme-secondary': '#feeae6',
-    '--mdc-theme-on-primary': '#442b2d',
-    '--mdc-theme-on-secondary': '#442b2d',
-    '--mdc-theme-on-surface': '#442b2d'
+    '--mdc-theme-secondary': '#feeae6'
   }
 };
 
 const getTheme = themeName => {
-  return {
+  const theme = {
     ...DEFAULT_THEME,
     ...(THEMES[themeName] || {})
   };
+
+  const colors = getAutoColorsForTheme(theme);
+  const merged = {
+    ...TEXT_DEFAULTS,
+    ...colors
+  };
+
+  const order = [
+    'primary',
+    'secondary',
+    'background',
+    'surface',
+    'on-primary',
+    'on-secondary',
+    'on-surface',
+    'text-primary-on-background',
+    'text-secondary-on-background',
+    'text-hint-on-background',
+    'text-disabled-on-background',
+    'text-icon-on-background',
+    'text-primary-on-light',
+    'text-secondary-on-light',
+    'text-hint-on-light',
+    'text-disabled-on-light',
+    'text-icon-on-light',
+    'text-primary-on-dark',
+    'text-secondary-on-dark',
+    'text-hint-on-dark',
+    'text-disabled-on-dark',
+    'text-icon-on-dark'
+  ];
+
+  return order.reduce((acc, key) => {
+    key = `--mdc-theme-${key}`;
+    acc[key] = merged[key];
+    return acc;
+  }, {});
 };
 
 const MainMenuItem = ({ url, label }) => {
@@ -174,7 +213,7 @@ class ThemePicker extends React.Component {
     return (
       <MenuSurfaceAnchor>
         <MenuSurface
-          style={{ maxWidth: '100vw', width: '400px' }}
+          style={{ maxWidth: '100vw', width: '440px' }}
           open={this.state.open}
           onClose={() => {
             this.setState({ open: false });
@@ -403,8 +442,12 @@ export class App extends React.Component {
       'home'}`;
 
     return (
-      <Theme className="app__root" tag="div" id={pageId}>
-        <ThemeStyleTag themeName={this.state.theme} />
+      <ThemeProvider
+        options={getTheme(this.state.theme)}
+        className="app__root"
+        tag="div"
+        id={pageId}
+      >
         <AppBar
           onNavClick={evt =>
             this.setState({ menuIsOpen: !this.state.menuIsOpen })
@@ -466,7 +509,7 @@ export class App extends React.Component {
             </RouterSwitch>
           </DrawerAppContent>
         </div>
-      </Theme>
+      </ThemeProvider>
     );
   }
 }
