@@ -56,6 +56,8 @@ import { Theme } from 'rmwc/Theme';
 ## ThemeProvider
 The `ThemeProvider` is an optional component that allows you to specify theme colors and settings for all of its subtree. This is useful to use once at the top of your app, or in parts of your app where the styles or color scheme differ.
 
+You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
+
 ```jsx render
 import { ThemeProvider } from 'rmwc/Theme';
 
