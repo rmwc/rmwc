@@ -113,6 +113,7 @@ export class Select extends withFoundation({
   static displayName = 'Select';
 
   disabled: boolean;
+  value: any;
 
   syncWithProps(nextProps: SelectPropsT) {
     //disabled
@@ -120,6 +121,13 @@ export class Select extends withFoundation({
       nextProps.disabled,
       this.disabled,
       () => (this.disabled = !!nextProps.disabled)
+    );
+
+    // value
+    syncFoundationProp(
+      nextProps.value,
+      this.value,
+      () => (this.value = nextProps.value)
     );
   }
 
