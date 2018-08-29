@@ -1,3 +1,52 @@
+#### 1.9.0 (2018-08-29)
+
+##### Breaking Changes
+
+* **CardAction:**  Aligning with IconButton props. ([6901499f](https://github.com/jamesmfriedman/rmwc/commit/6901499f35cc524636c60add876723f0b00592e9))
+* **Drawer:**  Matching MDC refactor of Drawers. persistent -> dismissible, temprorary -> modal. Permanent drawers are now used by default and dont have to be specified. DrawerContent is no longer an instance of the List component and can contain any content. ([9a675b33](https://github.com/jamesmfriedman/rmwc/commit/9a675b332f797f44956b31b1c9cd66d086b3144e))
+* **IconButton:**  Refactor to match MDC refactor. The props interface has been simplified to support standard IconButtons and IconToggles ([c2ea570e](https://github.com/jamesmfriedman/rmwc/commit/c2ea570e19bbe5de1d760f93b93a494b9b0f0e0c))
+* **Menu:**  MenuSurface has been renamed to MenuSurfaceAnchor. If you’re using SimpleMenu you will not be affected. ([c12a8358](https://github.com/jamesmfriedman/rmwc/commit/c12a83585149a0158ae14b8b169ba6b87aaa1e22))
+* **Tabs:**  TabBar and Tabs have been completely overhauled by material-components-web, the good news is, they’re much simpler! RMWC has insulated from changes as best as possible. onChange: evt.detail.activeTabIndex becomes onActivated: evt.detail.index. TabBarScroller no longer and exists and TabBars scroll by default when there is enough content. Also, TabIcons and TabIconText are now built into the Tab component directly. ([5d0db7a2](https://github.com/jamesmfriedman/rmwc/commit/5d0db7a2c437c2ddf9afe826f792d85439357a03))
+* **List:**  ListItemText is no longer required for single line lists. For multi line lists, it is required as a wrapper for PrimaryText and SecondaryText. If you’re using SimpleListItem, everything should just keep working without any changes. [#281](https://github.com/jamesmfriedman/rmwc/pull/281) ([dfb6e266](https://github.com/jamesmfriedman/rmwc/commit/dfb6e2669dccd8435fdb6645cdb34708116d3d72))
+
+##### Chores
+
+* **Switch:**  Upgrading to new switch component [#281](https://github.com/jamesmfriedman/rmwc/pull/281) ([13a51019](https://github.com/jamesmfriedman/rmwc/commit/13a51019d9f81a5038f40cdad031986e3805e39d))
+
+##### Documentation Changes
+
+* **Styles:**  Docs now include where to import the individual component styles ([f406bac3](https://github.com/jamesmfriedman/rmwc/commit/f406bac3f11a3cf98799e43c15eccc72a325fdd8))
+* **Controls:**  Adding more examples ([0e040059](https://github.com/jamesmfriedman/rmwc/commit/0e040059906c10ad8ceae3a379233e19ef8ffdeb))
+* **List:**  Adding Checkbox list example ([67c750d5](https://github.com/jamesmfriedman/rmwc/commit/67c750d5ea9ba99f06fc6f5467792feb970a38a8))
+* **Styling And Theming:**
+  *  fixed the prettier problems ([4a9a59d6](https://github.com/jamesmfriedman/rmwc/commit/4a9a59d6c7fc3743b950faa666886a24fb8f958c))
+  *  fixed the prettier problems ([ce8bfd05](https://github.com/jamesmfriedman/rmwc/commit/ce8bfd05d338b97dee125de19af3c3954b7d18f1))
+  *  added section Theme and ThemeProvider in docs ([4897e234](https://github.com/jamesmfriedman/rmwc/commit/4897e234f3abf465d31f792fa96d61257aff5983))
+* **Theming:**  fixed the link to theming with runtime css variables ([1f0ec06c](https://github.com/jamesmfriedman/rmwc/commit/1f0ec06cd45dcdf37181fbff7a0e03b269e07e88))
+* **Styling:**  renamed docs menu and url name Styling to Styling and Theming (and their import in menuContent.js) ([579510e8](https://github.com/jamesmfriedman/rmwc/commit/579510e8093e0c3a352fb7745ecefe1d0f344e4a))
+
+##### New Features
+
+* **ThemeProvider:**  automatically determining light and dark text color palettes. ([3378b2f8](https://github.com/jamesmfriedman/rmwc/commit/3378b2f89fac402ea84f7e5b19c7fb32ecfa258d))
+* **MenuSurface:**  Adds menu surface component ([cd1f598b](https://github.com/jamesmfriedman/rmwc/commit/cd1f598b03fb6a6bed6d51406f077ab70b401968))
+
+##### Bug Fixes
+
+* **Select:**  corrects issue with label not floating. Fixes [#283](https://github.com/jamesmfriedman/rmwc/pull/283) ([2fcca699](https://github.com/jamesmfriedman/rmwc/commit/2fcca6991139bb9256929c4c3a8a46a854678f63))
+* **Menu:**  Corrects JS error from timer being fired after unmount ([b95fff80](https://github.com/jamesmfriedman/rmwc/commit/b95fff80b848effc108b0a2f04ef6d6449e1be28))
+* **Tabs:**  Corrects focus issue when activating initial tab ([0eac6982](https://github.com/jamesmfriedman/rmwc/commit/0eac69821fd9cfc0325226305a566a74d19131a0))
+* **Checkbox:**  Corrects event handling with new foundation pattern. ([12d42546](https://github.com/jamesmfriedman/rmwc/commit/12d42546abf5372e893155d18f770bf0336a9a1c))
+* **TextField:**  Fixes issue with deprecated single line input ([9663311f](https://github.com/jamesmfriedman/rmwc/commit/9663311fcf62ac433c17b13c58daa0265d4a552c))
+* **Type Defs:**  strengthened Typings for Provider and Icon ([c4c9eabb](https://github.com/jamesmfriedman/rmwc/commit/c4c9eabb70b7047f4db534051e253f79cf2865b8))
+
+##### Other Changes
+
+* **ThemeProvider:**  Adding information about auto colors ([5f9194d9](https://github.com/jamesmfriedman/rmwc/commit/5f9194d91ff8cdcdd30530aeb55fc14f72ed2fe1))
+
+##### Refactors
+
+* **Icon:**  The Icon component props interface has been altered to better accomodate other components that are extending the Icon. A deprecation notice is posted and the old props handling will be removed in the next release of RMWC. ([ee826735](https://github.com/jamesmfriedman/rmwc/commit/ee8267351825e0fb07e4571dd888316fedf44564))
+
 #### 1.8.3 (2018-07-19)
 
 ##### Documentation Changes
