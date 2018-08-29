@@ -95,7 +95,7 @@ export class TabBar extends withFoundation({
     window.requestAnimationFrame(() => {
       // to make this even more annoying, Tabs focus by default
       // restore the focus and scroll position after we activate the tab
-      const activeElement = window.document.activeElement;
+      const activeElement: any = window.document.activeElement;
       const [scrollX, scrollY] = [window.scrollX, window.scrollY];
 
       //activate the tab
@@ -209,7 +209,7 @@ export const TabIcon = simpleTag({
 });
 
 /** A Tab component */
-export const Tab = ({
+export const Tab: React.ComponentType<TabPropsT> = ({
   children,
   label,
   icon,

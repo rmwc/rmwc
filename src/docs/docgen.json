@@ -3226,12 +3226,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3435,7 +3435,7 @@
             }
           },
           "required": false,
-          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+          "description": "Callback that when the menu is closed."
         },
         "onSelected": {
           "flowType": {
@@ -3838,6 +3838,13 @@
             }
           ],
           "returns": null
+        },
+        {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
         }
       ],
       "props": {
@@ -4034,7 +4041,7 @@
             }
           },
           "required": false,
-          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+          "description": "Callback that when the menu is closed."
         },
         "onSelected": {
           "flowType": {
@@ -4194,7 +4201,7 @@
             }
           },
           "required": false,
-          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+          "description": "Callback that when the menu is closed."
         },
         "onSelected": {
           "flowType": {
@@ -7873,7 +7880,15 @@
     {
       "description": "A ThemeProvider. This sets theme colors for its child tree.",
       "displayName": "ThemeProvider",
-      "methods": [],
+      "methods": [
+        {
+          "name": "colors",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
       "props": {
         "options": {
           "flowType": {
@@ -7902,11 +7917,7 @@
             "name": "Object"
           },
           "required": false,
-          "description": "Additional standard inline styles that will be merged into the style tag.",
-          "defaultValue": {
-            "value": "{}",
-            "computed": false
-          }
+          "description": "Additional standard inline styles that will be merged into the style tag."
         }
       }
     }

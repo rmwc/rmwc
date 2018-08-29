@@ -149,12 +149,11 @@ export class TextField extends withFoundation({
   valid: boolean;
   value: any;
   disabled: boolean;
+  foundation_: any;
 
   syncWithProps(nextProps: TextFieldPropsT) {
     // invalid | valid
-    (this.foundation_: any).setUseNativeValidation(
-      nextProps.invalid === undefined
-    );
+    this.foundation_.setUseNativeValidation(nextProps.invalid === undefined);
 
     syncFoundationProp(
       nextProps.invalid,

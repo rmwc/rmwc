@@ -82,6 +82,7 @@ import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
   <Tab>Rolls</Tab>
   <Tab>Sushi</Tab>
   <Tab>Cupcake</Tab>
+  <Tab>Cheesecake</Tab>
 </TabBar>
 ```
 

@@ -38,7 +38,9 @@ type ThemeProviderPropsT = {
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
 export class ThemeProvider extends React.Component<ThemeProviderPropsT> {
-  prevOpts_ = null;
+  static displayName = 'ThemeProvider';
+
+  prevOpts_ = '';
   colors_ = {};
 
   get colors() {
@@ -76,5 +78,3 @@ export class ThemeProvider extends React.Component<ThemeProviderPropsT> {
     return <div {...rest} style={themeStyles} />;
   }
 }
-
-ThemeProvider.displayName = 'ThemeProvider';

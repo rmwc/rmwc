@@ -62,7 +62,7 @@ export type SelectedEventDetailT = {
 export type MenuPropsT = {
   /** Whether or not the Menu is open. */
   open?: boolean,
-  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */
+  /** Callback that when the menu is closed. */
   onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when a Menu item is selected. */
   onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
@@ -79,11 +79,11 @@ export class Menu extends withFoundation({
 
   open: boolean;
   setAnchorCorner: Function;
-  onCloseHandler_: Function;
   menuSurface_: any;
 
   constructor(props: MenuPropsT) {
     super(props);
+    //$FlowFixMe
     this.onCloseHandler_ = this.onCloseHandler_.bind(this);
   }
 
@@ -138,7 +138,6 @@ export class Menu extends withFoundation({
       children,
       open,
       onClose,
-      onCancel,
       onSelected,
       anchorCorner,
       ...rest

@@ -58,6 +58,8 @@ The `ThemeProvider` is an optional component that allows you to specify theme co
 
 You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
 
+Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Shrine". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
+
 ```jsx render
 import { ThemeProvider } from 'rmwc/Theme';
 
