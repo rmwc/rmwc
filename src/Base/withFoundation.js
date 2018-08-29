@@ -204,18 +204,23 @@ export const withFoundation = ({
         1
       )}`;
 
-      // covers calling variations of events. onOpened, onClosed -> onOpen, onClose
-      if (this.props[propName]) {
-        this.props[propName](evt);
-      } else if (this.props[propName.slice(0, -1)]) {
-        this.props[propName.slice(0, -1)](evt);
-      } else if (this.props[propName.slice(0, -2)]) {
-        this.props[propName.slice(0, -2)](evt);
-      }
+      // check to see if the foundation still exists. If not, we are
+      // probably unmounted or destroyed and dont want to call any more handlers
+      // This happens when MDC broadcasts certain events on timers
+      if (this.foundation_) {
+        if (this.props[propName]) {
+          // covers calling variations of events. onOpened, onClosed -> onOpen, onClose
+          this.props[propName](evt);
+        } else if (this.props[propName.slice(0, -1)]) {
+          this.props[propName.slice(0, -1)](evt);
+        } else if (this.props[propName.slice(0, -2)]) {
+          this.props[propName.slice(0, -2)](evt);
+        }
 
-      // MDC can change state internally, if we are triggering a handler, re-sync with our props
-      sync && this._safeSyncWithProps(this.props);
-      this.root_ && this.root_.dispatchEvent(evt);
+        // MDC can change state internally, if we are triggering a handler, re-sync with our props
+        sync && this._safeSyncWithProps(this.props);
+        this.root_ && this.root_.dispatchEvent(evt);
+      }
 
       return evt;
     }

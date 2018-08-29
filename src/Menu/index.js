@@ -190,6 +190,7 @@ export class MenuSurface extends withFoundation({
   open: boolean;
   foundation_: any;
   setAnchorCorner: Function;
+  deregisterBodyClickListener_: Function;
 
   syncWithProps(nextProps: MenuSurfacePropsT) {
     //open
@@ -210,6 +211,13 @@ export class MenuSurface extends withFoundation({
         ]
       );
     }
+  }
+
+  destroy() {
+    super.destroy();
+    // Some extra cleanup to avoid JS errors from MDC
+    this.foundation_.adapter_.removeClass = () => {};
+    this.deregisterBodyClickListener_();
   }
 
   render() {

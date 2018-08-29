@@ -213,7 +213,7 @@ class ThemePicker extends React.Component {
     return (
       <MenuSurfaceAnchor>
         <MenuSurface
-          style={{ maxWidth: '100vw', width: '440px' }}
+          style={{ maxWidth: '100vw', width: '520px' }}
           open={this.state.open}
           onClose={() => {
             this.setState({ open: false });
@@ -370,16 +370,6 @@ class ThemePicker extends React.Component {
     );
   }
 }
-
-const ThemeStyleTag = ({ themeName }) => (
-  <style>{`
-    :root {
-      ${Object.entries(getTheme(themeName))
-    .map(([t, val]) => `${t}: ${val};`)
-    .join('\n')}
-    }
-  `}</style>
-);
 
 const Nav = props => (
   <React.Fragment>
