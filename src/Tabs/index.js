@@ -93,7 +93,17 @@ export class TabBar extends withFoundation({
     // causes the first tab of the set to not be active
     // request animation frame required to avoid test failure issues
     window.requestAnimationFrame(() => {
+      // to make this even more annoying, Tabs focus by default
+      // restore the focus and scroll position after we activate the tab
+      const activeElement = window.document.activeElement;
+      const [scrollX, scrollY] = [window.scrollX, window.scrollY];
+
+      //activate the tab
       this.foundation_ && this.activateTab(this.props.activeTabIndex || 0);
+
+      // restore focus and scroll
+      activeElement && activeElement.focus();
+      window.scrollTo(scrollX, scrollY);
     });
   }
 
