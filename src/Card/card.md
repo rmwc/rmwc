@@ -4,8 +4,9 @@
 
 `material-web-components` provides a light framework for structuring cards, but the actual content layout will require a bit of custom CSS.
 
-import from **rmwc/Card**  
-[https://material.io/components/web/catalog/cards/](https://material.io/components/web/catalog/cards/)
+- import from **rmwc/Card**  
+- import styles from **@material/card/dist/mdc.card.css**
+- [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
 ## Fully Featured Example
 
@@ -55,13 +56,11 @@ import { Typography } from 'rmwc/Typography';
     </CardActionButtons>
     <CardActionIcons>
       <CardAction
-        onLabel="Remove from favorites"
-        onContent="favorite"
-        offLabel="Add to favorites"
-        offContent="favorite_border"
+        onIcon="favorite"
+        icon="favorite_border"
       />
-      <CardAction use="share" />
-      <CardAction use="more_vert" />
+      <CardAction icon="share" />
+      <CardAction icon="more_vert" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -129,7 +128,7 @@ import { Typography } from 'rmwc/Typography';
 
   <CardActions fullBleed>
     <CardAction>
-      All Business Headlines <Icon use="arrow_forward" />
+      All Business Headlines <Icon icon="arrow_forward" />
     </CardAction>
   </CardActions>
 </Card>
@@ -179,13 +178,11 @@ import {
   <CardActions>
     <CardActionIcons>
       <CardAction
-        onLabel="Remove from favorites"
-        onContent="favorite"
-        offLabel="Add to favorites"
-        offContent="favorite_border"
+        onIcon="favorite"
+        icon="favorite_border"
       />
-      <CardAction use="bookmark_border" />
-      <CardAction use="share" />
+      <CardAction icon="bookmark_border" />
+      <CardAction icon="share" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -201,5 +198,5 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="CardActions" />
 <DocumentComponent displayName="CardActionButtons" />
 <DocumentComponent displayName="CardActionIcons" />
-<DocumentComponent displayName="CardAction" />
+<DocumentComponent displayName="CardAction" composes={['IconButton', 'Icon', 'Button']}/>
 ```

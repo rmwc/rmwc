@@ -162,7 +162,7 @@ export default {
   SelectIcon: props => (
     <SelectIconRow filter={props.filter} value={props.value}>
             {props.children}
-            <TextFieldIcon use={props.icon} />
+            <TextFieldIcon icon={props.icon} />
     </SelectIconRow>
   )
 };

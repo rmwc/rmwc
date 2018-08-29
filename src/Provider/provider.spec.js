@@ -37,7 +37,7 @@ describe('Provider', () => {
         iconClassNamePrefix={'my-icon-lib-test-'}
         iconStrategy="className"
       >
-        <Icon use="test" />
+        <Icon icon="test" />
       </RMWCProvider>
     );
 

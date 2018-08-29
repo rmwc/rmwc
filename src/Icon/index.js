@@ -1,13 +1,14 @@
 // @flow
 import type { SimpleTagPropsT } from '../Base/simpleTag';
 import type { RMWCProviderOptionsT } from '../Provider';
-import type { IconStrategyT } from './utils';
+import type { DeprecatedIconPropsT, IconOptionsT } from './defs';
 
 import * as React from 'react';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 import { simpleTag } from '../Base';
+import { deprecationWarning } from '../Base/utils/deprecationWarning';
 import { getIconStrategy } from './utils';
 
 export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });
@@ -43,26 +44,17 @@ const iconRenderMap = {
 
 export type IconPropsT = {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
-  use?: React.Node,
-  /** Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider. */
-  strategy?: IconStrategyT,
-  /** A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy. */
-  prefix?: string,
-  /** A base className for the icon namespace, i.e. material-icons. */
-  basename?: string,
-  /** A render function to use when using the 'custom' strategy. */
-  render?: (content: mixed) => React.Node | null
-} & SimpleTagPropsT;
+  icon?: React.Node,
+  /** Additional Icon Options. See the Icon component documentation. */
+  iconOptions?: IconOptionsT
+} & DeprecatedIconPropsT &
+  SimpleTagPropsT;
 
 /**
  * An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.
  */
 export class Icon extends React.PureComponent<IconPropsT> {
   static displayName = 'Icon';
-
-  static defaultProps = {
-    use: undefined
-  };
 
   static contextTypes = {
     RMWCOptions: PropTypes.object
@@ -77,6 +69,8 @@ export class Icon extends React.PureComponent<IconPropsT> {
 
   render(): React.Node {
     const {
+      icon,
+      iconOptions = {},
       use,
       children,
       render,
@@ -86,6 +80,28 @@ export class Icon extends React.PureComponent<IconPropsT> {
       ...rest
     } = this.props;
 
+    if (use !== undefined || children !== undefined) {
+      deprecationWarning(
+        'Specifying icons via `use` prop or as `children` is deprecated and will be removed in the next release. Please use the `icon` prop instead. '
+      );
+    }
+
+    [
+      [strategy, 'strategy'],
+      [prefix, 'prefix'],
+      [render, 'render'],
+      [basename, 'basename']
+    ].forEach(k => {
+      if (k[0] !== undefined) {
+        deprecationWarning(
+          `The Icon \`${k[1]}\` prop has been replaced by \`iconOptions.${
+            k[1]
+          }\`.`
+        );
+      }
+    });
+
+    // Get provider options
     const {
       iconClassNameBase: defaultBasename,
       iconClassNamePrefix: defaultPrefix,
@@ -93,14 +109,18 @@ export class Icon extends React.PureComponent<IconPropsT> {
       iconRender: defaultCustomRender
     } = this.providerOptions;
 
-    const content = use || children;
+    const content = icon || use || children;
+
     const strategyToUse = getIconStrategy(
       content,
-      strategy || null,
+      iconOptions.strategy || strategy || null,
       defaultStrategy || null
     );
-    const prefixToUse = prefix || defaultPrefix;
-    const basenameToUse = basename === undefined ? defaultBasename : basename;
+    const prefixToUse = iconOptions.prefix || prefix || defaultPrefix;
+    const basenameToUse =
+      (iconOptions.basename || basename) === undefined
+        ? defaultBasename
+        : iconOptions.basename || basename;
     const iconClassName =
       strategyToUse === 'className' && typeof content === 'string'
         ? `${String(prefixToUse)}${content}`
@@ -108,7 +128,7 @@ export class Icon extends React.PureComponent<IconPropsT> {
 
     const renderToUse =
       strategyToUse === 'custom'
-        ? render || defaultCustomRender
+        ? iconOptions.render || render || defaultCustomRender
         : !!strategyToUse && iconRenderMap[strategyToUse] !== undefined
           ? iconRenderMap[strategyToUse]
           : undefined;

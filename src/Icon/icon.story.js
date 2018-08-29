@@ -12,7 +12,7 @@ storiesOf('Icons', module).add('Icon', () => (
       Ligature child: <Icon>favorite</Icon>
     </li>
     <li>
-      Ligature use: <Icon use="favorite" />
+      Ligature use: <Icon icon="favorite" />
     </li>
     <li>
       Url child:
@@ -22,7 +22,7 @@ storiesOf('Icons', module).add('Icon', () => (
     </li>
     <li>
       Url use:{' '}
-      <Icon use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
+      <Icon icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
     </li>
     <li>
       Component child:{' '}
@@ -33,7 +33,7 @@ storiesOf('Icons', module).add('Icon', () => (
     <li>
       Component Use:
       <Icon
-        use={
+        icon={
           <div
             style={{ background: 'purple', width: '24px', height: '24px' }}
           />
@@ -44,7 +44,7 @@ storiesOf('Icons', module).add('Icon', () => (
       Nested Icon Child:{' '}
       <Icon>
         <Icon
-          use={
+          icon={
             <div
               style={{ background: 'blue', width: '24px', height: '24px' }}
             />
@@ -55,9 +55,9 @@ storiesOf('Icons', module).add('Icon', () => (
     <li>
       Nested Icon Use:{' '}
       <Icon
-        use={
+        icon={
           <Icon
-            use={
+            icon={
               <div
                 style={{ background: 'blue', width: '24px', height: '24px' }}
               />
@@ -74,7 +74,7 @@ storiesOf('Icons', module).add('Icon', () => (
     </li>
     <li>
       className use:{' '}
-      <Icon prefix="ion-" use="ionic" strategy="className" basename="icon" />
+      <Icon prefix="ion-" icon="ionic" strategy="className" basename="icon" />
     </li>
     <li>
       custom child:{' '}
@@ -90,7 +90,7 @@ storiesOf('Icons', module).add('Icon', () => (
       <Icon
         strategy="custom"
         render={props => <div>Customized-{props.content}</div>}
-        use="CUSTOM"
+        icon="CUSTOM"
       />
     </li>
     <li>
@@ -99,7 +99,7 @@ storiesOf('Icons', module).add('Icon', () => (
         iconStrategy="custom"
         iconRender={props => <div>Custom + {props.content}</div>}
       >
-        <Icon use="test" />
+        <Icon icon="test" />
       </RMWCProvider>
     </li>
   </ul>

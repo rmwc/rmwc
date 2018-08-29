@@ -2,8 +2,9 @@
 
 > Shapes direct attention, identify components, communicate state, and express brand.
 
-import from **rmwc/Shape**  
-[https://material.io/components/web/catalog/shape/](https://material.io/components/web/catalog/shape/)
+- import from **rmwc/Shape**
+- import styles from **@material/shape/dist/mdc.shape.css**
+- [https://material.io/develop/web/components/shape/](https://material.io/develop/web/components/shape/)
 
 ```jsx render
 import { ShapeContainer } from 'rmwc/Shape';

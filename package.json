@@ -31,7 +31,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "hyperform": "^0.9.9",
-    "material-components-web": "0.37.x",
+    "material-components-web": "0.39.0",
     "mutation-observer": "^1.0.3",
     "prop-types": "^15.6.1"
   },
@@ -48,7 +48,7 @@
     "clean": "node scripts/clean.js",
     "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",
-    "docgen": "export NODE_ENV=development && react-docgen ./src --exclude=/\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/docs/docgen.json",
+    "docgen": "export NODE_ENV=development && react-docgen ./src --exclude /\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/docs/docgen.json",
     "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",

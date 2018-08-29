@@ -2,8 +2,9 @@
 
 > Grid lists are an alternative to standard list views.
 
-import from **rmwc/GridList**  
-[https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
+- import from **rmwc/GridList**  
+- import styles from **@material/grid-list/dist/mdc.grid-list.css**
+- [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
 
 ```jsx render
 import {
@@ -34,7 +35,7 @@ import { Select } from 'rmwc/Select';
         </GridTilePrimaryContent>
       </GridTilePrimary>
       <GridTileSecondary>
-        <GridTileIcon>info</GridTileIcon>
+        <GridTileIcon icon="info" />
         <GridTileTitle>Tile {i + 1}</GridTileTitle>
       </GridTileSecondary>
     </GridTile>
@@ -59,7 +60,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="GridList" />
 <DocumentComponent displayName="GridTile" />
-<DocumentComponent displayName="GridTileIcon" />
+<DocumentComponent displayName="GridTileIcon" composes={['Icon']}/>
 <DocumentComponent displayName="GridTilePrimary" />
 <DocumentComponent displayName="GridTileSecondary" />
 <DocumentComponent displayName="GridTileTitleSupportText" />

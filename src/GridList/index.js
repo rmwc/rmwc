@@ -82,7 +82,7 @@ export const GridTileSecondary = simpleTag({
   classNames: 'mdc-grid-tile__secondary'
 });
 
-/** The icon for a Grid tile. This is an instance of Icon and can take all of the same props. */
+/** The icon for a Grid tile. This is an instance of Icon component. */
 export const GridTileIcon = simpleTag({
   displayName: 'GridTileIcon',
   tag: Icon,

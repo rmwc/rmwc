@@ -2,14 +2,15 @@
 
 > Buttons communicate the action that will occur when the user touches them.
 
-import from **rmwc/Button**  
-[https://material.io/components/web/catalog/buttons/](https://material.io/components/web/catalog/buttons/)
+- import from **rmwc/Button**  
+- import styles from **@material/button/dist/mdc.button.css**
+- [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 ```jsx render
 import { Button, ButtonIcon } from 'rmwc/Button';
 
 <Button>Default</Button>
-<Button><ButtonIcon use="favorite" /> With Icon</Button>
+<Button><ButtonIcon icon="favorite" /> With Icon</Button>
 <Button raised>Raised</Button>
 <Button dense>Dense</Button>
 <Button unelevated>Unelevated</Button>
@@ -31,5 +32,5 @@ import { Button, ButtonIcon } from 'rmwc/Button';
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Button" />
-<DocumentComponent displayName="ButtonIcon" />
+<DocumentComponent displayName="ButtonIcon" composes={['Icon']} />
 ```

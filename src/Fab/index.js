@@ -1,13 +1,14 @@
 // @flow
+import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
+import type { IconPropsT } from '../Icon';
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Icon } from '../Icon';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
-
-import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
-import type { RMWCProviderOptionsT } from '../Provider';
 
 /**
  * Private
@@ -16,18 +17,15 @@ import type { RMWCProviderOptionsT } from '../Provider';
 export type FabPropsT = {
   /** Make the Fab smaller. */
   mini?: boolean,
-  /** The icon to use for the fab. */
-  icon?: boolean,
   /** Make the Fab extended with a label. */
   label?: React.Node,
   /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
   exited?: boolean,
-  /** cssOnly Fab. */
-  cssOnly?: boolean,
   /** Enable / disable the ripple. */
   ripple?: boolean
 } & SimpleTagPropsT &
-  WithRipplePropsT;
+  WithRipplePropsT &
+  IconPropsT;
 
 export const FabRoot = withRipple({ surface: false })(
   simpleTag({
@@ -82,7 +80,15 @@ export class Fab extends React.Component<FabPropsT> {
 
   render() {
     const { buttonDefaultRipple } = this.providerOptions;
-    const { ripple, className, children, icon, label, ...rest } = this.props;
+    const {
+      ripple,
+      className,
+      children,
+      icon,
+      iconOptions,
+      label,
+      ...rest
+    } = this.props;
     const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
     const classes = classNames(
       this.providerOptions.iconClassNamePrefix,
@@ -96,7 +102,7 @@ export class Fab extends React.Component<FabPropsT> {
         label={label}
         {...rest}
       >
-        <FabIcon>{children || icon}</FabIcon>
+        <FabIcon icon={icon} iconOptions={iconOptions} />
         {!!label && <FabLabel>{label}</FabLabel>}
       </FabRoot>
     );

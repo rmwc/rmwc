@@ -1,13 +1,13 @@
 // @flow
+import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
+import type { RMWCProviderOptionsT } from '../Provider';
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '../Provider';
 
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
-
-import type { SimpleTagPropsT, WithRipplePropsT } from '../Base';
-import type { RMWCProviderOptionsT } from '../Provider';
 
 export type ButtonPropsT = {
   /** Make the Button dense. */

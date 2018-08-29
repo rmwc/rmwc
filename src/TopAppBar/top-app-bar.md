@@ -2,8 +2,9 @@
 
 > Top App Bar acts as a container for items such as application title, navigation icon, and action items.
 
-import from **rmwc/TopAppBar**  
-[https://material.io/components/web/catalog/top-app-bar/](https://material.io/components/web/catalog/top-app-bar/)
+- import from **rmwc/TopAppBar**  
+- import styles from **@material/top-app-bar/dist/mdc.top-app-bar.css**
+- [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 
 The TopAppBar cannot be effectively demoed inline, but it is in use above in the RMWC docs. To view additional functionality, check out the [Material Components Top App Bar demo page](https://material-components-web.appspot.com/top-app-bar.html).
 
@@ -21,7 +22,7 @@ import {
 <TopAppBar>
   <TopAppBarRow>
     <TopAppBarSection>
-      <TopAppBarNavigationIcon use="menu" />
+      <TopAppBarNavigationIcon icon="menu" />
     </TopAppBarSection>
   </TopAppBarRow>
 </TopAppBar>
@@ -30,7 +31,7 @@ import {
 <TopAppBar>
   <TopAppBarRow>
     <TopAppBarSection alignStart>
-      <TopAppBarNavigationIcon use="menu" />
+      <TopAppBarNavigationIcon icon="menu" />
       <TopAppBarTitle>Title</TopAppBarTitle>
     </TopAppBarSection>
     <TopAppBarSection alignEnd>
@@ -77,8 +78,8 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="TopAppBarRow" />
 <DocumentComponent displayName="TopAppBarSection" />
 <DocumentComponent displayName="TopAppBarTitle" />
-<DocumentComponent displayName="TopAppBarNavigationIcon" />
-<DocumentComponent displayName="TopAppBarActionItem" />
+<DocumentComponent displayName="TopAppBarNavigationIcon" composes={['Icon']} />
+<DocumentComponent displayName="TopAppBarActionItem" composes={['Icon']} />
 <DocumentComponent displayName="TopAppBarFixedAdjust" />
 <DocumentComponent displayName="SimpleTopAppBar" />
 ```

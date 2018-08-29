@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import {
   List,
   ListItem,
-  ListItemText,
+  ListItemPrimaryText,
   ListItemGraphic,
   ListItemMeta,
   SimpleListItem
@@ -15,7 +15,7 @@ describe('List', () => {
       <List>
         <ListItem ripple>
           <ListItemGraphic />
-          <ListItemText>Cookies</ListItemText>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
           <ListItemMeta />
         </ListItem>
       </List>
@@ -50,7 +50,7 @@ describe('List', () => {
   });
 
   it('can have custom classnames', () => {
-    [List, ListItem, ListItemText].forEach(Component => {
+    [List, ListItem, ListItemPrimaryText].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

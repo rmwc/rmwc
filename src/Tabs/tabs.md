@@ -2,65 +2,93 @@
 
 > Tabs make it easy to explore and switch between different views.
 
-import from **rmwc/Tabs**  
-[https://material.io/components/web/catalog/tabs/](https://material.io/components/web/catalog/tabs/)
+- import from **rmwc/Tabs**  
+- import styles from **@material/tab-bar/dist/mdc.tab-bar.css**
+- [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
+## Controlled vs Uncontrolled
+Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivated` callback for controlled components.
 ```jsx render
-import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
+{/* Uncontrolled */}
+<TabBar>
+  <Tab>Cookies</Tab>
+  <Tab>Pizza</Tab>
+  <Tab>Icecream</Tab>
+</TabBar>
 
+{/* Controlled */}
 <TabBar
-  activeTabIndex={this.state.activeTabIndex}
-  onChange={evt => this.setState({'activeTabIndex': evt.detail.activeTabIndex})}
+  activeTabIndex={this.state.activeTab}
+  onActivate={evt => this.setState({activeTab: evt.detail.index})}
 >
   <Tab>Cookies</Tab>
   <Tab>Pizza</Tab>
   <Tab>Icecream</Tab>
 </TabBar>
 
-<TabBar
-  activeTabIndex={this.state.activeTabIndex2}
-  onChange={evt => this.setState({'activeTabIndex2': evt.detail.activeTabIndex})}
->
-  <Tab><TabIcon>star_border</TabIcon></Tab>
-  <Tab><TabIcon>favorite_border</TabIcon></Tab>
-  <Tab><TabIcon>mood</TabIcon></Tab>
+```
+
+## Variants
+
+```jsx render
+import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from 'rmwc/Tabs';
+
+{/* Basic Tabs */}
+<TabBar>
+  <Tab>Cookies</Tab>
+  <Tab>Pizza</Tab>
+  <Tab>Icecream</Tab>
 </TabBar>
 
-<TabBar
-  activeTabIndex={this.state.activeTabIndex3}
-  onChange={evt => this.setState({'activeTabIndex3': evt.detail.activeTabIndex})}
->
-  <Tab><TabIcon>star_border</TabIcon><TabIconText>Featured</TabIconText></Tab>
-  <Tab><TabIcon>favorite_border</TabIcon><TabIconText>Favorites</TabIconText></Tab>
-  <Tab><TabIcon>mood</TabIcon><TabIconText>Feedback</TabIconText></Tab>
+{/* With Icons */}
+<TabBar>
+  <Tab
+    icon="star_border"
+    label="Cookies"
+  />
+  <Tab
+    icon="favorite_border"
+    label="Pizza"
+  />
+  <Tab
+    icon="mood"
+    label="Icecream"
+  />
 </TabBar>
 
-{/* TabBar wrapped in TabBarScroller */}
-<TabBarScroller>
-  <TabBar
-    activeTabIndex={this.state.activeTabIndex4}
-    onChange={evt => this.setState({'activeTabIndex4': evt.detail.activeTabIndex})}
-  >
-    <Tab>Cookies</Tab>
-    <Tab>Pizza</Tab>
-    <Tab>Icecream</Tab>
-    <Tab>Chocolate</Tab>
-    <Tab>Fishsticks</Tab>
-    <Tab>Ratatouille</Tab>
-    <Tab>Bread</Tab>
-    <Tab>Rolls</Tab>
-    <Tab>Sushi</Tab>
-    <Tab>Cupcake</Tab>
-  </TabBar>
-</TabBarScroller>
+{/* Icons Only */}
+<TabBar>
+  <Tab icon="star_border" />
+  <Tab icon="favorite_border" />
+  <Tab icon="mood" />
+</TabBar>
+
+{/* Stacked with indicator restricted to labels */}
+<TabBar>
+  <Tab stacked restrictIndicator icon="star_border" label="Cookies" />
+  <Tab stacked restrictIndicator icon="favorite_border" label="Pizza" />
+  <Tab stacked restrictIndicator icon="mood" label="Icecream" />
+</TabBar>
+
+{/* Tabs automatically scroll with lots of content. */}
+<TabBar>
+  <Tab>Cookies</Tab>
+  <Tab>Pizza</Tab>
+  <Tab>Icecream</Tab>
+  <Tab>Chocolate</Tab>
+  <Tab>Fishsticks</Tab>
+  <Tab>Ratatouille</Tab>
+  <Tab>Bread</Tab>
+  <Tab>Rolls</Tab>
+  <Tab>Sushi</Tab>
+  <Tab>Cupcake</Tab>
+  <Tab>Cheesecake</Tab>
+</TabBar>
 ```
 
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="TabBar" />
-<DocumentComponent displayName="Tab" />
-<DocumentComponent displayName="TabIcon" />
-<DocumentComponent displayName="TabIconText" />
-<DocumentComponent displayName="TabBarScroller" />
+<DocumentComponent displayName="Tab" composes={['Icon']} />
 ```

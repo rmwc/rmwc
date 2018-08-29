@@ -142,7 +142,7 @@ export class SimpleTopAppBar extends React.Component<SimpleTopAppBarPropsT> {
           <TopAppBarSection alignStart>
             {!!navigationIcon && (
               <TopAppBarNavigationIcon
-                use="menu"
+                icon="menu"
                 {...(typeof navigationIcon === 'boolean' ? {} : navigationIcon)}
               />
             )}

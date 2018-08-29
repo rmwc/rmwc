@@ -2,86 +2,90 @@
 
 > A navigation drawer slides in from the left and contains the navigation destinations for your app.
 
-import from **rmwc/Drawer**  
-[https://material.io/components/web/catalog/drawers/](https://material.io/components/web/catalog/drawers/)
+- import from **rmwc/Drawer**  
+- impor styles from **@material/drawer/dist/mdc.drawer.css**
+- [https://material.io/develop/web/components/drawers/](https://material.io/components/web/catalog/drawers/)
 
-## Permanent Drawers
+## Drawers
 
 These are drawers that are permanently fixed inside of a view.
-[https://material.io/components/web/catalog/drawers/#permanent-drawer-usage](https://material.io/components/web/catalog/drawers/#permanent-drawer-usage)
 
 ```jsx render
 import {
   Drawer,
   DrawerHeader,
-  DrawerContent
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle
 } from 'rmwc/Drawer';
 
 import {
   List,
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
-<Drawer permanent>
+<Drawer>
   <DrawerHeader>
-    DrawerHeader
+    <DrawerTitle>DrawerHeader</DrawerTitle>
+    <DrawerSubtitle>Subtitle</DrawerSubtitle>
   </DrawerHeader>
   <DrawerContent>
-    <ListItem>
-      <ListItemText>Cookies</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Pizza</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Icecream</ListItemText>
-    </ListItem>
+    <List>
+      <ListItem>Cookies</ListItem>
+      <ListItem>Pizza</ListItem>
+      <ListItem>Icecream</ListItem>
+    </List>
   </DrawerContent>
 </Drawer>
 ```
 
 ---
 
-## Persistent Drawers
+## Dismissible Drawers
 
 These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when closed.
-[https://material.io/components/web/catalog/drawers/#persistent-drawer-usage](https://material.io/components/web/catalog/drawers/#persistent-drawer-usage)
 
 ```jsx render
 import {
   Drawer,
   DrawerHeader,
-  DrawerContent
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle,
+  DrawerAppContent
 } from 'rmwc/Drawer';
 
 import {
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
 
+<div style={{overflow: 'hidden', position: 'relative'}}>
+  <Drawer dismissible open={this.state.dismissibleOpen == undefined ? true : this.state.dismissibleOpen}>
+    <DrawerHeader>
+      <DrawerTitle>DrawerHeader</DrawerTitle>
+      <DrawerSubtitle>Subtitle</DrawerSubtitle>
+    </DrawerHeader>
+    <DrawerContent>
+      <List>
+        <ListItem>Cookies</ListItem>
+        <ListItem>Pizza</ListItem>
+        <ListItem>Icecream</ListItem>
+      </List>
+    </DrawerContent>
+  </Drawer>
 
-<Drawer persistent open={this.state.persistentOpen == undefined ? true : this.state.persistentOpen}>
-  <DrawerHeader>
-    DrawerHeader
-  </DrawerHeader>
-  <DrawerContent>
-   <ListItem>
-      <ListItemText>Cookies</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Pizza</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Icecream</ListItemText>
-    </ListItem>
-  </DrawerContent>
-</Drawer>
+  {/* Optional DrawerAppContent */}
+  <DrawerAppContent style={{minHeight: '15rem', padding: '1rem'}}>
+    DrawerAppContent is an optional component that will resize content when the dismissible drawer is open and closed. It must be placed directly after the Drawer component.
+  </DrawerAppContent>
+</div>
 
 <Button
-  onClick={() => this.setState({persistentOpen: this.state.persistentOpen === undefined ? false : !this.state.persistentOpen})}
+  onClick={() => this.setState({dismissibleOpen: this.state.dismissibleOpen === undefined ? false : !this.state.dismissibleOpen})}
   raised
 >
   Toggle Drawer
@@ -90,48 +94,51 @@ import { Button } from 'rmwc/Button';
 
 ---
 
-## Temporary Drawers
+## Modal Drawers
 
 These are drawers that can be temporarily displayed fixed on the side of the entire viewport.
-[https://material.io/components/web/catalog/drawers/#temporary-drawer-usage](https://material.io/components/web/catalog/drawers/#temporary-drawer-usage)
 
 ```jsx render
 import {
   Drawer,
   DrawerHeader,
-  DrawerContent
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle,
+  DrawerScrim
 } from 'rmwc/Drawer';
 
 import {
   ListItem,
-  ListItemText
+  ListItemPrimaryText
 } from 'rmwc/List';
 
 import { Button } from 'rmwc/Button';
 
 <Drawer
-  temporary
-  open={this.state.tempOpen}
-  onClose={() => this.setState({tempOpen: false})}
+  modal
+  open={this.state.modalOpen}
+  onClose={() => this.setState({modalOpen: false})}
 >
   <DrawerHeader>
-    DrawerHeader
+    <DrawerTitle>DrawerHeader</DrawerTitle>
+    <DrawerSubtitle>Subtitle</DrawerSubtitle>
   </DrawerHeader>
   <DrawerContent>
-    <ListItem>
-      <ListItemText>Cookies</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Pizza</ListItemText>
-    </ListItem>
-    <ListItem>
-      <ListItemText>Icecream</ListItemText>
-    </ListItem>
+    <List>
+      <ListItem>Cookies</ListItem>
+      <ListItem>Pizza</ListItem>
+      <ListItem>Icecream</ListItem>
+    </List>
   </DrawerContent>
 </Drawer>
 
+{/* REACT 15 ONLY!!! You have to manually include the Scrim. This is done for you in React 16. */}
+<DrawerScrim />
+{/* END REACT 15 ONLY!!! */}
+
 <Button
-  onClick={() => this.setState({tempOpen: !this.state.tempOpen})}
+  onClick={() => this.setState({modalOpen: !this.state.modalOpen})}
   raised
 >
   Toggle Drawer
@@ -142,7 +149,10 @@ import { Button } from 'rmwc/Button';
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Drawer" />
-<DocumentComponent displayName="DrawerToolbarSpacer" />
 <DocumentComponent displayName="DrawerHeader" />
+<DocumentComponent displayName="DrawerTitle" />
+<DocumentComponent displayName="DrawerSubtitle" />
 <DocumentComponent displayName="DrawerContent" />
+<DocumentComponent displayName="DrawerScrim" />
+<DocumentComponent displayName="DrawerAppContent" />
 ```

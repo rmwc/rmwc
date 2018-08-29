@@ -2,8 +2,9 @@
 
 > Material Design’s text sizes and styles were developed to balance content density and reading comfort under typical usage conditions.
 
-import from **rmwc/Typography**  
-[https://material.io/components/web/catalog/typography/](https://material.io/components/web/catalog/typography/)
+- import from **rmwc/Typography**  
+- import styles from **@material/typography/dist/mdc.typography.css**
+- [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)
 
 ```jsx render
 import { Typography } from 'rmwc/Typography';

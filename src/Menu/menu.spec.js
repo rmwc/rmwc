@@ -1,11 +1,18 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { MenuAnchor, Menu, MenuItem, SimpleMenu } from './';
+import {
+  MenuSurfaceAnchor,
+  Menu,
+  MenuSurface,
+  MenuItem,
+  SimpleMenu,
+  SimpleMenuSurface
+} from './';
 
 describe('Menu', () => {
   it('renders', () => {
     mount(
-      <MenuAnchor>
+      <MenuSurfaceAnchor>
         <button>Test</button>
 
         <Menu open onClose={() => {}}>
@@ -13,7 +20,21 @@ describe('Menu', () => {
           <MenuItem>Pizza</MenuItem>
           <MenuItem>Icecream</MenuItem>
         </Menu>
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
+    );
+  });
+
+  it('MenuSurface renders', () => {
+    mount(
+      <MenuSurfaceAnchor>
+        <button>Test</button>
+
+        <MenuSurface open onClose={() => {}}>
+          <MenuItem>Cookies</MenuItem>
+          <MenuItem>Pizza</MenuItem>
+          <MenuItem>Icecream</MenuItem>
+        </MenuSurface>
+      </MenuSurfaceAnchor>
     );
   });
 
@@ -31,12 +52,34 @@ describe('Menu', () => {
     el
       .find(Menu)
       .instance()
-      .foundation_.adapter_.notifyCancel();
+      .menuSurface_.foundation_.adapter_.notifyClose();
+    expect(val).toBe(1);
+  });
+
+  it('SimpleMenuSurface renders', () => {
+    let val = 0;
+
+    const el = mount(
+      <SimpleMenuSurface
+        handle={<button>Test</button>}
+        open
+        onClose={() => val++}
+      >
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </SimpleMenuSurface>
+    );
+
+    el
+      .find(MenuSurface)
+      .instance()
+      .foundation_.adapter_.notifyClose();
     expect(val).toBe(1);
   });
 
   it('can have custom classnames', () => {
-    [MenuAnchor, Menu, MenuItem].forEach(Component => {
+    [MenuSurfaceAnchor, Menu, MenuItem].forEach(Component => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

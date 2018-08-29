@@ -2,8 +2,9 @@
 
 > Sliders let users select from a range of values by moving the slider thumb.
 
-import from **rmwc/Slider**  
-[https://material.io/components/web/catalog/input-controls/sliders/](https://material.io/components/web/catalog/input-controls/sliders/)
+- import from **rmwc/Slider**  
+- import styles from **@material/slider/dist/mdc.slider.css**
+- [https://material.io/develop/web/components/input-controls/sliders/](https://material.io/develop/web/components/input-controls/sliders/)
 
 Sliders can be both uncontrolled and controlled. When creating a controlled `Slider`, you should be listening to the `onInput` event and use `evt.detail.value` to set your new value.
 

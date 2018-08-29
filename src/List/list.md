@@ -1,9 +1,10 @@
 # Lists
 
-> Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+> Lists are continuous, vertical indexes of text or images.
 
-import from **rmwc/List**  
-[https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
+- import from **rmwc/List**  
+- import styles from **@material/list/dist/mdc.list.css**
+- [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
 
@@ -12,31 +13,13 @@ ListItems can be verbose to import and render. A non-standard 'SimpleListItem' h
 ```jsx render
 import {
   List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryText,
-  ListItemGraphic,
-  ListItemMeta
+  ListItem
 } from 'rmwc/List';
 
 <List>
-  <ListItem>
-    <ListItemGraphic>star_border</ListItemGraphic>
-    <ListItemText>Cookies</ListItemText>
-    <ListItemMeta>info</ListItemMeta>
-  </ListItem>
-
-  <ListItem>
-    <ListItemGraphic>favorite_border</ListItemGraphic>
-    <ListItemText>Pizza</ListItemText>
-    <ListItemMeta>info</ListItemMeta>
-  </ListItem>
-
-  <ListItem>
-    <ListItemGraphic>mood</ListItemGraphic>
-    <ListItemText>Icecream</ListItemText>
-    <ListItemMeta tag="span" basename="">Text!</ListItemMeta>
-  </ListItem>
+  <ListItem>Cookies</ListItem>
+  <ListItem>Pizza</ListItem>
+  <ListItem>Icecream</ListItem>
 </List>
 ```
 
@@ -55,12 +38,134 @@ import {
 </List>
 ```
 
+## Two Line
+When using the `twoLine` prop, you have to wrap the contents of the `ListItem` in `ListItemText`.
+
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemPrimaryText,
+  ListItemSecondaryText
+} from 'rmwc/List';
+
+<List twoLine>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+      <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
+      <ListItemSecondaryText>$1.99 a slice</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+  <ListItem>
+    <ListItemText>
+      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
+      <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
+    </ListItemText>
+  </ListItem>
+</List>
+```
+
+## Leading and Trailing Icons
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemGraphic,
+  ListItemMeta
+} from 'rmwc/List';
+
+<List>
+  <ListItem>
+    <ListItemGraphic icon="favorite"/>
+    Leading
+  </ListItem>
+  <ListItem>
+    Trailing
+    <ListItemMeta icon="star"/>
+  </ListItem>
+  <ListItem>
+    <ListItemGraphic icon="wifi"/>
+    Leading and Trailing
+    <ListItemMeta icon="info"/>
+  </ListItem>
+</List>
+```
+
+## Avatar List with Dividers
+```jsx render
+import {
+  List,
+  ListGroup,
+  ListDivider,
+  ListItem,
+  ListItemGraphic,
+  ListItemMeta,
+} from 'rmwc/List';
+
+<List twoLine avatarList>
+  <ListGroup>
+    <ListItem>
+      <ListItemGraphic icon="person" style={{backgroundColor: 'lightgray'}} />
+      Bruce Wayne
+      <ListItemMeta icon="info"/>
+    </ListItem>
+    <ListItem>
+      <ListItemGraphic icon="person" style={{backgroundColor: 'coral'}} />
+      Clark Kent
+      <ListItemMeta icon="info"/>
+    </ListItem>
+  </ListGroup>
+  <ListDivider />
+  <ListGroup>
+    <ListItem>
+      <ListItemGraphic icon="person" style={{backgroundColor: 'lightblue'}} />
+      Diana Prince
+      <ListItemMeta icon="info"/>
+    </ListItem>
+  </ListGroup>
+</List>
+```
+
+
+## Selectable
+```jsx render
+import {
+  List,
+  ListItem,
+  ListItemGraphic,
+} from 'rmwc/List';
+
+import { Checkbox } from 'rmwc/Checkbox';
+
+<List>
+  <ListItem onClick={() => this.setState({cookiesChecked: !this.state.cookiesChecked})}>
+    <ListItemGraphic icon={<Checkbox checked={this.state.cookiesChecked}/>}/>
+    Cookies
+  </ListItem>
+  <ListItem onClick={() => this.setState({pizzaChecked: !this.state.pizzaChecked})}>
+    <ListItemGraphic icon={<Checkbox checked={this.state.pizzaChecked}/>}/>
+    Pizza
+  </ListItem>
+  <ListItem onClick={() => this.setState({iceCreamChecked: !this.state.iceCreamChecked})}>
+    <ListItemGraphic icon={<Checkbox checked={this.state.iceCreamChecked}/>}/>
+    Icecream
+  </ListItem>
+</List>
+```
+
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="List" />
 <DocumentComponent displayName="ListItem" />
-<DocumentComponent displayName="ListItemText" />
+<DocumentComponent displayName="ListItemPrimaryText" />
 <DocumentComponent displayName="ListItemSecondaryText" />
 <DocumentComponent displayName="ListItemGraphic" />
 <DocumentComponent displayName="ListItemMeta" />

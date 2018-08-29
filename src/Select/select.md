@@ -2,8 +2,9 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-import from **rmwc/Select**  
-[https://material.io/components/web/catalog/input-controls/select-menus/](https://material.io/components/web/catalog/input-controls/select-menus/)
+- import from **rmwc/Select**  
+- import styles from **@material/select/dist/mdc.select.css**
+- [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
 ## Select Styles
 Selects come in three different styles: standard, box, and outlined.

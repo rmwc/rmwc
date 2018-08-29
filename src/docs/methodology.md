@@ -50,10 +50,10 @@ Here's a TextField example in raw MDC and with RMWC.
 // This is the RMWC version
 <List twoLine>
   <ListItem>
-    <ListItemText>
+    <ListItemPrimaryText>
       Two-line item
-      <ListItemSecondaryText>Secondary text</ListItemSecondaryText>
-    </ListItemText>
+    </ListItemPrimaryText>
+    <ListItemSecondaryText>Secondary text</ListItemSecondaryText>
   </ListItem>
 </List>
 ```

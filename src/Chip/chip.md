@@ -2,8 +2,9 @@
 
 > Chips represent complex entities in small blocks, such as a contact.
 
-import from **rmwc/Chip**  
-[https://material.io/components/web/catalog/chips/](https://material.io/components/web/catalog/chips/)
+- import from **rmwc/Chip**  
+- import styles **@material/chip/dist/mdc.chips.css**  
+- [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
 Please note that in MDC, the ChipSet code contains logic for selecting single and multiple chips (filter and choice chip sets). This doesn't fit well with React's uni-directional data flow. Instead it is recommended to write your own filtering and selection logic and just apply the `selected` prop to the `Chip` component directly.
 
@@ -19,9 +20,9 @@ import { Chip, ChipText, ChipIcon, ChipSet } from 'rmwc/Chip';
 {/* With Icons */}
 <ChipSet>
   <Chip>
-    <ChipIcon leading use="favorite" />
+    <ChipIcon leading icon="favorite" />
     <ChipText>Cookies</ChipText>
-    <ChipIcon trailing use="close" />
+    <ChipIcon trailing icon="close" />
   </Chip>
 </ChipSet>
 ```
@@ -36,7 +37,7 @@ import {
   SimpleChip
 } from 'rmwc/Chip';
 
-<ChipSet>
+<ChipSet choice>
   <SimpleChip
     checkmark
     selected
@@ -79,16 +80,16 @@ import {
   >
     <ChipCheckmark />
     <ChipText>Cookies</ChipText>
-    <ChipIcon tabIndex={0} use="close" trailing />
+    <ChipIcon tabIndex={0} icon="close" trailing />
   </Chip>
   <Chip
     selected={this.state.pizza}
     onClick={() => this.setState({pizza: !this.state.pizza})}
   >
-    <ChipIcon use="local_pizza" leading />
+    <ChipIcon icon="local_pizza" leading />
     <ChipCheckmark />
     <ChipText>Pizza</ChipText>
-    <ChipIcon use="close" trailing />
+    <ChipIcon icon="close" trailing />
   </Chip>
   {/* You can use simple chips as well */}
   <SimpleChip
@@ -107,7 +108,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Chip" />
 <DocumentComponent displayName="ChipText" />
-<DocumentComponent displayName="ChipIcon" />
+<DocumentComponent displayName="ChipIcon" composes={['Icon']} />
 <DocumentComponent displayName="ChipCheckmark" />
 <DocumentComponent displayName="ChipSet" />
 <DocumentComponent displayName="SimpleChip" />

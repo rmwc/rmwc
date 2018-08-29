@@ -2,18 +2,20 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-import from **rmwc/Menu**  
-[https://material.io/components/web/catalog/menus/](https://material.io/components/web/catalog/menus/)
+- import from **rmwc/Menu** 
+- import styles from **@material/menu/dist/mdc.menu.css**
+- import styles from **@material/menu-surface/dist/mdc.menu-surface.css**
+- [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
-## Default Usage
+## Menu with Items
 
 You can compose a menu with the given components, and manually manage the open state.
 
 ```jsx render
-import { Menu, MenuItem, MenuAnchor } from 'rmwc/Menu';
+import { Menu, MenuItem, MenuSurfaceAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
-<MenuAnchor>
+<MenuSurfaceAnchor>
   <Menu
     open={this.state.menuIsOpen}
     onClose={evt => this.setState({menuIsOpen: false})}
@@ -29,7 +31,32 @@ import { Button } from 'rmwc/Button';
   >
     Open Menu
   </Button>
-</MenuAnchor>
+</MenuSurfaceAnchor>
+```
+
+## Generic Menu Surface
+
+`MenuSurface` allows you to create a menu with any kind of content.
+
+```jsx render
+import { MenuSurface, MenuSurfaceAnchor } from 'rmwc/Menu';
+import { Button } from 'rmwc/Button';
+
+<MenuSurfaceAnchor>
+  <MenuSurface
+    open={this.state.genericMenuIsOpen}
+    onClose={evt => this.setState({genericMenuIsOpen: false})}
+  >
+    <div style={{padding: '1rem', width: '8rem'}}>Make the content whatever you want.</div>
+  </MenuSurface>
+
+  <Button
+    raised
+    onClick={evt => this.setState({'genericMenuIsOpen': !this.state.genericMenuIsOpen})}
+  >
+    Open Generic Menu
+  </Button>
+</MenuSurfaceAnchor>
 ```
 
 ## Simplified usage
@@ -37,7 +64,7 @@ import { Button } from 'rmwc/Button';
 RMWC provides a non-standard convenience `SimpleMenu` component that takes a handle as a prop, and manages the open state for you.
 
 ```jsx render
-import { SimpleMenu, MenuItem } from 'rmwc/Menu';
+import { SimpleMenu, SimpleMenuSurface, MenuItem } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 <SimpleMenu
@@ -47,13 +74,20 @@ import { Button } from 'rmwc/Button';
   <MenuItem>Pizza</MenuItem>
   <MenuItem>Icecream</MenuItem>
 </SimpleMenu>
+
+<SimpleMenuSurface
+  handle={ <Button raised>Open Simple Menu Surface</Button> }
+>
+  <div style={{padding: '1rem', width: '8rem'}}>Make the content whatever you want.</div>
+</SimpleMenuSurface>
 ```
 
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Menu" />
-<DocumentComponent displayName="MenuItem" />
-<DocumentComponent displayName="MenuAnchor" />
+<DocumentComponent displayName="MenuItem" composes={['ListItem']}/>
+<DocumentComponent displayName="MenuSurfaceAnchor" />
 <DocumentComponent displayName="SimpleMenu" />
+<DocumentComponent displayName="SimpleMenuSurface" />
 ```

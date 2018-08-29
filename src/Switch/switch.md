@@ -2,8 +2,9 @@
 
 > On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Switches take on the same visual properties of the radio button.
 
-import from **rmwc/Switch**  
-[https://material.io/components/web/catalog/input-controls/switches/](https://material.io/components/web/catalog/input-controls/switches/)
+- import from **rmwc/Switch** 
+- import styles from **@material/switch/dist/mdc.switch.css**
+- [https://material.io/develop/web/components/input-controls/switches/](https://material.io/develop/web/components/input-controls/switches/)
 
 Switches are identical in function to the [Checkbox](checkboxes) component, they just present a different UI / UX paradigm.
 
@@ -17,11 +18,14 @@ import { Switch } from 'rmwc/Switch';
   Cookies
 </Switch>
 
-{/* Standard Switch */}
-<Switch>Pizza</Switch>
+{/* Uncontrolled Switch */}
+<Switch defaultChecked>Pizza</Switch>
 
 {/* Using the label prop */}
 <Switch label="Icecream" />
+
+{/* Disabled */}
+<Switch disabled label="Disabled" />
 ```
 
 ```jsx renderOnly

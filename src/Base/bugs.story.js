@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { TextField, Button, Checkbox, Menu, MenuItem } from '../rmwc';
+import { TextField, Button, Checkbox, Menu, MenuItem, Select } from '../rmwc';
 
 class Bug216 extends React.Component {
   constructor(props) {
@@ -66,6 +66,35 @@ class Bug216 extends React.Component {
   }
 }
 
+class Bug283 extends React.Component {
+  state = { value: '' };
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  handleClick = () => {
+    this.setState({ value: 'Pizza' });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <Select
+          outlined
+          label="Label"
+          placeholder=""
+          options={['Cookies', 'Pizza', 'Icecream']}
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <br />
+        <Button onClick={this.handleClick}>Change value</Button>
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -102,4 +131,5 @@ storiesOf('Bugs', module)
         label="Uncontrolled"
       />
     </React.Fragment>
-  ));
+  ))
+  .add('#283', () => <Bug283 />);

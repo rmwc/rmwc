@@ -2,8 +2,9 @@
 
 > Icon buttons allow users to take actions, and make choices, with a single tap.
 
-import from **rmwc/IconToggle**  
-[https://material.io/components/web/catalog/buttons/icon-buttons/](https://material.io/components/web/catalog/buttons/icon-buttons/)
+- import from **rmwc/IconButton**  
+- import styles from **@material/icon-button/dist/mdc.icon-button.css**
+[https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
 ## Basic Usage
 `IconButton` inherits from the `Icon` component and can be passed icons in the same way.
@@ -11,52 +12,44 @@ import from **rmwc/IconToggle**
 ```jsx render
 import { IconButton } from 'rmwc/IconButton';
 
-<IconButton use="star" label="Rate this!" />
+<IconButton icon="star" label="Rate this!" />
 <IconButton
-  use="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  label="Tweet it!"
+  icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  aria-label="Tweet it!"
 />
 
 ```
 
 ## Usage as a Toggle
 
-When being used as a toggle, `onContent` and `offContent` behave the same as the `use` prop of the `Icon` component.
+To use as a toggle, specify an additional toggled on state using 'onIcon'. 
 
 ```jsx render
 {/* Uncontrolled */}
 <IconButton
-  onLabel="Remove from favorites"
-  onContent="favorite"
-  offLabel="Add to favorites"
-  offContent="favorite_border"
+  icon="favorite_border"
+  onIcon="favorite"
 />
 
 {/* Controlled */}
 <IconButton
   checked={this.state.isChecked}
   onClick={() => this.setState({isChecked: !this.state.isChecked})}
-  onLabel="Remove from favorites"
-  onContent="star"
-  offLabel="Add to favorites"
-  offContent="star_border"
+  onIcon="star"
+  icon="star_border"
 />
 
 <IconButton
   onChange={(evt) => console.log(evt.detail)}
-  onLabel="Switch to Facebook"
-  onContent="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  offLabel="Switch to Twitter"
-  offContent="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
+  onIcon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  icon="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
 />
 
 <IconButton
-  onLabel="Stop"
-  onContent={
+  onIcon={
     <div style={{ background: 'red', width: '24px', height: '24px'}} />
   }
-  offLabel="Play"
-  offContent={
+  icon={
     <div style={{ background: 'green', width: '24px', height: '24px', borderRadius: '50%' }} />
   }
 />
@@ -66,5 +59,5 @@ When being used as a toggle, `onContent` and `offContent` behave the same as the
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 import { IconButton } from 'rmwc/IconButton';
 
-<DocumentComponent component={IconButton} displayName="IconButton" />
+<DocumentComponent component={IconButton} displayName="IconButton" composes={['Icon']} />
 ```

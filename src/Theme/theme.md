@@ -2,8 +2,9 @@
 
 > MDC Theme is a foundational module that themes MDC Web components.
 
-import from **rmwc/Theme**  
-[https://material.io/components/web/catalog/theme/](https://material.io/components/web/catalog/theme/)
+- import from **rmwc/Theme**  
+- import styles from **@material/theme/dist/mdc.theme.css**
+- [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
 
@@ -55,6 +56,10 @@ import { Theme } from 'rmwc/Theme';
 ## ThemeProvider
 The `ThemeProvider` is an optional component that allows you to specify theme colors and settings for all of its subtree. This is useful to use once at the top of your app, or in parts of your app where the styles or color scheme differ.
 
+You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
+
+Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Shrine". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
+
 ```jsx render
 import { ThemeProvider } from 'rmwc/Theme';
 
@@ -81,7 +86,7 @@ import { Radio } from 'rmwc/Radio';
 
 {/* Specify as many options as you want. */}
 <ThemeProvider options={{
-  primary: 'magenta',
+  primary: 'lightpink',
   secondary: 'black',
   onPrimary: '#000',
   textPrimaryOnBackground: 'black'

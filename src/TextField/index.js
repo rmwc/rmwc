@@ -3,6 +3,7 @@ import type { SimpleTagPropsT } from '../Base';
 import type { IconPropsT } from '../Icon';
 import * as React from 'react';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
+
 import {
   simpleTag,
   withFoundation,
@@ -148,9 +149,12 @@ export class TextField extends withFoundation({
   valid: boolean;
   value: any;
   disabled: boolean;
+  foundation_: any;
 
   syncWithProps(nextProps: TextFieldPropsT) {
     // invalid | valid
+    this.foundation_.setUseNativeValidation(nextProps.invalid === undefined);
+
     syncFoundationProp(
       nextProps.invalid,
       !this.valid,
@@ -174,6 +178,7 @@ export class TextField extends withFoundation({
     const {
       label = '',
       className,
+      style,
       inputRef,
       box,
       outlined,
@@ -196,7 +201,10 @@ export class TextField extends withFoundation({
       ...rest,
       disabled: disabled,
       elementRef: inputRef,
-      id: rest['id'] || randomId('text-field')
+      id: rest['id'] || randomId('text-field'),
+      // fixes an issue with the deprecated non box input
+      style:
+        box === undefined && outlined === undefined ? { marginTop: '3px' } : {}
     };
 
     const tag = textarea ? (
@@ -212,7 +220,7 @@ export class TextField extends withFoundation({
         (iconNode.type &&
           iconNode.type.displayName !== TextFieldIcon.displayName)
       ) {
-        return <TextFieldIcon use={iconNode} />;
+        return <TextFieldIcon icon={iconNode} />;
       }
 
       return iconNode;
@@ -232,6 +240,7 @@ export class TextField extends withFoundation({
         fullwidth={fullwidth}
         elementRef={root_}
         className={className}
+        style={style}
       >
         {!!withLeadingIcon && renderIcon(withLeadingIcon)}
         {children}

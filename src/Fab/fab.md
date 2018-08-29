@@ -1,7 +1,8 @@
 # Fabs
 
-import from **rmwc/Fab**  
-[https://material.io/components/web/catalog/buttons/floating-action-buttons/](https://material.io/components/web/catalog/buttons/)
+- import from **rmwc/Fab**  
+- import styles from **@material/fab/dist/mdc.fab.css**
+- [https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 
 ```jsx render
 import { Fab } from 'rmwc/Fab';
@@ -14,5 +15,5 @@ import { Fab } from 'rmwc/Fab';
 ```jsx renderOnly
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
-<DocumentComponent displayName="Fab" />
+<DocumentComponent displayName="Fab" composes={['Icon']} />
 ```

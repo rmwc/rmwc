@@ -1,8 +1,7 @@
 // @flow
-import * as React from 'react';
+import type { IconStrategyT } from './defs';
 
-// prettier-ignore
-export type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
+import * as React from 'react';
 
 /**
  * Given content, tries to figure out an appropriate strategy for it

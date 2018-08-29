@@ -32,14 +32,9 @@ describe('Card', () => {
             <CardAction>Bookmark</CardAction>
           </CardActionButtons>
           <CardActionIcons>
-            <CardAction
-              onLabel="Remove from favorites"
-              onContent="favorite"
-              offLabel="Add to favorites"
-              offContent="favorite_border"
-            />
-            <CardAction use="share" />
-            <CardAction use="more_vert" />
+            <CardAction onIcon="favorite" icon="favorite_border" />
+            <CardAction icon="share" />
+            <CardAction icon="more_vert" />
           </CardActionIcons>
         </CardActions>
       </Card>

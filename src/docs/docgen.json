@@ -3,7 +3,16 @@
     {
       "description": "",
       "displayName": "DocumentComponent",
-      "methods": []
+      "methods": [],
+      "props": {
+        "composes": {
+          "defaultValue": {
+            "value": "[]",
+            "computed": false
+          },
+          "required": false
+        }
+      }
     }
   ],
   "src/Button/index.js": [
@@ -158,16 +167,7 @@
     {
       "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
       "displayName": "CardAction",
-      "methods": [],
-      "props": {
-        "isIcon": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Forces the action to be an icon. In most cases, this will be determined for you."
-        }
-      }
+      "methods": []
     }
   ],
   "src/Checkbox/index.js": [
@@ -345,6 +345,13 @@
       "description": "A Checkbox component",
       "displayName": "Checkbox",
       "methods": [
+        {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
         {
           "name": "syncWithProps",
           "docblock": null,
@@ -1395,28 +1402,33 @@
   ],
   "src/Drawer/index.js": [
     {
-      "description": "",
-      "displayName": "DrawerHeaderRoot",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "DrawerHeaderContent",
-      "methods": []
-    },
-    {
-      "description": "A Header for Drawers",
+      "description": "An optional header for the Drawer.",
       "displayName": "DrawerHeader",
       "methods": []
     },
     {
-      "description": "If you are using fixed a Toolbar, this provides space for it.",
-      "displayName": "DrawerToolbarSpacer",
+      "description": "An title for the DrawerHeader.",
+      "displayName": "DrawerTitle",
+      "methods": []
+    },
+    {
+      "description": "A subtitle for the DrawerHeader.",
+      "displayName": "DrawerSubtitle",
       "methods": []
     },
     {
       "description": "Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else.",
       "displayName": "DrawerContent",
+      "methods": []
+    },
+    {
+      "description": "Protects the app's UI from interactions while a modal drawer is open.\nThis is automatically included if you're using React 16 and above.\nFor React 15, you must manually include it immediately after a modal Drawer.",
+      "displayName": "DrawerScrim",
+      "methods": []
+    },
+    {
+      "description": "For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes.",
+      "displayName": "DrawerAppContent",
       "methods": []
     },
     {
@@ -1432,12 +1444,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a permanent drawer. */\n  permanent?: boolean,\n  /** Makes a persistent drawer. */\n  persistent?: boolean,\n  /** Makes a temporary drawer. */\n  temporary?: boolean\n}",
+                    "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1504,21 +1516,14 @@
                           }
                         },
                         {
-                          "key": "permanent",
+                          "key": "dismissible",
                           "value": {
                             "name": "boolean",
                             "required": false
                           }
                         },
                         {
-                          "key": "persistent",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "temporary",
+                          "key": "modal",
                           "value": {
                             "name": "boolean",
                             "required": false
@@ -1538,11 +1543,6 @@
           "returns": null
         }
       ]
-    },
-    {
-      "description": "",
-      "displayName": "DrawerDrawer",
-      "methods": []
     },
     {
       "description": "",
@@ -1612,26 +1612,19 @@
           "required": false,
           "description": "Callback that fires when the Drawer is opened."
         },
-        "permanent": {
+        "dismissible": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a permanent drawer."
+          "description": "Makes a dismissible drawer."
         },
-        "persistent": {
+        "modal": {
           "flowType": {
             "name": "boolean"
           },
           "required": false,
-          "description": "Makes a persistent drawer."
-        },
-        "temporary": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Makes a temporary drawer."
+          "description": "Makes a modal / temporary drawer."
         }
       }
     }
@@ -1691,13 +1684,6 @@
           "required": false,
           "description": "Make the Fab smaller."
         },
-        "icon": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "The icon to use for the fab."
-        },
         "label": {
           "flowType": {
             "name": "ReactNode",
@@ -1712,13 +1698,6 @@
           },
           "required": false,
           "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
-        },
-        "cssOnly": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "cssOnly Fab."
         },
         "ripple": {
           "flowType": {
@@ -2197,7 +2176,7 @@
       "methods": []
     },
     {
-      "description": "The icon for a Grid tile. This is an instance of Icon and can take all of the same props.",
+      "description": "The icon for a Grid tile. This is an instance of Icon component.",
       "displayName": "GridTileIcon",
       "methods": []
     },
@@ -2292,61 +2271,20 @@
       "displayName": "Icon",
       "methods": [],
       "props": {
-        "use": {
+        "icon": {
           "flowType": {
             "name": "ReactNode",
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-          "defaultValue": {
-            "value": "undefined",
-            "computed": true
-          }
+          "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
         },
-        "strategy": {
+        "iconOptions": {
           "flowType": {
-            "name": "IconStrategyT"
+            "name": "IconOptionsT"
           },
           "required": false,
-          "description": "Handle multiple methods of embedding an icon. 'ligature' uses ligature style embedding like material-icons, 'className' adds a class onto the element for libraries like glyphicons and ion icons, 'url' will load a remote image, and 'component' will render content as children like SVGs or any other React node. 'custom' allows you to specify your own render prop. If not set, 'auto' will be used or the defaults set inside of RMWCProvider."
-        },
-        "prefix": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": "A className prefix to use when using css font icons that use prefixes, i.e. font-awesome-, ion-, glyphicons-. This only applies when using the 'className' strategy."
-        },
-        "basename": {
-          "flowType": {
-            "name": "string"
-          },
-          "required": false,
-          "description": "A base className for the icon namespace, i.e. material-icons."
-        },
-        "render": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(content: mixed) => React.Node",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "content",
-                  "type": {
-                    "name": "mixed"
-                  }
-                }
-              ],
-              "return": {
-                "name": "ReactNode",
-                "raw": "React.Node"
-              }
-            }
-          },
-          "required": false,
-          "description": "A render function to use when using the 'custom' strategy."
+          "description": "Additional Icon Options. See the Icon component documentation."
         }
       },
       "context": {
@@ -2362,221 +2300,42 @@
   "src/IconButton/index.js": [
     {
       "description": "",
-      "displayName": "IconButtonRoot",
-      "methods": [],
-      "props": {
-        "role": {
-          "defaultValue": {
-            "value": "'button'",
-            "computed": false
-          },
-          "required": false
-        },
-        "tabIndex": {
-          "defaultValue": {
-            "value": "'0'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    },
-    {
-      "description": "",
-      "displayName": "IconButton",
+      "displayName": "IconButtonIcon",
       "methods": [
         {
-          "name": "isOn",
-          "docblock": "Takes into account our checked prop",
-          "modifiers": [],
-          "params": [],
-          "returns": null,
-          "description": "Takes into account our checked prop"
-        },
-        {
-          "name": "initialize",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
-        },
-        {
-          "name": "syncWithProps",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
           "params": [
             {
-              "name": "nextProps",
+              "name": "props",
               "type": {
-                "name": "intersection",
-                "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n} & SimpleTagPropsT &\n  IconPropsT",
-                "elements": [
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\n  /** A label for non-toggleable buttons */\n  label?: React.Node,\n  /** The icon to use when a toggleable button is on. */\n  onContent?: React.Node,\n  /** The label to use when a toggleable button is on. */\n  onLabel?: React.Node,\n  /** The icon to use when a toggleable button is off. */\n  offContent?: React.Node,\n  /** The label to use when a toggleable button is off. */\n  offLabel?: React.Node,\n  /** Controls the on / off state of the a toggleable button. */\n  checked?: boolean,\n  /** An onChange callback that receives a custom event. */\n  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => mixed,\n  /** Makes the button disabled */\n  disabled?: boolean\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "label",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onContent",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onLabel",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "offContent",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "offLabel",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "checked",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onChange",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "signature",
-                                        "type": "object",
-                                        "raw": "{ isOn: boolean }",
-                                        "signature": {
-                                          "properties": [
-                                            {
-                                              "key": "isOn",
-                                              "value": {
-                                                "name": "boolean",
-                                                "required": true
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<{ isOn: boolean }>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "disabled",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        }
-                      ]
+                "name": "signature",
+                "type": "object",
+                "raw": "{ on: boolean }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "on",
+                      "value": {
+                        "name": "boolean",
+                        "required": true
+                      }
                     }
-                  },
-                  {
-                    "name": "SimpleTagPropsT"
-                  },
-                  {
-                    "name": "IconPropsT"
-                  }
-                ],
-                "alias": "IconButtonPropsT"
+                  ]
+                }
               }
             }
           ],
           "returns": null
-        },
-        {
-          "name": "renderIcon",
-          "docblock": null,
-          "modifiers": [],
-          "params": [],
-          "returns": null
         }
-      ],
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "IconButton",
+      "methods": [],
       "props": {
-        "label": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "A label for non-toggleable buttons"
-        },
-        "onContent": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use when a toggleable button is on."
-        },
-        "onLabel": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The label to use when a toggleable button is on."
-        },
-        "offContent": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The icon to use when a toggleable button is off."
-        },
-        "offLabel": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The label to use when a toggleable button is off."
-        },
         "checked": {
           "flowType": {
             "name": "boolean"
@@ -2631,6 +2390,21 @@
           },
           "required": false,
           "description": "Makes the button disabled"
+        },
+        "onIcon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "If specified, renders a toggle with this icon as the on state."
+        },
+        "onIconOptions": {
+          "flowType": {
+            "name": "IconOptionsT"
+          },
+          "required": false,
+          "description": "Options for the onIcon"
         }
       }
     }
@@ -3227,6 +3001,13 @@
             "value": "true",
             "computed": false
           }
+        },
+        "tabIndex": {
+          "defaultValue": {
+            "value": "0",
+            "computed": false
+          },
+          "required": false
         }
       },
       "context": {
@@ -3239,8 +3020,13 @@
       }
     },
     {
-      "description": "Text for the ListItem",
+      "description": "Text Wrapper for the ListItem",
       "displayName": "ListItemText",
+      "methods": []
+    },
+    {
+      "description": "Primary Text for the ListItem",
+      "displayName": "ListItemPrimaryText",
       "methods": []
     },
     {
@@ -3256,7 +3042,24 @@
     {
       "description": "A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag=\"span\" and basename=\"\" to ensure proper rendering. See the examples above.",
       "displayName": "ListItemMeta",
-      "methods": []
+      "methods": [],
+      "props": {
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
+        "icon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": ""
+        }
+      }
     },
     {
       "description": "A container to group ListItems",
@@ -3411,11 +3214,6 @@
       "methods": []
     },
     {
-      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuAnchors position to absolute.",
-      "displayName": "MenuAnchor",
-      "methods": []
-    },
-    {
       "description": "A menu component",
       "displayName": "Menu",
       "methods": [
@@ -3428,12 +3226,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that fires for either onSelected or onCancel, convenient for setting the closed state. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Callback that fires when the menu is closed with nothing selected. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3520,34 +3318,6 @@
                           }
                         },
                         {
-                          "key": "onCancel",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<void>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "void"
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<void>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
                           "key": "anchorCorner",
                           "value": {
                             "name": "union",
@@ -3601,6 +3371,34 @@
             }
           ],
           "returns": null
+        },
+        {
+          "name": "onCloseHandler_",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "evt",
+              "type": {
+                "name": "CustomEventT",
+                "elements": [
+                  {
+                    "name": "void"
+                  }
+                ],
+                "raw": "CustomEventT<void>",
+                "alias": "CustomEventT"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
         }
       ],
       "props": {
@@ -3637,7 +3435,7 @@
             }
           },
           "required": false,
-          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+          "description": "Callback that when the menu is closed."
         },
         "onSelected": {
           "flowType": {
@@ -3686,34 +3484,6 @@
           },
           "required": false,
           "description": "Callback that fires when a Menu item is selected."
-        },
-        "onCancel": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: CustomEventT<void>) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "CustomEventT",
-                    "elements": [
-                      {
-                        "name": "void"
-                      }
-                    ],
-                    "raw": "CustomEventT<void>"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when the menu is closed with nothing selected."
         },
         "anchorCorner": {
           "flowType": {
@@ -3760,25 +3530,455 @@
       }
     },
     {
-      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuAnchor",
-      "displayName": "SimpleMenu",
+      "description": "",
+      "displayName": "MenuSurfaceRoot",
       "methods": [
         {
-          "name": "syncWithOpenProp",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
           "params": [
             {
-              "name": "open",
-              "optional": true,
+              "name": "props",
               "type": {
-                "name": "boolean"
+                "name": "intersection",
+                "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "open",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "fixed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "anchorCorner",
+                          "value": {
+                            "name": "union",
+                            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                            "elements": [
+                              {
+                                "name": "literal",
+                                "value": "'bottomEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomStart'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topStart'"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onOpen",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "MenuSurfacePropsT"
               }
             }
           ],
           "returns": null
         }
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "MenuSurface",
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "open",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "fixed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "anchorCorner",
+                          "value": {
+                            "name": "union",
+                            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                            "elements": [
+                              {
+                                "name": "literal",
+                                "value": "'bottomEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'bottomStart'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topEnd'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topLeft'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topRight'"
+                              },
+                              {
+                                "name": "literal",
+                                "value": "'topStart'"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onOpen",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "MenuSurfacePropsT"
+              }
+            }
+          ],
+          "returns": null
+        },
+        {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
       ],
+      "props": {
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Opens the menu."
+        },
+        "fixed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Make the menu position fixed."
+        },
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        },
+        "onOpen": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is opened."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is closed."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render."
+        }
+      }
+    },
+    {
+      "description": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute.",
+      "displayName": "MenuSurfaceAnchor",
+      "methods": []
+    },
+    {
+      "description": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor",
+      "displayName": "SimpleMenu",
+      "methods": [],
       "props": {
         "handle": {
           "flowType": {
@@ -3798,7 +3998,7 @@
             "name": "Object"
           },
           "required": false,
-          "description": "By default, props spread to the Menu component. These will spread to the MenuAnchor which is useful for things like overall positioning of the anchor."
+          "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
         },
         "children": {
           "flowType": {
@@ -3841,7 +4041,7 @@
             }
           },
           "required": false,
-          "description": "Callback that fires for either onSelected or onCancel, convenient for setting the closed state."
+          "description": "Callback that when the menu is closed."
         },
         "onSelected": {
           "flowType": {
@@ -3891,7 +4091,91 @@
           "required": false,
           "description": "Callback that fires when a Menu item is selected."
         },
-        "onCancel": {
+        "anchorCorner": {
+          "flowType": {
+            "name": "union",
+            "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'bottomEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottomStart'"
+              },
+              {
+                "name": "literal",
+                "value": "'topEnd'"
+              },
+              {
+                "name": "literal",
+                "value": "'topLeft'"
+              },
+              {
+                "name": "literal",
+                "value": "'topRight'"
+              },
+              {
+                "name": "literal",
+                "value": "'topStart'"
+              }
+            ]
+          },
+          "required": false,
+          "description": "Manually position the menu to one of the corners."
+        }
+      }
+    },
+    {
+      "description": "The same as SimpleMenu, but a generic surface.",
+      "displayName": "SimpleMenuSurface",
+      "methods": [],
+      "props": {
+        "handle": {
+          "flowType": {
+            "name": "ReactElement",
+            "raw": "React.Element<any>",
+            "elements": [
+              {
+                "name": "any"
+              }
+            ]
+          },
+          "required": true,
+          "description": "An element that will open the menu when clicked"
+        },
+        "rootProps": {
+          "flowType": {
+            "name": "Object"
+          },
+          "required": false,
+          "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
+        },
+        "children": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "Children to render"
+        },
+        "open": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Whether or not the Menu is open."
+        },
+        "onClose": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -3917,7 +4201,55 @@
             }
           },
           "required": false,
-          "description": "Callback that fires when the menu is closed with nothing selected."
+          "description": "Callback that when the menu is closed."
+        },
+        "onSelected": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "index",
+                              "value": {
+                                "name": "number",
+                                "required": true
+                              }
+                            },
+                            {
+                              "key": "item",
+                              "value": {
+                                "name": "HTMLElement",
+                                "required": true
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "raw": "CustomEventT<SelectedEventDetailT>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback that fires when a Menu item is selected."
         },
         "anchorCorner": {
           "flowType": {
@@ -3991,7 +4323,7 @@
               "type": {
                 "name": "signature",
                 "type": "object",
-                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: { content: React.Node, className: string }) => mixed,\n  /** Children to render */\n  children?: React.Node\n}",
+                "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: { content: React.Node, className: string }) => mixed,\n  /** Children to render */\n  children: React.Node\n}",
                 "signature": {
                   "properties": [
                     {
@@ -4104,7 +4436,7 @@
                       "value": {
                         "name": "ReactNode",
                         "raw": "React.Node",
-                        "required": false
+                        "required": true
                       }
                     }
                   ]
@@ -4252,7 +4584,11 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Children to render"
+          "description": "Children to render",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
         }
       },
       "childContext": {
@@ -6270,65 +6606,74 @@
             {
               "name": "props",
               "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "id",
-                      "value": {
-                        "name": "string",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "disabled",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "checked",
-                      "value": {
-                        "name": "union",
-                        "raw": "boolean | string",
-                        "elements": [
-                          {
-                            "name": "boolean"
-                          },
-                          {
-                            "name": "string"
+                "name": "intersection",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "id",
+                          "value": {
+                            "name": "string",
+                            "required": false
                           }
-                        ],
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "label",
-                      "value": {
-                        "name": "string",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "rootProps",
-                      "value": {
-                        "name": "any",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "children",
-                      "value": {
-                        "name": "ReactNode",
-                        "raw": "React.Node",
-                        "required": false
-                      }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "rootProps",
+                          "value": {
+                            "name": "any",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
                 "alias": "SwitchPropsT"
               }
             }
@@ -6353,7 +6698,17 @@
     },
     {
       "description": "",
-      "displayName": "SwitchBackground",
+      "displayName": "SwitchTrack",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "SwitchThumbUnderlay",
+      "methods": []
+    },
+    {
+      "description": "",
+      "displayName": "SwitchThumb",
       "methods": []
     },
     {
@@ -6369,7 +6724,90 @@
     {
       "description": "",
       "displayName": "Switch",
-      "methods": [],
+      "methods": [
+        {
+          "name": "syncWithProps",
+          "docblock": null,
+          "modifiers": [],
+          "params": [
+            {
+              "name": "nextProps",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "id",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "disabled",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "checked",
+                          "value": {
+                            "name": "union",
+                            "raw": "boolean | string",
+                            "elements": [
+                              {
+                                "name": "boolean"
+                              },
+                              {
+                                "name": "string"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "rootProps",
+                          "value": {
+                            "name": "any",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "SimpleTagPropsT"
+                  }
+                ],
+                "alias": "SwitchPropsT"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
       "props": {
         "id": {
           "flowType": {
@@ -6444,16 +6882,16 @@
                 "elements": [
                   {
                     "name": "intersection",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "onChange",
+                              "key": "onActivate",
                               "value": {
                                 "name": "signature",
                                 "type": "function",
@@ -6468,11 +6906,11 @@
                                           {
                                             "name": "signature",
                                             "type": "object",
-                                            "raw": "{\n    activeTabIndex: number;\n}",
+                                            "raw": "{\n  index: number\n}",
                                             "signature": {
                                               "properties": [
                                                 {
-                                                  "key": "activeTabIndex",
+                                                  "key": "index",
                                                   "value": {
                                                     "name": "number",
                                                     "required": true
@@ -6534,77 +6972,17 @@
     },
     {
       "description": "",
-      "displayName": "TabBarIndicator",
+      "displayName": "TabScroller",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TabBarScrollerRoot",
+      "displayName": "TabScrollerScrollArea",
       "methods": []
     },
     {
       "description": "",
-      "displayName": "TabBarScrollerIndicatorBack",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": {
-                "name": "signature",
-                "type": "object",
-                "raw": "{ back?: boolean, forward?: boolean }",
-                "signature": {
-                  "properties": [
-                    {
-                      "key": "back",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    },
-                    {
-                      "key": "forward",
-                      "value": {
-                        "name": "boolean",
-                        "required": false
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ],
-          "returns": null
-        }
-      ]
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerIndicatorInner",
-      "methods": []
-    },
-    {
-      "description": "",
-      "displayName": "TabBarScrollerScrollFrameEl",
-      "methods": []
-    },
-    {
-      "description": "A Tab component",
-      "displayName": "Tab",
-      "methods": []
-    },
-    {
-      "description": "A Tab icon. This is an instance of the Icon component.",
-      "displayName": "TabIcon",
-      "methods": []
-    },
-    {
-      "description": "Text that goes under a Tab icon",
-      "displayName": "TabIconText",
+      "displayName": "TabScrollerScrollContent",
       "methods": []
     },
     {
@@ -6620,16 +6998,16 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onChange?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                     "signature": {
                       "properties": [
                         {
-                          "key": "onChange",
+                          "key": "onActivate",
                           "value": {
                             "name": "signature",
                             "type": "function",
@@ -6644,11 +7022,11 @@
                                       {
                                         "name": "signature",
                                         "type": "object",
-                                        "raw": "{\n    activeTabIndex: number;\n}",
+                                        "raw": "{\n  index: number\n}",
                                         "signature": {
                                           "properties": [
                                             {
-                                              "key": "activeTabIndex",
+                                              "key": "index",
                                               "value": {
                                                 "name": "number",
                                                 "required": true
@@ -6691,7 +7069,7 @@
         }
       ],
       "props": {
-        "onChange": {
+        "onActivate": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -6706,11 +7084,11 @@
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n    activeTabIndex: number;\n}",
+                        "raw": "{\n  index: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "activeTabIndex",
+                              "key": "index",
                               "value": {
                                 "name": "number",
                                 "required": true
@@ -6742,41 +7120,101 @@
       }
     },
     {
-      "description": "The TabBar Scroll container",
-      "displayName": "TabBarScroller",
+      "description": "",
+      "displayName": "TabRoot",
       "methods": [
         {
-          "name": "initialize",
+          "name": "classNames",
           "docblock": null,
           "modifiers": [],
-          "params": [],
+          "params": [
+            {
+              "name": "props",
+              "type": {
+                "name": "intersection",
+                "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n} & IconPropsT",
+                "elements": [
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "children",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "icon",
+                          "value": {
+                            "name": "ReactNode",
+                            "raw": "React.Node",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "stacked",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "restrictIndicator",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "IconPropsT"
+                  }
+                ],
+                "alias": "TabPropsT"
+              }
+            }
+          ],
           "returns": null
         }
-      ],
+      ]
+    },
+    {
+      "description": "",
+      "displayName": "TabIndicator",
+      "methods": []
+    },
+    {
+      "description": "A Tab icon. This is an instance of the Icon component.",
+      "displayName": "TabIcon",
+      "methods": []
+    },
+    {
+      "description": "A Tab component",
+      "displayName": "Tab",
+      "methods": [],
       "props": {
-        "indicatorForward": {
+        "label": {
           "flowType": {
             "name": "ReactNode",
             "raw": "React.Node"
           },
           "required": false,
-          "description": "The forward indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
-          "defaultValue": {
-            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
-            "computed": false
-          }
-        },
-        "indicatorBack": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": false,
-          "description": "The back indicator to use, gets passed to the Icon use prop. An SVG has been included by default to work correctly without material-icons.",
-          "defaultValue": {
-            "value": "<svg\n  style={{ fill: 'currentColor' }}\n  height=\"24\"\n  viewBox=\"0 0 24 24\"\n  width=\"24\"\n>\n  <path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\" />\n  <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n</svg>",
-            "computed": false
-          }
+          "description": "A label for the tab."
         },
         "children": {
           "flowType": {
@@ -6784,7 +7222,29 @@
             "raw": "React.Node"
           },
           "required": false,
-          "description": "Children to render"
+          "description": "The label for the tab, passed as children."
+        },
+        "icon": {
+          "flowType": {
+            "name": "ReactNode",
+            "raw": "React.Node"
+          },
+          "required": false,
+          "description": "The icon to use for the tab."
+        },
+        "stacked": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Stacks the icon on top of the text label"
+        },
+        "restrictIndicator": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Restricts the indicator to the content"
         }
       }
     }
@@ -7420,7 +7880,15 @@
     {
       "description": "A ThemeProvider. This sets theme colors for its child tree.",
       "displayName": "ThemeProvider",
-      "methods": [],
+      "methods": [
+        {
+          "name": "colors",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        }
+      ],
       "props": {
         "options": {
           "flowType": {
@@ -7449,11 +7917,7 @@
             "name": "Object"
           },
           "required": false,
-          "description": "Additional standard inline styles that will be merged into the style tag.",
-          "defaultValue": {
-            "value": "{}",
-            "computed": false
-          }
+          "description": "Additional standard inline styles that will be merged into the style tag."
         }
       }
     }

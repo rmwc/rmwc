@@ -4,9 +4,11 @@ import type { SimpleTagPropsT } from '../Base';
 import * as React from 'react';
 import FormField from '../FormField';
 import classNames from 'classnames';
+import { MDCSwitch } from '@material/switch/dist/mdc.switch';
 
-import { simpleTag } from '../Base';
+import { simpleTag, withFoundation } from '../Base';
 import { randomId } from '../Base/utils/randomId';
+import { syncFoundationProp } from '../Base';
 
 export type SwitchPropsT = {
   /** A DOM ID for the toggle. */
@@ -43,9 +45,19 @@ export const SwitchNativeControl = simpleTag({
   }
 });
 
-export const SwitchBackground = simpleTag({
-  displayName: 'SwitchBackground',
-  classNames: 'mdc-switch__background'
+export const SwitchTrack = simpleTag({
+  displayName: 'SwitchTrack',
+  classNames: 'mdc-switch__track'
+});
+
+export const SwitchThumbUnderlay = simpleTag({
+  displayName: 'SwitchThumbUnderlay',
+  classNames: 'mdc-switch__thumb-underlay'
+});
+
+export const SwitchThumb = simpleTag({
+  displayName: 'SwitchThumb',
+  classNames: 'mdc-switch__thumb'
 });
 
 export const SwitchKnob = simpleTag({
@@ -59,14 +71,38 @@ export const SwitchLabel = simpleTag({
   classNames: 'mdc-switch-label'
 });
 
-export class Switch extends React.Component<SwitchPropsT> {
+export class Switch extends withFoundation({
+  constructor: MDCSwitch,
+  adapter: {}
+})<SwitchPropsT> {
   static displayName = 'Switch';
 
   generatedId: string;
+  disabled: boolean;
+  checked: boolean;
+  ripple_: any;
+  initRipple_: Function;
 
   constructor(props: SwitchPropsT) {
     super(props);
     this.generatedId = randomId('switch');
+  }
+
+  componentDidMount() {
+    super.componentDidMount();
+    this.ripple_ = this.initRipple_();
+  }
+
+  syncWithProps(nextProps: SwitchPropsT) {
+    // disabled
+    syncFoundationProp(nextProps.disabled, this.disabled, () => {
+      this.disabled = !!nextProps.disabled;
+    });
+
+    // checked
+    syncFoundationProp(nextProps.checked, this.checked, () => {
+      this.checked = !!nextProps.checked;
+    });
   }
 
   render() {
@@ -74,17 +110,22 @@ export class Switch extends React.Component<SwitchPropsT> {
 
     const labelId = id || this.generatedId;
     const hasLabel = label.length || children;
+    const { root_ } = this.foundationRefs;
 
     const switchTag = (
       <SwitchRoot
         {...(!hasLabel ? rootProps : {})}
         disabled={rest.disabled}
         className={classNames(hasLabel || rootProps.className)}
+        elementRef={root_}
       >
-        <SwitchNativeControl id={labelId} {...rest} />
-        <SwitchBackground>
-          <SwitchKnob />
-        </SwitchBackground>
+        <SwitchTrack />
+        <SwitchThumbUnderlay>
+          <SwitchThumb>
+            <SwitchNativeControl id={labelId} {...rest} />
+          </SwitchThumb>
+        </SwitchThumbUnderlay>
+        <SwitchKnob />
       </SwitchRoot>
     );
 

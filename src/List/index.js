@@ -5,6 +5,7 @@ import type { RMWCProviderOptionsT } from '../Provider';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { getProviderOptions } from '../Provider';
 import { simpleTag, withRipple } from '../Base';
 import { Icon } from '../Icon';
@@ -40,7 +41,8 @@ export class ListItem extends React.Component<ListItemPropsT> {
   static displayName = 'ListItem';
 
   static defaultProps = {
-    ripple: true
+    ripple: true,
+    tabIndex: 0
   };
 
   static contextTypes = {
@@ -63,11 +65,18 @@ export class ListItem extends React.Component<ListItemPropsT> {
   }
 }
 
-/** Text for the ListItem */
+/** Text Wrapper for the ListItem */
 export const ListItemText = simpleTag({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: 'mdc-list-item__text'
+});
+
+/** Primary Text for the ListItem */
+export const ListItemPrimaryText = simpleTag({
+  displayName: 'ListItemPrimaryText',
+  tag: 'span',
+  classNames: 'mdc-list-item__primary-text'
 });
 
 /** Secondary text for the ListItem */
@@ -84,12 +93,27 @@ export const ListItemGraphic = simpleTag({
   tag: Icon
 });
 
-/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
-export const ListItemMeta = simpleTag({
-  displayName: 'ListItemMeta',
-  classNames: 'mdc-list-item__meta',
-  tag: Icon
+const ListItemMetaRoot = simpleTag({
+  displayName: 'ListItemMetaRoot',
+  tag: 'span'
 });
+
+/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
+export const ListItemMeta = ({
+  className,
+  icon,
+  ...rest
+}: {
+  className?: string,
+  icon?: React.Node
+}) => {
+  const classes = classNames('mdc-list-item__meta', className);
+  if (icon) {
+    return <Icon icon={icon} className={classes} {...rest} />;
+  }
+
+  return <ListItemMetaRoot className={classes} {...rest} />;
+};
 
 /** A container to group ListItems */
 export const ListGroup = simpleTag({
@@ -164,18 +188,34 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   meta,
   children,
   ...rest
-}: SimpleListItemPropsT) => (
-  <ListItem {...rest}>
-    {graphic !== undefined && <ListItemGraphic>{graphic}</ListItemGraphic>}
-    <ListItemText>
-      {text}
-      {secondaryText !== undefined && (
-        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+}: SimpleListItemPropsT) => {
+  const primaryTextToRender =
+    text && secondaryText !== undefined ? (
+      <ListItemPrimaryText>{text}</ListItemPrimaryText>
+    ) : (
+      text || null
+    );
+
+  const secondaryTextToRender =
+    secondaryText !== undefined ? (
+      <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+    ) : null;
+
+  return (
+    <ListItem {...rest}>
+      {graphic !== undefined && <ListItemGraphic icon={graphic} />}
+      {secondaryTextToRender !== null ? (
+        <ListItemText>
+          {primaryTextToRender}
+          {secondaryTextToRender}
+        </ListItemText>
+      ) : (
+        primaryTextToRender
       )}
-    </ListItemText>
-    {meta !== undefined && <ListItemMeta>{meta}</ListItemMeta>}
-    {children}
-  </ListItem>
-);
+      {meta !== undefined && <ListItemMeta icon={meta} />}
+      {children}
+    </ListItem>
+  );
+};
 
 SimpleListItem.displayName = 'SimpleListItem';

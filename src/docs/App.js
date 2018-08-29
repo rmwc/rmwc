@@ -11,23 +11,24 @@ import {
   TopAppBarSection,
   TopAppBarTitle,
   TopAppBarNavigationIcon,
-  TopAppBarActionItem
+  TopAppBarActionItem,
+  TopAppBarFixedAdjust
 } from 'rmwc/TopAppBar';
 
-import { Theme } from 'rmwc/Theme';
+import { ThemeProvider } from 'rmwc/Theme';
+import { getAutoColorsForTheme } from 'rmwc/Theme/utils';
 import { TabBar, Tab } from 'rmwc/Tabs';
 
-import { Drawer, DrawerContent } from 'rmwc/Drawer';
+import { Drawer, DrawerContent, DrawerAppContent } from 'rmwc/Drawer';
 
 import {
   ListItem,
-  ListItemText,
   ListGroupSubheader,
   ListItemGraphic,
   ListItemMeta
 } from 'rmwc/List';
 
-import { Menu, MenuAnchor } from 'rmwc/Menu';
+import { MenuSurface, MenuSurfaceAnchor } from 'rmwc/Menu';
 import { Button } from 'rmwc/Button';
 
 import Submenu from './Submenu';
@@ -40,7 +41,10 @@ const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
   '--mdc-theme-secondary': '#03dac4',
   '--mdc-theme-background': '#fff',
-  '--mdc-theme-surface': '#fff',
+  '--mdc-theme-surface': '#fff'
+};
+
+const TEXT_DEFAULTS = {
   '--mdc-theme-on-primary': '#fff',
   '--mdc-theme-on-secondary': '#fff',
   '--mdc-theme-on-surface': '#000',
@@ -64,7 +68,8 @@ const DEFAULT_THEME = {
 const THEMES = {
   Baseline: {
     '--mdc-theme-primary': '#6200ee',
-    '--mdc-theme-secondary': '#03dac4'
+    '--mdc-theme-secondary':
+      '#03dac4' /** Any theme option pointing to a valid CSS value. */
   },
   Crane: {
     '--mdc-theme-primary': '#5d1049',
@@ -76,31 +81,65 @@ const THEMES = {
   },
   Shrine: {
     '--mdc-theme-primary': '#ffdbcf',
-    '--mdc-theme-secondary': '#feeae6',
-    '--mdc-theme-on-primary': '#442b2d',
-    '--mdc-theme-on-secondary': '#442b2d',
-    '--mdc-theme-on-surface': '#442b2d'
+    '--mdc-theme-secondary': '#feeae6'
   }
 };
 
 const getTheme = themeName => {
-  return {
+  const theme = {
     ...DEFAULT_THEME,
     ...(THEMES[themeName] || {})
   };
+
+  const colors = getAutoColorsForTheme(theme);
+  const merged = {
+    ...TEXT_DEFAULTS,
+    ...colors
+  };
+
+  const order = [
+    'primary',
+    'secondary',
+    'background',
+    'surface',
+    'on-primary',
+    'on-secondary',
+    'on-surface',
+    'text-primary-on-background',
+    'text-secondary-on-background',
+    'text-hint-on-background',
+    'text-disabled-on-background',
+    'text-icon-on-background',
+    'text-primary-on-light',
+    'text-secondary-on-light',
+    'text-hint-on-light',
+    'text-disabled-on-light',
+    'text-icon-on-light',
+    'text-primary-on-dark',
+    'text-secondary-on-dark',
+    'text-hint-on-dark',
+    'text-disabled-on-dark',
+    'text-icon-on-dark'
+  ];
+
+  return order.reduce((acc, key) => {
+    key = `--mdc-theme-${key}`;
+    acc[key] = merged[key];
+    return acc;
+  }, {});
 };
 
 const MainMenuItem = ({ url, label }) => {
   return (
     <ListItem
+      tag={Link}
+      to={url}
       onClick={() => window.scrollTo(0, 0)}
       activated={
         window.location.pathname.split('/').pop() === url.split('/').pop()
       }
     >
-      <Link to={url}>
-        <ListItemText>{label}</ListItemText>
-      </Link>
+      <span>{label}</span>
     </ListItem>
   );
 };
@@ -115,28 +154,29 @@ const GithubIcon = () => (
 );
 
 const AppBar = ({ onNavClick, children }) => (
-  <TopAppBar fixed className="app__top-app-bar">
-    <TopAppBarRow>
-      <TopAppBarSection alignStart>
-        <TopAppBarNavigationIcon onClick={onNavClick}>
-          menu
-        </TopAppBarNavigationIcon>
+  <React.Fragment>
+    <TopAppBar fixed className="app__top-app-bar">
+      <TopAppBarRow>
+        <TopAppBarSection alignStart>
+          <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
 
-        <TopAppBarTitle tag={Link} to="/">
-          RMWC
-        </TopAppBarTitle>
-        <span className="app__version">{version}</span>
-      </TopAppBarSection>
-      <TopAppBarSection alignEnd>
-        {children}
-        <TopAppBarActionItem
-          tag="a"
-          href="https://github.com/jamesmfriedman/rmwc"
-          use={<GithubIcon />}
-        />
-      </TopAppBarSection>
-    </TopAppBarRow>
-  </TopAppBar>
+          <TopAppBarTitle tag={Link} to="/">
+            RMWC
+          </TopAppBarTitle>
+          <span className="app__version">{version}</span>
+        </TopAppBarSection>
+        <TopAppBarSection alignEnd>
+          {children}
+          <TopAppBarActionItem
+            tag="a"
+            href="https://github.com/jamesmfriedman/rmwc"
+            icon={<GithubIcon />}
+          />
+        </TopAppBarSection>
+      </TopAppBarRow>
+    </TopAppBar>
+    <TopAppBarFixedAdjust />
+  </React.Fragment>
 );
 
 const ColorBlock = ({ color, size = 1.5 }) => (
@@ -171,16 +211,20 @@ class ThemePicker extends React.Component {
     const { selectedThemeName, onThemeClick } = this.props;
     const selectedTheme = getTheme(selectedThemeName);
     return (
-      <MenuAnchor>
-        <Menu
+      <MenuSurfaceAnchor>
+        <MenuSurface
+          style={{ maxWidth: '100vw', width: '520px' }}
           open={this.state.open}
-          onCancel={() => this.setState({ open: false })}
+          onClose={() => {
+            this.setState({ open: false });
+          }}
         >
           <ListGroupSubheader>Themes</ListGroupSubheader>
           {Object.keys(THEMES).map(themeName => {
             const theme = getTheme(themeName);
             return (
               <ListItem
+                style={{ cursor: 'pointer' }}
                 key={themeName}
                 role="menuitem"
                 tabIndex="0"
@@ -199,10 +243,10 @@ class ThemePicker extends React.Component {
                   }}
                 />
                 <ListItemGraphic
-                  use={themeName === selectedThemeName ? 'check' : ''}
+                  icon={themeName === selectedThemeName ? 'check' : ''}
                 />
-                <ListItemText>{themeName}</ListItemText>
-                <ListItemMeta basename="" tag="span">
+                {themeName}
+                <ListItemMeta>
                   <ColorBlock color={theme['--mdc-theme-primary']} />
                   <ColorBlock color={theme['--mdc-theme-secondary']} />
                   <ColorBlock color={theme['--mdc-theme-background']} />
@@ -215,8 +259,8 @@ class ThemePicker extends React.Component {
             onClick={evt => this.setState({ open: true })}
             style={{ margin: '1rem auto -1rem auto' }}
             activeTabIndex={this.state.activeTabIndex}
-            onChange={evt =>
-              this.setState({ activeTabIndex: evt.detail.activeTabIndex })
+            onActivate={evt =>
+              this.setState({ activeTabIndex: evt.detail.index })
             }
           >
             <Tab>ThemeProvider</Tab>
@@ -316,44 +360,36 @@ class ThemePicker extends React.Component {
           <div style={{ padding: '1rem' }}>
             <Button>Done</Button>
           </div>
-        </Menu>
+        </MenuSurface>
         <TopAppBarActionItem
           onClick={() => this.setState({ open: !this.state.open })}
           theme="on-primary"
-          use="color_lens"
+          icon="color_lens"
         />
-      </MenuAnchor>
+      </MenuSurfaceAnchor>
     );
   }
 }
 
-const ThemeStyleTag = ({ themeName }) => (
-  <style>{`
-    :root {
-      ${Object.entries(getTheme(themeName))
-    .map(([t, val]) => `${t}: ${val};`)
-    .join('\n')}
-    }
-  `}</style>
-);
-
 const Nav = props => (
-  <Drawer id="main-nav" {...props}>
-    <DrawerContent>
-      {menuContent.map(m => {
-        if (m.options) {
-          return (
-            <Submenu label={m.label} key={m.label}>
-              {m.options.map(v => (
-                <MainMenuItem key={v.label} label={v.label} url={v.url} />
-              ))}
-            </Submenu>
-          );
-        }
-        return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
-      })}
-    </DrawerContent>
-  </Drawer>
+  <React.Fragment>
+    <Drawer id="main-nav" {...props}>
+      <DrawerContent>
+        {menuContent.map(m => {
+          if (m.options) {
+            return (
+              <Submenu label={m.label} key={m.label}>
+                {m.options.map(v => (
+                  <MainMenuItem key={v.label} label={v.label} url={v.url} />
+                ))}
+              </Submenu>
+            );
+          }
+          return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
+        })}
+      </DrawerContent>
+    </Drawer>
+  </React.Fragment>
 );
 
 export class App extends React.Component {
@@ -396,8 +432,12 @@ export class App extends React.Component {
       'home'}`;
 
     return (
-      <Theme className="app__root" tag="div" id={pageId}>
-        <ThemeStyleTag themeName={this.state.theme} />
+      <ThemeProvider
+        options={getTheme(this.state.theme)}
+        className="app__root"
+        tag="div"
+        id={pageId}
+      >
         <AppBar
           onNavClick={evt =>
             this.setState({ menuIsOpen: !this.state.menuIsOpen })
@@ -417,12 +457,12 @@ export class App extends React.Component {
         <div className="demo-content">
           <Nav
             open={this.state.menuIsOpen}
-            persistent={!this.state.isMobile}
-            temporary={this.state.isMobile}
+            dismissible={!this.state.isMobile}
+            modal={this.state.isMobile}
             onClose={() => this.setState({ menuIsOpen: false })}
           />
 
-          <main className="app__content">
+          <DrawerAppContent tag="main" className="app__content">
             <RouterSwitch>
               {menuContent.map(m => {
                 if (m.options) {
@@ -457,9 +497,9 @@ export class App extends React.Component {
               })}
               <Route path="/" exact component={Home} />
             </RouterSwitch>
-          </main>
+          </DrawerAppContent>
         </div>
-      </Theme>
+      </ThemeProvider>
     );
   }
 }

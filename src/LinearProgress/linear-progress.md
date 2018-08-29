@@ -2,8 +2,9 @@
 
 > Progress and activity indicators are visual indications of an app loading content.
 
-import from **rmwc/LinearProgress**  
-[https://material.io/components/web/catalog/linear-progress/](https://material.io/components/web/catalog/linear-progress/)
+- import from **rmwc/LinearProgress**  
+- import styles from **@material/linear-progress/dist/mdc.linear-progress.css**
+- [https://material.io/develop/web/components/linear-progress/](https://material.io/develop/web/components/linear-progress/)
 
 ```jsx render
 import { LinearProgress } from 'rmwc/LinearProgress';
