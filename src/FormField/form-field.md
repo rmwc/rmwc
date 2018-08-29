@@ -2,8 +2,9 @@
 
 > MDC Form Field provides an mdc-form-field helper class for easily making theme-aware, RTL-aware form field + label combos. It also provides an MDCFormField class for easily making input ripples respond to label events.
 
-import from **rmwc/FormField**  
-[https://material.io/components/web/catalog/input-controls/form-fields/](https://material.io/components/web/catalog/input-controls/form-fields/)
+- import from **rmwc/FormField** 
+- import styles from **@material/form-field/dist/mdc.form-field.css**
+- [https://material.io/develop/web/components/input-controls/form-fields/](https://material.io/develop/web/components/input-controls/form-fields/)
 
 Its not immediately clear when to use this component, but it has been included in RMWC for completeness. Please refer to the official MDC docs for use cases.
 

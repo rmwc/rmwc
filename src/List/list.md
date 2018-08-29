@@ -2,8 +2,9 @@
 
 > Lists are continuous, vertical indexes of text or images.
 
-import from **rmwc/List**  
-[https://material.io/components/web/catalog/lists/](https://material.io/components/web/catalog/lists/)
+- import from **rmwc/List**  
+- import styles from **@material/list/dist/mdc.list.css**
+- [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ListItems can be verbose to import and render. A non-standard 'SimpleListItem' has been created to improve the developer experience which contains a default template for ListItems.
 

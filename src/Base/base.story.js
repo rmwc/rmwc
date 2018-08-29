@@ -7,8 +7,8 @@ storiesOf('Base', module).add('simpleTag elementRef', () => {
   const Link = ({ to, ...rest }) => <a href="#" {...rest} />;
   return (
     <ListItem tag={Link} to="/">
-      <ListItemGraphic>home</ListItemGraphic>
-      <ListItemPrimaryText>Home</ListItemPrimaryText>
+      <ListItemGraphic icon="home" />
+      Home
     </ListItem>
   );
 });

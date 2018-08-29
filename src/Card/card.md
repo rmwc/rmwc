@@ -4,8 +4,9 @@
 
 `material-web-components` provides a light framework for structuring cards, but the actual content layout will require a bit of custom CSS.
 
-import from **rmwc/Card**  
-[https://material.io/components/web/catalog/cards/](https://material.io/components/web/catalog/cards/)
+- import from **rmwc/Card**  
+- import styles from **@material/card/dist/mdc.card.css**
+- [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
 ## Fully Featured Example
 

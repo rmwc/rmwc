@@ -2,8 +2,9 @@
 
 > Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
-import from **rmwc/Snackbar**  
-[https://material.io/components/web/catalog/snackbars/](https://material.io/components/web/catalog/snackbars/)
+- import from **rmwc/Snackbar**  
+- import styles from **@material/snackbar/dist/mdc.snackbar.css**
+- [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ```jsx render
 import { Snackbar } from 'rmwc/Snackbar';

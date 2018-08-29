@@ -16,7 +16,7 @@ export type TabBarEventDetailT = {
 
 export type TabBarPropsT = {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,
+  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,
   /** The index of the active tab. */
   activeTabIndex?: number
 } & SimpleTagPropsT;
@@ -76,11 +76,12 @@ export class TabBar extends withFoundation({
   root_: any;
 
   syncWithProps(nextProps: TabBarPropsT) {
+    // request animation frame required to avoid test failure issues
     window.requestAnimationFrame(() => {
       syncFoundationProp(
         nextProps.activeTabIndex,
         this.activeTabIndex,
-        () => (this.activeTabIndex = Number(nextProps.activeTabIndex))
+        () => this.foundation_ && this.activateTab(nextProps.activeTabIndex)
       );
     });
   }
@@ -90,14 +91,10 @@ export class TabBar extends withFoundation({
 
     // This corrects an issue where passing in 0 or no activeTabIndex
     // causes the first tab of the set to not be active
-    if (
-      this.props.activeTabIndex === 0 ||
-      this.props.activeTabIndex === undefined
-    ) {
-      window.requestAnimationFrame(() => {
-        this.foundation_ && this.activateTab(0);
-      });
-    }
+    // request animation frame required to avoid test failure issues
+    window.requestAnimationFrame(() => {
+      this.foundation_ && this.activateTab(this.props.activeTabIndex || 0);
+    });
   }
 
   componentDidUpdate(prevProps: TabBarPropsT) {
@@ -139,7 +136,7 @@ export class TabBar extends withFoundation({
       children,
       activeTabIndex,
       apiRef,
-      onActivated,
+      onActivate,
       ...rest
     } = this.props;
     const { root_ } = this.foundationRefs;

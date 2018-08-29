@@ -2,8 +2,9 @@
 
 > Objects in material design possess similar qualities to objects in the physical world.
 
-import from **rmwc/Elevation**  
-[https://material.io/components/web/catalog/elevation/](https://material.io/components/web/catalog/elevation/)
+- import from **rmwc/Elevation**  
+- import styles from **@material/elevation/dist/mdc.elevation.css**
+- [https://material.io/develop/web/components/elevation/](https://material.io/develop/web/components/elevation/)
 
 ```jsx render
 import { Elevation } from 'rmwc/Elevation';

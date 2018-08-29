@@ -2,8 +2,9 @@
 
 > Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
-import from **rmwc/Grid**  
-[https://material.io/components/web/catalog/layout-grid/](https://material.io/components/web/catalog/layout-grid/)
+- import from **rmwc/Grid** 
+- import styles from **@material/layout-grid/dist/mdc.layout-grid.css**
+- [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
 
 ```jsx render
 import { Grid, GridCell, GridInner } from 'rmwc/Grid';

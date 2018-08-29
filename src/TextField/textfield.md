@@ -2,8 +2,9 @@
 
 > Text fields allow users to input, edit, and select text.
 
-import from **rmwc/TextField**  
-[https://material.io/components/web/catalog/input-controls/text-field/](https://material.io/components/web/catalog/input-controls/text-field/)
+- import from **rmwc/TextField**  
+- import styles from **@material/textfield/dist/mdc.textfield.css**
+- [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
 
 ## Text Field Variants
 

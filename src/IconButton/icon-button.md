@@ -2,8 +2,9 @@
 
 > Icon buttons allow users to take actions, and make choices, with a single tap.
 
-import from **rmwc/IconToggle**  
-[https://material.io/components/web/catalog/buttons/icon-buttons/](https://material.io/components/web/catalog/buttons/icon-buttons/)
+- import from **rmwc/IconButton**  
+- import styles from **@material/icon-button/dist/mdc.icon-button.css**
+[https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
 ## Basic Usage
 `IconButton` inherits from the `Icon` component and can be passed icons in the same way.
@@ -21,7 +22,7 @@ import { IconButton } from 'rmwc/IconButton';
 
 ## Usage as a Toggle
 
-When being used as a toggle, `onContent` and `offContent` behave the same as the `use` prop of the `Icon` component.
+To use as a toggle, specify an additional toggled on state using 'onIcon'. 
 
 ```jsx render
 {/* Uncontrolled */}
@@ -58,5 +59,5 @@ When being used as a toggle, `onContent` and `offContent` behave the same as the
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 import { IconButton } from 'rmwc/IconButton';
 
-<DocumentComponent component={IconButton} displayName="IconButton" />
+<DocumentComponent component={IconButton} displayName="IconButton" composes={['Icon']} />
 ```

@@ -346,6 +346,13 @@
       "displayName": "Checkbox",
       "methods": [
         {
+          "name": "destroy",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": null
+        },
+        {
           "name": "syncWithProps",
           "docblock": null,
           "modifiers": [],
@@ -6868,16 +6875,16 @@
                 "elements": [
                   {
                     "name": "intersection",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                     "elements": [
                       {
                         "name": "signature",
                         "type": "object",
-                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                        "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                         "signature": {
                           "properties": [
                             {
-                              "key": "onActivated",
+                              "key": "onActivate",
                               "value": {
                                 "name": "signature",
                                 "type": "function",
@@ -6984,16 +6991,16 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivated?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
+                    "raw": "{\n  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */\n  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => mixed,\n  /** The index of the active tab. */\n  activeTabIndex?: number\n}",
                     "signature": {
                       "properties": [
                         {
-                          "key": "onActivated",
+                          "key": "onActivate",
                           "value": {
                             "name": "signature",
                             "type": "function",
@@ -7055,7 +7062,7 @@
         }
       ],
       "props": {
-        "onActivated": {
+        "onActivate": {
           "flowType": {
             "name": "signature",
             "type": "function",

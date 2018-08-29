@@ -2,8 +2,9 @@
 
 > Checkboxes allow the user to select multiple options from a set.
 
-import from **rmwc/Checkbox**  
-[https://material.io/components/web/catalog/input-controls/checkboxes/](https://material.io/components/web/catalog/input-controls/checkboxes/)
+- import from **rmwc/Checkbox**  
+- import styles from **@material/checkbox/dist/mdc.checkbox.css**
+- [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 ```jsx render
 import { Checkbox } from 'rmwc/Checkbox';

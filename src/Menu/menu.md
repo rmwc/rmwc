@@ -2,8 +2,10 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-import from **rmwc/Menu**  
-[https://material.io/components/web/catalog/menus/](https://material.io/components/web/catalog/menus/)
+- import from **rmwc/Menu** 
+- import styles from **@material/menu/dist/mdc.menu.css**
+- import styles from **@material/menu-surface/dist/mdc.menu-surface.css**
+- [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Menu with Items
 

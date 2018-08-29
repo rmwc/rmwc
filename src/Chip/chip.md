@@ -2,8 +2,9 @@
 
 > Chips represent complex entities in small blocks, such as a contact.
 
-import from **rmwc/Chip**  
-[https://material.io/components/web/catalog/chips/](https://material.io/components/web/catalog/chips/)
+- import from **rmwc/Chip**  
+- import styles **@material/chip/dist/mdc.chips.css**  
+- [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
 Please note that in MDC, the ChipSet code contains logic for selecting single and multiple chips (filter and choice chip sets). This doesn't fit well with React's uni-directional data flow. Instead it is recommended to write your own filtering and selection logic and just apply the `selected` prop to the `Chip` component directly.
 

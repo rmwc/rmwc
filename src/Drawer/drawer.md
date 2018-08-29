@@ -2,13 +2,13 @@
 
 > A navigation drawer slides in from the left and contains the navigation destinations for your app.
 
-import from **rmwc/Drawer**  
-[https://material.io/components/web/catalog/drawers/](https://material.io/components/web/catalog/drawers/)
+- import from **rmwc/Drawer**  
+- impor styles from **@material/drawer/dist/mdc.drawer.css**
+- [https://material.io/develop/web/components/drawers/](https://material.io/components/web/catalog/drawers/)
 
 ## Drawers
 
 These are drawers that are permanently fixed inside of a view.
-[https://material.io/components/web/catalog/drawers/#permanent-drawer-usage](https://material.io/components/web/catalog/drawers/#permanent-drawer-usage)
 
 ```jsx render
 import {
@@ -45,7 +45,6 @@ import {
 ## Dismissible Drawers
 
 These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when closed.
-[https://material.io/components/web/catalog/drawers/#persistent-drawer-usage](https://material.io/components/web/catalog/drawers/#persistent-drawer-usage)
 
 ```jsx render
 import {
@@ -98,7 +97,6 @@ import { Button } from 'rmwc/Button';
 ## Modal Drawers
 
 These are drawers that can be temporarily displayed fixed on the side of the entire viewport.
-[https://material.io/components/web/catalog/drawers/#temporary-drawer-usage](https://material.io/components/web/catalog/drawers/#temporary-drawer-usage)
 
 ```jsx render
 import {

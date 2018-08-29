@@ -2,8 +2,9 @@
 
 > MDC Image List provides a RTL-aware Material Design image list component, representing an evolution of the Material Design Grid List spec. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).
 
-import from **rmwc/ImageList**  
-[https://material.io/components/web/catalog/image-lists/](https://material.io/components/web/catalog/image-lists/)
+- import from **rmwc/ImageList**  
+- import styles from **@material/image-list/dist/mdc.image-list.css**
+- [https://material.io/develop/web/components/image-lists/](https://material.io/develop/web/components/image-lists/)
 
 Image Lists will give you basic layout, but you will have to use inline styling or CSS to achieve things like spacing, aspect ratio, and column count. Check out the inline styles below as examples.
 

@@ -2,8 +2,9 @@
 
 > Tabs make it easy to explore and switch between different views.
 
-import from **rmwc/Tabs**  
-[https://material.io/components/web/catalog/tabs/](https://material.io/components/web/catalog/tabs/)
+- import from **rmwc/Tabs**  
+- import styles from **@material/tab-bar/dist/mdc.tab-bar.css**
+- [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Controlled vs Uncontrolled
 Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivated` callback for controlled components.
@@ -18,7 +19,7 @@ Tabs can be either controlled or uncontrolled just like inputs. Use the `activeT
 {/* Controlled */}
 <TabBar
   activeTabIndex={this.state.activeTab}
-  onActivated={evt => this.setState({activeTab: evt.detail.index})}
+  onActivate={evt => this.setState({activeTab: evt.detail.index})}
 >
   <Tab>Cookies</Tab>
   <Tab>Pizza</Tab>

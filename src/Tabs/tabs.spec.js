@@ -5,7 +5,7 @@ import { TabBar, Tab } from './';
 describe('Tabs', () => {
   it('TabBar renders', () => {
     mount(
-      <TabBar activeTabIndex={0} onActivated={evt => {}}>
+      <TabBar activeTabIndex={0} onActivate={evt => {}}>
         <Tab>Test</Tab>
       </TabBar>
     );
@@ -92,8 +92,6 @@ describe('Tabs', () => {
         <Tab>2</Tab>
       </TabBar>
     );
-
-    // set a timeout because the child tabs render async
     setTimeout(() => {
       expect(el1.html().includes('mdc-tab--active')).toEqual(true);
       expect(el2.html().includes('mdc-tab--active')).toEqual(true);

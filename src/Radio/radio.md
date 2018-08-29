@@ -2,8 +2,9 @@
 
 > Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side.
 
-import from **rmwc/Radio**  
-[https://material.io/components/web/catalog/input-controls/radio-buttons/](https://material.io/components/web/catalog/input-controls/radio-buttons/)
+- import from **rmwc/Radio**
+- import styles from **@material/radio/dist/mdc.radio.css**
+- [https://material.io/develop/web/components/input-controls/radio-buttons/](https://material.io/develop/web/components/input-controls/radio-buttons/)
 
 ### Controlled Usage
 

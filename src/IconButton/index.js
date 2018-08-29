@@ -59,18 +59,7 @@ export const IconButtonIcon = simpleTag({
 });
 
 class IconButtonToggle extends withFoundation({
-  constructor: MDCIconButtonToggle,
-  adapter: {
-    /**
-     * A hack to get uncontrolled Icons to render
-     * setText is only used to set the iconContent.
-     * We are controlling the content through React
-     * So here, we just use it as a queue to re-render
-     */
-    setText: function() {
-      this.forceUpdate();
-    }
-  }
+  constructor: MDCIconButtonToggle
 })<IconButtonPropsT> {
   static displayName = 'IconButton';
 
@@ -108,18 +97,17 @@ class IconButtonToggle extends withFoundation({
       onIconOptions,
       ...rest
     } = this.props;
+    const { root_ } = this.foundationRefs;
+
     return (
       <IconButtonRoot
         aria-pressed={this.isOn()}
         aria-hidden="true"
         {...rest}
-        checked={checked}
-        elementRef={this.foundationRefs.root_}
+        elementRef={root_}
       >
         <IconButtonIcon icon={icon} iconOptions={iconOptions} />
-        {!!onIcon && (
-          <IconButtonIcon icon={onIcon} iconOptions={onIconOptions} on />
-        )}
+        <IconButtonIcon icon={onIcon} iconOptions={onIconOptions} on />
       </IconButtonRoot>
     );
   }

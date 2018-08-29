@@ -73,19 +73,24 @@ class TabBarStory extends React.Component {
             }}
           />
         </div>
+        Controlled
         <TabBar
           activeTabIndex={this.state.activeTabIndex}
-          onActivated={evt => this.onChange(evt)}
+          onActivate={evt => this.onChange(evt)}
         >
           {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
         </TabBar>
-
+        <br />
+        <br />
+        Uncontrolled
         <TabBar>
           {this.state.tabs.map((label, index) => (
             <Tab key={label} label={label} icon={this.state.icons[index]} />
           ))}
         </TabBar>
-
+        <br />
+        <br />
+        Icons
         <TabBar>
           {this.state.tabs.map((label, index) => (
             <Tab
@@ -97,6 +102,14 @@ class TabBarStory extends React.Component {
             />
           ))}
         </TabBar>
+        <br />
+        <br />
+        Always 1
+        <TabBar activeTabIndex={1}>
+          {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
+        </TabBar>
+        <br />
+        <br />
       </div>
     );
   }
