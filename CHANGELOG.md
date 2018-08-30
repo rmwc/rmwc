@@ -1,3 +1,9 @@
+#### 1.9.1 (2018-08-30)
+
+##### Bug Fixes
+
+* **Menu:**  Corrects onSelected -> onSelect. Adds example in documentation. ([b164dad3](https://github.com/jamesmfriedman/rmwc/commit/b164dad3bb2ca34d90eb067f067460d2f0763157))
+
 #### 1.9.0 (2018-08-29)
 
 ##### Breaking Changes
