@@ -18,6 +18,7 @@ import { Button } from 'rmwc/Button';
 <MenuSurfaceAnchor>
   <Menu
     open={this.state.menuIsOpen}
+    onSelect={evt => console.log(evt.detail.index)}
     onClose={evt => this.setState({menuIsOpen: false})}
   >
     <MenuItem>Cookies</MenuItem>

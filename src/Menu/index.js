@@ -65,7 +65,7 @@ export type MenuPropsT = {
   /** Callback that when the menu is closed. */
   onClose?: (evt: CustomEventT<void>) => mixed,
   /** Callback that fires when a Menu item is selected. */
-  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
+  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT
 } & SimpleTagPropsT;
@@ -138,7 +138,7 @@ export class Menu extends withFoundation({
       children,
       open,
       onClose,
-      onSelected,
+      onSelect,
       anchorCorner,
       ...rest
     } = this.props;
