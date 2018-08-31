@@ -3226,12 +3226,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelected?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3270,7 +3270,7 @@
                           }
                         },
                         {
-                          "key": "onSelected",
+                          "key": "onSelect",
                           "value": {
                             "name": "signature",
                             "type": "function",
@@ -3437,7 +3437,7 @@
           "required": false,
           "description": "Callback that when the menu is closed."
         },
-        "onSelected": {
+        "onSelect": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -4043,7 +4043,7 @@
           "required": false,
           "description": "Callback that when the menu is closed."
         },
-        "onSelected": {
+        "onSelect": {
           "flowType": {
             "name": "signature",
             "type": "function",
@@ -4203,7 +4203,7 @@
           "required": false,
           "description": "Callback that when the menu is closed."
         },
-        "onSelected": {
+        "onSelect": {
           "flowType": {
             "name": "signature",
             "type": "function",

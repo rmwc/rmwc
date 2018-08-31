@@ -179,7 +179,7 @@ export type SimpleListItemPropsT = {
   meta?: React.Node,
   /** Children to render */
   children?: React.Node
-};
+} & ListItemPropsT;
 
 export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
   text,
