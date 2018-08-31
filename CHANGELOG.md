@@ -1,3 +1,9 @@
+#### 1.9.2 (2018-08-31)
+
+##### Bug Fixes
+
+* **TypeScript:**  Adding ListItemPropsT to SimpleTagPropsT ([ba27d886](https://github.com/jamesmfriedman/rmwc/commit/ba27d886785e8f28d03c38cbddcfacb318a2f98a))
+
 #### 1.9.1 (2018-08-30)
 
 ##### Bug Fixes
