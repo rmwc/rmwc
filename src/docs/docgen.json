@@ -184,7 +184,7 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -260,6 +260,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "CheckboxPropsT"
@@ -361,7 +370,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -437,6 +446,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "CheckboxPropsT"
@@ -2700,12 +2718,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n}",
+                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -2749,6 +2767,13 @@
                         },
                         {
                           "key": "reversed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "closed",
                           "value": {
                             "name": "boolean",
                             "required": false
@@ -2837,12 +2862,12 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean\n}",
+                    "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n}",
                     "signature": {
                       "properties": [
                         {
@@ -2886,6 +2911,13 @@
                         },
                         {
                           "key": "reversed",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "closed",
                           "value": {
                             "name": "boolean",
                             "required": false
@@ -2967,6 +2999,13 @@
             "value": "false",
             "computed": false
           }
+        },
+        "closed": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Hides the progress bar. Adding / removing this prop will trigger an animation in or out."
         }
       }
     }
@@ -4782,7 +4821,7 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** A label for the control. */\n  label?: string,\n  /** Children to render */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** A label for the control. */\n  label?: string,\n  /** Children to render */\n  children?: React.Node\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -4859,6 +4898,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "RadioPropsT"
@@ -4916,7 +4964,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** A label for the control. */\n  label?: string,\n  /** Children to render */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** A label for the control. */\n  label?: string,\n  /** Children to render */\n  children?: React.Node\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -4993,6 +5041,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "RadioPropsT"
@@ -5178,7 +5235,7 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -5293,6 +5350,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "SelectPropsT"
@@ -5345,7 +5411,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Makes the Select have a visual box. */\n  box?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -5460,6 +5526,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "SelectPropsT"
@@ -6774,7 +6849,7 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -6839,6 +6914,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "SwitchPropsT"
@@ -6901,7 +6985,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -6966,6 +7050,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "SwitchPropsT"
@@ -7430,7 +7523,7 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -7566,6 +7659,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "TextFieldPropsT"
@@ -7632,7 +7734,7 @@
       }
     },
     {
-      "description": "",
+      "description": "A TextField component for accepting text input from a user.",
       "displayName": "TextField",
       "methods": [
         {
@@ -7644,7 +7746,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -7780,6 +7882,15 @@
                   },
                   {
                     "name": "SimpleTagPropsT"
+                  },
+                  {
+                    "name": "ReactInputHTMLAttributes",
+                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ]
                   }
                 ],
                 "alias": "TextFieldPropsT"

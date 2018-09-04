@@ -15,7 +15,9 @@ export type LinearProgressPropsT = {
   /** Whether or not the Progress bar is determinate. */
   determinate?: boolean,
   /** Progress goes from right to left. */
-  reversed?: boolean
+  reversed?: boolean,
+  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
+  closed?: boolean
 } & SimpleTagPropsT;
 
 export const LinearProgressRoot = simpleTag({
@@ -25,7 +27,8 @@ export const LinearProgressRoot = simpleTag({
     'mdc-linear-progress',
     {
       'mdc-linear-progress--indeterminate': !props.determinate,
-      'mdc-linear-progress--reversed': props.reversed
+      'mdc-linear-progress--reversed': props.reversed,
+      'mdc-linear-progress--closed': props.closed
     }
   ],
   defaultProps: {
@@ -34,7 +37,7 @@ export const LinearProgressRoot = simpleTag({
     reversed: false,
     accent: false
   },
-  consumeProps: ['determinate', 'reversed', 'accent']
+  consumeProps: ['determinate', 'reversed', 'accent', 'closed']
 });
 
 export const LinearProgressBufferingDots = simpleTag({

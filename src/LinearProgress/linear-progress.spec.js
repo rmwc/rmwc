@@ -12,6 +12,10 @@ describe('LinearProgress', () => {
     mount(<LinearProgress buffer={0.8} />);
   });
 
+  it('can be closed', () => {
+    mount(<LinearProgress closed />);
+  });
+
   it('can be indeterminate', () => {
     const el = mount(<LinearProgress determinate={false} />);
     expect(el.html().includes('mdc-linear-progress--determinate')).toBe(false);
