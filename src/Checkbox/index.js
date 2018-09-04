@@ -119,8 +119,12 @@ export class Checkbox extends withFoundation({
     this.nativeCb_.removeEventListener('change', this.handleChange_);
 
     this.handleChange_ = () => {
-      this.syncWithProps(this.props);
-      this.foundation_.handleChange();
+      // RAF fixes #294 for an unknown reason
+      // Checkbox not responsive on iOS.
+      window.requestAnimationFrame(() => {
+        this.syncWithProps(this.props);
+        this.foundation_.handleChange();
+      });
     };
 
     this.nativeCb_.addEventListener('change', this.handleChange_);
