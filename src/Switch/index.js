@@ -23,7 +23,9 @@ export type SwitchPropsT = {
   rootProps?: any,
   /** Any children to render. */
   children?: React.Node
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  //$FlowFixMe
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const SwitchRoot = simpleTag({
   displayName: 'SwitchRoot',

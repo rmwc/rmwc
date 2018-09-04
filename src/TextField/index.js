@@ -47,7 +47,9 @@ export type TextFieldPropsT = {
   rootProps?: Object,
   /** The type of input field to render */
   type?: string
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  //$FlowFixMe
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const TextFieldRoot = simpleTag({
   displayName: 'TextFieldRoot',
@@ -140,6 +142,7 @@ export class TextFieldIcon extends simpleTag({
   }
 }
 
+/** A TextField component for accepting text input from a user. */
 export class TextField extends withFoundation({
   constructor: MDCTextField,
   adapter: {}

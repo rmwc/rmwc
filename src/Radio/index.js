@@ -20,7 +20,9 @@ export type RadioPropsT = {
   label?: string,
   /** Children to render */
   children?: React.Node
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  //$FlowFixMe
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const RadioRoot = simpleTag({
   displayName: 'RadioRoot',

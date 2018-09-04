@@ -32,7 +32,9 @@ export type SelectPropsT = {
   rootProps?: Object,
   /** A className for the root element. */
   className?: string
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  //$FlowFixMe
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const SelectRoot = simpleTag({
   displayName: 'SelectRoot',

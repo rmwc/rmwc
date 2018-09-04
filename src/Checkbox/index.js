@@ -21,7 +21,9 @@ export type CheckboxPropsT = {
   indeterminate?: boolean,
   /** A label for the control. */
   label?: string
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  //$FlowFixMe
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export const CheckboxRoot = simpleTag({
   displayName: 'CheckboxRoot',
