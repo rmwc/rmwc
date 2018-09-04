@@ -29,13 +29,7 @@ export type SwitchPropsT = {
 
 export const SwitchRoot = simpleTag({
   displayName: 'SwitchRoot',
-  classNames: (props: SwitchPropsT) => [
-    'mdc-switch',
-    {
-      'mdc-switch--disabled': props.disabled
-    }
-  ],
-  consumeProps: ['disabled']
+  classNames: 'mdc-switch'
 });
 
 export const SwitchNativeControl = simpleTag({
@@ -96,19 +90,26 @@ export class Switch extends withFoundation({
   }
 
   syncWithProps(nextProps: SwitchPropsT) {
-    // disabled
-    syncFoundationProp(nextProps.disabled, this.disabled, () => {
-      this.disabled = !!nextProps.disabled;
-    });
-
     // checked
     syncFoundationProp(nextProps.checked, this.checked, () => {
       this.checked = !!nextProps.checked;
     });
+
+    // disabled
+    syncFoundationProp(nextProps.disabled, this.disabled, () => {
+      this.disabled = !!nextProps.disabled;
+    });
   }
 
   render() {
-    const { label = '', id, children, rootProps = {}, ...rest } = this.props;
+    const {
+      label = '',
+      id,
+      children,
+      disabled,
+      rootProps = {},
+      ...rest
+    } = this.props;
 
     const labelId = id || this.generatedId;
     const hasLabel = label.length || children;
@@ -117,7 +118,6 @@ export class Switch extends withFoundation({
     const switchTag = (
       <SwitchRoot
         {...(!hasLabel ? rootProps : {})}
-        disabled={rest.disabled}
         className={classNames(hasLabel || rootProps.className)}
         elementRef={root_}
       >

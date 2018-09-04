@@ -1,7 +1,15 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { TextField, Button, Checkbox, Menu, MenuItem, Select } from '../rmwc';
+import {
+  TextField,
+  Button,
+  Checkbox,
+  Menu,
+  MenuItem,
+  Select,
+  Switch
+} from '../rmwc';
 
 class Bug216 extends React.Component {
   constructor(props) {
@@ -95,6 +103,42 @@ class Bug283 extends React.Component {
   }
 }
 
+class Bug293 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoading: false, checked: false };
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Switch
+          label="Try to switch me, baby"
+          checked={this.state.checked}
+          disabled={this.state.isLoading}
+          onChange={this.onChange}
+        />
+        <Checkbox
+          label="Try to switch me, baby"
+          checked={this.state.checked}
+          disabled={this.state.isLoading}
+          onChange={this.onChange}
+        />
+      </React.Fragment>
+    );
+  }
+  onChange = () => {
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      this.setState(c => ({
+        ...c,
+        checked: !c.checked,
+        isLoading: false
+      }));
+    }, 100);
+  };
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -130,6 +174,23 @@ storiesOf('Bugs', module)
         onChange={e => console.log('change', e.target.checked)}
         label="Uncontrolled"
       />
+
+      <Switch
+        checked={true}
+        onChange={e => console.log('change', e.target.checked)}
+        label="True controlled"
+      />
+
+      <Switch
+        checked={false}
+        onChange={e => console.log('change', e.target.checked)}
+        label="False controlled"
+      />
+      <Switch
+        onChange={e => console.log('change', e.target.checked)}
+        label="Uncontrolled"
+      />
     </React.Fragment>
   ))
-  .add('#283', () => <Bug283 />);
+  .add('#283', () => <Bug283 />)
+  .add('#293', () => <Bug293 />);
