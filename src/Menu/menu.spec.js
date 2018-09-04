@@ -24,6 +24,22 @@ describe('Menu', () => {
     );
   });
 
+  it('can be fixed', () => {
+    const el = mount(
+      <MenuSurfaceAnchor>
+        <button>Test</button>
+
+        <Menu open fixed>
+          <MenuItem>Cookies</MenuItem>
+          <MenuItem>Pizza</MenuItem>
+          <MenuItem>Icecream</MenuItem>
+        </Menu>
+      </MenuSurfaceAnchor>
+    );
+
+    expect(el.html().includes('mdc-menu-surface--fixed')).toBe(true);
+  });
+
   it('MenuSurface renders', () => {
     mount(
       <MenuSurfaceAnchor>

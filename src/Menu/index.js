@@ -27,9 +27,34 @@ type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'top
 /****************************************************************
  * Menu
  ****************************************************************/
+export type SelectedEventDetailT = {
+  index: number,
+  item: HTMLElement
+};
+
+export type MenuPropsT = {
+  /** Whether or not the Menu is open. */
+  open?: boolean,
+  /** Make the menu position fixed. */
+  fixed?: boolean,
+  /** Callback that when the menu is closed. */
+  onClose?: (evt: CustomEventT<void>) => mixed,
+  /** Callback that fires when a Menu item is selected. */
+  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
+  /** Manually position the menu to one of the corners. */
+  anchorCorner?: AnchorT
+} & SimpleTagPropsT;
+
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
-  classNames: props => ['mdc-menu', 'mdc-menu-surface'],
+  classNames: (props: MenuSurfacePropsT) => [
+    'mdc-menu',
+    'mdc-menu-surface',
+    {
+      'mdc-menu-surface--fixed': props.fixed
+    }
+  ],
+  consumeProps: ['fixed'],
   defaultProps: {
     tabIndex: '-1'
   }
@@ -53,22 +78,6 @@ export class MenuItem extends React.Component<any> {
     return <ListItem role="menuitem" tabIndex={0} {...this.props} />;
   }
 }
-
-export type SelectedEventDetailT = {
-  index: number,
-  item: HTMLElement
-};
-
-export type MenuPropsT = {
-  /** Whether or not the Menu is open. */
-  open?: boolean,
-  /** Callback that when the menu is closed. */
-  onClose?: (evt: CustomEventT<void>) => mixed,
-  /** Callback that fires when a Menu item is selected. */
-  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
-  /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT
-} & SimpleTagPropsT;
 
 /** A menu component for displaying lists items. */
 export class Menu extends withFoundation({
