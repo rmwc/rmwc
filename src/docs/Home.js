@@ -27,7 +27,7 @@ export const Home = () => {
           </Typography>
 
           <Link to="/installation">
-            <Button theme="secondary-bg" raised>
+            <Button theme="secondary-bg on-secondary" raised>
               Get Started
             </Button>
           </Link>
@@ -65,7 +65,7 @@ export const Home = () => {
                   }}
                 />
                 <CardActions>
-                  <CardAction raised theme="secondary-bg">
+                  <CardAction raised theme="secondary-bg on-secondary">
                     Get Started
                   </CardAction>
                 </CardActions>

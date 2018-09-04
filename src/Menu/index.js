@@ -47,7 +47,7 @@ export type MenuPropsT = {
 
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
-  classNames: (props: MenuSurfacePropsT) => [
+  classNames: (props: MenuPropsT) => [
     'mdc-menu',
     'mdc-menu-surface',
     {
