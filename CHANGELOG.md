@@ -1,3 +1,20 @@
+#### 1.9.3 (2018-09-04)
+
+##### Documentation Changes
+
+* **Menu:**  Correcting Menu docs proptypes fixes [#295](https://github.com/jamesmfriedman/rmwc/pull/295) ([df9aff7a](https://github.com/jamesmfriedman/rmwc/commit/df9aff7a0b8df049aad536d84871dd3bc38988fe))
+
+##### New Features
+
+* **LinearProgress:**  Adding closed prop fixes [#278](https://github.com/jamesmfriedman/rmwc/pull/278) ([af015a4b](https://github.com/jamesmfriedman/rmwc/commit/af015a4b94051f222a6b2e377fbaf79d8e999c4f))
+* **Menu:**  Adding missing fixed prop and behavior [#295](https://github.com/jamesmfriedman/rmwc/pull/295) ([94459c4a](https://github.com/jamesmfriedman/rmwc/commit/94459c4a0f8e594f9d9dc347d426b5c39fde30e9))
+
+##### Bug Fixes
+
+* **Switch:**  Fixes an issue where disabled state on switch would persist fixes [#293](https://github.com/jamesmfriedman/rmwc/pull/293) ([a9caf555](https://github.com/jamesmfriedman/rmwc/commit/a9caf555331f86900912cf32f346282d87439cca))
+* **Checkbox:**  adds RAF to fix unresponsive iOS checkbox fixes [#294](https://github.com/jamesmfriedman/rmwc/pull/294) ([fb53f44f](https://github.com/jamesmfriedman/rmwc/commit/fb53f44ff24ff02f5a6118fb0153638576ac7550))
+* **Typescript:**  Corrects intrinsic props for html input elements fixes [#287](https://github.com/jamesmfriedman/rmwc/pull/287) ([54b2e2b9](https://github.com/jamesmfriedman/rmwc/commit/54b2e2b93a8d3c2ec9f696dce87b669eb73c32cf))
+
 #### 1.9.2 (2018-08-31)
 
 ##### Bug Fixes
