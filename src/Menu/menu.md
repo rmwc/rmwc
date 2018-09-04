@@ -88,6 +88,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="Menu" />
 <DocumentComponent displayName="MenuItem" composes={['ListItem']}/>
+<DocumentComponent displayName="MenuSurface" />
 <DocumentComponent displayName="MenuSurfaceAnchor" />
 <DocumentComponent displayName="SimpleMenu" />
 <DocumentComponent displayName="SimpleMenuSurface" />

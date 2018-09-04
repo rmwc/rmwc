@@ -3155,6 +3155,27 @@
           },
           "required": false,
           "description": "Children to render"
+        },
+        "selected": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "A modifier for a selected state."
+        },
+        "activated": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "A modifier for an active state."
+        },
+        "ripple": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Enable / disable the ripple."
         }
       }
     }
@@ -3214,7 +3235,7 @@
       "methods": []
     },
     {
-      "description": "A menu component",
+      "description": "A menu component for displaying lists items.",
       "displayName": "Menu",
       "methods": [
         {
@@ -3686,7 +3707,7 @@
       ]
     },
     {
-      "description": "",
+      "description": "A generic menu component for displaying any type of content.",
       "displayName": "MenuSurface",
       "methods": [
         {
@@ -4173,83 +4194,14 @@
             "name": "boolean"
           },
           "required": false,
-          "description": "Whether or not the Menu is open."
+          "description": "Opens the menu."
         },
-        "onClose": {
+        "fixed": {
           "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: CustomEventT<void>) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "CustomEventT",
-                    "elements": [
-                      {
-                        "name": "void"
-                      }
-                    ],
-                    "raw": "CustomEventT<void>"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
+            "name": "boolean"
           },
           "required": false,
-          "description": "Callback that when the menu is closed."
-        },
-        "onSelect": {
-          "flowType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "name": "CustomEventT",
-                    "elements": [
-                      {
-                        "name": "signature",
-                        "type": "object",
-                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
-                        "signature": {
-                          "properties": [
-                            {
-                              "key": "index",
-                              "value": {
-                                "name": "number",
-                                "required": true
-                              }
-                            },
-                            {
-                              "key": "item",
-                              "value": {
-                                "name": "HTMLElement",
-                                "required": true
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "raw": "CustomEventT<SelectedEventDetailT>"
-                  }
-                }
-              ],
-              "return": {
-                "name": "mixed"
-              }
-            }
-          },
-          "required": false,
-          "description": "Callback that fires when a Menu item is selected."
+          "description": "Make the menu position fixed."
         },
         "anchorCorner": {
           "flowType": {
@@ -4292,6 +4244,62 @@
           },
           "required": false,
           "description": "Manually position the menu to one of the corners."
+        },
+        "onOpen": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is opened."
+        },
+        "onClose": {
+          "flowType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(evt: CustomEventT<void>) => mixed",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "name": "CustomEventT",
+                    "elements": [
+                      {
+                        "name": "void"
+                      }
+                    ],
+                    "raw": "CustomEventT<void>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "mixed"
+              }
+            }
+          },
+          "required": false,
+          "description": "Callback for when the menu is closed."
         }
       }
     }

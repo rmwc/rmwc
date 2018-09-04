@@ -70,7 +70,7 @@ export type MenuPropsT = {
   anchorCorner?: AnchorT
 } & SimpleTagPropsT;
 
-/** A menu component */
+/** A menu component for displaying lists items. */
 export class Menu extends withFoundation({
   constructor: MDCMenu,
   adapter: {}
@@ -156,7 +156,7 @@ export class Menu extends withFoundation({
 /****************************************************************
  * MenuSurface
  ****************************************************************/
-type MenuSurfacePropsT = {
+export type MenuSurfacePropsT = {
   /** Opens the menu. */
   open?: boolean,
   /** Make the menu position fixed. */
@@ -182,6 +182,7 @@ export const MenuSurfaceRoot = simpleTag({
   consumeProps: ['fixed']
 });
 
+/** A generic menu component for displaying any type of content. */
 export class MenuSurface extends withFoundation({
   constructor: MDCMenuSurface,
   adapter: {}
@@ -258,7 +259,11 @@ export type SimpleMenuPropsT = {
   rootProps?: Object,
   /** Children to render */
   children?: React.Node
-} & MenuPropsT;
+};
+
+export type SimpleMenuFactoryPropsT = SimpleMenuPropsT &
+  MenuPropsT &
+  MenuSurfacePropsT;
 
 export type SimpleMenuStateT = {
   open: boolean
@@ -266,15 +271,15 @@ export type SimpleMenuStateT = {
 
 const simpleMenuFactory = (
   MenuComponent
-): React.ComponentType<SimpleMenuPropsT> =>
-  class extends React.Component<SimpleMenuPropsT, SimpleMenuStateT> {
+): React.ComponentType<SimpleMenuFactoryPropsT> =>
+  class extends React.Component<SimpleMenuFactoryPropsT, SimpleMenuStateT> {
     static displayName = 'SimpleMenu';
 
     componentWillMount() {
       this.syncWithOpenProp(this.props.open);
     }
 
-    componentWillReceiveProps(nextProps: SimpleMenuPropsT) {
+    componentWillReceiveProps(nextProps: SimpleMenuFactoryPropsT) {
       this.syncWithOpenProp(nextProps.open);
     }
 
@@ -334,7 +339,7 @@ const SimpleMenuRoot = simpleMenuFactory(Menu);
 /**
  * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
  */
-export const SimpleMenu = (props: SimpleMenuPropsT) => (
+export const SimpleMenu = (props: SimpleMenuPropsT & MenuPropsT) => (
   <SimpleMenuRoot {...props} />
 );
 
@@ -343,6 +348,6 @@ const SimpleMenuSurfaceRoot = simpleMenuFactory(MenuSurface);
 /**
  * The same as SimpleMenu, but a generic surface.
  */
-export const SimpleMenuSurface = (props: SimpleMenuPropsT) => (
-  <SimpleMenuSurfaceRoot {...props} />
-);
+export const SimpleMenuSurface = (
+  props: SimpleMenuPropsT & MenuSurfacePropsT
+) => <SimpleMenuSurfaceRoot {...props} />;
