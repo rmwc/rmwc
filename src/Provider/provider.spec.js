@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { RMWCProvider } from './';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
+import { Button } from '@rmwc/button';
+import { Icon } from '@rmwc/icon';
 
 describe('Provider', () => {
   it('renders', () => {

@@ -1,6 +1,6 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
-import type { ButtonPropsT } from '../Button';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import type { ButtonPropsT } from '@rmwc/button';
 
 import * as React from 'react';
 import {
@@ -8,10 +8,10 @@ import {
   MDCDialogFoundation
 } from '@material/dialog/dist/mdc.dialog';
 
-import Button from '../Button';
-import { simpleTag, noop } from '../Base';
+import Button from '@rmwc/button';
+import { simpleTag, noop } from '@rmwc/base';
 
-import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
+import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
 
 export const DialogRoot = simpleTag({
   displayName: 'DialogRoot',

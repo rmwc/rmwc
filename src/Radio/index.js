@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCRadio } from '@material/radio/dist/mdc.radio';
-import FormField from '../FormField';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
-import { randomId } from '../Base/utils/randomId';
+import FormField from '@rmwc/form-field';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import { randomId } from '@rmwc/base/utils/randomId';
 
 export type RadioPropsT = {
   /** A DOM ID for the toggle. */

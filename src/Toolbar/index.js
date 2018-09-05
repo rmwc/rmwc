@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCToolbar } from '@material/toolbar/dist/mdc.toolbar';
-import { Icon } from '../Icon';
-import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/withFoundation';
+import { Icon } from '@rmwc/icon';
+import { simpleTag } from '@rmwc/base';
+import { withFoundation } from '@rmwc/base/withFoundation';
 
 export type ToolbarPropsT = {
   /** Makes the toolbar fixed */

@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
-import type { IconPropsT } from '../Icon';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
 import { MDCTabBar } from '@material/tab-bar/dist/mdc.tabBar';
-import { Icon } from '../Icon';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
+import { Icon } from '@rmwc/icon';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 /************************************************************
  * TabBar

@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-import { randomId } from '../Base/utils/randomId';
+import { randomId } from '@rmwc/base/utils/randomId';
 
 const mdcShapeAngledCornerBackground = (
   rootId: string,

@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCMenu } from '@material/menu/dist/mdc.menu';
@@ -7,8 +7,8 @@ import {
   MDCMenuSurface,
   MDCMenuSurfaceFoundation
 } from '@material/menu-surface/dist/mdc.menuSurface';
-import { List, ListItem } from '../List';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
+import { List, ListItem } from '@rmwc/list';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',

@@ -1,12 +1,12 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
-import FormField from '../FormField';
-import { simpleTag } from '../Base';
-import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
-import { randomId } from '../Base/utils/randomId';
+import FormField from '@rmwc/form-field';
+import { simpleTag } from '@rmwc/base';
+import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
+import { randomId } from '@rmwc/base/utils/randomId';
 
 export type CheckboxPropsT = {
   /** A DOM ID for the toggle. */

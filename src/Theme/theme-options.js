@@ -1,4 +1,4 @@
-import { toDashCase } from '../Base/utils/to-dash-case';
+import { toDashCase } from '@rmwc/base/utils/to-dash-case';
 
 export const themeOptionsCamel = [
   'primary',

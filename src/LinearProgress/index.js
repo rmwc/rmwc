@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 /* eslint-disable max-len */
 import { MDCLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 /* eslint-enable max-len */
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 export type LinearProgressPropsT = {
   /** Progress float percentage between 0 and 1. */

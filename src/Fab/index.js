@@ -1,16 +1,16 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
-import type { RMWCProviderOptionsT } from '../Provider';
-import type { IconPropsT } from '../Icon';
-import type { WithRipplePropsT } from '../Ripple';
+import type { SimpleTagPropsT } from '@rmwc/base';
+import type { RMWCProviderOptionsT } from '@rmwc/provider';
+import type { IconPropsT } from '@rmwc/icon';
+import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '../Icon';
-import { getProviderOptions } from '../Provider';
-import { simpleTag } from '../Base';
-import { withRipple } from '../Ripple';
+import { Icon } from '@rmwc/icon';
+import { getProviderOptions } from '@rmwc/provider';
+import { simpleTag } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
 
 /**
  * Private

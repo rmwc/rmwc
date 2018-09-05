@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, object, array, boolean } from '@storybook/addon-knobs';
 import { Select } from './';
-import { storyWithState } from '../Base/utils/story-with-state';
+import { storyWithState } from '@rmwc/base/utils/story-with-state';
 
 const MutatingSelect = storyWithState(
   state => ({

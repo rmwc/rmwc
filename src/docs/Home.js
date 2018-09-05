@@ -3,15 +3,14 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { version } from '../rmwc';
-import { Typography } from '../Typography';
+import { Typography } from '@rmwc/typography';
 
-import { Card, CardMedia, CardActions, CardAction } from '../Card';
+import { Card, CardMedia, CardActions, CardAction } from '@rmwc/card';
 
-import { Grid, GridCell } from '../Grid';
+import { Grid, GridCell } from '@rmwc/grid';
 
-import { Button } from '../Button';
-
-import { Theme } from '../Theme';
+import { Button } from '@rmwc/button';
+import { Theme } from '@rmwc/theme';
 
 export const Home = () => {
   return (

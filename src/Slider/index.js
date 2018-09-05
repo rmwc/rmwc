@@ -1,9 +1,9 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCSlider } from '@material/slider/dist/mdc.slider';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 export type SliderPropsT = {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */

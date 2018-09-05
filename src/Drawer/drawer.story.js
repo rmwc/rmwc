@@ -10,7 +10,7 @@ import {
   DrawerTitle,
   DrawerSubtitle
 } from './';
-import { List, ListItem, ListItemGraphic } from '../List';
+import { List, ListItem, ListItemGraphic } from '@rmwc/list';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Icon } from './';
-import { RMWCProvider } from '../Provider';
+import { RMWCProvider } from '@rmwc/provider';
 
 storiesOf('Icons', module).add('Icon', () => (
   <ul>

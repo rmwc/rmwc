@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
-import { FloatingLabel } from '../FloatingLabel';
-import { LineRipple } from '../LineRipple';
-import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import { FloatingLabel } from '@rmwc/floating-label';
+import { LineRipple } from '@rmwc/line-ripple';
+import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
 
 type FormattedOption = {
   label: string,

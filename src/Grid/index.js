@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
-import { simpleTag } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+import { simpleTag } from '@rmwc/base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 export type GridPropsT = {
   /** Specifies the grid should have fixed column width. */

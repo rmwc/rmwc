@@ -1,9 +1,9 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCFormField } from '@material/form-field/dist/mdc.formField';
-import { simpleTag, withFoundation } from '../Base';
+import { simpleTag, withFoundation } from '@rmwc/base';
 
 type FormFieldRootPropsT = {
   /** Position the input after the label. */

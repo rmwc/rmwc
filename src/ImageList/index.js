@@ -1,7 +1,7 @@
 // @flow
 // eslint-disable-next-line no-unused-vars
 import * as React from 'react';
-import { simpleTag } from '../Base';
+import { simpleTag } from '@rmwc/base';
 
 type ImageListPropsT = {
   /** Indicates that this Image List should use the Masonry variant. */

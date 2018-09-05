@@ -1,10 +1,10 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCIconToggle } from '@material/icon-toggle/dist/mdc.iconToggle';
-import { Icon } from '../Icon';
-import { simpleTag, noop, withFoundation, syncFoundationProp } from '../Base';
+import { Icon } from '@rmwc/icon';
+import { simpleTag, noop, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 export type IconToggleChangeEventDetailT = {
     isOn: boolean;

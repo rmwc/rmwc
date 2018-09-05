@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
-import Icon from '../Icon';
-import { simpleTag } from '../Base';
-import type { SimpleTagPropsT } from '../Base';
+import Icon from '@rmwc/icon';
+import { simpleTag } from '@rmwc/base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 export type GridListPropsT = {
   /** Use a 1px gutter. */

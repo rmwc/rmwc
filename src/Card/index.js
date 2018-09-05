@@ -1,13 +1,13 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
-import type { IconButtonPropsT } from '../IconButton';
-import type { WithRipplePropsT } from '../Ripple';
+import type { SimpleTagPropsT } from '@rmwc/base';
+import type { IconButtonPropsT } from '@rmwc/icon-button';
+import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
-import { Button } from '../Button';
-import { simpleTag } from '../Base';
-import { withRipple } from '../Ripple';
-import { IconButton } from '../IconButton';
+import { Button } from '@rmwc/button';
+import { simpleTag } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
+import { IconButton } from '@rmwc/icon-button';
 
 /****************************************************************
  * Card

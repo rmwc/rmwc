@@ -1,14 +1,14 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import FormField from '../FormField';
+import FormField from '@rmwc/form-field';
 import classNames from 'classnames';
 import { MDCSwitch } from '@material/switch/dist/mdc.switch';
 
-import { simpleTag, withFoundation } from '../Base';
-import { randomId } from '../Base/utils/randomId';
-import { syncFoundationProp } from '../Base';
+import { simpleTag, withFoundation } from '@rmwc/base';
+import { randomId } from '@rmwc/base/utils/randomId';
+import { syncFoundationProp } from '@rmwc/base';
 
 export type SwitchPropsT = {
   /** A DOM ID for the toggle. */

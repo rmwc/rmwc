@@ -1,12 +1,12 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 import './polyfill';
-import { simpleTag } from '../Base';
-import { noop } from '../Base';
+import { simpleTag } from '@rmwc/base';
+import { noop } from '@rmwc/base';
 import { MDCDrawer } from '@material/drawer/dist/mdc.drawer';
-import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
+import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
 
 /***************************************************************************************
  * Drawer Headers

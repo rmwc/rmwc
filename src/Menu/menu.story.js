@@ -3,7 +3,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
-import { Button } from '../Button';
+import { Button } from '@rmwc/button';
 
 class MenuStory extends React.Component {
   state = {

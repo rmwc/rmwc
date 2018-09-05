@@ -14,7 +14,7 @@ import {
   DialogFooterButton,
   DialogBackdrop
 } from './';
-import { storyWithState } from '../Base/utils/story-with-state';
+import { storyWithState } from '@rmwc/base/utils/story-with-state';
 
 const DialogStory = storyWithState(
   state => ({

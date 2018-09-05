@@ -95,13 +95,13 @@ A more relevant example. Say your app already has a custom Icon component.
 
 ```jsx
 // 1) Your app has an icon component you use
-import { MyIconComponent } from '../Icon';
+import { MyIconComponent } from '@rmwc/icon';
 <MyIconComponent name="search" />;
 
 // 2) Now you are using RMWC, lots of components are instances of Icons
 // You could do this, but it would be verbose
 import { TextFieldIcon } from 'rmwc/TextField';
-import { MyIconComponent } from '../Icon';
+import { MyIconComponent } from '@rmwc/icon';
 <TextFieldIcon icon={<MyIconComponent name="search" />} />;
 
 // 3) Instead, you should set the custom strategy to be your default
@@ -110,7 +110,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App'; // your main app component
 import { RMWCProvider } from 'rmwc/Provider';
-import { MyIconComponent } from '../Icon';
+import { MyIconComponent } from '@rmwc/icon';
 
 const iconRenderHandler = ({ content, className, ...rest }) => {
   // content is the "icon" prop

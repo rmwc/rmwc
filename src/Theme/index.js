@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
 
-import { simpleTag } from '../Base';
-import { toDashCase } from '../Base/utils/to-dash-case';
+import { simpleTag } from '@rmwc/base';
+import { toDashCase } from '@rmwc/base/utils/to-dash-case';
 import { getAutoColorsForTheme } from './utils';
 
 // prettier-ignore

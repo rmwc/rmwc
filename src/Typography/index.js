@@ -1,9 +1,9 @@
 // @flow
 // eslint-disable-next-line no-unused-vars
 import * as React from 'react';
-import { simpleTag } from '../Base';
+import { simpleTag } from '@rmwc/base';
 
-import type { SimpleTagPropsT } from '../Base';
+import type { SimpleTagPropsT } from '@rmwc/base';
 
 export type TypographyPropsT = {
   /* prettier-ignore */

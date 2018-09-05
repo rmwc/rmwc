@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { ListItem } from '../List';
+import { ListItem } from '@rmwc/list';
 import { withTheme } from './withTheme';
 
 describe('RMWC', () => {

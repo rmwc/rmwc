@@ -12,9 +12,9 @@ import {
   CardAction
 } from './';
 
-import { Typography } from '../Typography';
-import { ListDivider } from '../List';
-import { Icon } from '../Icon';
+import { Typography } from '@rmwc/typography';
+import { ListDivider } from '@rmwc/list';
+import { Icon } from '@rmwc/icon';
 
 storiesOf('Cards', module)
   .add('Full Featured', () => (

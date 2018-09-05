@@ -1,8 +1,8 @@
 // @flow
 // eslint-disable-next-line no-unused-vars
 import * as React from 'react';
-import { simpleTag } from '../Base';
-import type { SimpleTagPropsT } from '../Base/simpleTag';
+import { simpleTag } from '@rmwc/base';
+import type { SimpleTagPropsT } from '@rmwc/base/simpleTag';
 
 export type ElevationPropsT = {
   /** A number from 0 - 24 for different levels of elevation */

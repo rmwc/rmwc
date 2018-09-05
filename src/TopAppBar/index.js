@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
 
-import { Icon } from '../Icon';
-import { simpleTag, withFoundation } from '../Base';
+import { Icon } from '@rmwc/icon';
+import { simpleTag, withFoundation } from '@rmwc/base';
 
 type TopAppAppBarPropsT = {
   /** Emits when the navigation icon is clicked. */

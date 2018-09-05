@@ -96,6 +96,20 @@
     "typescript": "^2.9.2"
   },
   "jest": {
+    "moduleNameMapper": {
+      "@rmwc/floating-label$": "<rootDir>/src/FloatingLabel",
+      "@rmwc/form-field": "<rootDir>/src/FormField",
+      "@rmwc/grid-list$": "<rootDir>/src/GridList",
+      "@rmwc/icon-button$": "<rootDir>/src/IconButton",
+      "@rmwc/image-list$": "<rootDir>/src/ImageList",
+      "@rmwc/notched-outline$": "<rootDir>/src/NotchedOutline",
+      "@rmwc/text-field$": "<rootDir>/src/TextField",
+      "@rmwc/line-ripple$": "<rootDir>/src/LineRipple",
+      "@rmwc/linear-progress$": "<rootDir>/src/LinearProgress",
+      "@rmwc/top-app-bar$": "<rootDir>/src/TopAppBar",
+      "@rmwc/(.*)$": "<rootDir>/src/$1"
+
+    },
     "resolver": "./scripts/jest-resolver.js",
     "collectCoverageFrom": [
       "src/**/*.{js}",

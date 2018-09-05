@@ -1,15 +1,15 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
-import type { WithRipplePropsT } from '../Ripple';
-import type { RMWCProviderOptionsT } from '../Provider';
+import type { SimpleTagPropsT } from '@rmwc/base';
+import type { WithRipplePropsT } from '@rmwc/ripple';
+import type { RMWCProviderOptionsT } from '@rmwc/provider';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { getProviderOptions } from '../Provider';
-import { simpleTag } from '../Base';
-import { withRipple } from '../Ripple';
-import { Icon } from '../Icon';
+import { getProviderOptions } from '@rmwc/provider';
+import { simpleTag } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
+import { Icon } from '@rmwc/icon';
 
 export type ListItemPropsT = {
   /** A modifier for a selected state. */

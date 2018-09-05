@@ -1,11 +1,11 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
-import type { IconPropsT } from '../Icon';
+import type { SimpleTagPropsT } from '@rmwc/base';
+import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { Icon } from '../Icon';
-import { simpleTag } from '../Base';
-import { withFoundation } from '../Base/withFoundation';
+import { Icon } from '@rmwc/icon';
+import { simpleTag } from '@rmwc/base';
+import { withFoundation } from '@rmwc/base/withFoundation';
 
 import { MDCChip, MDCChipSet } from '@material/chips/dist/mdc.chips';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';

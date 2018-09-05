@@ -1,6 +1,6 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base';
-import type { IconPropsT } from '../Icon';
+import type { SimpleTagPropsT } from '@rmwc/base';
+import type { IconPropsT } from '@rmwc/icon';
 import * as React from 'react';
 import { MDCTextField } from '@material/textfield/dist/mdc.textfield';
 
@@ -9,12 +9,12 @@ import {
   withFoundation,
   syncFoundationProp,
   randomId
-} from '../Base';
+} from '@rmwc/base';
 
-import { Icon } from '../Icon';
-import { LineRipple } from '../LineRipple';
-import { FloatingLabel } from '../FloatingLabel';
-import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
+import { Icon } from '@rmwc/icon';
+import { LineRipple } from '@rmwc/line-ripple';
+import { FloatingLabel } from '@rmwc/floating-label';
+import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
 
 /*********************************************************************
  * TextField

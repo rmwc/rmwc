@@ -1,14 +1,14 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '../Base';
-import type { IconPropsT } from '../Icon';
-import type { IconOptionsT } from '../Icon/defs';
-import type { WithRipplePropsT } from '../Ripple';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import type { IconPropsT } from '@rmwc/icon';
+import type { IconOptionsT } from '@rmwc/icon/defs';
+import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button/dist/mdc.iconButton';
-import { Icon } from '../Icon';
-import { withRipple } from '../Ripple';
-import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
+import { Icon } from '@rmwc/icon';
+import { withRipple } from '@rmwc/ripple';
+import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
 export type IconButtonPropsT = {
   /** Controls the on / off state of the a toggleable button. */

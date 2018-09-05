@@ -1,14 +1,14 @@
 // @flow
-import type { SimpleTagPropsT } from '../Base/simpleTag';
-import type { RMWCProviderOptionsT } from '../Provider';
+import type { SimpleTagPropsT } from '@rmwc/base/simpleTag';
+import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { DeprecatedIconPropsT, IconOptionsT } from './defs';
 
 import * as React from 'react';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
-import { getProviderOptions } from '../Provider';
-import { simpleTag } from '../Base';
-import { deprecationWarning } from '../Base/utils/deprecationWarning';
+import { getProviderOptions } from '@rmwc/provider';
+import { simpleTag } from '@rmwc/base';
+import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
 import { getIconStrategy } from './utils';
 
 export const IconRoot = simpleTag({ displayName: 'IconRoot', tag: 'i' });

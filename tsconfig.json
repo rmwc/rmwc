@@ -12,13 +12,26 @@
     "jsx": "preserve",
     "moduleResolution": "node",
     "rootDir": "./",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "noImplicitReturns": true,
     "noImplicitThis": false,
     "noImplicitAny": false,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "preserveSymlinks": true
+    "preserveSymlinks": true,
+    "paths": {
+      "@rmwc/*": ["./*"],
+      "@rmwc/floating-label": ["./FloatingLabel"],
+      "@rmwc/form-field": ["./FormField"],
+      "@rmwc/grid-list": ["./GridList"],
+      "@rmwc/icon-button": ["./IconButton"],
+      "@rmwc/image-list": ["./ImageList"],
+      "@rmwc/notched-outline": ["./NotchedOutline"],
+      "@rmwc/text-field": ["./TextField"],
+      "@rmwc/line-ripple": ["./LineRipple"],
+      "@rmwc/linear-progress": ["./LinearProgress"],
+      "@rmwc/top-app-bar": ["./TopAppBar"]
+    }
   },
   "exclude": [
     "node_modules",
