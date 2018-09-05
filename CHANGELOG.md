@@ -1,3 +1,11 @@
+#### 1.9.4 (2018-09-05)
+
+##### Bug Fixes
+
+* **CardActions:**  Makes fullbleed type optional ([7fc51d5e](https://github.com/jamesmfriedman/rmwc/commit/7fc51d5eb78a037d2420843eda21b8589da2daaa))
+* **Snackbar:**  Corrects issues with Snackbar opening twice ([ddcac118](https://github.com/jamesmfriedman/rmwc/commit/ddcac118cca2ecf10ef2e1b34bfe763951d3f434))
+* **Typescript:**  Corrects cryptic typing errors about base constructor [#40](https://github.com/jamesmfriedman/rmwc/pull/40) ([7ba24123](https://github.com/jamesmfriedman/rmwc/commit/7ba241234afb469d83d835302609df4873348cd5))
+
 #### 1.9.3 (2018-09-04)
 
 ##### Documentation Changes
