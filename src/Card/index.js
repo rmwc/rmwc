@@ -88,7 +88,7 @@ CardPrimaryAction.displayName = 'CardPrimaryAction';
  ****************************************************************/
 export type CardActionsT = {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
-  fullBleed: boolean
+  fullBleed?: boolean
 } & SimpleTagPropsT;
 
 const CardActionsRoot = simpleTag({
