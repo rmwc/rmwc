@@ -10,9 +10,8 @@ type ImageListPropsT = {
   withTextProtection?: boolean
 };
 
-/** Indicates the root Image List element. */
-export class ImageList extends simpleTag({
-  displayName: 'ImageList',
+const ImageListRoot = simpleTag({
+  displayName: 'ImageListRoot',
   tag: 'ul',
   classNames: (props: ImageListPropsT) => [
     'mdc-image-list',
@@ -22,11 +21,13 @@ export class ImageList extends simpleTag({
     }
   ],
   consumeProps: ['masonry', 'withTextProtection']
-})<ImageListPropsT> {
-  render() {
-    return super.render();
-  }
-}
+});
+
+/** Indicates the root Image List element. */
+export const ImageList: React.ComponentType<ImageListPropsT> = (
+  props: ImageListPropsT
+) => <ImageListRoot {...props} />;
+ImageList.displayName = 'ImageList';
 
 /** Indicates each item in an Image List. */
 export const ImageListItem = simpleTag({

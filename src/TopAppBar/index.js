@@ -51,8 +51,8 @@ type TopAppBarSectionPropsT = {
   alignEnd?: boolean
 };
 
-/** A section for the app bar. */
-export class TopAppBarSection extends simpleTag({
+const TopAppBarSectionRoot = simpleTag({
+  displayName: 'TopAppBarSectionRoot',
   tag: 'section',
   classNames: (props: TopAppBarSectionPropsT) => [
     'mdc-top-app-bar__section',
@@ -62,13 +62,13 @@ export class TopAppBarSection extends simpleTag({
     }
   ],
   consumeProps: ['alignStart', 'alignEnd']
-})<TopAppBarSectionPropsT> {
-  static displayName = 'TopAppBarSection';
+});
 
-  render() {
-    return super.render();
-  }
-}
+/** A section for the app bar. */
+export const TopAppBarSection: React.ComponentType<TopAppBarSectionPropsT> = (
+  props: TopAppBarSectionPropsT
+) => <TopAppBarSectionRoot {...props} />;
+TopAppBarSection.displayName = 'TopAppBarSection';
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
 export const TopAppBarNavigationIcon = simpleTag({

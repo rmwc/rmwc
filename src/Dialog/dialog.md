@@ -85,7 +85,7 @@ import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 <DocumentComponent displayName="DialogHeaderTitle" />
 <DocumentComponent displayName="DialogBody" />
 <DocumentComponent displayName="DialogFooter" />
-<DocumentComponent displayName="DialogFooterButton" />
+<DocumentComponent displayName="DialogFooterButton" composes={['Button']} />
 <DocumentComponent displayName="DialogBackdrop" />
 <DocumentComponent displayName="SimpleDialog" />
 ```

@@ -16,6 +16,9 @@ import { LineRipple } from '../LineRipple';
 import { FloatingLabel } from '../FloatingLabel';
 import { NotchedOutline, NotchedOutlineIdle } from '../NotchedOutline';
 
+/*********************************************************************
+ * TextField
+ *********************************************************************/
 export type TextFieldPropsT = {
   /** Makes a multiline TextField. */
   textarea?: boolean,
@@ -95,52 +98,6 @@ export const TextFieldTextarea = simpleTag({
   tag: 'textarea',
   classNames: 'mdc-text-field__input'
 });
-
-export type TextFieldHelperTextPropsT = {
-  /** Make the help text always visible */
-  persistent?: boolean,
-  /** Make the help a validation message style */
-  validationMsg?: boolean
-};
-
-/**
- * A help text component
- */
-export class TextFieldHelperText extends simpleTag({
-  displayName: 'TextFieldHelperText',
-  tag: 'p',
-  classNames: (props: TextFieldHelperTextPropsT) => [
-    'mdc-text-field-helper-text',
-    {
-      'mdc-text-field-helper-text--persistent': props.persistent,
-      'mdc-text-field-helper-text--validation-msg': props.validationMsg
-    }
-  ],
-  consumeProps: ['persistent', 'validationMsg']
-})<TextFieldHelperTextPropsT> {
-  render() {
-    return super.render();
-  }
-}
-
-export type TextFieldIconPropsT = {
-  /** The icon to use */
-  use: React.Node
-} & IconPropsT;
-
-/**
- * An Icon in a TextField
- */
-export class TextFieldIcon extends simpleTag({
-  tag: Icon,
-  classNames: 'mdc-text-field__icon'
-})<TextFieldIconPropsT> {
-  static displayName = 'TextFieldIcon';
-
-  render() {
-    return super.render();
-  }
-}
 
 /** A TextField component for accepting text input from a user. */
 export class TextField extends withFoundation({
@@ -259,5 +216,52 @@ export class TextField extends withFoundation({
     );
   }
 }
+
+/*********************************************************************
+ * Helper Text
+ *********************************************************************/
+export type TextFieldHelperTextPropsT = {
+  /** Make the help text always visible */
+  persistent?: boolean,
+  /** Make the help a validation message style */
+  validationMsg?: boolean
+};
+
+const TextFieldHelperTextRoot = simpleTag({
+  displayName: 'TextFieldHelperTextRoot',
+  tag: 'p',
+  classNames: (props: TextFieldHelperTextPropsT) => [
+    'mdc-text-field-helper-text',
+    {
+      'mdc-text-field-helper-text--persistent': props.persistent,
+      'mdc-text-field-helper-text--validation-msg': props.validationMsg
+    }
+  ],
+  consumeProps: ['persistent', 'validationMsg']
+});
+
+/**
+ * A help text component
+ */
+export const TextFieldHelperText: React.ComponentType<
+  TextFieldHelperTextPropsT
+> = (props: TextFieldHelperTextPropsT) => (
+  <TextFieldHelperTextRoot {...props} />
+);
+
+TextFieldHelperText.displayName = 'TextFieldHelperText';
+
+/*********************************************************************
+ * Icon
+ *********************************************************************/
+
+/**
+ * An Icon in a TextField
+ */
+export const TextFieldIcon: React.ComponentType<IconPropsT> = simpleTag({
+  tag: Icon,
+  displayName: 'TextFieldIcon',
+  classNames: 'mdc-text-field__icon'
+});
 
 export default TextField;

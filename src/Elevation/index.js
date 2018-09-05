@@ -11,10 +11,8 @@ export type ElevationPropsT = {
   transition?: boolean
 } & SimpleTagPropsT;
 
-/**
- * The Elevation Component
- */
-export class Elevation extends simpleTag({
+const ElevationRoot = simpleTag({
+  displayName: 'ElevationRoot',
   defaultProps: {
     z: 0,
     transition: false
@@ -25,11 +23,14 @@ export class Elevation extends simpleTag({
     { 'mdc-elevation-transition': props.transition }
   ],
   consumeProps: ['z', 'transition']
-})<ElevationPropsT> {
-  static displayName = 'Elevation';
-  render() {
-    return super.render();
-  }
-}
+});
+
+/**
+ * The Elevation Component
+ */
+export const Elevation: React.ComponentType<ElevationPropsT> = (
+  props: ElevationPropsT
+) => <ElevationRoot {...props} />;
+Elevation.displayName = 'Elevation';
 
 export default Elevation;

@@ -144,8 +144,8 @@ export type ListPropsT = {
   nonInteractive?: boolean
 } & SimpleTagPropsT;
 
-export class List extends simpleTag({
-  displayName: 'List',
+const ListRoot = simpleTag({
+  displayName: 'ListRoot',
   defaultProps: {
     dense: undefined,
     twoLine: undefined,
@@ -162,11 +162,13 @@ export class List extends simpleTag({
     }
   ],
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
-})<ListPropsT> {
-  render() {
-    return super.render();
-  }
-}
+});
+
+/** A List Component */
+export const List: React.ComponentType<ListPropsT> = (props: ListPropsT) => (
+  <ListRoot {...props} />
+);
+List.displayName = 'List';
 
 export type SimpleListItemPropsT = {
   /** Text for the ListItem. */

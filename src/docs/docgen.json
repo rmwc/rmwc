@@ -109,7 +109,7 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Removes the shadow and displays a hairline outline instead"
         }
       }
@@ -123,14 +123,14 @@
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Automatically scales the media area’s height to equal its width"
         },
         "sixteenByNine": {
           "flowType": {
             "name": "boolean"
           },
-          "required": true,
+          "required": false,
           "description": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
         }
       }
@@ -138,6 +138,11 @@
     {
       "description": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image",
       "displayName": "CardMediaContent",
+      "methods": []
+    },
+    {
+      "description": "The main clickable area for the primary content of the card",
+      "displayName": "CardPrimaryAction",
       "methods": []
     },
     {
@@ -979,23 +984,7 @@
     {
       "description": "A Dialog footer button",
       "displayName": "DialogFooterButton",
-      "methods": [],
-      "props": {
-        "accept": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Make it an accept button."
-        },
-        "cancel": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Make it a cancel button."
-        }
-      }
+      "methods": []
     },
     {
       "description": "",
@@ -3116,7 +3105,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "A List Component",
       "displayName": "List",
       "methods": [],
       "props": {
@@ -3233,12 +3222,12 @@
               "name": "props",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
                 "elements": [
                   {
                     "name": "signature",
                     "type": "object",
-                    "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                    "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
                     "signature": {
                       "properties": [
                         {
@@ -3252,6 +3241,82 @@
                           "key": "fixed",
                           "value": {
                             "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClose",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<void>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "void"
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<void>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onSelect",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "(evt: CustomEventT<SelectedEventDetailT>) => mixed",
+                            "signature": {
+                              "arguments": [
+                                {
+                                  "name": "evt",
+                                  "type": {
+                                    "name": "CustomEventT",
+                                    "elements": [
+                                      {
+                                        "name": "signature",
+                                        "type": "object",
+                                        "raw": "{\n  index: number,\n  item: HTMLElement\n}",
+                                        "signature": {
+                                          "properties": [
+                                            {
+                                              "key": "index",
+                                              "value": {
+                                                "name": "number",
+                                                "required": true
+                                              }
+                                            },
+                                            {
+                                              "key": "item",
+                                              "value": {
+                                                "name": "HTMLElement",
+                                                "required": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "raw": "CustomEventT<SelectedEventDetailT>"
+                                  }
+                                }
+                              ],
+                              "return": {
+                                "name": "mixed"
+                              }
+                            },
                             "required": false
                           }
                         },
@@ -3296,70 +3361,6 @@
                             ],
                             "required": false
                           }
-                        },
-                        {
-                          "key": "onOpen",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<void>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "void"
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<void>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onClose",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "(evt: CustomEventT<void>) => mixed",
-                            "signature": {
-                              "arguments": [
-                                {
-                                  "name": "evt",
-                                  "type": {
-                                    "name": "CustomEventT",
-                                    "elements": [
-                                      {
-                                        "name": "void"
-                                      }
-                                    ],
-                                    "raw": "CustomEventT<void>"
-                                  }
-                                }
-                              ],
-                              "return": {
-                                "name": "mixed"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "children",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
                         }
                       ]
                     }
@@ -3368,7 +3369,7 @@
                     "name": "SimpleTagPropsT"
                   }
                 ],
-                "alias": "MenuSurfacePropsT"
+                "alias": "MenuPropsT"
               }
             }
           ],
@@ -6839,99 +6840,7 @@
     {
       "description": "",
       "displayName": "SwitchRoot",
-      "methods": [
-        {
-          "name": "classNames",
-          "docblock": null,
-          "modifiers": [],
-          "params": [
-            {
-              "name": "props",
-              "type": {
-                "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
-                "elements": [
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "id",
-                          "value": {
-                            "name": "string",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "disabled",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "checked",
-                          "value": {
-                            "name": "union",
-                            "raw": "boolean | string",
-                            "elements": [
-                              {
-                                "name": "boolean"
-                              },
-                              {
-                                "name": "string"
-                              }
-                            ],
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "label",
-                          "value": {
-                            "name": "string",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "rootProps",
-                          "value": {
-                            "name": "any",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "children",
-                          "value": {
-                            "name": "ReactNode",
-                            "raw": "React.Node",
-                            "required": false
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "name": "SimpleTagPropsT"
-                  },
-                  {
-                    "name": "ReactInputHTMLAttributes",
-                    "raw": "React.InputHTMLAttributes<HTMLInputElement>",
-                    "elements": [
-                      {
-                        "name": "HTMLInputElement"
-                      }
-                    ]
-                  }
-                ],
-                "alias": "SwitchPropsT"
-              }
-            }
-          ],
-          "returns": null
-        }
-      ]
+      "methods": []
     },
     {
       "description": "",
@@ -6985,7 +6894,7 @@
               "name": "nextProps",
               "type": {
                 "name": "intersection",
-                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
+                "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** A label for the control. */\n  label?: string,\n  /** Props for the root element. By default, props spread to the input. */\n  rootProps?: any,\n  /** Any children to render. */\n  children?: React.Node\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
                 "elements": [
                   {
                     "name": "signature",
@@ -7698,42 +7607,6 @@
       "methods": []
     },
     {
-      "description": "A help text component",
-      "displayName": "TextFieldHelperText",
-      "methods": [],
-      "props": {
-        "persistent": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Make the help text always visible"
-        },
-        "validationMsg": {
-          "flowType": {
-            "name": "boolean"
-          },
-          "required": false,
-          "description": "Make the help a validation message style"
-        }
-      }
-    },
-    {
-      "description": "An Icon in a TextField",
-      "displayName": "TextFieldIcon",
-      "methods": [],
-      "props": {
-        "use": {
-          "flowType": {
-            "name": "ReactNode",
-            "raw": "React.Node"
-          },
-          "required": true,
-          "description": "The icon to use"
-        }
-      }
-    },
-    {
       "description": "A TextField component for accepting text input from a user.",
       "displayName": "TextField",
       "methods": [
@@ -8025,6 +7898,32 @@
           "description": "The type of input field to render"
         }
       }
+    },
+    {
+      "description": "A help text component",
+      "displayName": "TextFieldHelperText",
+      "methods": [],
+      "props": {
+        "persistent": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Make the help text always visible"
+        },
+        "validationMsg": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": false,
+          "description": "Make the help a validation message style"
+        }
+      }
+    },
+    {
+      "description": "",
+      "displayName": "TextFieldIcon",
+      "methods": []
     }
   ],
   "src/Theme/index.js": [
@@ -8314,7 +8213,7 @@
       "methods": []
     },
     {
-      "description": "",
+      "description": "A section of the Toolbar",
       "displayName": "ToolbarSection",
       "methods": [],
       "props": {

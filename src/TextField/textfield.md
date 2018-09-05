@@ -60,6 +60,6 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 import { DocumentComponent } from 'rmwc/Base/utils/DocumentComponent';
 
 <DocumentComponent displayName="TextField" />
-<DocumentComponent displayName="TextFieldIcon" />
+<DocumentComponent displayName="TextFieldIcon" composes={['Icon']}/>
 <DocumentComponent displayName="TextFieldHelperText" />
 ```

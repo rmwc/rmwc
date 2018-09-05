@@ -63,7 +63,8 @@ type ToolbarSectionPropsT = {
   shrinkToFit?: boolean
 } & SimpleTagPropsT;
 
-export class ToolbarSection extends simpleTag({
+const ToolbarSectionRoot = simpleTag({
+  displayName: 'ToolbarSectionRoot',
   tag: 'section',
   classNames: (props: ToolbarSectionPropsT) => [
     'mdc-toolbar__section',
@@ -79,13 +80,13 @@ export class ToolbarSection extends simpleTag({
     shrinkToFit: false
   },
   consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
-})<ToolbarSectionPropsT> {
-  static displayName = 'ToolbarSection';
+});
 
-  render() {
-    return super.render();
-  }
-}
+/** A section of the Toolbar */
+export const ToolbarSection: React.ComponentType<ToolbarSectionPropsT> = (
+  props: ToolbarSectionPropsT
+) => <ToolbarSectionRoot {...props} />;
+ToolbarSection.displayName = 'ToolbarSection';
 
 /** A Toolbar row  */
 export const ToolbarRow = simpleTag({

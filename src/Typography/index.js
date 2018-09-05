@@ -11,10 +11,7 @@ export type TypographyPropsT = {
   use: 'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'
 } & SimpleTagPropsT;
 
-/**
- * The Typography Component
- */
-export class Typography extends simpleTag({
+const TypographyRoot = simpleTag({
   displayName: 'Typography',
   defaultProps: {
     use: undefined
@@ -26,10 +23,15 @@ export class Typography extends simpleTag({
     }
   ],
   consumeProps: ['use']
-})<TypographyPropsT> {
-  render() {
-    return super.render();
-  }
-}
+});
+
+/**
+ * The Typography Component
+ */
+export const Typography: React.ComponentType<TypographyPropsT> = (
+  props: TypographyPropsT
+) => <TypographyRoot {...props} />;
+
+Typography.displayName = 'Typography';
 
 export default Typography;

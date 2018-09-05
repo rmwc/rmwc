@@ -1,5 +1,6 @@
 // @flow
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
+import type { ButtonPropsT } from '../Button';
 
 import * as React from 'react';
 import {
@@ -47,28 +48,27 @@ export const DialogHeaderTitle = simpleTag({
   classNames: 'mdc-dialog__header__title'
 });
 
-export type DialogBodyT = {
+export type DialogBodyPropsT = {
   /** Make it scrollable. */
   scrollable?: boolean
 } & SimpleTagPropsT;
 
-/** The Dialog body */
-export class DialogBody extends simpleTag({
+const DialogBodyRoot = simpleTag({
+  displayName: 'DialogBodyRoot',
   tag: 'section',
-  classNames: (props: DialogBodyT) => [
+  classNames: (props: DialogBodyPropsT) => [
     'mdc-dialog__body',
     {
       'mdc-dialog__body--scrollable': props.scrollable
     }
   ],
   consumeProps: ['scrollable']
-})<DialogBodyT> {
-  static displayName = 'DialogBody';
+});
 
-  render() {
-    return super.render();
-  }
-}
+/** The Dialog body */
+export const DialogBody: React.ComponentType<DialogBodyPropsT> = (
+  props: DialogBodyPropsT
+) => <DialogBodyRoot {...props} />;
 
 /** The Dialog footer */
 export const DialogFooter = simpleTag({
@@ -77,17 +77,18 @@ export const DialogFooter = simpleTag({
   classNames: 'mdc-dialog__footer'
 });
 
-export type DialogFooterButtonT = {
+export type DialogFooterButtonPropsT = {
   /** Make it an accept button. */
   accept?: boolean,
   /** Make it a cancel button. */
   cancel?: boolean
-} & SimpleTagPropsT;
+} & SimpleTagPropsT &
+  ButtonPropsT;
 
-/** A Dialog footer button */
-export class DialogFooterButton extends simpleTag({
+const DialogFooterButtonRoot = simpleTag({
+  displayName: 'DialogFooterButtonRoot',
   tag: Button,
-  classNames: (props: DialogFooterButtonT) => [
+  classNames: (props: DialogFooterButtonPropsT) => [
     'mdc-dialog__footer__button',
     {
       'mdc-dialog__footer__button--cancel': props.cancel,
@@ -99,13 +100,13 @@ export class DialogFooterButton extends simpleTag({
     cancel: false
   },
   consumeProps: ['accept', 'cancel']
-})<DialogFooterButtonT> {
-  static displayName = 'DialogFooterButton';
+});
 
-  render() {
-    return super.render();
-  }
-}
+/** A Dialog footer button */
+export const DialogFooterButton: React.ComponentType<
+  DialogFooterButtonPropsT
+> = props => <DialogFooterButtonRoot {...props} />;
+DialogFooterButton.displayName = 'DialogFooterButton';
 
 export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */

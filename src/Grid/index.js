@@ -38,9 +38,8 @@ export type GridCellPropsT = {
   align?: 'top' | 'middle' | 'bottom'
 } & SimpleTagPropsT;
 
-/** A Grid cell */
-export class GridCell extends simpleTag({
-  displayName: 'GridCell',
+const GridCellRoot = simpleTag({
+  displayName: 'GridCellRoot',
   defaultProps: {
     span: undefined,
     phone: undefined,
@@ -66,11 +65,13 @@ export class GridCell extends simpleTag({
     }
   ],
   consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']
-})<GridCellPropsT> {
-  render() {
-    return super.render();
-  }
-}
+});
+
+/** A Grid cell */
+export const GridCell: React.ComponentType<GridCellPropsT> = (
+  props: GridCellPropsT
+) => <GridCellRoot {...props} />;
+GridCell.displayName = 'GridCell';
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
 export const GridInner = simpleTag({
