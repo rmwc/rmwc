@@ -1,7 +1,7 @@
 const glob = require('glob');
 
 module.exports = callback => {
-  glob('./src/**/!(*.story.js|*.spec.js|*.md|setupTests.js)', {}, function(
+  glob('./src/**/!(*.story.js|*.spec.js|setupTests.js)', {}, function(
     er,
     files
   ) {

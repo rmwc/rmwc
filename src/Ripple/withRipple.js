@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Ripple } from '../Ripple';
+import { Ripple } from '.';
 
 export type WithRipplePropsT = {
   /* Adds a ripple effect to the component */

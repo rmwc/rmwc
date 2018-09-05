@@ -47,6 +47,11 @@ const writeTypescriptFile = (inputFile, outputFile) => {
   }
 };
 
+// Simply copies the file
+const copyFile = (inputFile, outputFile) => {
+  exec(`cp ${inputFile} ${outputFile}`);
+};
+
 processBuiltFiles(files => {
   files.forEach(f => {
     let out = f.replace('./src/', './');
@@ -73,10 +78,14 @@ processBuiltFiles(files => {
       fs.mkdirSync(dir);
     }
 
-    console.log('Babel:', f, '-> ', out);
-    writeBuiltFile(f, out);
-    writeFlowFile(f, out);
-    writeTypescriptFile(f, out);
+    if (path.extname(f) === '.js') {
+      console.log('Babel:', f, '-> ', out);
+      writeBuiltFile(f, out);
+      writeFlowFile(f, out);
+      writeTypescriptFile(f, out);
+    } else {
+      copyFile(f, out);
+    }
   });
 
   console.log('Compiling Typescript...');

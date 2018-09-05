@@ -1,5 +1,5 @@
 import * as React from 'react';
-import docgen from '../../docs/docgen';
+import docgen from './docgen';
 
 const flatDocs = Object.values(docgen).reduce((acc, val) => {
   return acc.concat(val);

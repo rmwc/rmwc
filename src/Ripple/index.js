@@ -5,6 +5,9 @@ import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
 import { withFoundation, syncFoundationProp } from '../Base/withFoundation';
 
+export { withRipple } from './withRipple';
+export type { WithRipplePropsT } from './withRipple';
+
 export type RipplePropsT = {
   /** Makes the ripple unbounded */
   unbounded?: boolean,

@@ -1,11 +1,12 @@
 // @flow
 import type { SimpleTagPropsT } from '../Base';
 import type { IconButtonPropsT } from '../IconButton';
-import type { WithRipplePropsT } from '../Base/withRipple';
+import type { WithRipplePropsT } from '../Ripple';
 
 import * as React from 'react';
 import { Button } from '../Button';
-import { simpleTag, withRipple } from '../Base';
+import { simpleTag } from '../Base';
+import { withRipple } from '../Ripple';
 import { IconButton } from '../IconButton';
 
 /****************************************************************

@@ -2,16 +2,13 @@
 import type { SimpleTagPropsT, CustomEventT } from '../Base';
 import type { IconPropsT } from '../Icon';
 import type { IconOptionsT } from '../Icon/defs';
+import type { WithRipplePropsT } from '../Ripple';
 
 import * as React from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button/dist/mdc.iconButton';
 import { Icon } from '../Icon';
-import {
-  simpleTag,
-  withFoundation,
-  syncFoundationProp,
-  withRipple
-} from '../Base';
+import { withRipple } from '../Ripple';
+import { simpleTag, withFoundation, syncFoundationProp } from '../Base';
 
 export type IconButtonPropsT = {
   /** Controls the on / off state of the a toggleable button. */
@@ -26,7 +23,8 @@ export type IconButtonPropsT = {
   onIconOptions?: IconOptionsT
   /**  */
 } & SimpleTagPropsT &
-  IconPropsT;
+  IconPropsT &
+  WithRipplePropsT;
 
 export const IconButtonRoot = withRipple({ unbounded: true })(
   simpleTag({
