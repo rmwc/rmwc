@@ -123,22 +123,28 @@ export class Snackbar extends withFoundation({
     );
 
     syncFoundationProp(nextProps.show, this.isShowing, () => {
-      const {
-        message,
-        timeout,
-        actionHandler,
-        actionText,
-        multiline,
-        actionOnBottom
-      } = nextProps;
+      this.isShowing = nextProps.show;
 
-      this.show({
-        message,
-        timeout,
-        actionHandler,
-        actionText: actionText || ' ',
-        multiline,
-        actionOnBottom
+      window.requestAnimationFrame(() => {
+        if (nextProps.show) {
+          const {
+            message,
+            timeout,
+            actionHandler,
+            actionText,
+            multiline,
+            actionOnBottom
+          } = nextProps;
+
+          this.show({
+            message,
+            timeout,
+            actionHandler,
+            actionText: actionText || ' ',
+            multiline,
+            actionOnBottom
+          });
+        }
       });
     });
   }

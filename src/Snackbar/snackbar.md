@@ -17,6 +17,7 @@ import { Button } from 'rmwc/Button';
   message="This is a new message"
   actionText="Action"
   actionHandler={() => alert('Action clicked')}
+  dismissesOnAction={false}
 />
 
 <Button
