@@ -75,7 +75,7 @@ const copyBuiltDirsBackToSrc = files => {
 
 const promises = getPackageDirs().map(d => {
   return new Promise((resolve, reject) => {
-    glob(`./src/${d}/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
+    glob(`./src/${d}/**/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
       er,
       files
     ) {
@@ -84,6 +84,11 @@ const promises = getPackageDirs().map(d => {
       files.forEach(f => {
         // skip the root dir
         if (f === `./src/${d}`) {
+          return;
+        }
+
+        // skip the docs folder
+        if (f.includes('rmwc/docs')) {
           return;
         }
 
@@ -120,4 +125,3 @@ Promise.all(promises).then(() => {
     files.forEach(fs.unlinkSync);
   });
 });
-

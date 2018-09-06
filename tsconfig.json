@@ -6,7 +6,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["es2017", "dom"],
     "sourceMap": true,
     "jsx": "preserve",
     "moduleResolution": "node",
@@ -100,7 +100,6 @@
     "webpack",
     "jest",
     "src/setupTests.ts",
-    "Base/testPolyfill.tsx",
-    "Base/utils/DocumentComponent.tsx"
+    "src/base/dist/utils/DocumentComponent.tsx"
   ]
 }
