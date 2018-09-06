@@ -4,7 +4,7 @@
   "description": "RMWC Floating Action Button component",
   "main": "index.js",
   "scripts": {
-    "publish:dist": "npm publish dist",
+    "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
