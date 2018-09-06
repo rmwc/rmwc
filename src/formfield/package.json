@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/formfield",
-  "version": "1.10.1-alpha.0",
+  "version": "2.0.0-alpha.0",
   "description": "RMWC FormField component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/form-field": "~0.39.1",
-    "@rmwc/base": "^1.10.1-alpha.0"
+    "@rmwc/base": "^2.0.0-alpha.0"
   }
 }
