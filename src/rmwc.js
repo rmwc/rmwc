@@ -13,7 +13,6 @@ export * from './FormField';
 export * from './GridList';
 export * from './Grid';
 export * from './Icon';
-export * from './IconToggle';
 export * from './LineRipple';
 export * from './LinearProgress';
 export * from './List';

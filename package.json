@@ -38,13 +38,14 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build:docs": "npm run docgen && react-app-rewired build && rm -R docs && mv build docs",
-    "build:code": "node scripts/build-code.js",
+    "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
     "build": "npm run build:code && npm run build:lib && npm run build:docs",
     "pretest": "node scripts/pretest.js",
     "test": "flow && npm run build:code && node scripts/test.js",
     "test:watch": "react-app-rewired test --env=jsdom",
     "test:coverage": "react-app-rewired test --env=jsdom --coverage",
+    "lerna:publish": "lerna publish --canary --skip-npm && lerna run publish:dist",
     "clean": "node scripts/clean.js",
     "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",
@@ -81,6 +82,7 @@
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.74.0",
     "generate-changelog": "^1.7.0",
+    "lerna": "^3.2.1",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.8.1",
     "prismjs": "^1.9.0",
@@ -108,7 +110,6 @@
       "@rmwc/linear-progress$": "<rootDir>/src/LinearProgress",
       "@rmwc/top-app-bar$": "<rootDir>/src/TopAppBar",
       "@rmwc/(.*)$": "<rootDir>/src/$1"
-
     },
     "resolver": "./scripts/jest-resolver.js",
     "collectCoverageFrom": [

@@ -1,7 +1,7 @@
 {
-  "name": "@rmwc/base",
+  "name": "@rmwc/slider",
   "version": "1.9.4",
-  "description": "RMWC base module",
+  "description": "RMWC Slider component",
   "main": "index.js",
   "scripts": {
     "publish:dist": "npm publish dist",
@@ -20,14 +20,13 @@
   "bugs": {
     "url": "https://github.com/jamesmfriedman/rmwc/issues"
   },
-  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/Base#readme",
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/Slider#readme",
   "peerDependencies": {
     "react": "^15.x.x || ^16.x.x",
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "hyperform": "^0.9.9",
-    "mutation-observer": "^1.0.3"
+    "@material/slider": "~0.39.1",
+    "@rmwc/base": "~1.9.4"
   }
 }

@@ -8,6 +8,7 @@
 
 # production
 /build
+**/dist
 /Base
 /Button
 /Card

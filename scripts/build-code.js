@@ -49,12 +49,37 @@ const writeTypescriptFile = (inputFile, outputFile) => {
 
 // Simply copies the file
 const copyFile = (inputFile, outputFile) => {
-  exec(`cp ${inputFile} ${outputFile}`);
+  exec(`cp -R ${inputFile} ${outputFile}`);
+};
+
+const copyBuiltDirsBackToSrc = files => {
+  const dirs = [
+    ...new Set(
+      files.map(f =>
+        path
+          .dirname(f)
+          .replace('./src/', '')
+          .split(path.sep)
+          .slice(0, 2)
+          .join(path.sep)
+      )
+    )
+  ].filter(d => d !== './src');
+
+  dirs.forEach(dir => {
+    console.log('Copy Dist Dir:', `./${dir}`, `./src/${dir}/dist`);
+    copyFile(`./${dir}`, `./src/${dir}/dist`);
+  });
 };
 
 processBuiltFiles(files => {
   files.forEach(f => {
     let out = f.replace('./src/', './');
+
+    // avoid copying the root directory into itself
+    if (out.split(path.sep).length === 2) {
+      return;
+    }
 
     if (out === './index.js') {
       return;
@@ -95,5 +120,7 @@ processBuiltFiles(files => {
   glob('./**/*.tsx', {}, function(er, files) {
     console.log(files);
     files.forEach(fs.unlinkSync);
+
+    processBuiltFiles(copyBuiltDirsBackToSrc);
   });
 });
