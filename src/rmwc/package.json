@@ -4,6 +4,7 @@
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node postinstall.js",
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
