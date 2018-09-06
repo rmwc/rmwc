@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "1.9.4",
+  "version": "1.10.0-alpha.0",
   "description": "RMWC Checkbox component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/checkbox": "~0.39.1",
-    "@rmwc/form-field": "~1.9.4",
-    "@rmwc/base": "~1.9.4"
+    "@rmwc/base": "^1.10.0-alpha.0",
+    "@rmwc/form-field": "^1.10.0-alpha.0"
   }
 }
