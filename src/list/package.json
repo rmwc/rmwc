@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/list",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "description": "RMWC List component",
   "main": "index.js",
   "scripts": {
@@ -26,10 +26,10 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^2.0.0-alpha.4",
-    "@rmwc/icon": "^2.0.0-alpha.4",
-    "@rmwc/provider": "^2.0.0-alpha.4",
-    "@rmwc/ripple": "^2.0.0-alpha.4",
+    "@rmwc/base": "^2.0.0-alpha.5",
+    "@rmwc/icon": "^2.0.0-alpha.5",
+    "@rmwc/provider": "^2.0.0-alpha.5",
+    "@rmwc/ripple": "^2.0.0-alpha.5",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1"
   }
