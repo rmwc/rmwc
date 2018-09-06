@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/theme",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "RMWC Theme component",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^2.0.0-alpha.2"
+    "@rmwc/base": "^2.0.0-alpha.3"
   }
 }
