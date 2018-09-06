@@ -19,6 +19,7 @@
     "react-mdc",
     "react-material-design"
   ],
+  "types": "index.d.ts",
   "author": "James Friedman",
   "private": false,
   "license": "MIT",

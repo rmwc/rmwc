@@ -2,6 +2,4 @@ const { readdirSync, statSync } = require('fs');
 const { join } = require('path');
 
 module.exports = () =>
-  readdirSync('./src')
-    .filter(f => statSync(join('./src', f)).isDirectory())
-    .filter(d => d !== 'rmwc');
+  readdirSync('./src').filter(f => statSync(join('./src', f)).isDirectory());

@@ -9,44 +9,6 @@
 # production
 /build
 **/dist
-/Base
-/Button
-/Card
-/Chip
-/Checkbox
-/Dialog
-/Drawer
-/Elevation
-/Fab
-/FloatingLabel
-/FormField
-/Grid
-/GridList
-/Icon
-/IconButton
-/IconToggle
-/ImageList
-/index.js
-/index.tsx
-/LinearProgress
-/LineRipple
-/List
-/Menu
-/NotchedOutline
-/Provider
-/Radio
-/Ripple
-/Select
-/Shape
-/Slider
-/Snackbar
-/Switch
-/Tabs
-/TextField
-/Theme
-/Toolbar
-/TopAppBar
-/Typography
 react-versions
 
 # misc

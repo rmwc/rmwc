@@ -1,6 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const processBuiltFiles = require('./process-built-files');
+const getPackageDirs = require('./get-package-dirs');
 const path = require('path');
 const fs = require('fs-extra');
 const { exec, execSync } = require('child_process');
@@ -72,55 +73,51 @@ const copyBuiltDirsBackToSrc = files => {
   });
 };
 
-processBuiltFiles(files => {
-  files.forEach(f => {
-    let out = f.replace('./src/', './');
+const promises = getPackageDirs().map(d => {
+  return new Promise((resolve, reject) => {
+    glob(`./src/${d}/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
+      er,
+      files
+    ) {
+      console.log(`Building Package: ${d}`);
 
-    // avoid copying the root directory into itself
-    if (out.split(path.sep).length === 2) {
-      return;
-    }
+      files.forEach(f => {
+        // skip the root dir
+        if (f === `./src/${d}`) {
+          return;
+        }
 
-    if (out === './index.js') {
-      return;
-    }
+        const out = f.replace(`./src/${d}`, `./src/${d}/dist`);
 
-    if (out === './rmwc.js') {
-      out = './index.js';
-      execSync(
-        `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`
-      );
-      fixPackageDotJSONPath(out);
-      writeFlowFile(f, out);
-      writeTypescriptFile(f, out);
-      fixPackageDotJSONPath(out.replace('.js', '.tsx'));
-      return;
-    }
+        // make our out dir
+        const dir = path.dirname(out);
+        if (!fs.existsSync(dir)) {
+          fs.mkdirSync(dir);
+        }
 
-    const dir = path.dirname(out);
-
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-
-    if (path.extname(f) === '.js') {
-      console.log('Babel:', f, '-> ', out);
-      writeBuiltFile(f, out);
-      writeFlowFile(f, out);
-      writeTypescriptFile(f, out);
-    } else {
-      copyFile(f, out);
-    }
+        // handle files
+        if (path.extname(f) === '.js') {
+          console.log('Babel:', f, '-> ', out);
+          writeBuiltFile(f, out);
+          writeFlowFile(f, out);
+          writeTypescriptFile(f, out);
+        } else {
+          copyFile(f, out);
+        }
+      });
+      resolve();
+    });
   });
+});
 
+// Compile the TS
+Promise.all(promises).then(() => {
   console.log('Compiling Typescript...');
   const compileTypescriptCmd = `./node_modules/.bin/tsc`;
   execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-  glob('./**/*.tsx', {}, function(er, files) {
-    console.log(files);
+  glob('./**/dist/*.tsx', {}, function(er, files) {
     files.forEach(fs.unlinkSync);
-
-    processBuiltFiles(copyBuiltDirsBackToSrc);
   });
 });
+

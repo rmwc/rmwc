@@ -1,5 +1,5 @@
 export default () => {
-  if (global.window) {
+  if (global['window']) {
     const { ValidityState } = require('hyperform');
 
     const defineValidity = {
@@ -10,22 +10,22 @@ export default () => {
     };
 
     Object.defineProperty(
-      global.HTMLInputElement.prototype,
+      global['HTMLInputElement'].prototype,
       'validity',
       defineValidity
     );
     Object.defineProperty(
-      global.HTMLTextAreaElement.prototype,
+      global['HTMLTextAreaElement'].prototype,
       'validity',
       defineValidity
     );
 
-    Object.defineProperty(window.HTMLElement.prototype, 'dataset', {
+    Object.defineProperty(window['HTMLElement'].prototype, 'dataset', {
       writable: true,
       value: {}
     });
 
-    Object.defineProperty(window.HTMLCanvasElement.prototype, 'getContext', {
+    Object.defineProperty(window['HTMLCanvasElement'].prototype, 'getContext', {
       writable: true,
       value: () => ({
         font: '',
@@ -33,7 +33,7 @@ export default () => {
       })
     });
 
-    window.MutationObserver =
-      window.MutationObserver || require('mutation-observer');
+    window['MutationObserver'] =
+      window['MutationObserver'] || require('mutation-observer');
   }
 };

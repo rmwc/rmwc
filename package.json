@@ -1,26 +1,8 @@
 {
   "name": "rmwc",
-  "version": "1.9.4",
   "author": "James Friedman",
-  "private": false,
-  "description": "A thin React wrapper for Material Design (Web) Components",
-  "homepage": "https://jamesmfriedman.github.io/rmwc/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jamesmfriedman/rmwc.git"
-  },
-  "keywords": [
-    "rmwc",
-    "react",
-    "react-material",
-    "material-design",
-    "react-mdc",
-    "react-material-design"
-  ],
-  "bugs": {
-    "url": "https://github.com/jamesmfriedman/rmwc/issues",
-    "email": "me@jamesmfriedman.com"
-  },
+  "private": true,
+  "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
@@ -45,7 +27,7 @@
     "test": "flow && npm run build:code && node scripts/test.js && npm run clean",
     "test:watch": "react-app-rewired test --env=jsdom",
     "test:coverage": "react-app-rewired test --env=jsdom --coverage",
-    "lerna:publish": "lerna version && lerna run publish:dist && npm run clean",
+    "lerna:release": "lerna version && lerna run publish:dist && npm run clean",
     "clean": "node scripts/clean.js",
     "postpublish": "npm run clean",
     "docgen": "node scripts/docgen.js",
@@ -98,16 +80,6 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "@rmwc/floating-label$": "<rootDir>/src/FloatingLabel",
-      "@rmwc/form-field": "<rootDir>/src/FormField",
-      "@rmwc/grid-list$": "<rootDir>/src/GridList",
-      "@rmwc/icon-button$": "<rootDir>/src/IconButton",
-      "@rmwc/image-list$": "<rootDir>/src/ImageList",
-      "@rmwc/notched-outline$": "<rootDir>/src/NotchedOutline",
-      "@rmwc/text-field$": "<rootDir>/src/TextField",
-      "@rmwc/line-ripple$": "<rootDir>/src/LineRipple",
-      "@rmwc/linear-progress$": "<rootDir>/src/LinearProgress",
-      "@rmwc/top-app-bar$": "<rootDir>/src/TopAppBar",
       "@rmwc/(.*)$": "<rootDir>/src/$1"
     },
     "resolver": "./scripts/jest-resolver.js",
