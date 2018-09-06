@@ -1,0 +1,373 @@
+[
+  {
+    "description": "",
+    "displayName": "SnackbarRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "show",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "onShow",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "() => mixed",
+                          "signature": {
+                            "arguments": [],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "onHide",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "() => mixed",
+                          "signature": {
+                            "arguments": [],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "message",
+                        "value": {
+                          "name": "ReactNode",
+                          "raw": "React.Node",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "timeout",
+                        "value": {
+                          "name": "number",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "actionHandler",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "() => mixed",
+                          "signature": {
+                            "arguments": [],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "actionText",
+                        "value": {
+                          "name": "ReactNode",
+                          "raw": "React.Node",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "multiline",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "actionOnBottom",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "dismissesOnAction",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "alignStart",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "SnackbarPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "alignStart": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "aria-live": {
+        "defaultValue": {
+          "value": "'assertive'",
+          "computed": false
+        },
+        "required": false
+      },
+      "aria-atomic": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        },
+        "required": false
+      },
+      "aria-hidden": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "SnackbarText",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "SnackbarActionWrapper",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "SnackbarActionButton",
+    "methods": []
+  },
+  {
+    "description": "A Snackbar component for notifications.",
+    "displayName": "Snackbar",
+    "methods": [
+      {
+        "name": "isShowing",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "isShowing",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "isShowing",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "syncWithProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "MDCSnackbar",
+              "alias": "MDCSnackbar"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "show": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Show the Snackbar.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onShow": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => mixed",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "A callback thats fired when the Snackbar shows.",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onHide": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => mixed",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "A callback thats fired when the Snackbar hides.",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "message": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "A string or other renderable JSX to be used as the message body.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "timeout": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Milliseconds to show the Snackbar for.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "actionHandler": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => mixed",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback that fires when action is pressed. The actionText property must be set to use this.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "actionText": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Label for the action button.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "multiline": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Lets the Snackbar text overflow onto multiple lines.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "actionOnBottom": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Places the action underneath the message text.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dismissesOnAction": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Whether or not the Snackbar dismisses on the action press.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "alignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  }
+]

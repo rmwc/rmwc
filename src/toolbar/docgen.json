@@ -1,0 +1,204 @@
+[
+  {
+    "description": "",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Makes the toolbar fixed */\n  fixed?: boolean,\n  /** Adds a waterfall effect on scroll */\n  waterfall?: boolean,\n  /** Fixes the last row of a multi-row toolbar */\n  fixedLastrowOnly?: boolean,\n  /** makes the toolbar flexible */\n  flexible?: boolean,\n  /** further defines the background and title movement behavior, use in conjunction with flexible. */\n  flexibleDefaultBehavior?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Makes the toolbar fixed */\n  fixed?: boolean,\n  /** Adds a waterfall effect on scroll */\n  waterfall?: boolean,\n  /** Fixes the last row of a multi-row toolbar */\n  fixedLastrowOnly?: boolean,\n  /** makes the toolbar flexible */\n  flexible?: boolean,\n  /** further defines the background and title movement behavior, use in conjunction with flexible. */\n  flexibleDefaultBehavior?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "fixed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "waterfall",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "fixedLastrowOnly",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "flexible",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "flexibleDefaultBehavior",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "ToolbarPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "fixed": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "waterfall": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "fixedLastrowOnly": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "flexible": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "flexibleDefaultBehavior": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "A Toolbar title",
+    "displayName": "ToolbarTitle",
+    "methods": []
+  },
+  {
+    "description": "A section of the Toolbar",
+    "displayName": "ToolbarSection",
+    "methods": [],
+    "props": {
+      "alignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Aligns the ToolbarSection at the start."
+      },
+      "alignEnd": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Aligns the ToolbarSection at the end."
+      },
+      "shrinkToFit": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the ToolbarSection shrink to fit."
+      }
+    }
+  },
+  {
+    "description": "A Toolbar row",
+    "displayName": "ToolbarRow",
+    "methods": []
+  },
+  {
+    "description": "This component can be placed after a fixed Toolbar component to fill in the space.",
+    "displayName": "ToolbarFixedAdjust",
+    "methods": []
+  },
+  {
+    "description": "A Menu Icon For the Toolbar. This is an instance of the Icon component.",
+    "displayName": "ToolbarMenuIcon",
+    "methods": []
+  },
+  {
+    "description": "A standard Icon for toolbar actions. This is an instance of the Icon component.",
+    "displayName": "ToolbarIcon",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "Toolbar",
+    "methods": [],
+    "props": {
+      "fixed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the toolbar fixed"
+      },
+      "waterfall": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Adds a waterfall effect on scroll"
+      },
+      "fixedLastrowOnly": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Fixes the last row of a multi-row toolbar"
+      },
+      "flexible": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "makes the toolbar flexible"
+      },
+      "flexibleDefaultBehavior": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "further defines the background and title movement behavior, use in conjunction with flexible."
+      }
+    }
+  }
+]

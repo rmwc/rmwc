@@ -10,16 +10,5 @@
 module.name_mapper='^rmwc\/\(.*\)$' -> '<PROJECT_ROOT>/\1'
 module.name_mapper='^rmwc$' -> '<PROJECT_ROOT>'
 module.name_mapper='^@rmwc/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
-module.name_mapper='^@rmwc/icon-button$' -> '<PROJECT_ROOT>/src/IconButton'
-module.name_mapper='^@rmwc/grid-list$' -> '<PROJECT_ROOT>/src/GridList'
-module.name_mapper='^@rmwc/form-field$' -> '<PROJECT_ROOT>/src/FormField'
-module.name_mapper='^@rmwc/text-field$' -> '<PROJECT_ROOT>/src/TextField'
-module.name_mapper='^@rmwc/linear-progress$' -> '<PROJECT_ROOT>/src/LinearProgress'
-module.name_mapper='^@rmwc/top-app-bar$' -> '<PROJECT_ROOT>/src/TopAppBar'
-module.name_mapper='^@rmwc/image-list$' -> '<PROJECT_ROOT>/src/ImageList'
-module.name_mapper='^@rmwc/floating-label$' -> '<PROJECT_ROOT>/src/FloatingLabel'
-module.name_mapper='^@rmwc/line-ripple$' -> '<PROJECT_ROOT>/src/LineRipple'
-module.name_mapper='^@rmwc/notched-outline$' -> '<PROJECT_ROOT>/src/NotchedOutline'
-
 
 [strict]

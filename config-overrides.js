@@ -1,44 +1,5 @@
 const path = require('path');
 
-const modules = [
-  'Base',
-  'Button',
-  'Card',
-  'Checkbox',
-  'Chip',
-  'Dialog',
-  'Drawer',
-  'Elevation',
-  'Fab',
-  'FloatingLabel',
-  'FormField',
-  'Grid',
-  'GridList',
-  'Icon',
-  'IconButton',
-  'IconToggle',
-  'ImageList',
-  'LinearProgress',
-  'LineRipple',
-  'List',
-  'Menu',
-  'NotchedOutline',
-  'Provider',
-  'Radio',
-  'Ripple',
-  'Select',
-  'Shape',
-  'Slider',
-  'Snackbar',
-  'Switch',
-  'Tabs',
-  'TextField',
-  'Theme',
-  'Toolbar',
-  'TopAppBar',
-  'Typography'
-];
-
 module.exports = function override(config, env) {
   config.entry.unshift(require.resolve('react-hot-loader/patch'));
 
@@ -74,11 +35,7 @@ module.exports = function override(config, env) {
 
   // add module aliases
   config.resolve.alias['rmwc'] = path.resolve('./src');
-  modules.forEach(moduleName => {
-    config.resolve.alias[
-      `@rmwc/${moduleName.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()}`
-    ] = path.resolve(`./src/${moduleName}`);
-  });
+  config.resolve.alias['@rmwc'] = path.resolve('./src');
 
   return config;
 };

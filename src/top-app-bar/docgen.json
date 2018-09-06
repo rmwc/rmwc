@@ -1,0 +1,340 @@
+[
+  {
+    "description": "",
+    "displayName": "TopAppBarRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "onNav",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "(evt: CustomEventT<void>) => mixed",
+                          "signature": {
+                            "arguments": [
+                              {
+                                "name": "evt",
+                                "type": {
+                                  "name": "CustomEventT",
+                                  "elements": [
+                                    {
+                                      "name": "void"
+                                    }
+                                  ],
+                                  "raw": "CustomEventT<void>"
+                                }
+                              }
+                            ],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "fixed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "prominent",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "short",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "shortCollapsed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "dense",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "TopAppAppBarPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ]
+  },
+  {
+    "description": "A row for the app bar.",
+    "displayName": "TopAppBarRow",
+    "methods": []
+  },
+  {
+    "description": "A section for the app bar.",
+    "displayName": "TopAppBarSection",
+    "methods": [],
+    "props": {
+      "alignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Aligns the section to the start."
+      },
+      "alignEnd": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Aligns the section to the end."
+      }
+    }
+  },
+  {
+    "description": "A navigation icon for the top app bar. This is an instance of the Icon component.",
+    "displayName": "TopAppBarNavigationIcon",
+    "methods": []
+  },
+  {
+    "description": "Action items for the top app bar. This is an instance of the Icon component.",
+    "displayName": "TopAppBarActionItem",
+    "methods": []
+  },
+  {
+    "description": "A title for the top app bar.",
+    "displayName": "TopAppBarTitle",
+    "methods": []
+  },
+  {
+    "description": "An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar.",
+    "displayName": "TopAppBarFixedAdjust",
+    "methods": []
+  },
+  {
+    "description": "A TopAppBar component",
+    "displayName": "TopAppBar",
+    "methods": [],
+    "props": {
+      "onNav": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Emits when the navigation icon is clicked."
+      },
+      "fixed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a fixed top app bar."
+      },
+      "prominent": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a prominent top app bar."
+      },
+      "short": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a short top app bar."
+      },
+      "shortCollapsed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar to always be collapsed."
+      },
+      "dense": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar to be dense."
+      }
+    }
+  },
+  {
+    "description": "A simplified syntax for creating an AppBar.",
+    "displayName": "SimpleTopAppBar",
+    "methods": [],
+    "props": {
+      "title": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "The title for the App Bar."
+      },
+      "actionItems": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Object"
+            }
+          ],
+          "raw": "Object[]"
+        },
+        "required": false,
+        "description": "An array of props that will be used to create TopAppBarActionItems."
+      },
+      "navigationIcon": {
+        "flowType": {
+          "name": "union",
+          "raw": "Object | boolean",
+          "elements": [
+            {
+              "name": "Object"
+            },
+            {
+              "name": "boolean"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions."
+      },
+      "startContent": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Additional content to place in the start section."
+      },
+      "endContent": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Additional content to place in the end section."
+      },
+      "onNav": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Emits when the navigation icon is clicked."
+      },
+      "fixed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a fixed top app bar."
+      },
+      "prominent": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a prominent top app bar."
+      },
+      "short": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar as a short top app bar."
+      },
+      "shortCollapsed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar to always be collapsed."
+      },
+      "dense": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the top app bar to be dense."
+      }
+    }
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "description": "The ListItem component.",
+    "displayName": "ListItem",
+    "methods": [],
+    "props": {
+      "selected": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for a selected state."
+      },
+      "activated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for an active state."
+      },
+      "ripple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Enable / disable the ripple.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "tabIndex": {
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        },
+        "required": false
+      }
+    },
+    "context": {
+      "RMWCOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "Text Wrapper for the ListItem",
+    "displayName": "ListItemText",
+    "methods": []
+  },
+  {
+    "description": "Primary Text for the ListItem",
+    "displayName": "ListItemPrimaryText",
+    "methods": []
+  },
+  {
+    "description": "Secondary text for the ListItem",
+    "displayName": "ListItemSecondaryText",
+    "methods": []
+  },
+  {
+    "description": "A graphic / icon for the ListItem",
+    "displayName": "ListItemGraphic",
+    "methods": []
+  },
+  {
+    "description": "A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag=\"span\" and basename=\"\" to ensure proper rendering. See the examples above.",
+    "displayName": "ListItemMeta",
+    "methods": [],
+    "props": {
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "icon": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  {
+    "description": "A container to group ListItems",
+    "displayName": "ListGroup",
+    "methods": []
+  },
+  {
+    "description": "A subheader for the ListGroup",
+    "displayName": "ListGroupSubheader",
+    "methods": []
+  },
+  {
+    "description": "A divider for the List",
+    "displayName": "ListDivider",
+    "methods": []
+  },
+  {
+    "description": "A List Component",
+    "displayName": "List",
+    "methods": [],
+    "props": {
+      "dense": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Reduces the padding on List items."
+      },
+      "twoLine": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Gives more space for dual lined list items."
+      },
+      "avatarList": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the list start detail circular for avatars."
+      },
+      "nonInteractive": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems."
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "SimpleListItem",
+    "methods": [],
+    "props": {
+      "text": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Text for the ListItem."
+      },
+      "secondaryText": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Secondary Text for the ListItem."
+      },
+      "graphic": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "A graphic icon for the ListItem."
+      },
+      "meta": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "A meta icon for the ListItem"
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children to render"
+      },
+      "selected": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for a selected state."
+      },
+      "activated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for an active state."
+      },
+      "ripple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Enable / disable the ripple."
+      }
+    }
+  }
+]

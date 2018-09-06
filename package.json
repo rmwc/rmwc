@@ -48,7 +48,7 @@
     "lerna:publish": "lerna version && lerna run publish:dist && npm run clean",
     "clean": "node scripts/clean.js",
     "postpublish": "npm run clean",
-    "docgen": "export NODE_ENV=development && react-docgen ./src --exclude /\\.\\(story\\|docs\\|spec\\)\\.js/ --pretty --resolver ./scripts/docgen-resolver.js -o ./src/base/utils/docgen.json",
+    "docgen": "node scripts/docgen.js",
     "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",

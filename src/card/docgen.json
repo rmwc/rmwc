@@ -1,0 +1,76 @@
+[
+  {
+    "description": "A Card Component",
+    "displayName": "Card",
+    "methods": [],
+    "props": {
+      "outlined": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Removes the shadow and displays a hairline outline instead"
+      }
+    }
+  },
+  {
+    "description": "Media area that displays a custom background-image with background-size: cover",
+    "displayName": "CardMedia",
+    "methods": [],
+    "props": {
+      "square": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Automatically scales the media area’s height to equal its width"
+      },
+      "sixteenByNine": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
+      }
+    }
+  },
+  {
+    "description": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image",
+    "displayName": "CardMediaContent",
+    "methods": []
+  },
+  {
+    "description": "The main clickable area for the primary content of the card",
+    "displayName": "CardPrimaryAction",
+    "methods": []
+  },
+  {
+    "description": "Row containing action buttons and/or icons",
+    "displayName": "CardActions",
+    "methods": [],
+    "props": {
+      "fullBleed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width"
+      }
+    }
+  },
+  {
+    "description": "A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons",
+    "displayName": "CardActionButtons",
+    "methods": []
+  },
+  {
+    "description": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons",
+    "displayName": "CardActionIcons",
+    "methods": []
+  },
+  {
+    "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
+    "displayName": "CardAction",
+    "methods": []
+  }
+]

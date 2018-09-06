@@ -1,0 +1,145 @@
+[
+  {
+    "description": "A container for shaping other components.",
+    "displayName": "ShapeContainer",
+    "methods": [],
+    "props": {
+      "backgroundColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The background fill color for the corner",
+        "defaultValue": {
+          "value": "'#fff'",
+          "computed": false
+        }
+      },
+      "corner": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The corner length. Will be used for all sides that are left unset."
+      },
+      "topLeftCorner": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The top left corner length."
+      },
+      "topRightCorner": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The top right corner length."
+      },
+      "bottomRightCorner": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The bottom right corner length."
+      },
+      "bottomLeftCorner": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The bottom left corner length."
+      },
+      "outlineWidth": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Sets the width of an outlined corner."
+      },
+      "outlineColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Sets the color outlined corner."
+      },
+      "outlineStyle": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Sets the border style of an outlined corner."
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Custom className to add"
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children to render."
+      }
+    }
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "description": "",
+    "displayName": "Ripple",
+    "methods": [
+      {
+        "name": "syncWithProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Makes the ripple unbounded */\n  unbounded?: boolean,\n  /** Makes the ripple primary */\n  primary?: boolean,\n  /** Makes the ripple an accent color*/\n  accent?: boolean,\n  /** makes the ripple disabled */\n  disabled?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "unbounded",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "primary",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "accent",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "disabled",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "RipplePropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "unbounded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the ripple unbounded"
+      },
+      "primary": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the ripple primary"
+      },
+      "accent": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the ripple an accent color"
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "makes the ripple disabled"
+      },
+      "surface": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  }
+]

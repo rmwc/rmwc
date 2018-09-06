@@ -1,0 +1,112 @@
+[
+  {
+    "description": "",
+    "displayName": "IconButtonIcon",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{ on: boolean }",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "on",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "returns": null
+      }
+    ]
+  },
+  {
+    "description": "",
+    "displayName": "IconButton",
+    "methods": [],
+    "props": {
+      "checked": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Controls the on / off state of the a toggleable button."
+      },
+      "onChange": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{ isOn: boolean }",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "isOn",
+                            "value": {
+                              "name": "boolean",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "raw": "CustomEventT<{ isOn: boolean }>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "An onChange callback that receives a custom event."
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes the button disabled"
+      },
+      "onIcon": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "If specified, renders a toggle with this icon as the on state."
+      },
+      "onIconOptions": {
+        "flowType": {
+          "name": "IconOptionsT"
+        },
+        "required": false,
+        "description": "Options for the onIcon"
+      }
+    }
+  }
+]

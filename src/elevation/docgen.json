@@ -1,0 +1,32 @@
+[
+  {
+    "description": "The Elevation Component",
+    "displayName": "Elevation",
+    "methods": [],
+    "props": {
+      "z": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": true,
+        "description": "A number from 0 - 24 for different levels of elevation"
+      },
+      "transition": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Allows for smooth transitions between elevations when the z value changes."
+      }
+    }
+  }
+]
