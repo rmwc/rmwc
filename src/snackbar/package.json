@@ -26,8 +26,8 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@material/animation": "~0.39.1",
-    "@material/snackbar": "~0.39.1",
+    "@material/animation": "~0.39.0",
+    "@material/snackbar": "~0.39.0",
     "@rmwc/base": "^2.0.0-alpha.1",
     "@rmwc/button": "^2.0.0-alpha.1"
   }
