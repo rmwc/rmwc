@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "RMWC Tabs component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/tab-bar": "~0.39.0",
-    "@rmwc/base": "^2.0.0-alpha.1",
-    "@rmwc/icon": "^2.0.0-alpha.1"
+    "@rmwc/base": "^2.0.0-alpha.2",
+    "@rmwc/icon": "^2.0.0-alpha.2"
   }
 }
