@@ -36,7 +36,7 @@
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",
     "preversion": "npm test -- --coverage",
-    "version": "npm run build && npm run changelog && git add CHANGELOG.md && git add -A lib && npm run build && git add docs -f",
+    "version": "npm run build && npm run changelog && git add CHANGELOG.md && npm run build && git add docs -f",
     "postversion": "git push && git push --tags",
     "flow": "flow"
   },
@@ -63,7 +63,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.80.0",
-    "generate-changelog": "^1.7.1",
+    "generate-changelog": "1.7.0",
     "lerna": "^3.2.1",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.8.2",
