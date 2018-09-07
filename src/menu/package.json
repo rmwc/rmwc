@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@material/menu": "~0.39.0",
+    "@material/menu-surface": "~0.39.0",
     "@rmwc/base": "^2.0.0-alpha.6",
     "@rmwc/list": "^2.0.0-alpha.6"
   }
