@@ -74,11 +74,10 @@
     "react-hot-loader": "^4.3.6",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "1.1.4",
     "safer-buffer": "^2.1.2",
     "storybook": "^1.0.0",
-    "typescript": "^2.9.2",
-    "uglify-es": "^3.3.9"
+    "typescript": "^2.9.2"
   },
   "jest": {
     "moduleNameMapper": {
