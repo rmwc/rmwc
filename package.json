@@ -61,7 +61,7 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.7.0",
-    "flow-bin": "^0.74.0",
+    "flow-bin": "^0.80.0",
     "generate-changelog": "^1.7.0",
     "lerna": "^3.2.1",
     "normalize.css": "^7.0.0",
