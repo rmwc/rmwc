@@ -2,7 +2,7 @@
 
 > This is an optional component that provides global configuration for RMWC.
 
-- import * from **'@rmwc/provider'**;
+- Module **@rmwc/provider**
 
 You can wrap your top level App component with RMWC provider to set global configuration options. Just pass the options in as props.
 

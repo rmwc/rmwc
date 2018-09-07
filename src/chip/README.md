@@ -2,8 +2,8 @@
 
 > Chips represent complex entities in small blocks, such as a contact.
 
-- import * from **'@rmwc/chip'**;  
-- import styles:
+- Module **@rmwc/chip**  
+- Import styles:
   - import **'@material/chips/dist/mdc.chips.css'**;
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 

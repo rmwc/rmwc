@@ -2,8 +2,8 @@
 
 > A navigation drawer slides in from the left and contains the navigation destinations for your app.
 
-- import * from **'@rmwc/drawer'**;
-- import styles:
+- Module **@rmwc/drawer**
+- Import styles:
   - import **'@material/drawer/dist/mdc.drawer.css'**;
 - MDC Docs: [https://material.io/develop/web/components/drawers/](https://material.io/components/web/catalog/drawers/)
 

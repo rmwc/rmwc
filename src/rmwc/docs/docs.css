@@ -36,12 +36,53 @@ body ul li {
   will-change: initial;
 }
 
+/** Install Block */
 .app__content {
   flex: 1 1 auto;
   max-width: 100%;
   transition: margin-left 0.3s, max-width 0.3s;
   will-change: margin-left;
   will-change: max-width;
+}
+
+.app__content > div > ul:first-of-type {
+  list-style: none;
+  padding: 3rem 1rem 1rem 1rem;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.app__content > div > ul:first-of-type:after {
+  content: 'Setup';
+  background: var(--mdc-theme-primary);
+  color: var(--mdc-theme-on-primary);
+  position: absolute;
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 0.75rem;
+}
+
+.app__content > div > ul:first-of-type > li {
+  margin-top: 0.25rem;
+}
+
+.app__content > div > ul:first-of-type strong,
+.app__content > div > ul:first-of-type a {
+  color: var(--mdc-theme-primary);
+}
+
+.app__content > div > ul:first-of-type:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--mdc-theme-primary);
+  opacity: 0.1;
 }
 
 .mdc-drawer--dismissible.mdc-drawer--open + .app__content {
@@ -96,7 +137,7 @@ body ul li {
 .example.render-with-code,
 .example.code-only {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
   margin: 1.5rem 0;
   background-color: white;
 }
@@ -112,7 +153,7 @@ body ul li {
 .app__content > div .example:not(.render-only) .run {
   padding: 1rem;
   background-color: #f2f2f2;
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
 .app__content > div .example .run + .source {
@@ -147,8 +188,8 @@ body ul li {
 
 p,
 ul {
-  line-height: 1.4;
-  font-size: 0.875rem;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .app__content > div blockquote {
@@ -212,6 +253,8 @@ ul {
 #main-nav .mdc-drawer__content {
   padding-bottom: 88px;
   padding-top: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100vh - 15rem);
 }
 
 #main-nav .mdc-list-item:before {
@@ -230,6 +273,24 @@ ul li {
   display: flex;
   flex: 1;
   position: relative;
+}
+
+/* made by */
+.made-by {
+  padding: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.made-by img {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 /* page home */
@@ -305,6 +366,26 @@ ul li {
 
 #page-home .app__content .mdc-layout-grid__cell a {
   text-decoration: none;
+}
+
+#page-home .app__content .home__checklist {
+  text-align: left;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#page-home .app__content .home__checklist > div {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+
+#page-home .app__content .home__checklist i {
+  vertical-align: middle;
+  margin-right: 1rem;
+  position: relative;
+  top: -1px;
 }
 
 /* page tabs */

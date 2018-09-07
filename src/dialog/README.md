@@ -4,8 +4,8 @@
 
 Material Dialogs are a complex component. RMWC contains an additional non-standard `SimpleDialog` component for ease of use that internally contains the default structure already built out. Illustrated below is both the strandard and simple dialog usage.
 
-- import * from **'@rmwc/dialog'**;
-- import styles:
+- Module **@rmwc/dialog**
+- Import styles:
   - import **'@material/dialog/dist/mdc.dialog.css'**;
   - import **'@material/button/dist/mdc.button.css'**;
 - MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)

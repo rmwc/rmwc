@@ -1,7 +1,7 @@
 # Fabs
 
-- import * from **'@rmwc/fab'**;
-- import styles:
+- Module **@rmwc/fab**
+- Import styles:
   - import **'@material/fab/dist/mdc.fab.css'**;
 - MDC Docs:[https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 

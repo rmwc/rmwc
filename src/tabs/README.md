@@ -2,8 +2,8 @@
 
 > Tabs make it easy to explore and switch between different views.
 
-- import * from **'@rmwc/tabs'**  
-- import styles:
+- Module **@rmwc/tabs**  
+- Import styles:
   - import **'@material/tab-bar/dist/mdc.tab-bar.css'**;
   - import **'@material/tab/dist/mdc.tab.css'**;
   - import **'@material/tab-scroller/dist/mdc.tab-scroller.css'**;
@@ -11,7 +11,7 @@
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Controlled vs Uncontrolled
-Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivated` callback for controlled components.
+Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivate` callback for controlled components.
 ```jsx render
 {/* Uncontrolled */}
 <TabBar>

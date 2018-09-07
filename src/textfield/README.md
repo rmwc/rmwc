@@ -2,9 +2,12 @@
 
 > Text fields allow users to input, edit, and select text.
 
-- import * from **'@rmwc/textfield'**;
-- import styles:
+- Module **@rmwc/textfield**
+- Import styles:
   - import **'@material/textfield/dist/mdc.textfield.css'**;
+  - import **'@material/floating-label/dist/mdc.floating-label.css'**;
+  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**;
+  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**;
 - MDC Docs: [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
 
 ## Text Field Variants

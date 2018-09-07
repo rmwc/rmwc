@@ -3,7 +3,7 @@
 > Top App Bar acts as a container for items such as application title, navigation icon, and action items.
 
 - import from **'@rmwc/top-app-bar'**;  
-- import styles:
+- Import styles:
   - import **'@material/top-app-bar/dist/mdc.top-app-bar.css'**;
 - MDC Docs: [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 

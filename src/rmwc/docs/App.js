@@ -15,7 +15,10 @@ import {
   TopAppBarFixedAdjust
 } from '@rmwc/top-app-bar';
 
+import { Icon } from '@rmwc/icon';
 import { ThemeProvider } from '@rmwc/theme';
+import { Typography } from '@rmwc/typography';
+import { Ripple } from '@rmwc/ripple';
 import { getAutoColorsForTheme } from '@rmwc/theme/utils';
 import { TabBar, Tab } from '@rmwc/tabs';
 
@@ -285,7 +288,8 @@ class ThemePicker extends React.Component {
                   <b>Theme your App!</b>
                   <br />
                   Place this tag around the root of your App, or anywhere you
-                  want to apply a custom theme.<br />
+                  want to apply a custom theme.
+                  <br />
                   <br />
                 </div>
                 <span className="token keyword">import</span> {'{'}{' '}
@@ -307,7 +311,8 @@ class ThemePicker extends React.Component {
                   >
                     <span>
                       <span style={{ color: '#07a' }}>
-                        &nbsp;&nbsp;{toCamel(t.split('--mdc-theme-')[1])}:
+                        &nbsp;&nbsp;
+                        {toCamel(t.split('--mdc-theme-')[1])}:
                       </span>{' '}
                       '{val}'{index < arr.length - 1 ? ',' : ''}
                     </span>
@@ -318,7 +323,8 @@ class ThemePicker extends React.Component {
                 {'}}'}
                 <span className="token punctuation">&gt;</span>
                 <br />
-                &nbsp;&nbsp;<span className="token punctuation">&lt;</span>
+                &nbsp;&nbsp;
+                <span className="token punctuation">&lt;</span>
                 <span className="token tag">App </span>
                 <span className="token punctuation">/&gt;</span>
                 <br />
@@ -332,7 +338,8 @@ class ThemePicker extends React.Component {
                   <b>Theme your App!</b>
                   <br />
                   Copy and paste these rules into your main css file, or a style
-                  tag in your app and customize to your liking.<br />
+                  tag in your app and customize to your liking.
+                  <br />
                   <br />
                 </div>
                 <span style={{ color: '#690' }}>:root</span> {'{'}
@@ -346,7 +353,10 @@ class ThemePicker extends React.Component {
                     }}
                   >
                     <span>
-                      <span style={{ color: '#07a' }}>&nbsp;&nbsp;{t}:</span>{' '}
+                      <span style={{ color: '#07a' }}>
+                        &nbsp;&nbsp;
+                        {t}:
+                      </span>{' '}
                       {val};
                     </span>
 
@@ -388,6 +398,18 @@ const Nav = props => (
           return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
         })}
       </DrawerContent>
+      <Ripple>
+        <Typography tag="div" use="caption" className="made-by">
+          <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
+          <span>
+            Made with{' '}
+            <span role="img" aria-label="heart">
+              ❤️
+            </span>{' '}
+            in Sunny FL.
+          </span>
+        </Typography>
+      </Ripple>
     </Drawer>
   </React.Fragment>
 );

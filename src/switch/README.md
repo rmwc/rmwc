@@ -2,8 +2,8 @@
 
 > On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Switches take on the same visual properties of the radio button.
 
-- import * from **'@rmwc/switch'**; 
-- import styles:
+- Module **@rmwc/switch** 
+- Import styles:
   - import **'@material/switch/dist/mdc.switch.css'**;
   - import **'@material/form-field/dist/mdc.form-field.css'**;
 - MDC Docs: [https://material.io/develop/web/components/input-controls/switches/](https://material.io/develop/web/components/input-controls/switches/)

@@ -6,11 +6,18 @@ import { version } from '../';
 import { Typography } from '@rmwc/typography';
 
 import { Card, CardMedia, CardActions, CardAction } from '@rmwc/card';
-
 import { Grid, GridCell } from '@rmwc/grid';
-
 import { Button } from '@rmwc/button';
 import { Theme } from '@rmwc/theme';
+import { Icon } from '@rmwc/icon';
+
+const checklist = [
+  "Uses Google's official material-components-web library",
+  'Works in any version of React from 15.5.x to 16.5.x',
+  'First class Typescript and Flow Support',
+  'Server side rendering support',
+  'Individually packaged and released components'
+];
 
 export const Home = () => {
   return (
@@ -33,6 +40,14 @@ export const Home = () => {
           <Typography tag="h3" use="caption">
             v{version}
           </Typography>
+
+          <div className="home__checklist">
+            {checklist.map(c => (
+              <div>
+                <Icon theme="secondary" icon="check" /> <div>{c}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </Theme>
 

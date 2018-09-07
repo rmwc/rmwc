@@ -2,8 +2,8 @@
 
 > Toolbar actions appear above the view affected by their actions.
 
-- import * from **'@rmwc/toolbar'**;
-- import styles:
+- Module **@rmwc/toolbar**
+- Import styles:
   - import **'@material/toolbar/dist/mdc.toolbar.css'**;
 - MDC Docs: [https://material.io/develop/web/components/toolbar/](https://material.io/develop/web/components/toolbar/)
 

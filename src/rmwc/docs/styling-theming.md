@@ -49,7 +49,7 @@ Just add your className. If you need to target a node that is not directly expos
 ```jsx
 /** in your JSX */
 import { DrawerHeader } from '@rmwc/drawer';
-import styles from './my-style-sheet.css';
+Import styles from './my-style-sheet.css';
 
 const MyComponent = props => (
   <DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
@@ -234,4 +234,4 @@ Additional customization can be done through your own SASS build. This is a feat
 
 ## Theme and ThemeProvider
 
-Build on MDC Theme, RMWC has two theming components for extra easy useage. See component page [Theme](/theme).
+Build on MDC Theme, RMWC has two theming components for extra easy useage. See component page [Theme](theme).

@@ -3,7 +3,7 @@
 > Lists are continuous, vertical indexes of text or images.
 
 - import from **'@rmwc/list'**;
-- import styles:
+- Import styles:
   - import **'@material/list/dist/mdc.list.css'**;
 - MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 

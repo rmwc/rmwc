@@ -2,9 +2,12 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-- import * from **'@rmwc/select'**;  
-- import styles:
+- Module **@rmwc/select**  
+- Import styles:
   - import **'@material/select/dist/mdc.select.css'**;
+  - import **'@material/floating-label/dist/mdc.floating-label.css'**;
+  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**;
+  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**;
 - MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
 ## Select Styles

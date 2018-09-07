@@ -2,8 +2,8 @@
 
 > Buttons communicate the action that will occur when the user touches them.
 
-- import * from **'@rmwc/button'**;  
-- import styles:
+- Module **@rmwc/button**  
+- Import styles:
   - import **'@material/button/dist/mdc.button.css'**;
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 

@@ -2,8 +2,8 @@
 
 > MDC Theme is a foundational module that themes MDC Web components.
 
-- import * from **'@rmwc/theme'**;  
-- import styles:
+- Module **@rmwc/theme**  
+- Import styles:
   - import **'@material/theme/dist/mdc.theme.css'**;
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 

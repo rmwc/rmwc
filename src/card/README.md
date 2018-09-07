@@ -4,8 +4,8 @@
 
 `material-web-components` provides a light framework for structuring cards, but the actual content layout will require a bit of custom CSS.
 
-- import * from **'@rmwc/card'**;  
-- import styles: 
+- Module **@rmwc/card**  
+- Import styles: 
   - import **'@material/card/dist/mdc.card.css'**;
   - import **'@material/button/dist/mdc.button.css'**;
   - import **'@material/icon-button/dist/mdc.icon-button.css'**;

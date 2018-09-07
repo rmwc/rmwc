@@ -2,8 +2,8 @@
 
 > Snackbars provide brief feedback about an operation through a message at the bottom of the screen.
 
-- import * from **'@rmwc/snackbar'**;  
-- import styles:
+- Module **@rmwc/snackbar**  
+- Import styles:
   - import **'@material/snackbar/dist/mdc.snackbar.css'**;
 - MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 

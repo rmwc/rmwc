@@ -3,7 +3,7 @@
 > Shapes direct attention, identify components, communicate state, and express brand.
 
 - import from **'@rmwc/shape'**;
-- import styles:
+- Import styles:
   - import **'@material/shape/dist/mdc.shape.css'**;
 - MDC Docs: [https://material.io/develop/web/components/shape/](https://material.io/develop/web/components/shape/)
 

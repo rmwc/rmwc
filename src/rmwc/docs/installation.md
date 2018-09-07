@@ -2,13 +2,17 @@
 
 > Welcome to RMWC, a React wrapper for Material Design (Web) Components.
 
-Required steps
+**Required steps**
 
-* `npm i rmwc --save` or `yarn add rmwc`
-* [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. 
-* Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.). 
+* Install **ALL** of RMWC
+  * `npm i rmwc --save` or `yarn add rmwc`
+  * include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
+* OR Install **INDIVIDUAL** components
+  * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
+  * Include the individual components stylesheets (listed on their docs page) `node_modules/@material/button/dist/mdc.button.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
 
-Optional steps
+
+**Optional steps**
 
 * If you would like to use the default **Roboto font**:
   * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
@@ -23,14 +27,23 @@ import { Button } from '@rmwc/button';
 const MyComponent = props => <Button>Hello World</Button>;
 ```
 
-## Bundle size considerations
+## Bundle size and Dependency considerations
 
-All of RMWC is under 90K gzipped, but the entire [material-components-web](https://github.com/material-components/material-components-web) package is quite large. If you care about your end use bundle size, pay attention to this!
+To keep your build as trim as possible, it is recommended that you install the components individually as you need them instead of installing RMWC. This strategy has several benefits:
+
+- You will only include the minimal javascript and css to get the component working
+- You can insulate your self from future breaking changes and upgrade components one at a time.
+- If you have an existing project you are converting over to RMWC, you can swap out one component at a time.
+
+
+If you decide to go for the convenience to install the entire RMWC library, your app will still reference the individual modules, you just lose the ability to upgrade them independently when a new release comes out.
 
 ```jsx
 /** GOOD example, only the `Button` component will be imported. This supports tree shaking. */
 import { Button } from '@rmwc/button';
 ```
+
+This is for the laziest of lazy, all components are re-exported from the root module if you choose to reference them this way.
 
 ```jsx
 /**
@@ -40,7 +53,16 @@ import { Button } from '@rmwc/button';
 import { Button } from 'rmwc';
 ```
 
-The same is true for importing styles into your project. RMWC doesn't ship with any of its own styles, you are required to import them from the [material-components-web](https://github.com/material-components/material-components-web) package. The pre-minified version of this file is around 240kb. If you only want to import styles for individual components, you can find the css files in `node_modules/@material/COMPONENT_NAME/dist/mdc.COMPONENT_NAME.min.css`.
+Deprecated Syntax: this method was available for importing components prior to 2.0.0. It will continue to work for the forseeable future but will be removed in a future release.
+
+```jsx
+/**
+ * Deprecated syntax prior to 2.0.0
+ */
+import { Button } from 'rmwc/Button';
+```
+
+The same is true for importing styles into your project. RMWC doesn't ship with any of its own styles, you are required to import them from the [material-components-web](https://github.com/material-components/material-components-web) package. The pre-minified version of this file is around 240kb. If you only want to Import styles for individual components, you can find the css files in `node_modules/@material/COMPONENT_NAME/dist/mdc.COMPONENT_NAME.min.css`.
 
 ```jsx
 /** Imports styles for ALL components */

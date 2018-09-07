@@ -2,8 +2,8 @@
 
 > Sliders let users select from a range of values by moving the slider thumb.
 
-- import * from **'@rmwc/slider'**;
-- import styles:
+- Module **@rmwc/slider**
+- Import styles:
   - import **'@material/slider/dist/mdc.slider.css'**;
 - MDC Docs: [https://material.io/develop/web/components/input-controls/sliders/](https://material.io/develop/web/components/input-controls/sliders/)
 
