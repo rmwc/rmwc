@@ -77,7 +77,8 @@
     "react-scripts": "^1.1.5",
     "safer-buffer": "^2.1.2",
     "storybook": "^1.0.0",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.9"
   },
   "jest": {
     "moduleNameMapper": {
