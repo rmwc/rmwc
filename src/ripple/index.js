@@ -18,7 +18,14 @@ export type RipplePropsT = {
 
 export class Ripple extends withFoundation({
   constructor: MDCRipple,
-  adapter: {}
+  adapter: {
+    addClass: function(className) {
+      return this.root_ && this.root_.classList.add(className);
+    },
+    removeClass: function(className) {
+      return this.root_ && this.root_.classList.remove(className);
+    }
+  }
 })<RipplePropsT & { surface?: boolean }> {
   static displayName = 'Ripple';
 

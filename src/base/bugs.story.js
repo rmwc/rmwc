@@ -139,6 +139,28 @@ class Bug293 extends React.Component {
   };
 }
 
+class Bug298 extends React.Component {
+  state = { show: true };
+
+  render() {
+    return (
+      <React.Fragment>
+        <p>Long click on the button below (so you get a full ripple)</p>
+        {this.state.show && (
+          <Button
+            raised
+            onClick={() => {
+              this.setState({ show: false });
+            }}
+          >
+            Long click me
+          </Button>
+        )}
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -193,4 +215,5 @@ storiesOf('Bugs', module)
     </React.Fragment>
   ))
   .add('#283', () => <Bug283 />)
-  .add('#293', () => <Bug293 />);
+  .add('#293', () => <Bug293 />)
+  .add('#298', () => <Bug298 />);

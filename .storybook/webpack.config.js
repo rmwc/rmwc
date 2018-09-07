@@ -6,10 +6,18 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 
+const path = require('path');
+
 module.exports = {
   plugins: [
     // your custom plugins
   ],
+  resolve: {
+    alias: {
+      rmwc: path.resolve('./src'),
+      '@rmwc': path.resolve('./src')
+    }
+  },
   module: {
     rules: [
       {
@@ -19,11 +27,11 @@ module.exports = {
           {
             loader: require.resolve('css-loader'),
             options: {
-              importLoaders: 1,
-            },
-          },
-        ],
-      },
-    ],
-  },
+              importLoaders: 1
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
