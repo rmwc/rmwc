@@ -49,7 +49,7 @@
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "8.2.3",
     "babel-preset-es2015": "^6.24.1",
     "css-to-string-loader": "^0.1.3",
     "enzyme": "^3.6.0",
