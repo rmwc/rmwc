@@ -1,6 +1,7 @@
 {
   "name": "rmwc",
   "author": "James Friedman",
+  "version": "2.0.0",
   "private": true,
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "license": "MIT",
