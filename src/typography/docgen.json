@@ -1,0 +1,71 @@
+[
+  {
+    "description": "The Typography Component",
+    "displayName": "Typography",
+    "methods": [],
+    "props": {
+      "use": {
+        "flowType": {
+          "name": "union",
+          "raw": "'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'headline1'"
+            },
+            {
+              "name": "literal",
+              "value": "'headline2'"
+            },
+            {
+              "name": "literal",
+              "value": "'headline3'"
+            },
+            {
+              "name": "literal",
+              "value": "'headline4'"
+            },
+            {
+              "name": "literal",
+              "value": "'headline5'"
+            },
+            {
+              "name": "literal",
+              "value": "'headline6'"
+            },
+            {
+              "name": "literal",
+              "value": "'subtitle1'"
+            },
+            {
+              "name": "literal",
+              "value": "'subtitle2'"
+            },
+            {
+              "name": "literal",
+              "value": "'body1'"
+            },
+            {
+              "name": "literal",
+              "value": "'body2'"
+            },
+            {
+              "name": "literal",
+              "value": "'caption'"
+            },
+            {
+              "name": "literal",
+              "value": "'button'"
+            },
+            {
+              "name": "literal",
+              "value": "'overline'"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The typography style."
+      }
+    }
+  }
+]

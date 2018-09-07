@@ -1,0 +1,480 @@
+[
+  {
+    "description": "",
+    "displayName": "DialogRoot",
+    "methods": [],
+    "props": {
+      "role": {
+        "defaultValue": {
+          "value": "'alertdialog'",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "The Dialog backdrop",
+    "displayName": "DialogBackdrop",
+    "methods": []
+  },
+  {
+    "description": "The Dialog surface",
+    "displayName": "DialogSurface",
+    "methods": []
+  },
+  {
+    "description": "The Dialog header",
+    "displayName": "DialogHeader",
+    "methods": []
+  },
+  {
+    "description": "The Dialog title",
+    "displayName": "DialogHeaderTitle",
+    "methods": []
+  },
+  {
+    "description": "The Dialog body",
+    "displayName": "DialogBody",
+    "methods": [],
+    "props": {
+      "scrollable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make it scrollable."
+      }
+    }
+  },
+  {
+    "description": "The Dialog footer",
+    "displayName": "DialogFooter",
+    "methods": []
+  },
+  {
+    "description": "A Dialog footer button",
+    "displayName": "DialogFooterButton",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "Dialog",
+    "methods": [
+      {
+        "name": "syncWithProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "open",
+                    "value": {
+                      "name": "boolean",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "onAccept",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(evt: CustomEventT<void>) => mixed",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "evt",
+                            "type": {
+                              "name": "CustomEventT",
+                              "elements": [
+                                {
+                                  "name": "void"
+                                }
+                              ],
+                              "raw": "CustomEventT<void>"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "mixed"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "onCancel",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(evt: CustomEventT<void>) => mixed",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "evt",
+                            "type": {
+                              "name": "CustomEventT",
+                              "elements": [
+                                {
+                                  "name": "void"
+                                }
+                              ],
+                              "raw": "CustomEventT<void>"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "mixed"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "onClose",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(evt: CustomEventT<void>) => mixed",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "evt",
+                            "type": {
+                              "name": "CustomEventT",
+                              "elements": [
+                                {
+                                  "name": "void"
+                                }
+                              ],
+                              "raw": "CustomEventT<void>"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "mixed"
+                        }
+                      },
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "DialogPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": "Whether or not the Dialog is showing."
+      },
+      "onAccept": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the accept Button is pressed."
+      },
+      "onCancel": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the Dialog was closed without acceptance."
+      },
+      "onClose": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the Dialog closes."
+      }
+    }
+  },
+  {
+    "description": "A non-standard SimpleDialog component for ease of use.",
+    "displayName": "SimpleDialog",
+    "methods": [],
+    "props": {
+      "title": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "A title for the default Dialog template.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "header": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Additional Dialog header content for the default Dialog template.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "body": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Body content for the default Dialog template, rendered before children.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "footer": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Additional footer content for the default Dialog template, rendered before any buttons.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "acceptLabel": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Creates an accept button for the default Dialog template with a given label. You can pass `null` to remove the button.",
+        "defaultValue": {
+          "value": "'Accept'",
+          "computed": false
+        }
+      },
+      "cancelLabel": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.",
+        "defaultValue": {
+          "value": "'Cancel'",
+          "computed": false
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Any children will be rendered in the body of the default Dialog template.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "scrollable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Allow the body to be scrollable",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Whether or not the Dialog is showing.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onAccept": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the accept Button is pressed.",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onCancel": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the Dialog was closed without acceptance.",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onClose": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the Dialog closes.",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      }
+    }
+  }
+]

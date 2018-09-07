@@ -1,0 +1,36 @@
+{
+  "name": "@rmwc/textfield",
+  "version": "2.0.0-alpha.7",
+  "description": "RMWC TextField component",
+  "main": "index.js",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmfriedman/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "James Friedman",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesmfriedman/rmwc/issues"
+  },
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/textfield#readme",
+  "peerDependencies": {
+    "react": "^15.x.x || ^16.x.x",
+    "react-dom": "^15.x.x || ^16.x.x"
+  },
+  "dependencies": {
+    "@material/textfield": "~0.39.0",
+    "@rmwc/base": "^2.0.0-alpha.7",
+    "@rmwc/floating-label": "^2.0.0-alpha.7",
+    "@rmwc/icon": "^2.0.0-alpha.7",
+    "@rmwc/line-ripple": "^2.0.0-alpha.7",
+    "@rmwc/notched-outline": "^2.0.0-alpha.7"
+  }
+}

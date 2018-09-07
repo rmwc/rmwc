@@ -1,0 +1,209 @@
+[
+  {
+    "description": "",
+    "displayName": "GridRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Specifies the grid should have fixed column width. */\n  fixedColumnWidth?: boolean,\n  /** Specifies the alignment of the whole grid. */\n  align?: 'left' | 'right'\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Specifies the grid should have fixed column width. */\n  fixedColumnWidth?: boolean,\n  /** Specifies the alignment of the whole grid. */\n  align?: 'left' | 'right'\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "fixedColumnWidth",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "align",
+                        "value": {
+                          "name": "union",
+                          "raw": "'left' | 'right'",
+                          "elements": [
+                            {
+                              "name": "literal",
+                              "value": "'left'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'right'"
+                            }
+                          ],
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "GridPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ]
+  },
+  {
+    "description": "A Grid cell",
+    "displayName": "GridCell",
+    "methods": [],
+    "props": {
+      "span": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Default number of columns to span."
+      },
+      "phone": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Number of columns to span on a phone."
+      },
+      "tablet": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Number of columns to span on a tablet."
+      },
+      "desktop": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Number of columns to span on a desktop."
+      },
+      "order": {
+        "flowType": {
+          "name": "union",
+          "raw": "string | number",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies the order of the cell."
+      },
+      "align": {
+        "flowType": {
+          "name": "union",
+          "raw": "'top' | 'middle' | 'bottom'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'top'"
+            },
+            {
+              "name": "literal",
+              "value": "'middle'"
+            },
+            {
+              "name": "literal",
+              "value": "'bottom'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies the alignment of cell"
+      }
+    }
+  },
+  {
+    "description": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
+    "displayName": "GridInner",
+    "methods": []
+  },
+  {
+    "description": "A Grid component",
+    "displayName": "Grid",
+    "methods": [],
+    "props": {
+      "fixedColumnWidth": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Specifies the grid should have fixed column width."
+      },
+      "align": {
+        "flowType": {
+          "name": "union",
+          "raw": "'left' | 'right'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'left'"
+            },
+            {
+              "name": "literal",
+              "value": "'right'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies the alignment of the whole grid."
+      }
+    }
+  }
+]

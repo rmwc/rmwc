@@ -1,6 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const processBuiltFiles = require('./process-built-files');
+const getPackageDirs = require('./get-package-dirs');
 const path = require('path');
 const fs = require('fs-extra');
 const { exec, execSync } = require('child_process');
@@ -47,44 +48,80 @@ const writeTypescriptFile = (inputFile, outputFile) => {
   }
 };
 
-processBuiltFiles(files => {
-  files.forEach(f => {
-    let out = f.replace('./src/', './');
+// Simply copies the file
+const copyFile = (inputFile, outputFile) => {
+  exec(`cp -R ${inputFile} ${outputFile}`);
+};
 
-    if (out === './index.js') {
-      return;
-    }
+const copyBuiltDirsBackToSrc = files => {
+  const dirs = [
+    ...new Set(
+      files.map(f =>
+        path
+          .dirname(f)
+          .replace('./src/', '')
+          .split(path.sep)
+          .slice(0, 2)
+          .join(path.sep)
+      )
+    )
+  ].filter(d => d !== './src');
 
-    if (out === './rmwc.js') {
-      out = './index.js';
-      execSync(
-        `NODE_ENV=production ./node_modules/.bin/babel ${f} -o ${out} --copy-files`
-      );
-      fixPackageDotJSONPath(out);
-      writeFlowFile(f, out);
-      writeTypescriptFile(f, out);
-      fixPackageDotJSONPath(out.replace('.js', '.tsx'));
-      return;
-    }
-
-    const dir = path.dirname(out);
-
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-
-    console.log('Babel:', f, '-> ', out);
-    writeBuiltFile(f, out);
-    writeFlowFile(f, out);
-    writeTypescriptFile(f, out);
+  dirs.forEach(dir => {
+    console.log('Copy Dist Dir:', `./${dir}`, `./src/${dir}/dist`);
+    copyFile(`./${dir}`, `./src/${dir}/dist`);
   });
+};
 
+const promises = getPackageDirs().map(d => {
+  return new Promise((resolve, reject) => {
+    glob(`./src/${d}/**/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
+      er,
+      files
+    ) {
+      console.log(`Building Package: ${d}`);
+
+      files.forEach(f => {
+        // skip the root dir
+        if (f === `./src/${d}`) {
+          return;
+        }
+
+        // skip the docs folder
+        if (f.includes('rmwc/docs')) {
+          return;
+        }
+
+        const out = f.replace(`./src/${d}`, `./src/${d}/dist`);
+
+        // make our out dir
+        const dir = path.dirname(out);
+        if (!fs.existsSync(dir)) {
+          fs.mkdirSync(dir);
+        }
+
+        // handle files
+        if (path.extname(f) === '.js') {
+          console.log('Babel:', f, '-> ', out);
+          writeBuiltFile(f, out);
+          writeFlowFile(f, out);
+          writeTypescriptFile(f, out);
+        } else {
+          copyFile(f, out);
+        }
+      });
+      resolve();
+    });
+  });
+});
+
+// Compile the TS
+Promise.all(promises).then(() => {
   console.log('Compiling Typescript...');
   const compileTypescriptCmd = `./node_modules/.bin/tsc`;
   execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-  glob('./**/*.tsx', {}, function(er, files) {
-    console.log(files);
+  glob('./**/dist/*.tsx', {}, function(er, files) {
     files.forEach(fs.unlinkSync);
   });
 });

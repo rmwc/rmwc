@@ -1,1 +1,1 @@
-import './docs';
+import './rmwc/docs';

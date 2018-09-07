@@ -1,0 +1,306 @@
+[
+  {
+    "description": "",
+    "displayName": "LinearProgressRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "progress",
+                        "value": {
+                          "name": "union",
+                          "raw": "number | string",
+                          "elements": [
+                            {
+                              "name": "number"
+                            },
+                            {
+                              "name": "string"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "buffer",
+                        "value": {
+                          "name": "union",
+                          "raw": "number | string",
+                          "elements": [
+                            {
+                              "name": "number"
+                            },
+                            {
+                              "name": "string"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "determinate",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "reversed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "closed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "LinearProgressPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "role": {
+        "defaultValue": {
+          "value": "'progressbar'",
+          "computed": false
+        },
+        "required": false
+      },
+      "determinate": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        },
+        "required": false
+      },
+      "reversed": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "accent": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgressBufferingDots",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgressBuffer",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgressPrimaryBar",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgressSecondaryBar",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgressBarInner",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "LinearProgress",
+    "methods": [
+      {
+        "name": "syncWithProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nextProps",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Progress float percentage between 0 and 1. */\n  progress?: number | string,\n  /** A Progress buffer float percentage between 0 and 1. */\n  buffer?: number | string,\n  /** Whether or not the Progress bar is determinate. */\n  determinate?: boolean,\n  /** Progress goes from right to left. */\n  reversed?: boolean,\n  /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */\n  closed?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "progress",
+                        "value": {
+                          "name": "union",
+                          "raw": "number | string",
+                          "elements": [
+                            {
+                              "name": "number"
+                            },
+                            {
+                              "name": "string"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "buffer",
+                        "value": {
+                          "name": "union",
+                          "raw": "number | string",
+                          "elements": [
+                            {
+                              "name": "number"
+                            },
+                            {
+                              "name": "string"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "determinate",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "reversed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "closed",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "LinearProgressPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "progress": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Progress float percentage between 0 and 1.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "buffer": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "A Progress buffer float percentage between 0 and 1.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "determinate": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Whether or not the Progress bar is determinate.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "reversed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Progress goes from right to left.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "closed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Hides the progress bar. Adding / removing this prop will trigger an animation in or out."
+      }
+    }
+  }
+]

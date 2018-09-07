@@ -11,24 +11,24 @@ A React (15 / 16) wrapper for the official Material Design (Web) Components v0.3
 
 Features:
 
-* [x] Uses Google's official material-components-web library
-* [x] Tested in all versions of React ranging from 15.5.x to 16.4.x
+* [x] Implements Google's official material-components-web library
+* [x] Tested in all versions of React ranging from 15.5.x to 16.5.x
 * [x] First class Flow Type Support, no extra configuration needed
 * [x] First class Typescript support (Beta)
 * [x] Server side rendering support
+* [x] Individually packaged and released components
+
 
 ## Recent updates
 
-MDC 39 Contains a multitude of updates, and handful of breaking changes.
+New in 2.0.0: Individually packaged and released components!
 
-- Icons have been refactored to have a cleaner props api. This is reflected throughout all components that extend the Icon. The only api will continue to work for a few releases but a deprecation notice has been posted.
-- Tabs have been completely rebuilt by `material-components-web`. They feature better performance, and a much simpler component interface in RMWC.
-- IconButtons have been refactored, and RMWC now includes a simpler props interface to match the changes to Icon.
-- MenuSurface has been added so you can now make menus that dont require Lists as content.
-- The path to import individual css styles have been added to the docs on all pages.
-- Functionality has been added to ThemeProvider to automatically determine light or dark text colors based on what you pass in.
-- Lists / ListItems have been overhauled and detailed docs have been added to RMWC.
-- Drawers have been completely rebuilt by `material-components-web` but usage is still similar. 
+2.0.0 does not contain any changes to the components themselves, but it's a major refactor of how RMWC is packaged and deployed. All components have been broken apart into their own npm packages. What this means for you:
+
+- From now on RMWC will honor Semver. Any breaking change to a component (aka prop interface) will bump the major version. This should alleviate some issues people have had with npm greedily auto updating.
+- Components can now be individually installed which means they can also be individually upgraded. This further alleviates the pain of a breaking changes by allowing you to upgrade one component at a time at your leisure. 
+- Please note that all components will still be versioned and released to together. This means that if any component has a breaking change, the version will be bumped on ALL components, even though they don't contain a breaking change. This is the safest way to guarantee cohesive releases of the library. You'll know that all 3.x.x components are intended to work together.
+- The docs have been updated to reflect importing from the new modules, but work has been done to make sure importing from the old syntax (rmwc/Button) still works for the time being. It is recommended that you upgrade to the new syntax at your convenience (@rmwc/button).
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 

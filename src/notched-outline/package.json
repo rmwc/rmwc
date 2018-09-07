@@ -1,0 +1,31 @@
+{
+  "name": "@rmwc/notched-outline",
+  "version": "2.0.0-alpha.7",
+  "description": "RMWC NotchedOutline component",
+  "main": "index.js",
+  "scripts": {
+    "publish:dist": "npm publish dist --access=public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmfriedman/rmwc.git"
+  },
+  "keywords": [
+    "rmwc"
+  ],
+  "author": "James Friedman",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesmfriedman/rmwc/issues"
+  },
+  "homepage": "https://github.com/jamesmfriedman/rmwc#readme",
+  "peerDependencies": {
+    "react": "^15.x.x || ^16.x.x",
+    "react-dom": "^15.x.x || ^16.x.x"
+  },
+  "dependencies": {
+    "@material/notched-outline": "~0.39.0"
+  }
+}

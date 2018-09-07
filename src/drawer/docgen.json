@@ -1,0 +1,229 @@
+[
+  {
+    "description": "An optional header for the Drawer.",
+    "displayName": "DrawerHeader",
+    "methods": []
+  },
+  {
+    "description": "An title for the DrawerHeader.",
+    "displayName": "DrawerTitle",
+    "methods": []
+  },
+  {
+    "description": "A subtitle for the DrawerHeader.",
+    "displayName": "DrawerSubtitle",
+    "methods": []
+  },
+  {
+    "description": "Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else.",
+    "displayName": "DrawerContent",
+    "methods": []
+  },
+  {
+    "description": "Protects the app's UI from interactions while a modal drawer is open.\nThis is automatically included if you're using React 16 and above.\nFor React 15, you must manually include it immediately after a modal Drawer.",
+    "displayName": "DrawerScrim",
+    "methods": []
+  },
+  {
+    "description": "For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes.",
+    "displayName": "DrawerAppContent",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "DrawerRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "open",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "onClose",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "(evt: CustomEventT<void>) => mixed",
+                          "signature": {
+                            "arguments": [
+                              {
+                                "name": "evt",
+                                "type": {
+                                  "name": "CustomEventT",
+                                  "elements": [
+                                    {
+                                      "name": "void"
+                                    }
+                                  ],
+                                  "raw": "CustomEventT<void>"
+                                }
+                              }
+                            ],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "onOpen",
+                        "value": {
+                          "name": "signature",
+                          "type": "function",
+                          "raw": "(evt: CustomEventT<void>) => mixed",
+                          "signature": {
+                            "arguments": [
+                              {
+                                "name": "evt",
+                                "type": {
+                                  "name": "CustomEventT",
+                                  "elements": [
+                                    {
+                                      "name": "void"
+                                    }
+                                  ],
+                                  "raw": "CustomEventT<void>"
+                                }
+                              }
+                            ],
+                            "return": {
+                              "name": "mixed"
+                            }
+                          },
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "dismissible",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "modal",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "DrawerPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ]
+  },
+  {
+    "description": "",
+    "displayName": "Drawer",
+    "methods": [],
+    "props": {
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Opens or closes the Drawer."
+      },
+      "onClose": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback that fires when the Drawer is closed."
+      },
+      "onOpen": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback that fires when the Drawer is opened."
+      },
+      "dismissible": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes a dismissible drawer."
+      },
+      "modal": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Makes a modal / temporary drawer."
+      }
+    }
+  }
+]

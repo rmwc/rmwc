@@ -1,0 +1,68 @@
+[
+  {
+    "description": "",
+    "displayName": "FormFieldRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Position the input after the label. */\n  alignEnd?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Position the input after the label. */\n  alignEnd?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "alignEnd",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "FormFieldRootPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "alignEnd": {
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "FormField",
+    "methods": [],
+    "props": {
+      "alignEnd": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Position the input after the label."
+      }
+    }
+  }
+]

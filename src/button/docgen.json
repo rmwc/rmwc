@@ -1,0 +1,84 @@
+[
+  {
+    "description": "An icon that goes inside of buttons. This is an instance of the Icon component.",
+    "displayName": "ButtonIcon",
+    "methods": []
+  },
+  {
+    "description": "The Button component. Buttons also accepts all of the props from the Ripple component.",
+    "displayName": "Button",
+    "methods": [],
+    "props": {
+      "dense": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the Button dense.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "raised": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the Button raised.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "unelevated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the button unelevated.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "outlined": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the button outlined.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "make the button disabled"
+      },
+      "ripple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Enable / disable the ripple.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      }
+    },
+    "context": {
+      "RMWCOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false
+      }
+    }
+  }
+]

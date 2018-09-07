@@ -1,0 +1,293 @@
+[
+  {
+    "description": "Provides default options for children\nProp override options in providerDefaults with the same name",
+    "displayName": "RMWCProvider",
+    "methods": [
+      {
+        "name": "buildOptions",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Set the buttons ripple effect globally */\n  buttonDefaultRipple?: boolean,\n  /** Set the listItems ripple effect globally */\n  listItemDefaultRipple?: boolean,\n  /** Set the iconClassNameBase. Read the icon docs for more info. */\n  iconClassNameBase?: string,\n  /** Set the iconClassNamePrefix. Read the icon docs for more info. */\n  iconClassNamePrefix?: string,\n  /** Set the default iconStrategy. Read the icon docs for more info. */\n  iconStrategy?: IconStrategyT,\n  /** Sets a default render function to be used when the iconStrategy is custom */\n  iconRender?: (props: { content: React.Node, className: string }) => mixed,\n  /** Children to render */\n  children: React.Node\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "buttonDefaultRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "listItemDefaultRipple",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassNameBase",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconClassNamePrefix",
+                    "value": {
+                      "name": "string",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconStrategy",
+                    "value": {
+                      "name": "union",
+                      "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'auto'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'ligature'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'className'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'url'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'component'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'custom'"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "iconRender",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(props: { content: React.Node, className: string }) => mixed",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "props",
+                            "type": {
+                              "name": "signature",
+                              "type": "object",
+                              "raw": "{ content: React.Node, className: string }",
+                              "signature": {
+                                "properties": [
+                                  {
+                                    "key": "content",
+                                    "value": {
+                                      "name": "ReactNode",
+                                      "raw": "React.Node",
+                                      "required": true
+                                    }
+                                  },
+                                  {
+                                    "key": "className",
+                                    "value": {
+                                      "name": "string",
+                                      "required": true
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "mixed"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "children",
+                    "value": {
+                      "name": "ReactNode",
+                      "raw": "React.Node",
+                      "required": true
+                    }
+                  }
+                ]
+              },
+              "alias": "RMWCProviderOptionsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "buttonDefaultRipple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set the buttons ripple effect globally",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "listItemDefaultRipple": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Set the listItems ripple effect globally",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "iconClassNameBase": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Set the iconClassNameBase. Read the icon docs for more info.",
+        "defaultValue": {
+          "value": "'material-icons'",
+          "computed": false
+        }
+      },
+      "iconClassNamePrefix": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Set the iconClassNamePrefix. Read the icon docs for more info.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "iconStrategy": {
+        "flowType": {
+          "name": "union",
+          "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'auto'"
+            },
+            {
+              "name": "literal",
+              "value": "'ligature'"
+            },
+            {
+              "name": "literal",
+              "value": "'className'"
+            },
+            {
+              "name": "literal",
+              "value": "'url'"
+            },
+            {
+              "name": "literal",
+              "value": "'component'"
+            },
+            {
+              "name": "literal",
+              "value": "'custom'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Set the default iconStrategy. Read the icon docs for more info.",
+        "defaultValue": {
+          "value": "'auto'",
+          "computed": false
+        }
+      },
+      "iconRender": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(props: { content: React.Node, className: string }) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "props",
+                "type": {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ content: React.Node, className: string }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "content",
+                        "value": {
+                          "name": "ReactNode",
+                          "raw": "React.Node",
+                          "required": true
+                        }
+                      },
+                      {
+                        "key": "className",
+                        "value": {
+                          "name": "string",
+                          "required": true
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Sets a default render function to be used when the iconStrategy is custom",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children to render",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      }
+    },
+    "childContext": {
+      "RMWCOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false
+      }
+    }
+  }
+]

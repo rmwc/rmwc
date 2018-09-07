@@ -1,0 +1,255 @@
+[
+  {
+    "description": "",
+    "displayName": "GridListRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Use a 1px gutter. */\n  tileGutter1?: boolean,\n  /** Move the caption to the top of the card. */\n  headerCaption?: boolean,\n  /** Make the caption two lines. */\n  twolineCaption?: boolean,\n  /** Leaves space for a start aligned icon. */\n  withIconAlignStart?: boolean,\n  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */\n  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Use a 1px gutter. */\n  tileGutter1?: boolean,\n  /** Move the caption to the top of the card. */\n  headerCaption?: boolean,\n  /** Make the caption two lines. */\n  twolineCaption?: boolean,\n  /** Leaves space for a start aligned icon. */\n  withIconAlignStart?: boolean,\n  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */\n  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "tileGutter1",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "headerCaption",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "twolineCaption",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "withIconAlignStart",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "tileAspect",
+                        "value": {
+                          "name": "union",
+                          "raw": "'1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'",
+                          "elements": [
+                            {
+                              "name": "literal",
+                              "value": "'1x1'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'16x9'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'2x3'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'3x2'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'4x3'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'3x4'"
+                            }
+                          ],
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "GridListPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "tileGutter1": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "headerCaption": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "twolineCaption": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "withIconAlignStart": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        },
+        "required": false
+      },
+      "tileAspect": {
+        "defaultValue": {
+          "value": "'1x1'",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "GridListTiles",
+    "methods": []
+  },
+  {
+    "description": "The primary content for a Grid tile",
+    "displayName": "GridTilePrimary",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "GridTilePrimaryContent",
+    "methods": [],
+    "props": {
+      "wrap": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "A grid tile",
+    "displayName": "GridTile",
+    "methods": []
+  },
+  {
+    "description": "The secondary content for a Grid tile",
+    "displayName": "GridTileSecondary",
+    "methods": []
+  },
+  {
+    "description": "The icon for a Grid tile. This is an instance of Icon component.",
+    "displayName": "GridTileIcon",
+    "methods": []
+  },
+  {
+    "description": "The title for a Grid tile",
+    "displayName": "GridTileTitle",
+    "methods": []
+  },
+  {
+    "description": "Supporting Text for the Grid Tile",
+    "displayName": "GridTileTitleSupportText",
+    "methods": []
+  },
+  {
+    "description": "Grid List Component",
+    "displayName": "GridList",
+    "methods": [],
+    "props": {
+      "tileGutter1": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Use a 1px gutter."
+      },
+      "headerCaption": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Move the caption to the top of the card."
+      },
+      "twolineCaption": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the caption two lines."
+      },
+      "withIconAlignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Leaves space for a start aligned icon."
+      },
+      "tileAspect": {
+        "flowType": {
+          "name": "union",
+          "raw": "'1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'1x1'"
+            },
+            {
+              "name": "literal",
+              "value": "'16x9'"
+            },
+            {
+              "name": "literal",
+              "value": "'2x3'"
+            },
+            {
+              "name": "literal",
+              "value": "'3x2'"
+            },
+            {
+              "name": "literal",
+              "value": "'4x3'"
+            },
+            {
+              "name": "literal",
+              "value": "'3x4'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4."
+      }
+    }
+  }
+]

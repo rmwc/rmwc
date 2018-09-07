@@ -35,6 +35,7 @@ module.exports = function override(config, env) {
 
   // add module aliases
   config.resolve.alias['rmwc'] = path.resolve('./src');
+  config.resolve.alias['@rmwc'] = path.resolve('./src');
 
   return config;
 };
