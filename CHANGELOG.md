@@ -1,3 +1,9 @@
+#### 2.0.0 (2018-09-07)
+
+##### Bug Fixes
+
+* **Button:**  Corrects issue with disappearing Ripple #298 (c20b28b5)
+
 #### 2018-09-07
 
 #### 2018-09-07
