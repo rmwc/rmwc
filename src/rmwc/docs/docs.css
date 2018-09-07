@@ -83,6 +83,7 @@ body ul li {
   left: 0;
   background: var(--mdc-theme-primary);
   opacity: 0.1;
+  pointer-events: none;
 }
 
 .mdc-drawer--dismissible.mdc-drawer--open + .app__content {
