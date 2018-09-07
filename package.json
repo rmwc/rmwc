@@ -91,11 +91,12 @@
       "!src/**/*.flow.js",
       "!src/**/*.story.js",
       "!src/index.js",
-      "!src/rmwc.js",
-      "!src/Base/testPolyfill.js",
-      "!src/Base/utils/DocumentComponent.js",
-      "!src/Base/utils/story-with-state.js",
+      "!src/rmwc/**/*",
+      "!src/base/testPolyfill.js",
+      "!src/base/utils/DocumentComponent.js",
+      "!src/base/utils/story-with-state.js",
       "!src/docs/*",
+      "!src/icon/defs.js",
       "!<rootDir>/node_modules/"
     ]
   }
