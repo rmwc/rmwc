@@ -57,7 +57,7 @@ const TopAppBarSectionRoot = simpleTag({
   classNames: (props: TopAppBarSectionPropsT) => [
     'mdc-top-app-bar__section',
     {
-      'mdc-top-app-bar__section--align-Start': props.alignStart,
+      'mdc-top-app-bar__section--align-start': props.alignStart,
       'mdc-top-app-bar__section--align-end': props.alignEnd
     }
   ],
