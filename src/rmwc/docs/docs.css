@@ -45,7 +45,10 @@ body ul li {
   will-change: max-width;
 }
 
-.app__content > div > ul:first-of-type {
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+  .app__content
+  > div
+  > ul:first-of-type {
   list-style: none;
   padding: 3rem 1rem 1rem 1rem;
   border-radius: 0.75rem;
@@ -53,7 +56,10 @@ body ul li {
   overflow: hidden;
 }
 
-.app__content > div > ul:first-of-type:after {
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+  .app__content
+  > div
+  > ul:first-of-type:after {
   content: 'Setup';
   background: var(--mdc-theme-primary);
   color: var(--mdc-theme-on-primary);
@@ -65,16 +71,26 @@ body ul li {
   border-bottom-right-radius: 0.75rem;
 }
 
-.app__content > div > ul:first-of-type > li {
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+  > div
+  > ul:first-of-type
+  > li {
   margin-top: 0.25rem;
 }
 
-.app__content > div > ul:first-of-type strong,
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+  .app__content
+  > div
+  > ul:first-of-type
+  strong,
 .app__content > div > ul:first-of-type a {
   color: var(--mdc-theme-primary);
 }
 
-.app__content > div > ul:first-of-type:before {
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+  .app__content
+  > div
+  > ul:first-of-type:before {
   content: '';
   position: absolute;
   top: 0;
