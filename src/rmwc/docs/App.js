@@ -399,15 +399,23 @@ const Nav = props => (
         })}
       </DrawerContent>
       <Ripple>
-        <Typography tag="div" use="caption" className="made-by">
+        <Typography
+          tag="a"
+          use="caption"
+          className="made-by"
+          href="https://opencollective.com/rmwc"
+        >
           <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
-          <span>
-            Made with{' '}
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>{' '}
-            in Sunny FL.
-          </span>
+          <div>
+            <div>
+              Made with{' '}
+              <span role="img" aria-label="heart">
+                ❤️
+              </span>{' '}
+              in Sunny FL.
+            </div>
+            <div className="made-by__link">Donate on Open Collective</div>
+          </div>
         </Typography>
       </Ripple>
     </Drawer>
