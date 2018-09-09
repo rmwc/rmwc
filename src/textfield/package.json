@@ -31,6 +31,6 @@
     "@rmwc/floating-label": "^2.0.1",
     "@rmwc/icon": "^2.0.1",
     "@rmwc/line-ripple": "^2.0.1",
-    "@rmwc/notched-outline": "^2.0.0"
+    "@rmwc/notched-outline": "^2.0.1"
   }
 }

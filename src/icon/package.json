@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@rmwc/base": "^2.0.1",
-    "@rmwc/provider": "^2.0.0",
+    "@rmwc/provider": "^2.0.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1"
   }
