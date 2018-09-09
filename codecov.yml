@@ -1,0 +1,11 @@
+ignore:
+  - "node_modules/",
+  - "src/**/*.flow.js",
+  - "src/**/*.story.js",
+  - "src/index.js",
+  - "src/setupTests.js",
+  - "src/drawer/polyfill.js",
+  - "src/rmwc/**/*",
+  - "src/base/utils/*",
+  - "src/base/testPolyfill.js",
+  - "src/icon/defs.js"

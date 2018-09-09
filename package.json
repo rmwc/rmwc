@@ -88,6 +88,7 @@
     "resolver": "./scripts/jest-resolver.js",
     "collectCoverageFrom": [
       "src/**/*.{js}",
+      "!<rootDir>/node_modules/",
       "!src/**/*.flow.js",
       "!src/**/*.story.js",
       "!src/index.js",
@@ -96,11 +97,7 @@
       "!src/rmwc/**/*",
       "!src/base/utils/*",
       "!src/base/testPolyfill.js",
-      "!src/base/utils/DocumentComponent.js",
-      "!src/base/utils/story-with-state.js",
-      "!src/docs/*",
-      "!src/icon/defs.js",
-      "!<rootDir>/node_modules/"
+      "!src/icon/defs.js"
     ]
   }
 }
