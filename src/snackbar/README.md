@@ -18,6 +18,7 @@ import { Button } from '@rmwc/button';
   message="This is a new message"
   actionText="Action"
   actionHandler={() => alert('Action clicked')}
+  timeout={1000}
   dismissesOnAction={false}
 />
 

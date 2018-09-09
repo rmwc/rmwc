@@ -65,8 +65,7 @@ describe('Menu', () => {
       </SimpleMenu>
     );
 
-    el
-      .find(Menu)
+    el.find(Menu)
       .instance()
       .menuSurface_.foundation_.adapter_.notifyClose();
     expect(val).toBe(1);
@@ -80,15 +79,10 @@ describe('Menu', () => {
         handle={<button>Test</button>}
         open
         onClose={() => val++}
-      >
-        <MenuItem>Cookies</MenuItem>
-        <MenuItem>Pizza</MenuItem>
-        <MenuItem>Icecream</MenuItem>
-      </SimpleMenuSurface>
+      />
     );
 
-    el
-      .find(MenuSurface)
+    el.find(MenuSurface)
       .instance()
       .foundation_.adapter_.notifyClose();
     expect(val).toBe(1);

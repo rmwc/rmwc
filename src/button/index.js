@@ -77,7 +77,6 @@ export const ButtonIcon = simpleTag({
  */
 export class Button extends React.Component<ButtonPropsT> {
   static defaultProps = {
-    ripple: true,
     raised: false,
     unelevated: false,
     outlined: false,

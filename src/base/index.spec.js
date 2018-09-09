@@ -2,9 +2,41 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { ListItem } from '@rmwc/list';
 import { withTheme } from './withTheme';
+import { withFoundation } from './withFoundation';
+import { noop } from './';
 
 describe('RMWC', () => {
   it('works', () => {});
+});
+
+describe('Utils', () => {
+  it('noop', () => {
+    noop();
+  });
+});
+
+describe('withFoundation', () => {
+  class MyComponent extends withFoundation({
+    constructor: function() {
+      this.foundation_ = {};
+    },
+    adapter: {}
+  }) {
+    componentDidMount() {
+      const func = () => {};
+      this.listen('click', func);
+      this.emit('clicked', {});
+      this.unlisten('click', func);
+    }
+
+    render() {
+      return <div ref={this.foundationRefs.root_} />;
+    }
+  }
+
+  it('FoundationComponent', () => {
+    mount(<MyComponent onClick={() => {}} elementRef={el => {}} />);
+  });
 });
 
 describe('simpleTag', () => {

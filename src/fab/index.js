@@ -69,10 +69,6 @@ export class Fab extends React.Component<FabPropsT> {
     RMWCOptions: PropTypes.object
   };
 
-  static defaultProps = {
-    ripple: true
-  };
-
   componentWillMount() {
     this.providerOptions = getProviderOptions(this.context);
   }

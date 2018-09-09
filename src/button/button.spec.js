@@ -33,6 +33,11 @@ describe('Button', () => {
     expect(!!~btn.html().search('mdc-button')).toEqual(true);
   });
 
+  it('can not ripple', () => {
+    const btn = mount(<Button ripple={undefined} />);
+    expect(!!~btn.html().search('mdc-button')).toEqual(true);
+  });
+
   it('can have custom classnames', () => {
     const el = mount(<Button className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);

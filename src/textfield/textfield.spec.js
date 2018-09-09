@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { TextField } from './';
+import { TextField, TextFieldHelperText, TextFieldIcon } from './';
 
 describe('TextField', () => {
   it('renders', () => {
@@ -72,6 +72,18 @@ describe('TextField', () => {
     mount(<TextField required />);
   });
 
+  it('can be have withLeadingIcon', () => {
+    mount(<TextField withLeadingIcon="favorite" />);
+  });
+
+  it('can be have withLeadingIcon jsx', () => {
+    mount(<TextField withLeadingIcon={<TextFieldIcon icon="foo" />} />);
+  });
+
+  it('can be have withTrailingIcon', () => {
+    mount(<TextField withTrailingIcon="favorite" />);
+  });
+
   it('sync validity with textfield foundation during prop initialization', () => {
     let inst = mount(<TextField invalid />).instance();
     expect(inst.valid).toBe(false);
@@ -85,5 +97,11 @@ describe('TextField', () => {
     expect(inst.foundation_.isValid()).toBe(false);
     wrapper.setProps({ invalid: false });
     expect(inst.foundation_.isValid()).toBe(true);
+  });
+});
+
+describe('TextFieldHelperText', () => {
+  it('renders', () => {
+    mount(<TextFieldHelperText>Hello</TextFieldHelperText>);
   });
 });
