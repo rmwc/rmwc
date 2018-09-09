@@ -90,11 +90,38 @@ export const TopAppBarTitle = simpleTag({
   classNames: 'mdc-top-app-bar__title'
 });
 
-/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export const TopAppBarFixedAdjust = simpleTag({
-  displayName: 'TopAppBarFixedAdjust',
-  classNames: 'mdc-top-app-bar--fixed-adjust'
+type TopAppBarFixedAdjustPropsT = {
+  /** Class used to style the content below the dense top app bar to prevent the top app bar from covering it. */
+  dense?: boolean,
+  /** Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. */
+  prominent?: boolean,
+  /** Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it. */
+  denseProminent?: boolean,
+  /** Class used to style the content below the short top app bar to prevent the top app bar from covering it. */
+  short?: boolean
+};
+
+const TopAppBarFixedAdjustRoot = simpleTag({
+  displayName: 'TopAppBarFixedAdjustRoot',
+  classNames: (props: TopAppBarFixedAdjustPropsT) => [
+    'mdc-top-app-bar--fixed-adjust',
+    {
+      'mdc-top-app-bar--dense-fixed-adjust': props.dense,
+      'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
+      'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
+      'mdc-top-app-bar--short-fixed-adjust': props.short
+    }
+  ]
 });
+
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export const TopAppBarFixedAdjust: React.ComponentType<
+  TopAppBarFixedAdjustPropsT
+> = (props: TopAppBarFixedAdjustPropsT) => (
+  <TopAppBarFixedAdjustRoot {...props} />
+);
+
+TopAppBarFixedAdjust.displayName = 'TopAppBarFixedAdjust';
 
 /** A TopAppBar component */
 export class TopAppBar extends withFoundation({

@@ -41,11 +41,7 @@
           "name": "boolean"
         },
         "required": false,
-        "description": "Enable / disable the ripple.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
+        "description": "Enable / disable the ripple."
       }
     },
     "context": {

@@ -81,7 +81,7 @@ describe('TopAppBar', () => {
     expect(el.html().includes('mdc-top-app-bar--short-collapsed')).toBe(true);
   });
 
-  test('SimpleTopApPBar', () => {
+  test('SimpleTopAppBar', () => {
     const el = mount(
       <SimpleTopAppBar
         title="TestTitle"
@@ -103,5 +103,27 @@ describe('TopAppBar', () => {
 
     // has action item
     expect(el.html().includes('star_outline')).toBe(true);
+  });
+});
+
+describe('TopAppBarFixedAdjust', () => {
+  it('renders', () => {
+    mount(<TopAppBarFixedAdjust />);
+  });
+
+  it('can be short', () => {
+    mount(<TopAppBarFixedAdjust short />);
+  });
+
+  it('can be dense', () => {
+    mount(<TopAppBarFixedAdjust dense />);
+  });
+
+  it('can be prominent', () => {
+    mount(<TopAppBarFixedAdjust prominent />);
+  });
+
+  it('can be denseProminent', () => {
+    mount(<TopAppBarFixedAdjust denseProminent />);
   });
 });
