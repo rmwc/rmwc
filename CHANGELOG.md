@@ -1,3 +1,10 @@
+#### 2.0.0 (2018-09-09)
+
+##### Bug Fixes
+
+* **TopAppBarFixedAdjust:**  Adds missing props fixes #302 (a2ba82fb)
+* **TopAppBar:**  Corrects alignStart style for TopAppBarSection (7c361034)
+
 #### 2.0.0 (2018-09-07)
 
 ##### Bug Fixes
