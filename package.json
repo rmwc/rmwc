@@ -29,7 +29,7 @@
     "test": "flow && npm run build:code && node scripts/test.js && npm run clean",
     "test:watch": "react-app-rewired test --env=jsdom",
     "test:coverage": "react-app-rewired test --env=jsdom --coverage",
-    "release": "lerna version && lerna run publish:dist && npm run clean",
+    "release": "npm run clean && lerna version && lerna run publish:dist --parallel --no-bail && npm run clean",
     "clean": "node scripts/clean.js",
     "postpublish": "npm run clean",
     "docgen": "node scripts/docgen.js",
