@@ -115,7 +115,7 @@ export const Home = () => {
           </GridCell>
 
           <GridCell span={4}>
-            <Link to="/styling">
+            <Link to="/styling-theming">
               <Card
                 style={{ backgroundColor: '#212121' }}
                 theme="text-primary-on-dark"
