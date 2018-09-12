@@ -122,7 +122,6 @@
     ],
     "props": {
       "onInteraction": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -141,10 +140,10 @@
             }
           }
         },
+        "required": false,
         "description": "A custom event you can use from MCW. You can also just use onClick instead."
       },
       "onTrailingIconInteraction": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -163,10 +162,10 @@
             }
           }
         },
+        "required": false,
         "description": "A custom event for the trailing icon that you can use from MCW. You can also just use onClick instead."
       },
       "onRemoval": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -185,13 +184,14 @@
             }
           }
         },
+        "required": false,
         "description": "A custom event for when the chip is removed."
       },
       "selected": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "makes the Chip appear selected."
       }
     }
@@ -217,7 +217,6 @@
         "params": [
           {
             "name": "props",
-            "optional": false,
             "type": {
               "name": "intersection",
               "raw": "{\n  /** Make it a leading icon */\n  leading?: boolean,\n  /** Make it a trailing icon */\n  trailing?: boolean\n} & SimpleTagPropsT &\n  IconPropsT",
@@ -266,17 +265,17 @@
     "methods": [],
     "props": {
       "leading": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Make it a leading icon"
       },
       "trailing": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Make it a trailing icon"
       }
     }
@@ -292,7 +291,6 @@
         "params": [
           {
             "name": "props",
-            "optional": false,
             "type": {
               "name": "signature",
               "type": "object",
@@ -329,17 +327,17 @@
     "methods": [],
     "props": {
       "choice": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Creates a choice chipset"
       },
       "filter": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Creates a filter chipset"
       }
     }
@@ -350,42 +348,42 @@
     "methods": [],
     "props": {
       "text": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Text for your Chip"
       },
       "leadingIcon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Instance of an Icon Component"
       },
       "trailingIcon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Instance of an Icon Component"
       },
       "checkmark": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Includes a checkmark for the selected state"
       },
       "children": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Additional children will be rendered in the text area"
       }
     }

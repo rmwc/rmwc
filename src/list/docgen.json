@@ -5,24 +5,24 @@
     "methods": [],
     "props": {
       "selected": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "A modifier for a selected state."
       },
       "activated": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "A modifier for an active state."
       },
       "ripple": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Enable / disable the ripple.",
         "defaultValue": {
           "value": "true",
@@ -72,18 +72,18 @@
     "methods": [],
     "props": {
       "className": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": ""
       },
       "icon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": ""
       }
     }
@@ -109,31 +109,31 @@
     "methods": [],
     "props": {
       "dense": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Reduces the padding on List items."
       },
       "twoLine": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Gives more space for dual lined list items."
       },
       "avatarList": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the list start detail circular for avatars."
       },
       "nonInteractive": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems."
       }
     }
@@ -144,64 +144,64 @@
     "methods": [],
     "props": {
       "text": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Text for the ListItem."
       },
       "secondaryText": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Secondary Text for the ListItem."
       },
       "graphic": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "A graphic icon for the ListItem."
       },
       "meta": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "A meta icon for the ListItem"
       },
       "children": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Children to render"
       },
       "selected": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "A modifier for a selected state."
       },
       "activated": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "A modifier for an active state."
       },
       "ripple": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Enable / disable the ripple."
       }
     }

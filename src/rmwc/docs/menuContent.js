@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 
 import Loadable from 'react-loadable';

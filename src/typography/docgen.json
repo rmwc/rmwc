@@ -5,7 +5,6 @@
     "methods": [],
     "props": {
       "use": {
-        "required": true,
         "flowType": {
           "name": "union",
           "raw": "'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'",
@@ -64,6 +63,7 @@
             }
           ]
         },
+        "required": true,
         "description": "The typography style."
       }
     }

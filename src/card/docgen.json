@@ -5,10 +5,10 @@
     "methods": [],
     "props": {
       "outlined": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Removes the shadow and displays a hairline outline instead"
       }
     }
@@ -19,17 +19,17 @@
     "methods": [],
     "props": {
       "square": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Automatically scales the media area’s height to equal its width"
       },
       "sixteenByNine": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
       }
     }
@@ -50,10 +50,10 @@
     "methods": [],
     "props": {
       "fullBleed": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width"
       }
     }

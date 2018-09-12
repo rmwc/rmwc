@@ -39,10 +39,10 @@
     "methods": [],
     "props": {
       "scrollable": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Make it scrollable."
       }
     }
@@ -68,7 +68,6 @@
         "params": [
           {
             "name": "nextProps",
-            "optional": false,
             "type": {
               "name": "signature",
               "type": "object",
@@ -177,14 +176,13 @@
     ],
     "props": {
       "open": {
-        "required": true,
         "flowType": {
           "name": "boolean"
         },
+        "required": true,
         "description": "Whether or not the Dialog is showing."
       },
       "onAccept": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -209,10 +207,10 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the accept Button is pressed."
       },
       "onCancel": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -237,10 +235,10 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the Dialog was closed without acceptance."
       },
       "onClose": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -265,6 +263,7 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the Dialog closes."
       }
     }
@@ -275,11 +274,11 @@
     "methods": [],
     "props": {
       "title": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "A title for the default Dialog template.",
         "defaultValue": {
           "value": "undefined",
@@ -287,11 +286,11 @@
         }
       },
       "header": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Additional Dialog header content for the default Dialog template.",
         "defaultValue": {
           "value": "undefined",
@@ -299,11 +298,11 @@
         }
       },
       "body": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Body content for the default Dialog template, rendered before children.",
         "defaultValue": {
           "value": "undefined",
@@ -311,11 +310,11 @@
         }
       },
       "footer": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Additional footer content for the default Dialog template, rendered before any buttons.",
         "defaultValue": {
           "value": "undefined",
@@ -323,11 +322,11 @@
         }
       },
       "acceptLabel": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Creates an accept button for the default Dialog template with a given label. You can pass `null` to remove the button.",
         "defaultValue": {
           "value": "'Accept'",
@@ -335,11 +334,11 @@
         }
       },
       "cancelLabel": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button.",
         "defaultValue": {
           "value": "'Cancel'",
@@ -347,11 +346,11 @@
         }
       },
       "children": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Any children will be rendered in the body of the default Dialog template.",
         "defaultValue": {
           "value": "undefined",
@@ -359,10 +358,10 @@
         }
       },
       "scrollable": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Allow the body to be scrollable",
         "defaultValue": {
           "value": "undefined",
@@ -370,10 +369,10 @@
         }
       },
       "open": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Whether or not the Dialog is showing.",
         "defaultValue": {
           "value": "false",
@@ -381,7 +380,6 @@
         }
       },
       "onAccept": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -406,6 +404,7 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the accept Button is pressed.",
         "defaultValue": {
           "value": "noop",
@@ -413,7 +412,6 @@
         }
       },
       "onCancel": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -438,6 +436,7 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the Dialog was closed without acceptance.",
         "defaultValue": {
           "value": "noop",
@@ -445,7 +444,6 @@
         }
       },
       "onClose": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -470,6 +468,7 @@
             }
           }
         },
+        "required": false,
         "description": "Callback for when the Dialog closes.",
         "defaultValue": {
           "value": "noop",

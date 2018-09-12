@@ -10,18 +10,18 @@
     "methods": [],
     "props": {
       "icon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
       },
       "iconOptions": {
-        "required": false,
         "flowType": {
           "name": "IconOptionsT"
         },
+        "required": false,
         "description": "Additional Icon Options. See the Icon component documentation."
       }
     },

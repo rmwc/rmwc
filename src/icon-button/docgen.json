@@ -48,14 +48,13 @@
     "methods": [],
     "props": {
       "checked": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Controls the on / off state of the a toggleable button."
       },
       "onChange": {
-        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -93,28 +92,29 @@
             }
           }
         },
+        "required": false,
         "description": "An onChange callback that receives a custom event."
       },
       "disabled": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the button disabled"
       },
       "onIcon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "If specified, renders a toggle with this icon as the on state."
       },
       "onIconOptions": {
-        "required": false,
         "flowType": {
           "name": "IconOptionsT"
         },
+        "required": false,
         "description": "Options for the onIcon"
       }
     }

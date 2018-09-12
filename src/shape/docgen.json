@@ -5,10 +5,10 @@
     "methods": [],
     "props": {
       "backgroundColor": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": "The background fill color for the corner",
         "defaultValue": {
           "value": "'#fff'",
@@ -16,7 +16,6 @@
         }
       },
       "corner": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -29,10 +28,10 @@
             }
           ]
         },
+        "required": false,
         "description": "The corner length. Will be used for all sides that are left unset."
       },
       "topLeftCorner": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -45,10 +44,10 @@
             }
           ]
         },
+        "required": false,
         "description": "The top left corner length."
       },
       "topRightCorner": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -61,10 +60,10 @@
             }
           ]
         },
+        "required": false,
         "description": "The top right corner length."
       },
       "bottomRightCorner": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -77,10 +76,10 @@
             }
           ]
         },
+        "required": false,
         "description": "The bottom right corner length."
       },
       "bottomLeftCorner": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -93,10 +92,10 @@
             }
           ]
         },
+        "required": false,
         "description": "The bottom left corner length."
       },
       "outlineWidth": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -109,35 +108,36 @@
             }
           ]
         },
+        "required": false,
         "description": "Sets the width of an outlined corner."
       },
       "outlineColor": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": "Sets the color outlined corner."
       },
       "outlineStyle": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": "Sets the border style of an outlined corner."
       },
       "className": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": "Custom className to add"
       },
       "children": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Children to render."
       }
     }

@@ -355,14 +355,13 @@
     ],
     "props": {
       "textarea": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes a multiline TextField."
       },
       "value": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -375,24 +374,24 @@
             }
           ]
         },
+        "required": false,
         "description": "Sets the value for controlled TextFields."
       },
       "fullwidth": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the TextField fullwidth."
       },
       "box": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the TextField have a visual box."
       },
       "inputRef": {
-        "required": false,
         "flowType": {
           "name": "ReactRef",
           "raw": "React.Ref<any>",
@@ -402,79 +401,80 @@
             }
           ]
         },
+        "required": false,
         "description": "A ref for the native input."
       },
       "disabled": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Disables the input."
       },
       "required": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Mark the input as required."
       },
       "invalid": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used."
       },
       "dense": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Makes the TextField dense"
       },
       "outlined": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Outline the TextField"
       },
       "label": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "A label for the input."
       },
       "withLeadingIcon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Add a leading icon."
       },
       "withTrailingIcon": {
-        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
+        "required": false,
         "description": "Add a trailing icon."
       },
       "rootProps": {
-        "required": false,
         "flowType": {
           "name": "Object"
         },
+        "required": false,
         "description": "By default, props spread to the input. These props are for the component's root container."
       },
       "type": {
-        "required": false,
         "flowType": {
           "name": "string"
         },
+        "required": false,
         "description": "The type of input field to render"
       }
     }
@@ -485,17 +485,17 @@
     "methods": [],
     "props": {
       "persistent": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Make the help text always visible"
       },
       "validationMsg": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Make the help a validation message style"
       }
     }

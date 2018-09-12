@@ -66,7 +66,6 @@
     "methods": [],
     "props": {
       "span": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -79,10 +78,10 @@
             }
           ]
         },
+        "required": false,
         "description": "Default number of columns to span."
       },
       "phone": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -95,10 +94,10 @@
             }
           ]
         },
+        "required": false,
         "description": "Number of columns to span on a phone."
       },
       "tablet": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -111,10 +110,10 @@
             }
           ]
         },
+        "required": false,
         "description": "Number of columns to span on a tablet."
       },
       "desktop": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -127,10 +126,10 @@
             }
           ]
         },
+        "required": false,
         "description": "Number of columns to span on a desktop."
       },
       "order": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string | number",
@@ -143,10 +142,10 @@
             }
           ]
         },
+        "required": false,
         "description": "Specifies the order of the cell."
       },
       "align": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'top' | 'middle' | 'bottom'",
@@ -165,6 +164,7 @@
             }
           ]
         },
+        "required": false,
         "description": "Specifies the alignment of cell"
       }
     }
@@ -180,14 +180,13 @@
     "methods": [],
     "props": {
       "fixedColumnWidth": {
-        "required": false,
         "flowType": {
           "name": "boolean"
         },
+        "required": false,
         "description": "Specifies the grid should have fixed column width."
       },
       "align": {
-        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'left' | 'right'",
@@ -202,6 +201,7 @@
             }
           ]
         },
+        "required": false,
         "description": "Specifies the alignment of the whole grid."
       }
     }
