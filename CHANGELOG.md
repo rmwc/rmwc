@@ -1,3 +1,13 @@
+#### 2.0.2 (2018-09-12)
+
+##### Documentation Changes
+
+* **Favicon:**  Adding favicon fixes #306 and adding missing switch styles fixes #307 (9a0ad1a3)
+
+##### Bug Fixes
+
+* **TS:**  Massive type cleanup (f44276ed)
+
 #### 2.0.0 (2018-09-09)
 
 ##### Bug Fixes
