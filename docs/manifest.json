@@ -3,7 +3,7 @@
   "name": "RMWC: React Material Web Components",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     }
