@@ -24,6 +24,7 @@ import '@material/menu-surface/dist/mdc.menu-surface.css';
 import '@material/radio/dist/mdc.radio.css';
 import '@material/ripple/dist/mdc.ripple.css';
 import '@material/select/dist/mdc.select.css';
+import '@material/switch/dist/mdc.switch.css';
 import '@material/shape/dist/mdc.shape.css';
 import '@material/slider/dist/mdc.slider.css';
 import '@material/snackbar/dist/mdc.snackbar.css';
