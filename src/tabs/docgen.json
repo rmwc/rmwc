@@ -266,7 +266,7 @@
             "name": "props",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n} & IconPropsT",
+              "raw": "{\n  /** A label for the tab. */\n  label?: React.Node,\n  /** The label for the tab, passed as children. */\n  children?: React.Node,\n  /** The icon to use for the tab. */\n  icon?: React.Node,\n  /** Stacks the icon on top of the text label */\n  stacked?: boolean,\n  /** Restricts the indicator to the content */\n  restrictIndicator?: boolean\n} & IconPropsT &\n  SimpleTagPropsT",
               "elements": [
                 {
                   "name": "signature",
@@ -317,6 +317,9 @@
                 },
                 {
                   "name": "IconPropsT"
+                },
+                {
+                  "name": "SimpleTagPropsT"
                 }
               ],
               "alias": "TabPropsT"

@@ -11,20 +11,30 @@
           {
             "name": "props",
             "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{ on: boolean }",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "on",
-                    "value": {
-                      "name": "boolean",
-                      "required": true
-                    }
+              "name": "intersection",
+              "raw": "{\n  on?: boolean\n} & IconPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  on?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "on",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
                   }
-                ]
-              }
+                },
+                {
+                  "name": "IconPropsT"
+                }
+              ],
+              "alias": "IconButtonIconPropsT"
             }
           }
         ],
