@@ -42,9 +42,9 @@ export type CardMediaPropsT = {
   square?: boolean,
   /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */
   sixteenByNine?: boolean
-};
+} & SimpleTagPropsT;
 
-const CardMediaRoot = simpleTag({
+const CardMediaRoot: React.ComponentType<CardMediaPropsT> = simpleTag({
   displayName: 'CardMediaRoot',
   tag: 'section',
   classNames: (props: CardMediaPropsT) => [

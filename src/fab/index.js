@@ -12,10 +12,6 @@ import { getProviderOptions } from '@rmwc/provider';
 import { simpleTag } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 
-/**
- * Private
- */
-
 export type FabPropsT = {
   /** Make the Fab smaller. */
   mini?: boolean,
@@ -29,7 +25,9 @@ export type FabPropsT = {
   WithRipplePropsT &
   IconPropsT;
 
-export const FabRoot = withRipple({ surface: false })(
+export const FabRoot: React.ComponentType<FabPropsT> = withRipple({
+  surface: false
+})(
   simpleTag({
     displayName: 'FabRoot',
     tag: 'button',
@@ -49,7 +47,7 @@ export const FabRoot = withRipple({ surface: false })(
   })
 );
 
-export const FabIcon = simpleTag({
+export const FabIcon: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'FabIcon',
   tag: Icon,
   classNames: 'mdc-fab__icon'

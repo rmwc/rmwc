@@ -20,7 +20,9 @@ export type SimpleTagPropsT = {
   theme?: string | string[],
   apiRef?: <S>(api: S) => S
   //$FlowFixMe
-} & React.HTMLAttributes<any>;
+} & React.HTMLAttributes<any> &
+  //$FlowFixMe
+  React.HTMLProps<any>;
 
 export const simpleTag = ({
   displayName = 'SimpleTag',
@@ -29,12 +31,10 @@ export const simpleTag = ({
   tag,
   wrap: defaultWrap = false,
   classNames
-}: SimpleTagFactoryT) => {
+}: SimpleTagFactoryT): React.ComponentType<SimpleTagPropsT> => {
   const defaultTag = tag || 'div';
 
-  const S = class SimpleTag<P> extends React.Component<
-    P & SimpleTagPropsT & any
-  > {
+  const S = class SimpleTag<P> extends React.Component<P & SimpleTagPropsT> {
     static displayName = displayName;
 
     static defaultProps = {
@@ -45,6 +45,7 @@ export const simpleTag = ({
     static isSimpleTag = true;
 
     render() {
+      const tsxProps: any = this.props;
       const {
         tag,
         className,
@@ -52,11 +53,11 @@ export const simpleTag = ({
         elementRef,
         theme,
         ...rest
-      } = this.props;
+      } = tsxProps;
 
       // choose the tag we are going to render
 
-      const Component =
+      const Component: any =
         typeof defaultTag === 'function' && typeof tag === 'string'
           ? defaultTag
           : tag || defaultTag;

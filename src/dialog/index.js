@@ -79,7 +79,7 @@ export const DialogFooter = simpleTag({
 
 export type DialogFooterButtonPropsT = {
   /** Make it an accept button. */
-  accept?: boolean,
+  accept?: any,
   /** Make it a cancel button. */
   cancel?: boolean
 } & SimpleTagPropsT &
@@ -95,10 +95,6 @@ const DialogFooterButtonRoot = simpleTag({
       'mdc-dialog__footer__button--accept': props.accept
     }
   ],
-  defaultProps: {
-    accept: false,
-    cancel: false
-  },
   consumeProps: ['accept', 'cancel']
 });
 

@@ -36,7 +36,7 @@ export type SelectPropsT = {
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const SelectRoot = simpleTag({
+export const SelectRoot: React.ComponentType<SelectPropsT> = simpleTag({
   displayName: 'SelectRoot',
   classNames: (props: SelectPropsT) => [
     'mdc-select',

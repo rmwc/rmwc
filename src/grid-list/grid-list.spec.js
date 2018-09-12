@@ -21,7 +21,7 @@ describe('GridList', () => {
             </GridTilePrimaryContent>
           </GridTilePrimary>
           <GridTileSecondary>
-            <GridTileIcon>info</GridTileIcon>
+            <GridTileIcon icon="icon" />
             <GridTileTitle>Tile</GridTileTitle>
           </GridTileSecondary>
         </GridTile>

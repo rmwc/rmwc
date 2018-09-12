@@ -1,6 +1,7 @@
 // @flow
 // eslint-disable-next-line no-unused-vars
 import * as React from 'react';
+import type { SimpleTagPropsT } from '@rmwc/base';
 import { simpleTag } from '@rmwc/base';
 
 type ImageListPropsT = {
@@ -8,9 +9,9 @@ type ImageListPropsT = {
   masonry?: boolean,
   /** Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image). */
   withTextProtection?: boolean
-};
+} & SimpleTagPropsT;
 
-const ImageListRoot = simpleTag({
+const ImageListRoot: React.ComponentType<ImageListPropsT> = simpleTag({
   displayName: 'ImageListRoot',
   tag: 'ul',
   classNames: (props: ImageListPropsT) => [

@@ -1,17 +1,10 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-const processBuiltFiles = require('./process-built-files');
 const getPackageDirs = require('./get-package-dirs');
 const path = require('path');
 const fs = require('fs-extra');
 const { exec, execSync } = require('child_process');
 const glob = require('glob');
-
-const fixPackageDotJSONPath = filename => {
-  const data = fs.readFileSync(filename, 'utf8');
-  var result = data.replace(/\.\.\/package\.json/g, './package.json');
-  fs.writeFileSync(filename, result, 'utf8');
-};
 
 // Babels and copies the file to its new directory
 const writeBuiltFile = (inputFile, outputFile) => {
@@ -51,26 +44,6 @@ const writeTypescriptFile = (inputFile, outputFile) => {
 // Simply copies the file
 const copyFile = (inputFile, outputFile) => {
   exec(`cp -R ${inputFile} ${outputFile}`);
-};
-
-const copyBuiltDirsBackToSrc = files => {
-  const dirs = [
-    ...new Set(
-      files.map(f =>
-        path
-          .dirname(f)
-          .replace('./src/', '')
-          .split(path.sep)
-          .slice(0, 2)
-          .join(path.sep)
-      )
-    )
-  ].filter(d => d !== './src');
-
-  dirs.forEach(dir => {
-    console.log('Copy Dist Dir:', `./${dir}`, `./src/${dir}/dist`);
-    copyFile(`./${dir}`, `./src/${dir}/dist`);
-  });
 };
 
 const promises = getPackageDirs().map(d => {

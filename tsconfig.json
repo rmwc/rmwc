@@ -18,6 +18,7 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "preserveSymlinks": true,
+    "stripInternal": true,
     "baseUrl": ".",
     "paths": {
       "@rmwc/base": ["src/base/dist"],

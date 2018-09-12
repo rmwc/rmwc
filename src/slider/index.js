@@ -34,7 +34,7 @@ export type SliderPropsT = {
   disabled?: boolean
 } & SimpleTagPropsT;
 
-export const SliderRoot = simpleTag({
+export const SliderRoot: React.ComponentType<SliderPropsT> = simpleTag({
   displayName: 'SliderRoot',
   classNames: (props: SliderPropsT) => [
     'mdc-slider',
@@ -217,14 +217,16 @@ export class Slider extends withFoundation({
     }
 
     const dataStep = step ? { 'data-step': step } : {};
+    const tsxValue: any = value;
+    const tsxMax: any = max;
 
     return (
       <SliderRoot
-        tabIndex="0"
+        tabIndex={0}
         //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
         role="slider"
-        aria-valuemax={max}
-        aria-valuenow={value}
+        aria-valuemax={tsxMax}
+        aria-valuenow={tsxValue}
         aria-label="Select Value"
         elementRef={root_}
         discrete={discrete}

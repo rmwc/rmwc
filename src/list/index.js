@@ -2,6 +2,7 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 import type { RMWCProviderOptionsT } from '@rmwc/provider';
+import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
@@ -88,7 +89,7 @@ export const ListItemSecondaryText = simpleTag({
 });
 
 /** A graphic / icon for the ListItem */
-export const ListItemGraphic = simpleTag({
+export const ListItemGraphic: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'ListItemGraphic',
   classNames: 'mdc-list-item__graphic',
   tag: Icon

@@ -2,6 +2,7 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { WithRipplePropsT } from '@rmwc/ripple';
+import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
@@ -27,10 +28,9 @@ export type ButtonPropsT = {
 } & SimpleTagPropsT &
   WithRipplePropsT;
 
-/****************************************************************
- * Private
- ****************************************************************/
-export const ButtonRoot = withRipple({ surface: false })(
+export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
+  surface: false
+})(
   simpleTag({
     displayName: 'ButtonRoot',
     tag: 'button',
@@ -61,12 +61,8 @@ export const ButtonRoot = withRipple({ surface: false })(
   })
 );
 
-/****************************************************************
- * Public
- ****************************************************************/
-
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export const ButtonIcon = simpleTag({
+export const ButtonIcon: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'ButtonIcon',
   tag: Icon,
   classNames: 'mdc-button__icon'
@@ -83,13 +79,14 @@ export class Button extends React.Component<ButtonPropsT> {
     dense: false
   };
 
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
-
   static contextTypes = {
     RMWCOptions: PropTypes.object
   };
+
+  constructor(props: ButtonPropsT, context: Object) {
+    super(props, context);
+    this.providerOptions = getProviderOptions(this.context);
+  }
 
   providerOptions: RMWCProviderOptionsT;
   context: Object;

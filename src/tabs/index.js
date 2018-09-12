@@ -177,9 +177,10 @@ export type TabPropsT = {
   stacked?: boolean,
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean
-} & IconPropsT;
+} & IconPropsT &
+  SimpleTagPropsT;
 
-export const TabRoot = simpleTag({
+export const TabRoot: React.ComponentType<TabPropsT> = simpleTag({
   displayName: 'TabRoot',
   tag: 'button',
   classNames: (props: TabPropsT) => [
@@ -202,7 +203,7 @@ export class TabIndicator extends React.PureComponent<{}> {
 }
 
 /** A Tab icon. This is an instance of the Icon component. */
-export const TabIcon = simpleTag({
+export const TabIcon: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'TabIcon',
   tag: Icon,
   classNames: 'mdc-tab__icon'

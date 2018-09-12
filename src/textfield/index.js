@@ -54,7 +54,7 @@ export type TextFieldPropsT = {
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const TextFieldRoot = simpleTag({
+export const TextFieldRoot: React.ComponentType<any> = simpleTag({
   displayName: 'TextFieldRoot',
   classNames: (props: TextFieldPropsT) => [
     'mdc-text-field',
@@ -225,9 +225,11 @@ export type TextFieldHelperTextPropsT = {
   persistent?: boolean,
   /** Make the help a validation message style */
   validationMsg?: boolean
-};
+} & SimpleTagPropsT;
 
-const TextFieldHelperTextRoot = simpleTag({
+const TextFieldHelperTextRoot: React.ComponentType<
+  TextFieldHelperTextPropsT
+> = simpleTag({
   displayName: 'TextFieldHelperTextRoot',
   tag: 'p',
   classNames: (props: TextFieldHelperTextPropsT) => [

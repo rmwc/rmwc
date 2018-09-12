@@ -26,7 +26,11 @@ export type IconButtonPropsT = {
   IconPropsT &
   WithRipplePropsT;
 
-export const IconButtonRoot = withRipple({ unbounded: true })(
+export const IconButtonRoot: React.ComponentType<IconButtonPropsT> = withRipple(
+  {
+    unbounded: true
+  }
+)(
   simpleTag({
     displayName: 'IconButtonRoot',
     tag: 'button',
@@ -44,10 +48,16 @@ export const IconButtonRoot = withRipple({ unbounded: true })(
   })
 );
 
-export const IconButtonIcon = simpleTag({
+type IconButtonIconPropsT = {
+  on?: boolean
+} & IconPropsT;
+
+export const IconButtonIcon: React.ComponentType<
+  IconButtonIconPropsT
+> = simpleTag({
   displayName: 'IconButtonIcon',
   tag: Icon,
-  classNames: (props: { on: boolean }) => [
+  classNames: (props: IconButtonIconPropsT) => [
     'mdc-icon-button__icon',
     {
       'mdc-icon-button__icon--on': props.on
@@ -96,10 +106,11 @@ class IconButtonToggle extends withFoundation({
       ...rest
     } = this.props;
     const { root_ } = this.foundationRefs;
+    const tsxIsOn: any = this.isOn();
 
     return (
       <IconButtonRoot
-        aria-pressed={this.isOn()}
+        aria-pressed={tsxIsOn}
         aria-hidden="true"
         {...rest}
         elementRef={root_}
