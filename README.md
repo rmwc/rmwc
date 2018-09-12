@@ -21,6 +21,8 @@ Features:
 
 ## Recent updates
 
+*View all release notes* 👉 https://opencollective.com/rmwc/updates
+
 New in 2.0.0: Individually packaged and released components!
 
 2.0.0 does not contain any changes to the components themselves, but it's a major refactor of how RMWC is packaged and deployed. All components have been broken apart into their own npm packages. What this means for you:
