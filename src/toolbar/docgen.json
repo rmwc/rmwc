@@ -117,24 +117,24 @@
     "methods": [],
     "props": {
       "alignStart": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Aligns the ToolbarSection at the start."
       },
       "alignEnd": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Aligns the ToolbarSection at the end."
       },
       "shrinkToFit": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the ToolbarSection shrink to fit."
       }
     }
@@ -165,38 +165,38 @@
     "methods": [],
     "props": {
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the toolbar fixed"
       },
       "waterfall": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Adds a waterfall effect on scroll"
       },
       "fixedLastrowOnly": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Fixes the last row of a multi-row toolbar"
       },
       "flexible": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "makes the toolbar flexible"
       },
       "flexibleDefaultBehavior": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "further defines the background and title movement behavior, use in conjunction with flexible."
       }
     }

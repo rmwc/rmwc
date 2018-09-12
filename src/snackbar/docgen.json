@@ -190,14 +190,18 @@
       {
         "name": "isShowing",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "get"
+        ],
         "params": [],
         "returns": null
       },
       {
         "name": "isShowing",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "set"
+        ],
         "params": [
           {
             "name": "isShowing",
@@ -226,10 +230,10 @@
     ],
     "props": {
       "show": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Show the Snackbar.",
         "defaultValue": {
           "value": "false",
@@ -237,6 +241,7 @@
         }
       },
       "onShow": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -248,7 +253,6 @@
             }
           }
         },
-        "required": false,
         "description": "A callback thats fired when the Snackbar shows.",
         "defaultValue": {
           "value": "noop",
@@ -256,6 +260,7 @@
         }
       },
       "onHide": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -267,7 +272,6 @@
             }
           }
         },
-        "required": false,
         "description": "A callback thats fired when the Snackbar hides.",
         "defaultValue": {
           "value": "noop",
@@ -275,11 +279,11 @@
         }
       },
       "message": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "A string or other renderable JSX to be used as the message body.",
         "defaultValue": {
           "value": "undefined",
@@ -287,10 +291,10 @@
         }
       },
       "timeout": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "Milliseconds to show the Snackbar for.",
         "defaultValue": {
           "value": "undefined",
@@ -298,6 +302,7 @@
         }
       },
       "actionHandler": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -309,7 +314,6 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that fires when action is pressed. The actionText property must be set to use this.",
         "defaultValue": {
           "value": "undefined",
@@ -317,11 +321,11 @@
         }
       },
       "actionText": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Label for the action button.",
         "defaultValue": {
           "value": "undefined",
@@ -329,10 +333,10 @@
         }
       },
       "multiline": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Lets the Snackbar text overflow onto multiple lines.",
         "defaultValue": {
           "value": "false",
@@ -340,10 +344,10 @@
         }
       },
       "actionOnBottom": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Places the action underneath the message text.",
         "defaultValue": {
           "value": "false",
@@ -351,10 +355,10 @@
         }
       },
       "dismissesOnAction": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Whether or not the Snackbar dismisses on the action press.",
         "defaultValue": {
           "value": "true",
@@ -362,10 +366,10 @@
         }
       },
       "alignStart": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": ""
       }
     }

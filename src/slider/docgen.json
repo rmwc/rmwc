@@ -249,7 +249,9 @@
       {
         "name": "discrete",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "get"
+        ],
         "params": [],
         "returns": {
           "type": {
@@ -260,10 +262,13 @@
       {
         "name": "discrete",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "set"
+        ],
         "params": [
           {
             "name": "isDiscrete",
+            "optional": false,
             "type": {
               "name": "boolean"
             }
@@ -274,7 +279,9 @@
       {
         "name": "displayMarkers",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "get"
+        ],
         "params": [],
         "returns": {
           "type": {
@@ -285,10 +292,13 @@
       {
         "name": "displayMarkers",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "set"
+        ],
         "params": [
           {
             "name": "isDisplayMarkers",
+            "optional": false,
             "type": {
               "name": "boolean"
             }
@@ -303,6 +313,7 @@
         "params": [
           {
             "name": "nextProps",
+            "optional": false,
             "type": {
               "name": "intersection",
               "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n} & SimpleTagPropsT",
@@ -496,6 +507,7 @@
     ],
     "props": {
       "onChange": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -533,10 +545,10 @@
             }
           }
         },
-        "required": false,
         "description": "A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value."
       },
       "onInput": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -574,10 +586,10 @@
             }
           }
         },
-        "required": false,
         "description": "A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value."
       },
       "value": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -590,10 +602,10 @@
             }
           ]
         },
-        "required": false,
         "description": "The value of the Slider."
       },
       "min": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -606,10 +618,10 @@
             }
           ]
         },
-        "required": false,
         "description": "The minimum value of the Slider."
       },
       "max": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -622,10 +634,10 @@
             }
           ]
         },
-        "required": false,
         "description": "The maximum value of the Slider."
       },
       "step": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -638,28 +650,27 @@
             }
           ]
         },
-        "required": false,
         "description": "A step to quantize values by."
       },
       "discrete": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Displays the exact value of the Slider on the knob."
       },
       "displayMarkers": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Displays the individual step markers on the Slider track."
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disables the control."
       }
     }

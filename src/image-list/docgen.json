@@ -5,17 +5,17 @@
     "methods": [],
     "props": {
       "masonry": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Indicates that this Image List should use the Masonry variant."
       },
       "withTextProtection": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image)."
       }
     }

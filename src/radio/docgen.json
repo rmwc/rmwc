@@ -252,20 +252,21 @@
     ],
     "props": {
       "id": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "A DOM ID for the toggle."
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disables the control."
       },
       "checked": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "boolean | string",
@@ -278,10 +279,10 @@
             }
           ]
         },
-        "required": false,
         "description": "Toggle the control on and off."
       },
       "value": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "boolean | string | number",
@@ -297,22 +298,21 @@
             }
           ]
         },
-        "required": false,
         "description": "The value of the control."
       },
       "label": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "A label for the control."
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Children to render"
       }
     }

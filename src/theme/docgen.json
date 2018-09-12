@@ -5,6 +5,7 @@
     "methods": [],
     "props": {
       "use": {
+        "required": true,
         "flowType": {
           "name": "union",
           "raw": "string | ThemeOptionT[]",
@@ -114,14 +115,13 @@
             }
           ]
         },
-        "required": true,
         "description": "A theme option as a string, a space separated string for multiple values, or an array of valid theme options."
       },
       "wrap": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors."
       }
     }
@@ -133,13 +133,16 @@
       {
         "name": "colors",
         "docblock": null,
-        "modifiers": [],
+        "modifiers": [
+          "get"
+        ],
         "params": [],
         "returns": null
       }
     ],
     "props": {
       "options": {
+        "required": true,
         "flowType": {
           "name": "signature",
           "type": "object",
@@ -158,14 +161,13 @@
             ]
           }
         },
-        "required": true,
         "description": "Any theme option pointing to a valid CSS value."
       },
       "style": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Additional standard inline styles that will be merged into the style tag."
       }
     }

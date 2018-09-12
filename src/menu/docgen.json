@@ -399,20 +399,21 @@
     ],
     "props": {
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Whether or not the Menu is open."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the menu position fixed."
       },
       "onClose": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -437,10 +438,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that when the menu is closed."
       },
       "onSelect": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -485,10 +486,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that fires when a Menu item is selected."
       },
       "anchorCorner": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
@@ -527,7 +528,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Manually position the menu to one of the corners."
       }
     }
@@ -852,20 +852,21 @@
     ],
     "props": {
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Opens the menu."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the menu position fixed."
       },
       "anchorCorner": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
@@ -904,10 +905,10 @@
             }
           ]
         },
-        "required": false,
         "description": "Manually position the menu to one of the corners."
       },
       "onOpen": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -932,10 +933,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback for when the menu is opened."
       },
       "onClose": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -960,15 +961,14 @@
             }
           }
         },
-        "required": false,
         "description": "Callback for when the menu is closed."
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Children to render."
       }
     }
@@ -984,6 +984,7 @@
     "methods": [],
     "props": {
       "handle": {
+        "required": true,
         "flowType": {
           "name": "ReactElement",
           "raw": "React.Element<any>",
@@ -993,39 +994,39 @@
             }
           ]
         },
-        "required": true,
         "description": "An element that will open the menu when clicked"
       },
       "rootProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Children to render"
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Whether or not the Menu is open."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the menu position fixed."
       },
       "onClose": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1050,10 +1051,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that when the menu is closed."
       },
       "onSelect": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1098,10 +1099,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that fires when a Menu item is selected."
       },
       "anchorCorner": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
@@ -1140,7 +1141,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Manually position the menu to one of the corners."
       }
     }
@@ -1151,6 +1151,7 @@
     "methods": [],
     "props": {
       "handle": {
+        "required": true,
         "flowType": {
           "name": "ReactElement",
           "raw": "React.Element<any>",
@@ -1160,39 +1161,39 @@
             }
           ]
         },
-        "required": true,
         "description": "An element that will open the menu when clicked"
       },
       "rootProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Children to render"
       },
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Opens the menu."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the menu position fixed."
       },
       "anchorCorner": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
@@ -1231,10 +1232,10 @@
             }
           ]
         },
-        "required": false,
         "description": "Manually position the menu to one of the corners."
       },
       "onOpen": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1259,10 +1260,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback for when the menu is opened."
       },
       "onClose": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -1287,7 +1288,6 @@
             }
           }
         },
-        "required": false,
         "description": "Callback for when the menu is closed."
       }
     }

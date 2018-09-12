@@ -40,6 +40,7 @@
         "params": [
           {
             "name": "props",
+            "optional": false,
             "type": {
               "name": "intersection",
               "raw": "{\n  /** Opens or closes the Drawer. */\n  open?: boolean,\n  /** Callback that fires when the Drawer is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when the Drawer is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Makes a dismissible drawer. */\n  dismissible?: boolean,\n  /** Makes a modal / temporary drawer. */\n  modal?: boolean\n} & SimpleTagPropsT",
@@ -148,13 +149,14 @@
     "methods": [],
     "props": {
       "open": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Opens or closes the Drawer."
       },
       "onClose": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -179,10 +181,10 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that fires when the Drawer is closed."
       },
       "onOpen": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -207,21 +209,20 @@
             }
           }
         },
-        "required": false,
         "description": "Callback that fires when the Drawer is opened."
       },
       "dismissible": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes a dismissible drawer."
       },
       "modal": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes a modal / temporary drawer."
       }
     }

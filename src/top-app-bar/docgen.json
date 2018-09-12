@@ -109,17 +109,17 @@
     "methods": [],
     "props": {
       "alignStart": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Aligns the section to the start."
       },
       "alignEnd": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Aligns the section to the end."
       }
     }
@@ -145,31 +145,31 @@
     "methods": [],
     "props": {
       "dense": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Class used to style the content below the dense top app bar to prevent the top app bar from covering it."
       },
       "prominent": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Class used to style the content below the prominent top app bar to prevent the top app bar from covering it."
       },
       "denseProminent": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it."
       },
       "short": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Class used to style the content below the short top app bar to prevent the top app bar from covering it."
       }
     }
@@ -180,6 +180,7 @@
     "methods": [],
     "props": {
       "onNav": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -204,42 +205,41 @@
             }
           }
         },
-        "required": false,
         "description": "Emits when the navigation icon is clicked."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a fixed top app bar."
       },
       "prominent": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a prominent top app bar."
       },
       "short": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a short top app bar."
       },
       "shortCollapsed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar to always be collapsed."
       },
       "dense": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar to be dense."
       }
     }
@@ -250,14 +250,15 @@
     "methods": [],
     "props": {
       "title": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "The title for the App Bar."
       },
       "actionItems": {
+        "required": false,
         "flowType": {
           "name": "Array",
           "elements": [
@@ -267,10 +268,10 @@
           ],
           "raw": "Object[]"
         },
-        "required": false,
         "description": "An array of props that will be used to create TopAppBarActionItems."
       },
       "navigationIcon": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "Object | boolean",
@@ -283,26 +284,26 @@
             }
           ]
         },
-        "required": false,
         "description": "Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions."
       },
       "startContent": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Additional content to place in the start section."
       },
       "endContent": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Additional content to place in the end section."
       },
       "onNav": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -327,42 +328,41 @@
             }
           }
         },
-        "required": false,
         "description": "Emits when the navigation icon is clicked."
       },
       "fixed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a fixed top app bar."
       },
       "prominent": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a prominent top app bar."
       },
       "short": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar as a short top app bar."
       },
       "shortCollapsed": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar to always be collapsed."
       },
       "dense": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Styles the top app bar to be dense."
       }
     }

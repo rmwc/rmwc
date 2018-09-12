@@ -204,6 +204,7 @@
     ],
     "props": {
       "onActivate": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -241,14 +242,13 @@
             }
           }
         },
-        "required": false,
         "description": "Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex."
       },
       "activeTabIndex": {
+        "required": false,
         "flowType": {
           "name": "number"
         },
-        "required": false,
         "description": "The index of the active tab."
       }
     }
@@ -343,41 +343,41 @@
     "methods": [],
     "props": {
       "label": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "A label for the tab."
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "The label for the tab, passed as children."
       },
       "icon": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "The icon to use for the tab."
       },
       "stacked": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Stacks the icon on top of the text label"
       },
       "restrictIndicator": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Restricts the indicator to the content"
       }
     }

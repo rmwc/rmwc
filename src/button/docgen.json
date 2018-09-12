@@ -10,10 +10,10 @@
     "methods": [],
     "props": {
       "dense": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the Button dense.",
         "defaultValue": {
           "value": "false",
@@ -21,10 +21,10 @@
         }
       },
       "raised": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the Button raised.",
         "defaultValue": {
           "value": "false",
@@ -32,10 +32,10 @@
         }
       },
       "unelevated": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the button unelevated.",
         "defaultValue": {
           "value": "false",
@@ -43,10 +43,10 @@
         }
       },
       "outlined": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the button outlined.",
         "defaultValue": {
           "value": "false",
@@ -54,17 +54,17 @@
         }
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "make the button disabled"
       },
       "ripple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Enable / disable the ripple."
       }
     },

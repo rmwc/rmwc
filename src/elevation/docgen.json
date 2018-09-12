@@ -5,6 +5,7 @@
     "methods": [],
     "props": {
       "z": {
+        "required": true,
         "flowType": {
           "name": "union",
           "raw": "number | string",
@@ -17,14 +18,13 @@
             }
           ]
         },
-        "required": true,
         "description": "A number from 0 - 24 for different levels of elevation"
       },
       "transition": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Allows for smooth transitions between elevations when the z value changes."
       }
     }

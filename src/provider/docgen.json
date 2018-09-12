@@ -140,10 +140,10 @@
     ],
     "props": {
       "buttonDefaultRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set the buttons ripple effect globally",
         "defaultValue": {
           "value": "true",
@@ -151,10 +151,10 @@
         }
       },
       "listItemDefaultRipple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Set the listItems ripple effect globally",
         "defaultValue": {
           "value": "true",
@@ -162,10 +162,10 @@
         }
       },
       "iconClassNameBase": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Set the iconClassNameBase. Read the icon docs for more info.",
         "defaultValue": {
           "value": "'material-icons'",
@@ -173,10 +173,10 @@
         }
       },
       "iconClassNamePrefix": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Set the iconClassNamePrefix. Read the icon docs for more info.",
         "defaultValue": {
           "value": "''",
@@ -184,6 +184,7 @@
         }
       },
       "iconStrategy": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom'",
@@ -214,7 +215,6 @@
             }
           ]
         },
-        "required": false,
         "description": "Set the default iconStrategy. Read the icon docs for more info.",
         "defaultValue": {
           "value": "'auto'",
@@ -222,6 +222,7 @@
         }
       },
       "iconRender": {
+        "required": false,
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -261,7 +262,6 @@
             }
           }
         },
-        "required": false,
         "description": "Sets a default render function to be used when the iconStrategy is custom",
         "defaultValue": {
           "value": "undefined",
@@ -269,11 +269,11 @@
         }
       },
       "children": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Children to render",
         "defaultValue": {
           "value": "undefined",

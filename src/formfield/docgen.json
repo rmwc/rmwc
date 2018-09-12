@@ -57,10 +57,10 @@
     "methods": [],
     "props": {
       "alignEnd": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Position the input after the label."
       }
     }

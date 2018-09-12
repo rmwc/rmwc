@@ -55,38 +55,38 @@
     ],
     "props": {
       "unbounded": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the ripple unbounded"
       },
       "primary": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the ripple primary"
       },
       "accent": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the ripple an accent color"
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "makes the ripple disabled"
       },
       "surface": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": ""
       }
     }

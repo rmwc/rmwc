@@ -323,13 +323,14 @@
     ],
     "props": {
       "value": {
+        "required": false,
         "flowType": {
           "name": "mixed"
         },
-        "required": false,
         "description": "The value for a controlled select."
       },
       "options": {
+        "required": false,
         "flowType": {
           "name": "union",
           "raw": "string[] | { [value: string]: string } | any[]",
@@ -372,56 +373,55 @@
             }
           ]
         },
-        "required": false,
         "description": "Options accepts flat arrays, value => label maps, and more. See examples for details."
       },
       "label": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "A label for the form control."
       },
       "placeholder": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label."
       },
       "outlined": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the select outlined."
       },
       "disabled": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Disables the form control."
       },
       "box": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Makes the Select have a visual box."
       },
       "rootProps": {
+        "required": false,
         "flowType": {
           "name": "Object"
         },
-        "required": false,
         "description": "Props for the root element. By default, additional props spread to the native select element."
       },
       "className": {
+        "required": false,
         "flowType": {
           "name": "string"
         },
-        "required": false,
         "description": "A className for the root element."
       }
     }

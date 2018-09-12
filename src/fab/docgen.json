@@ -15,32 +15,32 @@
     "methods": [],
     "props": {
       "mini": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Make the Fab smaller."
       },
       "label": {
+        "required": false,
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
         },
-        "required": false,
         "description": "Make the Fab extended with a label."
       },
       "exited": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
       },
       "ripple": {
+        "required": false,
         "flowType": {
           "name": "boolean"
         },
-        "required": false,
         "description": "Enable / disable the ripple."
       }
     },
