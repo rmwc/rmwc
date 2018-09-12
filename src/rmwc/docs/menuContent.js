@@ -1,38 +1,22 @@
-import InstallationDocs from './installation.md';
-import StylingThemingDocs from './styling-theming.md';
-import UsageDocs from './usage.md';
-import MethodologyDocs from './methodology.md';
-import ProviderDocs from '@rmwc/provider/README.md';
-import ButtonDocs from '@rmwc/button/README.md';
-import FabDocs from '@rmwc/fab/README.md';
-import IconButtonDocs from '@rmwc/icon-button/README.md';
-import CardDocs from '@rmwc/card/README.md';
-import DialogDocs from '@rmwc/dialog/README.md';
-import DrawerDocs from '@rmwc/drawer/README.md';
-import ElevationDocs from '@rmwc/elevation/README.md';
-import GridListDocs from '@rmwc/grid-list/README.md';
-import CheckboxDocs from '@rmwc/checkbox/README.md';
-import FormFieldDocs from '@rmwc/formfield/README.md';
-import RadioDocs from '@rmwc/radio/README.md';
-import SelectDocs from '@rmwc/select/README.md';
-import SliderDocs from '@rmwc/slider/README.md';
-import SwitchDocs from '@rmwc/switch/README.md';
-import TextFieldDocs from '@rmwc/textfield/README.md';
-import GridDocs from '@rmwc/grid/README.md';
-import LinearProgressDocs from '@rmwc/linear-progress/README.md';
-import ListDocs from '@rmwc/list/README.md';
-import MenuDocs from '@rmwc/menu/README.md';
-import RippleDocs from '@rmwc/ripple/README.md';
-import SnackbarDocs from '@rmwc/snackbar/README.md';
-import TabDocs from '@rmwc/tabs/README.md';
-import ThemeDocs from '@rmwc/theme/README.md';
-import ToolbarDocs from '@rmwc/toolbar/README.md';
-import TypographyDocs from '@rmwc/typography/README.md';
-import IconDocs from '@rmwc/icon/README.md';
-import ChipDocs from '@rmwc/chip/README.md';
-import TopAppBarDocs from '@rmwc/top-app-bar/README.md';
-import ShapeDocs from '@rmwc/shape/README.md';
-import ImageListDocs from '@rmwc/image-list/README.md';
+// @flow
+import * as React from 'react';
+
+import Loadable from 'react-loadable';
+
+const Loading = () => (
+  <div
+    style={{
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100%',
+      boxSizing: 'border-box'
+    }}
+  >
+    Loading...
+  </div>
+);
 
 export const menuContent = [
   {
@@ -41,22 +25,34 @@ export const menuContent = [
       {
         label: 'Installation',
         url: `/installation`,
-        component: InstallationDocs
+        component: Loadable({
+          loader: () => import('./installation.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Usage',
         url: `/usage`,
-        component: UsageDocs
+        component: Loadable({
+          loader: () => import('./usage.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Styling and Theming',
         url: `/styling-theming`,
-        component: StylingThemingDocs
+        component: Loadable({
+          loader: () => import('./styling-theming.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Project Methodology',
         url: `/methodology`,
-        component: MethodologyDocs
+        component: Loadable({
+          loader: () => import('./methodology.md'),
+          loading: Loading
+        })
       }
     ]
   },
@@ -66,54 +62,84 @@ export const menuContent = [
       {
         label: 'Buttons',
         url: `/buttons`,
-        component: ButtonDocs
+        component: Loadable({
+          loader: () => import('@rmwc/button/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Fabs',
         url: `/fabs`,
-        component: FabDocs
+        component: Loadable({
+          loader: () => import('@rmwc/fab/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Icon Buttons',
         url: `/icon-buttons`,
-        component: IconButtonDocs
+        component: Loadable({
+          loader: () => import('@rmwc/icon-button/README.md'),
+          loading: Loading
+        })
       }
     ]
   },
   {
     label: 'Cards',
     url: `/cards`,
-    component: CardDocs
+    component: Loadable({
+      loader: () => import('@rmwc/card/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Chips',
     url: `/chips`,
-    component: ChipDocs
+    component: Loadable({
+      loader: () => import('@rmwc/chip/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Dialogs',
     url: `/dialogs`,
-    component: DialogDocs
+    component: Loadable({
+      loader: () => import('@rmwc/dialog/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Drawers',
     url: `/drawers`,
-    component: DrawerDocs
+    component: Loadable({
+      loader: () => import('@rmwc/drawer/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Elevation',
     url: `/elevation`,
-    component: ElevationDocs
+    component: Loadable({
+      loader: () => import('@rmwc/elevation/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Grid Lists',
     url: `/grid-lists`,
-    component: GridListDocs
+    component: Loadable({
+      loader: () => import('@rmwc/grid-list/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Image Lists',
     url: `/image-lists`,
-    component: ImageListDocs
+    component: Loadable({
+      loader: () => import('@rmwc/image-list/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Inputs and Controls',
@@ -121,109 +147,172 @@ export const menuContent = [
       {
         label: 'Checkboxes',
         url: `/checkboxes`,
-        component: CheckboxDocs
+        component: Loadable({
+          loader: () => import('@rmwc/checkbox/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'FormFields',
         url: `/formfields`,
-        component: FormFieldDocs
+        component: Loadable({
+          loader: () => import('@rmwc/formfield/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Radio Buttons',
         url: `/radio-buttons`,
-        component: RadioDocs
+        component: Loadable({
+          loader: () => import('@rmwc/radio/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Select Menus',
         url: `/select-menus`,
-        component: SelectDocs
+        component: Loadable({
+          loader: () => import('@rmwc/select/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Sliders',
         url: `/sliders`,
-        component: SliderDocs
+        component: Loadable({
+          loader: () => import('@rmwc/slider/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Switches',
         url: `/switches`,
-        component: SwitchDocs
+        component: Loadable({
+          loader: () => import('@rmwc/switch/README.md'),
+          loading: Loading
+        })
       },
       {
         label: 'Text Fields',
         url: `/text-fields`,
-        component: TextFieldDocs
+        component: Loadable({
+          loader: () => import('@rmwc/textfield/README.md'),
+          loading: Loading
+        })
       }
     ]
   },
   {
     label: 'Layout Grid',
     url: `/layout-grid`,
-    component: GridDocs
+    component: Loadable({
+      loader: () => import('@rmwc/grid/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Linear Progress',
     url: `/linear-progress`,
-    component: LinearProgressDocs
+    component: Loadable({
+      loader: () => import('@rmwc/linear-progress/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Lists',
     url: `/lists`,
-    component: ListDocs
+    component: Loadable({
+      loader: () => import('@rmwc/list/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Menus',
     url: `/menus`,
-    component: MenuDocs
+    component: Loadable({
+      loader: () => import('@rmwc/menu/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Ripples',
     url: `/ripples`,
-    component: RippleDocs
+    component: Loadable({
+      loader: () => import('@rmwc/ripple/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Shape',
     url: '/shape',
-    component: ShapeDocs
+    component: Loadable({
+      loader: () => import('@rmwc/shape/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Snackbars',
     url: `/snackbars`,
-    component: SnackbarDocs
+    component: Loadable({
+      loader: () => import('@rmwc/snackbar/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Tabs',
     url: `/tabs`,
-    component: TabDocs
+    component: Loadable({
+      loader: () => import('@rmwc/tabs/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Theme',
     url: `/theme`,
-    component: ThemeDocs
+    component: Loadable({
+      loader: () => import('@rmwc/theme/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Toolbars',
     url: `/toolbars`,
-    component: ToolbarDocs
+    component: Loadable({
+      loader: () => import('@rmwc/toolbar/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Top App Bar',
     url: `/top-app-bar`,
-    component: TopAppBarDocs
+    component: Loadable({
+      loader: () => import('@rmwc/top-app-bar/README.md'),
+      loading: Loading
+    })
   },
 
   {
     label: 'Typography',
     url: `/typography`,
-    component: TypographyDocs
+    component: Loadable({
+      loader: () => import('@rmwc/typography/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Icons',
     url: `/icons`,
-    component: IconDocs
+    component: Loadable({
+      loader: () => import('@rmwc/icon/README.md'),
+      loading: Loading
+    })
   },
   {
     label: 'Provider',
     url: `/provider`,
-    component: ProviderDocs
+    component: Loadable({
+      loader: () => import('@rmwc/provider/README.md'),
+      loading: Loading
+    })
   }
 ];
