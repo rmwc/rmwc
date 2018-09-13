@@ -164,7 +164,7 @@ export class TextField extends withFoundation({
       id: rest['id'] || randomId('text-field'),
       // fixes an issue with the deprecated non box input
       style:
-        box === undefined && outlined === undefined ? { marginTop: '3px' } : {}
+        box === undefined && outlined === undefined && textarea === undefined ? { marginTop: '3px' } : {}
     };
 
     const tag = textarea ? (
