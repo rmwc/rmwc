@@ -1,3 +1,14 @@
+#### 2.1.0 (2018-09-14)
+
+##### New Features
+
+* **DataTable:**  Adds custom DataTable component (3e2ac4a4)
+
+##### Bug Fixes
+
+* **TextField:**  removing marginTop (1981e18f)
+* Textarea is including margin-top. (9869aab8)
+
 #### 2.0.2 (2018-09-12)
 
 ##### Documentation Changes
