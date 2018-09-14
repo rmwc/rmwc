@@ -17,7 +17,9 @@
     "hyperform": "^0.9.14",
     "material-components-web": "0.39.0",
     "mutation-observer": "^1.0.3",
-    "prop-types": "^15.6.2"
+    "opencollective-postinstall": "^2.0.0",
+    "prop-types": "^15.6.2",
+    "opencollective": "^1.0.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -39,7 +41,8 @@
     "preversion": "npm test -- --coverage",
     "version": "npm run build && npm run changelog && git add CHANGELOG.md && npm run build && git add docs -f",
     "postversion": "git push && git push --tags",
-    "flow": "flow"
+    "flow": "flow",
+    "postinstall": "opencollective-postinstall"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
@@ -100,5 +103,9 @@
       "!src/base/testPolyfill.js",
       "!src/icon/defs.js"
     ]
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/rmwc"
   }
 }
