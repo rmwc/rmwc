@@ -37,6 +37,7 @@
     "@rmwc/card": "^2.0.2",
     "@rmwc/checkbox": "^2.0.2",
     "@rmwc/chip": "^2.0.2",
+    "@rmwc/data-table": "^2.0.2",
     "@rmwc/dialog": "^2.0.2",
     "@rmwc/drawer": "^2.0.2",
     "@rmwc/elevation": "^2.0.2",

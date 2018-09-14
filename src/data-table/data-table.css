@@ -1,0 +1,271 @@
+/** 
+ * DataTable
+ */
+.rmwc-data-table {
+  position: relative;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  text-align: left;
+  color: var(--mdc-theme-primary-on-background, rgba(0, 0, 0, 0.87));
+}
+
+/** DataTable Sticky Rules */
+.rmwc-data-table--sticky-columns-1 .rmwc-data-table__cell:nth-child(-n + 1) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  box-shadow: 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.rmwc-data-table--sticky-rows-1
+  .rmwc-data-table__head
+  .rmwc-data-table__row:nth-child(-n + 1)
+  .rmwc-data-table__cell {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/** 1 x 1 */
+.rmwc-data-table--sticky-rows-1.rmwc-data-table--sticky-columns-1
+  .rmwc-data-table__head
+  .rmwc-data-table__row:nth-child(-n + 1)
+  .rmwc-data-table__cell:nth-child(-n + 1) {
+  z-index: 3;
+}
+
+.rmwc-data-table--sticky-rows-1.rmwc-data-table--sticky-columns-1
+  .rmwc-data-table__head
+  .rmwc-data-table__row:nth-child(-n + 1)
+  .rmwc-data-table__cell:nth-child(-n + 1) {
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+/** 
+ * DataTableContent
+ */
+.rmwc-data-table__content {
+  position: relative;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  background-color: white;
+}
+
+/**
+ * DataTableHead
+ */
+.rmwc-data-table__head {
+  padding-bottom: 0.1875rem;
+}
+
+/** NEED SOME RULE FOR INLINE SELECTS
+.mdl-data-table__select {
+  margin-top: 0;
+}
+**/
+
+/**
+ * DataTableBody
+ */
+.rmwc-data-table__body {
+}
+
+/**
+ * DataTableRow
+ */
+.rmwc-data-table__row {
+  position: relative;
+}
+
+.rmwc-data-table__body
+  .rmwc-data-table__row--hover:not(.rmwc-data-table__row--selected):not(.rmwc-data-table__row--activated)
+  .rmwc-data-table__cell:before,
+.rmwc-data-table__body
+  .rmwc-data-table__row:hover:not(.rmwc-data-table__row--selected):not(.rmwc-data-table__row--activated)
+  .rmwc-data-table__cell:before {
+  opacity: 0.04;
+  background-color: var(--mdc-theme-on-surface, black);
+}
+
+.rmwc-data-table__row--selected .rmwc-data-table__cell:before {
+  opacity: 0.1;
+  background-color: var(--mdc-theme-on-surface, black);
+}
+
+.rmwc-data-table__row--activated {
+  color: var(--mdc-theme-primary, #6200ee);
+}
+
+.rmwc-data-table__row--activated .rmwc-data-table__cell:before {
+  opacity: 0.1;
+  background-color: var(--mdc-theme-primary, #6200ee);
+}
+
+/**
+ * DataTableCell and DataTableHeadCell
+ */
+.rmwc-data-table__cell {
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 1, 1);
+  position: relative;
+  vertical-align: middle;
+  height: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.75rem 1rem;
+  box-sizing: border-box;
+  background-color: var(--mdc-theme-surface, white);
+}
+
+.rmwc-data-table__row:first-child .rmwc-data-table__cell {
+  border-top: 0;
+}
+
+.rmwc-data-table__body:last-child
+  .rmwc-data-table__row:last-child
+  .rmwc-data-table__cell {
+  border-bottom: 0;
+}
+
+.rmwc-data-table__cell:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 1, 1),
+    opacity 0.28s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.rmwc-data-table__cell--align-end {
+  text-align: right;
+}
+
+.rmwc-data-table__cell--align-start {
+  text-align: left;
+}
+
+.rmwc-data-table__cell--align-middle {
+  text-align: center;
+}
+
+.rmwc-data-table__cell:first-of-type {
+  padding-left: 1.5rem;
+}
+
+.rmwc-data-table__cell:last-of-type {
+  padding-right: 1.5rem;
+}
+
+.rmwc-data-table__cell .mdc-checkbox {
+  vertical-align: text-top;
+  position: relative;
+  top: 0.0625rem; /** Fixes 1px offset */
+  margin: -0.6875rem 0.25rem -0.6875rem -1rem;
+}
+
+/**
+ * DataTableSortIcon
+ */
+.rmwc-data-table__sort-icon {
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  vertical-align: text-top;
+  width: 1.125rem;
+  height: 1.125rem;
+  display: inline-flex;
+  margin-right: 0.25rem;
+}
+
+.rmwc-data-table__head-cell--sortable {
+}
+
+.rmwc-data-table__head-cell--sorted .rmwc-data-table__sort-icon {
+  opacity: 1;
+}
+
+.rmwc-data-table__head-cell--sorted-descending .rmwc-data-table__sort-icon {
+  transform: scaleY(-1);
+}
+
+.rmwc-data-table__head-cell--sorted-ascending .rmwc-data-table__sort-icon {
+  /** Do stuff with sorted icons */
+}
+
+/**
+ * DataTableHeadCell
+ */
+.rmwc-data-table__head-cell {
+  position: relative;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+  height: 3rem;
+  color: var(--mdc-theme-secondary-on-background, rgba(0, 0, 0, 0.54));
+  background-color: var(--mdc-theme-surface, white);
+}
+
+/** Sortable Rules */
+.rmwc-data-table__head-cell--sortable {
+  transition: color 0.3s;
+}
+
+.rmwc-data-table__head-cell--sortable-hover,
+.rmwc-data-table__head-cell--sortable:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.rmwc-data-table__head-cell--sorted {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/**
+ * Form Controls
+ */
+/** Checkbox / Radio */
+.rmwc-data-table__cell .mdc-checkbox,
+.rmwc-data-table__cell .mdc-radio {
+  vertical-align: text-top;
+  position: relative;
+  top: 0.0625rem; /** Fixes 1px offset */
+  margin: -0.6875rem 0.25rem -0.6875rem -1rem;
+}
+
+/** Select */
+.rmwc-data-table__cell .mdc-select {
+  margin: -0.75rem -1rem;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.rmwc-data-table__cell .mdc-select .mdc-select__native-control {
+  border-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.rmwc-data-table__cell .mdc-select option {
+  font-size: 1rem;
+}
+
+.rmwc-data-table__cell .mdc-select .mdc-line-ripple {
+  display: none;
+}
+
+/** Switch */
+.rmwc-data-table__cell .mdc-switch {
+  vertical-align: middle;
+}

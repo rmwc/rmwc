@@ -27,7 +27,11 @@ Each component requires the following items in order to be complete:
 * A **index.js** file containing the bulk of the component code. This makes importing easier.
 * A **story** using Storybook. This is where the component can be developed in isolation.
 * A **test** using enzyme
-* A **README.md** named the same as the component with working code examples
+* A **README.md** 
+* A **package.json** file with the appropriate information
+* Extra challenging, RMWC uses flow types that are automatically converted to Typescript at build time. In order to verify the typescript conversion is working properly, you can run npm run build:code. You must add a path alias for the component in tsconfig.json.
+* It needs to be added to the src/rmwc/package.json
+* It folder needs to be added camelcased in RMWC that re-exports its index file
 
 ### Running development server
 

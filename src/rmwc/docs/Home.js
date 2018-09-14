@@ -13,8 +13,9 @@ import { Icon } from '@rmwc/icon';
 
 const checklist = [
   "Uses Google's official material-components-web library",
+  'Includes Addon components for ones missing from the official spec',
   'Works in any version of React from 15.5.x to 16.5.x',
-  'First class Typescript and Flow Support',
+  'First class Typescript (Beta) and Flow Support',
   'Server side rendering support',
   'Individually packaged and released components'
 ];

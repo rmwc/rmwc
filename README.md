@@ -11,10 +11,10 @@ A React (15 / 16) wrapper for the official Material Design (Web) Components v0.3
 
 Features:
 
-* [x] Implements Google's official material-components-web library
-* [x] Tested in all versions of React ranging from 15.5.x to 16.5.x
-* [x] First class Flow Type Support, no extra configuration needed
-* [x] First class Typescript support (Beta)
+* [x] Uses Google's official material-components-web library
+* [x] Includes Addon components for ones missing from the official spec
+* [x] Works in any version of React from 15.5.x to 16.5.x
+* [x] First class Typescript (Beta) and Flow Support
 * [x] Server side rendering support
 * [x] Individually packaged and released components
 
@@ -22,6 +22,10 @@ Features:
 ## Recent updates
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
+
+New in 2.1.0: RMWC Addons!
+
+While the primary goal of wrapping material-components-web remains the same, they simply don't currently (or aren't planning on) supporting the entire spec. Happy to announce the first RMWC only component: DataTable. This is a port of the Data Table components from MDL and has been refactored to play nicely with the rest of RWMC, including themes and sizing. It also adds a couple of features like sticky rows and sticky columns. Enjoy!
 
 New in 2.0.0: Individually packaged and released components!
 
@@ -42,6 +46,7 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 * To utilize the Foundation javascript classes and expose their api for
   consumption
 * To be as unobtrusive and sensible as possible.
+* To fill the gaps in material-components-web with custom React community driven components.
 
 ## Installation
 

@@ -205,7 +205,7 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
           {(!!title || !!header) && (
             <DialogHeader>
               {!!title && <DialogHeaderTitle>{title}</DialogHeaderTitle>}
-              {!!header && { header }}
+              {!!header && header}
             </DialogHeader>
           )}
           {(!!body || children) && (

@@ -1,11 +1,20 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Button from './';
+import { Button, ButtonIcon } from './';
 
 describe('Button', () => {
   it('renders', () => {
     const btn = mount(<Button />);
     expect(!!~btn.html().search('mdc-button')).toEqual(true);
+  });
+
+  it('can have an icon', () => {
+    mount(
+      <Button>
+        <ButtonIcon icon="favorite" />
+        Button
+      </Button>
+    );
   });
 
   it('can be raised', () => {

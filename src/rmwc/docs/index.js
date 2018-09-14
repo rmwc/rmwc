@@ -38,6 +38,8 @@ import '@material/toolbar/dist/mdc.toolbar.css';
 import '@material/top-app-bar/dist/mdc.top-app-bar.css';
 import '@material/typography/dist/mdc.typography.css';
 
+import '@rmwc/data-table/data-table.css';
+
 import 'prismjs/themes/prism.css';
 import './docs.css';
 import { AppContainer } from 'react-hot-loader';

@@ -138,6 +138,18 @@ body ul li {
   margin-bottom: 1.875rem;
 }
 
+.app__content > div > h1 > code {
+  font: inherit;
+  color: var(--mdc-theme-secondary);
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 0.75rem;
+  border: 1px solid var(--mdc-theme-secondary);
+  padding: 0.25rem 0.5rem;
+  vertical-align: middle;
+}
+
 .app__content > div > h1:first-child {
   margin-top: 0.5rem;
 }
@@ -556,6 +568,15 @@ ul li {
   clear: both;
 }
 
+#page-data-tables .example.render-with-code {
+  text-align: center;
+}
+
+#page-data-tables .example.render-with-code .run > div > .mdc-select {
+  margin: 0.5rem;
+  min-width: 5rem;
+}
+
 /**
  * Submenu
  */
@@ -615,17 +636,17 @@ ul li {
   color: rgb(0, 0, 128);
 }
 
-table th,
-table td {
+.example.render-only table th,
+.example.render-only table td {
   text-align: left;
   padding: 16px;
 }
 
-table {
+.example.render-only table {
   margin-left: -16px;
 }
 
-table th {
+.example.render-only table th {
   font-weight: bold;
 }
 

@@ -31,6 +31,8 @@
       "@rmwc/checkbox/*": ["src/checkbox/dist/*"],
       "@rmwc/chip": ["src/chip/dist"],
       "@rmwc/chip/*": ["src/chip/dist/*"],
+      "@rmwc/data-table": ["src/data-table/dist"],
+      "@rmwc/data-table/*": ["src/data-table/dist/*"],
       "@rmwc/dialog": ["src/dialog/dist"],
       "@rmwc/dialog/*": ["src/dialog/dist/*"],
       "@rmwc/drawer": ["src/drawer/dist"],

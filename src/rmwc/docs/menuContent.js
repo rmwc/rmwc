@@ -101,6 +101,14 @@ export const menuContent = [
     })
   },
   {
+    label: 'Data Tables',
+    url: `/data-tables`,
+    component: Loadable({
+      loader: () => import('@rmwc/data-table/README.md'),
+      loading: Loading
+    })
+  },
+  {
     label: 'Dialogs',
     url: `/dialogs`,
     component: Loadable({

@@ -22,12 +22,34 @@ describe('Theme', () => {
   });
 
   test('ThemeProvider renders', () => {
-    themeOptions.map((theme, i) =>
-      mount(
-        <ThemeProvider options={{ primary: 'red' }}>
-          <div />
-        </ThemeProvider>
-      )
+    const el = mount(
+      <ThemeProvider
+        options={{ primary: 'red', secondary: '#fff', surface: '#000000' }}
+      >
+        <div />
+      </ThemeProvider>
     );
+
+    el.setProps({
+      options: {
+        '--mdc-theme-primary': 'blue',
+        secondary: '#fff',
+        surface: '#000000'
+      }
+    });
+    el.update();
+    el.instance().colors;
+
+    el.setProps({
+      options: {
+        '--mdc-theme-primary': 'green',
+        secondary: '#000000',
+        surface: '#000000'
+      }
+    });
+    el.instance().colors;
+
+    el.update();
+    el.instance().colors;
   });
 });

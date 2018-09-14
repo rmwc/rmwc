@@ -1,0 +1,362 @@
+[
+  {
+    "description": "The DataTable Component.",
+    "displayName": "DataTable",
+    "methods": [],
+    "props": {
+      "stickyRows": {
+        "flowType": {
+          "name": "union",
+          "raw": "0 | 1",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "0"
+            },
+            {
+              "name": "literal",
+              "value": "1"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The number of rows to affix to the top of the table when scrolling."
+      },
+      "stickyColumns": {
+        "flowType": {
+          "name": "union",
+          "raw": "0 | 1",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "0"
+            },
+            {
+              "name": "literal",
+              "value": "1"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The number of columns to affix to the side of the table when scrolling."
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "DataTableContent",
+    "methods": []
+  },
+  {
+    "description": "A header for the data table.",
+    "displayName": "DataTableHead",
+    "methods": []
+  },
+  {
+    "description": "A body for the data table.",
+    "displayName": "DataTableBody",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "DataTableRow",
+    "methods": [],
+    "props": {
+      "selected": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the row in a selected state."
+      },
+      "activated": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Styles the row in an activated state."
+      }
+    }
+  },
+  {
+    "description": "A header cell for the data table.",
+    "displayName": "DataTableHeadCell",
+    "methods": [],
+    "props": {
+      "sort": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the column sortable"
+      },
+      "alignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the start of the cell."
+      },
+      "alignMiddle": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the middle of the cell."
+      },
+      "alignEnd": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the end of the cell."
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "DataTableCellRoot",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Align content to the start of the cell. */\n  alignStart?: boolean,\n  /** Align content to the middle of the cell. */\n  alignMiddle?: boolean,\n  /** Align content to the end of the cell. */\n  alignEnd?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Align content to the start of the cell. */\n  alignStart?: boolean,\n  /** Align content to the middle of the cell. */\n  alignMiddle?: boolean,\n  /** Align content to the end of the cell. */\n  alignEnd?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "alignStart",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "alignMiddle",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "alignEnd",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "DataTableCellPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ]
+  },
+  {
+    "description": "A cell for the data table.",
+    "displayName": "DataTableCell",
+    "methods": [],
+    "props": {
+      "alignStart": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the start of the cell."
+      },
+      "alignMiddle": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the middle of the cell."
+      },
+      "alignEnd": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Align content to the end of the cell."
+      }
+    }
+  },
+  {
+    "description": "A simple data table to render matrices.",
+    "displayName": "SimpleDataTable",
+    "methods": [],
+    "props": {
+      "data": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "any"
+                }
+              ],
+              "raw": "any[]"
+            }
+          ],
+          "raw": "Array<any[]>"
+        },
+        "required": true,
+        "description": "Data to render."
+      },
+      "headers": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "any"
+                }
+              ],
+              "raw": "any[]"
+            }
+          ],
+          "raw": "Array<any[]>"
+        },
+        "required": false,
+        "description": "Table headers to render."
+      },
+      "getRowProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(row: any[], index: number, isHead: boolean) => Object",
+          "signature": {
+            "arguments": [
+              {
+                "name": "row",
+                "type": {
+                  "name": "Array",
+                  "elements": [
+                    {
+                      "name": "any"
+                    }
+                  ],
+                  "raw": "any[]"
+                }
+              },
+              {
+                "name": "index",
+                "type": {
+                  "name": "number"
+                }
+              },
+              {
+                "name": "isHead",
+                "type": {
+                  "name": "boolean"
+                }
+              }
+            ],
+            "return": {
+              "name": "Object"
+            }
+          }
+        },
+        "required": false,
+        "description": "A function that allows you to return custom props for a row."
+      },
+      "getCellProps": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(cell: any[], index: number, isHead: boolean) => Object",
+          "signature": {
+            "arguments": [
+              {
+                "name": "cell",
+                "type": {
+                  "name": "Array",
+                  "elements": [
+                    {
+                      "name": "any"
+                    }
+                  ],
+                  "raw": "any[]"
+                }
+              },
+              {
+                "name": "index",
+                "type": {
+                  "name": "number"
+                }
+              },
+              {
+                "name": "isHead",
+                "type": {
+                  "name": "boolean"
+                }
+              }
+            ],
+            "return": {
+              "name": "Object"
+            }
+          }
+        },
+        "required": false,
+        "description": "A function that allows you to return custom props for a cell."
+      },
+      "stickyRows": {
+        "flowType": {
+          "name": "union",
+          "raw": "0 | 1",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "0"
+            },
+            {
+              "name": "literal",
+              "value": "1"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The number of rows to affix to the top of the table when scrolling."
+      },
+      "stickyColumns": {
+        "flowType": {
+          "name": "union",
+          "raw": "0 | 1",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "0"
+            },
+            {
+              "name": "literal",
+              "value": "1"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The number of columns to affix to the side of the table when scrolling."
+      }
+    }
+  }
+]

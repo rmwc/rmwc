@@ -50,6 +50,7 @@ describe('GridList', () => {
 
   it('can be tileAspect undefined', () => {
     mount(<GridList tileAspect={undefined} />);
+    mount(<GridList tileAspect={0} />);
   });
 
   it('can have custom classnames', () => {

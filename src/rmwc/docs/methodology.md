@@ -4,9 +4,13 @@
 
 ## Project Goals
 
-* To create the thinnest, lightest, and spec compliant wrapper around Google Material Design Components for the Web https://material.io/components/web/
-* To utilize the Foundation javascript classes and expose their api for consumption
+* To create the thinnest, lightest, and spec compliant wrapper around Google
+  Material Design Components for the Web
+  [https://material.io/components/web/](https://material.io/components/web/)
+* To utilize the Foundation javascript classes and expose their api for
+  consumption
 * To be as unobtrusive and sensible as possible.
+* To fill the gaps in material-components-web with custom React community driven components.
 
 ## Why?
 
@@ -16,13 +20,13 @@ There are many different Material UI implementations in both Angular and React. 
 * The library is an opinionated representation of material or it isn't very polished
 * The library has been abandoned
 
-RMWC's goal is to use the Google sanctioned javascript Material Design Components which are designed, developed, and maintained by Google.
+RMWC's goal is to use the Google sanctioned javascript Material Design Components which are designed, developed, and maintained by Google. Where Google doesn't provide a component, RMWC will include its own React driven components. These will be denoted with an "RMWC Addon" label.
 
 ## Breaking Changes
 
 As stated in "Why?", the goal of this library is to be unopinionated, and that includes opinions about breaking changes that come downstream from material-components-web. In the future, steps may be taken to insulate consumers by providing a deprecation path, but for the time being please make sure your keep eyes on the official MDC Changelog and RMWC will do its best to also keep its changelog up to date.
 
-With that said, you can each release of RMWC is bound to a specific release of material-components-web, so you can safely continue running your current version without upgrading.
+With that said, you can each release of RMWC is bound to a specific release of material-components-web, so you can safely continue running your current version without upgrading. As of 2.0.0, components are also individually packaged and released. If you have a large code base and want to insulate yourself from change, it is recommended you install one component at a time.
 
 ## Basic Layout
 
