@@ -208,6 +208,34 @@ describe('DataTable', () => {
   });
 });
 
+it('Sorted columns can have an onClick', () => {
+  let value = 0;
+
+  const el = mount(
+    <DataTable>
+      <DataTableContent>
+        <DataTableHead>
+          <DataTableRow>
+            <DataTableHeadCell>Item</DataTableHeadCell>
+            <DataTableHeadCell
+              sort={null}
+              onClick={evt => (value = 1)}
+              onSortChange={d => {}}
+            >
+              Quantity (Click Me)
+            </DataTableHeadCell>
+            <DataTableHeadCell>Unit price</DataTableHeadCell>
+          </DataTableRow>
+        </DataTableHead>
+      </DataTableContent>
+    </DataTable>
+  );
+
+  const cell = el.find('.rmwc-data-table__head-cell--sortable');
+  cell.simulate('click');
+  expect(value).toBe(1);
+});
+
 describe('SimpleDataTable', () => {
   it('renders', () => {
     mount(
