@@ -96,7 +96,7 @@ Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology
 ## Contributions
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/undefined/undefinedgraphs/contributors"><img src="https://opencollective.com/rmwc/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/jamesmfriedman/rmwc/graphs/contributors"><img src="https://opencollective.com/rmwc/contributors.svg?width=890&button=false" /></a>
 
 
 ### Backers
