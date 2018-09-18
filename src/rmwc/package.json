@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "index.js",
   "scripts": {
@@ -45,7 +45,7 @@
     "@rmwc/floating-label": "^2.0.2",
     "@rmwc/formfield": "^2.1.0",
     "@rmwc/grid": "^2.1.0",
-    "@rmwc/grid-list": "^2.1.0",
+    "@rmwc/grid-list": "^2.1.1",
     "@rmwc/icon": "^2.1.0",
     "@rmwc/icon-button": "^2.1.0",
     "@rmwc/image-list": "^2.1.0",

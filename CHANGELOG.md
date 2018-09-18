@@ -1,3 +1,9 @@
+#### 2.1.1 (2018-09-18)
+
+##### Bug Fixes
+
+* **GridList:**  Adding missing dependency for styles (b4aac1c2)
+
 #### 2.1.0 (2018-09-14)
 
 ##### New Features
