@@ -572,6 +572,10 @@ ul li {
   text-align: center;
 }
 
+#page-data-tables .example.render-with-code .run .rmwc-data-table {
+  max-width: 100%;
+}
+
 #page-data-tables .example.render-with-code .run > div > .mdc-select {
   margin: 0.5rem;
   min-width: 5rem;

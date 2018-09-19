@@ -4,6 +4,7 @@
 .rmwc-data-table {
   position: relative;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(0, 0, 0, 0.12);
   display: inline-block;
   text-align: left;
@@ -175,11 +176,12 @@
 .rmwc-data-table__sort-icon {
   transition: opacity 0.3s, transform 0.3s;
   opacity: 0;
-  vertical-align: text-top;
+  vertical-align: middle;
   width: 1.125rem;
   height: 1.125rem;
   display: inline-flex;
   margin-right: 0.25rem;
+  margin-top: -0.1875rem;
 }
 
 .rmwc-data-table__head-cell--sortable {
@@ -236,10 +238,8 @@
 /** Checkbox / Radio */
 .rmwc-data-table__cell .mdc-checkbox,
 .rmwc-data-table__cell .mdc-radio {
-  vertical-align: text-top;
-  position: relative;
-  top: 0.0625rem; /** Fixes 1px offset */
-  margin: -0.6875rem 0.25rem -0.6875rem -1rem;
+  vertical-align: middle;
+  margin: calc(-0.6875rem - 1.6px) 0.25rem -0.6875rem -1rem;
 }
 
 /** Select */

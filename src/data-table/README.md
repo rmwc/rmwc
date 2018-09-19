@@ -82,7 +82,7 @@ import {
 import { Select } from '@rmwc/select';
 
 <DataTable
-  style={{ height: '300px', maxWidth: '375px' }}
+  style={{ height: '300px', width: '375px' }}
   stickyRows={this.state.rows !== undefined ? this.state.rows : 0}
   stickyColumns={this.state.cols !== undefined ? this.state.cols : 0}
 >
@@ -96,7 +96,7 @@ import { Select } from '@rmwc/select';
       </DataTableRow>
     </DataTableHead>
     <DataTableBody>
-      {[...Array(100)].map((v, i) => (
+      {[...Array(50)].map((v, i) => (
         <DataTableRow key={i}>
           <DataTableCell>Label</DataTableCell>
           <DataTableCell>Row {i} Cell 1</DataTableCell>
