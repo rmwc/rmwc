@@ -1,15 +1,86 @@
 [
   {
     "description": "",
-    "displayName": "CheckboxRoot",
+    "displayName": "CheckboxNativeControl",
+    "methods": [],
+    "props": {
+      "type": {
+        "defaultValue": {
+          "value": "'checkbox'",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "CheckboxBackground",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "CheckboxCheckmark",
+    "methods": [],
+    "props": {
+      "viewBox": {
+        "defaultValue": {
+          "value": "'0 0 24 24'",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "CheckboxCheckmarkPath",
+    "methods": [],
+    "props": {
+      "fill": {
+        "defaultValue": {
+          "value": "'none'",
+          "computed": false
+        },
+        "required": false
+      },
+      "stroke": {
+        "defaultValue": {
+          "value": "'white'",
+          "computed": false
+        },
+        "required": false
+      },
+      "d": {
+        "defaultValue": {
+          "value": "'M1.73,12.91 8.1,19.28 22.79,4.59'",
+          "computed": false
+        },
+        "required": false
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "CheckboxMixedmark",
+    "methods": []
+  },
+  {
+    "description": "",
+    "displayName": "CheckboxLabel",
+    "methods": []
+  },
+  {
+    "description": "A Checkbox component",
+    "displayName": "Checkbox",
     "methods": [
       {
-        "name": "classNames",
+        "name": "syncWithDOM",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "props",
+            "name": "nextProps",
             "type": {
               "name": "intersection",
               "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
@@ -104,191 +175,12 @@
           }
         ],
         "returns": null
-      }
-    ]
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxNativeControl",
-    "methods": [],
-    "props": {
-      "type": {
-        "defaultValue": {
-          "value": "'checkbox'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxBackground",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxCheckmark",
-    "methods": [],
-    "props": {
-      "viewBox": {
-        "defaultValue": {
-          "value": "'0 0 24 24'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxCheckmarkPath",
-    "methods": [],
-    "props": {
-      "fill": {
-        "defaultValue": {
-          "value": "'none'",
-          "computed": false
-        },
-        "required": false
       },
-      "stroke": {
-        "defaultValue": {
-          "value": "'white'",
-          "computed": false
-        },
-        "required": false
-      },
-      "d": {
-        "defaultValue": {
-          "value": "'M1.73,12.91 8.1,19.28 22.79,4.59'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxMixedmark",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "CheckboxLabel",
-    "methods": []
-  },
-  {
-    "description": "A Checkbox component",
-    "displayName": "Checkbox",
-    "methods": [
       {
-        "name": "destroy",
+        "name": "getDefaultFoundation",
         "docblock": null,
         "modifiers": [],
         "params": [],
-        "returns": null
-      },
-      {
-        "name": "syncWithProps",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "nextProps",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "id",
-                        "value": {
-                          "name": "string",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "disabled",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "checked",
-                        "value": {
-                          "name": "union",
-                          "raw": "boolean | string",
-                          "elements": [
-                            {
-                              "name": "boolean"
-                            },
-                            {
-                              "name": "string"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "value",
-                        "value": {
-                          "name": "union",
-                          "raw": "boolean | string | number",
-                          "elements": [
-                            {
-                              "name": "boolean"
-                            },
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "indeterminate",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "label",
-                        "value": {
-                          "name": "string",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                },
-                {
-                  "name": "ReactInputHTMLAttributes",
-                  "raw": "React.InputHTMLAttributes<HTMLInputElement>",
-                  "elements": [
-                    {
-                      "name": "HTMLInputElement"
-                    }
-                  ]
-                }
-              ],
-              "alias": "CheckboxPropsT"
-            }
-          }
-        ],
         "returns": null
       }
     ],

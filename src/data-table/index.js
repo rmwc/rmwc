@@ -105,9 +105,9 @@ const DataTableSortIcon = () => (
 
 export type DataTableHeadCellPropsT = {
   /** Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. */
-  sort?: null | 1 | -1,
-  /** A callback for when the sorting method changes. */
-  onSortChange?: (dir: null | 1 | -1) => mixed
+  sort?: null | number,
+  /** A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending.*/
+  onSortChange?: (dir: null | number) => mixed
 } & SharedDataTableCellPropsT;
 
 const DataTableHeadCellRoot: React.ComponentType<

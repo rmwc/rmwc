@@ -2,11 +2,11 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCCheckbox } from '@material/checkbox/dist/mdc.checkbox';
+import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '@rmwc/formfield';
-import { simpleTag } from '@rmwc/base';
-import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
+import { simpleTag, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
+import { withRipple } from '@rmwc/ripple';
 
 export type CheckboxPropsT = {
   /** A DOM ID for the toggle. */
@@ -25,16 +25,18 @@ export type CheckboxPropsT = {
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckboxRoot = simpleTag({
-  displayName: 'CheckboxRoot',
-  classNames: (props: CheckboxPropsT) => [
-    'mdc-checkbox',
-    {
-      'mdc-checkbox--disabled': props.disabled
-    }
-  ],
-  consumeProps: ['disabled']
-});
+export const CheckboxRoot = withRipple({ surface: false, unbounded: true })(
+  simpleTag({
+    displayName: 'CheckboxRoot',
+    classNames: (props: CheckboxPropsT) => [
+      'mdc-checkbox',
+      {
+        'mdc-checkbox--disabled': props.disabled
+      }
+    ],
+    consumeProps: ['disabled']
+  })
+);
 
 export const CheckboxNativeControl = simpleTag({
   displayName: 'CheckboxNativeControl',
@@ -84,104 +86,75 @@ export const CheckboxLabel = simpleTag({
 /**
  * A Checkbox component
  */
-export class Checkbox extends withFoundation({
-  constructor: MDCCheckbox,
-  adapter: {}
-})<CheckboxPropsT> {
+export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   static displayName = 'Checkbox';
-
-  generatedId: string;
-  boundChangeHandler: (props: CheckboxPropsT) => mixed;
-  initRipple_: Function;
-  ripple_: any;
-  checked: boolean;
-  indeterminate: boolean;
-  disabled: boolean;
-  value: any;
-  handleChange_: Function;
-  foundation_: any;
   nativeCb_: any;
+  root_: any;
+  generatedId: string;
+  nativeCbHandler_: Function;
 
   constructor(props: CheckboxPropsT) {
     super(props);
     this.generatedId = randomId('checkbox');
+    this.createClassList('root_');
+    this.createPropsList('nativeCb_');
   }
 
   componentDidMount() {
+    this.nativeCbHandler_ = () => this.syncWithDOM(this.props);
+    this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
     super.componentDidMount();
-    this.ripple_ = this.initRipple_();
-
-    // Fixes bug #247
-    // Basically we need to do the following hacks
-    // - register syncWithProps so it runs on change
-    // - deregister the original change handler and re-register so it
-    //   runs after sync with props
-    this.nativeCb_.removeEventListener('change', this.handleChange_);
-
-    this.handleChange_ = () => {
-      // RAF fixes #294 for an unknown reason
-      // Checkbox not responsive on iOS.
-      window.requestAnimationFrame(() => {
-        this.syncWithProps(this.props);
-        this.foundation_.handleChange();
-      });
-    };
-
-    this.nativeCb_.addEventListener('change', this.handleChange_);
   }
 
-  destroy() {
-    super.destroy();
-    this.nativeCb_.removeEventListener('change', this.handleChange_);
+  componentWillUnmount() {
+    super.componentWillUnmount();
+    this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
   }
 
-  syncWithProps(nextProps: CheckboxPropsT) {
-    // checked
-    syncFoundationProp(
-      nextProps.checked,
-      this.checked,
-      () => (this.checked = !!nextProps.checked)
-    );
+  syncWithDOM(nextProps: CheckboxPropsT) {
+    if (nextProps.indeterminate !== this.nativeCb_.indeterminate) {
+      this.nativeCb_.indeterminate = nextProps.indeterminate;
+    }
+  }
 
-    // indeterminate
-    syncFoundationProp(
-      nextProps.indeterminate,
-      this.indeterminate,
-      () => (this.indeterminate = !!nextProps.indeterminate)
-    );
-
-    // disabled
-    syncFoundationProp(
-      nextProps.disabled,
-      this.disabled,
-      () => (this.disabled = !!nextProps.disabled)
-    );
-
-    // value
-    syncFoundationProp(
-      nextProps.value,
-      this.value,
-      () => (this.value = nextProps.value)
-    );
+  getDefaultFoundation() {
+    return new MDCCheckboxFoundation({
+      addClass: className => this.classList.root_.add(className),
+      removeClass: className => this.classList.root_.remove(className),
+      setNativeControlAttr: (attr, value) =>
+        this.propsList.nativeCb_.add(attr, value),
+      removeNativeControlAttr: attr => this.propsList.nativeCb_.remove(attr),
+      getNativeControl: () => this.nativeCb_,
+      isIndeterminate: () => this.props.indeterminate,
+      isChecked: () =>
+        this.props.checked !== undefined
+          ? this.props.checked
+          : this.nativeCb_.checked,
+      hasNativeControl: () => !!this.nativeCb_,
+      setNativeControlDisabled: disabled =>
+        (this.nativeCb_.disabled = disabled),
+      forceLayout: () => this.root_.offsetWidth,
+      isAttachedToDOM: () => Boolean(this.root_.parentNode)
+    });
   }
 
   render() {
-    const {
-      label = '',
-      id,
-      children,
-      checked,
-      indeterminate,
-      apiRef,
-      ...rest
-    } = this.props;
+    const { label = '', id, children, indeterminate, ...rest } = this.props;
 
-    const { root_ } = this.foundationRefs;
     const labelId = id || this.generatedId;
 
     const checkbox = (
-      <CheckboxRoot elementRef={root_} disabled={rest.disabled}>
-        <CheckboxNativeControl id={labelId} checked={checked} {...rest} />
+      <CheckboxRoot
+        elementRef={ref => (this.root_ = ref)}
+        disabled={rest.disabled}
+        {...this.classList.root_.get()}
+      >
+        <CheckboxNativeControl
+          {...this.propsList.nativeCb_.get()}
+          elementRef={ref => (this.nativeCb_ = ref)}
+          id={labelId}
+          {...rest}
+        />
         <CheckboxBackground>
           <CheckboxCheckmark>
             <CheckboxCheckmarkPath />

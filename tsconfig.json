@@ -19,6 +19,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "preserveSymlinks": true,
     "stripInternal": true,
+    "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
       "@rmwc/base": ["src/base/dist"],

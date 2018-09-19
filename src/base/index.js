@@ -11,5 +11,7 @@ export { randomId } from './utils/randomId';
 
 export { withFoundation, syncFoundationProp } from './withFoundation';
 
+export { FoundationComponent } from './foundation-component';
+
 //$FlowFixMe
 export type CustomEventT<T> = CustomEvent<T> & SyntheticEvent<EventTarget>;

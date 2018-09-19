@@ -25,7 +25,7 @@ import { Checkbox } from '@rmwc/checkbox';
 <Checkbox label="Icecream" />
 
 {/* Making a "half" checked, indeterminate Checkbox */}
-<Checkbox indeterminate={true}>Broccoli</Checkbox>
+<Checkbox indeterminate>Broccoli</Checkbox>
 ```
 
 ```jsx renderOnly

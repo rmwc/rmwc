@@ -85,10 +85,50 @@
     "props": {
       "sort": {
         "flowType": {
-          "name": "boolean"
+          "name": "union",
+          "raw": "null | number",
+          "elements": [
+            {
+              "name": "unknown"
+            },
+            {
+              "name": "number"
+            }
+          ]
         },
         "required": false,
-        "description": "Make the column sortable"
+        "description": "Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending."
+      },
+      "onSortChange": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(dir: null | number) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "dir",
+                "type": {
+                  "name": "union",
+                  "raw": "null | number",
+                  "elements": [
+                    {
+                      "name": "unknown"
+                    },
+                    {
+                      "name": "number"
+                    }
+                  ]
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending."
       },
       "alignStart": {
         "flowType": {

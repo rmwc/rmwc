@@ -28,6 +28,7 @@
   "dependencies": {
     "@material/checkbox": "~0.39.0",
     "@rmwc/base": "^2.0.2",
+    "@rmwc/ripple": "^2.0.2",
     "@rmwc/formfield": "^2.1.0"
   }
 }
