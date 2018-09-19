@@ -147,7 +147,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       <CheckboxRoot
         elementRef={ref => (this.root_ = ref)}
         disabled={rest.disabled}
-        {...this.classList.root_.get()}
+        className={this.classList.root_.get()}
       >
         <CheckboxNativeControl
           {...this.propsList.nativeCb_.get()}

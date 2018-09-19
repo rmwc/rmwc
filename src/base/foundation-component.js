@@ -27,7 +27,7 @@ export class FoundationComponent<P> extends React.Component<
   classList: { [key: string]: ClassListT } = {};
   propsList: { [key: string]: PropsListT } = {};
 
-  createClassList(elementName) {
+  createClassList(elementName: string) {
     const classes = new Set();
     this.classList[elementName] = {
       get: () =>
@@ -49,7 +49,7 @@ export class FoundationComponent<P> extends React.Component<
     };
   }
 
-  createPropsList(elementName) {
+  createPropsList(elementName: string) {
     let props = {};
     this.propsList[elementName] = {
       get: () => props,
