@@ -2,13 +2,7 @@
 
 ## RMWC or MDC?
 
-RMWC is just a React wrapper for Google's official MDC that provides a props based interface for their components. Is the bug being caused by RMWC, or MDC? Please do your best to track down where the bug is originating from and post your issue to the proper repository. MDC bugs should be filed here https://github.com/material-components/material-components-web/issues.
-
-Also, please note that RMWC does not contain any styles of its own, so if you're having any style related issues it is probable that the issue is with MDC.
-
-Bugs that would likely be caused by RMWC:
-- synchronicity issues: The underlying MDC component or behavior does not match up with your props.
-- missing MDC features: MDC says you can do "X" but there is no prop or option for it in RMWC.
+RMWC is a React wrapper for Google's official MDC that provides a props based interface for their components. Is the bug being caused by RMWC, or MDC? Please do your best to track down where the bug is originating from and post your issue to the proper repository. MDC bugs should be filed here https://github.com/material-components/material-components-web/issues.
 
 ## Bugs
 
@@ -18,19 +12,18 @@ Follow the template below to ensure the quickest and most accurate response to y
 
 > Please be specific, e.g. _major.minor.patch_
 
-### What browser(s) and React Version is this bug affecting?
-
-> Please include the browser version. A user-agent string is also quite helpful.
-
 ### What build system are you using?
 
-> Webpack, Create React App, Browserify, SystemJS, None, etc.
+> Webpack, Create React App, Browserify, SystemJS, None, etc. Also mention if you are using Typescript or Flow.
 
 ### What are the steps to reproduce the bug?
 
 > Please write the steps which need to be taken in order to reproduce the bug. These steps should be
-> as detailed as possible. If possible please use this sandbox (https://codesandbox.io/s/p7lm5oyn3m) and try
-> to reproduce the bug. It makes it much easier to resolve issues.  
+> as detailed as possible. PLEASE use the Code Sandbox 
+> to reproduce the bug which will allow a quicker resolution to your issue.
+> - Javascript Sandbox https://codesandbox.io/s/kpy13vqnr
+> - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
+
 
 
 ### What is the expected behavior?
