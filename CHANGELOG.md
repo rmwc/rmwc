@@ -1,3 +1,17 @@
+#### 2.1.2 (2018-09-19)
+
+##### Chores
+
+* **Typescript:**  Upgrade to 3.0.0 and fix @node types issue (68eb0d50)
+
+##### Bug Fixes
+
+* **DataTable:**  Scrolling and control alignment. (668420e9)
+
+##### Refactors
+
+* **Checkbox:**  Correcting sync issues by rewriting with standard foundation adpater. (8aa98d5a)
+
 #### 2.1.1 (2018-09-18)
 
 ##### Bug Fixes

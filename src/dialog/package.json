@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "description": "RMWC Dialog component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/dialog": "~0.39.0",
-    "@rmwc/base": "^2.0.2",
-    "@rmwc/button": "^2.1.0"
+    "@rmwc/base": "^2.1.2",
+    "@rmwc/button": "^2.1.2"
   }
 }
