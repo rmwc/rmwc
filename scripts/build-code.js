@@ -94,7 +94,7 @@ Promise.all(promises).then(() => {
   const compileTypescriptCmd = `./node_modules/.bin/tsc`;
   execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-  glob('./**/dist/*.tsx', {}, function(er, files) {
+  glob('./**/dist/**/*.tsx', {}, function(er, files) {
     files.forEach(fs.unlinkSync);
   });
 });
