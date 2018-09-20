@@ -2,7 +2,65 @@
   {
     "description": "The DataTable Component.",
     "displayName": "DataTable",
-    "methods": [],
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** The number of rows to affix to the top of the table when scrolling. */\n  stickyRows?: 0 | 1,\n  /** The number of columns to affix to the side of the table when scrolling. */\n  stickyColumns?: 0 | 1\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "stickyRows",
+                    "value": {
+                      "name": "union",
+                      "raw": "0 | 1",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "0"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "1"
+                        }
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "stickyColumns",
+                    "value": {
+                      "name": "union",
+                      "raw": "0 | 1",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "0"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "1"
+                        }
+                      ],
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "DataTablePropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "stickyRows": {
         "flowType": {
@@ -43,7 +101,7 @@
     }
   },
   {
-    "description": "",
+    "description": "The data table content.",
     "displayName": "DataTableContent",
     "methods": []
   },
@@ -58,25 +116,45 @@
     "methods": []
   },
   {
-    "description": "",
+    "description": "A row for the data table.",
     "displayName": "DataTableRow",
-    "methods": [],
-    "props": {
-      "selected": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the row in a selected state."
-      },
-      "activated": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the row in an activated state."
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Styles the row in a selected state. */\n  selected?: boolean,\n  /** Styles the row in an activated state. */\n  activated?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "selected",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "activated",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "DataTableRowPropsT"
+            }
+          }
+        ],
+        "returns": null
       }
-    }
+    ]
   },
   {
     "description": "A header cell for the data table.",
@@ -130,6 +208,14 @@
         "required": false,
         "description": "A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending."
       },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children to pass to the cell."
+      },
       "alignStart": {
         "flowType": {
           "name": "boolean"
@@ -154,8 +240,8 @@
     }
   },
   {
-    "description": "",
-    "displayName": "DataTableCellRoot",
+    "description": "A cell for the DataTable",
+    "displayName": "DataTableCell",
     "methods": [
       {
         "name": "classNames",
@@ -165,55 +251,41 @@
           {
             "name": "props",
             "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Align content to the start of the cell. */\n  alignStart?: boolean,\n  /** Align content to the middle of the cell. */\n  alignMiddle?: boolean,\n  /** Align content to the end of the cell. */\n  alignEnd?: boolean\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Align content to the start of the cell. */\n  alignStart?: boolean,\n  /** Align content to the middle of the cell. */\n  alignMiddle?: boolean,\n  /** Align content to the end of the cell. */\n  alignEnd?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "alignStart",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "alignMiddle",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "alignEnd",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Align content to the start of the cell. */\n  alignStart?: boolean,\n  /** Align content to the middle of the cell. */\n  alignMiddle?: boolean,\n  /** Align content to the end of the cell. */\n  alignEnd?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "alignStart",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "alignMiddle",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "alignEnd",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
                   }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
+                ]
+              },
               "alias": "DataTableCellPropsT"
             }
           }
         ],
         "returns": null
       }
-    ]
-  },
-  {
-    "description": "A cell for the data table.",
-    "displayName": "DataTableCell",
-    "methods": [],
+    ],
     "props": {
       "alignStart": {
         "flowType": {

@@ -38,7 +38,9 @@ import '@material/toolbar/dist/mdc.toolbar.css';
 import '@material/top-app-bar/dist/mdc.top-app-bar.css';
 import '@material/typography/dist/mdc.typography.css';
 
+// rmwc additions
 import '@rmwc/data-table/data-table.css';
+import '@rmwc/icon/icon.css';
 
 import 'prismjs/themes/prism.css';
 import './docs.css';

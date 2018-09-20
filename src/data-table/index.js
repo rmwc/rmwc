@@ -1,8 +1,6 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
-
 import * as React from 'react';
-import { simpleTag } from '@rmwc/base';
+import { Component } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 
 type SharedDataTableCellPropsT = {
@@ -12,19 +10,20 @@ type SharedDataTableCellPropsT = {
   alignMiddle?: boolean,
   /** Align content to the end of the cell. */
   alignEnd?: boolean
-} & SimpleTagPropsT;
+};
 
 export type DataTablePropsT = {
   /** The number of rows to affix to the top of the table when scrolling. */
   stickyRows?: 0 | 1,
   /** The number of columns to affix to the side of the table when scrolling. */
   stickyColumns?: 0 | 1
-} & SimpleTagPropsT;
+};
 
-const DataTableRoot: React.ComponentType<DataTablePropsT> = simpleTag({
-  displayName: 'DataTableRoot',
-  tag: 'div',
-  classNames: (props: DataTablePropsT) => [
+/** @extends React.Component */
+/** The DataTable Component. */
+export class DataTable extends Component<DataTablePropsT> {
+  static displayName = 'DataTable';
+  classNames = (props: DataTablePropsT) => [
     'rmwc-data-table',
     {
       'rmwc-data-table--sticky-columns': !!props.stickyColumns,
@@ -32,62 +31,55 @@ const DataTableRoot: React.ComponentType<DataTablePropsT> = simpleTag({
       'rmwc-data-table--sticky-rows': !!props.stickyRows,
       'rmwc-data-table--sticky-rows-1': !!props.stickyRows
     }
-  ],
-  consumeProps: ['stickyColumns', 'stickyRows']
-});
+  ];
+  consumeProps = ['stickyColumns', 'stickyRows'];
+}
 
-/** The DataTable Component. */
-export const DataTable: React.ComponentType<DataTablePropsT> = (
-  props: DataTablePropsT
-) => <DataTableRoot {...props} />;
+/** @extends React.Component */
+/** The data table content. */
+export class DataTableContent extends Component<{}> {
+  static displayName = 'DataTableContent';
+  tag = 'table';
+  classNames = ['rmwc-data-table__content'];
+}
 
-DataTable.displayName = 'DataTable';
-
-export const DataTableContent = simpleTag({
-  displayName: 'DataTableContent',
-  tag: 'table',
-  classNames: 'rmwc-data-table__content'
-});
-
+/** @extends React.Component */
 /** A header for the data table. */
-export const DataTableHead = simpleTag({
-  displayName: 'DataTableHead',
-  tag: 'thead',
-  classNames: 'rmwc-data-table__head'
-});
+export class DataTableHead extends Component<{}> {
+  static displayName = 'DataTableHead';
+  tag = 'thead';
+  classNames = ['rmwc-data-table__head'];
+}
 
+/** @extends React.Component */
 /** A body for the data table. */
-export const DataTableBody = simpleTag({
-  displayName: 'DataTableBody',
-  tag: 'tbody',
-  classNames: 'rmwc-data-table__body'
-});
+export class DataTableBody extends Component<{}> {
+  static displayName = 'DataTableBody';
+  tag = 'tbody';
+  classNames = ['rmwc-data-table__body'];
+}
 
 export type DataTableRowPropsT = {
   /** Styles the row in a selected state. */
   selected?: boolean,
   /** Styles the row in an activated state. */
   activated?: boolean
-} & SimpleTagPropsT;
+};
 
+/** @extends React.Component */
 /** A row for the data table. */
-const DataTableRowRoot = simpleTag({
-  displayName: 'DataTableRowRoot',
-  tag: 'tr',
-  classNames: (props: DataTableRowPropsT) => [
+export class DataTableRow extends Component<{}> {
+  static displayName = 'DataTableRow';
+  tag = 'tr';
+  classNames = (props: DataTableRowPropsT) => [
     'rmwc-data-table__row',
     {
       'rmwc-data-table__row--selected': props.selected,
       'rmwc-data-table__row--activated': props.activated
     }
-  ],
-  consumeProps: ['activated', 'selected']
-});
-
-export const DataTableRow: React.ComponentType<DataTableRowPropsT> = (
-  props: DataTableRowPropsT
-) => <DataTableRowRoot {...props} />;
-DataTableRow.displayName = 'DataTableRow';
+  ];
+  consumeProps = ['activated', 'selected'];
+}
 
 const DataTableSortIcon = () => (
   <Icon
@@ -107,15 +99,15 @@ export type DataTableHeadCellPropsT = {
   /** Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. */
   sort?: null | number,
   /** A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending.*/
-  onSortChange?: (dir: null | number) => mixed
+  onSortChange?: (dir: null | number) => mixed,
+  /** Children to pass to the cell. */
+  children?: React.Node
 } & SharedDataTableCellPropsT;
 
-const DataTableHeadCellRoot: React.ComponentType<
-  DataTableHeadCellPropsT
-> = simpleTag({
-  displayName: 'DataTableHeadCellRoot',
-  tag: 'th',
-  classNames: (props: DataTableHeadCellPropsT) => [
+class DataTableHeadCellRoot extends Component<DataTableHeadCellPropsT> {
+  static displayName = 'DataTableHeadCellRoot';
+  tag = 'th';
+  classNames = (props: DataTableHeadCellPropsT) => [
     'rmwc-data-table__cell',
     'rmwc-data-table__head-cell',
     {
@@ -127,15 +119,15 @@ const DataTableHeadCellRoot: React.ComponentType<
       'rmwc-data-table__cell--align-middle': props.alignMiddle,
       'rmwc-data-table__cell--align-end': props.alignEnd
     }
-  ],
-  consumeProps: [
+  ];
+  consumeProps = [
     'alignStart',
     'alignMiddle',
     'alignEnd',
     'sort',
     'onSortChange'
-  ]
-});
+  ];
+}
 
 /** A header cell for the data table. */
 export const DataTableHeadCell: React.ComponentType<DataTableHeadCellPropsT> = (
@@ -149,8 +141,8 @@ export const DataTableHeadCell: React.ComponentType<DataTableHeadCellPropsT> = (
               props.onSortChange(
                 props.sort === null ? 1 : props.sort === 1 ? -1 : null
               );
-
-          props.onClick && props.onClick(evt);
+          //$FlowFixMe
+          props['onClick'] && props['onClick'](evt);
         }
       }
       : {};
@@ -163,28 +155,25 @@ export const DataTableHeadCell: React.ComponentType<DataTableHeadCellPropsT> = (
   );
 };
 
+DataTableHeadCell.displayName = 'DataTableHeadCell';
+
 export type DataTableCellPropsT = SharedDataTableCellPropsT;
 
-export const DataTableCellRoot: React.ComponentType<
-  DataTableCellPropsT
-> = simpleTag({
-  displayName: 'DataTableCellRoot',
-  tag: 'td',
-  classNames: (props: DataTableCellPropsT) => [
+/** @extends React.Component */
+/** A cell for the DataTable */
+export class DataTableCell extends Component<DataTableCellPropsT> {
+  static displayName = 'DataTableCell';
+  tag = 'td';
+  classNames = (props: DataTableCellPropsT) => [
     'rmwc-data-table__cell',
     {
       'rmwc-data-table__cell--align-start': props.alignStart,
       'rmwc-data-table__cell--align-middle': props.alignMiddle,
       'rmwc-data-table__cell--align-end': props.alignEnd
     }
-  ],
-  consumeProps: ['alignStart', 'alignMiddle', 'alignEnd']
-});
-
-/** A cell for the data table. */
-export const DataTableCell: React.ComponentType<DataTableCellPropsT> = (
-  props: DataTableCellPropsT
-) => <DataTableCellRoot {...props} />;
+  ];
+  consumeProps = ['alignStart', 'alignMiddle', 'alignEnd'];
+}
 
 export type SimpleDataTablePropsT = {
   /** Data to render. */
