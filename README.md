@@ -25,9 +25,13 @@ Features:
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 
-New in 2.1.0: RMWC Addons!
+New in 2.2.0: RMWC Addons!
 
-While the primary goal of wrapping material-components-web remains the same, they simply don't currently (or aren't planning on) supporting the entire spec. Happy to announce the first RMWC only component: DataTable. This is a port of the Data Table components from MDL and has been refactored to play nicely with the rest of RWMC, including themes and sizing. It also adds a couple of features like sticky rows and sticky columns. Enjoy!
+While the primary goal of wrapping material-components-web remains the same, they simply don't currently (or aren't planning on) supporting the entire spec. New functionality:
+
+- Circular Progress
+- Icon Sizing
+- Data Tables
 
 New in 2.0.0: Individually packaged and released components!
 
