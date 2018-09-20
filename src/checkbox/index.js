@@ -1,5 +1,6 @@
 // @flow
 import type { SimpleTagPropsT } from '@rmwc/base';
+import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
@@ -22,10 +23,14 @@ export type CheckboxPropsT = {
   /** A label for the control. */
   label?: string
 } & SimpleTagPropsT &
+  WithRipplePropsT &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckboxRoot = withRipple({ surface: false, unbounded: true })(
+export const CheckboxRoot: React.ComponentType<CheckboxPropsT> = withRipple({
+  surface: false,
+  unbounded: true
+})(
   simpleTag({
     displayName: 'CheckboxRoot',
     classNames: (props: CheckboxPropsT) => [
