@@ -1,3 +1,18 @@
+#### 2.2.0 (2018-09-20)
+
+##### New Features
+
+* **CircularProgress:**  Adding circular progress RMWC addon component. (8db0f60a)
+* **Icon:**  Adding icon sizes (3e7dcf39)
+
+##### Bug Fixes
+
+* **Checkbox:**  Enhancing Typescript definition (dc9d46c2)
+
+##### Refactors
+
+* **Component:**  replacing simpleTag with more effecient base Component. (468a8d3c)
+
 #### 2.1.3 (2018-09-19)
 
 #### 2.1.2 (2018-09-19)

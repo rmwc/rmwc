@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/provider",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "RMWC Provider component",
   "main": "index.js",
   "scripts": {
