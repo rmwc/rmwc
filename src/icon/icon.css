@@ -1,0 +1,29 @@
+.rmwc-icon--size-xsmall {
+  font-size: 1.125rem;
+  width: 1em;
+  height: 1em;
+}
+
+.rmwc-icon--size-small {
+  font-size: 1.25rem;
+  width: 1em;
+  height: 1em;
+}
+
+.rmwc-icon--size-medium {
+  font-size: 1.5rem;
+  width: 1em;
+  height: 1em;
+}
+
+.rmwc-icon--size-large {
+  font-size: 2.25rem;
+  width: 1em;
+  height: 1em;
+}
+
+.rmwc-icon--size-xlarge {
+  font-size: 3rem;
+  width: 1em;
+  height: 1em;
+}

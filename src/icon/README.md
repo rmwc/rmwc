@@ -1,8 +1,11 @@
-# Icons
+# Icons `RMWC Addon`
 
 > Material icons use geometric shapes to visually represent core ideas, capabilities, or topics.
 
 - Module **@rmwc/icon**
+- Import styles:
+  - import **'@rmwc/icon/icon.css'**;
+
 
 Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. You can include [Material Icons](https://material.io/icons/), any other font icon set, use SVGs, or your own images.
 
@@ -72,6 +75,19 @@ import { Icon } from '@rmwc/icon';
     prefix: "glyphicons-"
   }}
 />
+```
+
+## Icon Sizing
+
+The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size.
+
+```jsx render
+
+<Icon icon="favorite" iconSize="xsmall" /> {/* 18px */}
+<Icon icon="favorite" iconSize="small" />  {/* 20px */}
+<Icon icon="favorite" iconSize="medium" /> {/* 24px */}
+<Icon icon="favorite" iconSize="large" />  {/* 36px */}
+<Icon icon="favorite" iconSize="xlarge" /> {/* 48px */}
 ```
 
 ## Custom Rendering

@@ -5,7 +5,7 @@ import { Icon } from './';
 describe('Icon', () => {
   it('renders ligature', () => {
     const el = mount(<Icon icon="favorite" />);
-    expect(el.html()).toBe(`<i class="material-icons">favorite</i>`);
+    expect(el.html()).toBe(`<i class="rmwc-icon material-icons">favorite</i>`);
   });
 
   it('renders Url', () => {
@@ -13,7 +13,7 @@ describe('Icon', () => {
       <Icon icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
     );
     expect(el2.html()).toBe(
-      `<img class="material-icons" src="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon">`
+      `<img class="rmwc-icon material-icons" src="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon">`
     );
   });
 
@@ -33,7 +33,7 @@ describe('Icon', () => {
       />
     );
     expect(el.html()).toBe(
-      `<i class="material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
+      `<i class="rmwc-icon material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
     );
 
     const el2 = mount(
@@ -46,7 +46,7 @@ describe('Icon', () => {
       />
     );
     expect(el2.html()).toBe(
-      `<i class="material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
+      `<i class="rmwc-icon material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
     );
   });
 
@@ -66,7 +66,7 @@ describe('Icon', () => {
         }}
       />
     );
-    expect(el.html()).toBe(`<i class="icon ion-ionic"></i>`);
+    expect(el.html()).toBe(`<i class="rmwc-icon icon ion-ionic"></i>`);
   });
 
   it('renders custom', () => {
@@ -75,7 +75,12 @@ describe('Icon', () => {
         icon="CUSTOM"
         iconOptions={{
           strategy: 'custom',
-          render: props => <div>Customized-{props.content}</div>
+          render: props => (
+            <div>
+              Customized-
+              {props.content}
+            </div>
+          )
         }}
       />
     );
