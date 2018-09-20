@@ -30,9 +30,10 @@ export class Component<P> extends React.Component<ComponentPropsT<P>> {
    */
   handleClassNames(props: any) {
     const { className, theme } = this.props;
+    const tsxSafeTheme: any = theme;
     props.className = classNamesFunc(
       className,
-      !!theme && parseThemeOptions,
+      ...(!!tsxSafeTheme ? parseThemeOptions(tsxSafeTheme) : []),
       ...(typeof this.classNames === 'function'
         ? this.classNames(this.props)
         : this.classNames)

@@ -28,6 +28,8 @@
       "@rmwc/button/*": ["src/button/dist/*"],
       "@rmwc/card": ["src/card/dist"],
       "@rmwc/card/*": ["src/card/dist/*"],
+      "@rmwc/circular-progress": ["src/circular-progress/dist"],
+      "@rmwc/circular-progress/*": ["src/circular-progress/dist/*"],
       "@rmwc/checkbox": ["src/checkbox/dist"],
       "@rmwc/checkbox/*": ["src/checkbox/dist/*"],
       "@rmwc/chip": ["src/chip/dist"],

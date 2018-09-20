@@ -218,12 +218,25 @@ export const menuContent = [
     })
   },
   {
-    label: 'Linear Progress',
-    url: `/linear-progress`,
-    component: Loadable({
-      loader: () => import('@rmwc/linear-progress/README.md'),
-      loading: Loading
-    })
+    label: 'Progress',
+    options: [
+      {
+        label: 'Linear Progress',
+        url: `/linear-progress`,
+        component: Loadable({
+          loader: () => import('@rmwc/linear-progress/README.md'),
+          loading: Loading
+        })
+      },
+      {
+        label: 'Circular Progress',
+        url: `/circular-progress`,
+        component: Loadable({
+          loader: () => import('@rmwc/circular-progress/README.md'),
+          loading: Loading
+        })
+      }
+    ]
   },
   {
     label: 'Lists',

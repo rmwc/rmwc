@@ -83,7 +83,7 @@
             "name": "nextProps",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
+              "raw": "{\n  /** A DOM ID for the toggle. */\n  id?: string,\n  /** Disables the control. */\n  disabled?: boolean,\n  /** Toggle the control on and off. */\n  checked?: boolean | string,\n  /** The value of the control. */\n  value?: boolean | string | number,\n  /** Make the control indeterminate */\n  indeterminate?: boolean,\n  /** A label for the control. */\n  label?: string\n} & SimpleTagPropsT &\n  WithRipplePropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
               "elements": [
                 {
                   "name": "signature",
@@ -159,6 +159,9 @@
                 },
                 {
                   "name": "SimpleTagPropsT"
+                },
+                {
+                  "name": "WithRipplePropsT"
                 },
                 {
                   "name": "ReactInputHTMLAttributes",

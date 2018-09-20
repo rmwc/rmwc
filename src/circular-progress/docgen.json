@@ -1,0 +1,122 @@
+[
+  {
+    "description": "A Circular Progress indicator.",
+    "displayName": "CircularProgress",
+    "methods": [
+      {
+        "name": "calculateRatio",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "circularStyle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "size",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "max": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Max value for determinate progress bars.",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "min": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Min value for determinate progress bars.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "progress": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Value for determinate progress bars.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "size": {
+        "flowType": {
+          "name": "union",
+          "raw": "'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'xsmall'"
+            },
+            {
+              "name": "literal",
+              "value": "'small'"
+            },
+            {
+              "name": "literal",
+              "value": "'medium'"
+            },
+            {
+              "name": "literal",
+              "value": "'large'"
+            },
+            {
+              "name": "literal",
+              "value": "'xlarge'"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The size of the loader you would like to render.",
+        "defaultValue": {
+          "value": "'medium'",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Additional className for the progress indicator."
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Additional styles for the progress indicator."
+      }
+    }
+  }
+]
