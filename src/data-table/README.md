@@ -8,7 +8,7 @@
 
 ## Standard Table
 
-The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists. With that said, you you can easily plug in libraries such as [React Virtualized](https://github.com/bvaughn/react-virtualized).
+The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists. With that said, you can easily plug in libraries such as [React Virtualized](https://github.com/bvaughn/react-virtualized).
 
 ```jsx render
 import {
