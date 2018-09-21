@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "index.js",
   "scripts": {
@@ -37,11 +37,11 @@
     "@rmwc/card": "^2.2.0",
     "@rmwc/checkbox": "^2.2.0",
     "@rmwc/chip": "^2.2.0",
-    "@rmwc/data-table": "^2.2.0",
+    "@rmwc/data-table": "^2.2.1",
     "@rmwc/dialog": "^2.2.0",
     "@rmwc/drawer": "^2.2.0",
     "@rmwc/elevation": "^2.2.0",
-    "@rmwc/fab": "^2.2.0",
+    "@rmwc/fab": "^2.2.1",
     "@rmwc/floating-label": "^2.2.0",
     "@rmwc/formfield": "^2.2.0",
     "@rmwc/grid": "^2.2.0",

@@ -1,3 +1,9 @@
+#### 2.2.1 (2018-09-21)
+
+##### Bug Fixes
+
+* **Fab:**  Allows Fab to accept children (e13c68ff)
+
 #### 2.2.0 (2018-09-20)
 
 ##### New Features
