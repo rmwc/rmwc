@@ -1,3 +1,9 @@
+#### 2.2.2 (2018-09-21)
+
+##### Bug Fixes
+
+* **Icon:**  Correcting icon sizing spec. (d7e95750)
+
 #### 2.2.1 (2018-09-21)
 
 ##### Bug Fixes

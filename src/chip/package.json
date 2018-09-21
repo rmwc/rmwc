@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/chip",
-  "version": "2.2.0",
+  "version": "2.2.2",
   "description": "RMWC Chip component",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "@material/chips": "~0.39.0",
     "@material/ripple": "~0.39.0",
     "@rmwc/base": "^2.2.0",
-    "@rmwc/icon": "^2.2.0"
+    "@rmwc/icon": "^2.2.2"
   }
 }

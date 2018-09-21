@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/fab",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "RMWC Floating Action Button component",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "@material/fab": "~0.39.0",
     "@rmwc/base": "^2.2.0",
-    "@rmwc/icon": "^2.2.0",
+    "@rmwc/icon": "^2.2.2",
     "@rmwc/provider": "^2.2.0",
     "@rmwc/ripple": "^2.2.0",
     "classnames": "^2.2.5",

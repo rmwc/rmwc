@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/snackbar",
-  "version": "2.2.0",
+  "version": "2.2.2",
   "description": "RMWC Snackbar component",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "@material/animation": "~0.39.0",
     "@material/snackbar": "~0.39.0",
     "@rmwc/base": "^2.2.0",
-    "@rmwc/button": "^2.2.0"
+    "@rmwc/button": "^2.2.2"
   }
 }
