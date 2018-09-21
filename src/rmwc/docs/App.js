@@ -85,6 +85,19 @@ const THEMES = {
   Shrine: {
     '--mdc-theme-primary': '#ffdbcf',
     '--mdc-theme-secondary': '#feeae6'
+  },
+  Dark: {
+    // Sadly ThemeProvider is not high enough in DOM for bg to work
+    '--mdc-theme-background': '#263238',
+
+    '--mdc-theme-surface': '#37474F', // blue grey 800
+    '--mdc-theme-on-surface': 'rgba(255,255,255,.87)',
+
+    '--mdc-theme-primary': '#214b61',
+    '--mdc-theme-on-primary': 'rgba(255,255,255,.87)',
+
+    '--mdc-theme-secondary': '#b3e5fc', // light blue 100
+    '--mdc-theme-on-secondary': 'rgba(0,0,0,0.87)'
   }
 };
 
