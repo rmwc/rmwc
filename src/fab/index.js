@@ -100,6 +100,7 @@ export class Fab extends React.Component<FabPropsT> {
       >
         <FabIcon icon={icon} iconOptions={iconOptions} />
         {!!label && <FabLabel>{label}</FabLabel>}
+        {children}
       </FabRoot>
     );
   }
