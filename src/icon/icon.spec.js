@@ -55,6 +55,14 @@ describe('Icon', () => {
     expect(!!~el.html().search('Hello World')).toEqual(true);
   });
 
+  it('can be sizes', () => {
+    const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+    sizes.forEach(size => {
+      const el = mount(<Icon icon="favorite" iconOptions={{ size }} />);
+      expect(el.html().includes(`rmwc-icon--size-${size}`)).toEqual(true);
+    });
+  });
+
   it('renders className', () => {
     const el = mount(
       <Icon

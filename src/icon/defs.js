@@ -37,5 +37,7 @@ export type IconOptionsT = {
   /** A base className for the icon namespace, i.e. material-icons. */
   basename?: string,
   /** A render function to use when using the 'custom' strategy. */
-  render?: (content: mixed) => React.Node | null
+  render?: (content: mixed) => React.Node | null,
+  /** A size to render the icon  */
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
 };

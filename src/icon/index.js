@@ -46,8 +46,7 @@ export type IconPropsT = {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: React.Node,
   /** Additional Icon Options. See the Icon component documentation. */
-  iconOptions?: IconOptionsT,
-  iconSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
+  iconOptions?: IconOptionsT
 } & DeprecatedIconPropsT &
   SimpleTagPropsT;
 
@@ -72,7 +71,6 @@ export class Icon extends React.PureComponent<IconPropsT> {
     const {
       icon,
       iconOptions = {},
-      iconSize,
       use,
       children,
       render,
@@ -152,7 +150,7 @@ export class Icon extends React.PureComponent<IconPropsT> {
         rest.className,
         iconClassName,
         {
-          [`rmwc-icon--size-${iconSize || ''}`]: !!iconSize
+          [`rmwc-icon--size-${iconOptions.size || ''}`]: !!iconOptions.size
         }
       )
     });

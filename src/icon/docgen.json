@@ -23,36 +23,6 @@
         },
         "required": false,
         "description": "Additional Icon Options. See the Icon component documentation."
-      },
-      "iconSize": {
-        "flowType": {
-          "name": "union",
-          "raw": "'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'xsmall'"
-            },
-            {
-              "name": "literal",
-              "value": "'small'"
-            },
-            {
-              "name": "literal",
-              "value": "'medium'"
-            },
-            {
-              "name": "literal",
-              "value": "'large'"
-            },
-            {
-              "name": "literal",
-              "value": "'xlarge'"
-            }
-          ]
-        },
-        "required": false,
-        "description": ""
       }
     },
     "context": {

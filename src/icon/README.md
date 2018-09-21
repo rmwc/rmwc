@@ -83,11 +83,11 @@ The Material spec details multiple sizes for icons. The Icon component doesn't a
 
 ```jsx render
 
-<Icon icon="favorite" iconSize="xsmall" /> {/* 18px */}
-<Icon icon="favorite" iconSize="small" />  {/* 20px */}
-<Icon icon="favorite" iconSize="medium" /> {/* 24px */}
-<Icon icon="favorite" iconSize="large" />  {/* 36px */}
-<Icon icon="favorite" iconSize="xlarge" /> {/* 48px */}
+<Icon icon="favorite" iconOptions={{size: "xsmall"}} /> {/* 18px */}
+<Icon icon="favorite" iconOptions={{size: "small"}} />  {/* 20px */}
+<Icon icon="favorite" iconOptions={{size: "medium"}} /> {/* 24px */}
+<Icon icon="favorite" iconOptions={{size: "large"}} />  {/* 36px */}
+<Icon icon="favorite" iconOptions={{size: "xlarge"}} /> {/* 48px */}
 ```
 
 ## Custom Rendering
