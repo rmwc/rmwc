@@ -20,6 +20,7 @@
 * If you would like to use the **material-icons** font:
   * add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
 * Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
+* Add the class `mdc-theme--background` to the `<body>`
 
 ```jsx
 import { Button } from '@rmwc/button';
