@@ -36,6 +36,7 @@
     "@rmwc/button": "^2.2.2",
     "@rmwc/card": "^2.2.2",
     "@rmwc/checkbox": "^2.2.0",
+    "@rmwc/circular-progress": "^2.2.0",
     "@rmwc/chip": "^2.2.2",
     "@rmwc/data-table": "^2.2.2",
     "@rmwc/dialog": "^2.2.2",
