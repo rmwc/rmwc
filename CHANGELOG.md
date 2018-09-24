@@ -1,3 +1,9 @@
+#### 2.2.3 (2018-09-24)
+
+##### Bug Fixes
+
+* **CircularProgress:**  Adding missing dependency to main rmwc package.json (46943e79)
+
 #### 2.2.2 (2018-09-21)
 
 ##### Bug Fixes
