@@ -25,7 +25,6 @@ export * from '@rmwc/provider';
 export * from '@rmwc/radio';
 export * from '@rmwc/ripple';
 export * from '@rmwc/select';
-export * from '@rmwc/shape';
 export * from '@rmwc/slider';
 export * from '@rmwc/snackbar';
 export * from '@rmwc/switch';

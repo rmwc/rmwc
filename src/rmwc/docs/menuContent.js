@@ -262,14 +262,7 @@ export const menuContent = [
       loading: Loading
     })
   },
-  {
-    label: 'Shape',
-    url: '/shape',
-    component: Loadable({
-      loader: () => import('@rmwc/shape/README.md'),
-      loading: Loading
-    })
-  },
+
   {
     label: 'Snackbars',
     url: `/snackbars`,
