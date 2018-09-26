@@ -15,7 +15,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "hyperform": "^0.9.14",
-    "material-components-web": "0.39.0",
+    "material-components-web": "~0.40.0",
     "mutation-observer": "^1.0.3",
     "prop-types": "^15.6.2"
   },

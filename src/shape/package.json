@@ -26,7 +26,7 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@material/shape": "~0.39.0",
+    "@material/shape": "~0.40.0",
     "@rmwc/base": "^2.2.0",
     "classnames": "^2.2.5"
   }

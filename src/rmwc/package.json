@@ -69,6 +69,6 @@
     "@rmwc/toolbar": "^2.2.2",
     "@rmwc/top-app-bar": "^2.2.2",
     "@rmwc/typography": "^2.2.0",
-    "material-components-web": "~0.39.0"
+    "material-components-web": "~0.40.0"
   }
 }
