@@ -1,11 +1,10 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '@rmwc/formfield';
-import { simpleTag, FoundationComponent } from '@rmwc/base';
+import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
@@ -22,71 +21,63 @@ export type CheckboxPropsT = {
   indeterminate?: boolean,
   /** A label for the control. */
   label?: string
-} & SimpleTagPropsT &
-  WithRipplePropsT &
+} & WithRipplePropsT &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckboxRoot: React.ComponentType<CheckboxPropsT> = withRipple({
+export const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  simpleTag({
-    displayName: 'CheckboxRoot',
-    classNames: (props: CheckboxPropsT) => [
+  class extends Component<CheckboxPropsT> {
+    static displayName = 'CheckboxRoot';
+    classNames = (props: CheckboxPropsT) => [
       'mdc-checkbox',
       {
         'mdc-checkbox--disabled': props.disabled
       }
-    ],
-    consumeProps: ['disabled']
-  })
+    ];
+    consumeProps = ['disabled'];
+  }
 );
 
-export const CheckboxNativeControl = simpleTag({
-  displayName: 'CheckboxNativeControl',
-
-  tag: 'input',
-  classNames: 'mdc-checkbox__native-control',
-  defaultProps: {
+export class CheckboxNativeControl extends Component<{}> {
+  static displayName = 'CheckboxNativeControl';
+  static defaultProps = {
     type: 'checkbox'
-  }
-});
+  };
 
-export const CheckboxBackground = simpleTag({
-  displayName: 'CheckboxBackground',
-  classNames: 'mdc-checkbox__background'
-});
+  tag = 'input';
+  classNames = ['mdc-checkbox__native-control'];
+}
 
-export const CheckboxCheckmark = simpleTag({
-  displayName: 'CheckboxCheckmark',
-  tag: 'svg',
-  classNames: 'mdc-checkbox__checkmark',
-  defaultProps: {
-    viewBox: '0 0 24 24'
-  }
-});
+export const CheckboxBackground: React.ComponentType<any> = ({ ...rest }) => (
+  <div {...rest} className="mdc-checkbox__background" />
+);
+CheckboxBackground.displayName = 'CheckboxBackground';
 
-export const CheckboxCheckmarkPath = simpleTag({
-  displayName: 'CheckboxCheckmarkPath',
-  tag: 'path',
-  classNames: 'mdc-checkbox__checkmark-path',
-  defaultProps: {
-    fill: 'none',
-    stroke: 'white',
-    d: 'M1.73,12.91 8.1,19.28 22.79,4.59'
-  }
-});
+export const CheckboxCheckmark: React.ComponentType<{}> = () => (
+  <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+    <path
+      className="mdc-checkbox__checkmark-path"
+      fill="none"
+      stroke="white"
+      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+    />
+  </svg>
+);
 
-export const CheckboxMixedmark = simpleTag({
-  displayName: 'CheckboxMixedmark',
-  classNames: 'mdc-checkbox__mixedmark'
-});
+CheckboxCheckmark.displayName = 'CheckboxCheckmark';
 
-export const CheckboxLabel = simpleTag({
-  displayName: 'CheckboxLabel',
-  tag: 'label'
-});
+export const CheckboxMixedmark: React.ComponentType<{}> = () => (
+  <div className="mdc-checkbox__mixedmark" />
+);
+CheckboxMixedmark.displayName = 'CheckboxMixedmark';
+
+export const CheckboxLabel: React.ComponentType<any> = ({ ...rest }) => (
+  <label {...rest} />
+);
+CheckboxLabel.displayName = 'CheckboxLabel';
 
 /**
  * A Checkbox component
@@ -161,9 +152,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
           {...rest}
         />
         <CheckboxBackground>
-          <CheckboxCheckmark>
-            <CheckboxCheckmarkPath />
-          </CheckboxCheckmark>
+          <CheckboxCheckmark />
           <CheckboxMixedmark />
         </CheckboxBackground>
       </CheckboxRoot>
