@@ -2,6 +2,14 @@
   {
     "description": "",
     "displayName": "LineRipple",
-    "methods": []
+    "methods": [
+      {
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ]
   }
 ]

@@ -52,10 +52,6 @@ describe('TextField', () => {
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 
-  it('can be box', () => {
-    mount(<TextField box />);
-  });
-
   it('can be dense', () => {
     mount(<TextField dense />);
   });
@@ -82,21 +78,6 @@ describe('TextField', () => {
 
   it('can be have withTrailingIcon', () => {
     mount(<TextField withTrailingIcon="favorite" />);
-  });
-
-  it('sync validity with textfield foundation during prop initialization', () => {
-    let inst = mount(<TextField invalid />).instance();
-    expect(inst.valid).toBe(false);
-    inst = mount(<TextField invalid={false} />).instance();
-    expect(inst.valid).toBe(true);
-  });
-
-  it('sync validity with textfield foundation during prop modification', () => {
-    const wrapper = mount(<TextField invalid />);
-    const inst = wrapper.instance();
-    expect(inst.foundation_.isValid()).toBe(false);
-    wrapper.setProps({ invalid: false });
-    expect(inst.foundation_.isValid()).toBe(true);
   });
 });
 

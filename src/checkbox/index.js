@@ -149,10 +149,10 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       <CheckboxRoot
         elementRef={ref => (this.root_ = ref)}
         disabled={rest.disabled}
-        className={this.classList.root_.get()}
+        className={this.classList.root_.renderToString()}
       >
         <CheckboxNativeControl
-          {...this.propsList.nativeCb_.get()}
+          {...this.propsList.nativeCb_.all()}
           elementRef={ref => (this.nativeCb_ = ref)}
           id={labelId}
           {...rest}
