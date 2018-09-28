@@ -107,6 +107,7 @@ export class Switch extends withFoundation({
       id,
       children,
       disabled,
+      className,
       rootProps = {},
       ...rest
     } = this.props;
@@ -118,7 +119,7 @@ export class Switch extends withFoundation({
     const switchTag = (
       <SwitchRoot
         {...(!hasLabel ? rootProps : {})}
-        className={classNames(hasLabel || rootProps.className)}
+        className={classNames(hasLabel || [rootProps.className, className])}
         elementRef={root_}
       >
         <SwitchTrack />
@@ -137,7 +138,10 @@ export class Switch extends withFoundation({
      */
     if (hasLabel) {
       return (
-        <FormField {...rootProps} className={rootProps.className}>
+        <FormField
+          {...rootProps}
+          className={classNames(rootProps.className, className)}
+        >
           {switchTag}
           <SwitchLabel id={labelId + 'label'} htmlFor={labelId}>
             {label}
