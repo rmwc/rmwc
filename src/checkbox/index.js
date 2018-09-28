@@ -98,7 +98,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   }
 
   componentDidMount() {
-    this.nativeCbHandler_ = () => this.syncWithDOM(this.props);
+    this.nativeCbHandler_ = () => this.sync(this.props);
     this.nativeCb_ &&
       this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
     super.componentDidMount();
@@ -110,7 +110,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
   }
 
-  syncWithDOM(nextProps: CheckboxPropsT) {
+  sync(nextProps: CheckboxPropsT) {
     if (
       this.nativeCb_ &&
       nextProps.indeterminate !== this.nativeCb_.indeterminate

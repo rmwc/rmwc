@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "focus-trap": "^3.0.0",
     "hyperform": "^0.9.14",
     "material-components-web": "~0.40.0",
     "mutation-observer": "^1.0.3",

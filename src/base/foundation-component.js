@@ -99,11 +99,11 @@ export class FoundationComponent<P> extends React.Component<
 
   componentDidMount() {
     this.foundation_.init();
-    this.syncWithDOM(this.props);
+    this.sync(this.props);
   }
 
   componentDidUpdate() {
-    this.syncWithDOM(this.props);
+    this.sync(this.props);
   }
 
   componentWillUnmount() {
@@ -112,7 +112,7 @@ export class FoundationComponent<P> extends React.Component<
     this.classList = {};
   }
 
-  syncWithDOM(props: any) {}
+  sync(props: any) {}
 
   getDefaultFoundation() {}
 

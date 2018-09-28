@@ -15,14 +15,10 @@ Material Dialogs are a complex component. RMWC contains an additional non-standa
 ```jsx render
 import {
   Dialog,
-  DefaultDialogTemplate,
-  DialogSurface,
-  DialogHeader,
-  DialogHeaderTitle,
-  DialogBody,
-  DialogFooter,
-  DialogFooterButton,
-  DialogBackdrop
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  DialogButton
 } from '@rmwc/dialog';
 
 import { Button } from '@rmwc/button';
@@ -30,19 +26,17 @@ import { Button } from '@rmwc/button';
 {/** Standard dialog usage */}
 <Dialog
   open={this.state.standardDialogOpen}
-  onClose={evt => this.setState({standardDialogOpen: false})}
->
-  <DialogSurface>
-    <DialogHeader>
-      <DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
-    </DialogHeader>
-    <DialogBody>This is a standard dialog.</DialogBody>
-    <DialogFooter>
-        <DialogFooterButton cancel>Cancel</DialogFooterButton>
-        <DialogFooterButton accept>Sweet!</DialogFooterButton>
-    </DialogFooter>
-  </DialogSurface>
-  <DialogBackdrop />
+  onClose={evt => {
+    console.log(evt.detail.action)
+    this.setState({standardDialogOpen: false})
+  }}
+>    
+  <DialogTitle>Dialog Title</DialogTitle>
+  <DialogContent>This is a standard dialog.</DialogContent>
+  <DialogActions>
+    <DialogButton close>Cancel</DialogButton>
+    <DialogButton accept isDefault>Sweet!</DialogButton>
+  </DialogActions>
 </Dialog>
 
 <Button
@@ -64,9 +58,10 @@ import { Button } from '@rmwc/button';
   title="This is a simple dialog"
   body="You can pass the body prop, or anything you want as children."
   open={this.state.simpleDialogIsOpen}
-  onClose={evt => this.setState({simpleDialogIsOpen: false})}
-  onAccept={evt => console.log('Accepted')}
-  onCancel={evt => console.log('Cancelled')}
+  onClose={evt => {
+    console.log(evt.detail.action)
+    this.setState({simpleDialogIsOpen: false})
+  }}
 />
 
 
