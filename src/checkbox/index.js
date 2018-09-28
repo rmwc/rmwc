@@ -25,7 +25,7 @@ export type CheckboxPropsT = {
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckboxRoot = withRipple({
+const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
@@ -41,7 +41,7 @@ export const CheckboxRoot = withRipple({
   }
 );
 
-export class CheckboxNativeControl extends Component<{}> {
+class CheckboxNativeControl extends Component<{}> {
   static displayName = 'CheckboxNativeControl';
   static defaultProps = {
     type: 'checkbox'
@@ -51,30 +51,31 @@ export class CheckboxNativeControl extends Component<{}> {
   classNames = ['mdc-checkbox__native-control'];
 }
 
-export const CheckboxBackground: React.ComponentType<any> = ({ ...rest }) => (
-  <div {...rest} className="mdc-checkbox__background" />
-);
-CheckboxBackground.displayName = 'CheckboxBackground';
+class CheckboxBackground extends React.Component<{}> {
+  static displayName = 'CheckboxBackground';
 
-export const CheckboxCheckmark: React.ComponentType<{}> = () => (
-  <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-    <path
-      className="mdc-checkbox__checkmark-path"
-      fill="none"
-      stroke="white"
-      d="M1.73,12.91 8.1,19.28 22.79,4.59"
-    />
-  </svg>
-);
+  shouldComponentUpdate() {
+    return false;
+  }
 
-CheckboxCheckmark.displayName = 'CheckboxCheckmark';
+  render() {
+    return (
+      <div className="mdc-checkbox__background">
+        <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+          <path
+            className="mdc-checkbox__checkmark-path"
+            fill="none"
+            stroke="white"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          />
+        </svg>
+        <div className="mdc-checkbox__mixedmark" />
+      </div>
+    );
+  }
+}
 
-export const CheckboxMixedmark: React.ComponentType<{}> = () => (
-  <div className="mdc-checkbox__mixedmark" />
-);
-CheckboxMixedmark.displayName = 'CheckboxMixedmark';
-
-export const CheckboxLabel: React.ComponentType<any> = ({ ...rest }) => (
+const CheckboxLabel: React.ComponentType<any> = ({ ...rest }) => (
   <label {...rest} />
 );
 CheckboxLabel.displayName = 'CheckboxLabel';
@@ -151,10 +152,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
           id={labelId}
           {...rest}
         />
-        <CheckboxBackground>
-          <CheckboxCheckmark />
-          <CheckboxMixedmark />
-        </CheckboxBackground>
+        <CheckboxBackground />
       </CheckboxRoot>
     );
 
