@@ -36,7 +36,7 @@ describe('Dialog', () => {
     );
   });
 
-  it('Dialog lifecycle', () => {
+  it('Dialog lifecycle', done => {
     const el = mount(
       <Dialog
         onClose={evt => {
@@ -62,6 +62,11 @@ describe('Dialog', () => {
 
     const cancelButton = el.find('button.mdc-dialog__button').first();
     cancelButton.simulate('click');
+
+    el.setProps({ open: false });
+    setTimeout(() => {
+      done();
+    }, 500);
   });
 
   it('standard Dialog renders', () => {
