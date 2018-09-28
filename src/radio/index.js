@@ -1,10 +1,8 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
-
 import * as React from 'react';
-import { MDCRadio } from '@material/radio/dist/mdc.radio';
+import { MDCRadioFoundation } from '@material/radio/dist/mdc.radio';
 import FormField from '@rmwc/formfield';
-import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 
 export type RadioPropsT = {
@@ -20,105 +18,84 @@ export type RadioPropsT = {
   label?: string,
   /** Children to render */
   children?: React.Node
-} & SimpleTagPropsT &
   //$FlowFixMe
-  React.InputHTMLAttributes<HTMLInputElement>;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const RadioRoot = simpleTag({
-  displayName: 'RadioRoot',
-  classNames: (props: RadioPropsT) => [
+export class RadioRoot extends Component<RadioPropsT> {
+  static displayName = 'RadioRoot';
+  classNames = (props: RadioPropsT) => [
     'mdc-radio',
     { 'mdc-radio--disabled': props.disabled }
-  ]
-});
+  ];
+}
 
-export const RadioNativeControl = simpleTag({
-  displayName: 'RadioNativeControl',
-  tag: 'input',
-  classNames: 'mdc-radio__native-control',
-  defaultProps: {
+export class RadioNativeControl extends Component<{}> {
+  static displayName = 'RadioNativeControl';
+  static defaultProps = {
     type: 'radio'
+  };
+  tag = 'input';
+  classNames = ['mdc-radio__native-control'];
+}
+
+class RadioBackground extends React.Component<{}> {
+  static displayName = 'RadioBackground';
+
+  shouldComponentUpdate() {
+    return false;
   }
-});
 
-export const RadioBackground = simpleTag({
-  displayName: 'RadioBackground',
-  classNames: 'mdc-radio__background'
-});
+  render() {
+    return (
+      <div className="mdc-radio__background">
+        <div className="mdc-radio__outer-circle" />
+        <div className="mdc-radio__inner-circle" />
+      </div>
+    );
+  }
+}
 
-export const RadioOuterCircle = simpleTag({
-  displayName: 'RadioOuterCircle',
-  classNames: 'mdc-radio__outer-circle'
-});
+export const RadioLabel: React.ComponentType<any> = ({ ...rest }) => (
+  <label {...rest} />
+);
+RadioLabel.displayName = 'RadioLabel';
 
-export const RadioInnerCircle = simpleTag({
-  displayName: 'RadioInnerCircle',
-  classNames: 'mdc-radio__inner-circle'
-});
-
-export const RadioLabel = simpleTag({
-  displayName: 'RadioLabel',
-  tag: 'label'
-});
-
-export class Radio extends withFoundation({
-  constructor: MDCRadio,
-  adapter: {}
-})<RadioPropsT> {
+export class Radio extends FoundationComponent<RadioPropsT> {
   static displayName = 'Radio';
+  nativeRadio_: ?HTMLInputElement;
+  root_: ?HTMLElement;
 
   generatedId: string;
-  ripple_: any;
-  initRipple_: Function;
-  checked: boolean;
-  disabled: boolean;
-  value: any;
 
   constructor(props: RadioPropsT) {
     super(props);
     this.generatedId = randomId('radio');
+    this.createClassList('root_');
   }
 
-  componentDidMount() {
-    super.componentDidMount();
-    this.ripple_ = this.initRipple_();
-  }
-
-  syncWithProps(nextProps: RadioPropsT) {
-    // checked
-    syncFoundationProp(
-      nextProps.checked,
-      this.checked,
-      () => (this.checked = !!nextProps.checked)
-    );
-
-    // disabled
-    syncFoundationProp(
-      nextProps.disabled,
-      this.disabled,
-      () => (this.disabled = !!nextProps.disabled)
-    );
-
-    // value
-    syncFoundationProp(
-      nextProps.value,
-      this.value,
-      () => (this.value = nextProps.value)
-    );
+  getDefaultFoundation() {
+    return new MDCRadioFoundation({
+      addClass: className => this.classList.root_.add(className),
+      removeClass: className => this.classList.root_.remove(className),
+      getNativeControl: () => this.nativeRadio_
+    });
   }
 
   render() {
     const { label = '', id, children, apiRef, ...rest } = this.props;
     const labelId = id || this.generatedId;
-    const { root_ } = this.foundationRefs;
 
     const radio = (
-      <RadioRoot elementRef={root_} disabled={rest.disabled}>
-        <RadioNativeControl id={labelId} {...rest} />
-        <RadioBackground>
-          <RadioOuterCircle />
-          <RadioInnerCircle />
-        </RadioBackground>
+      <RadioRoot
+        elementRef={ref => (this.root_ = ref)}
+        disabled={rest.disabled}
+      >
+        <RadioNativeControl
+          elementRef={ref => (this.nativeRadio_ = ref)}
+          id={labelId}
+          {...rest}
+        />
+        <RadioBackground />
       </RadioRoot>
     );
 
