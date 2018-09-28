@@ -89,6 +89,7 @@ export class Radio extends FoundationComponent<RadioPropsT> {
       <RadioRoot
         elementRef={ref => (this.root_ = ref)}
         disabled={rest.disabled}
+        className={this.classList.root_.get()}
       >
         <RadioNativeControl
           elementRef={ref => (this.nativeRadio_ = ref)}
