@@ -7,12 +7,7 @@ import {
   MDCTextFieldIconFoundation
 } from '@material/textfield/dist/mdc.textfield';
 
-import {
-  simpleTag,
-  Component,
-  FoundationComponent,
-  randomId
-} from '@rmwc/base';
+import { Component, FoundationComponent, randomId } from '@rmwc/base';
 
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -51,11 +46,10 @@ export type TextFieldPropsT = {
   rootProps?: Object,
   /** The type of input field to render */
   type?: string
-} & SimpleTagPropsT &
   //$FlowFixMe
-  React.InputHTMLAttributes<HTMLInputElement>;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export class TextFieldRoot extends Component<TextFieldPropsT> {
+class TextFieldRoot extends Component<TextFieldPropsT> {
   static displayName = 'TextFieldRoot';
   deprecate = {
     box: ''
@@ -86,20 +80,20 @@ export class TextFieldRoot extends Component<TextFieldPropsT> {
   ];
 }
 
-export const TextFieldInput = simpleTag({
-  displayName: 'TextFieldInput',
-  tag: 'input',
-  classNames: 'mdc-text-field__input',
-  defaultProps: {
+class TextFieldInput extends Component<{}> {
+  static displayName = 'TextFieldInput';
+  static defaultProps = {
     type: 'text'
-  }
-});
+  };
+  tag = 'input';
+  classNames = ['mdc-text-field__input'];
+}
 
-export const TextFieldTextarea = simpleTag({
-  displayName: 'TextFieldTextarea',
-  tag: 'textarea',
-  classNames: 'mdc-text-field__input'
-});
+class TextFieldTextarea extends Component<{}> {
+  static displayName = 'TextFieldTextarea';
+  tag = 'textarea';
+  classNames = ['mdc-text-field__input'];
+}
 
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<TextFieldPropsT> {
@@ -344,31 +338,21 @@ export type TextFieldHelperTextPropsT = {
   validationMsg?: boolean
 } & SimpleTagPropsT;
 
-const TextFieldHelperTextRoot: React.ComponentType<
-  TextFieldHelperTextPropsT
-> = simpleTag({
-  displayName: 'TextFieldHelperTextRoot',
-  tag: 'p',
-  classNames: (props: TextFieldHelperTextPropsT) => [
+/**
+ * A help text component
+ */
+export class TextFieldHelperText extends Component<TextFieldHelperTextPropsT> {
+  static displayName = 'TextFieldHelperText';
+  tag = 'p';
+  classNames = (props: TextFieldHelperTextPropsT) => [
     'mdc-text-field-helper-text',
     {
       'mdc-text-field-helper-text--persistent': props.persistent,
       'mdc-text-field-helper-text--validation-msg': props.validationMsg
     }
-  ],
-  consumeProps: ['persistent', 'validationMsg']
-});
-
-/**
- * A help text component
- */
-export const TextFieldHelperText: React.ComponentType<
-  TextFieldHelperTextPropsT
-> = (props: TextFieldHelperTextPropsT) => (
-  <TextFieldHelperTextRoot {...props} />
-);
-
-TextFieldHelperText.displayName = 'TextFieldHelperText';
+  ];
+  consumeProps = ['persistent', 'validationMsg'];
+}
 
 /*********************************************************************
  * Icon
