@@ -26,8 +26,6 @@ export type SelectPropsT = {
   outlined?: boolean,
   /** Disables the form control. */
   disabled?: boolean,
-  /** Makes the Select have a visual box. */
-  box?: boolean,
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object,
   /** A className for the root element. */
@@ -41,11 +39,10 @@ export const SelectRoot: React.ComponentType<SelectPropsT> = simpleTag({
   classNames: (props: SelectPropsT) => [
     'mdc-select',
     {
-      'mdc-select--outlined': props.outlined,
-      'mdc-select--box': props.box
+      'mdc-select--outlined': props.outlined
     }
   ],
-  consumeProps: ['box', 'outlined'],
+  consumeProps: ['outlined'],
   defaultProps: {
     role: 'listbox'
   }
@@ -141,7 +138,6 @@ export class Select extends withFoundation({
       outlined,
       label = '',
       options = [],
-      box,
       className,
       rootProps = {},
       apiRef,
@@ -154,7 +150,6 @@ export class Select extends withFoundation({
     return (
       <SelectRoot
         {...rootProps}
-        box={box}
         outlined={outlined}
         elementRef={root_}
         className={className}
