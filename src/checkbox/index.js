@@ -85,8 +85,8 @@ CheckboxLabel.displayName = 'CheckboxLabel';
  */
 export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   static displayName = 'Checkbox';
-  nativeCb_: any;
-  root_: any;
+  nativeCb_: ?HTMLInputElement;
+  root_: ?HTMLElement;
   generatedId: string;
   nativeCbHandler_: Function;
 
@@ -99,18 +99,23 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
 
   componentDidMount() {
     this.nativeCbHandler_ = () => this.syncWithDOM(this.props);
-    this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
+    this.nativeCb_ &&
+      this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
     super.componentDidMount();
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
-    this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
+    this.nativeCb_ &&
+      this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
   }
 
   syncWithDOM(nextProps: CheckboxPropsT) {
-    if (nextProps.indeterminate !== this.nativeCb_.indeterminate) {
-      this.nativeCb_.indeterminate = nextProps.indeterminate;
+    if (
+      this.nativeCb_ &&
+      nextProps.indeterminate !== this.nativeCb_.indeterminate
+    ) {
+      this.nativeCb_.indeterminate = !!nextProps.indeterminate;
     }
   }
 
@@ -126,12 +131,12 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       isChecked: () =>
         this.props.checked !== undefined
           ? this.props.checked
-          : this.nativeCb_.checked,
+          : this.nativeCb_ && this.nativeCb_.checked,
       hasNativeControl: () => !!this.nativeCb_,
       setNativeControlDisabled: disabled =>
-        (this.nativeCb_.disabled = disabled),
-      forceLayout: () => this.root_.offsetWidth,
-      isAttachedToDOM: () => Boolean(this.root_.parentNode)
+        this.nativeCb_ && (this.nativeCb_.disabled = disabled),
+      forceLayout: () => this.root_ && this.root_.offsetWidth,
+      isAttachedToDOM: () => this.root_ && Boolean(this.root_.parentNode)
     });
   }
 
