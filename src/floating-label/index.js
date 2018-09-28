@@ -7,7 +7,7 @@ export type FloatingLabelPropsT = {};
 
 export class FloatingLabel extends FoundationComponent<FloatingLabelPropsT> {
   static displayName = 'FloatingLabel';
-  root_: ?HTMLLabelElement;
+  root_: null | HTMLLabelElement;
 
   constructor(props: FloatingLabelPropsT) {
     super(props);

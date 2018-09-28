@@ -85,10 +85,10 @@ CheckboxLabel.displayName = 'CheckboxLabel';
  */
 export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   static displayName = 'Checkbox';
-  nativeCb_: ?HTMLInputElement;
-  root_: ?HTMLElement;
+  nativeCb_: HTMLInputElement | null;
+  root_: HTMLElement | null;
   generatedId: string;
-  nativeCbHandler_: Function;
+  nativeCbHandler_: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);

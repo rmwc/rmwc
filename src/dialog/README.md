@@ -34,8 +34,8 @@ import { Button } from '@rmwc/button';
   <DialogTitle>Dialog Title</DialogTitle>
   <DialogContent>This is a standard dialog.</DialogContent>
   <DialogActions>
-    <DialogButton close>Cancel</DialogButton>
-    <DialogButton accept isDefault>Sweet!</DialogButton>
+    <DialogButton action="close">Cancel</DialogButton>
+    <DialogButton action="accept" isDefaultAction>Sweet!</DialogButton>
   </DialogActions>
 </Dialog>
 

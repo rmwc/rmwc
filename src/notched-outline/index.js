@@ -17,8 +17,8 @@ export class NotchedOutlineIdle extends React.Component<{}> {
 
 export class NotchedOutline extends FoundationComponent<NotchedOutlinePropsT> {
   static displayName = 'NotchedOutline';
-  root_: ?HTMLElement;
-  path_: ?Element;
+  root_: null | HTMLElement;
+  path_: null | Element;
 
   constructor(props: NotchedOutlinePropsT) {
     super(props);
@@ -35,9 +35,10 @@ export class NotchedOutline extends FoundationComponent<NotchedOutlinePropsT> {
       setOutlinePathAttr: value =>
         this.path_ && this.path_.setAttribute('d', value),
 
-      getIdleOutlineStyleValue: propertyName => {
+      getIdleOutlineStyleValue: (propertyName): any => {
         if (this.root_) {
           const idleOutlineElement = this.root_.nextElementSibling;
+          if (!idleOutlineElement) return undefined;
           return window
             .getComputedStyle(idleOutlineElement)
             .getPropertyValue(propertyName);

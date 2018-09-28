@@ -62,8 +62,8 @@ RadioLabel.displayName = 'RadioLabel';
 
 export class Radio extends FoundationComponent<RadioPropsT> {
   static displayName = 'Radio';
-  nativeRadio_: ?HTMLInputElement;
-  root_: ?HTMLElement;
+  nativeRadio_: null | HTMLInputElement;
+  root_: null | HTMLElement;
 
   generatedId: string;
 
@@ -82,7 +82,7 @@ export class Radio extends FoundationComponent<RadioPropsT> {
   }
 
   render() {
-    const { label = '', id, children, apiRef, ...rest } = this.props;
+    const { label = '', id, children, ...rest } = this.props;
     const labelId = id || this.generatedId;
 
     const radio = (

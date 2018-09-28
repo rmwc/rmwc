@@ -99,13 +99,13 @@ class TextFieldTextarea extends Component<{}> {
 export class TextField extends FoundationComponent<TextFieldPropsT> {
   static displayName = 'TextField';
   generatedId: string;
-  root_: ?HTMLElement;
-  input_: ?HTMLInputElement | HTMLTextAreaElement;
-  label_: ?any;
-  lineRipple_: ?any;
-  leadingIcon_: ?any;
-  trailingIcon_: ?any;
-  outline_: ?any;
+  root_: null | HTMLElement;
+  input_: null | HTMLInputElement | HTMLTextAreaElement;
+  label_: null | any;
+  lineRipple_: null | any;
+  leadingIcon_: null | any;
+  trailingIcon_: null | any;
+  outline_: null | any;
 
   constructor(props: TextFieldPropsT) {
     super(props);
@@ -139,15 +139,16 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
             }
           };
         },
-        deregisterValidationAttributeChangeHandler: (observer: ?any) => {
+        deregisterValidationAttributeChangeHandler: (observer: null | any) => {
           observer && observer.disconnect();
         },
         isFocused: () => {
           return document.activeElement === this.input_;
         },
         isRtl: () =>
+          this.root_ &&
           window.getComputedStyle(this.root_).getPropertyValue('direction') ===
-          'rtl',
+            'rtl',
 
         ...this.getInputAdapterMethods_(),
         ...this.getLabelAdapterMethods_(),
@@ -248,7 +249,6 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
       className,
       style,
       inputRef,
-      box,
       outlined,
       fullwidth,
       dense,
@@ -259,7 +259,6 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
       children,
       textarea,
       rootProps = {},
-      apiRef,
       ...rest
     } = this.props;
 
@@ -287,7 +286,6 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         withLeadingIcon={!!withLeadingIcon}
         withTrailingIcon={!!withTrailingIcon}
         textarea={textarea}
-        box={box}
         dense={dense}
         disabled={disabled}
         outlined={outlined}
@@ -363,7 +361,7 @@ export class TextFieldHelperText extends Component<TextFieldHelperTextPropsT> {
  */
 export class TextFieldIcon extends FoundationComponent<IconPropsT> {
   static displayName = 'TextFieldIcon';
-  root_: ?HTMLElement;
+  root_: null | HTMLElement;
 
   constructor(props: IconPropsT) {
     super(props);

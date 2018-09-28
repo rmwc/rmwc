@@ -4,14 +4,45 @@ import type { ButtonPropsT } from '@rmwc/button';
 
 import * as React from 'react';
 import { MDCDialogFoundation } from '@material/dialog/dist/mdc.dialog';
-import * as util from '@material/dialog/util';
-import { closest, matches } from '@material/dom/ponyfill';
 import createFocusTrap from 'focus-trap';
 
 import Button from '@rmwc/button';
 import { FoundationComponent, Component, noop } from '@rmwc/base';
 
 const strings = MDCDialogFoundation.strings;
+
+const isScrollable = el => {
+  return el.scrollHeight > el.offsetHeight;
+};
+
+const areTopsMisaligned = els => {
+  const tops = new Set();
+  [].forEach.call(els, el => tops.add(el.offsetTop));
+  return tops.size > 1;
+};
+
+const closest = (element, selector) => {
+  if (element.closest) {
+    return element.closest(selector);
+  }
+
+  let el = element;
+  while (el) {
+    if (matches(el, selector)) {
+      return el;
+    }
+    el = el.parentElement;
+  }
+  return null;
+};
+
+const matches = (element, selector) => {
+  const nativeMatches =
+    element.matches ||
+    element.webkitMatchesSelector ||
+    element.msMatchesSelector;
+  return nativeMatches.call(element, selector);
+};
 
 class DialogRoot extends Component<{}> {
   static displayName = 'DialogRoot';
@@ -48,28 +79,25 @@ export class DialogActions extends Component<{}> {
   classNames = ['mdc-dialog__actions'];
 }
 
-export class DialogButton extends React.Component<ButtonPropsT> {
+export type DialogButtonPropsT = {
+  /** An action returned in evt.detail.action to the onClose handler. */
+  action?: string,
+  /** Indicates this is the default selected action when pressing enter */
+  isDefaultAction?: boolean
+} & ButtonPropsT;
+
+export class DialogButton extends React.Component<DialogButtonPropsT> {
   static displayName = 'DialogButton';
   render() {
-    const { accept, close, className, isDefault, ...rest } = this.props;
-    const dataProps = {};
-
-    if (accept) {
-      dataProps['data-mdc-dialog-action'] = 'accept';
-    }
-
-    if (close) {
-      dataProps['data-mdc-dialog-action'] = 'close';
-    }
-
+    const { action = '', className, isDefaultAction, ...rest } = this.props;
     return (
       <Button
         {...rest}
-        {...dataProps}
+        data-mdc-dialog-action={action}
         className={[
           className,
           'mdc-dialog__button',
-          isDefault && 'mdc-dialog__button--default'
+          isDefaultAction && 'mdc-dialog__button--default'
         ]
           .filter(Boolean)
           .join(' ')}
@@ -89,14 +117,14 @@ export type DialogPropsT = {
 
 export class Dialog extends FoundationComponent<DialogPropsT> {
   static displayName = 'Dialog';
-  root_: ?HTMLElement;
-  container_: ?HTMLElement;
-  content_: ?HTMLElement;
-  buttons_: ?(HTMLElement[]);
-  defaultButton_: ?HTMLElement;
+  root_: null | HTMLElement;
+  container_: null | HTMLElement;
+  content_: null | HTMLElement;
+  buttons_: null | HTMLElement[];
+  defaultButton_: null | HTMLElement;
   focusTrap_: any;
-  handleInteraction_: Function;
-  handleDocumentKeydown_: Function;
+  handleInteraction_: any;
+  handleDocumentKeydown_: any;
 
   constructor(props: DialogPropsT) {
     super(props);
@@ -128,10 +156,12 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
     this.defaultButton_ =
       this.root_ && this.root_.querySelector(strings.DEFAULT_BUTTON_SELECTOR);
 
-    this.focusTrap_ = createFocusTrap(this.container_, {
-      escapeDeactivates: false, // Dialog foundation handles escape key
-      clickOutsideDeactivates: true // Allow handling of scrim clicks
-    });
+    this.container_ &&
+      (this.focusTrap_ = createFocusTrap(this.container_, {
+        initialFocus: this.defaultButton_ || undefined,
+        escapeDeactivates: false,
+        clickOutsideDeactivates: true
+      }));
 
     this.handleInteraction_ = this.foundation_.handleInteraction.bind(
       this.foundation_
@@ -187,9 +217,8 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
         this.root_ && this.root_.getBoundingClientRect(),
       trapFocus: () => this.focusTrap_.activate(),
       releaseFocus: () => this.focusTrap_.deactivate(),
-      isContentScrollable: () =>
-        !!this.content_ && util.isScrollable(this.content_),
-      areButtonsStacked: () => util.areTopsMisaligned(this.buttons_),
+      isContentScrollable: () => !!this.content_ && isScrollable(this.content_),
+      areButtonsStacked: () => areTopsMisaligned(this.buttons_),
       getActionFromEvent: event => {
         const element = closest(event.target, `[${strings.ACTION_ATTRIBUTE}]`);
         return element && element.getAttribute(strings.ACTION_ATTRIBUTE);
@@ -215,15 +244,7 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
   }
 
   render() {
-    const {
-      children,
-      open,
-      onOpen,
-      onOpening,
-      onClose,
-      onClosing,
-      ...rest
-    } = this.props;
+    const { children, open, onOpen, onClose, ...rest } = this.props;
     return (
       <DialogRoot
         {...rest}
@@ -238,38 +259,6 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
     );
   }
 }
-
-// constructor: MDCDialog,
-// adapter: {
-//   notifyAccept: function() {
-//     const evt = this.emit(MDCDialogFoundation.strings.ACCEPT_EVENT);
-//     this.props.onClose && this.props.onClose(evt);
-//   },
-//   notifyCancel: function() {
-//     const evt = this.emit(MDCDialogFoundation.strings.CANCEL_EVENT);
-//     this.props.onClose && this.props.onClose(evt);
-//   }
-// }
-// })<DialogPropsT> {
-
-//   show: Function;
-//   close: Function;
-//   open: boolean;
-
-//   syncWithProps(nextProps: DialogPropsT) {
-//     // open
-//     syncFoundationProp(nextProps.open, this.open, () => {
-//       nextProps.open ? this.show() : this.close();
-//     });
-//   }
-
-//   render() {
-//     const { open, onAccept, onCancel, onClose, apiRef, ...rest } = this.props;
-//     const { root_ } = this.foundationRefs;
-
-//     return <DialogRoot {...rest} elementRef={root_} />;
-//   }
-// }
 
 export type SimpleDialogPropsT = {
   /** A title for the default Dialog template. */
@@ -297,12 +286,9 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
     header: undefined,
     body: undefined,
     footer: undefined,
-    scrollable: undefined,
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel',
     open: false,
-    onAccept: noop,
-    onCancel: noop,
     onClose: noop,
     children: undefined
   };
@@ -313,13 +299,10 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
       header,
       body,
       footer,
-      scrollable,
       acceptLabel,
       cancelLabel,
       children,
       open,
-      onAccept,
-      onCancel,
       ...rest
     } = this.props;
 
@@ -332,7 +315,7 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
           </DialogTitle>
         )}
         {(!!body || children) && (
-          <DialogContent scrollable={scrollable}>
+          <DialogContent>
             {body}
             {children}
           </DialogContent>
@@ -341,8 +324,12 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
         {(!!cancelLabel || !!acceptLabel) && (
           <DialogActions>
             {!!footer && { footer }}
-            {!!cancelLabel && <DialogButton close>{cancelLabel}</DialogButton>}
-            {!!acceptLabel && <DialogButton accept>{acceptLabel}</DialogButton>}
+            {!!cancelLabel && (
+              <DialogButton action="close">{cancelLabel}</DialogButton>
+            )}
+            {!!acceptLabel && (
+              <DialogButton action="accept">{acceptLabel}</DialogButton>
+            )}
           </DialogActions>
         )}
       </Dialog>

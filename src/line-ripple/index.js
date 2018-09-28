@@ -7,7 +7,7 @@ export type LineRipplePropsT = {};
 
 export class LineRipple extends FoundationComponent<LineRipplePropsT> {
   static displayName = 'LineRipple';
-  root_: ?HTMLElement;
+  root_: null | HTMLElement;
 
   constructor(props: LineRipplePropsT) {
     super(props);
