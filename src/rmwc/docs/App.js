@@ -44,7 +44,8 @@ const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
   '--mdc-theme-secondary': '#03dac4',
   '--mdc-theme-background': '#fff',
-  '--mdc-theme-surface': '#fff'
+  '--mdc-theme-surface': '#fff',
+  '--mdc-theme-error': '#b00020'
 };
 
 const TEXT_DEFAULTS = {
@@ -103,11 +104,13 @@ const getTheme = themeName => {
   const order = [
     'primary',
     'secondary',
+    'error',
     'background',
     'surface',
     'on-primary',
     'on-secondary',
     'on-surface',
+    'on-error',
     'text-primary-on-background',
     'text-secondary-on-background',
     'text-hint-on-background',

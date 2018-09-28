@@ -17,7 +17,9 @@ import { Theme } from '@rmwc/theme';
     {[
       'primary',
       'secondary',
+      'error',
       'background',
+      'surface',
       'primaryBg',
       'secondaryBg',
       'textPrimaryOnBackground',
@@ -40,6 +42,7 @@ import { Theme } from '@rmwc/theme';
     {[
       'onPrimary',
       'onSecondary',
+      'onError',
       'textPrimaryOnDark',
       'textSecondaryOnDark',
       'textHintOnDark',
