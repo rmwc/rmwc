@@ -21,13 +21,6 @@ Selects come in three different styles: standard, box, and outlined.
 />
 
 <Select
-  label="Boxed"
-  box
-  placeholder=""
-  options={['Cookies', 'Pizza', 'Icecream']}
-/>
-
-<Select
   label="Outlined"
   outlined
   placeholder=""

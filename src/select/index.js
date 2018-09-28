@@ -162,7 +162,9 @@ export class Select extends withFoundation({
         <SelectNativeControl
           {...rest}
           value={value}
-          defaultValue={value !== undefined ? undefined : ''}
+          defaultValue={
+            value !== undefined ? undefined : this.props.defaultValue || ''
+          }
         >
           {(!!placeholder || placeholder === '') && (
             <option value="" disabled={placeholder === ''}>
