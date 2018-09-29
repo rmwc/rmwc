@@ -99,7 +99,8 @@
       "!src/setupTests.js",
       "!src/drawer/polyfill.js",
       "!src/rmwc/**/*",
-      "!src/base/utils/*",
+      "!src/base/utils/document-component.js",
+      "!src/base/utils/story-with-state.js",
       "!src/base/testPolyfill.js",
       "!src/icon/defs.js"
     ]

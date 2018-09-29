@@ -126,18 +126,17 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         deregisterTextFieldInteractionHandler: (evtType, handler) =>
           this.propsList.root_.removeEventListener(evtType, handler),
         registerValidationAttributeChangeHandler: handler => {
-          const getAttributesList = mutationsList => {
-            if (this.input_) {
-              mutationsList.map(mutation => mutation.attributeName);
-              const observer = new MutationObserver(mutationsList =>
-                handler(getAttributesList(mutationsList))
-              );
-              const targetNode = this.input_;
-              const config = { attributes: true };
-              targetNode && observer.observe(targetNode, config);
-              return observer;
-            }
-          };
+          const getAttributesList = mutationsList =>
+            mutationsList.map(mutation => mutation.attributeName);
+          if (this.input_) {
+            const observer = new MutationObserver(mutationsList =>
+              handler(getAttributesList(mutationsList))
+            );
+            const targetNode = this.input_;
+            const config = { attributes: true };
+            targetNode && observer.observe(targetNode, config);
+            return observer;
+          }
         },
         deregisterValidationAttributeChangeHandler: (observer: null | any) => {
           observer && observer.disconnect();

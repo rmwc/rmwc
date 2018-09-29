@@ -44,7 +44,7 @@ import { Slider } from '@rmwc/slider';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
 <DocumentComponent docs={docs} displayName="Slider" />

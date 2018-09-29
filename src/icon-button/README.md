@@ -57,7 +57,7 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
 <DocumentComponent docs={docs} component={IconButton} displayName="IconButton" composes={['Icon']} />

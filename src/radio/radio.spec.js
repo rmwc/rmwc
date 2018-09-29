@@ -4,7 +4,7 @@ import Radio from './';
 
 describe('Radio', () => {
   test('renders', () => {
-    const radio = mount(<Radio />);
+    const radio = mount(<Radio label="test" />);
     expect(!!~radio.html().search('mdc-radio')).toEqual(true);
   });
 
@@ -24,6 +24,14 @@ describe('Radio', () => {
   test('can be disabled', () => {
     const radio = mount(<Radio disabled />);
     expect(radio.find('input').getDOMNode().disabled).toEqual(true);
+  });
+
+  test('foundation check', () => {
+    const radio = mount(<Radio disabled />);
+    const adapter = radio.instance().foundation_.adapter_;
+    adapter.addClass('test');
+    adapter.removeClass('test');
+    adapter.getNativeControl();
   });
 
   test('can have custom classnames on input', () => {
