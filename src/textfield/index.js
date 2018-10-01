@@ -137,6 +137,8 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
             targetNode && observer.observe(targetNode, config);
             return observer;
           }
+
+          return {};
         },
         deregisterValidationAttributeChangeHandler: (observer: null | any) => {
           observer && observer.disconnect();
