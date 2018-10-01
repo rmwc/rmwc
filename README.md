@@ -23,15 +23,9 @@ Features:
 
 ## Recent updates
 
+See whats new in 3.0.0 👉 https://opencollective.com/rmwc/updates/300
+
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
-
-New in 2.2.0: RMWC Addons!
-
-While the primary goal of wrapping material-components-web remains the same, they simply don't currently (or aren't planning on) supporting the entire spec. New functionality:
-
-- Circular Progress
-- Icon Sizing
-- Data Tables
 
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
