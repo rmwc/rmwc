@@ -1,77 +1,69 @@
 [
   {
-    "description": "",
-    "displayName": "DialogRoot",
+    "description": "The Dialog title.",
+    "displayName": "DialogTitle",
+    "methods": []
+  },
+  {
+    "description": "The Dialog content.",
+    "displayName": "DialogContent",
+    "methods": []
+  },
+  {
+    "description": "Actions container for the Dialog.",
+    "displayName": "DialogActions",
+    "methods": []
+  },
+  {
+    "description": "Action buttons for the Dialog.",
+    "displayName": "DialogButton",
     "methods": [],
     "props": {
-      "role": {
-        "defaultValue": {
-          "value": "'alertdialog'",
-          "computed": false
+      "action": {
+        "flowType": {
+          "name": "string"
         },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "The Dialog backdrop",
-    "displayName": "DialogBackdrop",
-    "methods": []
-  },
-  {
-    "description": "The Dialog surface",
-    "displayName": "DialogSurface",
-    "methods": []
-  },
-  {
-    "description": "The Dialog header",
-    "displayName": "DialogHeader",
-    "methods": []
-  },
-  {
-    "description": "The Dialog title",
-    "displayName": "DialogHeaderTitle",
-    "methods": []
-  },
-  {
-    "description": "The Dialog body",
-    "displayName": "DialogBody",
-    "methods": [],
-    "props": {
-      "scrollable": {
+        "required": false,
+        "description": "An action returned in evt.detail.action to the onClose handler."
+      },
+      "isDefaultAction": {
         "flowType": {
           "name": "boolean"
         },
         "required": false,
-        "description": "Make it scrollable."
+        "description": "Indicates this is the default selected action when pressing enter"
       }
     }
   },
   {
-    "description": "The Dialog footer",
-    "displayName": "DialogFooter",
-    "methods": []
-  },
-  {
-    "description": "A Dialog footer button",
-    "displayName": "DialogFooterButton",
-    "methods": []
-  },
-  {
-    "description": "",
+    "description": "A Dialog component.",
     "displayName": "Dialog",
     "methods": [
       {
-        "name": "syncWithProps",
+        "name": "open",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "close",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "sync",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "nextProps",
+            "name": "props",
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the accept Button is pressed. */\n  onAccept?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog was closed without acceptance. */\n  onCancel?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed\n}",
+              "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the Dialog opens. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed\n}",
               "signature": {
                 "properties": [
                   {
@@ -82,35 +74,7 @@
                     }
                   },
                   {
-                    "key": "onAccept",
-                    "value": {
-                      "name": "signature",
-                      "type": "function",
-                      "raw": "(evt: CustomEventT<void>) => mixed",
-                      "signature": {
-                        "arguments": [
-                          {
-                            "name": "evt",
-                            "type": {
-                              "name": "CustomEventT",
-                              "elements": [
-                                {
-                                  "name": "void"
-                                }
-                              ],
-                              "raw": "CustomEventT<void>"
-                            }
-                          }
-                        ],
-                        "return": {
-                          "name": "mixed"
-                        }
-                      },
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "onCancel",
+                    "key": "onOpen",
                     "value": {
                       "name": "signature",
                       "type": "function",
@@ -172,6 +136,13 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
       }
     ],
     "props": {
@@ -182,7 +153,7 @@
         "required": true,
         "description": "Whether or not the Dialog is showing."
       },
-      "onAccept": {
+      "onOpen": {
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -208,35 +179,7 @@
           }
         },
         "required": false,
-        "description": "Callback for when the accept Button is pressed."
-      },
-      "onCancel": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Callback for when the Dialog was closed without acceptance."
+        "description": "Callback for when the Dialog opens."
       },
       "onClose": {
         "flowType": {
@@ -362,11 +305,7 @@
           "name": "boolean"
         },
         "required": false,
-        "description": "Allow the body to be scrollable",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
+        "description": "Allow the body to be scrollable"
       },
       "open": {
         "flowType": {
@@ -379,7 +318,7 @@
           "computed": false
         }
       },
-      "onAccept": {
+      "onOpen": {
         "flowType": {
           "name": "signature",
           "type": "function",
@@ -405,43 +344,7 @@
           }
         },
         "required": false,
-        "description": "Callback for when the accept Button is pressed.",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
-        }
-      },
-      "onCancel": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Callback for when the Dialog was closed without acceptance.",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
-        }
+        "description": "Callback for when the Dialog opens."
       },
       "onClose": {
         "flowType": {

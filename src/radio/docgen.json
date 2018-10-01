@@ -1,11 +1,6 @@
 [
   {
-    "description": "",
-    "displayName": "RadioLabel",
-    "methods": []
-  },
-  {
-    "description": "",
+    "description": "A Radio button component.",
     "displayName": "Radio",
     "methods": [
       {

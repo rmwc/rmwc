@@ -76,14 +76,12 @@ import { Button } from '@rmwc/button';
 ```jsx renderOnly
 import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as buttonDocs from '@rmwc/button/docgen.json';
 
 <DocumentComponent docs={docs} displayName="Dialog" />
-<DocumentComponent docs={docs} displayName="DialogSurface" />
-<DocumentComponent docs={docs} displayName="DialogHeader" />
-<DocumentComponent docs={docs} displayName="DialogHeaderTitle" />
-<DocumentComponent docs={docs} displayName="DialogBody" />
-<DocumentComponent docs={docs} displayName="DialogFooter" />
-<DocumentComponent docs={docs} displayName="DialogFooterButton" composes={['Button']} />
-<DocumentComponent docs={docs} displayName="DialogBackdrop" />
+<DocumentComponent docs={docs} displayName="DialogTitle" />
+<DocumentComponent docs={docs} displayName="DialogContent" />
+<DocumentComponent docs={docs} displayName="DialogActions" />
+<DocumentComponent docs={[docs, buttonDocs]} displayName="DialogButton" composes={['Button']} />
 <DocumentComponent docs={docs} displayName="SimpleDialog" />
 ```

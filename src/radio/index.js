@@ -21,7 +21,7 @@ export type RadioPropsT = {
   //$FlowFixMe
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export class RadioRoot extends Component<RadioPropsT> {
+class RadioRoot extends Component<RadioPropsT> {
   static displayName = 'RadioRoot';
   classNames = (props: RadioPropsT) => [
     'mdc-radio',
@@ -29,7 +29,7 @@ export class RadioRoot extends Component<RadioPropsT> {
   ];
 }
 
-export class RadioNativeControl extends Component<{}> {
+class RadioNativeControl extends Component<{}> {
   static displayName = 'RadioNativeControl';
   static defaultProps = {
     type: 'radio'
@@ -55,11 +55,12 @@ class RadioBackground extends React.Component<{}> {
   }
 }
 
-export const RadioLabel: React.ComponentType<any> = ({ ...rest }) => (
+const RadioLabel: React.ComponentType<any> = ({ ...rest }) => (
   <label {...rest} />
 );
 RadioLabel.displayName = 'RadioLabel';
 
+/** A Radio button component. */
 export class Radio extends FoundationComponent<RadioPropsT> {
   static displayName = 'Radio';
   nativeRadio_: null | HTMLInputElement;

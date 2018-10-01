@@ -75,13 +75,14 @@ import { SimpleTopAppBar } from '@rmwc/top-app-bar';
 ```jsx renderOnly
 import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as iconDocs from '@rmwc/icon//docgen.json';
 
 <DocumentComponent docs={docs} displayName="TopAppBar" />
 <DocumentComponent docs={docs} displayName="TopAppBarRow" />
 <DocumentComponent docs={docs} displayName="TopAppBarSection" />
 <DocumentComponent docs={docs} displayName="TopAppBarTitle" />
-<DocumentComponent docs={docs} displayName="TopAppBarNavigationIcon" composes={['Icon']} />
-<DocumentComponent docs={docs} displayName="TopAppBarActionItem" composes={['Icon']} />
+<DocumentComponent docs={[docs, iconDocs]} displayName="TopAppBarNavigationIcon" composes={['Icon']} />
+<DocumentComponent docs={[docs, iconDocs]} displayName="TopAppBarActionItem" composes={['Icon']} />
 <DocumentComponent docs={docs} displayName="TopAppBarFixedAdjust" />
 <DocumentComponent docs={docs} displayName="SimpleTopAppBar" />
 ```

@@ -1,24 +1,5 @@
 [
   {
-    "description": "",
-    "displayName": "TextFieldInput",
-    "methods": [],
-    "props": {
-      "type": {
-        "defaultValue": {
-          "value": "'text'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "TextFieldTextarea",
-    "methods": []
-  },
-  {
     "description": "A TextField component for accepting text input from a user.",
     "displayName": "TextField",
     "methods": [
@@ -212,27 +193,6 @@
         },
         "required": false,
         "description": "The type of input field to render"
-      }
-    }
-  },
-  {
-    "description": "A help text component",
-    "displayName": "TextFieldHelperText",
-    "methods": [],
-    "props": {
-      "persistent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the help text always visible"
-      },
-      "validationMsg": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the help a validation message style"
       }
     }
   },

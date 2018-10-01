@@ -63,17 +63,23 @@ class DialogScrim extends React.Component<{}> {
   }
 }
 
+/** @extends React.Component */
+/** The Dialog title. */
 export class DialogTitle extends Component<{}> {
   static displayName = 'DialogTitle';
   tag = 'h2';
   classNames = ['mdc-dialog__title'];
 }
 
+/** @extends React.Component */
+/** The Dialog content. */
 export class DialogContent extends Component<{}> {
   static displayName = 'DialogContent';
   classNames = ['mdc-dialog__content'];
 }
 
+/** @extends React.Component */
+/** Actions container for the Dialog. */
 export class DialogActions extends Component<{}> {
   static displayName = 'DialogActions';
   classNames = ['mdc-dialog__actions'];
@@ -86,6 +92,7 @@ export type DialogButtonPropsT = {
   isDefaultAction?: boolean
 } & ButtonPropsT;
 
+/** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<DialogButtonPropsT> {
   static displayName = 'DialogButton';
   render() {
@@ -115,6 +122,7 @@ export type DialogPropsT = {
   onClose?: (evt: CustomEventT<void>) => mixed
 };
 
+/** A Dialog component. */
 export class Dialog extends FoundationComponent<DialogPropsT> {
   static displayName = 'Dialog';
   root_: null | HTMLElement;

@@ -38,22 +38,14 @@
           "name": "number"
         },
         "required": false,
-        "description": "Max value for determinate progress bars.",
-        "defaultValue": {
-          "value": "1",
-          "computed": false
-        }
+        "description": "Max value for determinate progress bars."
       },
       "min": {
         "flowType": {
           "name": "number"
         },
         "required": false,
-        "description": "Min value for determinate progress bars.",
-        "defaultValue": {
-          "value": "0",
-          "computed": false
-        }
+        "description": "Min value for determinate progress bars."
       },
       "progress": {
         "flowType": {
