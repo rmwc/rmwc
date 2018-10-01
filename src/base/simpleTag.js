@@ -103,7 +103,11 @@ export const simpleTag = ({
         return React.cloneElement(child, {
           ...child.props,
           ...safeRest,
-          ...{ className: safeClassNames }
+          ...{
+            className: [safeClassNames, child.props.className]
+              .filter(Boolean)
+              .join(' ')
+          }
         });
       }
 

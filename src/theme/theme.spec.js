@@ -14,6 +14,16 @@ describe('Theme', () => {
     );
   });
 
+  test('wraps', () => {
+    const el = mount(
+      <Theme use="primary" wrap>
+        <div className="test-classname" />
+      </Theme>
+    );
+
+    expect(el.html().includes('test-classname')).toBe(true);
+  });
+
   test('can have custom classnames', () => {
     const el = mount(
       <Theme use="on-primary" className="my-custom-classname" />
