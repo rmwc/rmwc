@@ -62,7 +62,7 @@ body ul li {
   will-change: max-width;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type {
@@ -73,7 +73,7 @@ body ul li {
   overflow: hidden;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type:after {
@@ -88,14 +88,14 @@ body ul li {
   border-bottom-right-radius: 0.75rem;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   > div
   > ul:first-of-type
   > li {
   margin-top: 0.25rem;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type
@@ -104,7 +104,7 @@ body ul li {
   color: var(--mdc-theme-primary);
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type:before {
