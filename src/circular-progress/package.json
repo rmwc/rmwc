@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/circular-progress",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "RMWC Circular Progress",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^2.2.0"
+    "@rmwc/base": "^3.0.0"
   }
 }

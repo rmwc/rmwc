@@ -1,3 +1,42 @@
+#### 2.2.3 (2018-10-01)
+
+##### Breaking Changes
+
+* **Dialog:**  MDC has completely overhauled dialogs. The good news is, they are easier to consume in RMWC. The new structure should be easy to convert over to but unfortunately this couldn’t be done in a non breaking manner. (3f69744d)
+* **Shape:**  The Shape package has been removed from RMWC due to a new SASS only implementation. The existing 2.x.x shape package is still available to use but will no longer be updated. (17975f29)
+
+##### Chores
+
+* **Select:**  Remove box variant (6e582fc8)
+* **TextField:**  Remove simpleTag factory. (cf7a2d49)
+* **Checkbox:**
+  *  Type safe fixes (128ff884)
+  *  Structural improvements to code. (9c94e40b)
+
+##### Documentation Changes
+
+* **LibraryIntegrations:**  Adding library integrations page (8a283873)
+* **Theme:**  Adding dark theme example (4413e291)
+
+##### New Features
+
+* **ThemeProvider:**  Allow wrapping of content to preserve layout #317 (fb6cc936)
+* **Theme:**  Adding error and onError theme options (382f2562)
+
+##### Bug Fixes
+
+* **Menu:**  Works around an MDC issue where menu items could not be anchor tags. Also submitted a PR upstream to fix. https://github.com/material-components/material-components-web/pull/3680 #311 (a111244b)
+* **Theme:**  Wrapping preserves className on child node #327 (2ecb14fb)
+* **Switch:**  apply className to switch root (17c0d90f)
+* **Select:**  Honoring default value if passed (5b7ba066)
+* **Radio:**  Adding classes to root (73a156ef)
+
+##### Refactors
+
+* **TextField:**  Rewrite to directly use foundation implementation. (9c77a0bf)
+* **Radio:**  Using Foundation pattern. (a6c39a97)
+* **Checkbox:**  Rendering perf improvement (f18209fd)
+
 #### 2.2.3 (2018-09-24)
 
 ##### Bug Fixes

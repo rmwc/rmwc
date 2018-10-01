@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/typography",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "RMWC Typography component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/typography": "~0.40.0",
-    "@rmwc/base": "^2.2.0"
+    "@rmwc/base": "^3.0.0"
   }
 }
