@@ -2,7 +2,7 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { Slider } from './';
 
-const spyWarn = jest.spyOn(console, 'warn');
+jest.spyOn(console, 'warn');
 
 describe('Slider', () => {
   it('renders uncontrolled', () => {

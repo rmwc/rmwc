@@ -86,11 +86,12 @@ import { Button } from '@rmwc/button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as listDocs from '@rmwc/list//docgen.json';
 
 <DocumentComponent docs={docs} displayName="Menu" />
-<DocumentComponent docs={docs} displayName="MenuItem" composes={['ListItem']}/>
+<DocumentComponent docs={[docs, listDocs]} displayName="MenuItem" composes={['ListItem']}/>
 <DocumentComponent docs={docs} displayName="MenuSurface" />
 <DocumentComponent docs={docs} displayName="MenuSurfaceAnchor" />
 <DocumentComponent docs={docs} displayName="SimpleMenu" />

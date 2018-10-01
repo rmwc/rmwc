@@ -50,8 +50,6 @@ export class CircularProgressRoot extends Component<
 /** A Circular Progress indicator. */
 export class CircularProgress extends React.Component<CircularProgressPropsT> {
   static defaultProps = {
-    max: 1,
-    min: 0,
     progress: undefined,
     size: 'medium'
   };

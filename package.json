@@ -14,8 +14,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "focus-trap": "^3.0.0",
     "hyperform": "^0.9.14",
-    "material-components-web": "0.39.0",
+    "material-components-web": "~0.40.0",
     "mutation-observer": "^1.0.3",
     "prop-types": "^15.6.2"
   },
@@ -98,7 +99,8 @@
       "!src/setupTests.js",
       "!src/drawer/polyfill.js",
       "!src/rmwc/**/*",
-      "!src/base/utils/*",
+      "!src/base/utils/document-component.js",
+      "!src/base/utils/story-with-state.js",
       "!src/base/testPolyfill.js",
       "!src/icon/defs.js"
     ]

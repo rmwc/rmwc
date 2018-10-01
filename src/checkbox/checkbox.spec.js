@@ -6,6 +6,7 @@ describe('Checkbox', () => {
   test('renders', () => {
     const checkbox = mount(<Checkbox />);
     expect(!!~checkbox.html().search('mdc-checkbox')).toEqual(true);
+    checkbox.unmount();
   });
 
   test('can be checked', () => {
@@ -41,5 +42,22 @@ describe('Checkbox', () => {
   test('can have custom classnames on input', () => {
     const el = mount(<Checkbox className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+  });
+
+  test('foundation check', () => {
+    const el = mount(<Checkbox className={'my-custom-classname'} />);
+    const adapter = el.instance().foundation_.adapter_;
+    adapter.addClass('test');
+    adapter.removeClass('test');
+    adapter.setNativeControlAttr('checked', true);
+    adapter.removeNativeControlAttr('checked');
+    adapter.getNativeControl();
+    adapter.isIndeterminate();
+    adapter.isChecked();
+    adapter.hasNativeControl();
+    adapter.setNativeControlDisabled(true);
+    adapter.setNativeControlDisabled(false);
+    adapter.forceLayout();
+    adapter.isAttachedToDOM();
   });
 });

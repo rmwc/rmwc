@@ -4,7 +4,7 @@ import { TextField, TextFieldHelperText, TextFieldIcon } from './';
 
 describe('TextField', () => {
   it('renders', () => {
-    mount(<TextField placeholder="test" />);
+    mount(<TextField label="test" placeholder="test" />);
   });
 
   it('can have children', () => {
@@ -52,12 +52,12 @@ describe('TextField', () => {
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 
-  it('can be box', () => {
-    mount(<TextField box />);
-  });
-
   it('can be dense', () => {
     mount(<TextField dense />);
+  });
+
+  it('can be invalid', () => {
+    mount(<TextField invalid />);
   });
 
   it('can be outlined', () => {
@@ -84,19 +84,51 @@ describe('TextField', () => {
     mount(<TextField withTrailingIcon="favorite" />);
   });
 
-  it('sync validity with textfield foundation during prop initialization', () => {
-    let inst = mount(<TextField invalid />).instance();
-    expect(inst.valid).toBe(false);
-    inst = mount(<TextField invalid={false} />).instance();
-    expect(inst.valid).toBe(true);
+  it('foundation checks', () => {
+    const el = mount(<TextField />);
+    const adapter = el.instance().foundation_.adapter_;
+    adapter.addClass('test');
+    adapter.removeClass('test');
+    adapter.hasClass('test');
+    adapter.registerTextFieldInteractionHandler('click', () => {});
+    adapter.deregisterTextFieldInteractionHandler('click', () => {});
+    adapter.registerValidationAttributeChangeHandler(() => {});
+    adapter.deregisterValidationAttributeChangeHandler({
+      disconnect: () => {}
+    });
+    adapter.isFocused();
+    adapter.isRtl();
+    adapter.registerInputInteractionHandler('click', () => {});
+    adapter.deregisterInputInteractionHandler('click', () => {});
+    adapter.getNativeInput();
+    adapter.notchOutline(200, false);
+    adapter.closeOutline();
+    adapter.hasOutline();
+    adapter.activateLineRipple();
+    adapter.deactivateLineRipple();
+    adapter.setLineRippleTransformOrigin(1);
+    adapter.shakeLabel(true);
+    adapter.floatLabel(true);
+    adapter.hasLabel();
+    adapter.getLabelWidth();
+  });
+});
+
+describe('TextFieldIcon', () => {
+  it('renders', () => {
+    mount(<TextFieldIcon icon="favorite" />);
   });
 
-  it('sync validity with textfield foundation during prop modification', () => {
-    const wrapper = mount(<TextField invalid />);
-    const inst = wrapper.instance();
-    expect(inst.foundation_.isValid()).toBe(false);
-    wrapper.setProps({ invalid: false });
-    expect(inst.foundation_.isValid()).toBe(true);
+  it('foundation checks', () => {
+    const el = mount(<TextFieldIcon icon="favorite" />);
+    const adapter = el.instance().foundation_.adapter_;
+    adapter.getAttr('test');
+    adapter.setAttr('test', 1);
+    adapter.removeAttr('test');
+    adapter.setContent('test');
+    adapter.registerInteractionHandler('click', () => {});
+    adapter.deregisterInteractionHandler('click', () => {});
+    adapter.notifyIconAction();
   });
 });
 

@@ -79,10 +79,6 @@ describe('Select', () => {
     });
   });
 
-  it('can be box', () => {
-    mount(<Select box options={[1, 2, 3]} />);
-  });
-
   it('can have custom classnames', () => {
     const el = mount(
       <Select

@@ -57,12 +57,13 @@ import { Select } from '@rmwc/select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as iconDocs from '@rmwc/icon//docgen.json';
 
 <DocumentComponent docs={docs} displayName="GridList" />
 <DocumentComponent docs={docs} displayName="GridTile" />
-<DocumentComponent docs={docs} displayName="GridTileIcon" composes={['Icon']}/>
+<DocumentComponent docs={[docs, iconDocs]} displayName="GridTileIcon" composes={['Icon']}/>
 <DocumentComponent docs={docs} displayName="GridTilePrimary" />
 <DocumentComponent docs={docs} displayName="GridTileSecondary" />
 <DocumentComponent docs={docs} displayName="GridTileTitleSupportText" />

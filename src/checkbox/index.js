@@ -1,11 +1,10 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
 import FormField from '@rmwc/formfield';
-import { simpleTag, FoundationComponent } from '@rmwc/base';
+import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
@@ -22,81 +21,74 @@ export type CheckboxPropsT = {
   indeterminate?: boolean,
   /** A label for the control. */
   label?: string
-} & SimpleTagPropsT &
-  WithRipplePropsT &
+} & WithRipplePropsT &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const CheckboxRoot: React.ComponentType<CheckboxPropsT> = withRipple({
+const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  simpleTag({
-    displayName: 'CheckboxRoot',
-    classNames: (props: CheckboxPropsT) => [
+  class extends Component<CheckboxPropsT> {
+    static displayName = 'CheckboxRoot';
+    classNames = (props: CheckboxPropsT) => [
       'mdc-checkbox',
       {
         'mdc-checkbox--disabled': props.disabled
       }
-    ],
-    consumeProps: ['disabled']
-  })
+    ];
+    consumeProps = ['disabled'];
+  }
 );
 
-export const CheckboxNativeControl = simpleTag({
-  displayName: 'CheckboxNativeControl',
-
-  tag: 'input',
-  classNames: 'mdc-checkbox__native-control',
-  defaultProps: {
+class CheckboxNativeControl extends Component<{}> {
+  static displayName = 'CheckboxNativeControl';
+  static defaultProps = {
     type: 'checkbox'
+  };
+
+  tag = 'input';
+  classNames = ['mdc-checkbox__native-control'];
+}
+
+class CheckboxBackground extends React.Component<{}> {
+  static displayName = 'CheckboxBackground';
+
+  shouldComponentUpdate() {
+    return false;
   }
-});
 
-export const CheckboxBackground = simpleTag({
-  displayName: 'CheckboxBackground',
-  classNames: 'mdc-checkbox__background'
-});
-
-export const CheckboxCheckmark = simpleTag({
-  displayName: 'CheckboxCheckmark',
-  tag: 'svg',
-  classNames: 'mdc-checkbox__checkmark',
-  defaultProps: {
-    viewBox: '0 0 24 24'
+  render() {
+    return (
+      <div className="mdc-checkbox__background">
+        <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+          <path
+            className="mdc-checkbox__checkmark-path"
+            fill="none"
+            stroke="white"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+          />
+        </svg>
+        <div className="mdc-checkbox__mixedmark" />
+      </div>
+    );
   }
-});
+}
 
-export const CheckboxCheckmarkPath = simpleTag({
-  displayName: 'CheckboxCheckmarkPath',
-  tag: 'path',
-  classNames: 'mdc-checkbox__checkmark-path',
-  defaultProps: {
-    fill: 'none',
-    stroke: 'white',
-    d: 'M1.73,12.91 8.1,19.28 22.79,4.59'
-  }
-});
-
-export const CheckboxMixedmark = simpleTag({
-  displayName: 'CheckboxMixedmark',
-  classNames: 'mdc-checkbox__mixedmark'
-});
-
-export const CheckboxLabel = simpleTag({
-  displayName: 'CheckboxLabel',
-  tag: 'label'
-});
+const CheckboxLabel: React.ComponentType<any> = ({ ...rest }) => (
+  <label {...rest} />
+);
+CheckboxLabel.displayName = 'CheckboxLabel';
 
 /**
  * A Checkbox component
  */
 export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   static displayName = 'Checkbox';
-  nativeCb_: any;
-  root_: any;
+  nativeCb_: HTMLInputElement | null;
+  root_: HTMLElement | null;
   generatedId: string;
-  nativeCbHandler_: Function;
+  nativeCbHandler_: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);
@@ -106,19 +98,24 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   }
 
   componentDidMount() {
-    this.nativeCbHandler_ = () => this.syncWithDOM(this.props);
-    this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
+    this.nativeCbHandler_ = () => this.sync(this.props);
+    this.nativeCb_ &&
+      this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
     super.componentDidMount();
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
-    this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
+    this.nativeCb_ &&
+      this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
   }
 
-  syncWithDOM(nextProps: CheckboxPropsT) {
-    if (nextProps.indeterminate !== this.nativeCb_.indeterminate) {
-      this.nativeCb_.indeterminate = nextProps.indeterminate;
+  sync(nextProps: CheckboxPropsT) {
+    if (
+      this.nativeCb_ &&
+      nextProps.indeterminate !== this.nativeCb_.indeterminate
+    ) {
+      this.nativeCb_.indeterminate = !!nextProps.indeterminate;
     }
   }
 
@@ -134,12 +131,12 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       isChecked: () =>
         this.props.checked !== undefined
           ? this.props.checked
-          : this.nativeCb_.checked,
+          : this.nativeCb_ && this.nativeCb_.checked,
       hasNativeControl: () => !!this.nativeCb_,
       setNativeControlDisabled: disabled =>
-        (this.nativeCb_.disabled = disabled),
-      forceLayout: () => this.root_.offsetWidth,
-      isAttachedToDOM: () => Boolean(this.root_.parentNode)
+        this.nativeCb_ && (this.nativeCb_.disabled = disabled),
+      forceLayout: () => this.root_ && this.root_.offsetWidth,
+      isAttachedToDOM: () => this.root_ && Boolean(this.root_.parentNode)
     });
   }
 
@@ -152,20 +149,15 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       <CheckboxRoot
         elementRef={ref => (this.root_ = ref)}
         disabled={rest.disabled}
-        className={this.classList.root_.get()}
+        className={this.classList.root_.renderToString()}
       >
         <CheckboxNativeControl
-          {...this.propsList.nativeCb_.get()}
+          {...this.propsList.nativeCb_.all()}
           elementRef={ref => (this.nativeCb_ = ref)}
           id={labelId}
           {...rest}
         />
-        <CheckboxBackground>
-          <CheckboxCheckmark>
-            <CheckboxCheckmarkPath />
-          </CheckboxCheckmark>
-          <CheckboxMixedmark />
-        </CheckboxBackground>
+        <CheckboxBackground />
       </CheckboxRoot>
     );
 

@@ -22,10 +22,18 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 <TextFieldHelperText>Optional help text.</TextFieldHelperText>
 
 {/* Leading and trailing icons can be used, they look the best with the box prop. You can pass anything the Icon component accepts. */}
-<TextField box withLeadingIcon="search" label="box withLeadingIcon..." />
+<TextField withLeadingIcon="search" withTrailingIcon="close" label="withLeadingIcon..." />
 
-{/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. */}
-<TextField box withTrailingIcon={<TextFieldIcon icon="close"/>} label="box withTrailingIcon..." />
+{/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. Dont forget the TabIndex to make it clickable*/}
+<TextField
+  label="withTrailingIcon..." 
+  withTrailingIcon={
+    <TextFieldIcon
+      tabIndex="0"
+      icon="close"
+      onClick={() => console.log('Clear')}/>
+  } 
+/>
 
 {/* An outlined TextField */}
 <TextField outlined label="outlined..." />
@@ -41,6 +49,10 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 
 {/* Disabled text field. */}
 <TextField disabled label="disabled..." />
+
+{/* Invalid text fields. */}
+<TextField invalid label="Invalid..." value="#@!$" onChange={() => {}}/>
+<TextField label="Validate Pattern" pattern="[A-Za-z]{3}"/>
 ```
 
 ## HTML Input Types
@@ -50,21 +62,22 @@ A preview of how `material-components-web` handles styling input types for your 
 ```jsx render
 import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 
-<TextField box label="text" type="text"/>
-<TextField box label="color" type="color" style={{width: '6rem'}}/>
-<TextField box label="date" type="date"/>
-<TextField box label="datetime-local" type="datetime-local"/>
-<TextField box label="month" type="month"/>
-<TextField box label="range" type="range"/>
-<TextField box label="time" type="time"/>
-<TextField box label="week" type="week"/>
+<TextField label="text" type="text"/>
+<TextField label="color" type="color" style={{width: '6rem'}}/>
+<TextField label="date" type="date"/>
+<TextField label="datetime-local" type="datetime-local"/>
+<TextField label="month" type="month"/>
+<TextField label="range" type="range"/>
+<TextField label="time" type="time"/>
+<TextField label="week" type="week"/>
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as iconDocs from '@rmwc/icon//docgen.json';
 
 <DocumentComponent docs={docs} displayName="TextField" />
-<DocumentComponent docs={docs} displayName="TextFieldIcon" composes={['Icon']}/>
+<DocumentComponent docs={[docs, iconDocs]} displayName="TextFieldIcon" composes={['Icon']}/>
 <DocumentComponent docs={docs} displayName="TextFieldHelperText" />
 ```

@@ -70,14 +70,15 @@ import {
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as iconDocs from '@rmwc/icon//docgen.json';
 
 <DocumentComponent docs={docs} displayName="Toolbar" />
 <DocumentComponent docs={docs} displayName="ToolbarRow" />
 <DocumentComponent docs={docs} displayName="ToolbarSection" />
 <DocumentComponent docs={docs} displayName="ToolbarTitle" />
-<DocumentComponent docs={docs} displayName="ToolbarMenuIcon" composes={['Icon']}/>
-<DocumentComponent docs={docs} displayName="ToolbarIcon" composes={['Icon']} />
+<DocumentComponent docs={[docs, iconDocs]} displayName="ToolbarMenuIcon" composes={['Icon']}/>
+<DocumentComponent docs={[docs, iconDocs]} displayName="ToolbarIcon" composes={['Icon']} />
 <DocumentComponent docs={docs} displayName="ToolbarFixedAdjust" />
 ```

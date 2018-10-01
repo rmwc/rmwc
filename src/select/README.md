@@ -21,13 +21,6 @@ Selects come in three different styles: standard, box, and outlined.
 />
 
 <Select
-  label="Boxed"
-  box
-  placeholder=""
-  options={['Cookies', 'Pizza', 'Icecream']}
-/>
-
-<Select
   label="Outlined"
   outlined
   placeholder=""
@@ -174,7 +167,7 @@ import { Select } from '@rmwc/select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
 <DocumentComponent docs={docs} displayName="Select" />

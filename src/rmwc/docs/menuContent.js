@@ -1,6 +1,6 @@
 import * as React from 'react';
-
 import Loadable from 'react-loadable';
+import { CircularProgress } from '@rmwc/circular-progress';
 
 const Loading = () => (
   <div
@@ -13,7 +13,7 @@ const Loading = () => (
       boxSizing: 'border-box'
     }}
   >
-    Loading...
+    <CircularProgress size="xlarge" />
   </div>
 );
 
@@ -50,6 +50,14 @@ export const menuContent = [
         url: `/methodology`,
         component: Loadable({
           loader: () => import('./methodology.md'),
+          loading: Loading
+        })
+      },
+      {
+        label: 'Library Integrations',
+        url: `/library-integrations`,
+        component: Loadable({
+          loader: () => import('./library-integrations.md'),
           loading: Loading
         })
       }
@@ -262,14 +270,7 @@ export const menuContent = [
       loading: Loading
     })
   },
-  {
-    label: 'Shape',
-    url: '/shape',
-    component: Loadable({
-      loader: () => import('@rmwc/shape/README.md'),
-      loading: Loading
-    })
-  },
+
   {
     label: 'Snackbars',
     url: `/snackbars`,

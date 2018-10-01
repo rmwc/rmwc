@@ -15,14 +15,10 @@ Material Dialogs are a complex component. RMWC contains an additional non-standa
 ```jsx render
 import {
   Dialog,
-  DefaultDialogTemplate,
-  DialogSurface,
-  DialogHeader,
-  DialogHeaderTitle,
-  DialogBody,
-  DialogFooter,
-  DialogFooterButton,
-  DialogBackdrop
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  DialogButton
 } from '@rmwc/dialog';
 
 import { Button } from '@rmwc/button';
@@ -30,19 +26,17 @@ import { Button } from '@rmwc/button';
 {/** Standard dialog usage */}
 <Dialog
   open={this.state.standardDialogOpen}
-  onClose={evt => this.setState({standardDialogOpen: false})}
->
-  <DialogSurface>
-    <DialogHeader>
-      <DialogHeaderTitle>Dialog Title</DialogHeaderTitle>
-    </DialogHeader>
-    <DialogBody>This is a standard dialog.</DialogBody>
-    <DialogFooter>
-        <DialogFooterButton cancel>Cancel</DialogFooterButton>
-        <DialogFooterButton accept>Sweet!</DialogFooterButton>
-    </DialogFooter>
-  </DialogSurface>
-  <DialogBackdrop />
+  onClose={evt => {
+    console.log(evt.detail.action)
+    this.setState({standardDialogOpen: false})
+  }}
+>    
+  <DialogTitle>Dialog Title</DialogTitle>
+  <DialogContent>This is a standard dialog.</DialogContent>
+  <DialogActions>
+    <DialogButton action="close">Cancel</DialogButton>
+    <DialogButton action="accept" isDefaultAction>Sweet!</DialogButton>
+  </DialogActions>
 </Dialog>
 
 <Button
@@ -64,9 +58,10 @@ import { Button } from '@rmwc/button';
   title="This is a simple dialog"
   body="You can pass the body prop, or anything you want as children."
   open={this.state.simpleDialogIsOpen}
-  onClose={evt => this.setState({simpleDialogIsOpen: false})}
-  onAccept={evt => console.log('Accepted')}
-  onCancel={evt => console.log('Cancelled')}
+  onClose={evt => {
+    console.log(evt.detail.action)
+    this.setState({simpleDialogIsOpen: false})
+  }}
 />
 
 
@@ -79,16 +74,14 @@ import { Button } from '@rmwc/button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as buttonDocs from '@rmwc/button/docgen.json';
 
 <DocumentComponent docs={docs} displayName="Dialog" />
-<DocumentComponent docs={docs} displayName="DialogSurface" />
-<DocumentComponent docs={docs} displayName="DialogHeader" />
-<DocumentComponent docs={docs} displayName="DialogHeaderTitle" />
-<DocumentComponent docs={docs} displayName="DialogBody" />
-<DocumentComponent docs={docs} displayName="DialogFooter" />
-<DocumentComponent docs={docs} displayName="DialogFooterButton" composes={['Button']} />
-<DocumentComponent docs={docs} displayName="DialogBackdrop" />
+<DocumentComponent docs={docs} displayName="DialogTitle" />
+<DocumentComponent docs={docs} displayName="DialogContent" />
+<DocumentComponent docs={docs} displayName="DialogActions" />
+<DocumentComponent docs={[docs, buttonDocs]} displayName="DialogButton" composes={['Button']} />
 <DocumentComponent docs={docs} displayName="SimpleDialog" />
 ```

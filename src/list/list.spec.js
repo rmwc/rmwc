@@ -11,20 +11,33 @@ import {
 
 describe('List', () => {
   it('renders', () => {
-    mount(
+    const el = mount(
       <List>
         <ListItem ripple>
           <ListItemGraphic />
           <ListItemPrimaryText>Cookies</ListItemPrimaryText>
           <ListItemMeta />
         </ListItem>
+        <ListItem ripple={false}>
+          <ListItemGraphic />
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+          <ListItemMeta />
+        </ListItem>
       </List>
     );
+
+    el.unmount();
   });
 
   it('SimpleListItem renders', () => {
     mount(
       <List>
+        <SimpleListItem graphic="star_border" text="Cookies" />
+        <SimpleListItem
+          graphic="star_border"
+          text="Cookies"
+          secondaryText="Chocolate chip"
+        />
         <SimpleListItem
           graphic="star_border"
           text="Cookies"

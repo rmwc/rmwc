@@ -18,7 +18,7 @@ type ComponentPropsT<P> = {
 export class Component<P> extends React.Component<ComponentPropsT<P>> {
   static displayName = 'UnknownComponent';
 
-  tag = 'div';
+  tag: string | React.ComponentType<any> = 'div';
   consumeProps: string[] = [];
   classNames: ((props: any) => any[]) | string[] = () => [];
   deprecate: {
@@ -79,18 +79,25 @@ export class Component<P> extends React.Component<ComponentPropsT<P>> {
       }
 
       if (props[oldPropName] !== undefined) {
-        props[newPropName] = transformProp(props[oldPropName]);
-        let propTransformMessage = '';
-        if (props[newPropName] !== props[oldPropName]) {
-          propTransformMessage = ` The old value has also been converted from '${
-            props[newPropName]
-          }' to '${props[oldPropName]}'`;
-        }
+        if (newPropName === '') {
+          deprecationWarning(
+            `prop '${oldPropName}' has been removed from the ${displayName ||
+              ''} component and is no longer a valid prop.`
+          );
+        } else {
+          props[newPropName] = transformProp(props[oldPropName]);
+          let propTransformMessage = '';
+          if (props[newPropName] !== props[oldPropName]) {
+            propTransformMessage = ` The old value has also been converted from '${
+              props[newPropName]
+            }' to '${props[oldPropName]}'`;
+          }
 
-        deprecationWarning(
-          `prop '${oldPropName}' has been replaced with '${newPropName}' on the ${displayName ||
-            ''} component.${propTransformMessage}`
-        );
+          deprecationWarning(
+            `prop '${oldPropName}' has been replaced with '${newPropName}' on the ${displayName ||
+              ''} component.${propTransformMessage}`
+          );
+        }
 
         delete props[oldPropName];
       }

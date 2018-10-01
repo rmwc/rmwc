@@ -105,12 +105,13 @@ import {
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
+import * as iconDocs from '@rmwc/icon/docgen.json';
 
 <DocumentComponent docs={docs} displayName="Chip" />
 <DocumentComponent docs={docs} displayName="ChipText" />
-<DocumentComponent docs={docs} displayName="ChipIcon" composes={['Icon']} />
+<DocumentComponent docs={[docs, iconDocs]} displayName="ChipIcon" composes={['Icon']} />
 <DocumentComponent docs={docs} displayName="ChipCheckmark" />
 <DocumentComponent docs={docs} displayName="ChipSet" />
 <DocumentComponent docs={docs} displayName="SimpleChip" />

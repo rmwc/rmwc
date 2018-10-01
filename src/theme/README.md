@@ -17,7 +17,9 @@ import { Theme } from '@rmwc/theme';
     {[
       'primary',
       'secondary',
+      'error',
       'background',
+      'surface',
       'primaryBg',
       'secondaryBg',
       'textPrimaryOnBackground',
@@ -40,6 +42,7 @@ import { Theme } from '@rmwc/theme';
     {[
       'onPrimary',
       'onSecondary',
+      'onError',
       'textPrimaryOnDark',
       'textSecondaryOnDark',
       'textHintOnDark',
@@ -97,6 +100,40 @@ import { Radio } from '@rmwc/radio';
   <Radio label="Icecream" defaultChecked />
 </ThemeProvider>
 ```
+
+## Using the ThemeProvider to fix built in styles
+As stated above, theming in `material-components-web` isn't perfect, but the ThemeProvider can be used to conveniently fix some of the built in style issues. For instance, the Tab bar doesn't respond correctly when used in the TopAppBar or on any other dark color surface.
+
+```jsx render
+import { Toolbar, ToolbarRow } from '@rmwc/toolbar';
+import { TabBar, Tab } from '@rmwc/tabs';
+
+{/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
+<Toolbar>
+  <ToolbarRow>
+    <TabBar>
+      <Tab>Cookies</Tab>
+      <Tab>Pizza</Tab>
+      <Tab>Icecream</Tab>
+    </TabBar>
+  </ToolbarRow>
+</Toolbar>
+
+{/* Fixed using ThemeProvider. Use "wrap" to not screw up layout. */}
+<Toolbar>
+  <ToolbarRow>
+    <ThemeProvider options={{primary: 'white', onSurface: 'white'}} wrap>
+      <TabBar>
+        <Tab>Cookies</Tab>
+        <Tab>Pizza</Tab>
+        <Tab>Icecream</Tab>
+      </TabBar>
+    </ThemeProvider>
+  </ToolbarRow>
+</Toolbar>
+```
+
+
 ## Theme Component
 The Theme component allows you to apply theme colors to RMWC components, or components of your own. Almost every component in RMWC has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
 
@@ -122,7 +159,7 @@ import { Button } from '@rmwc/button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/DocumentComponent';
+import { DocumentComponent } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
 <DocumentComponent docs={docs} displayName="ThemeProvider" />

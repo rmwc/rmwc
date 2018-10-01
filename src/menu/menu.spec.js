@@ -11,17 +11,16 @@ import {
 
 describe('Menu', () => {
   it('renders', () => {
-    mount(
-      <MenuSurfaceAnchor>
-        <button>Test</button>
-
-        <Menu open onClose={() => {}}>
-          <MenuItem>Cookies</MenuItem>
-          <MenuItem>Pizza</MenuItem>
-          <MenuItem>Icecream</MenuItem>
-        </Menu>
-      </MenuSurfaceAnchor>
+    const el = mount(
+      <Menu open onClose={() => {}}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </Menu>
     );
+
+    el.setProps({ open: false, anchorCorner: 'bottomRight' });
+    el.instance().destroy();
   });
 
   it('can be fixed', () => {
@@ -76,16 +75,23 @@ describe('Menu', () => {
 
     const el = mount(
       <SimpleMenuSurface
-        handle={<button>Test</button>}
+        handle={<button onClick={() => {}}>Test</button>}
         open
         onClose={() => val++}
       />
     );
 
+    el.find('button')
+      .first()
+      .simulate('click');
+
     el.find(MenuSurface)
       .instance()
       .foundation_.adapter_.notifyClose();
     expect(val).toBe(1);
+
+    el.setProps({ open: false, anchorCorner: 'bottomRight' });
+    el.unmount();
   });
 
   it('can have custom classnames', () => {

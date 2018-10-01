@@ -44,7 +44,8 @@ const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
   '--mdc-theme-secondary': '#03dac4',
   '--mdc-theme-background': '#fff',
-  '--mdc-theme-surface': '#fff'
+  '--mdc-theme-surface': '#fff',
+  '--mdc-theme-error': '#b00020'
 };
 
 const TEXT_DEFAULTS = {
@@ -85,6 +86,15 @@ const THEMES = {
   Shrine: {
     '--mdc-theme-primary': '#ffdbcf',
     '--mdc-theme-secondary': '#feeae6'
+  },
+  Dark: {
+    '--mdc-theme-background': '#212121',
+    '--mdc-theme-surface': '#37474F',
+    '--mdc-theme-on-surface': 'rgba(255,255,255,.87)',
+    '--mdc-theme-primary': '#24aee9',
+    '--mdc-theme-on-primary': 'rgba(255,255,255,.87)',
+    '--mdc-theme-secondary': '#e539ff',
+    '--mdc-theme-on-secondary': 'rgba(0,0,0,0.87)'
   }
 };
 
@@ -103,11 +113,13 @@ const getTheme = themeName => {
   const order = [
     'primary',
     'secondary',
+    'error',
     'background',
     'surface',
     'on-primary',
     'on-secondary',
     'on-surface',
+    'on-error',
     'text-primary-on-background',
     'text-secondary-on-background',
     'text-hint-on-background',
@@ -273,7 +285,7 @@ class ThemePicker extends React.Component {
             onClick={evt => this.setState({ open: true })}
             ripple={false}
             style={{
-              backgroundColor: '#f2f2f2',
+              backgroundColor: 'rgba(0,0,0,.05)',
               padding: '1rem',
               marginTop: '1rem',
               display: 'block',

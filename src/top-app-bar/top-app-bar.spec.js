@@ -91,6 +91,10 @@ describe('TopAppBar', () => {
         actionItems={[{ icon: 'star_outline' }]}
       />
     );
+
+    mount(
+      <SimpleTopAppBar title="TestTitle" navigationIcon={{ icon: 'foo' }} />
+    );
     // has title
     expect(el.html().includes('TestTitle')).toBe(true);
 

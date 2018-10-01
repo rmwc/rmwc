@@ -28,12 +28,29 @@ pre[class*='language-'] {
   font-size: 0.875rem;
 }
 
+code[class*='language-'],
+pre[class*='language-'] {
+  color: inherit;
+  text-shadow: none;
+}
+
 body ul li {
   margin: 0;
 }
 
 .mdc-temporary-drawer__drawer {
   will-change: initial;
+  color: #155a80;
+}
+
+.app__root,
+.mdc-drawer {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-surface);
+}
+
+.mdc-drawer .mdc-list-item {
+  color: var(--mdc-theme-on-surface);
 }
 
 /** Install Block */
@@ -45,7 +62,7 @@ body ul li {
   will-change: max-width;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type {
@@ -56,7 +73,7 @@ body ul li {
   overflow: hidden;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type:after {
@@ -71,14 +88,14 @@ body ul li {
   border-bottom-right-radius: 0.75rem;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   > div
   > ul:first-of-type
   > li {
   margin-top: 0.25rem;
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type
@@ -87,7 +104,7 @@ body ul li {
   color: var(--mdc-theme-primary);
 }
 
-.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage)
+.app__root:not(#page-home):not(#page-installation):not(#page-methodology):not(#page-styling-theming):not(#page-usage):not(#page-library-integrations)
   .app__content
   > div
   > ul:first-of-type:before {
@@ -138,6 +155,7 @@ body ul li {
   margin-bottom: 1.875rem;
 }
 
+/* RMWC Addon*/
 .app__content > div > h1 > code {
   font: inherit;
   color: var(--mdc-theme-secondary);
@@ -148,6 +166,7 @@ body ul li {
   border: 1px solid var(--mdc-theme-secondary);
   padding: 0.25rem 0.5rem;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .app__content > div > h1:first-child {
@@ -168,7 +187,7 @@ body ul li {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.75rem;
   margin: 1.5rem 0;
-  background-color: white;
+  background-color: var(--mdc-theme-background);
 }
 
 .app__content > div .example + .example {
@@ -181,7 +200,7 @@ body ul li {
 
 .app__content > div .example:not(.render-only) .run {
   padding: 1rem;
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -313,7 +332,7 @@ ul li {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--mdc-theme-on-surface);
 }
 
 .made-by img {
@@ -449,11 +468,6 @@ ul li {
 
 /* page buttons */
 #page-buttons .example .mdc-button {
-  margin: 0.5rem;
-}
-
-/* page shapes */
-#page-shape .example .mdc-shape-container {
   margin: 0.5rem;
 }
 

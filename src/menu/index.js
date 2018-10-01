@@ -124,6 +124,18 @@ export class Menu extends withFoundation({
       MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
       this.onCloseHandler_
     );
+
+    if (this.foundation_) {
+      this.foundation_.preventDefaultEvent_ = evt => {
+        const target = evt.target;
+        const tagName = `${target.tagName}`.toLowerCase();
+        if (
+          ['input', 'button', 'textarea', 'select', 'a'].indexOf(tagName) === -1
+        ) {
+          evt.preventDefault();
+        }
+      };
+    }
   }
 
   onCloseHandler_(evt: CustomEventT<void>) {

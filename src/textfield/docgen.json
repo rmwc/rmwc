@@ -1,352 +1,76 @@
 [
   {
-    "description": "",
-    "displayName": "TextFieldRoot",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "textarea",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "value",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "fullwidth",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "box",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "inputRef",
-                        "value": {
-                          "name": "ReactRef",
-                          "raw": "React.Ref<any>",
-                          "elements": [
-                            {
-                              "name": "any"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "disabled",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "required",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "invalid",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "dense",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "outlined",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "label",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "withLeadingIcon",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "withTrailingIcon",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "rootProps",
-                        "value": {
-                          "name": "Object",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "type",
-                        "value": {
-                          "name": "string",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                },
-                {
-                  "name": "ReactInputHTMLAttributes",
-                  "raw": "React.InputHTMLAttributes<HTMLInputElement>",
-                  "elements": [
-                    {
-                      "name": "HTMLInputElement"
-                    }
-                  ]
-                }
-              ],
-              "alias": "TextFieldPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ]
-  },
-  {
-    "description": "",
-    "displayName": "TextFieldInput",
-    "methods": [],
-    "props": {
-      "type": {
-        "defaultValue": {
-          "value": "'text'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "TextFieldTextarea",
-    "methods": []
-  },
-  {
     "description": "A TextField component for accepting text input from a user.",
     "displayName": "TextField",
     "methods": [
       {
-        "name": "syncWithProps",
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getLabelAdapterMethods_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getLineRippleAdapterMethods_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getOutlineAdapterMethods_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getInputAdapterMethods_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getFoundationMap_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderIcon",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "nextProps",
+            "name": "iconNode",
             "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
+              "name": "any"
+            }
+          },
+          {
+            "name": "leadOrTrail",
+            "type": {
+              "name": "union",
+              "raw": "'leadingIcon_' | 'trailingIcon_'",
               "elements": [
                 {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Makes a multiline TextField. */\n  textarea?: boolean,\n  /** Sets the value for controlled TextFields. */\n  value?: string | number,\n  /** Makes the TextField fullwidth. */\n  fullwidth?: boolean,\n  /** Makes the TextField have a visual box. */\n  box?: boolean,\n  /** A ref for the native input. */\n  inputRef?: React.Ref<any>,\n  /** Disables the input. */\n  disabled?: boolean,\n  /** Mark the input as required. */\n  required?: boolean,\n  /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */\n  invalid?: boolean,\n  /** Makes the TextField dense */\n  dense?: boolean,\n  /** Outline the TextField */\n  outlined?: boolean,\n  /** A label for the input. */\n  label?: React.Node,\n  /** Add a leading icon. */\n  withLeadingIcon?: React.Node,\n  /** Add a trailing icon. */\n  withTrailingIcon?: React.Node,\n  /** By default, props spread to the input. These props are for the component's root container. */\n  rootProps?: Object,\n  /** The type of input field to render */\n  type?: string\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "textarea",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "value",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "fullwidth",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "box",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "inputRef",
-                        "value": {
-                          "name": "ReactRef",
-                          "raw": "React.Ref<any>",
-                          "elements": [
-                            {
-                              "name": "any"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "disabled",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "required",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "invalid",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "dense",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "outlined",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "label",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "withLeadingIcon",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "withTrailingIcon",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "rootProps",
-                        "value": {
-                          "name": "Object",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "type",
-                        "value": {
-                          "name": "string",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
+                  "name": "literal",
+                  "value": "'leadingIcon_'"
                 },
                 {
-                  "name": "SimpleTagPropsT"
-                },
-                {
-                  "name": "ReactInputHTMLAttributes",
-                  "raw": "React.InputHTMLAttributes<HTMLInputElement>",
-                  "elements": [
-                    {
-                      "name": "HTMLInputElement"
-                    }
-                  ]
+                  "name": "literal",
+                  "value": "'trailingIcon_'"
                 }
-              ],
-              "alias": "TextFieldPropsT"
+              ]
             }
           }
         ],
@@ -383,13 +107,6 @@
         },
         "required": false,
         "description": "Makes the TextField fullwidth."
-      },
-      "box": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Makes the TextField have a visual box."
       },
       "inputRef": {
         "flowType": {
@@ -480,29 +197,16 @@
     }
   },
   {
-    "description": "A help text component",
-    "displayName": "TextFieldHelperText",
-    "methods": [],
-    "props": {
-      "persistent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the help text always visible"
-      },
-      "validationMsg": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the help a validation message style"
-      }
-    }
-  },
-  {
-    "description": "",
+    "description": "An Icon in a TextField",
     "displayName": "TextFieldIcon",
-    "methods": []
+    "methods": [
+      {
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ]
   }
 ]

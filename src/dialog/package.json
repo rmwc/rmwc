@@ -26,8 +26,10 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@material/dialog": "~0.39.0",
+    "@material/dialog": "~0.40.0",
+    "@material/dom": "~0.40.0",
     "@rmwc/base": "^2.2.0",
-    "@rmwc/button": "^2.2.2"
+    "@rmwc/button": "^2.2.2",
+    "focus-trap": "^2.3.0"
   }
 }

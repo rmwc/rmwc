@@ -40,7 +40,10 @@ describe('Snackbar', () => {
   });
 
   it('can dismissesOnAction', () => {
-    mount(<Snackbar show message="This is a new message" dismissesOnAction />);
+    const el = mount(
+      <Snackbar show message="This is a new message" dismissesOnAction />
+    );
+    el.setProps({ dismissesOnAction: false });
   });
 
   it('can be have JSX', () => {
@@ -49,5 +52,7 @@ describe('Snackbar', () => {
         <div>Hello World</div>
       </Snackbar>
     );
+
+    mount(<Snackbar message={<div>Hello World</div>} />);
   });
 });

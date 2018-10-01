@@ -2,6 +2,14 @@
   {
     "description": "",
     "displayName": "FloatingLabel",
-    "methods": []
+    "methods": [
+      {
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ]
   }
 ]

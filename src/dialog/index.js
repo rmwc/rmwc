@@ -1,151 +1,270 @@
 // @flow
-import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import type { CustomEventT } from '@rmwc/base';
 import type { ButtonPropsT } from '@rmwc/button';
 
 import * as React from 'react';
-import {
-  MDCDialog,
-  MDCDialogFoundation
-} from '@material/dialog/dist/mdc.dialog';
+import { MDCDialogFoundation } from '@material/dialog/dist/mdc.dialog';
+import createFocusTrap from 'focus-trap';
 
 import Button from '@rmwc/button';
-import { simpleTag, noop } from '@rmwc/base';
+import { FoundationComponent, Component, noop } from '@rmwc/base';
 
-import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
+const strings = MDCDialogFoundation.strings;
 
-export const DialogRoot = simpleTag({
-  displayName: 'DialogRoot',
-  defaultProps: {
-    role: 'alertdialog'
-  },
-  tag: 'aside',
-  classNames: 'mdc-dialog'
-});
+const isScrollable = el => {
+  return el.scrollHeight > el.offsetHeight;
+};
 
-/** The Dialog backdrop */
-export const DialogBackdrop = simpleTag({
-  displayName: 'DialogBackdrop',
-  classNames: 'mdc-dialog__backdrop'
-});
+const areTopsMisaligned = els => {
+  const tops = new Set();
+  [].forEach.call(els, el => tops.add(el.offsetTop));
+  return tops.size > 1;
+};
 
-/** The Dialog surface */
-export const DialogSurface = simpleTag({
-  displayName: 'DialogSurface',
-  classNames: 'mdc-dialog__surface'
-});
+const closest = (element, selector) => {
+  if (element.closest) {
+    return element.closest(selector);
+  }
 
-/** The Dialog header */
-export const DialogHeader = simpleTag({
-  displayName: 'DialogHeader',
-  tag: 'header',
-  classNames: 'mdc-dialog__header'
-});
-
-/** The Dialog title */
-export const DialogHeaderTitle = simpleTag({
-  displayName: 'DialogHeaderTitle',
-  tag: 'h2',
-  classNames: 'mdc-dialog__header__title'
-});
-
-export type DialogBodyPropsT = {
-  /** Make it scrollable. */
-  scrollable?: boolean
-} & SimpleTagPropsT;
-
-const DialogBodyRoot = simpleTag({
-  displayName: 'DialogBodyRoot',
-  tag: 'section',
-  classNames: (props: DialogBodyPropsT) => [
-    'mdc-dialog__body',
-    {
-      'mdc-dialog__body--scrollable': props.scrollable
+  let el = element;
+  while (el) {
+    if (matches(el, selector)) {
+      return el;
     }
-  ],
-  consumeProps: ['scrollable']
-});
+    el = el.parentElement;
+  }
+  return null;
+};
 
-/** The Dialog body */
-export const DialogBody: React.ComponentType<DialogBodyPropsT> = (
-  props: DialogBodyPropsT
-) => <DialogBodyRoot {...props} />;
+const matches = (element, selector) => {
+  const nativeMatches =
+    element.matches ||
+    element.webkitMatchesSelector ||
+    element.msMatchesSelector;
+  return nativeMatches.call(element, selector);
+};
 
-/** The Dialog footer */
-export const DialogFooter = simpleTag({
-  displayName: 'DialogFooter',
-  tag: 'footer',
-  classNames: 'mdc-dialog__footer'
-});
+class DialogRoot extends Component<{}> {
+  static displayName = 'DialogRoot';
+  static defaultProps: {
+    role: 'alertdialog',
+    'aria-modal': true
+  };
+  classNames = ['mdc-dialog'];
+}
 
-export type DialogFooterButtonPropsT = {
-  /** Make it an accept button. */
-  accept?: any,
-  /** Make it a cancel button. */
-  cancel?: boolean
-} & SimpleTagPropsT &
-  ButtonPropsT;
+class DialogScrim extends React.Component<{}> {
+  shouldComponentUpdate() {
+    return false;
+  }
 
-const DialogFooterButtonRoot = simpleTag({
-  displayName: 'DialogFooterButtonRoot',
-  tag: Button,
-  classNames: (props: DialogFooterButtonPropsT) => [
-    'mdc-dialog__footer__button',
-    {
-      'mdc-dialog__footer__button--cancel': props.cancel,
-      'mdc-dialog__footer__button--accept': props.accept
-    }
-  ],
-  consumeProps: ['accept', 'cancel']
-});
+  render() {
+    return <div className="mdc-dialog__scrim" />;
+  }
+}
 
-/** A Dialog footer button */
-export const DialogFooterButton: React.ComponentType<
-  DialogFooterButtonPropsT
-> = props => <DialogFooterButtonRoot {...props} />;
-DialogFooterButton.displayName = 'DialogFooterButton';
+/** @extends React.Component */
+/** The Dialog title. */
+export class DialogTitle extends Component<{}> {
+  static displayName = 'DialogTitle';
+  tag = 'h2';
+  classNames = ['mdc-dialog__title'];
+}
+
+/** @extends React.Component */
+/** The Dialog content. */
+export class DialogContent extends Component<{}> {
+  static displayName = 'DialogContent';
+  classNames = ['mdc-dialog__content'];
+}
+
+/** @extends React.Component */
+/** Actions container for the Dialog. */
+export class DialogActions extends Component<{}> {
+  static displayName = 'DialogActions';
+  classNames = ['mdc-dialog__actions'];
+}
+
+export type DialogButtonPropsT = {
+  /** An action returned in evt.detail.action to the onClose handler. */
+  action?: string,
+  /** Indicates this is the default selected action when pressing enter */
+  isDefaultAction?: boolean
+} & ButtonPropsT;
+
+/** Action buttons for the Dialog. */
+export class DialogButton extends React.Component<DialogButtonPropsT> {
+  static displayName = 'DialogButton';
+  render() {
+    const { action = '', className, isDefaultAction, ...rest } = this.props;
+    return (
+      <Button
+        {...rest}
+        data-mdc-dialog-action={action}
+        className={[
+          className,
+          'mdc-dialog__button',
+          isDefaultAction && 'mdc-dialog__button--default'
+        ]
+          .filter(Boolean)
+          .join(' ')}
+      />
+    );
+  }
+}
 
 export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean,
-  /** Callback for when the accept Button is pressed. */
-  onAccept?: (evt: CustomEventT<void>) => mixed,
-  /** Callback for when the Dialog was closed without acceptance. */
-  onCancel?: (evt: CustomEventT<void>) => mixed,
+  /** Callback for when the Dialog opens. */
+  onOpen?: (evt: CustomEventT<void>) => mixed,
   /** Callback for when the Dialog closes. */
   onClose?: (evt: CustomEventT<void>) => mixed
 };
 
-export class Dialog extends withFoundation({
-  constructor: MDCDialog,
-  adapter: {
-    notifyAccept: function() {
-      const evt = this.emit(MDCDialogFoundation.strings.ACCEPT_EVENT);
-      this.props.onClose && this.props.onClose(evt);
-    },
-    notifyCancel: function() {
-      const evt = this.emit(MDCDialogFoundation.strings.CANCEL_EVENT);
-      this.props.onClose && this.props.onClose(evt);
+/** A Dialog component. */
+export class Dialog extends FoundationComponent<DialogPropsT> {
+  static displayName = 'Dialog';
+  root_: null | HTMLElement;
+  container_: null | HTMLElement;
+  content_: null | HTMLElement;
+  buttons_: null | HTMLElement[];
+  defaultButton_: null | HTMLElement;
+  focusTrap_: any;
+  handleInteraction_: any;
+  handleDocumentKeydown_: any;
+
+  constructor(props: DialogPropsT) {
+    super(props);
+    this.createClassList('root_');
+  }
+
+  open() {
+    if (!this.foundation_.isOpen_) {
+      document.addEventListener('keydown', this.handleDocumentKeydown_);
+      this.foundation_.open();
     }
   }
-})<DialogPropsT> {
-  static displayName = 'Dialog';
 
-  show: Function;
-  close: Function;
-  open: boolean;
+  close() {
+    if (this.foundation_.isOpen_) {
+      document.removeEventListener('keydown', this.handleDocumentKeydown_);
+      this.foundation_.close();
+    }
+  }
 
-  syncWithProps(nextProps: DialogPropsT) {
-    // open
-    syncFoundationProp(nextProps.open, this.open, () => {
-      nextProps.open ? this.show() : this.close();
+  componentDidMount() {
+    this.container_ =
+      this.root_ && this.root_.querySelector(strings.CONTAINER_SELECTOR);
+    this.content_ =
+      this.root_ && this.root_.querySelector(strings.CONTENT_SELECTOR);
+    this.buttons_ =
+      this.root_ &&
+      [].slice.call(this.root_.querySelectorAll(strings.BUTTON_SELECTOR));
+    this.defaultButton_ =
+      this.root_ && this.root_.querySelector(strings.DEFAULT_BUTTON_SELECTOR);
+
+    this.container_ &&
+      (this.focusTrap_ = createFocusTrap(this.container_, {
+        initialFocus: this.defaultButton_ || undefined,
+        escapeDeactivates: false,
+        clickOutsideDeactivates: true
+      }));
+
+    this.handleInteraction_ = this.foundation_.handleInteraction.bind(
+      this.foundation_
+    );
+
+    this.root_ && this.root_.addEventListener('click', this.handleInteraction_);
+    this.root_ &&
+      this.root_.addEventListener('keydown', this.handleInteraction_);
+    this.handleDocumentKeydown_ = this.foundation_.handleDocumentKeydown.bind(
+      this.foundation_
+    );
+
+    super.componentDidMount();
+  }
+
+  componentWillUnmount() {
+    super.componentWillUnmount();
+    document.removeEventListener('keydown', this.handleDocumentKeydown_);
+    this.root_ &&
+      this.root_.removeEventListener('click', this.handleInteraction_);
+    this.root_ &&
+      this.root_.removeEventListener('keydown', this.handleInteraction_);
+  }
+
+  sync(props: DialogPropsT) {
+    if (this.props.open) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
+
+  getDefaultFoundation() {
+    return new MDCDialogFoundation({
+      addClass: className => {
+        // a hack to make sure the open animation is triggered
+        if (className === 'mdc-dialog--open') {
+          window.requestAnimationFrame(() => {
+            this.classList.root_.add(className);
+          });
+        } else {
+          this.classList.root_.add(className);
+        }
+      },
+      removeClass: className => this.classList.root_.remove(className),
+      hasClass: className => this.classList.root_.has(className),
+      addBodyClass: className =>
+        document.body && document.body.classList.add(className),
+      removeBodyClass: className =>
+        document.body && document.body.classList.remove(className),
+      eventTargetMatches: (target, selector) => matches(target, selector),
+      computeBoundingRect: () =>
+        this.root_ && this.root_.getBoundingClientRect(),
+      trapFocus: () => this.focusTrap_.activate(),
+      releaseFocus: () => this.focusTrap_.deactivate(),
+      isContentScrollable: () => !!this.content_ && isScrollable(this.content_),
+      areButtonsStacked: () => areTopsMisaligned(this.buttons_),
+      getActionFromEvent: event => {
+        const element = closest(event.target, `[${strings.ACTION_ATTRIBUTE}]`);
+        return element && element.getAttribute(strings.ACTION_ATTRIBUTE);
+      },
+      clickDefaultButton: () => {
+        if (this.defaultButton_) {
+          this.defaultButton_.click();
+        }
+      },
+      reverseButtons: () => {
+        this.buttons_ && this.buttons_.reverse();
+        this.buttons_ &&
+          this.buttons_.forEach(
+            button =>
+              button.parentElement && button.parentElement.appendChild(button)
+          );
+      },
+      notifyOpening: () => this.emit('onOpen', {}),
+      notifyOpened: () => this.emit('onOpened', {}),
+      notifyClosing: action => this.emit('onClose', action ? { action } : {}),
+      notifyClosed: action => this.emit('onClosed', action ? { action } : {})
     });
   }
 
   render() {
-    const { open, onAccept, onCancel, onClose, apiRef, ...rest } = this.props;
-    const { root_ } = this.foundationRefs;
-
-    return <DialogRoot {...rest} elementRef={root_} />;
+    const { children, open, onOpen, onClose, ...rest } = this.props;
+    return (
+      <DialogRoot
+        {...rest}
+        elementRef={ref => (this.root_ = ref)}
+        className={this.classList.root_.renderToString()}
+      >
+        <div className="mdc-dialog__container">
+          <div className="mdc-dialog__surface">{children}</div>
+        </div>
+        <DialogScrim />
+      </DialogRoot>
+    );
   }
 }
 
@@ -175,12 +294,9 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
     header: undefined,
     body: undefined,
     footer: undefined,
-    scrollable: undefined,
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel',
     open: false,
-    onAccept: noop,
-    onCancel: noop,
     onClose: noop,
     children: undefined
   };
@@ -191,7 +307,6 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
       header,
       body,
       footer,
-      scrollable,
       acceptLabel,
       cancelLabel,
       children,
@@ -201,33 +316,30 @@ export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
 
     return (
       <Dialog open={open} {...rest}>
-        <DialogSurface>
-          {(!!title || !!header) && (
-            <DialogHeader>
-              {!!title && <DialogHeaderTitle>{title}</DialogHeaderTitle>}
-              {!!header && header}
-            </DialogHeader>
-          )}
-          {(!!body || children) && (
-            <DialogBody scrollable={scrollable}>
-              {body}
-              {children}
-            </DialogBody>
-          )}
+        {(!!title || !!header) && (
+          <DialogTitle>
+            {!!title && title}
+            {!!header && header}
+          </DialogTitle>
+        )}
+        {(!!body || children) && (
+          <DialogContent>
+            {body}
+            {children}
+          </DialogContent>
+        )}
 
-          {(!!cancelLabel || !!acceptLabel) && (
-            <DialogFooter>
-              {!!footer && { footer }}
-              {!!cancelLabel && (
-                <DialogFooterButton cancel>{cancelLabel}</DialogFooterButton>
-              )}
-              {!!acceptLabel && (
-                <DialogFooterButton accept>{acceptLabel}</DialogFooterButton>
-              )}
-            </DialogFooter>
-          )}
-        </DialogSurface>
-        <DialogBackdrop />
+        {(!!cancelLabel || !!acceptLabel) && (
+          <DialogActions>
+            {!!footer && { footer }}
+            {!!cancelLabel && (
+              <DialogButton action="close">{cancelLabel}</DialogButton>
+            )}
+            {!!acceptLabel && (
+              <DialogButton action="accept">{acceptLabel}</DialogButton>
+            )}
+          </DialogActions>
+        )}
       </Dialog>
     );
   }

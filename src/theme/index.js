@@ -35,7 +35,11 @@ type ThemeProviderPropsT = {
   /** Any theme option pointing to a valid CSS value. */
   options: { [key: string]: string },
   /** Additional standard inline styles that will be merged into the style tag. */
-  style?: Object
+  style?: Object,
+  /** Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. */
+  wrap?: boolean,
+  /** Children to render */
+  children?: React.Node
 };
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
@@ -69,7 +73,7 @@ export class ThemeProvider extends React.Component<ThemeProviderPropsT> {
   }
 
   render() {
-    const { options, style = {}, ...rest } = this.props;
+    const { options, style = {}, wrap, ...rest } = this.props;
     // Casting styles to avoid TSX error
     // $FlowFixMe
     const tsxSafeStyle: React.CSSProperties = style;
@@ -77,6 +81,18 @@ export class ThemeProvider extends React.Component<ThemeProviderPropsT> {
       ...tsxSafeStyle,
       ...this.colors
     };
+
+    if (wrap && rest.children) {
+      const child = React.Children.only(rest.children);
+      const childStyle = child.props.style || {};
+
+      return React.cloneElement(child, {
+        ...child.props,
+        ...rest,
+        style: { ...themeStyles, ...childStyle }
+      });
+    }
+
     return <div {...rest} style={themeStyles} />;
   }
 }

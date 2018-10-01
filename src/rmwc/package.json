@@ -59,7 +59,6 @@
     "@rmwc/radio": "^2.2.0",
     "@rmwc/ripple": "^2.2.0",
     "@rmwc/select": "^2.2.0",
-    "@rmwc/shape": "^2.2.0",
     "@rmwc/slider": "^2.2.0",
     "@rmwc/snackbar": "^2.2.2",
     "@rmwc/switch": "^2.2.2",
@@ -69,6 +68,6 @@
     "@rmwc/toolbar": "^2.2.2",
     "@rmwc/top-app-bar": "^2.2.2",
     "@rmwc/typography": "^2.2.0",
-    "material-components-web": "~0.39.0"
+    "material-components-web": "~0.40.0"
   }
 }
