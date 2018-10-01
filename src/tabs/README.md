@@ -13,6 +13,8 @@
 ## Controlled vs Uncontrolled
 Tabs can be either controlled or uncontrolled just like inputs. Use the `activeTabIndex` and `onActivate` callback for controlled components.
 ```jsx render
+import { TabBar, Tab } from '@rmwc/tabs';
+
 {/* Uncontrolled */}
 <TabBar>
   <Tab>Cookies</Tab>
@@ -35,7 +37,7 @@ Tabs can be either controlled or uncontrolled just like inputs. Use the `activeT
 ## Variants
 
 ```jsx render
-import { TabBar, Tab, TabIcon, TabIconText, TabBarScroller } from '@rmwc/tabs';
+import { TabBar, Tab } from '@rmwc/tabs';
 
 {/* Basic Tabs */}
 <TabBar>
