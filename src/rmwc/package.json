@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "index.js",
   "scripts": {
@@ -45,7 +45,7 @@
     "@rmwc/fab": "^3.0.0",
     "@rmwc/floating-label": "^3.0.0",
     "@rmwc/formfield": "^3.0.0",
-    "@rmwc/grid": "^3.0.0",
+    "@rmwc/grid": "^3.0.1",
     "@rmwc/grid-list": "^3.0.0",
     "@rmwc/icon": "^3.0.0",
     "@rmwc/icon-button": "^3.0.0",
@@ -60,14 +60,14 @@
     "@rmwc/ripple": "^3.0.0",
     "@rmwc/select": "^3.0.0",
     "@rmwc/slider": "^3.0.0",
-    "@rmwc/snackbar": "^3.0.0",
+    "@rmwc/snackbar": "^3.0.1",
     "@rmwc/switch": "^3.0.0",
     "@rmwc/tabs": "^3.0.0",
     "@rmwc/textfield": "^3.0.0",
     "@rmwc/theme": "^3.0.0",
     "@rmwc/toolbar": "^3.0.0",
     "@rmwc/top-app-bar": "^3.0.0",
-    "@rmwc/typography": "^3.0.0",
+    "@rmwc/typography": "^3.0.1",
     "material-components-web": "~0.40.0"
   }
 }

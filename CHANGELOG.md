@@ -1,3 +1,9 @@
+#### 3.0.1 (2018-10-01)
+
+##### Bug Fixes
+
+* **Dependency:**  Correcting package versions from @material (e1cc1a13)
+
 #### 2.2.3 (2018-10-01)
 
 ##### Breaking Changes
