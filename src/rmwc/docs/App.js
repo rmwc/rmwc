@@ -86,6 +86,15 @@ const THEMES = {
   Shrine: {
     '--mdc-theme-primary': '#ffdbcf',
     '--mdc-theme-secondary': '#feeae6'
+  },
+  Dark: {
+    '--mdc-theme-background': '#212121',
+    '--mdc-theme-surface': '#37474F',
+    '--mdc-theme-on-surface': 'rgba(255,255,255,.87)',
+    '--mdc-theme-primary': '#24aee9',
+    '--mdc-theme-on-primary': 'rgba(255,255,255,.87)',
+    '--mdc-theme-secondary': '#e539ff',
+    '--mdc-theme-on-secondary': 'rgba(0,0,0,0.87)'
   }
 };
 
@@ -276,7 +285,7 @@ class ThemePicker extends React.Component {
             onClick={evt => this.setState({ open: true })}
             ripple={false}
             style={{
-              backgroundColor: '#f2f2f2',
+              backgroundColor: 'rgba(0,0,0,.05)',
               padding: '1rem',
               marginTop: '1rem',
               display: 'block',

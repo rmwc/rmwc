@@ -28,12 +28,29 @@ pre[class*='language-'] {
   font-size: 0.875rem;
 }
 
+code[class*='language-'],
+pre[class*='language-'] {
+  color: inherit;
+  text-shadow: none;
+}
+
 body ul li {
   margin: 0;
 }
 
 .mdc-temporary-drawer__drawer {
   will-change: initial;
+  color: #155a80;
+}
+
+.app__root,
+.mdc-drawer {
+  background-color: var(--mdc-theme-background);
+  color: var(--mdc-theme-on-surface);
+}
+
+.mdc-drawer .mdc-list-item {
+  color: var(--mdc-theme-on-surface);
 }
 
 /** Install Block */
@@ -168,7 +185,7 @@ body ul li {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.75rem;
   margin: 1.5rem 0;
-  background-color: white;
+  background-color: var(--mdc-theme-background);
 }
 
 .app__content > div .example + .example {
@@ -181,7 +198,7 @@ body ul li {
 
 .app__content > div .example:not(.render-only) .run {
   padding: 1rem;
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -313,7 +330,7 @@ ul li {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--mdc-theme-on-surface);
 }
 
 .made-by img {
