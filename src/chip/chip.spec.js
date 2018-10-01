@@ -62,6 +62,14 @@ describe('SimpleChip', () => {
         checkmark
       />
     );
+    mount(
+      <SimpleChip
+        leadingIcon={<ChipIcon use="favorite" />}
+        trailingIcon="close"
+        text="test"
+        checkmark
+      />
+    );
   });
 });
 

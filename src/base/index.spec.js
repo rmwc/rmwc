@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { ListItem } from '@rmwc/list';
 import { withTheme } from './withTheme';
 import { withFoundation } from './withFoundation';
-import { noop, Component } from './';
+import { noop, Component, randomId } from './';
 
 jest.spyOn(console, 'warn');
 
@@ -14,6 +14,12 @@ describe('RMWC', () => {
 describe('Utils', () => {
   it('noop', () => {
     noop();
+  });
+
+  it('randomId', () => {
+    process.env.NODE_ENV = 'production';
+    randomId();
+    process.env.NODE_ENV = 'test';
   });
 });
 

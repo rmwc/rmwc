@@ -3,14 +3,18 @@ import { mount } from 'enzyme';
 import { RMWCProvider } from './';
 import { Button } from '@rmwc/button';
 import { Icon } from '@rmwc/icon';
+import { List, SimpleListItem } from '@rmwc/list';
 
 describe('Provider', () => {
   it('renders', () => {
-    mount(
+    const el = mount(
       <RMWCProvider>
         <div />
       </RMWCProvider>
     );
+
+    el.setProps({ buttonDefaultRipple: true });
+    el.instance().buildOptions(undefined);
   });
 
   it('can set default ripple', () => {
@@ -42,5 +46,15 @@ describe('Provider', () => {
     );
 
     expect(!!~dom.html().search('my-icon-lib-test-')).toEqual(true);
+  });
+
+  it('can set list item ripple', () => {
+    mount(
+      <RMWCProvider listItemDefaultRipple={false}>
+        <List>
+          <SimpleListItem ripple={undefined} text="foo" />
+        </List>
+      </RMWCProvider>
+    );
   });
 });

@@ -197,7 +197,7 @@ export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
     text && secondaryText !== undefined ? (
       <ListItemPrimaryText>{text}</ListItemPrimaryText>
     ) : (
-      text || null
+      text
     );
 
   const secondaryTextToRender =

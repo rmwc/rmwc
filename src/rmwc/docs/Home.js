@@ -44,7 +44,7 @@ export const Home = () => {
 
           <div className="home__checklist">
             {checklist.map(c => (
-              <div>
+              <div key={c}>
                 <Icon theme="secondary" icon="check" /> <div>{c}</div>
               </div>
             ))}

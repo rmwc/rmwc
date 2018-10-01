@@ -77,6 +77,25 @@ describe('Icon', () => {
     expect(el.html()).toBe(`<i class="rmwc-icon icon ion-ionic"></i>`);
   });
 
+  it('Errors when bad strategy is passed', () => {
+    jest.spyOn(console, 'error');
+    mount(
+      <Icon
+        icon="foo"
+        iconOptions={{
+          strategy: 'error'
+        }}
+      />
+    );
+    expect(console.error).toHaveBeenCalled();
+  });
+
+  it('handles deprecated usage', () => {
+    jest.spyOn(console, 'warn');
+    mount(<Icon icon="foo" prefix="foo" />);
+    expect(console.warn).toHaveBeenCalled();
+  });
+
   it('renders custom', () => {
     const el = mount(
       <Icon

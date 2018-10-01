@@ -70,20 +70,6 @@ describe('Dialog', () => {
   });
 
   it('standard Dialog renders', () => {
-    mount(
-      <Dialog open onClose={evt => {}}>
-        <DialogTitle>Dialog Title</DialogTitle>
-
-        <DialogContent>This is a custom dialog.</DialogContent>
-        <DialogActions>
-          <DialogButton action="close">Cancel</DialogButton>
-          <DialogButton action="accept">Sweet!</DialogButton>
-        </DialogActions>
-      </Dialog>
-    );
-  });
-
-  it('foundation check', () => {
     const el = mount(
       <Dialog open onClose={evt => {}}>
         <DialogTitle>Dialog Title</DialogTitle>
@@ -96,11 +82,35 @@ describe('Dialog', () => {
       </Dialog>
     );
 
+    el.unmount();
+  });
+
+  it('foundation check', () => {
+    const el = mount(
+      <Dialog open onClose={evt => {}}>
+        <DialogTitle>Dialog Title</DialogTitle>
+
+        <DialogContent>This is a custom dialog.</DialogContent>
+        <DialogActions>
+          <DialogButton action="close">Cancel</DialogButton>
+          <DialogButton action="accept" isDefaultAction>
+            Sweet!
+          </DialogButton>
+        </DialogActions>
+      </Dialog>
+    );
+
+    el.find('button')
+      .first()
+      .simulate('click');
+
     const adapter = el.instance().foundation_.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.hasClass('test');
     adapter.addBodyClass('test');
     adapter.removeBodyClass('test');
+    adapter.reverseButtons();
+    adapter.clickDefaultButton();
   });
 });
