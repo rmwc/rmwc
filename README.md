@@ -8,7 +8,7 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for the official Material Design (Web) Components v0.39.0
+A React (15 / 16) wrapper for the official Material Design (Web) Components v0.40.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
@@ -33,15 +33,6 @@ While the primary goal of wrapping material-components-web remains the same, the
 - Icon Sizing
 - Data Tables
 
-New in 2.0.0: Individually packaged and released components!
-
-2.0.0 does not contain any changes to the components themselves, but it's a major refactor of how RMWC is packaged and deployed. All components have been broken apart into their own npm packages. What this means for you:
-
-- From now on RMWC will honor Semver. Any breaking change to a component (aka prop interface) will bump the major version. This should alleviate some issues people have had with npm greedily auto updating.
-- Components can now be individually installed which means they can also be individually upgraded. This further alleviates the pain of a breaking changes by allowing you to upgrade one component at a time at your leisure. 
-- Please note that all components will still be versioned and released to together. This means that if any component has a breaking change, the version will be bumped on ALL components, even though they don't contain a breaking change. This is the safest way to guarantee cohesive releases of the library. You'll know that all 3.x.x components are intended to work together.
-- The docs have been updated to reflect importing from the new modules, but work has been done to make sure importing from the old syntax (rmwc/Button) still works for the time being. It is recommended that you upgrade to the new syntax at your convenience (@rmwc/button).
-
 View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md](https://github.com/jamesmfriedman/rmwc/blob/master/CHANGELOG.md)
 
 ## Goals
@@ -56,19 +47,7 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 ## Installation
 
-Required steps
-
 * `npm i rmwc --save` or `yarn add rmwc`
-* [material-components-web](https://github.com/material-components/material-components-web) should be installed automatically as a peer dependency. Include `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using a link tag, a css-loader, etc.).
-
-Optional steps
-
-* If you would like to use the default **Roboto font**:
-  * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
-  * add the class `mdc-typography` to the body `<body className="mdc-typography">...</body>`
-* If you would like to use the **material-icons** font:
-  * add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
-* Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
 
 Additional information is available in the [Installation Guide](https://jamesmfriedman.github.io/rmwc/installation)
 

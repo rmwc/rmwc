@@ -17,6 +17,7 @@
 * If you would like to use the default **Roboto font**:
   * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
   * add the class `mdc-typography` to the body `<body className="mdc-typography">...</body>`
+* If you plan on using CSS variables for theming, it's a good idea to add the class `mdc-theme--background` to the html or body element.
 * If you would like to use the **material-icons** font:
   * add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
 * Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
