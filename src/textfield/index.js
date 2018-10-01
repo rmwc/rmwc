@@ -8,7 +8,6 @@ import {
 } from '@material/textfield/dist/mdc.textfield';
 
 import { Component, FoundationComponent, randomId } from '@rmwc/base';
-
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
