@@ -155,6 +155,7 @@ body ul li {
   margin-bottom: 1.875rem;
 }
 
+/* RMWC Addon*/
 .app__content > div > h1 > code {
   font: inherit;
   color: var(--mdc-theme-secondary);
@@ -165,6 +166,7 @@ body ul li {
   border: 1px solid var(--mdc-theme-secondary);
   padding: 0.25rem 0.5rem;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .app__content > div > h1:first-child {
