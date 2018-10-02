@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon",
-  "version": "3.0.0",
+  "version": "3.0.3",
   "description": "RMWC Icon component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@rmwc/base": "^3.0.0",
-    "@rmwc/provider": "^3.0.0",
+    "@rmwc/provider": "^3.0.3",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1"
   }

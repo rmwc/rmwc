@@ -1,3 +1,9 @@
+#### 3.0.3 (2018-10-02)
+
+##### Bug Fixes
+
+* **Flow:**  Corrects FlowTyped issue with Flow 0.82.0 and Provider. (464a4bfa)
+
 #### 3.0.2 (2018-10-02)
 
 ##### Bug Fixes

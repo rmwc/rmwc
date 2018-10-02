@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "3.0.0",
+  "version": "3.0.3",
   "description": "RMWC TextField component",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "@material/textfield": "~0.40.0",
     "@rmwc/base": "^3.0.0",
     "@rmwc/floating-label": "^3.0.0",
-    "@rmwc/icon": "^3.0.0",
+    "@rmwc/icon": "^3.0.3",
     "@rmwc/line-ripple": "^3.0.0",
     "@rmwc/notched-outline": "^3.0.0"
   }

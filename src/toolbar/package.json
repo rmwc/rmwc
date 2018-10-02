@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/toolbar",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "RMWC Toolbar component",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
   "dependencies": {
     "@material/toolbar": "~0.40.0",
     "@rmwc/base": "^3.0.0",
-    "@rmwc/icon": "^3.0.0"
+    "@rmwc/icon": "^3.0.3"
   }
 }
