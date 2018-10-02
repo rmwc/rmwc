@@ -1,3 +1,9 @@
+#### 3.0.2 (2018-10-02)
+
+##### Bug Fixes
+
+* **Typescript:**  Toolbar Icon Typings (912ca3fb)
+
 #### 3.0.1 (2018-10-01)
 
 ##### Bug Fixes
