@@ -39,6 +39,22 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 * To be as unobtrusive and sensible as possible.
 * To fill the gaps in material-components-web with custom React community driven components.
 
+### *Doesn't Google have their own React Wrapper?*
+
+Yes, and here are the differences.
+
+* [x] RMWC is feature complete! Contains all fo the components in the MDC catalog.
+* [x] RMWC Includes Addon components for ones missing from the official spec
+* [x] RMWC Works in any version of React from 15.5.x to 16.5.x
+* [x] RMWC includes first class Typescript and Flow Support
+* [x] RMWC has tested server side rendering support
+* [x] RMWC favors deprecations over breaking changes whenever possible
+* [x] RMWC has interactive polished documentation
+* [x] RMWC is about 8 months older than Google's.
+
+The MDC team has been nothing but collaborative and kind, even in pursuing their own React wrapper. Both libraries individually package components, so you can use this one, that one, or a mix of both if you want to. There are multiple production apps running RMWC, so this library will continue to exist and be improved. Hopefully in the future there can be a convergence point, but in the meantime you can weigh both libraries on their own merits.
+https://github.com/material-components/material-components-web-react
+
 ## Installation
 
 * `npm i rmwc --save` or `yarn add rmwc`
