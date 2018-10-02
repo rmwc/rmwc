@@ -1,7 +1,7 @@
 {
   "name": "rmwc",
   "author": "James Friedman",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "private": true,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
@@ -66,7 +66,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "flow-bin": "^0.80.0",
+    "flow-bin": "^0.82.0",
     "generate-changelog": "1.7.0",
     "lerna": "^3.2.1",
     "normalize.css": "^7.0.0",

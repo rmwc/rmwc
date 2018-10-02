@@ -26,7 +26,7 @@ export type RMWCProviderOptionsT = {
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
   buttonDefaultRipple: true,
-  children: undefined,
+  children: null,
   listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
