@@ -1,4 +1,5 @@
 // @flow
+import type { IconPropsT } from '@rmwc/icon';
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
@@ -105,7 +106,7 @@ export const ToolbarFixedAdjust = simpleTag({
 /**
  * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
-export const ToolbarMenuIcon = simpleTag({
+export const ToolbarMenuIcon: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'ToolbarMenuIcon',
   tag: Icon,
   classNames: 'mdc-toolbar__menu-icon'
@@ -114,7 +115,7 @@ export const ToolbarMenuIcon = simpleTag({
 /**
  * A standard Icon for toolbar actions. This is an instance of the Icon component.
  */
-export const ToolbarIcon = simpleTag({
+export const ToolbarIcon: React.ComponentType<IconPropsT> = simpleTag({
   displayName: 'ToolbarIcon',
   tag: Icon,
   classNames: 'mdc-toolbar__icon'
