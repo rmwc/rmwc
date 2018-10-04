@@ -1,3 +1,9 @@
+#### 3.0.3 (2018-10-04)
+
+##### Bug Fixes
+
+* **TextField:**  Fixes #334 Corrects issue with PropsList on foundation components not merging user passed props (7a370707)
+
 #### 3.0.3 (2018-10-02)
 
 ##### Bug Fixes

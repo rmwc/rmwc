@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/radio",
-  "version": "3.0.0",
+  "version": "3.0.4",
   "description": "RMWC Radio component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/radio": "~0.40.0",
-    "@rmwc/base": "^3.0.0",
-    "@rmwc/formfield": "^3.0.0"
+    "@rmwc/base": "^3.0.4",
+    "@rmwc/formfield": "^3.0.4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/ripple",
-  "version": "3.0.0",
+  "version": "3.0.4",
   "description": "RMWC Ripple component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/ripple": "~0.40.0",
-    "@rmwc/base": "^3.0.0",
+    "@rmwc/base": "^3.0.4",
     "classnames": "^2.2.5"
   }
 }
