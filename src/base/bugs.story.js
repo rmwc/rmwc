@@ -188,6 +188,27 @@ class Bug312 extends React.Component {
   }
 }
 
+const Bug334 = () => {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <div>
+        <TextField
+          label="MDC"
+          onChange={e => console.log(e.target.value)}
+          onBlur={() => console.log('rmwc blur')}
+          onFocus={() => console.log('rmwc onFocus')}
+        />
+        <input
+          onChange={e => console.log(e.target.value)}
+          onBlur={() => console.log('regular blur')}
+        />
+      </div>
+    </div>
+  );
+};
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -244,4 +265,5 @@ storiesOf('Bugs', module)
   .add('#283', () => <Bug283 />)
   .add('#293', () => <Bug293 />)
   .add('#298', () => <Bug298 />)
-  .add('#312', () => <Bug312 />);
+  .add('#312', () => <Bug312 />)
+  .add('#334', () => <Bug334 />);

@@ -12,14 +12,69 @@ type ClassListT = {
   remove: (className: string) => void
 };
 
-type PropsListT = {
-  addEventListener: (evtName: string, callback: Function) => void,
-  removeEventListener: (evtName: string, callback: Function) => void,
-  all: () => { [key: string]: any },
-  get: (propName: string) => any,
-  add: (propName: string, value: any) => void,
-  remove: (propName: string) => void
-};
+class PropsList {
+  update: Function;
+  props = {};
+
+  constructor(update) {
+    this.update = update;
+  }
+
+  add(propName, value) {
+    this.props = {
+      ...this.props,
+      [propName]: value
+    };
+    this.update();
+  }
+
+  remove(propName) {
+    delete this.props[propName];
+    this.props = {
+      ...this.props
+    };
+    this.update();
+  }
+
+  all(mergeProps?: Object) {
+    if (mergeProps) {
+      const merged = Object.entries(mergeProps).reduce((acc, [key, val]) => {
+        if (
+          typeof this.props[key] === 'function' &&
+          typeof val === 'function'
+        ) {
+          const oldFunc = this.props[key];
+          const wrappedFunc = evt => {
+            oldFunc(evt);
+            val(evt);
+          };
+
+          acc[key] = wrappedFunc;
+        }
+        return acc;
+      }, {});
+
+      return {
+        ...this.props,
+        ...merged
+      };
+    }
+
+    return this.props;
+  }
+
+  get(attr: string) {
+    return this.props[attr];
+  }
+
+  addEventListener(evtName, callback) {
+    this.add(reactPropFromEventName(evtName), callback);
+  }
+
+  removeEventListener(evtName, callback) {
+    this.remove(reactPropFromEventName(evtName));
+  }
+}
 
 type FoundationPropsT<P> = P &
   //$FlowFixMe
@@ -32,7 +87,7 @@ export class FoundationComponent<P> extends React.Component<
 > {
   foundation_: any;
   classList: { [key: string]: ClassListT } = {};
-  propsList: { [key: string]: PropsListT } = {};
+  propsList: { [key: string]: PropsList } = {};
 
   constructor(props: FoundationPropsT<P>) {
     super(props);
@@ -65,36 +120,7 @@ export class FoundationComponent<P> extends React.Component<
   }
 
   createPropsList(elementName: string) {
-    let props = {};
-
-    const add = (propName, value) => {
-      props = {
-        ...props,
-        [propName]: value
-      };
-      this.setState({});
-    };
-
-    const remove = propName => {
-      delete props[propName];
-      props = {
-        ...props
-      };
-      this.setState({});
-    };
-
-    this.propsList[elementName] = {
-      addEventListener: (evtName, callback) => {
-        add(reactPropFromEventName(evtName), callback);
-      },
-      removeEventListener: (evtName, callback) => {
-        remove(reactPropFromEventName(evtName));
-      },
-      all: () => props,
-      add,
-      remove,
-      get: (attr: string) => props[attr]
-    };
+    this.propsList[elementName] = new PropsList(() => this.setState({}));
   }
 
   componentDidMount() {

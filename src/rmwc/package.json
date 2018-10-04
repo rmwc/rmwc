@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "index.js",
   "scripts": {

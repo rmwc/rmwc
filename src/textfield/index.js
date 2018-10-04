@@ -270,7 +270,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         typeof inputRef === 'function' && inputRef(ref);
       },
       id: rest['id'] || randomId('text-field'),
-      ...this.propsList.input_.all()
+      ...this.propsList.input_.all(rest)
     };
 
     const tag = textarea ? (
