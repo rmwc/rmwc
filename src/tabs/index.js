@@ -118,13 +118,13 @@ export class TabBar extends withFoundation({
       JSON.stringify(
         React.Children.map(
           prevProps.children,
-          (child: any) => 'key' in (child && child.key) || {},
+          (child: any) => (child && child.key) || {}
         )
       ) !==
         JSON.stringify(
           React.Children.map(
             this.props.children,
-            (child: any) => 'key' in (child && child.key) || {},
+            (child: any) => (child && child.key) || {}
           )
         );
 
