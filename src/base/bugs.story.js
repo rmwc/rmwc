@@ -195,6 +195,7 @@ const Bug334 = () => {
       <h2>Start editing to see some magic happen!</h2>
       <div>
         <TextField
+          className={'tester'}
           label="MDC"
           onChange={e => console.log(e.target.value)}
           onBlur={() => console.log('rmwc blur')}

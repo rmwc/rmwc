@@ -297,7 +297,9 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         outlined={outlined}
         fullwidth={fullwidth}
         elementRef={ref => (this.root_ = ref)}
-        className={`${className} ${this.classList.root_.renderToString()}`}
+        className={[className, this.classList.root_.renderToString()]
+          .filter(Boolean)
+          .join(' ')}
         style={style}
         {...this.propsList.root_.all()}
       >
