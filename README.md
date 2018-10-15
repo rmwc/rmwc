@@ -43,7 +43,7 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 
 Yes, and here are the differences.
 
-* [x] RMWC is feature complete! Contains all fo the components in the MDC catalog.
+* [x] RMWC is feature complete! It contains all of the components in the MDC catalog.
 * [x] RMWC Includes Addon components for ones missing from the official spec
 * [x] RMWC Works in any version of React from 15.5.x to 16.5.x
 * [x] RMWC includes first class Typescript and Flow Support
