@@ -1,3 +1,15 @@
+#### 3.0.5 (2018-10-15)
+
+##### Bug Fixes
+
+* **Select:**
+  *  Correct TS issue for style (7703a6e1)
+  *  Allows style object to be applied to root of component #341 (0321ca1f)
+* **TextField:**
+  *  Corrects ‘undefined’ being rendered as className #335 (9240be21)
+  *  corrects issue where TextField label does not respond to state change #338 (ea1e683b)
+* **Tabs:**  make conditional tabs work even after re-render (3d2ca8f3)
+
 #### 3.0.4 (2018-10-04)
 
 ##### Bug Fixes
