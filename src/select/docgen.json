@@ -12,12 +12,12 @@
             "name": "props",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
+              "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string,\n  /** Styles to be applied to the root of the component. */\n  style?: Object\n} & SimpleTagPropsT &\n  //$FlowFixMe\n  React.InputHTMLAttributes<HTMLInputElement>",
               "elements": [
                 {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
+                  "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string,\n  /** Styles to be applied to the root of the component. */\n  style?: Object\n}",
                   "signature": {
                     "properties": [
                       {
@@ -112,6 +112,13 @@
                         "key": "className",
                         "value": {
                           "name": "string",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "style",
+                        "value": {
+                          "name": "Object",
                           "required": false
                         }
                       }
@@ -181,12 +188,12 @@
             "name": "nextProps",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
+              "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string,\n  /** Styles to be applied to the root of the component. */\n  style?: Object\n} & SimpleTagPropsT &\n  React.InputHTMLAttributes<HTMLInputElement>",
               "elements": [
                 {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string\n}",
+                  "raw": "{\n  /** The value for a controlled select. */\n  value?: mixed,\n  /** Options accepts flat arrays, value => label maps, and more. See examples for details. */\n  options?: string[] | { [value: string]: string } | any[],\n  /** A label for the form control. */\n  label?: string,\n  /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */\n  placeholder?: string,\n  /** Makes the select outlined. */\n  outlined?: boolean,\n  /** Disables the form control. */\n  disabled?: boolean,\n  /** Props for the root element. By default, additional props spread to the native select element.  */\n  rootProps?: Object,\n  /** A className for the root element. */\n  className?: string,\n  /** Styles to be applied to the root of the component. */\n  style?: Object\n}",
                   "signature": {
                     "properties": [
                       {
@@ -281,6 +288,13 @@
                         "key": "className",
                         "value": {
                           "name": "string",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "style",
+                        "value": {
+                          "name": "Object",
                           "required": false
                         }
                       }
@@ -402,6 +416,13 @@
         },
         "required": false,
         "description": "A className for the root element."
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": "Styles to be applied to the root of the component."
       }
     }
   }

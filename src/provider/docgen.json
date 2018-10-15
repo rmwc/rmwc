@@ -276,8 +276,8 @@
         "required": false,
         "description": "Children to render",
         "defaultValue": {
-          "value": "undefined",
-          "computed": true
+          "value": "null",
+          "computed": false
         }
       }
     },
