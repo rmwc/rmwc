@@ -209,6 +209,26 @@ const Bug334 = () => {
   );
 };
 
+class Bug338 extends React.Component {
+  state = {
+    value: ''
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        value: 'Test'
+      });
+    }, 1000);
+  }
+
+  render() {
+    return (
+      <TextField label="Foo" value={this.state.value} onChange={() => {}} />
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -266,4 +286,5 @@ storiesOf('Bugs', module)
   .add('#293', () => <Bug293 />)
   .add('#298', () => <Bug298 />)
   .add('#312', () => <Bug312 />)
-  .add('#334', () => <Bug334 />);
+  .add('#334', () => <Bug334 />)
+  .add('#338', () => <Bug338 />);

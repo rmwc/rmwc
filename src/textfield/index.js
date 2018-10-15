@@ -243,6 +243,12 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     return iconNode;
   }
 
+  sync(props: TextFieldPropsT) {
+    if (props.value !== undefined) {
+      this.foundation_.setValue(props.value);
+    }
+  }
+
   render() {
     const {
       label = '',
