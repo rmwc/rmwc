@@ -31,7 +31,7 @@ export type SelectPropsT = {
   /** A className for the root element. */
   className?: string,
   /** Styles to be applied to the root of the component. */
-  style?: string
+  style?: Object
 } & SimpleTagPropsT &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
