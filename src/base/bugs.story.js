@@ -89,6 +89,7 @@ class Bug283 extends React.Component {
     return (
       <React.Fragment>
         <Select
+          style={{ width: '100%' }}
           outlined
           label="Label"
           placeholder=""

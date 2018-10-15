@@ -29,7 +29,9 @@ export type SelectPropsT = {
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object,
   /** A className for the root element. */
-  className?: string
+  className?: string,
+  /** Styles to be applied to the root of the component. */
+  style?: string
 } & SimpleTagPropsT &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
@@ -141,6 +143,7 @@ export class Select extends withFoundation({
       className,
       rootProps = {},
       apiRef,
+      style,
       ...rest
     } = this.props;
 
@@ -153,6 +156,7 @@ export class Select extends withFoundation({
         outlined={outlined}
         elementRef={root_}
         className={className}
+        style={style}
       >
         <SelectNativeControl
           {...rest}
