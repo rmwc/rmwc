@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/grid",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "RMWC Grid component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/layout-grid": "~0.39.0",
-    "@rmwc/base": "^3.0.5"
+    "@rmwc/base": "^3.0.6"
   }
 }

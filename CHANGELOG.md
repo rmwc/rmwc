@@ -1,3 +1,9 @@
+#### 3.0.6 (2018-10-24)
+
+##### Refactors
+
+* **Slider:**  Implements directly through foundation, drastically improves performance. (6b42908b)
+
 #### 3.0.5 (2018-10-15)
 
 ##### Bug Fixes
