@@ -1,3 +1,9 @@
+#### 3.0.7 (2018-10-24)
+
+##### Bug Fixes
+
+* **Component:**  Corrects a regression for prop spreading on the slider component. (3580a6a0)
+
 #### 3.0.6 (2018-10-24)
 
 ##### Refactors
