@@ -55,6 +55,7 @@ class PropsList {
       }, {});
 
       return {
+        ...mergeProps,
         ...this.props,
         ...merged
       };

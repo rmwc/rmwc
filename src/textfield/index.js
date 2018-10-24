@@ -269,7 +269,6 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     } = this.props;
 
     const tagProps = {
-      ...rest,
       disabled: disabled,
       elementRef: ref => {
         this.input_ = ref;
