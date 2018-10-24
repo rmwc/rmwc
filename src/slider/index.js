@@ -2,8 +2,9 @@
 import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCSlider } from '@material/slider/dist/mdc.slider';
-import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import { MDCSliderFoundation } from '@material/slider/dist/mdc.slider';
+import { Component, FoundationComponent, syncFoundationProp } from '@rmwc/base';
+import { debounce } from '@rmwc/base/utils/debounce';
 
 export type SliderPropsT = {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
@@ -34,78 +35,174 @@ export type SliderPropsT = {
   disabled?: boolean
 } & SimpleTagPropsT;
 
-export const SliderRoot: React.ComponentType<SliderPropsT> = simpleTag({
-  displayName: 'SliderRoot',
-  classNames: (props: SliderPropsT) => [
+/** @extends React.Component */
+class SliderRoot extends Component<SliderPropsT> {
+  static displayName = 'SliderRoot';
+  classNames = (props: SliderPropsT) => [
     'mdc-slider',
     {
       'mdc-slider--discrete': props.discrete,
       'mdc-slider--display-markers': props.displayMarkers && props.discrete
     }
-  ],
-  consumeProps: ['discrete', 'displayMarkers']
-});
+  ];
+  consumeProps = ['discrete', 'displayMarkers'];
+}
 
-export const SliderTrackContainer = simpleTag({
-  displayName: 'SliderTrackContainer',
-  classNames: 'mdc-slider__track-container'
-});
+class SliderTrack extends React.Component<{ elementRef: any }> {
+  static displayName = 'SliderTrack';
 
-export const SliderTrack = simpleTag({
-  displayName: 'SliderTrack',
-  classNames: 'mdc-slider__track'
-});
+  shouldComponentUpdate() {
+    return false;
+  }
 
-export const SliderTrackMarkerContainer = simpleTag({
-  displayName: 'SliderTrackMarkerContainer',
-  classNames: 'mdc-slider__track-marker-container'
-});
+  render() {
+    return <div ref={this.props.elementRef} className="mdc-slider__track" />;
+  }
+}
 
-export const SliderThumbContainer = simpleTag({
-  displayName: 'SliderThumbContainer',
-  classNames: 'mdc-slider__thumb-container'
-});
+class SliderTrackMarkerContainer extends React.PureComponent<{
+  markersCount: number
+}> {
+  static displayName = 'SliderTrackMarkerContainer';
 
-export const SliderPin = simpleTag({
-  displayName: 'SliderPin',
-  classNames: 'mdc-slider__pin'
-});
+  render() {
+    return (
+      <div className="mdc-slider__track-marker-container">
+        {[...Array(this.props.markersCount)].map((v, i) => (
+          <div className="mdc-slider__track-marker" key={i} />
+        ))}
+      </div>
+    );
+  }
+}
 
-export const SliderPinValueMarker = simpleTag({
-  displayName: 'SliderPinValueMarker',
-  tag: 'span',
-  classNames: 'mdc-slider__pin-value-marker'
-});
+class SliderPin extends React.Component<{ elementRef: any }> {
+  static displayName = 'SliderPin';
 
-export const SliderThumb = () => (
-  <svg className="mdc-slider__thumb" width="21" height="21">
-    <circle cx="10.5" cy="10.5" r="7.875" />
-  </svg>
-);
+  shouldComponentUpdate() {
+    return false;
+  }
 
-export const SliderFocusRing = simpleTag({
-  displayName: 'SliderFocusRing',
-  classNames: 'mdc-slider__focus-ring'
-});
+  render() {
+    return (
+      <div className="mdc-slider__pin">
+        <span
+          ref={this.props.elementRef}
+          className="mdc-slider__pin-value-marker"
+        />
+      </div>
+    );
+  }
+}
 
-export class Slider extends withFoundation({
-  constructor: MDCSlider,
-  refs: [
-    'root_',
-    'thumbContainer_',
-    'track_',
-    'pinValueMarker_',
-    'trackMarkerContainer_'
-  ],
-  adapter: {}
-})<SliderPropsT> {
-  static displayName = 'Slider';
+class SliderThumb extends React.Component<{}> {
+  static displayName = 'SliderThumb';
 
-  value: any;
-  min: number | string;
-  max: number | string;
-  step: number | string;
-  disabled: boolean;
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  render() {
+    return (
+      <svg className="mdc-slider__thumb" width="21" height="21">
+        <circle cx="10.5" cy="10.5" r="7.875" />
+      </svg>
+    );
+  }
+}
+
+class SliderFocusRing extends React.Component<{}> {
+  static displayName = 'SliderFocusRing';
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  render() {
+    return <div className="mdc-slider__focus-ring" />;
+  }
+}
+
+type SliderState = {
+  trackMarkersCount: number
+};
+
+export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
+  state = {
+    trackMarkersCount: 0,
+    pinContainerStyle: {}
+  };
+
+  root_: HTMLElement | null;
+  track_: HTMLElement | null;
+  pinValueMarker_: HTMLElement | null;
+  thumbContainer_: HTMLElement | null;
+
+  constructor(props: SliderPropsT) {
+    super(props);
+    this.createClassList('root_');
+    this.createPropsList('root_');
+    this.createPropsList('thumbContainer_');
+
+    // Fixes an issue where sythetic events were being
+    // accessed in the Foundation and causing an error
+    const existingInteractionStartHandler_ = this.foundation_
+      .interactionStartHandler_;
+    this.foundation_.interactionStartHandler_ = evt => {
+      evt.persist();
+      existingInteractionStartHandler_(evt);
+    };
+  }
+
+  /** @return {number} */
+  get value() {
+    return this.foundation_.getValue();
+  }
+
+  /** @param {number} value */
+  set value(value: number) {
+    this.foundation_.setValue(value);
+  }
+
+  /** @return {number} */
+  get min() {
+    return this.foundation_.getMin();
+  }
+
+  /** @param {number} min */
+  set min(min: number) {
+    this.foundation_.setMin(min);
+  }
+
+  /** @return {number} */
+  get max() {
+    return this.foundation_.getMax();
+  }
+
+  /** @param {number} max */
+  set max(max: number) {
+    this.foundation_.setMax(max);
+  }
+
+  /** @return {number} */
+  get step() {
+    return this.foundation_.getStep();
+  }
+
+  /** @param {number} step */
+  set step(step: number) {
+    this.foundation_.setStep(step);
+  }
+
+  /** @return {boolean} */
+  get disabled() {
+    return this.foundation_.isDisabled();
+  }
+
+  /** @param {boolean} disabled */
+  set disabled(disabled: boolean) {
+    this.foundation_.setDisabled(disabled);
+  }
 
   get discrete(): boolean {
     return !!(this.foundation_ && this.foundation_.isDiscrete_);
@@ -127,12 +224,19 @@ export class Slider extends withFoundation({
     }
   }
 
-  syncWithProps(nextProps: SliderPropsT) {
+  layout() {
+    this.foundation_.layout();
+  }
+
+  sync(nextProps: SliderPropsT) {
     // value
+
     syncFoundationProp(
       nextProps.value,
       this.value,
-      () => (this.value = nextProps.value)
+      () =>
+        (this.value =
+          nextProps.value !== undefined ? Number(nextProps.value) : this.value)
     );
 
     // max
@@ -141,14 +245,12 @@ export class Slider extends withFoundation({
       this.max,
       () => (this.max = nextProps.max !== undefined ? +nextProps.max : this.max)
     );
-
     // min
     syncFoundationProp(
       nextProps.min,
       this.min,
       () => (this.min = nextProps.min !== undefined ? +nextProps.min : this.min)
     );
-
     // step
     syncFoundationProp(
       nextProps.step,
@@ -156,32 +258,104 @@ export class Slider extends withFoundation({
       () =>
         (this.step = nextProps.step !== undefined ? +nextProps.step : this.step)
     );
-
     // disabled
     syncFoundationProp(
       nextProps.disabled,
       this.disabled,
       () => (this.disabled = !!nextProps.disabled)
     );
-
     // discrete
     syncFoundationProp(
       nextProps.discrete,
       this.discrete,
       () => (this.discrete = !!nextProps.discrete)
     );
-
     //eslint-disable-next-line eqeqeq
     if (this.discrete && this.foundation_ && this.foundation_.getStep() == 0) {
       this.step = 1;
     }
-
     // displayMarkers
     syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
       this.displayMarkers = !!nextProps.displayMarkers;
       window.requestAnimationFrame(
         () => this.foundation_ && this.foundation_.setupTrackMarker()
       );
+    });
+  }
+
+  getDefaultFoundation() {
+    return new MDCSliderFoundation({
+      hasClass: className => this.classList.root_.has(className),
+      addClass: className => this.classList.root_.add(className),
+      removeClass: className => this.classList.root_.remove(className),
+      getAttribute: name => this.propsList.root_.get(name),
+      setAttribute: debounce(
+        (name, value) =>
+          this.propsList.root_ && this.propsList.root_.add(name, value),
+        300
+      ),
+      removeAttribute: name => this.propsList.root_.remove(name),
+      computeBoundingRect: () =>
+        this.root_ && this.root_.getBoundingClientRect(),
+      getTabIndex: () => this.root_ && this.root_.tabIndex,
+      registerInteractionHandler: (type, handler) => {
+        this.propsList.root_.addEventListener(type, handler);
+      },
+      deregisterInteractionHandler: (type, handler) => {
+        this.propsList.root_.removeEventListener(type, handler);
+      },
+      registerThumbContainerInteractionHandler: (type, handler) => {
+        this.propsList.thumbContainer_.addEventListener(type, handler);
+      },
+      deregisterThumbContainerInteractionHandler: (type, handler) => {
+        this.propsList.thumbContainer_.removeEventListener(type, handler);
+      },
+      registerBodyInteractionHandler: (type, handler) => {
+        document.body && document.body.addEventListener(type, handler);
+      },
+      deregisterBodyInteractionHandler: (type, handler) => {
+        document.body && document.body.removeEventListener(type, handler);
+      },
+      registerResizeHandler: handler => {
+        window.addEventListener('resize', handler);
+      },
+      deregisterResizeHandler: handler => {
+        window.removeEventListener('resize', handler);
+      },
+      notifyInput: () => {
+        this.emit('onInput', { value: this.value });
+      },
+      notifyChange: () => {
+        this.emit('onChange', { value: this.value });
+      },
+      setThumbContainerStyleProperty: (propertyName, value) => {
+        this.thumbContainer_ &&
+          this.thumbContainer_.style.setProperty(propertyName, value);
+      },
+      setTrackStyleProperty: (propertyName, value) => {
+        this.track_ && this.track_.style.setProperty(propertyName, value);
+      },
+      setMarkerValue: value => {
+        this.pinValueMarker_ && (this.pinValueMarker_.innerText = value);
+      },
+      appendTrackMarkers: numMarkers => {
+        this.setState({ trackMarkersCount: numMarkers });
+      },
+      removeTrackMarkers: () => {
+        this.setState({ trackMarkersCount: 0 });
+      },
+      setLastTrackMarkersStyleProperty: (propertyName, value) => {
+        if (this.root_) {
+          // We remove and append new nodes, thus, the last track marker must be dynamically found.
+          const lastTrackMarker = this.root_.querySelector(
+            MDCSliderFoundation.strings.LAST_TRACK_MARKER_SELECTOR
+          );
+          lastTrackMarker &&
+            lastTrackMarker.style.setProperty(propertyName, value);
+        }
+      },
+      isRTL: () =>
+        this.root_ && getComputedStyle(this.root_).direction === 'rtl'
     });
   }
 
@@ -197,17 +371,12 @@ export class Slider extends withFoundation({
       onChange,
       onInput,
       children,
-      apiRef,
       ...rest
     } = this.props;
 
-    const {
-      root_,
-      thumbContainer_,
-      track_,
-      pinValueMarker_,
-      trackMarkerContainer_
-    } = this.foundationRefs;
+    const dataStep = step ? { 'data-step': step } : {};
+    const tsxValue: any = value;
+    const tsxMax: any = max;
 
     if (displayMarkers && !discrete) {
       console.warn(
@@ -215,10 +384,6 @@ export class Slider extends withFoundation({
         only work in conjunction with the 'discrete' prop`
       );
     }
-
-    const dataStep = step ? { 'data-step': step } : {};
-    const tsxValue: any = value;
-    const tsxMax: any = max;
 
     return (
       <SliderRoot
@@ -228,28 +393,33 @@ export class Slider extends withFoundation({
         aria-valuemax={tsxMax}
         aria-valuenow={tsxValue}
         aria-label="Select Value"
-        elementRef={root_}
+        elementRef={ref => (this.root_ = ref)}
         discrete={discrete}
         displayMarkers={displayMarkers}
         {...(disabled ? { 'aria-disabled': disabled } : {})}
         {...dataStep}
-        {...rest}
+        {...this.propsList.root_.all(rest)}
+        className={this.classList.root_.renderToString()}
       >
-        <SliderTrackContainer>
-          <SliderTrack elementRef={track_} />
+        <div className="mdc-slider__track-container">
+          <SliderTrack elementRef={ref => (this.track_ = ref)} />
           {displayMarkers && (
-            <SliderTrackMarkerContainer elementRef={trackMarkerContainer_} />
+            <SliderTrackMarkerContainer
+              markersCount={this.state.trackMarkersCount}
+            />
           )}
-        </SliderTrackContainer>
-        <SliderThumbContainer elementRef={thumbContainer_}>
+        </div>
+        <div
+          className="mdc-slider__thumb-container"
+          ref={ref => (this.thumbContainer_ = ref)}
+          {...this.propsList.thumbContainer_.all()}
+        >
           {discrete && (
-            <SliderPin>
-              <SliderPinValueMarker elementRef={pinValueMarker_} />
-            </SliderPin>
+            <SliderPin elementRef={ref => (this.pinValueMarker_ = ref)} />
           )}
           <SliderThumb />
           <SliderFocusRing />
-        </SliderThumbContainer>
+        </div>
         {children}
       </SliderRoot>
     );

@@ -82,8 +82,9 @@ type FoundationPropsT<P> = P &
   //$FlowFixMe
   React.HTMLProps<any>;
 
-export class FoundationComponent<P> extends React.Component<
-  FoundationPropsT<P>
+export class FoundationComponent<P, S = {}> extends React.Component<
+  FoundationPropsT<P>,
+  S
 > {
   foundation_: any;
   classList: { [key: string]: ClassListT } = {};

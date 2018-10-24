@@ -87,14 +87,6 @@ describe('Slider', () => {
     expect(value).toEqual(1);
   });
 
-  it('handles apiRef', () => {
-    let api = null;
-
-    mount(<Slider apiRef={ref => (api = ref)} />);
-
-    expect(api).toBeTruthy();
-  });
-
   it('handles min > 100', () => {
     mount(<Slider min={101} max={200} />);
   });

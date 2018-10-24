@@ -1,251 +1,153 @@
 [
   {
     "description": "",
-    "displayName": "SliderRoot",
+    "displayName": "Slider",
     "methods": [
       {
-        "name": "classNames",
-        "docblock": null,
+        "name": "value",
+        "docblock": "@return {number}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "number"
+          }
+        },
+        "description": null
+      },
+      {
+        "name": "value",
+        "docblock": "@param {number} value",
         "modifiers": [],
         "params": [
           {
-            "name": "props",
+            "name": "value",
+            "description": null,
             "type": {
-              "name": "intersection",
-              "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */\n  onChange?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */\n  onInput?: (\n    evt: CustomEventT<{\n      value: number\n    }>\n  ) => mixed,\n  /** The value of the Slider. */\n  value?: number | string,\n  /** The minimum value of the Slider. */\n  min?: number | string,\n  /** The maximum value of the Slider. */\n  max?: number | string,\n  /** A step to quantize values by. */\n  step?: number | string,\n  /** Displays the exact value of the Slider on the knob. */\n  discrete?: boolean,\n  /** Displays the individual step markers on the Slider track. */\n  displayMarkers?: boolean,\n  /** Disables the control. */\n  disabled?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "onChange",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
-                          "signature": {
-                            "arguments": [
-                              {
-                                "name": "evt",
-                                "type": {
-                                  "name": "CustomEventT",
-                                  "elements": [
-                                    {
-                                      "name": "signature",
-                                      "type": "object",
-                                      "raw": "{\n  value: number\n}",
-                                      "signature": {
-                                        "properties": [
-                                          {
-                                            "key": "value",
-                                            "value": {
-                                              "name": "number",
-                                              "required": true
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  "raw": "CustomEventT<{\n  value: number\n}>"
-                                }
-                              }
-                            ],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onInput",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "(\n  evt: CustomEventT<{\n    value: number\n  }>\n) => mixed",
-                          "signature": {
-                            "arguments": [
-                              {
-                                "name": "evt",
-                                "type": {
-                                  "name": "CustomEventT",
-                                  "elements": [
-                                    {
-                                      "name": "signature",
-                                      "type": "object",
-                                      "raw": "{\n  value: number\n}",
-                                      "signature": {
-                                        "properties": [
-                                          {
-                                            "key": "value",
-                                            "value": {
-                                              "name": "number",
-                                              "required": true
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  "raw": "CustomEventT<{\n  value: number\n}>"
-                                }
-                              }
-                            ],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "value",
-                        "value": {
-                          "name": "union",
-                          "raw": "number | string",
-                          "elements": [
-                            {
-                              "name": "number"
-                            },
-                            {
-                              "name": "string"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "min",
-                        "value": {
-                          "name": "union",
-                          "raw": "number | string",
-                          "elements": [
-                            {
-                              "name": "number"
-                            },
-                            {
-                              "name": "string"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "max",
-                        "value": {
-                          "name": "union",
-                          "raw": "number | string",
-                          "elements": [
-                            {
-                              "name": "number"
-                            },
-                            {
-                              "name": "string"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "step",
-                        "value": {
-                          "name": "union",
-                          "raw": "number | string",
-                          "elements": [
-                            {
-                              "name": "number"
-                            },
-                            {
-                              "name": "string"
-                            }
-                          ],
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "discrete",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "displayMarkers",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "disabled",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
-              "alias": "SliderPropsT"
+              "name": "number"
             }
           }
         ],
-        "returns": null
-      }
-    ]
-  },
-  {
-    "description": "",
-    "displayName": "SliderTrackContainer",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderTrack",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderTrackMarkerContainer",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderThumbContainer",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderPin",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderPinValueMarker",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderThumb",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SliderFocusRing",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "Slider",
-    "methods": [
+        "returns": null,
+        "description": null
+      },
+      {
+        "name": "min",
+        "docblock": "@return {number}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "number"
+          }
+        },
+        "description": null
+      },
+      {
+        "name": "min",
+        "docblock": "@param {number} min",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "min",
+            "description": null,
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null,
+        "description": null
+      },
+      {
+        "name": "max",
+        "docblock": "@return {number}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "number"
+          }
+        },
+        "description": null
+      },
+      {
+        "name": "max",
+        "docblock": "@param {number} max",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "max",
+            "description": null,
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null,
+        "description": null
+      },
+      {
+        "name": "step",
+        "docblock": "@return {number}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "number"
+          }
+        },
+        "description": null
+      },
+      {
+        "name": "step",
+        "docblock": "@param {number} step",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "step",
+            "description": null,
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null,
+        "description": null
+      },
+      {
+        "name": "disabled",
+        "docblock": "@return {boolean}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "description": null
+      },
+      {
+        "name": "disabled",
+        "docblock": "@param {boolean} disabled",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "disabled",
+            "description": null,
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null,
+        "description": null
+      },
       {
         "name": "discrete",
         "docblock": null,
@@ -297,7 +199,14 @@
         "returns": null
       },
       {
-        "name": "syncWithProps",
+        "name": "layout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "sync",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -491,6 +400,13 @@
             }
           }
         ],
+        "returns": null
+      },
+      {
+        "name": "getDefaultFoundation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
         "returns": null
       }
     ],
