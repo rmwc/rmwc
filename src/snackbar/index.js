@@ -115,15 +115,15 @@ export class Snackbar extends withFoundation({
     this.isShowing_ = isShowing;
   }
 
-  syncWithProps(nextProps: MDCSnackbar) {
+  syncWithProps(nextProps: SnackbarPropsT) {
     syncFoundationProp(
       nextProps.dismissesOnAction,
       this.dismissesOnAction,
-      () => (this.dismissesOnAction = nextProps.dismissesOnAction)
+      () => (this.dismissesOnAction = !!nextProps.dismissesOnAction)
     );
 
     syncFoundationProp(nextProps.show, this.isShowing, () => {
-      this.isShowing = nextProps.show;
+      this.isShowing = !!nextProps.show;
 
       window.requestAnimationFrame(() => {
         if (nextProps.show) {
