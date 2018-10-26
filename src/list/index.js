@@ -17,6 +17,8 @@ export type ListItemPropsT = {
   selected?: boolean,
   /** A modifier for an active state. */
   activated?: boolean,
+  /** A modifier for a disabled state. */
+  disabled?: boolean,
   /** Enable / disable the ripple. */
   ripple?: boolean
 } & SimpleTagPropsT &
@@ -29,10 +31,11 @@ export const ListItemRoot = withRipple()(
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
-        'mdc-list-item--activated': props.activated
+        'mdc-list-item--activated': props.activated,
+        'mdc-list-item--disabled': props.disabled
       }
     ],
-    consumeProps: ['selected', 'activated', 'options'] //options is from the select element
+    consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element
   })
 );
 
