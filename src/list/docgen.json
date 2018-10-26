@@ -18,6 +18,13 @@
         "required": false,
         "description": "A modifier for an active state."
       },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for a disabled state."
+      },
       "ripple": {
         "flowType": {
           "name": "boolean"
@@ -196,6 +203,13 @@
         },
         "required": false,
         "description": "A modifier for an active state."
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "A modifier for a disabled state."
       },
       "ripple": {
         "flowType": {
