@@ -244,7 +244,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
   }
 
   sync(props: TextFieldPropsT) {
-    if (props.value !== undefined) {
+    if (props.value) {
       this.foundation_.setValue(props.value);
     }
   }
