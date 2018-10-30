@@ -231,6 +231,23 @@ class Bug338 extends React.Component {
   }
 }
 
+class Bug297 extends React.Component {
+  state = {
+    value: ''
+  };
+
+  render() {
+    return (
+      <TextField
+        label="Foo"
+        value={this.state.value}
+        onChange={evt => this.setState({ value: evt.target.value })}
+        required
+      />
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -286,6 +303,7 @@ storiesOf('Bugs', module)
   ))
   .add('#283', () => <Bug283 />)
   .add('#293', () => <Bug293 />)
+  .add('#297', () => <Bug297 />)
   .add('#298', () => <Bug298 />)
   .add('#312', () => <Bug312 />)
   .add('#334', () => <Bug334 />)

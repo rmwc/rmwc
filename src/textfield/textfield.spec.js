@@ -69,7 +69,12 @@ describe('TextField', () => {
   });
 
   it('can be required', () => {
-    mount(<TextField required />);
+    const el = mount(<TextField value="" onChange={() => {}} required />);
+    const foundation = el.instance().foundation_;
+    const getValid = () => foundation.isValid();
+
+    // should render valid to start
+    expect(getValid()).toBe(true);
   });
 
   it('can be have withLeadingIcon', () => {
