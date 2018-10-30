@@ -150,7 +150,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   render() {
     const { label = '', id, children, indeterminate, ...rest } = this.props;
     const labelId = id || this.generatedId;
-    console.log(this.props.onChange);
+
     const checkbox = (
       <CheckboxRoot
         elementRef={ref => (this.root_ = ref)}
