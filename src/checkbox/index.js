@@ -96,7 +96,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   nativeCb_: HTMLInputElement | null;
   root_: HTMLElement | null;
   generatedId: string;
-  handleChange_: Function;
+  handleChange_: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);
