@@ -343,9 +343,8 @@ export type TextFieldHelperTextPropsT = {
   validationMsg?: boolean
 } & SimpleTagPropsT;
 
-/**
- * A help text component
- */
+/** @extends React.Component */
+/** A help text component */
 export class TextFieldHelperText extends Component<TextFieldHelperTextPropsT> {
   static displayName = 'TextFieldHelperText';
   tag = 'p';

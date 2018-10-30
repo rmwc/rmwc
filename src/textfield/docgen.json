@@ -349,6 +349,72 @@
     }
   },
   {
+    "description": "A help text component",
+    "displayName": "TextFieldHelperText",
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "intersection",
+              "raw": "{\n  /** Make the help text always visible */\n  persistent?: boolean,\n  /** Make the help a validation message style */\n  validationMsg?: boolean\n} & SimpleTagPropsT",
+              "elements": [
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{\n  /** Make the help text always visible */\n  persistent?: boolean,\n  /** Make the help a validation message style */\n  validationMsg?: boolean\n}",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "persistent",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "validationMsg",
+                        "value": {
+                          "name": "boolean",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "SimpleTagPropsT"
+                }
+              ],
+              "alias": "TextFieldHelperTextPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "persistent": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the help text always visible"
+      },
+      "validationMsg": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the help a validation message style"
+      }
+    }
+  },
+  {
     "description": "An Icon in a TextField",
     "displayName": "TextFieldIcon",
     "methods": [
