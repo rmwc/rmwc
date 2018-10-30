@@ -1,3 +1,15 @@
+#### 3.0.8 (2018-10-30)
+
+##### Documentation Changes
+
+* **TextFieldHelperText:**  Fix missing docs fixes #352 (b39f4696)
+
+##### Bug Fixes
+
+* **Checkbox:**  Corrects issue deep in MDC that would cause React to not fire event handlers #312 (3ffef39d)
+* **Textfield:**  Corrects issue where controlled required textfields render as invalid initially fixes #297 (c217bca7)
+* **ListItem:**  added disabled state for Item in List (f32f557c)
+
 #### 3.0.7 (2018-10-24)
 
 ##### Bug Fixes

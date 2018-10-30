@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/drawer",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "RMWC Drawer component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/drawer": "~0.40.0",
-    "@rmwc/base": "^3.0.7"
+    "@rmwc/base": "^3.0.8"
   }
 }
