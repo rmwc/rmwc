@@ -8,6 +8,14 @@ import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
+/**
+ * This is an awful freaking bugfix
+ * Basically, MDC decided that patching the native getter and setter
+ * on a checkbox would be fun which consequently kills Reacts ability
+ * to do the same.
+ */
+MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
+
 export type CheckboxPropsT = {
   /** A DOM ID for the toggle. */
   id?: string,
@@ -88,7 +96,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   nativeCb_: HTMLInputElement | null;
   root_: HTMLElement | null;
   generatedId: string;
-  nativeCbHandler_: any;
+  handleChange_: Function;
 
   constructor(props: CheckboxPropsT) {
     super(props);
@@ -98,19 +106,21 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   }
 
   componentDidMount() {
-    this.nativeCbHandler_ = () => this.sync(this.props);
-    this.nativeCb_ &&
-      this.nativeCb_.addEventListener('change', this.nativeCbHandler_);
     super.componentDidMount();
+    this.handleChange_ = () => this.sync(this.props);
+    this.nativeCb_ &&
+      this.nativeCb_.addEventListener('change', this.handleChange_);
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
     this.nativeCb_ &&
-      this.nativeCb_.removeEventListener('change', this.nativeCbHandler_);
+      this.nativeCb_.removeEventListener('change', this.handleChange_);
   }
 
   sync(nextProps: CheckboxPropsT) {
+    this.foundation_.handleChange();
+
     if (
       this.nativeCb_ &&
       nextProps.indeterminate !== this.nativeCb_.indeterminate
@@ -128,10 +138,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       removeNativeControlAttr: attr => this.propsList.nativeCb_.remove(attr),
       getNativeControl: () => this.nativeCb_,
       isIndeterminate: () => this.props.indeterminate,
-      isChecked: () =>
-        this.props.checked !== undefined
-          ? this.props.checked
-          : this.nativeCb_ && this.nativeCb_.checked,
+      isChecked: () => this.nativeCb_ && this.nativeCb_.checked,
       hasNativeControl: () => !!this.nativeCb_,
       setNativeControlDisabled: disabled =>
         this.nativeCb_ && (this.nativeCb_.disabled = disabled),
@@ -142,9 +149,8 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
 
   render() {
     const { label = '', id, children, indeterminate, ...rest } = this.props;
-
     const labelId = id || this.generatedId;
-
+    console.log(this.props.onChange);
     const checkbox = (
       <CheckboxRoot
         elementRef={ref => (this.root_ = ref)}
@@ -152,11 +158,11 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
         className={this.classList.root_.renderToString()}
       >
         <CheckboxNativeControl
-          {...this.propsList.nativeCb_.all()}
           elementRef={ref => (this.nativeCb_ = ref)}
           id={labelId}
           {...rest}
         />
+
         <CheckboxBackground />
       </CheckboxRoot>
     );
