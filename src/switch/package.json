@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "RMWC Switch component",
   "main": "index.js",
   "scripts": {
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "@material/switch": "~0.40.0",
-    "@rmwc/base": "^3.0.8",
-    "@rmwc/button": "^3.0.8",
-    "@rmwc/formfield": "^3.0.8",
+    "@rmwc/base": "^3.0.9",
+    "@rmwc/button": "^3.0.9",
+    "@rmwc/formfield": "^3.0.9",
     "classnames": "^2.2.5"
   }
 }

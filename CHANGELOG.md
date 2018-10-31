@@ -1,3 +1,10 @@
+#### 3.0.9 (2018-10-31)
+
+##### Bug Fixes
+
+* **Select:**   fixes issue with floating label when programatically updating options #350 (4ccd6f47)
+* **Checkbox:**  corrects remaining sync issues https://github.com/material-components/material-components-web/issues/4018 (1bcd0ced)
+
 #### 3.0.8 (2018-10-30)
 
 ##### Documentation Changes
