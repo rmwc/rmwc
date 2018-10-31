@@ -1,7 +1,7 @@
 {
   "name": "rmwc",
   "author": "James Friedman",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "private": true,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
