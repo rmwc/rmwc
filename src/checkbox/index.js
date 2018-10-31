@@ -138,12 +138,15 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
       removeNativeControlAttr: attr => this.propsList.nativeCb_.remove(attr),
       getNativeControl: () => this.nativeCb_,
       isIndeterminate: () => this.props.indeterminate,
-      isChecked: () => this.nativeCb_ && this.nativeCb_.checked,
+      isChecked: () =>
+        this.props.checked !== undefined
+          ? this.props.checked
+          : this.nativeCb_ && this.nativeCb_.checked,
       hasNativeControl: () => !!this.nativeCb_,
       setNativeControlDisabled: disabled =>
         this.nativeCb_ && (this.nativeCb_.disabled = disabled),
       forceLayout: () => this.root_ && this.root_.offsetWidth,
-      isAttachedToDOM: () => this.root_ && Boolean(this.root_.parentNode)
+      isAttachedToDOM: () => true
     });
   }
 
@@ -160,7 +163,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
         <CheckboxNativeControl
           elementRef={ref => (this.nativeCb_ = ref)}
           id={labelId}
-          {...rest}
+          {...this.propsList.nativeCb_.all(rest)}
         />
 
         <CheckboxBackground />
