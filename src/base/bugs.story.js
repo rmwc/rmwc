@@ -248,6 +248,41 @@ class Bug297 extends React.Component {
   }
 }
 
+class Bug350 extends React.Component {
+  state = { options: [] };
+  ref = React.createRef();
+
+  render() {
+    const style = { width: '100%', marginBottom: '1rem' };
+    return (
+      <React.Fragment>
+        <Select
+          style={style}
+          outlined
+          label="Options"
+          options={this.state.options}
+        />
+
+        <Select
+          style={style}
+          outlined
+          label="Options"
+          options={this.state.options}
+          ref={this.ref}
+        />
+
+        <Button
+          onClick={() => {
+            this.setState({ options: ['Apples', 'Oranges'] });
+          }}
+        >
+          Update options
+        </Button>
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -307,4 +342,5 @@ storiesOf('Bugs', module)
   .add('#298', () => <Bug298 />)
   .add('#312', () => <Bug312 />)
   .add('#334', () => <Bug334 />)
-  .add('#338', () => <Bug338 />);
+  .add('#338', () => <Bug338 />)
+  .add('#350', () => <Bug350 />);

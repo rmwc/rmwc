@@ -115,6 +115,7 @@ export class Select extends withFoundation({
 
   disabled: boolean;
   value: any;
+  foundation_: any;
 
   syncWithProps(nextProps: SelectPropsT) {
     //disabled
@@ -130,6 +131,16 @@ export class Select extends withFoundation({
       this.value,
       () => (this.value = nextProps.value)
     );
+
+    // options
+    if (
+      nextProps.options &&
+      (nextProps.placeholder === undefined || nextProps.value) &&
+      JSON.stringify(nextProps.options) !== JSON.stringify(this.props.options)
+    ) {
+      this.foundation_.adapter_.floatLabel(true);
+      this.foundation_.notchOutline(true);
+    }
   }
 
   render() {
