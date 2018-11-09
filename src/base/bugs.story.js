@@ -283,6 +283,40 @@ class Bug350 extends React.Component {
   }
 }
 
+class Bug361 extends React.Component {
+  state = { checked: false };
+
+  render() {
+    return (
+      <React.Fragment>
+        <div>
+          <Switch
+            id="test"
+            checked={this.state.checked}
+            onChange={e => this.setState({ checked: e.target.checked })}
+            label={`Checked ${this.state.checked ? 'yes' : 'no'}`}
+          />
+        </div>
+
+        <div>
+          <Switch
+            id="test2"
+            checked={this.state.checked}
+            onChange={e => this.setState({ checked: e.target.checked })}
+            label="Fixed label"
+          />
+        </div>
+
+        <Button
+          onClick={() => this.setState(state => ({ checked: !state.checked }))}
+        >
+          Toggle
+        </Button>
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -343,4 +377,5 @@ storiesOf('Bugs', module)
   .add('#312', () => <Bug312 />)
   .add('#334', () => <Bug334 />)
   .add('#338', () => <Bug338 />)
-  .add('#350', () => <Bug350 />);
+  .add('#350', () => <Bug350 />)
+  .add('#361', () => <Bug361 />);

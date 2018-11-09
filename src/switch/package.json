@@ -30,6 +30,7 @@
     "@rmwc/base": "^3.0.9",
     "@rmwc/button": "^3.0.9",
     "@rmwc/formfield": "^3.0.9",
+    "@rmwc/ripple": "^3.0.9",
     "classnames": "^2.2.5"
   }
 }

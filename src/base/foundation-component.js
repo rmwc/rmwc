@@ -130,8 +130,8 @@ export class FoundationComponent<P, S = {}> extends React.Component<
     this.sync(this.props);
   }
 
-  componentDidUpdate() {
-    this.sync(this.props);
+  componentDidUpdate(prevProps: FoundationPropsT<P>) {
+    this.sync(this.props, prevProps);
   }
 
   componentWillUnmount() {
@@ -140,7 +140,7 @@ export class FoundationComponent<P, S = {}> extends React.Component<
     this.classList = {};
   }
 
-  sync(props: any) {}
+  sync(props: FoundationPropsT<P>, prevProps?: FoundationPropsT<P>) {}
 
   getDefaultFoundation() {}
 

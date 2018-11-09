@@ -2,13 +2,12 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import FormField from '@rmwc/formfield';
 import classNames from 'classnames';
-import { MDCSwitch } from '@material/switch/dist/mdc.switch';
-
-import { simpleTag, withFoundation } from '@rmwc/base';
+import { MDCSwitchFoundation } from '@material/switch/dist/mdc.switch';
+import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
-import { syncFoundationProp } from '@rmwc/base';
+import { FormField } from '@rmwc/formfield';
+import { withRipple } from '@rmwc/ripple';
 
 export type SwitchPropsT = {
   /** A DOM ID for the toggle. */
@@ -27,78 +26,102 @@ export type SwitchPropsT = {
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
-export const SwitchRoot = simpleTag({
-  displayName: 'SwitchRoot',
-  classNames: 'mdc-switch'
-});
+export class SwitchRoot extends Component<SwitchPropsT> {
+  static displayName = 'SwitchRoot';
+  classNames = ['mdc-switch'];
+}
 
-export const SwitchNativeControl = simpleTag({
-  displayName: 'SwitchNativeControl',
-  tag: 'input',
-  classNames: 'mdc-switch__native-control',
-  defaultProps: {
-    type: 'checkbox'
+class SwitchTrack extends React.Component<{}> {
+  static displayName = 'SwitchTrack';
+
+  shouldComponentUpdate() {
+    return false;
   }
-});
 
-export const SwitchTrack = simpleTag({
-  displayName: 'SwitchTrack',
-  classNames: 'mdc-switch__track'
-});
+  render() {
+    return <div className="mdc-switch__track" />;
+  }
+}
 
-export const SwitchThumbUnderlay = simpleTag({
-  displayName: 'SwitchThumbUnderlay',
-  classNames: 'mdc-switch__thumb-underlay'
-});
+class SwitchKnob extends React.Component<{}> {
+  static displayName = 'SwitchKnob';
 
-export const SwitchThumb = simpleTag({
-  displayName: 'SwitchThumb',
-  classNames: 'mdc-switch__thumb'
-});
+  shouldComponentUpdate() {
+    return false;
+  }
 
-export const SwitchKnob = simpleTag({
-  displayName: 'SwitchKnob',
-  classNames: 'mdc-switch__knob'
-});
+  render() {
+    return <div className="mdc-switch__knob" />;
+  }
+}
 
-export const SwitchLabel = simpleTag({
-  displayName: 'SwitchLabel',
-  tag: 'label',
-  classNames: 'mdc-switch-label'
-});
+const SwitchThumbUnderlay = withRipple({ unbounded: true })(
+  ({ className, ...rest }: { className: string }) => (
+    <div
+      className={classNames(className, 'mdc-switch__thumb-underlay')}
+      {...rest}
+    />
+  )
+);
 
-export class Switch extends withFoundation({
-  constructor: MDCSwitch,
-  adapter: {}
-})<SwitchPropsT> {
+export class Switch extends FoundationComponent<SwitchPropsT> {
   static displayName = 'Switch';
-
+  changeHandler_: Function;
+  root_: ?HTMLElement;
+  nativeControl_: ?HTMLInputElement;
   generatedId: string;
-  disabled: boolean;
-  checked: boolean;
-  ripple_: any;
-  initRipple_: Function;
 
   constructor(props: SwitchPropsT) {
     super(props);
     this.generatedId = randomId('switch');
+    this.createClassList('root_');
+    this.createPropsList('nativeControl_');
   }
 
   componentDidMount() {
     super.componentDidMount();
-    this.ripple_ = this.initRipple_();
+    this.changeHandler_ = this.foundation_.handleChange.bind(this.foundation_);
+    this.nativeControl_ &&
+      this.nativeControl_.addEventListener('change', this.changeHandler_);
+    this.nativeControl_ &&
+      this.foundation_.updateCheckedStyling_(this.nativeControl_.checked);
+    this.nativeControl_ &&
+      this.foundation_.setDisabled(this.nativeControl_.disabled);
   }
 
-  syncWithProps(nextProps: SwitchPropsT) {
-    // checked
-    syncFoundationProp(nextProps.checked, this.checked, () => {
-      this.checked = !!nextProps.checked;
-    });
+  componentWillUnmount() {
+    super.componentWillUnmount();
+    this.nativeControl_ &&
+      this.nativeControl_.removeEventListener('change', this.changeHandler_);
+  }
 
-    // disabled
-    syncFoundationProp(nextProps.disabled, this.disabled, () => {
-      this.disabled = !!nextProps.disabled;
+  getDefaultFoundation() {
+    return new MDCSwitchFoundation({
+      addClass: className => this.classList.root_.add(className),
+      removeClass: className => this.classList.root_.remove(className),
+      setNativeControlChecked: checked =>
+        this.propsList.nativeControl_.add('checked', checked),
+      setNativeControlDisabled: disabled =>
+        this.propsList.nativeControl_.add('disabled', disabled)
     });
+  }
+
+  sync(props: SwitchPropsT, prevProps?: SwitchPropsT) {
+    if (
+      props.checked !== undefined &&
+      !!prevProps &&
+      props.checked !== prevProps.checked
+    ) {
+      this.foundation_.updateCheckedStyling_(props.checked);
+    }
+
+    if (
+      props.disabled !== undefined &&
+      !!prevProps &&
+      props.disabled !== prevProps.disabled
+    ) {
+      this.foundation_.setDisabled(props.disabled);
+    }
   }
 
   render() {
@@ -106,7 +129,6 @@ export class Switch extends withFoundation({
       label = '',
       id,
       children,
-      disabled,
       className,
       rootProps = {},
       ...rest
@@ -114,19 +136,27 @@ export class Switch extends withFoundation({
 
     const labelId = id || this.generatedId;
     const hasLabel = label.length || children;
-    const { root_ } = this.foundationRefs;
 
     const switchTag = (
       <SwitchRoot
         {...(!hasLabel ? rootProps : {})}
-        className={classNames(hasLabel || [rootProps.className, className])}
-        elementRef={root_}
+        className={
+          (classNames(hasLabel || [rootProps.className, className]),
+          this.classList.root_.renderToString())
+        }
+        elementRef={el => (this.root_ = el)}
       >
         <SwitchTrack />
         <SwitchThumbUnderlay>
-          <SwitchThumb>
-            <SwitchNativeControl id={labelId} {...rest} />
-          </SwitchThumb>
+          <div className="mdc-switch__thumb">
+            <input
+              {...this.propsList.nativeControl_.all(rest)}
+              id={labelId}
+              ref={el => (this.nativeControl_ = el)}
+              className="mdc-switch__native-control"
+              type="checkbox"
+            />
+          </div>
         </SwitchThumbUnderlay>
         <SwitchKnob />
       </SwitchRoot>
@@ -143,10 +173,14 @@ export class Switch extends withFoundation({
           className={classNames(rootProps.className, className)}
         >
           {switchTag}
-          <SwitchLabel id={labelId + 'label'} htmlFor={labelId}>
+          <label
+            className="mdc-switch-label"
+            id={labelId + 'label'}
+            htmlFor={labelId}
+          >
             {label}
             {children}
-          </SwitchLabel>
+          </label>
         </FormField>
       );
     } else {
