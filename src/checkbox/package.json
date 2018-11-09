@@ -26,6 +26,7 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
+    "@material/animation": "~0.39.0",
     "@material/checkbox": "~0.40.0",
     "@rmwc/base": "^3.0.9",
     "@rmwc/formfield": "^3.0.9",

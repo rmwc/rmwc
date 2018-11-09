@@ -3,6 +3,7 @@ import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
+import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
 import FormField from '@rmwc/formfield';
 import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
@@ -97,6 +98,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
   root_: HTMLElement | null;
   generatedId: string;
   handleChange_: any;
+  handleAnimationEnd_: any;
 
   constructor(props: CheckboxPropsT) {
     super(props);
@@ -107,15 +109,26 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
 
   componentDidMount() {
     super.componentDidMount();
+    this.handleAnimationEnd_ = () => this.foundation_.handleAnimationEnd();
     this.handleChange_ = () => this.sync(this.props);
     this.nativeCb_ &&
       this.nativeCb_.addEventListener('change', this.handleChange_);
+    this.root_ &&
+      this.root_.addEventListener(
+        getCorrectEventName(window, 'animationend'),
+        this.handleAnimationEnd_
+      );
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
     this.nativeCb_ &&
       this.nativeCb_.removeEventListener('change', this.handleChange_);
+    this.root_ &&
+      this.root_.removeEventListener(
+        getCorrectEventName(window, 'animationend'),
+        this.handleAnimationEnd_
+      );
   }
 
   sync(nextProps: CheckboxPropsT) {
