@@ -105,6 +105,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
   leadingIcon_: null | any;
   trailingIcon_: null | any;
   outline_: null | any;
+  valueNeedsUpdate = false;
 
   constructor(props: TextFieldPropsT) {
     super(props);
@@ -244,11 +245,11 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
   }
 
   sync(props: TextFieldPropsT) {
-    if (
-      props.value !== undefined &&
-      props.value !== this.foundation_.getValue()
-    ) {
+    // Bug #362
+    // see comments below in render function
+    if (this.valueNeedsUpdate) {
       this.foundation_.setValue(props.value);
+      this.valueNeedsUpdate = false;
     }
   }
 
@@ -270,6 +271,19 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
       rootProps = {},
       ...rest
     } = this.props;
+
+    // Fixes bug #362
+    // MDC breaks Reacts unidirectional data flow...
+    // we cant set the value on render, but we need to
+    // to create the side effects for the UI when we dynamically update the field
+    // Flag that it needs to be set so that we can call the foundation
+    // on componentDidUpdate
+    if (
+      this.props.value !== undefined &&
+      this.props.value !== this.foundation_.getValue()
+    ) {
+      this.valueNeedsUpdate = true;
+    }
 
     const tagProps = {
       disabled: disabled,

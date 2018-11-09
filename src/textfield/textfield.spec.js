@@ -71,7 +71,8 @@ describe('TextField', () => {
   it('can be required', () => {
     const el = mount(<TextField value="" onChange={() => {}} required />);
     const foundation = el.instance().foundation_;
-    const getValid = () => foundation.isValid();
+    const getValid = () =>
+      el.html().includes('mdc-text-field--invalid') === false;
 
     // should render valid to start
     expect(getValid()).toBe(true);
@@ -87,6 +88,19 @@ describe('TextField', () => {
 
   it('can be have withTrailingIcon', () => {
     mount(<TextField withTrailingIcon="favorite" />);
+  });
+
+  it('label floats on dynamic change', done => {
+    const el = mount(<TextField label="test" value="" onChange={() => {}} />);
+    expect(el.html().includes('mdc-floating-label--float-above')).toBe(false);
+    el.setProps({ value: 'foo' }, () => {
+      setTimeout(() => {
+        expect(el.html().includes('mdc-floating-label--float-above')).toBe(
+          true
+        );
+        done();
+      });
+    });
   });
 
   it('foundation checks', () => {
