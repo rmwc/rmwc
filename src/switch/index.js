@@ -66,9 +66,9 @@ const SwitchThumbUnderlay = withRipple({ unbounded: true })(
 
 export class Switch extends FoundationComponent<SwitchPropsT> {
   static displayName = 'Switch';
-  changeHandler_: Function;
-  root_: ?HTMLElement;
-  nativeControl_: ?HTMLInputElement;
+  changeHandler_: any;
+  root_: HTMLElement | null;
+  nativeControl_: HTMLInputElement | null;
   generatedId: string;
 
   constructor(props: SwitchPropsT) {

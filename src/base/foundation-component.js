@@ -140,7 +140,7 @@ export class FoundationComponent<P, S = {}> extends React.Component<
     this.classList = {};
   }
 
-  sync(props: FoundationPropsT<P>, prevProps?: FoundationPropsT<P>) {}
+  sync(props: any, prevProps?: any) {}
 
   getDefaultFoundation() {}
 
