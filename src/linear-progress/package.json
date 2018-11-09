@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/linear-progress",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "description": "RMWC LinearProgress component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/linear-progress": "~0.40.0",
-    "@rmwc/base": "^3.0.9"
+    "@rmwc/base": "^3.0.10"
   }
 }

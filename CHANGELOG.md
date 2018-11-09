@@ -1,3 +1,11 @@
+#### 3.0.10 (2018-11-09)
+
+##### Bug Fixes
+
+* **Checkbox:**  Corrects an issue where animations would reply if checkbox display property was set to none and back #343 (f5572ae7)
+* **Switch:**  Corrects issues with syncing, adds missing ripple, rewrites using Foundation adapter pattern #361 (5e95ef24)
+* **Textfield:**  Corrects issue with floating label on dynamic updates #362 (c6b85926)
+
 #### 3.0.9 (2018-10-31)
 
 ##### Bug Fixes
