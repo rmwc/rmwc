@@ -93,6 +93,7 @@ export type WithRipplePropsT = {
   /* Adds a ripple effect to the component */
   ripple?: boolean,
   /* Some components need to disable the ripple-surface class */
+  accent?: boolean,
   surface?: boolean,
   cssOnly?: boolean,
   unbounded?: boolean
@@ -103,10 +104,12 @@ export type WithRipplePropsT = {
  */
 export const withRipple = ({
   unbounded: defaultUnbounded,
+  accent: defaultAccent,
   surface: defaultSurface = true
 }: {
   unbounded?: boolean,
-  surface?: boolean
+  surface?: boolean,
+  accent?: boolean
 } = {}) => (Component: React.ComponentType<*>) =>
   class extends React.Component<WithRipplePropsT & any> {
     static displayName = `withRipple(${Component.displayName || 'Unknown'})`;
@@ -120,6 +123,7 @@ export const withRipple = ({
         return (
           <Ripple
             {...rest}
+            accent={rest.accent || defaultAccent}
             unbounded={rest.unbounded || defaultUnbounded}
             surface={rest.surface || defaultSurface}
           >

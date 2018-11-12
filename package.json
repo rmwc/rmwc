@@ -16,7 +16,6 @@
     "classnames": "^2.2.6",
     "focus-trap": "^3.0.0",
     "hyperform": "^0.9.14",
-    "material-components-web": "~0.40.0",
     "mutation-observer": "^1.0.3",
     "prop-types": "^15.6.2"
   },
@@ -69,6 +68,7 @@
     "flow-bin": "^0.85.0",
     "generate-changelog": "1.7.0",
     "lerna": "^3.2.1",
+    "material-components-web": "^0.41.0",
     "normalize.css": "^7.0.0",
     "prettier-eslint": "^8.8.2",
     "prismjs": "^1.15.0",

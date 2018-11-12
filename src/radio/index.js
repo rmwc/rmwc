@@ -4,6 +4,7 @@ import { MDCRadioFoundation } from '@material/radio/dist/mdc.radio';
 import FormField from '@rmwc/formfield';
 import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
+import { withRipple } from '@rmwc/ripple';
 
 export type RadioPropsT = {
   /** A DOM ID for the toggle. */
@@ -21,13 +22,15 @@ export type RadioPropsT = {
   //$FlowFixMe
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-class RadioRoot extends Component<RadioPropsT> {
-  static displayName = 'RadioRoot';
-  classNames = (props: RadioPropsT) => [
-    'mdc-radio',
-    { 'mdc-radio--disabled': props.disabled }
-  ];
-}
+const RadioRoot = withRipple({ unbounded: true, accent: true })(
+  class extends Component<RadioPropsT> {
+    static displayName = 'RadioRoot';
+    classNames = (props: RadioPropsT) => [
+      'mdc-radio',
+      { 'mdc-radio--disabled': props.disabled }
+    ];
+  }
+);
 
 class RadioNativeControl extends Component<{}> {
   static displayName = 'RadioNativeControl';
@@ -77,8 +80,7 @@ export class Radio extends FoundationComponent<RadioPropsT> {
   getDefaultFoundation() {
     return new MDCRadioFoundation({
       addClass: className => this.classList.root_.add(className),
-      removeClass: className => this.classList.root_.remove(className),
-      getNativeControl: () => this.nativeRadio_
+      removeClass: className => this.classList.root_.remove(className)
     });
   }
 
