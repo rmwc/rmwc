@@ -10,96 +10,95 @@
 Please note that in MDC, the ChipSet code contains logic for selecting single and multiple chips (filter and choice chip sets). This doesn't fit well with React's uni-directional data flow. Instead it is recommended to write your own filtering and selection logic and just apply the `selected` prop to the `Chip` component directly.
 
 ```jsx render
-import { Chip, ChipText, ChipIcon, ChipSet } from '@rmwc/chip';
+import { Chip, ChipSet } from '@rmwc/chip';
 
 <ChipSet>
-  <Chip selected><ChipText>Cookies</ChipText></Chip>
-  <Chip><ChipText>Pizza</ChipText></Chip>
-  <Chip><ChipText>Icecream</ChipText></Chip>
+  <Chip selected label="Cookies" />
+  <Chip label="Pizza" />
+  <Chip label="Icecream" />
 </ChipSet>
 
 {/* With Icons */}
 <ChipSet>
-  <Chip>
-    <ChipIcon leading icon="favorite" />
-    <ChipText>Cookies</ChipText>
-    <ChipIcon trailing icon="close" />
-  </Chip>
+  <Chip
+    leadingIcon="favorite"
+    label="Cookies"
+    trailingIcon="close"
+  />
 </ChipSet>
-```
 
-## Simplified Usage
-
-RMWC contains a non-standard SimpleChip component that allows for an abbreviated syntax.
-
-```jsx render
-import {
-  ChipSet,
-  SimpleChip
-} from '@rmwc/chip';
-
-<ChipSet choice>
-  <SimpleChip
-    checkmark
-    selected
+{/* Events */}
+<ChipSet>
+  <Chip
+    key="my-chip"
+    label="Click Me"
+    selected={this.state.evtSelected}
+    onRemove={evt => console.log('onRemove', evt.detail)}
+    onInteraction={evt => console.log('onInteraction', evt.detail)}
+    onTrailingIconInteraction={evt => console.log('onTrailingIconIteraction', evt.detail)}
     trailingIcon="close"
-    text="Cookie Monster"
-  />
-
-  <SimpleChip
-    leadingIcon="face"
-    trailingIcon="close"
-    text="Pizza Monster"
-  />
-
-  <SimpleChip
-    leadingIcon="face"
-    trailingIcon="close"
-    text="Icecream Monster"
   />
 </ChipSet>
 ```
 
-## Filtering
+## Filter and Choice Chipsets
 
-Reacts Unidrectional data-flow doesn't fit well with the built in chip set functionality, but creating your own is fairly straight forward.
+You can specify a `ChipSet` as either a `filter` of `choice` which slightly changes the visual styling of selected chips. While `material-components-web` has some built in functionality for chip sets, it doesn't fit well with React's unidirectional data flow. It is recommended you use standard React patterns to store selected chips in your state and render them accordingly.
+
+Clicking on the trailing close icon will trigger a close animation and put the chip in an exited state, but it is up to you to remove component out from rendering. The you use the `onRemove` prop implement this behavior.
 
 ```jsx render
 import {
   Chip,
-  ChipIcon,
-  ChipText,
-  ChipCheckmark,
-  ChipSet,
-  SimpleChip
+  ChipSet
 } from '@rmwc/chip';
 
 <ChipSet filter>
   <Chip
     selected={this.state.cookies}
     onClick={() => this.setState({cookies: !this.state.cookies})}
-  >
-    <ChipCheckmark />
-    <ChipText>Cookies</ChipText>
-    <ChipIcon tabIndex={0} icon="close" trailing />
-  </Chip>
+    checkmark
+    label="Cookies"
+    trailingIcon="close"
+  />
   <Chip
     selected={this.state.pizza}
     onClick={() => this.setState({pizza: !this.state.pizza})}
-  >
-    <ChipIcon icon="local_pizza" leading />
-    <ChipCheckmark />
-    <ChipText>Pizza</ChipText>
-    <ChipIcon icon="close" trailing />
-  </Chip>
-  {/* You can use simple chips as well */}
-  <SimpleChip
+    leadingIcon="local_pizza"
+    checkmark
+    label="Pizza"
+    trailingIcon="close"
+  />
+  <Chip
     selected={this.state.icecream}
     onClick={() => this.setState({icecream: !this.state.icecream})}
     checkmark
     leadingIcon="favorite_border"
     trailingIcon="close"
-    text="Icecream"
+    label="Icecream"
+  />
+</ChipSet>
+
+<ChipSet choice>
+  <Chip
+    selected={this.state.cookiesChoice}
+    onClick={() => this.setState({cookiesChoice: !this.state.cookiesChoice})}
+    label="Cookies"
+    trailingIcon="close"
+  />
+  <Chip
+    selected={this.state.pizzaChoice}
+    onClick={() => this.setState({pizzaChoice: !this.state.pizzaChoice})}
+    leadingIcon="local_pizza"
+    label="Pizza"
+    trailingIcon="close"
+  />
+  <Chip
+    selected={this.state.icecreamChoice}
+    onClick={() => this.setState({icecreamChoice: !this.state.icecreamChoice})}
+    leadingIcon="favorite_border"
+    trailingIcon="close"
+    label="Icecream"
   />
 </ChipSet>
 ```
@@ -110,9 +109,5 @@ import * as docs from './docgen.json';
 import * as iconDocs from '@rmwc/icon/docgen.json';
 
 <DocumentComponent docs={docs} displayName="Chip" />
-<DocumentComponent docs={docs} displayName="ChipText" />
-<DocumentComponent docs={[docs, iconDocs]} displayName="ChipIcon" composes={['Icon']} />
-<DocumentComponent docs={docs} displayName="ChipCheckmark" />
 <DocumentComponent docs={docs} displayName="ChipSet" />
-<DocumentComponent docs={docs} displayName="SimpleChip" />
 ```
