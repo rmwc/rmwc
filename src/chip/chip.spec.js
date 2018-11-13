@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Chip, ChipText, ChipIcon, ChipSet, SimpleChip } from './';
+import { Chip, ChipSet } from './';
 
 describe('Chip', () => {
   it('renders', () => {
     mount(
       <ChipSet>
-        <Chip>
-          <ChipIcon icon="favorite" />
-          <ChipText>One</ChipText>
-        </Chip>
+        <Chip leadingIcon="favorite" trailingIcon="close" label="One" />
       </ChipSet>
     );
   });
@@ -30,59 +27,11 @@ describe('Chip', () => {
     expect(value).toEqual(1);
   });
 
-  it('handles onRemoval', () => {
+  it('handles onRemove', () => {
     let value = 0;
-    const el = mount(<Chip onRemoval={() => value++} />);
+    const el = mount(<Chip onRemove={() => value++} />);
     const inst = el.instance();
     inst.foundation_.adapter_.notifyRemoval();
     expect(value).toEqual(1);
-  });
-
-  it('handles apiRef', () => {
-    let api = null;
-
-    mount(
-      <Chip apiRef={ref => (api = ref)}>
-        <ChipIcon icon="favorite" />
-        <ChipText>One</ChipText>
-      </Chip>
-    );
-
-    expect(api).toBeTruthy();
-  });
-});
-
-describe('SimpleChip', () => {
-  it('renders', () => {
-    mount(
-      <SimpleChip
-        leadingIcon="face"
-        trailingIcon="close"
-        text="test"
-        checkmark
-      />
-    );
-    mount(
-      <SimpleChip
-        leadingIcon={<ChipIcon use="favorite" />}
-        trailingIcon="close"
-        text="test"
-        checkmark
-      />
-    );
-  });
-});
-
-describe('ChipIcon', () => {
-  it('renders', () => {
-    mount(<ChipIcon icon="favorite" />);
-  });
-
-  it('can be leading', () => {
-    mount(<ChipIcon leading icon="favorite" />);
-  });
-
-  it('can be trailing', () => {
-    mount(<ChipIcon trailing icon="favorite" />);
   });
 });
