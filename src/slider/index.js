@@ -2,7 +2,7 @@
 import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCSliderFoundation } from '@material/slider/dist/mdc.slider';
+import { MDCSliderFoundation } from '@material/slider';
 import { Component, FoundationComponent, syncFoundationProp } from '@rmwc/base';
 import { debounce } from '@rmwc/base/utils/debounce';
 

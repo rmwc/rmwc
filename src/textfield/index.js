@@ -5,7 +5,7 @@ import * as React from 'react';
 import {
   MDCTextFieldFoundation,
   MDCTextFieldIconFoundation
-} from '@material/textfield/dist/mdc.textfield';
+} from '@material/textfield';
 
 import { Component, FoundationComponent, randomId } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';

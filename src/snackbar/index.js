@@ -6,9 +6,14 @@ import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
-import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
+import { getCorrectEventName } from '@material/animation';
 import Button from '@rmwc/button';
-import { simpleTag, syncFoundationProp, withFoundation, noop } from '@rmwc/base';
+import {
+  simpleTag,
+  syncFoundationProp,
+  withFoundation,
+  noop
+} from '@rmwc/base';
 
 export type SnackbarPropsT = {
   /** Show the Snackbar. */

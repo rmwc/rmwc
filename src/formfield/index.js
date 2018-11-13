@@ -2,7 +2,7 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCFormField } from '@material/form-field/dist/mdc.formField';
+import { MDCFormField } from '@material/form-field';
 import { simpleTag, withFoundation } from '@rmwc/base';
 
 type FormFieldRootPropsT = {
@@ -10,21 +10,21 @@ type FormFieldRootPropsT = {
   alignEnd?: boolean
 } & SimpleTagPropsT;
 
-export const FormFieldRoot: React.ComponentType<
-  FormFieldRootPropsT
-> = simpleTag({
-  displayName: 'FormFieldRoot',
-  defaultProps: {
-    alignEnd: undefined
-  },
-  classNames: (props: FormFieldRootPropsT) => [
-    'mdc-form-field',
-    {
-      'mdc-form-field--align-end': props.alignEnd
-    }
-  ],
-  consumeProps: ['alignEnd']
-});
+export const FormFieldRoot: React.ComponentType<FormFieldRootPropsT> = simpleTag(
+  {
+    displayName: 'FormFieldRoot',
+    defaultProps: {
+      alignEnd: undefined
+    },
+    classNames: (props: FormFieldRootPropsT) => [
+      'mdc-form-field',
+      {
+        'mdc-form-field--align-end': props.alignEnd
+      }
+    ],
+    consumeProps: ['alignEnd']
+  }
+);
 
 export class FormField extends withFoundation({
   constructor: MDCFormField,

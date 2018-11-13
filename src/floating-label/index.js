@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCFloatingLabelFoundation } from '@material/floating-label/dist/mdc.floatingLabel';
+import { MDCFloatingLabelFoundation } from '@material/floating-label';
 import { FoundationComponent } from '@rmwc/base';
 
 export type FloatingLabelPropsT = {};

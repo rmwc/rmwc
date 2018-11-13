@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/animation": "~0.39.0",
-    "@material/snackbar": "~0.40.0",
+    "@material/snackbar": "~0.41.0",
     "@rmwc/base": "^3.0.11",
     "@rmwc/button": "^3.0.11"
   }

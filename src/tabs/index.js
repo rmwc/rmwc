@@ -3,7 +3,7 @@ import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { MDCTabBar } from '@material/tab-bar/dist/mdc.tabBar';
+import { MDCTabBar } from '@material/tab-bar';
 import { Icon } from '@rmwc/icon';
 import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 

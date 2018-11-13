@@ -26,10 +26,10 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@material/card": "~0.40.0",
-    "@rmwc/base": "^3.0.11",
-    "@rmwc/button": "^3.0.11",
-    "@rmwc/icon-button": "^3.0.11",
-    "@rmwc/ripple": "^3.0.11"
+    "@material/card": "~0.41.0",
+    "@rmwc/base": "^3.0.10",
+    "@rmwc/button": "^3.0.10",
+    "@rmwc/icon-button": "^3.0.10",
+    "@rmwc/ripple": "^3.0.10"
   }
 }

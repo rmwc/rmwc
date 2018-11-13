@@ -3,7 +3,7 @@ import type { CustomEventT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { MDCChipFoundation } from '@material/chips/dist/mdc.chips';
+import { MDCChipFoundation } from '@material/chips';
 
 import { Icon } from '@rmwc/icon';
 import { FoundationComponent, Component } from '@rmwc/base';
