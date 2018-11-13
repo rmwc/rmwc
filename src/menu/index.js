@@ -2,11 +2,11 @@
 import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCMenu } from '@material/menu/dist/mdc.menu';
+import { MDCMenu } from '@material/menu';
 import {
   MDCMenuSurface,
   MDCMenuSurfaceFoundation
-} from '@material/menu-surface/dist/mdc.menuSurface';
+} from '@material/menu-surface';
 import { List, ListItem } from '@rmwc/list';
 import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 

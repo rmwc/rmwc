@@ -3,7 +3,7 @@ import type { CustomEventT } from '@rmwc/base';
 import type { ButtonPropsT } from '@rmwc/button';
 
 import * as React from 'react';
-import { MDCDialogFoundation } from '@material/dialog/dist/mdc.dialog';
+import { MDCDialogFoundation } from '@material/dialog';
 import createFocusTrap from 'focus-trap';
 
 import Button from '@rmwc/button';

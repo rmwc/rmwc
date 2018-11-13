@@ -3,7 +3,7 @@ import type { IconPropsT } from '@rmwc/icon';
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCToolbar } from '@material/toolbar/dist/mdc.toolbar';
+import { MDCToolbar } from '@material/toolbar';
 import { Icon } from '@rmwc/icon';
 import { simpleTag } from '@rmwc/base';
 import { withFoundation } from '@rmwc/base/withFoundation';

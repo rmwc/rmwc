@@ -2,8 +2,8 @@
 import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
-import { MDCCheckboxFoundation } from '@material/checkbox/dist/mdc.checkbox';
-import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
+import { MDCCheckboxFoundation } from '@material/checkbox';
+import { getCorrectEventName } from '@material/animation';
 import FormField from '@rmwc/formfield';
 import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';

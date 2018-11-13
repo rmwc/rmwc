@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { MDCRipple } from '@material/ripple/dist/mdc.ripple';
+import { MDCRipple } from '@material/ripple';
 import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
 
 export type RipplePropsT = {

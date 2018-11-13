@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { FoundationComponent } from '@rmwc/base';
-import { MDCNotchedOutlineFoundation } from '@material/notched-outline/dist/mdc.notchedOutline';
+import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 
 export type NotchedOutlinePropsT = {};
 

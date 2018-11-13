@@ -3,7 +3,7 @@ import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { MDCTopAppBar } from '@material/top-app-bar/dist/mdc.topAppBar';
+import { MDCTopAppBar } from '@material/top-app-bar';
 
 import { Icon } from '@rmwc/icon';
 import { simpleTag, withFoundation } from '@rmwc/base';
@@ -54,20 +54,20 @@ type TopAppBarSectionPropsT = {
   alignEnd?: boolean
 } & SimpleTagPropsT;
 
-const TopAppBarSectionRoot: React.ComponentType<
-  TopAppBarSectionPropsT
-> = simpleTag({
-  displayName: 'TopAppBarSectionRoot',
-  tag: 'section',
-  classNames: (props: TopAppBarSectionPropsT) => [
-    'mdc-top-app-bar__section',
-    {
-      'mdc-top-app-bar__section--align-start': props.alignStart,
-      'mdc-top-app-bar__section--align-end': props.alignEnd
-    }
-  ],
-  consumeProps: ['alignStart', 'alignEnd']
-});
+const TopAppBarSectionRoot: React.ComponentType<TopAppBarSectionPropsT> = simpleTag(
+  {
+    displayName: 'TopAppBarSectionRoot',
+    tag: 'section',
+    classNames: (props: TopAppBarSectionPropsT) => [
+      'mdc-top-app-bar__section',
+      {
+        'mdc-top-app-bar__section--align-start': props.alignStart,
+        'mdc-top-app-bar__section--align-end': props.alignEnd
+      }
+    ],
+    consumeProps: ['alignStart', 'alignEnd']
+  }
+);
 
 /** A section for the app bar. */
 export const TopAppBarSection: React.ComponentType<TopAppBarSectionPropsT> = (
@@ -76,13 +76,13 @@ export const TopAppBarSection: React.ComponentType<TopAppBarSectionPropsT> = (
 TopAppBarSection.displayName = 'TopAppBarSection';
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export const TopAppBarNavigationIcon: React.ComponentType<
-  IconPropsT
-> = simpleTag({
-  displayName: 'TopAppBarNavigationIcon',
-  classNames: 'mdc-top-app-bar__navigation-icon',
-  tag: Icon
-});
+export const TopAppBarNavigationIcon: React.ComponentType<IconPropsT> = simpleTag(
+  {
+    displayName: 'TopAppBarNavigationIcon',
+    classNames: 'mdc-top-app-bar__navigation-icon',
+    tag: Icon
+  }
+);
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
 export const TopAppBarActionItem: React.ComponentType<IconPropsT> = simpleTag({
@@ -108,28 +108,26 @@ type TopAppBarFixedAdjustPropsT = {
   short?: boolean
 } & SimpleTagPropsT;
 
-const TopAppBarFixedAdjustRoot: React.ComponentType<
-  TopAppBarFixedAdjustPropsT
-> = simpleTag({
-  displayName: 'TopAppBarFixedAdjustRoot',
-  classNames: (props: TopAppBarFixedAdjustPropsT) => [
-    'mdc-top-app-bar--fixed-adjust',
-    {
-      'mdc-top-app-bar--dense-fixed-adjust': props.dense,
-      'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
-      'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
-      'mdc-top-app-bar--short-fixed-adjust': props.short
-    }
-  ],
-  consumeProps: ['dense', 'denseProminent', 'prominent', 'short']
-});
+const TopAppBarFixedAdjustRoot: React.ComponentType<TopAppBarFixedAdjustPropsT> = simpleTag(
+  {
+    displayName: 'TopAppBarFixedAdjustRoot',
+    classNames: (props: TopAppBarFixedAdjustPropsT) => [
+      'mdc-top-app-bar--fixed-adjust',
+      {
+        'mdc-top-app-bar--dense-fixed-adjust': props.dense,
+        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
+        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
+        'mdc-top-app-bar--short-fixed-adjust': props.short
+      }
+    ],
+    consumeProps: ['dense', 'denseProminent', 'prominent', 'short']
+  }
+);
 
 /** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export const TopAppBarFixedAdjust: React.ComponentType<
-  TopAppBarFixedAdjustPropsT
-> = (props: TopAppBarFixedAdjustPropsT) => (
-  <TopAppBarFixedAdjustRoot {...props} />
-);
+export const TopAppBarFixedAdjust: React.ComponentType<TopAppBarFixedAdjustPropsT> = (
+  props: TopAppBarFixedAdjustPropsT
+) => <TopAppBarFixedAdjustRoot {...props} />;
 
 TopAppBarFixedAdjust.displayName = 'TopAppBarFixedAdjust';
 

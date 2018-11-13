@@ -5,7 +5,7 @@ import * as React from 'react';
 import './polyfill';
 import { simpleTag } from '@rmwc/base';
 import { noop } from '@rmwc/base';
-import { MDCDrawer } from '@material/drawer/dist/mdc.drawer';
+import { MDCDrawer } from '@material/drawer';
 import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
 
 /***************************************************************************************

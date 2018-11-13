@@ -1,7 +1,7 @@
 // @flow
 import type { SimpleTagPropsT } from '@rmwc/base';
 import * as React from 'react';
-import { MDCSelect } from '@material/select/dist/mdc.select';
+import { MDCSelect } from '@material/select';
 import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';

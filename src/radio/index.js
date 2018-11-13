@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCRadioFoundation } from '@material/radio/dist/mdc.radio';
+import { MDCRadioFoundation } from '@material/radio';
 import FormField from '@rmwc/formfield';
 import { Component, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
