@@ -29,6 +29,29 @@ export class LineRipple extends FoundationComponent<LineRipplePropsT> {
     });
   }
 
+  /**
+   * Activates the line ripple
+   */
+  activate() {
+    this.foundation_.activate();
+  }
+
+  /**
+   * Deactivates the line ripple
+   */
+  deactivate() {
+    this.foundation_.deactivate();
+  }
+
+  /**
+   * Sets the transform origin given a user's click location. The `rippleCenter` is the
+   * x-coordinate of the middle of the ripple.
+   * @param {number} xCoordinate
+   */
+  setRippleCenter(xCoordinate: number) {
+    this.foundation_.setRippleCenter(xCoordinate);
+  }
+
   render() {
     return (
       <div

@@ -27,6 +27,26 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelPropsT> {
     });
   }
 
+  shake(shouldShake: boolean) {
+    this.foundation_.shake(shouldShake);
+  }
+
+  /**
+   * Styles label to float/dock.
+   * @param {boolean} shouldFloat styles the label to float by adding float class
+   * if true, otherwise docks the label by removing the float class.
+   */
+  float(shouldFloat: boolean) {
+    this.foundation_.float(shouldFloat);
+  }
+
+  /**
+   * @return {number}
+   */
+  getWidth() {
+    return this.foundation_.getWidth();
+  }
+
   render() {
     return (
       <label
