@@ -31,7 +31,6 @@ describe('Radio', () => {
     const adapter = radio.instance().foundation_.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
-    adapter.getNativeControl();
   });
 
   test('can have custom classnames on input', () => {
