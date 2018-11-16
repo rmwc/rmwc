@@ -3,8 +3,7 @@ import type { SimpleTagPropsT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { MDCSelectFoundation } from '@material/select';
-import { MDCSelectIconFoundation } from '@material/select/icon';
+import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 import { Component, FoundationComponent } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -164,7 +163,7 @@ type SelectEnhancedControlPropsT = {
   defaultValue?: string,
   children?: React.Node
 };
-
+// eslint-disable-next-line
 class SelectEnhancedControl extends React.Component<SelectEnhancedControlPropsT> {
   render() {
     const {

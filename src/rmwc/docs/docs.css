@@ -546,6 +546,10 @@ ul li {
   margin: 1rem;
 }
 
+#page-select-menus .run .mdc-select {
+  min-width: 10rem;
+}
+
 #page-select-menus .run > .mdc-select {
   float: left;
   clear: both;
