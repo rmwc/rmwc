@@ -159,6 +159,15 @@ export class FoundationComponent<P, S = {}> extends React.Component<
       evt.initCustomEvent(evtType, shouldBubble, false, evtData);
     }
 
+    // bugfix for events coming from form elements
+    // and also fits with reacts form pattern better...
+    // This should always otherwise be null since there is no target
+    // for Custom Events
+    Object.defineProperty(evt, 'target', {
+      value: evtData,
+      writable: false
+    });
+
     // Custom handling for React
     const propName = evtType;
 

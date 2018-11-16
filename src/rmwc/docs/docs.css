@@ -200,7 +200,7 @@ body ul li {
 
 .app__content > div .example:not(.render-only) .run {
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
   border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -546,11 +546,14 @@ ul li {
   margin: 1rem;
 }
 
-#page-select-menus .example .mdc-select,
-#page-select-menus .example .mdc-multi-select {
+#page-select-menus .run > .mdc-select {
   float: left;
   clear: both;
   margin: 0.75rem 0;
+}
+
+#page-select-menus .run > div {
+  clear: both;
 }
 
 #page-select-menus .run:after {

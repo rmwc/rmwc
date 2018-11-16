@@ -29,7 +29,10 @@
     "@material/select": "~0.41.0",
     "@rmwc/base": "^3.0.10",
     "@rmwc/floating-label": "^3.0.10",
+    "@rmwc/icon": "^3.0.10",
     "@rmwc/line-ripple": "^3.0.10",
+    "@rmwc/menu": "^3.0.10",
+    "@rmwc/list": "^3.0.10",
     "@rmwc/notched-outline": "^3.0.10"
   }
 }
