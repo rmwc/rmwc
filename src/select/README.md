@@ -14,18 +14,35 @@
 Selects come in three different styles: standard, box, and outlined.
 
 ```jsx render
+import { Select, SelectHelperText } from '@rmwc/select';
+
 <Select
-  label="Standard"
-  placeholder=""
+  label="Standard"  
   options={['Cookies', 'Pizza', 'Icecream']}
 />
 
 <Select
   label="Outlined"
   outlined
-  placeholder=""
   options={['Cookies', 'Pizza', 'Icecream']}
 />
+
+<Select
+  label="Enhanced"
+  enhanced
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<div>
+  <Select
+    label="With Icon"
+    defaultChecked="Pizza"
+    withLeadingIcon="favorite"
+    options={['Cookies', 'Pizza', 'Icecream']}
+  />
+  <SelectHelperText>Choose your favorite snack...</SelectHelperText>
+</div>
+
 ```
 
 ## Data Driven Selects
@@ -48,7 +65,6 @@ import { Select } from '@rmwc/select';
   value={this.state.value}
   onChange={evt => this.setState({value: evt.target.value})}
   label="Array"
-  placeholder=""
   options={[
     {
       label: 'Cookies',
@@ -96,9 +112,8 @@ import { Select } from '@rmwc/select';
 
 <Select
   label="Manual"
-  defaultValue=""
+  defaultValue="Cookies"
 >
-  <option value="" disabled></option>
   <option value="Cookies">
     Cookies
   </option>
@@ -113,13 +128,14 @@ import { Select } from '@rmwc/select';
 
 ## Option Groups
 
-You can build a select with optgroup.
+Both native and enhanced Selects can contain option groups. Just nest additional options arrays in your data.
 
 ```jsx render
 import { Select } from '@rmwc/select';
 
 <Select
   label="Formatted"
+  enhanced
   options={[
     {
       label: 'Dinner',
