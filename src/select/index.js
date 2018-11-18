@@ -1,5 +1,5 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
+import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
@@ -160,9 +160,18 @@ type SelectEnhancedControlPropsT = {
   elementRef: React.Ref<*>,
   apiRef: React.Ref<*>,
   value?: string,
-  defaultValue?: string,
-  children?: React.Node
+  defaultValue?: any,
+  children?: React.Node,
+  onClose: (evt: CustomEventT<void>) => mixed,
+  onOpen: (evt: CustomEventT<void>) => mixed,
+  onSelect: (
+    evt: CustomEventT<{
+      index: number,
+      item: HTMLElement
+    }>
+  ) => mixed
 };
+
 // eslint-disable-next-line
 class SelectEnhancedControl extends React.Component<SelectEnhancedControlPropsT> {
   render() {
@@ -463,8 +472,9 @@ class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
         this.classList.root_.remove(className),
       hasClass: (className: string) => this.classList.root_.has(className),
       isRtl: () =>
+        this.root_ &&
         window.getComputedStyle(this.root_).getPropertyValue('direction') ===
-        'rtl',
+          'rtl',
       setRippleCenter: (normalizedX: number) =>
         this.lineRipple_ && this.lineRipple_.setRippleCenter(normalizedX),
       activateBottomLine: () => this.lineRipple_ && this.lineRipple_.activate(),
@@ -546,25 +556,25 @@ class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
     this.foundation_.setValue(value);
   }
 
-  handleChange_(evt: SyntheticEvent<*>) {
+  handleChange_(evt: any) {
     const { onChange } = this.props;
     onChange && onChange(evt);
     this.foundation_.handleChange(true);
   }
 
-  handleFocus_(evt: SyntheticEvent<*>) {
+  handleFocus_(evt: any) {
     const { onFocus } = this.props;
     onFocus && onFocus(evt);
     this.foundation_.handleFocus();
   }
 
-  handleBlur_(evt: SyntheticEvent<*>) {
+  handleBlur_(evt: any) {
     const { onBlur } = this.props;
     onBlur && onBlur(evt);
     this.foundation_.handleBlur();
   }
 
-  handleClick_(evt: SyntheticEvent<*>) {
+  handleClick_(evt: any) {
     const { onClick, onMouseDown, onTouchStart } = this.props;
     evt.type === 'click' && onClick && onClick(evt);
     evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
@@ -574,18 +584,18 @@ class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
     this.foundation_.handleClick(this.getNormalizedXCoordinate_(evt));
   }
 
-  handleKeydown_(evt: SyntheticEvent<*>) {
+  handleKeydown_(evt: any) {
     const { onKeyDown } = this.props;
     onKeyDown && onKeyDown(evt);
     this.foundation_.handleKeydown(evt);
   }
 
-  handleMenuSelected_(evtData: Object) {
-    const value = evtData.detail.item.dataset.value;
+  handleMenuSelected_(evt: CustomEventT<{ item: HTMLElement, index: number }>) {
+    const value = evt.detail.item.dataset.value;
     this.emit(
       'onChange',
       {
-        index: evtData.detail.index,
+        index: evt.detail.index,
         value
       },
       true

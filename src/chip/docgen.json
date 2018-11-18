@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A Chip component.",
     "displayName": "Chip",
     "methods": [
       {
@@ -12,7 +12,7 @@
       }
     ],
     "props": {
-      "label": {
+      "text": {
         "flowType": {
           "name": "ReactNode",
           "raw": "React.Node"
