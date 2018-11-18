@@ -11,7 +11,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export type ChipPropsT = {
   /** Text for your Chip. */
-  label?: React.Node,
+  text?: React.Node,
   /** makes the Chip appear selected. */
   selected?: boolean,
   /** Instance of an Icon Component. */
@@ -45,6 +45,7 @@ const ChipRoot = withRipple({})(
   }
 );
 
+/** A Chip component. */
 export class Chip extends FoundationComponent<ChipPropsT> {
   static displayName = 'Chip';
   root_: HTMLElement | null;
@@ -159,6 +160,7 @@ export class Chip extends FoundationComponent<ChipPropsT> {
             true /* shouldBubble */
           ),
         getComputedStyleValue: propertyName =>
+          this.root_ &&
           window.getComputedStyle(this.root_).getPropertyValue(propertyName),
         setStyleProperty: (propertyName, value) =>
           this.root_ && this.root_.style.setProperty(propertyName, value)
@@ -175,7 +177,7 @@ export class Chip extends FoundationComponent<ChipPropsT> {
       leadingIcon,
       trailingIcon,
       checkmark,
-      label,
+      text,
       children,
       ...rest
     } = this.props;
@@ -193,7 +195,7 @@ export class Chip extends FoundationComponent<ChipPropsT> {
           })}
         {!!checkmark && <ChipCheckmark />}
         <div className="mdc-chip__text">
-          {label}
+          {text}
           {children}
         </div>
         {!!trailingIcon &&

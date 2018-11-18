@@ -12,56 +12,14 @@
             "name": "props",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+              "raw": "{\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed\n} & MenuSurfacePropsT &\n  SimpleTagPropsT",
               "elements": [
                 {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                  "raw": "{\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed\n}",
                   "signature": {
                     "properties": [
-                      {
-                        "key": "open",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "fixed",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onClose",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "(evt: CustomEventT<void>) => mixed",
-                          "signature": {
-                            "arguments": [
-                              {
-                                "name": "evt",
-                                "type": {
-                                  "name": "CustomEventT",
-                                  "elements": [
-                                    {
-                                      "name": "void"
-                                    }
-                                  ],
-                                  "raw": "CustomEventT<void>"
-                                }
-                              }
-                            ],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
                       {
                         "key": "onSelect",
                         "value": {
@@ -109,51 +67,147 @@
                           },
                           "required": false
                         }
-                      },
-                      {
-                        "key": "anchorCorner",
-                        "value": {
-                          "name": "union",
-                          "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
-                          "elements": [
-                            {
-                              "name": "literal",
-                              "value": "'bottomEnd'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomLeft'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomRight'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomStart'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topEnd'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topLeft'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topRight'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topStart'"
-                            }
-                          ],
-                          "required": false
-                        }
                       }
                     ]
                   }
+                },
+                {
+                  "name": "intersection",
+                  "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                  "elements": [
+                    {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "open",
+                            "value": {
+                              "name": "boolean",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "fixed",
+                            "value": {
+                              "name": "boolean",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "anchorCorner",
+                            "value": {
+                              "name": "union",
+                              "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomEnd'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomLeft'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomRight'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomStart'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topEnd'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topLeft'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topRight'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topStart'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "onOpen",
+                            "value": {
+                              "name": "signature",
+                              "type": "function",
+                              "raw": "(evt: CustomEventT<void>) => mixed",
+                              "signature": {
+                                "arguments": [
+                                  {
+                                    "name": "evt",
+                                    "type": {
+                                      "name": "CustomEventT",
+                                      "elements": [
+                                        {
+                                          "name": "void"
+                                        }
+                                      ],
+                                      "raw": "CustomEventT<void>"
+                                    }
+                                  }
+                                ],
+                                "return": {
+                                  "name": "mixed"
+                                }
+                              },
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "onClose",
+                            "value": {
+                              "name": "signature",
+                              "type": "function",
+                              "raw": "(evt: CustomEventT<void>) => mixed",
+                              "signature": {
+                                "arguments": [
+                                  {
+                                    "name": "evt",
+                                    "type": {
+                                      "name": "CustomEventT",
+                                      "elements": [
+                                        {
+                                          "name": "void"
+                                        }
+                                      ],
+                                      "raw": "CustomEventT<void>"
+                                    }
+                                  }
+                                ],
+                                "return": {
+                                  "name": "mixed"
+                                }
+                              },
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "children",
+                            "value": {
+                              "name": "ReactNode",
+                              "raw": "React.Node",
+                              "required": false
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "SimpleTagPropsT"
+                    }
+                  ]
                 },
                 {
                   "name": "SimpleTagPropsT"
@@ -215,56 +269,14 @@
             "name": "nextProps",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n} & SimpleTagPropsT",
+              "raw": "{\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed\n} & MenuSurfacePropsT &\n  SimpleTagPropsT",
               "elements": [
                 {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{\n  /** Whether or not the Menu is open. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Callback that when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT\n}",
+                  "raw": "{\n  /** Callback that fires when a Menu item is selected. */\n  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed\n}",
                   "signature": {
                     "properties": [
-                      {
-                        "key": "open",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "fixed",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onClose",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "(evt: CustomEventT<void>) => mixed",
-                          "signature": {
-                            "arguments": [
-                              {
-                                "name": "evt",
-                                "type": {
-                                  "name": "CustomEventT",
-                                  "elements": [
-                                    {
-                                      "name": "void"
-                                    }
-                                  ],
-                                  "raw": "CustomEventT<void>"
-                                }
-                              }
-                            ],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
                       {
                         "key": "onSelect",
                         "value": {
@@ -312,51 +324,147 @@
                           },
                           "required": false
                         }
-                      },
-                      {
-                        "key": "anchorCorner",
-                        "value": {
-                          "name": "union",
-                          "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
-                          "elements": [
-                            {
-                              "name": "literal",
-                              "value": "'bottomEnd'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomLeft'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomRight'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottomStart'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topEnd'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topLeft'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topRight'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'topStart'"
-                            }
-                          ],
-                          "required": false
-                        }
                       }
                     ]
                   }
+                },
+                {
+                  "name": "intersection",
+                  "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n} & SimpleTagPropsT",
+                  "elements": [
+                    {
+                      "name": "signature",
+                      "type": "object",
+                      "raw": "{\n  /** Opens the menu. */\n  open?: boolean,\n  /** Make the menu position fixed. */\n  fixed?: boolean,\n  /** Manually position the menu to one of the corners. */\n  anchorCorner?: AnchorT,\n  /** Callback for when the menu is opened. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the menu is closed. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Children to render. */\n  children?: React.Node\n}",
+                      "signature": {
+                        "properties": [
+                          {
+                            "key": "open",
+                            "value": {
+                              "name": "boolean",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "fixed",
+                            "value": {
+                              "name": "boolean",
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "anchorCorner",
+                            "value": {
+                              "name": "union",
+                              "raw": "'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomEnd'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomLeft'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomRight'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'bottomStart'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topEnd'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topLeft'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topRight'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'topStart'"
+                                }
+                              ],
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "onOpen",
+                            "value": {
+                              "name": "signature",
+                              "type": "function",
+                              "raw": "(evt: CustomEventT<void>) => mixed",
+                              "signature": {
+                                "arguments": [
+                                  {
+                                    "name": "evt",
+                                    "type": {
+                                      "name": "CustomEventT",
+                                      "elements": [
+                                        {
+                                          "name": "void"
+                                        }
+                                      ],
+                                      "raw": "CustomEventT<void>"
+                                    }
+                                  }
+                                ],
+                                "return": {
+                                  "name": "mixed"
+                                }
+                              },
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "onClose",
+                            "value": {
+                              "name": "signature",
+                              "type": "function",
+                              "raw": "(evt: CustomEventT<void>) => mixed",
+                              "signature": {
+                                "arguments": [
+                                  {
+                                    "name": "evt",
+                                    "type": {
+                                      "name": "CustomEventT",
+                                      "elements": [
+                                        {
+                                          "name": "void"
+                                        }
+                                      ],
+                                      "raw": "CustomEventT<void>"
+                                    }
+                                  }
+                                ],
+                                "return": {
+                                  "name": "mixed"
+                                }
+                              },
+                              "required": false
+                            }
+                          },
+                          {
+                            "key": "children",
+                            "value": {
+                              "name": "ReactNode",
+                              "raw": "React.Node",
+                              "required": false
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "SimpleTagPropsT"
+                    }
+                  ]
                 },
                 {
                   "name": "SimpleTagPropsT"
@@ -398,48 +506,6 @@
       }
     ],
     "props": {
-      "open": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Whether or not the Menu is open."
-      },
-      "fixed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the menu position fixed."
-      },
-      "onClose": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Callback that when the menu is closed."
-      },
       "onSelect": {
         "flowType": {
           "name": "signature",
@@ -488,6 +554,20 @@
         "required": false,
         "description": "Callback that fires when a Menu item is selected."
       },
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Opens the menu."
+      },
+      "fixed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the menu position fixed."
+      },
       "anchorCorner": {
         "flowType": {
           "name": "union",
@@ -529,6 +609,70 @@
         },
         "required": false,
         "description": "Manually position the menu to one of the corners."
+      },
+      "onOpen": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the menu is opened."
+      },
+      "onClose": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the menu is closed."
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children to render."
       }
     }
   },
@@ -1011,48 +1155,6 @@
         "required": false,
         "description": "Children to render"
       },
-      "open": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Whether or not the Menu is open."
-      },
-      "fixed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the menu position fixed."
-      },
-      "onClose": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Callback that when the menu is closed."
-      },
       "onSelect": {
         "flowType": {
           "name": "signature",
@@ -1101,6 +1203,20 @@
         "required": false,
         "description": "Callback that fires when a Menu item is selected."
       },
+      "open": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Opens the menu."
+      },
+      "fixed": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make the menu position fixed."
+      },
       "anchorCorner": {
         "flowType": {
           "name": "union",
@@ -1142,6 +1258,62 @@
         },
         "required": false,
         "description": "Manually position the menu to one of the corners."
+      },
+      "onOpen": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the menu is opened."
+      },
+      "onClose": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(evt: CustomEventT<void>) => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "evt",
+                "type": {
+                  "name": "CustomEventT",
+                  "elements": [
+                    {
+                      "name": "void"
+                    }
+                  ],
+                  "raw": "CustomEventT<void>"
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback for when the menu is closed."
       }
     }
   },

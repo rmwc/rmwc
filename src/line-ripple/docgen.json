@@ -9,6 +9,38 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "activate",
+        "docblock": "Activates the line ripple",
+        "modifiers": [],
+        "params": [],
+        "returns": null,
+        "description": "Activates the line ripple"
+      },
+      {
+        "name": "deactivate",
+        "docblock": "Deactivates the line ripple",
+        "modifiers": [],
+        "params": [],
+        "returns": null,
+        "description": "Deactivates the line ripple"
+      },
+      {
+        "name": "setRippleCenter",
+        "docblock": "Sets the transform origin given a user's click location. The `rippleCenter` is the\nx-coordinate of the middle of the ripple.\n@param {number} xCoordinate",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "xCoordinate",
+            "description": null,
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null,
+        "description": "Sets the transform origin given a user's click location. The `rippleCenter` is the\nx-coordinate of the middle of the ripple."
       }
     ]
   }
