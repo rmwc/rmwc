@@ -5,6 +5,7 @@ import {
   Menu,
   MenuSurface,
   MenuItem,
+  MenuRoot,
   SimpleMenu,
   SimpleMenuSurface
 } from './';
@@ -37,6 +38,20 @@ describe('Menu', () => {
     );
 
     expect(el.html().includes('mdc-menu-surface--fixed')).toBe(true);
+  });
+
+  it('dynamically updates aria-hidden based on whether or not the menu is open', () => {
+    let el = mount(
+      <Menu open />
+    );
+
+    expect(el.find(MenuRoot).prop('aria-hidden')).toBe(false);
+
+    el = mount(
+      <Menu />
+    );
+
+    expect(el.find(MenuRoot).prop('aria-hidden')).toBe(true);
   });
 
   it('MenuSurface renders', () => {

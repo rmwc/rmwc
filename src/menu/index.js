@@ -65,8 +65,7 @@ export const MenuItems = simpleTag({
   tag: List,
   classNames: 'mdc-list mdc-menu__items',
   defaultProps: {
-    role: 'menu',
-    'aria-hidden': 'true'
+    role: 'menu'
   }
 });
 
@@ -167,7 +166,7 @@ export class Menu extends withFoundation({
     const { root_ } = this.foundationRefs;
 
     return (
-      <MenuRoot {...rest} elementRef={root_}>
+      <MenuRoot aria-hidden={!open} {...rest} elementRef={root_}>
         <MenuItems>{children}</MenuItems>
       </MenuRoot>
     );
