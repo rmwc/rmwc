@@ -158,9 +158,9 @@ export class Select extends withFoundation({
       ...rest
     } = this.props;
 	
-	if(!options.id) {
-		options.id = randomId('select');
-	}
+    if(!options.id) {
+      options.id = randomId('select');
+    }
 
     const { root_ } = this.foundationRefs;
     const selectOptions = createSelectOptions(options);
@@ -175,7 +175,7 @@ export class Select extends withFoundation({
       >
         <SelectNativeControl
           {...rest}
-		  id={options.id}
+          id={options.id}
           value={value}
           defaultValue={
             value !== undefined ? undefined : this.props.defaultValue || ''
