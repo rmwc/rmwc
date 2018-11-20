@@ -2,7 +2,12 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 import * as React from 'react';
 import { MDCSelect } from '@material/select/dist/mdc.select';
-import { simpleTag, withFoundation, syncFoundationProp, randomId } from '@rmwc/base';
+import {
+  simpleTag,
+  withFoundation,
+  syncFoundationProp,
+  randomId
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
@@ -116,6 +121,7 @@ export class Select extends withFoundation({
   disabled: boolean;
   value: any;
   foundation_: any;
+  id: string = this.props.id || randomId('select');
 
   syncWithProps(nextProps: SelectPropsT) {
     //disabled
@@ -157,10 +163,6 @@ export class Select extends withFoundation({
       style,
       ...rest
     } = this.props;
-	
-    if(!options.id) {
-      options.id = randomId('select');
-    }
 
     const { root_ } = this.foundationRefs;
     const selectOptions = createSelectOptions(options);
@@ -175,7 +177,7 @@ export class Select extends withFoundation({
       >
         <SelectNativeControl
           {...rest}
-          id={options.id}
+          id={this.id}
           value={value}
           defaultValue={
             value !== undefined ? undefined : this.props.defaultValue || ''
@@ -208,7 +210,7 @@ export class Select extends withFoundation({
             })}
           {children}
         </SelectNativeControl>
-        <FloatingLabel htmlFor={options.id}>{label}</FloatingLabel>
+        <FloatingLabel htmlFor={this.id}>{label}</FloatingLabel>
         {!!outlined && <NotchedOutline />}
         {!!outlined ? <NotchedOutlineIdle /> : <LineRipple />}
       </SelectRoot>
