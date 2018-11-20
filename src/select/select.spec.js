@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Select } from './';
+import { Select, SelectBase, SelectIcon } from './';
 
 describe('Select', () => {
   it('renders', () => {
@@ -88,5 +88,71 @@ describe('Select', () => {
     );
 
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+  });
+
+  it('adapter checks', () => {
+    const standard = mount(
+      <SelectBase options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }} />
+    );
+
+    const enhanced = mount(
+      <SelectBase
+        enhanced
+        options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
+      />
+    );
+
+    const inst = standard.instance();
+    const a = inst.foundation_.adapter_;
+    const enhancedA = enhanced.foundation_.adapter_;
+
+    [a, enhancedA].forEach(a => {
+      a.getValue();
+      a.setValue();
+      a.openMenu();
+      a.closeMenu();
+      a.isMenuOpen();
+      a.setSelectedIndex(0);
+      a.setDisabled(false);
+      a.setValid(true);
+
+      // having an issue polyiflling check validity
+      //a.checkValidity();
+    });
+
+    a.addClass('test');
+    a.hasClass('test');
+    a.removeClass('test');
+    a.isRtl();
+    a.setRippleCenter(0);
+    a.activateBottomLine();
+    a.deactivateBottomLine();
+    a.notifyChange();
+
+    a.hasOutline();
+    a.notchOutline(0, false);
+    a.closeOutline();
+
+    a.floatLabel(false);
+    a.getLabelWidth();
+  });
+});
+
+describe('Select Icon', () => {
+  it('renders', () => {
+    mount(<SelectIcon icon="favorite" />);
+  });
+
+  it('adapter checks', () => {
+    const el = mount(<SelectIcon icon="favorite" />);
+    const a = el.instance().foundation_.adapter_;
+
+    a.getAttr('test');
+    a.setAttr('test', 'test');
+    a.removeAttr('test');
+    a.setContent('test');
+    a.registerInteractionHandler('click', () => {});
+    a.deregisterInteractionHandler('click', () => {});
+    a.notifyIconAction();
   });
 });

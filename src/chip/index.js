@@ -50,71 +50,42 @@ export class Chip extends FoundationComponent<ChipPropsT> {
   static displayName = 'Chip';
   root_: HTMLElement | null;
   trailingIcon_: HTMLElement | null;
-  leadingIcon_: any;
-  handleInteraction_: any;
-  handleTransitionEnd_: any;
-  handleTrailingIconInteraction_: any;
-  INTERACTION_EVENTS = ['click', 'keydown'];
   id: string;
   _reactInternalFiber: any;
 
   constructor(props: ChipPropsT) {
     super(props);
     this.createClassList('root_');
+
+    [
+      'handleInteraction_',
+      'handleTransitionEnd_',
+      'handleTrailingIconInteraction_'
+      //$FlowFixMe
+    ].forEach(key => (this[key] = this[key].bind(this)));
+  }
+
+  handleInteraction_(evt: any) {
+    evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
+    evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
+    return this.foundation_.handleInteraction(evt);
+  }
+
+  handleTransitionEnd_(evt: any) {
+    return this.foundation_.handleTransitionEnd(evt);
+  }
+
+  handleTrailingIconInteraction_(evt: any) {
+    return this.foundation_.handleTrailingIconInteraction(evt);
   }
 
   componentDidMount() {
     super.componentDidMount();
+
     this.id =
       this.root_ && this.root_.id
         ? this.root_.id
         : this._reactInternalFiber.key || `${Math.random()}`;
-    this.handleInteraction_ = evt => this.foundation_.handleInteraction(evt);
-    this.handleTransitionEnd_ = evt =>
-      this.foundation_.handleTransitionEnd(evt);
-    this.handleTrailingIconInteraction_ = evt =>
-      this.foundation_.handleTrailingIconInteraction(evt);
-
-    this.INTERACTION_EVENTS.forEach(evtType => {
-      this.root_ &&
-        this.root_.addEventListener(evtType, this.handleInteraction_);
-    });
-    this.root_ &&
-      this.root_.addEventListener('transitionend', this.handleTransitionEnd_);
-
-    if (this.trailingIcon_) {
-      this.INTERACTION_EVENTS.forEach(evtType => {
-        this.trailingIcon_ &&
-          this.trailingIcon_.addEventListener(
-            evtType,
-            this.handleTrailingIconInteraction_
-          );
-      });
-    }
-  }
-
-  componentWillUnmount() {
-    super.componentWillUnmount();
-
-    this.INTERACTION_EVENTS.forEach(evtType => {
-      this.root_ &&
-        this.root_.removeEventListener(evtType, this.handleInteraction_);
-    });
-    this.root_ &&
-      this.root_.removeEventListener(
-        'transitionend',
-        this.handleTransitionEnd_
-      );
-
-    if (this.trailingIcon_) {
-      this.INTERACTION_EVENTS.forEach(evtType => {
-        this.trailingIcon_ &&
-          this.trailingIcon_.removeEventListener(
-            evtType,
-            this.handleTrailingIconInteraction_
-          );
-      });
-    }
   }
 
   getDefaultFoundation() {
@@ -124,14 +95,10 @@ export class Chip extends FoundationComponent<ChipPropsT> {
         removeClass: className => this.classList.root_.remove(className),
         hasClass: className => this.classList.root_.has(className),
         addClassToLeadingIcon: className => {
-          if (this.leadingIcon_) {
-            this.leadingIcon_.classList.add(className);
-          }
+          // handled by props
         },
         removeClassFromLeadingIcon: className => {
-          if (this.leadingIcon_) {
-            this.leadingIcon_.classList.remove(className);
-          }
+          // handled by props
         },
         eventTargetHasClass: (target, className) =>
           target.classList.contains(className),
@@ -185,6 +152,9 @@ export class Chip extends FoundationComponent<ChipPropsT> {
       <ChipRoot
         tabIndex={0}
         {...rest}
+        onClick={this.handleInteraction_}
+        onKeyDown={this.handleInteraction_}
+        onTransitionEnd={this.handleTransitionEnd_}
         elementRef={el => (this.root_ = el)}
         className={this.classList.root_.renderToString()}
       >
@@ -201,7 +171,9 @@ export class Chip extends FoundationComponent<ChipPropsT> {
         {!!trailingIcon &&
           renderChipIcon(trailingIcon, {
             trailing: true,
-            elementRef: el => (this.trailingIcon_ = el)
+            elementRef: el => (this.trailingIcon_ = el),
+            onClick: this.handleTrailingIconInteraction_,
+            onKeyDown: this.handleTrailingIconInteraction_
           })}
       </ChipRoot>
     );
@@ -254,7 +226,7 @@ class ChipIconRoot extends Component<ChipIconPropsT> {
   consumeProps = ['trailing', 'leading'];
 }
 
-const ChipIcon: React.ComponentType<ChipIconPropsT> = (
+export const ChipIcon: React.ComponentType<ChipIconPropsT> = (
   props: ChipIconPropsT
 ) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
@@ -279,7 +251,8 @@ const renderChipIcon = (iconNode, props) => {
     return <ChipIcon icon={iconNode} {...props} />;
   }
 
-  return iconNode;
+  const icon = React.Children.only(iconNode);
+  return React.cloneElement(icon, { ...icon.props, ...props });
 };
 
 export type ChipSetPropsT = {

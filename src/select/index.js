@@ -4,6 +4,7 @@ import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
+
 import { Component, FoundationComponent } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -11,6 +12,7 @@ import { Icon } from '@rmwc/icon';
 import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
+
 
 type FormattedOption = {
   label: string,
@@ -256,7 +258,10 @@ type SelectStateT = {
   menuOpen: boolean
 };
 
-class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
+export class SelectBase extends FoundationComponent<
+  SelectPropsT,
+  SelectStateT
+> {
   root_: HTMLElement | null;
   id: string = this.props.id || randomId('select');
   nativeControl_: HTMLSelectElement | null;
@@ -513,12 +518,6 @@ class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
     };
   }
 
-  getNormalizedXCoordinate_(evt: any) {
-    const targetClientRect = evt.target.getBoundingClientRect();
-    const xCoordinate = evt.clientX;
-    return xCoordinate - targetClientRect.left;
-  }
-
   getFoundationMap_() {
     return {
       leadingIcon: this.leadingIcon_ || undefined
@@ -580,8 +579,14 @@ class SelectBase extends FoundationComponent<SelectPropsT, SelectStateT> {
     evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
     evt.type === 'touchstart' && onTouchStart && onTouchStart(evt);
 
+    const getNormalizedXCoordinate = (evt: any) => {
+      const targetClientRect = evt.target.getBoundingClientRect();
+      const xCoordinate = evt.clientX;
+      return xCoordinate - targetClientRect.left;
+    };
+
     if (this.selectedText_) this.selectedText_.focus();
-    this.foundation_.handleClick(this.getNormalizedXCoordinate_(evt));
+    this.foundation_.handleClick(getNormalizedXCoordinate(evt));
   }
 
   handleKeydown_(evt: any) {

@@ -1,24 +1,7 @@
 export default () => {
   if (global['window']) {
-    const { ValidityState } = require('hyperform');
-
-    const defineValidity = {
-      get() {
-        return ValidityState(this);
-      },
-      configurable: true
-    };
-
-    Object.defineProperty(
-      global['HTMLInputElement'].prototype,
-      'validity',
-      defineValidity
-    );
-    Object.defineProperty(
-      global['HTMLTextAreaElement'].prototype,
-      'validity',
-      defineValidity
-    );
+    const hyperform = require('hyperform');
+    hyperform(window);
 
     Object.defineProperty(window['HTMLElement'].prototype, 'dataset', {
       writable: true,
