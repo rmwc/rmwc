@@ -76,14 +76,11 @@ export class TabBar extends withFoundation({
   root_: any;
 
   syncWithProps(nextProps: TabBarPropsT) {
-    // request animation frame required to avoid test failure issues
-    window.requestAnimationFrame(() => {
-      syncFoundationProp(
-        nextProps.activeTabIndex,
-        this.activeTabIndex,
-        () => this.foundation_ && this.activateTab(nextProps.activeTabIndex)
-      );
-    });
+    syncFoundationProp(
+      nextProps.activeTabIndex,
+      this.props.activeTabIndex,
+      () => this.foundation_ && this.activateTab(nextProps.activeTabIndex)
+    );
   }
 
   componentDidMount() {

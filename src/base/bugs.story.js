@@ -8,7 +8,9 @@ import {
   Menu,
   MenuItem,
   Select,
-  Switch
+  Switch,
+  TabBar,
+  Tab
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -317,6 +319,29 @@ class Bug361 extends React.Component {
   }
 }
 
+class Bug370 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: 0
+    };
+  }
+
+  render() {
+    return (
+      <TabBar
+        activeTabIndex={this.state.activeTab}
+        onActivate={evt => {
+          setTimeout(() => this.setState({ activeTab: evt.detail.index }), 0);
+        }}
+      >
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+      </TabBar>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -378,4 +403,5 @@ storiesOf('Bugs', module)
   .add('#334', () => <Bug334 />)
   .add('#338', () => <Bug338 />)
   .add('#350', () => <Bug350 />)
-  .add('#361', () => <Bug361 />);
+  .add('#361', () => <Bug361 />)
+  .add('#370', () => <Bug370 />);
