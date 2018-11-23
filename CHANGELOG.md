@@ -1,3 +1,11 @@
+#### 3.0.11 (2018-11-23)
+
+##### Bug Fixes
+
+* **TabBar:**  Corrects issue with asynchronously setting activeTabIndex (fed9f6bf)
+* **Select:**  correcting id options (33836957)
+* **Menu:**  Set aria-hidden dynamically for A11Y (e0eb5e1a)
+
 #### 3.0.10 (2018-11-09)
 
 ##### Bug Fixes

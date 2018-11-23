@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "3.0.10",
+  "version": "3.0.11",
   "description": "RMWC Checkbox component",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   "dependencies": {
     "@material/animation": "~0.39.0",
     "@material/checkbox": "~0.40.0",
-    "@rmwc/base": "^3.0.10",
-    "@rmwc/formfield": "^3.0.10",
-    "@rmwc/ripple": "^3.0.10"
+    "@rmwc/base": "^3.0.11",
+    "@rmwc/formfield": "^3.0.11",
+    "@rmwc/ripple": "^3.0.11"
   }
 }

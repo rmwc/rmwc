@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/textfield",
-  "version": "3.0.10",
+  "version": "3.0.11",
   "description": "RMWC TextField component",
   "main": "index.js",
   "scripts": {
@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "@material/textfield": "~0.40.0",
-    "@rmwc/base": "^3.0.10",
-    "@rmwc/floating-label": "^3.0.10",
-    "@rmwc/icon": "^3.0.10",
-    "@rmwc/line-ripple": "^3.0.10",
-    "@rmwc/notched-outline": "^3.0.10"
+    "@rmwc/base": "^3.0.11",
+    "@rmwc/floating-label": "^3.0.11",
+    "@rmwc/icon": "^3.0.11",
+    "@rmwc/line-ripple": "^3.0.11",
+    "@rmwc/notched-outline": "^3.0.11"
   }
 }
