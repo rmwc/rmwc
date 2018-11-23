@@ -26,3 +26,4 @@ yarn-error.log*
 # Webstorm
 .idea
 /index.js.flow
+/.vscode/chrome
