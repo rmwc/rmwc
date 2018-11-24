@@ -5,7 +5,7 @@ import type { IconPropsT } from '@rmwc/icon';
 import * as React from 'react';
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
-import { Component, FoundationComponent } from '@rmwc/base';
+import { Component, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon } from '@rmwc/icon';
