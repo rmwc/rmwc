@@ -11,6 +11,9 @@ Sliders can be both uncontrolled and controlled. When creating a controlled `Sli
 
 Sliders will automatically layout themselves on window resize. If you need to manually trigger a layout because the sliders container size changed, the simplest way is to trigger a resize event `window.dispatchEvent(new Event('resize'));`.
 
+**Known Issue**
+`material-components-web` uses pointer events internally. If you are using something below React 16.4, you will see unknown attribute errors, however the slider should still work.
+
 ```jsx render
 import { Slider } from '@rmwc/slider';
 
