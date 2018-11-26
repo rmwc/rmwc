@@ -241,13 +241,6 @@
           "computed": false
         },
         "required": false
-      },
-      "aria-hidden": {
-        "defaultValue": {
-          "value": "'true'",
-          "computed": false
-        },
-        "required": false
       }
     }
   },

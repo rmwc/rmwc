@@ -7,6 +7,8 @@
   - import **'@material/toolbar/dist/mdc.toolbar.css'**;
 - MDC Docs: [https://material.io/develop/web/components/toolbar/](https://material.io/develop/web/components/toolbar/)
 
+**Attention** Toolbars are technically deprecated by `material-components-web` but they remain useful until TopAppBar can catch up and contain all of the same behaviors.
+
 ```jsx render
 import {
   Toolbar,

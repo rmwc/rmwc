@@ -4,6 +4,48 @@
     "displayName": "Chip",
     "methods": [
       {
+        "name": "handleInteraction_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleTransitionEnd_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleTrailingIconInteraction_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "getDefaultFoundation",
         "docblock": null,
         "modifiers": [],
@@ -187,6 +229,27 @@
         },
         "required": false,
         "description": "A callback that is fired once the chip is in an exited state from removing it."
+      }
+    }
+  },
+  {
+    "description": "",
+    "displayName": "ChipIcon",
+    "methods": [],
+    "props": {
+      "leading": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make it a leading icon"
+      },
+      "trailing": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Make it a trailing icon"
       }
     }
   },

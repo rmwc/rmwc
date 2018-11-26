@@ -28,7 +28,8 @@
     "context": {
       "RMWCOptions": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "PropTypes.object"
         },
         "required": false
       }
