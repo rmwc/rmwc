@@ -95,4 +95,34 @@ describe('Slider', () => {
     const el = mount(<Slider className={'my-custom-classname'} />);
     expect(el.html().includes('my-custom-classname')).toEqual(true);
   });
+
+  it('adapter checks', () => {
+    const el = mount(<Slider />);
+    const a = el.instance().foundation_.adapter_;
+    a.hasClass('test');
+    a.addClass('test');
+    a.removeClass('test');
+    a.getAttribute('test');
+    a.setAttribute('test', 'test');
+    a.removeAttribute('test');
+    a.computeBoundingRect();
+    a.getTabIndex();
+    a.registerInteractionHandler('click', () => {});
+    a.deregisterInteractionHandler('click', () => {});
+    a.registerThumbContainerInteractionHandler('click', () => {});
+    a.deregisterThumbContainerInteractionHandler('click', () => {});
+    a.registerBodyInteractionHandler('click', () => {});
+    a.deregisterBodyInteractionHandler('click', () => {});
+    a.registerResizeHandler(() => {});
+    a.deregisterResizeHandler(() => {});
+    a.notifyInput();
+    a.notifyChange();
+    a.setThumbContainerStyleProperty('color', 'red');
+    a.setTrackStyleProperty('color', 'red');
+    a.setMarkerValue(0);
+    a.appendTrackMarkers(10);
+    a.removeTrackMarkers();
+    a.setLastTrackMarkersStyleProperty('color', 'red');
+    a.isRTL();
+  });
 });
