@@ -79,22 +79,6 @@ class Example1 extends React.Component {
 }
 ```
 
-### `apiRef`
-
-material-components-web has javascript constructors for a majority of their components. RMWC exposes this functionality on components that have them. You generally shouldn't have to use this, but it's available if you need it.
-
-```jsx
-import { TextField } from '@rmwc/textfield';
-
-// renders an h1
-
-class Example1 extends React.Component {
-  render() {
-    return <TextField apiRef={api => this.textFieldApi = api}>
-  }
-}
-```
-
 ### `wrap`
 
 Most of material-components-web are just classNames used for styling, but React is component based making it hard to combine classNames from two different components. The `wrap` prop allows you to "collapse" one component onto another while maintaining the props and functionality of both. It's not used that often, but consider the following example which will simply apply the elevation class to the button instead of creating an additional node.

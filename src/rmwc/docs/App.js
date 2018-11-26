@@ -52,6 +52,7 @@ const TEXT_DEFAULTS = {
   '--mdc-theme-on-primary': '#fff',
   '--mdc-theme-on-secondary': '#fff',
   '--mdc-theme-on-surface': '#000',
+  '--mdc-theme-on-error': '#fff',
   '--mdc-theme-text-primary-on-background': 'rgba(0, 0, 0, 0.87)',
   '--mdc-theme-text-secondary-on-background': 'rgba(0, 0, 0, 0.54)',
   '--mdc-theme-text-hint-on-background': 'rgba(0, 0, 0, 0.38)',

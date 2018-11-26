@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCFloatingLabelFoundation } from '@material/floating-label/dist/mdc.floatingLabel';
+import { MDCFloatingLabelFoundation } from '@material/floating-label';
 import { FoundationComponent } from '@rmwc/base';
 
 export type FloatingLabelPropsT = {};
@@ -25,6 +25,26 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelPropsT> {
       deregisterInteractionHandler: (evtType, handler) =>
         this.propsList.root_.removeEventListener(evtType, handler)
     });
+  }
+
+  shake(shouldShake: boolean) {
+    this.foundation_.shake(shouldShake);
+  }
+
+  /**
+   * Styles label to float/dock.
+   * @param {boolean} shouldFloat styles the label to float by adding float class
+   * if true, otherwise docks the label by removing the float class.
+   */
+  float(shouldFloat: boolean) {
+    this.foundation_.float(shouldFloat);
+  }
+
+  /**
+   * @return {number}
+   */
+  getWidth() {
+    return this.foundation_.getWidth();
   }
 
   render() {

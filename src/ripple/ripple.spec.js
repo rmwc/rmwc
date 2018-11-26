@@ -31,18 +31,6 @@ describe('Ripple', () => {
     expect(!!~el.html().search('mdc-ripple-surface--accent')).toBe(true);
   });
 
-  it('handles apiRef', () => {
-    let api = null;
-
-    mount(
-      <Ripple apiRef={ref => (api = ref)}>
-        <div />
-      </Ripple>
-    );
-
-    expect(api).toBeTruthy();
-  });
-
   it('can be unbounded', () => {
     const el = mount(
       <Ripple unbounded>

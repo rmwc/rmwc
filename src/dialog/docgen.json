@@ -63,7 +63,7 @@
             "type": {
               "name": "signature",
               "type": "object",
-              "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the Dialog opens. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed\n}",
+              "raw": "{\n  /** Whether or not the Dialog is showing. */\n  open: boolean,\n  /** Callback for when the Dialog opens. */\n  onOpen?: (evt: CustomEventT<void>) => mixed,\n  /** Callback for when the Dialog closes. */\n  onClose?: (evt: CustomEventT<void>) => mixed,\n  /** Callback to use if you need more direct access to the Dialog's lifecycle. */\n  onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => mixed\n}",
               "signature": {
                 "properties": [
                   {
@@ -119,6 +119,47 @@
                                 }
                               ],
                               "raw": "CustomEventT<void>"
+                            }
+                          }
+                        ],
+                        "return": {
+                          "name": "mixed"
+                        }
+                      },
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "onStateChange",
+                    "value": {
+                      "name": "signature",
+                      "type": "function",
+                      "raw": "(state: 'opening' | 'opened' | 'closing' | 'closed') => mixed",
+                      "signature": {
+                        "arguments": [
+                          {
+                            "name": "state",
+                            "type": {
+                              "name": "union",
+                              "raw": "'opening' | 'opened' | 'closing' | 'closed'",
+                              "elements": [
+                                {
+                                  "name": "literal",
+                                  "value": "'opening'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'opened'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'closing'"
+                                },
+                                {
+                                  "name": "literal",
+                                  "value": "'closed'"
+                                }
+                              ]
                             }
                           }
                         ],
@@ -208,6 +249,47 @@
         },
         "required": false,
         "description": "Callback for when the Dialog closes."
+      },
+      "onStateChange": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(state: 'opening' | 'opened' | 'closing' | 'closed') => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "state",
+                "type": {
+                  "name": "union",
+                  "raw": "'opening' | 'opened' | 'closing' | 'closed'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'opening'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'opened'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'closing'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'closed'"
+                    }
+                  ]
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback to use if you need more direct access to the Dialog's lifecycle."
       }
     }
   },
@@ -377,6 +459,47 @@
           "value": "noop",
           "computed": true
         }
+      },
+      "onStateChange": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "(state: 'opening' | 'opened' | 'closing' | 'closed') => mixed",
+          "signature": {
+            "arguments": [
+              {
+                "name": "state",
+                "type": {
+                  "name": "union",
+                  "raw": "'opening' | 'opened' | 'closing' | 'closed'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'opening'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'opened'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'closing'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'closed'"
+                    }
+                  ]
+                }
+              }
+            ],
+            "return": {
+              "name": "mixed"
+            }
+          }
+        },
+        "required": false,
+        "description": "Callback to use if you need more direct access to the Dialog's lifecycle."
       }
     }
   }

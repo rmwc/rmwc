@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
     "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3"
   }

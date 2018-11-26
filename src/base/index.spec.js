@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { ListItem } from '@rmwc/list';
 import { withTheme } from './withTheme';
 import { withFoundation } from './withFoundation';
-import { noop, Component, randomId } from './';
+import { noop, Component, randomId, debounce } from './';
 
 jest.spyOn(console, 'warn');
 
@@ -20,6 +20,17 @@ describe('Utils', () => {
     process.env.NODE_ENV = 'production';
     randomId();
     process.env.NODE_ENV = 'test';
+  });
+
+  it('debounce', done => {
+    let val = 0;
+    const foo = () => val++;
+    const debouncedFoo = debounce(foo, 100);
+    debouncedFoo();
+    setTimeout(() => {
+      expect(val).toBe(1);
+      done();
+    }, 150);
   });
 });
 

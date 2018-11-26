@@ -8,7 +8,7 @@ We strive to make developing RMWC as frictionless as possible, both for ourselve
 
 ### Setting up your development environment
 
-You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC. We test using the latest node versions, so use the latest where possible. The dev environment is verified to work with Node versions 7 and up.
+You'll need a recent version of [nodejs](https://nodejs.org/en/) to work on RMWC. We test using the latest node versions, so use the latest where possible. The dev environment is verified to work with Node versions 7 and up. Currently, RMWC development has only been done on Mac. If you are using a windows or linux based machine, please document your experience!
 
 > **NOTE**: If you expect to commit updated or new dependencies, please ensure you are using npm 5, which will
 > also update `package-lock.json` correctly when you install or upgrade packages.
@@ -19,6 +19,30 @@ Once node is installed, simply clone our repo (or your fork of it) and run `npm 
 git@github.com:jamesmfriedman/rmwc.git # or a path to your fork
 cd rmwc && npm i
 ```
+
+### Contributing to Existing Components
+
+The most importing thing to know about RMWC is that a lot is done automatically for you based on the Flow Types. Because of this, your typings have to be correct.
+
+- The Prop types in the docs are automatically generated at build time from the Flow Types. DO NOT update a docgen.json file manually
+- Typescript definitions are also automatically generated from the Flow Types. The best check for this to make sure Typescript is working is to run `npm run build:code`. This will create the Typescript definition files and happily report any errors to you. Read more about Types below.
+- The markdown files are actually pulled in at build time and are the actual docs you see on the doc site.
+
+It is also worth noting that the foundation / adapter integration that `material-components-web` suggests using can appear daunting at times. Don't let it scare you out of trying to give back. When in doubt, just ping us on [Discord](https://discordapp.com/invite/4BSUxCW)
+
+## Cheat sheet
+- `npm start` - run the docs site
+- `npm run test:watch` - run the tests in watch mode while developing
+- `npm run build:code` - compile the code to check for Typescript issues
+- `npm run docgen` - generates the prop types for the docs. This will unfortunately spit out some unfixable errors that you can mostly disregard. This automatically gets run when the docs get built, but you can manually run it for testing purposes.
+- `npm run clean` - this will clean up all of the generated build files
+
+## Typings
+
+- Flow and Typescript are similar enough to where a light conversion process is all that is needed to turn one into the other
+- While `any` is generally considered bad practice, it is an escape hatch that you can employ to get out of some impossible intersections.
+- Flow uses a leading `?` for nullable types, but Typescript doesn't recognize this. Instead, use a union of `value | null`
+
 
 ### Building Components
 
@@ -50,12 +74,6 @@ To "build" the library for distribution
 
 ```
 npm run build
-```
-
-To build the umd module
-
-```
-npm run build:lib
 ```
 
 To build the docs

@@ -151,9 +151,6 @@ export const withFoundation = ({
       this.foundation_ && this.foundation_.init();
       this.initialSyncWithDOM();
       this._safeSyncWithProps(this.props);
-
-      // this method should be deprecated in the future in favor of standard refs
-      typeof this.props.apiRef === 'function' && this.props.apiRef(this);
     }
 
     destroyComponent() {

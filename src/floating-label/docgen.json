@@ -9,6 +9,49 @@
         "modifiers": [],
         "params": [],
         "returns": null
+      },
+      {
+        "name": "shake",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "shouldShake",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "float",
+        "docblock": "Styles label to float/dock.\n@param {boolean} shouldFloat styles the label to float by adding float class\nif true, otherwise docks the label by removing the float class.",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "shouldFloat",
+            "description": "styles the label to float by adding float class\nif true, otherwise docks the label by removing the float class.",
+            "type": {
+              "name": "boolean"
+            }
+          }
+        ],
+        "returns": null,
+        "description": "Styles label to float/dock."
+      },
+      {
+        "name": "getWidth",
+        "docblock": "@return {number}",
+        "modifiers": [],
+        "params": [],
+        "returns": {
+          "description": null,
+          "type": {
+            "name": "number"
+          }
+        },
+        "description": null
       }
     ]
   }

@@ -11,6 +11,20 @@
         "returns": null
       },
       {
+        "name": "handleChange_",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": {
+              "name": "any"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "sync",
         "docblock": null,
         "modifiers": [],

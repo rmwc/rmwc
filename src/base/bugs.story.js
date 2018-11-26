@@ -342,6 +342,22 @@ class Bug370 extends React.Component {
   }
 }
 
+class Bug374 extends React.Component {
+  state = { checked: false };
+
+  render() {
+    return (
+      <Switch
+        label="Label"
+        checked={this.state.checked}
+        onChange={e => {
+          this.setState({ checked: e.target.checked });
+        }}
+      />
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -404,4 +420,5 @@ storiesOf('Bugs', module)
   .add('#338', () => <Bug338 />)
   .add('#350', () => <Bug350 />)
   .add('#361', () => <Bug361 />)
-  .add('#370', () => <Bug370 />);
+  .add('#370', () => <Bug370 />)
+  .add('#374', () => <Bug374 />);

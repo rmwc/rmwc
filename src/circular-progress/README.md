@@ -37,7 +37,7 @@ The CircularProgress component is designed to work well with other components wh
 ```jsx render
 import { Button, ButtonIcon } from '@rmwc/button';
 import { List, SimpleListItem } from '@rmwc/list';
-import { SimpleChip } from '@rmwc/chip';
+import { Chip } from '@rmwc/chip';
 
 <Button>
   <ButtonIcon icon={<CircularProgress theme="secondary" />}/> Cookies
@@ -48,7 +48,7 @@ import { SimpleChip } from '@rmwc/chip';
   <SimpleListItem graphic="favorite" text="Icecream"/>
 </List>
 
-<SimpleChip
+<Chip
   leadingIcon={<CircularProgress />}
   text="Donuts"
 />

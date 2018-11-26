@@ -2,11 +2,11 @@
 import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { MDCMenu } from '@material/menu/dist/mdc.menu';
+import { MDCMenu } from '@material/menu';
 import {
   MDCMenuSurface,
   MDCMenuSurfaceFoundation
-} from '@material/menu-surface/dist/mdc.menuSurface';
+} from '@material/menu-surface';
 import { List, ListItem } from '@rmwc/list';
 import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
 
@@ -32,18 +32,26 @@ export type SelectedEventDetailT = {
   item: HTMLElement
 };
 
-export type MenuPropsT = {
-  /** Whether or not the Menu is open. */
+export type MenuSurfacePropsT = {
+  /** Opens the menu. */
   open?: boolean,
   /** Make the menu position fixed. */
   fixed?: boolean,
-  /** Callback that when the menu is closed. */
-  onClose?: (evt: CustomEventT<void>) => mixed,
-  /** Callback that fires when a Menu item is selected. */
-  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed,
   /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT
+  anchorCorner?: AnchorT,
+  /** Callback for when the menu is opened. */
+  onOpen?: (evt: CustomEventT<void>) => mixed,
+  /** Callback for when the menu is closed. */
+  onClose?: (evt: CustomEventT<void>) => mixed,
+  /** Children to render. */
+  children?: React.Node
 } & SimpleTagPropsT;
+
+export type MenuPropsT = {
+  /** Callback that fires when a Menu item is selected. */
+  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => mixed
+} & MenuSurfacePropsT &
+  SimpleTagPropsT;
 
 export const MenuRoot = simpleTag({
   displayName: 'MenuRoot',
@@ -124,6 +132,11 @@ export class Menu extends withFoundation({
       this.onCloseHandler_
     );
 
+    this.menuSurface_.listen(
+      MDCMenuSurfaceFoundation.strings.OPENED_EVENT,
+      evt => this.props.onOpen && this.props.onOpen(evt)
+    );
+
     if (this.foundation_) {
       this.foundation_.preventDefaultEvent_ = evt => {
         const target = evt.target;
@@ -158,15 +171,22 @@ export class Menu extends withFoundation({
       children,
       open,
       onClose,
+      onOpen,
       onSelect,
       anchorCorner,
       ...rest
     } = this.props;
 
     const { root_ } = this.foundationRefs;
-
     return (
-      <MenuRoot aria-hidden={!open} {...rest} elementRef={root_}>
+      <MenuRoot
+        aria-hidden={!open}
+        {...rest}
+        elementRef={el => {
+          root_(el);
+          this.props.elementRef && this.props.elementRef(el);
+        }}
+      >
         <MenuItems>{children}</MenuItems>
       </MenuRoot>
     );
@@ -176,21 +196,6 @@ export class Menu extends withFoundation({
 /****************************************************************
  * MenuSurface
  ****************************************************************/
-export type MenuSurfacePropsT = {
-  /** Opens the menu. */
-  open?: boolean,
-  /** Make the menu position fixed. */
-  fixed?: boolean,
-  /** Manually position the menu to one of the corners. */
-  anchorCorner?: AnchorT,
-  /** Callback for when the menu is opened. */
-  onOpen?: (evt: CustomEventT<void>) => mixed,
-  /** Callback for when the menu is closed. */
-  onClose?: (evt: CustomEventT<void>) => mixed,
-  /** Children to render. */
-  children?: React.Node
-} & SimpleTagPropsT;
-
 export const MenuSurfaceRoot = simpleTag({
   displayName: 'MenuSurfaceRoot',
   classNames: (props: MenuSurfacePropsT) => [

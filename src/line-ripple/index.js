@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { MDCLineRippleFoundation } from '@material/line-ripple/dist/mdc.lineRipple';
+import { MDCLineRippleFoundation } from '@material/line-ripple';
 import { FoundationComponent } from '@rmwc/base';
 
 export type LineRipplePropsT = {};
@@ -27,6 +27,29 @@ export class LineRipple extends FoundationComponent<LineRipplePropsT> {
       deregisterEventHandler: (evtType, handler) =>
         this.propsList.root_.removeEventListener(evtType, handler)
     });
+  }
+
+  /**
+   * Activates the line ripple
+   */
+  activate() {
+    this.foundation_.activate();
+  }
+
+  /**
+   * Deactivates the line ripple
+   */
+  deactivate() {
+    this.foundation_.deactivate();
+  }
+
+  /**
+   * Sets the transform origin given a user's click location. The `rippleCenter` is the
+   * x-coordinate of the middle of the ripple.
+   * @param {number} xCoordinate
+   */
+  setRippleCenter(xCoordinate: number) {
+    this.foundation_.setRippleCenter(xCoordinate);
   }
 
   render() {

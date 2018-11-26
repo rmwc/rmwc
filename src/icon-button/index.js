@@ -5,7 +5,7 @@ import type { IconOptionsT } from '@rmwc/icon/defs';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
-import { MDCIconButtonToggle } from '@material/icon-button/dist/mdc.iconButton';
+import { MDCIconButtonToggle } from '@material/icon-button';
 import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
@@ -52,19 +52,19 @@ type IconButtonIconPropsT = {
   on?: boolean
 } & IconPropsT;
 
-export const IconButtonIcon: React.ComponentType<
-  IconButtonIconPropsT
-> = simpleTag({
-  displayName: 'IconButtonIcon',
-  tag: Icon,
-  classNames: (props: IconButtonIconPropsT) => [
-    'mdc-icon-button__icon',
-    {
-      'mdc-icon-button__icon--on': props.on
-    }
-  ],
-  consumeProps: ['on']
-});
+export const IconButtonIcon: React.ComponentType<IconButtonIconPropsT> = simpleTag(
+  {
+    displayName: 'IconButtonIcon',
+    tag: Icon,
+    classNames: (props: IconButtonIconPropsT) => [
+      'mdc-icon-button__icon',
+      {
+        'mdc-icon-button__icon--on': props.on
+      }
+    ],
+    consumeProps: ['on']
+  }
+);
 
 class IconButtonToggle extends withFoundation({
   constructor: MDCIconButtonToggle
