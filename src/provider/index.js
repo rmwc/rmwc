@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import { PropTypes } from '@rmwc/base';
 
 // prettier-ignore
 // eslint-disable-next-line max-len

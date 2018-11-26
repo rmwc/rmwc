@@ -416,7 +416,6 @@ export class SelectBase extends FoundationComponent<
               selectedTextContent
             },
             () => {
-              console.log(this.foundation_);
               this.foundation_.layout();
               this.foundation_.adapter_.floatLabel(!!selectedTextContent);
             }

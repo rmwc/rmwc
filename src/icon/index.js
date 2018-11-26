@@ -4,10 +4,8 @@ import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { DeprecatedIconPropsT, IconOptionsT } from './defs';
 
 import * as React from 'react';
-import classNames from 'classnames';
-import * as PropTypes from 'prop-types';
 import { getProviderOptions } from '@rmwc/provider';
-import { simpleTag } from '@rmwc/base';
+import { simpleTag, classNames, PropTypes } from '@rmwc/base';
 import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
 import { getIconStrategy } from './utils';
 

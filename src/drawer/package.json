@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/drawer": "~0.41.0",
-    "@rmwc/base": "^3.0.10"
+    "@rmwc/base": "^3.0.11"
   }
 }

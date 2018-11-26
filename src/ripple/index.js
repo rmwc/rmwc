@@ -1,9 +1,8 @@
 // @flow
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import classNames from 'classnames';
 import { MDCRipple } from '@material/ripple';
-import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
+import { withFoundation, syncFoundationProp, classNames } from '@rmwc/base';
 
 export type RipplePropsT = {
   /** Makes the ripple unbounded */

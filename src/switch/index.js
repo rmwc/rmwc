@@ -2,9 +2,8 @@
 import type { SimpleTagPropsT } from '@rmwc/base';
 
 import * as React from 'react';
-import classNames from 'classnames';
 import { MDCSwitchFoundation } from '@material/switch';
-import { Component, FoundationComponent } from '@rmwc/base';
+import { Component, FoundationComponent, classNames } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { FormField } from '@rmwc/formfield';
 import { withRipple } from '@rmwc/ripple';

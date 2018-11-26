@@ -28,8 +28,8 @@
   "dependencies": {
     "@material/animation": "~0.41.0",
     "@material/checkbox": "~0.41.0",
-    "@rmwc/base": "^3.0.10",
-    "@rmwc/formfield": "^3.0.10",
-    "@rmwc/ripple": "^3.0.10"
+    "@rmwc/base": "^3.0.11",
+    "@rmwc/formfield": "^3.0.11",
+    "@rmwc/ripple": "^3.0.11"
   }
 }

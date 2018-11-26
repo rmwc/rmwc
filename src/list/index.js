@@ -5,10 +5,8 @@ import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { getProviderOptions } from '@rmwc/provider';
-import { simpleTag } from '@rmwc/base';
+import { simpleTag, classNames, PropTypes } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
