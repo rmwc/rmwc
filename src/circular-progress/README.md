@@ -50,7 +50,7 @@ import { Chip } from '@rmwc/chip';
 
 <Chip
   leadingIcon={<CircularProgress />}
-  label="Donuts"
+  text="Donuts"
 />
 ```
 
