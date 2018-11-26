@@ -75,23 +75,15 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
     this.generatedId = randomId('switch');
     this.createClassList('root_');
     this.createPropsList('nativeControl_');
+    (this: any).handleChange_ = this.handleChange_.bind(this);
   }
 
   componentDidMount() {
     super.componentDidMount();
-    this.changeHandler_ = this.foundation_.handleChange.bind(this.foundation_);
-    this.nativeControl_ &&
-      this.nativeControl_.addEventListener('change', this.changeHandler_);
     this.nativeControl_ &&
       this.foundation_.updateCheckedStyling_(this.nativeControl_.checked);
     this.nativeControl_ &&
       this.foundation_.setDisabled(this.nativeControl_.disabled);
-  }
-
-  componentWillUnmount() {
-    super.componentWillUnmount();
-    this.nativeControl_ &&
-      this.nativeControl_.removeEventListener('change', this.changeHandler_);
   }
 
   getDefaultFoundation() {
@@ -103,6 +95,11 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
       setNativeControlDisabled: disabled =>
         this.propsList.nativeControl_.add('disabled', disabled)
     });
+  }
+
+  handleChange_(evt: any) {
+    this.foundation_.handleChange(evt);
+    this.props.onChange && this.props.onChange(evt);
   }
 
   sync(props: SwitchPropsT, prevProps?: SwitchPropsT) {
@@ -150,6 +147,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
           <div className="mdc-switch__thumb">
             <input
               {...this.propsList.nativeControl_.all(rest)}
+              onChange={this.handleChange_}
               id={labelId}
               ref={el => (this.nativeControl_ = el)}
               className="mdc-switch__native-control"
