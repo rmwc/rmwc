@@ -1,3 +1,40 @@
+#### 3.0.11 (2018-11-26)
+
+##### Breaking Changes
+
+* **apiRef:**  apiRef has been removed from the library. If you were using, just use the standard react “ref”  if you need to get access to the class internals. (41c2c149)
+* **Chip:**
+  *  Refactor to reduce the complexity, implementation, and event handling of Chips #354 (eb62bcac)
+  *  Refactor to reduce the complexity, implementation, and event handling of Chips #354 (69139821)
+
+##### Documentation Changes
+
+* **Contributing:**  Updating contributing docs with a bit more info fixes #359 (73b34da8)
+* **Slider:**  Adding known slider issue to documentation fixes #367 (a9d9f0fc)
+* **ThemeProvider:**  Fixes empty onError property in example dropdown. closes #363 (714be619)
+
+##### New Features
+
+* **Dialog:**  Adds lifecycle hooks fixes #355 (68aab17e)
+
+##### Bug Fixes
+
+* **Switch:**  Corrects issue with controlled Switch using Safari fixes #374 (8dd7525b)
+* **SelectIcon:**  Circumventing foundation to allow release due to MDC bug (e1c8fb6c)
+* **MDC:**
+  *  Corrects and updates imports throughout components to match MDCs new export path. #354 (b81bdf14)
+  *  Corrects and updates imports throughout components to match MDCs new export path. #354 (b6438b44)
+* **Radio:**
+  *  removes deprecated adapter call, adds missing ripple #354 (405180e9)
+  *  removes deprecated adapter call, adds missing ripple #354 (d53bb0da)
+
+##### Refactors
+
+* **Dependencies:**  Move all 3rd party deps to base (d163492b)
+* **Select:**
+  *  The Select component now uses the foundation / adapter pattern and includes an enhanced variant. A small caveat is the Select will no longer appear to show a value when no value or defaultValue is given. If you were relying on this behavior before, just pass defaultValue or value.  #354 (ef5a104e)
+  *  The Select component now uses the foundation / adapter pattern and includes an enhanced variant. A small caveat is the Select will no longer appear to show a value when no value or defaultValue is given. If you were relying on this behavior before, just pass defaultValue or value.  #354 (11de8e1f)
+
 #### 3.0.11 (2018-11-23)
 
 ##### Bug Fixes

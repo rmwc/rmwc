@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/list",
-  "version": "3.0.11",
+  "version": "4.0.0",
   "description": "RMWC List component",
   "main": "index.js",
   "scripts": {
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "@material/list": "~0.41.0",
-    "@rmwc/base": "^3.0.11",
-    "@rmwc/icon": "^3.0.11",
-    "@rmwc/provider": "^3.0.6",
-    "@rmwc/ripple": "^3.0.11"
+    "@rmwc/base": "^4.0.0",
+    "@rmwc/icon": "^4.0.0",
+    "@rmwc/provider": "^4.0.0",
+    "@rmwc/ripple": "^4.0.0"
   }
 }

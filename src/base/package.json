@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/base",
-  "version": "3.0.11",
+  "version": "4.0.0",
   "description": "RMWC base module",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.1",
     "hyperform": "^0.9.9",
-    "mutation-observer": "^1.0.3"
+    "mutation-observer": "^1.0.3",
+    "prop-types": "^15.6.1"
   }
 }
