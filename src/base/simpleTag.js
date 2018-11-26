@@ -17,8 +17,7 @@ export type SimpleTagPropsT = {
   tag?: string | React.ComponentType<any>,
   wrap?: boolean,
   elementRef?: any,
-  theme?: string | string[],
-  apiRef?: <S>(api: S) => S
+  theme?: string | string[]
   //$FlowFixMe
 } & React.HTMLAttributes<any> &
   //$FlowFixMe

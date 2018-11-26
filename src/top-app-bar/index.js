@@ -139,7 +139,7 @@ export class TopAppBar extends withFoundation({
   static displayName = 'TopAppBar';
 
   render() {
-    const { onNav, apiRef, ...rest } = this.props;
+    const { onNav, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
     return <TopAppBarRoot {...rest} elementRef={root_} />;
   }

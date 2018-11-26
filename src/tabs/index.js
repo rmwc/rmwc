@@ -139,13 +139,7 @@ export class TabBar extends withFoundation({
   }
 
   render() {
-    const {
-      children,
-      activeTabIndex,
-      apiRef,
-      onActivate,
-      ...rest
-    } = this.props;
+    const { children, activeTabIndex, onActivate, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
 
     return (

@@ -65,7 +65,6 @@ export class Ripple extends withFoundation({
       accent,
       unbounded,
       surface,
-      apiRef,
       ...rest
     } = this.props;
 
