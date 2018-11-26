@@ -4,7 +4,7 @@
     "space-before-function-paren": "off",
     "indent": ["error", 2],
     "max-len": [
-      "error",
+      "warn",
       80,
       {
         "ignoreComments": true,
