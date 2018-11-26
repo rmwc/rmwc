@@ -35,6 +35,7 @@ It is also worth noting that the foundation / adapter integration that `material
 - `npm run test:watch` - run the tests in watch mode while developing
 - `npm run build:code` - compile the code to check for Typescript issues
 - `npm run docgen` - generates the prop types for the docs. This will unfortunately spit out some unfixable errors that you can mostly disregard. This automatically gets run when the docs get built, but you can manually run it for testing purposes.
+- `npm run clean` - this will clean up all of the generated build files
 
 ## Typings
 
