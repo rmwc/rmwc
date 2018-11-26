@@ -8,7 +8,7 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for the official Material Design (Web) Components v0.40.0
+A React (15 / 16) wrapper for the official Material Design (Web) Components v0.41.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
@@ -23,7 +23,7 @@ Features:
 
 ## Recent updates
 
-See whats new in 3.0.0 👉 https://opencollective.com/rmwc/updates/300
+See whats new in 4.0.0 👉 https://opencollective.com/rmwc/updates/400
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 
