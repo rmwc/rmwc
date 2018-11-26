@@ -119,7 +119,9 @@ export type DialogPropsT = {
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: CustomEventT<void>) => mixed,
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: CustomEventT<void>) => mixed
+  onClose?: (evt: CustomEventT<void>) => mixed,
+  /** Callback to use if you need more direct access to the Dialog's lifecycle. */
+  onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => mixed
 };
 
 /** A Dialog component. */
@@ -244,15 +246,34 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
               button.parentElement && button.parentElement.appendChild(button)
           );
       },
-      notifyOpening: () => this.emit('onOpen', {}),
-      notifyOpened: () => this.emit('onOpened', {}),
-      notifyClosing: action => this.emit('onClose', action ? { action } : {}),
-      notifyClosed: action => this.emit('onClosed', action ? { action } : {})
+      notifyOpening: () => {
+        this.emit('onOpen', {});
+        this.props.onStateChange && this.props.onStateChange('opening');
+      },
+      notifyOpened: () => {
+        this.emit('onOpened', {});
+        this.props.onStateChange && this.props.onStateChange('opened');
+      },
+      notifyClosing: action => {
+        this.emit('onClose', action ? { action } : {});
+        this.props.onStateChange && this.props.onStateChange('closing');
+      },
+      notifyClosed: action => {
+        this.emit('onClosed', action ? { action } : {});
+        this.props.onStateChange && this.props.onStateChange('closed');
+      }
     });
   }
 
   render() {
-    const { children, open, onOpen, onClose, ...rest } = this.props;
+    const {
+      children,
+      open,
+      onOpen,
+      onClose,
+      onStateChange,
+      ...rest
+    } = this.props;
     return (
       <DialogRoot
         {...rest}
