@@ -75,7 +75,8 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
     this.generatedId = randomId('switch');
     this.createClassList('root_');
     this.createPropsList('nativeControl_');
-    (this: any).handleChange_ = this.handleChange_.bind(this);
+    // $FlowFixMe
+    this.handleChange_ = this.handleChange_.bind(this);
   }
 
   componentDidMount() {

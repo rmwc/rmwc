@@ -662,7 +662,6 @@ export class SelectBase extends FoundationComponent<
       options = [],
       className,
       rootProps = {},
-      apiRef,
       style,
       enhanced,
       withLeadingIcon,
