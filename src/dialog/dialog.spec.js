@@ -74,8 +74,8 @@ describe('Dialog', () => {
         expect(closed).toBe(1);
         expect(lifecycle).toEqual(['opening', 'opened', 'closing', 'closed']);
         done();
-      }, 500);
-    }, 500);
+      }, 1000);
+    }, 1000);
   });
 
   it('standard Dialog renders', () => {
