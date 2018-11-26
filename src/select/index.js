@@ -3,7 +3,7 @@ import type { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
 import type { IconPropsT } from '@rmwc/icon';
 
 import * as React from 'react';
-import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
+import { MDCSelectFoundation } from '@material/select';
 
 import { Component, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
@@ -12,7 +12,6 @@ import { Icon } from '@rmwc/icon';
 import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
-
 
 type FormattedOption = {
   label: string,
@@ -417,6 +416,7 @@ export class SelectBase extends FoundationComponent<
               selectedTextContent
             },
             () => {
+              console.log(this.foundation_);
               this.foundation_.layout();
               this.foundation_.adapter_.floatLabel(!!selectedTextContent);
             }
@@ -772,20 +772,27 @@ export class SelectIcon extends FoundationComponent<IconPropsT> {
     this.createPropsList('root_');
   }
 
-  getDefaultFoundation() {
-    return new MDCSelectIconFoundation({
-      getAttr: attr => this.propsList.root_.get(attr),
-      setAttr: (attr, value) => this.propsList.root_.add(attr, value),
-      removeAttr: attr => this.propsList.root_.remove(attr),
-      setContent: content => {
-        this.root_ && (this.root_.textContent = content);
-      },
-      registerInteractionHandler: (evtType, handler) =>
-        this.propsList.root_.addEventListener(evtType, handler),
-      deregisterInteractionHandler: (evtType, handler) =>
-        this.propsList.root_.removeEventListener(evtType, handler),
-      notifyIconAction: () => this.emit('onClick', {}, true)
-    });
+  getDefaultFoundation(): any {
+    return {
+      init: () => {},
+      destroy: () => {}
+    };
+    // MDC BUG: The current default export doesnt contain this foundation
+    // https://github.com/material-components/material-components-web/issues/4094
+    //
+    // return new MDCSelectIconFoundation({
+    //   getAttr: attr => this.propsList.root_.get(attr),
+    //   setAttr: (attr, value) => this.propsList.root_.add(attr, value),
+    //   removeAttr: attr => this.propsList.root_.remove(attr),
+    //   setContent: content => {
+    //     this.root_ && (this.root_.textContent = content);
+    //   },
+    //   registerInteractionHandler: (evtType, handler) =>
+    //     this.propsList.root_.addEventListener(evtType, handler),
+    //   deregisterInteractionHandler: (evtType, handler) =>
+    //     this.propsList.root_.removeEventListener(evtType, handler),
+    //   notifyIconAction: () => this.emit('onClick', {}, true)
+    // });
   }
 
   render() {
