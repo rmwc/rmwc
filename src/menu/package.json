@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/menu",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "RMWC Menu component",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "@material/menu": "~0.41.0",
     "@material/menu-surface": "~0.41.0",
-    "@rmwc/base": "^4.0.0",
-    "@rmwc/list": "^4.0.0"
+    "@rmwc/base": "^4.0.1",
+    "@rmwc/list": "^4.0.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/icon-button",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "RMWC IconButton component",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "@material/icon-button": "~0.41.0",
-    "@rmwc/base": "^4.0.0",
-    "@rmwc/icon": "^4.0.0",
-    "@rmwc/ripple": "^4.0.0"
+    "@rmwc/base": "^4.0.1",
+    "@rmwc/icon": "^4.0.1",
+    "@rmwc/ripple": "^4.0.1"
   }
 }

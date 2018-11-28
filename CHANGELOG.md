@@ -1,3 +1,9 @@
+#### 4.0.1 (2018-11-28)
+
+##### Bug Fixes
+
+* **Typescript:**  Corrects issue with proptypes import (6f8041bb)
+
 #### 4.0.0 (2018-11-26)
 
 ##### Breaking Changes
