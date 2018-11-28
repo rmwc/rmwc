@@ -1,5 +1,4 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
 import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 import type { IconPropsT } from '@rmwc/icon';
@@ -7,7 +6,7 @@ import type { IconPropsT } from '@rmwc/icon';
 import * as React from 'react';
 import { getProviderOptions } from '@rmwc/provider';
 
-import { simpleTag, PropTypes } from '@rmwc/base';
+import { Component, PropTypes } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
@@ -24,22 +23,21 @@ export type ButtonPropsT = {
   disabled?: boolean,
   /** Enable / disable the ripple. */
   ripple?: boolean
-} & SimpleTagPropsT &
-  WithRipplePropsT;
+} & WithRipplePropsT;
 
 export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
   surface: false
 })(
-  simpleTag({
-    displayName: 'ButtonRoot',
-    tag: 'button',
-    defaultProps: {
+  class extends Component<ButtonPropsT> {
+    static displayName = 'ButtonRoot';
+    static defaultProps = {
       dense: false,
       raised: false,
       unelevated: false,
       outlined: false
-    },
-    consumeProps: [
+    };
+    tag = 'button';
+    consumeProps = [
       'dense',
       'raised',
       'unelevated',
@@ -47,8 +45,8 @@ export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
       'primary',
       'accent',
       'unbounded'
-    ],
-    classNames: (props: ButtonPropsT) => [
+    ];
+    classNames = (props: ButtonPropsT) => [
       'mdc-button',
       {
         'mdc-button--dense': props.dense,
@@ -56,16 +54,17 @@ export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
         'mdc-button--unelevated': props.unelevated,
         'mdc-button--outlined': props.outlined
       }
-    ]
-  })
+    ];
+  }
 );
 
+/** @extends React.Component */
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export const ButtonIcon: React.ComponentType<IconPropsT> = simpleTag({
-  displayName: 'ButtonIcon',
-  tag: Icon,
-  classNames: 'mdc-button__icon'
-});
+export class ButtonIcon extends Component<{}> {
+  static displayName = 'ButtonIcon';
+  tag = Icon;
+  classNames = ['mdc-button__icon'];
+}
 
 /**
  * The Button component. Buttons also accepts all of the props from the Ripple component.

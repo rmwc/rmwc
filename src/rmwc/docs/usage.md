@@ -78,36 +78,3 @@ class Example1 extends React.Component {
   }
 }
 ```
-
-### `wrap`
-
-Most of material-components-web are just classNames used for styling, but React is component based making it hard to combine classNames from two different components. The `wrap` prop allows you to "collapse" one component onto another while maintaining the props and functionality of both. It's not used that often, but consider the following example which will simply apply the elevation class to the button instead of creating an additional node.
-
-```jsx
-import { Button } from '@rmwc/button';
-import { Elevation } from '@rmwc/elevation';
-
-/**
- * No Wrapping
- * Renders:
- *   <div class="mdc-elevation mdc-elevation--z3">
- *     <button class="mdc-button">Hello World</button>
- *   </div>
- */
-const Example1 = props => (
-  <Elevation z="3">
-    <Button>Hello World</Button>
-  </Elevation>
-);
-
-/**
- * With Wrapping
- * Renders:
- *   <button className="mdc-elevation mdc-elevation--z3 mdc-button">Hello World</button>
- */
-const Example2 = props => (
-  <Elevation wrap>
-    <Button>Hello World</Button>
-  </Elevation>
-);
-```

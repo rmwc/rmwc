@@ -2,7 +2,36 @@
   {
     "description": "A Card Component",
     "displayName": "Card",
-    "methods": [],
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Removes the shadow and displays a hairline outline instead */\n  outlined?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "outlined",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "CardPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "outlined": {
         "flowType": {
@@ -16,7 +45,43 @@
   {
     "description": "Media area that displays a custom background-image with background-size: cover",
     "displayName": "CardMedia",
-    "methods": [],
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Automatically scales the media area’s height to equal its width */\n  square?: boolean,\n  /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */\n  sixteenByNine?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "square",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "sixteenByNine",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "CardMediaPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "square": {
         "flowType": {
@@ -47,7 +112,36 @@
   {
     "description": "Row containing action buttons and/or icons",
     "displayName": "CardActions",
-    "methods": [],
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */\n  fullBleed?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "fullBleed",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "CardActionsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "fullBleed": {
         "flowType": {

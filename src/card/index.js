@@ -1,11 +1,10 @@
 // @flow
-import type { SimpleTagPropsT } from '@rmwc/base';
 import type { IconButtonPropsT } from '@rmwc/icon-button';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { Button } from '@rmwc/button';
-import { simpleTag } from '@rmwc/base';
+import { Component } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { IconButton } from '@rmwc/icon-button';
 
@@ -15,24 +14,20 @@ import { IconButton } from '@rmwc/icon-button';
 export type CardPropsT = {
   /** Removes the shadow and displays a hairline outline instead */
   outlined?: boolean
-} & SimpleTagPropsT;
+};
 
-const CardRoot = simpleTag({
-  displayName: 'CardRoot',
-  classNames: (props: CardPropsT) => [
+/** @extends React.Component */
+/** A Card Component */
+export class Card extends Component<CardPropsT> {
+  static displayName = 'Card';
+  classNames = (props: CardPropsT) => [
     'mdc-card',
     {
       'mdc-card--outlined': props.outlined
     }
-  ],
-  consumeProps: ['outlined']
-});
-
-/** A Card Component */
-export const Card: React.ComponentType<CardPropsT> = (props: CardPropsT) => (
-  <CardRoot {...props} />
-);
-Card.displayName = 'Card';
+  ];
+  consumeProps = ['outlined'];
+}
 
 /****************************************************************
  * Card Media
@@ -42,46 +37,43 @@ export type CardMediaPropsT = {
   square?: boolean,
   /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */
   sixteenByNine?: boolean
-} & SimpleTagPropsT;
+};
 
-const CardMediaRoot: React.ComponentType<CardMediaPropsT> = simpleTag({
-  displayName: 'CardMediaRoot',
-  tag: 'section',
-  classNames: (props: CardMediaPropsT) => [
+/** @extends React.Component */
+/** Media area that displays a custom background-image with background-size: cover */
+export class CardMedia extends Component<CardMediaPropsT> {
+  static displayName = 'CardMedia';
+  tag = 'section';
+  classNames = (props: CardMediaPropsT) => [
     'mdc-card__media',
     {
       'mdc-card__media--square': props.square,
       'mdc-card__media--16-9': props.sixteenByNine
     }
-  ],
-  consumeProps: ['square', 'sixteenByNine']
-});
+  ];
+  consumeProps = ['square', 'sixteenByNine'];
+}
 
-/** Media area that displays a custom background-image with background-size: cover */
-export const CardMedia: React.ComponentType<CardMediaPropsT> = (
-  props: CardMediaPropsT
-) => <CardMediaRoot {...props} />;
-CardMedia.displayName = 'CardMedia';
-
+/** @extends React.Component */
 /** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
-export const CardMediaContent = simpleTag({
-  displayName: 'CardMediaContent',
-  classNames: 'mdc-card__media-content'
-});
+export class CardMediaContent extends Component<{}> {
+  static displayName = 'CardMediaContent';
+  classNames = ['mdc-card__media-content'];
+}
 
-const CardPrimaryActionRoot = withRipple({ surface: false })(
-  simpleTag({
-    displayName: 'CardPrimaryActionRoot',
-    classNames: 'mdc-card__primary-action'
-  })
+const CardPrimaryActionRoot: React.ComponentType<WithRipplePropsT> = withRipple(
+  { surface: false }
+)(
+  class extends Component<{}> {
+    static displayName = 'CardPrimaryActionRoot';
+    classNames = ['mdc-card__primary-action'];
+  }
 );
 
 /** The main clickable area for the primary content of the card */
-export const CardPrimaryAction: React.ComponentType<
-  SimpleTagPropsT & WithRipplePropsT
-> = (props: SimpleTagPropsT & WithRipplePropsT) => (
-  <CardPrimaryActionRoot {...props} />
-);
+export const CardPrimaryAction: React.ComponentType<WithRipplePropsT> = ({
+  ...rest
+}) => <CardPrimaryActionRoot {...rest} />;
 CardPrimaryAction.displayName = 'CardPrimaryAction';
 
 /****************************************************************
@@ -90,47 +82,45 @@ CardPrimaryAction.displayName = 'CardPrimaryAction';
 export type CardActionsT = {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
   fullBleed?: boolean
-} & SimpleTagPropsT;
+};
 
-const CardActionsRoot = simpleTag({
-  displayName: 'CardActionsRoot',
-  tag: 'section',
-  classNames: (props: CardActionsT) => [
+/** @extends React.Component */
+/** Row containing action buttons and/or icons */
+export class CardActions extends Component<CardActionsT> {
+  static displayName = 'CardActions';
+  tag = 'section';
+  classNames = (props: CardActionsT) => [
     'mdc-card__actions',
     { 'mdc-card__actions--full-bleed': props.fullBleed }
-  ],
-  consumeProps: ['fullBleed']
-});
+  ];
+  consumeProps = ['fullBleed'];
+}
 
-/** Row containing action buttons and/or icons */
-export const CardActions: React.ComponentType<CardActionsT> = (
-  props: CardActionsT
-) => <CardActionsRoot {...props} />;
-CardActions.displayName = 'CardActions';
-
+/** @extends React.Component */
 /** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
-export const CardActionButtons = simpleTag({
-  displayName: 'CardActionButtons',
-  classNames: 'mdc-card__action-buttons'
-});
+export class CardActionButtons extends Component<{}> {
+  static displayName = 'CardActionButtons';
+  classNames = ['mdc-card__action-buttons'];
+}
 
+/** @extends React.Component */
 /** A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons */
-export const CardActionIcons = simpleTag({
-  displayName: 'CardActionIcons',
-  classNames: 'mdc-card__action-icons'
-});
+export class CardActionIcons extends Component<{}> {
+  static displayName = 'CardActionIcons';
+  classNames = ['mdc-card__action-icons'];
+}
 
 export type CardActionPropsT = IconButtonPropsT;
 
-const CardActionIcon = simpleTag({
-  tag: IconButton,
-  classNames: ['mdc-card__action', 'mdc-card__action--icon']
-});
+class CardActionIcon extends Component<{}> {
+  tag = IconButton;
+  classNames = ['mdc-card__action', 'mdc-card__action--icon'];
+}
 
-const CardActionButton = simpleTag({
-  tag: Button,
-  classNames: ['mdc-card__action', 'mdc-card__action--button']
-});
+class CardActionButton extends Component<{}> {
+  tag = Button;
+  classNames = ['mdc-card__action', 'mdc-card__action--button'];
+}
 
 /** A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component. */
 export class CardAction extends React.Component<CardActionPropsT> {
@@ -144,5 +134,3 @@ export class CardAction extends React.Component<CardActionPropsT> {
     );
   }
 }
-
-CardAction.displayName = 'CardAction';

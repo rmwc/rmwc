@@ -1,7 +1,39 @@
 [
   {
-    "description": "",
-    "displayName": "GridRoot",
+    "description": "A Grid component",
+    "displayName": "Grid",
+    "methods": [],
+    "props": {
+      "fixedColumnWidth": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Specifies the grid should have fixed column width."
+      },
+      "align": {
+        "flowType": {
+          "name": "union",
+          "raw": "'left' | 'right'",
+          "elements": [
+            {
+              "name": "literal",
+              "value": "'left'"
+            },
+            {
+              "name": "literal",
+              "value": "'right'"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies the alignment of the whole grid."
+      }
+    }
+  },
+  {
+    "description": "A Grid cell",
+    "displayName": "GridCell",
     "methods": [
       {
         "name": "classNames",
@@ -12,18 +44,91 @@
             "name": "props",
             "type": {
               "name": "intersection",
-              "raw": "{\n  /** Specifies the grid should have fixed column width. */\n  fixedColumnWidth?: boolean,\n  /** Specifies the alignment of the whole grid. */\n  align?: 'left' | 'right'\n} & SimpleTagPropsT",
+              "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n} & SimpleTagPropsT",
               "elements": [
                 {
                   "name": "signature",
                   "type": "object",
-                  "raw": "{\n  /** Specifies the grid should have fixed column width. */\n  fixedColumnWidth?: boolean,\n  /** Specifies the alignment of the whole grid. */\n  align?: 'left' | 'right'\n}",
+                  "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n}",
                   "signature": {
                     "properties": [
                       {
-                        "key": "fixedColumnWidth",
+                        "key": "span",
                         "value": {
-                          "name": "boolean",
+                          "name": "union",
+                          "raw": "string | number",
+                          "elements": [
+                            {
+                              "name": "string"
+                            },
+                            {
+                              "name": "number"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "phone",
+                        "value": {
+                          "name": "union",
+                          "raw": "string | number",
+                          "elements": [
+                            {
+                              "name": "string"
+                            },
+                            {
+                              "name": "number"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "tablet",
+                        "value": {
+                          "name": "union",
+                          "raw": "string | number",
+                          "elements": [
+                            {
+                              "name": "string"
+                            },
+                            {
+                              "name": "number"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "desktop",
+                        "value": {
+                          "name": "union",
+                          "raw": "string | number",
+                          "elements": [
+                            {
+                              "name": "string"
+                            },
+                            {
+                              "name": "number"
+                            }
+                          ],
+                          "required": false
+                        }
+                      },
+                      {
+                        "key": "order",
+                        "value": {
+                          "name": "union",
+                          "raw": "string | number",
+                          "elements": [
+                            {
+                              "name": "string"
+                            },
+                            {
+                              "name": "number"
+                            }
+                          ],
                           "required": false
                         }
                       },
@@ -31,15 +136,19 @@
                         "key": "align",
                         "value": {
                           "name": "union",
-                          "raw": "'left' | 'right'",
+                          "raw": "'top' | 'middle' | 'bottom'",
                           "elements": [
                             {
                               "name": "literal",
-                              "value": "'left'"
+                              "value": "'top'"
                             },
                             {
                               "name": "literal",
-                              "value": "'right'"
+                              "value": "'middle'"
+                            },
+                            {
+                              "name": "literal",
+                              "value": "'bottom'"
                             }
                           ],
                           "required": false
@@ -52,18 +161,13 @@
                   "name": "SimpleTagPropsT"
                 }
               ],
-              "alias": "GridPropsT"
+              "alias": "GridCellPropsT"
             }
           }
         ],
         "returns": null
       }
-    ]
-  },
-  {
-    "description": "A Grid cell",
-    "displayName": "GridCell",
-    "methods": [],
+    ],
     "props": {
       "span": {
         "flowType": {
@@ -173,37 +277,5 @@
     "description": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
     "displayName": "GridInner",
     "methods": []
-  },
-  {
-    "description": "A Grid component",
-    "displayName": "Grid",
-    "methods": [],
-    "props": {
-      "fixedColumnWidth": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Specifies the grid should have fixed column width."
-      },
-      "align": {
-        "flowType": {
-          "name": "union",
-          "raw": "'left' | 'right'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'left'"
-            },
-            {
-              "name": "literal",
-              "value": "'right'"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Specifies the alignment of the whole grid."
-      }
-    }
   }
 ]

@@ -2,7 +2,52 @@
   {
     "description": "The Elevation Component",
     "displayName": "Elevation",
-    "methods": [],
+    "methods": [
+      {
+        "name": "classNames",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** A number from 0 - 24 for different levels of elevation */\n  z: number | string,\n  /** Allows for smooth transitions between elevations when the z value changes. */\n  transition?: boolean\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "z",
+                    "value": {
+                      "name": "union",
+                      "raw": "number | string",
+                      "elements": [
+                        {
+                          "name": "number"
+                        },
+                        {
+                          "name": "string"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "transition",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              },
+              "alias": "ElevationPropsT"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "z": {
         "flowType": {
@@ -17,15 +62,23 @@
             }
           ]
         },
-        "required": true,
-        "description": "A number from 0 - 24 for different levels of elevation"
+        "required": false,
+        "description": "A number from 0 - 24 for different levels of elevation",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
       },
       "transition": {
         "flowType": {
           "name": "boolean"
         },
         "required": false,
-        "description": "Allows for smooth transitions between elevations when the z value changes."
+        "description": "Allows for smooth transitions between elevations when the z value changes.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       }
     }
   }
