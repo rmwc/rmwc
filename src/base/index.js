@@ -1,6 +1,7 @@
 // @flow
+import * as PropTypes from 'prop-types';
 export { default as classNames } from 'classnames';
-export { default as PropTypes } from 'prop-types';
+export { PropTypes };
 
 export { simpleTag } from './simpleTag';
 export type { SimpleTagPropsT } from './simpleTag';
