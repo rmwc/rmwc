@@ -93,7 +93,9 @@ export type DialogButtonPropsT = {
 } & ButtonPropsT;
 
 /** Action buttons for the Dialog. */
-export class DialogButton extends React.Component<DialogButtonPropsT> {
+export class DialogButton extends React.Component<
+  DialogButtonPropsT & { className?: string }
+> {
   static displayName = 'DialogButton';
   render() {
     const { action = '', className, isDefaultAction, ...rest } = this.props;

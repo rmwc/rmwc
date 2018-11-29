@@ -60,7 +60,7 @@ export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
 
 /** @extends React.Component */
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export class ButtonIcon extends Component<{}> {
+export class ButtonIcon extends Component<IconPropsT> {
   static displayName = 'ButtonIcon';
   tag = Icon;
   classNames = ['mdc-button__icon'];

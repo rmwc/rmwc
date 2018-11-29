@@ -6,8 +6,10 @@ export type GridPropsT = {
   /** Specifies the grid should have fixed column width. */
   fixedColumnWidth?: boolean,
   /** Specifies the alignment of the whole grid. */
-  align?: 'left' | 'right'
-} & SimpleTagPropsT;
+  align?: 'left' | 'right',
+  /** Children for the Grid */
+  children?: React.Node
+};
 
 class GridRoot extends Component<GridPropsT> {
   static displayName = 'GridRoot';
@@ -55,7 +57,7 @@ export type GridCellPropsT = {
   order?: string | number,
   /** Specifies the alignment of cell */
   align?: 'top' | 'middle' | 'bottom'
-} & SimpleTagPropsT;
+};
 
 /** @extends React.Component */
 /** A Grid cell */
