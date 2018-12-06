@@ -210,8 +210,8 @@ const lightTextPalette = [
 
 const darkTextPalette = [
   'rgba(255, 255, 255, 1)',
-  'rgba(255, 255, 255, 0.7',
-  'rgba(255, 255, 255, 0.5'
+  'rgba(255, 255, 255, 0.7)',
+  'rgba(255, 255, 255, 0.5)'
 ];
 
 export const getAutoColorsForTheme = (colors: { [key: string]: string }) => {
