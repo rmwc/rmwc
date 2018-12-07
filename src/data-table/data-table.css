@@ -244,6 +244,7 @@
 
 /** Select */
 .rmwc-data-table__cell .mdc-select {
+  vertical-align: middle;
   margin: -0.75rem -1rem;
   background-color: transparent;
   border-radius: 0;
