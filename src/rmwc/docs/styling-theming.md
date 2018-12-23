@@ -49,7 +49,7 @@ Just add your className. If you need to target a node that is not directly expos
 ```jsx
 /** in your JSX */
 import { DrawerHeader } from '@rmwc/drawer';
-Import styles from './my-style-sheet.css';
+import styles from './my-style-sheet.css';
 
 const MyComponent = props => (
   <DrawerHeader className={styles.myDrawerHeader}>Hello World</DrawerHeader>
