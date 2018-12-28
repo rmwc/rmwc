@@ -32,6 +32,13 @@
         },
         "required": false,
         "description": "Indicates this is the default selected action when pressing enter"
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
       }
     }
   },

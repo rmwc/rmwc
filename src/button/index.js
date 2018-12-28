@@ -22,7 +22,9 @@ export type ButtonPropsT = {
   /** make the button disabled */
   disabled?: boolean,
   /** Enable / disable the ripple. */
-  ripple?: boolean
+  ripple?: boolean,
+  /** Additional className for the button */
+  className?: string
 } & WithRipplePropsT;
 
 export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({

@@ -28,6 +28,14 @@
         },
         "required": false,
         "description": "Specifies the alignment of the whole grid."
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactNode",
+          "raw": "React.Node"
+        },
+        "required": false,
+        "description": "Children for the Grid"
       }
     }
   },
@@ -43,124 +51,115 @@
           {
             "name": "props",
             "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "span",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
+              "name": "signature",
+              "type": "object",
+              "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n}",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "span",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
                         }
-                      },
-                      {
-                        "key": "phone",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "phone",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
                         }
-                      },
-                      {
-                        "key": "tablet",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "tablet",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
                         }
-                      },
-                      {
-                        "key": "desktop",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "desktop",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
                         }
-                      },
-                      {
-                        "key": "order",
-                        "value": {
-                          "name": "union",
-                          "raw": "string | number",
-                          "elements": [
-                            {
-                              "name": "string"
-                            },
-                            {
-                              "name": "number"
-                            }
-                          ],
-                          "required": false
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "order",
+                    "value": {
+                      "name": "union",
+                      "raw": "string | number",
+                      "elements": [
+                        {
+                          "name": "string"
+                        },
+                        {
+                          "name": "number"
                         }
-                      },
-                      {
-                        "key": "align",
-                        "value": {
-                          "name": "union",
-                          "raw": "'top' | 'middle' | 'bottom'",
-                          "elements": [
-                            {
-                              "name": "literal",
-                              "value": "'top'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'middle'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'bottom'"
-                            }
-                          ],
-                          "required": false
+                      ],
+                      "required": false
+                    }
+                  },
+                  {
+                    "key": "align",
+                    "value": {
+                      "name": "union",
+                      "raw": "'top' | 'middle' | 'bottom'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'top'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'middle'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'bottom'"
                         }
-                      }
-                    ]
+                      ],
+                      "required": false
+                    }
                   }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
+                ]
+              },
               "alias": "GridCellPropsT"
             }
           }
