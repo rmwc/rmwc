@@ -1,3 +1,9 @@
+#### 4.0.3 (2018-12-28)
+
+##### Bug Fixes
+
+* **TS:**  Corrects className issue on buttons (f999004a)
+
 #### 4.0.1 (2018-11-28)
 
 ##### Bug Fixes
