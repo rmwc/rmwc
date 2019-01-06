@@ -133,7 +133,7 @@ class SelectNativeControl extends React.Component<{
               return (
                 <optgroup label={label} key={label}>
                   {options.map(({ label, ...option }, i) => (
-                    <option key={label} {...option} value={option.value}>
+                    <option key={`${label}-${option.value}`} {...option} value={option.value}>
                       {label}
                     </option>
                   ))}
@@ -142,7 +142,7 @@ class SelectNativeControl extends React.Component<{
             }
 
             return (
-              <option key={label} {...option} value={option.value}>
+              <option key={`${label}-${option.value}`} {...option} value={option.value}>
                 {label}
               </option>
             );
@@ -218,7 +218,7 @@ class SelectEnhancedControl extends React.Component<SelectEnhancedControlPropsT>
                     currentIndex += 1;
                     return (
                       <MenuItem
-                        key={label}
+                        key={`${label}-${option.value}`} 
                         selected={currentIndex - 1 === selectedIndex}
                         {...option}
                         data-value={option.value}
@@ -236,7 +236,7 @@ class SelectEnhancedControl extends React.Component<SelectEnhancedControlPropsT>
           currentIndex += 1;
           return (
             <MenuItem
-              key={label}
+              key={`${label}-${option.value}`} 
               selected={currentIndex - 1 === selectedIndex}
               {...option}
               data-value={option.value}
