@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/provider",
-  "version": "4.0.1",
+  "version": "4.0.4",
   "description": "RMWC Provider component",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^4.0.1"
+    "@rmwc/base": "^4.0.4"
   }
 }

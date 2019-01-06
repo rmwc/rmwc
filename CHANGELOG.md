@@ -1,3 +1,9 @@
+#### 4.0.4 (2019-01-06)
+
+##### Bug Fixes
+
+* **Select:**  use a combination of label and value as key for options (dc3d8a3e)
+
 #### 4.0.3 (2018-12-28)
 
 ##### Bug Fixes
