@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/line-ripple",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "RMWC LineRipple component",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@material/line-ripple": "~0.41.0",
-    "@rmwc/base": "^4.0.5"
+    "@rmwc/base": "^4.0.6"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "RMWC Dialog component",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   "dependencies": {
     "@material/dialog": "~0.41.0",
     "@material/dom": "~0.41.0",
-    "@rmwc/base": "^4.0.5",
-    "@rmwc/button": "^4.0.5",
+    "@rmwc/base": "^4.0.6",
+    "@rmwc/button": "^4.0.6",
     "focus-trap": "^2.3.0"
   }
 }

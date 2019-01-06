@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/grid-list",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "RMWC GridList component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/grid-list": "~0.41.0",
-    "@rmwc/base": "^4.0.5",
-    "@rmwc/icon": "^4.0.5"
+    "@rmwc/base": "^4.0.6",
+    "@rmwc/icon": "^4.0.6"
   }
 }

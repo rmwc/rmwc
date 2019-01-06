@@ -1,3 +1,9 @@
+#### 4.0.6 (2019-01-06)
+
+##### Bug Fixes
+
+* **TypeScript:**  Correcting issue with build (f42f7296)
+
 #### 4.0.5 (2019-01-06)
 
 ##### Bug Fixes
