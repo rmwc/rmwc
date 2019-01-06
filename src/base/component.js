@@ -4,7 +4,7 @@ import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './withTheme';
 import { deprecationWarning } from './utils/deprecationWarning';
 
-type ComponentPropsT<P> = {
+export type ComponentPropsT<P = {}> = {
   className?: string,
   elementRef?: React.Ref<any>,
   theme?: string | string[],

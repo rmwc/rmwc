@@ -2,6 +2,7 @@
 import type { RMWCProviderOptionsT } from '@rmwc/provider';
 import type { WithRipplePropsT } from '@rmwc/ripple';
 import type { IconPropsT } from '@rmwc/icon';
+import type { ComponentPropsT } from '@rmwc/base';
 
 import * as React from 'react';
 import { getProviderOptions } from '@rmwc/provider';
@@ -25,7 +26,8 @@ export type ButtonPropsT = {
   ripple?: boolean,
   /** Additional className for the button */
   className?: string
-} & WithRipplePropsT;
+} & WithRipplePropsT &
+  ComponentPropsT<{}>;
 
 export const ButtonRoot: React.ComponentType<ButtonPropsT> = withRipple({
   surface: false

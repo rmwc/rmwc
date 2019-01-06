@@ -9,7 +9,8 @@ export type GridPropsT = {
   align?: 'left' | 'right',
   /** Children for the Grid */
   children?: React.Node
-};
+  //$FlowFixMe
+} & React.HTMLProps<HTMLElement>;
 
 class GridRoot extends Component<GridPropsT> {
   static displayName = 'GridRoot';

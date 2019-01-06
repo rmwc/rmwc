@@ -66,6 +66,13 @@
         },
         "required": false,
         "description": "Enable / disable the ripple."
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Additional className for the button"
       }
     },
     "context": {

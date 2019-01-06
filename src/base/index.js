@@ -17,6 +17,7 @@ export { withFoundation, syncFoundationProp } from './withFoundation';
 
 export { FoundationComponent } from './foundation-component';
 export { Component } from './component';
+export type { ComponentPropsT } from './component';
 
 //$FlowFixMe
 export type CustomEventT<T> = CustomEvent<T> & SyntheticEvent<EventTarget>;
