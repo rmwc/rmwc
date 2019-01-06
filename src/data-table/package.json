@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/data-table",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "RMWC Data Table Component",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^4.0.4",
-    "@rmwc/icon": "^4.0.4"
+    "@rmwc/base": "^4.0.5",
+    "@rmwc/icon": "^4.0.5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/top-app-bar",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "RMWC TopAppBar component",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material/top-app-bar": "~0.41.0",
-    "@rmwc/base": "^4.0.4",
-    "@rmwc/icon": "^4.0.4"
+    "@rmwc/base": "^4.0.5",
+    "@rmwc/icon": "^4.0.5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/card",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "RMWC Card component",
   "main": "index.js",
   "scripts": {
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "@material/card": "~0.41.0",
-    "@rmwc/base": "^4.0.4",
-    "@rmwc/button": "^4.0.4",
-    "@rmwc/icon-button": "^4.0.4",
-    "@rmwc/ripple": "^4.0.4"
+    "@rmwc/base": "^4.0.5",
+    "@rmwc/button": "^4.0.5",
+    "@rmwc/icon-button": "^4.0.5",
+    "@rmwc/ripple": "^4.0.5"
   }
 }

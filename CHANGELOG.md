@@ -1,3 +1,9 @@
+#### 4.0.5 (2019-01-06)
+
+##### Bug Fixes
+
+* **Typescript:**  Correcting types (20dec9c3)
+
 #### 4.0.4 (2019-01-06)
 
 ##### Bug Fixes

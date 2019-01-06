@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tabs",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "RMWC Tabs component",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "@material/tab-bar": "~0.41.0",
     "@material/tab-indicator": "~0.41.0",
     "@material/tab-scroller": "~0.41.0",
-    "@rmwc/base": "^4.0.4",
-    "@rmwc/icon": "^4.0.4"
+    "@rmwc/base": "^4.0.5",
+    "@rmwc/icon": "^4.0.5"
   }
 }
