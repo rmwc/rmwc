@@ -94,7 +94,16 @@ Promise.all(promises).then(() => {
   const compileTypescriptCmd = `./node_modules/.bin/tsc`;
   execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-  glob('./**/dist/**/*.tsx', {}, function(er, files) {
-    files.forEach(fs.unlinkSync);
-  });
+  setTimeout(() => {
+    glob('./**/dist/**/*.tsx', {}, function(er, files) {
+      files.forEach(f => {
+        console.log('Removing File', f);
+        fs.unlinkSync(f);
+      });
+
+      setTimeout(() => {
+        console.log('DONE!');
+      }, 1000);
+    });
+  }, 1000);
 });

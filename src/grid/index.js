@@ -10,7 +10,7 @@ export type GridPropsT = {
   /** Children for the Grid */
   children?: React.Node
   //$FlowFixMe
-} & React.HTMLProps<HTMLElement>;
+} & React.HTMLProps<any>;
 
 class GridRoot extends Component<GridPropsT> {
   static displayName = 'GridRoot';
