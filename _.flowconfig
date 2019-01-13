@@ -1,0 +1,16 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/config-chain/.*
+node_modules/config-chain
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='^rmwc\/\(.*\)$' -> '<PROJECT_ROOT>/\1'
+module.name_mapper='^rmwc$' -> '<PROJECT_ROOT>'
+module.name_mapper='^@rmwc/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+
+[strict]

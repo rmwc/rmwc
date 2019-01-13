@@ -12,7 +12,7 @@ export class DocumentComponent extends React.Component {
     return this.flatDocs.find(v => v.displayName === name);
   }
 
-  renderRaw(raw: string) {
+  renderRaw(raw) {
     return raw.split('\n').map((s, i) => (
       <React.Fragment key={i}>
         {i !== 0 && <br />}
@@ -41,9 +41,9 @@ export class DocumentComponent extends React.Component {
           props:
             def.props || acc.props
               ? {
-                ...(def.props || {}),
-                ...(acc.props || {})
-              }
+                  ...(def.props || {}),
+                  ...(acc.props || {})
+                }
               : null
         };
       }, {});
@@ -56,8 +56,7 @@ export class DocumentComponent extends React.Component {
       <div className="document-component">
         <h2>{displayName}</h2>
         {docs && !!docs.description && <p>{docs.description}</p>}
-        {docs &&
-          docs.props && (
+        {docs && docs.props && (
           <div>
             <h3>Props</h3>
             <table>
@@ -78,9 +77,9 @@ export class DocumentComponent extends React.Component {
                     <td>
                       <code>
                         {prop.flowType &&
-                            this.renderRaw(
-                              prop.flowType.raw || prop.flowType.name || ''
-                            )}
+                          this.renderRaw(
+                            prop.flowType.raw || prop.flowType.name || ''
+                          )}
                       </code>
                     </td>
                     <td>
