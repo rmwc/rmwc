@@ -1,7 +1,7 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import { ComponentProps, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { simpleTag } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 import { noop } from '@rmwc/base';
 // @ts-ignore
 import { MDCDrawer } from '@material/drawer';
@@ -11,30 +11,30 @@ import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
  * Drawer Headers
  ***************************************************************************************/
 /** An optional header for the Drawer. */
-export const DrawerHeader = simpleTag({
+export const DrawerHeader = componentFactory({
   displayName: 'DrawerHeader',
-  classNames: 'mdc-drawer__header'
+  classNames: ['mdc-drawer__header']
 });
 
 /** An title for the DrawerHeader. */
-export const DrawerTitle = simpleTag({
+export const DrawerTitle = componentFactory({
   displayName: 'DrawerTitle',
-  classNames: 'mdc-drawer__title'
+  classNames: ['mdc-drawer__title']
 });
 
 /** A subtitle for the DrawerHeader. */
-export const DrawerSubtitle = simpleTag({
+export const DrawerSubtitle = componentFactory({
   displayName: 'DrawerSubtitle',
-  classNames: 'mdc-drawer__subtitle'
+  classNames: ['mdc-drawer__subtitle']
 });
 
 /***************************************************************************************
  * Drawer Content
  ***************************************************************************************/
 /** Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else. */
-export const DrawerContent = simpleTag({
+export const DrawerContent = componentFactory({
   displayName: 'DrawerContent',
-  classNames: 'mdc-drawer__content'
+  classNames: ['mdc-drawer__content']
 });
 
 /***************************************************************************************
@@ -51,9 +51,9 @@ export const DrawerScrim = () => <div className="mdc-drawer-scrim" />;
  * DrawerAppContent
  ***************************************************************************************/
 /** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export const DrawerAppContent = simpleTag({
+export const DrawerAppContent = componentFactory({
   displayName: 'DrawerAppContent',
-  classNames: 'mdc-drawer-app-content'
+  classNames: ['mdc-drawer-app-content']
 });
 
 /***************************************************************************************
@@ -70,9 +70,9 @@ export type DrawerPropsT = {
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */
   modal?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-export const DrawerRoot = simpleTag({
+export const DrawerRoot = componentFactory({
   displayName: 'DrawerRoot',
   tag: 'aside',
   classNames: (props: DrawerPropsT) => [
@@ -124,7 +124,7 @@ const slidableDrawerFactory = (MDCConstructor: Function, displayName: string) =>
       const { onOpen, onClose, open, ...rest } = this.props;
       const { root_ } = this.foundationRefs;
 
-      return <DrawerRoot elementRef={root_} {...rest} />;
+      return <DrawerRoot ref={root_} {...rest} />;
     }
   };
 

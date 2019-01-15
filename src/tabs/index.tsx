@@ -1,11 +1,11 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
-import { IconPropsT } from '@rmwc/icon';
+import { ComponentProps, CustomEventT, componentFactory } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
 // @ts-ignore
 import { MDCTabBar } from '@material/tab-bar';
 import { Icon } from '@rmwc/icon';
-import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import { withFoundation, syncFoundationProp } from '@rmwc/base';
 
 /************************************************************
  * TabBar
@@ -14,14 +14,14 @@ export type TabBarEventDetailT = {
   index: number;
 };
 
-export type TabBarPropsT = {
+export interface TabBarPropsT extends ComponentProps {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
   onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => void;
   /** The index of the active tab. */
   activeTabIndex?: number;
-} & SimpleTagPropsT;
+}
 
-export const TabBarRoot = simpleTag({
+export const TabBarRoot = componentFactory({
   displayName: 'TabBarRoot',
   tag: 'nav',
   classNames: (props: TabBarPropsT & { isTabScroller?: boolean }) => [
@@ -33,19 +33,19 @@ export const TabBarRoot = simpleTag({
   consumeProps: ['isTabScroller']
 });
 
-export const TabScroller = simpleTag({
+export const TabScroller = componentFactory({
   displayName: 'TabScroller',
-  classNames: 'mdc-tab-scroller'
+  classNames: ['mdc-tab-scroller']
 });
 
-export const TabScrollerScrollArea = simpleTag({
+export const TabScrollerScrollArea = componentFactory({
   displayName: 'TabScrollerScrollArea',
-  classNames: 'mdc-tab-scroller__scroll-area'
+  classNames: ['mdc-tab-scroller__scroll-area']
 });
 
-export const TabScrollerScrollContent = simpleTag({
+export const TabScrollerScrollContent = componentFactory({
   displayName: 'TabScrollerScrollContent',
-  classNames: 'mdc-tab-scroller__scroll-content'
+  classNames: ['mdc-tab-scroller__scroll-content']
 });
 
 /** The TabBar component */
@@ -148,7 +148,7 @@ export class TabBar extends withFoundation({
     const { root_ } = this.foundationRefs;
 
     return (
-      <TabBarRoot {...rest} elementRef={root_}>
+      <TabBarRoot {...rest} ref={root_}>
         <TabScroller>
           <TabScrollerScrollArea>
             <TabScrollerScrollContent>{children}</TabScrollerScrollContent>
@@ -162,9 +162,9 @@ export class TabBar extends withFoundation({
 /************************************************************
  * Tab
  ************************************************************/
-export type TabPropsT = {
+export interface TabProps extends ComponentProps, IconProps {
   /** A label for the tab. */
-  label?: React.ReactNode;
+  label?: any;
   /** The label for the tab, passed as children. */
   children?: React.ReactNode;
   /** The icon to use for the tab. */
@@ -173,13 +173,12 @@ export type TabPropsT = {
   stacked?: boolean;
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean;
-} & IconPropsT &
-  SimpleTagPropsT;
+}
 
-export const TabRoot: React.ComponentType<TabPropsT> = simpleTag({
+export const TabRoot = componentFactory({
   displayName: 'TabRoot',
   tag: 'button',
-  classNames: (props: TabPropsT) => [
+  classNames: (props: TabProps) => [
     'mdc-tab',
     {
       'mdc-tab--stacked': props.stacked
@@ -199,14 +198,14 @@ export class TabIndicator extends React.PureComponent<{}> {
 }
 
 /** A Tab icon. This is an instance of the Icon component. */
-export const TabIcon: React.ComponentType<IconPropsT> = simpleTag({
+export const TabIcon = componentFactory<IconProps>({
   displayName: 'TabIcon',
   tag: Icon,
-  classNames: 'mdc-tab__icon'
+  classNames: ['mdc-tab__icon']
 });
 
 /** A Tab component */
-export const Tab: React.ComponentType<TabPropsT> = ({
+export const Tab = ({
   children,
   label,
   icon,
@@ -214,7 +213,7 @@ export const Tab: React.ComponentType<TabPropsT> = ({
   stacked,
   restrictIndicator,
   ...rest
-}: TabPropsT) => {
+}: TabProps) => {
   return (
     <TabRoot stacked={stacked} {...rest}>
       <div className="mdc-tab__content">

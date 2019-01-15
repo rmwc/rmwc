@@ -1,5 +1,5 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
-import { IconPropsT } from '@rmwc/icon';
+import { ComponentProps, CustomEventT, componentFactory } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
 // @ts-ignore
@@ -19,7 +19,7 @@ type FormattedOption = {
   options?: FormattedOption[];
 };
 
-export type SelectPropsT = {
+export interface SelectPropsT extends ComponentProps {
   /** The value for a controlled select. */
   value?: string;
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
@@ -42,9 +42,7 @@ export type SelectPropsT = {
   withLeadingIcon?: React.ReactNode;
   /** Styles to be applied to the root of the component. */
   style?: Object;
-} & SimpleTagPropsT &
-  //$FlowFixMe
-  React.InputHTMLAttributes<HTMLInputElement>;
+}
 
 /**
  * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
@@ -77,20 +75,20 @@ const createSelectOptions = (options: any): FormattedOption[] => {
   return options;
 };
 
-class SelectRoot extends Component<SelectPropsT> {
-  static displayName = 'SelectRoot';
-  static defaultProps = {
+const SelectRoot = componentFactory({
+  displayName: 'SelectRoot',
+  defaultProps: {
     role: 'listbox'
-  };
-  classNames = (props: SelectPropsT) => [
+  },
+  classNames: (props: SelectPropsT) => [
     'mdc-select',
     {
-      'mdc-select--outlined': props.outlined,
-      'mdc-select--with-leading-icon': props.withLeadingIcon
+      'mdc-select--outlined': !!props.outlined,
+      'mdc-select--with-leading-icon': !!props.withLeadingIcon
     }
-  ];
-  consumeProps = ['outlined', 'withLeadingIcon'];
-}
+  ],
+  consumeProps: ['outlined', 'withLeadingIcon']
+});
 
 class SelectDropdownArrow extends React.Component<{}> {
   shouldComponentUpdate() {
@@ -103,7 +101,6 @@ class SelectDropdownArrow extends React.Component<{}> {
 }
 
 class SelectNativeControl extends React.Component<{
-  elementRef: React.Ref<HTMLSelectElement>;
   selectOptions: any;
   placeholder?: string;
   children: React.ReactNode;
@@ -113,15 +110,9 @@ class SelectNativeControl extends React.Component<{
   static displayName = 'SelectNativeControl';
 
   render() {
-    const {
-      elementRef,
-      selectOptions,
-      placeholder = '',
-      children,
-      ...rest
-    } = this.props;
+    const { selectOptions, placeholder = '', children, ...rest } = this.props;
     return (
-      <select {...rest} className="mdc-select__native-control" ref={elementRef}>
+      <select {...rest} className="mdc-select__native-control">
         {!this.props.value && !this.props.defaultValue && (
           <option value="" disabled={placeholder === ''}>
             {placeholder}
@@ -168,7 +159,6 @@ type SelectEnhancedControlPropsT = {
   selectOptions: any;
   selectedIndex: number;
   placeholder?: string;
-  elementRef: React.Ref<HTMLSelectElement>;
   apiRef: React.Ref<any>;
   value?: string;
   defaultValue?: any;
@@ -190,7 +180,6 @@ class SelectEnhancedControl extends React.Component<
   render() {
     const {
       selectOptions,
-      elementRef,
       apiRef,
       selectedIndex,
       placeholder,
@@ -206,12 +195,7 @@ class SelectEnhancedControl extends React.Component<
       currentIndex++ === 0;
 
     return (
-      <Menu
-        {...rest}
-        elementRef={elementRef}
-        ref={apiRef}
-        className="mdc-select__menu"
-      >
+      <Menu {...rest} ref={apiRef} className="mdc-select__menu">
         {showPlaceholder && (
           <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
             {placeholder}
@@ -714,7 +698,7 @@ export class SelectBase extends FoundationComponent<
         withLeadingIcon={withLeadingIcon}
         className={this.classList.root_.renderToString()}
         outlined={outlined}
-        elementRef={(el: HTMLElement) => (this.root_ = el)}
+        ref={(el: HTMLElement) => (this.root_ = el)}
         style={style}
       >
         {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon_')}
@@ -743,7 +727,7 @@ export class SelectBase extends FoundationComponent<
             apiRef={apiRef => {
               this.menu_ = apiRef;
             }}
-            elementRef={el => (this.menuElement_ = el)}
+            ref={(el: any) => (this.menuElement_ = el)}
             open={this.state.menuOpen}
             onClose={this.handleMenuClosed_}
             onOpen={this.handleMenuOpened_}
@@ -754,7 +738,7 @@ export class SelectBase extends FoundationComponent<
         ) : (
           <SelectNativeControl
             {...rest}
-            elementRef={el => (this.nativeControl_ = el)}
+            ref={(el: any) => (this.nativeControl_ = el)}
             {...sharedControlProps}
             {...sharedEventProps}
           >
@@ -777,11 +761,11 @@ export class SelectBase extends FoundationComponent<
   }
 }
 
-export class SelectIcon extends FoundationComponent<IconPropsT> {
+export class SelectIcon extends FoundationComponent<IconProps> {
   static displayName = 'SelectIcon';
   root_: null | HTMLElement = null;
 
-  constructor(props: IconPropsT) {
+  constructor(props: IconProps) {
     super(props);
     this.createClassList('root_');
     this.createPropsList('root_');

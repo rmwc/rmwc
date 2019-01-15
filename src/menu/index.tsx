@@ -1,4 +1,4 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import { CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
@@ -9,7 +9,12 @@ import {
   // @ts-ignore
 } from '@material/menu-surface';
 import { List, ListItem } from '@rmwc/list';
-import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import {
+  componentFactory,
+  ComponentProps,
+  withFoundation,
+  syncFoundationProp
+} from '@rmwc/base';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
@@ -46,15 +51,15 @@ export type MenuSurfacePropsT = {
   onClose?: (evt: CustomEventT<void>) => void;
   /** Children to render. */
   children?: React.ReactNode;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
 export type MenuPropsT = {
   /** Callback that fires when a Menu item is selected. */
   onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => void;
 } & MenuSurfacePropsT &
-  SimpleTagPropsT;
+  ComponentProps;
 
-export const MenuRoot = simpleTag({
+export const MenuRoot = componentFactory({
   displayName: 'MenuRoot',
   classNames: (props: MenuPropsT) => [
     'mdc-menu',
@@ -69,10 +74,10 @@ export const MenuRoot = simpleTag({
   }
 });
 
-export const MenuItems = simpleTag({
+export const MenuItems = componentFactory({
   displayName: 'MenuItems',
   tag: List,
-  classNames: 'mdc-list mdc-menu__items',
+  classNames: ['mdc-list mdc-menu__items'],
   defaultProps: {
     role: 'menu'
   }
@@ -186,9 +191,10 @@ export class Menu extends withFoundation({
       <MenuRoot
         aria-hidden={!open}
         {...rest}
-        elementRef={(el: HTMLElement) => {
+        ref={(el: HTMLElement) => {
           root_(el);
-          this.props.elementRef && this.props.elementRef(el);
+          // @ts-ignore
+          this.props.ref && this.props.ref(el);
         }}
       >
         <MenuItems>{children}</MenuItems>
@@ -200,7 +206,7 @@ export class Menu extends withFoundation({
 /****************************************************************
  * MenuSurface
  ****************************************************************/
-export const MenuSurfaceRoot = simpleTag({
+export const MenuSurfaceRoot = componentFactory({
   displayName: 'MenuSurfaceRoot',
   classNames: (props: MenuSurfacePropsT) => [
     'mdc-menu-surface',
@@ -261,7 +267,7 @@ export class MenuSurface extends withFoundation({
 
     const { root_ } = this.foundationRefs;
     return (
-      <MenuSurfaceRoot {...rest} elementRef={root_}>
+      <MenuSurfaceRoot {...rest} ref={root_}>
         {children}
       </MenuSurfaceRoot>
     );
@@ -273,9 +279,9 @@ export class MenuSurface extends withFoundation({
  ****************************************************************/
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
-export const MenuSurfaceAnchor = simpleTag({
+export const MenuSurfaceAnchor = componentFactory({
   displayName: 'MenuSurfaceAnchor',
-  classNames: 'mdc-menu-surface--anchor'
+  classNames: ['mdc-menu-surface--anchor']
 });
 
 /****************************************************************

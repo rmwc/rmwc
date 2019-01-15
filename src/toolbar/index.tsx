@@ -1,14 +1,14 @@
-import { IconPropsT } from '@rmwc/icon';
-import { SimpleTagPropsT } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
+import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
 import { MDCToolbar } from '@material/toolbar';
 import { Icon } from '@rmwc/icon';
-import { simpleTag } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 import { withFoundation } from '@rmwc/base/withFoundation';
 
-export type ToolbarPropsT = {
+export interface ToolbarPropsT extends ComponentProps {
   /** Makes the toolbar fixed */
   fixed?: boolean;
   /** Adds a waterfall effect on scroll */
@@ -19,9 +19,10 @@ export type ToolbarPropsT = {
   flexible?: boolean;
   /** further defines the background and title movement behavior, use in conjunction with flexible. */
   flexibleDefaultBehavior?: boolean;
-} & SimpleTagPropsT;
+}
 
-export const ToolbarRoot = simpleTag({
+export const ToolbarRoot = componentFactory({
+  displayName: 'TabBarRoot',
   tag: 'header',
   classNames: (props: ToolbarPropsT) => [
     'mdc-toolbar',
@@ -50,9 +51,9 @@ export const ToolbarRoot = simpleTag({
 });
 
 /** A Toolbar title  */
-export const ToolbarTitle = simpleTag({
+export const ToolbarTitle = componentFactory({
   displayName: 'ToolbarTitle',
-  classNames: 'mdc-toolbar__title'
+  classNames: ['mdc-toolbar__title']
 });
 
 type ToolbarSectionPropsT = {
@@ -62,9 +63,9 @@ type ToolbarSectionPropsT = {
   alignEnd?: boolean;
   /** Makes the ToolbarSection shrink to fit. */
   shrinkToFit?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-const ToolbarSectionRoot = simpleTag({
+const ToolbarSectionRoot = componentFactory({
   displayName: 'ToolbarSectionRoot',
   tag: 'section',
   classNames: (props: ToolbarSectionPropsT) => [
@@ -90,35 +91,37 @@ export const ToolbarSection: React.ComponentType<ToolbarSectionPropsT> = (
 ToolbarSection.displayName = 'ToolbarSection';
 
 /** A Toolbar row  */
-export const ToolbarRow = simpleTag({
+export const ToolbarRow = componentFactory({
   displayName: 'ToolbarRow',
-  classNames: 'mdc-toolbar__row'
+  classNames: ['mdc-toolbar__row']
 });
 
 /**
  * This component can be placed after a fixed Toolbar component to fill in the space.
  */
-export const ToolbarFixedAdjust = simpleTag({
+export const ToolbarFixedAdjust = componentFactory({
   displayName: 'ToolbarFixedAdjust',
-  classNames: 'mdc-toolbar-fixed-adjust'
+  classNames: ['mdc-toolbar-fixed-adjust']
 });
 
 /**
  * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
-export const ToolbarMenuIcon: React.ComponentType<IconPropsT> = simpleTag({
-  displayName: 'ToolbarMenuIcon',
-  tag: Icon,
-  classNames: 'mdc-toolbar__menu-icon'
-});
+export const ToolbarMenuIcon: React.ComponentType<IconProps> = componentFactory(
+  {
+    displayName: 'ToolbarMenuIcon',
+    tag: Icon,
+    classNames: ['mdc-toolbar__menu-icon']
+  }
+);
 
 /**
  * A standard Icon for toolbar actions. This is an instance of the Icon component.
  */
-export const ToolbarIcon: React.ComponentType<IconPropsT> = simpleTag({
+export const ToolbarIcon: React.ComponentType<IconProps> = componentFactory({
   displayName: 'ToolbarIcon',
   tag: Icon,
-  classNames: 'mdc-toolbar__icon'
+  classNames: ['mdc-toolbar__icon']
 });
 
 export class Toolbar extends withFoundation({

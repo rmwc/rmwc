@@ -1,17 +1,14 @@
 /**
  * Shows in browser notifications
  */
-
-import { SimpleTagPropsT } from '@rmwc/base';
-
 import * as React from 'react';
 // @ts-ignore
 import { MDCSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 // @ts-ignore
 import { getCorrectEventName } from '@material/animation/dist/mdc.animation';
-import Button from '@rmwc/button';
+import { Button } from '@rmwc/button';
 import {
-  simpleTag,
+  componentFactory,
   syncFoundationProp,
   withFoundation,
   noop
@@ -40,9 +37,9 @@ export type SnackbarPropsT = {
   dismissesOnAction?: boolean;
   /* Aligns the Snackbar to the start of the screen. */
   alignStart?: boolean;
-} & SimpleTagPropsT;
+};
 
-export const SnackbarRoot = simpleTag({
+export const SnackbarRoot = componentFactory({
   displayName: 'SnackbarRoot',
   classNames: (props: SnackbarPropsT) => [
     'mdc-snackbar',
@@ -59,20 +56,20 @@ export const SnackbarRoot = simpleTag({
   consumeProps: ['alignStart']
 });
 
-export const SnackbarText = simpleTag({
+export const SnackbarText = componentFactory({
   displayName: 'SnackbarText',
-  classNames: 'mdc-snackbar__text'
+  classNames: ['mdc-snackbar__text']
 });
 
-export const SnackbarActionWrapper = simpleTag({
+export const SnackbarActionWrapper = componentFactory({
   displayName: 'SnackbarActionWrapper',
-  classNames: 'mdc-snackbar__action-wrapper'
+  classNames: ['mdc-snackbar__action-wrapper']
 });
 
-export const SnackbarActionButton = simpleTag({
+export const SnackbarActionButton = componentFactory({
   displayName: 'SnackbarActionButton',
   tag: Button,
-  classNames: 'mdc-snackbar__action-button'
+  classNames: ['mdc-snackbar__action-button']
 });
 
 /**
@@ -194,7 +191,7 @@ export class Snackbar extends withFoundation({
      * ignored and shows th rendered content :)
      */
     return (
-      <SnackbarRoot {...rest} elementRef={root_}>
+      <SnackbarRoot {...rest} ref={root_}>
         <SnackbarText style={snackbarTextStyle} />
         {isJSX && <SnackbarText>{message}</SnackbarText>}
         <SnackbarActionWrapper style={snackbarActionWrapperStyle}>

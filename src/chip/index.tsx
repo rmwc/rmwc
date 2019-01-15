@@ -1,5 +1,5 @@
 import { CustomEventT } from '@rmwc/base';
-import { IconPropsT } from '@rmwc/icon';
+import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
 //@ts-ignore
@@ -202,18 +202,18 @@ class ChipCheckmark extends React.Component<{}> {
   }
 }
 
-type ChipIconPropsT = {
+type ChipIconProps = {
   /** Make it a leading icon */
   leading?: boolean;
   /** Make it a trailing icon */
   trailing?: boolean;
-} & IconPropsT;
+} & IconProps;
 
 /** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
-class ChipIconRoot extends Component<ChipIconPropsT> {
+class ChipIconRoot extends Component<ChipIconProps> {
   static displayName = 'ChipIconRoot';
   tag = Icon;
-  classNames = (props: ChipIconPropsT & { hidden?: boolean }) => {
+  classNames = (props: ChipIconProps & { hidden?: boolean }) => {
     return [
       'mdc-chip__icon',
       {
@@ -226,8 +226,8 @@ class ChipIconRoot extends Component<ChipIconPropsT> {
   consumeProps = ['trailing', 'leading'];
 }
 
-export const ChipIcon: React.ComponentType<ChipIconPropsT> = (
-  props: ChipIconPropsT
+export const ChipIcon: React.ComponentType<ChipIconProps> = (
+  props: ChipIconProps
 ) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')

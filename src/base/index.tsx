@@ -1,16 +1,15 @@
-import { SimpleTagPropsT } from './simpleTag';
 import { WithThemePropsT } from './withTheme';
-import { ComponentPropsT } from './component';
+import { ComponentPropsT } from './class-component';
+import { ComponentProps } from './component';
 
-export type SimpleTagPropsT = SimpleTagPropsT;
 export type WithThemePropsT = WithThemePropsT;
 export type ComponentPropsT<P> = ComponentPropsT<P>;
+export interface ComponentProps<T = any> extends ComponentProps<T> {}
 
 import * as PropTypes from 'prop-types';
 export { default as classNames } from 'classnames';
 export { PropTypes };
 
-export { simpleTag } from './simpleTag';
 export { withTheme } from './withTheme';
 
 export { noop } from './utils/noop';
@@ -20,7 +19,8 @@ export { debounce } from './utils/debounce';
 export { withFoundation, syncFoundationProp } from './withFoundation';
 
 export { FoundationComponent } from './foundation-component';
-export { Component } from './component';
+export { Component } from './class-component';
+export { componentFactory } from './component';
 
 export type CustomEventT<T> = CustomEvent<T> &
   React.SyntheticEvent<EventTarget>;

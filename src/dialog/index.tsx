@@ -1,12 +1,12 @@
 import { CustomEventT } from '@rmwc/base';
-import { ButtonPropsT } from '@rmwc/button';
+import { ButtonProps } from '@rmwc/button';
 
 import * as React from 'react';
 //@ts-ignore
 import { MDCDialogFoundation } from '@material/dialog';
 import createFocusTrap from 'focus-trap';
 
-import Button from '@rmwc/button';
+import { Button } from '@rmwc/button';
 import { FoundationComponent, Component, noop } from '@rmwc/base';
 
 const strings = MDCDialogFoundation.strings;
@@ -96,7 +96,7 @@ export type DialogButtonPropsT = {
   action?: string;
   /** Indicates this is the default selected action when pressing enter */
   isDefaultAction?: boolean;
-} & ButtonPropsT;
+} & ButtonProps;
 
 /** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<

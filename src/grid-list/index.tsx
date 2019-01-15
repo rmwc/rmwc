@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Icon from '@rmwc/icon';
-import { simpleTag } from '@rmwc/base';
-import { SimpleTagPropsT } from '@rmwc/base';
+import { Icon } from '@rmwc/icon';
+import { ComponentProps, componentFactory } from '@rmwc/base';
 
 export type GridListPropsT = {
   /** Use a 1px gutter. */
@@ -14,9 +13,9 @@ export type GridListPropsT = {
   withIconAlignStart?: boolean;
   /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */
   tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4';
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-export const GridListRoot = simpleTag({
+export const GridListRoot = componentFactory({
   displayName: 'GridListRoot',
   classNames: (props: GridListPropsT) => [
     'mdc-grid-list',
@@ -44,21 +43,21 @@ export const GridListRoot = simpleTag({
   ]
 });
 
-export const GridListTiles = simpleTag({
+export const GridListTiles = componentFactory({
   displayName: 'GridListTiles',
   tag: 'ul',
-  classNames: 'mdc-grid-list__tiles'
+  classNames: ['mdc-grid-list__tiles']
 });
 
 /** The primary content for a Grid tile */
-export const GridTilePrimary = simpleTag({
+export const GridTilePrimary = componentFactory({
   displayName: 'GridTilePrimary',
-  classNames: 'mdc-grid-tile__primary'
+  classNames: ['mdc-grid-tile__primary']
 });
 
-export const GridTilePrimaryContent = simpleTag({
+export const GridTilePrimaryContent = componentFactory({
   displayName: 'GridTilePrimaryContent',
-  classNames: 'mdc-grid-tile__primary-content',
+  classNames: ['mdc-grid-tile__primary-content'],
   defaultProps: {
     wrap: true
   }
@@ -68,38 +67,38 @@ export const GridTilePrimaryContent = simpleTag({
  ****************************************************************/
 
 /** A grid tile  */
-export const GridTile = simpleTag({
+export const GridTile = componentFactory({
   displayName: 'GridTile',
   tag: 'li',
-  classNames: 'mdc-grid-tile'
+  classNames: ['mdc-grid-tile']
 });
 
 /** The secondary content for a Grid tile */
-export const GridTileSecondary = simpleTag({
+export const GridTileSecondary = componentFactory({
   displayName: 'GridTileSecondary',
   tag: 'span',
-  classNames: 'mdc-grid-tile__secondary'
+  classNames: ['mdc-grid-tile__secondary']
 });
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
-export const GridTileIcon = simpleTag({
+export const GridTileIcon = componentFactory({
   displayName: 'GridTileIcon',
   tag: Icon,
-  classNames: 'mdc-grid-tile__icon'
+  classNames: ['mdc-grid-tile__icon']
 });
 
 /** The title for a Grid tile */
-export const GridTileTitle = simpleTag({
+export const GridTileTitle = componentFactory({
   displayName: 'GridTileTitle',
   tag: 'span',
-  classNames: 'mdc-grid-tile__title'
+  classNames: ['mdc-grid-tile__title']
 });
 
 /** Supporting Text for the Grid Tile */
-export const GridTileTitleSupportText = simpleTag({
+export const GridTileTitleSupportText = componentFactory({
   displayName: 'GridTileTitleSupportText',
   tag: 'span',
-  classNames: 'mdc-grid-tile__support-text'
+  classNames: ['mdc-grid-tile__support-text']
 });
 
 /**

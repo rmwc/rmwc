@@ -1,4 +1,4 @@
-import { SimpleTagPropsT } from './simpleTag';
+import { ComponentProps } from './component';
 import * as React from 'react';
 
 /************************************************************************
@@ -58,7 +58,7 @@ type FoundationT = {
   refs?: string[];
 };
 
-type FoundationPropsT<P> = P & SimpleTagPropsT;
+type FoundationPropsT<P> = P & ComponentProps;
 
 export const withFoundation = ({
   constructor: FoundationConstructor,
@@ -82,6 +82,7 @@ export const withFoundation = ({
       this.foundationRefs = refs.reduce((acc: any, r) => {
         // Here we gracefully merge two refs together if one was passed down the chain
         const propName =
+          // @ts-ignore
           props.elementRef && props.elementRef.refName_ === r
             ? 'elementRef'
             : r;

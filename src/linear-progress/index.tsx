@@ -1,9 +1,13 @@
-import { SimpleTagPropsT } from '@rmwc/base';
+import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
 import { MDCLinearProgress } from '@material/linear-progress';
-import { simpleTag, withFoundation, syncFoundationProp } from '@rmwc/base';
+import {
+  componentFactory,
+  withFoundation,
+  syncFoundationProp
+} from '@rmwc/base';
 
 export type LinearProgressPropsT = {
   /** Progress float percentage between 0 and 1. */
@@ -16,9 +20,9 @@ export type LinearProgressPropsT = {
   reversed?: boolean;
   /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
   closed?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-export const LinearProgressRoot = simpleTag({
+export const LinearProgressRoot = componentFactory({
   displayName: 'LinearProgressRoot',
   tag: 'nav',
   classNames: (props: LinearProgressPropsT) => [
@@ -38,29 +42,29 @@ export const LinearProgressRoot = simpleTag({
   consumeProps: ['determinate', 'reversed', 'accent', 'closed']
 });
 
-export const LinearProgressBufferingDots = simpleTag({
+export const LinearProgressBufferingDots = componentFactory({
   displayName: 'LinearProgressBufferingDots',
-  classNames: 'mdc-linear-progress__buffering-dots'
+  classNames: ['mdc-linear-progress__buffering-dots']
 });
 
-export const LinearProgressBuffer = simpleTag({
+export const LinearProgressBuffer = componentFactory({
   displayName: 'LinearProgressBuffer',
-  classNames: 'mdc-linear-progress__buffer'
+  classNames: ['mdc-linear-progress__buffer']
 });
 
-export const LinearProgressPrimaryBar = simpleTag({
+export const LinearProgressPrimaryBar = componentFactory({
   displayName: 'LinearProgressPrimaryBar',
-  classNames: 'mdc-linear-progress__bar mdc-linear-progress__primary-bar'
+  classNames: ['mdc-linear-progress__bar mdc-linear-progress__primary-bar']
 });
 
-export const LinearProgressSecondaryBar = simpleTag({
+export const LinearProgressSecondaryBar = componentFactory({
   displayName: 'LinearProgressSecondaryBar',
-  classNames: 'mdc-linear-progress__bar mdc-linear-progress__secondary-bar'
+  classNames: ['mdc-linear-progress__bar mdc-linear-progress__secondary-bar']
 });
 
-export const LinearProgressBarInner = simpleTag({
+export const LinearProgressBarInner = componentFactory({
   displayName: 'LinearProgressBarInner',
-  classNames: 'mdc-linear-progress__bar-inner'
+  classNames: ['mdc-linear-progress__bar-inner']
 });
 
 export class LinearProgress extends withFoundation({

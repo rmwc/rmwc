@@ -1,4 +1,4 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
+import { ComponentProps, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
@@ -33,7 +33,7 @@ export type SliderPropsT = {
   displayMarkers?: boolean;
   /** Disables the control. */
   disabled?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
 /** @extends React.Component */
 class SliderRoot extends Component<SliderPropsT> {

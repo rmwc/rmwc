@@ -1,8 +1,8 @@
-import { IconButtonPropsT } from '@rmwc/icon-button';
+import { IconButtonProps } from '@rmwc/icon-button';
 import { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
-import { Button, ButtonPropsT } from '@rmwc/button';
+import { Button, ButtonProps } from '@rmwc/button';
 import { Component } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { IconButton } from '@rmwc/icon-button';
@@ -109,7 +109,7 @@ export class CardActionIcons extends Component<{}> {
   classNames = ['mdc-card__action-icons'];
 }
 
-export type CardActionPropsT = IconButtonPropsT & ButtonPropsT;
+export type CardActionPropsT = IconButtonProps & ButtonProps;
 
 class CardActionIcon extends Component<{}> {
   tag = IconButton;

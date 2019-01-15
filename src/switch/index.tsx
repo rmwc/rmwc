@@ -1,4 +1,4 @@
-import { SimpleTagPropsT } from '@rmwc/base';
+import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
@@ -21,9 +21,7 @@ export type SwitchPropsT = {
   rootProps?: any;
   /** Any children to render. */
   children?: React.ReactNode;
-} & SimpleTagPropsT &
-  //$FlowFixMe
-  React.InputHTMLAttributes<HTMLInputElement>;
+} & ComponentProps;
 
 export class SwitchRoot extends Component<SwitchPropsT> {
   static displayName = 'SwitchRoot';

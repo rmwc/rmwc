@@ -58,20 +58,6 @@ describe('withFoundation', () => {
   });
 });
 
-describe('simpleTag', () => {
-  it('Tag can be another component', () => {
-    const Link = ({ to, ...rest }) => <a href="#" {...rest} />;
-    const ListItemGraphic = 'div';
-    const ListItemPrimaryText = 'div';
-    mount(
-      <ListItem tag={Link} to="/">
-        <ListItemGraphic>home</ListItemGraphic>
-        <ListItemPrimaryText>Home</ListItemPrimaryText>
-      </ListItem>
-    );
-  });
-});
-
 describe('withTheme', () => {
   it('works with and without classnames', () => {
     const Component = withTheme('div');

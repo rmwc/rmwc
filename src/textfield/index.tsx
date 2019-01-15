@@ -1,5 +1,5 @@
-import { SimpleTagPropsT } from '@rmwc/base';
-import { IconPropsT } from '@rmwc/icon';
+import { ComponentProps } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
 import * as React from 'react';
 import {
   MDCTextFieldFoundation,
@@ -371,7 +371,7 @@ export type TextFieldHelperTextPropsT = {
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
 /** @extends React.Component */
 /** A help text component */
@@ -395,11 +395,11 @@ export class TextFieldHelperText extends Component<TextFieldHelperTextPropsT> {
 /**
  * An Icon in a TextField
  */
-export class TextFieldIcon extends FoundationComponent<IconPropsT> {
+export class TextFieldIcon extends FoundationComponent<IconProps> {
   static displayName = 'TextFieldIcon';
   root_: null | HTMLElement = null;
 
-  constructor(props: IconPropsT) {
+  constructor(props: IconProps) {
     super(props);
     this.createClassList('root_');
     this.createPropsList('root_');

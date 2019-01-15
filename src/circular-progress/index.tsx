@@ -1,4 +1,4 @@
-import { Component } from '@rmwc/base';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 import * as React from 'react';
 
 const SIZE_MAP: { [key: string]: number } = {
@@ -9,7 +9,7 @@ const SIZE_MAP: { [key: string]: number } = {
   xlarge: 48
 };
 
-type CircularProgressPropsT = {
+export interface CircularProgressProps extends ComponentProps {
   /** Max value for determinate progress bars. */
   max?: number;
   /** Min value for determinate progress bars. */
@@ -17,37 +17,31 @@ type CircularProgressPropsT = {
   /** Value for determinate progress bars. */
   progress?: number;
   /** The size of the loader you would like to render. */
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
-  /** Additional className for the progress indicator. */
-  className?: string;
-  /** Additional styles for the progress indicator. */
-  style?: Object;
-};
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number | any;
+}
 
-type CircularProgressRootPropsT = {
+interface CircularProgressRootProps {
   _size: string | number;
   _progress?: number;
-};
+}
 
-export class CircularProgressRoot extends Component<
-  CircularProgressRootPropsT
-> {
-  static displayName = 'CircularProgressRoot';
-  classNames = (props: CircularProgressRootPropsT) => [
+const CircularProgressRoot = componentFactory({
+  displayName: 'CircularProgressRoot',
+  classNames: (props: CircularProgressRootProps) => [
     'rmwc-circular-progress',
     {
       [`rmwc-circular-progress--size-${props._size}`]:
         typeof props._size === 'string',
       'rmwc-circular-progress--indeterminate': props._progress === undefined,
       'rmwc-circular-progress--thickerstroke':
-        props._size && (SIZE_MAP[props._size] || Number(props._size)) > 36
+        !!props._size && (SIZE_MAP[props._size] || Number(props._size)) > 36
     }
-  ];
-  consumeProps = ['size', 'progress'];
-}
+  ],
+  consumeProps: ['size', 'progress']
+});
 
 /** A Circular Progress indicator. */
-export class CircularProgress extends React.Component<CircularProgressPropsT> {
+export class CircularProgress extends React.Component<CircularProgressProps> {
   static defaultProps = {
     progress: undefined,
     size: 'medium'

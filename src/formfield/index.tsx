@@ -1,18 +1,18 @@
-import { SimpleTagPropsT } from '@rmwc/base';
+import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 //@ts-ignore
 import { MDCFormField } from '@material/form-field';
-import { simpleTag, withFoundation } from '@rmwc/base';
+import { componentFactory, withFoundation } from '@rmwc/base';
 
 type FormFieldRootPropsT = {
   /** Position the input after the label. */
   alignEnd?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
 export const FormFieldRoot: React.ComponentType<
   FormFieldRootPropsT
-> = simpleTag({
+> = componentFactory({
   displayName: 'FormFieldRoot',
   defaultProps: {
     alignEnd: undefined
@@ -35,7 +35,7 @@ export class FormField extends withFoundation({
     //$FlowFixMe
     const { ...rest } = this.props;
     const { root_ } = this.foundationRefs;
-    return <FormFieldRoot {...rest} elementRef={root_} />;
+    return <FormFieldRoot {...rest} ref={root_} />;
   }
 }
 

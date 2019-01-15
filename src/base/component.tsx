@@ -3,140 +3,176 @@ import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './withTheme';
 import { deprecationWarning } from './utils/deprecationWarning';
 
-export type ComponentPropsT<P = {}> = {
-  className?: string;
-  elementRef?: React.Ref<any>;
-  theme?: string | string[];
-  tag?: string | React.ComponentType<any>;
-} & P &
-  //$FlowFixMe
-  React.HTMLAttributes<any> &
-  //$FlowFixMe
-  React.HTMLProps<any>;
+type ExtractProps<
+  TComponentOrTProps
+> = TComponentOrTProps extends React.Component<infer TProps, any>
+  ? TProps
+  : TComponentOrTProps;
 
-export class Component<P> extends React.Component<ComponentPropsT<P>> {
-  static displayName = 'UnknownComponent';
+type ThemeOptionT =
+  | string
+  | 'primary'
+  | 'secondary'
+  | 'background'
+  | 'surface'
+  | 'onPrimary'
+  | 'onSecondary'
+  | 'onSurface'
+  | 'onError'
+  | 'textPrimaryOnBackground'
+  | 'textSecondaryOnBackground'
+  | 'textHintOnBackground'
+  | 'textDisabledOnBackground'
+  | 'textIconOnBackground'
+  | 'textPrimaryOnLight'
+  | 'textSecondaryOnLight'
+  | 'textHintOnLight'
+  | 'textDisabledOnLight'
+  | 'textIconOnLight'
+  | 'textPrimaryOnDark'
+  | 'textSecondaryOnDark'
+  | 'textHintOnDark'
+  | 'textDisabledOnDark'
+  | 'textIconOnDark';
 
-  tag: string | React.ComponentType<any> = 'div';
-  consumeProps: string[] = [];
-  classNames: ((props: any) => any[]) | string[] = () => [];
-  deprecate: {
-    [oldPropName: string]: string | [string, (value: any) => {}];
-  } = {};
+type ThemeInputT = ThemeOptionT | ThemeOptionT[];
 
-  /**
-   * All of these functions mutate the props object directly
-   */
-  handleClassNames(props: any) {
-    const { className, theme } = this.props;
-    const tsxSafeTheme: any = theme;
-    props.className = classNamesFunc(
-      className,
-      ...(!!tsxSafeTheme ? parseThemeOptions(tsxSafeTheme) : []),
-      ...(typeof this.classNames === 'function'
-        ? this.classNames(this.props)
-        : this.classNames)
-    );
+type ClassNamesInputT =
+  | ((
+      props: any
+    ) => Array<
+      | string
+      | undefined
+      | null
+      | { [className: string]: boolean | undefined | string | number }
+    >)
+  | string[];
+
+type TagT = string | React.ComponentType<any>;
+
+type DeprecateT = {
+  [oldPropName: string]: string | [string, (value: any) => void];
+};
+
+interface ComponentFactoryOpts<P> {
+  displayName: string;
+  classNames?: ClassNamesInputT;
+  tag?: TagT;
+  deprecate?: DeprecateT;
+  consumeProps?: string[];
+  defaultProps?: P;
+}
+
+export interface ComponentProps<T = any> extends React.HTMLProps<T> {
+  tag?: TagT;
+  theme?: ThemeInputT;
+  ref?: ((instance: any) => void) | React.RefObject<any> | null | undefined;
+}
+
+// ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS
+// this is intentional and done for speed and memory
+
+const handleClassNames = (
+  props: any,
+  classNames: ClassNamesInputT,
+  className?: string,
+  theme?: ThemeInputT
+) => {
+  const finalClassNames = classNamesFunc(
+    className,
+    ...(!!theme ? parseThemeOptions(theme) : []),
+    ...(typeof classNames === 'function' ? classNames(props) : classNames)
+  );
+
+  props.className = finalClassNames;
+};
+
+const handleTag = (props: any, defaultTag: TagT, tag?: TagT) => {
+  // Handle the case where we are extending a component but passing
+  // a string as a tag. For instance, extending an Icon but rendering a span
+  if (typeof defaultTag === 'function' && typeof tag === 'string') {
+    props.tag = tag;
   }
+};
 
-  handleTag(props: any) {
-    const { tag } = this.props;
-    // Handle the case where we are extending a component but passing
-    // a string as a tag. For instance, extending an Icon but rendering a span
-    if (typeof this.tag === 'function' && typeof tag === 'string') {
-      props.tag = tag;
+const handleDeprecations = (
+  props: any,
+  deprecate: DeprecateT,
+  displayName: string
+) => {
+  for (const oldPropName in deprecate) {
+    const newProp = deprecate[oldPropName];
+    let newPropName;
+    let transformProp = (value: any) => value;
+
+    if (Array.isArray(newProp)) {
+      newPropName = newProp[0];
+      transformProp = newProp[1];
+    } else {
+      newPropName = newProp;
     }
-  }
 
-  handleElementRef(props: any) {
-    const { elementRef } = this.props;
-
-    // handle elementRefs
-    if (elementRef) {
-      // if the tag is a string, make our ref
-      // otherwise pass elementRef along
-      if (typeof this.tag === 'string') {
-        props.ref = elementRef;
+    if (props[oldPropName] !== undefined) {
+      if (newPropName === '') {
+        deprecationWarning(
+          `prop '${oldPropName}' has been removed from the ${displayName ||
+            ''} component and is no longer a valid prop.`
+        );
       } else {
-        props.elementRef = elementRef;
-      }
-    }
-  }
-
-  handleDeprecations(props: any) {
-    for (const oldPropName in this.deprecate) {
-      const newProp = this.deprecate[oldPropName];
-      const displayName: string = (this.constructor as any)['displayName'];
-      let newPropName;
-      let transformProp = (value: any) => value;
-
-      if (Array.isArray(newProp)) {
-        newPropName = newProp[0];
-        transformProp = newProp[1];
-      } else {
-        newPropName = newProp;
-      }
-
-      if (props[oldPropName] !== undefined) {
-        if (newPropName === '') {
-          deprecationWarning(
-            `prop '${oldPropName}' has been removed from the ${displayName ||
-              ''} component and is no longer a valid prop.`
-          );
-        } else {
-          props[newPropName] = transformProp(props[oldPropName]);
-          let propTransformMessage = '';
-          if (props[newPropName] !== props[oldPropName]) {
-            propTransformMessage = ` The old value has also been converted from '${
-              props[newPropName]
-            }' to '${props[oldPropName]}'`;
-          }
-
-          deprecationWarning(
-            `prop '${oldPropName}' has been replaced with '${newPropName}' on the ${displayName ||
-              ''} component.${propTransformMessage}`
-          );
+        props[newPropName] = transformProp(props[oldPropName]);
+        let propTransformMessage = '';
+        if (props[newPropName] !== props[oldPropName]) {
+          propTransformMessage = ` The old value has also been converted from '${
+            props[newPropName]
+          }' to '${props[oldPropName]}'`;
         }
 
-        delete props[oldPropName];
+        deprecationWarning(
+          `prop '${oldPropName}' has been replaced with '${newPropName}' on the ${displayName ||
+            ''} component.${propTransformMessage}`
+        );
       }
+
+      delete props[oldPropName];
     }
   }
+};
 
-  handleConsumeProps(props: any) {
-    this.consumeProps.forEach(p => {
-      delete props[p];
-    });
-  }
+const handleConsumeProps = (props: any, consumeProps: string[]) => {
+  consumeProps.forEach(p => {
+    delete props[p];
+  });
+};
+export const componentFactory = <P extends {}>({
+  displayName,
+  classNames = [],
+  tag: defaultTag = 'div',
+  deprecate,
+  defaultProps,
+  consumeProps = []
+}: ComponentFactoryOpts<P>) => {
+  const Component = React.forwardRef<any, any>(
+    (props: P & ComponentProps, ref) => {
+      const { className, theme, tag, ...rest } = props;
 
-  /**
-   * A convenience function fro getting the props that are safe to pass
-   * To the final rendered tag
-   */
-  getProps() {
-    const tsxSafeProps: any = this.props;
-    const { elementRef, className, theme, tag, ...rest } = tsxSafeProps;
-    const props: any = rest;
+      handleClassNames(rest, classNames, className, theme);
+      handleTag(rest, defaultTag, tag);
+      deprecate && handleDeprecations(rest, deprecate, displayName);
+      handleConsumeProps(rest, consumeProps);
 
-    this.handleClassNames(props);
-    this.handleTag(props);
-    this.handleElementRef(props);
-    this.handleDeprecations(props);
-    this.handleConsumeProps(props);
-    return props;
-  }
+      const finalProps: ComponentProps = rest;
 
-  /**
-   * Gets the tag to render
-   */
-  getTag(): any {
-    return typeof this.tag === 'function' && typeof this.props.tag === 'string'
-      ? this.tag
-      : this.props.tag || this.tag;
-  }
+      const Tag =
+        typeof defaultTag === 'function' && typeof tag === 'string'
+          ? defaultTag
+          : tag || defaultTag;
 
-  render() {
-    const Tag = this.getTag();
-    return <Tag {...this.getProps()} />;
-  }
-}
+      // @ts-ignore
+      return <Tag {...finalProps} ref={ref} />;
+    }
+  );
+
+  Component.displayName = displayName;
+  Component.defaultProps = defaultProps;
+  return Component;
+};

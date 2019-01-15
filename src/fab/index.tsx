@@ -1,34 +1,29 @@
-import { SimpleTagPropsT } from '@rmwc/base';
-import { RMWCProviderOptionsT } from '@rmwc/provider';
-import { IconPropsT } from '@rmwc/icon';
+import { componentFactory, ComponentProps } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
 import { WithRipplePropsT } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { Icon } from '@rmwc/icon';
-import { getProviderOptions } from '@rmwc/provider';
-import { simpleTag, classNames, PropTypes } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 
-export type FabPropsT = {
+export interface FabProps extends ComponentProps, IconProps, WithRipplePropsT {
   /** Make the Fab smaller. */
   mini?: boolean;
   /** Make the Fab extended with a label. */
-  label?: React.ReactNode;
+  label?: React.ReactNode & any;
   /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
   exited?: boolean;
   /** Enable / disable the ripple. */
   ripple?: boolean;
-} & SimpleTagPropsT &
-  WithRipplePropsT &
-  IconPropsT;
+}
 
-export const FabRoot: React.ComponentType<FabPropsT> = withRipple({
+export const FabRoot = withRipple({
   surface: false
 })(
-  simpleTag({
+  componentFactory({
     displayName: 'FabRoot',
     tag: 'button',
-    classNames: (props: FabPropsT) => [
+    classNames: (props: FabProps) => [
       'mdc-fab',
       {
         'mdc-fab--mini': props.mini,
@@ -44,65 +39,28 @@ export const FabRoot: React.ComponentType<FabPropsT> = withRipple({
   })
 );
 
-export const FabIcon: React.ComponentType<IconPropsT> = simpleTag({
+export const FabIcon = componentFactory<IconProps>({
   displayName: 'FabIcon',
   tag: Icon,
-  classNames: 'mdc-fab__icon'
+  classNames: ['mdc-fab__icon']
 });
 
-export const FabLabel = simpleTag({
+export const FabLabel = componentFactory({
   displayName: 'FabLabel',
-  classNames: 'mdc-fab__label'
+  classNames: ['mdc-fab__label']
 });
 
-/**
- * Public
- */
 /** A floating action button component */
-export class Fab extends React.Component<FabPropsT> {
-  static contextTypes = {
-    RMWCOptions: PropTypes.object
-  };
-
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
-
-  // @ts-ignore
-  providerOptions: RMWCProviderOptionsT;
-  // @ts-ignore
-  context: Object;
-
-  render() {
-    const { buttonDefaultRipple } = this.providerOptions;
-    const {
-      ripple,
-      className,
-      children,
-      icon,
-      iconOptions,
-      label,
-      ...rest
-    } = this.props;
-    const shouldRipple = ripple === undefined ? buttonDefaultRipple : ripple;
-    const classes = classNames(
-      this.providerOptions.iconClassNamePrefix,
-      className
-    );
-
-    return (
-      <FabRoot
-        className={classes}
-        ripple={shouldRipple}
-        label={label}
-        {...rest}
-      >
-        <FabIcon icon={icon} iconOptions={iconOptions} />
-        {!!label && <FabLabel>{label}</FabLabel>}
-        {children}
-      </FabRoot>
-    );
-  }
-}
-
-export default Fab;
+export const Fab = ({
+  children,
+  label,
+  icon,
+  iconOptions,
+  ...rest
+}: FabProps) => (
+  <FabRoot {...rest}>
+    <FabIcon icon={icon} iconOptions={iconOptions} />
+    {!!label && <FabLabel>{label}</FabLabel>}
+    {children}
+  </FabRoot>
+);

@@ -1,14 +1,14 @@
-import { SimpleTagPropsT, CustomEventT } from '@rmwc/base';
-import { IconPropsT } from '@rmwc/icon';
+import { ComponentProps, CustomEventT, componentFactory } from '@rmwc/base';
+import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
 // @ts-ignore
 import { MDCTopAppBar } from '@material/top-app-bar';
 
 import { Icon } from '@rmwc/icon';
-import { simpleTag, withFoundation } from '@rmwc/base';
+import { withFoundation } from '@rmwc/base';
 
-type TopAppAppBarPropsT = {
+export interface TopAppAppBarPropsT extends ComponentProps {
   /** Emits when the navigation icon is clicked. */
   onNav?: (evt: CustomEventT<void>) => void;
   /** Styles the top app bar as a fixed top app bar. */
@@ -21,30 +21,28 @@ type TopAppAppBarPropsT = {
   shortCollapsed?: boolean;
   /** Styles the top app bar to be dense. */
   dense?: boolean;
-} & SimpleTagPropsT;
+}
 
-export const TopAppBarRoot: React.ComponentType<TopAppAppBarPropsT> = simpleTag(
-  {
-    displayName: 'TopAppBarRoot',
-    tag: 'header',
-    classNames: (props: TopAppAppBarPropsT) => [
-      'mdc-top-app-bar',
-      {
-        'mdc-top-app-bar--fixed': props.fixed,
-        'mdc-top-app-bar--prominent': props.prominent,
-        'mdc-top-app-bar--short': props.short || props.shortCollapsed,
-        'mdc-top-app-bar--short-collapsed': props.shortCollapsed,
-        'mdc-top-app-bar--dense': props.dense
-      }
-    ],
-    consumeProps: ['fixed', 'prominent', 'short', 'shortCollapsed', 'dense']
-  }
-);
+export const TopAppBarRoot = componentFactory({
+  displayName: 'TopAppBarRoot',
+  tag: 'header',
+  classNames: (props: TopAppAppBarPropsT) => [
+    'mdc-top-app-bar',
+    {
+      'mdc-top-app-bar--fixed': props.fixed,
+      'mdc-top-app-bar--prominent': props.prominent,
+      'mdc-top-app-bar--short': props.short || props.shortCollapsed,
+      'mdc-top-app-bar--short-collapsed': props.shortCollapsed,
+      'mdc-top-app-bar--dense': props.dense
+    }
+  ],
+  consumeProps: ['fixed', 'prominent', 'short', 'shortCollapsed', 'dense']
+});
 
 /** A row for the app bar. */
-export const TopAppBarRow = simpleTag({
+export const TopAppBarRow = componentFactory({
   displayName: 'TopAppBarRow',
-  classNames: 'mdc-top-app-bar__row'
+  classNames: ['mdc-top-app-bar__row']
 });
 
 type TopAppBarSectionPropsT = {
@@ -52,12 +50,11 @@ type TopAppBarSectionPropsT = {
   alignStart?: boolean;
   /** Aligns the section to the end. */
   alignEnd?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-const TopAppBarSectionRoot: React.ComponentType<
-  TopAppBarSectionPropsT
-> = simpleTag({
-  displayName: 'TopAppBarSectionRoot',
+/** A section for the app bar. */
+export const TopAppBarSection = componentFactory({
+  displayName: 'TopAppBarSection',
   tag: 'section',
   classNames: (props: TopAppBarSectionPropsT) => [
     'mdc-top-app-bar__section',
@@ -69,35 +66,27 @@ const TopAppBarSectionRoot: React.ComponentType<
   consumeProps: ['alignStart', 'alignEnd']
 });
 
-/** A section for the app bar. */
-export const TopAppBarSection: React.ComponentType<TopAppBarSectionPropsT> = (
-  props: TopAppBarSectionPropsT
-) => <TopAppBarSectionRoot {...props} />;
-TopAppBarSection.displayName = 'TopAppBarSection';
-
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export const TopAppBarNavigationIcon: React.ComponentType<
-  IconPropsT
-> = simpleTag({
+export const TopAppBarNavigationIcon = componentFactory<IconProps>({
   displayName: 'TopAppBarNavigationIcon',
-  classNames: 'mdc-top-app-bar__navigation-icon',
+  classNames: ['mdc-top-app-bar__navigation-icon'],
   tag: Icon
 });
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
-export const TopAppBarActionItem: React.ComponentType<IconPropsT> = simpleTag({
+export const TopAppBarActionItem = componentFactory<IconProps>({
   displayName: 'TopAppBarActionItem',
-  classNames: 'mdc-top-app-bar__action-item',
+  classNames: ['mdc-top-app-bar__action-item'],
   tag: Icon
 });
 
 /** A title for the top app bar. */
-export const TopAppBarTitle = simpleTag({
+export const TopAppBarTitle = componentFactory({
   displayName: 'TopAppBarTitle',
-  classNames: 'mdc-top-app-bar__title'
+  classNames: ['mdc-top-app-bar__title']
 });
 
-type TopAppBarFixedAdjustPropsT = {
+export interface TopAppBarFixedAdjustPropsT extends ComponentProps {
   /** Class used to style the content below the dense top app bar to prevent the top app bar from covering it. */
   dense?: boolean;
   /** Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. */
@@ -106,12 +95,11 @@ type TopAppBarFixedAdjustPropsT = {
   denseProminent?: boolean;
   /** Class used to style the content below the short top app bar to prevent the top app bar from covering it. */
   short?: boolean;
-} & SimpleTagPropsT;
+}
 
-const TopAppBarFixedAdjustRoot: React.ComponentType<
-  TopAppBarFixedAdjustPropsT
-> = simpleTag({
-  displayName: 'TopAppBarFixedAdjustRoot',
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export const TopAppBarFixedAdjust = componentFactory({
+  displayName: 'TopAppBarFixedAdjust',
   classNames: (props: TopAppBarFixedAdjustPropsT) => [
     'mdc-top-app-bar--fixed-adjust',
     {
@@ -124,15 +112,6 @@ const TopAppBarFixedAdjustRoot: React.ComponentType<
   consumeProps: ['dense', 'denseProminent', 'prominent', 'short']
 });
 
-/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export const TopAppBarFixedAdjust: React.ComponentType<
-  TopAppBarFixedAdjustPropsT
-> = (props: TopAppBarFixedAdjustPropsT) => (
-  <TopAppBarFixedAdjustRoot {...props} />
-);
-
-TopAppBarFixedAdjust.displayName = 'TopAppBarFixedAdjust';
-
 /** A TopAppBar component */
 export class TopAppBar extends withFoundation({
   constructor: MDCTopAppBar,
@@ -143,7 +122,7 @@ export class TopAppBar extends withFoundation({
   render() {
     const { onNav, ...rest } = this.props;
     const { root_ } = this.foundationRefs;
-    return <TopAppBarRoot {...rest} elementRef={root_} />;
+    return <TopAppBarRoot {...rest} ref={root_} />;
   }
 }
 

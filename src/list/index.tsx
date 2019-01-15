@@ -1,11 +1,11 @@
-import { SimpleTagPropsT } from '@rmwc/base';
+import { ComponentProps } from '@rmwc/base';
 import { WithRipplePropsT } from '@rmwc/ripple';
-import { RMWCProviderOptionsT } from '@rmwc/provider';
-import { IconPropsT } from '@rmwc/icon';
+import { RMWCProviderOptionsT, WithProviderContext } from '@rmwc/provider';
+import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
-import { getProviderOptions } from '@rmwc/provider';
-import { simpleTag, classNames, PropTypes } from '@rmwc/base';
+import { withProviderContext } from '@rmwc/provider';
+import { componentFactory, classNames, PropTypes } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
@@ -18,11 +18,12 @@ export type ListItemPropsT = {
   disabled?: boolean;
   /** Enable / disable the ripple. */
   ripple?: boolean;
-} & SimpleTagPropsT &
-  WithRipplePropsT;
+} & ComponentProps &
+  WithRipplePropsT &
+  WithProviderContext;
 
 export const ListItemRoot = withRipple()(
-  simpleTag({
+  componentFactory({
     displayName: 'ListItemRoot',
     classNames: (props: ListItemPropsT) => [
       'mdc-list-item',
@@ -39,102 +40,72 @@ export const ListItemRoot = withRipple()(
 /**
  * The ListItem component.
  */
-export class ListItem extends React.Component<ListItemPropsT> {
-  static displayName = 'ListItem';
-
-  static defaultProps = {
-    ripple: true,
-    tabIndex: 0
-  };
-
-  static contextTypes = {
-    RMWCOptions: PropTypes.object
-  };
-
-  componentWillMount() {
-    this.providerOptions = getProviderOptions(this.context);
-  }
-
-  // @ts-ignore
-  providerOptions: RMWCProviderOptionsT;
-  // @ts-ignore
-  context: Object;
-
-  render() {
-    const { listItemDefaultRipple } = this.providerOptions;
-    const { ripple, ...rest } = this.props;
+export const ListItem = withProviderContext()(
+  ({ providerContext, ...props }: ListItemPropsT) => {
+    const { listItemDefaultRipple } = providerContext;
+    const { ripple, ...rest } = props;
     const shouldRipple = ripple === undefined ? listItemDefaultRipple : ripple;
-
     return <ListItemRoot ripple={shouldRipple} {...rest} />;
   }
-}
+);
+
+ListItem.displayName = 'ListItem';
+ListItem.defaultProps = {
+  ripple: true,
+  tabIndex: 0
+};
 
 /** Text Wrapper for the ListItem */
-export const ListItemText = simpleTag({
+export const ListItemText = componentFactory({
   displayName: 'ListItemText',
   tag: 'span',
-  classNames: 'mdc-list-item__text'
+  classNames: ['mdc-list-item__text']
 });
 
 /** Primary Text for the ListItem */
-export const ListItemPrimaryText = simpleTag({
+export const ListItemPrimaryText = componentFactory({
   displayName: 'ListItemPrimaryText',
   tag: 'span',
-  classNames: 'mdc-list-item__primary-text'
+  classNames: ['mdc-list-item__primary-text']
 });
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = simpleTag({
+export const ListItemSecondaryText = componentFactory({
   displayName: 'ListItemSecondaryText',
   tag: 'span',
-  classNames: 'mdc-list-item__secondary-text'
+  classNames: ['mdc-list-item__secondary-text']
 });
 
 /** A graphic / icon for the ListItem */
-export const ListItemGraphic: React.ComponentType<IconPropsT> = simpleTag({
+export const ListItemGraphic = componentFactory<IconProps>({
   displayName: 'ListItemGraphic',
-  classNames: 'mdc-list-item__graphic',
+  classNames: ['mdc-list-item__graphic'],
   tag: Icon
 });
 
-const ListItemMetaRoot = simpleTag({
-  displayName: 'ListItemMetaRoot',
-  tag: 'span'
+/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
+export const ListItemMeta = componentFactory<IconProps>({
+  displayName: 'ListItemMeta',
+  classNames: ['mdc-list-item__meta'],
+  tag: Icon
 });
 
-/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
-export const ListItemMeta = ({
-  className,
-  icon,
-  ...rest
-}: {
-  className?: string;
-  icon?: React.ReactNode;
-} & SimpleTagPropsT) => {
-  const classes = classNames('mdc-list-item__meta', className);
-  if (icon) {
-    return <Icon icon={icon} className={classes} {...rest} />;
-  }
-
-  return <ListItemMetaRoot className={classes} {...rest} />;
-};
-
 /** A container to group ListItems */
-export const ListGroup = simpleTag({
+export const ListGroup = componentFactory({
   displayName: 'ListGroup',
-  classNames: 'mdc-list-group'
+  classNames: ['mdc-list-group']
 });
 
 /** A subheader for the ListGroup */
-export const ListGroupSubheader = simpleTag({
+export const ListGroupSubheader = componentFactory({
   displayName: 'ListGroupSubheader',
-  classNames: 'mdc-list-group__subheader'
+  classNames: ['mdc-list-group__subheader']
 });
 
 /** A divider for the List */
-export const ListDivider = simpleTag({
+export const ListDivider = componentFactory({
   displayName: 'ListDivider',
-  classNames: 'mdc-list-divider'
+  classNames: ['mdc-list-divider']
 });
 
 export type ListPropsT = {
@@ -146,10 +117,11 @@ export type ListPropsT = {
   avatarList?: boolean;
   /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean;
-} & SimpleTagPropsT;
+} & ComponentProps;
 
-const ListRoot = simpleTag({
-  displayName: 'ListRoot',
+/** A List Component */
+export const List = componentFactory({
+  displayName: 'List',
   defaultProps: {
     dense: undefined,
     twoLine: undefined,
@@ -167,12 +139,6 @@ const ListRoot = simpleTag({
   ],
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
 });
-
-/** A List Component */
-export const List: React.ComponentType<ListPropsT> = (props: ListPropsT) => (
-  <ListRoot {...props} />
-);
-List.displayName = 'List';
 
 export type SimpleListItemPropsT = {
   /** Text for the ListItem. */
