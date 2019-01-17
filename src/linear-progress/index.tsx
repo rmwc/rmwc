@@ -84,13 +84,13 @@ export class LinearProgress extends FoundationComponent<
     return new MDCLinearProgressFoundation({
       addClass: (className: string) => this.root.addClass(className),
       getPrimaryBar: () =>
-        this.root.element &&
-        this.root.element.querySelector(
+        this.root.el &&
+        this.root.el.querySelector(
           MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
         ),
       getBuffer: () =>
-        this.root.element &&
-        this.root.element.querySelector(
+        this.root.el &&
+        this.root.el.querySelector(
           MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
         ),
       hasClass: (className: string) => this.root.hasClass(className),
@@ -150,7 +150,7 @@ export class LinearProgress extends FoundationComponent<
 
     return (
       // @ts-ignore
-      <LinearProgressRoot ref={this.root.setElement} {...this.root.props(rest)}>
+      <LinearProgressRoot ref={this.root.setEl} {...this.root.props(rest)}>
         <LinearProgressBufferingDots />
         <LinearProgressBuffer />
         <LinearProgressPrimaryBar>

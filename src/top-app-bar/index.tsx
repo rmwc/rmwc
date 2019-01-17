@@ -139,8 +139,8 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
   componentDidMount() {
     super.componentDidMount();
     this.navIcon =
-      this.root.element &&
-      this.root.element.querySelector(
+      this.root.el &&
+      this.root.el.querySelector(
         MDCTopAppBarFoundation.strings.NAVIGATION_ICON_SELECTOR
       );
   }
@@ -152,10 +152,8 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       setStyle: (property: string, value: string) =>
-        this.root.element &&
-        this.root.element.style.setProperty(property, value),
-      getTopAppBarHeight: () =>
-        this.root.element && this.root.element.clientHeight,
+        this.root.el && this.root.el.style.setProperty(property, value),
+      getTopAppBarHeight: () => this.root.el && this.root.el.clientHeight,
       registerNavigationIconInteractionHandler: (
         evtType: string,
         handler: (evt: Event) => void
@@ -189,8 +187,8 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
           this.scrollTarget === window ? 'pageYOffset' : 'scrollTop'
         ],
       getTotalActionItems: () =>
-        this.root.element &&
-        this.root.element.querySelectorAll(
+        this.root.el &&
+        this.root.el.querySelectorAll(
           MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
         ).length
     }));
@@ -210,9 +208,7 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
 
   render() {
     const { onNav, ...rest } = this.props;
-    return (
-      <TopAppBarRoot {...this.root.props(rest)} ref={this.root.setElement} />
-    );
+    return <TopAppBarRoot {...this.root.props(rest)} ref={this.root.setEl} />;
   }
 }
 

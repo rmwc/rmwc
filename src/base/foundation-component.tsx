@@ -2,11 +2,14 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 
+const toCamel = (str: string) =>
+  str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
+
 const reactPropFromEventName = (evtName: string) =>
-  (eventsMap as { [key: string]: string })[evtName];
+  (eventsMap as { [key: string]: string })[evtName] || evtName;
 
 type ClassListT = {
-  renderToString: () => string;
+  renderToString: (className?: string) => string;
   add: (className: string) => void;
   has: (className: string) => boolean;
   remove: (className: string) => void;
@@ -24,6 +27,18 @@ class PropsList {
     this.get = this.get.bind(this);
     this.addEventListener = this.addEventListener.bind(this);
     this.removeEventListener = this.removeEventListener.bind(this);
+    this.setStyle = this.setStyle.bind(this);
+  }
+
+  setStyle(styleName: string, styleValue: string) {
+    this.props = {
+      ...this.props,
+      style: {
+        ...(this.props.style || {}),
+        [toCamel(styleName)]: styleValue
+      }
+    };
+    this.update();
   }
 
   add(propName: string, value: any) {
@@ -35,10 +50,11 @@ class PropsList {
   }
 
   remove(propName: string) {
-    delete this.props[propName];
     this.props = {
       ...this.props
     };
+
+    delete this.props[propName];
     this.update();
   }
 
@@ -57,6 +73,11 @@ class PropsList {
             };
 
             acc[key] = wrappedFunc;
+          } else if (key === 'style') {
+            acc[key] = {
+              ...this.props[key],
+              ...val
+            };
           }
           return acc;
         },
@@ -120,7 +141,8 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
     const classList = this.classList[elementName];
     const propsList = this.propsList[elementName];
     const getElement = () => this.foundationRefs[elementName] || null;
-    const getClasses = () => classList.renderToString();
+    const getClasses = (className?: string) =>
+      classList.renderToString(className);
     return {
       addClass: classList.add,
       removeClass: classList.remove,
@@ -133,16 +155,17 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
       getProp: propsList.get,
       props: (rest: any) => ({
         ...propsList.all(rest),
-        className: getClasses()
+        className: getClasses(rest.className)
       }),
+      setStyle: propsList.setStyle,
       addEventListener: propsList.addEventListener,
       removeEventListener: propsList.removeEventListener,
-      setElement: (el: Element | Text | null) => {
+      setEl: (el: Element | Text | null) => {
         if (el instanceof HTMLElement) {
           this.foundationRefs[elementName] = el;
         }
       },
-      get element(): HTMLElement | null {
+      get el(): HTMLElement | null {
         return getElement();
       }
     };
@@ -151,10 +174,11 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   createClassList(elementName: string) {
     const classes = new Set();
     this.classList[elementName] = {
-      renderToString: () =>
+      renderToString: className =>
         classNames(
           (elementName === 'root_' || elementName === 'root') &&
             this.props.className,
+          className,
           [...classes]
         ),
       has: className => {

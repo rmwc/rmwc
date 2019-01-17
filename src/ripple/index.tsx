@@ -52,12 +52,12 @@ export class Ripple extends FoundationComponent<RippleProps> {
       browserSupportsCssVars: () => util.supportsCssVariables(window),
       isUnbounded: () => !!this.props.unbounded,
       isSurfaceActive: () =>
-        this.root.element && (this.root.element as any)[MATCHES](':active'),
+        this.root.el && (this.root.el as any)[MATCHES](':active'),
       isSurfaceDisabled: () => this.props.disabled,
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       containsEventTarget: (target: HTMLElement) =>
-        this.root.element && this.root.element.contains(target),
+        this.root.el && this.root.el.contains(target),
       registerInteractionHandler: (
         evtType: string,
         handler: (evt: Event) => void
@@ -89,10 +89,9 @@ export class Ripple extends FoundationComponent<RippleProps> {
       deregisterResizeHandler: (handler: (evt: Event) => void) =>
         window.removeEventListener('resize', handler),
       updateCssVariable: (varName: string, value: string | null) =>
-        this.root.element &&
-        this.root.element.style.setProperty(varName, value),
+        this.root.el && this.root.el.style.setProperty(varName, value),
       computeBoundingRect: () =>
-        this.root.element && this.root.element.getBoundingClientRect(),
+        this.root.el && this.root.el.getBoundingClientRect(),
       getWindowPageOffset: () => ({
         x: window.pageXOffset,
         y: window.pageYOffset
@@ -101,7 +100,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
   }
 
   sync(props: RippleProps, prevProps: RippleProps) {
-    this.root.setElement(ReactDOM.findDOMNode(this));
+    this.root.setEl(ReactDOM.findDOMNode(this));
 
     if (props.unbounded !== prevProps.unbounded) {
       this.foundation.setUnbounded(props.unbounded);
