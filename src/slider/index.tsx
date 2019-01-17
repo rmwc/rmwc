@@ -3,7 +3,11 @@ import { ComponentProps, CustomEventT } from '@rmwc/base';
 import * as React from 'react';
 // @ts-ignore
 import { MDCSliderFoundation } from '@material/slider';
-import { Component, FoundationComponent, syncFoundationProp } from '@rmwc/base';
+import {
+  componentFactory,
+  FoundationComponent,
+  syncFoundationProp
+} from '@rmwc/base';
 import { debounce } from '@rmwc/base/utils/debounce';
 
 export type SliderPropsT = {
@@ -35,18 +39,17 @@ export type SliderPropsT = {
   disabled?: boolean;
 } & ComponentProps;
 
-/** @extends React.Component */
-class SliderRoot extends Component<SliderPropsT> {
-  static displayName = 'SliderRoot';
-  classNames = (props: SliderPropsT) => [
+const SliderRoot = componentFactory<SliderPropsT>({
+  displayName: 'SliderRoot',
+  classNames: (props: SliderPropsT) => [
     'mdc-slider',
     {
       'mdc-slider--discrete': props.discrete,
       'mdc-slider--display-markers': props.displayMarkers && props.discrete
     }
-  ];
-  consumeProps = ['discrete', 'displayMarkers'];
-}
+  ],
+  consumeProps: ['discrete', 'displayMarkers']
+});
 
 class SliderTrack extends React.Component<{ elementRef: any }> {
   static displayName = 'SliderTrack';
@@ -146,9 +149,9 @@ export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
 
     // Fixes an issue where sythetic events were being
     // accessed in the Foundation and causing an error
-    const existingInteractionStartHandler_ = this.foundation_
+    const existingInteractionStartHandler_ = this.foundation
       .interactionStartHandler_;
-    this.foundation_.interactionStartHandler_ = (
+    this.foundation.interactionStartHandler_ = (
       evt: React.SyntheticEvent<any>
     ) => {
       evt.persist();
@@ -158,76 +161,76 @@ export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
 
   /** @return {number} */
   get value() {
-    return this.foundation_.getValue();
+    return this.foundation.getValue();
   }
 
   /** @param {number} value */
   set value(value: number) {
-    this.foundation_.setValue(value);
+    this.foundation.setValue(value);
   }
 
   /** @return {number} */
   get min() {
-    return this.foundation_.getMin();
+    return this.foundation.getMin();
   }
 
   /** @param {number} min */
   set min(min: number) {
-    this.foundation_.setMin(min);
+    this.foundation.setMin(min);
   }
 
   /** @return {number} */
   get max() {
-    return this.foundation_.getMax();
+    return this.foundation.getMax();
   }
 
   /** @param {number} max */
   set max(max: number) {
-    this.foundation_.setMax(max);
+    this.foundation.setMax(max);
   }
 
   /** @return {number} */
   get step() {
-    return this.foundation_.getStep();
+    return this.foundation.getStep();
   }
 
   /** @param {number} step */
   set step(step: number) {
-    this.foundation_.setStep(step);
+    this.foundation.setStep(step);
   }
 
   /** @return {boolean} */
   get disabled() {
-    return this.foundation_.isDisabled();
+    return this.foundation.isDisabled();
   }
 
   /** @param {boolean} disabled */
   set disabled(disabled: boolean) {
-    this.foundation_.setDisabled(disabled);
+    this.foundation.setDisabled(disabled);
   }
 
   get discrete(): boolean {
-    return !!(this.foundation_ && this.foundation_.isDiscrete_);
+    return !!(this.foundation && this.foundation.isDiscrete_);
   }
 
   set discrete(isDiscrete: boolean) {
-    if (this.foundation_) {
-      this.foundation_.isDiscrete_ = isDiscrete;
+    if (this.foundation) {
+      this.foundation.isDiscrete_ = isDiscrete;
     }
   }
 
   get displayMarkers(): boolean {
-    return !!this.foundation_ && this.foundation_.hasTrackMarker_;
+    return !!this.foundation && this.foundation.hasTrackMarker_;
   }
 
   set displayMarkers(isDisplayMarkers: boolean) {
-    if (this.foundation_) {
-      this.foundation_.hasTrackMarker_ = isDisplayMarkers;
+    if (this.foundation) {
+      this.foundation.hasTrackMarker_ = isDisplayMarkers;
     }
   }
 
   layout() {
-    this.foundation_.layout();
+    this.foundation.layout();
   }
 
   sync(nextProps: SliderPropsT) {
@@ -273,14 +276,14 @@ export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
       () => (this.discrete = !!nextProps.discrete)
     );
     //eslint-disable-next-line eqeqeq
-    if (this.discrete && this.foundation_ && this.foundation_.getStep() == 0) {
+    if (this.discrete && this.foundation && this.foundation.getStep() == 0) {
       this.step = 1;
     }
     // displayMarkers
     syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
       this.displayMarkers = !!nextProps.displayMarkers;
       window.requestAnimationFrame(
-        () => this.foundation_ && this.foundation_.setupTrackMarker()
+        () => this.foundation && this.foundation.setupTrackMarker()
       );
     });
   }

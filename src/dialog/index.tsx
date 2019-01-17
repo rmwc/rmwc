@@ -7,7 +7,8 @@ import { MDCDialogFoundation } from '@material/dialog';
 import createFocusTrap from 'focus-trap';
 
 import { Button } from '@rmwc/button';
-import { FoundationComponent, Component, noop } from '@rmwc/base';
+import { FoundationComponent, componentFactory } from '@rmwc/base';
+import { noop } from '@rmwc/base/utils/noop';
 
 const strings = MDCDialogFoundation.strings;
 
@@ -50,14 +51,14 @@ const matches = (element: HTMLElement, selector: string) => {
   return nativeMatches.call(element, selector);
 };
 
-class DialogRoot extends Component<{}> {
-  static displayName = 'DialogRoot';
-  static defaultProps: {
-    role: 'alertdialog';
-    'aria-modal': true;
-  };
-  classNames = ['mdc-dialog'];
-}
+const DialogRoot = componentFactory({
+  displayName: 'DialogRoot',
+  defaultProps: {
+    role: 'alertdialog',
+    'aria-modal': true
+  },
+  classNames: ['mdc-dialog']
+});
 
 class DialogScrim extends React.Component<{}> {
   shouldComponentUpdate() {
@@ -69,27 +70,24 @@ class DialogScrim extends React.Component<{}> {
   }
 }
 
-/** @extends React.Component */
 /** The Dialog title. */
-export class DialogTitle extends Component<{}> {
-  static displayName = 'DialogTitle';
-  tag = 'h2';
-  classNames = ['mdc-dialog__title'];
-}
+export const DialogTitle = componentFactory({
+  displayName: 'DialogTitle',
+  tag: 'h2',
+  classNames: ['mdc-dialog__title']
+});
 
-/** @extends React.Component */
 /** The Dialog content. */
-export class DialogContent extends Component<{}> {
-  static displayName = 'DialogContent';
-  classNames = ['mdc-dialog__content'];
-}
+export const DialogContent = componentFactory({
+  displayName: 'DialogContent',
+  classNames: ['mdc-dialog__content']
+});
 
-/** @extends React.Component */
 /** Actions container for the Dialog. */
-export class DialogActions extends Component<{}> {
-  static displayName = 'DialogActions';
-  classNames = ['mdc-dialog__actions'];
-}
+export const DialogActions = componentFactory({
+  displayName: 'DialogActions',
+  classNames: ['mdc-dialog__actions']
+});
 
 export type DialogButtonPropsT = {
   /** An action returned in evt.detail.action to the onClose handler. */
@@ -150,16 +148,16 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
   }
 
   open() {
-    if (!this.foundation_.isOpen_) {
+    if (!this.foundation.isOpen_) {
       document.addEventListener('keydown', this.handleDocumentKeydown_);
-      this.foundation_.open();
+      this.foundation.open();
     }
   }
 
   close() {
-    if (this.foundation_.isOpen_) {
+    if (this.foundation.isOpen_) {
       document.removeEventListener('keydown', this.handleDocumentKeydown_);
-      this.foundation_.close();
+      this.foundation.close();
     }
   }
 
@@ -181,15 +179,15 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
         clickOutsideDeactivates: true
       }));
 
-    this.handleInteraction_ = this.foundation_.handleInteraction.bind(
-      this.foundation_
+    this.handleInteraction_ = this.foundation.handleInteraction.bind(
+      this.foundation
     );
 
     this.root_ && this.root_.addEventListener('click', this.handleInteraction_);
     this.root_ &&
       this.root_.addEventListener('keydown', this.handleInteraction_);
-    this.handleDocumentKeydown_ = this.foundation_.handleDocumentKeydown.bind(
-      this.foundation_
+    this.handleDocumentKeydown_ = this.foundation.handleDocumentKeydown.bind(
+      this.foundation
     );
 
     super.componentDidMount();
@@ -287,7 +285,7 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
     return (
       <DialogRoot
         {...rest}
-        elementRef={ref => (this.root_ = ref)}
+        ref={ref => (this.root_ = ref)}
         className={this.classList.root_.renderToString()}
       >
         <div className="mdc-dialog__container">

@@ -1,23 +1,21 @@
-import { ComponentProps } from '@rmwc/base';
+import { FoundationComponent } from '@rmwc/base';
 
 import * as React from 'react';
 //@ts-ignore
-import { MDCFormField } from '@material/form-field';
-import { componentFactory, withFoundation } from '@rmwc/base';
+import { MDCFormFieldFoundation } from '@material/form-field';
+import { componentFactory } from '@rmwc/base';
 
-type FormFieldRootPropsT = {
+export interface FormFieldProps {
   /** Position the input after the label. */
   alignEnd?: boolean;
-} & ComponentProps;
+}
 
-export const FormFieldRoot: React.ComponentType<
-  FormFieldRootPropsT
-> = componentFactory({
+export const FormFieldRoot = componentFactory<FormFieldProps>({
   displayName: 'FormFieldRoot',
   defaultProps: {
     alignEnd: undefined
   },
-  classNames: (props: FormFieldRootPropsT) => [
+  classNames: (props: FormFieldProps) => [
     'mdc-form-field',
     {
       'mdc-form-field--align-end': props.alignEnd
@@ -26,17 +24,22 @@ export const FormFieldRoot: React.ComponentType<
   consumeProps: ['alignEnd']
 });
 
-export class FormField extends withFoundation({
-  constructor: MDCFormField,
-  adapter: {}
-})<FormFieldRootPropsT> {
+export class FormField extends FoundationComponent<FormFieldProps> {
   static displayName = 'FormField';
+
+  getDefaultFoundation() {
+    // For RMWC, the entire foundation is a noop. Interactions and ripples are controlled
+    // on the components themselves
+    return new MDCFormFieldFoundation({
+      registerInteractionHandler: (type: string, handler: () => void) => {},
+      deregisterInteractionHandler: (type: string, handler: () => void) => {},
+      activateInputRipple: () => {},
+      deactivateInputRipple: () => {}
+    });
+  }
+
   render() {
-    //$FlowFixMe
-    const { ...rest } = this.props;
-    const { root_ } = this.foundationRefs;
-    return <FormFieldRoot {...rest} ref={root_} />;
+    // @ts-ignore
+    return <FormFieldRoot {...this.props} />;
   }
 }
-
-export default FormField;

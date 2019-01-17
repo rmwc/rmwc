@@ -76,6 +76,10 @@ export const withFoundation = ({
     foundationRefs: { [name: string]: (ref: HTMLElement) => void };
     root_: Element | Text | null = null;
 
+    get foundation() {
+      return this.foundation_;
+    }
+
     constructor(props: FoundationPropsT<P>) {
       super(props);
 

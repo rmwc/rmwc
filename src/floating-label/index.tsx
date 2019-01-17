@@ -29,7 +29,7 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelPropsT> {
   }
 
   shake(shouldShake: boolean) {
-    this.foundation_.shake(shouldShake);
+    this.foundation.shake(shouldShake);
   }
 
   /**
@@ -38,14 +38,14 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelPropsT> {
    * if true, otherwise docks the label by removing the float class.
    */
   float(shouldFloat: boolean) {
-    this.foundation_.float(shouldFloat);
+    this.foundation.float(shouldFloat);
   }
 
   /**
    * @return {number}
    */
   getWidth() {
-    return this.foundation_.getWidth();
+    return this.foundation.getWidth();
   }
 
   render() {

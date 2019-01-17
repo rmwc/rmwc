@@ -3,10 +3,10 @@ import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
-import { MDCToolbar } from '@material/toolbar';
+import { MDCToolbarFoundation } from '@material/toolbar';
 import { Icon } from '@rmwc/icon';
-import { componentFactory } from '@rmwc/base';
-import { withFoundation } from '@rmwc/base/withFoundation';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
 
 export interface ToolbarPropsT extends ComponentProps {
   /** Makes the toolbar fixed */
@@ -63,10 +63,11 @@ type ToolbarSectionPropsT = {
   alignEnd?: boolean;
   /** Makes the ToolbarSection shrink to fit. */
   shrinkToFit?: boolean;
-} & ComponentProps;
+};
 
-const ToolbarSectionRoot = componentFactory({
-  displayName: 'ToolbarSectionRoot',
+/** A section of the Toolbar */
+export const ToolbarSection = componentFactory<ToolbarSectionPropsT>({
+  displayName: 'ToolbarSection',
   tag: 'section',
   classNames: (props: ToolbarSectionPropsT) => [
     'mdc-toolbar__section',
@@ -83,12 +84,6 @@ const ToolbarSectionRoot = componentFactory({
   },
   consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']
 });
-
-/** A section of the Toolbar */
-export const ToolbarSection: React.ComponentType<ToolbarSectionPropsT> = (
-  props: ToolbarSectionPropsT
-) => <ToolbarSectionRoot {...props} />;
-ToolbarSection.displayName = 'ToolbarSection';
 
 /** A Toolbar row  */
 export const ToolbarRow = componentFactory({
@@ -107,47 +102,118 @@ export const ToolbarFixedAdjust = componentFactory({
 /**
  * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
-export const ToolbarMenuIcon: React.ComponentType<IconProps> = componentFactory(
-  {
+export const ToolbarMenuIcon = withRipple({ unbounded: true })(
+  componentFactory<IconProps>({
     displayName: 'ToolbarMenuIcon',
     tag: Icon,
     classNames: ['mdc-toolbar__menu-icon']
-  }
+  })
 );
 
 /**
  * A standard Icon for toolbar actions. This is an instance of the Icon component.
  */
-export const ToolbarIcon: React.ComponentType<IconProps> = componentFactory({
-  displayName: 'ToolbarIcon',
-  tag: Icon,
-  classNames: ['mdc-toolbar__icon']
-});
+export const ToolbarIcon: React.ComponentType<IconProps> = withRipple({
+  unbounded: true
+})(
+  componentFactory({
+    displayName: 'ToolbarIcon',
+    tag: Icon,
+    classNames: ['mdc-toolbar__icon']
+  })
+);
 
-export class Toolbar extends withFoundation({
-  constructor: MDCToolbar,
-  adapter: {}
-})<ToolbarPropsT> {
+export class Toolbar extends FoundationComponent<ToolbarPropsT> {
   static displayName = 'Toolbar';
-  fixedAdjustElement: any;
-  root_: any;
+
+  root = this.createElement('root');
+  fixedAdjustElement_: HTMLElement | null = null;
 
   componentDidMount() {
     super.componentDidMount();
-    if (
-      this.root_ &&
-      this.root_.nextSibling &&
-      (this.root_.nextSibling.getAttribute('class') || '').includes(
-        'mdc-toolbar-fixed-adjust'
-      )
-    ) {
-      this.fixedAdjustElement = this.root_.nextSibling;
+
+    // loop through and get the fixed adjust element
+    if (this.root.element && this.root.element.parentNode) {
+      for (let i = 0; i < this.root.element.parentNode.children.length; i++) {
+        const el = this.root.element.parentNode.children[i];
+        if (
+          (el.getAttribute('class') || '').includes('mdc-toolbar-fixed-adjust')
+        ) {
+          this.fixedAdjustElement = el as HTMLElement;
+          break;
+        }
+      }
     }
+  }
+
+  get firstRowElement(): HTMLElement | null {
+    return (
+      this.root.element &&
+      this.root.element.querySelector(
+        MDCToolbarFoundation.strings.FIRST_ROW_SELECTOR
+      )
+    );
+  }
+
+  get titleElement(): HTMLElement | null {
+    return (
+      this.root.element &&
+      this.root.element.querySelector(
+        MDCToolbarFoundation.strings.TITLE_SELECTOR
+      )
+    );
+  }
+
+  set fixedAdjustElement(fixedAdjustElement) {
+    this.fixedAdjustElement_ = fixedAdjustElement;
+    this.foundation.updateAdjustElementStyles();
+  }
+
+  get fixedAdjustElement(): HTMLElement | null {
+    return this.fixedAdjustElement_;
+  }
+
+  getDefaultFoundation() {
+    return new MDCToolbarFoundation({
+      hasClass: (className: string) => this.root.hasClass(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      registerScrollHandler: (handler: (evt: Event) => void) =>
+        window.addEventListener('scroll', handler),
+      deregisterScrollHandler: (handler: (evt: Event) => void) =>
+        window.removeEventListener('scroll', handler),
+      registerResizeHandler: (handler: (evt: Event) => void) =>
+        window.addEventListener('resize', handler),
+      deregisterResizeHandler: (handler: (evt: Event) => void) =>
+        window.removeEventListener('resize', handler),
+      getViewportWidth: () => window.innerWidth,
+      getViewportScrollY: () => window.pageYOffset,
+      getOffsetHeight: () =>
+        this.root.element && this.root.element.offsetHeight,
+      getFirstRowElementOffsetHeight: () =>
+        this.firstRowElement && this.firstRowElement.offsetHeight,
+      notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
+        this.emit('onChange', evtData),
+      setStyle: (property: string, value: string) =>
+        this.root.element &&
+        this.root.element.style.setProperty(property, value),
+      setStyleForTitleElement: (property: string, value: string) =>
+        this.titleElement &&
+        this.titleElement.style.setProperty(property, value),
+      setStyleForFlexibleRowElement: (property: string, value: string) =>
+        this.firstRowElement &&
+        this.firstRowElement.style.setProperty(property, value),
+      setStyleForFixedAdjustElement: (property: string, value: string) => {
+        if (this.fixedAdjustElement) {
+          this.fixedAdjustElement.style.setProperty(property, value);
+        }
+      }
+    });
   }
 
   render() {
     const { ...rest } = this.props;
     const { root_ } = this.foundationRefs;
-    return <ToolbarRoot elementRef={root_} {...rest} />;
+    return <ToolbarRoot ref={root_} {...rest} />;
   }
 }

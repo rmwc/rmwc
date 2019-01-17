@@ -1,23 +1,19 @@
-import { ComponentProps, CustomEventT } from '@rmwc/base';
+import { ComponentProps, CustomEventT, FoundationComponent } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
 import { IconOptionsT } from '@rmwc/icon/defs';
-import { WithRipplePropsT } from '@rmwc/ripple';
+import { WithRippleProps } from '@rmwc/ripple';
 
 import * as React from 'react';
 //@ts-ignore
-import { MDCIconButtonToggle } from '@material/icon-button';
+import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
-import {
-  componentFactory,
-  withFoundation,
-  syncFoundationProp
-} from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 
 export interface IconButtonProps
   extends ComponentProps,
     IconProps,
-    WithRipplePropsT {
+    WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
   /** An onChange callback that receives a custom event. */
@@ -33,7 +29,7 @@ export interface IconButtonProps
 export const IconButtonRoot = withRipple({
   unbounded: true
 })(
-  componentFactory({
+  componentFactory<IconButtonProps>({
     displayName: 'IconButtonRoot',
     tag: 'button',
     classNames: (props: IconButtonProps) => [
@@ -66,14 +62,37 @@ export const IconButtonIcon = componentFactory<IconButtonIconProps>({
   consumeProps: ['on']
 });
 
-class IconButtonToggle extends withFoundation({
-  constructor: MDCIconButtonToggle
-})<any> {
+class IconButtonToggle extends FoundationComponent<IconButtonProps> {
   static displayName = 'IconButton';
 
-  on?: boolean;
-  initRipple_: any;
-  ripple_: any;
+  constructor(props: IconButtonProps) {
+    super(props);
+    this.createClassList('root_');
+    this.createPropsList('root_');
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  get on() {
+    return this.foundation && this.foundation.isOn();
+  }
+
+  set on(isOn) {
+    this.foundation.toggle(isOn);
+  }
+
+  getDefaultFoundation() {
+    return new MDCIconButtonToggleFoundation({
+      addClass: (className: string) => this.classList.root_.add(className),
+      removeClass: (className: string) =>
+        this.classList.root_.remove(className),
+      hasClass: (className: string) => this.classList.root_.has(className),
+      setAttr: (attrName: string, attrValue: string | number | null) =>
+        this.propsList.root_.add(attrName, attrValue),
+      notifyChange: (evtData: { isOn: boolean }) =>
+        this.emit('onChange', evtData)
+    });
+  }
 
   /** Takes into account our checked prop */
   isOn() {
@@ -81,19 +100,19 @@ class IconButtonToggle extends withFoundation({
       return this.props.checked;
     }
 
-    return this.foundation_ && this.on;
+    return this.on;
   }
 
-  initialize() {
-    this.ripple_ = this.initRipple_();
-    super.initialize();
-  }
-
-  syncWithProps(nextProps: IconButtonProps) {
+  sync(nextProps: IconButtonProps) {
     // checked
-    syncFoundationProp(nextProps.checked, this.on, () => {
+    if (nextProps.checked !== undefined && this.on !== nextProps.checked) {
       this.on = !!nextProps.checked;
-    });
+    }
+  }
+
+  handleClick(evt: React.MouseEvent<HTMLButtonElement>) {
+    this.props.onClick && this.props.onClick(evt);
+    this.foundation.handleClick(evt);
   }
 
   render() {
@@ -105,15 +124,13 @@ class IconButtonToggle extends withFoundation({
       onIconOptions,
       ...rest
     } = this.props;
-    const { root_ } = this.foundationRefs;
-    const tsxIsOn: any = this.isOn();
-
     return (
       <IconButtonRoot
-        aria-pressed={tsxIsOn}
+        aria-pressed={this.isOn()}
         aria-hidden="true"
-        {...rest}
-        elementRef={root_}
+        {...this.propsList.root_.all(rest)}
+        onClick={this.handleClick}
+        className={this.classList.root_.renderToString()}
       >
         <IconButtonIcon icon={icon} iconOptions={iconOptions} />
         <IconButtonIcon icon={onIcon} iconOptions={onIconOptions} on />

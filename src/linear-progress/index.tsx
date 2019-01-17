@@ -2,33 +2,32 @@ import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
-import { MDCLinearProgress } from '@material/linear-progress';
-import {
-  componentFactory,
-  withFoundation,
-  syncFoundationProp
-} from '@rmwc/base';
+import { MDCLinearProgressFoundation } from '@material/linear-progress';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
 
-export type LinearProgressPropsT = {
+export interface LinearProgressProps {
   /** Progress float percentage between 0 and 1. */
   progress?: number | string;
   /** A Progress buffer float percentage between 0 and 1. */
   buffer?: number | string;
-  /** Whether or not the Progress bar is determinate. */
-  determinate?: boolean;
   /** Progress goes from right to left. */
   reversed?: boolean;
   /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
   closed?: boolean;
-} & ComponentProps;
+}
 
-export const LinearProgressRoot = componentFactory({
+interface DeprecatedLinearProgressProps {
+  /** Whether or not the Progress bar is determinate. */
+  determinate?: boolean;
+}
+
+export const LinearProgressRoot = componentFactory<LinearProgressProps>({
   displayName: 'LinearProgressRoot',
   tag: 'nav',
-  classNames: (props: LinearProgressPropsT) => [
+  classNames: (props: LinearProgressProps) => [
     'mdc-linear-progress',
     {
-      'mdc-linear-progress--indeterminate': !props.determinate,
       'mdc-linear-progress--reversed': props.reversed,
       'mdc-linear-progress--closed': props.closed
     }
@@ -67,59 +66,91 @@ export const LinearProgressBarInner = componentFactory({
   classNames: ['mdc-linear-progress__bar-inner']
 });
 
-export class LinearProgress extends withFoundation({
-  constructor: MDCLinearProgress,
-  adapter: {}
-})<LinearProgressPropsT> {
+export class LinearProgress extends FoundationComponent<
+  LinearProgressProps & DeprecatedLinearProgressProps
+> {
   static displayName = 'LinearProgress';
 
   static defaultProps = {
-    progress: 0,
+    progress: undefined,
     buffer: undefined,
-    determinate: true,
     reversed: false
   };
 
-  progress: any;
-  buffer: any;
-  determinate: any;
-  reversed: any;
+  root = this.createElement('root');
+  determinate: boolean | null = null;
 
-  syncWithProps(nextProps: LinearProgressPropsT) {
+  getDefaultFoundation() {
+    return new MDCLinearProgressFoundation({
+      addClass: (className: string) => this.root.addClass(className),
+      getPrimaryBar: () =>
+        this.root.element &&
+        this.root.element.querySelector(
+          MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
+        ),
+      getBuffer: () =>
+        this.root.element &&
+        this.root.element.querySelector(
+          MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
+        ),
+      hasClass: (className: string) => this.root.hasClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      setStyle: (
+        el: HTMLElement,
+        styleProperty: string,
+        value: string | null
+      ) => ((el.style as any)[styleProperty] = value)
+    });
+  }
+
+  sync(props: LinearProgressProps, prevProps: LinearProgressProps) {
     // progress
-    syncFoundationProp(
-      nextProps.progress,
-      this.progress,
-      () => (this.progress = nextProps.progress)
-    );
+    if (props.progress !== prevProps.progress) {
+      this.foundation.setProgress(props.progress || 0);
+    }
 
     // buffer
-    syncFoundationProp(
-      nextProps.buffer,
-      this.buffer,
-      () => (this.buffer = nextProps.buffer)
-    );
+    if (props.buffer !== prevProps.buffer) {
+      this.foundation.setBuffer(props.buffer || 0);
+    }
 
     // determinate
-    syncFoundationProp(
-      nextProps.determinate,
-      this.determinate,
-      () => (this.determinate = nextProps.determinate)
-    );
+    // automatically derive this from progress
+    if (props.progress !== undefined && !this.determinate) {
+      // progress is passed but we are not currently determinate
+      this.foundation.setDeterminate(true);
+      this.determinate = true;
+    } else if (
+      (props.progress === undefined && this.determinate) ||
+      this.determinate === null
+    ) {
+      // progress is not passed and we are either determinate, or its our first syncing
+      // indicated by this.determinate being null;
+      this.foundation.setDeterminate(false);
+      this.determinate = false;
+    }
 
     // reversed
-    syncFoundationProp(
-      nextProps.reversed,
-      this.reversed,
-      () => (this.reversed = nextProps.reversed)
-    );
+    if (props.reversed !== prevProps.reversed) {
+      this.foundation.setReverse(props.reversed || 0);
+    }
+
+    // closed
+    if (props.closed !== prevProps.closed) {
+      props.closed ? this.foundation.close() : this.foundation.open();
+    }
   }
 
   render() {
-    const { progress, buffer, ...rest } = this.props;
-    const { root_ } = this.foundationRefs;
+    const { progress, buffer, determinate, ...rest } = this.props;
+
+    deprecationWarning(
+      'LinearProgress determinate is no longer a valid prop. Determinate is set automatically be the presence of the progress prop.'
+    );
+
     return (
-      <LinearProgressRoot elementRef={root_} {...rest}>
+      // @ts-ignore
+      <LinearProgressRoot ref={this.root.setElement} {...this.root.props(rest)}>
         <LinearProgressBufferingDots />
         <LinearProgressBuffer />
         <LinearProgressPrimaryBar>

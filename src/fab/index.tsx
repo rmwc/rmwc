@@ -1,26 +1,24 @@
 import { componentFactory, ComponentProps } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
-import { WithRipplePropsT } from '@rmwc/ripple';
+import { WithRippleProps } from '@rmwc/ripple';
 
 import * as React from 'react';
 import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
-export interface FabProps extends ComponentProps, IconProps, WithRipplePropsT {
+export interface FabProps extends IconProps, WithRippleProps {
   /** Make the Fab smaller. */
   mini?: boolean;
   /** Make the Fab extended with a label. */
   label?: React.ReactNode & any;
   /** Animates the FAB out of view. When this class is removed, the FAB will return to view. */
   exited?: boolean;
-  /** Enable / disable the ripple. */
-  ripple?: boolean;
 }
 
 export const FabRoot = withRipple({
   surface: false
 })(
-  componentFactory({
+  componentFactory<FabProps>({
     displayName: 'FabRoot',
     tag: 'button',
     classNames: (props: FabProps) => [
@@ -58,7 +56,7 @@ export const Fab = ({
   iconOptions,
   ...rest
 }: FabProps) => (
-  <FabRoot {...rest}>
+  <FabRoot label={label} {...rest}>
     <FabIcon icon={icon} iconOptions={iconOptions} />
     {!!label && <FabLabel>{label}</FabLabel>}
     {children}

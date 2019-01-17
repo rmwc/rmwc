@@ -1,11 +1,14 @@
 import { ComponentProps, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
-import { noop } from '@rmwc/base';
-// @ts-ignore
-import { MDCDrawer } from '@material/drawer';
-import { withFoundation, syncFoundationProp } from '@rmwc/base/withFoundation';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { noop } from '@rmwc/base/utils/noop';
+import {
+  MDCModalDrawerFoundation,
+  MDCDismissibleDrawerFoundation
+  // @ts-ignore
+} from '@material/drawer';
+import { createFocusTrap, FocusTrap } from '@rmwc/base';
 
 /***************************************************************************************
  * Drawer Headers
@@ -45,7 +48,11 @@ export const DrawerContent = componentFactory({
  * This is automatically included if you're using React 16 and above.
  * For React 15, you must manually include it immediately after a modal Drawer.
  * */
-export const DrawerScrim = () => <div className="mdc-drawer-scrim" />;
+export const DrawerScrim = ({
+  onClick
+}: {
+  onClick: (evt: React.MouseEvent<HTMLDivElement>) => void;
+}) => <div className="mdc-drawer-scrim" onClick={onClick} />;
 
 /***************************************************************************************
  * DrawerAppContent
@@ -85,11 +92,11 @@ export const DrawerRoot = componentFactory({
   consumeProps: ['dismissible', 'modal']
 });
 
-const slidableDrawerFactory = (MDCConstructor: Function, displayName: string) =>
-  class extends withFoundation({
-    constructor: MDCConstructor,
-    adapter: {}
-  })<DrawerPropsT> {
+const slidableDrawerFactory = (
+  MDCConstructor: MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
+  displayName: string
+) =>
+  class extends FoundationComponent<DrawerPropsT> {
     static displayName = displayName;
 
     static defaultProps = {
@@ -98,39 +105,113 @@ const slidableDrawerFactory = (MDCConstructor: Function, displayName: string) =>
       onClose: noop
     };
 
-    open: any;
+    root = this.createElement('root');
+    previousFocus: HTMLElement | null = null;
+    focusTrap: FocusTrap | null = null;
 
-    initialize() {
-      console.log('HERE');
-      //override to kill some abhorrent MDCWeb functionality...
+    constructor(props: DrawerPropsT) {
+      super(props);
+
+      ['handleScrimClick', 'handleTransitionEnd', 'handleKeyDown'].forEach(
+        k => {
+          (this as any)[k] = (this as any)[k].bind(this);
+        }
+      );
     }
 
-    syncWithProps(nextProps: DrawerPropsT) {
-      // Open
-      // MDC calls notify change before actually setting the Open value
-      // which causes an infinite loop for reacts uni-directional data flow
-      // The set timeout gives us a frame before we re-evaluate whether we are open
-      setTimeout(() => {
-        this.foundation_ &&
-          syncFoundationProp(
-            nextProps.open,
-            this.open,
-            () => (this.open = nextProps.open || false)
-          );
-      });
+    componentDidMount() {
+      super.componentDidMount();
+      this.root.element &&
+        (this.focusTrap = createFocusTrap(this.root.element, {
+          clickOutsideDeactivates: true,
+          initialFocus: undefined,
+          escapeDeactivates: false,
+          returnFocusOnDeactivate: false
+        }));
+    }
+
+    getDefaultFoundation() {
+      /** @type {!MDCDrawerAdapter} */
+      const adapter = /** @type {!MDCDrawerAdapter} */ {
+        addClass: (className: string) => this.root.addClass(className),
+        removeClass: (className: string) => this.root.removeClass(className),
+        hasClass: (className: string) => this.root.hasClass(className),
+        elementHasClass: (element: HTMLElement, className: string) =>
+          element.classList.contains(className),
+        saveFocus: () => {
+          this.previousFocus = document.activeElement as HTMLElement;
+        },
+        restoreFocus: () => {
+          const previousFocus = this.previousFocus && this.previousFocus.focus;
+          if (
+            this.root.element &&
+            this.root.element.contains(document.activeElement) &&
+            previousFocus
+          ) {
+            this.previousFocus && this.previousFocus.focus();
+          }
+        },
+        focusActiveNavigationItem: () => {
+          const activeNavItemEl =
+            this.root.element &&
+            this.root.element.querySelector(`.mdc-list-item--activated`);
+          if (activeNavItemEl) {
+            (activeNavItemEl as HTMLElement).focus();
+          }
+        },
+        notifyClose: () => this.emit('onClose', {}, true /* shouldBubble */),
+        notifyOpen: () => this.emit('onOpen', {}, true /* shouldBubble */),
+        trapFocus: () => this.focusTrap && this.focusTrap.activate(),
+        releaseFocus: () => this.focusTrap && this.focusTrap.deactivate()
+      };
+
+      return new MDCConstructor(adapter);
+    }
+
+    handleScrimClick() {
+      this.foundation.handleScrimClick();
+    }
+
+    handleKeyDown(evt: React.KeyboardEvent) {
+      this.props.onKeyDown && this.props.onKeyDown(evt);
+      this.foundation.handleKeydown(evt);
+    }
+
+    handleTransitionEnd(evt: React.TransitionEvent) {
+      this.props.onTransitionEnd && this.props.onTransitionEnd(evt);
+      this.foundation.handleTransitionEnd(evt);
+    }
+
+    sync(props: DrawerPropsT, prevProps: DrawerPropsT) {
+      if (props.open !== prevProps.open) {
+        props.open ? this.foundation.open() : this.foundation.close();
+      }
     }
 
     render() {
       const { onOpen, onClose, open, ...rest } = this.props;
-      const { root_ } = this.foundationRefs;
-
-      return <DrawerRoot ref={root_} {...rest} />;
+      return (
+        <React.Fragment>
+          <DrawerRoot
+            ref={this.root.setElement}
+            {...this.root.props(rest)}
+            onKeyDown={this.handleKeyDown}
+            onTransitionEnd={this.handleTransitionEnd}
+          />
+          {rest.modal && <DrawerScrim onClick={this.handleScrimClick} />}
+        </React.Fragment>
+      );
     }
   };
 
-const ModalDrawer = slidableDrawerFactory(MDCDrawer, 'ModalDrawer');
-
-const DismissibleDrawer = slidableDrawerFactory(MDCDrawer, 'dismissibleDrawer');
+const ModalDrawer = slidableDrawerFactory(
+  MDCModalDrawerFoundation,
+  'ModalDrawer'
+);
+const DismissibleDrawer = slidableDrawerFactory(
+  MDCDismissibleDrawerFoundation,
+  'dismissibleDrawer'
+);
 
 export const Drawer: React.ComponentType<DrawerPropsT> = (
   props: DrawerPropsT
@@ -140,16 +221,7 @@ export const Drawer: React.ComponentType<DrawerPropsT> = (
   }
 
   if (props.modal) {
-    if (React.Fragment !== undefined) {
-      return (
-        <React.Fragment>
-          <ModalDrawer {...props} />
-          <DrawerScrim />
-        </React.Fragment>
-      );
-    } else {
-      return <ModalDrawer {...props} />;
-    }
+    return <ModalDrawer {...props} />;
   }
 
   return <DrawerRoot {...props} />;

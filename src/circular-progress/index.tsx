@@ -25,7 +25,7 @@ interface CircularProgressRootProps {
   _progress?: number;
 }
 
-const CircularProgressRoot = componentFactory({
+const CircularProgressRoot = componentFactory<CircularProgressRootProps>({
   displayName: 'CircularProgressRoot',
   classNames: (props: CircularProgressRootProps) => [
     'rmwc-circular-progress',

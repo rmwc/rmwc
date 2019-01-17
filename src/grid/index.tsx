@@ -1,29 +1,27 @@
-
 import * as React from 'react';
-import { Component } from '@rmwc/base';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 
 export type GridPropsT = {
   /** Specifies the grid should have fixed column width. */
-  fixedColumnWidth?: boolean,
+  fixedColumnWidth?: boolean;
   /** Specifies the alignment of the whole grid. */
-  align?: 'left' | 'right',
+  align?: 'left' | 'right';
   /** Children for the Grid */
-  children?: React.ReactNode
-  //$FlowFixMe
-} & React.HTMLProps<any>;
+  children?: React.ReactNode;
+} & ComponentProps;
 
-class GridRoot extends Component<GridPropsT> {
-  static displayName = 'GridRoot';
-  classNames = (props: GridPropsT) => [
+const GridRoot = componentFactory<GridPropsT>({
+  displayName: 'GridRoot',
+  classNames: (props: GridPropsT) => [
     'mdc-layout-grid',
     {
       [`mdc-layout-grid__cell--align-${props.align || ''}`]:
         props.align !== undefined,
       'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth
     }
-  ];
-  consumeProps = ['fixedColumnWidth', 'align'];
-}
+  ],
+  consumeProps: ['fixedColumnWidth', 'align']
+});
 
 /** A Grid component */
 export const Grid: React.ComponentType<GridPropsT> = ({
@@ -47,24 +45,23 @@ Grid.displayName = 'Grid';
 
 export type GridCellPropsT = {
   /** Default number of columns to span. */
-  span?: string | number,
+  span?: string | number;
   /** Number of columns to span on a phone. */
-  phone?: string | number,
+  phone?: string | number;
   /** Number of columns to span on a tablet. */
-  tablet?: string | number,
+  tablet?: string | number;
   /** Number of columns to span on a desktop. */
-  desktop?: string | number,
+  desktop?: string | number;
   /** Specifies the order of the cell. */
-  order?: string | number,
+  order?: string | number;
   /** Specifies the alignment of cell */
-  align?: 'top' | 'middle' | 'bottom'
+  align?: 'top' | 'middle' | 'bottom';
 };
 
-/** @extends React.Component */
 /** A Grid cell */
-export class GridCell extends Component<GridCellPropsT> {
-  static displayName = 'GridCell';
-  classNames = (props: GridCellPropsT) => [
+export const GridCell = componentFactory<GridCellPropsT>({
+  displayName: 'GridCell',
+  classNames: (props: GridCellPropsT) => [
     'mdc-layout-grid__cell',
     {
       [`mdc-layout-grid__cell--order-${props.order || ''}`]:
@@ -80,13 +77,12 @@ export class GridCell extends Component<GridCellPropsT> {
       [`mdc-layout-grid__cell--span-${props.desktop || ''}-desktop`]:
         props.desktop !== undefined
     }
-  ];
-  consumeProps = ['span', 'phone', 'tablet', 'desktop', 'order', 'align'];
-}
+  ],
+  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']
+});
 
-/** @extends React.Component */
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export class GridInner extends Component<{}> {
-  static displayName = 'GridInner';
-  classNames = ['mdc-layout-grid__inner'];
-}
+export const GridInner = componentFactory({
+  displayName: 'GridInner',
+  classNames: ['mdc-layout-grid__inner']
+});

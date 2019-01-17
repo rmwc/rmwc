@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ListItem, ListItemMeta } from '@rmwc/list';
 
@@ -7,10 +6,6 @@ export class Submenu extends React.Component<{
   children: React.ReactNode;
   label: string;
 }> {
-  static propTypes = {
-    label: PropTypes.node
-  };
-
   state = {
     isOpen: false
   };

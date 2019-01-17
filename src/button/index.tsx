@@ -1,16 +1,12 @@
-import { RMWCProviderOptionsT } from '@rmwc/provider';
-import { WithRipplePropsT } from '@rmwc/ripple';
+import { WithRippleProps } from '@rmwc/ripple';
 import { IconProps } from '@rmwc/icon';
 import { ComponentProps, componentFactory } from '@rmwc/base';
 
 import * as React from 'react';
-import { ProviderContext } from '@rmwc/provider';
-
-import { Component, PropTypes } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
-export interface ButtonProps extends WithRipplePropsT, ComponentProps {
+export interface ButtonProps extends WithRippleProps, ComponentProps {
   /** Make the Button dense. */
   dense?: boolean;
   /** Make the Button raised. */
@@ -28,11 +24,12 @@ export interface ButtonProps extends WithRipplePropsT, ComponentProps {
 /**
  * The Button component. Buttons also accepts all of the props from the Ripple component.
  */
-export const Button: React.ComponentType<ButtonProps> = withRipple({
+export const Button = withRipple({
   surface: false
 })(
   componentFactory({
     displayName: 'Button',
+    tag: 'button',
     classNames: (props: ButtonProps) => [
       'mdc-button',
       {
@@ -42,7 +39,6 @@ export const Button: React.ComponentType<ButtonProps> = withRipple({
         'mdc-button--outlined': props.outlined
       }
     ],
-    tag: 'button',
     consumeProps: [
       'dense',
       'raised',

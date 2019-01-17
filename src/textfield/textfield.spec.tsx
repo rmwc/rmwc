@@ -70,7 +70,7 @@ describe('TextField', () => {
 
   it('can be required', () => {
     const el = mount(<TextField value="" onChange={() => {}} required />);
-    const foundation = el.instance().foundation_;
+    const foundation = el.instance().foundation;
     const getValid = () =>
       el.html().includes('mdc-text-field--invalid') === false;
 
@@ -105,7 +105,7 @@ describe('TextField', () => {
 
   it('foundation checks', () => {
     const el = mount(<TextField />);
-    const adapter = el.instance().foundation_.adapter_;
+    const adapter = el.instance().foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.hasClass('test');
@@ -140,7 +140,7 @@ describe('TextFieldIcon', () => {
 
   it('foundation checks', () => {
     const el = mount(<TextFieldIcon icon="favorite" />);
-    const adapter = el.instance().foundation_.adapter_;
+    const adapter = el.instance().foundation.adapter_;
     adapter.getAttr('test');
     adapter.setAttr('test', 1);
     adapter.removeAttr('test');

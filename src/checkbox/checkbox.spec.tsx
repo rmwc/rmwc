@@ -46,7 +46,7 @@ describe('Checkbox', () => {
 
   test('foundation check', () => {
     const el = mount(<Checkbox className={'my-custom-classname'} />);
-    const adapter = el.instance().foundation_.adapter_;
+    const adapter = el.instance().foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.setNativeControlAttr('checked', true);

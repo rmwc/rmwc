@@ -81,7 +81,7 @@ describe('Menu', () => {
 
     el.find(Menu)
       .instance()
-      .menuSurface_.foundation_.adapter_.notifyClose();
+      .menuSurface_.foundation.adapter_.notifyClose();
     expect(val).toBe(1);
   });
 
@@ -102,7 +102,7 @@ describe('Menu', () => {
 
     el.find(MenuSurface)
       .instance()
-      .foundation_.adapter_.notifyClose();
+      .foundation.adapter_.notifyClose();
     expect(val).toBe(1);
 
     el.setProps({ open: false, anchorCorner: 'bottomRight' });

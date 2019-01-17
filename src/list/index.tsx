@@ -1,31 +1,31 @@
 import { ComponentProps } from '@rmwc/base';
-import { WithRipplePropsT } from '@rmwc/ripple';
-import { RMWCProviderOptionsT, WithProviderContext } from '@rmwc/provider';
+import { WithRippleProps } from '@rmwc/ripple';
 import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
-import { withProviderContext } from '@rmwc/provider';
-import { componentFactory, classNames, PropTypes } from '@rmwc/base';
+import { componentFactory, classNames } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
-export type ListItemPropsT = {
+export interface ListItemProps extends WithRippleProps {
   /** A modifier for a selected state. */
   selected?: boolean;
   /** A modifier for an active state. */
   activated?: boolean;
   /** A modifier for a disabled state. */
   disabled?: boolean;
-  /** Enable / disable the ripple. */
-  ripple?: boolean;
-} & ComponentProps &
-  WithRipplePropsT &
-  WithProviderContext;
+}
 
-export const ListItemRoot = withRipple()(
-  componentFactory({
-    displayName: 'ListItemRoot',
-    classNames: (props: ListItemPropsT) => [
+/**
+ * The ListItem component.
+ */
+export const ListItem = withRipple()(
+  componentFactory<ListItemProps>({
+    displayName: 'ListItem',
+    defaultProps: {
+      tabIndex: 0
+    },
+    classNames: (props: ListItemProps) => [
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
@@ -36,24 +36,6 @@ export const ListItemRoot = withRipple()(
     consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element
   })
 );
-
-/**
- * The ListItem component.
- */
-export const ListItem = withProviderContext()(
-  ({ providerContext, ...props }: ListItemPropsT) => {
-    const { listItemDefaultRipple } = providerContext;
-    const { ripple, ...rest } = props;
-    const shouldRipple = ripple === undefined ? listItemDefaultRipple : ripple;
-    return <ListItemRoot ripple={shouldRipple} {...rest} />;
-  }
-);
-
-ListItem.displayName = 'ListItem';
-ListItem.defaultProps = {
-  ripple: true,
-  tabIndex: 0
-};
 
 /** Text Wrapper for the ListItem */
 export const ListItemText = componentFactory({
@@ -140,7 +122,7 @@ export const List = componentFactory({
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
 });
 
-export type SimpleListItemPropsT = {
+export interface SimpleListItemProps extends ListItemProps {
   /** Text for the ListItem. */
   text?: React.ReactNode;
   /** Secondary Text for the ListItem. */
@@ -151,16 +133,16 @@ export type SimpleListItemPropsT = {
   meta?: React.ReactNode;
   /** Children to render */
   children?: React.ReactNode;
-} & ListItemPropsT;
+}
 
-export const SimpleListItem: React.ComponentType<SimpleListItemPropsT> = ({
+export const SimpleListItem: React.ComponentType<SimpleListItemProps> = ({
   text,
   secondaryText,
   graphic,
   meta,
   children,
   ...rest
-}: SimpleListItemPropsT) => {
+}: SimpleListItemProps) => {
   const primaryTextToRender =
     text && secondaryText !== undefined ? (
       <ListItemPrimaryText>{text}</ListItemPrimaryText>

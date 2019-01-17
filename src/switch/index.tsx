@@ -3,7 +3,7 @@ import { ComponentProps } from '@rmwc/base';
 import * as React from 'react';
 // @ts-ignore
 import { MDCSwitchFoundation } from '@material/switch';
-import { Component, FoundationComponent, classNames } from '@rmwc/base';
+import { componentFactory, FoundationComponent, classNames } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { FormField } from '@rmwc/formfield';
 import { withRipple } from '@rmwc/ripple';
@@ -23,10 +23,10 @@ export type SwitchPropsT = {
   children?: React.ReactNode;
 } & ComponentProps;
 
-export class SwitchRoot extends Component<SwitchPropsT> {
-  static displayName = 'SwitchRoot';
-  classNames = ['mdc-switch'];
-}
+export const SwitchRoot = componentFactory<SwitchPropsT>({
+  displayName: 'SwitchRoot',
+  classNames: ['mdc-switch']
+});
 
 class SwitchTrack extends React.Component<{}> {
   static displayName = 'SwitchTrack';
@@ -53,7 +53,7 @@ class SwitchKnob extends React.Component<{}> {
 }
 
 const SwitchThumbUnderlay = withRipple({ unbounded: true })(
-  ({ className, ...rest }: { className: string }) => (
+  ({ className, ...rest }: { className?: string }) => (
     <div
       className={classNames(className, 'mdc-switch__thumb-underlay')}
       {...rest}
@@ -80,9 +80,9 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
   componentDidMount() {
     super.componentDidMount();
     this.nativeControl_ &&
-      this.foundation_.updateCheckedStyling_(this.nativeControl_.checked);
+      this.foundation.updateCheckedStyling_(this.nativeControl_.checked);
     this.nativeControl_ &&
-      this.foundation_.setDisabled(this.nativeControl_.disabled);
+      this.foundation.setDisabled(this.nativeControl_.disabled);
   }
 
   getDefaultFoundation() {
@@ -98,7 +98,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
   }
 
   handleChange_(evt: any) {
-    this.foundation_.handleChange(evt);
+    this.foundation.handleChange(evt);
     this.props.onChange && this.props.onChange(evt);
   }
 
@@ -108,7 +108,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
       !!prevProps &&
       props.checked !== prevProps.checked
     ) {
-      this.foundation_.updateCheckedStyling_(props.checked);
+      this.foundation.updateCheckedStyling_(props.checked);
     }
 
     if (
@@ -116,7 +116,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
       !!prevProps &&
       props.disabled !== prevProps.disabled
     ) {
-      this.foundation_.setDisabled(props.disabled);
+      this.foundation.setDisabled(props.disabled);
     }
   }
 
@@ -140,7 +140,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
           (classNames(hasLabel || [rootProps.className, className]),
           this.classList.root_.renderToString())
         }
-        elementRef={(el: HTMLElement) => (this.root_ = el)}
+        ref={(el: HTMLElement) => (this.root_ = el)}
       >
         <SwitchTrack />
         <SwitchThumbUnderlay>

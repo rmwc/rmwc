@@ -39,7 +39,7 @@ describe('Chip', () => {
     let value = 0;
     const el = mount(<Chip onInteraction={() => value++} />);
     const inst = el.instance();
-    inst.foundation_.adapter_.notifyInteraction();
+    inst.foundation.adapter_.notifyInteraction();
     expect(value).toEqual(1);
   });
 
@@ -65,7 +65,7 @@ describe('Chip', () => {
 
     expect(onInteraction).toEqual(1);
 
-    const a = el.instance().foundation_.adapter_;
+    const a = el.instance().foundation.adapter_;
     a.notifyRemoval();
     expect(onRemove).toEqual(1);
 
@@ -85,7 +85,7 @@ describe('Chip', () => {
     );
 
     const inst = el.instance();
-    const a = inst.foundation_.adapter_;
+    const a = inst.foundation.adapter_;
 
     a.addClass('test');
     a.hasClass('test');

@@ -28,7 +28,7 @@ describe('Radio', () => {
 
   test('foundation check', () => {
     const radio = mount(<Radio disabled />);
-    const adapter = radio.instance().foundation_.adapter_;
+    const adapter = radio.instance().foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
   });

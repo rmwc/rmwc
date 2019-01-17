@@ -10,9 +10,9 @@ import { Button } from '@rmwc/button';
 import {
   componentFactory,
   syncFoundationProp,
-  withFoundation,
-  noop
+  withFoundation
 } from '@rmwc/base';
+import { noop } from '@rmwc/base/utils/noop';
 
 export type SnackbarPropsT = {
   /** Show the Snackbar. */

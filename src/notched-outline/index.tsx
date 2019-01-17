@@ -55,14 +55,14 @@ export class NotchedOutline extends FoundationComponent<NotchedOutlinePropsT> {
    * will be right justified in outline path, otherwise left justified.
    */
   notch(notchWidth: number, isRtl: boolean) {
-    this.foundation_.notch(notchWidth, isRtl);
+    this.foundation.notch(notchWidth, isRtl);
   }
 
   /**
    * Updates the outline selectors to close notch and return it to idle state.
    */
   closeNotch() {
-    this.foundation_.closeNotch();
+    this.foundation.closeNotch();
   }
 
   render() {

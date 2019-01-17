@@ -103,8 +103,8 @@ describe('Select', () => {
     );
 
     const inst = standard.instance();
-    const a = inst.foundation_.adapter_;
-    const enhancedA = enhanced.instance().foundation_.adapter_;
+    const a = inst.foundation.adapter_;
+    const enhancedA = enhanced.instance().foundation.adapter_;
 
     [a, enhancedA].forEach(a => {
       a.getValue();
@@ -145,7 +145,7 @@ describe('Select Icon', () => {
 
   // it('adapter checks', () => {
   //   const el = mount(<SelectIcon icon="favorite" />);
-  //   const a = el.instance().foundation_.adapter_;
+  //   const a = el.instance().foundation.adapter_;
 
   //   a.getAttr('test');
   //   a.setAttr('test', 'test');

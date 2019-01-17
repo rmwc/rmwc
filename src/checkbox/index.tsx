@@ -1,12 +1,12 @@
-import { WithRipplePropsT } from '@rmwc/ripple';
+import { WithRippleProps } from '@rmwc/ripple';
 
 import * as React from 'react';
 // @ts-ignore
 import { MDCCheckboxFoundation } from '@material/checkbox';
 // @ts-ignore
 import { getCorrectEventName } from '@material/animation';
-import FormField from '@rmwc/formfield';
-import { Component, FoundationComponent } from '@rmwc/base';
+import { FormField } from '@rmwc/formfield';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
@@ -31,7 +31,7 @@ export type CheckboxPropsT = {
   indeterminate?: boolean;
   /** A label for the control. */
   label?: string;
-} & WithRipplePropsT &
+} & WithRippleProps &
   //$FlowFixMe
   React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -39,27 +39,26 @@ const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  class extends Component<CheckboxPropsT> {
-    static displayName = 'CheckboxRoot';
-    classNames = (props: CheckboxPropsT) => [
+  componentFactory<CheckboxPropsT>({
+    displayName: 'CheckboxRoot',
+    classNames: (props: CheckboxPropsT) => [
       'mdc-checkbox',
       {
         'mdc-checkbox--disabled': props.disabled
       }
-    ];
-    consumeProps = ['disabled'];
-  }
+    ],
+    consumeProps: ['disabled']
+  })
 );
 
-class CheckboxNativeControl extends Component<{}> {
-  static displayName = 'CheckboxNativeControl';
-  static defaultProps = {
+const CheckboxNativeControl = componentFactory({
+  displayName: 'CheckboxNativeControl',
+  defaultProps: {
     type: 'checkbox'
-  };
-
-  tag = 'input';
-  classNames = ['mdc-checkbox__native-control'];
-}
+  },
+  tag: 'input',
+  classNames: ['mdc-checkbox__native-control']
+});
 
 class CheckboxBackground extends React.Component<{}> {
   static displayName = 'CheckboxBackground';
@@ -106,34 +105,13 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
     this.generatedId = randomId('checkbox');
     this.createClassList('root_');
     this.createPropsList('nativeCb_');
-  }
 
-  componentDidMount() {
-    super.componentDidMount();
-    this.handleAnimationEnd_ = () => this.foundation_.handleAnimationEnd();
-    this.handleChange_ = () => this.sync(this.props);
-    this.nativeCb_ &&
-      this.nativeCb_.addEventListener('change', this.handleChange_);
-    this.root_ &&
-      this.root_.addEventListener(
-        getCorrectEventName(window, 'animationend'),
-        this.handleAnimationEnd_
-      );
-  }
-
-  componentWillUnmount() {
-    super.componentWillUnmount();
-    this.nativeCb_ &&
-      this.nativeCb_.removeEventListener('change', this.handleChange_);
-    this.root_ &&
-      this.root_.removeEventListener(
-        getCorrectEventName(window, 'animationend'),
-        this.handleAnimationEnd_
-      );
+    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   sync(nextProps: CheckboxPropsT) {
-    this.foundation_.handleChange();
+    this.foundation.handleChange();
 
     if (
       this.nativeCb_ &&
@@ -166,20 +144,32 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
     });
   }
 
+  handleAnimationEnd(evt: React.AnimationEvent) {
+    this.props.onAnimationEnd && this.props.onAnimationEnd(evt);
+    this.foundation && this.foundation.handleAnimationEnd();
+  }
+
+  handleOnChange(evt: React.ChangeEvent<HTMLInputElement>) {
+    this.props.onChange && this.props.onChange(evt);
+    this.sync(this.props);
+  }
+
   render() {
     const { label = '', id, children, indeterminate, ...rest } = this.props;
     const labelId = id || this.generatedId;
 
     const checkbox = (
       <CheckboxRoot
-        elementRef={(ref: any) => (this.root_ = ref)}
+        ref={ref => (this.root_ = ref)}
         disabled={rest.disabled}
         className={this.classList.root_.renderToString()}
+        onAnimationEnd={this.handleAnimationEnd}
       >
         <CheckboxNativeControl
-          elementRef={ref => (this.nativeCb_ = ref)}
+          ref={ref => (this.nativeCb_ = ref)}
           id={labelId}
           {...this.propsList.nativeCb_.all(rest)}
+          onChange={this.handleOnChange}
         />
 
         <CheckboxBackground />

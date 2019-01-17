@@ -117,11 +117,11 @@ export class Menu extends withFoundation({
 
     // anchorCorner
     if (
-      this.foundation_ &&
+      this.foundation &&
       nextProps.anchorCorner !== undefined &&
       MDCMenuSurfaceFoundation.Corner[
         ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== this.foundation_.anchorCorner_
+      ] !== this.foundation.anchorCorner_
     ) {
       this.setAnchorCorner(
         MDCMenuSurfaceFoundation.Corner[
@@ -143,8 +143,8 @@ export class Menu extends withFoundation({
       (evt: CustomEventT<void>) => this.props.onOpen && this.props.onOpen(evt)
     );
 
-    if (this.foundation_) {
-      this.foundation_.preventDefaultEvent_ = (evt: CustomEventT<void>) => {
+    if (this.foundation) {
+      this.foundation.preventDefaultEvent_ = (evt: CustomEventT<void>) => {
         const target = evt.target;
         if (target instanceof Element) {
           const tagName = `${target.tagName}`.toLowerCase();
@@ -223,7 +223,7 @@ export class MenuSurface extends withFoundation({
   adapter: {}
 })<MenuSurfacePropsT> {
   open?: boolean;
-  foundation_: any;
+  foundation: any;
   setAnchorCorner: Function = () => {};
   deregisterBodyClickListener_: Function = () => {};
 
@@ -238,7 +238,7 @@ export class MenuSurface extends withFoundation({
       nextProps.anchorCorner !== undefined &&
       MDCMenuSurfaceFoundation.Corner[
         ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== this.foundation_.anchorCorner_
+      ] !== this.foundation.anchorCorner_
     ) {
       this.setAnchorCorner(
         MDCMenuSurfaceFoundation.Corner[
@@ -251,7 +251,7 @@ export class MenuSurface extends withFoundation({
   destroy() {
     super.destroy();
     // Some extra cleanup to avoid JS errors from MDC
-    this.foundation_.adapter_.removeClass = () => {};
+    this.foundation.adapter_.removeClass = () => {};
     this.deregisterBodyClickListener_();
   }
 

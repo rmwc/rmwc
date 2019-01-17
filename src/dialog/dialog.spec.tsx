@@ -113,7 +113,7 @@ describe('Dialog', () => {
       .first()
       .simulate('click');
 
-    const adapter = el.instance().foundation_.adapter_;
+    const adapter = el.instance().foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.hasClass('test');

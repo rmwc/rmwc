@@ -73,7 +73,7 @@ describe('Slider', () => {
     let value = 0;
     const el = mount(<Slider onChange={() => value++} />);
     const inst = el.instance();
-    inst.foundation_.adapter_.notifyChange();
+    inst.foundation.adapter_.notifyChange();
 
     expect(value).toEqual(1);
   });
@@ -82,7 +82,7 @@ describe('Slider', () => {
     let value = 0;
     const el = mount(<Slider onInput={() => value++} />);
     const inst = el.instance();
-    inst.foundation_.adapter_.notifyInput();
+    inst.foundation.adapter_.notifyInput();
 
     expect(value).toEqual(1);
   });
@@ -98,7 +98,7 @@ describe('Slider', () => {
 
   it('adapter checks', () => {
     const el = mount(<Slider />);
-    const a = el.instance().foundation_.adapter_;
+    const a = el.instance().foundation.adapter_;
     a.hasClass('test');
     a.addClass('test');
     a.removeClass('test');

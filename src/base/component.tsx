@@ -54,19 +54,23 @@ type DeprecateT = {
   [oldPropName: string]: string | [string, (value: any) => void];
 };
 
-interface ComponentFactoryOpts<P> {
+interface ComponentFactoryOpts<Props> {
   displayName: string;
   classNames?: ClassNamesInputT;
   tag?: TagT;
   deprecate?: DeprecateT;
   consumeProps?: string[];
-  defaultProps?: P;
+  // TODO, any had to be included
+  // Currently causing errors because things like "role" cant be undefined
+  defaultProps?: any & Partial<ComponentProps<any> & Props>;
 }
 
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
   tag?: TagT;
   theme?: ThemeInputT;
-  ref?: ((instance: any) => void) | React.RefObject<any> | null | undefined;
+  // // TODO, any had to be included
+  // // This is a type mistmatch between refs in class components vs forwardRef components... string is the
+  ref?: any;
 }
 
 // ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS
@@ -151,7 +155,7 @@ export const componentFactory = <P extends {}>({
   defaultProps,
   consumeProps = []
 }: ComponentFactoryOpts<P>) => {
-  const Component = React.forwardRef<any, any>(
+  const Component = React.forwardRef<any, P & ComponentProps>(
     (props: P & ComponentProps, ref) => {
       const { className, theme, tag, ...rest } = props;
 

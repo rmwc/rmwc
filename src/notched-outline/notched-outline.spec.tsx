@@ -11,11 +11,11 @@ describe('NotchedOutline', () => {
   it('foundation methods', () => {
     const el = mount(<NotchedOutline />);
     const inst = el.instance();
-    inst.foundation_.adapter_.getWidth();
-    inst.foundation_.adapter_.getHeight();
-    inst.foundation_.adapter_.addClass('foo');
-    inst.foundation_.adapter_.removeClass('foo');
-    inst.foundation_.adapter_.setOutlinePathAttr(200);
-    inst.foundation_.adapter_.getIdleOutlineStyleValue('height');
+    inst.foundation.adapter_.getWidth();
+    inst.foundation.adapter_.getHeight();
+    inst.foundation.adapter_.addClass('foo');
+    inst.foundation.adapter_.removeClass('foo');
+    inst.foundation.adapter_.setOutlinePathAttr(200);
+    inst.foundation.adapter_.getIdleOutlineStyleValue('height');
   });
 });

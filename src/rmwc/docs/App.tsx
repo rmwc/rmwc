@@ -262,7 +262,7 @@ class ThemePicker extends React.Component<{
                 key={themeName}
                 role="menuitem"
                 tabIndex={0}
-                onClick={evt => {
+                onClick={(evt: React.MouseEvent<HTMLDivElement>) => {
                   evt.stopPropagation();
                   onThemeClick(themeName);
                 }}
@@ -301,7 +301,7 @@ class ThemePicker extends React.Component<{
             <Tab>CSS</Tab>
           </TabBar>
           <ListItem
-            onClick={evt => this.setState({ open: true })}
+            onClick={() => this.setState({ open: true })}
             ripple={false}
             style={{
               backgroundColor: 'rgba(0,0,0,.05)',

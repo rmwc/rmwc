@@ -34,14 +34,14 @@ export class LineRipple extends FoundationComponent<LineRipplePropsT> {
    * Activates the line ripple
    */
   activate() {
-    this.foundation_.activate();
+    this.foundation.activate();
   }
 
   /**
    * Deactivates the line ripple
    */
   deactivate() {
-    this.foundation_.deactivate();
+    this.foundation.deactivate();
   }
 
   /**
@@ -50,7 +50,7 @@ export class LineRipple extends FoundationComponent<LineRipplePropsT> {
    * @param {number} xCoordinate
    */
   setRippleCenter(xCoordinate: number) {
-    this.foundation_.setRippleCenter(xCoordinate);
+    this.foundation.setRippleCenter(xCoordinate);
   }
 
   render() {

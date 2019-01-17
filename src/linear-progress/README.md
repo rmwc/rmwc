@@ -12,7 +12,7 @@ import { LinearProgress } from '@rmwc/linear-progress';
 
 <LinearProgress progress={0.5} />
 <LinearProgress progress={0.6} buffer={0.8}/>
-<LinearProgress determinate={false}/>
+<LinearProgress/>
 <LinearProgress progress={0.2} reversed/>
 ```
 

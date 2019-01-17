@@ -29,7 +29,6 @@
     "@material/dialog": "~0.41.0",
     "@material/dom": "~0.41.0",
     "@rmwc/base": "^4.0.6",
-    "@rmwc/button": "^4.0.6",
-    "focus-trap": "^2.3.0"
+    "@rmwc/button": "^4.0.6"
   }
 }

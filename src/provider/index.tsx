@@ -6,9 +6,7 @@ type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | '
 
 export interface RMWCProviderOptionsT {
   /** Set the buttons ripple effect globally */
-  buttonDefaultRipple?: boolean;
-  /** Set the listItems ripple effect globally */
-  listItemDefaultRipple?: boolean;
+  ripple?: boolean;
   /** Set the iconClassNameBase. Read the icon docs for more info. */
   iconClassNameBase?: string;
   /** Set the iconClassNamePrefix. Read the icon docs for more info. */
@@ -25,9 +23,8 @@ export interface RMWCProviderOptionsT {
 
 // Default provider options
 const providerDefaults: RMWCProviderOptionsT = {
-  buttonDefaultRipple: true,
+  ripple: true,
   children: null,
-  listItemDefaultRipple: true,
   iconClassNameBase: 'material-icons',
   iconClassNamePrefix: '',
   iconStrategy: 'auto',

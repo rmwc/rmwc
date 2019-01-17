@@ -14,17 +14,17 @@ export type TabBarEventDetailT = {
   index: number;
 };
 
-export interface TabBarPropsT extends ComponentProps {
+export interface TabBarProps {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
   onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => void;
   /** The index of the active tab. */
   activeTabIndex?: number;
 }
 
-export const TabBarRoot = componentFactory({
+export const TabBarRoot = componentFactory<TabBarProps>({
   displayName: 'TabBarRoot',
   tag: 'nav',
-  classNames: (props: TabBarPropsT & { isTabScroller?: boolean }) => [
+  classNames: (props: TabBarProps & { isTabScroller?: boolean }) => [
     'mdc-tab-bar',
     {
       'mdc-tab-scroller__scroll-frame__tabs': props.isTabScroller
@@ -67,7 +67,7 @@ export class TabBar extends withFoundation({
       );
     }
   }
-})<TabBarPropsT> {
+})<TabBarProps> {
   static displayName = 'TabBar';
 
   activeTabIndex?: number;
@@ -78,11 +78,11 @@ export class TabBar extends withFoundation({
   activateTab: any;
   root_: any;
 
-  syncWithProps(nextProps: TabBarPropsT) {
+  syncWithProps(nextProps: TabBarProps) {
     syncFoundationProp(
       nextProps.activeTabIndex,
       this.props.activeTabIndex,
-      () => this.foundation_ && this.activateTab(nextProps.activeTabIndex)
+      () => this.foundation && this.activateTab(nextProps.activeTabIndex)
     );
   }
 
@@ -99,7 +99,7 @@ export class TabBar extends withFoundation({
       const [scrollX, scrollY] = [window.scrollX, window.scrollY];
 
       //activate the tab
-      this.foundation_ && this.activateTab(this.props.activeTabIndex || 0);
+      this.foundation && this.activateTab(this.props.activeTabIndex || 0);
 
       // restore focus and scroll
       activeElement && activeElement.focus();
@@ -107,7 +107,7 @@ export class TabBar extends withFoundation({
     });
   }
 
-  componentDidUpdate(prevProps: TabBarPropsT) {
+  componentDidUpdate(prevProps: TabBarProps & ComponentProps) {
     // Children changing is a pain...
     // We have to perform a lot of cleanup and sometimes we have to reinit
     const childrenDidChange =
@@ -134,7 +134,7 @@ export class TabBar extends withFoundation({
 
     if (childrenDidChange || tabsLengthMismatch) {
       this.tabList_.forEach((mdcTab: any) => {
-        mdcTab.foundation_ && mdcTab.foundation_.destroy();
+        mdcTab.foundation && mdcTab.foundation.destroy();
       });
       this.tabList_ = this.getTabElements_().map((el: HTMLElement) =>
         this.tabFactory_(el)
@@ -162,7 +162,7 @@ export class TabBar extends withFoundation({
 /************************************************************
  * Tab
  ************************************************************/
-export interface TabProps extends ComponentProps, IconProps {
+export interface TabProps extends IconProps {
   /** A label for the tab. */
   label?: any;
   /** The label for the tab, passed as children. */
@@ -175,7 +175,7 @@ export interface TabProps extends ComponentProps, IconProps {
   restrictIndicator?: boolean;
 }
 
-export const TabRoot = componentFactory({
+export const TabRoot = componentFactory<TabProps>({
   displayName: 'TabRoot',
   tag: 'button',
   classNames: (props: TabProps) => [

@@ -25,7 +25,7 @@ import { Button, ButtonIcon } from '@rmwc/button';
   See the documentation on Ripples.
   */
 }
-<Button theme="secondary" accent>With Theme</Button>
+<Button theme="secondary" ripple={{accent: true}}>With Theme</Button>
 <Button ripple={false}>No Ripple</Button>
 ```
 

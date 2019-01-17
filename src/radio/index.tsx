@@ -1,8 +1,12 @@
 import * as React from 'react';
 // @ts-ignore
 import { MDCRadioFoundation } from '@material/radio';
-import FormField from '@rmwc/formfield';
-import { Component, FoundationComponent } from '@rmwc/base';
+import { FormField } from '@rmwc/formfield';
+import {
+  componentFactory,
+  FoundationComponent,
+  ComponentProps
+} from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
@@ -19,27 +23,26 @@ export type RadioPropsT = {
   label?: string;
   /** Children to render */
   children?: React.ReactNode;
-  //$FlowFixMe
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & ComponentProps;
 
 const RadioRoot = withRipple({ unbounded: true, accent: true })(
-  class extends Component<RadioPropsT> {
-    static displayName = 'RadioRoot';
-    classNames = (props: RadioPropsT) => [
+  componentFactory<RadioPropsT>({
+    displayName: 'RadioRoot',
+    classNames: (props: RadioPropsT) => [
       'mdc-radio',
       { 'mdc-radio--disabled': props.disabled }
-    ];
-  }
+    ]
+  })
 );
 
-class RadioNativeControl extends Component<{}> {
-  static displayName = 'RadioNativeControl';
-  static defaultProps = {
+const RadioNativeControl = componentFactory({
+  displayName: 'RadioNativeControl',
+  defaultProps: {
     type: 'radio'
-  };
-  tag = 'input';
-  classNames = ['mdc-radio__native-control'];
-}
+  },
+  tag: 'input',
+  classNames: ['mdc-radio__native-control']
+});
 
 class RadioBackground extends React.Component<{}> {
   static displayName = 'RadioBackground';
@@ -90,12 +93,12 @@ export class Radio extends FoundationComponent<RadioPropsT> {
 
     const radio = (
       <RadioRoot
-        elementRef={(ref: HTMLElement) => (this.root_ = ref)}
+        ref={(ref: HTMLElement) => (this.root_ = ref)}
         disabled={rest.disabled}
         className={this.classList.root_.renderToString()}
       >
         <RadioNativeControl
-          elementRef={ref => (this.nativeRadio_ = ref)}
+          ref={ref => (this.nativeRadio_ = ref)}
           id={labelId}
           {...rest}
         />

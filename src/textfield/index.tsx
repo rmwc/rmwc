@@ -7,7 +7,8 @@ import {
   // @ts-ignore
 } from '@material/textfield';
 
-import { Component, FoundationComponent, randomId } from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { randomId } from '@rmwc/base/utils/randomId';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
@@ -45,15 +46,14 @@ export type TextFieldPropsT = {
   rootProps?: Object;
   /** The type of input field to render */
   type?: string;
-  //$FlowFixMe
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & ComponentProps;
 
-class TextFieldRoot extends Component<TextFieldPropsT> {
-  static displayName = 'TextFieldRoot';
-  deprecate = {
+const TextFieldRoot = componentFactory<TextFieldPropsT>({
+  displayName: 'TextFieldRoot',
+  deprecate: {
     box: ''
-  };
-  classNames = (props: TextFieldPropsT) => [
+  },
+  classNames: (props: TextFieldPropsT) => [
     'mdc-text-field',
     'mdc-text-field--upgraded',
     {
@@ -63,11 +63,11 @@ class TextFieldRoot extends Component<TextFieldPropsT> {
       'mdc-text-field--dense': props.dense,
       'mdc-text-field--invalid': props.invalid,
       'mdc-text-field--disabled': props.disabled,
-      'mdc-text-field--with-leading-icon': props.withLeadingIcon,
-      'mdc-text-field--with-trailing-icon': props.withTrailingIcon
+      'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,
+      'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon
     }
-  ];
-  consumeProps = [
+  ],
+  consumeProps: [
     'textarea',
     'fullwidth',
     'outlined',
@@ -76,23 +76,23 @@ class TextFieldRoot extends Component<TextFieldPropsT> {
     'disabled',
     'withLeadingIcon',
     'withTrailingIcon'
-  ];
-}
+  ]
+});
 
-class TextFieldInput extends Component<{}> {
-  static displayName = 'TextFieldInput';
-  static defaultProps = {
+const TextFieldInput = componentFactory({
+  displayName: 'TextFieldInput',
+  defaultProps: {
     type: 'text'
-  };
-  tag = 'input';
-  classNames = ['mdc-text-field__input'];
-}
+  },
+  tag: 'input',
+  classNames: ['mdc-text-field__input']
+});
 
-class TextFieldTextarea extends Component<{}> {
-  static displayName = 'TextFieldTextarea';
-  tag = 'textarea';
-  classNames = ['mdc-text-field__input'];
-}
+const TextFieldTextarea = componentFactory({
+  displayName: 'TextFieldTextarea',
+  tag: 'textarea',
+  classNames: ['mdc-text-field__input']
+});
 
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<TextFieldPropsT> {
@@ -239,9 +239,9 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         <TextFieldIcon
           ref={(ref: TextFieldIcon) => {
             if (leadOrTrail === 'leadingIcon_') {
-              this.leadingIcon_ = ref && ref.foundation_;
+              this.leadingIcon_ = ref && ref.foundation;
             } else {
-              this.trailingIcon_ = ref && ref.foundation_;
+              this.trailingIcon_ = ref && ref.foundation;
             }
           }}
           tabIndex={leadOrTrail === 'trailingIcon_' ? 0 : undefined}
@@ -257,7 +257,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     // Bug #362
     // see comments below in render function
     if (this.valueNeedsUpdate) {
-      this.foundation_.setValue(props.value);
+      this.foundation.setValue(props.value);
       this.valueNeedsUpdate = false;
     }
   }
@@ -289,7 +289,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     // on componentDidUpdate
     if (
       this.props.value !== undefined &&
-      this.props.value !== this.foundation_.getValue()
+      this.props.value !== this.foundation.getValue()
     ) {
       this.valueNeedsUpdate = true;
     }
@@ -321,7 +321,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         disabled={disabled}
         outlined={outlined}
         fullwidth={fullwidth}
-        elementRef={ref => (this.root_ = ref)}
+        ref={ref => (this.root_ = ref)}
         className={[className, this.classList.root_.renderToString()]
           .filter(Boolean)
           .join(' ')}
@@ -333,7 +333,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         {tag}
         {!!label && (
           <FloatingLabel
-            ref={(ref: FloatingLabel) => (this.label_ = ref && ref.foundation_)}
+            ref={(ref: FloatingLabel) => (this.label_ = ref && ref.foundation)}
             htmlFor={tagProps.id}
           >
             {label}
@@ -345,7 +345,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         {!!outlined && (
           <NotchedOutline
             ref={(ref: NotchedOutline) =>
-              (this.outline_ = ref && ref.foundation_)
+              (this.outline_ = ref && ref.foundation)
             }
           />
         )}
@@ -354,7 +354,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         ) : (
           <LineRipple
             ref={(ref: LineRipple) =>
-              (this.lineRipple_ = ref && ref.foundation_)
+              (this.lineRipple_ = ref && ref.foundation)
             }
           />
         )}
@@ -373,20 +373,19 @@ export type TextFieldHelperTextPropsT = {
   validationMsg?: boolean;
 } & ComponentProps;
 
-/** @extends React.Component */
 /** A help text component */
-export class TextFieldHelperText extends Component<TextFieldHelperTextPropsT> {
-  static displayName = 'TextFieldHelperText';
-  tag = 'p';
-  classNames = (props: TextFieldHelperTextPropsT) => [
+export const TextFieldHelperText = componentFactory<TextFieldHelperTextPropsT>({
+  displayName: 'TextFieldHelperText',
+  tag: 'p',
+  classNames: (props: TextFieldHelperTextPropsT) => [
     'mdc-text-field-helper-text',
     {
       'mdc-text-field-helper-text--persistent': props.persistent,
       'mdc-text-field-helper-text--validation-msg': props.validationMsg
     }
-  ];
-  consumeProps = ['persistent', 'validationMsg'];
-}
+  ],
+  consumeProps: ['persistent', 'validationMsg']
+});
 
 /*********************************************************************
  * Icon
