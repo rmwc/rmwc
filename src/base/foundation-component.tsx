@@ -30,12 +30,16 @@ class PropsList {
     this.setStyle = this.setStyle.bind(this);
   }
 
-  setStyle(styleName: string, styleValue: string) {
+  setStyle(styleName: string, styleValue: string | number | null) {
+    const formattedName = styleName.startsWith('--')
+      ? styleName
+      : toCamel(styleName);
+
     this.props = {
       ...this.props,
       style: {
         ...(this.props.style || {}),
-        [toCamel(styleName)]: styleValue
+        [formattedName]: styleValue
       }
     };
     this.update();
@@ -62,22 +66,29 @@ class PropsList {
     if (mergeProps) {
       const merged = Object.entries(mergeProps).reduce(
         (acc: any, [key, val]) => {
-          if (
-            typeof this.props[key] === 'function' &&
-            typeof val === 'function'
-          ) {
-            const oldFunc = this.props[key];
-            const wrappedFunc = (evt: any) => {
-              oldFunc(evt);
-              val(evt);
-            };
+          switch (key) {
+            case 'style':
+              acc[key] = {
+                ...this.props[key],
+                ...val
+              };
+              break;
+            case 'className':
+              acc[key] = classNames(this.props[key], val);
+              break;
+            default:
+              if (
+                typeof this.props[key] === 'function' &&
+                typeof val === 'function'
+              ) {
+                const oldFunc = this.props[key];
+                const wrappedFunc = (evt: any) => {
+                  oldFunc(evt);
+                  val(evt);
+                };
 
-            acc[key] = wrappedFunc;
-          } else if (key === 'style') {
-            acc[key] = {
-              ...this.props[key],
-              ...val
-            };
+                acc[key] = wrappedFunc;
+              }
           }
           return acc;
         },
@@ -115,7 +126,9 @@ class PropsList {
   }
 }
 
-interface FoundationProps extends React.HTMLProps<any> {}
+interface FoundationProps extends React.HTMLProps<any> {
+  ref?: any;
+}
 interface FoundationState {}
 
 type FoundationPropsT<P> = P & FoundationProps;
@@ -174,13 +187,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   createClassList(elementName: string) {
     const classes = new Set();
     this.classList[elementName] = {
-      renderToString: className =>
-        classNames(
-          (elementName === 'root_' || elementName === 'root') &&
-            this.props.className,
-          className,
-          [...classes]
-        ),
+      renderToString: className => classNames(className, [...classes]),
       has: className => {
         return classes.has(className);
       },

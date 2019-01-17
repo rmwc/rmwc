@@ -4,7 +4,7 @@ import * as React from 'react';
 // @ts-ignore
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
+import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
 export interface LinearProgressProps {
   /** Progress float percentage between 0 and 1. */

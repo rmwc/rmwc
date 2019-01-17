@@ -1,4 +1,3 @@
-
 import { IconStrategyT } from './defs';
 
 import * as React from 'react';
@@ -18,7 +17,7 @@ const processAutoStrategy = (content: React.ReactNode): IconStrategyT => {
   }
 
   // handle JSX components
-  if (typeof content === 'object') {
+  if (React.isValidElement(content)) {
     return 'component';
   }
 

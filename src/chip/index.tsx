@@ -171,7 +171,7 @@ export class Chip extends FoundationComponent<ChipPropsT> {
         {!!trailingIcon &&
           renderChipIcon(trailingIcon, {
             trailing: true,
-            elementRef: (el: HTMLElement) => (this.trailingIcon_ = el),
+            ref: (el: HTMLElement) => (this.trailingIcon_ = el),
             onClick: this.handleTrailingIconInteraction_,
             onKeyDown: this.handleTrailingIconInteraction_
           })}

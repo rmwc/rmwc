@@ -3,11 +3,7 @@ import { ComponentProps, CustomEventT } from '@rmwc/base';
 import * as React from 'react';
 // @ts-ignore
 import { MDCSliderFoundation } from '@material/slider';
-import {
-  componentFactory,
-  FoundationComponent,
-  syncFoundationProp
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { debounce } from '@rmwc/base/utils/debounce';
 
 export type SliderPropsT = {
@@ -233,59 +229,52 @@ export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
     this.foundation.layout();
   }
 
-  sync(nextProps: SliderPropsT) {
+  sync(props: SliderPropsT, prevProps: SliderPropsT) {
     // value
-
-    syncFoundationProp(
-      nextProps.value,
-      this.value,
-      () =>
-        (this.value =
-          nextProps.value !== undefined ? Number(nextProps.value) : this.value)
-    );
+    if (props.value !== undefined && props.value !== this.value) {
+      this.value = props.value !== undefined ? Number(props.value) : this.value;
+    }
 
     // max
-    syncFoundationProp(
-      nextProps.max,
-      this.max,
-      () => (this.max = nextProps.max !== undefined ? +nextProps.max : this.max)
-    );
+    if (props.max !== undefined && props.max !== this.max) {
+      this.max = props.max !== undefined ? +props.max : this.max;
+    }
+
     // min
-    syncFoundationProp(
-      nextProps.min,
-      this.min,
-      () => (this.min = nextProps.min !== undefined ? +nextProps.min : this.min)
-    );
+    if (props.min !== undefined && props.min !== this.min) {
+      this.min = props.min !== undefined ? +props.min : this.min;
+    }
+
     // step
-    syncFoundationProp(
-      nextProps.step,
-      this.step,
-      () =>
-        (this.step = nextProps.step !== undefined ? +nextProps.step : this.step)
-    );
+    if (props.step !== undefined && props.step !== this.step) {
+      this.step = props.step !== undefined ? +props.step : this.step;
+    }
+
     // disabled
-    syncFoundationProp(
-      nextProps.disabled,
-      this.disabled,
-      () => (this.disabled = !!nextProps.disabled)
-    );
+    if (props.disabled !== undefined && props.disabled !== this.disabled) {
+      this.disabled = !!props.disabled;
+    }
+
     // discrete
-    syncFoundationProp(
-      nextProps.discrete,
-      this.discrete,
-      () => (this.discrete = !!nextProps.discrete)
-    );
+    if (props.discrete !== undefined && props.discrete !== this.discrete) {
+      this.discrete = !!props.discrete;
+    }
+
     //eslint-disable-next-line eqeqeq
     if (this.discrete && this.foundation && this.foundation.getStep() == 0) {
       this.step = 1;
     }
+
     // displayMarkers
-    syncFoundationProp(nextProps.displayMarkers, this.displayMarkers, () => {
-      this.displayMarkers = !!nextProps.displayMarkers;
+    if (
+      props.displayMarkers !== undefined &&
+      props.displayMarkers !== this.displayMarkers
+    ) {
+      this.displayMarkers = !!props.displayMarkers;
       window.requestAnimationFrame(
         () => this.foundation && this.foundation.setupTrackMarker()
       );
-    });
+    }
   }
 
   getDefaultFoundation() {
@@ -405,7 +394,7 @@ export class Slider extends FoundationComponent<SliderPropsT, SliderState> {
         aria-valuemax={tsxMax}
         aria-valuenow={tsxValue}
         aria-label="Select Value"
-        elementRef={(ref: HTMLElement) => (this.root_ = ref)}
+        ref={(ref: HTMLElement) => (this.root_ = ref)}
         discrete={discrete}
         displayMarkers={displayMarkers}
         {...(disabled ? { 'aria-disabled': disabled } : {})}

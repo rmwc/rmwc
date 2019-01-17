@@ -166,7 +166,7 @@ export class Checkbox extends FoundationComponent<CheckboxPropsT> {
         onAnimationEnd={this.handleAnimationEnd}
       >
         <CheckboxNativeControl
-          ref={ref => (this.nativeCb_ = ref)}
+          ref={(ref: HTMLInputElement) => (this.nativeCb_ = ref)}
           id={labelId}
           {...this.propsList.nativeCb_.all(rest)}
           onChange={this.handleOnChange}

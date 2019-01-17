@@ -10,9 +10,6 @@ export { default as createFocusTrap } from 'focus-trap';
 export interface FocusTrap extends FocusTrap {}
 
 export { withTheme } from './withTheme';
-
-export { withFoundation, syncFoundationProp } from './withFoundation';
-
 export { FoundationComponent } from './foundation-component';
 export { componentFactory } from './component';
 

@@ -3,7 +3,12 @@ import * as ReactDOM from 'react-dom';
 // @ts-ignore
 import { MDCRippleFoundation, util } from '@material/ripple';
 import { classNames, FoundationComponent } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
+import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+
+export interface RippleSurfaceProps {
+  className: string;
+  style: React.CSSProperties;
+}
 
 export interface RippleProps {
   /** Makes the ripple unbounded */
@@ -15,7 +20,7 @@ export interface RippleProps {
   /** makes the ripple disabled */
   disabled?: boolean;
   /** For internal use */
-  surface?: boolean;
+  surface?: boolean | RippleSurface;
 }
 
 type ActivateEventTypes<S> =
@@ -28,6 +33,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
   static displayName = 'Ripple';
 
   root = this.createElement('root');
+  surface = this.createElement('surface');
 
   constructor(props: RippleProps) {
     super(props);
@@ -54,8 +60,8 @@ export class Ripple extends FoundationComponent<RippleProps> {
       isSurfaceActive: () =>
         this.root.el && (this.root.el as any)[MATCHES](':active'),
       isSurfaceDisabled: () => this.props.disabled,
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
+      addClass: (className: string) => this.surface.addClass(className),
+      removeClass: (className: string) => this.surface.removeClass(className),
       containsEventTarget: (target: HTMLElement) =>
         this.root.el && this.root.el.contains(target),
       registerInteractionHandler: (
@@ -88,8 +94,8 @@ export class Ripple extends FoundationComponent<RippleProps> {
         window.addEventListener('resize', handler),
       deregisterResizeHandler: (handler: (evt: Event) => void) =>
         window.removeEventListener('resize', handler),
-      updateCssVariable: (varName: string, value: string | null) =>
-        this.root.el && this.root.el.style.setProperty(varName, value),
+      updateCssVariable: (varName: string, value: string) =>
+        this.surface.setStyle(varName, value),
       computeBoundingRect: () =>
         this.root.el && this.root.el.getBoundingClientRect(),
       getWindowPageOffset: () => ({
@@ -149,7 +155,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
 
   activateRipple(evt: ActivateEventTypes<HTMLElement>) {
     // https://reactjs.org/docs/events.html#event-pooling
-
+    evt.persist();
     this.foundation.activate(evt);
   }
 
@@ -173,10 +179,30 @@ export class Ripple extends FoundationComponent<RippleProps> {
       ? { 'data-mdc-ripple-is-unbounded': true }
       : {};
 
-    return React.cloneElement(child, {
+    const rippleSurfaceProps = this.surface.props({});
+    const surfaceIsRoot = !(surface instanceof RippleSurface);
+
+    if (surface instanceof RippleSurface) {
+      surface.setSurfaceProps(rippleSurfaceProps);
+    }
+
+    const content = React.cloneElement(child, {
       ...child.props,
       ...unboundedProp,
-      ...this.root.props(rest),
+      ...this.root.props({
+        ...rest,
+        ...(surfaceIsRoot ? rippleSurfaceProps : undefined),
+        className: classNames(
+          className,
+          surfaceIsRoot && rippleSurfaceProps.className,
+          {
+            'mdc-ripple-surface':
+              typeof surface === 'boolean' ? surface : surface === undefined,
+            'mdc-ripple-surface--primary': primary,
+            'mdc-ripple-surface--accent': accent
+          }
+        )
+      }),
       onFocus: this.handleFocus,
       onBlur: this.handleBlur,
       onMouseDown: this.handleMouseDown,
@@ -184,13 +210,38 @@ export class Ripple extends FoundationComponent<RippleProps> {
       onTouchStart: this.handleTouchStart,
       onTouchEnd: this.handleTouchEnd,
       onKeyDown: this.handleKeyDown,
-      onKeyUp: this.handleKeyUp,
-      className: classNames(this.root.classes, {
-        'mdc-ripple-surface': surface !== undefined ? surface : true,
-        'mdc-ripple-surface--primary': primary,
-        'mdc-ripple-surface--accent': accent
-      })
+      onKeyUp: this.handleKeyUp
     });
+
+    return <React.Fragment>{content}</React.Fragment>;
+  }
+}
+
+export class RippleSurface extends React.PureComponent<
+  React.HTMLAttributes<HTMLDivElement>
+> {
+  state = {
+    rippleSurfaceProps: { className: '', style: {} }
+  };
+
+  setSurfaceProps(rippleSurfaceProps: any) {
+    if (
+      JSON.stringify(rippleSurfaceProps) !==
+      JSON.stringify(this.state.rippleSurfaceProps)
+    )
+      this.setState({ rippleSurfaceProps });
+  }
+
+  render() {
+    const { className, ...rest } = this.props;
+    return (
+      <div
+        {...rest}
+        {...this.state.rippleSurfaceProps}
+        className={`${className} ${this.state.rippleSurfaceProps.className ||
+          ''}`}
+      />
+    );
   }
 }
 

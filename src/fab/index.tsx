@@ -15,9 +15,7 @@ export interface FabProps extends IconProps, WithRippleProps {
   exited?: boolean;
 }
 
-export const FabRoot = withRipple({
-  surface: false
-})(
+export const FabRoot = withRipple({ surface: false })(
   componentFactory<FabProps>({
     displayName: 'FabRoot',
     tag: 'button',

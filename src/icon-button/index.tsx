@@ -9,6 +9,7 @@ import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 import { componentFactory } from '@rmwc/base';
+import { getIconStrategy } from '@rmwc/icon/utils';
 
 export interface IconButtonProps
   extends ComponentProps,
@@ -144,10 +145,23 @@ export const IconButton = ({ icon, iconOptions, ...rest }: IconButtonProps) => {
     return <IconButtonToggle {...rest} icon={icon} iconOptions={iconOptions} />;
   }
 
+  const strategy = getIconStrategy(icon, 'auto', null);
+  // URLs are image tags and need to be wrapped
+  if (strategy === 'url')
+    return (
+      <IconButtonRoot aria-hidden="true" {...rest}>
+        <IconButtonIcon icon={icon} iconOptions={iconOptions} />
+      </IconButtonRoot>
+    );
+
   return (
-    <IconButtonRoot aria-hidden="true" {...rest}>
-      <IconButtonIcon icon={icon} iconOptions={iconOptions} />
-    </IconButtonRoot>
+    <IconButtonRoot
+      aria-hidden="true"
+      {...rest}
+      tag={Icon}
+      icon={icon}
+      iconOptions={iconOptions}
+    />
   );
 };
 

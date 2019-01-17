@@ -3,7 +3,6 @@ import { IconOptionsT } from './defs';
 import * as React from 'react';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 import { ComponentProps, componentFactory, classNames } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecationWarning';
 import { getIconStrategy } from './utils';
 
 export const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });

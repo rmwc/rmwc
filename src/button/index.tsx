@@ -1,12 +1,13 @@
+import * as React from 'react';
+
 import { WithRippleProps } from '@rmwc/ripple';
 import { IconProps } from '@rmwc/icon';
-import { ComponentProps, componentFactory } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 
-import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon } from '@rmwc/icon';
 
-export interface ButtonProps extends WithRippleProps, ComponentProps {
+export interface ButtonProps extends WithRippleProps {
   /** Make the Button dense. */
   dense?: boolean;
   /** Make the Button raised. */
@@ -19,6 +20,12 @@ export interface ButtonProps extends WithRippleProps, ComponentProps {
   disabled?: boolean;
   /** Enable / disable the ripple. */
   ripple?: boolean;
+  /** Content specified as a label prop. */
+  label?: React.ReactNode;
+  /** Content specified as children. */
+  children?: React.ReactNode;
+  /** An Icon for the Button */
+  icon?: React.ReactNode;
 }
 
 /**
@@ -53,6 +60,19 @@ export const Button = withRipple({
       raised: false,
       unelevated: false,
       outlined: false
+    },
+    render: (
+      { icon, label, children, ...rest }: ButtonProps,
+      ref: React.Ref<any>,
+      Tag: any
+    ) => {
+      return (
+        <Tag {...rest} ref={ref}>
+          {!!icon && <ButtonIcon icon={icon} />}
+          {label}
+          {children}
+        </Tag>
+      );
     }
   })
 );

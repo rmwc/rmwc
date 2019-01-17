@@ -1,20 +1,15 @@
-import { CustomEventT } from '@rmwc/base';
+import { CustomEventT, FoundationComponent } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
-import { MDCMenu } from '@material/menu';
+import { MDCMenuFoundation } from '@material/menu';
 import {
-  MDCMenuSurface,
-  MDCMenuSurfaceFoundation
+  MDCMenuSurfaceFoundation,
+  util
   // @ts-ignore
 } from '@material/menu-surface';
 import { List, ListItem } from '@rmwc/list';
-import {
-  componentFactory,
-  ComponentProps,
-  withFoundation,
-  syncFoundationProp
-} from '@rmwc/base';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
@@ -93,87 +88,163 @@ export class MenuItem extends React.Component<any> {
 }
 
 /** A menu component for displaying lists items. */
-export class Menu extends withFoundation({
-  constructor: MDCMenu,
-  adapter: {}
-})<MenuPropsT> {
+export class Menu extends FoundationComponent<MenuPropsT> {
   static displayName = 'Menu';
 
-  open?: boolean;
-  setAnchorCorner: Function = () => {};
-  menuSurface_: any;
+  list: List | null = null;
+  menuSurface: MenuSurface | null = null;
 
-  constructor(props: MenuPropsT) {
-    super(props);
-    //$FlowFixMe
-    this.onCloseHandler_ = this.onCloseHandler_.bind(this);
+  get items() {
+    return this.list ? this.list.listElements : [];
   }
 
-  syncWithProps(nextProps: MenuPropsT) {
-    // open
-    syncFoundationProp(nextProps.open, this.open, () => {
-      this.open = !!nextProps.open;
+  get open() {
+    return this.menuSurface && this.menuSurface.open;
+  }
+
+  /** @param {boolean} value */
+  set open(value) {
+    this.menuSurface && (this.menuSurface.open = value);
+  }
+
+  getDefaultFoundation() {
+    return new MDCMenuFoundation({
+      addClassToElementAtIndex: (index: number, className: string) => {
+        const list = this.items;
+        list[index].classList.add(className);
+      },
+      removeClassFromElementAtIndex: (index: number, className: string) => {
+        const list = this.items;
+        list[index].classList.remove(className);
+      },
+      addAttributeToElementAtIndex: (
+        index: number,
+        attr: string,
+        value: string
+      ) => {
+        const list = this.items;
+        list[index].setAttribute(attr, value);
+      },
+      removeAttributeFromElementAtIndex: (index: number, attr: string) => {
+        const list = this.items;
+        list[index].removeAttribute(attr);
+      },
+      elementContainsClass: (element: HTMLElement, className: string) =>
+        element.classList.contains(className),
+      closeSurface: () => (this.open = false),
+      getElementIndex: (element: HTMLElement) =>
+        this.items.indexOf(element as HTMLLIElement),
+      getParentElement: (element: HTMLElement) => element.parentElement,
+      getSelectedElementIndex: (selectionGroup: HTMLElement) => {
+        return this.items.indexOf(selectionGroup.querySelector(
+          `.${MDCMenuFoundation.cssClasses.MENU_SELECTED_LIST_ITEM}`
+        ) as HTMLLIElement);
+      },
+      notifySelected: (evtData: { index: number; item: HTMLElement }) =>
+        this.emit('onSelect', {
+          index: evtData.index,
+          item: this.items[evtData.index]
+        })
     });
+  }
+
+  sync(props: MenuPropsT, prevProps: MenuPropsT) {
+    // open
+    if (!!props.open !== this.open) {
+      this.open = !!props.open;
+    }
 
     // anchorCorner
-    if (
-      this.foundation &&
-      nextProps.anchorCorner !== undefined &&
-      MDCMenuSurfaceFoundation.Corner[
-        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== this.foundation.anchorCorner_
-    ) {
-      this.setAnchorCorner(
-        MDCMenuSurfaceFoundation.Corner[
-          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-        ]
-      );
-    }
+    // if (
+    //   this.foundation &&
+    //   nextProps.anchorCorner !== undefined &&
+    //   MDCMenuSurfaceFoundation.Corner[
+    //     ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+    //   ] !== this.foundation.anchorCorner_
+    // ) {
+    //   this.setAnchorCorner(
+    //     MDCMenuSurfaceFoundation.Corner[
+    //       ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+    //     ]
+    //     );
+    //   }
   }
 
-  componentDidMount() {
-    super.componentDidMount();
-    this.menuSurface_.listen(
-      MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
-      this.onCloseHandler_
-    );
+  // open?: boolean;
+  // setAnchorCorner: Function = () => {};
+  // menuSurface_: any;
 
-    this.menuSurface_.listen(
-      MDCMenuSurfaceFoundation.strings.OPENED_EVENT,
-      (evt: CustomEventT<void>) => this.props.onOpen && this.props.onOpen(evt)
-    );
+  // constructor(props: MenuPropsT) {
+  //   super(props);
+  //   //$FlowFixMe
+  //   this.onCloseHandler_ = this.onCloseHandler_.bind(this);
+  // }
 
-    if (this.foundation) {
-      this.foundation.preventDefaultEvent_ = (evt: CustomEventT<void>) => {
-        const target = evt.target;
-        if (target instanceof Element) {
-          const tagName = `${target.tagName}`.toLowerCase();
-          if (
-            ['input', 'button', 'textarea', 'select', 'a'].indexOf(tagName) ===
-            -1
-          ) {
-            evt.preventDefault();
-          }
-        }
-      };
-    }
-  }
+  // syncWithProps(nextProps: MenuPropsT) {
+  //   // open
+  //   syncFoundationProp(nextProps.open, this.open, () => {
+  //     this.open = !!nextProps.open;
+  //   });
 
-  onCloseHandler_(evt: CustomEventT<void>) {
-    this.props.onClose && this.props.onClose(evt);
+  //   // anchorCorner
+  //   if (
+  //     this.foundation &&
+  //     nextProps.anchorCorner !== undefined &&
+  //     MDCMenuSurfaceFoundation.Corner[
+  //       ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+  //     ] !== this.foundation.anchorCorner_
+  //   ) {
+  //     this.setAnchorCorner(
+  //       MDCMenuSurfaceFoundation.Corner[
+  //         ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+  //       ]
+  //     );
+  //   }
+  // }
 
-    // little hack. We need to broadcast an CustomEvent from this component
-    // in order to keep MDC and React in sync.
-    // Otherwise, the internal state of the component can change and not be reflected in React
-    this.emit('RESYNC', {});
-  }
+  // componentDidMount() {
+  //   super.componentDidMount();
+  //   this.menuSurface_.listen(
+  //     MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
+  //     this.onCloseHandler_
+  //   );
 
-  destroy() {
-    this.menuSurface_.unlisten(
-      MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
-      this.onCloseHandler_
-    );
-  }
+  //   this.menuSurface_.listen(
+  //     MDCMenuSurfaceFoundation.strings.OPENED_EVENT,
+  //     (evt: CustomEventT<void>) => this.props.onOpen && this.props.onOpen(evt)
+  //   );
+
+  //   if (this.foundation) {
+  //     this.foundation.preventDefaultEvent_ = (evt: CustomEventT<void>) => {
+  //       const target = evt.target;
+  //       if (target instanceof Element) {
+  //         const tagName = `${target.tagName}`.toLowerCase();
+  //         if (
+  //           ['input', 'button', 'textarea', 'select', 'a'].indexOf(tagName) ===
+  //           -1
+  //         ) {
+  //           evt.preventDefault();
+  //         }
+  //       }
+  //     };
+  //   }
+  // }
+
+  // onCloseHandler_(evt: CustomEventT<void>) {
+  //   this.props.onClose && this.props.onClose(evt);
+
+  //   // little hack. We need to broadcast an CustomEvent from this component
+  //   // in order to keep MDC and React in sync.
+  //   // Otherwise, the internal state of the component can change and not be reflected in React
+  //   this.emit('RESYNC', {});
+  // }
+
+  // destroy() {
+  //   this.menuSurface_.unlisten(
+  //     MDCMenuSurfaceFoundation.strings.CLOSED_EVENT,
+  //     this.onCloseHandler_
+  //   );
+  // }
 
   render() {
     const {
@@ -186,19 +257,19 @@ export class Menu extends withFoundation({
       ...rest
     } = this.props;
 
-    const { root_ } = this.foundationRefs;
     return (
-      <MenuRoot
-        aria-hidden={!open}
+      <MenuSurface
         {...rest}
-        ref={(el: HTMLElement) => {
-          root_(el);
-          // @ts-ignore
-          this.props.ref && this.props.ref(el);
-        }}
+        aria-hidden={!open}
+        className={`mdc-menu ${rest.className || ''}`}
+        ref={(menuSurfaceApi: MenuSurface) =>
+          (this.menuSurface = menuSurfaceApi)
+        }
       >
-        <MenuItems>{children}</MenuItems>
-      </MenuRoot>
+        <MenuItems ref={(listApi: List) => (this.list = listApi)}>
+          {children}
+        </MenuItems>
+      </MenuSurface>
     );
   }
 }
@@ -218,42 +289,168 @@ export const MenuSurfaceRoot = componentFactory({
 });
 
 /** A generic menu component for displaying any type of content. */
-export class MenuSurface extends withFoundation({
-  constructor: MDCMenuSurface,
-  adapter: {}
-})<MenuSurfacePropsT> {
-  open?: boolean;
-  foundation: any;
-  setAnchorCorner: Function = () => {};
-  deregisterBodyClickListener_: Function = () => {};
+export class MenuSurface extends FoundationComponent<MenuSurfacePropsT> {
+  root = this.createElement('root');
+  anchorElement: HTMLElement | null = null;
+  previousFocus: HTMLElement | null = null;
+  firstFocusableElement: HTMLElement | null = null;
+  lastFocusableElement: HTMLElement | null = null;
 
-  syncWithProps(nextProps: MenuSurfacePropsT) {
-    //open
-    syncFoundationProp(nextProps.open, this.open, () => {
-      this.open = !!nextProps.open;
-    });
+  get open() {
+    return this.foundation.isOpen();
+  }
 
-    // anchorCorner
-    if (
-      nextProps.anchorCorner !== undefined &&
-      MDCMenuSurfaceFoundation.Corner[
-        ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-      ] !== this.foundation.anchorCorner_
-    ) {
-      this.setAnchorCorner(
-        MDCMenuSurfaceFoundation.Corner[
-          ANCHOR_CORNER_MAP[nextProps.anchorCorner]
-        ]
-      );
+  /** @param {boolean} value */
+  set open(value) {
+    if (value) {
+      const focusableElements = this.root.el
+        ? this.root.el.querySelectorAll(
+            MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
+          )
+        : [];
+      this.firstFocusableElement =
+        focusableElements.length > 0 ? focusableElements[0] : null;
+      this.lastFocusableElement =
+        focusableElements.length > 0
+          ? focusableElements[focusableElements.length - 1]
+          : null;
+      this.foundation.open();
+    } else {
+      this.foundation.close();
     }
   }
 
-  destroy() {
-    super.destroy();
-    // Some extra cleanup to avoid JS errors from MDC
-    this.foundation.adapter_.removeClass = () => {};
-    this.deregisterBodyClickListener_();
+  getDefaultFoundation() {
+    return new MDCMenuSurfaceFoundation({
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      hasClass: (className: string) =>
+        className === 'mdc-menu-surface' ? true : this.root.hasClass(className),
+      hasAnchor: () => !!this.anchorElement,
+      notifyClose: () => this.emit('onClose', {}),
+      notifyOpen: () => this.emit('onOpen', {}),
+      isElementInContainer: (el: HTMLElement) =>
+        this.root.el === el || (this.root.el && this.root.el.contains(el)),
+      isRtl: () =>
+        this.root.el &&
+        getComputedStyle(this.root.el).getPropertyValue('direction') === 'rtl',
+      setTransformOrigin: (origin: string) => {
+        this.root.setStyle(
+          `${util.getTransformPropertyName(window)}-origin`,
+          origin
+        );
+      },
+      ...this.getFocusAdapterMethods(),
+      ...this.getDimensionAdapterMethods()
+    });
   }
+
+  getFocusAdapterMethods() {
+    return {
+      isFocused: () => document.activeElement === this.root.el,
+      saveFocus: () => {
+        this.previousFocus = document.activeElement as HTMLElement;
+      },
+      restoreFocus: () => {
+        if (this.root.el && this.root.el.contains(document.activeElement)) {
+          if (this.previousFocus && this.previousFocus.focus) {
+            this.previousFocus.focus();
+          }
+        }
+      },
+      isFirstElementFocused: () =>
+        this.firstFocusableElement &&
+        this.firstFocusableElement === document.activeElement,
+      isLastElementFocused: () =>
+        this.firstFocusableElement &&
+        this.firstFocusableElement === document.activeElement,
+      focusFirstElement: () =>
+        this.firstFocusableElement &&
+        this.firstFocusableElement.focus &&
+        this.firstFocusableElement.focus(),
+      focusLastElement: () =>
+        this.firstFocusableElement &&
+        this.firstFocusableElement.focus &&
+        this.firstFocusableElement.focus()
+    };
+  }
+
+  getDimensionAdapterMethods() {
+    return {
+      getInnerDimensions: () => {
+        return {
+          width: this.root.el && this.root.el.offsetWidth,
+          height: this.root.el && this.root.el.offsetHeight
+        };
+      },
+      getAnchorDimensions: () =>
+        this.anchorElement && this.anchorElement.getBoundingClientRect(),
+      getWindowDimensions: () => {
+        return { width: window.innerWidth, height: window.innerHeight };
+      },
+      getBodyDimensions: () => {
+        return {
+          width: document.body.clientWidth,
+          height: document.body.clientHeight
+        };
+      },
+      getWindowScroll: () => {
+        return { x: window.pageXOffset, y: window.pageYOffset };
+      },
+      setPosition: (position: {
+        top: string;
+        right: string;
+        bottom: string;
+        left: string;
+      }) => {
+        this.root.setStyle('left', 'left' in position ? position.left : null);
+        this.root.setStyle(
+          'right',
+          'right' in position ? position.right : null
+        );
+        this.root.setStyle('top', 'top' in position ? position.top : null);
+        this.root.setStyle(
+          'bottom',
+          'bottom' in position ? position.bottom : null
+        );
+      },
+      setMaxHeight: (height: number) => {
+        this.root.setStyle('maxHeight', height);
+      }
+    };
+  }
+  // open?: boolean;
+  // foundation: any;
+  // setAnchorCorner: Function = () => {};
+  // deregisterBodyClickListener_: Function = () => {};
+
+  // syncWithProps(nextProps: MenuSurfacePropsT) {
+  //   //open
+  //   syncFoundationProp(nextProps.open, this.open, () => {
+  //     this.open = !!nextProps.open;
+  //   });
+
+  //   // anchorCorner
+  //   if (
+  //     nextProps.anchorCorner !== undefined &&
+  //     MDCMenuSurfaceFoundation.Corner[
+  //       ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+  //     ] !== this.foundation.anchorCorner_
+  //   ) {
+  //     this.setAnchorCorner(
+  //       MDCMenuSurfaceFoundation.Corner[
+  //         ANCHOR_CORNER_MAP[nextProps.anchorCorner]
+  //       ]
+  //     );
+  //   }
+  // }
+
+  // destroy() {
+  //   super.destroy();
+  //   // Some extra cleanup to avoid JS errors from MDC
+  //   this.foundation.adapter_.removeClass = () => {};
+  //   this.deregisterBodyClickListener_();
+  // }
 
   render() {
     const {
@@ -265,9 +462,8 @@ export class MenuSurface extends withFoundation({
       ...rest
     } = this.props;
 
-    const { root_ } = this.foundationRefs;
     return (
-      <MenuSurfaceRoot {...rest} ref={root_}>
+      <MenuSurfaceRoot {...this.root.props(rest)} ref={this.root.setEl}>
         {children}
       </MenuSurfaceRoot>
     );

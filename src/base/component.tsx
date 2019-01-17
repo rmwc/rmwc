@@ -1,13 +1,7 @@
 import * as React from 'react';
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './withTheme';
-import { deprecationWarning } from './utils/deprecationWarning';
-
-type ExtractProps<
-  TComponentOrTProps
-> = TComponentOrTProps extends React.Component<infer TProps, any>
-  ? TProps
-  : TComponentOrTProps;
+import { handleDeprecations, DeprecateT } from './utils/deprecation';
 
 type ThemeOptionT =
   | string
@@ -50,10 +44,6 @@ type ClassNamesInputT =
 
 type TagT = string | React.ComponentType<any>;
 
-type DeprecateT = {
-  [oldPropName: string]: string | [string, (value: any) => void];
-};
-
 interface ComponentFactoryOpts<Props> {
   displayName: string;
   classNames?: ClassNamesInputT;
@@ -63,6 +53,11 @@ interface ComponentFactoryOpts<Props> {
   // TODO, any had to be included
   // Currently causing errors because things like "role" cant be undefined
   defaultProps?: any & Partial<ComponentProps<any> & Props>;
+  render?: (
+    props: any,
+    ref: React.Ref<any>,
+    tag: TagT
+  ) => React.ReactElement<HTMLElement>;
 }
 
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
@@ -99,49 +94,6 @@ const handleTag = (props: any, defaultTag: TagT, tag?: TagT) => {
   }
 };
 
-const handleDeprecations = (
-  props: any,
-  deprecate: DeprecateT,
-  displayName: string
-) => {
-  for (const oldPropName in deprecate) {
-    const newProp = deprecate[oldPropName];
-    let newPropName;
-    let transformProp = (value: any) => value;
-
-    if (Array.isArray(newProp)) {
-      newPropName = newProp[0];
-      transformProp = newProp[1];
-    } else {
-      newPropName = newProp;
-    }
-
-    if (props[oldPropName] !== undefined) {
-      if (newPropName === '') {
-        deprecationWarning(
-          `prop '${oldPropName}' has been removed from the ${displayName ||
-            ''} component and is no longer a valid prop.`
-        );
-      } else {
-        props[newPropName] = transformProp(props[oldPropName]);
-        let propTransformMessage = '';
-        if (props[newPropName] !== props[oldPropName]) {
-          propTransformMessage = ` The old value has also been converted from '${
-            props[newPropName]
-          }' to '${props[oldPropName]}'`;
-        }
-
-        deprecationWarning(
-          `prop '${oldPropName}' has been replaced with '${newPropName}' on the ${displayName ||
-            ''} component.${propTransformMessage}`
-        );
-      }
-
-      delete props[oldPropName];
-    }
-  }
-};
-
 const handleConsumeProps = (props: any, consumeProps: string[]) => {
   consumeProps.forEach(p => {
     delete props[p];
@@ -153,7 +105,8 @@ export const componentFactory = <P extends {}>({
   tag: defaultTag = 'div',
   deprecate,
   defaultProps,
-  consumeProps = []
+  consumeProps = [],
+  render
 }: ComponentFactoryOpts<P>) => {
   const Component = React.forwardRef<any, P & ComponentProps>(
     (props: P & ComponentProps, ref) => {
@@ -161,7 +114,9 @@ export const componentFactory = <P extends {}>({
 
       handleClassNames(rest, classNames, className, theme);
       handleTag(rest, defaultTag, tag);
-      deprecate && handleDeprecations(rest, deprecate, displayName);
+      if (deprecate) {
+        props = handleDeprecations(rest, deprecate, displayName);
+      }
       handleConsumeProps(rest, consumeProps);
 
       const finalProps: ComponentProps = rest;
@@ -172,7 +127,11 @@ export const componentFactory = <P extends {}>({
           : tag || defaultTag;
 
       // @ts-ignore
-      return <Tag {...finalProps} ref={ref} />;
+      return render ? (
+        render(finalProps, ref, Tag)
+      ) : (
+        <Tag {...finalProps} ref={ref} />
+      );
     }
   );
 

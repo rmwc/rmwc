@@ -105,15 +105,22 @@ class SelectNativeControl extends React.Component<{
   selectOptions: any;
   placeholder?: string;
   children: React.ReactNode;
+  elementRef: React.Ref<HTMLSelectElement>;
   value: any;
   defaultValue?: any;
 }> {
   static displayName = 'SelectNativeControl';
 
   render() {
-    const { selectOptions, placeholder = '', children, ...rest } = this.props;
+    const {
+      selectOptions,
+      placeholder = '',
+      children,
+      elementRef,
+      ...rest
+    } = this.props;
     return (
-      <select {...rest} className="mdc-select__native-control">
+      <select {...rest} ref={elementRef} className="mdc-select__native-control">
         {!this.props.value && !this.props.defaultValue && (
           <option value="" disabled={placeholder === ''}>
             {placeholder}
@@ -724,8 +731,9 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
             selectedIndex={this.state.selectedIndex}
             apiRef={apiRef => {
               this.menu_ = apiRef;
+              this.menuElement_ =
+                apiRef && apiRef.menuSurface_.setAnchorElement;
             }}
-            ref={(el: any) => (this.menuElement_ = el)}
             open={this.state.menuOpen}
             onClose={this.handleMenuClosed_}
             onOpen={this.handleMenuOpened_}
@@ -736,7 +744,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
         ) : (
           <SelectNativeControl
             {...rest}
-            ref={(el: any) => (this.nativeControl_ = el)}
+            elementRef={(el: any) => (this.nativeControl_ = el)}
             {...sharedControlProps}
             {...sharedEventProps}
           >
