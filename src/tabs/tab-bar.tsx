@@ -1,7 +1,7 @@
 import {
-  CustomEventT,
   componentFactory,
-  FoundationComponent
+  FoundationComponent,
+  CustomEventT
 } from '@rmwc/base';
 
 import * as React from 'react';
@@ -16,13 +16,13 @@ console.log(TabBarContext);
 /************************************************************
  * TabBar
  ************************************************************/
-export type TabBarEventDetailT = {
-  index: number;
-};
-
 export interface TabBarProps {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onActivate?: (evt: CustomEventT<TabBarEventDetailT>) => void;
+  onActivate?: (
+    evt: CustomEventT<{
+      index: number;
+    }>
+  ) => void;
   /** The index of the active tab. */
   activeTabIndex?: number;
 }

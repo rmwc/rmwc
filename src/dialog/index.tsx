@@ -1,4 +1,3 @@
-import { CustomEventT } from '@rmwc/base';
 import { ButtonProps } from '@rmwc/button';
 
 import * as React from 'react';
@@ -7,7 +6,11 @@ import { MDCDialogFoundation } from '@material/dialog';
 import createFocusTrap from 'focus-trap';
 
 import { Button } from '@rmwc/button';
-import { FoundationComponent, componentFactory } from '@rmwc/base';
+import {
+  FoundationComponent,
+  componentFactory,
+  CustomEventT
+} from '@rmwc/base';
 import { noop } from '@rmwc/base/utils/noop';
 
 const strings = MDCDialogFoundation.strings;
@@ -123,9 +126,9 @@ export type DialogPropsT = {
   /** Whether or not the Dialog is showing. */
   open: boolean;
   /** Callback for when the Dialog opens. */
-  onOpen?: (evt: CustomEventT<void>) => void;
+  onOpen?: (evt: CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: CustomEventT<void>) => void;
+  onClose?: (evt: CustomEventT<{}>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
 };

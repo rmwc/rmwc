@@ -141,14 +141,16 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   foundation: any;
   classList: { [key: string]: ClassListT } = {};
   propsList: { [key: string]: PropsList } = {};
-  foundationRefs: { [key: string]: HTMLElement | null } = {};
+  foundationRefs: { [key: string]: Element | null } = {};
 
   constructor(props: FoundationPropsT<P>) {
     super(props);
     this.foundation = this.getDefaultFoundation();
   }
 
-  createElement(elementName: string) {
+  createElement<ElementType extends Element = HTMLElement>(
+    elementName: string
+  ) {
     this.createClassList(elementName);
     this.createPropsList(elementName);
     const classList = this.classList[elementName];
@@ -178,8 +180,8 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
           this.foundationRefs[elementName] = el;
         }
       },
-      get el(): HTMLElement | null {
-        return getElement();
+      get el(): ElementType {
+        return getElement() as ElementType;
       }
     };
   }

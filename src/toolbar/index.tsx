@@ -1,5 +1,4 @@
 import { IconProps } from '@rmwc/icon';
-import { ComponentProps } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
@@ -8,7 +7,7 @@ import { Icon } from '@rmwc/icon';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 
-export interface ToolbarPropsT extends ComponentProps {
+export interface ToolbarPropsT {
   /** Makes the toolbar fixed */
   fixed?: boolean;
   /** Adds a waterfall effect on scroll */
@@ -113,10 +112,10 @@ export const ToolbarMenuIcon = withRipple({ unbounded: true })(
 /**
  * A standard Icon for toolbar actions. This is an instance of the Icon component.
  */
-export const ToolbarIcon: React.ComponentType<IconProps> = withRipple({
+export const ToolbarIcon = withRipple({
   unbounded: true
 })(
-  componentFactory({
+  componentFactory<IconProps>({
     displayName: 'ToolbarIcon',
     tag: Icon,
     classNames: ['mdc-toolbar__icon']

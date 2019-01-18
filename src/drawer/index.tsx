@@ -70,9 +70,9 @@ export type DrawerPropsT = {
   /** Opens or closes the Drawer. */
   open?: boolean;
   /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: CustomEventT<void>) => void;
+  onClose?: (evt: CustomEventT<{}>) => void;
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: CustomEventT<void>) => void;
+  onOpen?: (evt: CustomEventT<{}>) => void;
   /** Makes a dismissible drawer. */
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */

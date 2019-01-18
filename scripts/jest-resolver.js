@@ -1,4 +1,4 @@
-const resolver = require('jest-resolve/build/defaultResolver.js');
+const resolver = require('jest-resolve/build/default_resolver.js');
 const ReactTestVersion = process.env.REACT_TEST_VERSION;
 
 module.exports = (moduleName, options) => {

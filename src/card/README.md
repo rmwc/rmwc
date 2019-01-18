@@ -18,7 +18,8 @@ import {
   Card,
   CardPrimaryAction,
   CardMedia,
-  CardAction,
+  CardActionButton,
+  CardActionIcon,
   CardActions,
   CardActionButtons,
   CardActionIcons
@@ -54,16 +55,16 @@ import { Typography } from '@rmwc/typography';
   </CardPrimaryAction>
   <CardActions>
     <CardActionButtons>
-      <CardAction>Read</CardAction>
-      <CardAction>Bookmark</CardAction>
+      <CardActionButton>Read</CardActionButton>
+      <CardActionButton>Bookmark</CardActionButton>
     </CardActionButtons>
     <CardActionIcons>
-      <CardAction
+      <CardActionIcon
         onIcon="favorite"
         icon="favorite_border"
       />
-      <CardAction icon="share" />
-      <CardAction icon="more_vert" />
+      <CardActionIcon icon="share" />
+      <CardActionIcon icon="more_vert" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -130,9 +131,9 @@ import { Typography } from '@rmwc/typography';
   <ListDivider />
 
   <CardActions fullBleed>
-    <CardAction>
+    <CardActionButton>
       All Business Headlines <Icon icon="arrow_forward" />
-    </CardAction>
+    </CardActionButton>
   </CardActions>
 </Card>
 ```
@@ -180,12 +181,12 @@ import {
   </CardPrimaryAction>
   <CardActions>
     <CardActionIcons>
-      <CardAction
+      <CardActionIcon
         onIcon="favorite"
         icon="favorite_border"
       />
-      <CardAction icon="bookmark_border" />
-      <CardAction icon="share" />
+      <CardActionIcon icon="bookmark_border" />
+      <CardActionIcon icon="share" />
     </CardActionIcons>
   </CardActions>
 </Card>

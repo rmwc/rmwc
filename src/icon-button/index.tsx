@@ -1,30 +1,34 @@
-import { ComponentProps, CustomEventT, FoundationComponent } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
-import { IconOptionsT } from '@rmwc/icon/defs';
-import { WithRippleProps } from '@rmwc/ripple';
-
 import * as React from 'react';
 //@ts-ignore
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import { Icon } from '@rmwc/icon';
-import { withRipple } from '@rmwc/ripple';
-import { componentFactory } from '@rmwc/base';
-import { getIconStrategy } from '@rmwc/icon/utils';
+import { Icon, IconPropT, IconProps, getIconStrategy } from '@rmwc/icon';
+import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import {
+  componentFactory,
+  ComponentProps,
+  FoundationComponent,
+  CustomEventT
+} from '@rmwc/base';
+import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
-export interface IconButtonProps
-  extends ComponentProps,
-    IconProps,
-    WithRippleProps {
+export interface IconButtonProps extends WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
   /** An onChange callback that receives a custom event. */
   onChange?: (evt: CustomEventT<{ isOn: boolean }>) => void;
   /** Makes the button disabled */
   disabled?: boolean;
+  /** Icon for the button */
+  icon?: IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
-  onIcon?: React.ReactNode;
-  /** Options for the onIcon */
-  onIconOptions?: IconOptionsT;
+  onIcon?: IconPropT;
+}
+
+export interface DeprecatedIconButtonProps {
+  /** DEPRECATED: Pass options directly to icon */
+  iconOptions?: any;
+  /** DEPRECATED: Pass options directly to onIcon */
+  onIconOptions?: any;
 }
 
 export const IconButtonRoot = withRipple({
@@ -63,10 +67,12 @@ export const IconButtonIcon = componentFactory<IconButtonIconProps>({
   consumeProps: ['on']
 });
 
-class IconButtonToggle extends FoundationComponent<IconButtonProps> {
+class IconButtonToggle extends FoundationComponent<
+  IconButtonProps & DeprecatedIconButtonProps
+> {
   static displayName = 'IconButton';
 
-  constructor(props: IconButtonProps) {
+  constructor(props: IconButtonProps & ComponentProps) {
     super(props);
     this.createClassList('root_');
     this.createPropsList('root_');
@@ -117,14 +123,14 @@ class IconButtonToggle extends FoundationComponent<IconButtonProps> {
   }
 
   render() {
-    const {
-      checked,
-      icon,
-      iconOptions,
-      onIcon,
-      onIconOptions,
-      ...rest
-    } = this.props;
+    const { icon, iconOptions, onIcon, onIconOptions, ...rest } = this.props;
+
+    if (iconOptions || onIconOptions) {
+      deprecationWarning(
+        'IconButton component props iconOptions and onIconOptions must be passed directly to the icon and onIcon prop. This issue has NOT been automatically fixed for you, please update your code.'
+      );
+    }
+
     return (
       <IconButtonRoot
         aria-pressed={this.isOn()}
@@ -133,16 +139,19 @@ class IconButtonToggle extends FoundationComponent<IconButtonProps> {
         onClick={this.handleClick}
         className={this.classList.root_.renderToString()}
       >
-        <IconButtonIcon icon={icon} iconOptions={iconOptions} />
-        <IconButtonIcon icon={onIcon} iconOptions={onIconOptions} on />
+        <IconButtonIcon icon={icon} />
+        <IconButtonIcon icon={onIcon} on />
       </IconButtonRoot>
     );
   }
 }
 
-export const IconButton = ({ icon, iconOptions, ...rest }: IconButtonProps) => {
+export const IconButton = ({
+  icon,
+  ...rest
+}: IconButtonProps & ComponentProps) => {
   if (rest.onIcon) {
-    return <IconButtonToggle {...rest} icon={icon} iconOptions={iconOptions} />;
+    return <IconButtonToggle {...rest} icon={icon} />;
   }
 
   const strategy = getIconStrategy(icon, 'auto', null);
@@ -150,19 +159,11 @@ export const IconButton = ({ icon, iconOptions, ...rest }: IconButtonProps) => {
   if (strategy === 'url')
     return (
       <IconButtonRoot aria-hidden="true" {...rest}>
-        <IconButtonIcon icon={icon} iconOptions={iconOptions} />
+        <IconButtonIcon icon={icon} />
       </IconButtonRoot>
     );
 
-  return (
-    <IconButtonRoot
-      aria-hidden="true"
-      {...rest}
-      tag={Icon}
-      icon={icon}
-      iconOptions={iconOptions}
-    />
-  );
+  return <IconButtonRoot aria-hidden="true" {...rest} tag={Icon} icon={icon} />;
 };
 
 export default IconButton;

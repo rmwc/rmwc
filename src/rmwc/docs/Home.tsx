@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { version } from '../';
 import { Typography } from '@rmwc/typography';
 
-import { Card, CardMedia, CardActions, CardAction } from '@rmwc/card';
+import { Card, CardMedia, CardActions, CardActionButton } from '@rmwc/card';
 import { Grid, GridCell } from '@rmwc/grid';
 import { Button } from '@rmwc/button';
 import { Theme } from '@rmwc/theme';
@@ -79,9 +79,9 @@ export const Home = () => {
                   }}
                 />
                 <CardActions>
-                  <CardAction raised theme="secondary-bg on-secondary">
+                  <CardActionButton raised theme="secondary-bg on-secondary">
                     Get Started
-                  </CardAction>
+                  </CardActionButton>
                 </CardActions>
               </Card>
             </Link>
@@ -109,7 +109,7 @@ export const Home = () => {
                 }}
               />
               <CardActions>
-                <CardAction>Visit MDC</CardAction>
+                <CardActionButton>Visit MDC</CardActionButton>
               </CardActions>
             </Card>
           </GridCell>
@@ -138,9 +138,9 @@ export const Home = () => {
                   }}
                 />
                 <CardActions>
-                  <CardAction style={{ backgroundColor: 'white' }}>
+                  <CardActionButton style={{ backgroundColor: 'white' }}>
                     Customize
-                  </CardAction>
+                  </CardActionButton>
                 </CardActions>
               </Card>
             </Link>

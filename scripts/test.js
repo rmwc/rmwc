@@ -10,7 +10,7 @@ fs.readdir('react-versions', function(err, files) {
     console.log('Running tests for', versionNum);
     childProcess.execSync(
       //prettier-ignore
-      `export REACT_TEST_VERSION=${versionNum} CI=true && react-app-rewired test --env=jsdom --maxWorkers 1 ${isLastRun ? '--coverage' : ''}`,
+      `export REACT_TEST_VERSION=${versionNum} CI=true && react-app-rewired test --env=jsdom ${isLastRun ? '--coverage' : ''}`,
       { stdio: [0, 1, 2] }
     );
   });

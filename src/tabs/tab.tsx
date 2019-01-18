@@ -5,19 +5,19 @@ import { MDCTabFoundation } from '@material/tab';
 
 import { FoundationComponent, componentFactory } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
-import { IconProps, Icon } from '@rmwc/icon';
+import { IconProps, Icon, IconPropT } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
 import { withTabBarContext, TabBarContextT } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';
 
-export interface TabProps extends IconProps {
+export interface TabProps {
   /** A label for the tab. */
   label?: any;
   /** The label for the tab, passed as children. */
   children?: React.ReactNode;
   /** The icon to use for the tab. */
-  icon?: React.ReactNode;
+  icon?: IconPropT;
   /** Stacks the icon on top of the text label */
   stacked?: boolean;
   /** Restricts the indicator to the content */
@@ -58,7 +58,7 @@ export const Tab = withTabBarContext()(
     root = this.createElement('root');
     tabIndicator: TabIndicator | null = null;
     content: HTMLDivElement | null = null;
-    rippleSurfaceApi: RippleSurface | null = name;
+    rippleSurfaceApi: RippleSurface | null = null;
 
     constructor(props: TabProps & { contextApi?: TabBarContextT }) {
       super(props);
@@ -145,7 +145,6 @@ export const Tab = withTabBarContext()(
         children,
         label,
         icon,
-        iconOptions,
         stacked,
         restrictIndicator,
         contextApi,
@@ -162,7 +161,7 @@ export const Tab = withTabBarContext()(
           }}
         >
           <div className="mdc-tab__content" ref={el => (this.content = el)}>
-            {!!icon && <TabIcon icon={icon} iconOptions={iconOptions} />}
+            {!!icon && <TabIcon icon={icon} />}
             {(children !== undefined || label !== undefined) && (
               <span className="mdc-tab__text-label">
                 {label}

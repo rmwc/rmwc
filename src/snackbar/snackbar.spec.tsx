@@ -21,18 +21,9 @@ describe('Snackbar', () => {
     }, 1500);
   });
 
-  it('can be alignStart', () => {
-    const el = mount(
-      <Snackbar
-        show
-        onHide={evt => {}}
-        message="This is a new message"
-        actionText="Action"
-        actionHandler={() => alert('Action clicked')}
-        alignStart
-      />
-    );
-    expect(!!~el.html().search('mdc-snackbar--align-start')).toBe(true);
+  it('can be leading', () => {
+    const el = mount(<Snackbar open message="This is a new message" leading />);
+    expect(!!~el.html().search('mdc-snackbar--leading')).toBe(true);
   });
 
   it('can be multiline', () => {

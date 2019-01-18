@@ -1,4 +1,4 @@
-import { CustomEventT, FoundationComponent } from '@rmwc/base';
+import { FoundationComponent, CustomEventT } from '@rmwc/base';
 
 import * as React from 'react';
 // @ts-ignore
@@ -28,12 +28,7 @@ type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'top
 /****************************************************************
  * Menu
  ****************************************************************/
-export type SelectedEventDetailT = {
-  index: number;
-  item: HTMLElement;
-};
-
-export type MenuSurfacePropsT = {
+export interface MenuSurfaceProps {
   /** Opens the menu. */
   open?: boolean;
   /** Make the menu position fixed. */
@@ -41,22 +36,28 @@ export type MenuSurfacePropsT = {
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
-  onOpen?: (evt: CustomEventT<void>) => void;
+  onOpen?: (evt: CustomEventT<{}>) => void;
   /** Callback for when the menu is closed. */
-  onClose?: (evt: CustomEventT<void>) => void;
+  onClose?: (evt: CustomEventT<{}>) => void;
   /** Children to render. */
   children?: React.ReactNode;
-} & ComponentProps;
+}
 
-export type MenuPropsT = {
+export interface MenuProps extends MenuSurfaceProps {
   /** Callback that fires when a Menu item is selected. */
-  onSelect?: (evt: CustomEventT<SelectedEventDetailT>) => void;
-} & MenuSurfacePropsT &
-  ComponentProps;
+  onSelect?: (
+    evt:
+      | CustomEventT<{
+          index: number;
+          item: HTMLElement;
+        }>
+      | any
+  ) => void;
+}
 
 export const MenuRoot = componentFactory({
   displayName: 'MenuRoot',
-  classNames: (props: MenuPropsT) => [
+  classNames: (props: MenuProps) => [
     'mdc-menu',
     'mdc-menu-surface',
     {
@@ -88,7 +89,7 @@ export class MenuItem extends React.Component<any> {
 }
 
 /** A menu component for displaying lists items. */
-export class Menu extends FoundationComponent<MenuPropsT> {
+export class Menu extends FoundationComponent<MenuProps> {
   static displayName = 'Menu';
 
   list: List | null = null;
@@ -148,7 +149,7 @@ export class Menu extends FoundationComponent<MenuPropsT> {
     });
   }
 
-  sync(props: MenuPropsT, prevProps: MenuPropsT) {
+  sync(props: MenuProps, prevProps: MenuProps) {
     // open
     if (!!props.open !== this.open) {
       this.open = !!props.open;
@@ -174,13 +175,13 @@ export class Menu extends FoundationComponent<MenuPropsT> {
   // setAnchorCorner: Function = () => {};
   // menuSurface_: any;
 
-  // constructor(props: MenuPropsT) {
+  // constructor(props: MenuProps) {
   //   super(props);
   //   //$FlowFixMe
   //   this.onCloseHandler_ = this.onCloseHandler_.bind(this);
   // }
 
-  // syncWithProps(nextProps: MenuPropsT) {
+  // syncWithProps(nextProps: MenuProps) {
   //   // open
   //   syncFoundationProp(nextProps.open, this.open, () => {
   //     this.open = !!nextProps.open;
@@ -233,7 +234,7 @@ export class Menu extends FoundationComponent<MenuPropsT> {
   // onCloseHandler_(evt: CustomEventT<void>) {
   //   this.props.onClose && this.props.onClose(evt);
 
-  //   // little hack. We need to broadcast an CustomEvent from this component
+  //   // little hack. We need to broadcast an CustomEventT from this component
   //   // in order to keep MDC and React in sync.
   //   // Otherwise, the internal state of the component can change and not be reflected in React
   //   this.emit('RESYNC', {});
@@ -279,7 +280,7 @@ export class Menu extends FoundationComponent<MenuPropsT> {
  ****************************************************************/
 export const MenuSurfaceRoot = componentFactory({
   displayName: 'MenuSurfaceRoot',
-  classNames: (props: MenuSurfacePropsT) => [
+  classNames: (props: MenuSurfaceProps) => [
     'mdc-menu-surface',
     {
       'mdc-menu-surface--fixed': props.fixed
@@ -289,7 +290,7 @@ export const MenuSurfaceRoot = componentFactory({
 });
 
 /** A generic menu component for displaying any type of content. */
-export class MenuSurface extends FoundationComponent<MenuSurfacePropsT> {
+export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
@@ -424,7 +425,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfacePropsT> {
   // setAnchorCorner: Function = () => {};
   // deregisterBodyClickListener_: Function = () => {};
 
-  // syncWithProps(nextProps: MenuSurfacePropsT) {
+  // syncWithProps(nextProps: MenuSurfaceProps) {
   //   //open
   //   syncFoundationProp(nextProps.open, this.open, () => {
   //     this.open = !!nextProps.open;
@@ -483,7 +484,7 @@ export const MenuSurfaceAnchor = componentFactory({
 /****************************************************************
  * Simple Menu
  ****************************************************************/
-export type SimpleMenuPropsT = {
+export type SimpleMenuProps = {
   /** An element that will open the menu when clicked  */
   handle: React.ReactElement<any>;
   /** By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor.   */
@@ -492,9 +493,9 @@ export type SimpleMenuPropsT = {
   children?: React.ReactNode;
 };
 
-export type SimpleMenuFactoryPropsT = SimpleMenuPropsT &
-  MenuPropsT &
-  MenuSurfacePropsT;
+export type SimpleMenuFactoryPropsT = SimpleMenuProps &
+  MenuProps &
+  MenuSurfaceProps;
 
 export type SimpleMenuStateT = {
   open: boolean;
@@ -543,7 +544,7 @@ const simpleMenuFactory = (
         }
       });
 
-      const wrappedOnClose = (evt: CustomEventT<void>) => {
+      const wrappedOnClose = (evt: CustomEventT<{}>) => {
         this.setState({ open: open || false });
         if (onClose) {
           onClose(evt);
@@ -570,15 +571,11 @@ const SimpleMenuRoot = simpleMenuFactory(Menu);
 /**
  * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
  */
-export const SimpleMenu = (props: SimpleMenuPropsT & MenuPropsT) => (
+export const SimpleMenu = (props: SimpleMenuProps & MenuProps) => (
   <SimpleMenuRoot {...props} />
 );
-
-const SimpleMenuSurfaceRoot = simpleMenuFactory(MenuSurface);
 
 /**
  * The same as SimpleMenu, but a generic surface.
  */
-export const SimpleMenuSurface = (
-  props: SimpleMenuPropsT & MenuSurfacePropsT
-) => <SimpleMenuSurfaceRoot {...props} />;
+export const SimpleMenuSurface = simpleMenuFactory(MenuSurface);

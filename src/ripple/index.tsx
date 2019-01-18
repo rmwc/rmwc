@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { MDCRippleFoundation, util } from '@material/ripple';
 import { classNames, FoundationComponent } from '@rmwc/base';
 import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 
 export interface RippleSurfaceProps {
   className: string;
@@ -21,6 +22,15 @@ export interface RippleProps {
   disabled?: boolean;
   /** For internal use */
   surface?: boolean | RippleSurface;
+}
+
+export interface DeprecatedRippleProps {
+  /** DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}` */
+  accent?: boolean;
+  /** DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}` */
+  surface?: boolean;
+  /** DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}` */
+  unbounded?: boolean;
 }
 
 type ActivateEventTypes<S> =
@@ -53,12 +63,20 @@ export class Ripple extends FoundationComponent<RippleProps> {
   }
 
   getDefaultFoundation() {
-    const MATCHES = util.getMatchesProperty(HTMLElement.prototype);
     return new MDCRippleFoundation({
       browserSupportsCssVars: () => util.supportsCssVariables(window),
       isUnbounded: () => !!this.props.unbounded,
-      isSurfaceActive: () =>
-        this.root.el && (this.root.el as any)[MATCHES](':active'),
+      isSurfaceActive: () => {
+        if (this.root.el) {
+          const method =
+            (this.root.el as any).matches ||
+            (this.root.el as any).webkitMatchesSelector ||
+            (this.root.el as any).msMatchesSelector;
+
+          return method(':active');
+        }
+        return false;
+      },
       isSurfaceDisabled: () => this.props.disabled,
       addClass: (className: string) => this.surface.addClass(className),
       removeClass: (className: string) => this.surface.removeClass(className),
@@ -262,12 +280,6 @@ interface WithRippleOpts {
   unbounded?: boolean;
 }
 
-interface DeprecatedRippleProps {
-  accent?: boolean;
-  surface?: boolean;
-  unbounded?: boolean;
-}
-
 /**
  * HOC that adds ripples to any component
  */
@@ -277,45 +289,50 @@ export const withRipple = ({
   surface: defaultSurface = true
 }: WithRippleOpts = {}) => <P extends {}>(
   Component: React.ComponentType<P & WithRippleProps & DeprecatedRippleProps>
-) => {
-  const WithRippleComponent = React.forwardRef<any, any>(
-    (
-      { ripple = true, ...rest }: P & WithRippleProps & DeprecatedRippleProps,
-      ref
-    ) => {
-      const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
+): React.ComponentType<P & WithRippleProps & DeprecatedRippleProps> => {
+  const WithRippleComponent = withProviderContext()(
+    React.forwardRef<any, any>(
+      (
+        {
+          providerContext,
+          ripple = providerContext.ripple,
+          ...rest
+        }: P & WithRippleProps & DeprecatedRippleProps & WithProviderContext,
+        ref
+      ) => {
+        const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
 
-      if (rest.accent || rest.unbounded || rest.surface) {
-        deprecationWarning(
-          `'accent', 'unbounded', and 'surface' have been deprecated as indiviudal props. Please pass an options object to the ripple prop directly. ripple={{accent: true, unbounded: true}} `
-        );
-        rippleOptions.accent = rest.accent || rippleOptions.accent;
-        rippleOptions.unbounded = rest.unbounded || rippleOptions.unbounded;
-        rippleOptions.surface = rest.surface || rippleOptions.surface;
+        if (rest.accent || rest.unbounded || rest.surface) {
+          deprecationWarning(
+            `'accent', 'unbounded', and 'surface' have been deprecated as indiviudal props. Please pass an options object to the ripple prop directly. ripple={{accent: true, unbounded: true}} `
+          );
+          rippleOptions.accent = rest.accent || rippleOptions.accent;
+          rippleOptions.unbounded = rest.unbounded || rippleOptions.unbounded;
+          rippleOptions.surface = rest.surface || rippleOptions.surface;
+        }
+
+        if (ripple) {
+          return (
+            <Ripple
+              {...rest}
+              accent={rippleOptions.accent || defaultAccent}
+              unbounded={rippleOptions.unbounded || defaultUnbounded}
+              surface={rippleOptions.surface || defaultSurface}
+            >
+              <Component {...rest as P} ref={ref} />
+            </Ripple>
+          );
+        }
+
+        return <Component {...rest as P} ref={ref} />;
       }
-
-      if (ripple) {
-        return (
-          <Ripple
-            {...rest}
-            accent={rippleOptions.accent || defaultAccent}
-            unbounded={rippleOptions.unbounded || defaultUnbounded}
-            surface={rippleOptions.surface || defaultSurface}
-          >
-            <Component {...rest as P} ref={ref} />
-          </Ripple>
-        );
-      }
-
-      return <Component {...rest as P} ref={ref} />;
-    }
+    )
   );
 
   WithRippleComponent.displayName = `withRipple(${Component.displayName ||
     'Unknown'})`;
-  WithRippleComponent.defaultProps = {
-    ripple: true
-  };
 
-  return WithRippleComponent;
+  return WithRippleComponent as React.ComponentType<
+    P & WithRippleProps & DeprecatedRippleProps
+  >;
 };

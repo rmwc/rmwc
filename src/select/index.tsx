@@ -11,7 +11,7 @@ import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon } from '@rmwc/icon';
 import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
-import { Menu, MenuItem, MenuItems } from '@rmwc/menu';
+import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
 
 type FormattedOption = {
@@ -162,8 +162,7 @@ class SelectNativeControl extends React.Component<{
   }
 }
 
-type SelectEnhancedControlPropsT = {
-  open: boolean;
+interface SelectEnhancedControlProps extends MenuProps {
   selectOptions: any;
   selectedIndex: number;
   placeholder?: string;
@@ -171,19 +170,11 @@ type SelectEnhancedControlPropsT = {
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
-  onClose: (evt: CustomEventT<void>) => void;
-  onOpen: (evt: CustomEventT<void>) => void;
-  onSelect: (
-    evt: CustomEventT<{
-      index: number;
-      item: HTMLElement;
-    }>
-  ) => void;
-};
+}
 
 // eslint-disable-next-line
 class SelectEnhancedControl extends React.Component<
-  SelectEnhancedControlPropsT
+  SelectEnhancedControlProps
 > {
   render() {
     const {

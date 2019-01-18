@@ -1,8 +1,8 @@
 import {
-  CustomEventT,
   componentFactory,
   FoundationComponent,
-  ComponentProps
+  ComponentProps,
+  CustomEventT
 } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
 
@@ -20,7 +20,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export interface TopAppBarProps {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: CustomEventT<void>) => void;
+  onNav?: (evt: CustomEventT<{}>) => void;
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean;
   /** Styles the top app bar as a prominent top app bar. */
@@ -134,10 +134,11 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
 
   root = this.createElement('root');
   navIcon: HTMLElement | null = null;
-  scrollTarget = window;
+  scrollTarget: Window | null = null;
 
   componentDidMount() {
     super.componentDidMount();
+    this.scrollTarget = window;
     this.navIcon =
       this.root.el &&
       this.root.el.querySelector(
@@ -153,7 +154,8 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
       removeClass: (className: string) => this.root.removeClass(className),
       setStyle: (property: string, value: string) =>
         this.root.el && this.root.el.style.setProperty(property, value),
-      getTopAppBarHeight: () => this.root.el && this.root.el.clientHeight,
+      getTopAppBarHeight: () =>
+        this.root && this.root.el && this.root.el.clientHeight,
       registerNavigationIconInteractionHandler: (
         evtType: string,
         handler: (evt: Event) => void
@@ -174,14 +176,17 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
         this.emit(MDCTopAppBarFoundation.strings.NAVIGATION_EVENT, {});
       },
       registerScrollHandler: (handler: (evt: Event) => void) =>
+        this.scrollTarget &&
         this.scrollTarget.addEventListener('scroll', handler),
       deregisterScrollHandler: (handler: (evt: Event) => void) =>
+        this.scrollTarget &&
         this.scrollTarget.removeEventListener('scroll', handler),
       registerResizeHandler: (handler: (evt: Event) => void) =>
         window.addEventListener('resize', handler),
       deregisterResizeHandler: (handler: (evt: Event) => void) =>
         window.removeEventListener('resize', handler),
       getViewportScrollY: () =>
+        this.scrollTarget &&
         this.scrollTarget[
           // @ts-ignore
           this.scrollTarget === window ? 'pageYOffset' : 'scrollTop'

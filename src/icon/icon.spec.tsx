@@ -57,8 +57,9 @@ describe('Icon', () => {
 
   it('can be sizes', () => {
     const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
-    sizes.forEach(size => {
-      const el = mount(<Icon icon="favorite" iconOptions={{ size }} />);
+
+    sizes.forEach((size: any) => {
+      const el = mount(<Icon icon={{ content: 'favorite', size }} />);
       expect(el.html().includes(`rmwc-icon--size-${size}`)).toEqual(true);
     });
   });
@@ -66,8 +67,8 @@ describe('Icon', () => {
   it('renders className', () => {
     const el = mount(
       <Icon
-        icon="ionic"
-        iconOptions={{
+        icon={{
+          content: 'ionic',
           prefix: 'ion-',
           strategy: 'className',
           basename: 'icon'
@@ -81,8 +82,9 @@ describe('Icon', () => {
     jest.spyOn(console, 'error');
     mount(
       <Icon
-        icon="foo"
-        iconOptions={{
+        // @ts-ignore
+        icon={{
+          content: 'foo',
           strategy: 'error'
         }}
       />
@@ -90,17 +92,11 @@ describe('Icon', () => {
     expect(console.error).toHaveBeenCalled();
   });
 
-  it('handles deprecated usage', () => {
-    jest.spyOn(console, 'warn');
-    mount(<Icon icon="foo" prefix="foo" />);
-    expect(console.warn).toHaveBeenCalled();
-  });
-
   it('renders custom', () => {
     const el = mount(
       <Icon
-        icon="CUSTOM"
-        iconOptions={{
+        icon={{
+          content: 'CUSTOM',
           strategy: 'custom',
           render: props => (
             <div>

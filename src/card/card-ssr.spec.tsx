@@ -1,5 +1,9 @@
+/**
+ * @jest-environment node
+ */
+
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { renderToString as mount } from 'react-dom/server';
 import {
   Card,
   CardPrimaryAction,
@@ -40,22 +44,5 @@ describe('Card', () => {
         </CardActions>
       </Card>
     );
-  });
-
-  it('can have custom classes', () => {
-    [
-      Card,
-      CardMedia,
-      CardMediaContent,
-      CardActionButtons,
-      CardActionIcons,
-      CardActions,
-      CardActionButton,
-      CardActionIcon,
-      CardPrimaryAction
-    ].forEach((Component: any) => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
-    });
   });
 });

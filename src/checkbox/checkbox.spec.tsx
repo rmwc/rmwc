@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Checkbox from './';
+import { Checkbox } from './';
 
 describe('Checkbox', () => {
   test('renders', () => {
@@ -11,7 +11,9 @@ describe('Checkbox', () => {
 
   test('can be checked', () => {
     const checkbox = mount(<Checkbox checked={true} onChange={() => {}} />);
-    expect(checkbox.find('input').getDOMNode().checked).toEqual(true);
+    expect(
+      (checkbox.find('input').getDOMNode() as HTMLInputElement).checked
+    ).toEqual(true);
   });
 
   test('handles onChange', () => {
@@ -26,12 +28,16 @@ describe('Checkbox', () => {
 
   test('can be disabled', () => {
     const checkbox = mount(<Checkbox disabled />);
-    expect(checkbox.find('input').getDOMNode().disabled).toEqual(true);
+    expect(
+      (checkbox.find('input').getDOMNode() as HTMLInputElement).disabled
+    ).toEqual(true);
   });
 
   test('can be indeterminate', () => {
     const checkbox = mount(<Checkbox indeterminate />);
-    expect(checkbox.find('input').getDOMNode().indeterminate).toEqual(true);
+    expect(
+      (checkbox.find('input').getDOMNode() as HTMLInputElement).indeterminate
+    ).toEqual(true);
   });
 
   test('can have a label', () => {
@@ -45,8 +51,10 @@ describe('Checkbox', () => {
   });
 
   test('foundation check', () => {
-    const el = mount(<Checkbox className={'my-custom-classname'} />);
-    const adapter = el.instance().foundation.adapter_;
+    const el = mount(
+      <Checkbox checked={false} className={'my-custom-classname'} />
+    );
+    const adapter = (el.instance() as any).foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.setNativeControlAttr('checked', true);

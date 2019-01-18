@@ -38,7 +38,7 @@ describe('Chip', () => {
   it('handles onInteraction', () => {
     let value = 0;
     const el = mount(<Chip onInteraction={() => value++} />);
-    const inst = el.instance();
+    const inst = el.instance() as Chip;
     inst.foundation.adapter_.notifyInteraction();
     expect(value).toEqual(1);
   });
@@ -65,7 +65,7 @@ describe('Chip', () => {
 
     expect(onInteraction).toEqual(1);
 
-    const a = el.instance().foundation.adapter_;
+    const a = (el.instance() as Chip).foundation.adapter_;
     a.notifyRemoval();
     expect(onRemove).toEqual(1);
 
@@ -84,7 +84,7 @@ describe('Chip', () => {
       <Chip leadingIcon="favorite" trailingIcon="close" text="test-label" />
     );
 
-    const inst = el.instance();
+    const inst = el.instance() as Chip;
     const a = inst.foundation.adapter_;
 
     a.addClass('test');
@@ -92,7 +92,7 @@ describe('Chip', () => {
     a.removeClass('test');
     a.addClassToLeadingIcon('test');
     a.removeClassFromLeadingIcon('test');
-    a.eventTargetHasClass(inst.root_, 'test');
+    a.eventTargetHasClass(inst.root.el, 'test');
     a.notifyInteraction();
     a.notifySelection(true);
     a.notifyTrailingIconInteraction();

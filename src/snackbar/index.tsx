@@ -14,9 +14,9 @@ export interface SnackbarProps {
   /** Show the Snackbar. */
   open?: boolean;
   /** A callback thats fired when the Snackbar shows. */
-  onOpen?: () => void;
+  onOpen?: (evt: Event) => void;
   /** A callback thats fired when the Snackbar hides. */
-  onClose?: () => void;
+  onClose?: (evt: Event) => void;
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.ReactNode;
   /** One or more actions to add to the snackbar. */
@@ -37,9 +37,9 @@ export interface DeprecatedSnackbarProps {
   /** DEPRECATED: Use open. */
   show?: boolean;
   /** DEPRECATED: Use onOpen. */
-  onShow?: () => void;
+  onShow?: (evt: Event) => void;
   /** DEPRECATED: Use onClose. */
-  onHide?: () => void;
+  onHide?: (evt: Event) => void;
   /** DEPRECATED: Use leading. */
   alignStart?: boolean;
   /** DEPRECATED: No longer applicable. */
@@ -127,12 +127,12 @@ export class Snackbar extends FoundationComponent<
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       announce: () => this.labelEl && this.announce(this.labelEl),
-      notifyOpening: () => this.emit('onShow', {}),
-      notifyOpened: () => this.emit('onShown', {}),
+      notifyOpening: () => this.emit('onOpen', {}),
+      notifyOpened: () => this.emit('onOpened', {}),
       notifyClosing: (reason: string) =>
-        this.emit('onHide', reason ? { reason } : {}),
+        this.emit('onClose', reason ? { reason } : {}),
       notifyClosed: (reason: string) =>
-        this.emit('onHidden', reason ? { reason } : {})
+        this.emit('onClosed', reason ? { reason } : {})
     });
   }
 

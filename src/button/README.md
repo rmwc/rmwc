@@ -10,13 +10,32 @@
 ```jsx render
 import { Button, ButtonIcon } from '@rmwc/button';
 
-<Button>Default</Button>
-<Button><ButtonIcon icon="favorite" /> With Icon</Button>
-<Button raised>Raised</Button>
-<Button dense>Dense</Button>
-<Button unelevated>Unelevated</Button>
-<Button outlined>Outlined</Button>
-<Button raised theme="secondary-bg on-secondary">With Theme</Button>
+<Button label="Default" />
+<Button
+  label="With Icon"
+  icon="favorite"
+/>
+<Button 
+  label="Raised"
+  raised
+/>
+<Button
+  label="Dense"
+  dense
+/>
+<Button
+  label="Unelevated"
+  unelevated
+/>
+<Button
+  label="Outlined"
+  outlined
+/>
+<Button
+  label="With Theme"
+  raised
+  theme="secondary-bg on-secondary"
+/>
 
 
 {/*
@@ -25,8 +44,20 @@ import { Button, ButtonIcon } from '@rmwc/button';
   See the documentation on Ripples.
   */
 }
-<Button theme="secondary" ripple={{accent: true}}>With Theme</Button>
-<Button ripple={false}>No Ripple</Button>
+<Button
+  label="With Theme"
+  theme="secondary"
+  ripple={{accent: true}}
+/>
+<Button
+  label="No Ripple"
+  ripple={false}
+/>
+
+{/*
+  Alternatively pass content as children
+*/}
+<Button><ButtonIcon icon="star" /> As Children</Button>
 ```
 
 ```jsx renderOnly

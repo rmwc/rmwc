@@ -15,6 +15,7 @@ describe('', () => {
     const el = mount(
       <IconButton onIcon="favorite" icon="favorite_border" checked={false} />
     );
+
     el.setProps({ checked: true }, () => {
       expect(el.html().includes('mdc-icon-button--on')).toBe(true);
     });

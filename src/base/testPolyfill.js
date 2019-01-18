@@ -9,13 +9,17 @@ export default () => {
     });
 
     if (!window['HTMLCanvasElement']) {
-      Object.defineProperty(window['HTMLCanvasElement'].prototype, 'getContext', {
-        writable: true,
-        value: () => ({
-          font: '',
-          measureText: () => ({ width: 0 })
-        })
-      });
+      Object.defineProperty(
+        window['HTMLCanvasElement'].prototype,
+        'getContext',
+        {
+          writable: true,
+          value: () => ({
+            font: '',
+            measureText: () => ({ width: 0 })
+          })
+        }
+      );
     }
 
     window['MutationObserver'] =

@@ -1,15 +1,18 @@
-import { CustomEventT } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
-
 import * as React from 'react';
 //@ts-ignore
 import { MDCChipFoundation } from '@material/chips';
 
-import { Icon } from '@rmwc/icon';
-import { FoundationComponent, componentFactory } from '@rmwc/base';
+import {
+  FoundationComponent,
+  componentFactory,
+  CustomEventT,
+  ComponentProps
+} from '@rmwc/base';
+import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
+import { Icon, IconProps } from '@rmwc/icon';
 
-export type ChipPropsT = {
+export interface ChipProps {
   /** Text for your Chip. */
   text?: React.ReactNode;
   /** makes the Chip appear selected. */
@@ -30,12 +33,12 @@ export type ChipPropsT = {
   onTrailingIconInteraction?: (evt: CustomEventT<{ chipId: string }>) => void;
   /** A callback that is fired once the chip is in an exited state from removing it. */
   onRemove?: (evt: CustomEventT<{ chipId: string }>) => void;
-};
+}
 
 const ChipRoot = withRipple({})(
-  componentFactory<ChipPropsT>({
+  componentFactory<ChipProps>({
     displayName: 'ChipRoot',
-    classNames: (props: ChipPropsT) => [
+    classNames: (props: ChipProps) => [
       'mdc-chip',
       {
         'mdc-chip--selected': props.selected
@@ -46,54 +49,37 @@ const ChipRoot = withRipple({})(
 );
 
 /** A Chip component. */
-export class Chip extends FoundationComponent<ChipPropsT> {
+export class Chip extends FoundationComponent<ChipProps> {
   static displayName = 'Chip';
-  root_: HTMLElement | null = null;
-  trailingIcon_: HTMLElement | null = null;
+
+  root = this.createElement('root');
   id: string = '';
   _reactInternalFiber: any;
 
-  constructor(props: ChipPropsT) {
+  constructor(props: ChipProps) {
     super(props);
-    this.createClassList('root_');
-
-    [
-      'handleInteraction_',
-      'handleTransitionEnd_',
-      'handleTrailingIconInteraction_'
-    ].forEach(key => ((this as any)[key] = (this as any)[key].bind(this)));
-  }
-
-  handleInteraction_(evt: any) {
-    evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
-    evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
-    return this.foundation.handleInteraction(evt);
-  }
-
-  handleTransitionEnd_(evt: any) {
-    return this.foundation.handleTransitionEnd(evt);
-  }
-
-  handleTrailingIconInteraction_(evt: any) {
-    return this.foundation.handleTrailingIconInteraction(evt);
+    this.handleInteraction = this.handleInteraction.bind(this);
+    this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
+    this.handleTrailingIconInteraction = this.handleTrailingIconInteraction.bind(
+      this
+    );
   }
 
   componentDidMount() {
     super.componentDidMount();
 
     this.id =
-      this.root_ && this.root_.id
-        ? this.root_.id
-        : this._reactInternalFiber.key || `${Math.random()}`;
+      this.root.el && this.root.el.id
+        ? this.root.el.id
+        : this._reactInternalFiber.key || randomId('chip');
   }
 
   getDefaultFoundation() {
     return new MDCChipFoundation(
       /** @type {!MDCChipAdapter} */ (Object.assign({
-        addClass: (className: string) => this.classList.root_.add(className),
-        removeClass: (className: string) =>
-          this.classList.root_.remove(className),
-        hasClass: (className: string) => this.classList.root_.has(className),
+        addClass: (className: string) => this.root.addClass(className),
+        removeClass: (className: string) => this.root.removeClass(className),
+        hasClass: (className: string) => this.root.hasClass(className),
         addClassToLeadingIcon: (className: string) => {
           // handled by props
         },
@@ -123,16 +109,30 @@ export class Chip extends FoundationComponent<ChipPropsT> {
         notifyRemoval: () =>
           this.emit(
             'onRemove',
-            { chipId: this.id, root: this.root_ },
+            { chipId: this.id, root: this.root.el },
             true /* shouldBubble */
           ),
         getComputedStyleValue: (propertyName: string) =>
-          this.root_ &&
-          window.getComputedStyle(this.root_).getPropertyValue(propertyName),
+          this.root.el &&
+          window.getComputedStyle(this.root.el).getPropertyValue(propertyName),
         setStyleProperty: (propertyName: string, value: any) =>
-          this.root_ && this.root_.style.setProperty(propertyName, value)
+          this.root.setStyle(propertyName, value)
       }))
     );
+  }
+
+  handleInteraction(evt: any) {
+    evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
+    evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
+    return this.foundation.handleInteraction(evt);
+  }
+
+  handleTransitionEnd(evt: any) {
+    return this.foundation.handleTransitionEnd(evt);
+  }
+
+  handleTrailingIconInteraction(evt: any) {
+    return this.foundation.handleTrailingIconInteraction(evt);
   }
 
   render() {
@@ -151,12 +151,11 @@ export class Chip extends FoundationComponent<ChipPropsT> {
     return (
       <ChipRoot
         tabIndex={0}
-        {...rest}
-        onClick={this.handleInteraction_}
-        onKeyDown={this.handleInteraction_}
-        onTransitionEnd={this.handleTransitionEnd_}
-        ref={(el: HTMLElement) => (this.root_ = el)}
-        className={this.classList.root_.renderToString()}
+        {...this.root.props(rest)}
+        onClick={this.handleInteraction}
+        onKeyDown={this.handleInteraction}
+        onTransitionEnd={this.handleTransitionEnd}
+        ref={this.root.setEl}
       >
         {!!leadingIcon &&
           renderChipIcon(leadingIcon, {
@@ -171,9 +170,8 @@ export class Chip extends FoundationComponent<ChipPropsT> {
         {!!trailingIcon &&
           renderChipIcon(trailingIcon, {
             trailing: true,
-            ref: (el: HTMLElement) => (this.trailingIcon_ = el),
-            onClick: this.handleTrailingIconInteraction_,
-            onKeyDown: this.handleTrailingIconInteraction_
+            onClick: this.handleTrailingIconInteraction,
+            onKeyDown: this.handleTrailingIconInteraction
           })}
       </ChipRoot>
     );
@@ -202,12 +200,12 @@ class ChipCheckmark extends React.Component<{}> {
   }
 }
 
-type ChipIconProps = {
+export interface ChipIconProps extends IconProps {
   /** Make it a leading icon */
   leading?: boolean;
   /** Make it a trailing icon */
   trailing?: boolean;
-} & IconProps;
+}
 
 /** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
 const ChipIconRoot = componentFactory<ChipIconProps>({
@@ -226,9 +224,7 @@ const ChipIconRoot = componentFactory<ChipIconProps>({
   consumeProps: ['trailing', 'leading']
 });
 
-export const ChipIcon: React.ComponentType<ChipIconProps> = (
-  props: ChipIconProps
-) => {
+export const ChipIcon = (props: ChipIconProps & ComponentProps) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')
   );
@@ -255,17 +251,17 @@ const renderChipIcon = (iconNode: any, props: any) => {
   return React.cloneElement(icon, { ...icon.props, ...props });
 };
 
-export type ChipSetPropsT = {
+export interface ChipSetProps {
   /** Creates a choice chipset */
   choice?: boolean;
   /** Creates a filter chipset */
   filter?: boolean;
-};
+}
 
 /** A container for multiple chips. */
-export const ChipSet = componentFactory<ChipSetPropsT>({
+export const ChipSet = componentFactory<ChipSetProps>({
   displayName: 'ChipSet',
-  classNames: (props: ChipSetPropsT) => [
+  classNames: (props: ChipSetProps) => [
     'mdc-chip-set',
     {
       'mdc-chip-set--choice': props.choice,
