@@ -39,7 +39,7 @@ describe('Dialog', () => {
   it('Dialog lifecycle', done => {
     let opened = 0;
     let closed = 0;
-    let lifecycle = [];
+    let lifecycle: string[] = [];
 
     const el = mount(
       <Dialog
@@ -70,9 +70,18 @@ describe('Dialog', () => {
 
       el.setProps({ open: false });
       setTimeout(() => {
-        expect(opened).toBe(1);
-        expect(closed).toBe(1);
-        expect(lifecycle).toEqual(['opening', 'opened', 'closing', 'closed']);
+        expect(opened).toBe(3);
+        expect(closed).toBe(3);
+        expect(lifecycle).toEqual([
+          'opening',
+          'closing',
+          'opening',
+          'opened',
+          'closing',
+          'opening',
+          'closing',
+          'closed'
+        ]);
         done();
       }, 1000);
     }, 1000);
@@ -113,7 +122,7 @@ describe('Dialog', () => {
       .first()
       .simulate('click');
 
-    const adapter = el.instance().foundation.adapter_;
+    const adapter = (el.instance() as Dialog).foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
     adapter.hasClass('test');

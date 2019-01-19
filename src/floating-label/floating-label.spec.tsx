@@ -9,7 +9,7 @@ describe('FloatingLabel', () => {
 
   it('foundation methods', () => {
     const el = mount(<FloatingLabel />);
-    const inst = el.instance();
+    const inst = el.instance() as FloatingLabel;
     inst.foundation.adapter_.addClass('foo');
     inst.foundation.adapter_.removeClass('foo');
     inst.foundation.adapter_.getWidth();

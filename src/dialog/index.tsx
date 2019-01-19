@@ -1,19 +1,16 @@
-import { ButtonProps } from '@rmwc/button';
-
 import * as React from 'react';
 //@ts-ignore
 import { MDCDialogFoundation } from '@material/dialog';
-import createFocusTrap from 'focus-trap';
 
-import { Button } from '@rmwc/button';
 import {
   FoundationComponent,
   componentFactory,
-  CustomEventT
+  CustomEventT,
+  createFocusTrap,
+  FocusTrap
 } from '@rmwc/base';
 import { noop } from '@rmwc/base/utils/noop';
-
-const strings = MDCDialogFoundation.strings;
+import { Button, ButtonProps } from '@rmwc/button';
 
 const isScrollable = (el: HTMLElement) => {
   return el.scrollHeight > el.offsetHeight;
@@ -54,7 +51,7 @@ const matches = (element: HTMLElement, selector: string) => {
   return nativeMatches.call(element, selector);
 };
 
-const DialogRoot = componentFactory({
+const DialogRoot = componentFactory<{}>({
   displayName: 'DialogRoot',
   defaultProps: {
     role: 'alertdialog',
@@ -74,34 +71,34 @@ class DialogScrim extends React.Component<{}> {
 }
 
 /** The Dialog title. */
-export const DialogTitle = componentFactory({
+export const DialogTitle = componentFactory<{}>({
   displayName: 'DialogTitle',
   tag: 'h2',
   classNames: ['mdc-dialog__title']
 });
 
 /** The Dialog content. */
-export const DialogContent = componentFactory({
+export const DialogContent = componentFactory<{}>({
   displayName: 'DialogContent',
   classNames: ['mdc-dialog__content']
 });
 
 /** Actions container for the Dialog. */
-export const DialogActions = componentFactory({
+export const DialogActions = componentFactory<{}>({
   displayName: 'DialogActions',
   classNames: ['mdc-dialog__actions']
 });
 
-export type DialogButtonPropsT = {
+export interface DialogButtonProps extends ButtonProps {
   /** An action returned in evt.detail.action to the onClose handler. */
   action?: string;
   /** Indicates this is the default selected action when pressing enter */
   isDefaultAction?: boolean;
-} & ButtonProps;
+}
 
 /** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<
-  DialogButtonPropsT & { className?: string }
+  DialogButtonProps & { className?: string }
 > {
   static displayName = 'DialogButton';
   render() {
@@ -122,90 +119,89 @@ export class DialogButton extends React.Component<
   }
 }
 
-export type DialogPropsT = {
+export interface DialogProps {
   /** Whether or not the Dialog is showing. */
-  open: boolean;
+  open?: boolean;
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
   onClose?: (evt: CustomEventT<{}>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
-};
+}
 
 /** A Dialog component. */
-export class Dialog extends FoundationComponent<DialogPropsT> {
+export class Dialog extends FoundationComponent<DialogProps> {
   static displayName = 'Dialog';
-  root_: null | HTMLElement = null;
-  container_: null | HTMLElement = null;
-  content_: null | HTMLElement = null;
-  buttons_: null | HTMLElement[] = null;
-  defaultButton_: null | HTMLElement = null;
-  focusTrap_: any;
-  handleInteraction_: any;
-  handleDocumentKeydown_: any;
 
-  constructor(props: DialogPropsT) {
+  root = this.createElement('root');
+  container: null | HTMLElement = null;
+  content: null | HTMLElement = null;
+  buttons: null | HTMLElement[] = null;
+  defaultButton: null | HTMLElement = null;
+  focusTrap: FocusTrap | null = null;
+  handleDocumentKeydown: (evt: Event) => void = () => {};
+
+  constructor(props: DialogProps) {
     super(props);
-    this.createClassList('root_');
+    this.handleInteraction = this.handleInteraction.bind(this);
   }
 
   open() {
     if (!this.foundation.isOpen_) {
-      document.addEventListener('keydown', this.handleDocumentKeydown_);
+      document.addEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.open();
     }
   }
 
   close() {
     if (this.foundation.isOpen_) {
-      document.removeEventListener('keydown', this.handleDocumentKeydown_);
+      document.removeEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.close();
     }
   }
 
   componentDidMount() {
-    this.container_ =
-      this.root_ && this.root_.querySelector(strings.CONTAINER_SELECTOR);
-    this.content_ =
-      this.root_ && this.root_.querySelector(strings.CONTENT_SELECTOR);
-    this.buttons_ =
-      this.root_ &&
-      [].slice.call(this.root_.querySelectorAll(strings.BUTTON_SELECTOR));
-    this.defaultButton_ =
-      this.root_ && this.root_.querySelector(strings.DEFAULT_BUTTON_SELECTOR);
+    super.componentDidMount();
+    this.container =
+      this.root.el &&
+      this.root.el.querySelector(MDCDialogFoundation.strings.CONTAINERSELECTOR);
+    this.content =
+      this.root.el &&
+      this.root.el.querySelector(MDCDialogFoundation.strings.CONTENTSELECTOR);
+    this.buttons =
+      this.root.el &&
+      [].slice.call(
+        this.root.el.querySelectorAll(
+          MDCDialogFoundation.strings.BUTTON_SELECTOR
+        )
+      );
+    this.defaultButton =
+      this.root.el &&
+      this.root.el.querySelector(
+        MDCDialogFoundation.strings.DEFAULT_BUTTON_SELECTOR
+      );
 
-    this.container_ &&
-      (this.focusTrap_ = createFocusTrap(this.container_, {
-        initialFocus: this.defaultButton_ || undefined,
+    this.container &&
+      (this.focusTrap = createFocusTrap(this.container, {
+        initialFocus: this.defaultButton || undefined,
         escapeDeactivates: false,
         clickOutsideDeactivates: true
       }));
 
-    this.handleInteraction_ = this.foundation.handleInteraction.bind(
+    this.handleDocumentKeydown = this.foundation.handleDocumentKeydown.bind(
       this.foundation
     );
 
-    this.root_ && this.root_.addEventListener('click', this.handleInteraction_);
-    this.root_ &&
-      this.root_.addEventListener('keydown', this.handleInteraction_);
-    this.handleDocumentKeydown_ = this.foundation.handleDocumentKeydown.bind(
-      this.foundation
-    );
-
-    super.componentDidMount();
+    document.addEventListener('keydown', this.handleDocumentKeydown);
   }
 
   componentWillUnmount() {
     super.componentWillUnmount();
-    document.removeEventListener('keydown', this.handleDocumentKeydown_);
-    this.root_ &&
-      this.root_.removeEventListener('click', this.handleInteraction_);
-    this.root_ &&
-      this.root_.removeEventListener('keydown', this.handleInteraction_);
+    document.removeEventListener('keydown', this.handleDocumentKeydown);
   }
 
-  sync(props: DialogPropsT) {
+  sync(props: DialogProps) {
     if (this.props.open) {
       this.open();
     } else {
@@ -215,19 +211,9 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
 
   getDefaultFoundation() {
     return new MDCDialogFoundation({
-      addClass: (className: string) => {
-        // a hack to make sure the open animation is triggered
-        if (className === 'mdc-dialog--open') {
-          window.requestAnimationFrame(() => {
-            this.classList.root_.add(className);
-          });
-        } else {
-          this.classList.root_.add(className);
-        }
-      },
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
-      hasClass: (className: string) => this.classList.root_.has(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      hasClass: (className: string) => this.root.hasClass(className),
       addBodyClass: (className: string) =>
         document.body && document.body.classList.add(className),
       removeBodyClass: (className: string) =>
@@ -235,24 +221,30 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
       eventTargetMatches: (target: HTMLElement, selector: string) =>
         matches(target, selector),
       computeBoundingRect: () =>
-        this.root_ && this.root_.getBoundingClientRect(),
-      trapFocus: () => this.focusTrap_.activate(),
-      releaseFocus: () => this.focusTrap_.deactivate(),
-      isContentScrollable: () => !!this.content_ && isScrollable(this.content_),
-      areButtonsStacked: () => areTopsMisaligned(this.buttons_),
+        this.root.el && this.root.el.getBoundingClientRect(),
+      trapFocus: () => this.focusTrap && this.focusTrap.activate(),
+      releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
+      isContentScrollable: () => !!this.content && isScrollable(this.content),
+      areButtonsStacked: () => areTopsMisaligned(this.buttons),
       getActionFromEvent: (event: React.SyntheticEvent<HTMLElement>) => {
-        const element = closest(event.target, `[${strings.ACTION_ATTRIBUTE}]`);
-        return element && element.getAttribute(strings.ACTION_ATTRIBUTE);
+        const element = closest(
+          event.target,
+          `[${MDCDialogFoundation.strings.ACTION_ATTRIBUTE}]`
+        );
+        return (
+          element &&
+          element.getAttribute(MDCDialogFoundation.strings.ACTION_ATTRIBUTE)
+        );
       },
       clickDefaultButton: () => {
-        if (this.defaultButton_) {
-          this.defaultButton_.click();
+        if (this.defaultButton) {
+          this.defaultButton.click();
         }
       },
       reverseButtons: () => {
-        this.buttons_ && this.buttons_.reverse();
-        this.buttons_ &&
-          this.buttons_.forEach(
+        this.buttons && this.buttons.reverse();
+        this.buttons &&
+          this.buttons.forEach(
             button =>
               button.parentElement && button.parentElement.appendChild(button)
           );
@@ -276,6 +268,12 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
     });
   }
 
+  handleInteraction(evt: React.MouseEvent & React.KeyboardEvent) {
+    evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
+    evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
+    return this.foundation.handleInteraction(evt);
+  }
+
   render() {
     const {
       children,
@@ -287,9 +285,10 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
     } = this.props;
     return (
       <DialogRoot
-        {...rest}
-        ref={ref => (this.root_ = ref)}
-        className={this.classList.root_.renderToString()}
+        {...this.root.props(rest)}
+        ref={this.root.setEl}
+        onClick={this.handleInteraction}
+        onKeyDown={this.handleInteraction}
       >
         <div className="mdc-dialog__container">
           <div className="mdc-dialog__surface">{children}</div>
@@ -300,7 +299,7 @@ export class Dialog extends FoundationComponent<DialogPropsT> {
   }
 }
 
-export type SimpleDialogPropsT = {
+export interface SimpleDialogProps extends DialogProps {
   /** A title for the default Dialog template. */
   title?: React.ReactNode;
   /** Additional Dialog header content for the default Dialog template. */
@@ -317,10 +316,10 @@ export type SimpleDialogPropsT = {
   children?: React.ReactNode;
   /** Allow the body to be scrollable */
   scrollable?: boolean;
-} & DialogPropsT;
+}
 
 /** A non-standard SimpleDialog component for ease of use. */
-export class SimpleDialog extends React.Component<SimpleDialogPropsT> {
+export class SimpleDialog extends React.Component<SimpleDialogProps> {
   static defaultProps = {
     title: undefined,
     header: undefined,

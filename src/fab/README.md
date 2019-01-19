@@ -10,7 +10,9 @@ import { Fab } from '@rmwc/fab';
 
 <Fab icon="favorite" />
 <Fab icon="favorite" mini />
-<Fab icon="favorite" label="Love It!" />
+<Fab icon="add" label="Create" />
+<Fab trailingIcon="add" label="Create" />
+<Fab label="Label only" />
 ```
 
 ```jsx renderOnly

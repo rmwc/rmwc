@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { componentFactory, ComponentProps } from '@rmwc/base';
 
-export type GridPropsT = {
+export interface GridProps {
   /** Specifies the grid should have fixed column width. */
   fixedColumnWidth?: boolean;
   /** Specifies the alignment of the whole grid. */
   align?: 'left' | 'right';
   /** Children for the Grid */
   children?: React.ReactNode;
-} & ComponentProps;
+}
 
-const GridRoot = componentFactory<GridPropsT>({
+const GridRoot = componentFactory<GridProps>({
   displayName: 'GridRoot',
-  classNames: (props: GridPropsT) => [
+  classNames: (props: GridProps) => [
     'mdc-layout-grid',
     {
       [`mdc-layout-grid__cell--align-${props.align || ''}`]:
@@ -24,10 +24,10 @@ const GridRoot = componentFactory<GridPropsT>({
 });
 
 /** A Grid component */
-export const Grid: React.ComponentType<GridPropsT> = ({
+export const Grid: React.ComponentType<GridProps & ComponentProps> = ({
   children,
   ...rest
-}: GridPropsT) => {
+}: GridProps) => {
   const child: any = children;
   const needsInnerGrid = !(
     child &&
@@ -43,9 +43,9 @@ export const Grid: React.ComponentType<GridPropsT> = ({
 
 Grid.displayName = 'Grid';
 
-export type GridCellPropsT = {
+export interface GridCellProps {
   /** Default number of columns to span. */
-  span?: string | number;
+  span?: string | number | any;
   /** Number of columns to span on a phone. */
   phone?: string | number;
   /** Number of columns to span on a tablet. */
@@ -56,12 +56,12 @@ export type GridCellPropsT = {
   order?: string | number;
   /** Specifies the alignment of cell */
   align?: 'top' | 'middle' | 'bottom';
-};
+}
 
 /** A Grid cell */
-export const GridCell = componentFactory<GridCellPropsT>({
+export const GridCell = componentFactory<GridCellProps>({
   displayName: 'GridCell',
-  classNames: (props: GridCellPropsT) => [
+  classNames: (props: GridCellProps) => [
     'mdc-layout-grid__cell',
     {
       [`mdc-layout-grid__cell--order-${props.order || ''}`]:
@@ -82,7 +82,7 @@ export const GridCell = componentFactory<GridCellPropsT>({
 });
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export const GridInner = componentFactory({
+export const GridInner = componentFactory<{}>({
   displayName: 'GridInner',
   classNames: ['mdc-layout-grid__inner']
 });

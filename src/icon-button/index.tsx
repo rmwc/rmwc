@@ -1,8 +1,6 @@
 import * as React from 'react';
 //@ts-ignore
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import { Icon, IconPropT, IconProps, getIconStrategy } from '@rmwc/icon';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
 import {
   componentFactory,
   ComponentProps,
@@ -10,6 +8,8 @@ import {
   CustomEventT
 } from '@rmwc/base';
 import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import { Icon, IconPropT, IconProps, getIconStrategy } from '@rmwc/icon';
+import { withRipple, WithRippleProps } from '@rmwc/ripple';
 
 export interface IconButtonProps extends WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */

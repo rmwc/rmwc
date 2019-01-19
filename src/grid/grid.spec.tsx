@@ -25,7 +25,7 @@ describe('Grid', () => {
         <GridInner />
       </Grid>
     );
-    expect(el.html().match(/mdc-layout-grid__inner/g).length).toBe(1);
+    expect((el.html().match(/mdc-layout-grid__inner/g) || []).length).toBe(1);
   });
 
   it('can be align', () => {
@@ -58,7 +58,7 @@ describe('Grid', () => {
   });
 
   it('can have custom classnames', () => {
-    [Grid, GridCell].forEach(Component => {
+    [Grid, GridCell].forEach((Component: React.ComponentType<any>) => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

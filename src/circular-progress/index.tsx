@@ -1,5 +1,5 @@
-import { componentFactory, ComponentProps } from '@rmwc/base';
 import * as React from 'react';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 
 const SIZE_MAP: { [key: string]: number } = {
   xsmall: 18,
@@ -9,7 +9,7 @@ const SIZE_MAP: { [key: string]: number } = {
   xlarge: 48
 };
 
-export interface CircularProgressProps extends ComponentProps {
+export interface CircularProgressProps {
   /** Max value for determinate progress bars. */
   max?: number;
   /** Min value for determinate progress bars. */
@@ -41,7 +41,9 @@ const CircularProgressRoot = componentFactory<CircularProgressRootProps>({
 });
 
 /** A Circular Progress indicator. */
-export class CircularProgress extends React.Component<CircularProgressProps> {
+export class CircularProgress extends React.Component<
+  CircularProgressProps & ComponentProps
+> {
   static defaultProps = {
     progress: undefined,
     size: 'medium'

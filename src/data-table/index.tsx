@@ -11,17 +11,17 @@ type SharedDataTableCellPropsT = {
   alignEnd?: boolean;
 };
 
-export type DataTablePropsT = {
+export interface DataTableProps {
   /** The number of rows to affix to the top of the table when scrolling. */
   stickyRows?: 0 | 1;
   /** The number of columns to affix to the side of the table when scrolling. */
   stickyColumns?: 0 | 1;
-};
+}
 
 /** The DataTable Component. */
-export const DataTable = componentFactory<DataTablePropsT>({
+export const DataTable = componentFactory<DataTableProps>({
   displayName: 'DataTable',
-  classNames: (props: DataTablePropsT) => [
+  classNames: (props: DataTableProps) => [
     'rmwc-data-table',
     {
       'rmwc-data-table--sticky-columns': !!props.stickyColumns,
@@ -34,38 +34,38 @@ export const DataTable = componentFactory<DataTablePropsT>({
 });
 
 /** The data table content. */
-export const DataTableContent = componentFactory({
+export const DataTableContent = componentFactory<{}>({
   displayName: 'DataTableContent',
   tag: 'table',
   classNames: ['rmwc-data-table__content']
 });
 
 /** A header for the data table. */
-export const DataTableHead = componentFactory({
+export const DataTableHead = componentFactory<{}>({
   displayName: 'DataTableHead',
   tag: 'thead',
   classNames: ['rmwc-data-table__head']
 });
 
 /** A body for the data table. */
-export const DataTableBody = componentFactory({
+export const DataTableBody = componentFactory<{}>({
   displayName: 'DataTableBody',
   tag: 'tbody',
   classNames: ['rmwc-data-table__body']
 });
 
-export type DataTableRowPropsT = {
+export interface DataTableRowProps {
   /** Styles the row in a selected state. */
   selected?: boolean;
   /** Styles the row in an activated state. */
   activated?: boolean;
-};
+}
 
 /** A row for the data table. */
-export const DataTableRow = componentFactory({
+export const DataTableRow = componentFactory<{}>({
   displayName: 'DataTableRow',
   tag: 'tr',
-  classNames: (props: DataTableRowPropsT) => [
+  classNames: (props: DataTableRowProps) => [
     'rmwc-data-table__row',
     {
       'rmwc-data-table__row--selected': props.selected,
@@ -89,20 +89,19 @@ const DataTableSortIcon = () => (
   />
 );
 
-export type DataTableHeadCellPropsT = {
+export interface DataTableHeadCellProps extends SharedDataTableCellPropsT {
   /** Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. */
   sort?: null | number;
   /** A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending.*/
   onSortChange?: (dir: null | number) => void;
   /** Children to pass to the cell. */
   children?: React.ReactNode;
-} & SharedDataTableCellPropsT &
-  React.AllHTMLAttributes<HTMLTableHeaderCellElement>;
+}
 
-const DataTableHeadCellRoot = componentFactory<DataTableHeadCellPropsT>({
+const DataTableHeadCellRoot = componentFactory<DataTableHeadCellProps>({
   displayName: 'DataTableHeadCellRoot',
   tag: 'th',
-  classNames: (props: DataTableHeadCellPropsT) => [
+  classNames: (props: DataTableHeadCellProps) => [
     'rmwc-data-table__cell',
     'rmwc-data-table__head-cell',
     {
@@ -125,8 +124,8 @@ const DataTableHeadCellRoot = componentFactory<DataTableHeadCellPropsT>({
 });
 
 /** A header cell for the data table. */
-export const DataTableHeadCell: React.ComponentType<DataTableHeadCellPropsT> = (
-  props: DataTableHeadCellPropsT
+export const DataTableHeadCell = (
+  props: DataTableHeadCellProps & ComponentProps
 ) => {
   const onClickProp =
     props.onSortChange && props.sort !== undefined
@@ -152,7 +151,7 @@ export const DataTableHeadCell: React.ComponentType<DataTableHeadCellPropsT> = (
 
 DataTableHeadCell.displayName = 'DataTableHeadCell';
 
-export type DataTableCellPropsT = SharedDataTableCellPropsT;
+export interface DataTableCellPropsT extends SharedDataTableCellPropsT {}
 
 /** A cell for the DataTable */
 export const DataTableCell = componentFactory<DataTableCellPropsT>({
@@ -169,7 +168,7 @@ export const DataTableCell = componentFactory<DataTableCellPropsT>({
   consumeProps: ['alignStart', 'alignMiddle', 'alignEnd']
 });
 
-export type SimpleDataTablePropsT = {
+export interface SimpleDataTableProps extends DataTableProps {
   /** Data to render. */
   data: Array<any[]>;
   /** Table headers to render. */
@@ -178,10 +177,10 @@ export type SimpleDataTablePropsT = {
   getRowProps?: (row: any[], index: number, isHead: boolean) => Object;
   /** A function that allows you to return custom props for a cell. */
   getCellProps?: (cell: any[], index: number, isHead: boolean) => Object;
-} & DataTablePropsT;
+}
 
 /** A simple data table to render matrices. */
-export class SimpleDataTable extends React.Component<SimpleDataTablePropsT> {
+export class SimpleDataTable extends React.Component<SimpleDataTableProps> {
   render() {
     const {
       data,

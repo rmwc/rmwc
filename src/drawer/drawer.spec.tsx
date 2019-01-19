@@ -6,7 +6,6 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerSubtitle,
-  DrawerScrim,
   DrawerAppContent
 } from './';
 
@@ -48,7 +47,6 @@ describe('Drawer', () => {
           </DrawerHeader>
           <DrawerContent />
         </Drawer>
-        <DrawerScrim />
       </React.Fragment>
     );
   });
@@ -73,7 +71,7 @@ describe('Drawer', () => {
   });
   it('can have custom classnames', () => {
     [Drawer, DrawerHeader, DrawerContent, DrawerTitle, DrawerSubtitle].forEach(
-      Component => {
+      (Component: React.ComponentType<any>) => {
         const el = mount(<Component className={'my-custom-classname'} />);
         expect(!!~el.html().search('my-custom-classname')).toEqual(true);
       }

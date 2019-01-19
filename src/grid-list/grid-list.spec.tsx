@@ -16,9 +16,7 @@ describe('GridList', () => {
       <GridList>
         <GridTile>
           <GridTilePrimary>
-            <GridTilePrimaryContent wrap>
-              <img src="" alt="" />
-            </GridTilePrimaryContent>
+            <GridTilePrimaryContent src="" alt="" />
           </GridTilePrimary>
           <GridTileSecondary>
             <GridTileIcon icon="icon" />
@@ -50,7 +48,6 @@ describe('GridList', () => {
 
   it('can be tileAspect undefined', () => {
     mount(<GridList tileAspect={undefined} />);
-    mount(<GridList tileAspect={0} />);
   });
 
   it('can have custom classnames', () => {
@@ -61,7 +58,7 @@ describe('GridList', () => {
       GridTilePrimary,
       GridTileSecondary,
       GridTileTitle
-    ].forEach(Component => {
+    ].forEach((Component: React.ComponentType<any>) => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });

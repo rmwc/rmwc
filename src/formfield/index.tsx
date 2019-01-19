@@ -39,7 +39,6 @@ export class FormField extends FoundationComponent<FormFieldProps> {
   }
 
   render() {
-    // @ts-ignore
     return <FormFieldRoot {...this.props} />;
   }
 }

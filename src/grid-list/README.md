@@ -31,9 +31,8 @@ import { Select } from '@rmwc/select';
   {[...Array(8)].map((val, i) => (
     <GridTile key={i}>
       <GridTilePrimary>
-        <GridTilePrimaryContent>
-          <img src="https://material-components-web.appspot.com/images/1-1.jpg" alt="test" />
-        </GridTilePrimaryContent>
+        <GridTilePrimaryContent         
+          src="https://material-components-web.appspot.com/images/1-1.jpg" alt="test"/>
       </GridTilePrimary>
       <GridTileSecondary>
         <GridTileIcon icon="info" />

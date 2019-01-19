@@ -1,16 +1,15 @@
-import { componentFactory } from '@rmwc/base';
-import { IconProps, IconPropT } from '@rmwc/icon';
-import { WithRippleProps } from '@rmwc/ripple';
-
 import * as React from 'react';
-import { Icon } from '@rmwc/icon';
-import { withRipple } from '@rmwc/ripple';
+import { componentFactory } from '@rmwc/base';
+import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
 export interface FabProps extends WithRippleProps {
   /** Make the Fab smaller. */
   mini?: boolean;
   /** The icon for the FAB */
   icon?: IconPropT;
+  /** A trialing icon for the FAB */
+  trailingIcon?: IconPropT;
   /** Make the Fab extended with a label. */
   label?: React.ReactNode & any;
   /** Content specified as children. */
@@ -45,16 +44,23 @@ export const FabIcon = componentFactory<IconProps>({
   classNames: ['mdc-fab__icon']
 });
 
-export const FabLabel = componentFactory({
+export const FabLabel = componentFactory<{}>({
   displayName: 'FabLabel',
   classNames: ['mdc-fab__label']
 });
 
 /** A floating action button component */
-export const Fab = ({ children, label, icon, ...rest }: FabProps) => (
+export const Fab = ({
+  children,
+  label,
+  icon,
+  trailingIcon,
+  ...rest
+}: FabProps) => (
   <FabRoot label={label} {...rest}>
-    <FabIcon icon={icon} />
+    {!!icon && <FabIcon icon={icon} />}
     {!!label && <FabLabel>{label}</FabLabel>}
     {children}
+    {!!trailingIcon && <FabIcon icon={trailingIcon} />}
   </FabRoot>
 );

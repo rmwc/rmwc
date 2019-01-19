@@ -14,19 +14,19 @@ import { createFocusTrap, FocusTrap } from '@rmwc/base';
  * Drawer Headers
  ***************************************************************************************/
 /** An optional header for the Drawer. */
-export const DrawerHeader = componentFactory({
+export const DrawerHeader = componentFactory<{}>({
   displayName: 'DrawerHeader',
   classNames: ['mdc-drawer__header']
 });
 
 /** An title for the DrawerHeader. */
-export const DrawerTitle = componentFactory({
+export const DrawerTitle = componentFactory<{}>({
   displayName: 'DrawerTitle',
   classNames: ['mdc-drawer__title']
 });
 
 /** A subtitle for the DrawerHeader. */
-export const DrawerSubtitle = componentFactory({
+export const DrawerSubtitle = componentFactory<{}>({
   displayName: 'DrawerSubtitle',
   classNames: ['mdc-drawer__subtitle']
 });
@@ -35,7 +35,7 @@ export const DrawerSubtitle = componentFactory({
  * Drawer Content
  ***************************************************************************************/
 /** Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else. */
-export const DrawerContent = componentFactory({
+export const DrawerContent = componentFactory<{}>({
   displayName: 'DrawerContent',
   classNames: ['mdc-drawer__content']
 });
@@ -43,11 +43,7 @@ export const DrawerContent = componentFactory({
 /***************************************************************************************
  * Drawer Scrim
  ***************************************************************************************/
-/**
- * Protects the app's UI from interactions while a modal drawer is open.
- * This is automatically included if you're using React 16 and above.
- * For React 15, you must manually include it immediately after a modal Drawer.
- * */
+/** Protects the app's UI from interactions while a modal drawer is open. */
 export const DrawerScrim = ({
   onClick
 }: {
@@ -58,7 +54,7 @@ export const DrawerScrim = ({
  * DrawerAppContent
  ***************************************************************************************/
 /** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export const DrawerAppContent = componentFactory({
+export const DrawerAppContent = componentFactory<{}>({
   displayName: 'DrawerAppContent',
   classNames: ['mdc-drawer-app-content']
 });
@@ -66,7 +62,7 @@ export const DrawerAppContent = componentFactory({
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
-export type DrawerPropsT = {
+export interface DrawerProps {
   /** Opens or closes the Drawer. */
   open?: boolean;
   /** Callback that fires when the Drawer is closed. */
@@ -77,12 +73,12 @@ export type DrawerPropsT = {
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */
   modal?: boolean;
-} & ComponentProps;
+}
 
-export const DrawerRoot = componentFactory({
+export const DrawerRoot = componentFactory<DrawerProps>({
   displayName: 'DrawerRoot',
   tag: 'aside',
-  classNames: (props: DrawerPropsT) => [
+  classNames: (props: DrawerProps) => [
     'mdc-drawer',
     {
       'mdc-drawer--dismissible': props.dismissible,
@@ -96,7 +92,7 @@ const slidableDrawerFactory = (
   MDCConstructor: MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
   displayName: string
 ) =>
-  class extends FoundationComponent<DrawerPropsT> {
+  class extends FoundationComponent<DrawerProps> {
     static displayName = displayName;
 
     static defaultProps = {
@@ -109,7 +105,7 @@ const slidableDrawerFactory = (
     previousFocus: HTMLElement | null = null;
     focusTrap: FocusTrap | null = null;
 
-    constructor(props: DrawerPropsT) {
+    constructor(props: DrawerProps) {
       super(props);
 
       ['handleScrimClick', 'handleTransitionEnd', 'handleKeyDown'].forEach(
@@ -182,7 +178,7 @@ const slidableDrawerFactory = (
       this.foundation.handleTransitionEnd(evt);
     }
 
-    sync(props: DrawerPropsT, prevProps: DrawerPropsT) {
+    sync(props: DrawerProps, prevProps: DrawerProps) {
       if (props.open !== prevProps.open) {
         props.open ? this.foundation.open() : this.foundation.close();
       }
@@ -213,8 +209,8 @@ const DismissibleDrawer = slidableDrawerFactory(
   'dismissibleDrawer'
 );
 
-export const Drawer: React.ComponentType<DrawerPropsT> = (
-  props: DrawerPropsT
+export const Drawer: React.ComponentType<DrawerProps & ComponentProps> = (
+  props: DrawerProps
 ) => {
   if (props.dismissible) {
     return <DismissibleDrawer {...props} />;
