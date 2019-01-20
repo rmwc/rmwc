@@ -5,6 +5,7 @@ export * from '@rmwc/button';
 export * from '@rmwc/card';
 export * from '@rmwc/checkbox';
 export * from '@rmwc/chip';
+export * from '@rmwc/data-table';
 export * from '@rmwc/dialog';
 export * from '@rmwc/drawer';
 export * from '@rmwc/elevation';

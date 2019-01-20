@@ -2,7 +2,6 @@ import * as React from 'react';
 
 //@ts-ignore
 import { MDCListFoundation } from '@material/list';
-
 import { FoundationComponent, componentFactory } from '@rmwc/base';
 
 export interface ListProps {
@@ -51,8 +50,8 @@ export class List extends FoundationComponent<ListProps> {
 
   get listElements(): HTMLLIElement[] {
     return [].slice.call(
-      this.root.el &&
-        this.root.el.querySelectorAll(
+      this.root.ref &&
+        this.root.ref.querySelectorAll(
           MDCListFoundation.strings.ENABLED_ITEMS_SELECTOR
         )
     );
@@ -157,7 +156,9 @@ export class List extends FoundationComponent<ListProps> {
           toggleEl.dispatchEvent(event);
         },
         isFocusInsideList: () => {
-          return this.root.el && this.root.el.contains(document.activeElement);
+          return (
+            this.root.ref && this.root.ref.contains(document.activeElement)
+          );
         }
       }))
     );
@@ -184,7 +185,7 @@ export class List extends FoundationComponent<ListProps> {
     return (
       <ListRoot
         {...rest}
-        ref={this.root.setEl}
+        ref={this.root.setRef}
         onClick={this.handleClick}
         onKeyDown={this.handleKeydown}
         onFocus={this.handleFocusIn}

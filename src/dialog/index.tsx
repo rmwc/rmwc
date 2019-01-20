@@ -164,21 +164,23 @@ export class Dialog extends FoundationComponent<DialogProps> {
   componentDidMount() {
     super.componentDidMount();
     this.container =
-      this.root.el &&
-      this.root.el.querySelector(MDCDialogFoundation.strings.CONTAINERSELECTOR);
+      this.root.ref &&
+      this.root.ref.querySelector(
+        MDCDialogFoundation.strings.CONTAINERSELECTOR
+      );
     this.content =
-      this.root.el &&
-      this.root.el.querySelector(MDCDialogFoundation.strings.CONTENTSELECTOR);
+      this.root.ref &&
+      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENTSELECTOR);
     this.buttons =
-      this.root.el &&
+      this.root.ref &&
       [].slice.call(
-        this.root.el.querySelectorAll(
+        this.root.ref.querySelectorAll(
           MDCDialogFoundation.strings.BUTTON_SELECTOR
         )
       );
     this.defaultButton =
-      this.root.el &&
-      this.root.el.querySelector(
+      this.root.ref &&
+      this.root.ref.querySelector(
         MDCDialogFoundation.strings.DEFAULT_BUTTON_SELECTOR
       );
 
@@ -221,7 +223,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
       eventTargetMatches: (target: HTMLElement, selector: string) =>
         matches(target, selector),
       computeBoundingRect: () =>
-        this.root.el && this.root.el.getBoundingClientRect(),
+        this.root.ref && this.root.ref.getBoundingClientRect(),
       trapFocus: () => this.focusTrap && this.focusTrap.activate(),
       releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
       isContentScrollable: () => !!this.content && isScrollable(this.content),
@@ -286,7 +288,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
     return (
       <DialogRoot
         {...this.root.props(rest)}
-        ref={this.root.setEl}
+        ref={this.root.setRef}
         onClick={this.handleInteraction}
         onKeyDown={this.handleInteraction}
       >

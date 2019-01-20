@@ -3,63 +3,51 @@ import * as React from 'react';
 import { MDCLineRippleFoundation } from '@material/line-ripple';
 import { FoundationComponent } from '@rmwc/base';
 
-export type LineRipplePropsT = {};
+export interface LineRippleProps {
+  active?: boolean;
+  center?: number;
+}
 
-export class LineRipple extends FoundationComponent<LineRipplePropsT> {
+export class LineRipple extends FoundationComponent<LineRippleProps> {
   static displayName = 'LineRipple';
-  root_: null | HTMLElement = null;
 
-  constructor(props: LineRipplePropsT) {
-    super(props);
-    this.createClassList('root_');
-    this.createPropsList('root_');
-  }
+  root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCLineRippleFoundation({
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
-      hasClass: (className: string) => this.classList.root_.has(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      hasClass: (className: string) => this.root.hasClass(className),
       setStyle: (propertyName: any, value: any) =>
-        this.root_ && (this.root_.style[propertyName] = value),
+        this.root.setStyle(propertyName, value),
       registerEventHandler: (evtType: string, handler: () => void) =>
-        this.propsList.root_.addEventListener(evtType, handler),
+        this.root.addEventListener(evtType, handler),
       deregisterEventHandler: (evtType: string, handler: () => void) =>
-        this.propsList.root_.removeEventListener(evtType, handler)
+        this.root.removeEventListener(evtType, handler)
     });
   }
 
-  /**
-   * Activates the line ripple
-   */
-  activate() {
-    this.foundation.activate();
-  }
+  sync(props: LineRippleProps, prevProps: LineRippleProps) {
+    // active
+    this.syncProp(props.active, prevProps.active, () => {
+      props.active ? this.foundation.activate() : this.foundation.deactivate();
+    });
 
-  /**
-   * Deactivates the line ripple
-   */
-  deactivate() {
-    this.foundation.deactivate();
-  }
-
-  /**
-   * Sets the transform origin given a user's click location. The `rippleCenter` is the
-   * x-coordinate of the middle of the ripple.
-   * @param {number} xCoordinate
-   */
-  setRippleCenter(xCoordinate: number) {
-    this.foundation.setRippleCenter(xCoordinate);
+    // center
+    this.syncProp(props.center, prevProps.center, () => {
+      this.foundation.setRippleCenter(props.center);
+    });
   }
 
   render() {
+    const { active, center, ...rest } = this.props;
     return (
       <div
-        {...this.props}
-        {...this.propsList.root_.all()}
-        className={`mdc-line-ripple ${this.classList.root_.renderToString()}`}
-        ref={ref => (this.root_ = ref)}
+        {...this.root.props({
+          ...rest,
+          className: `mdc-line-ripple ${this.props.className || ''}`
+        })}
+        ref={this.root.setRef}
       />
     );
   }

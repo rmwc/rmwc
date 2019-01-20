@@ -69,8 +69,8 @@ export class Chip extends FoundationComponent<ChipProps> {
     super.componentDidMount();
 
     this.id =
-      this.root.el && this.root.el.id
-        ? this.root.el.id
+      this.root.ref && this.root.ref.id
+        ? this.root.ref.id
         : this._reactInternalFiber.key || randomId('chip');
   }
 
@@ -109,19 +109,19 @@ export class Chip extends FoundationComponent<ChipProps> {
         notifyRemoval: () =>
           this.emit(
             'onRemove',
-            { chipId: this.id, root: this.root.el },
+            { chipId: this.id, root: this.root.ref },
             true /* shouldBubble */
           ),
         getComputedStyleValue: (propertyName: string) =>
-          this.root.el &&
-          window.getComputedStyle(this.root.el).getPropertyValue(propertyName),
+          this.root.ref &&
+          window.getComputedStyle(this.root.ref).getPropertyValue(propertyName),
         setStyleProperty: (propertyName: string, value: any) =>
           this.root.setStyle(propertyName, value)
       }))
     );
   }
 
-  handleInteraction(evt: any) {
+  handleInteraction(evt: React.MouseEvent & React.KeyboardEvent) {
     evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
     evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
     return this.foundation.handleInteraction(evt);
@@ -155,7 +155,7 @@ export class Chip extends FoundationComponent<ChipProps> {
         onClick={this.handleInteraction}
         onKeyDown={this.handleInteraction}
         onTransitionEnd={this.handleTransitionEnd}
-        ref={this.root.setEl}
+        ref={this.root.setRef}
       >
         {!!leadingIcon &&
           renderChipIcon(leadingIcon, {

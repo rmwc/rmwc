@@ -61,7 +61,7 @@ describe('Select', () => {
   });
 
   it('can have a tab index', () => {
-    const el = mount(<Select tabIndex="1" options={[1, 2, 3]} />);
+    const el = mount(<Select tabIndex={1} options={[1, 2, 3]} />);
     expect(!!~el.html().search('tabindex="1"')).toEqual(true);
   });
 
@@ -102,9 +102,9 @@ describe('Select', () => {
       />
     );
 
-    const inst = standard.instance();
+    const inst = standard.instance() as any;
     const a = inst.foundation.adapter_;
-    const enhancedA = enhanced.instance().foundation.adapter_;
+    const enhancedA = (enhanced.instance() as any).foundation.adapter_;
 
     [a, enhancedA].forEach(a => {
       a.getValue();

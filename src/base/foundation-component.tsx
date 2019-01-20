@@ -141,16 +141,14 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   foundation: any;
   classList: { [key: string]: ClassListT } = {};
   propsList: { [key: string]: PropsList } = {};
-  foundationRefs: { [key: string]: Element | null } = {};
+  foundationRefs: { [key: string]: React.Ref<any> } = {};
 
   constructor(props: FoundationPropsT<P>) {
     super(props);
     this.foundation = this.getDefaultFoundation();
   }
 
-  createElement<ElementType extends Element = HTMLElement>(
-    elementName: string
-  ) {
+  createElement<ElementType extends any = HTMLElement>(elementName: string) {
     this.createClassList(elementName);
     this.createPropsList(elementName);
     const classList = this.classList[elementName];
@@ -175,13 +173,13 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
       setStyle: propsList.setStyle,
       addEventListener: propsList.addEventListener,
       removeEventListener: propsList.removeEventListener,
-      setEl: (el: Element | Text | null) => {
-        if (el instanceof HTMLElement) {
+      setRef: (el: any) => {
+        if (el) {
           this.foundationRefs[elementName] = el;
         }
       },
-      get el(): ElementType {
-        return getElement() as ElementType;
+      get ref(): ElementType {
+        return (getElement() as unknown) as ElementType;
       }
     };
   }
@@ -234,6 +232,15 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   sync(props: any, prevProps?: any) {}
+
+  syncProp(prop: any, prevProp: any, callback: () => void) {
+    if (
+      (prop !== undefined || (prevProp !== undefined && prop === undefined)) &&
+      prop !== prevProp
+    ) {
+      callback();
+    }
+  }
 
   getDefaultFoundation() {}
 

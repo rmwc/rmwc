@@ -3,82 +3,90 @@ import { FoundationComponent } from '@rmwc/base';
 // @ts-ignore
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 
-export type NotchedOutlinePropsT = {};
+export interface NotchedOutlineProps {
+  notch?: number;
+}
 
-export class NotchedOutlineIdle extends React.Component<{}> {
+class NotchedOutlineLeading extends React.Component<{}> {
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
-    return <div className="mdc-notched-outline__idle" />;
+    return <div className="mdc-notched-outline__leading" />;
   }
 }
 
-export class NotchedOutline extends FoundationComponent<NotchedOutlinePropsT> {
-  static displayName = 'NotchedOutline';
-  root_: null | HTMLElement = null;
-  path_: null | SVGPathElement = null;
+class NotchedOutlineTrailing extends React.Component<{}> {
+  shouldComponentUpdate() {
+    return false;
+  }
 
-  constructor(props: NotchedOutlinePropsT) {
-    super(props);
-    this.createClassList('root_');
-    this.createPropsList('root_');
+  render() {
+    return <div className="mdc-notched-outline__trailing" />;
+  }
+}
+
+export class NotchedOutline extends FoundationComponent<NotchedOutlineProps> {
+  static displayName = 'NotchedOutline';
+  root = this.createElement('root');
+  notchElement = this.createElement('root');
+  label: HTMLLabelElement | null = null;
+
+  componentDidMount() {
+    super.componentDidMount();
+    this.label = this.root.ref && this.root.ref.querySelector('label');
+
+    if (this.label) {
+      this.label.style.transitionDuration = '0s';
+      this.root.addClass(
+        MDCNotchedOutlineFoundation.cssClasses.OUTLINE_UPGRADED
+      );
+      requestAnimationFrame(() => {
+        this.label && (this.label.style.transitionDuration = '');
+      });
+    } else {
+      this.root.addClass(MDCNotchedOutlineFoundation.cssClasses.NO_LABEL);
+    }
   }
 
   getDefaultFoundation() {
     return new MDCNotchedOutlineFoundation({
-      getWidth: () => this.root_ && this.root_.offsetWidth,
-      getHeight: () => this.root_ && this.root_.offsetHeight,
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
-      setOutlinePathAttr: (value: string) =>
-        this.path_ && this.path_.setAttribute('d', value),
-
-      getIdleOutlineStyleValue: (propertyName: string): any => {
-        if (this.root_) {
-          const idleOutlineElement = this.root_.nextElementSibling;
-          if (!idleOutlineElement) return undefined;
-          return window
-            .getComputedStyle(idleOutlineElement)
-            .getPropertyValue(propertyName);
-        }
-      }
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      setNotchWidthProperty: (width: number) =>
+        this.notchElement.setStyle('width', width + 'px'),
+      removeNotchWidthProperty: () => this.notchElement.setStyle('width', '')
     });
   }
 
-  /**
-   * Updates outline selectors and SVG path to open notch.
-   * @param {number} notchWidth The notch width in the outline.
-   * @param {boolean=} isRtl Determines if outline is rtl. If rtl is true, notch
-   * will be right justified in outline path, otherwise left justified.
-   */
-  notch(notchWidth: number, isRtl: boolean) {
-    this.foundation.notch(notchWidth, isRtl);
-  }
-
-  /**
-   * Updates the outline selectors to close notch and return it to idle state.
-   */
-  closeNotch() {
-    this.foundation.closeNotch();
+  sync(props: NotchedOutlineProps, prevProps: NotchedOutlineProps) {
+    this.syncProp(props.notch, prevProps.notch, () => {
+      !!props.notch
+        ? this.foundation.notch(props.notch)
+        : this.foundation.closeNotch();
+    });
   }
 
   render() {
+    const { children, ...rest } = this.props;
     return (
       <div
-        {...this.props}
-        {...this.propsList.root_.all()}
-        ref={ref => (this.root_ = ref)}
-        className={`mdc-notched-outline ${this.classList.root_.renderToString()}`}
+        {...this.root.props({
+          ...rest,
+          className: 'mdc-notched-outline'
+        })}
+        ref={this.root.setRef}
       >
-        <svg>
-          <path
-            className="mdc-notched-outline__path"
-            ref={ref => (this.path_ = ref)}
-          />
-        </svg>
+        <NotchedOutlineLeading />
+        <div
+          {...this.notchElement.props({})}
+          className="mdc-notched-outline__notch"
+          ref={this.notchElement.setRef}
+        >
+          {children}
+        </div>
+        <NotchedOutlineTrailing />
       </div>
     );
   }

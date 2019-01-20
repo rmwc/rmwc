@@ -52,18 +52,19 @@ export class TabScroller extends FoundationComponent<{}> {
       setScrollContentStyleProperty: (prop: string, value: string) =>
         this.content.setStyle(prop, value),
       getScrollContentStyleValue: (propName: string) =>
-        this.content.el &&
-        window.getComputedStyle(this.content.el).getPropertyValue(propName),
+        this.content.ref &&
+        window.getComputedStyle(this.content.ref).getPropertyValue(propName),
       setScrollAreaScrollLeft: (scrollX: number) =>
-        this.area.el && (this.area.el.scrollLeft = scrollX),
-      getScrollAreaScrollLeft: () => this.area.el && this.area.el.scrollLeft,
+        this.area.ref && (this.area.ref.scrollLeft = scrollX),
+      getScrollAreaScrollLeft: () => this.area.ref && this.area.ref.scrollLeft,
       getScrollContentOffsetWidth: () =>
-        this.content.el && this.content.el.offsetWidth,
-      getScrollAreaOffsetWidth: () => this.area.el && this.area.el.offsetWidth,
+        this.content.ref && this.content.ref.offsetWidth,
+      getScrollAreaOffsetWidth: () =>
+        this.area.ref && this.area.ref.offsetWidth,
       computeScrollAreaClientRect: () =>
-        this.area.el && this.area.el.getBoundingClientRect(),
+        this.area.ref && this.area.ref.getBoundingClientRect(),
       computeScrollContentClientRect: () =>
-        this.content.el && this.content.el.getBoundingClientRect(),
+        this.content.ref && this.content.ref.getBoundingClientRect(),
       computeHorizontalScrollbarHeight: () =>
         scrollerUtil.computeHorizontalScrollbarHeight(document)
     });
@@ -76,7 +77,7 @@ export class TabScroller extends FoundationComponent<{}> {
   }
 
   getScrollContentWidth() {
-    return this.content.el && this.content.el.offsetWidth;
+    return this.content.ref && this.content.ref.offsetWidth;
   }
 
   incrementScroll(scrollXIncrement: number) {
@@ -98,10 +99,10 @@ export class TabScroller extends FoundationComponent<{}> {
   render() {
     const { children, ...rest } = this.props;
     return (
-      <TabScrollerRoot {...this.root.props(rest)} ref={this.root.setEl}>
+      <TabScrollerRoot {...this.root.props(rest)} ref={this.root.setRef}>
         <TabScrollerScrollArea
           {...this.area.props({})}
-          ref={this.area.setEl}
+          ref={this.area.setRef}
           onWheel={this.handleInteraction}
           onTouchStart={this.handleInteraction}
           onPointerDown={this.handleInteraction}
@@ -110,7 +111,7 @@ export class TabScroller extends FoundationComponent<{}> {
         >
           <TabScrollerScrollContent
             {...this.content.props({})}
-            ref={this.content.setEl}
+            ref={this.content.setRef}
             onTransitionEnd={this.handleTransitionEnd}
           >
             {children}

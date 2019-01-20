@@ -132,9 +132,9 @@ export class Toolbar extends FoundationComponent<ToolbarPropsT> {
     super.componentDidMount();
 
     // loop through and get the fixed adjust element
-    if (this.root.el && this.root.el.parentNode) {
-      for (let i = 0; i < this.root.el.parentNode.children.length; i++) {
-        const el = this.root.el.parentNode.children[i];
+    if (this.root.ref && this.root.ref.parentNode) {
+      for (let i = 0; i < this.root.ref.parentNode.children.length; i++) {
+        const el = this.root.ref.parentNode.children[i];
         if (
           (el.getAttribute('class') || '').includes('mdc-toolbar-fixed-adjust')
         ) {
@@ -147,8 +147,8 @@ export class Toolbar extends FoundationComponent<ToolbarPropsT> {
 
   get firstRowElement(): HTMLElement | null {
     return (
-      this.root.el &&
-      this.root.el.querySelector(
+      this.root.ref &&
+      this.root.ref.querySelector(
         MDCToolbarFoundation.strings.FIRST_ROW_SELECTOR
       )
     );
@@ -156,8 +156,8 @@ export class Toolbar extends FoundationComponent<ToolbarPropsT> {
 
   get titleElement(): HTMLElement | null {
     return (
-      this.root.el &&
-      this.root.el.querySelector(MDCToolbarFoundation.strings.TITLE_SELECTOR)
+      this.root.ref &&
+      this.root.ref.querySelector(MDCToolbarFoundation.strings.TITLE_SELECTOR)
     );
   }
 
@@ -185,13 +185,13 @@ export class Toolbar extends FoundationComponent<ToolbarPropsT> {
         window.removeEventListener('resize', handler),
       getViewportWidth: () => window.innerWidth,
       getViewportScrollY: () => window.pageYOffset,
-      getOffsetHeight: () => this.root.el && this.root.el.offsetHeight,
+      getOffsetHeight: () => this.root.ref && this.root.ref.offsetHeight,
       getFirstRowElementOffsetHeight: () =>
         this.firstRowElement && this.firstRowElement.offsetHeight,
       notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
         this.emit('onChange', evtData),
       setStyle: (property: string, value: string) =>
-        this.root.el && this.root.el.style.setProperty(property, value),
+        this.root.ref && this.root.ref.style.setProperty(property, value),
       setStyleForTitleElement: (property: string, value: string) =>
         this.titleElement &&
         this.titleElement.style.setProperty(property, value),

@@ -92,7 +92,7 @@ describe('Chip', () => {
     a.removeClass('test');
     a.addClassToLeadingIcon('test');
     a.removeClassFromLeadingIcon('test');
-    a.eventTargetHasClass(inst.root.el, 'test');
+    a.eventTargetHasClass(inst.root.ref, 'test');
     a.notifyInteraction();
     a.notifySelection(true);
     a.notifyTrailingIconInteraction();

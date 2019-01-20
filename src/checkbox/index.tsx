@@ -101,10 +101,10 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
     this.foundation.handleChange();
 
     if (
-      this.nativeCb.el &&
-      nextProps.indeterminate !== this.nativeCb.el.indeterminate
+      this.nativeCb.ref &&
+      nextProps.indeterminate !== this.nativeCb.ref.indeterminate
     ) {
-      this.nativeCb.el.indeterminate = !!nextProps.indeterminate;
+      this.nativeCb.ref.indeterminate = !!nextProps.indeterminate;
     }
   }
 
@@ -115,16 +115,16 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
       setNativeControlAttr: (attr: string, value: any) =>
         this.nativeCb.addProp(attr, value),
       removeNativeControlAttr: (attr: string) => this.nativeCb.removeProp(attr),
-      getNativeControl: () => this.nativeCb.el,
+      getNativeControl: () => this.nativeCb.ref,
       isIndeterminate: () => this.props.indeterminate,
       isChecked: () =>
         this.props.checked !== undefined
           ? this.props.checked
-          : this.nativeCb.el && this.nativeCb.el.checked,
-      hasNativeControl: () => !!this.nativeCb.el,
+          : this.nativeCb.ref && this.nativeCb.ref.checked,
+      hasNativeControl: () => !!this.nativeCb.ref,
       setNativeControlDisabled: (disabled: boolean) =>
         this.nativeCb.addProp('disabled', disabled),
-      forceLayout: () => this.root.el && this.root.el.offsetWidth,
+      forceLayout: () => this.root.ref && this.root.ref.offsetWidth,
       isAttachedToDOM: () => true
     });
   }
@@ -145,13 +145,13 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
 
     const checkbox = (
       <CheckboxRoot
-        ref={this.root.setEl}
+        ref={this.root.setRef}
         disabled={rest.disabled}
         {...this.root.props({})}
         onAnimationEnd={this.handleAnimationEnd}
       >
         <CheckboxNativeControl
-          ref={this.nativeCb.setEl}
+          ref={this.nativeCb.setRef}
           id={labelId}
           {...this.nativeCb.props(rest)}
           onChange={this.handleOnChange}

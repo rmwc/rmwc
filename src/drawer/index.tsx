@@ -117,8 +117,8 @@ const slidableDrawerFactory = (
 
     componentDidMount() {
       super.componentDidMount();
-      this.root.el &&
-        (this.focusTrap = createFocusTrap(this.root.el, {
+      this.root.ref &&
+        (this.focusTrap = createFocusTrap(this.root.ref, {
           clickOutsideDeactivates: true,
           initialFocus: undefined,
           escapeDeactivates: false,
@@ -140,8 +140,8 @@ const slidableDrawerFactory = (
         restoreFocus: () => {
           const previousFocus = this.previousFocus && this.previousFocus.focus;
           if (
-            this.root.el &&
-            this.root.el.contains(document.activeElement) &&
+            this.root.ref &&
+            this.root.ref.contains(document.activeElement) &&
             previousFocus
           ) {
             this.previousFocus && this.previousFocus.focus();
@@ -149,8 +149,8 @@ const slidableDrawerFactory = (
         },
         focusActiveNavigationItem: () => {
           const activeNavItemEl =
-            this.root.el &&
-            this.root.el.querySelector(`.mdc-list-item--activated`);
+            this.root.ref &&
+            this.root.ref.querySelector(`.mdc-list-item--activated`);
           if (activeNavItemEl) {
             (activeNavItemEl as HTMLElement).focus();
           }
@@ -189,7 +189,7 @@ const slidableDrawerFactory = (
       return (
         <React.Fragment>
           <DrawerRoot
-            ref={this.root.setEl}
+            ref={this.root.setRef}
             {...this.root.props(rest)}
             onKeyDown={this.handleKeyDown}
             onTransitionEnd={this.handleTransitionEnd}

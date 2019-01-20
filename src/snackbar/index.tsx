@@ -242,7 +242,7 @@ export class Snackbar extends FoundationComponent<
     return (
       <SnackbarRoot
         {...this.root.props(rest)}
-        ref={this.root.setEl}
+        ref={this.root.setRef}
         onKeyDown={this.handleKeyDown}
       >
         <div

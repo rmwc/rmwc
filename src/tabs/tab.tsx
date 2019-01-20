@@ -98,11 +98,11 @@ export const Tab = withTabBarContext()(
             this.props.contextApi &&
               this.props.contextApi.onTabInteraction(evt);
           },
-          getOffsetLeft: () => this.root.el && this.root.el.offsetLeft,
-          getOffsetWidth: () => this.root.el && this.root.el.offsetWidth,
+          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,
+          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
           getContentOffsetLeft: () => this.content && this.content.offsetLeft,
           getContentOffsetWidth: () => this.content && this.content.offsetWidth,
-          focus: () => this.root.el && this.root.el.focus()
+          focus: () => this.root.ref && this.root.ref.focus()
         })
       );
     }
@@ -137,7 +137,7 @@ export const Tab = withTabBarContext()(
     }
 
     focus() {
-      this.root.el && this.root.el.focus();
+      this.root.ref && this.root.ref.focus();
     }
 
     render() {
@@ -155,7 +155,7 @@ export const Tab = withTabBarContext()(
           {...this.root.props(rest)}
           onClick={this.handleClick}
           stacked={stacked}
-          ref={this.root.setEl}
+          ref={this.root.setRef}
           ripple={{
             surface: this.rippleSurfaceApi
           }}

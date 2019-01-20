@@ -93,11 +93,11 @@ export class TabBar extends FoundationComponent<TabBarProps> {
           this.tabScroller && this.tabScroller.getScrollPosition(),
         getScrollContentWidth: () =>
           this.tabScroller && this.tabScroller.getScrollContentWidth(),
-        getOffsetWidth: () => this.root.el && this.root.el.offsetWidth,
+        getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
         isRTL: () =>
-          this.root.el &&
+          this.root.ref &&
           window
-            .getComputedStyle(this.root.el)
+            .getComputedStyle(this.root.ref)
             .getPropertyValue('direction') === 'rtl',
         setActiveTab: (index: number) => this.foundation.activateTab(index),
         activateTabAtIndex: (index: number, clientRect: ClientRect) =>
@@ -146,8 +146,8 @@ export class TabBar extends FoundationComponent<TabBarProps> {
 
   getTabElements(): Element[] | null {
     return [].slice.call(
-      this.root.el &&
-        this.root.el.querySelectorAll(MDCTabBarFoundation.strings.TAB_SELECTOR)
+      this.root.ref &&
+        this.root.ref.querySelectorAll(MDCTabBarFoundation.strings.TAB_SELECTOR)
     );
   }
 
@@ -167,7 +167,7 @@ export class TabBar extends FoundationComponent<TabBarProps> {
       <TabBarContext.Provider value={this.contextApi}>
         <TabBarRoot
           {...rest}
-          ref={this.root.setEl}
+          ref={this.root.setRef}
           onKeyDown={this.handleKeyDown}
         >
           <TabScroller ref={(api: TabScroller) => (this.tabScroller = api)}>

@@ -84,7 +84,7 @@ export const getIconStrategy = (
   strategy: string | null,
   providerStrategy: string | null
 ) => {
-  strategy = strategy || providerStrategy;
+  strategy = strategy || providerStrategy || 'auto';
 
   if (strategy === 'auto') {
     return processAutoStrategy(content);

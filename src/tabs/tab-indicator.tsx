@@ -21,7 +21,7 @@ export class TabIndicator extends FoundationComponent<{}> {
         this.root.removeClass(className);
       },
       computeContentClientRect: () =>
-        this.content.el && this.content.el.getBoundingClientRect(),
+        this.content.ref && this.content.ref.getBoundingClientRect(),
       setContentStyleProperty: (prop: string, value: string) => {
         this.content.setStyle(prop, value);
       }
@@ -80,7 +80,7 @@ export class TabIndicator extends FoundationComponent<{}> {
     return (
       <span {...this.root.props({ className: 'mdc-tab-indicator' })}>
         <span
-          ref={this.content.setEl}
+          ref={this.content.setRef}
           {...this.content.props({})}
           className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
         />

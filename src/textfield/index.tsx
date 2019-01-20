@@ -12,7 +12,7 @@ import { randomId } from '@rmwc/base/utils/randomId';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
-import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
+import { NotchedOutline } from '@rmwc/notched-outline';
 
 /*********************************************************************
  * TextField
@@ -342,15 +342,12 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         {!!withTrailingIcon &&
           this.renderIcon(withTrailingIcon, 'trailingIcon_')}
 
-        {!!outlined && (
+        {!!outlined ? (
           <NotchedOutline
             ref={(ref: NotchedOutline) =>
               (this.outline_ = ref && ref.foundation)
             }
           />
-        )}
-        {!!outlined ? (
-          <NotchedOutlineIdle />
         ) : (
           <LineRipple
             ref={(ref: LineRipple) =>

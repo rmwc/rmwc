@@ -10,7 +10,7 @@ import {
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 
-export type RadioPropsT = {
+export interface RadioProps {
   /** A DOM ID for the toggle. */
   id?: string;
   /** Disables the control. */
@@ -23,19 +23,19 @@ export type RadioPropsT = {
   label?: string;
   /** Children to render */
   children?: React.ReactNode;
-} & ComponentProps;
+}
 
 const RadioRoot = withRipple({ unbounded: true, accent: true })(
-  componentFactory<RadioPropsT>({
+  componentFactory<RadioProps>({
     displayName: 'RadioRoot',
-    classNames: (props: RadioPropsT) => [
+    classNames: (props: RadioProps) => [
       'mdc-radio',
       { 'mdc-radio--disabled': props.disabled }
     ]
   })
 );
 
-const RadioNativeControl = componentFactory({
+const RadioNativeControl = componentFactory<{}>({
   displayName: 'RadioNativeControl',
   defaultProps: {
     type: 'radio'
@@ -67,23 +67,15 @@ const RadioLabel: React.ComponentType<any> = ({ ...rest }) => (
 RadioLabel.displayName = 'RadioLabel';
 
 /** A Radio button component. */
-export class Radio extends FoundationComponent<RadioPropsT> {
+export class Radio extends FoundationComponent<RadioProps> {
   static displayName = 'Radio';
-  nativeRadio_: null | HTMLInputElement = null;
-  root_: null | HTMLElement = null;
-
-  generatedId: string;
-
-  constructor(props: RadioPropsT) {
-    super(props);
-    this.generatedId = randomId('radio');
-    this.createClassList('root_');
-  }
+  root = this.createElement('root');
+  generatedId = randomId('radio');
 
   getDefaultFoundation() {
     return new MDCRadioFoundation({
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) => this.classList.root_.remove(className)
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className)
     });
   }
 
@@ -93,15 +85,11 @@ export class Radio extends FoundationComponent<RadioPropsT> {
 
     const radio = (
       <RadioRoot
-        ref={(ref: HTMLElement) => (this.root_ = ref)}
+        {...this.root.props({})}
+        ref={this.root.setRef}
         disabled={rest.disabled}
-        className={this.classList.root_.renderToString()}
       >
-        <RadioNativeControl
-          ref={ref => (this.nativeRadio_ = ref)}
-          id={labelId}
-          {...rest}
-        />
+        <RadioNativeControl id={labelId} {...rest} />
         <RadioBackground />
       </RadioRoot>
     );

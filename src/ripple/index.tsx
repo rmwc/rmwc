@@ -67,13 +67,12 @@ export class Ripple extends FoundationComponent<RippleProps> {
       browserSupportsCssVars: () => util.supportsCssVariables(window),
       isUnbounded: () => !!this.props.unbounded,
       isSurfaceActive: () => {
-        if (this.root.el) {
-          const method =
-            (this.root.el as any).matches ||
-            (this.root.el as any).webkitMatchesSelector ||
-            (this.root.el as any).msMatchesSelector;
-
-          return method(':active');
+        if (this.root.ref) {
+          const el: any = this.root.ref;
+          if (el.matches) return el.matches(':active');
+          if (el.webkitMatchesSelector)
+            return el.webkitMatchesSelector(':active');
+          if (el.msMatchesSelector) return el.msMatchesSelector(':active');
         }
         return false;
       },
@@ -81,7 +80,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
       addClass: (className: string) => this.surface.addClass(className),
       removeClass: (className: string) => this.surface.removeClass(className),
       containsEventTarget: (target: HTMLElement) =>
-        this.root.el && this.root.el.contains(target),
+        this.root.ref && this.root.ref.contains(target),
       registerInteractionHandler: (
         evtType: string,
         handler: (evt: Event) => void
@@ -115,7 +114,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
       updateCssVariable: (varName: string, value: string) =>
         this.surface.setStyle(varName, value),
       computeBoundingRect: () =>
-        this.root.el && this.root.el.getBoundingClientRect(),
+        this.root.ref && this.root.ref.getBoundingClientRect(),
       getWindowPageOffset: () => ({
         x: window.pageXOffset,
         y: window.pageYOffset
@@ -124,7 +123,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
   }
 
   sync(props: RippleProps, prevProps: RippleProps) {
-    this.root.setEl(ReactDOM.findDOMNode(this));
+    this.root.setRef(ReactDOM.findDOMNode(this));
 
     if (props.unbounded !== prevProps.unbounded) {
       this.foundation.setUnbounded(props.unbounded);

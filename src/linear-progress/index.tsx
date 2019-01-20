@@ -1,5 +1,3 @@
-import { ComponentProps } from '@rmwc/base';
-
 import * as React from 'react';
 // @ts-ignore
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
@@ -17,7 +15,7 @@ export interface LinearProgressProps {
   closed?: boolean;
 }
 
-interface DeprecatedLinearProgressProps {
+export interface DeprecatedLinearProgressProps {
   /** Whether or not the Progress bar is determinate. */
   determinate?: boolean;
 }
@@ -33,35 +31,32 @@ export const LinearProgressRoot = componentFactory<LinearProgressProps>({
     }
   ],
   defaultProps: {
-    role: 'progressbar',
-    determinate: true,
-    reversed: false,
-    accent: false
+    role: 'progressbar'
   },
   consumeProps: ['determinate', 'reversed', 'accent', 'closed']
 });
 
-export const LinearProgressBufferingDots = componentFactory({
+export const LinearProgressBufferingDots = componentFactory<{}>({
   displayName: 'LinearProgressBufferingDots',
   classNames: ['mdc-linear-progress__buffering-dots']
 });
 
-export const LinearProgressBuffer = componentFactory({
+export const LinearProgressBuffer = componentFactory<{}>({
   displayName: 'LinearProgressBuffer',
   classNames: ['mdc-linear-progress__buffer']
 });
 
-export const LinearProgressPrimaryBar = componentFactory({
+export const LinearProgressPrimaryBar = componentFactory<{}>({
   displayName: 'LinearProgressPrimaryBar',
   classNames: ['mdc-linear-progress__bar mdc-linear-progress__primary-bar']
 });
 
-export const LinearProgressSecondaryBar = componentFactory({
+export const LinearProgressSecondaryBar = componentFactory<{}>({
   displayName: 'LinearProgressSecondaryBar',
   classNames: ['mdc-linear-progress__bar mdc-linear-progress__secondary-bar']
 });
 
-export const LinearProgressBarInner = componentFactory({
+export const LinearProgressBarInner = componentFactory<{}>({
   displayName: 'LinearProgressBarInner',
   classNames: ['mdc-linear-progress__bar-inner']
 });
@@ -84,13 +79,13 @@ export class LinearProgress extends FoundationComponent<
     return new MDCLinearProgressFoundation({
       addClass: (className: string) => this.root.addClass(className),
       getPrimaryBar: () =>
-        this.root.el &&
-        this.root.el.querySelector(
+        this.root.ref &&
+        this.root.ref.querySelector(
           MDCLinearProgressFoundation.strings.PRIMARY_BAR_SELECTOR
         ),
       getBuffer: () =>
-        this.root.el &&
-        this.root.el.querySelector(
+        this.root.ref &&
+        this.root.ref.querySelector(
           MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
         ),
       hasClass: (className: string) => this.root.hasClass(className),
@@ -144,13 +139,15 @@ export class LinearProgress extends FoundationComponent<
   render() {
     const { progress, buffer, determinate, ...rest } = this.props;
 
-    deprecationWarning(
-      'LinearProgress determinate is no longer a valid prop. Determinate is set automatically be the presence of the progress prop.'
-    );
+    if (determinate !== undefined) {
+      deprecationWarning(
+        'LinearProgress determinate is no longer a valid prop. Determinate is set automatically be the presence of the progress prop.'
+      );
+    }
 
     return (
       // @ts-ignore
-      <LinearProgressRoot ref={this.root.setEl} {...this.root.props(rest)}>
+      <LinearProgressRoot {...this.root.props(rest)} ref={this.root.setRef}>
         <LinearProgressBufferingDots />
         <LinearProgressBuffer />
         <LinearProgressPrimaryBar>

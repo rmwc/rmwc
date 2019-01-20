@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 import { withRipple, WithRippleProps } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
@@ -35,21 +35,21 @@ export const ListItem = withRipple()(
 );
 
 /** Text Wrapper for the ListItem */
-export const ListItemText = componentFactory({
+export const ListItemText = componentFactory<{}>({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: ['mdc-list-item__text']
 });
 
 /** Primary Text for the ListItem */
-export const ListItemPrimaryText = componentFactory({
+export const ListItemPrimaryText = componentFactory<{}>({
   displayName: 'ListItemPrimaryText',
   tag: 'span',
   classNames: ['mdc-list-item__primary-text']
 });
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = componentFactory({
+export const ListItemSecondaryText = componentFactory<{}>({
   displayName: 'ListItemSecondaryText',
   tag: 'span',
   classNames: ['mdc-list-item__secondary-text']
@@ -70,19 +70,19 @@ export const ListItemMeta = componentFactory<IconProps>({
 });
 
 /** A container to group ListItems */
-export const ListGroup = componentFactory({
+export const ListGroup = componentFactory<{}>({
   displayName: 'ListGroup',
   classNames: ['mdc-list-group']
 });
 
 /** A subheader for the ListGroup */
-export const ListGroupSubheader = componentFactory({
+export const ListGroupSubheader = componentFactory<{}>({
   displayName: 'ListGroupSubheader',
   classNames: ['mdc-list-group__subheader']
 });
 
 /** A divider for the List */
-export const ListDivider = componentFactory({
+export const ListDivider = componentFactory<{}>({
   displayName: 'ListDivider',
   classNames: ['mdc-list-divider']
 });
@@ -100,14 +100,14 @@ export interface SimpleListItemProps extends ListItemProps {
   children?: React.ReactNode;
 }
 
-export const SimpleListItem: React.ComponentType<SimpleListItemProps> = ({
+export const SimpleListItem = ({
   text,
   secondaryText,
   graphic,
   meta,
   children,
   ...rest
-}: SimpleListItemProps) => {
+}: SimpleListItemProps & ComponentProps) => {
   const primaryTextToRender =
     text && secondaryText !== undefined ? (
       <ListItemPrimaryText>{text}</ListItemPrimaryText>

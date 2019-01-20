@@ -3,7 +3,10 @@ import * as React from 'react';
 import { MDCFloatingLabelFoundation } from '@material/floating-label';
 import { FoundationComponent } from '@rmwc/base';
 
-export interface FloatingLabelProps {}
+export interface FloatingLabelProps {
+  shake?: boolean;
+  float?: boolean;
+}
 
 export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
   static displayName = 'FloatingLabel';
@@ -14,7 +17,7 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
     return new MDCFloatingLabelFoundation({
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      getWidth: () => this.root.el && this.root.el.offsetWidth,
+      getWidth: () => this.root.ref && this.root.ref.scrollWidth,
       registerInteractionHandler: (evtType: string, handler: () => void) =>
         this.root.addEventListener(evtType, handler),
       deregisterInteractionHandler: (evtType: string, handler: () => void) =>
@@ -22,12 +25,16 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
     });
   }
 
-  shake(shouldShake: boolean) {
-    this.foundation.shake(shouldShake);
-  }
+  sync(props: FloatingLabelProps, prevProps: FloatingLabelProps) {
+    // shake
+    this.syncProp(props.shake, prevProps.shake, () => {
+      this.foundation.shake(props.shake);
+    });
 
-  float(shouldFloat: boolean) {
-    this.foundation.float(shouldFloat);
+    // float
+    this.syncProp(props.float, prevProps.float, () => {
+      this.foundation.float(props.float);
+    });
   }
 
   getWidth() {
@@ -35,7 +42,13 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
   }
 
   render() {
-    return <label {...this.root.props(this.props)} ref={this.root.setEl} />;
+    const { shake, float, ...rest } = this.props;
+    return (
+      <label
+        {...this.root.props({ ...rest, className: 'mdc-floating-label' })}
+        ref={this.root.setRef}
+      />
+    );
   }
 }
 

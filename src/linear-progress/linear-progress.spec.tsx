@@ -17,7 +17,7 @@ describe('LinearProgress', () => {
   });
 
   it('can be indeterminate', () => {
-    const el = mount(<LinearProgress determinate={false} />);
+    const el = mount(<LinearProgress />);
     expect(el.html().includes('mdc-linear-progress--determinate')).toBe(false);
   });
 

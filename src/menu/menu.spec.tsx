@@ -5,7 +5,6 @@ import {
   Menu,
   MenuSurface,
   MenuItem,
-  MenuRoot,
   SimpleMenu,
   SimpleMenuSurface
 } from './';
@@ -21,7 +20,6 @@ describe('Menu', () => {
     );
 
     el.setProps({ open: false, anchorCorner: 'bottomRight' });
-    el.instance().destroy();
   });
 
   it('can be fixed', () => {
@@ -41,17 +39,13 @@ describe('Menu', () => {
   });
 
   it('dynamically updates aria-hidden based on whether or not the menu is open', () => {
-    let el = mount(
-      <Menu open />
-    );
+    let el = mount(<Menu open />);
 
-    expect(el.find(MenuRoot).prop('aria-hidden')).toBe(false);
+    expect(el.find(MenuSurface).prop('aria-hidden')).toBe(false);
 
-    el = mount(
-      <Menu />
-    );
+    el = mount(<Menu />);
 
-    expect(el.find(MenuRoot).prop('aria-hidden')).toBe(true);
+    expect(el.find(MenuSurface).prop('aria-hidden')).toBe(true);
   });
 
   it('MenuSurface renders', () => {
@@ -68,7 +62,7 @@ describe('Menu', () => {
     );
   });
 
-  it('SimpleMenu renders', () => {
+  it('SimpleMenu renders', done => {
     let val = 0;
 
     const el = mount(
@@ -79,40 +73,45 @@ describe('Menu', () => {
       </SimpleMenu>
     );
 
-    el.find(Menu)
-      .instance()
-      .menuSurface_.foundation.adapter_.notifyClose();
-    expect(val).toBe(1);
+    const item = el.find(MenuItem).first();
+    item.simulate('click');
+    setTimeout(() => {
+      expect(val).toBe(1);
+      done();
+    }, 200);
   });
 
-  it('SimpleMenuSurface renders', () => {
+  it.only('SimpleMenuSurface renders', done => {
     let val = 0;
 
     const el = mount(
       <SimpleMenuSurface
         handle={<button onClick={() => {}}>Test</button>}
         open
-        onClose={() => val++}
-      />
+        onClose={() => {
+          val++;
+        }}
+      >
+        <div>Hello</div>
+      </SimpleMenuSurface>
     );
 
-    el.find('button')
-      .first()
-      .simulate('click');
+    const button = el.find('button').first();
+    button.simulate('click');
 
-    el.find(MenuSurface)
-      .instance()
-      .foundation.adapter_.notifyClose();
-    expect(val).toBe(1);
-
-    el.setProps({ open: false, anchorCorner: 'bottomRight' });
-    el.unmount();
+    setTimeout(() => {
+      expect(val).toBe(1);
+      el.setProps({ open: false, anchorCorner: 'bottomRight' });
+      done();
+    }, 200);
   });
 
   it('can have custom classnames', () => {
-    [MenuSurfaceAnchor, Menu, MenuItem].forEach(Component => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
-    });
+    [MenuSurfaceAnchor, Menu, MenuItem].forEach(
+      (Component: React.ComponentType<any>) => {
+        const el = mount(<Component className={'my-custom-classname'} />);
+        expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      }
+    );
   });
 });

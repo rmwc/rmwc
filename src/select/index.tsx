@@ -1,18 +1,19 @@
 import { ComponentProps, CustomEventT } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
+import { IconProps, IconPropT } from '@rmwc/icon';
 
 import * as React from 'react';
 // @ts-ignore
-import { MDCSelectFoundation } from '@material/select';
+import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon } from '@rmwc/icon';
-import { NotchedOutline, NotchedOutlineIdle } from '@rmwc/notched-outline';
+import { NotchedOutline } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
+import { withRipple } from '@rmwc/ripple';
 
 type FormattedOption = {
   label: string;
@@ -40,9 +41,7 @@ export interface SelectProps {
   /** A className for the root element. */
   className?: string;
   /** Add a leading icon. */
-  withLeadingIcon?: React.ReactNode;
-  /** Styles to be applied to the root of the component. */
-  style?: Object;
+  withLeadingIcon?: IconPropT;
 }
 
 /**
@@ -76,20 +75,22 @@ const createSelectOptions = (options: any): FormattedOption[] => {
   return options;
 };
 
-const SelectRoot = componentFactory<SelectProps>({
-  displayName: 'SelectRoot',
-  defaultProps: {
-    role: 'listbox'
-  },
-  classNames: (props: SelectProps) => [
-    'mdc-select',
-    {
-      'mdc-select--outlined': !!props.outlined,
-      'mdc-select--with-leading-icon': !!props.withLeadingIcon
-    }
-  ],
-  consumeProps: ['outlined', 'withLeadingIcon']
-});
+const SelectRoot = withRipple()(
+  componentFactory<SelectProps>({
+    displayName: 'SelectRoot',
+    defaultProps: {
+      role: 'listbox'
+    },
+    classNames: (props: SelectProps) => [
+      'mdc-select',
+      {
+        'mdc-select--outlined': !!props.outlined,
+        'mdc-select--with-leading-icon': !!props.withLeadingIcon
+      }
+    ],
+    consumeProps: ['outlined', 'withLeadingIcon']
+  })
+);
 
 class SelectDropdownArrow extends React.Component<{}> {
   shouldComponentUpdate() {
@@ -101,14 +102,16 @@ class SelectDropdownArrow extends React.Component<{}> {
   }
 }
 
-class SelectNativeControl extends React.Component<{
-  selectOptions: any;
-  placeholder?: string;
-  children: React.ReactNode;
-  elementRef: React.Ref<HTMLSelectElement>;
-  value: any;
-  defaultValue?: any;
-}> {
+class SelectNativeControl extends React.Component<
+  {
+    selectOptions: any;
+    placeholder?: string;
+    children: React.ReactNode;
+    elementRef: React.Ref<HTMLSelectElement>;
+    value: any;
+    defaultValue?: any;
+  } & React.HTMLProps<HTMLSelectElement>
+> {
   static displayName = 'SelectNativeControl';
 
   render() {
@@ -119,8 +122,13 @@ class SelectNativeControl extends React.Component<{
       elementRef,
       ...rest
     } = this.props;
+
     return (
-      <select {...rest} ref={elementRef} className="mdc-select__native-control">
+      <select
+        {...rest}
+        ref={elementRef}
+        className={`mdc-select__native-control ${rest.className || ''}`}
+      >
         {!this.props.value && !this.props.defaultValue && (
           <option value="" disabled={placeholder === ''}>
             {placeholder}
@@ -248,22 +256,22 @@ class SelectEnhancedControl extends React.Component<
   }
 }
 
-type SelectStateT = {
+interface SelectState {
   selectedIndex: number;
   selectedTextContent: string;
   menuOpen: boolean;
-};
+}
 
-export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
-  root_: HTMLElement | null = null;
+export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
+  root = this.createElement('root');
+  lineRipple = this.createElement('lineRipple');
+  outline = this.createElement('outline');
+  label = this.createElement<FloatingLabel>('label');
   id: string = this.props.id || randomId('select');
-  nativeControl_: HTMLSelectElement | null = null;
-  selectedText_: HTMLElement | null = null;
-  menuElement_: HTMLElement | null = null;
-  lineRipple_: LineRipple | null = null;
-  outline_: NotchedOutline | null = null;
-  label_: FloatingLabel | null = null;
-  menu_: any;
+  nativeControl: HTMLSelectElement | null = null;
+  selectedText: HTMLElement | null = null;
+  menuElement: HTMLElement | null = null;
+  menu: Menu | null = null;
   hiddenInput_: HTMLInputElement | null = null;
   leadingIcon_: SelectIcon | null = null;
   trailingIcon_: HTMLElement | null = null;
@@ -276,18 +284,15 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
 
   constructor(props: SelectProps) {
     super(props);
-    this.createClassList('root_');
 
-    [
-      'handleChange_',
-      'handleFocus_',
-      'handleBlur_',
-      'handleClick_',
-      'handleKeydown_',
-      'handleMenuSelected_',
-      'handleMenuOpened_',
-      'handleMenuClosed_'
-    ].forEach(key => ((this as any)[key] = (this as any)[key].bind(this)));
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
+    this.handleMenuSelected = this.handleMenuSelected.bind(this);
+    this.handleMenuOpened = this.handleMenuOpened.bind(this);
+    this.handleMenuClosed = this.handleMenuClosed.bind(this);
   }
 
   componentDidMount() {
@@ -295,10 +300,12 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
 
     const { enhanced, value } = this.props;
 
-    if (this.menu_) {
-      this.menu_.hoistMenuToBody();
-      this.menu_.setAnchorElement(/** @type {!HTMLElement} */ (this.root_));
-      this.menu_.wrapFocus = false;
+    if (this.menu) {
+      this.menuElement =
+        this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
+      this.menu.hoistMenuToBody();
+      this.menu.setAnchorElement(this.root.ref);
+      //this.menu.wrapFocus = false;
 
       if (this.hiddenInput_ && this.hiddenInput_.value) {
         // If the hidden input already has a value, use it to restore the select's value.
@@ -314,7 +321,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
     }
 
     // Initially sync floating label
-    this.foundation.handleChange(/* didChange */ false);
+    this.foundation.handleChange(false);
 
     if (this.props.disabled) {
       this.foundation.setDisabled(true);
@@ -323,9 +330,10 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
 
   componentWillUnmount() {
     super.componentWillUnmount();
-    this.menuElement_ &&
-      this.menuElement_.parentNode &&
-      this.menuElement_.parentNode.removeChild(this.menuElement_);
+    // TODO: Switch this to a Portal
+    this.menuElement &&
+      this.menuElement.parentNode &&
+      this.menuElement.parentNode.removeChild(this.menuElement);
   }
 
   getDefaultFoundation() {
@@ -345,26 +353,26 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
   getNativeSelectAdapterMethods_() {
     return {
       getValue: () => {
-        const value = this.nativeControl_ && this.nativeControl_.value;
+        const value = this.nativeControl && this.nativeControl.value;
         return value === '' && this.props.placeholder ? ' ' : value;
       },
       setValue: (value: string) =>
-        this.nativeControl_ && (this.nativeControl_.value = value),
+        this.nativeControl && (this.nativeControl.value = value),
       openMenu: () => {},
       closeMenu: () => {},
       isMenuOpen: () => false,
       setSelectedIndex: (index: number) => {
-        this.nativeControl_ && (this.nativeControl_.selectedIndex = index);
+        this.nativeControl && (this.nativeControl.selectedIndex = index);
       },
       setDisabled: (isDisabled: boolean) =>
-        this.nativeControl_ && (this.nativeControl_.disabled = isDisabled),
+        this.nativeControl && (this.nativeControl.disabled = isDisabled),
       setValid: (isValid: boolean) => {
         isValid
-          ? this.classList.root_.remove(MDCSelectFoundation.cssClasses.INVALID)
-          : this.classList.root__.add(MDCSelectFoundation.cssClasses.INVALID);
+          ? this.root.removeClass(MDCSelectFoundation.cssClasses.INVALID)
+          : this.root.addClass(MDCSelectFoundation.cssClasses.INVALID);
       },
       checkValidity: () =>
-        this.nativeControl_ && this.nativeControl_.checkValidity()
+        this.nativeControl && this.nativeControl.checkValidity()
     };
   }
 
@@ -373,8 +381,8 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       getValue: () => {
         let value = '';
         const listItem =
-          this.menuElement_ &&
-          this.menuElement_.querySelector(
+          this.menuElement &&
+          this.menuElement.querySelector(
             MDCSelectFoundation.strings.SELECTED_ITEM_SELECTOR
           );
         if (
@@ -388,20 +396,21 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
         return value === '' && this.props.placeholder ? ' ' : value;
       },
       setValue: (value: string) => {
-        if (this.menuElement_) {
-          const element = this.menuElement_.querySelector(
+        if (this.menuElement) {
+          const element = this.menuElement.querySelector(
             `[${MDCSelectFoundation.strings.ENHANCED_VALUE_ATTR}="${value}"]`
           );
 
-          const selectedIndex = element
-            ? this.menu_.items.indexOf(element)
-            : -1;
+          const selectedIndex =
+            element && this.menu
+              ? this.menu.items.indexOf(element as HTMLLIElement)
+              : -1;
+          const selectedItem = this.menu && this.menu.items[selectedIndex];
 
-          const selectedItem = this.menu_ && this.menu_.items[selectedIndex];
-
-          const selectedTextContent = selectedItem
-            ? selectedItem.textContent.trim()
-            : '';
+          const selectedTextContent =
+            selectedItem && selectedItem.textContent
+              ? selectedItem.textContent.trim()
+              : '';
 
           this.setState(
             {
@@ -433,7 +442,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
         // handled by props in render function
       },
       checkValidity: () => {
-        const classList = this.root_ && this.root_.classList;
+        const classList = this.root.ref && this.root.ref.classList;
         if (
           classList &&
           classList.contains(MDCSelectFoundation.cssClasses.REQUIRED) &&
@@ -450,33 +459,28 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
         }
       },
       setValid: (isValid: boolean) => {
-        this.selectedText_ &&
-          this.selectedText_.setAttribute(
-            'aria-invalid',
-            (!isValid).toString()
-          );
+        this.selectedText &&
+          this.selectedText.setAttribute('aria-invalid', (!isValid).toString());
         isValid
-          ? this.classList.root_.remove(MDCSelectFoundation.cssClasses.INVALID)
-          : this.classList.root_.add(MDCSelectFoundation.cssClasses.INVALID);
+          ? this.root.removeClass(MDCSelectFoundation.cssClasses.INVALID)
+          : this.root.addClass(MDCSelectFoundation.cssClasses.INVALID);
       }
     };
   }
 
   getCommonAdapterMethods_() {
     return {
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
-      hasClass: (className: string) => this.classList.root_.has(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      hasClass: (className: string) => this.root.hasClass(className),
       isRtl: () =>
-        this.root_ &&
-        window.getComputedStyle(this.root_).getPropertyValue('direction') ===
+        this.root.ref &&
+        window.getComputedStyle(this.root.ref).getPropertyValue('direction') ===
           'rtl',
       setRippleCenter: (normalizedX: number) =>
-        this.lineRipple_ && this.lineRipple_.setRippleCenter(normalizedX),
-      activateBottomLine: () => this.lineRipple_ && this.lineRipple_.activate(),
-      deactivateBottomLine: () =>
-        this.lineRipple_ && this.lineRipple_.deactivate(),
+        this.lineRipple.addProp('center', normalizedX),
+      activateBottomLine: () => this.lineRipple.addProp('active', true),
+      deactivateBottomLine: () => this.lineRipple.addProp('active', false),
       notifyChange: (value: any) => {
         // handled byt the onChange event
       }
@@ -485,16 +489,12 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
 
   getOutlineAdapterMethods_() {
     return {
-      hasOutline: () => !!this.outline_,
-      notchOutline: (labelWidth: number, isRtl: boolean) => {
-        if (this.outline_) {
-          this.outline_.notch(labelWidth, isRtl);
-        }
+      hasOutline: () => !!this.props.outlined,
+      notchOutline: (labelWidth: number) => {
+        this.outline.addProp('notch', labelWidth);
       },
       closeOutline: () => {
-        if (this.outline_) {
-          this.outline_.closeNotch();
-        }
+        this.outline.removeProp('notch');
       }
     };
   }
@@ -502,10 +502,10 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
   getLabelAdapterMethods_() {
     return {
       floatLabel: (shouldFloat: boolean) => {
-        this.label_ && this.label_.float(shouldFloat);
+        this.label.addProp('float', shouldFloat);
       },
       getLabelWidth: () => {
-        return this.label_ ? this.label_.getWidth() : 0;
+        return this.label.ref ? this.label.ref.getWidth() : 0;
       }
     };
   }
@@ -547,25 +547,25 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
     this.foundation.setValue(value);
   }
 
-  handleChange_(evt: any) {
+  handleChange(evt: any) {
     const { onChange } = this.props;
     onChange && onChange(evt);
     this.foundation.handleChange(true);
   }
 
-  handleFocus_(evt: any) {
+  handleFocus(evt: any) {
     const { onFocus } = this.props;
     onFocus && onFocus(evt);
     this.foundation.handleFocus();
   }
 
-  handleBlur_(evt: any) {
+  handleBlur(evt: any) {
     const { onBlur } = this.props;
     onBlur && onBlur(evt);
     this.foundation.handleBlur();
   }
 
-  handleClick_(evt: any) {
+  handleClick(evt: any) {
     const { onClick, onMouseDown, onTouchStart } = this.props;
     evt.type === 'click' && onClick && onClick(evt);
     evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
@@ -577,17 +577,17 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       return xCoordinate - targetClientRect.left;
     };
 
-    if (this.selectedText_) this.selectedText_.focus();
+    if (this.selectedText) this.selectedText.focus();
     this.foundation.handleClick(getNormalizedXCoordinate(evt));
   }
 
-  handleKeydown_(evt: any) {
+  handleKeydown(evt: any) {
     const { onKeyDown } = this.props;
     onKeyDown && onKeyDown(evt);
     this.foundation.handleKeydown(evt);
   }
 
-  handleMenuSelected_(evt: CustomEventT<{ item: HTMLElement; index: number }>) {
+  handleMenuSelected(evt: CustomEventT<{ item: HTMLElement; index: number }>) {
     const value = evt.detail.item.dataset.value;
     this.emit(
       'onChange',
@@ -602,21 +602,21 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       this.getEnhancedSelectAdapterMethods_().setValue(value || '');
   }
 
-  handleMenuOpened_() {
+  handleMenuOpened() {
     // Menu should open to the last selected element.
-    if (this.state.selectedIndex >= 0) {
-      this.menu_.items[this.state.selectedIndex].focus();
+    if (this.menu && this.state.selectedIndex >= 0) {
+      this.menu.items[this.state.selectedIndex].focus();
     }
   }
 
-  handleMenuClosed_() {
+  handleMenuClosed() {
     // menuOpened_ is used to track the state of the menu opening or closing since the menu.open function
     // will return false if the menu is still closing and this method listens to the closed event which
     // occurs after the menu is already closed.
     this.setState({
       menuOpen: false
     });
-    if (document.activeElement !== this.selectedText_) {
+    if (document.activeElement !== this.selectedText) {
       this.foundation.handleBlur();
     }
   }
@@ -653,9 +653,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       outlined,
       label = '',
       options = [],
-      className,
       rootProps = {},
-      style,
       enhanced,
       withLeadingIcon,
       onChange,
@@ -672,13 +670,13 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       value !== undefined ? undefined : this.props.defaultValue || '';
 
     const sharedEventProps = {
-      onKeyDown: this.handleKeydown_,
-      onChange: this.handleChange_,
-      onFocus: this.handleFocus_,
-      onBlur: this.handleBlur_,
-      onClick: this.handleClick_,
-      onTouchStart: this.handleClick_,
-      onMouseDown: this.handleClick_
+      onKeyDown: this.handleKeydown,
+      onChange: this.handleChange,
+      onFocus: this.handleFocus,
+      onBlur: this.handleBlur,
+      onClick: this.handleClick,
+      onTouchStart: this.handleClick,
+      onMouseDown: this.handleClick
     };
 
     const sharedControlProps = {
@@ -688,70 +686,69 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
       selectOptions
     };
 
+    const renderedLabel = (
+      <FloatingLabel {...this.label.props({})} ref={this.label.setRef}>
+        {label}
+      </FloatingLabel>
+    );
+
     return (
       <SelectRoot
-        {...rootProps}
+        ripple={!outlined}
+        {...this.root.props(rootProps)}
         withLeadingIcon={withLeadingIcon}
-        className={this.classList.root_.renderToString()}
         outlined={outlined}
-        ref={(el: HTMLElement) => (this.root_ = el)}
-        style={style}
+        ref={this.root.setRef}
       >
         {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon_')}
         <SelectDropdownArrow />
 
-        {enhanced && (
-          <input type="hidden" ref={el => (this.hiddenInput_ = el)} />
-        )}
-
-        {enhanced && (
-          <div
-            ref={el => (this.selectedText_ = el)}
-            className="mdc-select__selected-text"
-            tabIndex={this.props.disabled ? -1 : 0}
-            aria-disabled={this.props.disabled ? 'true' : 'false'}
-            aria-expanded={this.state.menuOpen}
-            {...sharedEventProps}
-          >
-            {this.state.selectedTextContent}
-          </div>
-        )}
         {enhanced ? (
-          <SelectEnhancedControl
-            {...sharedControlProps}
-            selectedIndex={this.state.selectedIndex}
-            apiRef={apiRef => {
-              this.menu_ = apiRef;
-              this.menuElement_ =
-                apiRef && apiRef.menuSurface_.setAnchorElement;
-            }}
-            open={this.state.menuOpen}
-            onClose={this.handleMenuClosed_}
-            onOpen={this.handleMenuOpened_}
-            onSelect={this.handleMenuSelected_}
-          >
-            {children}
-          </SelectEnhancedControl>
+          <React.Fragment>
+            <input type="hidden" ref={el => (this.hiddenInput_ = el)} />
+            <div
+              ref={el => (this.selectedText = el)}
+              className="mdc-select__selected-text"
+              tabIndex={this.props.disabled ? -1 : 0}
+              aria-disabled={this.props.disabled ? 'true' : 'false'}
+              aria-expanded={this.state.menuOpen}
+              {...sharedEventProps}
+            >
+              {this.state.selectedTextContent}
+            </div>
+            <SelectEnhancedControl
+              {...sharedControlProps}
+              selectedIndex={this.state.selectedIndex}
+              apiRef={apiRef => {
+                this.menu = apiRef;
+              }}
+              open={this.state.menuOpen}
+              onClose={this.handleMenuClosed}
+              onOpen={this.handleMenuOpened}
+              onSelect={this.handleMenuSelected}
+            >
+              {children}
+            </SelectEnhancedControl>
+          </React.Fragment>
         ) : (
           <SelectNativeControl
             {...rest}
-            elementRef={(el: any) => (this.nativeControl_ = el)}
+            elementRef={(el: any) => (this.nativeControl = el)}
             {...sharedControlProps}
             {...sharedEventProps}
           >
             {children}
           </SelectNativeControl>
         )}
-        <FloatingLabel ref={(el: FloatingLabel) => (this.label_ = el)}>
-          {label}
-        </FloatingLabel>
-        {!!outlined && (
-          <NotchedOutline ref={(el: NotchedOutline) => (this.outline_ = el)} />
-        )}
         {!!outlined ? (
-          <NotchedOutlineIdle />
+          <NotchedOutline {...this.outline.props({})}>
+            {renderedLabel}
+          </NotchedOutline>
         ) : (
-          <LineRipple ref={(el: LineRipple) => (this.lineRipple_ = el)} />
+          <React.Fragment>
+            {renderedLabel}
+            <LineRipple {...this.lineRipple.props({})} />
+          </React.Fragment>
         )}
       </SelectRoot>
     );
@@ -760,59 +757,51 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectStateT> {
 
 export class SelectIcon extends FoundationComponent<IconProps> {
   static displayName = 'SelectIcon';
-  root_: null | HTMLElement = null;
-
-  constructor(props: IconProps) {
-    super(props);
-    this.createClassList('root_');
-    this.createPropsList('root_');
-  }
+  root = this.createElement('root');
 
   getDefaultFoundation(): any {
-    return {
-      init: () => {},
-      destroy: () => {}
-    };
-    // MDC BUG: The current default export doesnt contain this foundation
-    // https://github.com/material-components/material-components-web/issues/4094
-    //
-    // return new MDCSelectIconFoundation({
-    //   getAttr: attr => this.propsList.root_.get(attr),
-    //   setAttr: (attr, value) => this.propsList.root_.add(attr, value),
-    //   removeAttr: attr => this.propsList.root_.remove(attr),
-    //   setContent: content => {
-    //     this.root_ && (this.root_.textContent = content);
-    //   },
-    //   registerInteractionHandler: (evtType, handler) =>
-    //     this.propsList.root_.addEventListener(evtType, handler),
-    //   deregisterInteractionHandler: (evtType, handler) =>
-    //     this.propsList.root_.removeEventListener(evtType, handler),
-    //   notifyIconAction: () => this.emit('onClick', {}, true)
-    // });
+    return new MDCSelectIconFoundation({
+      getAttr: (attr: string) => this.root.getProp(attr),
+      setAttr: (attr: string, value: string) => this.root.addProp(attr, value),
+      removeAttr: (attr: string) => this.root.removeProp(attr),
+      setContent: (content: string) => {
+        this.root.ref && (this.root.ref.textContent = content);
+      },
+      registerInteractionHandler: (
+        evtType: string,
+        handler: (evt: Event) => void
+      ) => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: (
+        evtType: string,
+        handler: (evt: Event) => void
+      ) => this.root.removeEventListener(evtType, handler),
+      notifyIconAction: () => this.emit('onClick', {}, true)
+    });
   }
 
   render() {
     return (
       <Icon
-        {...this.props}
-        {...this.propsList.root_.all()}
-        className={`mdc-select__icon ${this.classList.root_.renderToString()}`}
+        {...this.root.props({
+          ...this.props,
+          className: 'mdc-select__icon'
+        })}
       />
     );
   }
 }
 
-export type SelectHelperTextPropsT = {
+export interface SelectHelperTextProps {
   /** Make the help text always visible */
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
-};
+}
 
-export const SelectHelperText = componentFactory<SelectHelperTextPropsT>({
+export const SelectHelperText = componentFactory<SelectHelperTextProps>({
   displayName: 'TextFieldHelperText',
   tag: 'p',
-  classNames: (props: SelectHelperTextPropsT) => [
+  classNames: (props: SelectHelperTextProps) => [
     'mdc-select-helper-text',
     {
       'mdc-select-helper-text--persistent': props.persistent,
@@ -825,10 +814,7 @@ export const SelectHelperText = componentFactory<SelectHelperTextPropsT>({
 /**
  * A Select Component
  */
-export const Select: React.ComponentType<SelectProps> = ({
-  enhanced,
-  ...rest
-}) => (
+export const Select = ({ enhanced, ...rest }: SelectProps & ComponentProps) => (
   <SelectBase
     key={enhanced ? 'enhanced' : 'native'}
     enhanced={enhanced}

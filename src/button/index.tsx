@@ -66,8 +66,10 @@ export const Button = withRipple({
       return (
         <Tag {...rest} ref={ref}>
           {!!icon && <ButtonIcon icon={icon} />}
-          {label}
-          {children}
+          <span className="mdc-button__label">
+            {label}
+            {children}
+          </span>
         </Tag>
       );
     }
