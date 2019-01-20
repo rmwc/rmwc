@@ -9,11 +9,10 @@ describe('Snackbar', () => {
   it('renders', () => {
     mount(
       <Snackbar
-        show
-        onHide={evt => {}}
+        open
+        onClose={evt => {}}
         message="This is a new message"
-        actionText="Action"
-        actionHandler={() => alert('Action clicked')}
+        action={<div />}
       />
     );
   });

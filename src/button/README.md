@@ -34,7 +34,7 @@ import { Button, ButtonIcon } from '@rmwc/button';
 <Button
   label="With Theme"
   raised
-  theme="secondary-bg on-secondary"
+  theme={['secondaryBg', 'onSecondary']}
 />
 
 

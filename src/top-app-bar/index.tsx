@@ -50,7 +50,7 @@ export const TopAppBarRoot = componentFactory<TopAppBarProps>({
 });
 
 /** A row for the app bar. */
-export const TopAppBarRow = componentFactory({
+export const TopAppBarRow = componentFactory<{}>({
   displayName: 'TopAppBarRow',
   classNames: ['mdc-top-app-bar__row']
 });
@@ -95,7 +95,7 @@ export const TopAppBarActionItem = withRipple({ unbounded: true })(
 );
 
 /** A title for the top app bar. */
-export const TopAppBarTitle = componentFactory({
+export const TopAppBarTitle = componentFactory<{}>({
   displayName: 'TopAppBarTitle',
   classNames: ['mdc-top-app-bar__title']
 });

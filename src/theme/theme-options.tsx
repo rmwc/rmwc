@@ -1,6 +1,6 @@
-import { toDashCase } from '@rmwc/base/utils/to-dash-case';
+import { ThemeOptionT } from '@rmwc/base/withTheme';
 
-export const themeOptionsCamel = [
+export const themeOptions: ThemeOptionT[] = [
   'primary',
   'secondary',
   'background',
@@ -26,7 +26,3 @@ export const themeOptionsCamel = [
   'textDisabledOnDark',
   'textIconOnDark'
 ];
-
-export const themeOptions = themeOptionsCamel.map(toDashCase);
-
-export default themeOptions;

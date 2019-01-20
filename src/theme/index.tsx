@@ -1,56 +1,39 @@
-import { ComponentProps } from '@rmwc/base';
-
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
+import { componentFactory, ComponentProps, ThemeOptionT } from '@rmwc/base';
 import { toDashCase } from '@rmwc/base/utils/to-dash-case';
 import { getAutoColorsForTheme } from './utils';
 
-type ThemeOptionT =
-  | string
-  | 'primary'
-  | 'secondary'
-  | 'background'
-  | 'surface'
-  | 'onPrimary'
-  | 'onSecondary'
-  | 'onSurface'
-  | 'textPrimaryOnBackground'
-  | 'textSecondaryOnBackground'
-  | 'textHintOnBackground'
-  | 'textDisabledOnBackground'
-  | 'textIconOnBackground'
-  | 'textPrimaryOnLight'
-  | 'textSecondaryOnLight'
-  | 'textHintOnLight'
-  | 'textDisabledOnLight'
-  | 'textIconOnLight'
-  | 'textPrimaryOnDark'
-  | 'textSecondaryOnDark'
-  | 'textHintOnDark'
-  | 'textDisabledOnDark'
-  | 'textIconOnDark';
-
-const ThemeRoot = componentFactory({
+const ThemeRoot = componentFactory<{}>({
   displayName: 'ThemeRoot',
   tag: 'span'
 });
 
-export interface ThemeProps extends ComponentProps {
+export interface ThemeProps {
   /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
   use: ThemeOptionT | ThemeOptionT[];
   /** Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors.  */
-  wrap?: any;
+  wrap?: boolean | any;
 }
 
 /**
  * A Theme Component.
  */
-export const Theme = ({ use, ...rest }: ThemeProps) => (
-  // TODO: FIX
-  // @ts-ignore
-  <ThemeRoot theme={use} {...rest} />
-);
+export const Theme = ({ use, wrap, ...rest }: ThemeProps & ComponentProps) => {
+  const root = <ThemeRoot theme={use} {...rest} />;
+
+  if (wrap) {
+    const child = React.Children.only(rest.children);
+    return React.cloneElement(child, {
+      ...child.props,
+      ...rest,
+      className: [root.props.className, child.props.className]
+        .filter(Boolean)
+        .join(' ')
+    });
+  }
+  return root;
+};
 
 Theme.displayName = 'Theme';
 

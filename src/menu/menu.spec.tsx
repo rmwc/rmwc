@@ -81,7 +81,7 @@ describe('Menu', () => {
     }, 200);
   });
 
-  it.only('SimpleMenuSurface renders', done => {
+  it('SimpleMenuSurface renders', done => {
     let val = 0;
 
     const el = mount(

@@ -6,12 +6,11 @@ describe('Snackbar', () => {
   it('renders', done => {
     const el = mount(
       <Snackbar
-        show
+        open
         timeout={1000}
-        onHide={() => console.log('HIDE')}
+        onClose={() => {}}
         message="This is a new message"
-        actionText="Action"
-        actionHandler={() => alert('Action clicked')}
+        action={<div />}
       />
     );
 
@@ -27,12 +26,12 @@ describe('Snackbar', () => {
   });
 
   it('can be multiline', () => {
-    mount(<Snackbar show message="This is a new message" multiline />);
+    mount(<Snackbar open message="This is a new message" />);
   });
 
   it('can dismissesOnAction', () => {
     const el = mount(
-      <Snackbar show message="This is a new message" dismissesOnAction />
+      <Snackbar open message="This is a new message" dismissesOnAction />
     );
     el.setProps({ dismissesOnAction: false });
   });

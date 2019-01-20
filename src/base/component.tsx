@@ -1,33 +1,7 @@
 import * as React from 'react';
 import classNamesFunc from 'classnames';
-import { parseThemeOptions } from './withTheme';
+import { parseThemeOptions, ThemeOptionT } from './withTheme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
-
-type ThemeOptionT =
-  | string
-  | 'primary'
-  | 'secondary'
-  | 'background'
-  | 'surface'
-  | 'onPrimary'
-  | 'onSecondary'
-  | 'onSurface'
-  | 'onError'
-  | 'textPrimaryOnBackground'
-  | 'textSecondaryOnBackground'
-  | 'textHintOnBackground'
-  | 'textDisabledOnBackground'
-  | 'textIconOnBackground'
-  | 'textPrimaryOnLight'
-  | 'textSecondaryOnLight'
-  | 'textHintOnLight'
-  | 'textDisabledOnLight'
-  | 'textIconOnLight'
-  | 'textPrimaryOnDark'
-  | 'textSecondaryOnDark'
-  | 'textHintOnDark'
-  | 'textDisabledOnDark'
-  | 'textIconOnDark';
 
 type ThemeInputT = ThemeOptionT | ThemeOptionT[];
 
@@ -63,6 +37,7 @@ interface ComponentFactoryOpts<Props> {
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
   tag?: TagT;
   theme?: ThemeInputT;
+  wrap?: boolean | any;
   // // TODO, any had to be included
   // // This is a type mistmatch between refs in class components vs forwardRef components... string is the
   ref?: any;

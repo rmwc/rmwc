@@ -1,13 +1,11 @@
-import { IconProps } from '@rmwc/icon';
-
 import * as React from 'react';
 // @ts-ignore
 import { MDCToolbarFoundation } from '@material/toolbar';
-import { Icon } from '@rmwc/icon';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
-export interface ToolbarPropsT {
+export interface ToolbarProps {
   /** Makes the toolbar fixed */
   fixed?: boolean;
   /** Adds a waterfall effect on scroll */
@@ -20,10 +18,10 @@ export interface ToolbarPropsT {
   flexibleDefaultBehavior?: boolean;
 }
 
-export const ToolbarRoot = componentFactory({
+export const ToolbarRoot = componentFactory<ToolbarProps>({
   displayName: 'TabBarRoot',
   tag: 'header',
-  classNames: (props: ToolbarPropsT) => [
+  classNames: (props: ToolbarProps) => [
     'mdc-toolbar',
     {
       'mdc-toolbar--fixed': props.fixed,
@@ -50,25 +48,25 @@ export const ToolbarRoot = componentFactory({
 });
 
 /** A Toolbar title  */
-export const ToolbarTitle = componentFactory({
+export const ToolbarTitle = componentFactory<{}>({
   displayName: 'ToolbarTitle',
   classNames: ['mdc-toolbar__title']
 });
 
-type ToolbarSectionPropsT = {
+export interface ToolbarSectionProps {
   /** Aligns the ToolbarSection at the start. */
   alignStart?: boolean;
   /** Aligns the ToolbarSection at the end. */
   alignEnd?: boolean;
   /** Makes the ToolbarSection shrink to fit. */
   shrinkToFit?: boolean;
-};
+}
 
 /** A section of the Toolbar */
-export const ToolbarSection = componentFactory<ToolbarSectionPropsT>({
+export const ToolbarSection = componentFactory<ToolbarSectionProps>({
   displayName: 'ToolbarSection',
   tag: 'section',
-  classNames: (props: ToolbarSectionPropsT) => [
+  classNames: (props: ToolbarSectionProps) => [
     'mdc-toolbar__section',
     {
       'mdc-toolbar__section--align-start': props.alignStart,
@@ -122,7 +120,7 @@ export const ToolbarIcon = withRipple({
   })
 );
 
-export class Toolbar extends FoundationComponent<ToolbarPropsT> {
+export class Toolbar extends FoundationComponent<ToolbarProps> {
   static displayName = 'Toolbar';
 
   root = this.createElement('root');
@@ -208,7 +206,6 @@ export class Toolbar extends FoundationComponent<ToolbarPropsT> {
 
   render() {
     const { ...rest } = this.props;
-    const { root_ } = this.foundationRefs;
-    return <ToolbarRoot ref={root_} {...rest} />;
+    return <ToolbarRoot ref={this.root.setRef} {...rest} />;
   }
 }

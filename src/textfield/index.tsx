@@ -13,11 +13,12 @@ import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
+import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
 /*********************************************************************
  * TextField
  *********************************************************************/
-export type TextFieldPropsT = {
+export interface TextFieldProps {
   /** Makes a multiline TextField. */
   textarea?: boolean;
   /** Sets the value for controlled TextFields. */
@@ -32,8 +33,6 @@ export type TextFieldPropsT = {
   required?: boolean;
   /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean;
-  /** Makes the TextField dense */
-  dense?: boolean;
   /** Outline the TextField */
   outlined?: boolean;
   /** A label for the input. */
@@ -46,14 +45,21 @@ export type TextFieldPropsT = {
   rootProps?: Object;
   /** The type of input field to render */
   type?: string;
-} & ComponentProps;
+}
 
-const TextFieldRoot = componentFactory<TextFieldPropsT>({
+export interface DeprecatedTextfieldProps {
+  /** DEPRECATED: Is being removed from MCW. */
+  dense?: boolean;
+}
+
+const TextFieldRoot = componentFactory<
+  TextFieldProps & DeprecatedTextfieldProps
+>({
   displayName: 'TextFieldRoot',
   deprecate: {
     box: ''
   },
-  classNames: (props: TextFieldPropsT) => [
+  classNames: (props: TextFieldProps & DeprecatedTextfieldProps) => [
     'mdc-text-field',
     'mdc-text-field--upgraded',
     {
@@ -95,11 +101,13 @@ const TextFieldTextarea = componentFactory({
 });
 
 /** A TextField component for accepting text input from a user. */
-export class TextField extends FoundationComponent<TextFieldPropsT> {
+export class TextField extends FoundationComponent<
+  TextFieldProps & DeprecatedTextfieldProps
+> {
   static displayName = 'TextField';
-  generatedId: string;
-  root_: null | HTMLElement = null;
-  input_: null | HTMLInputElement | HTMLTextAreaElement = null;
+  generatedId = randomId('textfield');
+  root = this.createElement('root');
+  input = this.createElement<HTMLInputElement & HTMLTextAreaElement>('input');
   label_: null | any;
   lineRipple_: null | any;
   leadingIcon_: null | any;
@@ -107,39 +115,30 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
   outline_: null | any;
   valueNeedsUpdate = false;
 
-  constructor(props: TextFieldPropsT) {
-    super(props);
-    this.generatedId = randomId('text-field');
-    this.createClassList('root_');
-    this.createPropsList('root_');
-    this.createPropsList('input_');
-  }
-
   getDefaultFoundation() {
     return new MDCTextFieldFoundation(
       {
-        addClass: (className: string) => this.classList.root_.add(className),
-        removeClass: (className: string) =>
-          this.classList.root_.remove(className),
-        hasClass: (className: string) => this.classList.root_.has(className),
+        addClass: (className: string) => this.root.addClass(className),
+        removeClass: (className: string) => this.root.removeClass(className),
+        hasClass: (className: string) => this.root.hasClass(className),
         registerTextFieldInteractionHandler: (
           evtType: string,
           handler: () => void
-        ) => this.propsList.root_.addEventListener(evtType, handler),
+        ) => this.root.addEventListener(evtType, handler),
         deregisterTextFieldInteractionHandler: (
           evtType: string,
           handler: () => void
-        ) => this.propsList.root_.removeEventListener(evtType, handler),
+        ) => this.root.removeEventListener(evtType, handler),
         registerValidationAttributeChangeHandler: (
           handler: (changes: (string | null)[]) => void
         ) => {
           const getAttributesList = (mutationsList: MutationRecord[]) =>
             mutationsList.map(mutation => mutation.attributeName);
-          if (this.input_) {
+          if (this.input.ref) {
             const observer = new MutationObserver(mutationsList =>
               handler(getAttributesList(mutationsList))
             );
-            const targetNode = this.input_;
+            const targetNode = this.input.ref;
             const config = { attributes: true };
             targetNode && observer.observe(targetNode, config);
             return observer;
@@ -151,12 +150,13 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
           observer && observer.disconnect();
         },
         isFocused: () => {
-          return document.activeElement === this.input_;
+          return document.activeElement === this.input.ref;
         },
         isRtl: () =>
-          this.root_ &&
-          window.getComputedStyle(this.root_).getPropertyValue('direction') ===
-            'rtl',
+          this.root.ref &&
+          window
+            .getComputedStyle(this.root.ref)
+            .getPropertyValue('direction') === 'rtl',
 
         ...this.getInputAdapterMethods_(),
         ...this.getLabelAdapterMethods_(),
@@ -211,12 +211,12 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
   getInputAdapterMethods_() {
     return {
       registerInputInteractionHandler: (evtType: string, handler: () => void) =>
-        this.propsList.input_.addEventListener(evtType, handler),
+        this.input.addEventListener(evtType, handler),
       deregisterInputInteractionHandler: (
         evtType: string,
         handler: () => void
-      ) => this.propsList.input_.removeEventListener(evtType, handler),
-      getNativeInput: () => this.input_
+      ) => this.input.removeEventListener(evtType, handler),
+      getNativeInput: () => this.input.ref
     };
   }
 
@@ -253,7 +253,7 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     return iconNode;
   }
 
-  sync(props: TextFieldPropsT) {
+  sync(props: TextFieldProps) {
     // Bug #362
     // see comments below in render function
     if (this.valueNeedsUpdate) {
@@ -281,6 +281,12 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
       ...rest
     } = this.props;
 
+    if (dense !== undefined) {
+      deprecationWarning(
+        `Textfield prop 'dense' is being removed in a future release by material-components-web.`
+      );
+    }
+
     // Fixes bug #362
     // MDC breaks Reacts unidirectional data flow...
     // we cant set the value on render, but we need to
@@ -296,12 +302,9 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
 
     const tagProps = {
       disabled: disabled,
-      elementRef: (ref: HTMLInputElement | HTMLTextAreaElement) => {
-        this.input_ = ref;
-        typeof inputRef === 'function' && inputRef(ref);
-      },
-      id: rest['id'] || randomId('text-field'),
-      ...this.propsList.input_.all(rest)
+      ref: this.input.setRef,
+      id: rest.id || this.generatedId,
+      ...this.input.props(rest)
     };
 
     const tag = textarea ? (
@@ -309,6 +312,15 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
     ) : (
       <TextFieldInput {...tagProps} />
     );
+
+    const renderedLabel = label ? (
+      <FloatingLabel
+        ref={(ref: FloatingLabel) => (this.label_ = ref && ref.foundation)}
+        htmlFor={tagProps.id}
+      >
+        {label}
+      </FloatingLabel>
+    ) : null;
 
     return (
       <TextFieldRoot
@@ -321,39 +333,37 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
         disabled={disabled}
         outlined={outlined}
         fullwidth={fullwidth}
-        ref={ref => (this.root_ = ref)}
-        className={[className, this.classList.root_.renderToString()]
-          .filter(Boolean)
-          .join(' ')}
+        ref={this.root.setRef}
         style={style}
-        {...this.propsList.root_.all()}
+        {...this.root.props({ ...rootProps, className })}
       >
         {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon_')}
         {children}
         {tag}
-        {!!label && (
-          <FloatingLabel
-            ref={(ref: FloatingLabel) => (this.label_ = ref && ref.foundation)}
-            htmlFor={tagProps.id}
-          >
-            {label}
-          </FloatingLabel>
-        )}
-        {!!withTrailingIcon &&
-          this.renderIcon(withTrailingIcon, 'trailingIcon_')}
 
         {!!outlined ? (
-          <NotchedOutline
-            ref={(ref: NotchedOutline) =>
-              (this.outline_ = ref && ref.foundation)
-            }
-          />
+          <React.Fragment>
+            <NotchedOutline
+              ref={(ref: NotchedOutline) =>
+                (this.outline_ = ref && ref.foundation)
+              }
+            >
+              {renderedLabel}
+            </NotchedOutline>
+            {!!withTrailingIcon &&
+              this.renderIcon(withTrailingIcon, 'trailingIcon_')}
+          </React.Fragment>
         ) : (
-          <LineRipple
-            ref={(ref: LineRipple) =>
-              (this.lineRipple_ = ref && ref.foundation)
-            }
-          />
+          <React.Fragment>
+            {renderedLabel}
+            {!!withTrailingIcon &&
+              this.renderIcon(withTrailingIcon, 'trailingIcon_')}
+            <LineRipple
+              ref={(ref: LineRipple) =>
+                (this.lineRipple_ = ref && ref.foundation)
+              }
+            />
+          </React.Fragment>
         )}
       </TextFieldRoot>
     );
@@ -363,18 +373,18 @@ export class TextField extends FoundationComponent<TextFieldPropsT> {
 /*********************************************************************
  * Helper Text
  *********************************************************************/
-export type TextFieldHelperTextPropsT = {
+export interface TextFieldHelperTextProps {
   /** Make the help text always visible */
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
-} & ComponentProps;
+}
 
 /** A help text component */
-export const TextFieldHelperText = componentFactory<TextFieldHelperTextPropsT>({
+export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
   displayName: 'TextFieldHelperText',
   tag: 'p',
-  classNames: (props: TextFieldHelperTextPropsT) => [
+  classNames: (props: TextFieldHelperTextProps) => [
     'mdc-text-field-helper-text',
     {
       'mdc-text-field-helper-text--persistent': props.persistent,
@@ -393,27 +403,20 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextPropsT>({
  */
 export class TextFieldIcon extends FoundationComponent<IconProps> {
   static displayName = 'TextFieldIcon';
-  root_: null | HTMLElement = null;
-
-  constructor(props: IconProps) {
-    super(props);
-    this.createClassList('root_');
-    this.createPropsList('root_');
-  }
+  root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCTextFieldIconFoundation({
-      getAttr: (attr: string) => this.propsList.root_.get(attr),
-      setAttr: (attr: string, value: string) =>
-        this.propsList.root_.add(attr, value),
-      removeAttr: (attr: string) => this.propsList.root_.remove(attr),
+      getAttr: (attr: string) => this.root.getProp(attr),
+      setAttr: (attr: string, value: string) => this.root.addProp(attr, value),
+      removeAttr: (attr: string) => this.root.removeProp(attr),
       setContent: (content: string) => {
-        this.root_ && (this.root_.textContent = content);
+        this.root.addProp('icon', content);
       },
       registerInteractionHandler: (evtType: string, handler: () => void) =>
-        this.propsList.root_.addEventListener(evtType, handler),
+        this.root.addEventListener(evtType, handler),
       deregisterInteractionHandler: (evtType: string, handler: () => void) =>
-        this.propsList.root_.removeEventListener(evtType, handler),
+        this.root.removeEventListener(evtType, handler),
       notifyIconAction: () => this.emit('onClick', {}, true)
     });
   }
@@ -421,12 +424,11 @@ export class TextFieldIcon extends FoundationComponent<IconProps> {
   render() {
     return (
       <Icon
-        {...this.props}
-        {...this.propsList.root_.all()}
-        className={`mdc-text-field__icon ${this.classList.root_.renderToString()}`}
+        {...this.root.props({
+          ...this.props,
+          className: 'mdc-text-field__icon'
+        })}
       />
     );
   }
 }
-
-export default TextField;

@@ -95,18 +95,6 @@ const speedUpTypescript = config => {
 /***********************************
  * Jest Rewiring
  ***********************************/
-
-/**
- * Fix absolute paths
- */
-const jestFixAbsolutePaths = config => {
-  config.setupFiles = config.setupFiles.map(
-    p => `<rootDir>${p.split('rmwc')[1]}`
-  );
-
-  return config;
-};
-
 /**
  * Add jest aliasing
  */
@@ -115,7 +103,6 @@ const jestModuleNameMapper = config => {
     ...config.moduleNameMapper,
     '@rmwc/(.*)$': '<rootDir>/src/$1'
   };
-  console.log(config);
   return config;
 };
 
@@ -123,6 +110,7 @@ const jestModuleNameMapper = config => {
  * Add jest transforms
  */
 const jestResolver = config => {
+  console.log(config.resolver);
   config.resolver = './scripts/jest-resolver.js';
   return config;
 };
@@ -141,9 +129,8 @@ module.exports = {
   storybook: (config, env) => pipe(addAliases)(config),
   jest: config => {
     return pipe(
-      //jestFixAbsolutePaths,
-      jestModuleNameMapper
-      //jestResolver
+      jestModuleNameMapper,
+      jestResolver
     )(config);
   }
 };

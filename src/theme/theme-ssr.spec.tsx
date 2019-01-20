@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { renderToString as mount } from 'react-dom/server';
 import { Theme, ThemeProvider } from './';
-import themeOptions from './theme-options';
+import { themeOptions } from './theme-options';
 
 describe('Theme SSR', () => {
   test('renders', () => {

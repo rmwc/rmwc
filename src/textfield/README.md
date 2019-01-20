@@ -41,8 +41,8 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 {/* A fullWidth input. */}
 <TextField fullwidth placeholder="fullWidth..."/>
 
-{/* You can make the TextField a textarea. */}
-<TextField textarea fullwidth label="textarea..." rows="8" />
+{/* You can make the TextField a textarea. Make sure to include `outlined` for proper styling */}
+<TextField textarea outlined fullwidth label="textarea..." rows="8" />
 
 {/* You can optionally make HelperText always visible with the persistent prop. */}
 <TextFieldHelperText persistent validationMsg>The field is required.</TextFieldHelperText>

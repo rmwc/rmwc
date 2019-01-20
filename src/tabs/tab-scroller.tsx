@@ -51,9 +51,13 @@ export class TabScroller extends FoundationComponent<{}> {
         this.area.setStyle(prop, value),
       setScrollContentStyleProperty: (prop: string, value: string) =>
         this.content.setStyle(prop, value),
-      getScrollContentStyleValue: (propName: string) =>
-        this.content.ref &&
-        window.getComputedStyle(this.content.ref).getPropertyValue(propName),
+      getScrollContentStyleValue: (propName: string) => {
+        const val =
+          this.content.ref &&
+          window.getComputedStyle(this.content.ref).getPropertyValue(propName);
+
+        return val || 'none';
+      },
       setScrollAreaScrollLeft: (scrollX: number) =>
         this.area.ref && (this.area.ref.scrollLeft = scrollX),
       getScrollAreaScrollLeft: () => this.area.ref && this.area.ref.scrollLeft,

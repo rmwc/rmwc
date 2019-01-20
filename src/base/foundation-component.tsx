@@ -141,7 +141,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   foundation: any;
   classList: { [key: string]: ClassListT } = {};
   propsList: { [key: string]: PropsList } = {};
-  foundationRefs: { [key: string]: React.Ref<any> } = {};
+  _refs: { [key: string]: React.Ref<any> } = {};
 
   constructor(props: FoundationPropsT<P>) {
     super(props);
@@ -153,7 +153,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
     this.createPropsList(elementName);
     const classList = this.classList[elementName];
     const propsList = this.propsList[elementName];
-    const getElement = () => this.foundationRefs[elementName] || null;
+    const getElement = () => this._refs[elementName] || null;
     const getClasses = (className?: string) =>
       classList.renderToString(className);
     return {
@@ -175,7 +175,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
       removeEventListener: propsList.removeEventListener,
       setRef: (el: any) => {
         if (el) {
-          this.foundationRefs[elementName] = el;
+          this._refs[elementName] = el;
         }
       },
       get ref(): ElementType {
@@ -228,7 +228,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
     Object.values(this.propsList).forEach(p => (p.update = () => {}));
     this.propsList = {};
     this.classList = {};
-    this.foundationRefs = {};
+    this._refs = {};
   }
 
   sync(props: any, prevProps?: any) {}

@@ -12,9 +12,7 @@ export const TabBarContext = React.createContext({
   unregisterTab: (tab: any) => {}
 });
 
-export const withTabBarContext = () => <
-  P extends { contextApi?: TabBarContextT }
->(
+export const withTabBarContext = () => <P extends {}>(
   Component: React.ComponentType<P & { contextApi?: TabBarContextT }>
 ): React.ComponentType<P & { contextApi?: TabBarContextT }> => (props: P) => (
   <TabBarContext.Consumer>

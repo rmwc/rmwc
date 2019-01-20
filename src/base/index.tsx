@@ -1,8 +1,9 @@
-import { WithThemePropsT } from './withTheme';
+import { WithThemeProps, ThemeOptionT } from './withTheme';
 import { ComponentProps } from './component';
 import { FocusTrap } from 'focus-trap';
 
-export type WithThemePropsT = WithThemePropsT;
+export type WithThemeProps = WithThemeProps;
+export type ThemeOptionT = ThemeOptionT;
 export interface ComponentProps<T = any> extends ComponentProps<T> {}
 
 export { default as classNames } from 'classnames';

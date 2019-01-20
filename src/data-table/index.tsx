@@ -2,14 +2,14 @@ import * as React from 'react';
 import { componentFactory, ComponentProps } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 
-type SharedDataTableCellPropsT = {
+interface SharedDataTableCellProps {
   /** Align content to the start of the cell. */
   alignStart?: boolean;
   /** Align content to the middle of the cell. */
   alignMiddle?: boolean;
   /** Align content to the end of the cell. */
   alignEnd?: boolean;
-};
+}
 
 export interface DataTableProps {
   /** The number of rows to affix to the top of the table when scrolling. */
@@ -89,7 +89,7 @@ const DataTableSortIcon = () => (
   />
 );
 
-export interface DataTableHeadCellProps extends SharedDataTableCellPropsT {
+export interface DataTableHeadCellProps extends SharedDataTableCellProps {
   /** Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. */
   sort?: null | number;
   /** A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending.*/
@@ -151,13 +151,13 @@ export const DataTableHeadCell = (
 
 DataTableHeadCell.displayName = 'DataTableHeadCell';
 
-export interface DataTableCellPropsT extends SharedDataTableCellPropsT {}
+export interface DataTableCellProps extends SharedDataTableCellProps {}
 
 /** A cell for the DataTable */
-export const DataTableCell = componentFactory<DataTableCellPropsT>({
+export const DataTableCell = componentFactory<DataTableCellProps>({
   displayName: 'DataTableCell',
   tag: 'td',
-  classNames: (props: DataTableCellPropsT) => [
+  classNames: (props: DataTableCellProps) => [
     'rmwc-data-table__cell',
     {
       'rmwc-data-table__cell--align-start': props.alignStart,

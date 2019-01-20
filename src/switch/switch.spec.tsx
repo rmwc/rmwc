@@ -10,7 +10,9 @@ describe('Switch', () => {
 
   test('can be checked', () => {
     const switchEl = mount(<Switch checked onChange={() => {}} />);
-    expect(switchEl.find('input').getDOMNode().checked).toEqual(true);
+    expect(
+      (switchEl.find('input').getDOMNode() as HTMLInputElement).checked
+    ).toEqual(true);
   });
 
   test('handles onChange', () => {
@@ -23,21 +25,23 @@ describe('Switch', () => {
 
   test('can be disabled', () => {
     const switchEl = mount(<Switch disabled />);
-    expect(switchEl.find('input').getDOMNode().disabled).toEqual(true);
+    expect(
+      (switchEl.find('input').getDOMNode() as HTMLInputElement).disabled
+    ).toEqual(true);
   });
 
   test('can have a label', () => {
     const switchEl = mount(<Switch label="hello world" />);
-    expect(switchEl.text()).toEqual('hello world');
+    expect(switchEl.text().trim()).toEqual('hello world');
   });
 
   test('can be dynamically changed with a dynamic label #361', done => {
     const el = mount(<Switch label="no" onChange={() => {}} checked={false} />);
     expect(
-      el
+      (el
         .find('input')
         .first()
-        .getDOMNode().checked
+        .getDOMNode() as HTMLInputElement).checked
     ).toBe(false);
 
     el.setProps({ label: 'yes', checked: true }, () => {

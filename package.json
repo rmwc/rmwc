@@ -1,5 +1,5 @@
 {
-  "name": "rmwc",
+  "name": "rmwc-main",
   "author": "James Friedman",
   "version": "4.0.6",
   "private": true,
@@ -53,7 +53,6 @@
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "generate-changelog": "^1.7.1",
-    "jest-resolve": "^23.6.0",
     "lerna": "^3.10.5",
     "material-components-web": "^0.43.0",
     "prismjs": "^1.15.0",

@@ -38,6 +38,7 @@ import { Button } from '@rmwc/button';
 
 import Submenu from './Submenu';
 import Home from './Home';
+import { ThemeOptionT } from '@rmwc/base/withTheme';
 
 const toCamel = (str: string) =>
   str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
@@ -113,37 +114,37 @@ const getTheme = (themeName: string) => {
     ...colors
   };
 
-  const order = [
+  const order: ThemeOptionT[] = [
     'primary',
     'secondary',
     'error',
     'background',
     'surface',
-    'on-primary',
-    'on-secondary',
-    'on-surface',
-    'on-error',
-    'text-primary-on-background',
-    'text-secondary-on-background',
-    'text-hint-on-background',
-    'text-disabled-on-background',
-    'text-icon-on-background',
-    'text-primary-on-light',
-    'text-secondary-on-light',
-    'text-hint-on-light',
-    'text-disabled-on-light',
-    'text-icon-on-light',
-    'text-primary-on-dark',
-    'text-secondary-on-dark',
-    'text-hint-on-dark',
-    'text-disabled-on-dark',
-    'text-icon-on-dark'
+    'onPrimary',
+    'onSecondary',
+    'onSurface',
+    'onError',
+    'textPrimaryOnBackground',
+    'textSecondaryOnBackground',
+    'textHintOnBackground',
+    'textDisabledOnBackground',
+    'textIconOnBackground',
+    'textPrimaryOnLight',
+    'textSecondaryOnLight',
+    'textHintOnLight',
+    'textDisabledOnLight',
+    'textIconOnLight',
+    'textPrimaryOnDark',
+    'textSecondaryOnDark',
+    'textHintOnDark',
+    'textDisabledOnDark',
+    'textIconOnDark'
   ];
 
   return order.reduce((acc, key) => {
-    key = `--mdc-theme-${key}`;
+    const newKey = `--mdc-theme-${key}`;
     // @ts-ignore
-    acc[key] = merged[key];
+    acc[newKey] = merged[newKey];
     return acc;
   }, {});
 };
@@ -408,7 +409,7 @@ class ThemePicker extends React.Component<{
         </MenuSurface>
         <TopAppBarActionItem
           onClick={() => this.setState({ open: !this.state.open })}
-          theme="on-primary"
+          theme="onPrimary"
           icon="color_lens"
         />
       </MenuSurfaceAnchor>

@@ -35,7 +35,9 @@ describe('Tabs', () => {
       render() {
         return (
           <TabBar>
-            {this.state.tabs.map(label => <Tab key={label} label={label} />)}
+            {this.state.tabs.map(label => (
+              <Tab key={label} label={label} />
+            ))}
           </TabBar>
         );
       }
@@ -72,13 +74,17 @@ describe('Tabs', () => {
   });
 
   it('can have custom classnames', () => {
-    [TabBar, Tab].forEach(Component => {
+    [TabBar, Tab].forEach((Component: React.ComponentType<any>) => {
       const el = mount(<Component className={'my-custom-classname'} />);
       expect(!!~el.html().search('my-custom-classname')).toEqual(true);
     });
   });
 
   it('sets initial active tab', done => {
+    // scrollTo is not implemented in JSDOM, mock it
+    // @ts-ignore
+    global.scrollTo = jest.fn();
+
     const el1 = mount(
       <TabBar activeTabIndex={0}>
         <Tab>1</Tab>

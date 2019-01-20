@@ -48,7 +48,7 @@ export const TabIcon = componentFactory<IconProps>({
 });
 
 /** A Tab component */
-export const Tab = withTabBarContext()(
+export const Tab = withTabBarContext()<TabProps>(
   class extends FoundationComponent<
     TabProps & { contextApi?: TabBarContextT }
   > {

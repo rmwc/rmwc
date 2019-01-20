@@ -11,8 +11,6 @@ import { TabScroller } from './tab-scroller';
 import { Tab } from './tab';
 import { TabBarContext } from './tab-bar-context';
 
-console.log(TabBarContext);
-
 /************************************************************
  * TabBar
  ************************************************************/
@@ -84,8 +82,10 @@ export class TabBar extends FoundationComponent<TabBarProps> {
   getDefaultFoundation() {
     return new MDCTabBarFoundation(
       /** @type {!MDCTabBarAdapter} */ ({
-        scrollTo: (scrollX: number) =>
-          this.tabScroller && this.tabScroller.scrollTo(scrollX),
+        scrollTo: (scrollX: number) => {
+          this.tabScroller && this.tabScroller.scrollTo(scrollX);
+        },
+
         incrementScroll: (scrollXIncrement: number) =>
           this.tabScroller &&
           this.tabScroller.incrementScroll(scrollXIncrement),

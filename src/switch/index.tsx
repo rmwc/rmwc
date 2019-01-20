@@ -8,7 +8,7 @@ import { randomId } from '@rmwc/base/utils/randomId';
 import { FormField } from '@rmwc/formfield';
 import { withRipple } from '@rmwc/ripple';
 
-export type SwitchPropsT = {
+export interface SwitchProps {
   /** A DOM ID for the toggle. */
   id?: string;
   /** Disables the control. */
@@ -21,9 +21,9 @@ export type SwitchPropsT = {
   rootProps?: any;
   /** Any children to render. */
   children?: React.ReactNode;
-} & ComponentProps;
+}
 
-export const SwitchRoot = componentFactory<SwitchPropsT>({
+export const SwitchRoot = componentFactory<SwitchProps>({
   displayName: 'SwitchRoot',
   classNames: ['mdc-switch']
 });
@@ -61,48 +61,43 @@ const SwitchThumbUnderlay = withRipple({ unbounded: true })(
   )
 );
 
-export class Switch extends FoundationComponent<SwitchPropsT> {
+export class Switch extends FoundationComponent<SwitchProps> {
   static displayName = 'Switch';
   changeHandler_: any;
-  root_: HTMLElement | null = null;
-  nativeControl_: HTMLInputElement | null = null;
-  generatedId: string;
+  root = this.createElement('root');
+  nativeControl = this.createElement<HTMLInputElement>('nativeControl');
+  generatedId = randomId('switch');
 
-  constructor(props: SwitchPropsT) {
+  constructor(props: SwitchProps & ComponentProps) {
     super(props);
-    this.generatedId = randomId('switch');
-    this.createClassList('root_');
-    this.createPropsList('nativeControl_');
-    // $FlowFixMe
-    this.handleChange_ = this.handleChange_.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     super.componentDidMount();
-    this.nativeControl_ &&
-      this.foundation.updateCheckedStyling_(this.nativeControl_.checked);
-    this.nativeControl_ &&
-      this.foundation.setDisabled(this.nativeControl_.disabled);
+    this.nativeControl.ref &&
+      this.foundation.updateCheckedStyling_(this.nativeControl.ref.checked);
+    this.nativeControl.ref &&
+      this.foundation.setDisabled(this.nativeControl.ref.disabled);
   }
 
   getDefaultFoundation() {
     return new MDCSwitchFoundation({
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
       setNativeControlChecked: (checked: boolean) =>
-        this.propsList.nativeControl_.add('checked', checked),
+        this.nativeControl.addProp('checked', checked),
       setNativeControlDisabled: (disabled: boolean) =>
-        this.propsList.nativeControl_.add('disabled', disabled)
+        this.nativeControl.addProp('disabled', disabled)
     });
   }
 
-  handleChange_(evt: any) {
+  handleChange(evt: any) {
     this.foundation.handleChange(evt);
     this.props.onChange && this.props.onChange(evt);
   }
 
-  sync(props: SwitchPropsT, prevProps?: SwitchPropsT) {
+  sync(props: SwitchProps, prevProps?: SwitchProps) {
     if (
       props.checked !== undefined &&
       !!prevProps &&
@@ -135,22 +130,22 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
 
     const switchTag = (
       <SwitchRoot
-        {...(!hasLabel ? rootProps : {})}
-        className={
-          (classNames(hasLabel || [rootProps.className, className]),
-          this.classList.root_.renderToString())
-        }
-        ref={(el: HTMLElement) => (this.root_ = el)}
+        {...this.root.props({
+          ...(!hasLabel ? rootProps : {}),
+          className: classNames(hasLabel || [rootProps.className, className])
+        })}
       >
         <SwitchTrack />
         <SwitchThumbUnderlay>
           <div className="mdc-switch__thumb">
             <input
-              {...this.propsList.nativeControl_.all(rest)}
-              onChange={this.handleChange_}
+              {...this.nativeControl.props({
+                ...rest,
+                className: 'mdc-switch__native-control'
+              })}
+              onChange={this.handleChange}
               id={labelId}
-              ref={el => (this.nativeControl_ = el)}
-              className="mdc-switch__native-control"
+              ref={this.nativeControl.setRef}
               type="checkbox"
             />
           </div>
@@ -169,7 +164,7 @@ export class Switch extends FoundationComponent<SwitchPropsT> {
           {...rootProps}
           className={classNames(rootProps.className, className)}
         >
-          {switchTag}
+          {switchTag}&nbsp;
           <label
             className="mdc-switch-label"
             id={labelId + 'label'}

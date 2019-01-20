@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { Theme, ThemeProvider } from './';
-import themeOptions from './theme-options';
+import { themeOptions } from './theme-options';
 
 describe('Theme', () => {
   test('renders', () => {
@@ -25,9 +25,7 @@ describe('Theme', () => {
   });
 
   test('can have custom classnames', () => {
-    const el = mount(
-      <Theme use="on-primary" className="my-custom-classname" />
-    );
+    const el = mount(<Theme use="onPrimary" className="my-custom-classname" />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 });
@@ -50,7 +48,8 @@ describe('ThemeProvider', () => {
       }
     });
     el.update();
-    el.instance().colors;
+    const inst = el.instance() as ThemeProvider;
+    inst.colors;
 
     el.setProps({
       options: {
@@ -59,10 +58,10 @@ describe('ThemeProvider', () => {
         surface: '#000000'
       }
     });
-    el.instance().colors;
+    inst.colors;
 
     el.update();
-    el.instance().colors;
+    inst.colors;
   });
 
   test('can wrap', () => {
