@@ -8215,7 +8215,7 @@
 							}
 						},
 						{
-							"id": 93,
+							"id": 92,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8229,7 +8229,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 23,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -8325,7 +8325,7 @@
 							}
 						},
 						{
-							"id": 94,
+							"id": 93,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8339,7 +8339,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 25,
+									"line": 23,
 									"character": 6
 								}
 							],
@@ -8390,7 +8390,7 @@
 							}
 						},
 						{
-							"id": 92,
+							"id": 91,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8404,7 +8404,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 21,
+									"line": 19,
 									"character": 7
 								}
 							],
@@ -8509,7 +8509,7 @@
 							}
 						},
 						{
-							"id": 91,
+							"id": 94,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8518,35 +8518,22 @@
 								"isOptional": true
 							},
 							"comment": {
-								"shortText": "Enable / disable the ripple."
+								"shortText": "Adds a ripple effect to the component"
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 19,
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+									"line": 278,
 									"character": 8
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "intrinsic",
-										"name": "false"
-									},
-									{
-										"type": "intrinsic",
-										"name": "true"
-									}
-								]
+								"type": "reference",
+								"name": "RipplePropT"
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "ButtonProps.ripple"
+								"name": "WithRippleProps.ripple"
 							}
 						},
 						{
@@ -8597,15 +8584,15 @@
 							"kind": 1024,
 							"children": [
 								84,
-								93,
+								92,
 								86,
 								90,
-								94,
+								93,
 								85,
-								92,
+								91,
 								89,
 								87,
-								91,
+								94,
 								88
 							]
 						}

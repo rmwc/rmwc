@@ -55,15 +55,19 @@ export const ListItemSecondaryText = componentFactory<{}>({
   classNames: ['mdc-list-item__secondary-text']
 });
 
+export interface ListItemGraphicProps extends IconProps {}
+
 /** A graphic / icon for the ListItem */
-export const ListItemGraphic = componentFactory<IconProps>({
+export const ListItemGraphic = componentFactory<ListItemGraphicProps>({
   displayName: 'ListItemGraphic',
   classNames: ['mdc-list-item__graphic'],
   tag: Icon
 });
 
+export interface ListItemMetaProps extends IconProps {}
+
 /** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
-export const ListItemMeta = componentFactory<IconProps>({
+export const ListItemMeta = componentFactory<ListItemMetaProps>({
   displayName: 'ListItemMeta',
   classNames: ['mdc-list-item__meta'],
   tag: Icon

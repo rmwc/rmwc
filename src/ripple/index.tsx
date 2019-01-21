@@ -39,6 +39,7 @@ type ActivateEventTypes<S> =
   | React.KeyboardEvent<S>
   | React.FocusEvent<S>;
 
+/** A component for adding Ripples to other components. */
 export class Ripple extends FoundationComponent<RippleProps> {
   static displayName = 'Ripple';
 
@@ -264,15 +265,17 @@ export class RippleSurface extends React.PureComponent<
   }
 }
 
+export type RipplePropT =
+  | boolean
+  | {
+      accent?: boolean;
+      surface?: boolean;
+      unbounded?: boolean;
+    };
+
 export interface WithRippleProps {
-  /* Adds a ripple effect to the component */
-  ripple?:
-    | boolean
-    | {
-        accent?: boolean;
-        surface?: boolean;
-        unbounded?: boolean;
-      };
+  /** Adds a ripple effect to the component */
+  ripple?: RipplePropT;
 }
 
 interface WithRippleOpts {

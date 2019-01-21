@@ -227,14 +227,16 @@ import { SimpleDataTable } from '@rmwc/data-table';
 
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="DataTable" />
-<DocumentComponent docs={docs} displayName="DataTableRow"/>
-<DocumentComponent docs={docs} displayName="DataTableCell"/>
-<DocumentComponent docs={docs} displayName="DataTableHead"/>
-<DocumentComponent docs={docs} displayName="DataTableBody"/>
-<DocumentComponent docs={docs} displayName="DataTableHeadCell"/>
-<DocumentComponent docs={docs} displayName="SimpleDataTable"/>
+<Docs src={docs} components={[
+ 'DataTable',  
+ 'DataTableRow',  
+ 'DataTableCell',  
+ 'DataTableHead',  
+ 'DataTableBody',  
+ 'DataTableHeadCell',  
+ 'SimpleDataTable'
+]}/>
 ```

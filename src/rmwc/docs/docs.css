@@ -40,6 +40,10 @@ pre[class*='language-'] {
   text-shadow: none;
 }
 
+code > .optional {
+  color: #905;
+}
+
 body ul li {
   margin: 0;
 }

@@ -193,18 +193,18 @@ import {
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon/docgen.json';
-import * as buttonDocs from '@rmwc/button/docgen.json';
-import * as iconButtonDocs from '@rmwc/icon-button/docgen.json';
 
-<DocumentComponent docs={docs} displayName="Card" />
-<DocumentComponent docs={docs} displayName="CardPrimaryAction" />
-<DocumentComponent docs={docs} displayName="CardMedia" />
-<DocumentComponent docs={docs} displayName="CardMediaContent" />
-<DocumentComponent docs={docs} displayName="CardActions" />
-<DocumentComponent docs={docs} displayName="CardActionButtons" />
-<DocumentComponent docs={docs} displayName="CardActionIcons" />
-<DocumentComponent docs={[docs, iconButtonDocs, iconDocs, buttonDocs]} displayName="CardAction" composes={['IconButton', 'Icon', 'Button']}/>
+<Docs src={docs} components={[
+  'Card',
+  'CardPrimaryAction',
+  'CardMedia',
+  'CardMediaContent',
+  'CardActions',
+  'CardActionButtons',
+  'CardActionIcons',
+  'CardActionIcon',
+  'CardActionButton'
+]}/>
 ```

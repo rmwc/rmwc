@@ -244,6 +244,96 @@
 				},
 				{
 					"id": 8,
+					"name": "GridTileIconProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 9,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 48,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "IconProps.icon"
+							}
+						},
+						{
+							"id": 10,
+							"name": "iconOptions",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Additional Icon Options. See the Icon component documentation."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 53,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconOptions"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedIconProps.iconOptions"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								9,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 85,
+							"character": 34
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "IconProps"
+						}
+					]
+				},
+				{
+					"id": 11,
 					"name": "GridList",
 					"kind": 32,
 					"kindString": "Variable",
@@ -271,7 +361,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 9,
+											"id": 12,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -295,7 +385,7 @@
 					"defaultValue": " componentFactory<GridListProps>({\n  displayName: 'GridList',\n  classNames: (props: GridListProps) => [\n    'mdc-grid-list',\n    {\n      'mdc-grid-list--tile-gutter-1': props.tileGutter1,\n      'mdc-grid-list--header-caption': props.headerCaption,\n      'mdc-grid-list--twoline-caption': props.twolineCaption,\n      'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,\n      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect\n    }\n  ],\n  defaultProps: {\n    tileGutter1: false,\n    headerCaption: false,\n    twolineCaption: false,\n    withIconAlignStart: false,\n    tileAspect: '1x1'\n  },\n  consumeProps: [\n    'tileGutter1',\n    'headerCaption',\n    'twolineCaption',\n    'withIconAlignStart',\n    'tileAspect'\n  ],\n  render: (\n    { children, ...rest }: GridListProps & ComponentProps,\n    ref: any,\n    Tag: any\n  ) => (\n    <Tag {...rest} ref={ref}>\n      <ul className=\"mdc-grid-list__tiles\">{children}</ul>\n    </Tag>\n  )\n})"
 				},
 				{
-					"id": 14,
+					"id": 17,
 					"name": "GridTile",
 					"kind": 32,
 					"kindString": "Variable",
@@ -323,7 +413,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 15,
+											"id": 18,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -347,7 +437,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTile',\n  tag: 'li',\n  classNames: ['mdc-grid-tile']\n})"
 				},
 				{
-					"id": 18,
+					"id": 21,
 					"name": "GridTileIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -361,7 +451,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 86,
+							"line": 88,
 							"character": 25
 						}
 					],
@@ -375,7 +465,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 19,
+											"id": 22,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -396,10 +486,10 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'GridTileIcon',\n  tag: Icon,\n  classNames: ['mdc-grid-tile__icon']\n})"
+					"defaultValue": " componentFactory<GridTileIconProps>({\n  displayName: 'GridTileIcon',\n  tag: Icon,\n  classNames: ['mdc-grid-tile__icon']\n})"
 				},
 				{
-					"id": 10,
+					"id": 13,
 					"name": "GridTilePrimary",
 					"kind": 32,
 					"kindString": "Variable",
@@ -427,7 +517,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 11,
+											"id": 14,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -451,7 +541,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimary',\n  classNames: ['mdc-grid-tile__primary']\n})"
 				},
 				{
-					"id": 12,
+					"id": 15,
 					"name": "GridTilePrimaryContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -476,7 +566,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 13,
+											"id": 16,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -500,7 +590,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimaryContent',\n  tag: 'img',\n  classNames: ['mdc-grid-tile__primary-content']\n})"
 				},
 				{
-					"id": 16,
+					"id": 19,
 					"name": "GridTileSecondary",
 					"kind": 32,
 					"kindString": "Variable",
@@ -528,7 +618,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 17,
+											"id": 20,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -552,7 +642,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileSecondary',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__secondary']\n})"
 				},
 				{
-					"id": 20,
+					"id": 23,
 					"name": "GridTileTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -566,7 +656,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 93,
+							"line": 95,
 							"character": 26
 						}
 					],
@@ -580,7 +670,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 21,
+											"id": 24,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -604,7 +694,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileTitle',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__title']\n})"
 				},
 				{
-					"id": 22,
+					"id": 25,
 					"name": "GridTileTitleSupportText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -618,7 +708,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 100,
+							"line": 102,
 							"character": 37
 						}
 					],
@@ -632,7 +722,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 23,
+											"id": 26,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -661,21 +751,22 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2
+						2,
+						8
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						8,
-						14,
-						18,
-						10,
-						12,
-						16,
-						20,
-						22
+						11,
+						17,
+						21,
+						13,
+						15,
+						19,
+						23,
+						25
 					]
 				}
 			],

@@ -61,10 +61,8 @@ import { Button, ButtonIcon } from '@rmwc/button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon/docgen.json';
 
-<DocumentComponent docs={docs} displayName="Button" />
-<DocumentComponent docs={[docs, iconDocs]} displayName="ButtonIcon" composes={['Icon']} />
+<Docs src={docs} components={['Button', 'ButtonIcon']} />
 ```

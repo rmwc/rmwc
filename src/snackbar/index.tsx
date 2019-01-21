@@ -5,8 +5,11 @@ import * as React from 'react';
 // @ts-ignore
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
 import { Button } from '@rmwc/button';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { noop } from '@rmwc/base/utils/noop';
+import {
+  componentFactory,
+  FoundationComponent,
+  CustomEventT
+} from '@rmwc/base';
 import { handleDeprecations } from '@rmwc/base/utils/deprecation';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
@@ -14,9 +17,9 @@ export interface SnackbarProps {
   /** Show the Snackbar. */
   open?: boolean;
   /** A callback thats fired when the Snackbar shows. */
-  onOpen?: (evt: Event) => void;
+  onOpen?: (evt: CustomEventT<{}>) => void;
   /** A callback thats fired when the Snackbar hides. */
-  onClose?: (evt: Event) => void;
+  onClose?: (evt: CustomEventT<{}>) => void;
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.ReactNode;
   /** One or more actions to add to the snackbar. */

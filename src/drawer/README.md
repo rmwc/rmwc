@@ -106,7 +106,6 @@ import {
   DrawerContent,
   DrawerTitle,
   DrawerSubtitle,
-  DrawerScrim
 } from '@rmwc/drawer';
 
 import {
@@ -134,10 +133,6 @@ import { Button } from '@rmwc/button';
   </DrawerContent>
 </Drawer>
 
-{/* REACT 15 ONLY!!! You have to manually include the Scrim. This is done for you in React 16. */}
-<DrawerScrim />
-{/* END REACT 15 ONLY!!! */}
-
 <Button
   onClick={() => this.setState({modalOpen: !this.state.modalOpen})}
   raised
@@ -147,14 +142,15 @@ import { Button } from '@rmwc/button';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Drawer" />
-<DocumentComponent docs={docs} displayName="DrawerHeader" />
-<DocumentComponent docs={docs} displayName="DrawerTitle" />
-<DocumentComponent docs={docs} displayName="DrawerSubtitle" />
-<DocumentComponent docs={docs} displayName="DrawerContent" />
-<DocumentComponent docs={docs} displayName="DrawerScrim" />
-<DocumentComponent docs={docs} displayName="DrawerAppContent" />
+<Docs src={docs} components={[
+  'Drawer',
+  'DrawerHeader',
+  'DrawerTitle',
+  'DrawerSubtitle',
+  'DrawerContent',
+  'DrawerAppContent'
+]}/>
 ```

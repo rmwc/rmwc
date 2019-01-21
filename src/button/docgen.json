@@ -93,7 +93,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 79,
+							"line": 77,
 							"character": 32
 						}
 					],
@@ -114,7 +114,7 @@
 					},
 					"children": [
 						{
-							"id": 10,
+							"id": 9,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -128,7 +128,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 23,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -212,7 +212,7 @@
 							}
 						},
 						{
-							"id": 11,
+							"id": 10,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -226,7 +226,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 25,
+									"line": 23,
 									"character": 6
 								}
 							],
@@ -236,7 +236,7 @@
 							}
 						},
 						{
-							"id": 9,
+							"id": 8,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -250,7 +250,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 21,
+									"line": 19,
 									"character": 7
 								}
 							],
@@ -343,7 +343,7 @@
 							}
 						},
 						{
-							"id": 8,
+							"id": 11,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -352,31 +352,22 @@
 								"isOptional": true
 							},
 							"comment": {
-								"shortText": "Enable / disable the ripple."
+								"shortText": "Adds a ripple effect to the component"
 							},
 							"sources": [
 								{
-									"fileName": "index.tsx",
-									"line": 19,
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+									"line": 278,
 									"character": 8
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "intrinsic",
-										"name": "false"
-									},
-									{
-										"type": "intrinsic",
-										"name": "true"
-									}
-								]
+								"type": "reference",
+								"name": "RipplePropT"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "WithRippleProps.ripple"
 							}
 						},
 						{
@@ -422,14 +413,14 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								10,
+								9,
 								3,
 								7,
-								11,
-								9,
+								10,
+								8,
 								6,
 								4,
-								8,
+								11,
 								5
 							]
 						}
@@ -439,6 +430,12 @@
 							"fileName": "index.tsx",
 							"line": 7,
 							"character": 28
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "WithRippleProps"
 						}
 					]
 				},
@@ -457,7 +454,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 31,
+							"line": 29,
 							"character": 19
 						}
 					],
@@ -565,7 +562,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 82,
+							"line": 80,
 							"character": 23
 						}
 					],

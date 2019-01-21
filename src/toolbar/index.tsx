@@ -83,7 +83,7 @@ export const ToolbarSection = componentFactory<ToolbarSectionProps>({
 });
 
 /** A Toolbar row  */
-export const ToolbarRow = componentFactory({
+export const ToolbarRow = componentFactory<{}>({
   displayName: 'ToolbarRow',
   classNames: ['mdc-toolbar__row']
 });
@@ -91,21 +91,25 @@ export const ToolbarRow = componentFactory({
 /**
  * This component can be placed after a fixed Toolbar component to fill in the space.
  */
-export const ToolbarFixedAdjust = componentFactory({
+export const ToolbarFixedAdjust = componentFactory<{}>({
   displayName: 'ToolbarFixedAdjust',
   classNames: ['mdc-toolbar-fixed-adjust']
 });
+
+export interface ToolbarMenuIconProps extends IconProps {}
 
 /**
  * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
 export const ToolbarMenuIcon = withRipple({ unbounded: true })(
-  componentFactory<IconProps>({
+  componentFactory<ToolbarMenuIconProps>({
     displayName: 'ToolbarMenuIcon',
     tag: Icon,
     classNames: ['mdc-toolbar__menu-icon']
   })
 );
+
+export interface ToolbarIconProps extends IconProps {}
 
 /**
  * A standard Icon for toolbar actions. This is an instance of the Icon component.
@@ -113,7 +117,7 @@ export const ToolbarMenuIcon = withRipple({ unbounded: true })(
 export const ToolbarIcon = withRipple({
   unbounded: true
 })(
-  componentFactory<IconProps>({
+  componentFactory<ToolbarIconProps>({
     displayName: 'ToolbarIcon',
     tag: Icon,
     classNames: ['mdc-toolbar__icon']

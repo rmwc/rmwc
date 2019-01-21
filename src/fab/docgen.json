@@ -187,150 +187,19 @@
 								"isExported": true,
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "Adds a ripple effect to the component"
+							},
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 269,
+									"line": 278,
 									"character": 8
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "boolean"
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 10,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 11,
-													"name": "accent",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-															"line": 272,
-															"character": 14
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												},
-												{
-													"id": 12,
-													"name": "surface",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-															"line": 273,
-															"character": 15
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												},
-												{
-													"id": 13,
-													"name": "unbounded",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-															"line": 274,
-															"character": 17
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														11,
-														12,
-														13
-													]
-												}
-											],
-											"sources": [
-												{
-													"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-													"line": 271,
-													"character": 5
-												}
-											]
-										}
-									}
-								]
+								"type": "reference",
+								"name": "RipplePropT"
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -392,7 +261,7 @@
 					]
 				},
 				{
-					"id": 17,
+					"id": 13,
 					"name": "FabIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -417,7 +286,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 18,
+											"id": 14,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -441,7 +310,7 @@
 					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'FabIcon',\n  tag: Icon,\n  classNames: ['mdc-fab__icon']\n})"
 				},
 				{
-					"id": 19,
+					"id": 15,
 					"name": "FabLabel",
 					"kind": 32,
 					"kindString": "Variable",
@@ -466,7 +335,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 20,
+											"id": 16,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -490,7 +359,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'FabLabel',\n  classNames: ['mdc-fab__label']\n})"
 				},
 				{
-					"id": 14,
+					"id": 10,
 					"name": "FabRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -518,7 +387,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 15,
+													"id": 11,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -561,7 +430,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 16,
+													"id": 12,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -595,7 +464,7 @@
 					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<FabProps>({\n    displayName: 'FabRoot',\n    tag: 'button',\n    classNames: (props: FabProps) => [\n      'mdc-fab',\n      {\n        'mdc-fab--mini': props.mini,\n        'mdc-fab--exited': props.exited,\n        'mdc-fab--extended': props.label\n      }\n    ],\n    defaultProps: {\n      cssOnly: false,\n      mini: false\n    },\n    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']\n  })\n)"
 				},
 				{
-					"id": 21,
+					"id": 17,
 					"name": "Fab",
 					"kind": 64,
 					"kindString": "Function",
@@ -608,7 +477,7 @@
 					},
 					"signatures": [
 						{
-							"id": 22,
+							"id": 18,
 							"name": "Fab",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -618,7 +487,7 @@
 							},
 							"parameters": [
 								{
-									"id": 23,
+									"id": 19,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -627,14 +496,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 24,
+											"id": 20,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 25,
+													"id": 21,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -699,7 +568,7 @@
 													}
 												},
 												{
-													"id": 27,
+													"id": 23,
 													"name": "icon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -740,7 +609,7 @@
 													}
 												},
 												{
-													"id": 26,
+													"id": 22,
 													"name": "label",
 													"kind": 32,
 													"kindString": "Variable",
@@ -758,7 +627,7 @@
 													}
 												},
 												{
-													"id": 29,
+													"id": 25,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -773,11 +642,11 @@
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 29
+														"id": 25
 													}
 												},
 												{
-													"id": 28,
+													"id": 24,
 													"name": "trailingIcon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -823,11 +692,11 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
+														21,
+														23,
+														22,
 														25,
-														27,
-														26,
-														29,
-														28
+														24
 													]
 												}
 											],
@@ -869,16 +738,16 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						17,
-						19,
-						14
+						13,
+						15,
+						10
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						21
+						17
 					]
 				}
 			],

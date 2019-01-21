@@ -82,8 +82,10 @@ export const GridTileSecondary = componentFactory<{}>({
   classNames: ['mdc-grid-tile__secondary']
 });
 
+export interface GridTileIconProps extends IconProps {}
+
 /** The icon for a Grid tile. This is an instance of Icon component. */
-export const GridTileIcon = componentFactory<IconProps>({
+export const GridTileIcon = componentFactory<GridTileIconProps>({
   displayName: 'GridTileIcon',
   tag: Icon,
   classNames: ['mdc-grid-tile__icon']

@@ -6,7 +6,7 @@ getPackageDirs()
   .forEach(d => {
     console.log(`Building Docs For: ${d}`);
     const proc = exec(
-      `export NODE_ENV=development && typedoc ./src/${d}/index.tsx --excludeExternals --excludePrivate --ignoreCompilerErrors --json ./src/${d}/docgen.json`
+      `export NODE_ENV=development && typedoc ./src/${d} --exclude **/*.spec.tsx --excludeExternals --excludePrivate --ignoreCompilerErrors --json ./src/${d}/docgen.json`
     );
 
     proc.stdout.on('data', data => {

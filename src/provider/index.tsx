@@ -6,7 +6,7 @@ import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 // eslint-disable-next-line max-len
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
-export interface RMWCProviderOptions {
+export interface RMWCProviderProps {
   /** Set the buttons ripple effect globally */
   ripple?: boolean;
   /** Global options for icons */
@@ -15,7 +15,7 @@ export interface RMWCProviderOptions {
   children?: React.ReactNode;
 }
 
-export interface DeprecatedRMWCProviderOptionsT {
+export interface DeprecatedRMWCProviderPropsT {
   /** DEPRECATED: Use the 'icon' prop. icon={{basename: 'material-icons'}} */
   iconClassNameBase?: string;
   /** DEPRECATED: Use the 'icon' prop. icon={{prefix: 'glyphicons-'}} */
@@ -29,7 +29,7 @@ export interface DeprecatedRMWCProviderOptionsT {
 }
 
 // Default provider options
-const providerDefaults: RMWCProviderOptions = {
+const providerDefaults: RMWCProviderProps = {
   ripple: true,
   icon: {
     basename: 'material-icons',
@@ -40,7 +40,7 @@ const providerDefaults: RMWCProviderOptions = {
 };
 
 export interface WithProviderContext {
-  providerContext: RMWCProviderOptions;
+  providerContext: RMWCProviderProps;
 }
 
 export const ProviderContext = React.createContext(providerDefaults);
@@ -67,7 +67,7 @@ export const RMWCProvider = ({
   iconStrategy,
   iconRender,
   ...rest
-}: RMWCProviderOptions & DeprecatedRMWCProviderOptionsT) => {
+}: RMWCProviderProps & DeprecatedRMWCProviderPropsT) => {
   const value = { ...providerDefaults };
   const iconOptions: IconOptions = { ...value.icon };
 

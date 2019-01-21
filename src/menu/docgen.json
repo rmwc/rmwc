@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 1,
+			"id": 363,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -20,6 +20,7698 @@
 					"character": 0
 				}
 			]
+		},
+		{
+			"id": 188,
+			"name": "\"menu\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu.tsx",
+			"children": [
+				{
+					"id": 209,
+					"name": "Menu",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A menu component for displaying lists items."
+					},
+					"typeParameter": [
+						{
+							"id": 239,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 276,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 213,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 214,
+									"name": "new Menu",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 215,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MenuProps",
+												"id": 189
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Menu",
+										"id": 209
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 74,
+									"character": 41
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 246,
+							"name": "canUpdate",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.canUpdate"
+							}
+						},
+						{
+							"id": 242,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 243,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 244,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 245,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 201,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 241,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 200,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 211,
+							"name": "list",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 73,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "List"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 212,
+							"name": "menuSurface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 74,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "MenuSurface",
+										"id": 15
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 210,
+							"name": "displayName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 71,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Menu\""
+						},
+						{
+							"id": 240,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 198,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 216,
+							"name": "items",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 217,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "HTMLLIElement"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 83,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 292,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 293,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 298,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 299,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 300,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 301,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 307,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 308,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 309,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 310,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 311,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 282,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 283,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 284,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 285,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 247,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 248,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 214,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 249,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 250,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 251,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "MenuProps",
+														"id": 189
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 219,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 290,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 291,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 294,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 295,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 296,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 297,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 252,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 253,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 302,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 303,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 304,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 305,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 306,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 254,
+							"name": "createElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 255,
+									"name": "createElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 256,
+											"name": "ElementType",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 257,
+											"name": "elementName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "FoundationElement",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "unknown",
+												"name": "ElementType"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.createElement"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 229,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.createElement"
+							}
+						},
+						{
+							"id": 271,
+							"name": "emit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 272,
+									"name": "emit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Fires a cross-browser-compatible custom event from the component root of the given type,"
+									},
+									"parameters": [
+										{
+											"id": 273,
+											"name": "evtType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 274,
+											"name": "evtData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Object"
+											}
+										},
+										{
+											"id": 275,
+											"name": "shouldBubble",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "CustomEvent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.emit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 256,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.emit"
+							}
+						},
+						{
+							"id": 226,
+							"name": "getDefaultFoundation",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 227,
+									"name": "getDefaultFoundation",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.getDefaultFoundation"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 99,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.getDefaultFoundation"
+							}
+						},
+						{
+							"id": 286,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 287,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 288,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 289,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 228,
+							"name": "handleClick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 229,
+									"name": "handleClick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 230,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MouseEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 142,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 231,
+							"name": "handleKeydown",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 232,
+									"name": "handleKeydown",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 233,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "KeyboardEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 147,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 234,
+							"name": "handleOpen",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 235,
+									"name": "handleOpen",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 236,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "CustomEventT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "__type"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 152,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 218,
+							"name": "hoistMenuToBody",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 219,
+									"name": "hoistMenuToBody",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 87,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 237,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 238,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 160,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 220,
+							"name": "setAnchorCorner",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 221,
+									"name": "setAnchorCorner",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 222,
+											"name": "corner",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 91,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 223,
+							"name": "setAnchorElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 224,
+									"name": "setAnchorElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 225,
+											"name": "element",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "HTMLElement"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 95,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 277,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 278,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 279,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuProps",
+																"id": 189
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 280,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 281,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 260,
+							"name": "sync",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 261,
+									"name": "sync",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 262,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 263,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.sync"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 240,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.sync"
+							}
+						},
+						{
+							"id": 264,
+							"name": "syncProp",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 265,
+									"name": "syncProp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 266,
+											"name": "prop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 267,
+											"name": "prevProp",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 268,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 269,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 270,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 242,
+															"character": 46
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.syncProp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 242,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.syncProp"
+							}
+						},
+						{
+							"id": 258,
+							"name": "update",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 259,
+									"name": "update",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.update"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 236,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.update"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								213
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								246,
+								242,
+								241,
+								211,
+								212,
+								210,
+								240
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								216
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								292,
+								298,
+								307,
+								282,
+								247,
+								249,
+								290,
+								294,
+								252,
+								302,
+								254,
+								271,
+								226,
+								286,
+								228,
+								231,
+								234,
+								218,
+								237,
+								220,
+								223,
+								277,
+								260,
+								264,
+								258
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 70,
+							"character": 17
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FoundationComponent",
+							"typeArguments": [
+								{
+									"type": "reference",
+									"name": "MenuProps",
+									"id": 189
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 189,
+					"name": "MenuProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Menu"
+					},
+					"children": [
+						{
+							"id": 199,
+							"name": "anchorCorner",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Manually position the menu to one of the corners."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AnchorT",
+								"id": 183
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.anchorCorner",
+								"id": 5
+							}
+						},
+						{
+							"id": 208,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children to render."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 41,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.children",
+								"id": 14
+							}
+						},
+						{
+							"id": 198,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the menu position fixed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.fixed",
+								"id": 4
+							}
+						},
+						{
+							"id": 204,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is closed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 39,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 205,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 206,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 207,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onClose",
+								"id": 10
+							}
+						},
+						{
+							"id": 200,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is opened."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 201,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 202,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 203,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onOpen",
+								"id": 6
+							}
+						},
+						{
+							"id": 190,
+							"name": "onSelect",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback that fires when a Menu item is selected."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 24,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 191,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 192,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 193,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "CustomEventT",
+																		"typeArguments": [
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 194,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {},
+																					"children": [
+																						{
+																							"id": 195,
+																							"name": "index",
+																							"kind": 32,
+																							"kindString": "Variable",
+																							"flags": {},
+																							"sources": [
+																								{
+																									"fileName": "menu.tsx",
+																									"line": 27,
+																									"character": 15
+																								}
+																							],
+																							"type": {
+																								"type": "intrinsic",
+																								"name": "number"
+																							}
+																						},
+																						{
+																							"id": 196,
+																							"name": "item",
+																							"kind": 32,
+																							"kindString": "Variable",
+																							"flags": {},
+																							"sources": [
+																								{
+																									"fileName": "menu.tsx",
+																									"line": 28,
+																									"character": 14
+																								}
+																							],
+																							"type": {
+																								"type": "reference",
+																								"name": "HTMLElement"
+																							}
+																						}
+																					],
+																					"groups": [
+																						{
+																							"title": "Variables",
+																							"kind": 32,
+																							"children": [
+																								195,
+																								196
+																							]
+																						}
+																					],
+																					"sources": [
+																						{
+																							"fileName": "menu.tsx",
+																							"line": 26,
+																							"character": 21
+																						}
+																					]
+																				}
+																			}
+																		]
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 197,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Opens the menu."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 31,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.open",
+								"id": 3
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								199,
+								208,
+								198,
+								204,
+								200,
+								190,
+								197
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 22,
+							"character": 26
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "MenuSurfaceProps",
+							"id": 2
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "SimpleMenuProps",
+							"id": 312
+						}
+					]
+				},
+				{
+					"id": 312,
+					"name": "SimpleMenuProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Simple Menu"
+					},
+					"children": [
+						{
+							"id": 325,
+							"name": "anchorCorner",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Manually position the menu to one of the corners."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AnchorT",
+								"id": 183
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.anchorCorner",
+								"id": 5
+							}
+						},
+						{
+							"id": 315,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children to render"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 192,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.children",
+								"id": 14
+							}
+						},
+						{
+							"id": 324,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the menu position fixed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.fixed",
+								"id": 4
+							}
+						},
+						{
+							"id": 313,
+							"name": "handle",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "An element that will open the menu when clicked"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 188,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ReactElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 330,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is closed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 39,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 331,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 332,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 333,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onClose",
+								"id": 10
+							}
+						},
+						{
+							"id": 326,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is opened."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 327,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 328,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 329,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onOpen",
+								"id": 6
+							}
+						},
+						{
+							"id": 316,
+							"name": "onSelect",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback that fires when a Menu item is selected."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 24,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 317,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 318,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 319,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "CustomEventT",
+																		"typeArguments": [
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 320,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {},
+																					"children": [
+																						{
+																							"id": 321,
+																							"name": "index",
+																							"kind": 32,
+																							"kindString": "Variable",
+																							"flags": {},
+																							"sources": [
+																								{
+																									"fileName": "menu.tsx",
+																									"line": 27,
+																									"character": 15
+																								}
+																							],
+																							"type": {
+																								"type": "intrinsic",
+																								"name": "number"
+																							}
+																						},
+																						{
+																							"id": 322,
+																							"name": "item",
+																							"kind": 32,
+																							"kindString": "Variable",
+																							"flags": {},
+																							"sources": [
+																								{
+																									"fileName": "menu.tsx",
+																									"line": 28,
+																									"character": 14
+																								}
+																							],
+																							"type": {
+																								"type": "reference",
+																								"name": "HTMLElement"
+																							}
+																						}
+																					],
+																					"groups": [
+																						{
+																							"title": "Variables",
+																							"kind": 32,
+																							"children": [
+																								321,
+																								322
+																							]
+																						}
+																					],
+																					"sources": [
+																						{
+																							"fileName": "menu.tsx",
+																							"line": 26,
+																							"character": 21
+																						}
+																					]
+																				}
+																			}
+																		]
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuProps.onSelect",
+								"id": 190
+							}
+						},
+						{
+							"id": 323,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Opens the menu."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 31,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.open",
+								"id": 3
+							}
+						},
+						{
+							"id": 314,
+							"name": "rootProps",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 190,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								325,
+								315,
+								324,
+								313,
+								330,
+								326,
+								316,
+								323,
+								314
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 186,
+							"character": 32
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "MenuProps",
+							"id": 189
+						}
+					]
+				},
+				{
+					"id": 349,
+					"name": "SimpleMenuState",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 350,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 205,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								350
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 204,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 334,
+					"name": "SimpleMenuSurfaceProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 340,
+							"name": "anchorCorner",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Manually position the menu to one of the corners."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AnchorT",
+								"id": 183
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.anchorCorner",
+								"id": 5
+							}
+						},
+						{
+							"id": 337,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children to render"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.children",
+								"id": 14
+							}
+						},
+						{
+							"id": 339,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the menu position fixed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.fixed",
+								"id": 4
+							}
+						},
+						{
+							"id": 335,
+							"name": "handle",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "An element that will open the menu when clicked"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 197,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ReactElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 345,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is closed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 39,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 346,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 347,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 348,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onClose",
+								"id": 10
+							}
+						},
+						{
+							"id": 341,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is opened."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 342,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 343,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 344,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onOpen",
+								"id": 6
+							}
+						},
+						{
+							"id": 338,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Opens the menu."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 31,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.open",
+								"id": 3
+							}
+						},
+						{
+							"id": 336,
+							"name": "rootProps",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 199,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								340,
+								337,
+								339,
+								335,
+								345,
+								341,
+								338,
+								336
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 195,
+							"character": 39
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "MenuSurfaceProps",
+							"id": 2
+						}
+					]
+				},
+				{
+					"id": 355,
+					"name": "MenuItem",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role=\"menuitem\"` and `tabIndex=\"0\"` to the components for accessibility."
+					},
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 60,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 356,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuItem',\n  tag: ListItem,\n  defaultProps: {\n    role: 'menuitem',\n    tabIndex: 0\n  }\n})"
+				},
+				{
+					"id": 353,
+					"name": "MenuItems",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 49,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 354,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuItems',\n  tag: List,\n  classNames: ['mdc-list mdc-menu__items'],\n  defaultProps: {\n    role: 'menu'\n  }\n})"
+				},
+				{
+					"id": 351,
+					"name": "MenuRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 34,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 352,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<MenuProps>({\n  displayName: 'MenuRoot',\n  classNames: (props: MenuProps) => [\n    'mdc-menu',\n    'mdc-menu-surface',\n    {\n      'mdc-menu-surface--fixed': props.fixed\n    }\n  ],\n  consumeProps: ['fixed'],\n  defaultProps: {\n    tabIndex: -1\n  }\n})"
+				},
+				{
+					"id": 361,
+					"name": "SimpleMenu",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor"
+					},
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 276,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "SimpleMenuProps",
+										"id": 312
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "SimpleMenuProps",
+										"id": 312
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " simpleMenuFactory<SimpleMenuProps>(Menu)"
+				},
+				{
+					"id": 362,
+					"name": "SimpleMenuSurface",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The same as SimpleMenu, but a generic surface."
+					},
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 281,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "SimpleMenuSurfaceProps",
+										"id": 334
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "SimpleMenuSurfaceProps",
+										"id": 334
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " simpleMenuFactory<SimpleMenuSurfaceProps>(\n  MenuSurface\n)"
+				},
+				{
+					"id": 357,
+					"name": "simpleMenuFactory",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 358,
+							"name": "simpleMenuFactory",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 359,
+									"name": "Props",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "SimpleMenuProps",
+										"id": 312
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 360,
+									"name": "MenuComponent",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "React.ComponentType",
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "MenuProps",
+														"id": 189
+													},
+													{
+														"type": "reference",
+														"name": "MenuSurfaceProps",
+														"id": 2
+													}
+												]
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ComponentType",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "Props",
+										"constraint": {
+											"type": "reference",
+											"name": "SimpleMenuProps",
+											"id": 312
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 208,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						209
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						189,
+						312,
+						349,
+						334
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						355,
+						353,
+						351,
+						361,
+						362
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						357
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "menu.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"menu-surface\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
+			"children": [
+				{
+					"id": 15,
+					"name": "MenuSurface",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A generic menu component for displaying any type of content."
+					},
+					"typeParameter": [
+						{
+							"id": 105,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 138,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 22,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 23,
+									"name": "new MenuSurface",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 24,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MenuSurfaceProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "MenuSurface",
+										"id": 15
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 65,
+									"character": 18
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 17,
+							"name": "anchorElement",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 61,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 112,
+							"name": "canUpdate",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.canUpdate"
+							}
+						},
+						{
+							"id": 108,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 109,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 110,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 111,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 201,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 19,
+							"name": "firstFocusableElement",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 63,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 107,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 200,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 21,
+							"name": "hoisted",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 65,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 20,
+							"name": "lastFocusableElement",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 64,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 18,
+							"name": "previousFocus",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 62,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 16,
+							"name": "root",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 60,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "FoundationElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									},
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									}
+								]
+							},
+							"defaultValue": " this.createElement('root')"
+						},
+						{
+							"id": 106,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 198,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 25,
+							"name": "open",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {},
+							"getSignature": [
+								{
+									"id": 26,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"comment": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"setSignature": [
+								{
+									"id": 27,
+									"name": "__set",
+									"kind": 1048576,
+									"kindString": "Set signature",
+									"flags": {},
+									"comment": {},
+									"parameters": [
+										{
+											"id": 28,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 73,
+									"character": 10
+								},
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 78,
+									"character": 10
+								}
+							]
+						},
+						{
+							"id": 154,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 155,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 160,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 162,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 163,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 169,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 170,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 171,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 172,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 173,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 144,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 145,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 146,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 147,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 113,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 114,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 214,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 115,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 116,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 117,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "MenuSurfaceProps",
+														"id": 2
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 219,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 152,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 153,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 156,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 157,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 158,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 159,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 118,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 119,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 164,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 165,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 166,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 167,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 168,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 120,
+							"name": "createElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 121,
+									"name": "createElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 122,
+											"name": "ElementType",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 123,
+											"name": "elementName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "FoundationElement",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "unknown",
+												"name": "ElementType"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.createElement"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 229,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.createElement"
+							}
+						},
+						{
+							"id": 95,
+							"name": "deregisterBodyClickListener",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 96,
+									"name": "deregisterBodyClickListener",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 243,
+									"character": 29
+								}
+							]
+						},
+						{
+							"id": 133,
+							"name": "emit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 134,
+									"name": "emit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Fires a cross-browser-compatible custom event from the component root of the given type,"
+									},
+									"parameters": [
+										{
+											"id": 135,
+											"name": "evtType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 136,
+											"name": "evtData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Object"
+											}
+										},
+										{
+											"id": 137,
+											"name": "shouldBubble",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "CustomEvent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.emit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 256,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.emit"
+							}
+						},
+						{
+							"id": 29,
+							"name": "getDefaultFoundation",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 30,
+									"name": "getDefaultFoundation",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.getDefaultFoundation"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 97,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.getDefaultFoundation"
+							}
+						},
+						{
+							"id": 48,
+							"name": "getDimensionAdapterMethods",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 49,
+									"name": "getDimensionAdapterMethods",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 50,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 56,
+													"name": "getAnchorDimensions",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 57,
+															"name": "getAnchorDimensions",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "reference",
+																		"name": "ClientRect"
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DOMRect"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 166,
+															"character": 25
+														}
+													]
+												},
+												{
+													"id": 63,
+													"name": "getBodyDimensions",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 64,
+															"name": "getBodyDimensions",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 65,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 67,
+																			"name": "height",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 174,
+																					"character": 16
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " document.body.clientHeight"
+																		},
+																		{
+																			"id": 66,
+																			"name": "width",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 173,
+																					"character": 15
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " document.body.clientWidth"
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				67,
+																				66
+																			]
+																		}
+																	]
+																}
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 171,
+															"character": 23
+														}
+													]
+												},
+												{
+													"id": 51,
+													"name": "getInnerDimensions",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 52,
+															"name": "getInnerDimensions",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 53,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 55,
+																			"name": "height",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 163,
+																					"character": 16
+																				}
+																			],
+																			"type": {
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "intrinsic",
+																						"name": "null"
+																					},
+																					{
+																						"type": "intrinsic",
+																						"name": "number"
+																					}
+																				]
+																			},
+																			"defaultValue": " this.root.ref && this.root.ref.offsetHeight"
+																		},
+																		{
+																			"id": 54,
+																			"name": "width",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 162,
+																					"character": 15
+																				}
+																			],
+																			"type": {
+																				"type": "union",
+																				"types": [
+																					{
+																						"type": "intrinsic",
+																						"name": "null"
+																					},
+																					{
+																						"type": "intrinsic",
+																						"name": "number"
+																					}
+																				]
+																			},
+																			"defaultValue": " this.root.ref && this.root.ref.offsetWidth"
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				55,
+																				54
+																			]
+																		}
+																	]
+																}
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 160,
+															"character": 24
+														}
+													]
+												},
+												{
+													"id": 58,
+													"name": "getWindowDimensions",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 59,
+															"name": "getWindowDimensions",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 60,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 62,
+																			"name": "height",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 169,
+																					"character": 49
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " window.innerHeight"
+																		},
+																		{
+																			"id": 61,
+																			"name": "width",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 169,
+																					"character": 22
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " window.innerWidth"
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				62,
+																				61
+																			]
+																		}
+																	]
+																}
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 168,
+															"character": 25
+														}
+													]
+												},
+												{
+													"id": 68,
+													"name": "getWindowScroll",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 69,
+															"name": "getWindowScroll",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 70,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 71,
+																			"name": "x",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 178,
+																					"character": 18
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " window.pageXOffset"
+																		},
+																		{
+																			"id": 72,
+																			"name": "y",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 178,
+																					"character": 41
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "number"
+																			},
+																			"defaultValue": " window.pageYOffset"
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				71,
+																				72
+																			]
+																		}
+																	]
+																}
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 177,
+															"character": 21
+														}
+													]
+												},
+												{
+													"id": 81,
+													"name": "setMaxHeight",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 82,
+															"name": "setMaxHeight",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 83,
+																	"name": "height",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "number"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 197,
+															"character": 18
+														}
+													]
+												},
+												{
+													"id": 73,
+													"name": "setPosition",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 74,
+															"name": "setPosition",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 75,
+																	"name": "position",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "reflection",
+																		"declaration": {
+																			"id": 76,
+																			"name": "__type",
+																			"kind": 65536,
+																			"kindString": "Type literal",
+																			"flags": {},
+																			"children": [
+																				{
+																					"id": 79,
+																					"name": "bottom",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu-surface.tsx",
+																							"line": 183,
+																							"character": 14
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "string"
+																					}
+																				},
+																				{
+																					"id": 80,
+																					"name": "left",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu-surface.tsx",
+																							"line": 184,
+																							"character": 12
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "string"
+																					}
+																				},
+																				{
+																					"id": 78,
+																					"name": "right",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu-surface.tsx",
+																							"line": 182,
+																							"character": 13
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "string"
+																					}
+																				},
+																				{
+																					"id": 77,
+																					"name": "top",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu-surface.tsx",
+																							"line": 181,
+																							"character": 11
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "string"
+																					}
+																				}
+																			],
+																			"groups": [
+																				{
+																					"title": "Variables",
+																					"kind": 32,
+																					"children": [
+																						79,
+																						80,
+																						78,
+																						77
+																					]
+																				}
+																			],
+																			"sources": [
+																				{
+																					"fileName": "menu-surface.tsx",
+																					"line": 180,
+																					"character": 29
+																				}
+																			]
+																		}
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 180,
+															"character": 17
+														}
+													]
+												}
+											],
+											"groups": [
+												{
+													"title": "Functions",
+													"kind": 64,
+													"children": [
+														56,
+														63,
+														51,
+														58,
+														68,
+														81,
+														73
+													]
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 158,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 31,
+							"name": "getFocusAdapterMethods",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 32,
+									"name": "getFocusAdapterMethods",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 33,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 44,
+													"name": "focusFirstElement",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 45,
+															"name": "focusFirstElement",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 147,
+															"character": 23
+														}
+													]
+												},
+												{
+													"id": 46,
+													"name": "focusLastElement",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 47,
+															"name": "focusLastElement",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 151,
+															"character": 22
+														}
+													]
+												},
+												{
+													"id": 40,
+													"name": "isFirstElementFocused",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 41,
+															"name": "isFirstElementFocused",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 141,
+															"character": 27
+														}
+													]
+												},
+												{
+													"id": 34,
+													"name": "isFocused",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 35,
+															"name": "isFocused",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 130,
+															"character": 15
+														}
+													]
+												},
+												{
+													"id": 42,
+													"name": "isLastElementFocused",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 43,
+															"name": "isLastElementFocused",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 144,
+															"character": 26
+														}
+													]
+												},
+												{
+													"id": 38,
+													"name": "restoreFocus",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 39,
+															"name": "restoreFocus",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 134,
+															"character": 18
+														}
+													]
+												},
+												{
+													"id": 36,
+													"name": "saveFocus",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 37,
+															"name": "saveFocus",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "menu-surface.tsx",
+															"line": 131,
+															"character": 15
+														}
+													]
+												}
+											],
+											"groups": [
+												{
+													"title": "Functions",
+													"kind": 64,
+													"children": [
+														44,
+														46,
+														40,
+														34,
+														42,
+														38,
+														36
+													]
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 128,
+									"character": 24
+								}
+							]
+						},
+						{
+							"id": 148,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 149,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 150,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 151,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 97,
+							"name": "handleBodyClick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 98,
+									"name": "handleBodyClick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 99,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MouseEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 247,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 100,
+							"name": "handleKeydown",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "handleKeydown",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "KeyboardEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 251,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 88,
+							"name": "hoistMenuToBody",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 89,
+									"name": "hoistMenuToBody",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 226,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 93,
+							"name": "registerBodyClickListener",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 94,
+									"name": "registerBodyClickListener",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 240,
+									"character": 27
+								}
+							]
+						},
+						{
+							"id": 103,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 104,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 255,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 90,
+							"name": "setAnchorCorner",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 91,
+									"name": "setAnchorCorner",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 92,
+											"name": "corner",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 236,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 139,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 140,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 141,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "MenuSurfaceProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 142,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 143,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 84,
+							"name": "sync",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 85,
+									"name": "sync",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 86,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MenuSurfaceProps",
+												"id": 2
+											}
+										},
+										{
+											"id": 87,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MenuSurfaceProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.sync"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 203,
+									"character": 6
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.sync"
+							}
+						},
+						{
+							"id": 126,
+							"name": "syncProp",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 127,
+									"name": "syncProp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 128,
+											"name": "prop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 129,
+											"name": "prevProp",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 130,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 131,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 132,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 242,
+															"character": 46
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.syncProp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 242,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.syncProp"
+							}
+						},
+						{
+							"id": 124,
+							"name": "update",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 125,
+									"name": "update",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.update"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 236,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.update"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								22
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								17,
+								112,
+								108,
+								19,
+								107,
+								21,
+								20,
+								18,
+								16,
+								106
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								25
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								154,
+								160,
+								169,
+								144,
+								113,
+								115,
+								152,
+								156,
+								118,
+								164,
+								120,
+								95,
+								133,
+								29,
+								48,
+								31,
+								148,
+								97,
+								100,
+								88,
+								93,
+								103,
+								90,
+								139,
+								84,
+								126,
+								124
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 59,
+							"character": 24
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FoundationComponent",
+							"typeArguments": [
+								{
+									"type": "reference",
+									"name": "MenuSurfaceProps",
+									"id": 2
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "MenuSurfaceProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 5,
+							"name": "anchorCorner",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Manually position the menu to one of the corners."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AnchorT",
+								"id": 183
+							}
+						},
+						{
+							"id": 14,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children to render."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 41,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 4,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the menu position fixed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is closed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 39,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 11,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 12,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 13,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 6,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is opened."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 7,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 8,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 9,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Opens the menu."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 31,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								5,
+								14,
+								4,
+								10,
+								6,
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 29,
+							"character": 33
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "MenuProps",
+							"id": 189
+						},
+						{
+							"type": "reference",
+							"name": "SimpleMenuSurfaceProps",
+							"id": 334
+						}
+					]
+				},
+				{
+					"id": 183,
+					"name": "AnchorT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 27,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "stringLiteral",
+								"value": "bottomEnd"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "bottomLeft"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "bottomRight"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "bottomStart"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "topEnd"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "topLeft"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "topRight"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "topStart"
+							}
+						]
+					}
+				},
+				{
+					"id": 186,
+					"name": "MenuSurfaceAnchor",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute."
+					},
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 282,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 187,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory({\n  displayName: 'MenuSurfaceAnchor',\n  classNames: ['mdc-menu-surface--anchor']\n})"
+				},
+				{
+					"id": 184,
+					"name": "MenuSurfaceRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "MenuSurface"
+					},
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 47,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 185,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuSurfaceRoot',\n  classNames: (props: MenuSurfaceProps) => [\n    'mdc-menu-surface',\n    {\n      'mdc-menu-surface--fixed': props.fixed\n    }\n  ],\n  consumeProps: ['fixed']\n})"
+				},
+				{
+					"id": 174,
+					"name": "ANCHOR_CORNER_MAP",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isConst": true
+					},
+					"children": [
+						{
+							"id": 175,
+							"name": "bottomEnd",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 16,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"BOTTOM_END\""
+						},
+						{
+							"id": 176,
+							"name": "bottomLeft",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 17,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"BOTTOM_LEFT\""
+						},
+						{
+							"id": 177,
+							"name": "bottomRight",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 18,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"BOTTOM_RIGHT\""
+						},
+						{
+							"id": 178,
+							"name": "bottomStart",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 19,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"BOTTOM_START\""
+						},
+						{
+							"id": 179,
+							"name": "topEnd",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 20,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"TOP_END\""
+						},
+						{
+							"id": 180,
+							"name": "topLeft",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 21,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"TOP_LEFT\""
+						},
+						{
+							"id": 181,
+							"name": "topRight",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 22,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"TOP_RIGHT\""
+						},
+						{
+							"id": 182,
+							"name": "topStart",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 23,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"TOP_START\""
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								175,
+								176,
+								177,
+								178,
+								179,
+								180,
+								181,
+								182
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 15,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						15
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						183
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						186,
+						184
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						174
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "menu-surface.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
 		}
 	],
 	"groups": [
@@ -27,6 +7719,8 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
+				363,
+				188,
 				1
 			]
 		}

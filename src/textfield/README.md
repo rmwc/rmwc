@@ -73,11 +73,8 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon//docgen.json';
 
-<DocumentComponent docs={docs} displayName="TextField" />
-<DocumentComponent docs={[docs, iconDocs]} displayName="TextFieldIcon" composes={['Icon']}/>
-<DocumentComponent docs={docs} displayName="TextFieldHelperText" />
+<Docs src={docs} components={['TextField', 'TextFieldIcon', 'TextFieldHelperText']} />
 ```

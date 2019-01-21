@@ -3584,9 +3584,7 @@
 					"name": "ChipIconProps",
 					"kind": 256,
 					"kindString": "Interface",
-					"flags": {
-						"isExported": true
-					},
+					"flags": {},
 					"children": [
 						{
 							"id": 206,
@@ -3594,7 +3592,6 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -3622,7 +3619,6 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -3650,7 +3646,6 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -3687,7 +3682,6 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -3735,7 +3729,7 @@
 						{
 							"fileName": "index.tsx",
 							"line": 203,
-							"character": 30
+							"character": 23
 						}
 					],
 					"extendedTypes": [
@@ -4638,7 +4632,6 @@
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {
-						"isExported": true,
 						"isConst": true
 					},
 					"signatures": [
@@ -4681,7 +4674,7 @@
 						{
 							"fileName": "index.tsx",
 							"line": 227,
-							"character": 21
+							"character": 14
 						}
 					]
 				},

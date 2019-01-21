@@ -84,7 +84,7 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "string"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",
@@ -117,7 +117,7 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "string"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",
@@ -150,7 +150,7 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "string"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",
@@ -183,15 +183,11 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "string"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",
 										"name": "number"
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
 									}
 								]
 							}
@@ -220,7 +216,7 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "string"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",

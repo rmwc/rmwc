@@ -702,7 +702,6 @@
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {
-						"isExported": true,
 						"isConst": true
 					},
 					"comment": {
@@ -805,7 +804,7 @@
 												{
 													"fileName": "index.tsx",
 													"line": 47,
-													"character": 28
+													"character": 21
 												}
 											]
 										}
@@ -822,7 +821,7 @@
 						{
 							"fileName": "index.tsx",
 							"line": 47,
-							"character": 24
+							"character": 17
 						}
 					]
 				},

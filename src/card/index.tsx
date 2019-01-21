@@ -69,16 +69,16 @@ export const CardPrimaryAction = withRipple({
 /****************************************************************
  * Card Actions
  ****************************************************************/
-export interface CardActions {
+export interface CardActionsProps {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
   fullBleed?: boolean;
 }
 
 /** Row containing action buttons and/or icons */
-export const CardActions = componentFactory<CardActions>({
+export const CardActions = componentFactory<CardActionsProps>({
   displayName: 'CardActions',
   tag: 'section',
-  classNames: (props: CardActions) => [
+  classNames: (props: CardActionsProps) => [
     'mdc-card__actions',
     { 'mdc-card__actions--full-bleed': props.fullBleed }
   ],
@@ -97,15 +97,19 @@ export const CardActionIcons = componentFactory<{}>({
   classNames: ['mdc-card__action-icons']
 });
 
+interface CardActionIconProps extends IconButtonProps {}
+
 /** A card action Icon */
-export const CardActionIcon = componentFactory<IconButtonProps>({
+export const CardActionIcon = componentFactory<CardActionIconProps>({
   displayName: 'CardActionIcon',
   tag: IconButton,
   classNames: ['mdc-card__action', 'mdc-card__action--icon']
 });
 
+interface CardActionButtonProps extends ButtonProps {}
+
 /** A card action Button */
-export const CardActionButton = componentFactory<ButtonProps>({
+export const CardActionButton = componentFactory<CardActionButtonProps>({
   displayName: 'CardActionButton',
   tag: Button,
   classNames: ['mdc-card__action', 'mdc-card__action--button']

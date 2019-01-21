@@ -16,7 +16,7 @@
 			"children": [
 				{
 					"id": 6,
-					"name": "DeprecatedRMWCProviderOptionsT",
+					"name": "DeprecatedRMWCProviderPropsT",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {
@@ -257,13 +257,13 @@
 						{
 							"fileName": "index.tsx",
 							"line": 18,
-							"character": 47
+							"character": 45
 						}
 					]
 				},
 				{
 					"id": 2,
-					"name": "RMWCProviderOptions",
+					"name": "RMWCProviderProps",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {
@@ -371,7 +371,7 @@
 						{
 							"fileName": "index.tsx",
 							"line": 9,
-							"character": 36
+							"character": 34
 						}
 					]
 				},
@@ -401,7 +401,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "RMWCProviderOptions",
+								"name": "RMWCProviderProps",
 								"id": 2
 							}
 						}
@@ -488,7 +488,7 @@
 						"typeArguments": [
 							{
 								"type": "reference",
-								"name": "RMWCProviderOptions",
+								"name": "RMWCProviderProps",
 								"id": 2
 							}
 						]

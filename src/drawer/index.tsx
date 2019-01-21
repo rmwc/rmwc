@@ -44,7 +44,7 @@ export const DrawerContent = componentFactory<{}>({
  * Drawer Scrim
  ***************************************************************************************/
 /** Protects the app's UI from interactions while a modal drawer is open. */
-export const DrawerScrim = ({
+const DrawerScrim = ({
   onClick
 }: {
   onClick: (evt: React.MouseEvent<HTMLDivElement>) => void;

@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { componentFactory } from '@rmwc/base';
-import { withRipple } from '@rmwc/ripple';
+import { withRipple, WithRippleProps } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
-export interface ButtonProps {
+export interface ButtonProps extends WithRippleProps {
   /** Make the Button dense. */
   dense?: boolean;
   /** Make the Button raised. */
@@ -15,8 +15,6 @@ export interface ButtonProps {
   outlined?: boolean;
   /** make the button disabled */
   disabled?: boolean;
-  /** Enable / disable the ripple. */
-  ripple?: boolean;
   /** Content specified as a label prop. */
   label?: React.ReactNode | any;
   /** Content specified as children. */

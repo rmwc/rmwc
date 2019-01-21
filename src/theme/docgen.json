@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 1,
+			"id": 187,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -15,7 +15,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/theme/index.tsx",
 			"children": [
 				{
-					"id": 14,
+					"id": 200,
 					"name": "ThemeProvider",
 					"kind": 128,
 					"kindString": "Class",
@@ -27,21 +27,21 @@
 					},
 					"typeParameter": [
 						{
-							"id": 24,
+							"id": 210,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 25,
+							"id": 211,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 70,
+							"id": 256,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -50,7 +50,7 @@
 					],
 					"children": [
 						{
-							"id": 73,
+							"id": 259,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -71,7 +71,7 @@
 							},
 							"signatures": [
 								{
-									"id": 74,
+									"id": 260,
 									"name": "new ThemeProvider",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -79,7 +79,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 75,
+											"id": 261,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -91,7 +91,7 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
@@ -100,7 +100,7 @@
 									"type": {
 										"type": "reference",
 										"name": "ThemeProvider",
-										"id": 14
+										"id": 200
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -108,7 +108,7 @@
 									}
 								},
 								{
-									"id": 76,
+									"id": 262,
 									"name": "new ThemeProvider",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -127,7 +127,7 @@
 									},
 									"parameters": [
 										{
-											"id": 77,
+											"id": 263,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -135,11 +135,11 @@
 											"type": {
 												"type": "reference",
 												"name": "ThemeProviderProps",
-												"id": 5
+												"id": 191
 											}
 										},
 										{
-											"id": 78,
+											"id": 264,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -155,7 +155,7 @@
 									"type": {
 										"type": "reference",
 										"name": "ThemeProvider",
-										"id": 14
+										"id": 200
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -181,7 +181,7 @@
 							}
 						},
 						{
-							"id": 17,
+							"id": 203,
 							"name": "colors_",
 							"kind": 1024,
 							"kindString": "Property",
@@ -198,7 +198,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 18,
+									"id": 204,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -207,7 +207,7 @@
 							}
 						},
 						{
-							"id": 72,
+							"id": 258,
 							"name": "context",
 							"kind": 1024,
 							"kindString": "Property",
@@ -245,7 +245,7 @@
 							}
 						},
 						{
-							"id": 16,
+							"id": 202,
 							"name": "prevOpts_",
 							"kind": 1024,
 							"kindString": "Property",
@@ -266,7 +266,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 97,
+							"id": 283,
 							"name": "props",
 							"kind": 1024,
 							"kindString": "Property",
@@ -290,14 +290,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 98,
+													"id": 284,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 99,
+															"id": 285,
 															"name": "children",
 															"kind": 32,
 															"kindString": "Variable",
@@ -322,7 +322,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																99
+																285
 															]
 														}
 													],
@@ -344,7 +344,7 @@
 											{
 												"type": "reference",
 												"name": "ThemeProviderProps",
-												"id": 5
+												"id": 191
 											}
 										]
 									}
@@ -356,7 +356,7 @@
 							}
 						},
 						{
-							"id": 101,
+							"id": 287,
 							"name": "refs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -381,21 +381,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 102,
+									"id": 288,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 103,
+											"id": 289,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 104,
+													"id": 290,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -427,7 +427,7 @@
 							}
 						},
 						{
-							"id": 100,
+							"id": 286,
 							"name": "state",
 							"kind": 1024,
 							"kindString": "Property",
@@ -457,7 +457,7 @@
 							}
 						},
 						{
-							"id": 71,
+							"id": 257,
 							"name": "contextType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -499,7 +499,7 @@
 							}
 						},
 						{
-							"id": 15,
+							"id": 201,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -521,7 +521,7 @@
 							"defaultValue": "\"ThemeProvider\""
 						},
 						{
-							"id": 19,
+							"id": 205,
 							"name": "colors",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -530,7 +530,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 20,
+									"id": 206,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -538,7 +538,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 21,
+											"id": 207,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -556,7 +556,7 @@
 							]
 						},
 						{
-							"id": 50,
+							"id": 236,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -566,7 +566,7 @@
 							},
 							"signatures": [
 								{
-									"id": 51,
+									"id": 237,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -612,7 +612,7 @@
 							}
 						},
 						{
-							"id": 56,
+							"id": 242,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -622,7 +622,7 @@
 							},
 							"signatures": [
 								{
-									"id": 57,
+									"id": 243,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -647,7 +647,7 @@
 									},
 									"parameters": [
 										{
-											"id": 58,
+											"id": 244,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -659,13 +659,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 59,
+											"id": 245,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -699,7 +699,7 @@
 							}
 						},
 						{
-							"id": 65,
+							"id": 251,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -709,7 +709,7 @@
 							},
 							"signatures": [
 								{
-									"id": 66,
+									"id": 252,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -734,7 +734,7 @@
 									},
 									"parameters": [
 										{
-											"id": 67,
+											"id": 253,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -746,13 +746,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 68,
+											"id": 254,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -769,7 +769,7 @@
 											}
 										},
 										{
-											"id": 69,
+											"id": 255,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -803,7 +803,7 @@
 							}
 						},
 						{
-							"id": 35,
+							"id": 221,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -813,7 +813,7 @@
 							},
 							"signatures": [
 								{
-									"id": 36,
+									"id": 222,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -823,7 +823,7 @@
 									},
 									"parameters": [
 										{
-											"id": 37,
+											"id": 223,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -834,7 +834,7 @@
 											}
 										},
 										{
-											"id": 38,
+											"id": 224,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -868,7 +868,7 @@
 							}
 						},
 						{
-							"id": 26,
+							"id": 212,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -878,7 +878,7 @@
 							},
 							"signatures": [
 								{
-									"id": 27,
+									"id": 213,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -909,7 +909,7 @@
 							}
 						},
 						{
-							"id": 43,
+							"id": 229,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -919,7 +919,7 @@
 							},
 							"signatures": [
 								{
-									"id": 44,
+									"id": 230,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -930,7 +930,7 @@
 									},
 									"parameters": [
 										{
-											"id": 45,
+											"id": 231,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -942,13 +942,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 46,
+											"id": 232,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -965,7 +965,7 @@
 											}
 										},
 										{
-											"id": 47,
+											"id": 233,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -975,7 +975,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SS",
-												"id": 25
+												"id": 211
 											}
 										}
 									],
@@ -1002,7 +1002,7 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 234,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1012,7 +1012,7 @@
 							},
 							"signatures": [
 								{
-									"id": 49,
+									"id": 235,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1058,7 +1058,7 @@
 							}
 						},
 						{
-							"id": 52,
+							"id": 238,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1068,7 +1068,7 @@
 							},
 							"signatures": [
 								{
-									"id": 53,
+									"id": 239,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1093,7 +1093,7 @@
 									},
 									"parameters": [
 										{
-											"id": 54,
+											"id": 240,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1105,13 +1105,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 55,
+											"id": 241,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1145,7 +1145,7 @@
 							}
 						},
 						{
-							"id": 33,
+							"id": 219,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1155,7 +1155,7 @@
 							},
 							"signatures": [
 								{
-									"id": 34,
+									"id": 220,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1186,7 +1186,7 @@
 							}
 						},
 						{
-							"id": 60,
+							"id": 246,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1196,7 +1196,7 @@
 							},
 							"signatures": [
 								{
-									"id": 61,
+									"id": 247,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1221,7 +1221,7 @@
 									},
 									"parameters": [
 										{
-											"id": 62,
+											"id": 248,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1233,13 +1233,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 63,
+											"id": 249,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1256,7 +1256,7 @@
 											}
 										},
 										{
-											"id": 64,
+											"id": 250,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1290,7 +1290,7 @@
 							}
 						},
 						{
-							"id": 92,
+							"id": 278,
 							"name": "forceUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1299,14 +1299,14 @@
 							},
 							"signatures": [
 								{
-									"id": 93,
+									"id": 279,
 									"name": "forceUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 94,
+											"id": 280,
 											"name": "callBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1323,14 +1323,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 95,
+															"id": 281,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 96,
+																	"id": 282,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -1370,7 +1370,7 @@
 							}
 						},
 						{
-							"id": 39,
+							"id": 225,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1380,7 +1380,7 @@
 							},
 							"signatures": [
 								{
-									"id": 40,
+									"id": 226,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1391,7 +1391,7 @@
 									},
 									"parameters": [
 										{
-											"id": 41,
+											"id": 227,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1403,13 +1403,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 42,
+											"id": 228,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1458,7 +1458,7 @@
 							}
 						},
 						{
-							"id": 22,
+							"id": 208,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1467,7 +1467,7 @@
 							},
 							"signatures": [
 								{
-									"id": 23,
+									"id": 209,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1501,7 +1501,7 @@
 							}
 						},
 						{
-							"id": 79,
+							"id": 265,
 							"name": "setState",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1510,14 +1510,14 @@
 							},
 							"signatures": [
 								{
-									"id": 80,
+									"id": 266,
 									"name": "setState",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 81,
+											"id": 267,
 											"name": "K",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1534,7 +1534,7 @@
 									],
 									"parameters": [
 										{
-											"id": 82,
+											"id": 268,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1545,21 +1545,21 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 83,
+															"id": 269,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 84,
+																	"id": 270,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
 																	"flags": {},
 																	"parameters": [
 																		{
-																			"id": 85,
+																			"id": 271,
 																			"name": "prevState",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -1576,7 +1576,7 @@
 																			}
 																		},
 																		{
-																			"id": 86,
+																			"id": 272,
 																			"name": "props",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -1588,7 +1588,7 @@
 																					{
 																						"type": "reference",
 																						"name": "ThemeProviderProps",
-																						"id": 5
+																						"id": 191
 																					}
 																				]
 																			}
@@ -1608,7 +1608,7 @@
 																			{
 																				"type": "reflection",
 																				"declaration": {
-																					"id": 87,
+																					"id": 273,
 																					"name": "__type",
 																					"kind": 65536,
 																					"kindString": "Type literal",
@@ -1642,7 +1642,7 @@
 															{
 																"type": "reflection",
 																"declaration": {
-																	"id": 88,
+																	"id": 274,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
@@ -1655,7 +1655,7 @@
 											}
 										},
 										{
-											"id": 89,
+											"id": 275,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1672,14 +1672,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 90,
+															"id": 276,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 91,
+																	"id": 277,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -1719,7 +1719,7 @@
 							}
 						},
 						{
-							"id": 28,
+							"id": 214,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1729,7 +1729,7 @@
 							},
 							"signatures": [
 								{
-									"id": 29,
+									"id": 215,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1740,7 +1740,7 @@
 									},
 									"parameters": [
 										{
-											"id": 30,
+											"id": 216,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1752,13 +1752,13 @@
 													{
 														"type": "reference",
 														"name": "ThemeProviderProps",
-														"id": 5
+														"id": 191
 													}
 												]
 											}
 										},
 										{
-											"id": 31,
+											"id": 217,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1775,7 +1775,7 @@
 											}
 										},
 										{
-											"id": 32,
+											"id": 218,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1814,49 +1814,49 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								73
+								259
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								17,
-								72,
-								16,
-								97,
-								101,
-								100,
-								71,
-								15
+								203,
+								258,
+								202,
+								283,
+								287,
+								286,
+								257,
+								201
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								19
+								205
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								50,
-								56,
-								65,
-								35,
-								26,
-								43,
-								48,
-								52,
-								33,
-								60,
-								92,
-								39,
-								22,
-								79,
-								28
+								236,
+								242,
+								251,
+								221,
+								212,
+								229,
+								234,
+								238,
+								219,
+								246,
+								278,
+								225,
+								208,
+								265,
+								214
 							]
 						}
 					],
@@ -1875,14 +1875,14 @@
 								{
 									"type": "reference",
 									"name": "ThemeProviderProps",
-									"id": 5
+									"id": 191
 								}
 							]
 						}
 					]
 				},
 				{
-					"id": 2,
+					"id": 188,
 					"name": "ThemeProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -1891,7 +1891,7 @@
 					},
 					"children": [
 						{
-							"id": 3,
+							"id": 189,
 							"name": "use",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1926,7 +1926,7 @@
 							}
 						},
 						{
-							"id": 4,
+							"id": 190,
 							"name": "wrap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1964,8 +1964,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								3,
-								4
+								189,
+								190
 							]
 						}
 					],
@@ -1978,7 +1978,7 @@
 					]
 				},
 				{
-					"id": 5,
+					"id": 191,
 					"name": "ThemeProviderProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -1987,7 +1987,7 @@
 					},
 					"children": [
 						{
-							"id": 12,
+							"id": 198,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2011,7 +2011,7 @@
 							}
 						},
 						{
-							"id": 6,
+							"id": 192,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2031,21 +2031,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 7,
+									"id": 193,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 8,
+											"id": 194,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 9,
+													"id": 195,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2073,7 +2073,7 @@
 							}
 						},
 						{
-							"id": 10,
+							"id": 196,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2097,7 +2097,7 @@
 							}
 						},
 						{
-							"id": 11,
+							"id": 197,
 							"name": "wrap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2139,10 +2139,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								12,
-								6,
-								10,
-								11
+								198,
+								192,
+								196,
+								197
 							]
 						}
 					],
@@ -2157,7 +2157,7 @@
 						{
 							"type": "reflection",
 							"declaration": {
-								"id": 13,
+								"id": 199,
 								"name": "__type",
 								"kind": 65536,
 								"kindString": "Type literal",
@@ -2174,7 +2174,7 @@
 					]
 				},
 				{
-					"id": 105,
+					"id": 291,
 					"name": "ThemeRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2198,7 +2198,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 106,
+											"id": 292,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2222,7 +2222,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ThemeRoot',\n  tag: 'span'\n})"
 				},
 				{
-					"id": 107,
+					"id": 293,
 					"name": "Theme",
 					"kind": 64,
 					"kindString": "Function",
@@ -2235,7 +2235,7 @@
 					},
 					"signatures": [
 						{
-							"id": 108,
+							"id": 294,
 							"name": "Theme",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2245,7 +2245,7 @@
 							},
 							"parameters": [
 								{
-									"id": 109,
+									"id": 295,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2254,14 +2254,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 110,
+											"id": 296,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 113,
+													"id": 299,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2276,11 +2276,11 @@
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 113
+														"id": 299
 													}
 												},
 												{
-													"id": 111,
+													"id": 297,
 													"name": "use",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2515,7 +2515,7 @@
 													}
 												},
 												{
-													"id": 112,
+													"id": 298,
 													"name": "wrap",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2538,9 +2538,9 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														113,
-														111,
-														112
+														299,
+														297,
+														298
 													]
 												}
 											],
@@ -2581,35 +2581,3747 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						14
+						200
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2,
-						5
+						188,
+						191
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						105
+						291
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						107
+						293
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 300,
+			"name": "\"theme-options\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/theme/theme-options.tsx",
+			"children": [
+				{
+					"id": 301,
+					"name": "themeOptions",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "theme-options.tsx",
+							"line": 3,
+							"character": 25
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "ThemeOptionT"
+						}
+					},
+					"defaultValue": " [\n  'primary',\n  'secondary',\n  'background',\n  'surface',\n  'error',\n  'onPrimary',\n  'onSecondary',\n  'onSurface',\n  'onError',\n  'textPrimaryOnBackground',\n  'textSecondaryOnBackground',\n  'textHintOnBackground',\n  'textDisabledOnBackground',\n  'textIconOnBackground',\n  'textPrimaryOnLight',\n  'textSecondaryOnLight',\n  'textHintOnLight',\n  'textDisabledOnLight',\n  'textIconOnLight',\n  'textPrimaryOnDark',\n  'textSecondaryOnDark',\n  'textHintOnDark',\n  'textDisabledOnDark',\n  'textIconOnDark'\n]"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						301
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "theme-options.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"utils\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/theme/utils.tsx",
+			"children": [
+				{
+					"id": 179,
+					"name": "darkTextPalette",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 213,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					},
+					"defaultValue": " [\n  'rgba(255, 255, 255, 1)',\n  'rgba(255, 255, 255, 0.7)',\n  'rgba(255, 255, 255, 0.5)'\n]"
+				},
+				{
+					"id": 178,
+					"name": "lightTextPalette",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 207,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					},
+					"defaultValue": " [\n  'rgba(0, 0, 0, 0.87)',\n  'rgba(0, 0, 0, 0.54)',\n  'rgba(0, 0, 0, 0.38)'\n]"
+				},
+				{
+					"id": 159,
+					"name": "contrast",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 160,
+							"name": "contrast",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 161,
+									"name": "rgb1",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "tuple",
+										"elements": [
+											{
+												"type": "intrinsic",
+												"name": "number"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											}
+										]
+									}
+								},
+								{
+									"id": 162,
+									"name": "rgb2",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "tuple",
+										"elements": [
+											{
+												"type": "intrinsic",
+												"name": "number"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 173,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 180,
+					"name": "getAutoColorsForTheme",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 181,
+							"name": "getAutoColorsForTheme",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 182,
+									"name": "colors",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 183,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"indexSignature": [
+												{
+													"id": 184,
+													"name": "__index",
+													"kind": 8192,
+													"kindString": "Index signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 185,
+															"name": "key",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 219,
+													"character": 45
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 186,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {}
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 219,
+							"character": 34
+						}
+					]
+				},
+				{
+					"id": 163,
+					"name": "getRgb",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 164,
+							"name": "getRgb",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 165,
+									"name": "color",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 166,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 169,
+											"name": "b",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 156,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[3], 16)"
+										},
+										{
+											"id": 168,
+											"name": "g",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 155,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[2], 16)"
+										},
+										{
+											"id": 167,
+											"name": "r",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 154,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[1], 16)"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												169,
+												168,
+												167
+											]
+										}
+									]
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 183,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 147,
+					"name": "hexToRgb",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 148,
+							"name": "hexToRgb",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 149,
+									"name": "hex",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 150,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 153,
+											"name": "b",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 156,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[3], 16)"
+										},
+										{
+											"id": 152,
+											"name": "g",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 155,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[2], 16)"
+										},
+										{
+											"id": 151,
+											"name": "r",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "utils.tsx",
+													"line": 154,
+													"character": 9
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": " parseInt(result[1], 16)"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												153,
+												152,
+												151
+											]
+										}
+									]
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 147,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 170,
+					"name": "isDark",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 171,
+							"name": "isDark",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 172,
+									"name": "color",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 188,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 154,
+					"name": "luminance",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 155,
+							"name": "luminance",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 156,
+									"name": "r",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 157,
+									"name": "g",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 158,
+									"name": "b",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 165,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 144,
+					"name": "nameToHex",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 145,
+							"name": "nameToHex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 146,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 145,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "colorMap",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isConst": true
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "aliceblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 2,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f0f8ff\""
+						},
+						{
+							"id": 4,
+							"name": "antiquewhite",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 3,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#faebd7\""
+						},
+						{
+							"id": 5,
+							"name": "aqua",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 4,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00ffff\""
+						},
+						{
+							"id": 6,
+							"name": "aquamarine",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 5,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#7fffd4\""
+						},
+						{
+							"id": 7,
+							"name": "azure",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 6,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f0ffff\""
+						},
+						{
+							"id": 8,
+							"name": "beige",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 7,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f5f5dc\""
+						},
+						{
+							"id": 9,
+							"name": "bisque",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 8,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffe4c4\""
+						},
+						{
+							"id": 10,
+							"name": "black",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 9,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#000000\""
+						},
+						{
+							"id": 11,
+							"name": "blanchedalmond",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 10,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffebcd\""
+						},
+						{
+							"id": 12,
+							"name": "blue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 11,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#0000ff\""
+						},
+						{
+							"id": 13,
+							"name": "blueviolet",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 12,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#8a2be2\""
+						},
+						{
+							"id": 14,
+							"name": "brown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 13,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#a52a2a\""
+						},
+						{
+							"id": 15,
+							"name": "burlywood",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 14,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#deb887\""
+						},
+						{
+							"id": 16,
+							"name": "cadetblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 15,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#5f9ea0\""
+						},
+						{
+							"id": 17,
+							"name": "chartreuse",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 16,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#7fff00\""
+						},
+						{
+							"id": 18,
+							"name": "chocolate",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 17,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#d2691e\""
+						},
+						{
+							"id": 19,
+							"name": "coral",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 18,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff7f50\""
+						},
+						{
+							"id": 20,
+							"name": "cornflowerblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 19,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#6495ed\""
+						},
+						{
+							"id": 21,
+							"name": "cornsilk",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 20,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fff8dc\""
+						},
+						{
+							"id": 22,
+							"name": "crimson",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 21,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#dc143c\""
+						},
+						{
+							"id": 23,
+							"name": "cyan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 22,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00ffff\""
+						},
+						{
+							"id": 24,
+							"name": "darkblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 23,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00008b\""
+						},
+						{
+							"id": 25,
+							"name": "darkcyan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 24,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#008b8b\""
+						},
+						{
+							"id": 26,
+							"name": "darkgoldenrod",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 25,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#b8860b\""
+						},
+						{
+							"id": 27,
+							"name": "darkgray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 26,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#a9a9a9\""
+						},
+						{
+							"id": 28,
+							"name": "darkgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 27,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#006400\""
+						},
+						{
+							"id": 29,
+							"name": "darkkhaki",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 28,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#bdb76b\""
+						},
+						{
+							"id": 30,
+							"name": "darkmagenta",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 29,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#8b008b\""
+						},
+						{
+							"id": 31,
+							"name": "darkolivegreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 30,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#556b2f\""
+						},
+						{
+							"id": 32,
+							"name": "darkorange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 31,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff8c00\""
+						},
+						{
+							"id": 33,
+							"name": "darkorchid",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 32,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#9932cc\""
+						},
+						{
+							"id": 34,
+							"name": "darkred",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 33,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#8b0000\""
+						},
+						{
+							"id": 35,
+							"name": "darksalmon",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 34,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#e9967a\""
+						},
+						{
+							"id": 36,
+							"name": "darkseagreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#8fbc8f\""
+						},
+						{
+							"id": 37,
+							"name": "darkslateblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 36,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#483d8b\""
+						},
+						{
+							"id": 38,
+							"name": "darkslategray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 37,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#2f4f4f\""
+						},
+						{
+							"id": 39,
+							"name": "darkturquoise",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 38,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00ced1\""
+						},
+						{
+							"id": 40,
+							"name": "darkviolet",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 39,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#9400d3\""
+						},
+						{
+							"id": 41,
+							"name": "deeppink",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 40,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff1493\""
+						},
+						{
+							"id": 42,
+							"name": "deepskyblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 41,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00bfff\""
+						},
+						{
+							"id": 43,
+							"name": "dimgray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 42,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#696969\""
+						},
+						{
+							"id": 44,
+							"name": "dodgerblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 43,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#1e90ff\""
+						},
+						{
+							"id": 45,
+							"name": "firebrick",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 44,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#b22222\""
+						},
+						{
+							"id": 46,
+							"name": "floralwhite",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 45,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fffaf0\""
+						},
+						{
+							"id": 47,
+							"name": "forestgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 46,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#228b22\""
+						},
+						{
+							"id": 48,
+							"name": "fuchsia",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 47,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff00ff\""
+						},
+						{
+							"id": 49,
+							"name": "gainsboro",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 48,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#dcdcdc\""
+						},
+						{
+							"id": 50,
+							"name": "ghostwhite",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 49,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f8f8ff\""
+						},
+						{
+							"id": 51,
+							"name": "gold",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 50,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffd700\""
+						},
+						{
+							"id": 52,
+							"name": "goldenrod",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 51,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#daa520\""
+						},
+						{
+							"id": 53,
+							"name": "gray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 52,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#808080\""
+						},
+						{
+							"id": 54,
+							"name": "green",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 53,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#008000\""
+						},
+						{
+							"id": 55,
+							"name": "greenyellow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 54,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#adff2f\""
+						},
+						{
+							"id": 56,
+							"name": "honeydew",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 55,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f0fff0\""
+						},
+						{
+							"id": 57,
+							"name": "hotpink",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 56,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff69b4\""
+						},
+						{
+							"id": 58,
+							"name": "indianred ",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 57,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#cd5c5c\""
+						},
+						{
+							"id": 59,
+							"name": "indigo",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 58,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#4b0082\""
+						},
+						{
+							"id": 60,
+							"name": "ivory",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 59,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fffff0\""
+						},
+						{
+							"id": 61,
+							"name": "khaki",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 60,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f0e68c\""
+						},
+						{
+							"id": 62,
+							"name": "lavender",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 61,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#e6e6fa\""
+						},
+						{
+							"id": 63,
+							"name": "lavenderblush",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 62,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fff0f5\""
+						},
+						{
+							"id": 64,
+							"name": "lawngreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 63,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#7cfc00\""
+						},
+						{
+							"id": 65,
+							"name": "lemonchiffon",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 64,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fffacd\""
+						},
+						{
+							"id": 66,
+							"name": "lightblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 65,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#add8e6\""
+						},
+						{
+							"id": 67,
+							"name": "lightcoral",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 66,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f08080\""
+						},
+						{
+							"id": 68,
+							"name": "lightcyan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 67,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#e0ffff\""
+						},
+						{
+							"id": 69,
+							"name": "lightgoldenrodyellow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 68,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fafad2\""
+						},
+						{
+							"id": 71,
+							"name": "lightgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 70,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#90ee90\""
+						},
+						{
+							"id": 70,
+							"name": "lightgrey",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 69,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#d3d3d3\""
+						},
+						{
+							"id": 72,
+							"name": "lightpink",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 71,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffb6c1\""
+						},
+						{
+							"id": 73,
+							"name": "lightsalmon",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 72,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffa07a\""
+						},
+						{
+							"id": 74,
+							"name": "lightseagreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 73,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#20b2aa\""
+						},
+						{
+							"id": 75,
+							"name": "lightskyblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 74,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#87cefa\""
+						},
+						{
+							"id": 76,
+							"name": "lightslategray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 75,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#778899\""
+						},
+						{
+							"id": 77,
+							"name": "lightsteelblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 76,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#b0c4de\""
+						},
+						{
+							"id": 78,
+							"name": "lightyellow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 77,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffffe0\""
+						},
+						{
+							"id": 79,
+							"name": "lime",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 78,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00ff00\""
+						},
+						{
+							"id": 80,
+							"name": "limegreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 79,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#32cd32\""
+						},
+						{
+							"id": 81,
+							"name": "linen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 80,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#faf0e6\""
+						},
+						{
+							"id": 82,
+							"name": "magenta",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 81,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff00ff\""
+						},
+						{
+							"id": 83,
+							"name": "maroon",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 82,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#800000\""
+						},
+						{
+							"id": 84,
+							"name": "mediumaquamarine",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 83,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#66cdaa\""
+						},
+						{
+							"id": 85,
+							"name": "mediumblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 84,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#0000cd\""
+						},
+						{
+							"id": 86,
+							"name": "mediumorchid",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 85,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ba55d3\""
+						},
+						{
+							"id": 87,
+							"name": "mediumpurple",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 86,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#9370d8\""
+						},
+						{
+							"id": 88,
+							"name": "mediumseagreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 87,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#3cb371\""
+						},
+						{
+							"id": 89,
+							"name": "mediumslateblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 88,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#7b68ee\""
+						},
+						{
+							"id": 90,
+							"name": "mediumspringgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 89,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00fa9a\""
+						},
+						{
+							"id": 91,
+							"name": "mediumturquoise",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 90,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#48d1cc\""
+						},
+						{
+							"id": 92,
+							"name": "mediumvioletred",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 91,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#c71585\""
+						},
+						{
+							"id": 93,
+							"name": "midnightblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 92,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#191970\""
+						},
+						{
+							"id": 94,
+							"name": "mintcream",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 93,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f5fffa\""
+						},
+						{
+							"id": 95,
+							"name": "mistyrose",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 94,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffe4e1\""
+						},
+						{
+							"id": 96,
+							"name": "moccasin",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 95,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffe4b5\""
+						},
+						{
+							"id": 97,
+							"name": "navajowhite",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 96,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffdead\""
+						},
+						{
+							"id": 98,
+							"name": "navy",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 97,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#000080\""
+						},
+						{
+							"id": 99,
+							"name": "oldlace",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 98,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fdf5e6\""
+						},
+						{
+							"id": 100,
+							"name": "olive",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 99,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#808000\""
+						},
+						{
+							"id": 101,
+							"name": "olivedrab",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 100,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#6b8e23\""
+						},
+						{
+							"id": 102,
+							"name": "orange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 101,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffa500\""
+						},
+						{
+							"id": 103,
+							"name": "orangered",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 102,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff4500\""
+						},
+						{
+							"id": 104,
+							"name": "orchid",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 103,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#da70d6\""
+						},
+						{
+							"id": 105,
+							"name": "palegoldenrod",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 104,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#eee8aa\""
+						},
+						{
+							"id": 106,
+							"name": "palegreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 105,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#98fb98\""
+						},
+						{
+							"id": 107,
+							"name": "paleturquoise",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 106,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#afeeee\""
+						},
+						{
+							"id": 108,
+							"name": "palevioletred",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 107,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#d87093\""
+						},
+						{
+							"id": 109,
+							"name": "papayawhip",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 108,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffefd5\""
+						},
+						{
+							"id": 110,
+							"name": "peachpuff",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 109,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffdab9\""
+						},
+						{
+							"id": 111,
+							"name": "peru",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 110,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#cd853f\""
+						},
+						{
+							"id": 112,
+							"name": "pink",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 111,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffc0cb\""
+						},
+						{
+							"id": 113,
+							"name": "plum",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 112,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#dda0dd\""
+						},
+						{
+							"id": 114,
+							"name": "powderblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 113,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#b0e0e6\""
+						},
+						{
+							"id": 115,
+							"name": "purple",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 114,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#800080\""
+						},
+						{
+							"id": 116,
+							"name": "red",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 115,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff0000\""
+						},
+						{
+							"id": 117,
+							"name": "rosybrown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 116,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#bc8f8f\""
+						},
+						{
+							"id": 118,
+							"name": "royalblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 117,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#4169e1\""
+						},
+						{
+							"id": 119,
+							"name": "saddlebrown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 118,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#8b4513\""
+						},
+						{
+							"id": 120,
+							"name": "salmon",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 119,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fa8072\""
+						},
+						{
+							"id": 121,
+							"name": "sandybrown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 120,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f4a460\""
+						},
+						{
+							"id": 122,
+							"name": "seagreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 121,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#2e8b57\""
+						},
+						{
+							"id": 123,
+							"name": "seashell",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 122,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fff5ee\""
+						},
+						{
+							"id": 124,
+							"name": "sienna",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 123,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#a0522d\""
+						},
+						{
+							"id": 125,
+							"name": "silver",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 124,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#c0c0c0\""
+						},
+						{
+							"id": 126,
+							"name": "skyblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 125,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#87ceeb\""
+						},
+						{
+							"id": 127,
+							"name": "slateblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 126,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#6a5acd\""
+						},
+						{
+							"id": 128,
+							"name": "slategray",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 127,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#708090\""
+						},
+						{
+							"id": 129,
+							"name": "snow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 128,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#fffafa\""
+						},
+						{
+							"id": 130,
+							"name": "springgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 129,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#00ff7f\""
+						},
+						{
+							"id": 131,
+							"name": "steelblue",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 130,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#4682b4\""
+						},
+						{
+							"id": 132,
+							"name": "tan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 131,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#d2b48c\""
+						},
+						{
+							"id": 133,
+							"name": "teal",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 132,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#008080\""
+						},
+						{
+							"id": 134,
+							"name": "thistle",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 133,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#d8bfd8\""
+						},
+						{
+							"id": 135,
+							"name": "tomato",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 134,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ff6347\""
+						},
+						{
+							"id": 136,
+							"name": "transparent",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 135,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffffff\""
+						},
+						{
+							"id": 137,
+							"name": "turquoise",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 136,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#40e0d0\""
+						},
+						{
+							"id": 138,
+							"name": "violet",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 137,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ee82ee\""
+						},
+						{
+							"id": 139,
+							"name": "wheat",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 138,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f5deb3\""
+						},
+						{
+							"id": 140,
+							"name": "white",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 139,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffffff\""
+						},
+						{
+							"id": 141,
+							"name": "whitesmoke",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 140,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#f5f5f5\""
+						},
+						{
+							"id": 142,
+							"name": "yellow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 141,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#ffff00\""
+						},
+						{
+							"id": 143,
+							"name": "yellowgreen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 142,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"#9acd32\""
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								3,
+								4,
+								5,
+								6,
+								7,
+								8,
+								9,
+								10,
+								11,
+								12,
+								13,
+								14,
+								15,
+								16,
+								17,
+								18,
+								19,
+								20,
+								21,
+								22,
+								23,
+								24,
+								25,
+								26,
+								27,
+								28,
+								29,
+								30,
+								31,
+								32,
+								33,
+								34,
+								35,
+								36,
+								37,
+								38,
+								39,
+								40,
+								41,
+								42,
+								43,
+								44,
+								45,
+								46,
+								47,
+								48,
+								49,
+								50,
+								51,
+								52,
+								53,
+								54,
+								55,
+								56,
+								57,
+								58,
+								59,
+								60,
+								61,
+								62,
+								63,
+								64,
+								65,
+								66,
+								67,
+								68,
+								69,
+								71,
+								70,
+								72,
+								73,
+								74,
+								75,
+								76,
+								77,
+								78,
+								79,
+								80,
+								81,
+								82,
+								83,
+								84,
+								85,
+								86,
+								87,
+								88,
+								89,
+								90,
+								91,
+								92,
+								93,
+								94,
+								95,
+								96,
+								97,
+								98,
+								99,
+								100,
+								101,
+								102,
+								103,
+								104,
+								105,
+								106,
+								107,
+								108,
+								109,
+								110,
+								111,
+								112,
+								113,
+								114,
+								115,
+								116,
+								117,
+								118,
+								119,
+								120,
+								121,
+								122,
+								123,
+								124,
+								125,
+								126,
+								127,
+								128,
+								129,
+								130,
+								131,
+								132,
+								133,
+								134,
+								135,
+								136,
+								137,
+								138,
+								139,
+								140,
+								141,
+								142,
+								143
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 1,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				},
+				{
+					"id": 173,
+					"name": "paletteMap",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isConst": true
+					},
+					"children": [
+						{
+							"id": 177,
+							"name": "--mdc-theme-background",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 198,
+									"character": 26
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "tuple",
+									"elements": [
+										{
+											"type": "intrinsic",
+											"name": "string"
+										},
+										{
+											"type": "intrinsic",
+											"name": "number"
+										}
+									]
+								}
+							},
+							"defaultValue": " [\n    ['--mdc-theme-text-primary-on-background', 0],\n    ['--mdc-theme-text-secondary-on-background', 1],\n    ['--mdc-theme-text-hint-on-background', 2],\n    ['--mdc-theme-text-disabled-on-background', 2],\n    ['--mdc-theme-text-icon-on-background', 2]\n  ]"
+						},
+						{
+							"id": 174,
+							"name": "--mdc-theme-primary",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 195,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "tuple",
+									"elements": [
+										{
+											"type": "intrinsic",
+											"name": "string"
+										},
+										{
+											"type": "intrinsic",
+											"name": "number"
+										}
+									]
+								}
+							},
+							"defaultValue": " [['--mdc-theme-on-primary', 0]]"
+						},
+						{
+							"id": 176,
+							"name": "--mdc-theme-secondary",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 197,
+									"character": 25
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "tuple",
+									"elements": [
+										{
+											"type": "intrinsic",
+											"name": "string"
+										},
+										{
+											"type": "intrinsic",
+											"name": "number"
+										}
+									]
+								}
+							},
+							"defaultValue": " [['--mdc-theme-on-secondary', 0]]"
+						},
+						{
+							"id": 175,
+							"name": "--mdc-theme-surface",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "utils.tsx",
+									"line": 196,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "tuple",
+									"elements": [
+										{
+											"type": "intrinsic",
+											"name": "string"
+										},
+										{
+											"type": "intrinsic",
+											"name": "number"
+										}
+									]
+								}
+							},
+							"defaultValue": " [['--mdc-theme-on-surface', 0]]"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								177,
+								174,
+								176,
+								175
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utils.tsx",
+							"line": 194,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						179,
+						178
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						159,
+						180,
+						163,
+						147,
+						170,
+						154,
+						144
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						2,
+						173
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "utils.tsx",
 					"line": 1,
 					"character": 0
 				}
@@ -2621,6 +6333,8 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
+				187,
+				300,
 				1
 			]
 		}

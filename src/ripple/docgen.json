@@ -22,6 +22,9 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "A component for adding Ripples to other components."
+					},
 					"typeParameter": [
 						{
 							"id": 60,
@@ -86,7 +89,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 46,
+									"line": 47,
 									"character": 42
 								}
 							],
@@ -229,7 +232,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 45,
+									"line": 46,
 									"character": 6
 								}
 							],
@@ -260,7 +263,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 46,
+									"line": 47,
 									"character": 9
 								}
 							],
@@ -292,7 +295,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 43,
+									"line": 44,
 									"character": 20
 								}
 							],
@@ -622,7 +625,7 @@
 											"type": {
 												"type": "reference",
 												"name": "ActivateEventTypes",
-												"id": 196,
+												"id": 192,
 												"typeArguments": [
 													{
 														"type": "reference",
@@ -641,7 +644,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 169,
+									"line": 170,
 									"character": 16
 								}
 							]
@@ -1233,7 +1236,7 @@
 											"type": {
 												"type": "reference",
 												"name": "ActivateEventTypes",
-												"id": 196,
+												"id": 192,
 												"typeArguments": [
 													{
 														"type": "reference",
@@ -1252,7 +1255,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 175,
+									"line": 176,
 									"character": 18
 								}
 							]
@@ -1367,7 +1370,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 61,
+									"line": 62,
 									"character": 22
 								}
 							],
@@ -1523,7 +1526,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 134,
+									"line": 135,
 									"character": 12
 								}
 							]
@@ -1571,7 +1574,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 129,
+									"line": 130,
 									"character": 13
 								}
 							]
@@ -1619,7 +1622,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 159,
+									"line": 160,
 									"character": 15
 								}
 							]
@@ -1667,7 +1670,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 164,
+									"line": 165,
 									"character": 13
 								}
 							]
@@ -1715,7 +1718,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 139,
+									"line": 140,
 									"character": 17
 								}
 							]
@@ -1763,7 +1766,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 144,
+									"line": 145,
 									"character": 15
 								}
 							]
@@ -1811,7 +1814,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 154,
+									"line": 155,
 									"character": 16
 								}
 							]
@@ -1859,7 +1862,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 149,
+									"line": 150,
 									"character": 18
 								}
 							]
@@ -1888,7 +1891,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 179,
+									"line": 180,
 									"character": 8
 								}
 							]
@@ -2053,7 +2056,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 121,
+									"line": 122,
 									"character": 6
 								}
 							],
@@ -2258,7 +2261,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 42,
+							"line": 43,
 							"character": 19
 						}
 					],
@@ -3177,7 +3180,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 254,
+									"line": 255,
 									"character": 8
 								}
 							]
@@ -3219,7 +3222,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 240,
+									"line": 241,
 									"character": 17
 								}
 							]
@@ -3348,7 +3351,7 @@
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 237,
+													"line": 238,
 													"character": 35
 												}
 											],
@@ -3369,7 +3372,7 @@
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 237,
+													"line": 238,
 													"character": 46
 												}
 											],
@@ -3398,7 +3401,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 237,
+											"line": 238,
 											"character": 22
 										}
 									],
@@ -3420,7 +3423,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 236,
+									"line": 237,
 									"character": 7
 								}
 							],
@@ -3462,7 +3465,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 233,
+							"line": 234,
 							"character": 26
 						}
 					],
@@ -3907,14 +3910,14 @@
 					]
 				},
 				{
-					"id": 192,
+					"id": 188,
 					"name": "WithRippleOpts",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 193,
+							"id": 189,
 							"name": "accent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3924,7 +3927,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 279,
+									"line": 282,
 									"character": 8
 								}
 							],
@@ -3947,7 +3950,7 @@
 							}
 						},
 						{
-							"id": 194,
+							"id": 190,
 							"name": "surface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3957,7 +3960,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 280,
+									"line": 283,
 									"character": 9
 								}
 							],
@@ -3980,7 +3983,7 @@
 							}
 						},
 						{
-							"id": 195,
+							"id": 191,
 							"name": "unbounded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3990,7 +3993,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 281,
+									"line": 284,
 									"character": 11
 								}
 							],
@@ -4018,16 +4021,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								193,
-								194,
-								195
+								189,
+								190,
+								191
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 278,
+							"line": 281,
 							"character": 24
 						}
 					]
@@ -4050,150 +4053,20 @@
 								"isExported": true,
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "Adds a ripple effect to the component"
+							},
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 269,
+									"line": 278,
 									"character": 8
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "boolean"
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 188,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 189,
-													"name": "accent",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 272,
-															"character": 14
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												},
-												{
-													"id": 190,
-													"name": "surface",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 273,
-															"character": 15
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												},
-												{
-													"id": 191,
-													"name": "unbounded",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {
-														"isOptional": true
-													},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 274,
-															"character": 17
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															}
-														]
-													}
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														189,
-														190,
-														191
-													]
-												}
-											],
-											"sources": [
-												{
-													"fileName": "index.tsx",
-													"line": 271,
-													"character": 5
-												}
-											]
-										}
-									}
-								]
+								"type": "reference",
+								"name": "RipplePropT",
+								"id": 194
 							}
 						}
 					],
@@ -4209,20 +4082,20 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 267,
+							"line": 276,
 							"character": 32
 						}
 					]
 				},
 				{
-					"id": 196,
+					"id": 192,
 					"name": "ActivateEventTypes",
 					"kind": 4194304,
 					"kindString": "Type alias",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 197,
+							"id": 193,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -4283,7 +4156,161 @@
 					}
 				},
 				{
-					"id": 198,
+					"id": 194,
+					"name": "RipplePropT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 268,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 195,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 196,
+											"name": "accent",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 271,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "false"
+													},
+													{
+														"type": "intrinsic",
+														"name": "true"
+													}
+												]
+											}
+										},
+										{
+											"id": 197,
+											"name": "surface",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 272,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "false"
+													},
+													{
+														"type": "intrinsic",
+														"name": "true"
+													}
+												]
+											}
+										},
+										{
+											"id": 198,
+											"name": "unbounded",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isOptional": true
+											},
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 273,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "false"
+													},
+													{
+														"type": "intrinsic",
+														"name": "true"
+													}
+												]
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												196,
+												197,
+												198
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "index.tsx",
+											"line": 270,
+											"character": 3
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 199,
 					"name": "withRipple",
 					"kind": 64,
 					"kindString": "Function",
@@ -4296,7 +4323,7 @@
 					},
 					"signatures": [
 						{
-							"id": 199,
+							"id": 200,
 							"name": "withRipple",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4306,7 +4333,7 @@
 							},
 							"parameters": [
 								{
-									"id": 200,
+									"id": 201,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4315,14 +4342,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 201,
+											"id": 202,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 203,
+													"id": 204,
 													"name": "defaultAccent",
 													"kind": 32,
 													"kindString": "Variable",
@@ -4330,7 +4357,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 289,
+															"line": 292,
 															"character": 23
 														}
 													],
@@ -4353,7 +4380,7 @@
 													}
 												},
 												{
-													"id": 204,
+													"id": 205,
 													"name": "defaultSurface",
 													"kind": 32,
 													"kindString": "Variable",
@@ -4361,7 +4388,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 290,
+															"line": 293,
 															"character": 25
 														}
 													],
@@ -4372,7 +4399,7 @@
 													"defaultValue": "true"
 												},
 												{
-													"id": 202,
+													"id": 203,
 													"name": "defaultUnbounded",
 													"kind": 32,
 													"kindString": "Variable",
@@ -4380,7 +4407,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 288,
+															"line": 291,
 															"character": 29
 														}
 													],
@@ -4408,16 +4435,16 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														203,
 														204,
-														202
+														205,
+														203
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 287,
+													"line": 290,
 													"character": 27
 												}
 											]
@@ -4435,7 +4462,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 287,
+							"line": 290,
 							"character": 23
 						}
 					]
@@ -4457,7 +4484,7 @@
 						11,
 						5,
 						2,
-						192,
+						188,
 						186
 					]
 				},
@@ -4465,14 +4492,15 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						196
+						192,
+						194
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						198
+						199
 					]
 				}
 			],

@@ -162,17 +162,19 @@ import { Checkbox } from '@rmwc/checkbox';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="List" />
-<DocumentComponent docs={docs} displayName="ListItem" />
-<DocumentComponent docs={docs} displayName="ListItemPrimaryText" />
-<DocumentComponent docs={docs} displayName="ListItemSecondaryText" />
-<DocumentComponent docs={docs} displayName="ListItemGraphic" />
-<DocumentComponent docs={docs} displayName="ListItemMeta" />
-<DocumentComponent docs={docs} displayName="ListDivider" />
-<DocumentComponent docs={docs} displayName="ListGroup" />
-<DocumentComponent docs={docs} displayName="ListGroupSubheader" />
-<DocumentComponent docs={docs} displayName="SimpleListItem" />
+<Docs src={docs} components={[
+  'List',
+  'ListItem',
+  'ListItemPrimaryText',
+  'ListItemSecondaryText',
+  'ListItemGraphic',
+  'ListItemMeta',
+  'ListDivider',
+  'ListGroup',
+  'ListGroupSubheader',
+  'SimpleListItem'
+]} />
 ```

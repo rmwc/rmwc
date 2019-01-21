@@ -200,7 +200,7 @@ class ChipCheckmark extends React.Component<{}> {
   }
 }
 
-export interface ChipIconProps extends IconProps {
+interface ChipIconProps extends IconProps {
   /** Make it a leading icon */
   leading?: boolean;
   /** Make it a trailing icon */
@@ -224,7 +224,7 @@ const ChipIconRoot = componentFactory<ChipIconProps>({
   consumeProps: ['trailing', 'leading']
 });
 
-export const ChipIcon = (props: ChipIconProps & ComponentProps) => {
+const ChipIcon = (props: ChipIconProps & ComponentProps) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')
   );

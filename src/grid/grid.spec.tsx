@@ -34,23 +34,23 @@ describe('Grid', () => {
   });
 
   it('GridCell span', () => {
-    mount(<GridCell span="4" />);
+    mount(<GridCell span={4} />);
   });
 
   it('GridCell phone', () => {
-    mount(<GridCell phone="4" />);
+    mount(<GridCell phone={4} />);
   });
 
   it('GridCell tablet', () => {
-    mount(<GridCell tablet="4" />);
+    mount(<GridCell tablet={4} />);
   });
 
   it('GridCell desktop', () => {
-    mount(<GridCell desktop="4" />);
+    mount(<GridCell desktop={4} />);
   });
 
   it('GridCell order', () => {
-    mount(<GridCell order="4" />);
+    mount(<GridCell order={4} />);
   });
 
   it('GridCell align', () => {

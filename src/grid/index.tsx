@@ -45,15 +45,15 @@ Grid.displayName = 'Grid';
 
 export interface GridCellProps {
   /** Default number of columns to span. */
-  span?: string | number | any;
+  span?: number;
   /** Number of columns to span on a phone. */
-  phone?: string | number;
+  phone?: number;
   /** Number of columns to span on a tablet. */
-  tablet?: string | number;
+  tablet?: number;
   /** Number of columns to span on a desktop. */
-  desktop?: string | number;
+  desktop?: number;
   /** Specifies the order of the cell. */
-  order?: string | number;
+  order?: number;
   /** Specifies the alignment of cell */
   align?: 'top' | 'middle' | 'bottom';
 }
