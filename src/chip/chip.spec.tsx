@@ -43,7 +43,7 @@ describe('Chip', () => {
     expect(value).toEqual(1);
   });
 
-  it('handles custom ChipIcon', () => {
+  it.only('handles custom ChipIcon', () => {
     const el = mount(<Chip leadingIcon={<ChipIcon icon="favorite" />} />);
     expect(el.html().includes('favorite')).toBe(true);
   });
