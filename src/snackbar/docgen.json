@@ -1,491 +1,3264 @@
-[
-  {
-    "description": "",
-    "displayName": "SnackbarRoot",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "show",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onShow",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onHide",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "message",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "timeout",
-                        "value": {
-                          "name": "number",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionHandler",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionText",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "multiline",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionOnBottom",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "dismissesOnAction",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "alignStart",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
-              "alias": "SnackbarPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "alignStart": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        },
-        "required": false
-      },
-      "aria-live": {
-        "defaultValue": {
-          "value": "'assertive'",
-          "computed": false
-        },
-        "required": false
-      },
-      "aria-atomic": {
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        },
-        "required": false
-      },
-      "aria-hidden": {
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "SnackbarText",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SnackbarActionWrapper",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "SnackbarActionButton",
-    "methods": []
-  },
-  {
-    "description": "A Snackbar component for notifications.",
-    "displayName": "Snackbar",
-    "methods": [
-      {
-        "name": "isShowing",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "isShowing",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "isShowing",
-            "type": {
-              "name": "boolean"
-            }
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "syncWithProps",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "nextProps",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Show the Snackbar. */\n  show?: boolean,\n  /** A callback thats fired when the Snackbar shows. */\n  onShow?: () => mixed,\n  /** A callback thats fired when the Snackbar hides. */\n  onHide?: () => mixed,\n  /** A string or other renderable JSX to be used as the message body. */\n  message?: React.Node,\n  /** Milliseconds to show the Snackbar for. */\n  timeout?: number,\n  /** Callback that fires when action is pressed. The actionText property must be set to use this. */\n  actionHandler?: () => mixed,\n  /** Label for the action button. */\n  actionText?: React.Node,\n  /** Lets the Snackbar text overflow onto multiple lines. */\n  multiline?: boolean,\n  /** Places the action underneath the message text. */\n  actionOnBottom?: boolean,\n  /** Whether or not the Snackbar dismisses on the action press. */\n  dismissesOnAction?: boolean,\n  /* Aligns the Snackbar to the start of the screen. */\n  alignStart?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "show",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onShow",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "onHide",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "message",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "timeout",
-                        "value": {
-                          "name": "number",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionHandler",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "() => mixed",
-                          "signature": {
-                            "arguments": [],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionText",
-                        "value": {
-                          "name": "ReactNode",
-                          "raw": "React.Node",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "multiline",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "actionOnBottom",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "dismissesOnAction",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "alignStart",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
-              "alias": "SnackbarPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "show": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Show the Snackbar.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "onShow": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => mixed",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "A callback thats fired when the Snackbar shows.",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
-        }
-      },
-      "onHide": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => mixed",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "A callback thats fired when the Snackbar hides.",
-        "defaultValue": {
-          "value": "noop",
-          "computed": true
-        }
-      },
-      "message": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "A string or other renderable JSX to be used as the message body.",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "timeout": {
-        "flowType": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Milliseconds to show the Snackbar for.",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "actionHandler": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "() => mixed",
-          "signature": {
-            "arguments": [],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Callback that fires when action is pressed. The actionText property must be set to use this.",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "actionText": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "Label for the action button.",
-        "defaultValue": {
-          "value": "undefined",
-          "computed": true
-        }
-      },
-      "multiline": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Lets the Snackbar text overflow onto multiple lines.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "actionOnBottom": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Places the action underneath the message text.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "dismissesOnAction": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Whether or not the Snackbar dismisses on the action press.",
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        }
-      },
-      "alignStart": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/snackbar",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/snackbar/index.tsx",
+			"children": [
+				{
+					"id": 36,
+					"name": "Snackbar",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A Snackbar component for notifications."
+					},
+					"typeParameter": [
+						{
+							"id": 66,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 99,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 40,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 41,
+									"name": "new Snackbar",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 42,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "SnackbarProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Snackbar",
+										"id": 36
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 108,
+									"character": 4
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 48,
+							"name": "announce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 122,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " util.announce"
+						},
+						{
+							"id": 73,
+							"name": "canUpdate",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.canUpdate"
+							}
+						},
+						{
+							"id": 45,
+							"name": "dismissesOnAction",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 119,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 69,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 70,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"indexSignature": [
+										{
+											"id": 71,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 72,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 201,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 68,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 200,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 44,
+							"name": "isShowing_",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 118,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 46,
+							"name": "labelEl",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 120,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 43,
+							"name": "root",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 117,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "FoundationElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									},
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									}
+								]
+							},
+							"defaultValue": " this.createElement('root')"
+						},
+						{
+							"id": 47,
+							"name": "show",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 121,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 37,
+							"name": "displayName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 105,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Snackbar\""
+						},
+						{
+							"id": 67,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 198,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 115,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 116,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 121,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 122,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 123,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 124,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 130,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 131,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 132,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 133,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 134,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 105,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 106,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 107,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 108,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 74,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 75,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 214,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 76,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 77,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 78,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "reference",
+																"name": "SnackbarProps",
+																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "DeprecatedSnackbarProps",
+																"id": 19
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 219,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 113,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 114,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 117,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 118,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 119,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 120,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 79,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 80,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 125,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 126,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 127,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 128,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 129,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 81,
+							"name": "createElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 82,
+									"name": "createElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 83,
+											"name": "ElementType",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 84,
+											"name": "elementName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "FoundationElement",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "unknown",
+												"name": "ElementType"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.createElement"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 229,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.createElement"
+							}
+						},
+						{
+							"id": 94,
+							"name": "emit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 95,
+									"name": "emit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Fires a cross-browser-compatible custom event from the component root of the given type,"
+									},
+									"parameters": [
+										{
+											"id": 96,
+											"name": "evtType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 97,
+											"name": "evtData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Object"
+											}
+										},
+										{
+											"id": 98,
+											"name": "shouldBubble",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "CustomEvent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.emit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 256,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.emit"
+							}
+						},
+						{
+							"id": 49,
+							"name": "getDefaultFoundation",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 50,
+									"name": "getDefaultFoundation",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.getDefaultFoundation"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 124,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.getDefaultFoundation"
+							}
+						},
+						{
+							"id": 55,
+							"name": "getPropsWithDeprecations",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 56,
+									"name": "getPropsWithDeprecations",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 57,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "SnackbarProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 156,
+									"character": 26
+								}
+							]
+						},
+						{
+							"id": 109,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 110,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 111,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 112,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 58,
+							"name": "handleKeyDown",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 59,
+									"name": "handleKeyDown",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 60,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "KeyboardEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 173,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 61,
+							"name": "handleSurfaceClick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 62,
+									"name": "handleSurfaceClick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 63,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MouseEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 178,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 64,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 65,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 224,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 100,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "SnackbarProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedSnackbarProps",
+																		"id": 19
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 103,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 104,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 51,
+							"name": "sync",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 52,
+									"name": "sync",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 53,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "SnackbarProps",
+												"id": 2
+											}
+										},
+										{
+											"id": 54,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "SnackbarProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.sync"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 139,
+									"character": 6
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.sync"
+							}
+						},
+						{
+							"id": 87,
+							"name": "syncProp",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 88,
+									"name": "syncProp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 89,
+											"name": "prop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 90,
+											"name": "prevProp",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 91,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 92,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {
+														"isExported": true
+													},
+													"signatures": [
+														{
+															"id": 93,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 242,
+															"character": 46
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.syncProp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 242,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.syncProp"
+							}
+						},
+						{
+							"id": 85,
+							"name": "update",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 86,
+									"name": "update",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.update"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 236,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.update"
+							}
+						},
+						{
+							"id": 38,
+							"name": "defaultProps",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 39,
+									"name": "dismissesOnAction",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "index.tsx",
+											"line": 107,
+											"character": 21
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "true"
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										39
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 106,
+									"character": 21
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								40
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								48,
+								73,
+								45,
+								69,
+								68,
+								44,
+								46,
+								43,
+								47,
+								37,
+								67
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								115,
+								121,
+								130,
+								105,
+								74,
+								76,
+								113,
+								117,
+								79,
+								125,
+								81,
+								94,
+								49,
+								55,
+								109,
+								58,
+								61,
+								64,
+								100,
+								51,
+								87,
+								85
+							]
+						},
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								38
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 102,
+							"character": 21
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FoundationComponent",
+							"typeArguments": [
+								{
+									"type": "intersection",
+									"types": [
+										{
+											"type": "reference",
+											"name": "SnackbarProps",
+											"id": 2
+										},
+										{
+											"type": "reference",
+											"name": "DeprecatedSnackbarProps",
+											"id": 19
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 19,
+					"name": "DeprecatedSnackbarProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 32,
+							"name": "actionHandler",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use the actions prop."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 50,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 33,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 34,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 31,
+							"name": "actionOnBottom",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use stacked."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 48,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 35,
+							"name": "actionText",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use the actions prop."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 52,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 29,
+							"name": "alignStart",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use leading."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 44,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 30,
+							"name": "multiline",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: No longer applicable."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 46,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 25,
+							"name": "onHide",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use onClose."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 42,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 26,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 27,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 28,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Event"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 21,
+							"name": "onShow",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use onOpen."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 40,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 22,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 23,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 24,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Event"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 20,
+							"name": "show",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Use open."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 38,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								32,
+								31,
+								35,
+								29,
+								30,
+								25,
+								21,
+								20
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 36,
+							"character": 40
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "SnackbarProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 13,
+							"name": "action",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "One or more actions to add to the snackbar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 23,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "React.ReactNode"
+									},
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "React.ReactNode"
+										}
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 17,
+							"name": "dismissIcon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 31,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						},
+						{
+							"id": 18,
+							"name": "dismissesOnAction",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Whether or not your want clicking an action to close the Snackbar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 33,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 16,
+							"name": "leading",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 29,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 12,
+							"name": "message",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A string or other renderable JSX to be used as the message body."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 21,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 8,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A callback thats fired when the Snackbar hides."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 19,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 9,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 10,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 11,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Event"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A callback thats fired when the Snackbar shows."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 17,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 5,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 6,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 7,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Event"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Show the Snackbar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 15,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 15,
+							"name": "stacked",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Places the action underneath the message text."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 27,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 14,
+							"name": "timeout",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Milliseconds to show the Snackbar for."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 25,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								13,
+								17,
+								18,
+								16,
+								12,
+								8,
+								4,
+								3,
+								15,
+								14
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 13,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 141,
+					"name": "SnackbarAction",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 87,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 142,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory({\n  displayName: 'SnackbarAction',\n  tag: Button,\n  classNames: ['mdc-snackbar__action']\n})"
+				},
+				{
+					"id": 139,
+					"name": "SnackbarActions",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 82,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 140,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory({\n  displayName: 'SnackbarActions',\n  classNames: ['mdc-snackbar__actions']\n})"
+				},
+				{
+					"id": 143,
+					"name": "SnackbarDismiss",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 93,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 144,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconButtonProps>({\n  displayName: 'SnackbarDismiss',\n  tag: IconButton,\n  classNames: ['mdc-snackbar__dismiss']\n})"
+				},
+				{
+					"id": 137,
+					"name": "SnackbarLabel",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 73,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 138,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory({\n  displayName: 'SnackbarText',\n  classNames: ['mdc-snackbar__label'],\n  defaultProps: {\n    role: 'status',\n    'aria-live': 'polite'\n  }\n})"
+				},
+				{
+					"id": 135,
+					"name": "SnackbarRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 55,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 136,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory({\n  displayName: 'SnackbarRoot',\n  classNames: (props: SnackbarProps) => [\n    'mdc-snackbar',\n    {\n      'mdc-snackbar--leading': props.leading,\n      'mdc-snackbar--stacked': props.stacked\n    }\n  ],\n  defaultProps: {\n    leading: false,\n    'aria-live': 'assertive',\n    'aria-atomic': true,\n    'aria-hidden': true\n  },\n  consumeProps: ['leading', 'stacked']\n})"
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						36
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						19,
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						141,
+						139,
+						143,
+						137,
+						135
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

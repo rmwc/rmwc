@@ -9,6 +9,8 @@ import {
 import { FoundationComponent } from '@rmwc/base';
 
 export class TabIndicator extends FoundationComponent<{}> {
+  static shouldDebounce = false;
+
   root = this.createElement('root');
   content = this.createElement('content');
 

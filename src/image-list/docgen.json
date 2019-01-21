@@ -1,48 +1,471 @@
-[
-  {
-    "description": "Indicates the root Image List element.",
-    "displayName": "ImageList",
-    "methods": [],
-    "props": {
-      "masonry": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Indicates that this Image List should use the Masonry variant."
-      },
-      "withTextProtection": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image)."
-      }
-    }
-  },
-  {
-    "description": "Indicates each item in an Image List.",
-    "displayName": "ImageListItem",
-    "methods": []
-  },
-  {
-    "description": "Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio.",
-    "displayName": "ImageListImageAspectContainer",
-    "methods": []
-  },
-  {
-    "description": "Indicates the image element in each item.",
-    "displayName": "ImageListImage",
-    "methods": []
-  },
-  {
-    "description": "Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels.",
-    "displayName": "ImageListSupporting",
-    "methods": []
-  },
-  {
-    "description": "Optional. Indicates the text label in each item, if the Image List contains text labels.",
-    "displayName": "ImageListLabel",
-    "methods": []
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/image-list",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/image-list/index.tsx",
+			"children": [
+				{
+					"id": 2,
+					"name": "ImageListProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "masonry",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Indicates that this Image List should use the Masonry variant."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 6,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "withTextProtection",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image)."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 8,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 4,
+							"character": 31
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "ImageList",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Indicates the root Image List element."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 12,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 6,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<ImageListProps>({\n  displayName: 'ImageListRoot',\n  tag: 'ul',\n  classNames: (props: ImageListProps) => [\n    'mdc-image-list',\n    {\n      'mdc-image-list--masonry': props.masonry,\n      'mdc-image-list--with-text-protection': props.withTextProtection\n    }\n  ],\n  consumeProps: ['masonry', 'withTextProtection']\n})"
+				},
+				{
+					"id": 11,
+					"name": "ImageListImage",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Indicates the image element in each item."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 39,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 12,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListImage',\n  tag: 'img',\n  classNames: ['mdc-image-list__image']\n})"
+				},
+				{
+					"id": 9,
+					"name": "ImageListImageAspectContainer",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 33,
+							"character": 42
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 10,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListImageAspectContainer',\n  classNames: ['mdc-image-list__image-aspect-container']\n})"
+				},
+				{
+					"id": 7,
+					"name": "ImageListItem",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Indicates each item in an Image List."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 26,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 8,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListItem',\n  tag: 'li',\n  classNames: ['mdc-image-list__item']\n})"
+				},
+				{
+					"id": 15,
+					"name": "ImageListLabel",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Optional. Indicates the text label in each item, if the Image List contains text labels."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 52,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 16,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListLabel',\n  classNames: ['mdc-image-list__label']\n})"
+				},
+				{
+					"id": 13,
+					"name": "ImageListSupporting",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 46,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 14,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListSupporting',\n  classNames: ['mdc-image-list__supporting']\n})"
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						5,
+						11,
+						9,
+						7,
+						15,
+						13
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

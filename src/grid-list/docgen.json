@@ -1,255 +1,700 @@
-[
-  {
-    "description": "",
-    "displayName": "GridListRoot",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Use a 1px gutter. */\n  tileGutter1?: boolean,\n  /** Move the caption to the top of the card. */\n  headerCaption?: boolean,\n  /** Make the caption two lines. */\n  twolineCaption?: boolean,\n  /** Leaves space for a start aligned icon. */\n  withIconAlignStart?: boolean,\n  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */\n  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Use a 1px gutter. */\n  tileGutter1?: boolean,\n  /** Move the caption to the top of the card. */\n  headerCaption?: boolean,\n  /** Make the caption two lines. */\n  twolineCaption?: boolean,\n  /** Leaves space for a start aligned icon. */\n  withIconAlignStart?: boolean,\n  /** One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. */\n  tileAspect?: '1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "tileGutter1",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "headerCaption",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "twolineCaption",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "withIconAlignStart",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "tileAspect",
-                        "value": {
-                          "name": "union",
-                          "raw": "'1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'",
-                          "elements": [
-                            {
-                              "name": "literal",
-                              "value": "'1x1'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'16x9'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'2x3'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'3x2'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'4x3'"
-                            },
-                            {
-                              "name": "literal",
-                              "value": "'3x4'"
-                            }
-                          ],
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
-              "alias": "GridListPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "tileGutter1": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        },
-        "required": false
-      },
-      "headerCaption": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        },
-        "required": false
-      },
-      "twolineCaption": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        },
-        "required": false
-      },
-      "withIconAlignStart": {
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        },
-        "required": false
-      },
-      "tileAspect": {
-        "defaultValue": {
-          "value": "'1x1'",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "",
-    "displayName": "GridListTiles",
-    "methods": []
-  },
-  {
-    "description": "The primary content for a Grid tile",
-    "displayName": "GridTilePrimary",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "GridTilePrimaryContent",
-    "methods": [],
-    "props": {
-      "wrap": {
-        "defaultValue": {
-          "value": "true",
-          "computed": false
-        },
-        "required": false
-      }
-    }
-  },
-  {
-    "description": "A grid tile",
-    "displayName": "GridTile",
-    "methods": []
-  },
-  {
-    "description": "The secondary content for a Grid tile",
-    "displayName": "GridTileSecondary",
-    "methods": []
-  },
-  {
-    "description": "The icon for a Grid tile. This is an instance of Icon component.",
-    "displayName": "GridTileIcon",
-    "methods": []
-  },
-  {
-    "description": "The title for a Grid tile",
-    "displayName": "GridTileTitle",
-    "methods": []
-  },
-  {
-    "description": "Supporting Text for the Grid Tile",
-    "displayName": "GridTileTitleSupportText",
-    "methods": []
-  },
-  {
-    "description": "Grid List Component",
-    "displayName": "GridList",
-    "methods": [],
-    "props": {
-      "tileGutter1": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Use a 1px gutter."
-      },
-      "headerCaption": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Move the caption to the top of the card."
-      },
-      "twolineCaption": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the caption two lines."
-      },
-      "withIconAlignStart": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Leaves space for a start aligned icon."
-      },
-      "tileAspect": {
-        "flowType": {
-          "name": "union",
-          "raw": "'1x1' | '16x9' | '2x3' | '3x2' | '4x3' | '3x4'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'1x1'"
-            },
-            {
-              "name": "literal",
-              "value": "'16x9'"
-            },
-            {
-              "name": "literal",
-              "value": "'2x3'"
-            },
-            {
-              "name": "literal",
-              "value": "'3x2'"
-            },
-            {
-              "name": "literal",
-              "value": "'4x3'"
-            },
-            {
-              "name": "literal",
-              "value": "'3x4'"
-            }
-          ]
-        },
-        "required": false,
-        "description": "One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4."
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/grid-list",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/grid-list/index.tsx",
+			"children": [
+				{
+					"id": 2,
+					"name": "GridListProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 4,
+							"name": "headerCaption",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Move the caption to the top of the card."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 9,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"name": "tileAspect",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 15,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "stringLiteral",
+										"value": "1x1"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "16x9"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "2x3"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "3x2"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "4x3"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "3x4"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "tileGutter1",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Use a 1px gutter."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 7,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "twolineCaption",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the caption two lines."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 11,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 6,
+							"name": "withIconAlignStart",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Leaves space for a start aligned icon."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 13,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4,
+								7,
+								3,
+								5,
+								6
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 5,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 8,
+					"name": "GridList",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Grid List Component"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 19,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 9,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<GridListProps>({\n  displayName: 'GridList',\n  classNames: (props: GridListProps) => [\n    'mdc-grid-list',\n    {\n      'mdc-grid-list--tile-gutter-1': props.tileGutter1,\n      'mdc-grid-list--header-caption': props.headerCaption,\n      'mdc-grid-list--twoline-caption': props.twolineCaption,\n      'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,\n      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect\n    }\n  ],\n  defaultProps: {\n    tileGutter1: false,\n    headerCaption: false,\n    twolineCaption: false,\n    withIconAlignStart: false,\n    tileAspect: '1x1'\n  },\n  consumeProps: [\n    'tileGutter1',\n    'headerCaption',\n    'twolineCaption',\n    'withIconAlignStart',\n    'tileAspect'\n  ],\n  render: (\n    { children, ...rest }: GridListProps & ComponentProps,\n    ref: any,\n    Tag: any\n  ) => (\n    <Tag {...rest} ref={ref}>\n      <ul className=\"mdc-grid-list__tiles\">{children}</ul>\n    </Tag>\n  )\n})"
+				},
+				{
+					"id": 14,
+					"name": "GridTile",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A grid tile"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 72,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 15,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTile',\n  tag: 'li',\n  classNames: ['mdc-grid-tile']\n})"
+				},
+				{
+					"id": 18,
+					"name": "GridTileIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The icon for a Grid tile. This is an instance of Icon component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 86,
+							"character": 25
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 19,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'GridTileIcon',\n  tag: Icon,\n  classNames: ['mdc-grid-tile__icon']\n})"
+				},
+				{
+					"id": 10,
+					"name": "GridTilePrimary",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The primary content for a Grid tile"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 57,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 11,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimary',\n  classNames: ['mdc-grid-tile__primary']\n})"
+				},
+				{
+					"id": 12,
+					"name": "GridTilePrimaryContent",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 62,
+							"character": 35
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 13,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimaryContent',\n  tag: 'img',\n  classNames: ['mdc-grid-tile__primary-content']\n})"
+				},
+				{
+					"id": 16,
+					"name": "GridTileSecondary",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The secondary content for a Grid tile"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 79,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 17,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileSecondary',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__secondary']\n})"
+				},
+				{
+					"id": 20,
+					"name": "GridTileTitle",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The title for a Grid tile"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 93,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 21,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileTitle',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__title']\n})"
+				},
+				{
+					"id": 22,
+					"name": "GridTileTitleSupportText",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Supporting Text for the Grid Tile"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 100,
+							"character": 37
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 23,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileTitleSupportText',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__support-text']\n})"
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						8,
+						14,
+						18,
+						10,
+						12,
+						16,
+						20,
+						22
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

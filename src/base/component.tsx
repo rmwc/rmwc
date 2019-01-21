@@ -64,7 +64,7 @@ const handleClassNames = (
 const handleTag = (props: any, defaultTag: TagT, tag?: TagT) => {
   // Handle the case where we are extending a component but passing
   // a string as a tag. For instance, extending an Icon but rendering a span
-  if (typeof defaultTag === 'function' && typeof tag === 'string') {
+  if (typeof defaultTag !== 'string' && typeof tag === 'string') {
     props.tag = tag;
   }
 };
@@ -96,8 +96,11 @@ export const componentFactory = <P extends {}>({
 
       const finalProps: ComponentProps = rest;
 
+      // Do some switching to figure out what tag to use
+      // if we are extending an icon, we can still honor
+      // someone passing in an 'a' tag, while extending the icon
       const Tag =
-        typeof defaultTag === 'function' && typeof tag === 'string'
+        typeof defaultTag !== 'string' && typeof tag === 'string'
           ? defaultTag
           : tag || defaultTag;
 

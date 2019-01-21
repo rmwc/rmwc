@@ -263,7 +263,7 @@ interface SelectState {
 }
 
 export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
-  root = this.createElement('root');
+  root = this.createElement<HTMLSelectElement>('root');
   lineRipple = this.createElement('lineRipple');
   outline = this.createElement('outline');
   label = this.createElement<FloatingLabel>('label');
@@ -304,7 +304,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       this.menuElement =
         this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
       this.menu.hoistMenuToBody();
-      this.menu.setAnchorElement(this.root.ref);
+      this.root.ref && this.menu.setAnchorElement(this.root.ref);
       //this.menu.wrapFocus = false;
 
       if (this.hiddenInput_ && this.hiddenInput_.value) {

@@ -1,370 +1,5156 @@
-[
-  {
-    "description": "",
-    "displayName": "TopAppBarRoot",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n} & SimpleTagPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  /** Emits when the navigation icon is clicked. */\n  onNav?: (evt: CustomEventT<void>) => mixed,\n  /** Styles the top app bar as a fixed top app bar. */\n  fixed?: boolean,\n  /** Styles the top app bar as a prominent top app bar. */\n  prominent?: boolean,\n  /** Styles the top app bar as a short top app bar. */\n  short?: boolean,\n  /** Styles the top app bar to always be collapsed. */\n  shortCollapsed?: boolean,\n  /** Styles the top app bar to be dense. */\n  dense?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "onNav",
-                        "value": {
-                          "name": "signature",
-                          "type": "function",
-                          "raw": "(evt: CustomEventT<void>) => mixed",
-                          "signature": {
-                            "arguments": [
-                              {
-                                "name": "evt",
-                                "type": {
-                                  "name": "CustomEventT",
-                                  "elements": [
-                                    {
-                                      "name": "void"
-                                    }
-                                  ],
-                                  "raw": "CustomEventT<void>"
-                                }
-                              }
-                            ],
-                            "return": {
-                              "name": "mixed"
-                            }
-                          },
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "fixed",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "prominent",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "short",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "shortCollapsed",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      },
-                      {
-                        "key": "dense",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "SimpleTagPropsT"
-                }
-              ],
-              "alias": "TopAppAppBarPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ]
-  },
-  {
-    "description": "A row for the app bar.",
-    "displayName": "TopAppBarRow",
-    "methods": []
-  },
-  {
-    "description": "A section for the app bar.",
-    "displayName": "TopAppBarSection",
-    "methods": [],
-    "props": {
-      "alignStart": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Aligns the section to the start."
-      },
-      "alignEnd": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Aligns the section to the end."
-      }
-    }
-  },
-  {
-    "description": "A navigation icon for the top app bar. This is an instance of the Icon component.",
-    "displayName": "TopAppBarNavigationIcon",
-    "methods": []
-  },
-  {
-    "description": "Action items for the top app bar. This is an instance of the Icon component.",
-    "displayName": "TopAppBarActionItem",
-    "methods": []
-  },
-  {
-    "description": "A title for the top app bar.",
-    "displayName": "TopAppBarTitle",
-    "methods": []
-  },
-  {
-    "description": "An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar.",
-    "displayName": "TopAppBarFixedAdjust",
-    "methods": [],
-    "props": {
-      "dense": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Class used to style the content below the dense top app bar to prevent the top app bar from covering it."
-      },
-      "prominent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Class used to style the content below the prominent top app bar to prevent the top app bar from covering it."
-      },
-      "denseProminent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it."
-      },
-      "short": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Class used to style the content below the short top app bar to prevent the top app bar from covering it."
-      }
-    }
-  },
-  {
-    "description": "A TopAppBar component",
-    "displayName": "TopAppBar",
-    "methods": [],
-    "props": {
-      "onNav": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Emits when the navigation icon is clicked."
-      },
-      "fixed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a fixed top app bar."
-      },
-      "prominent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a prominent top app bar."
-      },
-      "short": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a short top app bar."
-      },
-      "shortCollapsed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar to always be collapsed."
-      },
-      "dense": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar to be dense."
-      }
-    }
-  },
-  {
-    "description": "A simplified syntax for creating an AppBar.",
-    "displayName": "SimpleTopAppBar",
-    "methods": [],
-    "props": {
-      "title": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "The title for the App Bar."
-      },
-      "actionItems": {
-        "flowType": {
-          "name": "Array",
-          "elements": [
-            {
-              "name": "Object"
-            }
-          ],
-          "raw": "Object[]"
-        },
-        "required": false,
-        "description": "An array of props that will be used to create TopAppBarActionItems."
-      },
-      "navigationIcon": {
-        "flowType": {
-          "name": "union",
-          "raw": "Object | boolean",
-          "elements": [
-            {
-              "name": "Object"
-            },
-            {
-              "name": "boolean"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions."
-      },
-      "startContent": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "Additional content to place in the start section."
-      },
-      "endContent": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "Additional content to place in the end section."
-      },
-      "onNav": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<void>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "void"
-                    }
-                  ],
-                  "raw": "CustomEventT<void>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "Emits when the navigation icon is clicked."
-      },
-      "fixed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a fixed top app bar."
-      },
-      "prominent": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a prominent top app bar."
-      },
-      "short": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar as a short top app bar."
-      },
-      "shortCollapsed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar to always be collapsed."
-      },
-      "dense": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Styles the top app bar to be dense."
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/top-app-bar",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/top-app-bar/index.tsx",
+			"children": [
+				{
+					"id": 120,
+					"name": "SimpleTopAppBar",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A simplified syntax for creating an AppBar."
+					},
+					"typeParameter": [
+						{
+							"id": 124,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 125,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						},
+						{
+							"id": 170,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 173,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": ""
+									},
+									{
+										"tag": "see",
+										"text": "https://reactjs.org/docs/legacy-context.html\n"
+									}
+								]
+							},
+							"signatures": [
+								{
+									"id": 174,
+									"name": "new SimpleTopAppBar",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"comment": {},
+									"parameters": [
+										{
+											"id": 175,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "SimpleTopAppBar",
+										"id": 120
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.__constructor"
+									}
+								},
+								{
+									"id": 176,
+									"name": "new SimpleTopAppBar",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"comment": {
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": ""
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/docs/legacy-context.html\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 177,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "SimpleTopAppBarProps",
+												"id": 105
+											}
+										},
+										{
+											"id": 178,
+											"name": "context",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "SimpleTopAppBar",
+										"id": 120
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 393,
+									"character": 21
+								},
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 395,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.__constructor"
+							}
+						},
+						{
+							"id": 172,
+							"name": "context",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.",
+								"text": "```ts\nstatic contextType = MyContext\ncontext!: React.ContextType<typeof MyContext>\n```\n",
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": "if used without a type annotation, or without static contextType"
+									},
+									{
+										"tag": "see",
+										"text": "https://reactjs.org/docs/legacy-context.html\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 393,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.context"
+							}
+						},
+						{
+							"id": 197,
+							"name": "props",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 418,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 198,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 199,
+															"name": "children",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+																	"line": 418,
+																	"character": 43
+																}
+															],
+															"type": {
+																"type": "reference",
+																"name": "ReactNode"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																199
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+															"line": 418,
+															"character": 33
+														}
+													]
+												}
+											}
+										]
+									},
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "SimpleTopAppBarProps",
+												"id": 105
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.props"
+							}
+						},
+						{
+							"id": 201,
+							"name": "refs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": "\nhttps://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 424,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 202,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 203,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 204,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "ReactInstance"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+											"line": 424,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.refs"
+							}
+						},
+						{
+							"id": 200,
+							"name": "state",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 419,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Readonly",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "S"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.state"
+							}
+						},
+						{
+							"id": 171,
+							"name": "contextType",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "If set, `this.context` will be set at runtime to the current value of the given Context.",
+								"text": "Usage:\n\n```ts\ntype MyContext = number\nconst Ctx = React.createContext<MyContext>(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType<typeof Ctx>\n  render () {\n    return <>My context's value: {this.context}</>;\n  }\n}\n```\n",
+								"tags": [
+									{
+										"tag": "see",
+										"text": "https://reactjs.org/docs/context.html#classcontexttype\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 378,
+									"character": 26
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Context",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.contextType"
+							}
+						},
+						{
+							"id": 121,
+							"name": "displayName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 242,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"SimpleTopAppBar\""
+						},
+						{
+							"id": 150,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 151,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 156,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 157,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 158,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 159,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 165,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 166,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 167,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 168,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "S"
+													}
+												]
+											}
+										},
+										{
+											"id": 169,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 135,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 136,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 137,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 138,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 126,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 127,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after a component is mounted. Setting state here will trigger re-rendering."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 518,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							}
+						},
+						{
+							"id": 143,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 144,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after updating occurs. Not called for the initial render.",
+										"text": "The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.\n"
+									},
+									"parameters": [
+										{
+											"id": 145,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 146,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "S"
+													}
+												]
+											}
+										},
+										{
+											"id": 147,
+											"name": "snapshot",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "SS",
+												"id": 125
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 581,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							}
+						},
+						{
+							"id": 148,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 149,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 152,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 153,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 154,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 155,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 133,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 134,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 534,
+									"character": 28
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							}
+						},
+						{
+							"id": 160,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 162,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 163,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "S"
+													}
+												]
+											}
+										},
+										{
+											"id": 164,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 192,
+							"name": "forceUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 193,
+									"name": "forceUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 194,
+											"name": "callBack",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 195,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 196,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														}
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.forceUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 410,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.forceUpdate"
+							}
+						},
+						{
+							"id": 139,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 140,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 141,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 142,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "S"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 122,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 123,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Component.render"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 244,
+									"character": 8
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Component.render"
+							}
+						},
+						{
+							"id": 179,
+							"name": "setState",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 180,
+									"name": "setState",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 181,
+											"name": "K",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "typeOperator",
+												"operator": "keyof",
+												"target": {
+													"type": "typeParameter",
+													"name": "S"
+												}
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 182,
+											"name": "state",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 183,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 184,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 185,
+																			"name": "prevState",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Readonly",
+																				"typeArguments": [
+																					{
+																						"type": "typeParameter",
+																						"name": "S"
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"id": 186,
+																			"name": "props",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Readonly",
+																				"typeArguments": [
+																					{
+																						"type": "reference",
+																						"name": "SimpleTopAppBarProps",
+																						"id": 105
+																					}
+																				]
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "union",
+																		"types": [
+																			{
+																				"type": "intrinsic",
+																				"name": "null"
+																			},
+																			{
+																				"type": "unknown",
+																				"name": "S"
+																			},
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 187,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {}
+																				}
+																			}
+																		]
+																	}
+																}
+															],
+															"sources": [
+																{
+																	"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+																	"line": 406,
+																	"character": 18
+																}
+															]
+														}
+													},
+													{
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "unknown",
+																"name": "S"
+															},
+															{
+																"type": "reflection",
+																"declaration": {
+																	"id": 188,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {}
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 189,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 190,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 191,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														}
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.setState"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 405,
+									"character": 16
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.setState"
+							}
+						},
+						{
+							"id": 128,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 129,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 130,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SimpleTopAppBarProps",
+														"id": 105
+													}
+												]
+											}
+										},
+										{
+											"id": 131,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "S"
+													}
+												]
+											}
+										},
+										{
+											"id": 132,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								173
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								172,
+								197,
+								201,
+								200,
+								171,
+								121
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								150,
+								156,
+								165,
+								135,
+								126,
+								143,
+								148,
+								152,
+								133,
+								160,
+								192,
+								139,
+								122,
+								179,
+								128
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 241,
+							"character": 28
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Component",
+							"typeArguments": [
+								{
+									"type": "reference",
+									"name": "SimpleTopAppBarProps",
+									"id": 105
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 20,
+					"name": "TopAppBarBase",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "A TopAppBar component"
+					},
+					"typeParameter": [
+						{
+							"id": 31,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 69,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 39,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 40,
+									"name": "new TopAppBarBase",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 41,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "TopAppBarBase",
+										"id": 20
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 38,
+							"name": "canUpdate",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.canUpdate"
+							}
+						},
+						{
+							"id": 34,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 35,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 36,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 37,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 201,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 33,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 200,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 23,
+							"name": "navIcon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 136,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 22,
+							"name": "root",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 135,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "FoundationElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									},
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									}
+								]
+							},
+							"defaultValue": " this.createElement('root')"
+						},
+						{
+							"id": 24,
+							"name": "scrollTarget",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 137,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Window"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 21,
+							"name": "displayName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 133,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"TopAppBar\""
+						},
+						{
+							"id": 32,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 198,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 85,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 86,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 91,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 92,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 93,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 94,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 100,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 103,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 104,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 75,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 76,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 77,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 78,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 25,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 26,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 139,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 42,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 43,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 44,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "TopAppBarProps",
+														"id": 2
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 219,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 83,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 84,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 87,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 88,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 89,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 90,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 45,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 46,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 95,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 96,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 97,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 98,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 99,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 47,
+							"name": "createElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 48,
+									"name": "createElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 49,
+											"name": "ElementType",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 50,
+											"name": "elementName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "FoundationElement",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "unknown",
+												"name": "ElementType"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.createElement"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 229,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.createElement"
+							}
+						},
+						{
+							"id": 64,
+							"name": "emit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 65,
+									"name": "emit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Fires a cross-browser-compatible custom event from the component root of the given type,"
+									},
+									"parameters": [
+										{
+											"id": 66,
+											"name": "evtType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 67,
+											"name": "evtData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Object"
+											}
+										},
+										{
+											"id": 68,
+											"name": "shouldBubble",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "CustomEvent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.emit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 256,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.emit"
+							}
+						},
+						{
+							"id": 27,
+							"name": "getDefaultFoundation",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 28,
+									"name": "getDefaultFoundation",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.getDefaultFoundation"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 149,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.getDefaultFoundation"
+							}
+						},
+						{
+							"id": 79,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 80,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 81,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 82,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 29,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 30,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 214,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 70,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 71,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 72,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "TopAppBarProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 73,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 74,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 53,
+							"name": "sync",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 54,
+									"name": "sync",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 55,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 56,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.sync"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 240,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.sync"
+							}
+						},
+						{
+							"id": 57,
+							"name": "syncProp",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 58,
+									"name": "syncProp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 59,
+											"name": "prop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 60,
+											"name": "prevProp",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 61,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 62,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 63,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 242,
+															"character": 46
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.syncProp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 242,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.syncProp"
+							}
+						},
+						{
+							"id": 51,
+							"name": "update",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 52,
+									"name": "update",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.update"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 236,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.update"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								39
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								38,
+								34,
+								33,
+								23,
+								22,
+								24,
+								21,
+								32
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								85,
+								91,
+								100,
+								75,
+								25,
+								42,
+								83,
+								87,
+								45,
+								95,
+								47,
+								64,
+								27,
+								79,
+								29,
+								70,
+								53,
+								57,
+								51
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 132,
+							"character": 19
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FoundationComponent",
+							"typeArguments": [
+								{
+									"type": "reference",
+									"name": "TopAppBarProps",
+									"id": 2
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 105,
+					"name": "SimpleTopAppBarProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 107,
+							"name": "actionItems",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "An array of props that will be used to create TopAppBarActionItems."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 231,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Object"
+								}
+							}
+						},
+						{
+							"id": 119,
+							"name": "dense",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar to be dense."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.dense",
+								"id": 11
+							}
+						},
+						{
+							"id": 110,
+							"name": "endContent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Additional content to place in the end section."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 237,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 115,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a fixed top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 25,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.fixed",
+								"id": 7
+							}
+						},
+						{
+							"id": 108,
+							"name": "navigationIcon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 233,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Object"
+									},
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						},
+						{
+							"id": 111,
+							"name": "onNav",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Emits when the navigation icon is clicked."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 112,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 113,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 114,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.onNav",
+								"id": 3
+							}
+						},
+						{
+							"id": 116,
+							"name": "prominent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a prominent top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 27,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.prominent",
+								"id": 8
+							}
+						},
+						{
+							"id": 117,
+							"name": "short",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a short top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 29,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.short",
+								"id": 9
+							}
+						},
+						{
+							"id": 118,
+							"name": "shortCollapsed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar to always be collapsed."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 31,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "TopAppBarProps.shortCollapsed",
+								"id": 10
+							}
+						},
+						{
+							"id": 109,
+							"name": "startContent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Additional content to place in the start section."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 235,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 106,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The title for the App Bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 229,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								107,
+								119,
+								110,
+								115,
+								108,
+								111,
+								116,
+								117,
+								118,
+								109,
+								106
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 227,
+							"character": 37
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "TopAppBarProps",
+							"id": 2
+						}
+					]
+				},
+				{
+					"id": 15,
+					"name": "TopAppBarFixedAdjustProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 16,
+							"name": "dense",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Class used to style the content below the dense top app bar to prevent the top app bar from covering it."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 105,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 18,
+							"name": "denseProminent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 109,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 17,
+							"name": "prominent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Class used to style the content below the prominent top app bar to prevent the top app bar from covering it."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 107,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 19,
+							"name": "short",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Class used to style the content below the short top app bar to prevent the top app bar from covering it."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 111,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								16,
+								18,
+								17,
+								19
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 103,
+							"character": 42
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "TopAppBarProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 11,
+							"name": "dense",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar to be dense."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 33,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a fixed top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 25,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "onNav",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Emits when the navigation icon is clicked."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 4,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 5,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 6,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 8,
+							"name": "prominent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a prominent top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 27,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 9,
+							"name": "short",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar as a short top app bar."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 29,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"name": "shortCollapsed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Styles the top app bar to always be collapsed."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 31,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								11,
+								7,
+								3,
+								8,
+								9,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 21,
+							"character": 31
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "SimpleTopAppBarProps",
+							"id": 105
+						}
+					]
+				},
+				{
+					"id": 12,
+					"name": "TopAppBarSectionProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 14,
+							"name": "alignEnd",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Aligns the section to the end."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 62,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 13,
+							"name": "alignStart",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Aligns the section to the start."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 60,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								14,
+								13
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 58,
+							"character": 38
+						}
+					]
+				},
+				{
+					"id": 214,
+					"name": "TopAppBarActionItem",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Action items for the top app bar. This is an instance of the Icon component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 89,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 215,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 216,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<IconProps>({\n    displayName: 'TopAppBarActionItem',\n    classNames: ['mdc-top-app-bar__action-item'],\n    tag: Icon\n  })\n)"
+				},
+				{
+					"id": 219,
+					"name": "TopAppBarFixedAdjust",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 115,
+							"character": 33
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 220,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<TopAppBarFixedAdjustProps>(\n  {\n    displayName: 'TopAppBarFixedAdjust',\n    classNames: (props: TopAppBarFixedAdjustProps) => [\n      'mdc-top-app-bar--fixed-adjust',\n      {\n        'mdc-top-app-bar--dense-fixed-adjust': props.dense,\n        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,\n        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,\n        'mdc-top-app-bar--short-fixed-adjust': props.short\n      }\n    ],\n    consumeProps: ['dense', 'denseProminent', 'prominent', 'short']\n  }\n)"
+				},
+				{
+					"id": 211,
+					"name": "TopAppBarNavigationIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A navigation icon for the top app bar. This is an instance of the Icon component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 80,
+							"character": 36
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 212,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 213,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<IconProps>({\n    displayName: 'TopAppBarNavigationIcon',\n    classNames: ['mdc-top-app-bar__navigation-icon'],\n    tag: Icon\n  })\n)"
+				},
+				{
+					"id": 205,
+					"name": "TopAppBarRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 36,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 206,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<TopAppBarProps>({\n  displayName: 'TopAppBarRoot',\n  tag: 'header',\n  classNames: (props: TopAppBarProps) => [\n    'mdc-top-app-bar',\n    {\n      'mdc-top-app-bar--fixed': props.fixed,\n      'mdc-top-app-bar--prominent': props.prominent,\n      'mdc-top-app-bar--short': props.short || props.shortCollapsed,\n      'mdc-top-app-bar--short-collapsed': props.shortCollapsed,\n      'mdc-top-app-bar--dense': props.dense\n    }\n  ],\n  consumeProps: ['fixed', 'prominent', 'short', 'shortCollapsed', 'dense']\n})"
+				},
+				{
+					"id": 207,
+					"name": "TopAppBarRow",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A row for the app bar."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 53,
+							"character": 25
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 208,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'TopAppBarRow',\n  classNames: ['mdc-top-app-bar__row']\n})"
+				},
+				{
+					"id": 209,
+					"name": "TopAppBarSection",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A section for the app bar."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 66,
+							"character": 29
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 210,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<TopAppBarSectionProps>({\n  displayName: 'TopAppBarSection',\n  tag: 'section',\n  classNames: (props: TopAppBarSectionProps) => [\n    'mdc-top-app-bar__section',\n    {\n      'mdc-top-app-bar__section--align-start': props.alignStart,\n      'mdc-top-app-bar__section--align-end': props.alignEnd\n    }\n  ],\n  consumeProps: ['alignStart', 'alignEnd']\n})"
+				},
+				{
+					"id": 217,
+					"name": "TopAppBarTitle",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A title for the top app bar."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 98,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 218,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'TopAppBarTitle',\n  classNames: ['mdc-top-app-bar__title']\n})"
+				},
+				{
+					"id": 221,
+					"name": "TopAppBar",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 222,
+							"name": "TopAppBar",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 223,
+									"name": "props",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TopAppBarProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 220,
+							"character": 22
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						120,
+						20
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						105,
+						15,
+						2,
+						12
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						214,
+						219,
+						211,
+						205,
+						207,
+						209,
+						217
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						221
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

@@ -51,5 +51,3 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
     );
   }
 }
-
-export default FloatingLabel;

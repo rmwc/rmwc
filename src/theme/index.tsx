@@ -3,6 +3,7 @@ import * as React from 'react';
 import { componentFactory, ComponentProps, ThemeOptionT } from '@rmwc/base';
 import { toDashCase } from '@rmwc/base/utils/to-dash-case';
 import { getAutoColorsForTheme } from './utils';
+import { parseThemeOptions } from '@rmwc/base/withTheme';
 
 const ThemeRoot = componentFactory<{}>({
   displayName: 'ThemeRoot',
@@ -20,19 +21,17 @@ export interface ThemeProps {
  * A Theme Component.
  */
 export const Theme = ({ use, wrap, ...rest }: ThemeProps & ComponentProps) => {
-  const root = <ThemeRoot theme={use} {...rest} />;
-
   if (wrap) {
     const child = React.Children.only(rest.children);
+
     return React.cloneElement(child, {
       ...child.props,
-      ...rest,
-      className: [root.props.className, child.props.className]
+      className: [...parseThemeOptions(use), child.props.className]
         .filter(Boolean)
         .join(' ')
     });
   }
-  return root;
+  return <ThemeRoot theme={use} {...rest} />;
 };
 
 Theme.displayName = 'Theme';

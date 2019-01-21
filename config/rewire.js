@@ -110,7 +110,6 @@ const jestModuleNameMapper = config => {
  * Add jest transforms
  */
 const jestResolver = config => {
-  console.log(config.resolver);
   config.resolver = './scripts/jest-resolver.js';
   return config;
 };

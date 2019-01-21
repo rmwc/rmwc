@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
+import { debounce } from './utils/debounce';
 
 const toCamel = (str: string) =>
   str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
@@ -8,113 +9,152 @@ const toCamel = (str: string) =>
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
 
-type ClassListT = {
-  renderToString: (className?: string) => string;
-  add: (className: string) => void;
-  has: (className: string) => boolean;
-  remove: (className: string) => void;
-};
+class FoundationElement<
+  Props extends { [key: string]: any },
+  ElementType = HTMLElement
+> {
+  _classes = new Set<string>();
+  _events: { [key: string]: (evt: Event) => void } = {};
+  _style: { [key: string]: string | number | null } = {};
+  _props: Partial<Props> = {};
+  _ref = null;
+  onChange = () => {};
 
-class PropsList {
-  update: Function;
-  props: { [key: string]: any } = {};
-
-  constructor(update: () => void) {
-    this.update = update;
-    this.add = this.add.bind(this);
-    this.remove = this.remove.bind(this);
-    this.all = this.all.bind(this);
-    this.get = this.get.bind(this);
+  constructor(onChange: () => void) {
+    this.onChange = onChange;
+    this.addClass = this.addClass.bind(this);
+    this.removeClass = this.removeClass.bind(this);
+    this.hasClass = this.hasClass.bind(this);
+    this.addProp = this.addProp.bind(this);
+    this.getProp = this.getProp.bind(this);
+    this.removeProp = this.removeProp.bind(this);
+    this.setStyle = this.setStyle.bind(this);
     this.addEventListener = this.addEventListener.bind(this);
     this.removeEventListener = this.removeEventListener.bind(this);
-    this.setStyle = this.setStyle.bind(this);
+    this.setRef = this.setRef.bind(this);
   }
 
-  setStyle(styleName: string, styleValue: string | number | null) {
-    const formattedName = styleName.startsWith('--')
-      ? styleName
-      : toCamel(styleName);
-
-    this.props = {
-      ...this.props,
-      style: {
-        ...(this.props.style || {}),
-        [formattedName]: styleValue
-      }
-    };
-    this.update();
+  destroy() {
+    this.onChange = () => {};
+    this._ref = null;
+    this._events = {};
+    this._style = {};
+    this._props = {};
+    this._classes = new Set();
   }
 
-  add(propName: string, value: any) {
-    this.props = {
-      ...this.props,
-      [propName]: value
-    };
-    this.update();
-  }
-
-  remove(propName: string) {
-    this.props = {
-      ...this.props
-    };
-
-    delete this.props[propName];
-    this.update();
-  }
-
-  all(mergeProps?: Object) {
-    if (mergeProps) {
-      const merged = Object.entries(mergeProps).reduce(
-        (acc: any, [key, val]) => {
-          switch (key) {
-            case 'style':
-              acc[key] = {
-                ...this.props[key],
-                ...val
-              };
-              break;
-            case 'className':
-              acc[key] = classNames(this.props[key], val);
-              break;
-            default:
-              if (
-                typeof this.props[key] === 'function' &&
-                typeof val === 'function'
-              ) {
-                const oldFunc = this.props[key];
-                const wrappedFunc = (evt: any) => {
-                  oldFunc(evt);
-                  val(evt);
-                };
-
-                acc[key] = wrappedFunc;
-              }
-          }
-          return acc;
-        },
-        {}
-      );
-
-      return {
-        ...mergeProps,
-        ...this.props,
-        ...merged
-      };
+  /**************************************************
+   * Classes
+   **************************************************/
+  addClass(className: string) {
+    if (!this._classes.has(className)) {
+      this._classes.add(className);
+      this.onChange();
     }
-
-    return this.props;
   }
 
-  get(attr: string) {
-    return this.props[attr];
+  removeClass(className: string) {
+    if (this._classes.has(className)) {
+      this._classes.delete(className);
+      this.onChange();
+    }
   }
 
+  hasClass(className: string) {
+    return this._classes.has(className);
+  }
+
+  /**************************************************
+   * Props
+   **************************************************/
+  addProp(propName: keyof Props, value: any) {
+    if (this._props[propName] !== value) {
+      this._props[propName] = value;
+      this.onChange();
+    }
+  }
+
+  getProp(propName: keyof Props) {
+    return this._props[propName];
+  }
+
+  removeProp(propName: keyof Props) {
+    if (this._props[propName] !== undefined) {
+      delete this._props[propName];
+      this.onChange();
+    }
+  }
+
+  props(propsToMerge: { [key: string]: any }) {
+    const { className = '', style = {}, ...rest } = propsToMerge;
+
+    // handle merging events
+    // the foundation should be able to pass something onClick as well as a user
+    // This wraps them in a function that calls both
+    const mergedEvents = Object.entries(propsToMerge).reduce(
+      (acc: any, [key, possibleCallback]) => {
+        const existingCallback = this._props[key];
+        if (
+          typeof possibleCallback === 'function' &&
+          typeof existingCallback === 'function'
+        ) {
+          const wrappedCallback = (evt: any) => {
+            existingCallback(evt);
+            return possibleCallback(evt);
+          };
+
+          acc[key] = wrappedCallback;
+        }
+        return acc;
+      },
+      {}
+    );
+
+    // handle className
+    const mergedClasses = classNames(className, [...this._classes]);
+
+    // handle styles
+    const mergedStyles = {
+      ...this._style,
+      ...style
+    };
+
+    return {
+      ...propsToMerge,
+      ...this._props,
+      ...mergedEvents,
+      style: mergedStyles,
+      className: mergedClasses
+    };
+  }
+
+  /**************************************************
+   * Styles
+   **************************************************/
+  setStyle(propertyName: string, value: number | string | null) {
+    propertyName = propertyName.startsWith('--')
+      ? propertyName
+      : toCamel(propertyName);
+
+    if (this._style[propertyName] !== value) {
+      this._style[propertyName] = value;
+      this.onChange();
+    }
+  }
+
+  /**************************************************
+   * Events
+   **************************************************/
   addEventListener(
     evtName: string,
     callback: (evt: Event) => void,
     shouldBubble?: boolean
   ) {
-    this.add(reactPropFromEventName(evtName), callback);
+    const propName = reactPropFromEventName(evtName);
+    if (this._events[propName] !== callback) {
+      this._events[propName] = callback;
+      this.onChange();
+    }
   }
 
   removeEventListener(
@@ -122,7 +162,24 @@ class PropsList {
     callback: (evt: Event) => void,
     shouldBubble?: boolean
   ) {
-    this.remove(reactPropFromEventName(evtName));
+    const propName = reactPropFromEventName(evtName);
+    if (this._events[propName]) {
+      delete this._events[propName];
+      this.onChange();
+    }
+  }
+
+  /**************************************************
+   * Refs
+   **************************************************/
+  setRef(el: any) {
+    if (el) {
+      this._ref = el;
+    }
+  }
+
+  get ref(): ElementType | null {
+    return this._ref;
   }
 }
 
@@ -138,80 +195,20 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   FoundationPropsT<P>,
   FoundationStateT<S>
 > {
-  foundation: any;
-  classList: { [key: string]: ClassListT } = {};
-  propsList: { [key: string]: PropsList } = {};
-  _refs: { [key: string]: React.Ref<any> } = {};
+  static shouldDebounce = false;
 
-  constructor(props: FoundationPropsT<P>) {
+  foundation: any = this.getDefaultFoundation();
+  elements: { [key: string]: FoundationElement<any, any> } = {};
+  canUpdate = true;
+
+  constructor(props: any) {
     super(props);
-    this.foundation = this.getDefaultFoundation();
-  }
-
-  createElement<ElementType extends any = HTMLElement>(elementName: string) {
-    this.createClassList(elementName);
-    this.createPropsList(elementName);
-    const classList = this.classList[elementName];
-    const propsList = this.propsList[elementName];
-    const getElement = () => this._refs[elementName] || null;
-    const getClasses = (className?: string) =>
-      classList.renderToString(className);
-    return {
-      addClass: classList.add,
-      removeClass: classList.remove,
-      hasClass: classList.has,
-      get classes() {
-        return getClasses();
-      },
-      addProp: propsList.add,
-      removeProp: propsList.remove,
-      getProp: propsList.get,
-      props: (rest: any) => ({
-        ...propsList.all(rest),
-        className: getClasses(rest.className)
-      }),
-      setStyle: propsList.setStyle,
-      addEventListener: propsList.addEventListener,
-      removeEventListener: propsList.removeEventListener,
-      setRef: (el: any) => {
-        if (el) {
-          this._refs[elementName] = el;
-        }
-      },
-      get ref(): ElementType {
-        return (getElement() as unknown) as ElementType;
-      }
-    };
-  }
-
-  createClassList(elementName: string) {
-    const classes = new Set();
-    this.classList[elementName] = {
-      renderToString: className => classNames(className, [...classes]),
-      has: className => {
-        return classes.has(className);
-      },
-      add: className => {
-        if (!classes.has(className)) {
-          classes.add(className);
-          this.update();
-        }
-      },
-      remove: className => {
-        if (classes.has(className)) {
-          classes.delete(className);
-          this.update();
-        }
-      }
-    };
-  }
-
-  update() {
-    this.setState({});
-  }
-
-  createPropsList(elementName: string) {
-    this.propsList[elementName] = new PropsList(() => this.update());
+    //@ts-ignore
+    if (this.constructor.shouldDebounce) {
+      this.update = debounce(this.update.bind(this), 0);
+    } else {
+      this.update = this.update.bind(this);
+    }
   }
 
   componentDidMount() {
@@ -224,11 +221,20 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   componentWillUnmount() {
+    this.canUpdate = false;
     this.foundation && this.foundation.destroy();
-    Object.values(this.propsList).forEach(p => (p.update = () => {}));
-    this.propsList = {};
-    this.classList = {};
-    this._refs = {};
+    Object.values(this.elements).forEach(el => el.destroy());
+  }
+
+  createElement<ElementType extends any = HTMLElement>(elementName: string) {
+    const el = new FoundationElement<any, ElementType>(this.update);
+
+    this.elements[elementName] = el;
+    return el;
+  }
+
+  update() {
+    this.canUpdate && this.forceUpdate();
   }
 
   sync(props: any, prevProps?: any) {}

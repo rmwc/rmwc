@@ -1,122 +1,2906 @@
-[
-  {
-    "description": "",
-    "displayName": "IconButtonIcon",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "intersection",
-              "raw": "{\n  on?: boolean\n} & IconPropsT",
-              "elements": [
-                {
-                  "name": "signature",
-                  "type": "object",
-                  "raw": "{\n  on?: boolean\n}",
-                  "signature": {
-                    "properties": [
-                      {
-                        "key": "on",
-                        "value": {
-                          "name": "boolean",
-                          "required": false
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "IconPropsT"
-                }
-              ],
-              "alias": "IconButtonIconPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ]
-  },
-  {
-    "description": "",
-    "displayName": "IconButton",
-    "methods": [],
-    "props": {
-      "checked": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Controls the on / off state of the a toggleable button."
-      },
-      "onChange": {
-        "flowType": {
-          "name": "signature",
-          "type": "function",
-          "raw": "(evt: CustomEventT<{ isOn: boolean }>) => mixed",
-          "signature": {
-            "arguments": [
-              {
-                "name": "evt",
-                "type": {
-                  "name": "CustomEventT",
-                  "elements": [
-                    {
-                      "name": "signature",
-                      "type": "object",
-                      "raw": "{ isOn: boolean }",
-                      "signature": {
-                        "properties": [
-                          {
-                            "key": "isOn",
-                            "value": {
-                              "name": "boolean",
-                              "required": true
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "raw": "CustomEventT<{ isOn: boolean }>"
-                }
-              }
-            ],
-            "return": {
-              "name": "mixed"
-            }
-          }
-        },
-        "required": false,
-        "description": "An onChange callback that receives a custom event."
-      },
-      "disabled": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Makes the button disabled"
-      },
-      "onIcon": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "If specified, renders a toggle with this icon as the on state."
-      },
-      "onIconOptions": {
-        "flowType": {
-          "name": "IconOptionsT"
-        },
-        "required": false,
-        "description": "Options for the onIcon"
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/icon-button",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
+			"children": [
+				{
+					"id": 25,
+					"name": "IconButtonToggle",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"typeParameter": [
+						{
+							"id": 47,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 80,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 28,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 29,
+									"name": "new IconButtonToggle",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 30,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intersection",
+												"types": [
+													{
+														"type": "reference",
+														"name": "IconButtonProps",
+														"id": 2
+													},
+													{
+														"type": "reference",
+														"name": "ComponentProps"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "IconButtonToggle",
+										"id": 25
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 75,
+									"character": 36
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 54,
+							"name": "canUpdate",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "true",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.canUpdate"
+							}
+						},
+						{
+							"id": 50,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 201,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 51,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 52,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 53,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 201,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 49,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 200,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 27,
+							"name": "root",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 75,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "FoundationElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									},
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									}
+								]
+							},
+							"defaultValue": " this.createElement('root')"
+						},
+						{
+							"id": 26,
+							"name": "displayName",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 73,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"IconButton\""
+						},
+						{
+							"id": 48,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 198,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 31,
+							"name": "on",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {},
+							"getSignature": [
+								{
+									"id": 32,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"setSignature": [
+								{
+									"id": 33,
+									"name": "__set",
+									"kind": 1048576,
+									"kindString": "Set signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 34,
+											"name": "isOn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 82,
+									"character": 8
+								},
+								{
+									"fileName": "index.tsx",
+									"line": 86,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 96,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 97,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 102,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 103,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 104,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 105,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 111,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 112,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 113,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 114,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 115,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 86,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 87,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 88,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 89,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 55,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 56,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 214,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 57,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 58,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 59,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "reference",
+																"name": "IconButtonProps",
+																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "DeprecatedIconButtonProps",
+																"id": 18
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 219,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 94,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 95,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 98,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 99,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 100,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 101,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 60,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 61,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 106,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 107,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 108,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 109,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 110,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 62,
+							"name": "createElement",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 63,
+									"name": "createElement",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 64,
+											"name": "ElementType",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 65,
+											"name": "elementName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "FoundationElement",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "unknown",
+												"name": "ElementType"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.createElement"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 229,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.createElement"
+							}
+						},
+						{
+							"id": 75,
+							"name": "emit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 76,
+									"name": "emit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Fires a cross-browser-compatible custom event from the component root of the given type,"
+									},
+									"parameters": [
+										{
+											"id": 77,
+											"name": "evtType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 78,
+											"name": "evtData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Object"
+											}
+										},
+										{
+											"id": 79,
+											"name": "shouldBubble",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "CustomEvent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.emit"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 256,
+									"character": 6
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.emit"
+							}
+						},
+						{
+							"id": 35,
+							"name": "getDefaultFoundation",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 36,
+									"name": "getDefaultFoundation",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.getDefaultFoundation"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 90,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.getDefaultFoundation"
+							}
+						},
+						{
+							"id": 90,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 91,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 92,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 93,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 42,
+							"name": "handleClick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 43,
+									"name": "handleClick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 44,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MouseEvent",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "HTMLButtonElement"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 118,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 37,
+							"name": "isOn",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 38,
+									"name": "isOn",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Takes into account our checked prop"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 103,
+									"character": 6
+								}
+							]
+						},
+						{
+							"id": 45,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 46,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 123,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 81,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 82,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 83,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "IconButtonProps",
+																		"id": 2
+																	},
+																	{
+																		"type": "reference",
+																		"name": "DeprecatedIconButtonProps",
+																		"id": 18
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 84,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 85,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 39,
+							"name": "sync",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 40,
+									"name": "sync",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 41,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "IconButtonProps",
+												"id": 2
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.sync"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 111,
+									"character": 6
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.sync"
+							}
+						},
+						{
+							"id": 68,
+							"name": "syncProp",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 69,
+									"name": "syncProp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 70,
+											"name": "prop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 71,
+											"name": "prevProp",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 72,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 73,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 74,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 242,
+															"character": 46
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.syncProp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 242,
+									"character": 10
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.syncProp"
+							}
+						},
+						{
+							"id": 66,
+							"name": "update",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 67,
+									"name": "update",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.update"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 236,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.update"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								28
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								54,
+								50,
+								49,
+								27,
+								26,
+								48
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								31
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								96,
+								102,
+								111,
+								86,
+								55,
+								57,
+								94,
+								98,
+								60,
+								106,
+								62,
+								75,
+								35,
+								90,
+								42,
+								37,
+								45,
+								81,
+								39,
+								68,
+								66
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 70,
+							"character": 22
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "FoundationComponent",
+							"typeArguments": [
+								{
+									"type": "intersection",
+									"types": [
+										{
+											"type": "reference",
+											"name": "IconButtonProps",
+											"id": 2
+										},
+										{
+											"type": "reference",
+											"name": "DeprecatedIconButtonProps",
+											"id": 18
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 18,
+					"name": "DeprecatedIconButtonProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 19,
+							"name": "iconOptions",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Pass options directly to icon"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 29,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 20,
+							"name": "onIconOptions",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Pass options directly to onIcon"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 31,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								19,
+								20
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 27,
+							"character": 42
+						}
+					]
+				},
+				{
+					"id": 21,
+					"name": "IconButtonIconProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 23,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 48,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "IconProps.icon"
+							}
+						},
+						{
+							"id": 24,
+							"name": "iconOptions",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Additional Icon Options. See the Icon component documentation."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 53,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconOptions"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedIconProps.iconOptions"
+							}
+						},
+						{
+							"id": 22,
+							"name": "on",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 55,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								23,
+								24,
+								22
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 54,
+							"character": 36
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "IconProps"
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "IconButtonProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "checked",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Controls the on / off state of the a toggleable button."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 16,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"name": "disabled",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Makes the button disabled"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 20,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 11,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Icon for the button"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 22,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							}
+						},
+						{
+							"id": 4,
+							"name": "onChange",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "An onChange callback that receives a custom event."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 18,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 5,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 6,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 7,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reflection",
+																		"declaration": {
+																			"id": 8,
+																			"name": "__type",
+																			"kind": 65536,
+																			"kindString": "Type literal",
+																			"flags": {},
+																			"children": [
+																				{
+																					"id": 9,
+																					"name": "isOn",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "index.tsx",
+																							"line": 18,
+																							"character": 38
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "boolean"
+																					}
+																				}
+																			],
+																			"groups": [
+																				{
+																					"title": "Variables",
+																					"kind": 32,
+																					"children": [
+																						9
+																					]
+																				}
+																			],
+																			"sources": [
+																				{
+																					"fileName": "index.tsx",
+																					"line": 18,
+																					"character": 32
+																				}
+																			]
+																		}
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 12,
+							"name": "onIcon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "If specified, renders a toggle with this icon as the on state."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 24,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							}
+						},
+						{
+							"id": 13,
+							"name": "ripple",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+									"line": 269,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 14,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 15,
+													"name": "accent",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 272,
+															"character": 14
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												},
+												{
+													"id": 16,
+													"name": "surface",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 273,
+															"character": 15
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												},
+												{
+													"id": 17,
+													"name": "unbounded",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 274,
+															"character": 17
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														15,
+														16,
+														17
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+													"line": 271,
+													"character": 5
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "WithRippleProps.ripple"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								10,
+								11,
+								4,
+								12,
+								13
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 14,
+							"character": 32
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "WithRippleProps"
+						}
+					]
+				},
+				{
+					"id": 119,
+					"name": "IconButtonIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 58,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 120,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconButtonIconProps>({\n  displayName: 'IconButtonIcon',\n  tag: Icon,\n  classNames: (props: IconButtonIconProps) => [\n    'mdc-icon-button__icon',\n    {\n      'mdc-icon-button__icon--on': props.on\n    }\n  ],\n  consumeProps: ['on']\n})"
+				},
+				{
+					"id": 116,
+					"name": "IconButtonRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 34,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 117,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 118,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<IconButtonProps>({\n    displayName: 'IconButtonRoot',\n    tag: 'button',\n    classNames: (props: IconButtonProps) => [\n      'mdc-icon-button',\n      {\n        'mdc-icon-button--on': props.checked\n      }\n    ],\n    defaultProps: {\n      role: 'button',\n      tabIndex: '0'\n    },\n    consumeProps: ['checked']\n  })\n)"
+				},
+				{
+					"id": 121,
+					"name": "IconButton",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 122,
+							"name": "IconButton",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 123,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"originalName": "__0",
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 124,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {
+												"isExported": true
+											},
+											"children": [
+												{
+													"id": 125,
+													"name": "icon",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isExported": true
+													},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 147,
+															"character": 6
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "IconOptions"
+															}
+														]
+													}
+												},
+												{
+													"id": 126,
+													"name": "rest",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isExported": true
+													},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 148,
+															"character": 9
+														}
+													],
+													"type": {
+														"type": "reference",
+														"name": "rest",
+														"id": 126
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														125,
+														126
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 146,
+													"character": 27
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 146,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						25
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						18,
+						21,
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						119,
+						116
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						121
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

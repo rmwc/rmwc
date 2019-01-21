@@ -48,18 +48,14 @@ export class Ripple extends FoundationComponent<RippleProps> {
   constructor(props: RippleProps) {
     super(props);
 
-    [
-      'handleFocus',
-      'handleBlur',
-      'handleMouseDown',
-      'handleMouseUp',
-      'handleTouchStart',
-      'handleTouchEnd',
-      'handleKeyDown',
-      'handleKeyUp'
-    ].forEach(k => {
-      (this as any)[k] = (this as any)[k].bind(this);
-    });
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleTouchStart = this.handleTouchStart.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
   getDefaultFoundation() {
@@ -246,7 +242,13 @@ export class RippleSurface extends React.PureComponent<
       JSON.stringify(rippleSurfaceProps) !==
       JSON.stringify(this.state.rippleSurfaceProps)
     )
-      this.setState({ rippleSurfaceProps });
+      // this is a sucky hack
+      // the whole Ripple surface thing is annoying as it is
+      // but it throws errors trying to setState while rendering
+      // this avoids the issue, albeit causes another render
+      window.requestAnimationFrame(() => {
+        this.setState({ rippleSurfaceProps });
+      });
   }
 
   render() {

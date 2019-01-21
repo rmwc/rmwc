@@ -72,11 +72,10 @@ class IconButtonToggle extends FoundationComponent<
 > {
   static displayName = 'IconButton';
 
+  root = this.createElement('root');
+
   constructor(props: IconButtonProps & ComponentProps) {
     super(props);
-    this.createClassList('root_');
-    this.createPropsList('root_');
-
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -90,12 +89,11 @@ class IconButtonToggle extends FoundationComponent<
 
   getDefaultFoundation() {
     return new MDCIconButtonToggleFoundation({
-      addClass: (className: string) => this.classList.root_.add(className),
-      removeClass: (className: string) =>
-        this.classList.root_.remove(className),
-      hasClass: (className: string) => this.classList.root_.has(className),
+      addClass: (className: string) => this.root.addClass(className),
+      removeClass: (className: string) => this.root.removeClass(className),
+      hasClass: (className: string) => this.root.hasClass(className),
       setAttr: (attrName: string, attrValue: string | number | null) =>
-        this.propsList.root_.add(attrName, attrValue),
+        this.root.addProp(attrName, attrValue),
       notifyChange: (evtData: { isOn: boolean }) =>
         this.emit('onChange', evtData)
     });
@@ -135,9 +133,8 @@ class IconButtonToggle extends FoundationComponent<
       <IconButtonRoot
         aria-pressed={this.isOn()}
         aria-hidden="true"
-        {...this.propsList.root_.all(rest)}
+        {...this.root.props(rest)}
         onClick={this.handleClick}
-        className={this.classList.root_.renderToString()}
       >
         <IconButtonIcon icon={icon} />
         <IconButtonIcon icon={onIcon} on />

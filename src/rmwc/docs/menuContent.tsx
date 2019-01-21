@@ -1,7 +1,49 @@
 import * as React from 'react';
-// @ts-ignore
-import Loadable from 'react-loadable';
 import { CircularProgress } from '@rmwc/circular-progress';
+
+const InstallationDocs = React.lazy(() => import('./installation.md'));
+const UsageDocs = React.lazy(() => import('./usage.md'));
+const StylingThemingDocs = React.lazy(() => import('./styling-theming.md'));
+const MethodologyDocs = React.lazy(() => import('./methodology.md'));
+const LibraryIntegrationsDocs = React.lazy(() =>
+  import('./library-integrations.md')
+);
+const ButtonDocs = React.lazy(() => import('@rmwc/button/README.md'));
+const FabDocs = React.lazy(() => import('@rmwc/fab/README.md'));
+const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/README.md'));
+const CardDocs = React.lazy(() => import('@rmwc/card/README.md'));
+const ChipDocs = React.lazy(() => import('@rmwc/chip/README.md'));
+const DataTableDocs = React.lazy(() => import('@rmwc/data-table/README.md'));
+const DialogDocs = React.lazy(() => import('@rmwc/dialog/README.md'));
+const DrawerDocs = React.lazy(() => import('@rmwc/drawer/README.md'));
+const ElevationDocs = React.lazy(() => import('@rmwc/elevation/README.md'));
+const GridListDocs = React.lazy(() => import('@rmwc/grid-list/README.md'));
+const ImageListDocs = React.lazy(() => import('@rmwc/image-list/README.md'));
+const CheckboxDocs = React.lazy(() => import('@rmwc/checkbox/README.md'));
+const FormfieldDocs = React.lazy(() => import('@rmwc/formfield/README.md'));
+const RadioDocs = React.lazy(() => import('@rmwc/radio/README.md'));
+const SelectDocs = React.lazy(() => import('@rmwc/select/README.md'));
+const SliderDocs = React.lazy(() => import('@rmwc/slider/README.md'));
+const SwitchDocs = React.lazy(() => import('@rmwc/switch/README.md'));
+const TextfieldDocs = React.lazy(() => import('@rmwc/textfield/README.md'));
+const GridDocs = React.lazy(() => import('@rmwc/grid/README.md'));
+const LinearProgressDocs = React.lazy(() =>
+  import('@rmwc/linear-progress/README.md')
+);
+const CircularProgressDocsDocs = React.lazy(() =>
+  import('@rmwc/circular-progress/README.md')
+);
+const ListDocs = React.lazy(() => import('@rmwc/list/README.md'));
+const MenuDocs = React.lazy(() => import('@rmwc/menu/README.md'));
+const RippleDocs = React.lazy(() => import('@rmwc/ripple/README.md'));
+const SnackbarDocs = React.lazy(() => import('@rmwc/snackbar/README.md'));
+const TabsDocs = React.lazy(() => import('@rmwc/tabs/README.md'));
+const ThemeDocs = React.lazy(() => import('@rmwc/theme/README.md'));
+const ToolbarDocs = React.lazy(() => import('@rmwc/toolbar/README.md'));
+const TopAppBarDocs = React.lazy(() => import('@rmwc/top-app-bar/README.md'));
+const TypographyDocs = React.lazy(() => import('@rmwc/typography/README.md'));
+const IconDocs = React.lazy(() => import('@rmwc/icon/README.md'));
+const ProviderDocs = React.lazy(() => import('@rmwc/provider/README.md'));
 
 const Loading = () => (
   <div
@@ -18,6 +60,12 @@ const Loading = () => (
   </div>
 );
 
+const Loadable = (Component: any) => () => (
+  <React.Suspense fallback={<Loading />}>
+    <Component />
+  </React.Suspense>
+);
+
 export const menuContent = [
   {
     label: 'Getting Started',
@@ -25,44 +73,27 @@ export const menuContent = [
       {
         label: 'Installation',
         url: `/installation`,
-        component: Loadable({
-          // @ts-ignore
-          loader: () => import('./installation.md'),
-          loading: Loading
-        })
+        component: Loadable(InstallationDocs)
       },
       {
         label: 'Usage',
         url: `/usage`,
-        component: Loadable({
-          // @ts-ignore
-          loader: () => import('./usage.md'),
-          loading: Loading
-        })
+        component: Loadable(UsageDocs)
       },
       {
         label: 'Styling and Theming',
         url: `/styling-theming`,
-        component: Loadable({
-          loader: () => import('./styling-theming.md'),
-          loading: Loading
-        })
+        component: Loadable(StylingThemingDocs)
       },
       {
         label: 'Project Methodology',
         url: `/methodology`,
-        component: Loadable({
-          loader: () => import('./methodology.md'),
-          loading: Loading
-        })
+        component: Loadable(MethodologyDocs)
       },
       {
         label: 'Library Integrations',
         url: `/library-integrations`,
-        component: Loadable({
-          loader: () => import('./library-integrations.md'),
-          loading: Loading
-        })
+        component: Loadable(LibraryIntegrationsDocs)
       }
     ]
   },
@@ -72,92 +103,59 @@ export const menuContent = [
       {
         label: 'Buttons',
         url: `/buttons`,
-        component: Loadable({
-          loader: () => import('@rmwc/button/README.md'),
-          loading: Loading
-        })
+        component: Loadable(ButtonDocs)
       },
       {
         label: 'Fabs',
         url: `/fabs`,
-        component: Loadable({
-          loader: () => import('@rmwc/fab/README.md'),
-          loading: Loading
-        })
+        component: Loadable(FabDocs)
       },
       {
         label: 'Icon Buttons',
         url: `/icon-buttons`,
-        component: Loadable({
-          loader: () => import('@rmwc/icon-button/README.md'),
-          loading: Loading
-        })
+        component: Loadable(IconButtonDocs)
       }
     ]
   },
   {
     label: 'Cards',
     url: `/cards`,
-    component: Loadable({
-      loader: () => import('@rmwc/card/README.md'),
-      loading: Loading
-    })
+    component: Loadable(CardDocs)
   },
   {
     label: 'Chips',
     url: `/chips`,
-    component: Loadable({
-      loader: () => import('@rmwc/chip/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ChipDocs)
   },
   {
     label: 'Data Tables',
     url: `/data-tables`,
-    component: Loadable({
-      loader: () => import('@rmwc/data-table/README.md'),
-      loading: Loading
-    })
+    component: Loadable(DataTableDocs)
   },
   {
     label: 'Dialogs',
     url: `/dialogs`,
-    component: Loadable({
-      loader: () => import('@rmwc/dialog/README.md'),
-      loading: Loading
-    })
+    component: Loadable(DialogDocs)
   },
   {
     label: 'Drawers',
     url: `/drawers`,
-    component: Loadable({
-      loader: () => import('@rmwc/drawer/README.md'),
-      loading: Loading
-    })
+    component: Loadable(DrawerDocs)
   },
   {
     label: 'Elevation',
     url: `/elevation`,
-    component: Loadable({
-      loader: () => import('@rmwc/elevation/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ElevationDocs)
   },
   {
     label: 'Grid Lists',
     url: `/grid-lists`,
-    component: Loadable({
-      loader: () => import('@rmwc/grid-list/README.md'),
-      loading: Loading
-    })
+    component: Loadable(GridListDocs)
   },
   {
     label: 'Image Lists',
     url: `/image-lists`,
-    component: Loadable({
-      loader: () => import('@rmwc/image-list/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ImageListDocs)
   },
   {
     label: 'Inputs and Controls',
@@ -165,68 +163,44 @@ export const menuContent = [
       {
         label: 'Checkboxes',
         url: `/checkboxes`,
-        component: Loadable({
-          loader: () => import('@rmwc/checkbox/README.md'),
-          loading: Loading
-        })
+        component: Loadable(CheckboxDocs)
       },
       {
         label: 'FormFields',
         url: `/formfields`,
-        component: Loadable({
-          loader: () => import('@rmwc/formfield/README.md'),
-          loading: Loading
-        })
+        component: Loadable(FormfieldDocs)
       },
       {
         label: 'Radio Buttons',
         url: `/radio-buttons`,
-        component: Loadable({
-          loader: () => import('@rmwc/radio/README.md'),
-          loading: Loading
-        })
+        component: Loadable(RadioDocs)
       },
       {
         label: 'Select Menus',
         url: `/select-menus`,
-        component: Loadable({
-          loader: () => import('@rmwc/select/README.md'),
-          loading: Loading
-        })
+        component: Loadable(SelectDocs)
       },
       {
         label: 'Sliders',
         url: `/sliders`,
-        component: Loadable({
-          loader: () => import('@rmwc/slider/README.md'),
-          loading: Loading
-        })
+        component: Loadable(SliderDocs)
       },
       {
         label: 'Switches',
         url: `/switches`,
-        component: Loadable({
-          loader: () => import('@rmwc/switch/README.md'),
-          loading: Loading
-        })
+        component: Loadable(SwitchDocs)
       },
       {
         label: 'Text Fields',
         url: `/text-fields`,
-        component: Loadable({
-          loader: () => import('@rmwc/textfield/README.md'),
-          loading: Loading
-        })
+        component: Loadable(TextfieldDocs)
       }
     ]
   },
   {
     label: 'Layout Grid',
     url: `/layout-grid`,
-    component: Loadable({
-      loader: () => import('@rmwc/grid/README.md'),
-      loading: Loading
-    })
+    component: Loadable(GridDocs)
   },
   {
     label: 'Progress',
@@ -234,109 +208,70 @@ export const menuContent = [
       {
         label: 'Linear Progress',
         url: `/linear-progress`,
-        component: Loadable({
-          loader: () => import('@rmwc/linear-progress/README.md'),
-          loading: Loading
-        })
+        component: Loadable(LinearProgressDocs)
       },
       {
         label: 'Circular Progress',
         url: `/circular-progress`,
-        component: Loadable({
-          loader: () => import('@rmwc/circular-progress/README.md'),
-          loading: Loading
-        })
+        component: Loadable(CircularProgressDocsDocs)
       }
     ]
   },
   {
     label: 'Lists',
     url: `/lists`,
-    component: Loadable({
-      loader: () => import('@rmwc/list/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ListDocs)
   },
   {
     label: 'Menus',
     url: `/menus`,
-    component: Loadable({
-      loader: () => import('@rmwc/menu/README.md'),
-      loading: Loading
-    })
+    component: Loadable(MenuDocs)
   },
   {
     label: 'Ripples',
     url: `/ripples`,
-    component: Loadable({
-      loader: () => import('@rmwc/ripple/README.md'),
-      loading: Loading
-    })
+    component: Loadable(RippleDocs)
   },
 
   {
     label: 'Snackbars',
     url: `/snackbars`,
-    component: Loadable({
-      loader: () => import('@rmwc/snackbar/README.md'),
-      loading: Loading
-    })
+    component: Loadable(SnackbarDocs)
   },
   {
     label: 'Tabs',
     url: `/tabs`,
-    component: Loadable({
-      loader: () => import('@rmwc/tabs/README.md'),
-      loading: Loading
-    })
+    component: Loadable(TabsDocs)
   },
   {
     label: 'Theme',
     url: `/theme`,
-    component: Loadable({
-      loader: () => import('@rmwc/theme/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ThemeDocs)
   },
   {
     label: 'Toolbars',
     url: `/toolbars`,
-    component: Loadable({
-      loader: () => import('@rmwc/toolbar/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ToolbarDocs)
   },
   {
     label: 'Top App Bar',
     url: `/top-app-bar`,
-    component: Loadable({
-      loader: () => import('@rmwc/top-app-bar/README.md'),
-      loading: Loading
-    })
+    component: Loadable(TopAppBarDocs)
   },
 
   {
     label: 'Typography',
     url: `/typography`,
-    component: Loadable({
-      loader: () => import('@rmwc/typography/README.md'),
-      loading: Loading
-    })
+    component: Loadable(TypographyDocs)
   },
   {
     label: 'Icons',
     url: `/icons`,
-    component: Loadable({
-      loader: () => import('@rmwc/icon/README.md'),
-      loading: Loading
-    })
+    component: Loadable(IconDocs)
   },
   {
     label: 'Provider',
     url: `/provider`,
-    component: Loadable({
-      loader: () => import('@rmwc/provider/README.md'),
-      loading: Loading
-    })
+    component: Loadable(ProviderDocs)
   }
 ];

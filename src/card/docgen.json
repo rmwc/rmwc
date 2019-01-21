@@ -1,170 +1,869 @@
-[
-  {
-    "description": "A Card Component",
-    "displayName": "Card",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  /** Removes the shadow and displays a hairline outline instead */\n  outlined?: boolean\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "outlined",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  }
-                ]
-              },
-              "alias": "CardPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "outlined": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Removes the shadow and displays a hairline outline instead"
-      }
-    }
-  },
-  {
-    "description": "Media area that displays a custom background-image with background-size: cover",
-    "displayName": "CardMedia",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  /** Automatically scales the media area’s height to equal its width */\n  square?: boolean,\n  /** Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio */\n  sixteenByNine?: boolean\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "square",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "sixteenByNine",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  }
-                ]
-              },
-              "alias": "CardMediaPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "square": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Automatically scales the media area’s height to equal its width"
-      },
-      "sixteenByNine": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
-      }
-    }
-  },
-  {
-    "description": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image",
-    "displayName": "CardMediaContent",
-    "methods": []
-  },
-  {
-    "description": "The main clickable area for the primary content of the card",
-    "displayName": "CardPrimaryAction",
-    "methods": []
-  },
-  {
-    "description": "Row containing action buttons and/or icons",
-    "displayName": "CardActions",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */\n  fullBleed?: boolean\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "fullBleed",
-                    "value": {
-                      "name": "boolean",
-                      "required": false
-                    }
-                  }
-                ]
-              },
-              "alias": "CardActionsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "fullBleed": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width"
-      }
-    }
-  },
-  {
-    "description": "A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons",
-    "displayName": "CardActionButtons",
-    "methods": []
-  },
-  {
-    "description": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons",
-    "displayName": "CardActionIcons",
-    "methods": []
-  },
-  {
-    "description": "A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component.",
-    "displayName": "CardAction",
-    "methods": []
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/card",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/card/index.tsx",
+			"children": [
+				{
+					"id": 7,
+					"name": "CardActions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Card Actions\nRow containing action buttons and/or icons"
+					},
+					"children": [
+						{
+							"id": 8,
+							"name": "fullBleed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 74,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								8
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 72,
+							"character": 28
+						},
+						{
+							"fileName": "index.tsx",
+							"line": 78,
+							"character": 24
+						}
+					],
+					"defaultValue": " componentFactory<CardActions>({\n  displayName: 'CardActions',\n  tag: 'section',\n  classNames: (props: CardActions) => [\n    'mdc-card__actions',\n    { 'mdc-card__actions--full-bleed': props.fullBleed }\n  ],\n  consumeProps: ['fullBleed']\n})"
+				},
+				{
+					"id": 4,
+					"name": "CardMediaProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Card Media"
+					},
+					"children": [
+						{
+							"id": 6,
+							"name": "sixteenByNine",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 36,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "square",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Automatically scales the media area’s height to equal its width"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 34,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								6,
+								5
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 32,
+							"character": 31
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "CardProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Card"
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "outlined",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Removes the shadow and displays a hairline outline instead"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 14,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 12,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 26,
+					"name": "CardActionPropsT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 115,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "intersection",
+						"types": [
+							{
+								"type": "reference",
+								"name": "IconButtonProps"
+							},
+							{
+								"type": "reference",
+								"name": "ButtonProps"
+							}
+						]
+					}
+				},
+				{
+					"id": 9,
+					"name": "Card",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Card Component"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 18,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 10,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<CardProps>({\n  displayName: 'Card',\n  classNames: (props: CardProps) => [\n    'mdc-card',\n    {\n      'mdc-card--outlined': props.outlined\n    }\n  ],\n  consumeProps: ['outlined']\n})"
+				},
+				{
+					"id": 24,
+					"name": "CardActionButton",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A card action Button"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 108,
+							"character": 29
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 25,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<ButtonProps>({\n  displayName: 'CardActionButton',\n  tag: Button,\n  classNames: ['mdc-card__action', 'mdc-card__action--button']\n})"
+				},
+				{
+					"id": 18,
+					"name": "CardActionButtons",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 89,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 19,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardActionButtons',\n  classNames: ['mdc-card__action-buttons']\n})"
+				},
+				{
+					"id": 22,
+					"name": "CardActionIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A card action Icon"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 101,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 23,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconButtonProps>({\n  displayName: 'CardActionIcon',\n  tag: IconButton,\n  classNames: ['mdc-card__action', 'mdc-card__action--icon']\n})"
+				},
+				{
+					"id": 20,
+					"name": "CardActionIcons",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 95,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 21,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardActionIcons',\n  classNames: ['mdc-card__action-icons']\n})"
+				},
+				{
+					"id": 11,
+					"name": "CardMedia",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Media area that displays a custom background-image with background-size: cover"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 40,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 12,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<CardMediaProps>({\n  displayName: 'CardMedia',\n  tag: 'section',\n  classNames: (props: CardMediaProps) => [\n    'mdc-card__media',\n    {\n      'mdc-card__media--square': props.square,\n      'mdc-card__media--16-9': props.sixteenByNine\n    }\n  ],\n  consumeProps: ['square', 'sixteenByNine']\n})"
+				},
+				{
+					"id": 13,
+					"name": "CardMediaContent",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 54,
+							"character": 29
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 14,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardMediaContent',\n  classNames: ['mdc-card__media-content']\n})"
+				},
+				{
+					"id": 15,
+					"name": "CardPrimaryAction",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The main clickable area for the primary content of the card"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 60,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 16,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 17,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({\n  surface: false\n})(\n  componentFactory<{}>({\n    displayName: 'CardPrimaryAction',\n    classNames: ['mdc-card__primary-action']\n  })\n)"
+				},
+				{
+					"id": 27,
+					"name": "CardAction",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 28,
+							"name": "CardAction",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 29,
+									"name": "props",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "CardActionPropsT",
+										"id": 26
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 116,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						7,
+						4,
+						2
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						26
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						9,
+						24,
+						18,
+						22,
+						20,
+						11,
+						13,
+						15
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						27
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

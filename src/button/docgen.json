@@ -1,88 +1,642 @@
-[
-  {
-    "description": "An icon that goes inside of buttons. This is an instance of the Icon component.",
-    "displayName": "ButtonIcon",
-    "methods": []
-  },
-  {
-    "description": "The Button component. Buttons also accepts all of the props from the Ripple component.",
-    "displayName": "Button",
-    "methods": [],
-    "props": {
-      "dense": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the Button dense.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "raised": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the Button raised.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "unelevated": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the button unelevated.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "outlined": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the button outlined.",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "disabled": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "make the button disabled"
-      },
-      "ripple": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Enable / disable the ripple."
-      },
-      "className": {
-        "flowType": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Additional className for the button"
-      }
-    },
-    "context": {
-      "RMWCOptions": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/button",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
+			"children": [
+				{
+					"id": 12,
+					"name": "ButtonIconProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 13,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 48,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "IconProps.icon"
+							}
+						},
+						{
+							"id": 14,
+							"name": "iconOptions",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: Additional Icon Options. See the Icon component documentation."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 53,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconOptions"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedIconProps.iconOptions"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								13,
+								14
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 79,
+							"character": 32
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "IconProps"
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "ButtonProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 10,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Content specified as children."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 23,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 3,
+							"name": "dense",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the Button dense."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 9,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"name": "disabled",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "make the button disabled"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 17,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 11,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "An Icon for the Button"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 25,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							}
+						},
+						{
+							"id": 9,
+							"name": "label",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Content specified as a label prop."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 21,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "React.ReactNode"
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 6,
+							"name": "outlined",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the button outlined."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 15,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "raised",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the Button raised."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 11,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 8,
+							"name": "ripple",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Enable / disable the ripple."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 19,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "unelevated",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the button unelevated."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 13,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								10,
+								3,
+								7,
+								11,
+								9,
+								6,
+								4,
+								8,
+								5
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 7,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 15,
+					"name": "Button",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The Button component. Buttons also accepts all of the props from the Ripple component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 31,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 16,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 17,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({\n  surface: false\n})(\n  componentFactory<ButtonProps>({\n    displayName: 'Button',\n    tag: 'button',\n    classNames: (props: ButtonProps) => [\n      'mdc-button',\n      {\n        'mdc-button--dense': props.dense,\n        'mdc-button--raised': props.raised,\n        'mdc-button--unelevated': props.unelevated,\n        'mdc-button--outlined': props.outlined\n      }\n    ],\n    consumeProps: [\n      'dense',\n      'raised',\n      'unelevated',\n      'outlined',\n      'primary',\n      'accent',\n      'unbounded'\n    ],\n    defaultProps: {\n      dense: false,\n      raised: false,\n      unelevated: false,\n      outlined: false\n    },\n    render: (\n      { icon, label, children, ...rest }: ButtonProps,\n      ref: React.Ref<any>,\n      Tag: any\n    ) => {\n      return (\n        <Tag {...rest} ref={ref}>\n          {!!icon && <ButtonIcon icon={icon} />}\n          <span className=\"mdc-button__label\">\n            {label}\n            {children}\n          </span>\n        </Tag>\n      );\n    }\n  })\n)"
+				},
+				{
+					"id": 18,
+					"name": "ButtonIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An icon that goes inside of buttons. This is an instance of the Icon component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 82,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 19,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<ButtonIconProps>({\n  displayName: 'ButtonIcon',\n  tag: Icon,\n  classNames: ['mdc-button__icon']\n})"
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						12,
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						15,
+						18
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

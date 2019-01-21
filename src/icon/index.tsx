@@ -131,7 +131,7 @@ const buildIconOptions = (icon?: IconPropT) => {
       content: icon
     };
   }
-  return icon as object;
+  return icon as IconOptions;
 };
 
 const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });

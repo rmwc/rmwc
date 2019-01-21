@@ -1,155 +1,235 @@
-[
-  {
-    "description": "The Typography Component",
-    "displayName": "Typography",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  /* prettier-ignore */\n  /** The typography style.*/\n  use: 'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "use",
-                    "value": {
-                      "name": "union",
-                      "raw": "'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'",
-                      "elements": [
-                        {
-                          "name": "literal",
-                          "value": "'headline1'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'headline2'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'headline3'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'headline4'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'headline5'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'headline6'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'subtitle1'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'subtitle2'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'body1'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'body2'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'caption'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'button'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'overline'"
-                        }
-                      ],
-                      "required": true
-                    }
-                  }
-                ]
-              },
-              "alias": "TypographyPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "use": {
-        "flowType": {
-          "name": "union",
-          "raw": "'headline1' | 'headline2' | 'headline3' | 'headline4' | 'headline5' | 'headline6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'headline1'"
-            },
-            {
-              "name": "literal",
-              "value": "'headline2'"
-            },
-            {
-              "name": "literal",
-              "value": "'headline3'"
-            },
-            {
-              "name": "literal",
-              "value": "'headline4'"
-            },
-            {
-              "name": "literal",
-              "value": "'headline5'"
-            },
-            {
-              "name": "literal",
-              "value": "'headline6'"
-            },
-            {
-              "name": "literal",
-              "value": "'subtitle1'"
-            },
-            {
-              "name": "literal",
-              "value": "'subtitle2'"
-            },
-            {
-              "name": "literal",
-              "value": "'body1'"
-            },
-            {
-              "name": "literal",
-              "value": "'body2'"
-            },
-            {
-              "name": "literal",
-              "value": "'caption'"
-            },
-            {
-              "name": "literal",
-              "value": "'button'"
-            },
-            {
-              "name": "literal",
-              "value": "'overline'"
-            }
-          ]
-        },
-        "required": true,
-        "description": "The typography style."
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/typography",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/typography/index.tsx",
+			"children": [
+				{
+					"id": 2,
+					"name": "TypographyProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 3,
+							"name": "use",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The typography style."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 20,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "TypographyT",
+								"id": 4
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 18,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 4,
+					"name": "TypographyT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 3,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "stringLiteral",
+								"value": "headline1"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "headline2"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "headline3"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "headline4"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "headline5"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "headline6"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "subtitle1"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "subtitle2"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "body1"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "body2"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "caption"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "button"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "overline"
+							}
+						]
+					}
+				},
+				{
+					"id": 5,
+					"name": "Typography",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The Typography Component"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 24,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 6,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<TypographyProps>({\n  displayName: 'Typography',\n  tag: 'span',\n  classNames: (props: TypographyProps) => [\n    {\n      [`mdc-typography--${props.use}`]: props.use\n    }\n  ],\n  consumeProps: ['use']\n})"
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						4
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						5
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

@@ -42,12 +42,12 @@ import { Typography } from '@rmwc/typography';
       <Typography
         use="subtitle2"
         tag="h3"
-        theme="text-secondary-on-background"
+        theme="textSecondaryOnBackground"
         style={{ marginTop: '-1rem' }}
       >
         by Kurt Wagner
       </Typography>
-      <Typography use="body1" tag="div" theme="text-secondary-on-background">
+      <Typography use="body1" tag="div" theme="textSecondaryOnBackground">
         Visit ten places on our planet that are undergoing the biggest changes
         today.
       </Typography>
@@ -82,7 +82,7 @@ import { Typography } from '@rmwc/typography';
     use="subtitle1"
     tag="div"
     style={{ padding: '0.5rem 1rem' }}
-    theme="text-secondary-on-background"
+    theme="textSecondaryOnBackground"
   >
     Headlines
   </Typography>
@@ -94,7 +94,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         Copper on the rise
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         Copper price soars amid global market optimism and increased demand.
       </Typography>
     </div>
@@ -107,7 +107,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         U.S. tech startups rebound
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         Favorable business conditions have allowed startups to secure more
         fundraising deals compared to last year.
       </Typography>
@@ -121,7 +121,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         Asia's clean energy ambitions
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         China plans to invest billions of dollars for the development of over
         300 clean energy projects in Southeast Asia.
       </Typography>

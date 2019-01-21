@@ -41,9 +41,9 @@ export class DocumentComponent extends React.Component {
           props:
             def.props || acc.props
               ? {
-                  ...(def.props || {}),
-                  ...(acc.props || {})
-                }
+                ...(def.props || {}),
+                ...(acc.props || {})
+              }
               : null
         };
       }, {});

@@ -2,11 +2,11 @@ const getPackageDirs = require('./get-package-dirs');
 const { exec } = require('child_process');
 
 getPackageDirs()
-  .filter(name => !['base', 'rmwc'].includes(name))
+  .filter(name => !['base', 'rmwc', '@types'].includes(name))
   .forEach(d => {
     console.log(`Building Docs For: ${d}`);
     const proc = exec(
-      `export NODE_ENV=development && react-docgen ./src/${d}/index.js --pretty --resolver ./scripts/docgen-resolver.js -o ./src/${d}/docgen.json`
+      `export NODE_ENV=development && typedoc ./src/${d}/index.tsx --excludeExternals --excludePrivate --ignoreCompilerErrors --json ./src/${d}/docgen.json`
     );
 
     proc.stdout.on('data', data => {

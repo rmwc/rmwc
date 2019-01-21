@@ -76,8 +76,10 @@ export const Button = withRipple({
   })
 );
 
+export interface ButtonIconProps extends IconProps {}
+
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export const ButtonIcon = componentFactory<IconProps>({
+export const ButtonIcon = componentFactory<ButtonIconProps>({
   displayName: 'ButtonIcon',
   tag: Icon,
   classNames: ['mdc-button__icon']

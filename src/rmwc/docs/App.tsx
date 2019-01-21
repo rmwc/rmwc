@@ -179,31 +179,33 @@ const AppBar = ({
 }: {
   onNavClick: (evt: React.SyntheticEvent<HTMLElement>) => void;
   children: React.ReactNode;
-}) => (
-  <React.Fragment>
-    <TopAppBar fixed className="app__top-app-bar">
-      <TopAppBarRow>
-        <TopAppBarSection alignStart>
-          <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
+}) => {
+  return (
+    <React.Fragment>
+      <TopAppBar fixed className="app__top-app-bar">
+        <TopAppBarRow>
+          <TopAppBarSection alignStart>
+            <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
 
-          <TopAppBarTitle tag={Link} {...{ to: '/' }}>
-            RMWC
-          </TopAppBarTitle>
-          <span className="app__version">{version}</span>
-        </TopAppBarSection>
-        <TopAppBarSection alignEnd>
-          {children}
-          <TopAppBarActionItem
-            tag="a"
-            href="https://github.com/jamesmfriedman/rmwc"
-            icon={<GithubIcon />}
-          />
-        </TopAppBarSection>
-      </TopAppBarRow>
-    </TopAppBar>
-    <TopAppBarFixedAdjust />
-  </React.Fragment>
-);
+            <TopAppBarTitle tag={Link} {...{ to: '/' }}>
+              RMWC
+            </TopAppBarTitle>
+            <span className="app__version">{version}</span>
+          </TopAppBarSection>
+          <TopAppBarSection alignEnd>
+            {children}
+            <TopAppBarActionItem
+              tag="a"
+              href="https://github.com/jamesmfriedman/rmwc"
+              icon={<GithubIcon />}
+            />
+          </TopAppBarSection>
+        </TopAppBarRow>
+      </TopAppBar>
+      <TopAppBarFixedAdjust />
+    </React.Fragment>
+  );
+};
 
 const ColorBlock = ({
   color,

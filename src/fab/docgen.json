@@ -1,57 +1,903 @@
-[
-  {
-    "description": "",
-    "displayName": "FabIcon",
-    "methods": []
-  },
-  {
-    "description": "",
-    "displayName": "FabLabel",
-    "methods": []
-  },
-  {
-    "description": "A floating action button component",
-    "displayName": "Fab",
-    "methods": [],
-    "props": {
-      "mini": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Make the Fab smaller."
-      },
-      "label": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "Make the Fab extended with a label."
-      },
-      "exited": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
-      },
-      "ripple": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Enable / disable the ripple."
-      }
-    },
-    "context": {
-      "RMWCOptions": {
-        "type": {
-          "name": "custom",
-          "raw": "PropTypes.object"
-        },
-        "required": false
-      }
-    }
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/fab",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/fab/index.tsx",
+			"children": [
+				{
+					"id": 2,
+					"name": "FabProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 7,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Content specified as children."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 16,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 8,
+							"name": "exited",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Animates the FAB out of view. When this class is removed, the FAB will return to view."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 18,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "icon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The icon for the FAB"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 10,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							}
+						},
+						{
+							"id": 6,
+							"name": "label",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the Fab extended with a label."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 14,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reference",
+										"name": "React.ReactNode"
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "mini",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the Fab smaller."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 8,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 9,
+							"name": "ripple",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+									"line": 269,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 10,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 11,
+													"name": "accent",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 272,
+															"character": 14
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												},
+												{
+													"id": 12,
+													"name": "surface",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 273,
+															"character": 15
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												},
+												{
+													"id": 13,
+													"name": "unbounded",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+															"line": 274,
+															"character": 17
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														11,
+														12,
+														13
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+													"line": 271,
+													"character": 5
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "WithRippleProps.ripple"
+							}
+						},
+						{
+							"id": 5,
+							"name": "trailingIcon",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A trialing icon for the FAB"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 12,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconPropT"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								7,
+								8,
+								4,
+								6,
+								3,
+								9,
+								5
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 6,
+							"character": 25
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "WithRippleProps"
+						}
+					]
+				},
+				{
+					"id": 17,
+					"name": "FabIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 41,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 18,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'FabIcon',\n  tag: Icon,\n  classNames: ['mdc-fab__icon']\n})"
+				},
+				{
+					"id": 19,
+					"name": "FabLabel",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 47,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 20,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'FabLabel',\n  classNames: ['mdc-fab__label']\n})"
+				},
+				{
+					"id": 14,
+					"name": "FabRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 21,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 15,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 16,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<FabProps>({\n    displayName: 'FabRoot',\n    tag: 'button',\n    classNames: (props: FabProps) => [\n      'mdc-fab',\n      {\n        'mdc-fab--mini': props.mini,\n        'mdc-fab--exited': props.exited,\n        'mdc-fab--extended': props.label\n      }\n    ],\n    defaultProps: {\n      cssOnly: false,\n      mini: false\n    },\n    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']\n  })\n)"
+				},
+				{
+					"id": 21,
+					"name": "Fab",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A floating action button component"
+					},
+					"signatures": [
+						{
+							"id": 22,
+							"name": "Fab",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "A floating action button component"
+							},
+							"parameters": [
+								{
+									"id": 23,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"originalName": "__0",
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 24,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 25,
+													"name": "children",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 54,
+															"character": 10
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															},
+															{
+																"type": "reference",
+																"name": "__type"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "ReactNodeArray"
+															},
+															{
+																"type": "reference",
+																"name": "ReactPortal"
+															}
+														]
+													}
+												},
+												{
+													"id": 27,
+													"name": "icon",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 56,
+															"character": 6
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "IconOptions"
+															}
+														]
+													}
+												},
+												{
+													"id": 26,
+													"name": "label",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 55,
+															"character": 7
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												},
+												{
+													"id": 29,
+													"name": "rest",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 58,
+															"character": 9
+														}
+													],
+													"type": {
+														"type": "reference",
+														"name": "rest",
+														"id": 29
+													}
+												},
+												{
+													"id": 28,
+													"name": "trailingIcon",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 57,
+															"character": 14
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "IconOptions"
+															}
+														]
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														25,
+														27,
+														26,
+														29,
+														28
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 53,
+													"character": 20
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 53,
+							"character": 16
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						17,
+						19,
+						14
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						21
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}

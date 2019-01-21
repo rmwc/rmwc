@@ -1,280 +1,734 @@
-[
-  {
-    "description": "A Grid component",
-    "displayName": "Grid",
-    "methods": [],
-    "props": {
-      "fixedColumnWidth": {
-        "flowType": {
-          "name": "boolean"
-        },
-        "required": false,
-        "description": "Specifies the grid should have fixed column width."
-      },
-      "align": {
-        "flowType": {
-          "name": "union",
-          "raw": "'left' | 'right'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'left'"
-            },
-            {
-              "name": "literal",
-              "value": "'right'"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Specifies the alignment of the whole grid."
-      },
-      "children": {
-        "flowType": {
-          "name": "ReactNode",
-          "raw": "React.Node"
-        },
-        "required": false,
-        "description": "Children for the Grid"
-      }
-    }
-  },
-  {
-    "description": "A Grid cell",
-    "displayName": "GridCell",
-    "methods": [
-      {
-        "name": "classNames",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "props",
-            "type": {
-              "name": "signature",
-              "type": "object",
-              "raw": "{\n  /** Default number of columns to span. */\n  span?: string | number,\n  /** Number of columns to span on a phone. */\n  phone?: string | number,\n  /** Number of columns to span on a tablet. */\n  tablet?: string | number,\n  /** Number of columns to span on a desktop. */\n  desktop?: string | number,\n  /** Specifies the order of the cell. */\n  order?: string | number,\n  /** Specifies the alignment of cell */\n  align?: 'top' | 'middle' | 'bottom'\n}",
-              "signature": {
-                "properties": [
-                  {
-                    "key": "span",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "phone",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "tablet",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "desktop",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "order",
-                    "value": {
-                      "name": "union",
-                      "raw": "string | number",
-                      "elements": [
-                        {
-                          "name": "string"
-                        },
-                        {
-                          "name": "number"
-                        }
-                      ],
-                      "required": false
-                    }
-                  },
-                  {
-                    "key": "align",
-                    "value": {
-                      "name": "union",
-                      "raw": "'top' | 'middle' | 'bottom'",
-                      "elements": [
-                        {
-                          "name": "literal",
-                          "value": "'top'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'middle'"
-                        },
-                        {
-                          "name": "literal",
-                          "value": "'bottom'"
-                        }
-                      ],
-                      "required": false
-                    }
-                  }
-                ]
-              },
-              "alias": "GridCellPropsT"
-            }
-          }
-        ],
-        "returns": null
-      }
-    ],
-    "props": {
-      "span": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Default number of columns to span."
-      },
-      "phone": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Number of columns to span on a phone."
-      },
-      "tablet": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Number of columns to span on a tablet."
-      },
-      "desktop": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Number of columns to span on a desktop."
-      },
-      "order": {
-        "flowType": {
-          "name": "union",
-          "raw": "string | number",
-          "elements": [
-            {
-              "name": "string"
-            },
-            {
-              "name": "number"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Specifies the order of the cell."
-      },
-      "align": {
-        "flowType": {
-          "name": "union",
-          "raw": "'top' | 'middle' | 'bottom'",
-          "elements": [
-            {
-              "name": "literal",
-              "value": "'top'"
-            },
-            {
-              "name": "literal",
-              "value": "'middle'"
-            },
-            {
-              "name": "literal",
-              "value": "'bottom'"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Specifies the alignment of cell"
-      }
-    }
-  },
-  {
-    "description": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.",
-    "displayName": "GridInner",
-    "methods": []
-  }
-]
+{
+	"id": 0,
+	"name": "@rmwc/grid",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/grid/index.tsx",
+			"children": [
+				{
+					"id": 6,
+					"name": "GridCellProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 12,
+							"name": "align",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Specifies the alignment of cell"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 58,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "stringLiteral",
+										"value": "top"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "middle"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "bottom"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"name": "desktop",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Number of columns to span on a desktop."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 54,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						},
+						{
+							"id": 11,
+							"name": "order",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Specifies the order of the cell."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 56,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						},
+						{
+							"id": 8,
+							"name": "phone",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Number of columns to span on a phone."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 50,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						},
+						{
+							"id": 7,
+							"name": "span",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Default number of columns to span."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 48,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 9,
+							"name": "tablet",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Number of columns to span on a tablet."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 52,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								12,
+								10,
+								11,
+								8,
+								7,
+								9
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 46,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "GridProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 4,
+							"name": "align",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Specifies the alignment of the whole grid."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 8,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "stringLiteral",
+										"value": "left"
+									},
+									{
+										"type": "stringLiteral",
+										"value": "right"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children for the Grid"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 10,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 3,
+							"name": "fixedColumnWidth",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Specifies the grid should have fixed column width."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 6,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4,
+								5,
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 4,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 21,
+					"name": "GridCell",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Grid cell"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 62,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 22,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<GridCellProps>({\n  displayName: 'GridCell',\n  classNames: (props: GridCellProps) => [\n    'mdc-layout-grid__cell',\n    {\n      [`mdc-layout-grid__cell--order-${props.order || ''}`]:\n        props.order !== undefined,\n      [`mdc-layout-grid__cell--align-${props.align || ''}`]:\n        props.align !== undefined,\n      [`mdc-layout-grid__cell--span-${props.span || ''}`]:\n        props.span !== undefined,\n      [`mdc-layout-grid__cell--span-${props.phone || ''}-phone`]:\n        props.phone !== undefined,\n      [`mdc-layout-grid__cell--span-${props.tablet || ''}-tablet`]:\n        props.tablet !== undefined,\n      [`mdc-layout-grid__cell--span-${props.desktop || ''}-desktop`]:\n        props.desktop !== undefined\n    }\n  ],\n  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']\n})"
+				},
+				{
+					"id": 23,
+					"name": "GridInner",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 85,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 24,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridInner',\n  classNames: ['mdc-layout-grid__inner']\n})"
+				},
+				{
+					"id": 13,
+					"name": "GridRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 13,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 14,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<GridProps>({\n  displayName: 'GridRoot',\n  classNames: (props: GridProps) => [\n    'mdc-layout-grid',\n    {\n      [`mdc-layout-grid__cell--align-${props.align || ''}`]:\n        props.align !== undefined,\n      'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth\n    }\n  ],\n  consumeProps: ['fixedColumnWidth', 'align']\n})"
+				},
+				{
+					"id": 15,
+					"name": "Grid",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Grid component"
+					},
+					"signatures": [
+						{
+							"id": 16,
+							"name": "Grid",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "A Grid component"
+							},
+							"parameters": [
+								{
+									"id": 17,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"originalName": "__0",
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 18,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 19,
+													"name": "children",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 28,
+															"character": 10
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															},
+															{
+																"type": "reference",
+																"name": "__type"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "ReactNodeArray"
+															},
+															{
+																"type": "reference",
+																"name": "ReactPortal"
+															}
+														]
+													}
+												},
+												{
+													"id": 20,
+													"name": "rest",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 29,
+															"character": 9
+														}
+													],
+													"type": {
+														"type": "reference",
+														"name": "rest",
+														"id": 20
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														19,
+														20
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 27,
+													"character": 70
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 27,
+							"character": 17
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						6,
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						21,
+						23,
+						13
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						15
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}
