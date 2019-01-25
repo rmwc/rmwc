@@ -223,7 +223,7 @@ class SelectEnhancedControl extends React.Component<
                       return (
                         <MenuItem
                           key={`${label}-${option.value}`}
-                          selected={currentIndex - 1 === selectedIndex}
+                          activated={currentIndex - 1 === selectedIndex}
                           {...option}
                           data-value={option.value}
                         >
@@ -241,7 +241,7 @@ class SelectEnhancedControl extends React.Component<
             return (
               <MenuItem
                 key={`${label}-${option.value}`}
-                selected={currentIndex - 1 === selectedIndex}
+                activated={currentIndex - 1 === selectedIndex}
                 {...option}
                 data-value={option.value}
               >
@@ -380,11 +380,9 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
     return {
       getValue: () => {
         let value = '';
-        const listItem =
+        const listItem: any =
           this.menuElement &&
-          this.menuElement.querySelector(
-            MDCSelectFoundation.strings.SELECTED_ITEM_SELECTOR
-          );
+          this.menuElement.querySelector('.mdc-list-item--activated');
         if (
           listItem &&
           listItem.hasAttribute(MDCSelectFoundation.strings.ENHANCED_VALUE_ATTR)

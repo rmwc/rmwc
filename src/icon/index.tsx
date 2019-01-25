@@ -39,6 +39,8 @@ export interface IconOptions {
   ) => React.ReactNode;
   /** A size to render the icon  */
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  /** Additional props */
+  [key: string]: any;
 }
 
 export type IconPropT = IconElementT | IconOptions;
@@ -164,7 +166,15 @@ export const Icon = withProviderContext()(
     }
 
     // Build icon options object
-    const iconOptions: IconOptions = {
+    const {
+      content,
+      strategy,
+      prefix,
+      basename,
+      render,
+      size,
+      ...optionsRest
+    }: IconOptions = {
       ...buildIconOptions(icon),
       ...deprecatedIconOption
     };
@@ -177,18 +187,15 @@ export const Icon = withProviderContext()(
       render: providerRender = null
     } = providerContext.icon || {};
 
-    const content = iconOptions.content;
+    const contentToUse = content;
 
     const strategyToUse = getIconStrategy(
-      content,
-      iconOptions.strategy || null,
+      contentToUse,
+      strategy || null,
       providerStrategy || null
     );
-    const prefixToUse = iconOptions.prefix || providerPrefix;
-    const basenameToUse =
-      iconOptions.basename === undefined
-        ? providerBasename
-        : iconOptions.basename;
+    const prefixToUse = prefix || providerPrefix;
+    const basenameToUse = basename === undefined ? providerBasename : basename;
     const iconClassName =
       strategyToUse === 'className' && typeof content === 'string'
         ? `${String(prefixToUse)}${content}`
@@ -196,7 +203,7 @@ export const Icon = withProviderContext()(
 
     const renderToUse =
       strategyToUse === 'custom'
-        ? iconOptions.render || providerRender
+        ? render || providerRender
         : !!strategyToUse && iconRenderMap[strategyToUse] !== undefined
         ? iconRenderMap[strategyToUse]
         : undefined;
@@ -212,14 +219,16 @@ export const Icon = withProviderContext()(
       <React.Fragment>
         {renderToUse({
           ...rest,
-          content,
+          ...optionsRest,
+          content: contentToUse,
           className: classNames(
             'rmwc-icon',
             basenameToUse,
             rest.className,
+            optionsRest.className,
             iconClassName,
             {
-              [`rmwc-icon--size-${iconOptions.size || ''}`]: !!iconOptions.size
+              [`rmwc-icon--size-${size || ''}`]: !!size
             }
           )
         })}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { toDashCase } from './utils/to-dash-case';
+import { toDashCase } from './utils/strings';
 import { deprecationWarning } from './utils/deprecation';
 
 export type ThemeOptionT =

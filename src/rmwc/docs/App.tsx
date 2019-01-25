@@ -39,9 +39,7 @@ import { Button } from '@rmwc/button';
 import Submenu from './Submenu';
 import Home from './Home';
 import { ThemeOptionT } from '@rmwc/base/withTheme';
-
-const toCamel = (str: string) =>
-  str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
+import { toCamel } from '@rmwc/base/utils/strings';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',

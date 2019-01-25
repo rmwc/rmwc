@@ -2,20 +2,21 @@
 
 > Buttons communicate the action that will occur when the user touches them.
 
-- Module **@rmwc/button**  
+- Module **@rmwc/button**
 - Import styles:
   - import **'@material/button/dist/mdc.button.css'**;
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 ```jsx render
 import { Button, ButtonIcon } from '@rmwc/button';
+import { CircularProgress } from '@rmwc/circular-progress';
 
 <Button label="Default" />
 <Button
   label="With Icon"
   icon="favorite"
 />
-<Button 
+<Button
   label="Raised"
   raised
 />
@@ -53,6 +54,10 @@ import { Button, ButtonIcon } from '@rmwc/button';
   label="No Ripple"
   ripple={false}
 />
+<Button
+  label="Loading"
+  icon={<CircularProgress />}
+/>
 
 {/*
   Alternatively pass content as children
@@ -64,5 +69,5 @@ import { Button, ButtonIcon } from '@rmwc/button';
 import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<Docs src={docs} components={['Button', 'ButtonIcon']} />
+<Docs src={docs} components={['Button', 'ButtonIcon']} />;
 ```

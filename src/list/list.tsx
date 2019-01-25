@@ -62,6 +62,10 @@ export class List extends FoundationComponent<ListProps> {
     this.foundation.layout();
   }
 
+  focusItemAtIndex(index: number) {
+    this.foundation.adapter_.focusItemAtIndex(index);
+  }
+
   getDefaultFoundation() {
     return new MDCListFoundation(
       /** @type {!MDCListAdapter} */ (Object.assign({
@@ -164,20 +168,76 @@ export class List extends FoundationComponent<ListProps> {
     );
   }
 
-  handleClick(evt: React.MouseEvent) {
-    this.props.onClick && this.props.onClick(evt);
+  /**
+   * Used to figure out which list item this event is targetting. Or returns -1 if
+   * there is no list item
+   */
+  getListItemIndex(
+    evt: React.FocusEvent | React.KeyboardEvent | React.MouseEvent
+  ) {
+    let eventTarget = evt.target as HTMLElement | null;
+    let index = -1;
+
+    // Find the first ancestor that is a list item or the list.
+    while (
+      eventTarget &&
+      !eventTarget.classList.contains(
+        MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+      ) &&
+      !eventTarget.classList.contains(MDCListFoundation.cssClasses.ROOT)
+    ) {
+      eventTarget = eventTarget.parentElement as HTMLLIElement;
+    }
+
+    // Get the index of the element if it is a list item.
+    if (
+      eventTarget &&
+      eventTarget.classList.contains(
+        MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+      )
+    ) {
+      index = this.listElements.indexOf(eventTarget as HTMLLIElement);
+    }
+
+    return index;
   }
 
-  handleKeydown(evt: React.KeyboardEvent) {
+  handleClick(evt: React.MouseEvent) {
+    this.props.onClick && this.props.onClick(evt);
+
+    const index = this.getListItemIndex(evt);
+
+    // Toggle the checkbox only if it's not the target of the event, or the checkbox will have 2 change events.
+    //const toggleCheckbox = !matches(/** @type {!Element} */(evt.target), strings.CHECKBOX_RADIO_SELECTOR);
+    //this.foundation.handleClick(index, toggleCheckbox);
+    this.foundation.handleClick(index, false);
+  }
+
+  handleKeydown(evt: React.KeyboardEvent<HTMLElement>) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
+
+    const index = this.getListItemIndex(evt);
+
+    if (index >= 0) {
+      this.foundation.handleKeydown(
+        evt,
+        evt.target instanceof Element &&
+          evt.target.classList.contains(
+            MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+          ),
+        index
+      );
+    }
   }
 
   handleFocusIn(evt: React.FocusEvent) {
     this.props.onFocus && this.props.onFocus(evt);
+    this.foundation.handleFocusIn(evt, this.getListItemIndex(evt));
   }
 
   handleFocusOut(evt: React.FocusEvent) {
     this.props.onBlur && this.props.onBlur(evt);
+    this.foundation.handleFocusOut(evt, this.getListItemIndex(evt));
   }
 
   render() {

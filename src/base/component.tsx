@@ -37,7 +37,6 @@ interface ComponentFactoryOpts<Props> {
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
   tag?: TagT;
   theme?: ThemeInputT;
-  wrap?: boolean | any;
   // // TODO, any had to be included
   // // This is a type mistmatch between refs in class components vs forwardRef components... string is the
   ref?: any;

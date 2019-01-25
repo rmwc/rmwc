@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { componentFactory, ComponentProps, ThemeOptionT } from '@rmwc/base';
-import { toDashCase } from '@rmwc/base/utils/to-dash-case';
+import { toDashCase } from '@rmwc/base/utils/strings';
 import { getAutoColorsForTheme } from './utils';
 import { parseThemeOptions } from '@rmwc/base/withTheme';
 

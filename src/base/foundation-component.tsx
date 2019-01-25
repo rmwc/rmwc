@@ -2,9 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
-
-const toCamel = (str: string) =>
-  str.replace(/(-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
+import { toCamel } from './utils/strings';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
@@ -199,7 +197,6 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
 
   foundation: any = this.getDefaultFoundation();
   elements: { [key: string]: FoundationElement<any, any> } = {};
-  canUpdate = true;
 
   constructor(props: any) {
     super(props);
@@ -221,8 +218,8 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   componentWillUnmount() {
-    this.canUpdate = false;
     this.foundation && this.foundation.destroy();
+    this.foundation = null;
     Object.values(this.elements).forEach(el => el.destroy());
   }
 
@@ -234,7 +231,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   update() {
-    this.canUpdate && this.forceUpdate();
+    this.foundation && this.setState({});
   }
 
   sync(props: any, prevProps?: any) {}
@@ -282,11 +279,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
     // This happens when MDC broadcasts certain events on timers
     if (this.foundation) {
       //@ts-ignore
-      if (this.props[propName]) {
-        // covers calling variations of events. onOpened, onClosed -> onOpen, onClose
-        //@ts-ignore
-        this.props[propName](evt);
-      }
+      this.props[propName] && this.props[propName](evt);
     }
 
     return evt;

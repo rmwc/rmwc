@@ -16,6 +16,10 @@ export interface RMWCProviderProps {
 }
 
 export interface DeprecatedRMWCProviderPropsT {
+  /** DEPRECATED: Ripples for all components are now controlled by the providers ripple prop */
+  buttonDefaultRipple?: boolean;
+  /** DEPRECATED: Ripples for all components are now controlled by the providers ripple prop */
+  listItemDefaultRipple?: boolean;
   /** DEPRECATED: Use the 'icon' prop. icon={{basename: 'material-icons'}} */
   iconClassNameBase?: string;
   /** DEPRECATED: Use the 'icon' prop. icon={{prefix: 'glyphicons-'}} */

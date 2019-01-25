@@ -2,7 +2,7 @@ import * as React from 'react';
 // @ts-ignore
 import { MDCMenuFoundation } from '@material/menu';
 
-import { List, ListItem } from '@rmwc/list';
+import { List, ListItem, ListItemProps } from '@rmwc/list';
 import {
   componentFactory,
   FoundationComponent,
@@ -55,9 +55,10 @@ export const MenuItems = componentFactory<{}>({
   }
 });
 
-/** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
+interface MenuItemProps extends ListItemProps {}
 
-export const MenuItem = componentFactory<{}>({
+/** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
+export const MenuItem = componentFactory<MenuItemProps>({
   displayName: 'MenuItem',
   tag: ListItem,
   defaultProps: {
@@ -152,7 +153,7 @@ export class Menu extends FoundationComponent<MenuProps> {
   handleOpen(evt: CustomEventT<{}>) {
     this.props.onOpen && this.props.onOpen(evt);
     const list = this.items;
-    if (list.length > 0) {
+    if (list.length > 0 && !list.some(el => el === document.activeElement)) {
       list[0].focus();
     }
   }

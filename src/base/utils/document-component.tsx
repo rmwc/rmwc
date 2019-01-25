@@ -170,7 +170,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
           };
         })
         // remove deprecated props from UI
-        .filter(p => !p.description.toLocaleLowerCase().includes('deprecated'));
+        .filter(p => !p.description.toLowerCase().includes('deprecated'));
     }
 
     return def;

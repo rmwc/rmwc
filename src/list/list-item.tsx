@@ -16,7 +16,7 @@ export interface ListItemProps extends WithRippleProps {
 /**
  * The ListItem component.
  */
-export const ListItem = withRipple()(
+export const ListItem = withRipple({ surface: false })(
   componentFactory<ListItemProps>({
     displayName: 'ListItem',
     defaultProps: {
@@ -66,11 +66,18 @@ export const ListItemGraphic = componentFactory<ListItemGraphicProps>({
 
 export interface ListItemMetaProps extends IconProps {}
 
-/** A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag="span" and basename="" to ensure proper rendering. See the examples above.*/
+/** A meta icon for the ListItem.*/
 export const ListItemMeta = componentFactory<ListItemMetaProps>({
   displayName: 'ListItemMeta',
   classNames: ['mdc-list-item__meta'],
   tag: Icon
+});
+
+/** Meta text for the ListItem. This should be used as an alternative to ListItemMeta which is an icon.*/
+export const ListItemMetaText = componentFactory<{}>({
+  displayName: 'ListItemMetaText',
+  classNames: ['mdc-list-item__meta'],
+  tag: 'span'
 });
 
 /** A container to group ListItems */
@@ -100,6 +107,8 @@ export interface SimpleListItemProps extends ListItemProps {
   graphic?: IconPropT;
   /** A meta icon for the ListItem */
   meta?: IconPropT;
+  /** A metaText for the ListItem instead of an icon. */
+  metaText?: React.ReactNode;
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -109,6 +118,7 @@ export const SimpleListItem = ({
   secondaryText,
   graphic,
   meta,
+  metaText,
   children,
   ...rest
 }: SimpleListItemProps & ComponentProps) => {
@@ -135,7 +145,11 @@ export const SimpleListItem = ({
       ) : (
         primaryTextToRender
       )}
-      {meta !== undefined && <ListItemMeta icon={meta} />}
+      {!!meta ? (
+        <ListItemMeta icon={meta} />
+      ) : !!metaText ? (
+        <ListItemMetaText>{metaText}</ListItemMetaText>
+      ) : null}
       {children}
     </ListItem>
   );

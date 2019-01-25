@@ -56,11 +56,18 @@ export const Fab = ({
   icon,
   trailingIcon,
   ...rest
-}: FabProps) => (
-  <FabRoot label={label} {...rest}>
-    {!!icon && <FabIcon icon={icon} />}
-    {!!label && <FabLabel>{label}</FabLabel>}
-    {children}
-    {!!trailingIcon && <FabIcon icon={trailingIcon} />}
-  </FabRoot>
-);
+}: FabProps) => {
+  if (trailingIcon && !label) {
+    console.warn(
+      `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`
+    );
+  }
+  return (
+    <FabRoot label={label} {...rest}>
+      {!!icon && <FabIcon icon={icon} />}
+      {!!label && <FabLabel>{label}</FabLabel>}
+      {children}
+      {!!trailingIcon && <FabIcon icon={trailingIcon} />}
+    </FabRoot>
+  );
+};

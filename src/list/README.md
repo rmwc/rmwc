@@ -79,7 +79,8 @@ import {
   List,
   ListItem,
   ListItemGraphic,
-  ListItemMeta
+  ListItemMeta,
+  ListItemMetaText
 } from '@rmwc/list';
 
 <List>
@@ -95,6 +96,11 @@ import {
     <ListItemGraphic icon="wifi"/>
     Leading and Trailing
     <ListItemMeta icon="info"/>
+  </ListItem>
+  <ListItem>
+    <ListItemGraphic icon="wifi"/>
+    Leading with Trailing Text
+    <ListItemMetaText>HELLO!</ListItemMetaText>
   </ListItem>
 </List>
 ```
@@ -172,6 +178,7 @@ import * as docs from './docgen.json';
   'ListItemSecondaryText',
   'ListItemGraphic',
   'ListItemMeta',
+  'ListItemMetaText',
   'ListDivider',
   'ListGroup',
   'ListGroupSubheader',
