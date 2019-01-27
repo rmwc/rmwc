@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
 import { toCamel } from './utils/strings';
+import { MergeInterfacesT } from './utils/merge-interfaces';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
@@ -23,7 +24,7 @@ class FoundationElement<
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.hasClass = this.hasClass.bind(this);
-    this.addProp = this.addProp.bind(this);
+    this.setProp = this.setProp.bind(this);
     this.getProp = this.getProp.bind(this);
     this.removeProp = this.removeProp.bind(this);
     this.setStyle = this.setStyle.bind(this);
@@ -65,7 +66,7 @@ class FoundationElement<
   /**************************************************
    * Props
    **************************************************/
-  addProp(propName: keyof Props, value: any) {
+  setProp(propName: keyof Props, value: any) {
     if (this._props[propName] !== value) {
       this._props[propName] = value;
       this.onChange();
@@ -91,7 +92,7 @@ class FoundationElement<
     // This wraps them in a function that calls both
     const mergedEvents = Object.entries(propsToMerge).reduce(
       (acc: any, [key, possibleCallback]) => {
-        const existingCallback = this._props[key];
+        const existingCallback = this._events[key];
         if (
           typeof possibleCallback === 'function' &&
           typeof existingCallback === 'function'
@@ -105,7 +106,7 @@ class FoundationElement<
         }
         return acc;
       },
-      {}
+      { ...this._events }
     );
 
     // handle className
@@ -180,13 +181,18 @@ class FoundationElement<
     return this._ref;
   }
 }
+type ExtractProps<
+  TComponentOrTProps
+> = TComponentOrTProps extends React.Component<infer TProps, any>
+  ? TProps
+  : TComponentOrTProps;
 
-interface FoundationProps extends React.HTMLProps<any> {
+export interface FoundationProps extends React.HTMLProps<any> {
   ref?: any;
 }
 interface FoundationState {}
 
-type FoundationPropsT<P> = P & FoundationProps;
+type FoundationPropsT<P> = MergeInterfacesT<P, FoundationProps>;
 type FoundationStateT<S> = S & FoundationState;
 
 export class FoundationComponent<P, S extends any = {}> extends React.Component<
@@ -224,7 +230,9 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   createElement<ElementType extends any = HTMLElement>(elementName: string) {
-    const el = new FoundationElement<any, ElementType>(this.update);
+    const el = new FoundationElement<ExtractProps<ElementType>, ElementType>(
+      this.update
+    );
 
     this.elements[elementName] = el;
     return el;

@@ -1,10 +1,12 @@
 import * as React from 'react';
 // @ts-ignore
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
-import { FormField } from '@rmwc/formfield';
+import { componentFactory } from '@rmwc/base';
 import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import {
+  ToggleableFoundationComponent,
+  ToggleableFoundationProps
+} from '@rmwc/toggleable';
 
 /**
  * This is an awful freaking bugfix
@@ -14,19 +16,11 @@ import { withRipple, WithRippleProps } from '@rmwc/ripple';
  */
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
-export interface CheckboxProps extends WithRippleProps {
-  /** A DOM ID for the toggle. */
-  id?: string;
-  /** Disables the control. */
-  disabled?: boolean;
-  /** Toggle the control on and off. */
-  checked?: boolean;
-  /** The value of the control. */
-  value?: string | number | string[];
+export interface CheckboxProps
+  extends WithRippleProps,
+    ToggleableFoundationProps {
   /** Make the control indeterminate */
   indeterminate?: boolean;
-  /** A label for the control. */
-  label?: string | any;
 }
 
 const CheckboxRoot = withRipple({
@@ -78,18 +72,14 @@ class CheckboxBackground extends React.Component<{}> {
   }
 }
 
-const CheckboxLabel = ({ ...rest }) => <label {...rest} />;
-CheckboxLabel.displayName = 'CheckboxLabel';
-
 /**
  * A Checkbox component
  */
-export class Checkbox extends FoundationComponent<CheckboxProps> {
+export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
   static displayName = 'Checkbox';
 
   nativeCb = this.createElement<HTMLInputElement>('nativeCb');
   root = this.createElement('root');
-  generatedId = randomId('checkbox');
 
   constructor(props: CheckboxProps) {
     super(props);
@@ -113,8 +103,9 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       setNativeControlAttr: (attr: string, value: any) =>
-        this.nativeCb.addProp(attr, value),
-      removeNativeControlAttr: (attr: string) => this.nativeCb.removeProp(attr),
+        this.nativeCb.setProp(attr as any, value),
+      removeNativeControlAttr: (attr: string) =>
+        this.nativeCb.removeProp(attr as any),
       getNativeControl: () => this.nativeCb.ref,
       isIndeterminate: () => this.props.indeterminate,
       isChecked: () =>
@@ -123,7 +114,7 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
           : this.nativeCb.ref && this.nativeCb.ref.checked,
       hasNativeControl: () => !!this.nativeCb.ref,
       setNativeControlDisabled: (disabled: boolean) =>
-        this.nativeCb.addProp('disabled', disabled),
+        this.nativeCb.setProp('disabled', disabled),
       forceLayout: () => this.root.ref && this.root.ref.offsetWidth,
       isAttachedToDOM: () => true
     });
@@ -140,43 +131,31 @@ export class Checkbox extends FoundationComponent<CheckboxProps> {
   }
 
   render() {
-    const { label = '', id, children, indeterminate, ...rest } = this.props;
-    const labelId = id || this.generatedId;
+    const {
+      children,
+      className,
+      label,
+      style,
+      indeterminate,
+      ...rest
+    } = this.props;
 
     const checkbox = (
       <CheckboxRoot
+        {...this.toggleRootProps}
         ref={this.root.setRef}
-        disabled={rest.disabled}
-        {...this.root.props({})}
         onAnimationEnd={this.handleAnimationEnd}
       >
         <CheckboxNativeControl
-          ref={this.nativeCb.setRef}
-          id={labelId}
           {...this.nativeCb.props(rest)}
+          ref={this.nativeCb.setRef}
+          id={this.id}
           onChange={this.handleOnChange}
         />
-
         <CheckboxBackground />
       </CheckboxRoot>
     );
 
-    /**
-     * We have to conditionally wrap our checkbox in a formfield
-     * If we have a label
-     */
-    if (label.length || children) {
-      return (
-        <FormField>
-          {checkbox}
-          <CheckboxLabel id={labelId + 'label'} htmlFor={labelId}>
-            {label}
-            {children}
-          </CheckboxLabel>
-        </FormField>
-      );
-    } else {
-      return checkbox;
-    }
+    return this.renderToggle(checkbox);
   }
 }

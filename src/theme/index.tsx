@@ -4,6 +4,7 @@ import { componentFactory, ComponentProps, ThemeOptionT } from '@rmwc/base';
 import { toDashCase } from '@rmwc/base/utils/strings';
 import { getAutoColorsForTheme } from './utils';
 import { parseThemeOptions } from '@rmwc/base/withTheme';
+import { wrapChild } from '@rmwc/base/utils/wrap-child';
 
 const ThemeRoot = componentFactory<{}>({
   displayName: 'ThemeRoot',
@@ -14,7 +15,7 @@ export interface ThemeProps {
   /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
   use: ThemeOptionT | ThemeOptionT[];
   /** Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors.  */
-  wrap?: boolean | any;
+  wrap?: boolean;
 }
 
 /**
@@ -22,14 +23,7 @@ export interface ThemeProps {
  */
 export const Theme = ({ use, wrap, ...rest }: ThemeProps & ComponentProps) => {
   if (wrap) {
-    const child = React.Children.only(rest.children);
-
-    return React.cloneElement(child, {
-      ...child.props,
-      className: [...parseThemeOptions(use), child.props.className]
-        .filter(Boolean)
-        .join(' ')
-    });
+    return wrapChild({ ...rest, className: parseThemeOptions(use).join(' ') });
   }
   return <ThemeRoot theme={use} {...rest} />;
 };

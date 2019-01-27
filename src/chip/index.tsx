@@ -10,17 +10,18 @@ import {
 } from '@rmwc/base';
 import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps } from '@rmwc/icon';
+import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
 export interface ChipProps {
   /** Text for your Chip. */
-  text?: React.ReactNode;
+  label?: React.ReactNode;
   /** makes the Chip appear selected. */
   selected?: boolean;
   /** Instance of an Icon Component. */
-  leadingIcon?: React.ReactNode;
+  leadingIcon?: IconPropT;
   /** Instance of an Icon Component. */
-  trailingIcon?: React.ReactNode;
+  trailingIcon?: IconPropT;
   /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */
   id?: string;
   /** Includes an optional checkmark for the chips selected state. */
@@ -33,6 +34,11 @@ export interface ChipProps {
   onTrailingIconInteraction?: (evt: CustomEventT<{ chipId: string }>) => void;
   /** A callback that is fired once the chip is in an exited state from removing it. */
   onRemove?: (evt: CustomEventT<{ chipId: string }>) => void;
+}
+
+export interface DeprecatedChipProps {
+  /** Deprecated, use label instead */
+  text?: React.ReactNode;
 }
 
 const ChipRoot = withRipple({})(
@@ -49,7 +55,7 @@ const ChipRoot = withRipple({})(
 );
 
 /** A Chip component. */
-export class Chip extends FoundationComponent<ChipProps> {
+export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
   static displayName = 'Chip';
 
   root = this.createElement('root');
@@ -145,9 +151,18 @@ export class Chip extends FoundationComponent<ChipProps> {
       trailingIcon,
       checkmark,
       text,
+      label,
       children,
       ...rest
     } = this.props;
+
+    let labelToUse = label;
+
+    if (text) {
+      deprecationWarning('Chip `text` is now `label`');
+      labelToUse = text;
+    }
+
     return (
       <ChipRoot
         tabIndex={0}
@@ -157,22 +172,26 @@ export class Chip extends FoundationComponent<ChipProps> {
         onTransitionEnd={this.handleTransitionEnd}
         ref={this.root.setRef}
       >
-        {!!leadingIcon &&
-          renderChipIcon(leadingIcon, {
-            leading: true,
-            hidden: rest.selected && checkmark
-          })}
+        {!!leadingIcon && (
+          <ChipIcon
+            icon={leadingIcon}
+            leading
+            hidden={rest.selected && checkmark}
+          />
+        )}
         {!!checkmark && <ChipCheckmark />}
         <div className="mdc-chip__text">
-          {text}
+          {labelToUse}
           {children}
         </div>
-        {!!trailingIcon &&
-          renderChipIcon(trailingIcon, {
-            trailing: true,
-            onClick: this.handleTrailingIconInteraction,
-            onKeyDown: this.handleTrailingIconInteraction
-          })}
+        {!!trailingIcon && (
+          <ChipIcon
+            icon={trailingIcon}
+            trailing
+            onClick={this.handleTrailingIconInteraction}
+            onKeyDown={this.handleTrailingIconInteraction}
+          />
+        )}
       </ChipRoot>
     );
   }
@@ -237,19 +256,6 @@ export const ChipIcon = (props: ChipIconProps & ComponentProps) => {
 };
 
 ChipIcon.displayName = 'ChipIcon';
-
-// handle leading and trailing icons
-const renderChipIcon = (iconNode: any, props: any) => {
-  if (
-    (iconNode && typeof iconNode === 'string') ||
-    (typeof iconNode === 'object' && iconNode.type !== ChipIcon)
-  ) {
-    return <ChipIcon icon={iconNode} {...props} />;
-  }
-
-  const icon = React.Children.only(iconNode);
-  return React.cloneElement(icon, { ...icon.props, ...props });
-};
 
 export interface ChipSetProps {
   /** Creates a choice chipset */

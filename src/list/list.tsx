@@ -3,6 +3,7 @@ import * as React from 'react';
 //@ts-ignore
 import { MDCListFoundation } from '@material/list';
 import { FoundationComponent, componentFactory } from '@rmwc/base';
+import { matches } from '@rmwc/base/utils/ponyfills';
 
 export interface ListProps {
   /** Reduces the padding on List items. */
@@ -75,11 +76,17 @@ export class List extends FoundationComponent<ListProps> {
         setAttributeForElementIndex: (
           index: number,
           attr: string,
-          value: string
+          value: string | number
         ) => {
+          // This value is getting set and never getting set back
+          // This is causing list items to be un-tabbable
+          if (attr === 'tabindex' && value === -1) {
+            return;
+          }
+
           const element = this.listElements[index];
           if (element) {
-            element.setAttribute(attr, value);
+            element.setAttribute(attr, String(value));
           }
         },
         removeAttributeForElementIndex: (index: number, attr: string) => {
@@ -108,7 +115,7 @@ export class List extends FoundationComponent<ListProps> {
         },
         setTabIndexForListItemChildren: (
           listItemIndex: number,
-          tabIndexValue: string
+          tabIndexValue: string | number
         ) => {
           const element = this.listElements[listItemIndex];
           const listItemChildren: Element[] = [].slice.call(
@@ -117,7 +124,7 @@ export class List extends FoundationComponent<ListProps> {
             )
           );
           listItemChildren.forEach(ele =>
-            ele.setAttribute('tabindex', tabIndexValue)
+            ele.setAttribute('tabindex', String(tabIndexValue))
           );
         },
         followHref: (index: number) => {
@@ -208,9 +215,12 @@ export class List extends FoundationComponent<ListProps> {
     const index = this.getListItemIndex(evt);
 
     // Toggle the checkbox only if it's not the target of the event, or the checkbox will have 2 change events.
-    //const toggleCheckbox = !matches(/** @type {!Element} */(evt.target), strings.CHECKBOX_RADIO_SELECTOR);
-    //this.foundation.handleClick(index, toggleCheckbox);
-    this.foundation.handleClick(index, false);
+    const toggleCheckbox = !matches(
+      evt.target as HTMLElement,
+      MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
+    );
+
+    this.foundation.handleClick(index, toggleCheckbox);
   }
 
   handleKeydown(evt: React.KeyboardEvent<HTMLElement>) {

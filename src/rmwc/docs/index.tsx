@@ -38,6 +38,7 @@ import '@material/typography/dist/mdc.typography.css';
 import '@rmwc/data-table/data-table.css';
 import '@rmwc/icon/icon.css';
 import '@rmwc/circular-progress/circular-progress.css';
+import '@rmwc/list/collapsible-list.css';
 
 import 'prismjs/themes/prism.css';
 import './docs.css';

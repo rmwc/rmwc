@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNamesFunc from 'classnames';
 import { parseThemeOptions, ThemeOptionT } from './withTheme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
+import { MergeInterfacesT } from './utils/merge-interfaces';
 
 type ThemeInputT = ThemeOptionT | ThemeOptionT[];
 
@@ -82,7 +83,7 @@ export const componentFactory = <P extends {}>({
   consumeProps = [],
   render
 }: ComponentFactoryOpts<P>) => {
-  const Component = React.forwardRef<any, P & ComponentProps>(
+  const Component = React.forwardRef<any, MergeInterfacesT<P, ComponentProps>>(
     (props: P & ComponentProps, ref) => {
       const { className, theme, tag, ...rest } = props;
 

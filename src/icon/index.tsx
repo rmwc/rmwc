@@ -14,7 +14,7 @@ export type IconStrategyT =
   | 'custom';
 
 export interface IconOptions {
-  content?: IconElementT;
+  icon?: IconElementT;
   /**
    * Handle multiple methods of embedding an icon.
    * 'ligature' uses ligature style embedding like material-icons,
@@ -130,7 +130,7 @@ const iconRenderMap: {
 const buildIconOptions = (icon?: IconPropT) => {
   if (React.isValidElement(icon) || (icon && typeof icon !== 'object')) {
     return {
-      content: icon
+      icon
     };
   }
   return icon as IconOptions;
@@ -167,7 +167,7 @@ export const Icon = withProviderContext()(
 
     // Build icon options object
     const {
-      content,
+      icon: content,
       strategy,
       prefix,
       basename,

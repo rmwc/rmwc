@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { componentFactory, ComponentProps } from '@rmwc/base';
+import { MergeInterfacesT } from '@rmwc/base/utils/merge-interfaces';
 
 const SIZE_MAP: { [key: string]: number } = {
   xsmall: 18,
@@ -17,7 +18,7 @@ export interface CircularProgressProps {
   /** Value for determinate progress bars. */
   progress?: number;
   /** The size of the loader you would like to render. */
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number | any;
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
 }
 
 interface CircularProgressRootProps {
@@ -42,7 +43,7 @@ const CircularProgressRoot = componentFactory<CircularProgressRootProps>({
 
 /** A Circular Progress indicator. */
 export class CircularProgress extends React.Component<
-  CircularProgressProps & ComponentProps
+  MergeInterfacesT<CircularProgressProps, ComponentProps>
 > {
   static defaultProps = {
     progress: undefined,

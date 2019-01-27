@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { componentFactory, ComponentProps } from '@rmwc/base';
+import { componentFactory, ComponentProps, classNames } from '@rmwc/base';
 import { withRipple, WithRippleProps } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
@@ -66,18 +66,34 @@ export const ListItemGraphic = componentFactory<ListItemGraphicProps>({
 
 export interface ListItemMetaProps extends IconProps {}
 
-/** A meta icon for the ListItem.*/
+/** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export const ListItemMeta = componentFactory<ListItemMetaProps>({
   displayName: 'ListItemMeta',
   classNames: ['mdc-list-item__meta'],
-  tag: Icon
+  tag: 'div',
+  render: (props, ref, Tag) => {
+    if (!!props.icon) {
+      return <Icon ref={ref} {...props} />;
+    }
+
+    if (React.isValidElement(props.children)) {
+      const { children, ...rest } = props;
+      return React.cloneElement(props.children, {
+        ...rest,
+        ...props.children.props,
+        className: classNames(props.className, props.children.props.className)
+      });
+    }
+
+    return <Tag ref={ref} {...props} />;
+  }
 });
 
-/** Meta text for the ListItem. This should be used as an alternative to ListItemMeta which is an icon.*/
-export const ListItemMetaText = componentFactory<{}>({
-  displayName: 'ListItemMetaText',
+/** A meta icon for the ListItem.*/
+const ListItemMetaIcon = componentFactory<ListItemMetaProps>({
+  displayName: 'ListItemMetaIcon',
   classNames: ['mdc-list-item__meta'],
-  tag: 'span'
+  tag: Icon
 });
 
 /** A container to group ListItems */
@@ -106,9 +122,9 @@ export interface SimpleListItemProps extends ListItemProps {
   /** A graphic icon for the ListItem. */
   graphic?: IconPropT;
   /** A meta icon for the ListItem */
-  meta?: IconPropT;
-  /** A metaText for the ListItem instead of an icon. */
-  metaText?: React.ReactNode;
+  metaIcon?: IconPropT;
+  /** Meta content for the ListItem instead of an icon. */
+  meta?: React.ReactNode;
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -117,8 +133,8 @@ export const SimpleListItem = ({
   text,
   secondaryText,
   graphic,
+  metaIcon,
   meta,
-  metaText,
   children,
   ...rest
 }: SimpleListItemProps & ComponentProps) => {
@@ -145,11 +161,10 @@ export const SimpleListItem = ({
       ) : (
         primaryTextToRender
       )}
-      {!!meta ? (
-        <ListItemMeta icon={meta} />
-      ) : !!metaText ? (
-        <ListItemMetaText>{metaText}</ListItemMetaText>
-      ) : null}
+      {(!!meta || !!metaIcon) && (
+        <ListItemMeta icon={metaIcon}>{meta}</ListItemMeta>
+      )}
+
       {children}
     </ListItem>
   );

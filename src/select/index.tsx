@@ -15,17 +15,17 @@ import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
 import { withRipple } from '@rmwc/ripple';
 
-type FormattedOption = {
+export interface FormattedOption {
   label: string;
   value: string;
   options?: FormattedOption[];
-};
+}
 
 export interface SelectProps {
   /** The value for a controlled select. */
   value?: string;
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
-  options?: string[] | { [value: string]: string } | any[];
+  options?: FormattedOption[] | string[] | { [value: string]: string };
   /** A label for the form control. */
   label?: string;
   /** Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. */
@@ -264,8 +264,8 @@ interface SelectState {
 
 export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
   root = this.createElement<HTMLSelectElement>('root');
-  lineRipple = this.createElement('lineRipple');
-  outline = this.createElement('outline');
+  lineRipple = this.createElement<LineRipple>('lineRipple');
+  outline = this.createElement<NotchedOutline>('outline');
   label = this.createElement<FloatingLabel>('label');
   id: string = this.props.id || randomId('select');
   nativeControl: HTMLSelectElement | null = null;
@@ -476,9 +476,9 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
         window.getComputedStyle(this.root.ref).getPropertyValue('direction') ===
           'rtl',
       setRippleCenter: (normalizedX: number) =>
-        this.lineRipple.addProp('center', normalizedX),
-      activateBottomLine: () => this.lineRipple.addProp('active', true),
-      deactivateBottomLine: () => this.lineRipple.addProp('active', false),
+        this.lineRipple.setProp('center', normalizedX),
+      activateBottomLine: () => this.lineRipple.setProp('active', true),
+      deactivateBottomLine: () => this.lineRipple.setProp('active', false),
       notifyChange: (value: any) => {
         // handled byt the onChange event
       }
@@ -489,7 +489,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
     return {
       hasOutline: () => !!this.props.outlined,
       notchOutline: (labelWidth: number) => {
-        this.outline.addProp('notch', labelWidth);
+        this.outline.setProp('notch', labelWidth);
       },
       closeOutline: () => {
         this.outline.removeProp('notch');
@@ -500,7 +500,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
   getLabelAdapterMethods_() {
     return {
       floatLabel: (shouldFloat: boolean) => {
-        this.label.addProp('float', shouldFloat);
+        this.label.setProp('float', shouldFloat);
       },
       getLabelWidth: () => {
         return this.label.ref ? this.label.ref.getWidth() : 0;
@@ -759,9 +759,10 @@ export class SelectIcon extends FoundationComponent<IconProps> {
 
   getDefaultFoundation(): any {
     return new MDCSelectIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr),
-      setAttr: (attr: string, value: string) => this.root.addProp(attr, value),
-      removeAttr: (attr: string) => this.root.removeProp(attr),
+      getAttr: (attr: string) => this.root.getProp(attr as any),
+      setAttr: (attr: string, value: string) =>
+        this.root.setProp(attr as any, value),
+      removeAttr: (attr: string) => this.root.removeProp(attr as any),
       setContent: (content: string) => {
         this.root.ref && (this.root.ref.textContent = content);
       },

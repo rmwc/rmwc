@@ -22,12 +22,10 @@ import {
 export interface MenuProps extends MenuSurfaceProps {
   /** Callback that fires when a Menu item is selected. */
   onSelect?: (
-    evt:
-      | CustomEventT<{
-          index: number;
-          item: HTMLElement;
-        }>
-      | any
+    evt: CustomEventT<{
+      index: number;
+      item: HTMLElement;
+    }>
   ) => void;
 }
 

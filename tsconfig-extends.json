@@ -71,6 +71,8 @@
       "@rmwc/textfield/*": ["src/textfield/*"],
       "@rmwc/theme": ["src/theme"],
       "@rmwc/theme/*": ["src/theme/*"],
+      "@rmwc/toggleable": ["src/toggleable"],
+      "@rmwc/toggleable/*": ["src/toggleable/*"],
       "@rmwc/toolbar": ["src/toolbar"],
       "@rmwc/toolbar/*": ["src/toolbar/*"],
       "@rmwc/top-app-bar": ["src/top-app-bar"],

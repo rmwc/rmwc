@@ -5,6 +5,7 @@ import { MDCRippleFoundation, util } from '@material/ripple';
 import { classNames, FoundationComponent } from '@rmwc/base';
 import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
+import { matches } from '@rmwc/base/utils/ponyfills';
 
 export interface RippleSurfaceProps {
   className: string;
@@ -65,11 +66,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
       isUnbounded: () => !!this.props.unbounded,
       isSurfaceActive: () => {
         if (this.root.ref) {
-          const el: any = this.root.ref;
-          if (el.matches) return el.matches(':active');
-          if (el.webkitMatchesSelector)
-            return el.webkitMatchesSelector(':active');
-          if (el.msMatchesSelector) return el.msMatchesSelector(':active');
+          return matches(this.root.ref, ':active');
         }
         return false;
       },
@@ -238,6 +235,8 @@ export class RippleSurface extends React.PureComponent<
     rippleSurfaceProps: { className: '', style: {} }
   };
 
+  raf: number | null = null;
+
   setSurfaceProps(rippleSurfaceProps: any) {
     if (
       JSON.stringify(rippleSurfaceProps) !==
@@ -247,9 +246,13 @@ export class RippleSurface extends React.PureComponent<
       // the whole Ripple surface thing is annoying as it is
       // but it throws errors trying to setState while rendering
       // this avoids the issue, albeit causes another render
-      window.requestAnimationFrame(() => {
+      this.raf = window.requestAnimationFrame(() => {
         this.setState({ rippleSurfaceProps });
       });
+  }
+
+  componentWillUnmount() {
+    this.raf && window.cancelAnimationFrame(this.raf);
   }
 
   render() {

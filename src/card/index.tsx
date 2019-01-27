@@ -122,6 +122,7 @@ export const CardAction = (props: CardActionPropsT) => {
     'The CardAction component has been removed in favor of CardActionIcon and CardActionButton due to impossible type intersections of IconButtonProps and ButtonProps'
   );
   return props.icon ? (
+    // @ts-ignore
     <CardActionIcon {...props} />
   ) : (
     <CardActionButton {...props} />

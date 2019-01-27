@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { CircularProgress } from '@rmwc/circular-progress';
 
-const InstallationDocs = React.lazy(() => import('./installation.md'));
-const UsageDocs = React.lazy(() => import('./usage.md'));
-const StylingThemingDocs = React.lazy(() => import('./styling-theming.md'));
-const MethodologyDocs = React.lazy(() => import('./methodology.md'));
+const InstallationDocs = React.lazy(() => import('./README-INSTALLATION.md'));
+const UsageDocs = React.lazy(() => import('./README-USAGE.md'));
+const StylingThemingDocs = React.lazy(() =>
+  import('./README-STYLING-THEMING.md')
+);
+const MethodologyDocs = React.lazy(() => import('./README-METHODOLOGY.md'));
 const LibraryIntegrationsDocs = React.lazy(() =>
-  import('./library-integrations.md')
+  import('./README-LIBRARY-INTEGRATIONS.md')
 );
 const ButtonDocs = React.lazy(() => import('@rmwc/button/README.md'));
 const FabDocs = React.lazy(() => import('@rmwc/fab/README.md'));
@@ -34,6 +36,12 @@ const CircularProgressDocsDocs = React.lazy(() =>
   import('@rmwc/circular-progress/README.md')
 );
 const ListDocs = React.lazy(() => import('@rmwc/list/README.md'));
+const ListCollapsibleDocs = React.lazy(() =>
+  import('@rmwc/list/README-COLLAPSIBLE.md')
+);
+const ListVariantsDocs = React.lazy(() =>
+  import('@rmwc/list/README-VARIANTS.md')
+);
 const MenuDocs = React.lazy(() => import('@rmwc/menu/README.md'));
 const RippleDocs = React.lazy(() => import('@rmwc/ripple/README.md'));
 const SnackbarDocs = React.lazy(() => import('@rmwc/snackbar/README.md'));
@@ -219,8 +227,23 @@ export const menuContent = [
   },
   {
     label: 'Lists',
-    url: `/lists`,
-    component: Loadable(ListDocs)
+    options: [
+      {
+        label: 'Standard Lists',
+        url: `/lists`,
+        component: Loadable(ListDocs)
+      },
+      {
+        label: 'Collapsible',
+        url: `/lists-collapsible`,
+        component: Loadable(ListCollapsibleDocs)
+      },
+      {
+        label: 'Variants',
+        url: `/lists-variants`,
+        component: Loadable(ListVariantsDocs)
+      }
+    ]
   },
   {
     label: 'Menus',

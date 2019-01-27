@@ -32,13 +32,13 @@ import { Button } from '@rmwc/button';
       }}
 />}/>
 {/* Pass your content + additional options and props */}
-<Icon icon={{content: 'star', strategy: 'ligature'}} />
+<Icon icon={{icon: 'star', strategy: 'ligature'}} />
 
 {/* Passing additional props is especially helpful when the entire icon component isn't exposed. In this example we pass the additional onMouseOver prop directly to the icon */}
 <Button
   label="Hello!"
   icon={{
-    content: 'add',
+    icon: 'add',
     onMouseOver: () => console.log('OVER')
   }}
 />
@@ -53,7 +53,7 @@ import { Icon } from '@rmwc/icon';
 <Icon icon="favorite" />
 <Icon icon="favorite_outline" />
 {/* Example showing how to set the strategy explicitly */}
-<Icon icon={{content: 'star', strategy: 'ligature'}} />
+<Icon icon={{icon: 'star', strategy: 'ligature'}} />
 ```
 
 ## URLs
@@ -71,7 +71,7 @@ import { Icon } from '@rmwc/icon';
 }
 <Icon
   icon={{
-    content:
+    icon:
       'https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon',
     strategy: 'url'
   }}
@@ -105,7 +105,7 @@ import { Icon } from '@rmwc/icon';
 <Icon
   icon={{
     strategy: 'component',
-    content: (
+    icon: (
       <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
         <path
           fill="#60dbfb"
@@ -132,7 +132,7 @@ import { Icon } from '@rmwc/icon';
 }
 <Icon
   icon={{
-    content: 'star',
+    icon: 'star',
     strategy: 'className',
     basename: 'icon',
     prefix: 'ion-'
@@ -181,7 +181,7 @@ import { Icon } from '@rmwc/icon';
   icon="favorite"
   iconOptions={{
     strategy: 'custom',
-    render: ({ content, ...rest }) => <div>Hello + {content}</div>
+    render: ({ icon, ...rest }) => <div>Hello + {icon}</div>
   }}
 />
 ```
@@ -207,15 +207,15 @@ import App from './App'; // your main app component
 import { RMWCProvider } from '@rmwc/provider';
 import { MyIconComponent } from '@rmwc/icon';
 
-const iconRenderHandler = ({ content, className, ...rest }) => {
-  // content is the "icon" prop
+const iconRenderHandler = ({ icon, className, ...rest }) => {
+  // icon is the "icon" prop
 
   // className is the fully processed className taking into account the basename and prefix defaults
   // it's important to include this because MDC often has classes like text-field-icon directly
   // on the component for alignment
 
   // rest is just any other props
-  return <MyIconComponent className={className} name={content} {...rest} />
+  return <MyIconComponent className={className} name={icon} {...rest} />
 };
 
 ReactDOM.render(

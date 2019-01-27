@@ -128,7 +128,7 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
 
   root = this.createElement('root');
   thumbContainer = this.createElement('thumbContainer');
-  sliderPin = this.createElement('sliderPin');
+  sliderPin = this.createElement<SliderPin>('sliderPin');
   track: HTMLElement | null = null;
 
   constructor(props: SliderProps) {
@@ -273,12 +273,12 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
       hasClass: (className: string) => this.root.hasClass(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      getAttribute: (name: string) => this.root.getProp(name),
+      getAttribute: (name: string) => this.root.getProp(name as any),
       setAttribute: debounce(
-        (name: string, value: any) => this.root.addProp(name, value),
+        (name: string, value: any) => this.root.setProp(name as any, value),
         300
       ),
-      removeAttribute: (name: string) => this.root.removeProp(name),
+      removeAttribute: (name: string) => this.root.removeProp(name as any),
       computeBoundingRect: () =>
         this.root.ref && this.root.ref.getBoundingClientRect(),
       getTabIndex: () => this.root.ref && this.root.ref.tabIndex,
@@ -325,7 +325,7 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
         this.track && this.track.style.setProperty(propertyName, value);
       },
       setMarkerValue: (value: string) => {
-        this.sliderPin.addProp('value', value);
+        this.sliderPin.setProp('value', value);
       },
       appendTrackMarkers: (numMarkers: number) => {
         this.setState({ trackMarkersCount: numMarkers });

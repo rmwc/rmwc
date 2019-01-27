@@ -1,10 +1,12 @@
 import { WithThemeProps, ThemeOptionT } from './withTheme';
 import { ComponentProps } from './component';
+import { FoundationProps } from './foundation-component';
 import { FocusTrap } from 'focus-trap';
 
 export type WithThemeProps = WithThemeProps;
 export type ThemeOptionT = ThemeOptionT;
 export interface ComponentProps<T = any> extends ComponentProps<T> {}
+export interface FoundationProps extends FoundationProps {}
 
 export { default as classNames } from 'classnames';
 export { default as createFocusTrap } from 'focus-trap';

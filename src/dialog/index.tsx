@@ -11,6 +11,7 @@ import {
 } from '@rmwc/base';
 import { noop } from '@rmwc/base/utils/noop';
 import { Button, ButtonProps } from '@rmwc/button';
+import { closest, matches } from '@rmwc/base/utils/ponyfills';
 
 const isScrollable = (el: HTMLElement) => {
   return el.scrollHeight > el.offsetHeight;
@@ -20,35 +21,6 @@ const areTopsMisaligned = (els: HTMLElement[] | null) => {
   const tops = new Set();
   [].forEach.call(els, (el: HTMLElement) => tops.add(el.offsetTop));
   return tops.size > 1;
-};
-
-const closest = (
-  element: HTMLElement | EventTarget | null,
-  selector: string
-) => {
-  if (element instanceof Element) {
-    if (element && element.closest) {
-      return element.closest(selector);
-    }
-
-    let el: HTMLElement | null = element;
-    while (el) {
-      if (matches(el, selector)) {
-        return el;
-      }
-      el = el.parentElement;
-    }
-  }
-  return null;
-};
-
-const matches = (element: HTMLElement, selector: string) => {
-  const nativeMatches =
-    element.matches ||
-    element.webkitMatchesSelector ||
-    // @ts-ignore
-    element.msMatchesSelector;
-  return nativeMatches.call(element, selector);
 };
 
 const DialogRoot = componentFactory<{}>({

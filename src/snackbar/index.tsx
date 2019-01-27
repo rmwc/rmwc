@@ -23,7 +23,7 @@ export interface SnackbarProps {
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.ReactNode;
   /** One or more actions to add to the snackbar. */
-  action?: React.ReactNode | React.ReactNode[] | any;
+  action?: React.ReactNode | React.ReactNode[];
   /** Milliseconds to show the Snackbar for. */
   timeout?: number;
   /** Places the action underneath the message text. */

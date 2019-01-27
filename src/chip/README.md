@@ -13,16 +13,16 @@ Please note that in MDC, the ChipSet code contains logic for selecting single an
 import { Chip, ChipSet } from '@rmwc/chip';
 
 <ChipSet>
-  <Chip selected text="Cookies" />
-  <Chip text="Pizza" />
-  <Chip text="Icecream" />
+  <Chip selected label="Cookies" />
+  <Chip label="Pizza" />
+  <Chip label="Icecream" />
 </ChipSet>
 
 {/* With Icons */}
 <ChipSet>
   <Chip
     leadingIcon="favorite"
-    text="Cookies"
+    label="Cookies"
     trailingIcon="close"
   />
 </ChipSet>
@@ -31,7 +31,7 @@ import { Chip, ChipSet } from '@rmwc/chip';
 <ChipSet>
   <Chip
     key="my-chip"
-    text="Click Me"
+    label="Click Me"
     selected={this.state.evtSelected}
     onRemove={evt => console.log('onRemove', evt.detail)}
     onInteraction={evt => console.log('onInteraction', evt.detail)}
@@ -58,7 +58,7 @@ import {
     selected={this.state.cookies}
     onClick={() => this.setState({cookies: !this.state.cookies})}
     checkmark
-    text="Cookies"
+    label="Cookies"
     trailingIcon="close"
   />
   <Chip
@@ -66,7 +66,7 @@ import {
     onClick={() => this.setState({pizza: !this.state.pizza})}
     leadingIcon="local_pizza"
     checkmark
-    text="Pizza"
+    label="Pizza"
     trailingIcon="close"
   />
   <Chip
@@ -75,7 +75,7 @@ import {
     checkmark
     leadingIcon="favorite_border"
     trailingIcon="close"
-    text="Icecream"
+    label="Icecream"
   />
 </ChipSet>
 
@@ -83,14 +83,14 @@ import {
   <Chip
     selected={this.state.cookiesChoice}
     onClick={() => this.setState({cookiesChoice: !this.state.cookiesChoice})}
-    text="Cookies"
+    label="Cookies"
     trailingIcon="close"
   />
   <Chip
     selected={this.state.pizzaChoice}
     onClick={() => this.setState({pizzaChoice: !this.state.pizzaChoice})}
     leadingIcon="local_pizza"
-    text="Pizza"
+    label="Pizza"
     trailingIcon="close"
   />
   <Chip
@@ -98,7 +98,7 @@ import {
     onClick={() => this.setState({icecreamChoice: !this.state.icecreamChoice})}
     leadingIcon="favorite_border"
     trailingIcon="close"
-    text="Icecream"
+    label="Icecream"
   />
 </ChipSet>
 ```

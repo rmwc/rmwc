@@ -13,7 +13,7 @@
 ## Text Field Variants
 
 ```jsx render
-import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
+import { TextField, TextFieldHelperText } from '@rmwc/textfield';
 
 {/* Standard text field. */}
 <TextField label="standard..." />
@@ -24,15 +24,13 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 {/* Leading and trailing icons can be used, they look the best with the box prop. You can pass anything the Icon component accepts. */}
 <TextField withLeadingIcon="search" withTrailingIcon="close" label="withLeadingIcon..." />
 
-{/* If you need full control over the icon, you can pass TextFieldIcon in and add your own props. Dont forget the TabIndex to make it clickable*/}
+{/* If you need full control over the icon, you can pass the icon as options with your own props. Dont forget the TabIndex to make it clickable*/}
 <TextField
   label="withTrailingIcon..." 
-  withTrailingIcon={
-    <TextFieldIcon
-      tabIndex="0"
-      icon="close"
-      onClick={() => console.log('Clear')}/>
-  } 
+  withTrailingIcon={{
+    icon: 'close',
+    onClick: () => console.log('Clear')
+  }} 
 />
 
 {/* An outlined TextField */}

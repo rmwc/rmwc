@@ -30,7 +30,10 @@ import {
   ListItem,
   ListGroupSubheader,
   ListItemGraphic,
-  ListItemMeta
+  ListItemMeta,
+  CollapsibleList,
+  SimpleListItem,
+  List
 } from '@rmwc/list';
 
 import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
@@ -421,18 +424,25 @@ const Nav = (props: any) => (
   <React.Fragment>
     <Drawer id="main-nav" {...props}>
       <DrawerContent>
-        {menuContent.map(m => {
-          if (m.options) {
-            return (
-              <Submenu label={m.label} key={m.label}>
-                {m.options.map(v => (
-                  <MainMenuItem key={v.label} label={v.label} url={v.url} />
-                ))}
-              </Submenu>
-            );
-          }
-          return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
-        })}
+        <List>
+          {menuContent.map(m => {
+            if (m.options) {
+              return (
+                <CollapsibleList
+                  key={m.label}
+                  handle={
+                    <SimpleListItem text={m.label} metaIcon="chevron_right" />
+                  }
+                >
+                  {m.options.map(v => (
+                    <MainMenuItem key={v.label} label={v.label} url={v.url} />
+                  ))}
+                </CollapsibleList>
+              );
+            }
+            return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
+          })}
+        </List>
       </DrawerContent>
       <Ripple>
         <Typography

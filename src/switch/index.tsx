@@ -3,25 +3,17 @@ import { ComponentProps } from '@rmwc/base';
 import * as React from 'react';
 // @ts-ignore
 import { MDCSwitchFoundation } from '@material/switch';
-import { componentFactory, FoundationComponent, classNames } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
+import { componentFactory, classNames } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
-import { withRipple } from '@rmwc/ripple';
+import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import {
+  ToggleableFoundationComponent,
+  ToggleableFoundationProps
+} from '@rmwc/toggleable';
 
-export interface SwitchProps {
-  /** A DOM ID for the toggle. */
-  id?: string;
-  /** Disables the control. */
-  disabled?: boolean;
-  /** Toggle the control on and off. */
-  checked?: boolean | string;
-  /** A label for the control. */
-  label?: string;
-  /** Props for the root element. By default, props spread to the input. */
-  rootProps?: any;
-  /** Any children to render. */
-  children?: React.ReactNode;
-}
+export interface SwitchProps
+  extends WithRippleProps,
+    ToggleableFoundationProps {}
 
 export const SwitchRoot = componentFactory<SwitchProps>({
   displayName: 'SwitchRoot',
@@ -61,12 +53,19 @@ const SwitchThumbUnderlay = withRipple({ unbounded: true })(
   )
 );
 
-export class Switch extends FoundationComponent<SwitchProps> {
+const SwitchNativeControl = componentFactory<{}>({
+  displayName: 'SwitchNativeControl',
+  defaultProps: {
+    type: 'checkbox'
+  },
+  tag: 'input',
+  classNames: ['mdc-switch__native-control']
+});
+
+export class Switch extends ToggleableFoundationComponent<SwitchProps> {
   static displayName = 'Switch';
-  changeHandler_: any;
   root = this.createElement('root');
   nativeControl = this.createElement<HTMLInputElement>('nativeControl');
-  generatedId = randomId('switch');
 
   constructor(props: SwitchProps & ComponentProps) {
     super(props);
@@ -86,9 +85,9 @@ export class Switch extends FoundationComponent<SwitchProps> {
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       setNativeControlChecked: (checked: boolean) =>
-        this.nativeControl.addProp('checked', checked),
+        this.nativeControl.setProp('checked', checked),
       setNativeControlDisabled: (disabled: boolean) =>
-        this.nativeControl.addProp('disabled', disabled)
+        this.nativeControl.setProp('disabled', disabled)
     });
   }
 
@@ -116,37 +115,18 @@ export class Switch extends FoundationComponent<SwitchProps> {
   }
 
   render() {
-    const {
-      label = '',
-      id,
-      children,
-      className,
-      rootProps = {},
-      ...rest
-    } = this.props;
-
-    const labelId = id || this.generatedId;
-    const hasLabel = label.length || children;
+    const { children, className, label, style, ...rest } = this.props;
 
     const switchTag = (
-      <SwitchRoot
-        {...this.root.props({
-          ...(!hasLabel ? rootProps : {}),
-          className: classNames(hasLabel || [rootProps.className, className])
-        })}
-      >
+      <SwitchRoot {...this.toggleRootProps}>
         <SwitchTrack />
         <SwitchThumbUnderlay>
           <div className="mdc-switch__thumb">
-            <input
-              {...this.nativeControl.props({
-                ...rest,
-                className: 'mdc-switch__native-control'
-              })}
+            <SwitchNativeControl
+              {...rest}
               onChange={this.handleChange}
-              id={labelId}
+              id={this.id}
               ref={this.nativeControl.setRef}
-              type="checkbox"
             />
           </div>
         </SwitchThumbUnderlay>
@@ -154,30 +134,7 @@ export class Switch extends FoundationComponent<SwitchProps> {
       </SwitchRoot>
     );
 
-    /**
-     * We have to conditionally wrap our checkbox in a formfield
-     * If we have a label
-     */
-    if (hasLabel) {
-      return (
-        <FormField
-          {...rootProps}
-          className={classNames(rootProps.className, className)}
-        >
-          {switchTag}&nbsp;
-          <label
-            className="mdc-switch-label"
-            id={labelId + 'label'}
-            htmlFor={labelId}
-          >
-            {label}
-            {children}
-          </label>
-        </FormField>
-      );
-    } else {
-      return switchTag;
-    }
+    return this.renderToggle(switchTag);
   }
 }
 

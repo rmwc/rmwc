@@ -6,7 +6,8 @@ import {
   ListItemPrimaryText,
   ListItemGraphic,
   ListItemMeta,
-  SimpleListItem
+  SimpleListItem,
+  CollapsibleList
 } from './';
 
 describe('List', () => {
@@ -63,10 +64,12 @@ describe('List', () => {
   });
 
   it('can have custom classnames', () => {
-    [List, ListItem, ListItemPrimaryText].forEach(Component => {
-      const el = mount(<Component className={'my-custom-classname'} />);
-      expect(!!~el.html().search('my-custom-classname')).toEqual(true);
-    });
+    [List, ListItem, ListItemPrimaryText].forEach(
+      (Component: React.ComponentType<any>) => {
+        const el = mount(<Component className={'my-custom-classname'} />);
+        expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+      }
+    );
   });
 
   it('can be activated', () => {
@@ -77,5 +80,18 @@ describe('List', () => {
   it('can be selected', () => {
     const el = mount(<ListItem selected />);
     expect(!!~el.html().search('mdc-list-item--selected')).toEqual(true);
+  });
+});
+
+describe('Collapsible List', () => {
+  it('renders', () => {
+    mount(
+      <List>
+        <ListItem>One</ListItem>
+        <CollapsibleList handle={<ListItem>Handle</ListItem>}>
+          <ListItem>Two</ListItem>
+        </CollapsibleList>
+      </List>
+    );
   });
 });

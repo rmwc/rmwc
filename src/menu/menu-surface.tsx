@@ -11,6 +11,7 @@ import {
   CustomEventT,
   FoundationComponent
 } from '@rmwc/base';
+import { raf } from '@rmwc/base/utils/raf';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
@@ -22,6 +23,10 @@ const ANCHOR_CORNER_MAP = {
   topRight: 'TOP_RIGHT',
   topStart: 'TOP_START'
 };
+
+const getAnchorCornerFromProp = (
+  anchorCorner: keyof typeof ANCHOR_CORNER_MAP
+) => MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[anchorCorner]];
 
 // prettier-ignore
 export type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
@@ -70,6 +75,19 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
     this.handleBodyClick = this.handleBodyClick.bind(this);
   }
 
+  componentDidMount() {
+    super.componentDidMount();
+    if (
+      this.root.ref &&
+      this.root.ref.parentElement &&
+      this.root.ref.parentElement.classList.contains(
+        MDCMenuSurfaceFoundation.cssClasses.ANCHOR
+      )
+    ) {
+      this.anchorElement = this.root.ref.parentElement;
+    }
+  }
+
   get open() {
     return this.foundation.isOpen();
   }
@@ -88,8 +106,10 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         focusableElements.length > 0
           ? focusableElements[focusableElements.length - 1]
           : null;
+      this.registerBodyClickListener();
       this.foundation.open();
     } else {
+      this.deregisterBodyClickListener();
       this.foundation.close();
     }
   }
@@ -102,11 +122,9 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         className === 'mdc-menu-surface' ? true : this.root.hasClass(className),
       hasAnchor: () => !!this.anchorElement,
       notifyClose: () => {
-        this.deregisterBodyClickListener();
         this.emit('onClose', {});
       },
       notifyOpen: () => {
-        this.registerBodyClickListener();
         this.emit('onOpen', {});
       },
       isElementInContainer: (el: HTMLElement) =>
@@ -201,26 +219,25 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   }
 
   sync(props: MenuSurfaceProps, prevProps: MenuSurfaceProps) {
-    // open
-    this.syncProp(props.open, prevProps.open, () => {
-      this.open = !!props.open;
-    });
-
     // fixed
     this.syncProp(props.fixed, prevProps.fixed, () => {
       this.foundation.setFixedPosition(props.fixed);
     });
 
     // anchorCorner
-    if (
-      props.anchorCorner !== undefined &&
-      MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[props.anchorCorner]] !==
-        this.foundation.anchorCorner_
-    ) {
-      this.foundation.setAnchorCorner(
-        MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[props.anchorCorner]]
-      );
-    }
+    const anchorCorner =
+      props.anchorCorner && getAnchorCornerFromProp(props.anchorCorner);
+
+    this.syncProp(anchorCorner, this.foundation.anchorCorner_, () => {
+      this.foundation.setAnchorCorner(anchorCorner);
+      this.foundation.dimensions_ = this.foundation.adapter_.getInnerDimensions();
+      this.foundation.autoPosition_();
+    });
+
+    // open
+    this.syncProp(!!props.open, this.open, () => {
+      this.open = !!props.open;
+    });
   }
 
   hoistMenuToBody() {
@@ -245,7 +262,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   }
 
   handleBodyClick(evt: MouseEvent) {
-    this.foundation.handleBodyClick(evt);
+    this.foundation && this.foundation.handleBodyClick(evt);
   }
 
   handleKeydown(evt: React.KeyboardEvent) {

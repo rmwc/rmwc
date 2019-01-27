@@ -64,19 +64,17 @@ export class TabBar extends FoundationComponent<TabBarProps> {
     // This corrects an issue where passing in 0 or no activeTabIndex
     // causes the first tab of the set to not be active
 
-    window.requestAnimationFrame(() => {
-      // to make this even more annoying, Tabs focus by default
-      // restore the focus and scroll position after we activate the tab
-      const activeElement: any = window.document.activeElement;
-      const [scrollX, scrollY] = [window.scrollX, window.scrollY];
+    // to make this even more annoying, Tabs focus by default
+    // restore the focus and scroll position after we activate the tab
+    const activeElement: any = window.document.activeElement;
+    const [scrollX, scrollY] = [window.scrollX, window.scrollY];
 
-      //activate the tab
-      this.foundation.activateTab(this.props.activeTabIndex || 0);
+    //activate the tab
+    this.foundation.activateTab(this.props.activeTabIndex || 0);
 
-      // restore focus and scroll
-      activeElement && activeElement.focus();
-      window.scrollTo(scrollX, scrollY);
-    });
+    // restore focus and scroll
+    activeElement && activeElement.focus();
+    window.scrollTo(scrollX, scrollY);
   }
 
   getDefaultFoundation() {

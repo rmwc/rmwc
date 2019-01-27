@@ -93,7 +93,7 @@ class IconButtonToggle extends FoundationComponent<
       removeClass: (className: string) => this.root.removeClass(className),
       hasClass: (className: string) => this.root.hasClass(className),
       setAttr: (attrName: string, attrValue: string | number | null) =>
-        this.root.addProp(attrName, attrValue),
+        this.root.setProp(attrName as any, attrValue),
       notifyChange: (evtData: { isOn: boolean }) =>
         this.emit('onChange', evtData)
     });

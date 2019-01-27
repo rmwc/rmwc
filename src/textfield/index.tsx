@@ -1,5 +1,5 @@
 import { ComponentProps } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
+import { IconProps, IconPropT } from '@rmwc/icon';
 import * as React from 'react';
 import {
   MDCTextFieldFoundation,
@@ -25,8 +25,6 @@ export interface TextFieldProps {
   value?: string | number;
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean;
-  /** A ref for the native input. */
-  inputRef?: React.Ref<any>;
   /** Disables the input. */
   disabled?: boolean;
   /** Mark the input as required. */
@@ -38,9 +36,9 @@ export interface TextFieldProps {
   /** A label for the input. */
   label?: React.ReactNode;
   /** Add a leading icon. */
-  withLeadingIcon?: React.ReactNode;
+  withLeadingIcon?: IconPropT;
   /** Add a trailing icon. */
-  withTrailingIcon?: React.ReactNode;
+  withTrailingIcon?: IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** The type of input field to render */
@@ -108,12 +106,18 @@ export class TextField extends FoundationComponent<
   generatedId = randomId('textfield');
   root = this.createElement('root');
   input = this.createElement<HTMLInputElement & HTMLTextAreaElement>('input');
-  label_: null | any;
-  lineRipple_: null | any;
-  leadingIcon_: null | any;
-  trailingIcon_: null | any;
-  outline_: null | any;
+  label = this.createElement<FloatingLabel>('label');
+  lineRipple = this.createElement<LineRipple>('lineRipple');
+  leadingIcon: null | any;
+  trailingIcon: null | any;
+  outline: null | any;
   valueNeedsUpdate = false;
+
+  constructor(props: any) {
+    super(props);
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
 
   getDefaultFoundation() {
     return new MDCTextFieldFoundation(
@@ -158,60 +162,61 @@ export class TextField extends FoundationComponent<
             .getComputedStyle(this.root.ref)
             .getPropertyValue('direction') === 'rtl',
 
-        ...this.getInputAdapterMethods_(),
-        ...this.getLabelAdapterMethods_(),
-        ...this.getLineRippleAdapterMethods_(),
-        ...this.getOutlineAdapterMethods_()
+        ...this.getInputAdapterMethods(),
+        ...this.getLabelAdapterMethods(),
+        ...this.getLineRippleAdapterMethods(),
+        ...this.getOutlineAdapterMethods()
       },
-      this.getFoundationMap_()
+      this.getFoundationMap()
     );
   }
 
-  getLabelAdapterMethods_() {
+  getLabelAdapterMethods() {
     return {
       shakeLabel: (shouldShake: boolean) =>
-        this.label_ && this.label_.shake(shouldShake),
+        this.label.setProp('shake', shouldShake),
       floatLabel: (shouldFloat: boolean) =>
-        this.label_ && this.label_.float(shouldFloat),
-      hasLabel: () => !!this.label_,
-      getLabelWidth: () => this.label_ && this.label_.getWidth()
+        this.label.setProp('float', shouldFloat),
+      hasLabel: () => !!this.props.label,
+      getLabelWidth: () => this.label.ref && this.label.ref.getWidth()
     };
   }
 
-  getLineRippleAdapterMethods_() {
+  getLineRippleAdapterMethods() {
     return {
       activateLineRipple: () => {
-        if (this.lineRipple_) {
-          this.lineRipple_.activate();
+        if (this.lineRipple) {
+          this.lineRipple.setProp('active', true);
         }
       },
       deactivateLineRipple: () => {
-        if (this.lineRipple_) {
-          this.lineRipple_.deactivate();
+        if (this.lineRipple) {
+          this.lineRipple.setProp('active', false);
         }
       },
       setLineRippleTransformOrigin: (normalizedX: number) => {
-        if (this.lineRipple_) {
-          this.lineRipple_.setRippleCenter(normalizedX);
+        if (this.lineRipple) {
+          this.lineRipple.setProp('center', normalizedX);
         }
       }
     };
   }
 
-  getOutlineAdapterMethods_() {
+  getOutlineAdapterMethods() {
     return {
       notchOutline: (labelWidth: number, isRtl: boolean) => {
-        this.outline_ && this.outline_.notch(labelWidth, isRtl);
+        this.outline && this.outline.notch(labelWidth, isRtl);
       },
-      closeOutline: () => this.outline_ && this.outline_.closeNotch(),
-      hasOutline: () => !!this.outline_
+      closeOutline: () => this.outline && this.outline.closeNotch(),
+      hasOutline: () => !!this.outline
     };
   }
 
-  getInputAdapterMethods_() {
+  getInputAdapterMethods() {
     return {
       registerInputInteractionHandler: (evtType: string, handler: () => void) =>
         this.input.addEventListener(evtType, handler),
+
       deregisterInputInteractionHandler: (
         evtType: string,
         handler: () => void
@@ -220,37 +225,30 @@ export class TextField extends FoundationComponent<
     };
   }
 
-  getFoundationMap_() {
+  getFoundationMap() {
     return {
       // helperText: this.helperText_ ? this.helperText_.foundation : undefined,
       helperText: undefined,
-      leadingIcon: this.leadingIcon_,
-      trailingIcon: this.trailingIcon_
+      leadingIcon: this.leadingIcon,
+      trailingIcon: this.trailingIcon
     };
   }
 
   // handle leading and trailing icons
-  renderIcon(iconNode: any, leadOrTrail: 'leadingIcon_' | 'trailingIcon_') {
-    if (
-      (iconNode && typeof iconNode === 'string') ||
-      (iconNode.type && iconNode.type.displayName !== TextFieldIcon.displayName)
-    ) {
-      return (
-        <TextFieldIcon
-          ref={(ref: TextFieldIcon) => {
-            if (leadOrTrail === 'leadingIcon_') {
-              this.leadingIcon_ = ref && ref.foundation;
-            } else {
-              this.trailingIcon_ = ref && ref.foundation;
-            }
-          }}
-          tabIndex={leadOrTrail === 'trailingIcon_' ? 0 : undefined}
-          icon={iconNode}
-        />
-      );
-    }
-
-    return iconNode;
+  renderIcon(icon: IconPropT, leadOrTrail: 'leadingIcon' | 'trailingIcon') {
+    return (
+      <TextFieldIcon
+        ref={(ref: TextFieldIcon) => {
+          if (leadOrTrail === 'leadingIcon') {
+            this.leadingIcon = ref && ref.foundation;
+          } else {
+            this.trailingIcon = ref && ref.foundation;
+          }
+        }}
+        tabIndex={leadOrTrail === 'trailingIcon' ? 0 : undefined}
+        icon={icon}
+      />
+    );
   }
 
   sync(props: TextFieldProps) {
@@ -262,12 +260,16 @@ export class TextField extends FoundationComponent<
     }
   }
 
+  handleOnChange(evt: React.ChangeEvent<HTMLInputElement>) {
+    // this.props.onChange && this.props.onChange(evt);
+    // this.setState({});
+  }
+
   render() {
     const {
       label = '',
       className,
       style,
-      inputRef,
       outlined,
       fullwidth,
       dense,
@@ -301,10 +303,10 @@ export class TextField extends FoundationComponent<
     }
 
     const tagProps = {
+      ...this.input.props(rest),
       disabled: disabled,
       ref: this.input.setRef,
-      id: rest.id || this.generatedId,
-      ...this.input.props(rest)
+      id: rest.id || this.generatedId
     };
 
     const tag = textarea ? (
@@ -315,7 +317,8 @@ export class TextField extends FoundationComponent<
 
     const renderedLabel = label ? (
       <FloatingLabel
-        ref={(ref: FloatingLabel) => (this.label_ = ref && ref.foundation)}
+        {...this.label.props({})}
+        ref={this.label.setRef}
         htmlFor={tagProps.id}
       >
         {label}
@@ -324,7 +327,7 @@ export class TextField extends FoundationComponent<
 
     return (
       <TextFieldRoot
-        {...rootProps}
+        {...this.root.props({ ...rootProps, className })}
         invalid={invalid}
         withLeadingIcon={!!withLeadingIcon}
         withTrailingIcon={!!withTrailingIcon}
@@ -335,9 +338,8 @@ export class TextField extends FoundationComponent<
         fullwidth={fullwidth}
         ref={this.root.setRef}
         style={style}
-        {...this.root.props({ ...rootProps, className })}
       >
-        {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon_')}
+        {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon')}
         {children}
         {tag}
 
@@ -345,24 +347,20 @@ export class TextField extends FoundationComponent<
           <React.Fragment>
             <NotchedOutline
               ref={(ref: NotchedOutline) =>
-                (this.outline_ = ref && ref.foundation)
+                (this.outline = ref && ref.foundation)
               }
             >
               {renderedLabel}
             </NotchedOutline>
             {!!withTrailingIcon &&
-              this.renderIcon(withTrailingIcon, 'trailingIcon_')}
+              this.renderIcon(withTrailingIcon, 'trailingIcon')}
           </React.Fragment>
         ) : (
           <React.Fragment>
             {renderedLabel}
             {!!withTrailingIcon &&
-              this.renderIcon(withTrailingIcon, 'trailingIcon_')}
-            <LineRipple
-              ref={(ref: LineRipple) =>
-                (this.lineRipple_ = ref && ref.foundation)
-              }
-            />
+              this.renderIcon(withTrailingIcon, 'trailingIcon')}
+            <LineRipple {...this.lineRipple.props({})} />
           </React.Fragment>
         )}
       </TextFieldRoot>
@@ -401,17 +399,19 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
 /**
  * An Icon in a TextField
  */
-export class TextFieldIcon extends FoundationComponent<IconProps> {
+class TextFieldIcon extends FoundationComponent<IconProps> {
   static displayName = 'TextFieldIcon';
   root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCTextFieldIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr),
-      setAttr: (attr: string, value: string) => this.root.addProp(attr, value),
-      removeAttr: (attr: string) => this.root.removeProp(attr),
+      getAttr: (attr: string) => this.root.getProp(attr as any),
+      setAttr: (attr: string, value: string) =>
+        this.root.setProp(attr as any, value),
+      removeAttr: (attr: string) => this.root.removeProp(attr as any),
       setContent: (content: string) => {
-        this.root.addProp('icon', content);
+        // @ts-ignore
+        this.root.setProp('icon', content);
       },
       registerInteractionHandler: (evtType: string, handler: () => void) =>
         this.root.addEventListener(evtType, handler),

@@ -16,7 +16,7 @@ export interface ButtonProps extends WithRippleProps {
   /** make the button disabled */
   disabled?: boolean;
   /** Content specified as a label prop. */
-  label?: React.ReactNode | any;
+  label?: React.ReactNode;
   /** Content specified as children. */
   children?: React.ReactNode;
   /** An Icon for the Button */

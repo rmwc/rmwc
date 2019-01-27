@@ -79,7 +79,8 @@ export const Tab = withTabBarContext()<TabProps>(
     getDefaultFoundation() {
       return new MDCTabFoundation(
         /** @type {!MDCTabAdapter} */ ({
-          setAttr: (attr: string, value: any) => this.root.addProp(attr, value),
+          setAttr: (attr: string, value: any) =>
+            this.root.setProp(attr as any, value),
           addClass: (className: string) => this.root.addClass(className),
           removeClass: (className: string) => this.root.removeClass(className),
           hasClass: (className: string) => this.root.hasClass(className),
