@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build:docs": "npm run docgen && react-app-rewired build && rm -R docs && mv build docs",
+    "build:docs": "npm run docgen && react-app-rewired build && rm -R -f docs && mv build docs",
     "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
     "build": "npm run build:code && npm run build:docs",

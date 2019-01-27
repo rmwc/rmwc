@@ -24,7 +24,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 464,
+							"id": 465,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -33,7 +33,7 @@
 					],
 					"children": [
 						{
-							"id": 391,
+							"id": 393,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -42,14 +42,14 @@
 							},
 							"signatures": [
 								{
-									"id": 392,
+									"id": 394,
 									"name": "new Slider",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 393,
+											"id": 395,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -85,32 +85,7 @@
 							}
 						},
 						{
-							"id": 438,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
-						},
-						{
-							"id": 434,
+							"id": 436,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -120,14 +95,14 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 435,
+									"id": 437,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -136,14 +111,14 @@
 									},
 									"indexSignature": [
 										{
-											"id": 436,
+											"id": 438,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 437,
+													"id": 439,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -173,7 +148,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -185,7 +160,7 @@
 							}
 						},
 						{
-							"id": 433,
+							"id": 435,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -195,7 +170,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -229,8 +204,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -260,16 +235,52 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reflection",
+										"declaration": {
+											"id": 390,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 391,
+													"name": "value",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 78,
+															"character": 51
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														391
+													]
+												}
+											]
+										}
 									},
 									{
 										"type": "reference",
-										"name": "HTMLElement"
+										"name": "SliderPin",
+										"id": 164
 									}
 								]
 							},
-							"defaultValue": " this.createElement('sliderPin')"
+							"defaultValue": " this.createElement<SliderPin>('sliderPin')"
 						},
 						{
 							"id": 388,
@@ -291,8 +302,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -303,7 +314,7 @@
 							"defaultValue": " this.createElement('thumbContainer')"
 						},
 						{
-							"id": 390,
+							"id": 392,
 							"name": "track",
 							"kind": 1024,
 							"kindString": "Property",
@@ -333,7 +344,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 432,
+							"id": 434,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -344,7 +355,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -359,7 +370,7 @@
 							}
 						},
 						{
-							"id": 410,
+							"id": 412,
 							"name": "disabled",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -369,7 +380,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 411,
+									"id": 413,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -383,7 +394,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 412,
+									"id": 414,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -391,7 +402,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 413,
+											"id": 415,
 											"name": "disabled",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -423,7 +434,7 @@
 							]
 						},
 						{
-							"id": 414,
+							"id": 416,
 							"name": "discrete",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -432,7 +443,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 415,
+									"id": 417,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -445,14 +456,14 @@
 							],
 							"setSignature": [
 								{
-									"id": 416,
+									"id": 418,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 417,
+											"id": 419,
 											"name": "isDiscrete",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -483,7 +494,7 @@
 							]
 						},
 						{
-							"id": 418,
+							"id": 420,
 							"name": "displayMarkers",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -492,7 +503,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 419,
+									"id": 421,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -505,14 +516,14 @@
 							],
 							"setSignature": [
 								{
-									"id": 420,
+									"id": 422,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 421,
+											"id": 423,
 											"name": "isDisplayMarkers",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -543,7 +554,7 @@
 							]
 						},
 						{
-							"id": 402,
+							"id": 404,
 							"name": "max",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -553,7 +564,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 403,
+									"id": 405,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -567,7 +578,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 404,
+									"id": 406,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -575,7 +586,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 405,
+											"id": 407,
 											"name": "max",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -607,7 +618,7 @@
 							]
 						},
 						{
-							"id": 398,
+							"id": 400,
 							"name": "min",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -617,7 +628,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 399,
+									"id": 401,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -631,7 +642,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 400,
+									"id": 402,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -639,7 +650,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 401,
+											"id": 403,
 											"name": "min",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -671,7 +682,7 @@
 							]
 						},
 						{
-							"id": 406,
+							"id": 408,
 							"name": "step",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -681,7 +692,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 407,
+									"id": 409,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -695,7 +706,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 408,
+									"id": 410,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -703,7 +714,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 409,
+											"id": 411,
 											"name": "step",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -735,7 +746,7 @@
 							]
 						},
 						{
-							"id": 394,
+							"id": 396,
 							"name": "value",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -745,7 +756,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 395,
+									"id": 397,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -759,7 +770,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 396,
+									"id": 398,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -767,7 +778,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 397,
+											"id": 399,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -799,7 +810,7 @@
 							]
 						},
 						{
-							"id": 480,
+							"id": 481,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -809,7 +820,7 @@
 							},
 							"signatures": [
 								{
-									"id": 481,
+									"id": 482,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -855,7 +866,7 @@
 							}
 						},
 						{
-							"id": 486,
+							"id": 487,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -865,7 +876,7 @@
 							},
 							"signatures": [
 								{
-									"id": 487,
+									"id": 488,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -890,7 +901,7 @@
 									},
 									"parameters": [
 										{
-											"id": 488,
+											"id": 489,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -914,7 +925,7 @@
 											}
 										},
 										{
-											"id": 489,
+											"id": 490,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -948,7 +959,7 @@
 							}
 						},
 						{
-							"id": 495,
+							"id": 496,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -958,7 +969,7 @@
 							},
 							"signatures": [
 								{
-									"id": 496,
+									"id": 497,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -983,7 +994,7 @@
 									},
 									"parameters": [
 										{
-											"id": 497,
+											"id": 498,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1007,7 +1018,7 @@
 											}
 										},
 										{
-											"id": 498,
+											"id": 499,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1023,7 +1034,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 502
+																"id": 503
 															}
 														]
 													}
@@ -1031,7 +1042,7 @@
 											}
 										},
 										{
-											"id": 499,
+											"id": 500,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1065,7 +1076,7 @@
 							}
 						},
 						{
-							"id": 470,
+							"id": 471,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1075,7 +1086,7 @@
 							},
 							"signatures": [
 								{
-									"id": 471,
+									"id": 472,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1085,7 +1096,7 @@
 									},
 									"parameters": [
 										{
-											"id": 472,
+											"id": 473,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1096,7 +1107,7 @@
 											}
 										},
 										{
-											"id": 473,
+											"id": 474,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1130,7 +1141,7 @@
 							}
 						},
 						{
-							"id": 439,
+							"id": 440,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1139,7 +1150,7 @@
 							},
 							"signatures": [
 								{
-									"id": 440,
+									"id": 441,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1161,7 +1172,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 214,
+									"line": 217,
 									"character": 19
 								}
 							],
@@ -1175,7 +1186,7 @@
 							}
 						},
 						{
-							"id": 441,
+							"id": 442,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1184,14 +1195,14 @@
 							},
 							"signatures": [
 								{
-									"id": 442,
+									"id": 443,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 443,
+											"id": 444,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1226,7 +1237,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -1240,7 +1251,7 @@
 							}
 						},
 						{
-							"id": 478,
+							"id": 479,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1250,7 +1261,7 @@
 							},
 							"signatures": [
 								{
-									"id": 479,
+									"id": 480,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1296,7 +1307,7 @@
 							}
 						},
 						{
-							"id": 482,
+							"id": 483,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1306,7 +1317,7 @@
 							},
 							"signatures": [
 								{
-									"id": 483,
+									"id": 484,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1331,7 +1342,7 @@
 									},
 									"parameters": [
 										{
-											"id": 484,
+											"id": 485,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1355,7 +1366,7 @@
 											}
 										},
 										{
-											"id": 485,
+											"id": 486,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1389,7 +1400,7 @@
 							}
 						},
 						{
-							"id": 444,
+							"id": 445,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1398,7 +1409,7 @@
 							},
 							"signatures": [
 								{
-									"id": 445,
+									"id": 446,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1420,7 +1431,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -1434,7 +1445,7 @@
 							}
 						},
 						{
-							"id": 490,
+							"id": 491,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1444,7 +1455,7 @@
 							},
 							"signatures": [
 								{
-									"id": 491,
+									"id": 492,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1469,7 +1480,7 @@
 									},
 									"parameters": [
 										{
-											"id": 492,
+											"id": 493,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1493,7 +1504,7 @@
 											}
 										},
 										{
-											"id": 493,
+											"id": 494,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1509,7 +1520,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 502
+																"id": 503
 															}
 														]
 													}
@@ -1517,7 +1528,7 @@
 											}
 										},
 										{
-											"id": 494,
+											"id": 495,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1551,7 +1562,7 @@
 							}
 						},
 						{
-							"id": 446,
+							"id": 447,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1560,14 +1571,14 @@
 							},
 							"signatures": [
 								{
-									"id": 447,
+									"id": 448,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 448,
+											"id": 449,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1580,7 +1591,7 @@
 									],
 									"parameters": [
 										{
-											"id": 449,
+											"id": 450,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1596,8 +1607,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -1614,7 +1625,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -1624,7 +1635,7 @@
 							}
 						},
 						{
-							"id": 459,
+							"id": 460,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1633,7 +1644,7 @@
 							},
 							"signatures": [
 								{
-									"id": 460,
+									"id": 461,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1643,7 +1654,7 @@
 									},
 									"parameters": [
 										{
-											"id": 461,
+											"id": 462,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1654,7 +1665,7 @@
 											}
 										},
 										{
-											"id": 462,
+											"id": 463,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1665,7 +1676,7 @@
 											}
 										},
 										{
-											"id": 463,
+											"id": 464,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1696,7 +1707,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -1706,7 +1717,7 @@
 							}
 						},
 						{
-							"id": 428,
+							"id": 430,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1715,7 +1726,7 @@
 							},
 							"signatures": [
 								{
-									"id": 429,
+									"id": 431,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1743,7 +1754,7 @@
 							}
 						},
 						{
-							"id": 474,
+							"id": 475,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1753,7 +1764,7 @@
 							},
 							"signatures": [
 								{
-									"id": 475,
+									"id": 476,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1764,7 +1775,7 @@
 									},
 									"parameters": [
 										{
-											"id": 476,
+											"id": 477,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1788,7 +1799,7 @@
 											}
 										},
 										{
-											"id": 477,
+											"id": 478,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1804,7 +1815,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 502
+																"id": 503
 															}
 														]
 													}
@@ -1844,7 +1855,7 @@
 							}
 						},
 						{
-							"id": 422,
+							"id": 424,
 							"name": "layout",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1853,7 +1864,7 @@
 							},
 							"signatures": [
 								{
-									"id": 423,
+									"id": 425,
 									"name": "layout",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1873,7 +1884,7 @@
 							]
 						},
 						{
-							"id": 430,
+							"id": 432,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1882,7 +1893,7 @@
 							},
 							"signatures": [
 								{
-									"id": 431,
+									"id": 433,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1902,7 +1913,7 @@
 							]
 						},
 						{
-							"id": 465,
+							"id": 466,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1912,7 +1923,7 @@
 							},
 							"signatures": [
 								{
-									"id": 466,
+									"id": 467,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1923,7 +1934,7 @@
 									},
 									"parameters": [
 										{
-											"id": 467,
+											"id": 468,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1947,7 +1958,7 @@
 											}
 										},
 										{
-											"id": 468,
+											"id": 469,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1963,7 +1974,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 502
+																"id": 503
 															}
 														]
 													}
@@ -1971,7 +1982,7 @@
 											}
 										},
 										{
-											"id": 469,
+											"id": 470,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2005,7 +2016,7 @@
 							}
 						},
 						{
-							"id": 424,
+							"id": 426,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2014,14 +2025,14 @@
 							},
 							"signatures": [
 								{
-									"id": 425,
+									"id": 427,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 426,
+											"id": 428,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2033,7 +2044,7 @@
 											}
 										},
 										{
-											"id": 427,
+											"id": 429,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2068,7 +2079,7 @@
 							}
 						},
 						{
-							"id": 452,
+							"id": 453,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2077,14 +2088,14 @@
 							},
 							"signatures": [
 								{
-									"id": 453,
+									"id": 454,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 454,
+											"id": 455,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2095,7 +2106,7 @@
 											}
 										},
 										{
-											"id": 455,
+											"id": 456,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2106,7 +2117,7 @@
 											}
 										},
 										{
-											"id": 456,
+											"id": 457,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2114,7 +2125,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 457,
+													"id": 458,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2123,7 +2134,7 @@
 													},
 													"signatures": [
 														{
-															"id": 458,
+															"id": 459,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2137,7 +2148,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -2158,7 +2169,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -2168,7 +2179,7 @@
 							}
 						},
 						{
-							"id": 450,
+							"id": 451,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2177,7 +2188,7 @@
 							},
 							"signatures": [
 								{
-									"id": 451,
+									"id": 452,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2195,7 +2206,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -2291,60 +2302,59 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								391
+								393
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								438,
-								434,
-								433,
+								436,
+								435,
 								387,
 								389,
 								388,
-								390,
-								432
+								392,
+								434
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								410,
-								414,
-								418,
-								402,
-								398,
-								406,
-								394
+								412,
+								416,
+								420,
+								404,
+								400,
+								408,
+								396
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								480,
-								486,
-								495,
-								470,
-								439,
-								441,
-								478,
-								482,
-								444,
-								490,
-								446,
-								459,
-								428,
-								474,
-								422,
+								481,
+								487,
+								496,
+								471,
+								440,
+								442,
+								479,
+								483,
+								445,
+								491,
+								447,
+								460,
 								430,
-								465,
+								475,
 								424,
-								452,
-								450
+								432,
+								466,
+								426,
+								453,
+								451
 							]
 						},
 						{
@@ -2375,7 +2385,7 @@
 								{
 									"type": "reference",
 									"name": "SliderState",
-									"id": 502
+									"id": 503
 								}
 							]
 						}
@@ -11056,7 +11066,7 @@
 					]
 				},
 				{
-					"id": 502,
+					"id": 503,
 					"name": "SliderState",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -11071,14 +11081,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 503,
+							"id": 504,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 504,
+									"id": 505,
 									"name": "trackMarkersCount",
 									"kind": 32,
 									"kindString": "Variable",
@@ -11101,7 +11111,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										504
+										505
 									]
 								}
 							],
@@ -11116,7 +11126,7 @@
 					}
 				},
 				{
-					"id": 500,
+					"id": 501,
 					"name": "SliderRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -11140,7 +11150,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 501,
+											"id": 502,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -11188,14 +11198,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						502
+						503
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						500
+						501
 					]
 				}
 			],

@@ -3287,7 +3287,7 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<{}>({\n  displayName: 'DataTableRow',\n  tag: 'tr',\n  classNames: (props: DataTableRowProps) => [\n    'rmwc-data-table__row',\n    {\n      'rmwc-data-table__row--selected': props.selected,\n      'rmwc-data-table__row--activated': props.activated\n    }\n  ],\n  consumeProps: ['activated', 'selected']\n})"
+					"defaultValue": " componentFactory<DataTableRowProps>({\n  displayName: 'DataTableRow',\n  tag: 'tr',\n  classNames: (props: DataTableRowProps) => [\n    'rmwc-data-table__row',\n    {\n      'rmwc-data-table__row--selected': props.selected,\n      'rmwc-data-table__row--activated': props.activated\n    }\n  ],\n  consumeProps: ['activated', 'selected']\n})"
 				},
 				{
 					"id": 141,

@@ -399,7 +399,7 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
 /**
  * An Icon in a TextField
  */
-class TextFieldIcon extends FoundationComponent<IconProps> {
+export class TextFieldIcon extends FoundationComponent<IconProps> {
   static displayName = 'TextFieldIcon';
   root = this.createElement('root');
 

@@ -10,7 +10,9 @@ describe('Radio', () => {
 
   test('can be checked', () => {
     const radio = mount(<Radio checked={true} onChange={() => {}} />);
-    expect(radio.find('input').getDOMNode().checked).toEqual(true);
+    expect(
+      (radio.find('input').getDOMNode() as HTMLInputElement).checked
+    ).toEqual(true);
   });
 
   test('handles onChange', () => {
@@ -23,12 +25,14 @@ describe('Radio', () => {
 
   test('can be disabled', () => {
     const radio = mount(<Radio disabled />);
-    expect(radio.find('input').getDOMNode().disabled).toEqual(true);
+    expect(
+      (radio.find('input').getDOMNode() as HTMLInputElement).disabled
+    ).toEqual(true);
   });
 
   test('foundation check', () => {
     const radio = mount(<Radio disabled />);
-    const adapter = radio.instance().foundation.adapter_;
+    const adapter = (radio.instance() as Radio).foundation.adapter_;
     adapter.addClass('test');
     adapter.removeClass('test');
   });

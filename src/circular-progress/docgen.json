@@ -89,8 +89,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -142,8 +143,9 @@
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "intersection",
-												"types": [
+												"type": "reference",
+												"name": "MergeInterfacesT",
+												"typeArguments": [
 													{
 														"type": "reference",
 														"name": "CircularProgressProps",
@@ -313,8 +315,9 @@
 										"name": "Readonly",
 										"typeArguments": [
 											{
-												"type": "intersection",
-												"types": [
+												"type": "reference",
+												"name": "MergeInterfacesT",
+												"typeArguments": [
 													{
 														"type": "reference",
 														"name": "CircularProgressProps",
@@ -580,8 +583,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -676,8 +680,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -780,7 +785,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 52,
+									"line": 53,
 									"character": 16
 								}
 							]
@@ -838,7 +843,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 63,
+																	"line": 64,
 																	"character": 25
 																}
 															],
@@ -867,7 +872,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 60,
+									"line": 61,
 									"character": 15
 								}
 							]
@@ -1010,8 +1015,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -1182,8 +1188,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -1319,8 +1326,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -1498,8 +1506,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -1591,7 +1600,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 71,
+									"line": 72,
 									"character": 8
 								}
 							],
@@ -1686,8 +1695,9 @@
 																				"name": "Readonly",
 																				"typeArguments": [
 																					{
-																						"type": "intersection",
-																						"types": [
+																						"type": "reference",
+																						"name": "MergeInterfacesT",
+																						"typeArguments": [
 																							{
 																								"type": "reference",
 																								"name": "CircularProgressProps",
@@ -1859,8 +1869,9 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "intersection",
-														"types": [
+														"type": "reference",
+														"name": "MergeInterfacesT",
+														"typeArguments": [
 															{
 																"type": "reference",
 																"name": "CircularProgressProps",
@@ -1947,7 +1958,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 48,
+											"line": 49,
 											"character": 12
 										}
 									],
@@ -1968,7 +1979,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 49,
+											"line": 50,
 											"character": 8
 										}
 									],
@@ -1992,7 +2003,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 47,
+									"line": 48,
 									"character": 21
 								}
 							],
@@ -2055,7 +2066,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 44,
+							"line": 45,
 							"character": 29
 						}
 					],
@@ -2065,8 +2076,9 @@
 							"name": "Component",
 							"typeArguments": [
 								{
-									"type": "intersection",
-									"types": [
+									"type": "reference",
+									"name": "MergeInterfacesT",
+									"typeArguments": [
 										{
 											"type": "reference",
 											"name": "CircularProgressProps",
@@ -2106,7 +2118,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 14,
+									"line": 15,
 									"character": 5
 								}
 							],
@@ -2139,7 +2151,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 16,
+									"line": 17,
 									"character": 5
 								}
 							],
@@ -2172,7 +2184,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 18,
+									"line": 19,
 									"character": 10
 								}
 							],
@@ -2205,7 +2217,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 20,
+									"line": 21,
 									"character": 6
 								}
 							],
@@ -2235,10 +2247,6 @@
 									{
 										"type": "intrinsic",
 										"name": "number"
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
 									}
 								]
 							}
@@ -2259,7 +2267,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 12,
+							"line": 13,
 							"character": 38
 						}
 					]
@@ -2282,7 +2290,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 25,
+									"line": 26,
 									"character": 11
 								}
 							],
@@ -2309,7 +2317,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 24,
+									"line": 25,
 									"character": 7
 								}
 							],
@@ -2341,7 +2349,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 23,
+							"line": 24,
 							"character": 35
 						}
 					]
@@ -2357,7 +2365,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 28,
+							"line": 29,
 							"character": 26
 						}
 					],
@@ -2412,7 +2420,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 8,
+									"line": 9,
 									"character": 7
 								}
 							],
@@ -2431,7 +2439,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 7,
+									"line": 8,
 									"character": 8
 								}
 							],
@@ -2450,7 +2458,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 6,
+									"line": 7,
 									"character": 7
 								}
 							],
@@ -2469,7 +2477,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 8
 								}
 							],
@@ -2488,7 +2496,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 5,
+									"line": 6,
 									"character": 8
 								}
 							],
@@ -2515,7 +2523,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 4,
+							"line": 5,
 							"character": 14
 						}
 					],

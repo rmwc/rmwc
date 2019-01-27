@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 48,
+									"line": 50,
 									"character": 6
 								}
 							],
@@ -66,7 +66,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 53,
+									"line": 55,
 									"character": 13
 								}
 							],
@@ -255,17 +255,8 @@
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reference",
-										"name": "React.ReactNode"
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
+								"type": "reference",
+								"name": "React.ReactNode"
 							}
 						},
 						{
@@ -357,7 +348,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 278,
+									"line": 281,
 									"character": 8
 								}
 							],

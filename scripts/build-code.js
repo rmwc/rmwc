@@ -46,64 +46,72 @@ const copyFile = (inputFile, outputFile) => {
   exec(`cp -R ${inputFile} ${outputFile}`);
 };
 
-const promises = getPackageDirs().map(d => {
-  return new Promise((resolve, reject) => {
-    glob(`./src/${d}/**/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
-      er,
-      files
-    ) {
-      console.log(`Building Package: ${d}`);
+const root = path.resolve(__dirname, '../');
 
-      files.forEach(f => {
-        // skip the root dir
-        if (f === `./src/${d}`) {
-          return;
-        }
+const compileTypescriptCmd = `./node_modules/.bin/tsc --project ${root}`;
+execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-        // skip the docs folder
-        if (f.includes('rmwc/docs')) {
-          return;
-        }
+const promises = getPackageDirs()
+  .slice(1, 2)
+  .map(d => {
+    return new Promise((resolve, reject) => {
+      console.log(d);
+      // glob(`./src/${d}/**/!(*.story.js|*.spec.js|setupTests.js)`, {}, function(
+      //   er,
+      //   files
+      // ) {
+      //   console.log(`Building Package: ${d}`);
 
-        const out = f.replace(`./src/${d}`, `./src/${d}/dist`);
+      //   files.forEach(f => {
+      //     // skip the root dir
+      //     if (f === `./src/${d}`) {
+      //       return;
+      //     }
 
-        // make our out dir
-        const dir = path.dirname(out);
-        if (!fs.existsSync(dir)) {
-          fs.mkdirSync(dir);
-        }
+      //     // skip the docs folder
+      //     if (f.includes('rmwc/docs')) {
+      //       return;
+      //     }
 
-        // handle files
-        if (path.extname(f) === '.js') {
-          console.log('Babel:', f, '-> ', out);
-          writeBuiltFile(f, out);
-          writeFlowFile(f, out);
-          writeTypescriptFile(f, out);
-        } else {
-          copyFile(f, out);
-        }
-      });
-      resolve();
+      //     const out = f.replace(`./src/${d}`, `./src/${d}/dist`);
+
+      //     // make our out dir
+      //     const dir = path.dirname(out);
+      //     if (!fs.existsSync(dir)) {
+      //       fs.mkdirSync(dir);
+      //     }
+
+      //     // handle files
+      //     if (path.extname(f) === '.js') {
+      //       console.log('Babel:', f, '-> ', out);
+      //       writeBuiltFile(f, out);
+      //       writeFlowFile(f, out);
+      //       writeTypescriptFile(f, out);
+      //     } else {
+      //       copyFile(f, out);
+      //     }
+      //   });
+      //   resolve();
+      // });
     });
   });
-});
 
-// Compile the TS
-Promise.all(promises).then(() => {
-  console.log('Compiling Typescript...');
-  const compileTypescriptCmd = `./node_modules/.bin/tsc`;
-  execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
+// // Compile the TS
+// Promise.all(promises).then(() => {
+//   console.log('Compiling Typescript...');
+//   const compileTypescriptCmd = `./node_modules/.bin/tsc`;
+//   execSync(compileTypescriptCmd, { stdio: [0, 1, 2] });
 
-  setTimeout(() => {
-    glob('./**/dist/**/*.tsx', {}, function(er, files) {
-      files.forEach(f => {
-        console.log('Removing File', f);
-        fs.unlinkSync(f);
-      });
+//   setTimeout(() => {
+//     glob('./**/dist/**/*.tsx', {}, function(er, files) {
+//       files.forEach(f => {
+//         console.log('Removing File', f);
+//         fs.unlinkSync(f);
+//       });
 
-      setTimeout(() => {
-        console.log('DONE!');
-      }, 1000);
-    });
-  }, 1000);
-});
+//       setTimeout(() => {
+//         console.log('DONE!');
+//       }, 1000);
+//     });
+//   }, 1000);
+// });

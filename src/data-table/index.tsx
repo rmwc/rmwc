@@ -62,7 +62,7 @@ export interface DataTableRowProps {
 }
 
 /** A row for the data table. */
-export const DataTableRow = componentFactory<{}>({
+export const DataTableRow = componentFactory<DataTableRowProps>({
   displayName: 'DataTableRow',
   tag: 'tr',
   classNames: (props: DataTableRowProps) => [

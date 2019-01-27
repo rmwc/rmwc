@@ -38,8 +38,45 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 7,
+									"line": 9,
 									"character": 12
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "wrap",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Allows the elevation classes to be merged onto the child component instead of creating an new DOM node."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 11,
+									"character": 6
 								}
 							],
 							"type": {
@@ -74,7 +111,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 5,
+									"line": 7,
 									"character": 3
 								}
 							],
@@ -99,6 +136,7 @@
 							"kind": 1024,
 							"children": [
 								4,
+								5,
 								3
 							]
 						}
@@ -106,13 +144,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 3,
+							"line": 5,
 							"character": 31
 						}
 					]
 				},
 				{
-					"id": 5,
+					"id": 6,
 					"name": "Elevation",
 					"kind": 32,
 					"kindString": "Variable",
@@ -126,7 +164,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 11,
+							"line": 15,
 							"character": 22
 						}
 					],
@@ -140,7 +178,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 6,
+											"id": 7,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -161,7 +199,7 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<ElevationProps>({\n  displayName: 'Elevation',\n  defaultProps: {\n    z: 0,\n    transition: false\n  },\n  classNames: (props: ElevationProps) => [\n    `mdc-elevation--z${props.z}`,\n    { 'mdc-elevation-transition': props.transition }\n  ],\n  consumeProps: ['z', 'transition']\n})"
+					"defaultValue": " componentFactory<ElevationProps>({\n  displayName: 'Elevation',\n  defaultProps: {\n    z: 0,\n    transition: false\n  },\n  classNames: (props: ElevationProps) => [\n    `mdc-elevation--z${props.z}`,\n    { 'mdc-elevation-transition': props.transition }\n  ],\n  consumeProps: ['z', 'transition'],\n  render: (props, ref, Tag) => {\n    const { wrap, ...rest } = props;\n    if (wrap) {\n      return wrapChild({ ...rest, ref });\n    }\n\n    return <Tag {...rest} ref={ref} />;\n  }\n})"
 				}
 			],
 			"groups": [
@@ -176,7 +214,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						5
+						6
 					]
 				}
 			],

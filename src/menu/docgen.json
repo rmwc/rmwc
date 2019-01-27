@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 363,
+			"id": 378,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22,7 +22,7 @@
 			]
 		},
 		{
-			"id": 188,
+			"id": 199,
 			"name": "\"menu\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -32,7 +32,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu.tsx",
 			"children": [
 				{
-					"id": 209,
+					"id": 225,
 					"name": "Menu",
 					"kind": 128,
 					"kindString": "Class",
@@ -44,7 +44,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 239,
+							"id": 255,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -55,7 +55,7 @@
 							}
 						},
 						{
-							"id": 276,
+							"id": 291,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -64,7 +64,7 @@
 					],
 					"children": [
 						{
-							"id": 213,
+							"id": 229,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -73,14 +73,14 @@
 							},
 							"signatures": [
 								{
-									"id": 214,
+									"id": 230,
 									"name": "new Menu",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 215,
+											"id": 231,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -88,14 +88,14 @@
 											"type": {
 												"type": "reference",
 												"name": "MenuProps",
-												"id": 189
+												"id": 200
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "Menu",
-										"id": 209
+										"id": 225
 									},
 									"overwrites": {
 										"type": "reference",
@@ -106,7 +106,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 74,
+									"line": 73,
 									"character": 41
 								}
 							],
@@ -116,32 +116,7 @@
 							}
 						},
 						{
-							"id": 246,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
-						},
-						{
-							"id": 242,
+							"id": 258,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -151,28 +126,28 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 243,
+									"id": 259,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 244,
+											"id": 260,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 245,
+													"id": 261,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -202,7 +177,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -214,7 +189,7 @@
 							}
 						},
 						{
-							"id": 241,
+							"id": 257,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -224,7 +199,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -239,7 +214,7 @@
 							}
 						},
 						{
-							"id": 211,
+							"id": 227,
 							"name": "list",
 							"kind": 1024,
 							"kindString": "Property",
@@ -249,7 +224,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 73,
+									"line": 72,
 									"character": 6
 								}
 							],
@@ -269,7 +244,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 212,
+							"id": 228,
 							"name": "menuSurface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -279,7 +254,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 74,
+									"line": 73,
 									"character": 13
 								}
 							],
@@ -300,7 +275,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 210,
+							"id": 226,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -311,7 +286,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 71,
+									"line": 70,
 									"character": 20
 								}
 							],
@@ -322,7 +297,7 @@
 							"defaultValue": "\"Menu\""
 						},
 						{
-							"id": 240,
+							"id": 256,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -333,7 +308,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -348,7 +323,7 @@
 							}
 						},
 						{
-							"id": 216,
+							"id": 232,
 							"name": "items",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -357,7 +332,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 217,
+									"id": 233,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -374,13 +349,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 83,
+									"line": 82,
 									"character": 11
 								}
 							]
 						},
 						{
-							"id": 292,
+							"id": 307,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -390,7 +365,7 @@
 							},
 							"signatures": [
 								{
-									"id": 293,
+									"id": 308,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -436,7 +411,7 @@
 							}
 						},
 						{
-							"id": 298,
+							"id": 313,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -446,7 +421,7 @@
 							},
 							"signatures": [
 								{
-									"id": 299,
+									"id": 314,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -471,7 +446,7 @@
 									},
 									"parameters": [
 										{
-											"id": 300,
+											"id": 315,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -487,7 +462,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -495,7 +470,7 @@
 											}
 										},
 										{
-											"id": 301,
+											"id": 316,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -529,7 +504,7 @@
 							}
 						},
 						{
-							"id": 307,
+							"id": 322,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -539,7 +514,7 @@
 							},
 							"signatures": [
 								{
-									"id": 308,
+									"id": 323,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -564,7 +539,7 @@
 									},
 									"parameters": [
 										{
-											"id": 309,
+											"id": 324,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -580,7 +555,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -588,7 +563,7 @@
 											}
 										},
 										{
-											"id": 310,
+											"id": 325,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -615,7 +590,7 @@
 											}
 										},
 										{
-											"id": 311,
+											"id": 326,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -649,7 +624,7 @@
 							}
 						},
 						{
-							"id": 282,
+							"id": 297,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -659,7 +634,7 @@
 							},
 							"signatures": [
 								{
-									"id": 283,
+									"id": 298,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -669,7 +644,7 @@
 									},
 									"parameters": [
 										{
-											"id": 284,
+											"id": 299,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -680,7 +655,7 @@
 											}
 										},
 										{
-											"id": 285,
+											"id": 300,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -714,7 +689,7 @@
 							}
 						},
 						{
-							"id": 247,
+							"id": 262,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -723,7 +698,7 @@
 							},
 							"signatures": [
 								{
-									"id": 248,
+									"id": 263,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -745,7 +720,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 214,
+									"line": 217,
 									"character": 19
 								}
 							],
@@ -759,7 +734,7 @@
 							}
 						},
 						{
-							"id": 249,
+							"id": 264,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -768,14 +743,14 @@
 							},
 							"signatures": [
 								{
-									"id": 250,
+									"id": 265,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 251,
+											"id": 266,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -787,7 +762,7 @@
 													{
 														"type": "reference",
 														"name": "MenuProps",
-														"id": 189
+														"id": 200
 													}
 												]
 											}
@@ -810,7 +785,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -824,7 +799,7 @@
 							}
 						},
 						{
-							"id": 290,
+							"id": 305,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -834,7 +809,7 @@
 							},
 							"signatures": [
 								{
-									"id": 291,
+									"id": 306,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -880,7 +855,7 @@
 							}
 						},
 						{
-							"id": 294,
+							"id": 309,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -890,7 +865,7 @@
 							},
 							"signatures": [
 								{
-									"id": 295,
+									"id": 310,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -915,7 +890,7 @@
 									},
 									"parameters": [
 										{
-											"id": 296,
+											"id": 311,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -931,7 +906,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -939,7 +914,7 @@
 											}
 										},
 										{
-											"id": 297,
+											"id": 312,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -973,7 +948,7 @@
 							}
 						},
 						{
-							"id": 252,
+							"id": 267,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -982,7 +957,7 @@
 							},
 							"signatures": [
 								{
-									"id": 253,
+									"id": 268,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1004,7 +979,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -1018,7 +993,7 @@
 							}
 						},
 						{
-							"id": 302,
+							"id": 317,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1028,7 +1003,7 @@
 							},
 							"signatures": [
 								{
-									"id": 303,
+									"id": 318,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1053,7 +1028,7 @@
 									},
 									"parameters": [
 										{
-											"id": 304,
+											"id": 319,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1069,7 +1044,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -1077,7 +1052,7 @@
 											}
 										},
 										{
-											"id": 305,
+											"id": 320,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1104,7 +1079,7 @@
 											}
 										},
 										{
-											"id": 306,
+											"id": 321,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1138,7 +1113,7 @@
 							}
 						},
 						{
-							"id": 254,
+							"id": 269,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1147,14 +1122,14 @@
 							},
 							"signatures": [
 								{
-									"id": 255,
+									"id": 270,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 256,
+											"id": 271,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1167,7 +1142,7 @@
 									],
 									"parameters": [
 										{
-											"id": 257,
+											"id": 272,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1183,8 +1158,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -1201,7 +1176,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -1211,7 +1186,7 @@
 							}
 						},
 						{
-							"id": 271,
+							"id": 286,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1220,7 +1195,7 @@
 							},
 							"signatures": [
 								{
-									"id": 272,
+									"id": 287,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1230,7 +1205,7 @@
 									},
 									"parameters": [
 										{
-											"id": 273,
+											"id": 288,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1241,7 +1216,7 @@
 											}
 										},
 										{
-											"id": 274,
+											"id": 289,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1252,7 +1227,7 @@
 											}
 										},
 										{
-											"id": 275,
+											"id": 290,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1283,7 +1258,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -1293,7 +1268,7 @@
 							}
 						},
 						{
-							"id": 226,
+							"id": 242,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1302,7 +1277,7 @@
 							},
 							"signatures": [
 								{
-									"id": 227,
+									"id": 243,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1320,7 +1295,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 99,
+									"line": 98,
 									"character": 22
 								}
 							],
@@ -1330,7 +1305,7 @@
 							}
 						},
 						{
-							"id": 286,
+							"id": 301,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1340,7 +1315,7 @@
 							},
 							"signatures": [
 								{
-									"id": 287,
+									"id": 302,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1351,7 +1326,7 @@
 									},
 									"parameters": [
 										{
-											"id": 288,
+											"id": 303,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1367,7 +1342,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -1375,7 +1350,7 @@
 											}
 										},
 										{
-											"id": 289,
+											"id": 304,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1434,7 +1409,7 @@
 							}
 						},
 						{
-							"id": 228,
+							"id": 244,
 							"name": "handleClick",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1443,14 +1418,14 @@
 							},
 							"signatures": [
 								{
-									"id": 229,
+									"id": 245,
 									"name": "handleClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 230,
+											"id": 246,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1470,13 +1445,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 142,
+									"line": 141,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 231,
+							"id": 247,
 							"name": "handleKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1485,14 +1460,14 @@
 							},
 							"signatures": [
 								{
-									"id": 232,
+									"id": 248,
 									"name": "handleKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 233,
+											"id": 249,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1512,13 +1487,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 147,
+									"line": 146,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 234,
+							"id": 250,
 							"name": "handleOpen",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1527,14 +1502,14 @@
 							},
 							"signatures": [
 								{
-									"id": 235,
+									"id": 251,
 									"name": "handleOpen",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 236,
+											"id": 252,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1560,13 +1535,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 152,
+									"line": 151,
 									"character": 12
 								}
 							]
 						},
 						{
-							"id": 218,
+							"id": 234,
 							"name": "hoistMenuToBody",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1575,7 +1550,7 @@
 							},
 							"signatures": [
 								{
-									"id": 219,
+									"id": 235,
 									"name": "hoistMenuToBody",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1589,13 +1564,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 87,
+									"line": 86,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 237,
+							"id": 253,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1604,7 +1579,7 @@
 							},
 							"signatures": [
 								{
-									"id": 238,
+									"id": 254,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1618,13 +1593,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 160,
+									"line": 159,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 220,
+							"id": 236,
 							"name": "setAnchorCorner",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1633,14 +1608,14 @@
 							},
 							"signatures": [
 								{
-									"id": 221,
+									"id": 237,
 									"name": "setAnchorCorner",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 222,
+											"id": 238,
 											"name": "corner",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1660,13 +1635,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 91,
+									"line": 90,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 223,
+							"id": 239,
 							"name": "setAnchorElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1675,14 +1650,14 @@
 							},
 							"signatures": [
 								{
-									"id": 224,
+									"id": 240,
 									"name": "setAnchorElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 225,
+											"id": 241,
 											"name": "element",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1702,13 +1677,13 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 95,
+									"line": 94,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 277,
+							"id": 292,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1718,7 +1693,7 @@
 							},
 							"signatures": [
 								{
-									"id": 278,
+									"id": 293,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1729,7 +1704,7 @@
 									},
 									"parameters": [
 										{
-											"id": 279,
+											"id": 294,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1745,7 +1720,7 @@
 															{
 																"type": "reference",
 																"name": "MenuProps",
-																"id": 189
+																"id": 200
 															}
 														]
 													}
@@ -1753,7 +1728,7 @@
 											}
 										},
 										{
-											"id": 280,
+											"id": 295,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1780,7 +1755,7 @@
 											}
 										},
 										{
-											"id": 281,
+											"id": 296,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1814,7 +1789,7 @@
 							}
 						},
 						{
-							"id": 260,
+							"id": 275,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1823,14 +1798,14 @@
 							},
 							"signatures": [
 								{
-									"id": 261,
+									"id": 276,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 262,
+											"id": 277,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1841,7 +1816,7 @@
 											}
 										},
 										{
-											"id": 263,
+											"id": 278,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1867,7 +1842,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 245,
 									"character": 6
 								}
 							],
@@ -1877,7 +1852,7 @@
 							}
 						},
 						{
-							"id": 264,
+							"id": 279,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1886,14 +1861,14 @@
 							},
 							"signatures": [
 								{
-									"id": 265,
+									"id": 280,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 266,
+											"id": 281,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1904,7 +1879,7 @@
 											}
 										},
 										{
-											"id": 267,
+											"id": 282,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1915,7 +1890,7 @@
 											}
 										},
 										{
-											"id": 268,
+											"id": 283,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1923,14 +1898,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 269,
+													"id": 284,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 270,
+															"id": 285,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1944,7 +1919,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -1965,7 +1940,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -1975,7 +1950,7 @@
 							}
 						},
 						{
-							"id": 258,
+							"id": 273,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1984,7 +1959,7 @@
 							},
 							"signatures": [
 								{
-									"id": 259,
+									"id": 274,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2002,7 +1977,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -2017,65 +1992,64 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								213
+								229
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								246,
-								242,
-								241,
-								211,
-								212,
-								210,
-								240
+								258,
+								257,
+								227,
+								228,
+								226,
+								256
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								216
+								232
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								292,
-								298,
 								307,
-								282,
-								247,
-								249,
-								290,
-								294,
-								252,
-								302,
-								254,
-								271,
-								226,
-								286,
-								228,
-								231,
-								234,
-								218,
-								237,
-								220,
-								223,
-								277,
-								260,
+								313,
+								322,
+								297,
+								262,
 								264,
-								258
+								305,
+								309,
+								267,
+								317,
+								269,
+								286,
+								242,
+								301,
+								244,
+								247,
+								250,
+								234,
+								253,
+								236,
+								239,
+								292,
+								275,
+								279,
+								273
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 70,
+							"line": 69,
 							"character": 17
 						}
 					],
@@ -2087,14 +2061,195 @@
 								{
 									"type": "reference",
 									"name": "MenuProps",
-									"id": 189
+									"id": 200
 								}
 							]
 						}
 					]
 				},
 				{
-					"id": 189,
+					"id": 220,
+					"name": "MenuItemProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 222,
+							"name": "activated",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A modifier for an active state."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list-item.tsx",
+									"line": 11,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ListItemProps.activated"
+							}
+						},
+						{
+							"id": 223,
+							"name": "disabled",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A modifier for a disabled state."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list-item.tsx",
+									"line": 13,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ListItemProps.disabled"
+							}
+						},
+						{
+							"id": 224,
+							"name": "ripple",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Adds a ripple effect to the component"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
+									"line": 281,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RipplePropT"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "WithRippleProps.ripple"
+							}
+						},
+						{
+							"id": 221,
+							"name": "selected",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "A modifier for a selected state."
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list-item.tsx",
+									"line": 9,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ListItemProps.selected"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								222,
+								223,
+								224,
+								221
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 56,
+							"character": 23
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "ListItemProps"
+						}
+					]
+				},
+				{
+					"id": 200,
 					"name": "MenuProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2106,7 +2261,7 @@
 					},
 					"children": [
 						{
-							"id": 199,
+							"id": 210,
 							"name": "anchorCorner",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2120,14 +2275,14 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 35,
+									"line": 40,
 									"character": 14
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "AnchorT",
-								"id": 183
+								"id": 194
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -2136,7 +2291,7 @@
 							}
 						},
 						{
-							"id": 208,
+							"id": 219,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2150,7 +2305,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 41,
+									"line": 46,
 									"character": 10
 								}
 							],
@@ -2165,7 +2320,7 @@
 							}
 						},
 						{
-							"id": 198,
+							"id": 209,
 							"name": "fixed",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2179,7 +2334,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 33,
+									"line": 38,
 									"character": 7
 								}
 							],
@@ -2207,7 +2362,7 @@
 							}
 						},
 						{
-							"id": 204,
+							"id": 215,
 							"name": "onClose",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2221,7 +2376,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 39,
+									"line": 44,
 									"character": 9
 								}
 							],
@@ -2235,21 +2390,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 205,
+											"id": 216,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 206,
+													"id": 217,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 207,
+															"id": 218,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2283,7 +2438,7 @@
 							}
 						},
 						{
-							"id": 200,
+							"id": 211,
 							"name": "onOpen",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2297,7 +2452,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 37,
+									"line": 42,
 									"character": 8
 								}
 							],
@@ -2311,21 +2466,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 201,
+											"id": 212,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 202,
+													"id": 213,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 203,
+															"id": 214,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -2359,7 +2514,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 201,
 							"name": "onSelect",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2387,102 +2542,93 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 191,
+											"id": 202,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 192,
+													"id": 203,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 193,
+															"id": 204,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
 															"flags": {},
 															"type": {
-																"type": "union",
-																"types": [
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
 																	{
-																		"type": "reference",
-																		"name": "CustomEventT",
-																		"typeArguments": [
-																			{
-																				"type": "reflection",
-																				"declaration": {
-																					"id": 194,
-																					"name": "__type",
-																					"kind": 65536,
-																					"kindString": "Type literal",
+																		"type": "reflection",
+																		"declaration": {
+																			"id": 205,
+																			"name": "__type",
+																			"kind": 65536,
+																			"kindString": "Type literal",
+																			"flags": {},
+																			"children": [
+																				{
+																					"id": 206,
+																					"name": "index",
+																					"kind": 32,
+																					"kindString": "Variable",
 																					"flags": {},
-																					"children": [
-																						{
-																							"id": 195,
-																							"name": "index",
-																							"kind": 32,
-																							"kindString": "Variable",
-																							"flags": {},
-																							"sources": [
-																								{
-																									"fileName": "menu.tsx",
-																									"line": 27,
-																									"character": 15
-																								}
-																							],
-																							"type": {
-																								"type": "intrinsic",
-																								"name": "number"
-																							}
-																						},
-																						{
-																							"id": 196,
-																							"name": "item",
-																							"kind": 32,
-																							"kindString": "Variable",
-																							"flags": {},
-																							"sources": [
-																								{
-																									"fileName": "menu.tsx",
-																									"line": 28,
-																									"character": 14
-																								}
-																							],
-																							"type": {
-																								"type": "reference",
-																								"name": "HTMLElement"
-																							}
-																						}
-																					],
-																					"groups": [
-																						{
-																							"title": "Variables",
-																							"kind": 32,
-																							"children": [
-																								195,
-																								196
-																							]
-																						}
-																					],
 																					"sources": [
 																						{
 																							"fileName": "menu.tsx",
 																							"line": 26,
-																							"character": 21
+																							"character": 11
 																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "number"
+																					}
+																				},
+																				{
+																					"id": 207,
+																					"name": "item",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu.tsx",
+																							"line": 27,
+																							"character": 10
+																						}
+																					],
+																					"type": {
+																						"type": "reference",
+																						"name": "HTMLElement"
+																					}
+																				}
+																			],
+																			"groups": [
+																				{
+																					"title": "Variables",
+																					"kind": 32,
+																					"children": [
+																						206,
+																						207
 																					]
 																				}
-																			}
-																		]
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
+																			],
+																			"sources": [
+																				{
+																					"fileName": "menu.tsx",
+																					"line": 25,
+																					"character": 22
+																				}
+																			]
+																		}
 																	}
 																]
 															}
@@ -2500,7 +2646,7 @@
 							}
 						},
 						{
-							"id": 197,
+							"id": 208,
 							"name": "open",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2514,7 +2660,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 31,
+									"line": 36,
 									"character": 6
 								}
 							],
@@ -2547,13 +2693,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								199,
-								208,
-								198,
-								204,
-								200,
-								190,
-								197
+								210,
+								219,
+								209,
+								215,
+								211,
+								201,
+								208
 							]
 						}
 					],
@@ -2575,12 +2721,12 @@
 						{
 							"type": "reference",
 							"name": "SimpleMenuProps",
-							"id": 312
+							"id": 327
 						}
 					]
 				},
 				{
-					"id": 312,
+					"id": 327,
 					"name": "SimpleMenuProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2589,589 +2735,6 @@
 					},
 					"comment": {
 						"shortText": "Simple Menu"
-					},
-					"children": [
-						{
-							"id": 325,
-							"name": "anchorCorner",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Manually position the menu to one of the corners."
-							},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 35,
-									"character": 14
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "AnchorT",
-								"id": 183
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.anchorCorner",
-								"id": 5
-							}
-						},
-						{
-							"id": 315,
-							"name": "children",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Children to render"
-							},
-							"sources": [
-								{
-									"fileName": "menu.tsx",
-									"line": 192,
-									"character": 10
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "React.ReactNode"
-							},
-							"overwrites": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.children",
-								"id": 14
-							}
-						},
-						{
-							"id": 324,
-							"name": "fixed",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Make the menu position fixed."
-							},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 33,
-									"character": 7
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "intrinsic",
-										"name": "false"
-									},
-									{
-										"type": "intrinsic",
-										"name": "true"
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.fixed",
-								"id": 4
-							}
-						},
-						{
-							"id": 313,
-							"name": "handle",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"comment": {
-								"shortText": "An element that will open the menu when clicked"
-							},
-							"sources": [
-								{
-									"fileName": "menu.tsx",
-									"line": 188,
-									"character": 8
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "ReactElement",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
-							}
-						},
-						{
-							"id": 330,
-							"name": "onClose",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Callback for when the menu is closed."
-							},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 39,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 331,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"signatures": [
-												{
-													"id": 332,
-													"name": "__call",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 333,
-															"name": "evt",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "reference",
-																"name": "CustomEventT",
-																"typeArguments": [
-																	{
-																		"type": "reference",
-																		"name": "__type"
-																	}
-																]
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.onClose",
-								"id": 10
-							}
-						},
-						{
-							"id": 326,
-							"name": "onOpen",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Callback for when the menu is opened."
-							},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 37,
-									"character": 8
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 327,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"signatures": [
-												{
-													"id": 328,
-													"name": "__call",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 329,
-															"name": "evt",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "reference",
-																"name": "CustomEventT",
-																"typeArguments": [
-																	{
-																		"type": "reference",
-																		"name": "__type"
-																	}
-																]
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.onOpen",
-								"id": 6
-							}
-						},
-						{
-							"id": 316,
-							"name": "onSelect",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Callback that fires when a Menu item is selected."
-							},
-							"sources": [
-								{
-									"fileName": "menu.tsx",
-									"line": 24,
-									"character": 10
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 317,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"signatures": [
-												{
-													"id": 318,
-													"name": "__call",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 319,
-															"name": "evt",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "union",
-																"types": [
-																	{
-																		"type": "reference",
-																		"name": "CustomEventT",
-																		"typeArguments": [
-																			{
-																				"type": "reflection",
-																				"declaration": {
-																					"id": 320,
-																					"name": "__type",
-																					"kind": 65536,
-																					"kindString": "Type literal",
-																					"flags": {},
-																					"children": [
-																						{
-																							"id": 321,
-																							"name": "index",
-																							"kind": 32,
-																							"kindString": "Variable",
-																							"flags": {},
-																							"sources": [
-																								{
-																									"fileName": "menu.tsx",
-																									"line": 27,
-																									"character": 15
-																								}
-																							],
-																							"type": {
-																								"type": "intrinsic",
-																								"name": "number"
-																							}
-																						},
-																						{
-																							"id": 322,
-																							"name": "item",
-																							"kind": 32,
-																							"kindString": "Variable",
-																							"flags": {},
-																							"sources": [
-																								{
-																									"fileName": "menu.tsx",
-																									"line": 28,
-																									"character": 14
-																								}
-																							],
-																							"type": {
-																								"type": "reference",
-																								"name": "HTMLElement"
-																							}
-																						}
-																					],
-																					"groups": [
-																						{
-																							"title": "Variables",
-																							"kind": 32,
-																							"children": [
-																								321,
-																								322
-																							]
-																						}
-																					],
-																					"sources": [
-																						{
-																							"fileName": "menu.tsx",
-																							"line": 26,
-																							"character": 21
-																						}
-																					]
-																				}
-																			}
-																		]
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
-																	}
-																]
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuProps.onSelect",
-								"id": 190
-							}
-						},
-						{
-							"id": 323,
-							"name": "open",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "Opens the menu."
-							},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 31,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									{
-										"type": "intrinsic",
-										"name": "false"
-									},
-									{
-										"type": "intrinsic",
-										"name": "true"
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "MenuSurfaceProps.open",
-								"id": 3
-							}
-						},
-						{
-							"id": 314,
-							"name": "rootProps",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"comment": {
-								"shortText": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
-							},
-							"sources": [
-								{
-									"fileName": "menu.tsx",
-									"line": 190,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Object"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								325,
-								315,
-								324,
-								313,
-								330,
-								326,
-								316,
-								323,
-								314
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "menu.tsx",
-							"line": 186,
-							"character": 32
-						}
-					],
-					"extendedTypes": [
-						{
-							"type": "reference",
-							"name": "MenuProps",
-							"id": 189
-						}
-					]
-				},
-				{
-					"id": 349,
-					"name": "SimpleMenuState",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {
-						"isExported": true
-					},
-					"children": [
-						{
-							"id": 350,
-							"name": "open",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "menu.tsx",
-									"line": 205,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								350
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "menu.tsx",
-							"line": 204,
-							"character": 32
-						}
-					]
-				},
-				{
-					"id": 334,
-					"name": "SimpleMenuSurfaceProps",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {
-						"isExported": true
 					},
 					"children": [
 						{
@@ -3189,14 +2752,14 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 35,
+									"line": 40,
 									"character": 14
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "AnchorT",
-								"id": 183
+								"id": 194
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -3205,7 +2768,7 @@
 							}
 						},
 						{
-							"id": 337,
+							"id": 330,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3219,7 +2782,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 201,
+									"line": 191,
 									"character": 10
 								}
 							],
@@ -3248,7 +2811,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 33,
+									"line": 38,
 									"character": 7
 								}
 							],
@@ -3276,7 +2839,7 @@
 							}
 						},
 						{
-							"id": 335,
+							"id": 328,
 							"name": "handle",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3289,7 +2852,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 197,
+									"line": 187,
 									"character": 8
 								}
 							],
@@ -3319,7 +2882,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 39,
+									"line": 44,
 									"character": 9
 								}
 							],
@@ -3395,7 +2958,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 37,
+									"line": 42,
 									"character": 8
 								}
 							],
@@ -3457,6 +3020,143 @@
 							}
 						},
 						{
+							"id": 331,
+							"name": "onSelect",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback that fires when a Menu item is selected."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 24,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 332,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 333,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 334,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reflection",
+																		"declaration": {
+																			"id": 335,
+																			"name": "__type",
+																			"kind": 65536,
+																			"kindString": "Type literal",
+																			"flags": {},
+																			"children": [
+																				{
+																					"id": 336,
+																					"name": "index",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu.tsx",
+																							"line": 26,
+																							"character": 11
+																						}
+																					],
+																					"type": {
+																						"type": "intrinsic",
+																						"name": "number"
+																					}
+																				},
+																				{
+																					"id": 337,
+																					"name": "item",
+																					"kind": 32,
+																					"kindString": "Variable",
+																					"flags": {},
+																					"sources": [
+																						{
+																							"fileName": "menu.tsx",
+																							"line": 27,
+																							"character": 10
+																						}
+																					],
+																					"type": {
+																						"type": "reference",
+																						"name": "HTMLElement"
+																					}
+																				}
+																			],
+																			"groups": [
+																				{
+																					"title": "Variables",
+																					"kind": 32,
+																					"children": [
+																						336,
+																						337
+																					]
+																				}
+																			],
+																			"sources": [
+																				{
+																					"fileName": "menu.tsx",
+																					"line": 25,
+																					"character": 22
+																				}
+																			]
+																		}
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuProps.onSelect",
+								"id": 201
+							}
+						},
+						{
 							"id": 338,
 							"name": "open",
 							"kind": 1024,
@@ -3471,7 +3171,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 31,
+									"line": 36,
 									"character": 6
 								}
 							],
@@ -3499,7 +3199,7 @@
 							}
 						},
 						{
-							"id": 336,
+							"id": 329,
 							"name": "rootProps",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3513,7 +3213,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 199,
+									"line": 189,
 									"character": 11
 								}
 							],
@@ -3529,20 +3229,457 @@
 							"kind": 1024,
 							"children": [
 								340,
-								337,
+								330,
 								339,
-								335,
+								328,
 								345,
 								341,
+								331,
 								338,
-								336
+								329
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 195,
+							"line": 185,
+							"character": 32
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "MenuProps",
+							"id": 200
+						}
+					]
+				},
+				{
+					"id": 364,
+					"name": "SimpleMenuState",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 365,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 204,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								365
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 203,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 349,
+					"name": "SimpleMenuSurfaceProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 355,
+							"name": "anchorCorner",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Manually position the menu to one of the corners."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 40,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "AnchorT",
+								"id": 194
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.anchorCorner",
+								"id": 5
+							}
+						},
+						{
+							"id": 352,
+							"name": "children",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Children to render"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 200,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.children",
+								"id": 14
+							}
+						},
+						{
+							"id": 354,
+							"name": "fixed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the menu position fixed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 38,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.fixed",
+								"id": 4
+							}
+						},
+						{
+							"id": 350,
+							"name": "handle",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "An element that will open the menu when clicked"
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 196,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ReactElement",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						},
+						{
+							"id": 360,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is closed."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 44,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 361,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 362,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 363,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onClose",
+								"id": 10
+							}
+						},
+						{
+							"id": 356,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Callback for when the menu is opened."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 42,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 357,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 358,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 359,
+															"name": "evt",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "CustomEventT",
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	}
+																]
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.onOpen",
+								"id": 6
+							}
+						},
+						{
+							"id": 353,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Opens the menu."
+							},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 36,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "MenuSurfaceProps.open",
+								"id": 3
+							}
+						},
+						{
+							"id": 351,
+							"name": "rootProps",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor."
+							},
+							"sources": [
+								{
+									"fileName": "menu.tsx",
+									"line": 198,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								355,
+								352,
+								354,
+								350,
+								360,
+								356,
+								353,
+								351
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu.tsx",
+							"line": 194,
 							"character": 39
 						}
 					],
@@ -3555,7 +3692,7 @@
 					]
 				},
 				{
-					"id": 355,
+					"id": 370,
 					"name": "MenuItem",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3569,7 +3706,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 60,
+							"line": 59,
 							"character": 21
 						}
 					],
@@ -3583,7 +3720,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 356,
+											"id": 371,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3604,10 +3741,10 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuItem',\n  tag: ListItem,\n  defaultProps: {\n    role: 'menuitem',\n    tabIndex: 0\n  }\n})"
+					"defaultValue": " componentFactory<MenuItemProps>({\n  displayName: 'MenuItem',\n  tag: ListItem,\n  defaultProps: {\n    role: 'menuitem',\n    tabIndex: 0\n  }\n})"
 				},
 				{
-					"id": 353,
+					"id": 368,
 					"name": "MenuItems",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3618,7 +3755,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 49,
+							"line": 47,
 							"character": 22
 						}
 					],
@@ -3632,7 +3769,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 354,
+											"id": 369,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3656,7 +3793,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuItems',\n  tag: List,\n  classNames: ['mdc-list mdc-menu__items'],\n  defaultProps: {\n    role: 'menu'\n  }\n})"
 				},
 				{
-					"id": 351,
+					"id": 366,
 					"name": "MenuRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3667,7 +3804,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 34,
+							"line": 32,
 							"character": 21
 						}
 					],
@@ -3681,7 +3818,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 352,
+											"id": 367,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3705,7 +3842,7 @@
 					"defaultValue": " componentFactory<MenuProps>({\n  displayName: 'MenuRoot',\n  classNames: (props: MenuProps) => [\n    'mdc-menu',\n    'mdc-menu-surface',\n    {\n      'mdc-menu-surface--fixed': props.fixed\n    }\n  ],\n  consumeProps: ['fixed'],\n  defaultProps: {\n    tabIndex: -1\n  }\n})"
 				},
 				{
-					"id": 361,
+					"id": 376,
 					"name": "SimpleMenu",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3719,7 +3856,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 276,
+							"line": 275,
 							"character": 23
 						}
 					],
@@ -3733,7 +3870,7 @@
 									{
 										"type": "reference",
 										"name": "SimpleMenuProps",
-										"id": 312
+										"id": 327
 									},
 									{
 										"type": "intrinsic",
@@ -3748,7 +3885,7 @@
 									{
 										"type": "reference",
 										"name": "SimpleMenuProps",
-										"id": 312
+										"id": 327
 									}
 								]
 							}
@@ -3757,7 +3894,7 @@
 					"defaultValue": " simpleMenuFactory<SimpleMenuProps>(Menu)"
 				},
 				{
-					"id": 362,
+					"id": 377,
 					"name": "SimpleMenuSurface",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3771,7 +3908,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 281,
+							"line": 280,
 							"character": 30
 						}
 					],
@@ -3785,7 +3922,7 @@
 									{
 										"type": "reference",
 										"name": "SimpleMenuSurfaceProps",
-										"id": 334
+										"id": 349
 									},
 									{
 										"type": "intrinsic",
@@ -3800,7 +3937,7 @@
 									{
 										"type": "reference",
 										"name": "SimpleMenuSurfaceProps",
-										"id": 334
+										"id": 349
 									}
 								]
 							}
@@ -3809,7 +3946,7 @@
 					"defaultValue": " simpleMenuFactory<SimpleMenuSurfaceProps>(\n  MenuSurface\n)"
 				},
 				{
-					"id": 357,
+					"id": 372,
 					"name": "simpleMenuFactory",
 					"kind": 64,
 					"kindString": "Function",
@@ -3818,14 +3955,14 @@
 					},
 					"signatures": [
 						{
-							"id": 358,
+							"id": 373,
 							"name": "simpleMenuFactory",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"typeParameter": [
 								{
-									"id": 359,
+									"id": 374,
 									"name": "Props",
 									"kind": 131072,
 									"kindString": "Type parameter",
@@ -3833,13 +3970,13 @@
 									"type": {
 										"type": "reference",
 										"name": "SimpleMenuProps",
-										"id": 312
+										"id": 327
 									}
 								}
 							],
 							"parameters": [
 								{
-									"id": 360,
+									"id": 375,
 									"name": "MenuComponent",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3854,7 +3991,7 @@
 													{
 														"type": "reference",
 														"name": "MenuProps",
-														"id": 189
+														"id": 200
 													},
 													{
 														"type": "reference",
@@ -3877,7 +4014,7 @@
 										"constraint": {
 											"type": "reference",
 											"name": "SimpleMenuProps",
-											"id": 312
+											"id": 327
 										}
 									}
 								]
@@ -3887,7 +4024,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 208,
+							"line": 207,
 							"character": 23
 						}
 					]
@@ -3898,35 +4035,36 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						209
+						225
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						189,
-						312,
-						349,
-						334
+						220,
+						200,
+						327,
+						364,
+						349
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						355,
-						353,
-						351,
-						361,
-						362
+						370,
+						368,
+						366,
+						376,
+						377
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						357
+						372
 					]
 				}
 			],
@@ -3961,7 +4099,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 105,
+							"id": 107,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -3972,7 +4110,7 @@
 							}
 						},
 						{
-							"id": 138,
+							"id": 137,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -4023,7 +4161,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 65,
+									"line": 70,
 									"character": 18
 								}
 							],
@@ -4043,7 +4181,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 61,
+									"line": 66,
 									"character": 15
 								}
 							],
@@ -4063,32 +4201,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 112,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
-						},
-						{
-							"id": 108,
+							"id": 110,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4098,28 +4211,28 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 109,
+									"id": 111,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 110,
+											"id": 112,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 111,
+													"id": 113,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -4149,7 +4262,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -4171,7 +4284,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 63,
+									"line": 68,
 									"character": 23
 								}
 							],
@@ -4191,7 +4304,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 107,
+							"id": 109,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4201,7 +4314,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -4226,7 +4339,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 65,
+									"line": 70,
 									"character": 9
 								}
 							],
@@ -4247,7 +4360,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 64,
+									"line": 69,
 									"character": 22
 								}
 							],
@@ -4277,7 +4390,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 62,
+									"line": 67,
 									"character": 15
 								}
 							],
@@ -4307,7 +4420,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 60,
+									"line": 65,
 									"character": 6
 								}
 							],
@@ -4316,8 +4429,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -4328,7 +4441,7 @@
 							"defaultValue": " this.createElement('root')"
 						},
 						{
-							"id": 106,
+							"id": 108,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4339,7 +4452,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -4354,7 +4467,7 @@
 							}
 						},
 						{
-							"id": 25,
+							"id": 27,
 							"name": "open",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -4364,7 +4477,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 26,
+									"id": 28,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -4378,7 +4491,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 27,
+									"id": 29,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -4386,7 +4499,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 28,
+											"id": 30,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4407,18 +4520,18 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 73,
+									"line": 91,
 									"character": 10
 								},
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 78,
+									"line": 96,
 									"character": 10
 								}
 							]
 						},
 						{
-							"id": 154,
+							"id": 153,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4428,7 +4541,7 @@
 							},
 							"signatures": [
 								{
-									"id": 155,
+									"id": 154,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4474,7 +4587,7 @@
 							}
 						},
 						{
-							"id": 160,
+							"id": 159,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4484,7 +4597,7 @@
 							},
 							"signatures": [
 								{
-									"id": 161,
+									"id": 160,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4509,7 +4622,7 @@
 									},
 									"parameters": [
 										{
-											"id": 162,
+											"id": 161,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4533,7 +4646,7 @@
 											}
 										},
 										{
-											"id": 163,
+											"id": 162,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4567,7 +4680,7 @@
 							}
 						},
 						{
-							"id": 169,
+							"id": 168,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4577,7 +4690,7 @@
 							},
 							"signatures": [
 								{
-									"id": 170,
+									"id": 169,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4602,7 +4715,7 @@
 									},
 									"parameters": [
 										{
-											"id": 171,
+											"id": 170,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4626,7 +4739,7 @@
 											}
 										},
 										{
-											"id": 172,
+											"id": 171,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4653,7 +4766,7 @@
 											}
 										},
 										{
-											"id": 173,
+											"id": 172,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4687,7 +4800,7 @@
 							}
 						},
 						{
-							"id": 144,
+							"id": 143,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4697,7 +4810,7 @@
 							},
 							"signatures": [
 								{
-									"id": 145,
+									"id": 144,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4707,7 +4820,7 @@
 									},
 									"parameters": [
 										{
-											"id": 146,
+											"id": 145,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4718,7 +4831,7 @@
 											}
 										},
 										{
-											"id": 147,
+											"id": 146,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4752,7 +4865,7 @@
 							}
 						},
 						{
-							"id": 113,
+							"id": 25,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4761,7 +4874,7 @@
 							},
 							"signatures": [
 								{
-									"id": 114,
+									"id": 26,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4772,32 +4885,24 @@
 									},
 									"overwrites": {
 										"type": "reference",
-										"name": "ComponentLifecycle.componentDidMount"
-									},
-									"inheritedFrom": {
-										"type": "reference",
 										"name": "FoundationComponent.componentDidMount"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 214,
+									"fileName": "menu-surface.tsx",
+									"line": 78,
 									"character": 19
 								}
 							],
 							"overwrites": {
 								"type": "reference",
-								"name": "ComponentLifecycle.componentDidMount"
-							},
-							"inheritedFrom": {
-								"type": "reference",
 								"name": "FoundationComponent.componentDidMount"
 							}
 						},
 						{
-							"id": 115,
+							"id": 114,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4806,14 +4911,14 @@
 							},
 							"signatures": [
 								{
-									"id": 116,
+									"id": 115,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 117,
+											"id": 116,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4848,7 +4953,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -4862,7 +4967,7 @@
 							}
 						},
 						{
-							"id": 152,
+							"id": 151,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4872,7 +4977,7 @@
 							},
 							"signatures": [
 								{
-									"id": 153,
+									"id": 152,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4918,7 +5023,7 @@
 							}
 						},
 						{
-							"id": 156,
+							"id": 155,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4928,7 +5033,7 @@
 							},
 							"signatures": [
 								{
-									"id": 157,
+									"id": 156,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4953,7 +5058,7 @@
 									},
 									"parameters": [
 										{
-											"id": 158,
+											"id": 157,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4977,7 +5082,7 @@
 											}
 										},
 										{
-											"id": 159,
+											"id": 158,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5011,7 +5116,7 @@
 							}
 						},
 						{
-							"id": 118,
+							"id": 117,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5020,7 +5125,7 @@
 							},
 							"signatures": [
 								{
-									"id": 119,
+									"id": 118,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5042,7 +5147,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -5056,7 +5161,7 @@
 							}
 						},
 						{
-							"id": 164,
+							"id": 163,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5066,7 +5171,7 @@
 							},
 							"signatures": [
 								{
-									"id": 165,
+									"id": 164,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5091,7 +5196,7 @@
 									},
 									"parameters": [
 										{
-											"id": 166,
+											"id": 165,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5115,7 +5220,7 @@
 											}
 										},
 										{
-											"id": 167,
+											"id": 166,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5142,7 +5247,7 @@
 											}
 										},
 										{
-											"id": 168,
+											"id": 167,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5176,7 +5281,7 @@
 							}
 						},
 						{
-							"id": 120,
+							"id": 119,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5185,14 +5290,14 @@
 							},
 							"signatures": [
 								{
-									"id": 121,
+									"id": 120,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 122,
+											"id": 121,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -5205,7 +5310,7 @@
 									],
 									"parameters": [
 										{
-											"id": 123,
+											"id": 122,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5221,8 +5326,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -5239,7 +5344,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -5249,7 +5354,7 @@
 							}
 						},
 						{
-							"id": 95,
+							"id": 97,
 							"name": "deregisterBodyClickListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5258,7 +5363,7 @@
 							},
 							"signatures": [
 								{
-									"id": 96,
+									"id": 98,
 									"name": "deregisterBodyClickListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5272,13 +5377,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 243,
+									"line": 260,
 									"character": 29
 								}
 							]
 						},
 						{
-							"id": 133,
+							"id": 132,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5287,7 +5392,7 @@
 							},
 							"signatures": [
 								{
-									"id": 134,
+									"id": 133,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5297,7 +5402,7 @@
 									},
 									"parameters": [
 										{
-											"id": 135,
+											"id": 134,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5308,7 +5413,7 @@
 											}
 										},
 										{
-											"id": 136,
+											"id": 135,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5319,7 +5424,7 @@
 											}
 										},
 										{
-											"id": 137,
+											"id": 136,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5350,7 +5455,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -5360,7 +5465,7 @@
 							}
 						},
 						{
-							"id": 29,
+							"id": 31,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5369,7 +5474,7 @@
 							},
 							"signatures": [
 								{
-									"id": 30,
+									"id": 32,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5387,7 +5492,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 97,
+									"line": 117,
 									"character": 22
 								}
 							],
@@ -5397,7 +5502,7 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 50,
 							"name": "getDimensionAdapterMethods",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5406,7 +5511,7 @@
 							},
 							"signatures": [
 								{
-									"id": 49,
+									"id": 51,
 									"name": "getDimensionAdapterMethods",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5414,21 +5519,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 50,
+											"id": 52,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 56,
+													"id": 58,
 													"name": "getAnchorDimensions",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 57,
+															"id": 59,
 															"name": "getAnchorDimensions",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5455,20 +5560,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 166,
+															"line": 184,
 															"character": 25
 														}
 													]
 												},
 												{
-													"id": 63,
+													"id": 65,
 													"name": "getBodyDimensions",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 64,
+															"id": 66,
 															"name": "getBodyDimensions",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5476,14 +5581,14 @@
 															"type": {
 																"type": "reflection",
 																"declaration": {
-																	"id": 65,
+																	"id": 67,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
 																	"flags": {},
 																	"children": [
 																		{
-																			"id": 67,
+																			"id": 69,
 																			"name": "height",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5491,7 +5596,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 174,
+																					"line": 192,
 																					"character": 16
 																				}
 																			],
@@ -5502,7 +5607,7 @@
 																			"defaultValue": " document.body.clientHeight"
 																		},
 																		{
-																			"id": 66,
+																			"id": 68,
 																			"name": "width",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5510,7 +5615,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 173,
+																					"line": 191,
 																					"character": 15
 																				}
 																			],
@@ -5526,8 +5631,8 @@
 																			"title": "Variables",
 																			"kind": 32,
 																			"children": [
-																				67,
-																				66
+																				69,
+																				68
 																			]
 																		}
 																	]
@@ -5538,20 +5643,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 171,
+															"line": 189,
 															"character": 23
 														}
 													]
 												},
 												{
-													"id": 51,
+													"id": 53,
 													"name": "getInnerDimensions",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 52,
+															"id": 54,
 															"name": "getInnerDimensions",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5559,14 +5664,14 @@
 															"type": {
 																"type": "reflection",
 																"declaration": {
-																	"id": 53,
+																	"id": 55,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
 																	"flags": {},
 																	"children": [
 																		{
-																			"id": 55,
+																			"id": 57,
 																			"name": "height",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5574,7 +5679,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 163,
+																					"line": 181,
 																					"character": 16
 																				}
 																			],
@@ -5594,7 +5699,7 @@
 																			"defaultValue": " this.root.ref && this.root.ref.offsetHeight"
 																		},
 																		{
-																			"id": 54,
+																			"id": 56,
 																			"name": "width",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5602,7 +5707,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 162,
+																					"line": 180,
 																					"character": 15
 																				}
 																			],
@@ -5627,8 +5732,8 @@
 																			"title": "Variables",
 																			"kind": 32,
 																			"children": [
-																				55,
-																				54
+																				57,
+																				56
 																			]
 																		}
 																	]
@@ -5639,20 +5744,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 160,
+															"line": 178,
 															"character": 24
 														}
 													]
 												},
 												{
-													"id": 58,
+													"id": 60,
 													"name": "getWindowDimensions",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 59,
+															"id": 61,
 															"name": "getWindowDimensions",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5660,14 +5765,14 @@
 															"type": {
 																"type": "reflection",
 																"declaration": {
-																	"id": 60,
+																	"id": 62,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
 																	"flags": {},
 																	"children": [
 																		{
-																			"id": 62,
+																			"id": 64,
 																			"name": "height",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5675,7 +5780,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 169,
+																					"line": 187,
 																					"character": 49
 																				}
 																			],
@@ -5686,7 +5791,7 @@
 																			"defaultValue": " window.innerHeight"
 																		},
 																		{
-																			"id": 61,
+																			"id": 63,
 																			"name": "width",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5694,7 +5799,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 169,
+																					"line": 187,
 																					"character": 22
 																				}
 																			],
@@ -5710,8 +5815,8 @@
 																			"title": "Variables",
 																			"kind": 32,
 																			"children": [
-																				62,
-																				61
+																				64,
+																				63
 																			]
 																		}
 																	]
@@ -5722,20 +5827,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 168,
+															"line": 186,
 															"character": 25
 														}
 													]
 												},
 												{
-													"id": 68,
+													"id": 70,
 													"name": "getWindowScroll",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 69,
+															"id": 71,
 															"name": "getWindowScroll",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5743,14 +5848,14 @@
 															"type": {
 																"type": "reflection",
 																"declaration": {
-																	"id": 70,
+																	"id": 72,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
 																	"flags": {},
 																	"children": [
 																		{
-																			"id": 71,
+																			"id": 73,
 																			"name": "x",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5758,7 +5863,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 178,
+																					"line": 196,
 																					"character": 18
 																				}
 																			],
@@ -5769,7 +5874,7 @@
 																			"defaultValue": " window.pageXOffset"
 																		},
 																		{
-																			"id": 72,
+																			"id": 74,
 																			"name": "y",
 																			"kind": 32,
 																			"kindString": "Variable",
@@ -5777,7 +5882,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 178,
+																					"line": 196,
 																					"character": 41
 																				}
 																			],
@@ -5793,8 +5898,8 @@
 																			"title": "Variables",
 																			"kind": 32,
 																			"children": [
-																				71,
-																				72
+																				73,
+																				74
 																			]
 																		}
 																	]
@@ -5805,27 +5910,27 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 177,
+															"line": 195,
 															"character": 21
 														}
 													]
 												},
 												{
-													"id": 81,
+													"id": 83,
 													"name": "setMaxHeight",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 82,
+															"id": 84,
 															"name": "setMaxHeight",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 83,
+																	"id": 85,
 																	"name": "height",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -5845,27 +5950,27 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 197,
+															"line": 215,
 															"character": 18
 														}
 													]
 												},
 												{
-													"id": 73,
+													"id": 75,
 													"name": "setPosition",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 74,
+															"id": 76,
 															"name": "setPosition",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 75,
+																	"id": 77,
 																	"name": "position",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -5873,14 +5978,14 @@
 																	"type": {
 																		"type": "reflection",
 																		"declaration": {
-																			"id": 76,
+																			"id": 78,
 																			"name": "__type",
 																			"kind": 65536,
 																			"kindString": "Type literal",
 																			"flags": {},
 																			"children": [
 																				{
-																					"id": 79,
+																					"id": 81,
 																					"name": "bottom",
 																					"kind": 32,
 																					"kindString": "Variable",
@@ -5888,7 +5993,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 183,
+																							"line": 201,
 																							"character": 14
 																						}
 																					],
@@ -5898,7 +6003,7 @@
 																					}
 																				},
 																				{
-																					"id": 80,
+																					"id": 82,
 																					"name": "left",
 																					"kind": 32,
 																					"kindString": "Variable",
@@ -5906,7 +6011,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 184,
+																							"line": 202,
 																							"character": 12
 																						}
 																					],
@@ -5916,7 +6021,7 @@
 																					}
 																				},
 																				{
-																					"id": 78,
+																					"id": 80,
 																					"name": "right",
 																					"kind": 32,
 																					"kindString": "Variable",
@@ -5924,7 +6029,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 182,
+																							"line": 200,
 																							"character": 13
 																						}
 																					],
@@ -5934,7 +6039,7 @@
 																					}
 																				},
 																				{
-																					"id": 77,
+																					"id": 79,
 																					"name": "top",
 																					"kind": 32,
 																					"kindString": "Variable",
@@ -5942,7 +6047,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 181,
+																							"line": 199,
 																							"character": 11
 																						}
 																					],
@@ -5957,17 +6062,17 @@
 																					"title": "Variables",
 																					"kind": 32,
 																					"children": [
-																						79,
+																						81,
+																						82,
 																						80,
-																						78,
-																						77
+																						79
 																					]
 																				}
 																			],
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 180,
+																					"line": 198,
 																					"character": 29
 																				}
 																			]
@@ -5984,7 +6089,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 180,
+															"line": 198,
 															"character": 17
 														}
 													]
@@ -5995,13 +6100,13 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														56,
-														63,
-														51,
 														58,
-														68,
-														81,
-														73
+														65,
+														53,
+														60,
+														70,
+														83,
+														75
 													]
 												}
 											]
@@ -6012,13 +6117,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 158,
+									"line": 176,
 									"character": 28
 								}
 							]
 						},
 						{
-							"id": 31,
+							"id": 33,
 							"name": "getFocusAdapterMethods",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6027,7 +6132,7 @@
 							},
 							"signatures": [
 								{
-									"id": 32,
+									"id": 34,
 									"name": "getFocusAdapterMethods",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6035,21 +6140,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 33,
+											"id": 35,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 44,
+													"id": 46,
 													"name": "focusFirstElement",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 45,
+															"id": 47,
 															"name": "focusFirstElement",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6072,20 +6177,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 147,
+															"line": 165,
 															"character": 23
 														}
 													]
 												},
 												{
-													"id": 46,
+													"id": 48,
 													"name": "focusLastElement",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 47,
+															"id": 49,
 															"name": "focusLastElement",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6108,20 +6213,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 151,
+															"line": 169,
 															"character": 22
 														}
 													]
 												},
 												{
-													"id": 40,
+													"id": 42,
 													"name": "isFirstElementFocused",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 41,
+															"id": 43,
 															"name": "isFirstElementFocused",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6148,20 +6253,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 141,
+															"line": 159,
 															"character": 27
 														}
 													]
 												},
 												{
-													"id": 34,
+													"id": 36,
 													"name": "isFocused",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 35,
+															"id": 37,
 															"name": "isFocused",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6175,20 +6280,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 130,
+															"line": 148,
 															"character": 15
 														}
 													]
 												},
 												{
-													"id": 42,
+													"id": 44,
 													"name": "isLastElementFocused",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 43,
+															"id": 45,
 															"name": "isLastElementFocused",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6215,20 +6320,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 144,
+															"line": 162,
 															"character": 26
 														}
 													]
 												},
 												{
-													"id": 38,
+													"id": 40,
 													"name": "restoreFocus",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 39,
+															"id": 41,
 															"name": "restoreFocus",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6242,20 +6347,20 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 134,
+															"line": 152,
 															"character": 18
 														}
 													]
 												},
 												{
-													"id": 36,
+													"id": 38,
 													"name": "saveFocus",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 37,
+															"id": 39,
 															"name": "saveFocus",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6269,7 +6374,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 131,
+															"line": 149,
 															"character": 15
 														}
 													]
@@ -6280,13 +6385,13 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														44,
 														46,
-														40,
-														34,
+														48,
 														42,
-														38,
-														36
+														36,
+														44,
+														40,
+														38
 													]
 												}
 											]
@@ -6297,13 +6402,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 128,
+									"line": 146,
 									"character": 24
 								}
 							]
 						},
 						{
-							"id": 148,
+							"id": 147,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6313,7 +6418,7 @@
 							},
 							"signatures": [
 								{
-									"id": 149,
+									"id": 148,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6324,7 +6429,7 @@
 									},
 									"parameters": [
 										{
-											"id": 150,
+											"id": 149,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6348,7 +6453,7 @@
 											}
 										},
 										{
-											"id": 151,
+											"id": 150,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6407,7 +6512,7 @@
 							}
 						},
 						{
-							"id": 97,
+							"id": 99,
 							"name": "handleBodyClick",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6416,14 +6521,14 @@
 							},
 							"signatures": [
 								{
-									"id": 98,
+									"id": 100,
 									"name": "handleBodyClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 99,
+											"id": 101,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6443,13 +6548,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 247,
+									"line": 264,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 100,
+							"id": 102,
 							"name": "handleKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6458,14 +6563,14 @@
 							},
 							"signatures": [
 								{
-									"id": 101,
+									"id": 103,
 									"name": "handleKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 102,
+											"id": 104,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6485,13 +6590,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 251,
+									"line": 268,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 88,
+							"id": 90,
 							"name": "hoistMenuToBody",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6500,7 +6605,7 @@
 							},
 							"signatures": [
 								{
-									"id": 89,
+									"id": 91,
 									"name": "hoistMenuToBody",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6514,13 +6619,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 226,
+									"line": 243,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 93,
+							"id": 95,
 							"name": "registerBodyClickListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6529,7 +6634,7 @@
 							},
 							"signatures": [
 								{
-									"id": 94,
+									"id": 96,
 									"name": "registerBodyClickListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6543,13 +6648,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 240,
+									"line": 257,
 									"character": 27
 								}
 							]
 						},
 						{
-							"id": 103,
+							"id": 105,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6558,7 +6663,7 @@
 							},
 							"signatures": [
 								{
-									"id": 104,
+									"id": 106,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6572,13 +6677,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 255,
+									"line": 272,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 90,
+							"id": 92,
 							"name": "setAnchorCorner",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6587,14 +6692,14 @@
 							},
 							"signatures": [
 								{
-									"id": 91,
+									"id": 93,
 									"name": "setAnchorCorner",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 92,
+											"id": 94,
 											"name": "corner",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6614,13 +6719,13 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 236,
+									"line": 253,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 139,
+							"id": 138,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6630,7 +6735,7 @@
 							},
 							"signatures": [
 								{
-									"id": 140,
+									"id": 139,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6641,7 +6746,7 @@
 									},
 									"parameters": [
 										{
-											"id": 141,
+											"id": 140,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6665,7 +6770,7 @@
 											}
 										},
 										{
-											"id": 142,
+											"id": 141,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6692,7 +6797,7 @@
 											}
 										},
 										{
-											"id": 143,
+											"id": 142,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6726,7 +6831,7 @@
 							}
 						},
 						{
-							"id": 84,
+							"id": 86,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6735,14 +6840,14 @@
 							},
 							"signatures": [
 								{
-									"id": 85,
+									"id": 87,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 86,
+											"id": 88,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6754,7 +6859,7 @@
 											}
 										},
 										{
-											"id": 87,
+											"id": 89,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6779,7 +6884,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 203,
+									"line": 221,
 									"character": 6
 								}
 							],
@@ -6789,7 +6894,7 @@
 							}
 						},
 						{
-							"id": 126,
+							"id": 125,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6798,14 +6903,14 @@
 							},
 							"signatures": [
 								{
-									"id": 127,
+									"id": 126,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 128,
+											"id": 127,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6816,7 +6921,7 @@
 											}
 										},
 										{
-											"id": 129,
+											"id": 128,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6827,7 +6932,7 @@
 											}
 										},
 										{
-											"id": 130,
+											"id": 129,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6835,14 +6940,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 131,
+													"id": 130,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 132,
+															"id": 131,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -6856,7 +6961,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -6877,7 +6982,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -6887,7 +6992,7 @@
 							}
 						},
 						{
-							"id": 124,
+							"id": 123,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6896,7 +7001,7 @@
 							},
 							"signatures": [
 								{
-									"id": 125,
+									"id": 124,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6914,7 +7019,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -6937,62 +7042,61 @@
 							"kind": 1024,
 							"children": [
 								17,
-								112,
-								108,
+								110,
 								19,
-								107,
+								109,
 								21,
 								20,
 								18,
 								16,
-								106
+								108
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								25
+								27
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								154,
-								160,
-								169,
-								144,
-								113,
-								115,
-								152,
-								156,
-								118,
-								164,
-								120,
-								95,
-								133,
-								29,
-								48,
-								31,
-								148,
+								153,
+								159,
+								168,
+								143,
+								25,
+								114,
+								151,
+								155,
+								117,
+								163,
+								119,
 								97,
-								100,
-								88,
-								93,
-								103,
+								132,
+								31,
+								50,
+								33,
+								147,
+								99,
+								102,
 								90,
-								139,
-								84,
-								126,
-								124
+								95,
+								105,
+								92,
+								138,
+								86,
+								125,
+								123
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 59,
+							"line": 64,
 							"character": 24
 						}
 					],
@@ -7034,14 +7138,14 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 35,
+									"line": 40,
 									"character": 14
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "AnchorT",
-								"id": 183
+								"id": 194
 							}
 						},
 						{
@@ -7059,7 +7163,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 41,
+									"line": 46,
 									"character": 10
 								}
 							],
@@ -7083,7 +7187,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 33,
+									"line": 38,
 									"character": 7
 								}
 							],
@@ -7120,7 +7224,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 39,
+									"line": 44,
 									"character": 9
 								}
 							],
@@ -7191,7 +7295,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 37,
+									"line": 42,
 									"character": 8
 								}
 							],
@@ -7262,7 +7366,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 31,
+									"line": 36,
 									"character": 6
 								}
 							],
@@ -7302,7 +7406,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 29,
+							"line": 34,
 							"character": 33
 						}
 					],
@@ -7310,17 +7414,17 @@
 						{
 							"type": "reference",
 							"name": "MenuProps",
-							"id": 189
+							"id": 200
 						},
 						{
 							"type": "reference",
 							"name": "SimpleMenuSurfaceProps",
-							"id": 334
+							"id": 349
 						}
 					]
 				},
 				{
-					"id": 183,
+					"id": 194,
 					"name": "AnchorT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -7330,7 +7434,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 27,
+							"line": 32,
 							"character": 19
 						}
 					],
@@ -7373,7 +7477,7 @@
 					}
 				},
 				{
-					"id": 186,
+					"id": 197,
 					"name": "MenuSurfaceAnchor",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7387,7 +7491,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 282,
+							"line": 299,
 							"character": 30
 						}
 					],
@@ -7401,7 +7505,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 187,
+											"id": 198,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -7425,7 +7529,7 @@
 					"defaultValue": " componentFactory({\n  displayName: 'MenuSurfaceAnchor',\n  classNames: ['mdc-menu-surface--anchor']\n})"
 				},
 				{
-					"id": 184,
+					"id": 195,
 					"name": "MenuSurfaceRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7439,7 +7543,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 47,
+							"line": 52,
 							"character": 28
 						}
 					],
@@ -7453,7 +7557,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 185,
+											"id": 196,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -7477,7 +7581,236 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'MenuSurfaceRoot',\n  classNames: (props: MenuSurfaceProps) => [\n    'mdc-menu-surface',\n    {\n      'mdc-menu-surface--fixed': props.fixed\n    }\n  ],\n  consumeProps: ['fixed']\n})"
 				},
 				{
-					"id": 174,
+					"id": 182,
+					"name": "getAnchorCornerFromProp",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 183,
+							"name": "getAnchorCornerFromProp",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 184,
+									"name": "anchorCorner",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeOperator",
+										"operator": "keyof",
+										"target": {
+											"type": "reflection",
+											"declaration": {
+												"id": 185,
+												"name": "__type",
+												"kind": 65536,
+												"kindString": "Type literal",
+												"flags": {},
+												"children": [
+													{
+														"id": 186,
+														"name": "bottomEnd",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 17,
+																"character": 11
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"BOTTOM_END\""
+													},
+													{
+														"id": 187,
+														"name": "bottomLeft",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 18,
+																"character": 12
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"BOTTOM_LEFT\""
+													},
+													{
+														"id": 188,
+														"name": "bottomRight",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 19,
+																"character": 13
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"BOTTOM_RIGHT\""
+													},
+													{
+														"id": 189,
+														"name": "bottomStart",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 20,
+																"character": 13
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"BOTTOM_START\""
+													},
+													{
+														"id": 190,
+														"name": "topEnd",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 21,
+																"character": 8
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"TOP_END\""
+													},
+													{
+														"id": 191,
+														"name": "topLeft",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 22,
+																"character": 9
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"TOP_LEFT\""
+													},
+													{
+														"id": 192,
+														"name": "topRight",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 23,
+																"character": 10
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"TOP_RIGHT\""
+													},
+													{
+														"id": 193,
+														"name": "topStart",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "menu-surface.tsx",
+																"line": 24,
+																"character": 10
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"TOP_START\""
+													}
+												],
+												"groups": [
+													{
+														"title": "Variables",
+														"kind": 32,
+														"children": [
+															186,
+															187,
+															188,
+															189,
+															190,
+															191,
+															192,
+															193
+														]
+													}
+												],
+												"sources": [
+													{
+														"fileName": "menu-surface.tsx",
+														"line": 28,
+														"character": 21
+													}
+												]
+											}
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "menu-surface.tsx",
+							"line": 27,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 173,
 					"name": "ANCHOR_CORNER_MAP",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -7486,7 +7819,7 @@
 					},
 					"children": [
 						{
-							"id": 175,
+							"id": 174,
 							"name": "bottomEnd",
 							"kind": 32,
 							"kindString": "Variable",
@@ -7494,7 +7827,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 16,
+									"line": 17,
 									"character": 11
 								}
 							],
@@ -7505,7 +7838,7 @@
 							"defaultValue": "\"BOTTOM_END\""
 						},
 						{
-							"id": 176,
+							"id": 175,
 							"name": "bottomLeft",
 							"kind": 32,
 							"kindString": "Variable",
@@ -7513,7 +7846,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 17,
+									"line": 18,
 									"character": 12
 								}
 							],
@@ -7524,27 +7857,8 @@
 							"defaultValue": "\"BOTTOM_LEFT\""
 						},
 						{
-							"id": 177,
+							"id": 176,
 							"name": "bottomRight",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "menu-surface.tsx",
-									"line": 18,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							},
-							"defaultValue": "\"BOTTOM_RIGHT\""
-						},
-						{
-							"id": 178,
-							"name": "bottomStart",
 							"kind": 32,
 							"kindString": "Variable",
 							"flags": {},
@@ -7559,11 +7873,11 @@
 								"type": "intrinsic",
 								"name": "string"
 							},
-							"defaultValue": "\"BOTTOM_START\""
+							"defaultValue": "\"BOTTOM_RIGHT\""
 						},
 						{
-							"id": 179,
-							"name": "topEnd",
+							"id": 177,
+							"name": "bottomStart",
 							"kind": 32,
 							"kindString": "Variable",
 							"flags": {},
@@ -7571,6 +7885,25 @@
 								{
 									"fileName": "menu-surface.tsx",
 									"line": 20,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"BOTTOM_START\""
+						},
+						{
+							"id": 178,
+							"name": "topEnd",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "menu-surface.tsx",
+									"line": 21,
 									"character": 8
 								}
 							],
@@ -7581,7 +7914,7 @@
 							"defaultValue": "\"TOP_END\""
 						},
 						{
-							"id": 180,
+							"id": 179,
 							"name": "topLeft",
 							"kind": 32,
 							"kindString": "Variable",
@@ -7589,7 +7922,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 21,
+									"line": 22,
 									"character": 9
 								}
 							],
@@ -7600,7 +7933,7 @@
 							"defaultValue": "\"TOP_LEFT\""
 						},
 						{
-							"id": 181,
+							"id": 180,
 							"name": "topRight",
 							"kind": 32,
 							"kindString": "Variable",
@@ -7608,7 +7941,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 22,
+									"line": 23,
 									"character": 10
 								}
 							],
@@ -7619,7 +7952,7 @@
 							"defaultValue": "\"TOP_RIGHT\""
 						},
 						{
-							"id": 182,
+							"id": 181,
 							"name": "topStart",
 							"kind": 32,
 							"kindString": "Variable",
@@ -7627,7 +7960,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 23,
+									"line": 24,
 									"character": 10
 								}
 							],
@@ -7643,21 +7976,21 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
+								174,
 								175,
 								176,
 								177,
 								178,
 								179,
 								180,
-								181,
-								182
+								181
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 15,
+							"line": 16,
 							"character": 23
 						}
 					],
@@ -7686,22 +8019,29 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						183
+						194
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						186,
-						184
+						197,
+						195
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						182
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						174
+						173
 					]
 				}
 			],
@@ -7719,8 +8059,8 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
-				363,
-				188,
+				378,
+				199,
 				1
 			]
 		}

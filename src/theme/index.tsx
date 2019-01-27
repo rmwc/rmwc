@@ -5,6 +5,7 @@ import { toDashCase } from '@rmwc/base/utils/strings';
 import { getAutoColorsForTheme } from './utils';
 import { parseThemeOptions } from '@rmwc/base/withTheme';
 import { wrapChild } from '@rmwc/base/utils/wrap-child';
+import { MergeInterfacesT } from '@rmwc/base/utils/merge-interfaces';
 
 const ThemeRoot = componentFactory<{}>({
   displayName: 'ThemeRoot',
@@ -21,7 +22,11 @@ export interface ThemeProps {
 /**
  * A Theme Component.
  */
-export const Theme = ({ use, wrap, ...rest }: ThemeProps & ComponentProps) => {
+export const Theme = ({
+  use,
+  wrap,
+  ...rest
+}: MergeInterfacesT<ThemeProps, ComponentProps>) => {
   if (wrap) {
     return wrapChild({ ...rest, className: parseThemeOptions(use).join(' ') });
   }

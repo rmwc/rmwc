@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 366,
+			"id": 363,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22,7 +22,7 @@
 			]
 		},
 		{
-			"id": 226,
+			"id": 224,
 			"name": "\"tab\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -32,7 +32,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/tabs/tab.tsx",
 			"children": [
 				{
-					"id": 227,
+					"id": 225,
 					"name": "TabProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -41,7 +41,7 @@
 					},
 					"children": [
 						{
-							"id": 229,
+							"id": 227,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -65,7 +65,7 @@
 							}
 						},
 						{
-							"id": 230,
+							"id": 228,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -89,7 +89,7 @@
 							}
 						},
 						{
-							"id": 228,
+							"id": 226,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -113,7 +113,7 @@
 							}
 						},
 						{
-							"id": 233,
+							"id": 231,
 							"name": "onInteraction",
 							"kind": 1024,
 							"kindString": "Property",
@@ -150,7 +150,7 @@
 							}
 						},
 						{
-							"id": 232,
+							"id": 230,
 							"name": "restrictIndicator",
 							"kind": 1024,
 							"kindString": "Property",
@@ -187,7 +187,7 @@
 							}
 						},
 						{
-							"id": 231,
+							"id": 229,
 							"name": "stacked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -229,12 +229,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								229,
-								230,
+								227,
 								228,
-								233,
-								232,
-								231
+								226,
+								231,
+								230,
+								229
 							]
 						}
 					],
@@ -247,7 +247,7 @@
 					]
 				},
 				{
-					"id": 239,
+					"id": 237,
 					"name": "Tab",
 					"kind": 32,
 					"kindString": "Variable",
@@ -278,7 +278,69 @@
 											{
 												"type": "reference",
 												"name": "TabProps",
-												"id": 227
+												"id": 225
+											},
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 238,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 239,
+															"name": "contextApi",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "tab-bar-context.tsx",
+																	"line": 17,
+																	"character": 39
+																}
+															],
+															"type": {
+																"type": "reference",
+																"name": "TabBarContextT",
+																"id": 2
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																239
+															]
+														}
+													]
+												}
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TabProps",
+												"id": 225
 											},
 											{
 												"type": "reflection",
@@ -323,77 +385,15 @@
 												}
 											}
 										]
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
-							},
-							{
-								"type": "reference",
-								"name": "FunctionComponent",
-								"typeArguments": [
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reference",
-												"name": "TabProps",
-												"id": 227
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 242,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 243,
-															"name": "contextApi",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {
-																"isOptional": true
-															},
-															"sources": [
-																{
-																	"fileName": "tab-bar-context.tsx",
-																	"line": 17,
-																	"character": 39
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "TabBarContextT",
-																"id": 2
-															}
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																243
-															]
-														}
-													]
-												}
-											}
-										]
 									}
 								]
 							}
 						]
 					},
-					"defaultValue": " withTabBarContext()<TabProps>(\n  class extends FoundationComponent<\n    TabProps & { contextApi?: TabBarContextT }\n  > {\n    static displayName = 'Tab';\n\n    _id = randomId('tab');\n    root = this.createElement('root');\n    tabIndicator: TabIndicator | null = null;\n    content: HTMLDivElement | null = null;\n    rippleSurfaceApi: RippleSurface | null = null;\n\n    constructor(props: TabProps & { contextApi?: TabBarContextT }) {\n      super(props);\n      this.props.contextApi && this.props.contextApi.registerTab(this);\n      this.handleClick = this.handleClick.bind(this);\n    }\n\n    componentWillUnmount() {\n      this.props.contextApi && this.props.contextApi.unregisterTab(this);\n    }\n\n    get id() {\n      return this.props.id\n        ? this.props.id\n        : (this as any)._reactInternalFiber.key || this._id;\n    }\n\n    getDefaultFoundation() {\n      return new MDCTabFoundation(\n        /** @type {!MDCTabAdapter} */ ({\n          setAttr: (attr: string, value: any) => this.root.setProp(attr, value),\n          addClass: (className: string) => this.root.addClass(className),\n          removeClass: (className: string) => this.root.removeClass(className),\n          hasClass: (className: string) => this.root.hasClass(className),\n          activateIndicator: (previousIndicatorClientRect: ClientRect) =>\n            this.tabIndicator &&\n            this.tabIndicator.activate(previousIndicatorClientRect),\n          deactivateIndicator: () =>\n            this.tabIndicator && this.tabIndicator.deactivate(),\n          notifyInteracted: () => {\n            const evt = this.emit(\n              'onInteraction',\n              { tabId: this.id },\n              true /* bubble */\n            );\n\n            this.props.contextApi &&\n              this.props.contextApi.onTabInteraction(evt);\n          },\n          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,\n          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,\n          getContentOffsetLeft: () => this.content && this.content.offsetLeft,\n          getContentOffsetWidth: () => this.content && this.content.offsetWidth,\n          focus: () => this.root.ref && this.root.ref.focus()\n        })\n      );\n    }\n\n    handleClick(evt: React.MouseEvent) {\n      this.props.onClick && this.props.onClick(evt);\n      this.foundation.handleClick(evt);\n    }\n\n    get active() {\n      return this.foundation.isActive();\n    }\n\n    set focusOnActivate(focusOnActivate: string) {\n      this.foundation.setFocusOnActivate(focusOnActivate);\n    }\n\n    activate(computeIndicatorClientRect: ClientRect) {\n      this.foundation.activate(computeIndicatorClientRect);\n    }\n\n    deactivate() {\n      this.foundation.deactivate();\n    }\n\n    computeIndicatorClientRect() {\n      return this.tabIndicator && this.tabIndicator.computeContentClientRect();\n    }\n\n    computeDimensions() {\n      return this.foundation.computeDimensions();\n    }\n\n    focus() {\n      this.root.ref && this.root.ref.focus();\n    }\n\n    render() {\n      const {\n        children,\n        label,\n        icon,\n        stacked,\n        restrictIndicator,\n        contextApi,\n        ...rest\n      } = this.props;\n      return (\n        <TabRoot\n          {...this.root.props(rest)}\n          onClick={this.handleClick}\n          stacked={stacked}\n          ref={this.root.setRef}\n          ripple={{\n            surface: this.rippleSurfaceApi\n          }}\n        >\n          <div className=\"mdc-tab__content\" ref={el => (this.content = el)}>\n            {!!icon && <TabIcon icon={icon} />}\n            {(children !== undefined || label !== undefined) && (\n              <span className=\"mdc-tab__text-label\">\n                {label}\n                {children}\n              </span>\n            )}\n            {!!restrictIndicator && (\n              <TabIndicator\n                ref={(api: TabIndicator) => (this.tabIndicator = api)}\n              />\n            )}\n          </div>\n          {!restrictIndicator && (\n            <TabIndicator\n              ref={(api: TabIndicator) => (this.tabIndicator = api)}\n            />\n          )}\n          <RippleSurface\n            ref={(rippleSurfaceApi: RippleSurface) =>\n              (this.rippleSurfaceApi = rippleSurfaceApi)\n            }\n            className=\"mdc-tab__ripple\"\n          />\n        </TabRoot>\n      );\n    }\n  }\n)"
+					"defaultValue": " withTabBarContext()<TabProps>(\n  class extends FoundationComponent<\n    TabProps & { contextApi?: TabBarContextT }\n  > {\n    static displayName = 'Tab';\n\n    _id = randomId('tab');\n    root = this.createElement('root');\n    tabIndicator: TabIndicator | null = null;\n    content: HTMLDivElement | null = null;\n    rippleSurfaceApi: RippleSurface | null = null;\n\n    constructor(props: TabProps & { contextApi?: TabBarContextT }) {\n      super(props);\n      this.props.contextApi && this.props.contextApi.registerTab(this);\n      this.handleClick = this.handleClick.bind(this);\n    }\n\n    componentWillUnmount() {\n      this.props.contextApi && this.props.contextApi.unregisterTab(this);\n    }\n\n    get id() {\n      return this.props.id\n        ? this.props.id\n        : (this as any)._reactInternalFiber.key || this._id;\n    }\n\n    getDefaultFoundation() {\n      return new MDCTabFoundation(\n        /** @type {!MDCTabAdapter} */ ({\n          setAttr: (attr: string, value: any) =>\n            this.root.setProp(attr as any, value),\n          addClass: (className: string) => this.root.addClass(className),\n          removeClass: (className: string) => this.root.removeClass(className),\n          hasClass: (className: string) => this.root.hasClass(className),\n          activateIndicator: (previousIndicatorClientRect: ClientRect) =>\n            this.tabIndicator &&\n            this.tabIndicator.activate(previousIndicatorClientRect),\n          deactivateIndicator: () =>\n            this.tabIndicator && this.tabIndicator.deactivate(),\n          notifyInteracted: () => {\n            const evt = this.emit(\n              'onInteraction',\n              { tabId: this.id },\n              true /* bubble */\n            );\n\n            this.props.contextApi &&\n              this.props.contextApi.onTabInteraction(evt);\n          },\n          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,\n          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,\n          getContentOffsetLeft: () => this.content && this.content.offsetLeft,\n          getContentOffsetWidth: () => this.content && this.content.offsetWidth,\n          focus: () => this.root.ref && this.root.ref.focus()\n        })\n      );\n    }\n\n    handleClick(evt: React.MouseEvent) {\n      this.props.onClick && this.props.onClick(evt);\n      this.foundation.handleClick(evt);\n    }\n\n    get active() {\n      return this.foundation.isActive();\n    }\n\n    set focusOnActivate(focusOnActivate: string) {\n      this.foundation.setFocusOnActivate(focusOnActivate);\n    }\n\n    activate(computeIndicatorClientRect: ClientRect) {\n      this.foundation.activate(computeIndicatorClientRect);\n    }\n\n    deactivate() {\n      this.foundation.deactivate();\n    }\n\n    computeIndicatorClientRect() {\n      return this.tabIndicator && this.tabIndicator.computeContentClientRect();\n    }\n\n    computeDimensions() {\n      return this.foundation.computeDimensions();\n    }\n\n    focus() {\n      this.root.ref && this.root.ref.focus();\n    }\n\n    render() {\n      const {\n        children,\n        label,\n        icon,\n        stacked,\n        restrictIndicator,\n        contextApi,\n        ...rest\n      } = this.props;\n      return (\n        <TabRoot\n          {...this.root.props(rest)}\n          onClick={this.handleClick}\n          stacked={stacked}\n          ref={this.root.setRef}\n          ripple={{\n            surface: this.rippleSurfaceApi\n          }}\n        >\n          <div className=\"mdc-tab__content\" ref={el => (this.content = el)}>\n            {!!icon && <TabIcon icon={icon} />}\n            {(children !== undefined || label !== undefined) && (\n              <span className=\"mdc-tab__text-label\">\n                {label}\n                {children}\n              </span>\n            )}\n            {!!restrictIndicator && (\n              <TabIndicator\n                ref={(api: TabIndicator) => (this.tabIndicator = api)}\n              />\n            )}\n          </div>\n          {!restrictIndicator && (\n            <TabIndicator\n              ref={(api: TabIndicator) => (this.tabIndicator = api)}\n            />\n          )}\n          <RippleSurface\n            ref={(rippleSurfaceApi: RippleSurface) =>\n              (this.rippleSurfaceApi = rippleSurfaceApi)\n            }\n            className=\"mdc-tab__ripple\"\n          />\n        </TabRoot>\n      );\n    }\n  }\n)"
 				},
 				{
-					"id": 237,
+					"id": 235,
 					"name": "TabIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -421,7 +421,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 238,
+											"id": 236,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -445,7 +445,7 @@
 					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'TabIcon',\n  tag: Icon,\n  classNames: ['mdc-tab__icon']\n})"
 				},
 				{
-					"id": 234,
+					"id": 232,
 					"name": "TabRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -473,7 +473,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 235,
+													"id": 233,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -516,7 +516,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 236,
+													"id": 234,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -555,16 +555,16 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						227
+						225
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						239,
 						237,
-						234
+						235,
+						232
 					]
 				}
 			],
@@ -577,7 +577,7 @@
 			]
 		},
 		{
-			"id": 244,
+			"id": 242,
 			"name": "\"tab-bar\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -587,7 +587,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/tabs/tab-bar.tsx",
 			"children": [
 				{
-					"id": 253,
+					"id": 251,
 					"name": "TabBar",
 					"kind": 128,
 					"kindString": "Class",
@@ -599,7 +599,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 297,
+							"id": 295,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -610,7 +610,7 @@
 							}
 						},
 						{
-							"id": 328,
+							"id": 325,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -619,7 +619,7 @@
 					],
 					"children": [
 						{
-							"id": 276,
+							"id": 274,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -628,14 +628,14 @@
 							},
 							"signatures": [
 								{
-									"id": 277,
+									"id": 275,
 									"name": "new TabBar",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 278,
+											"id": 276,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -643,14 +643,14 @@
 											"type": {
 												"type": "reference",
 												"name": "TabBarProps",
-												"id": 245
+												"id": 243
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "TabBar",
-										"id": 253
+										"id": 251
 									},
 									"overwrites": {
 										"type": "reference",
@@ -671,32 +671,7 @@
 							}
 						},
 						{
-							"id": 304,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
-						},
-						{
-							"id": 300,
+							"id": 298,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -706,28 +681,28 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 301,
+									"id": 299,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 302,
+											"id": 300,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 303,
+													"id": 301,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -757,7 +732,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -769,7 +744,7 @@
 							}
 						},
 						{
-							"id": 299,
+							"id": 297,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -779,7 +754,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -794,7 +769,7 @@
 							}
 						},
 						{
-							"id": 255,
+							"id": 253,
 							"name": "root",
 							"kind": 1024,
 							"kindString": "Property",
@@ -813,8 +788,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -825,7 +800,7 @@
 							"defaultValue": " this.createElement('root')"
 						},
 						{
-							"id": 257,
+							"id": 255,
 							"name": "tabList",
 							"kind": 1024,
 							"kindString": "Property",
@@ -849,7 +824,7 @@
 							"defaultValue": " []"
 						},
 						{
-							"id": 256,
+							"id": 254,
 							"name": "tabScroller",
 							"kind": 1024,
 							"kindString": "Property",
@@ -880,7 +855,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 254,
+							"id": 252,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -902,7 +877,7 @@
 							"defaultValue": "\"TabBar\""
 						},
 						{
-							"id": 298,
+							"id": 296,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -913,7 +888,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -928,7 +903,7 @@
 							}
 						},
 						{
-							"id": 344,
+							"id": 341,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -938,7 +913,7 @@
 							},
 							"signatures": [
 								{
-									"id": 345,
+									"id": 342,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -984,7 +959,7 @@
 							}
 						},
 						{
-							"id": 350,
+							"id": 347,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -994,7 +969,7 @@
 							},
 							"signatures": [
 								{
-									"id": 351,
+									"id": 348,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1019,7 +994,7 @@
 									},
 									"parameters": [
 										{
-											"id": 352,
+											"id": 349,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1035,7 +1010,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -1043,7 +1018,7 @@
 											}
 										},
 										{
-											"id": 353,
+											"id": 350,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1077,7 +1052,7 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 356,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1087,7 +1062,7 @@
 							},
 							"signatures": [
 								{
-									"id": 360,
+									"id": 357,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1112,7 +1087,7 @@
 									},
 									"parameters": [
 										{
-											"id": 361,
+											"id": 358,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1128,7 +1103,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -1136,7 +1111,7 @@
 											}
 										},
 										{
-											"id": 362,
+											"id": 359,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1163,7 +1138,7 @@
 											}
 										},
 										{
-											"id": 363,
+											"id": 360,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1197,7 +1172,7 @@
 							}
 						},
 						{
-							"id": 334,
+							"id": 331,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1207,7 +1182,7 @@
 							},
 							"signatures": [
 								{
-									"id": 335,
+									"id": 332,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1217,7 +1192,7 @@
 									},
 									"parameters": [
 										{
-											"id": 336,
+											"id": 333,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1228,7 +1203,7 @@
 											}
 										},
 										{
-											"id": 337,
+											"id": 334,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1262,7 +1237,7 @@
 							}
 						},
 						{
-							"id": 279,
+							"id": 277,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1271,7 +1246,7 @@
 							},
 							"signatures": [
 								{
-									"id": 280,
+									"id": 278,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1299,7 +1274,7 @@
 							}
 						},
 						{
-							"id": 305,
+							"id": 302,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1308,14 +1283,14 @@
 							},
 							"signatures": [
 								{
-									"id": 306,
+									"id": 303,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 307,
+											"id": 304,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1327,7 +1302,7 @@
 													{
 														"type": "reference",
 														"name": "TabBarProps",
-														"id": 245
+														"id": 243
 													}
 												]
 											}
@@ -1350,7 +1325,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -1364,7 +1339,7 @@
 							}
 						},
 						{
-							"id": 342,
+							"id": 339,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1374,7 +1349,7 @@
 							},
 							"signatures": [
 								{
-									"id": 343,
+									"id": 340,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1420,7 +1395,7 @@
 							}
 						},
 						{
-							"id": 346,
+							"id": 343,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1430,7 +1405,7 @@
 							},
 							"signatures": [
 								{
-									"id": 347,
+									"id": 344,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1455,7 +1430,7 @@
 									},
 									"parameters": [
 										{
-											"id": 348,
+											"id": 345,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1471,7 +1446,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -1479,7 +1454,7 @@
 											}
 										},
 										{
-											"id": 349,
+											"id": 346,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1513,7 +1488,7 @@
 							}
 						},
 						{
-							"id": 308,
+							"id": 305,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1522,7 +1497,7 @@
 							},
 							"signatures": [
 								{
-									"id": 309,
+									"id": 306,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1544,7 +1519,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -1558,7 +1533,7 @@
 							}
 						},
 						{
-							"id": 354,
+							"id": 351,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1568,7 +1543,7 @@
 							},
 							"signatures": [
 								{
-									"id": 355,
+									"id": 352,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1593,7 +1568,7 @@
 									},
 									"parameters": [
 										{
-											"id": 356,
+											"id": 353,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1609,7 +1584,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -1617,7 +1592,7 @@
 											}
 										},
 										{
-											"id": 357,
+											"id": 354,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1644,7 +1619,7 @@
 											}
 										},
 										{
-											"id": 358,
+											"id": 355,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1678,7 +1653,7 @@
 							}
 						},
 						{
-							"id": 310,
+							"id": 307,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1687,14 +1662,14 @@
 							},
 							"signatures": [
 								{
-									"id": 311,
+									"id": 308,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 312,
+											"id": 309,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1707,7 +1682,7 @@
 									],
 									"parameters": [
 										{
-											"id": 313,
+											"id": 310,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1723,8 +1698,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -1741,7 +1716,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -1751,7 +1726,7 @@
 							}
 						},
 						{
-							"id": 323,
+							"id": 320,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1760,7 +1735,7 @@
 							},
 							"signatures": [
 								{
-									"id": 324,
+									"id": 321,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1770,7 +1745,7 @@
 									},
 									"parameters": [
 										{
-											"id": 325,
+											"id": 322,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1781,7 +1756,7 @@
 											}
 										},
 										{
-											"id": 326,
+											"id": 323,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1792,7 +1767,7 @@
 											}
 										},
 										{
-											"id": 327,
+											"id": 324,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1823,7 +1798,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -1833,7 +1808,7 @@
 							}
 						},
 						{
-							"id": 281,
+							"id": 279,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1842,7 +1817,7 @@
 							},
 							"signatures": [
 								{
-									"id": 282,
+									"id": 280,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1860,7 +1835,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 82,
+									"line": 80,
 									"character": 22
 								}
 							],
@@ -1870,7 +1845,7 @@
 							}
 						},
 						{
-							"id": 338,
+							"id": 335,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1880,7 +1855,7 @@
 							},
 							"signatures": [
 								{
-									"id": 339,
+									"id": 336,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1891,7 +1866,7 @@
 									},
 									"parameters": [
 										{
-											"id": 340,
+											"id": 337,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1907,7 +1882,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -1915,7 +1890,7 @@
 											}
 										},
 										{
-											"id": 341,
+											"id": 338,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1974,7 +1949,7 @@
 							}
 						},
 						{
-							"id": 287,
+							"id": 285,
 							"name": "getTabElements",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1983,7 +1958,7 @@
 							},
 							"signatures": [
 								{
-									"id": 288,
+									"id": 286,
 									"name": "getTabElements",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2009,13 +1984,13 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 147,
+									"line": 145,
 									"character": 16
 								}
 							]
 						},
 						{
-							"id": 292,
+							"id": 290,
 							"name": "handleKeyDown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2024,14 +1999,14 @@
 							},
 							"signatures": [
 								{
-									"id": 293,
+									"id": 291,
 									"name": "handleKeyDown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 294,
+											"id": 292,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2051,13 +2026,13 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 158,
+									"line": 156,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 289,
+							"id": 287,
 							"name": "handleTabInteraction",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2066,14 +2041,14 @@
 							},
 							"signatures": [
 								{
-									"id": 290,
+									"id": 288,
 									"name": "handleTabInteraction",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 291,
+											"id": 289,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2093,13 +2068,13 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 154,
+									"line": 152,
 									"character": 22
 								}
 							]
 						},
 						{
-							"id": 295,
+							"id": 293,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2108,7 +2083,7 @@
 							},
 							"signatures": [
 								{
-									"id": 296,
+									"id": 294,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2122,13 +2097,13 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 163,
+									"line": 161,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 329,
+							"id": 326,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2138,7 +2113,7 @@
 							},
 							"signatures": [
 								{
-									"id": 330,
+									"id": 327,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2149,7 +2124,7 @@
 									},
 									"parameters": [
 										{
-											"id": 331,
+											"id": 328,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2165,7 +2140,7 @@
 															{
 																"type": "reference",
 																"name": "TabBarProps",
-																"id": 245
+																"id": 243
 															}
 														]
 													}
@@ -2173,7 +2148,7 @@
 											}
 										},
 										{
-											"id": 332,
+											"id": 329,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2200,7 +2175,7 @@
 											}
 										},
 										{
-											"id": 333,
+											"id": 330,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2234,7 +2209,7 @@
 							}
 						},
 						{
-							"id": 283,
+							"id": 281,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2243,14 +2218,14 @@
 							},
 							"signatures": [
 								{
-									"id": 284,
+									"id": 282,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 285,
+											"id": 283,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2258,11 +2233,11 @@
 											"type": {
 												"type": "reference",
 												"name": "TabBarProps",
-												"id": 245
+												"id": 243
 											}
 										},
 										{
-											"id": 286,
+											"id": 284,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2270,7 +2245,7 @@
 											"type": {
 												"type": "reference",
 												"name": "TabBarProps",
-												"id": 245
+												"id": 243
 											}
 										}
 									],
@@ -2287,7 +2262,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 141,
+									"line": 139,
 									"character": 6
 								}
 							],
@@ -2297,7 +2272,7 @@
 							}
 						},
 						{
-							"id": 316,
+							"id": 313,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2306,14 +2281,14 @@
 							},
 							"signatures": [
 								{
-									"id": 317,
+									"id": 314,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 318,
+											"id": 315,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2324,7 +2299,7 @@
 											}
 										},
 										{
-											"id": 319,
+											"id": 316,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2335,7 +2310,7 @@
 											}
 										},
 										{
-											"id": 320,
+											"id": 317,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2343,14 +2318,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 321,
+													"id": 318,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 322,
+															"id": 319,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2364,7 +2339,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -2385,7 +2360,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -2395,7 +2370,7 @@
 							}
 						},
 						{
-							"id": 314,
+							"id": 311,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2404,7 +2379,7 @@
 							},
 							"signatures": [
 								{
-									"id": 315,
+									"id": 312,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2422,7 +2397,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -2432,7 +2407,7 @@
 							}
 						},
 						{
-							"id": 258,
+							"id": 256,
 							"name": "contextApi",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -2441,7 +2416,7 @@
 							},
 							"children": [
 								{
-									"id": 259,
+									"id": 257,
 									"name": "onTabInteraction",
 									"kind": 64,
 									"kindString": "Function",
@@ -2450,14 +2425,14 @@
 									},
 									"signatures": [
 										{
-											"id": 260,
+											"id": 258,
 											"name": "onTabInteraction",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 261,
+													"id": 259,
 													"name": "evt",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2483,7 +2458,7 @@
 									]
 								},
 								{
-									"id": 262,
+									"id": 260,
 									"name": "registerTab",
 									"kind": 64,
 									"kindString": "Function",
@@ -2492,14 +2467,14 @@
 									},
 									"signatures": [
 										{
-											"id": 263,
+											"id": 261,
 											"name": "registerTab",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 264,
+													"id": 262,
 													"name": "tab",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2517,7 +2492,69 @@
 																			{
 																				"type": "reference",
 																				"name": "TabProps",
-																				"id": 227
+																				"id": 225
+																			},
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 263,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {},
+																					"children": [
+																						{
+																							"id": 264,
+																							"name": "contextApi",
+																							"kind": 32,
+																							"kindString": "Variable",
+																							"flags": {
+																								"isOptional": true
+																							},
+																							"sources": [
+																								{
+																									"fileName": "tab-bar-context.tsx",
+																									"line": 17,
+																									"character": 39
+																								}
+																							],
+																							"type": {
+																								"type": "reference",
+																								"name": "TabBarContextT",
+																								"id": 2
+																							}
+																						}
+																					],
+																					"groups": [
+																						{
+																							"title": "Variables",
+																							"kind": 32,
+																							"children": [
+																								264
+																							]
+																						}
+																					]
+																				}
+																			}
+																		]
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "FunctionComponent",
+																"typeArguments": [
+																	{
+																		"type": "intersection",
+																		"types": [
+																			{
+																				"type": "reference",
+																				"name": "TabProps",
+																				"id": 225
 																			},
 																			{
 																				"type": "reflection",
@@ -2562,16 +2599,55 @@
 																				}
 																			}
 																		]
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
 																	}
 																]
-															},
+															}
+														]
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "tab-bar.tsx",
+											"line": 49,
+											"character": 15
+										}
+									]
+								},
+								{
+									"id": 267,
+									"name": "unregisterTab",
+									"kind": 64,
+									"kindString": "Function",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 268,
+											"name": "unregisterTab",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 269,
+													"name": "tab",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "union",
+														"types": [
 															{
 																"type": "reference",
-																"name": "FunctionComponent",
+																"name": "ComponentClass",
 																"typeArguments": [
 																	{
 																		"type": "intersection",
@@ -2579,19 +2655,19 @@
 																			{
 																				"type": "reference",
 																				"name": "TabProps",
-																				"id": 227
+																				"id": 225
 																			},
 																			{
 																				"type": "reflection",
 																				"declaration": {
-																					"id": 267,
+																					"id": 270,
 																					"name": "__type",
 																					"kind": 65536,
 																					"kindString": "Type literal",
 																					"flags": {},
 																					"children": [
 																						{
-																							"id": 268,
+																							"id": 271,
 																							"name": "contextApi",
 																							"kind": 32,
 																							"kindString": "Variable",
@@ -2617,62 +2693,23 @@
 																							"title": "Variables",
 																							"kind": 32,
 																							"children": [
-																								268
+																								271
 																							]
 																						}
 																					]
 																				}
 																			}
 																		]
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
 																	}
 																]
-															}
-														]
-													}
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											}
-										}
-									],
-									"sources": [
-										{
-											"fileName": "tab-bar.tsx",
-											"line": 49,
-											"character": 15
-										}
-									]
-								},
-								{
-									"id": 269,
-									"name": "unregisterTab",
-									"kind": 64,
-									"kindString": "Function",
-									"flags": {
-										"isExported": true
-									},
-									"signatures": [
-										{
-											"id": 270,
-											"name": "unregisterTab",
-											"kind": 4096,
-											"kindString": "Call signature",
-											"flags": {},
-											"parameters": [
-												{
-													"id": 271,
-													"name": "tab",
-													"kind": 32768,
-													"kindString": "Parameter",
-													"flags": {},
-													"type": {
-														"type": "union",
-														"types": [
+															},
 															{
 																"type": "reference",
-																"name": "ComponentClass",
+																"name": "FunctionComponent",
 																"typeArguments": [
 																	{
 																		"type": "intersection",
@@ -2680,7 +2717,7 @@
 																			{
 																				"type": "reference",
 																				"name": "TabProps",
-																				"id": 227
+																				"id": 225
 																			},
 																			{
 																				"type": "reflection",
@@ -2725,68 +2762,6 @@
 																				}
 																			}
 																		]
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
-																	}
-																]
-															},
-															{
-																"type": "reference",
-																"name": "FunctionComponent",
-																"typeArguments": [
-																	{
-																		"type": "intersection",
-																		"types": [
-																			{
-																				"type": "reference",
-																				"name": "TabProps",
-																				"id": 227
-																			},
-																			{
-																				"type": "reflection",
-																				"declaration": {
-																					"id": 274,
-																					"name": "__type",
-																					"kind": 65536,
-																					"kindString": "Type literal",
-																					"flags": {},
-																					"children": [
-																						{
-																							"id": 275,
-																							"name": "contextApi",
-																							"kind": 32,
-																							"kindString": "Variable",
-																							"flags": {
-																								"isOptional": true
-																							},
-																							"sources": [
-																								{
-																									"fileName": "tab-bar-context.tsx",
-																									"line": 17,
-																									"character": 39
-																								}
-																							],
-																							"type": {
-																								"type": "reference",
-																								"name": "TabBarContextT",
-																								"id": 2
-																							}
-																						}
-																					],
-																					"groups": [
-																						{
-																							"title": "Variables",
-																							"kind": 32,
-																							"children": [
-																								275
-																							]
-																						}
-																					]
-																				}
-																			}
-																		]
 																	}
 																]
 															}
@@ -2817,9 +2792,9 @@
 									"title": "Functions",
 									"kind": 64,
 									"children": [
-										259,
-										262,
-										269
+										257,
+										260,
+										267
 									]
 								}
 							],
@@ -2841,56 +2816,55 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								276
+								274
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								304,
-								300,
-								299,
+								298,
+								297,
+								253,
 								255,
-								257,
-								256,
 								254,
-								298
+								252,
+								296
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								344,
-								350,
-								359,
-								334,
-								279,
+								341,
+								347,
+								356,
+								331,
+								277,
+								302,
+								339,
+								343,
 								305,
-								342,
-								346,
-								308,
-								354,
-								310,
-								323,
-								281,
-								338,
+								351,
+								307,
+								320,
+								279,
+								335,
+								285,
+								290,
 								287,
-								292,
-								289,
-								295,
-								329,
-								283,
-								316,
-								314
+								293,
+								326,
+								281,
+								313,
+								311
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								258
+								256
 							]
 						}
 					],
@@ -2909,14 +2883,14 @@
 								{
 									"type": "reference",
 									"name": "TabBarProps",
-									"id": 245
+									"id": 243
 								}
 							]
 						}
 					]
 				},
 				{
-					"id": 245,
+					"id": 243,
 					"name": "TabBarProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2928,7 +2902,7 @@
 					},
 					"children": [
 						{
-							"id": 252,
+							"id": 250,
 							"name": "activeTabIndex",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2961,7 +2935,7 @@
 							}
 						},
 						{
-							"id": 246,
+							"id": 244,
 							"name": "onActivate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2989,21 +2963,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 247,
+											"id": 245,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 248,
+													"id": 246,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 249,
+															"id": 247,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -3015,14 +2989,14 @@
 																	{
 																		"type": "reflection",
 																		"declaration": {
-																			"id": 250,
+																			"id": 248,
 																			"name": "__type",
 																			"kind": 65536,
 																			"kindString": "Type literal",
 																			"flags": {},
 																			"children": [
 																				{
-																					"id": 251,
+																					"id": 249,
 																					"name": "index",
 																					"kind": 32,
 																					"kindString": "Variable",
@@ -3045,7 +3019,7 @@
 																					"title": "Variables",
 																					"kind": 32,
 																					"children": [
-																						251
+																						249
 																					]
 																				}
 																			],
@@ -3079,8 +3053,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								252,
-								246
+								250,
+								244
 							]
 						}
 					],
@@ -3093,7 +3067,7 @@
 					]
 				},
 				{
-					"id": 364,
+					"id": 361,
 					"name": "TabBarRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3118,7 +3092,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 365,
+											"id": 362,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3147,21 +3121,21 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						253
+						251
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						245
+						243
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						364
+						361
 					]
 				}
 			],
@@ -3630,7 +3604,7 @@
 			]
 		},
 		{
-			"id": 135,
+			"id": 134,
 			"name": "\"tab-indicator\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3640,7 +3614,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/tabs/tab-indicator.tsx",
 			"children": [
 				{
-					"id": 136,
+					"id": 135,
 					"name": "TabIndicator",
 					"kind": 128,
 					"kindString": "Class",
@@ -3649,7 +3623,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 151,
+							"id": 150,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -3660,7 +3634,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 188,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -3669,7 +3643,7 @@
 					],
 					"children": [
 						{
-							"id": 158,
+							"id": 156,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -3678,14 +3652,14 @@
 							},
 							"signatures": [
 								{
-									"id": 159,
+									"id": 157,
 									"name": "new TabIndicator",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 160,
+											"id": 158,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3699,7 +3673,7 @@
 									"type": {
 										"type": "reference",
 										"name": "TabIndicator",
-										"id": 136
+										"id": 135
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -3710,8 +3684,8 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 19
+									"line": 205,
+									"character": 64
 								}
 							],
 							"inheritedFrom": {
@@ -3720,32 +3694,7 @@
 							}
 						},
 						{
-							"id": 157,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
-						},
-						{
-							"id": 139,
+							"id": 138,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3764,8 +3713,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -3776,7 +3725,7 @@
 							"defaultValue": " this.createElement('content')"
 						},
 						{
-							"id": 153,
+							"id": 152,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3786,28 +3735,28 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 154,
+									"id": 153,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 155,
+											"id": 154,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 156,
+													"id": 155,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -3837,7 +3786,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -3849,7 +3798,7 @@
 							}
 						},
 						{
-							"id": 152,
+							"id": 151,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3859,7 +3808,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -3874,7 +3823,7 @@
 							}
 						},
 						{
-							"id": 138,
+							"id": 137,
 							"name": "root",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3893,8 +3842,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -3905,7 +3854,7 @@
 							"defaultValue": " this.createElement('root')"
 						},
 						{
-							"id": 137,
+							"id": 136,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3931,7 +3880,7 @@
 							}
 						},
 						{
-							"id": 206,
+							"id": 204,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3941,7 +3890,7 @@
 							},
 							"signatures": [
 								{
-									"id": 207,
+									"id": 205,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3987,7 +3936,7 @@
 							}
 						},
 						{
-							"id": 212,
+							"id": 210,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3997,7 +3946,7 @@
 							},
 							"signatures": [
 								{
-									"id": 213,
+									"id": 211,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4022,7 +3971,7 @@
 									},
 									"parameters": [
 										{
-											"id": 214,
+											"id": 212,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4045,7 +3994,7 @@
 											}
 										},
 										{
-											"id": 215,
+											"id": 213,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4079,7 +4028,7 @@
 							}
 						},
 						{
-							"id": 221,
+							"id": 219,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4089,7 +4038,7 @@
 							},
 							"signatures": [
 								{
-									"id": 222,
+									"id": 220,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4114,7 +4063,7 @@
 									},
 									"parameters": [
 										{
-											"id": 223,
+											"id": 221,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4137,7 +4086,7 @@
 											}
 										},
 										{
-											"id": 224,
+											"id": 222,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4164,7 +4113,7 @@
 											}
 										},
 										{
-											"id": 225,
+											"id": 223,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4198,7 +4147,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 141,
 							"name": "activate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4207,14 +4156,14 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 142,
 									"name": "activate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 143,
 											"name": "previousIndicatorClientRect",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4240,7 +4189,7 @@
 							]
 						},
 						{
-							"id": 196,
+							"id": 194,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4250,7 +4199,7 @@
 							},
 							"signatures": [
 								{
-									"id": 197,
+									"id": 195,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4260,7 +4209,7 @@
 									},
 									"parameters": [
 										{
-											"id": 198,
+											"id": 196,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4271,7 +4220,7 @@
 											}
 										},
 										{
-											"id": 199,
+											"id": 197,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4305,7 +4254,7 @@
 							}
 						},
 						{
-							"id": 161,
+							"id": 159,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4314,7 +4263,7 @@
 							},
 							"signatures": [
 								{
-									"id": 162,
+									"id": 160,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4336,7 +4285,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 214,
+									"line": 217,
 									"character": 19
 								}
 							],
@@ -4350,7 +4299,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 161,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4359,14 +4308,14 @@
 							},
 							"signatures": [
 								{
-									"id": 164,
+									"id": 162,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 165,
+											"id": 163,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4400,7 +4349,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -4414,7 +4363,7 @@
 							}
 						},
 						{
-							"id": 204,
+							"id": 202,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4424,7 +4373,7 @@
 							},
 							"signatures": [
 								{
-									"id": 205,
+									"id": 203,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4470,7 +4419,7 @@
 							}
 						},
 						{
-							"id": 208,
+							"id": 206,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4480,7 +4429,7 @@
 							},
 							"signatures": [
 								{
-									"id": 209,
+									"id": 207,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4505,7 +4454,7 @@
 									},
 									"parameters": [
 										{
-											"id": 210,
+											"id": 208,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4528,7 +4477,7 @@
 											}
 										},
 										{
-											"id": 211,
+											"id": 209,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4562,7 +4511,7 @@
 							}
 						},
 						{
-							"id": 166,
+							"id": 164,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4571,7 +4520,7 @@
 							},
 							"signatures": [
 								{
-									"id": 167,
+									"id": 165,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4593,7 +4542,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -4607,7 +4556,7 @@
 							}
 						},
 						{
-							"id": 216,
+							"id": 214,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4617,7 +4566,7 @@
 							},
 							"signatures": [
 								{
-									"id": 217,
+									"id": 215,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4642,7 +4591,7 @@
 									},
 									"parameters": [
 										{
-											"id": 218,
+											"id": 216,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4665,7 +4614,7 @@
 											}
 										},
 										{
-											"id": 219,
+											"id": 217,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4692,7 +4641,7 @@
 											}
 										},
 										{
-											"id": 220,
+											"id": 218,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4726,7 +4675,7 @@
 							}
 						},
 						{
-							"id": 147,
+							"id": 146,
 							"name": "computeContentClientRect",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4735,7 +4684,7 @@
 							},
 							"signatures": [
 								{
-									"id": 148,
+									"id": 147,
 									"name": "computeContentClientRect",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4755,7 +4704,7 @@
 							]
 						},
 						{
-							"id": 168,
+							"id": 166,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4764,14 +4713,14 @@
 							},
 							"signatures": [
 								{
-									"id": 169,
+									"id": 167,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 170,
+											"id": 168,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -4784,7 +4733,7 @@
 									],
 									"parameters": [
 										{
-											"id": 171,
+											"id": 169,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4800,8 +4749,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -4818,7 +4767,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -4828,7 +4777,7 @@
 							}
 						},
 						{
-							"id": 145,
+							"id": 144,
 							"name": "deactivate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4837,7 +4786,7 @@
 							},
 							"signatures": [
 								{
-									"id": 146,
+									"id": 145,
 									"name": "deactivate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4857,7 +4806,7 @@
 							]
 						},
 						{
-							"id": 185,
+							"id": 183,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4866,7 +4815,7 @@
 							},
 							"signatures": [
 								{
-									"id": 186,
+									"id": 184,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4876,7 +4825,7 @@
 									},
 									"parameters": [
 										{
-											"id": 187,
+											"id": 185,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4887,7 +4836,7 @@
 											}
 										},
 										{
-											"id": 188,
+											"id": 186,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4898,7 +4847,7 @@
 											}
 										},
 										{
-											"id": 189,
+											"id": 187,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4929,7 +4878,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -4939,7 +4888,7 @@
 							}
 						},
 						{
-							"id": 140,
+							"id": 139,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4948,7 +4897,7 @@
 							},
 							"signatures": [
 								{
-									"id": 141,
+									"id": 140,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4976,7 +4925,7 @@
 							}
 						},
 						{
-							"id": 200,
+							"id": 198,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4986,7 +4935,7 @@
 							},
 							"signatures": [
 								{
-									"id": 201,
+									"id": 199,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4997,7 +4946,7 @@
 									},
 									"parameters": [
 										{
-											"id": 202,
+											"id": 200,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5020,7 +4969,7 @@
 											}
 										},
 										{
-											"id": 203,
+											"id": 201,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5079,7 +5028,7 @@
 							}
 						},
 						{
-							"id": 149,
+							"id": 148,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5088,7 +5037,7 @@
 							},
 							"signatures": [
 								{
-									"id": 150,
+									"id": 149,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5108,7 +5057,7 @@
 							]
 						},
 						{
-							"id": 191,
+							"id": 189,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5118,7 +5067,7 @@
 							},
 							"signatures": [
 								{
-									"id": 192,
+									"id": 190,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5129,7 +5078,7 @@
 									},
 									"parameters": [
 										{
-											"id": 193,
+											"id": 191,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5152,7 +5101,7 @@
 											}
 										},
 										{
-											"id": 194,
+											"id": 192,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5179,7 +5128,7 @@
 											}
 										},
 										{
-											"id": 195,
+											"id": 193,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5213,7 +5162,7 @@
 							}
 						},
 						{
-							"id": 174,
+							"id": 172,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5222,14 +5171,14 @@
 							},
 							"signatures": [
 								{
-									"id": 175,
+									"id": 173,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 176,
+											"id": 174,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5240,7 +5189,7 @@
 											}
 										},
 										{
-											"id": 177,
+											"id": 175,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5266,7 +5215,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 245,
 									"character": 6
 								}
 							],
@@ -5276,7 +5225,7 @@
 							}
 						},
 						{
-							"id": 178,
+							"id": 176,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5285,14 +5234,14 @@
 							},
 							"signatures": [
 								{
-									"id": 179,
+									"id": 177,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 180,
+											"id": 178,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5303,7 +5252,7 @@
 											}
 										},
 										{
-											"id": 181,
+											"id": 179,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5314,7 +5263,7 @@
 											}
 										},
 										{
-											"id": 182,
+											"id": 180,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5322,14 +5271,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 183,
+													"id": 181,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 184,
+															"id": 182,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -5343,7 +5292,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -5364,7 +5313,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -5374,7 +5323,7 @@
 							}
 						},
 						{
-							"id": 172,
+							"id": 170,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5383,7 +5332,7 @@
 							},
 							"signatures": [
 								{
-									"id": 173,
+									"id": 171,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5401,7 +5350,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -5416,47 +5365,46 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								158
+								156
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								157,
-								139,
-								153,
-								152,
 								138,
-								137
+								152,
+								151,
+								137,
+								136
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								206,
-								212,
-								221,
-								142,
-								196,
-								161,
-								163,
 								204,
-								208,
+								210,
+								219,
+								141,
+								194,
+								159,
+								161,
+								202,
+								206,
+								164,
+								214,
+								146,
 								166,
-								216,
-								147,
-								168,
-								145,
-								185,
-								140,
-								200,
-								149,
-								191,
-								174,
-								178,
-								172
+								144,
+								183,
+								139,
+								198,
+								148,
+								189,
+								172,
+								176,
+								170
 							]
 						}
 					],
@@ -5486,7 +5434,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						136
+						135
 					]
 				}
 			],
@@ -5529,7 +5477,7 @@
 							}
 						},
 						{
-							"id": 93,
+							"id": 92,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -5608,8 +5556,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -5618,31 +5566,6 @@
 								]
 							},
 							"defaultValue": " this.createElement('area')"
-						},
-						{
-							"id": 63,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
-							}
 						},
 						{
 							"id": 33,
@@ -5664,8 +5587,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -5686,7 +5609,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
@@ -5737,7 +5660,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -5759,7 +5682,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -5793,8 +5716,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -5816,7 +5739,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -5831,7 +5754,7 @@
 							}
 						},
 						{
-							"id": 109,
+							"id": 108,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5841,7 +5764,7 @@
 							},
 							"signatures": [
 								{
-									"id": 110,
+									"id": 109,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5887,7 +5810,7 @@
 							}
 						},
 						{
-							"id": 115,
+							"id": 114,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5897,7 +5820,7 @@
 							},
 							"signatures": [
 								{
-									"id": 116,
+									"id": 115,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5922,7 +5845,7 @@
 									},
 									"parameters": [
 										{
-											"id": 117,
+											"id": 116,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5945,7 +5868,7 @@
 											}
 										},
 										{
-											"id": 118,
+											"id": 117,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5979,7 +5902,7 @@
 							}
 						},
 						{
-							"id": 124,
+							"id": 123,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5989,7 +5912,7 @@
 							},
 							"signatures": [
 								{
-									"id": 125,
+									"id": 124,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6014,7 +5937,7 @@
 									},
 									"parameters": [
 										{
-											"id": 126,
+											"id": 125,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6037,7 +5960,7 @@
 											}
 										},
 										{
-											"id": 127,
+											"id": 126,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6064,7 +5987,7 @@
 											}
 										},
 										{
-											"id": 128,
+											"id": 127,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6098,7 +6021,7 @@
 							}
 						},
 						{
-							"id": 99,
+							"id": 98,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6108,7 +6031,7 @@
 							},
 							"signatures": [
 								{
-									"id": 100,
+									"id": 99,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6118,7 +6041,7 @@
 									},
 									"parameters": [
 										{
-											"id": 101,
+											"id": 100,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6129,7 +6052,7 @@
 											}
 										},
 										{
-											"id": 102,
+											"id": 101,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6163,7 +6086,7 @@
 							}
 						},
 						{
-							"id": 64,
+							"id": 63,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6172,7 +6095,7 @@
 							},
 							"signatures": [
 								{
-									"id": 65,
+									"id": 64,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6194,7 +6117,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 214,
+									"line": 217,
 									"character": 19
 								}
 							],
@@ -6208,7 +6131,7 @@
 							}
 						},
 						{
-							"id": 66,
+							"id": 65,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6217,14 +6140,14 @@
 							},
 							"signatures": [
 								{
-									"id": 67,
+									"id": 66,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 68,
+											"id": 67,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6258,7 +6181,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -6272,7 +6195,7 @@
 							}
 						},
 						{
-							"id": 107,
+							"id": 106,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6282,7 +6205,7 @@
 							},
 							"signatures": [
 								{
-									"id": 108,
+									"id": 107,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6328,7 +6251,7 @@
 							}
 						},
 						{
-							"id": 111,
+							"id": 110,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6338,7 +6261,7 @@
 							},
 							"signatures": [
 								{
-									"id": 112,
+									"id": 111,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6363,7 +6286,7 @@
 									},
 									"parameters": [
 										{
-											"id": 113,
+											"id": 112,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6386,7 +6309,7 @@
 											}
 										},
 										{
-											"id": 114,
+											"id": 113,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6420,7 +6343,7 @@
 							}
 						},
 						{
-							"id": 69,
+							"id": 68,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6429,7 +6352,7 @@
 							},
 							"signatures": [
 								{
-									"id": 70,
+									"id": 69,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6451,7 +6374,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -6465,7 +6388,7 @@
 							}
 						},
 						{
-							"id": 119,
+							"id": 118,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6475,7 +6398,7 @@
 							},
 							"signatures": [
 								{
-									"id": 120,
+									"id": 119,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6500,7 +6423,7 @@
 									},
 									"parameters": [
 										{
-											"id": 121,
+											"id": 120,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6523,7 +6446,7 @@
 											}
 										},
 										{
-											"id": 122,
+											"id": 121,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6550,7 +6473,7 @@
 											}
 										},
 										{
-											"id": 123,
+											"id": 122,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6584,7 +6507,7 @@
 							}
 						},
 						{
-							"id": 71,
+							"id": 70,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6593,14 +6516,14 @@
 							},
 							"signatures": [
 								{
-									"id": 72,
+									"id": 71,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 73,
+											"id": 72,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -6613,7 +6536,7 @@
 									],
 									"parameters": [
 										{
-											"id": 74,
+											"id": 73,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6629,8 +6552,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -6647,7 +6570,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -6657,7 +6580,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 87,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6666,7 +6589,7 @@
 							},
 							"signatures": [
 								{
-									"id": 89,
+									"id": 88,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6676,7 +6599,7 @@
 									},
 									"parameters": [
 										{
-											"id": 90,
+											"id": 89,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6687,7 +6610,7 @@
 											}
 										},
 										{
-											"id": 91,
+											"id": 90,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6698,7 +6621,7 @@
 											}
 										},
 										{
-											"id": 92,
+											"id": 91,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6729,7 +6652,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -6843,7 +6766,7 @@
 							]
 						},
 						{
-							"id": 103,
+							"id": 102,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6853,7 +6776,7 @@
 							},
 							"signatures": [
 								{
-									"id": 104,
+									"id": 103,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6864,7 +6787,7 @@
 									},
 									"parameters": [
 										{
-											"id": 105,
+											"id": 104,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6887,7 +6810,7 @@
 											}
 										},
 										{
-											"id": 106,
+											"id": 105,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7130,7 +7053,7 @@
 							]
 						},
 						{
-							"id": 94,
+							"id": 93,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7140,7 +7063,7 @@
 							},
 							"signatures": [
 								{
-									"id": 95,
+									"id": 94,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7151,7 +7074,7 @@
 									},
 									"parameters": [
 										{
-											"id": 96,
+											"id": 95,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7174,7 +7097,7 @@
 											}
 										},
 										{
-											"id": 97,
+											"id": 96,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7201,7 +7124,7 @@
 											}
 										},
 										{
-											"id": 98,
+											"id": 97,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7235,7 +7158,7 @@
 							}
 						},
 						{
-							"id": 77,
+							"id": 76,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7244,14 +7167,14 @@
 							},
 							"signatures": [
 								{
-									"id": 78,
+									"id": 77,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 79,
+											"id": 78,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7262,7 +7185,7 @@
 											}
 										},
 										{
-											"id": 80,
+											"id": 79,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7288,7 +7211,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 245,
 									"character": 6
 								}
 							],
@@ -7298,7 +7221,7 @@
 							}
 						},
 						{
-							"id": 81,
+							"id": 80,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7307,14 +7230,14 @@
 							},
 							"signatures": [
 								{
-									"id": 82,
+									"id": 81,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 83,
+											"id": 82,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7325,7 +7248,7 @@
 											}
 										},
 										{
-											"id": 84,
+											"id": 83,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7336,7 +7259,7 @@
 											}
 										},
 										{
-											"id": 85,
+											"id": 84,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7344,14 +7267,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 86,
+													"id": 85,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 87,
+															"id": 86,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -7365,7 +7288,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -7386,7 +7309,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -7396,7 +7319,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 74,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7405,7 +7328,7 @@
 							},
 							"signatures": [
 								{
-									"id": 76,
+									"id": 75,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7423,7 +7346,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -7446,7 +7369,6 @@
 							"kind": 1024,
 							"children": [
 								32,
-								63,
 								33,
 								59,
 								58,
@@ -7458,31 +7380,31 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								109,
-								115,
-								124,
-								99,
-								64,
-								66,
-								107,
-								111,
-								69,
-								119,
-								71,
-								88,
+								108,
+								114,
+								123,
+								98,
+								63,
+								65,
+								106,
+								110,
+								68,
+								118,
+								70,
+								87,
 								37,
 								41,
 								39,
-								103,
+								102,
 								49,
 								51,
 								43,
 								54,
 								46,
-								94,
-								77,
-								81,
-								75
+								93,
+								76,
+								80,
+								74
 							]
 						}
 					],
@@ -7507,7 +7429,7 @@
 					]
 				},
 				{
-					"id": 129,
+					"id": 128,
 					"name": "TabScrollerRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7532,7 +7454,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 130,
+											"id": 129,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -7556,7 +7478,7 @@
 					"defaultValue": " componentFactory({\n  displayName: 'TabScroller',\n  classNames: ['mdc-tab-scroller']\n})"
 				},
 				{
-					"id": 131,
+					"id": 130,
 					"name": "TabScrollerScrollArea",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7581,7 +7503,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 132,
+											"id": 131,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -7605,7 +7527,7 @@
 					"defaultValue": " componentFactory({\n  displayName: 'TabScrollerScrollArea',\n  classNames: ['mdc-tab-scroller__scroll-area']\n})"
 				},
 				{
-					"id": 133,
+					"id": 132,
 					"name": "TabScrollerScrollContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7630,7 +7552,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 134,
+											"id": 133,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -7666,9 +7588,9 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						129,
-						131,
-						133
+						128,
+						130,
+						132
 					]
 				}
 			],
@@ -7686,11 +7608,11 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
-				366,
-				226,
-				244,
+				363,
+				224,
+				242,
 				1,
-				135,
+				134,
 				29
 			]
 		}

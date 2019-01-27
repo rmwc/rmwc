@@ -81,10 +81,6 @@ describe('TextField', () => {
     mount(<TextField withLeadingIcon="favorite" />);
   });
 
-  it('can be have withLeadingIcon jsx', () => {
-    mount(<TextField withLeadingIcon={<TextFieldIcon icon="foo" />} />);
-  });
-
   it('can be have withTrailingIcon', () => {
     mount(<TextField withTrailingIcon="favorite" />);
   });

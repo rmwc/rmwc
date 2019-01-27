@@ -13,36 +13,36 @@ describe('Slider', () => {
     const el = mount(<Slider />);
     el.setProps({ discrete: true }, () => {
       window.requestAnimationFrame(() => {
-        expect(el.instance().discrete).toBe(true);
+        expect((el.instance() as Slider).discrete).toBe(true);
       });
     });
 
     el.setProps({ displayMarkers: true }, () => {
-      expect(el.instance().displayMarkers).toBe(true);
+      expect((el.instance() as Slider).displayMarkers).toBe(true);
     });
 
     el.setProps({ discrete: true }, () => {
-      expect(el.instance().discrete).toBe(true);
+      expect((el.instance() as Slider).discrete).toBe(true);
     });
 
     el.setProps({ value: 1 }, () => {
-      expect(el.instance().value).toBe(1);
+      expect((el.instance() as Slider).value).toBe(1);
     });
 
     el.setProps({ max: 1 }, () => {
-      expect(el.instance().max).toBe(1);
+      expect((el.instance() as Slider).max).toBe(1);
     });
 
     el.setProps({ min: 1 }, () => {
-      expect(el.instance().min).toBe(1);
+      expect((el.instance() as Slider).min).toBe(1);
     });
 
     el.setProps({ step: 2 }, () => {
-      expect(el.instance().step).toBe(2);
+      expect((el.instance() as Slider).step).toBe(2);
     });
 
     el.setProps({ disabled: true }, () => {
-      expect(el.instance().disabled).toBe(true);
+      expect((el.instance() as Slider).disabled).toBe(true);
     });
 
     setTimeout(done, 200);
@@ -72,7 +72,7 @@ describe('Slider', () => {
   it('handles onChange', () => {
     let value = 0;
     const el = mount(<Slider onChange={() => value++} />);
-    const inst = el.instance();
+    const inst = el.instance() as Slider;
     inst.foundation.adapter_.notifyChange();
 
     expect(value).toEqual(1);
@@ -81,7 +81,7 @@ describe('Slider', () => {
   it('handles onInput', () => {
     let value = 0;
     const el = mount(<Slider onInput={() => value++} />);
-    const inst = el.instance();
+    const inst = el.instance() as Slider;
     inst.foundation.adapter_.notifyInput();
 
     expect(value).toEqual(1);
@@ -98,7 +98,7 @@ describe('Slider', () => {
 
   it('adapter checks', () => {
     const el = mount(<Slider />);
-    const a = el.instance().foundation.adapter_;
+    const a = (el.instance() as Slider).foundation.adapter_;
     a.hasClass('test');
     a.addClass('test');
     a.removeClass('test');

@@ -35,7 +35,7 @@
 							}
 						},
 						{
-							"id": 74,
+							"id": 73,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -44,7 +44,7 @@
 					],
 					"children": [
 						{
-							"id": 44,
+							"id": 43,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -53,14 +53,14 @@
 							},
 							"signatures": [
 								{
-									"id": 45,
+									"id": 44,
 									"name": "new Toolbar",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 46,
+											"id": 45,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -85,38 +85,13 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 19
+									"line": 205,
+									"character": 64
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.__constructor"
-							}
-						},
-						{
-							"id": 43,
-							"name": "canUpdate",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							},
-							"defaultValue": "true",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
 							}
 						},
 						{
@@ -130,7 +105,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 205,
 									"character": 10
 								}
 							],
@@ -181,7 +156,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
+											"line": 205,
 											"character": 11
 										}
 									]
@@ -233,7 +208,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
+									"line": 204,
 									"character": 12
 								}
 							],
@@ -267,8 +242,8 @@
 								"name": "FoundationElement",
 								"typeArguments": [
 									{
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "HTMLElement"
 									},
 									{
 										"type": "reference",
@@ -312,7 +287,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
+									"line": 202,
 									"character": 23
 								}
 							],
@@ -481,7 +456,7 @@
 							]
 						},
 						{
-							"id": 90,
+							"id": 89,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -491,7 +466,7 @@
 							},
 							"signatures": [
 								{
-									"id": 91,
+									"id": 90,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -537,7 +512,7 @@
 							}
 						},
 						{
-							"id": 96,
+							"id": 95,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -547,7 +522,7 @@
 							},
 							"signatures": [
 								{
-									"id": 97,
+									"id": 96,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -572,7 +547,7 @@
 									},
 									"parameters": [
 										{
-											"id": 98,
+											"id": 97,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -596,7 +571,7 @@
 											}
 										},
 										{
-											"id": 99,
+											"id": 98,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -630,7 +605,7 @@
 							}
 						},
 						{
-							"id": 105,
+							"id": 104,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -640,7 +615,7 @@
 							},
 							"signatures": [
 								{
-									"id": 106,
+									"id": 105,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -665,7 +640,7 @@
 									},
 									"parameters": [
 										{
-											"id": 107,
+											"id": 106,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -689,7 +664,7 @@
 											}
 										},
 										{
-											"id": 108,
+											"id": 107,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -716,7 +691,7 @@
 											}
 										},
 										{
-											"id": 109,
+											"id": 108,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -750,7 +725,7 @@
 							}
 						},
 						{
-							"id": 80,
+							"id": 79,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -760,7 +735,7 @@
 							},
 							"signatures": [
 								{
-									"id": 81,
+									"id": 80,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -770,7 +745,7 @@
 									},
 									"parameters": [
 										{
-											"id": 82,
+											"id": 81,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -781,7 +756,7 @@
 											}
 										},
 										{
-											"id": 83,
+											"id": 82,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -852,7 +827,7 @@
 							}
 						},
 						{
-							"id": 47,
+							"id": 46,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -861,14 +836,14 @@
 							},
 							"signatures": [
 								{
-									"id": 48,
+									"id": 47,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 49,
+											"id": 48,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -903,7 +878,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
+									"line": 222,
 									"character": 20
 								}
 							],
@@ -917,7 +892,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 87,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -927,7 +902,7 @@
 							},
 							"signatures": [
 								{
-									"id": 89,
+									"id": 88,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -973,7 +948,7 @@
 							}
 						},
 						{
-							"id": 92,
+							"id": 91,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -983,7 +958,7 @@
 							},
 							"signatures": [
 								{
-									"id": 93,
+									"id": 92,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1008,7 +983,7 @@
 									},
 									"parameters": [
 										{
-											"id": 94,
+											"id": 93,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1032,7 +1007,7 @@
 											}
 										},
 										{
-											"id": 95,
+											"id": 94,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1066,7 +1041,7 @@
 							}
 						},
 						{
-							"id": 50,
+							"id": 49,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1075,7 +1050,7 @@
 							},
 							"signatures": [
 								{
-									"id": 51,
+									"id": 50,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1097,7 +1072,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
+									"line": 226,
 									"character": 22
 								}
 							],
@@ -1111,7 +1086,7 @@
 							}
 						},
 						{
-							"id": 100,
+							"id": 99,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1121,7 +1096,7 @@
 							},
 							"signatures": [
 								{
-									"id": 101,
+									"id": 100,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1146,7 +1121,7 @@
 									},
 									"parameters": [
 										{
-											"id": 102,
+											"id": 101,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1170,7 +1145,7 @@
 											}
 										},
 										{
-											"id": 103,
+											"id": 102,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1197,7 +1172,7 @@
 											}
 										},
 										{
-											"id": 104,
+											"id": 103,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1231,7 +1206,7 @@
 							}
 						},
 						{
-							"id": 52,
+							"id": 51,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1240,14 +1215,14 @@
 							},
 							"signatures": [
 								{
-									"id": 53,
+									"id": 52,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 54,
+											"id": 53,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1260,7 +1235,7 @@
 									],
 									"parameters": [
 										{
-											"id": 55,
+											"id": 54,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1276,8 +1251,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -1294,7 +1269,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -1304,7 +1279,7 @@
 							}
 						},
 						{
-							"id": 69,
+							"id": 68,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1313,7 +1288,7 @@
 							},
 							"signatures": [
 								{
-									"id": 70,
+									"id": 69,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1323,7 +1298,7 @@
 									},
 									"parameters": [
 										{
-											"id": 71,
+											"id": 70,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1334,7 +1309,7 @@
 											}
 										},
 										{
-											"id": 72,
+											"id": 71,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1345,7 +1320,7 @@
 											}
 										},
 										{
-											"id": 73,
+											"id": 72,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1376,7 +1351,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -1423,7 +1398,7 @@
 							}
 						},
 						{
-							"id": 84,
+							"id": 83,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1433,7 +1408,7 @@
 							},
 							"signatures": [
 								{
-									"id": 85,
+									"id": 84,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1444,7 +1419,7 @@
 									},
 									"parameters": [
 										{
-											"id": 86,
+											"id": 85,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1468,7 +1443,7 @@
 											}
 										},
 										{
-											"id": 87,
+											"id": 86,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1556,7 +1531,7 @@
 							]
 						},
 						{
-							"id": 75,
+							"id": 74,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1566,7 +1541,7 @@
 							},
 							"signatures": [
 								{
-									"id": 76,
+									"id": 75,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1577,7 +1552,7 @@
 									},
 									"parameters": [
 										{
-											"id": 77,
+											"id": 76,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1601,7 +1576,7 @@
 											}
 										},
 										{
-											"id": 78,
+											"id": 77,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1628,7 +1603,7 @@
 											}
 										},
 										{
-											"id": 79,
+											"id": 78,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1662,7 +1637,7 @@
 							}
 						},
 						{
-							"id": 58,
+							"id": 57,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1671,14 +1646,14 @@
 							},
 							"signatures": [
 								{
-									"id": 59,
+									"id": 58,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 60,
+											"id": 59,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1689,7 +1664,7 @@
 											}
 										},
 										{
-											"id": 61,
+											"id": 60,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1715,7 +1690,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 245,
 									"character": 6
 								}
 							],
@@ -1725,7 +1700,7 @@
 							}
 						},
 						{
-							"id": 62,
+							"id": 61,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1734,14 +1709,14 @@
 							},
 							"signatures": [
 								{
-									"id": 63,
+									"id": 62,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 64,
+											"id": 63,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1752,7 +1727,7 @@
 											}
 										},
 										{
-											"id": 65,
+											"id": 64,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1763,7 +1738,7 @@
 											}
 										},
 										{
-											"id": 66,
+											"id": 65,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1771,14 +1746,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 67,
+													"id": 66,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 68,
+															"id": 67,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1792,7 +1767,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -1813,7 +1788,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -1823,7 +1798,7 @@
 							}
 						},
 						{
-							"id": 56,
+							"id": 55,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1832,7 +1807,7 @@
 							},
 							"signatures": [
 								{
-									"id": 57,
+									"id": 56,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1850,7 +1825,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -1865,14 +1840,13 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								44
+								43
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								43,
 								39,
 								21,
 								38,
@@ -1894,25 +1868,25 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								90,
-								96,
-								105,
-								80,
+								89,
+								95,
+								104,
+								79,
 								22,
-								47,
-								88,
-								92,
-								50,
-								100,
-								52,
-								69,
+								46,
+								87,
+								91,
+								49,
+								99,
+								51,
+								68,
 								32,
-								84,
+								83,
 								34,
-								75,
-								58,
-								62,
-								56
+								74,
+								57,
+								61,
+								55
 							]
 						}
 					],
@@ -1961,7 +1935,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 48,
+									"line": 50,
 									"character": 6
 								}
 							],
@@ -1989,7 +1963,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 53,
+									"line": 55,
 									"character": 13
 								}
 							],
@@ -2051,7 +2025,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 48,
+									"line": 50,
 									"character": 6
 								}
 							],
@@ -2079,7 +2053,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 53,
+									"line": 55,
 									"character": 13
 								}
 							],
@@ -2474,7 +2448,7 @@
 					]
 				},
 				{
-					"id": 118,
+					"id": 117,
 					"name": "ToolbarFixedAdjust",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2502,7 +2476,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 119,
+											"id": 118,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2526,7 +2500,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ToolbarFixedAdjust',\n  classNames: ['mdc-toolbar-fixed-adjust']\n})"
 				},
 				{
-					"id": 123,
+					"id": 122,
 					"name": "ToolbarIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2550,6 +2524,49 @@
 							{
 								"type": "reference",
 								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 123,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {}
+												}
+											},
+											{
+												"type": "reference",
+												"name": "RefAttributes",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											},
+											{
+												"type": "reference",
+												"name": "DeprecatedRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
 								"typeArguments": [
 									{
 										"type": "intersection",
@@ -2583,16 +2600,38 @@
 												"name": "DeprecatedRippleProps"
 											}
 										]
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
 									}
 								]
-							},
+							}
+						]
+					},
+					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<ToolbarIconProps>({\n    displayName: 'ToolbarIcon',\n    tag: Icon,\n    classNames: ['mdc-toolbar__icon']\n  })\n)"
+				},
+				{
+					"id": 119,
+					"name": "ToolbarMenuIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A Menu Icon For the Toolbar. This is an instance of the Icon component."
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 104,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
 							{
 								"type": "reference",
-								"name": "FunctionComponent",
+								"name": "ComponentClass",
 								"typeArguments": [
 									{
 										"type": "intersection",
@@ -2600,7 +2639,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 125,
+													"id": 120,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2626,38 +2665,16 @@
 												"name": "DeprecatedRippleProps"
 											}
 										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
 									}
 								]
-							}
-						]
-					},
-					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<ToolbarIconProps>({\n    displayName: 'ToolbarIcon',\n    tag: Icon,\n    classNames: ['mdc-toolbar__icon']\n  })\n)"
-				},
-				{
-					"id": 120,
-					"name": "ToolbarMenuIcon",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "A Menu Icon For the Toolbar. This is an instance of the Icon component."
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 104,
-							"character": 28
-						}
-					],
-					"type": {
-						"type": "union",
-						"types": [
+							},
 							{
 								"type": "reference",
-								"name": "ComponentClass",
+								"name": "FunctionComponent",
 								"typeArguments": [
 									{
 										"type": "intersection",
@@ -2691,49 +2708,6 @@
 												"name": "DeprecatedRippleProps"
 											}
 										]
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
-							},
-							{
-								"type": "reference",
-								"name": "FunctionComponent",
-								"typeArguments": [
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 122,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
-											},
-											{
-												"type": "reference",
-												"name": "RefAttributes",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
-											},
-											{
-												"type": "reference",
-												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
-											}
-										]
 									}
 								]
 							}
@@ -2742,7 +2716,7 @@
 					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<ToolbarMenuIconProps>({\n    displayName: 'ToolbarMenuIcon',\n    tag: Icon,\n    classNames: ['mdc-toolbar__menu-icon']\n  })\n)"
 				},
 				{
-					"id": 110,
+					"id": 109,
 					"name": "ToolbarRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2767,7 +2741,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 111,
+											"id": 110,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2791,7 +2765,7 @@
 					"defaultValue": " componentFactory<ToolbarProps>({\n  displayName: 'TabBarRoot',\n  tag: 'header',\n  classNames: (props: ToolbarProps) => [\n    'mdc-toolbar',\n    {\n      'mdc-toolbar--fixed': props.fixed,\n      'mdc-toolbar--waterfall': props.waterfall,\n      'mdc-toolbar--fixed-lastrow-only': props.fixedLastrowOnly,\n      'mdc-toolbar--flexible': props.flexible,\n      'mdc-toolbar--flexible-default-behavior': props.flexibleDefaultBehavior\n    }\n  ],\n  defaultProps: {\n    fixed: false,\n    waterfall: false,\n    fixedLastrowOnly: false,\n    flexible: false,\n    flexibleDefaultBehavior: false\n  },\n  consumeProps: [\n    'fixed',\n    'waterfall',\n    'fixedLastrowOnly',\n    'flexible',\n    'flexibleDefaultBehavior'\n  ]\n})"
 				},
 				{
-					"id": 116,
+					"id": 115,
 					"name": "ToolbarRow",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2819,7 +2793,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 117,
+											"id": 116,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2843,7 +2817,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ToolbarRow',\n  classNames: ['mdc-toolbar__row']\n})"
 				},
 				{
-					"id": 114,
+					"id": 113,
 					"name": "ToolbarSection",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2871,7 +2845,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 115,
+											"id": 114,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2895,7 +2869,7 @@
 					"defaultValue": " componentFactory<ToolbarSectionProps>({\n  displayName: 'ToolbarSection',\n  tag: 'section',\n  classNames: (props: ToolbarSectionProps) => [\n    'mdc-toolbar__section',\n    {\n      'mdc-toolbar__section--align-start': props.alignStart,\n      'mdc-toolbar__section--align-end': props.alignEnd,\n      'mdc-toolbar__section--shrink-to-fit': props.shrinkToFit\n    }\n  ],\n  defaultProps: {\n    alignStart: false,\n    alignEnd: false,\n    shrinkToFit: false\n  },\n  consumeProps: ['alignStart', 'alignEnd', 'shrinkToFit']\n})"
 				},
 				{
-					"id": 112,
+					"id": 111,
 					"name": "ToolbarTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2923,7 +2897,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 113,
+											"id": 112,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2969,13 +2943,13 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						118,
-						123,
-						120,
-						110,
-						116,
-						114,
-						112
+						117,
+						122,
+						119,
+						109,
+						115,
+						113,
+						111
 					]
 				}
 			],

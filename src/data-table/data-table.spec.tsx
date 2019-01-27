@@ -158,7 +158,7 @@ describe('DataTable', () => {
   });
 
   it('can have have sorted columns', () => {
-    let dir = null;
+    let dir: number | null = null;
     const getComp = () =>
       mount(
         <DataTable>
@@ -176,7 +176,7 @@ describe('DataTable', () => {
         </DataTable>
       );
 
-    const clickCell = el => {
+    const clickCell = (el: any) => {
       const cell = el.find('.rmwc-data-table__head-cell--sortable');
       cell.simulate('click');
     };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
+import { componentFactory, ComponentProps } from '@rmwc/base';
 import { withRipple, WithRippleProps } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
@@ -56,7 +56,7 @@ export const Fab = ({
   icon,
   trailingIcon,
   ...rest
-}: FabProps) => {
+}: FabProps & ComponentProps) => {
   if (trailingIcon && !label) {
     console.warn(
       `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`

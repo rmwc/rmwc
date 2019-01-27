@@ -15,7 +15,7 @@ import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
 import { withRipple } from '@rmwc/ripple';
 
-export interface FormattedOption {
+export interface FormattedOption extends React.AllHTMLAttributes<any> {
   label: string;
   value: string;
   options?: FormattedOption[];

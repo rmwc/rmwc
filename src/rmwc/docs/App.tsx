@@ -39,7 +39,6 @@ import {
 import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
 
-import Submenu from './Submenu';
 import Home from './Home';
 import { ThemeOptionT } from '@rmwc/base/withTheme';
 import { toCamel } from '@rmwc/base/utils/strings';

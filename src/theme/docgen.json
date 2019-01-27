@@ -191,7 +191,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 56,
+									"line": 55,
 									"character": 9
 								}
 							],
@@ -255,7 +255,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 55,
+									"line": 54,
 									"character": 11
 								}
 							],
@@ -510,7 +510,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 53,
+									"line": 52,
 									"character": 20
 								}
 							],
@@ -550,7 +550,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 58,
+									"line": 57,
 									"character": 12
 								}
 							]
@@ -1491,7 +1491,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 81,
+									"line": 80,
 									"character": 8
 								}
 							],
@@ -1863,7 +1863,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 52,
+							"line": 51,
 							"character": 26
 						}
 					],
@@ -1904,7 +1904,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 15,
+									"line": 17,
 									"character": 5
 								}
 							],
@@ -1940,7 +1940,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 17,
+									"line": 19,
 									"character": 6
 								}
 							],
@@ -1949,11 +1949,15 @@
 								"types": [
 									{
 										"type": "intrinsic",
-										"name": "boolean"
+										"name": "undefined"
 									},
 									{
 										"type": "intrinsic",
-										"name": "any"
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
 									}
 								]
 							}
@@ -1972,7 +1976,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 13,
+							"line": 15,
 							"character": 27
 						}
 					]
@@ -2001,7 +2005,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 48,
+									"line": 47,
 									"character": 10
 								}
 							],
@@ -2024,7 +2028,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 42,
+									"line": 41,
 									"character": 9
 								}
 							],
@@ -2065,7 +2069,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 42,
+											"line": 41,
 											"character": 10
 										}
 									]
@@ -2087,7 +2091,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 44,
+									"line": 43,
 									"character": 7
 								}
 							],
@@ -2111,7 +2115,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 46,
+									"line": 45,
 									"character": 6
 								}
 							],
@@ -2149,7 +2153,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 39,
+							"line": 38,
 							"character": 35
 						}
 					],
@@ -2165,7 +2169,7 @@
 								"sources": [
 									{
 										"fileName": "index.tsx",
-										"line": 40,
+										"line": 39,
 										"character": 9
 									}
 								]
@@ -2184,7 +2188,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 8,
+							"line": 10,
 							"character": 15
 						}
 					],
@@ -2269,8 +2273,8 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 23,
-															"character": 42
+															"line": 28,
+															"character": 9
 														}
 													],
 													"type": {
@@ -2288,8 +2292,8 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 23,
-															"character": 27
+															"line": 26,
+															"character": 5
 														}
 													],
 													"type": {
@@ -2523,13 +2527,26 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 23,
-															"character": 33
+															"line": 27,
+															"character": 6
 														}
 													],
 													"type": {
-														"type": "intrinsic",
-														"name": "any"
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
 													}
 												}
 											],
@@ -2547,7 +2564,7 @@
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 23,
+													"line": 25,
 													"character": 22
 												}
 											]
@@ -2570,7 +2587,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 23,
+							"line": 25,
 							"character": 18
 						}
 					]

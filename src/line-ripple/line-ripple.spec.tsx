@@ -9,7 +9,7 @@ describe('LineRipple', () => {
 
   it('foundation methods', () => {
     const el = mount(<LineRipple />);
-    const inst = el.instance();
+    const inst = el.instance() as LineRipple;
     inst.foundation.adapter_.addClass('foo');
     inst.foundation.adapter_.removeClass('foo');
     inst.foundation.adapter_.hasClass('foo');

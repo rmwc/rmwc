@@ -8,8 +8,7 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
-  DrawerSubtitle,
-  DrawerScrim
+  DrawerSubtitle
 } from './';
 
 describe('Drawer SSR', () => {
@@ -50,16 +49,13 @@ describe('Drawer SSR', () => {
       );
     } else {
       mount(
-        <div>
-          <Drawer modal>
-            <DrawerHeader>
-              <DrawerTitle>Title</DrawerTitle>
-              <DrawerSubtitle>Subtitle</DrawerSubtitle>
-            </DrawerHeader>
-            <DrawerContent />
-          </Drawer>
-          <DrawerScrim />
-        </div>
+        <Drawer modal>
+          <DrawerHeader>
+            <DrawerTitle>Title</DrawerTitle>
+            <DrawerSubtitle>Subtitle</DrawerSubtitle>
+          </DrawerHeader>
+          <DrawerContent />
+        </Drawer>
       );
     }
   });

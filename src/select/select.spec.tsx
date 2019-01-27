@@ -28,11 +28,11 @@ describe('Select', () => {
   });
 
   it('can accept options array', () => {
-    mount(<Select placeholder="Select a food" options={[1, 2, 3]} />);
+    mount(<Select placeholder="Select a food" options={['1', '2', '3']} />);
   });
 
   it('can be outlined', () => {
-    const el = mount(<Select outlined options={[1, 2, 3]} />);
+    const el = mount(<Select outlined options={['1', '2', '3']} />);
     expect(el.html().includes('mdc-select--outlined')).toBe(true);
   });
 
@@ -61,7 +61,7 @@ describe('Select', () => {
   });
 
   it('can have a tab index', () => {
-    const el = mount(<Select tabIndex={1} options={[1, 2, 3]} />);
+    const el = mount(<Select tabIndex={1} options={['1', '2', '3']} />);
     expect(!!~el.html().search('tabindex="1"')).toEqual(true);
   });
 
@@ -70,7 +70,7 @@ describe('Select', () => {
   });
 
   it('can be disabled', done => {
-    const el = mount(<Select disabled={false} options={[1, 2, 3]} />);
+    const el = mount(<Select disabled={false} options={['1', '2', '3']} />);
     expect(el.html().includes('mdc-select--disabled')).toBe(false);
     el.setProps({ disabled: true });
     setTimeout(() => {

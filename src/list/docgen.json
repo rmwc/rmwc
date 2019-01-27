@@ -5,35 +5,18 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 156,
-			"name": "\"index\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/index.tsx",
-			"sources": [
-				{
-					"fileName": "index.tsx",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
 			"id": 1,
-			"name": "\"list\"",
+			"name": "\"collapsible-list\"",
 			"kind": 1,
 			"kindString": "External module",
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list.tsx",
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/collapsible-list.tsx",
 			"children": [
 				{
-					"id": 7,
-					"name": "List",
+					"id": 14,
+					"name": "CollapsibleList",
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {
@@ -41,18 +24,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 32,
-							"name": "S",
-							"kind": 131072,
-							"kindString": "Type parameter",
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						},
-						{
-							"id": 67,
+							"id": 41,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -61,7 +33,7 @@
 					],
 					"children": [
 						{
-							"id": 9,
+							"id": 21,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -70,51 +42,50 @@
 							},
 							"signatures": [
 								{
-									"id": 10,
-									"name": "new List",
+									"id": 22,
+									"name": "new CollapsibleList",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 11,
+											"id": 23,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "reference",
-												"name": "ListProps",
-												"id": 2
+												"type": "intrinsic",
+												"name": "any"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"name": "List",
-										"id": 7
+										"name": "CollapsibleList",
+										"id": 14
 									},
 									"overwrites": {
 										"type": "reference",
-										"name": "FoundationComponent.__constructor"
+										"name": "Component.__constructor"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "list.tsx",
-									"line": 40,
-									"character": 36
+									"fileName": "collapsible-list.tsx",
+									"line": 57,
+									"character": 4
 								}
 							],
 							"overwrites": {
 								"type": "reference",
-								"name": "FoundationComponent.__constructor"
+								"name": "Component.__constructor"
 							}
 						},
 						{
-							"id": 39,
-							"name": "canUpdate",
+							"id": 15,
+							"name": "childContainer",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
@@ -122,24 +93,67 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 11
+									"fileName": "collapsible-list.tsx",
+									"line": 51,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLDivElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							},
+							"defaultValue": " null"
+						},
+						{
+							"id": 87,
+							"name": "context",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.",
+								"text": "```ts\nstatic contextType = MyContext\ncontext!: React.ContextType<typeof MyContext>\n```\n",
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": "if used without a type annotation, or without static contextType"
+									},
+									{
+										"tag": "see",
+										"text": "https://reactjs.org/docs/legacy-context.html\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 393,
+									"character": 15
 								}
 							],
 							"type": {
 								"type": "intrinsic",
-								"name": "boolean"
+								"name": "any"
 							},
-							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.canUpdate"
+								"name": "Component.context"
 							}
 						},
 						{
-							"id": 35,
-							"name": "elements",
+							"id": 106,
+							"name": "props",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
@@ -147,29 +161,136 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 418,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 107,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 108,
+															"name": "children",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+																	"line": 418,
+																	"character": 43
+																}
+															],
+															"type": {
+																"type": "reference",
+																"name": "ReactNode"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																108
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+															"line": 418,
+															"character": 33
+														}
+													]
+												}
+											}
+										]
+									},
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "intersection",
+												"types": [
+													{
+														"type": "reference",
+														"name": "CollapsibleProps",
+														"id": 2
+													},
+													{
+														"type": "reference",
+														"name": "ComponentProps"
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.props"
+							}
+						},
+						{
+							"id": 109,
+							"name": "refs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": "\nhttps://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 424,
+									"character": 12
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 36,
+									"id": 110,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 37,
+											"id": 111,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 38,
+													"id": 112,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -182,61 +303,26 @@
 											],
 											"type": {
 												"type": "reference",
-												"name": "FoundationElement",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													},
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ReactInstance"
 											}
 										}
 									],
 									"sources": [
 										{
-											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 201,
-											"character": 11
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+											"line": 424,
+											"character": 13
 										}
 									]
 								}
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.elements"
+								"name": "Component.refs"
 							}
 						},
 						{
-							"id": 34,
-							"name": "foundation",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 200,
-									"character": 12
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							},
-							"defaultValue": " this.getDefaultFoundation()",
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.foundation"
-							}
-						},
-						{
-							"id": 8,
+							"id": 16,
 							"name": "root",
 							"kind": 1024,
 							"kindString": "Property",
@@ -245,87 +331,70 @@
 							},
 							"sources": [
 								{
-									"fileName": "list.tsx",
-									"line": 40,
+									"fileName": "collapsible-list.tsx",
+									"line": 52,
 									"character": 6
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									},
+								"type": "union",
+								"types": [
 									{
 										"type": "reference",
-										"name": "HTMLElement"
+										"name": "HTMLDivElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
 									}
 								]
 							},
-							"defaultValue": " this.createElement('root')"
+							"defaultValue": " null"
 						},
 						{
-							"id": 33,
-							"name": "shouldDebounce",
+							"id": 86,
+							"name": "contextType",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
 								"isStatic": true,
-								"isExported": true
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "If set, `this.context` will be set at runtime to the current value of the given Context.",
+								"text": "Usage:\n\n```ts\ntype MyContext = number\nconst Ctx = React.createContext<MyContext>(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType<typeof Ctx>\n  render () {\n    return <>My context's value: {this.context}</>;\n  }\n}\n```\n",
+								"tags": [
+									{
+										"tag": "see",
+										"text": "https://reactjs.org/docs/context.html#classcontexttype\n"
+									}
+								]
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 198,
-									"character": 23
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 378,
+									"character": 26
 								}
 							],
 							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
+								"type": "reference",
+								"name": "Context",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
 							},
-							"defaultValue": "false",
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.shouldDebounce"
+								"name": "Component.contextType"
 							}
 						},
 						{
-							"id": 12,
-							"name": "listElements",
-							"kind": 262144,
-							"kindString": "Accessor",
-							"flags": {
-								"isExported": true
-							},
-							"getSignature": [
-								{
-									"id": 13,
-									"name": "__get",
-									"kind": 524288,
-									"kindString": "Get signature",
-									"flags": {},
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "reference",
-											"name": "HTMLLIElement"
-										}
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "list.tsx",
-									"line": 51,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 83,
+							"id": 66,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -335,7 +404,7 @@
 							},
 							"signatures": [
 								{
-									"id": 84,
+									"id": 67,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -381,7 +450,7 @@
 							}
 						},
 						{
-							"id": 89,
+							"id": 72,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -391,7 +460,7 @@
 							},
 							"signatures": [
 								{
-									"id": 90,
+									"id": 73,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -416,7 +485,7 @@
 									},
 									"parameters": [
 										{
-											"id": 91,
+											"id": 74,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -426,13 +495,16 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
+														"type": "intersection",
+														"types": [
 															{
 																"type": "reference",
-																"name": "ListProps",
+																"name": "CollapsibleProps",
 																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -440,7 +512,7 @@
 											}
 										},
 										{
-											"id": 92,
+											"id": 75,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -474,7 +546,7 @@
 							}
 						},
 						{
-							"id": 98,
+							"id": 81,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -484,7 +556,7 @@
 							},
 							"signatures": [
 								{
-									"id": 99,
+									"id": 82,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -509,7 +581,7 @@
 									},
 									"parameters": [
 										{
-											"id": 100,
+											"id": 83,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -519,13 +591,16 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
+														"type": "intersection",
+														"types": [
 															{
 																"type": "reference",
-																"name": "ListProps",
+																"name": "CollapsibleProps",
 																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -533,7 +608,7 @@
 											}
 										},
 										{
-											"id": 101,
+											"id": 84,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -544,23 +619,14 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "FoundationStateT",
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "S",
-																"constraint": {
-																	"type": "intrinsic",
-																	"name": "any"
-																}
-															}
-														]
+														"name": "CollapsibleState",
+														"id": 11
 													}
 												]
 											}
 										},
 										{
-											"id": 102,
+											"id": 85,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -594,7 +660,7 @@
 							}
 						},
 						{
-							"id": 73,
+							"id": 51,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -604,7 +670,7 @@
 							},
 							"signatures": [
 								{
-									"id": 74,
+									"id": 52,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -614,7 +680,7 @@
 									},
 									"parameters": [
 										{
-											"id": 75,
+											"id": 53,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -625,7 +691,7 @@
 											}
 										},
 										{
-											"id": 76,
+											"id": 54,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -659,74 +725,124 @@
 							}
 						},
 						{
-							"id": 14,
+							"id": 42,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isOptional": true
 							},
 							"signatures": [
 								{
-									"id": 15,
+									"id": 43,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after a component is mounted. Setting state here will trigger re-rendering."
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "void"
 									},
-									"overwrites": {
+									"inheritedFrom": {
 										"type": "reference",
-										"name": "FoundationComponent.componentDidMount"
+										"name": "ComponentLifecycle.componentDidMount"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "list.tsx",
-									"line": 60,
-									"character": 19
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 518,
+									"character": 25
 								}
 							],
-							"overwrites": {
+							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.componentDidMount"
+								"name": "ComponentLifecycle.componentDidMount"
 							}
 						},
 						{
-							"id": 40,
+							"id": 59,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isOptional": true
 							},
 							"signatures": [
 								{
-									"id": 41,
+									"id": 60,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after updating occurs. Not called for the initial render.",
+										"text": "The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.\n"
+									},
 									"parameters": [
 										{
-											"id": 42,
+											"id": 61,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"name": "FoundationPropsT",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "reference",
+																"name": "CollapsibleProps",
+																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 62,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "ListProps",
-														"id": 2
+														"name": "CollapsibleState",
+														"id": 11
 													}
 												]
+											}
+										},
+										{
+											"id": 63,
+											"name": "snapshot",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "SS",
+												"id": 41
 											}
 										}
 									],
@@ -734,34 +850,26 @@
 										"type": "intrinsic",
 										"name": "void"
 									},
-									"overwrites": {
-										"type": "reference",
-										"name": "NewLifecycle.componentDidUpdate"
-									},
 									"inheritedFrom": {
 										"type": "reference",
-										"name": "FoundationComponent.componentDidUpdate"
+										"name": "NewLifecycle.componentDidUpdate"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 219,
-									"character": 20
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 581,
+									"character": 26
 								}
 							],
-							"overwrites": {
-								"type": "reference",
-								"name": "NewLifecycle.componentDidUpdate"
-							},
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.componentDidUpdate"
+								"name": "NewLifecycle.componentDidUpdate"
 							}
 						},
 						{
-							"id": 81,
+							"id": 64,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -771,7 +879,7 @@
 							},
 							"signatures": [
 								{
-									"id": 82,
+									"id": 65,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -817,7 +925,7 @@
 							}
 						},
 						{
-							"id": 85,
+							"id": 68,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -827,7 +935,7 @@
 							},
 							"signatures": [
 								{
-									"id": 86,
+									"id": 69,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -852,7 +960,7 @@
 									},
 									"parameters": [
 										{
-											"id": 87,
+											"id": 70,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -862,13 +970,16 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
+														"type": "intersection",
+														"types": [
 															{
 																"type": "reference",
-																"name": "ListProps",
+																"name": "CollapsibleProps",
 																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -876,7 +987,7 @@
 											}
 										},
 										{
-											"id": 88,
+											"id": 71,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -910,52 +1021,48 @@
 							}
 						},
 						{
-							"id": 43,
+							"id": 49,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isOptional": true
 							},
 							"signatures": [
 								{
-									"id": 44,
+									"id": 50,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`."
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "void"
 									},
-									"overwrites": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentWillUnmount"
-									},
 									"inheritedFrom": {
 										"type": "reference",
-										"name": "FoundationComponent.componentWillUnmount"
+										"name": "ComponentLifecycle.componentWillUnmount"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 223,
-									"character": 22
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 534,
+									"character": 28
 								}
 							],
-							"overwrites": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentWillUnmount"
-							},
 							"inheritedFrom": {
 								"type": "reference",
-								"name": "FoundationComponent.componentWillUnmount"
+								"name": "ComponentLifecycle.componentWillUnmount"
 							}
 						},
 						{
-							"id": 93,
+							"id": 76,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -965,7 +1072,7 @@
 							},
 							"signatures": [
 								{
-									"id": 94,
+									"id": 77,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -990,7 +1097,7 @@
 									},
 									"parameters": [
 										{
-											"id": 95,
+											"id": 78,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1000,13 +1107,16 @@
 												"name": "Readonly",
 												"typeArguments": [
 													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
+														"type": "intersection",
+														"types": [
 															{
 																"type": "reference",
-																"name": "ListProps",
+																"name": "CollapsibleProps",
 																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -1014,7 +1124,7 @@
 											}
 										},
 										{
-											"id": 96,
+											"id": 79,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1025,23 +1135,14 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "FoundationStateT",
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "S",
-																"constraint": {
-																	"type": "intrinsic",
-																	"name": "any"
-																}
-															}
-														]
+														"name": "CollapsibleState",
+														"id": 11
 													}
 												]
 											}
 										},
 										{
-											"id": 97,
+											"id": 80,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1075,7 +1176,2426 @@
 							}
 						},
 						{
-							"id": 45,
+							"id": 24,
+							"name": "correctFocus",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 25,
+									"name": "correctFocus",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 26,
+											"name": "back",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 66,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 101,
+							"name": "forceUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 102,
+									"name": "forceUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 103,
+											"name": "callBack",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 104,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 105,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														}
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.forceUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 410,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.forceUpdate"
+							}
+						},
+						{
+							"id": 55,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 56,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 57,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "reference",
+																"name": "CollapsibleProps",
+																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 58,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "CollapsibleState",
+														"id": 11
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 575,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 30,
+							"name": "handleClick",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 31,
+									"name": "handleClick",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 32,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "MouseEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 121,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 36,
+							"name": "handleFocus",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 37,
+									"name": "handleFocus",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 38,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FocusEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 147,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 33,
+							"name": "handleKeydown",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 34,
+									"name": "handleKeydown",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 35,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "KeyboardEvent"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 125,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 39,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 40,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Component.render"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 161,
+									"character": 8
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Component.render"
+							}
+						},
+						{
+							"id": 88,
+							"name": "setState",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 89,
+									"name": "setState",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 90,
+											"name": "K",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "typeOperator",
+												"operator": "keyof",
+												"target": {
+													"type": "reference",
+													"name": "CollapsibleState"
+												}
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 91,
+											"name": "state",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 92,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 93,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 94,
+																			"name": "prevState",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Readonly",
+																				"typeArguments": [
+																					{
+																						"type": "reference",
+																						"name": "CollapsibleState",
+																						"id": 11
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"id": 95,
+																			"name": "props",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Readonly",
+																				"typeArguments": [
+																					{
+																						"type": "intersection",
+																						"types": [
+																							{
+																								"type": "reference",
+																								"name": "CollapsibleProps",
+																								"id": 2
+																							},
+																							{
+																								"type": "reference",
+																								"name": "ComponentProps"
+																							}
+																						]
+																					}
+																				]
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "union",
+																		"types": [
+																			{
+																				"type": "intrinsic",
+																				"name": "null"
+																			},
+																			{
+																				"type": "unknown",
+																				"name": "S"
+																			},
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 96,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {}
+																				}
+																			}
+																		]
+																	}
+																}
+															],
+															"sources": [
+																{
+																	"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+																	"line": 406,
+																	"character": 18
+																}
+															]
+														}
+													},
+													{
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "unknown",
+																"name": "S"
+															},
+															{
+																"type": "reflection",
+																"declaration": {
+																	"id": 97,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {}
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 98,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 99,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 100,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "void"
+																	}
+																}
+															]
+														}
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.setState"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 405,
+									"character": 16
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.setState"
+							}
+						},
+						{
+							"id": 44,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 45,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 46,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "reference",
+																"name": "CollapsibleProps",
+																"id": 2
+															},
+															{
+																"type": "reference",
+																"name": "ComponentProps"
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 47,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "CollapsibleState",
+														"id": 11
+													}
+												]
+											}
+										},
+										{
+											"id": 48,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 529,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						},
+						{
+							"id": 27,
+							"name": "toggleOpen",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 28,
+									"name": "toggleOpen",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 29,
+											"name": "isOpen",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 90,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 17,
+							"name": "state",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 19,
+									"name": "childrenStyle",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "collapsible-list.tsx",
+											"line": 56,
+											"character": 17
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 20,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									}
+								},
+								{
+									"id": 18,
+									"name": "open",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "collapsible-list.tsx",
+											"line": 55,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": " !!this.props.open"
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										19,
+										18
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 54,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Component.state"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								21
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								15,
+								87,
+								106,
+								109,
+								16,
+								86
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								66,
+								72,
+								81,
+								51,
+								42,
+								59,
+								64,
+								68,
+								49,
+								76,
+								24,
+								101,
+								55,
+								30,
+								36,
+								33,
+								39,
+								88,
+								44,
+								27
+							]
+						},
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								17
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 47,
+							"character": 28
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Component",
+							"typeArguments": [
+								{
+									"type": "intersection",
+									"types": [
+										{
+											"type": "reference",
+											"name": "CollapsibleProps",
+											"id": 2
+										},
+										{
+											"type": "reference",
+											"name": "ComponentProps"
+										}
+									]
+								},
+								{
+									"type": "reference",
+									"name": "CollapsibleState",
+									"id": 11
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "CollapsibleProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 3,
+							"name": "handle",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 5,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 8,
+							"name": "onClose",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 8,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 9,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 10,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 5,
+							"name": "onOpen",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 7,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 6,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 7,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 6,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								8,
+								5,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 4,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "CollapsibleState",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 13,
+							"name": "childrenStyle",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 13,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "CSSProperties"
+							}
+						},
+						{
+							"id": 12,
+							"name": "open",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "collapsible-list.tsx",
+									"line": 12,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								13,
+								12
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 11,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 113,
+					"name": "CollapsibleRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 16,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 114,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CollapsibleRoot',\n  classNames: ['rmwc-collapsible-list']\n})"
+				},
+				{
+					"id": 118,
+					"name": "getNextSibling",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 119,
+							"name": "getNextSibling",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 120,
+									"name": "el",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "HTMLElement"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									}
+								},
+								{
+									"id": 121,
+									"name": "isBack",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 32,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 115,
+					"name": "possiblyFocusElement",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 116,
+							"name": "possiblyFocusElement",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 117,
+									"name": "el",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "Element"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "collapsible-list.tsx",
+							"line": 21,
+							"character": 26
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						14
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2,
+						11
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						113
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						118,
+						115
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "collapsible-list.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 286,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/index.tsx",
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 122,
+			"name": "\"list\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list.tsx",
+			"children": [
+				{
+					"id": 128,
+					"name": "List",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"typeParameter": [
+						{
+							"id": 159,
+							"name": "S",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 193,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 130,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 131,
+									"name": "new List",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 132,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ListProps",
+												"id": 123
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "List",
+										"id": 128
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 41,
+									"character": 36
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.__constructor"
+							}
+						},
+						{
+							"id": 162,
+							"name": "elements",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 205,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 163,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": [
+										{
+											"id": 164,
+											"name": "__index",
+											"kind": 8192,
+											"kindString": "Index signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 165,
+													"name": "key",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "FoundationElement",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													},
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 205,
+											"character": 11
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.elements"
+							}
+						},
+						{
+							"id": 161,
+							"name": "foundation",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 204,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"defaultValue": " this.getDefaultFoundation()",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.foundation"
+							}
+						},
+						{
+							"id": 129,
+							"name": "root",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 41,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "FoundationElement",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									},
+									{
+										"type": "reference",
+										"name": "HTMLElement"
+									}
+								]
+							},
+							"defaultValue": " this.createElement('root')"
+						},
+						{
+							"id": 160,
+							"name": "shouldDebounce",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.shouldDebounce"
+							}
+						},
+						{
+							"id": 133,
+							"name": "listElements",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 134,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "HTMLLIElement"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 52,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 209,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 210,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 610,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 215,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 216,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 217,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "ListProps",
+																"id": 123
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 218,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 642,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 224,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 225,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 226,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "ListProps",
+																"id": 123
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 227,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 228,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 199,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 200,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 201,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 202,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 135,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 136,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 61,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 166,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 167,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 168,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "ListProps",
+														"id": 123
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 222,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 207,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 208,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 211,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 212,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 213,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "ListProps",
+																"id": 123
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 214,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 169,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 170,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 226,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 219,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 220,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 221,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "ListProps",
+																"id": 123
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 222,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 223,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 655,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 171,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1084,14 +3604,14 @@
 							},
 							"signatures": [
 								{
-									"id": 46,
+									"id": 172,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 47,
+											"id": 173,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1104,7 +3624,7 @@
 									],
 									"parameters": [
 										{
-											"id": 48,
+											"id": 174,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1120,8 +3640,8 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
 												"type": "unknown",
@@ -1138,7 +3658,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 229,
+									"line": 232,
 									"character": 15
 								}
 							],
@@ -1148,7 +3668,7 @@
 							}
 						},
 						{
-							"id": 62,
+							"id": 188,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1157,7 +3677,7 @@
 							},
 							"signatures": [
 								{
-									"id": 63,
+									"id": 189,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1167,7 +3687,7 @@
 									},
 									"parameters": [
 										{
-											"id": 64,
+											"id": 190,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1178,7 +3698,7 @@
 											}
 										},
 										{
-											"id": 65,
+											"id": 191,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1189,7 +3709,7 @@
 											}
 										},
 										{
-											"id": 66,
+											"id": 192,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1220,7 +3740,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 256,
+									"line": 261,
 									"character": 6
 								}
 							],
@@ -1230,7 +3750,49 @@
 							}
 						},
 						{
-							"id": 16,
+							"id": 137,
+							"name": "focusItemAtIndex",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 138,
+									"name": "focusItemAtIndex",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 139,
+											"name": "index",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 66,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 140,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1239,7 +3801,7 @@
 							},
 							"signatures": [
 								{
-									"id": 17,
+									"id": 141,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1257,7 +3819,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 65,
+									"line": 70,
 									"character": 22
 								}
 							],
@@ -1267,7 +3829,65 @@
 							}
 						},
 						{
-							"id": 77,
+							"id": 142,
+							"name": "getListItemIndex",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 143,
+									"name": "getListItemIndex",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Used to figure out which list item this event is targetting. Or returns -1 if\nthere is no list item"
+									},
+									"parameters": [
+										{
+											"id": 144,
+											"name": "evt",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "FocusEvent"
+													},
+													{
+														"type": "reference",
+														"name": "KeyboardEvent"
+													},
+													{
+														"type": "reference",
+														"name": "MouseEvent"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "list.tsx",
+									"line": 182,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 203,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1277,7 +3897,7 @@
 							},
 							"signatures": [
 								{
-									"id": 78,
+									"id": 204,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1288,7 +3908,7 @@
 									},
 									"parameters": [
 										{
-											"id": 79,
+											"id": 205,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1304,7 +3924,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 2
+																"id": 123
 															}
 														]
 													}
@@ -1312,7 +3932,7 @@
 											}
 										},
 										{
-											"id": 80,
+											"id": 206,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1371,7 +3991,7 @@
 							}
 						},
 						{
-							"id": 18,
+							"id": 145,
 							"name": "handleClick",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1380,14 +4000,14 @@
 							},
 							"signatures": [
 								{
-									"id": 19,
+									"id": 146,
 									"name": "handleClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 20,
+											"id": 147,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1407,13 +4027,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 167,
+									"line": 212,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 24,
+							"id": 151,
 							"name": "handleFocusIn",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1422,14 +4042,14 @@
 							},
 							"signatures": [
 								{
-									"id": 25,
+									"id": 152,
 									"name": "handleFocusIn",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 26,
+											"id": 153,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1449,13 +4069,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 175,
+									"line": 243,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 27,
+							"id": 154,
 							"name": "handleFocusOut",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1464,14 +4084,14 @@
 							},
 							"signatures": [
 								{
-									"id": 28,
+									"id": 155,
 									"name": "handleFocusOut",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 29,
+											"id": 156,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1491,13 +4111,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 179,
+									"line": 248,
 									"character": 16
 								}
 							]
 						},
 						{
-							"id": 21,
+							"id": 148,
 							"name": "handleKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1506,21 +4126,27 @@
 							},
 							"signatures": [
 								{
-									"id": 22,
+									"id": 149,
 									"name": "handleKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 23,
+											"id": 150,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"name": "KeyboardEvent"
+												"name": "KeyboardEvent",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "HTMLElement"
+													}
+												]
 											}
 										}
 									],
@@ -1533,13 +4159,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 171,
+									"line": 226,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 30,
+							"id": 157,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1548,7 +4174,7 @@
 							},
 							"signatures": [
 								{
-									"id": 31,
+									"id": 158,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1562,13 +4188,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 183,
+									"line": 253,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 68,
+							"id": 194,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1578,7 +4204,7 @@
 							},
 							"signatures": [
 								{
-									"id": 69,
+									"id": 195,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1589,7 +4215,7 @@
 									},
 									"parameters": [
 										{
-											"id": 70,
+											"id": 196,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1605,7 +4231,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 2
+																"id": 123
 															}
 														]
 													}
@@ -1613,7 +4239,7 @@
 											}
 										},
 										{
-											"id": 71,
+											"id": 197,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1640,7 +4266,7 @@
 											}
 										},
 										{
-											"id": 72,
+											"id": 198,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1674,7 +4300,7 @@
 							}
 						},
 						{
-							"id": 51,
+							"id": 177,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1683,14 +4309,14 @@
 							},
 							"signatures": [
 								{
-									"id": 52,
+									"id": 178,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 53,
+											"id": 179,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1701,7 +4327,7 @@
 											}
 										},
 										{
-											"id": 54,
+											"id": 180,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1727,7 +4353,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 245,
 									"character": 6
 								}
 							],
@@ -1737,7 +4363,7 @@
 							}
 						},
 						{
-							"id": 55,
+							"id": 181,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1746,14 +4372,14 @@
 							},
 							"signatures": [
 								{
-									"id": 56,
+									"id": 182,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 57,
+											"id": 183,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1764,7 +4390,7 @@
 											}
 										},
 										{
-											"id": 58,
+											"id": 184,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1775,7 +4401,7 @@
 											}
 										},
 										{
-											"id": 59,
+											"id": 185,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1783,14 +4409,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 60,
+													"id": 186,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 61,
+															"id": 187,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1804,7 +4430,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 242,
+															"line": 247,
 															"character": 46
 														}
 													]
@@ -1825,7 +4451,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 242,
+									"line": 247,
 									"character": 10
 								}
 							],
@@ -1835,7 +4461,7 @@
 							}
 						},
 						{
-							"id": 49,
+							"id": 175,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1844,7 +4470,7 @@
 							},
 							"signatures": [
 								{
-									"id": 50,
+									"id": 176,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1862,7 +4488,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 236,
+									"line": 241,
 									"character": 8
 								}
 							],
@@ -1877,61 +4503,62 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								9
+								130
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								39,
-								35,
-								34,
-								8,
-								33
+								162,
+								161,
+								129,
+								160
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								12
+								133
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								83,
-								89,
-								98,
-								73,
-								14,
-								40,
-								81,
-								85,
-								43,
-								93,
-								45,
-								62,
-								16,
-								77,
-								18,
-								24,
-								27,
-								21,
-								30,
-								68,
-								51,
-								55,
-								49
+								209,
+								215,
+								224,
+								199,
+								135,
+								166,
+								207,
+								211,
+								169,
+								219,
+								171,
+								188,
+								137,
+								140,
+								142,
+								203,
+								145,
+								151,
+								154,
+								148,
+								157,
+								194,
+								177,
+								181,
+								175
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 39,
+							"line": 40,
 							"character": 17
 						}
 					],
@@ -1943,14 +4570,14 @@
 								{
 									"type": "reference",
 									"name": "ListProps",
-									"id": 2
+									"id": 123
 								}
 							]
 						}
 					]
 				},
 				{
-					"id": 2,
+					"id": 123,
 					"name": "ListProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -1959,7 +4586,7 @@
 					},
 					"children": [
 						{
-							"id": 5,
+							"id": 126,
 							"name": "avatarList",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1973,7 +4600,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 12
 								}
 							],
@@ -1996,7 +4623,7 @@
 							}
 						},
 						{
-							"id": 3,
+							"id": 124,
 							"name": "dense",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2010,7 +4637,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 7
 								}
 							],
@@ -2033,7 +4660,7 @@
 							}
 						},
 						{
-							"id": 6,
+							"id": 127,
 							"name": "nonInteractive",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2047,7 +4674,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 15,
+									"line": 16,
 									"character": 16
 								}
 							],
@@ -2070,7 +4697,7 @@
 							}
 						},
 						{
-							"id": 4,
+							"id": 125,
 							"name": "twoLine",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2084,7 +4711,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 9
 								}
 							],
@@ -2112,23 +4739,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								5,
-								3,
-								6,
-								4
+								126,
+								124,
+								127,
+								125
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 7,
+							"line": 8,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 103,
+					"id": 229,
 					"name": "ListRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2142,7 +4769,7 @@
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 19,
+							"line": 20,
 							"character": 21
 						}
 					],
@@ -2156,7 +4783,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 104,
+											"id": 230,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2185,21 +4812,21 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						7
+						128
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2
+						123
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						103
+						229
 					]
 				}
 			],
@@ -2212,7 +4839,7 @@
 			]
 		},
 		{
-			"id": 105,
+			"id": 231,
 			"name": "\"list-item\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2222,7 +4849,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list-item.tsx",
 			"children": [
 				{
-					"id": 111,
+					"id": 237,
 					"name": "ListItemGraphicProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2231,7 +4858,7 @@
 					},
 					"children": [
 						{
-							"id": 112,
+							"id": 238,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2245,7 +4872,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 48,
+									"line": 50,
 									"character": 6
 								}
 							],
@@ -2259,7 +4886,7 @@
 							}
 						},
 						{
-							"id": 113,
+							"id": 239,
 							"name": "iconOptions",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2273,7 +4900,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 53,
+									"line": 55,
 									"character": 13
 								}
 							],
@@ -2292,8 +4919,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								112,
-								113
+								238,
+								239
 							]
 						}
 					],
@@ -2312,7 +4939,7 @@
 					]
 				},
 				{
-					"id": 114,
+					"id": 240,
 					"name": "ListItemMetaProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2321,7 +4948,7 @@
 					},
 					"children": [
 						{
-							"id": 115,
+							"id": 241,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2335,7 +4962,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 48,
+									"line": 50,
 									"character": 6
 								}
 							],
@@ -2349,7 +4976,7 @@
 							}
 						},
 						{
-							"id": 116,
+							"id": 242,
 							"name": "iconOptions",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2363,7 +4990,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 53,
+									"line": 55,
 									"character": 13
 								}
 							],
@@ -2382,8 +5009,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								115,
-								116
+								241,
+								242
 							]
 						}
 					],
@@ -2402,7 +5029,7 @@
 					]
 				},
 				{
-					"id": 106,
+					"id": 232,
 					"name": "ListItemProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2411,7 +5038,7 @@
 					},
 					"children": [
 						{
-							"id": 108,
+							"id": 234,
 							"name": "activated",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2448,7 +5075,7 @@
 							}
 						},
 						{
-							"id": 109,
+							"id": 235,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2485,7 +5112,7 @@
 							}
 						},
 						{
-							"id": 110,
+							"id": 236,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2499,7 +5126,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 278,
+									"line": 281,
 									"character": 8
 								}
 							],
@@ -2513,7 +5140,7 @@
 							}
 						},
 						{
-							"id": 107,
+							"id": 233,
 							"name": "selected",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2555,10 +5182,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								108,
-								109,
-								110,
-								107
+								234,
+								235,
+								236,
+								233
 							]
 						}
 					],
@@ -2579,12 +5206,12 @@
 						{
 							"type": "reference",
 							"name": "SimpleListItemProps",
-							"id": 117
+							"id": 243
 						}
 					]
 				},
 				{
-					"id": 117,
+					"id": 243,
 					"name": "SimpleListItemProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2593,7 +5220,7 @@
 					},
 					"children": [
 						{
-							"id": 124,
+							"id": 251,
 							"name": "activated",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2631,11 +5258,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.activated",
-								"id": 108
+								"id": 234
 							}
 						},
 						{
-							"id": 122,
+							"id": 249,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2649,7 +5276,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 104,
+									"line": 129,
 									"character": 10
 								}
 							],
@@ -2659,7 +5286,7 @@
 							}
 						},
 						{
-							"id": 125,
+							"id": 252,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2697,11 +5324,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.disabled",
-								"id": 109
+								"id": 235
 							}
 						},
 						{
-							"id": 120,
+							"id": 246,
 							"name": "graphic",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2715,7 +5342,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 100,
+									"line": 123,
 									"character": 9
 								}
 							],
@@ -2725,8 +5352,32 @@
 							}
 						},
 						{
-							"id": 121,
+							"id": 248,
 							"name": "meta",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Meta content for the ListItem instead of an icon."
+							},
+							"sources": [
+								{
+									"fileName": "list-item.tsx",
+									"line": 127,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 247,
+							"name": "metaIcon",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
@@ -2739,8 +5390,8 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 102,
-									"character": 6
+									"line": 125,
+									"character": 10
 								}
 							],
 							"type": {
@@ -2749,7 +5400,7 @@
 							}
 						},
 						{
-							"id": 126,
+							"id": 253,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2763,7 +5414,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 278,
+									"line": 281,
 									"character": 8
 								}
 							],
@@ -2777,7 +5428,7 @@
 							}
 						},
 						{
-							"id": 119,
+							"id": 245,
 							"name": "secondaryText",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2791,7 +5442,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 98,
+									"line": 121,
 									"character": 15
 								}
 							],
@@ -2801,7 +5452,7 @@
 							}
 						},
 						{
-							"id": 123,
+							"id": 250,
 							"name": "selected",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2839,11 +5490,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.selected",
-								"id": 107
+								"id": 233
 							}
 						},
 						{
-							"id": 118,
+							"id": 244,
 							"name": "text",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2857,7 +5508,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 96,
+									"line": 119,
 									"character": 6
 								}
 							],
@@ -2872,22 +5523,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								124,
-								122,
-								125,
-								120,
-								121,
-								126,
-								119,
-								123,
-								118
+								251,
+								249,
+								252,
+								246,
+								248,
+								247,
+								253,
+								245,
+								250,
+								244
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 94,
+							"line": 117,
 							"character": 36
 						}
 					],
@@ -2895,12 +5547,12 @@
 						{
 							"type": "reference",
 							"name": "ListItemProps",
-							"id": 106
+							"id": 232
 						}
 					]
 				},
 				{
-					"id": 144,
+					"id": 273,
 					"name": "ListDivider",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2914,7 +5566,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 89,
+							"line": 112,
 							"character": 24
 						}
 					],
@@ -2928,7 +5580,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 145,
+											"id": 274,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2952,7 +5604,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListDivider',\n  classNames: ['mdc-list-divider']\n})"
 				},
 				{
-					"id": 140,
+					"id": 269,
 					"name": "ListGroup",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2966,7 +5618,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 77,
+							"line": 100,
 							"character": 22
 						}
 					],
@@ -2980,7 +5632,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 141,
+											"id": 270,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3004,7 +5656,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListGroup',\n  classNames: ['mdc-list-group']\n})"
 				},
 				{
-					"id": 142,
+					"id": 271,
 					"name": "ListGroupSubheader",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3018,7 +5670,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 83,
+							"line": 106,
 							"character": 31
 						}
 					],
@@ -3032,7 +5684,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 143,
+											"id": 272,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3056,7 +5708,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListGroupSubheader',\n  classNames: ['mdc-list-group__subheader']\n})"
 				},
 				{
-					"id": 127,
+					"id": 254,
 					"name": "ListItem",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3087,7 +5739,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 128,
+													"id": 255,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -3130,7 +5782,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 129,
+													"id": 256,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -3161,10 +5813,10 @@
 							}
 						]
 					},
-					"defaultValue": " withRipple()(\n  componentFactory<ListItemProps>({\n    displayName: 'ListItem',\n    defaultProps: {\n      tabIndex: 0\n    },\n    classNames: (props: ListItemProps) => [\n      'mdc-list-item',\n      {\n        'mdc-list-item--selected': props.selected,\n        'mdc-list-item--activated': props.activated,\n        'mdc-list-item--disabled': props.disabled\n      }\n    ],\n    consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element\n  })\n)"
+					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<ListItemProps>({\n    displayName: 'ListItem',\n    defaultProps: {\n      tabIndex: 0\n    },\n    classNames: (props: ListItemProps) => [\n      'mdc-list-item',\n      {\n        'mdc-list-item--selected': props.selected,\n        'mdc-list-item--activated': props.activated,\n        'mdc-list-item--disabled': props.disabled\n      }\n    ],\n    consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element\n  })\n)"
 				},
 				{
-					"id": 136,
+					"id": 263,
 					"name": "ListItemGraphic",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3192,7 +5844,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 137,
+											"id": 264,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3216,7 +5868,7 @@
 					"defaultValue": " componentFactory<ListItemGraphicProps>({\n  displayName: 'ListItemGraphic',\n  classNames: ['mdc-list-item__graphic'],\n  tag: Icon\n})"
 				},
 				{
-					"id": 138,
+					"id": 265,
 					"name": "ListItemMeta",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3225,7 +5877,7 @@
 						"isConst": true
 					},
 					"comment": {
-						"shortText": "A meta icon for the ListItem. By default this is an icon component. If you need to render text, specify a tag=\"span\" and basename=\"\" to ensure proper rendering. See the examples above."
+						"shortText": "Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content."
 					},
 					"sources": [
 						{
@@ -3244,7 +5896,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 139,
+											"id": 266,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3265,10 +5917,61 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<ListItemMetaProps>({\n  displayName: 'ListItemMeta',\n  classNames: ['mdc-list-item__meta'],\n  tag: Icon\n})"
+					"defaultValue": " componentFactory<ListItemMetaProps>({\n  displayName: 'ListItemMeta',\n  classNames: ['mdc-list-item__meta'],\n  tag: 'div',\n  render: (props, ref, Tag) => {\n    if (!!props.icon) {\n      return <Icon ref={ref} {...props} />;\n    }\n\n    if (React.isValidElement(props.children)) {\n      const { children, ...rest } = props;\n      return React.cloneElement(props.children, {\n        ...rest,\n        ...props.children.props,\n        className: classNames(props.className, props.children.props.className)\n      });\n    }\n\n    return <Tag ref={ref} {...props} />;\n  }\n})"
 				},
 				{
-					"id": 132,
+					"id": 267,
+					"name": "ListItemMetaIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A meta icon for the ListItem."
+					},
+					"sources": [
+						{
+							"fileName": "list-item.tsx",
+							"line": 93,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 268,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<ListItemMetaProps>({\n  displayName: 'ListItemMetaIcon',\n  classNames: ['mdc-list-item__meta'],\n  tag: Icon\n})"
+				},
+				{
+					"id": 259,
 					"name": "ListItemPrimaryText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3296,7 +5999,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 133,
+											"id": 260,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3320,7 +6023,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemPrimaryText',\n  tag: 'span',\n  classNames: ['mdc-list-item__primary-text']\n})"
 				},
 				{
-					"id": 134,
+					"id": 261,
 					"name": "ListItemSecondaryText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3348,7 +6051,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 135,
+											"id": 262,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3372,7 +6075,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemSecondaryText',\n  tag: 'span',\n  classNames: ['mdc-list-item__secondary-text']\n})"
 				},
 				{
-					"id": 130,
+					"id": 257,
 					"name": "ListItemText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3400,7 +6103,7 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 131,
+											"id": 258,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -3424,7 +6127,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemText',\n  tag: 'span',\n  classNames: ['mdc-list-item__text']\n})"
 				},
 				{
-					"id": 146,
+					"id": 275,
 					"name": "SimpleListItem",
 					"kind": 64,
 					"kindString": "Function",
@@ -3434,14 +6137,14 @@
 					},
 					"signatures": [
 						{
-							"id": 147,
+							"id": 276,
 							"name": "SimpleListItem",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 148,
+									"id": 277,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3450,14 +6153,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 149,
+											"id": 278,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 154,
+													"id": 284,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3465,7 +6168,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 112,
+															"line": 138,
 															"character": 10
 														}
 													],
@@ -3522,7 +6225,7 @@
 													}
 												},
 												{
-													"id": 152,
+													"id": 281,
 													"name": "graphic",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3530,7 +6233,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 110,
+															"line": 135,
 															"character": 9
 														}
 													],
@@ -3563,7 +6266,7 @@
 													}
 												},
 												{
-													"id": 153,
+													"id": 283,
 													"name": "meta",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3571,7 +6274,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 111,
+															"line": 137,
 															"character": 6
 														}
 													],
@@ -3584,6 +6287,71 @@
 															},
 															{
 																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															},
+															{
+																"type": "reference",
+																"name": "__type"
+															},
+															{
+																"type": "reference",
+																"name": "ReactElement",
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "any"
+																	}
+																]
+															},
+															{
+																"type": "reference",
+																"name": "ReactNodeArray"
+															},
+															{
+																"type": "reference",
+																"name": "ReactPortal"
+															}
+														]
+													}
+												},
+												{
+													"id": 282,
+													"name": "metaIcon",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "list-item.tsx",
+															"line": 136,
+															"character": 10
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
 																"name": "string"
 															},
 															{
@@ -3604,7 +6372,7 @@
 													}
 												},
 												{
-													"id": 155,
+													"id": 285,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3612,18 +6380,18 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 113,
+															"line": 139,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 155
+														"id": 285
 													}
 												},
 												{
-													"id": 151,
+													"id": 280,
 													"name": "secondaryText",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3631,7 +6399,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 109,
+															"line": 134,
 															"character": 15
 														}
 													],
@@ -3688,7 +6456,7 @@
 													}
 												},
 												{
-													"id": 150,
+													"id": 279,
 													"name": "text",
 													"kind": 32,
 													"kindString": "Variable",
@@ -3696,7 +6464,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 108,
+															"line": 133,
 															"character": 6
 														}
 													],
@@ -3758,19 +6526,20 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														154,
-														152,
-														153,
-														155,
-														151,
-														150
+														284,
+														281,
+														283,
+														282,
+														285,
+														280,
+														279
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "list-item.tsx",
-													"line": 107,
+													"line": 132,
 													"character": 31
 												}
 											]
@@ -3787,7 +6556,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 107,
+							"line": 132,
 							"character": 27
 						}
 					]
@@ -3798,32 +6567,33 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						111,
-						114,
-						106,
-						117
+						237,
+						240,
+						232,
+						243
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						144,
-						140,
-						142,
-						127,
-						136,
-						138,
-						132,
-						134,
-						130
+						273,
+						269,
+						271,
+						254,
+						263,
+						265,
+						267,
+						259,
+						261,
+						257
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						146
+						275
 					]
 				}
 			],
@@ -3841,9 +6611,10 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
-				156,
 				1,
-				105
+				286,
+				122,
+				231
 			]
 		}
 	]

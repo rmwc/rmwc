@@ -7,21 +7,10 @@ import { IconButton } from './';
 
 describe('IconButton SSR', () => {
   it('renders', () => {
-    mount(
-      <IconButton
-        on={{ label: 'Remove from favorites', content: 'favorite' }}
-        off={{ label: 'Add to favorites', content: 'favorite_border' }}
-      />
-    );
+    mount(<IconButton onIcon="favorite" icon="favorite_border" />);
   });
 
   it('renders controlled', () => {
-    mount(
-      <IconButton
-        checked
-        on={{ label: 'Remove from favorites', content: 'favorite' }}
-        off={{ label: 'Add to favorites', content: 'favorite_border' }}
-      />
-    );
+    mount(<IconButton checked onIcon="favorite" icon="favorite_border" />);
   });
 });

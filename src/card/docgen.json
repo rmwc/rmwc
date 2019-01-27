@@ -174,17 +174,8 @@
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reference",
-										"name": "React.ReactNode"
-									},
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
+								"type": "reference",
+								"name": "React.ReactNode"
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -285,7 +276,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 278,
+									"line": 281,
 									"character": 8
 								}
 							],
@@ -641,7 +632,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 278,
+									"line": 281,
 									"character": 8
 								}
 							],
