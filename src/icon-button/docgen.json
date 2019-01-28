@@ -15,14 +15,14 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
 			"children": [
 				{
-					"id": 21,
+					"id": 24,
 					"name": "IconButtonToggle",
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 43,
+							"id": 45,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -33,7 +33,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 77,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -42,21 +42,21 @@
 					],
 					"children": [
 						{
-							"id": 24,
+							"id": 26,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 25,
+									"id": 27,
 									"name": "new IconButtonToggle",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 26,
+											"id": 28,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -80,7 +80,7 @@
 									"type": {
 										"type": "reference",
 										"name": "IconButtonToggle",
-										"id": 21
+										"id": 24
 									},
 									"overwrites": {
 										"type": "reference",
@@ -92,7 +92,7 @@
 								{
 									"fileName": "index.tsx",
 									"line": 75,
-									"character": 36
+									"character": 44
 								}
 							],
 							"overwrites": {
@@ -101,7 +101,7 @@
 							}
 						},
 						{
-							"id": 46,
+							"id": 48,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -116,21 +116,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 47,
+									"id": 49,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 48,
+											"id": 50,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 49,
+													"id": 51,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -172,7 +172,7 @@
 							}
 						},
 						{
-							"id": 45,
+							"id": 47,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -195,36 +195,7 @@
 							}
 						},
 						{
-							"id": 23,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 75,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
-							"id": 22,
+							"id": 25,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -245,7 +216,7 @@
 							"defaultValue": "\"IconButton\""
 						},
 						{
-							"id": 44,
+							"id": 46,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -270,14 +241,14 @@
 							}
 						},
 						{
-							"id": 27,
+							"id": 29,
 							"name": "on",
 							"kind": 262144,
 							"kindString": "Accessor",
 							"flags": {},
 							"getSignature": [
 								{
-									"id": 28,
+									"id": 30,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -290,14 +261,14 @@
 							],
 							"setSignature": [
 								{
-									"id": 29,
+									"id": 31,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 30,
+											"id": 32,
 											"name": "isOn",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -328,7 +299,7 @@
 							]
 						},
 						{
-							"id": 91,
+							"id": 93,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -337,7 +308,7 @@
 							},
 							"signatures": [
 								{
-									"id": 92,
+									"id": 94,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -383,7 +354,7 @@
 							}
 						},
 						{
-							"id": 97,
+							"id": 99,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -392,7 +363,7 @@
 							},
 							"signatures": [
 								{
-									"id": 98,
+									"id": 100,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -417,7 +388,7 @@
 									},
 									"parameters": [
 										{
-											"id": 99,
+											"id": 101,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -441,7 +412,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -451,7 +422,7 @@
 											}
 										},
 										{
-											"id": 100,
+											"id": 102,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -485,7 +456,7 @@
 							}
 						},
 						{
-							"id": 106,
+							"id": 108,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -494,7 +465,7 @@
 							},
 							"signatures": [
 								{
-									"id": 107,
+									"id": 109,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -519,7 +490,7 @@
 									},
 									"parameters": [
 										{
-											"id": 108,
+											"id": 110,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -543,7 +514,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -553,7 +524,7 @@
 											}
 										},
 										{
-											"id": 109,
+											"id": 111,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -580,7 +551,7 @@
 											}
 										},
 										{
-											"id": 110,
+											"id": 112,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -614,7 +585,7 @@
 							}
 						},
 						{
-							"id": 81,
+							"id": 83,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -623,7 +594,7 @@
 							},
 							"signatures": [
 								{
-									"id": 82,
+									"id": 84,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -633,7 +604,7 @@
 									},
 									"parameters": [
 										{
-											"id": 83,
+											"id": 85,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -644,7 +615,7 @@
 											}
 										},
 										{
-											"id": 84,
+											"id": 86,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -678,14 +649,14 @@
 							}
 						},
 						{
-							"id": 50,
+							"id": 52,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 51,
+									"id": 53,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -721,21 +692,21 @@
 							}
 						},
 						{
-							"id": 52,
+							"id": 54,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 53,
+									"id": 55,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 54,
+											"id": 56,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -755,7 +726,7 @@
 															{
 																"type": "reference",
 																"name": "DeprecatedIconButtonProps",
-																"id": 14
+																"id": 17
 															}
 														]
 													}
@@ -794,7 +765,7 @@
 							}
 						},
 						{
-							"id": 89,
+							"id": 91,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -803,7 +774,7 @@
 							},
 							"signatures": [
 								{
-									"id": 90,
+									"id": 92,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -849,7 +820,7 @@
 							}
 						},
 						{
-							"id": 93,
+							"id": 95,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -858,7 +829,7 @@
 							},
 							"signatures": [
 								{
-									"id": 94,
+									"id": 96,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -883,7 +854,7 @@
 									},
 									"parameters": [
 										{
-											"id": 95,
+											"id": 97,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -907,7 +878,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -917,7 +888,7 @@
 											}
 										},
 										{
-											"id": 96,
+											"id": 98,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -951,14 +922,14 @@
 							}
 						},
 						{
-							"id": 55,
+							"id": 57,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 56,
+									"id": 58,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -994,7 +965,7 @@
 							}
 						},
 						{
-							"id": 101,
+							"id": 103,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1003,7 +974,7 @@
 							},
 							"signatures": [
 								{
-									"id": 102,
+									"id": 104,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1028,7 +999,7 @@
 									},
 									"parameters": [
 										{
-											"id": 103,
+											"id": 105,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1052,7 +1023,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -1062,7 +1033,7 @@
 											}
 										},
 										{
-											"id": 104,
+											"id": 106,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1089,7 +1060,7 @@
 											}
 										},
 										{
-											"id": 105,
+											"id": 107,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1123,21 +1094,21 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 59,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 58,
+									"id": 60,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 59,
+											"id": 61,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1150,7 +1121,7 @@
 									],
 									"parameters": [
 										{
-											"id": 60,
+											"id": 62,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1194,14 +1165,14 @@
 							}
 						},
 						{
-							"id": 70,
+							"id": 72,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 71,
+									"id": 73,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1211,7 +1182,7 @@
 									},
 									"parameters": [
 										{
-											"id": 72,
+											"id": 74,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1222,7 +1193,7 @@
 											}
 										},
 										{
-											"id": 73,
+											"id": 75,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1233,7 +1204,7 @@
 											}
 										},
 										{
-											"id": 74,
+											"id": 76,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1274,14 +1245,14 @@
 							}
 						},
 						{
-							"id": 31,
+							"id": 33,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 32,
+									"id": 34,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1309,7 +1280,7 @@
 							}
 						},
 						{
-							"id": 85,
+							"id": 87,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1318,7 +1289,7 @@
 							},
 							"signatures": [
 								{
-									"id": 86,
+									"id": 88,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1329,7 +1300,7 @@
 									},
 									"parameters": [
 										{
-											"id": 87,
+											"id": 89,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1353,7 +1324,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -1363,7 +1334,7 @@
 											}
 										},
 										{
-											"id": 88,
+											"id": 90,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1422,21 +1393,21 @@
 							}
 						},
 						{
-							"id": 38,
+							"id": 40,
 							"name": "handleClick",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 39,
+									"id": 41,
 									"name": "handleClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 40,
+											"id": 42,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1468,14 +1439,14 @@
 							]
 						},
 						{
-							"id": 33,
+							"id": 35,
 							"name": "isOn",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 34,
+									"id": 36,
 									"name": "isOn",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1498,14 +1469,14 @@
 							]
 						},
 						{
-							"id": 41,
+							"id": 43,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 42,
+									"id": 44,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1525,7 +1496,7 @@
 							]
 						},
 						{
-							"id": 76,
+							"id": 78,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1534,7 +1505,7 @@
 							},
 							"signatures": [
 								{
-									"id": 77,
+									"id": 79,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1545,7 +1516,7 @@
 									},
 									"parameters": [
 										{
-											"id": 78,
+											"id": 80,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1569,7 +1540,7 @@
 																	{
 																		"type": "reference",
 																		"name": "DeprecatedIconButtonProps",
-																		"id": 14
+																		"id": 17
 																	}
 																]
 															}
@@ -1579,7 +1550,7 @@
 											}
 										},
 										{
-											"id": 79,
+											"id": 81,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1606,7 +1577,7 @@
 											}
 										},
 										{
-											"id": 80,
+											"id": 82,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1640,21 +1611,21 @@
 							}
 						},
 						{
-							"id": 35,
+							"id": 37,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 36,
+									"id": 38,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 37,
+											"id": 39,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1689,21 +1660,21 @@
 							}
 						},
 						{
-							"id": 63,
+							"id": 65,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 64,
+									"id": 66,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 65,
+											"id": 67,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1714,7 +1685,7 @@
 											}
 										},
 										{
-											"id": 66,
+											"id": 68,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1725,7 +1696,7 @@
 											}
 										},
 										{
-											"id": 67,
+											"id": 69,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1733,14 +1704,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 68,
+													"id": 70,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 69,
+															"id": 71,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1785,14 +1756,14 @@
 							}
 						},
 						{
-							"id": 61,
+							"id": 63,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 62,
+									"id": 64,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1825,52 +1796,51 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								24
+								26
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								46,
-								45,
-								23,
-								22,
-								44
+								48,
+								47,
+								25,
+								46
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								27
+								29
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								91,
-								97,
-								106,
-								81,
-								50,
-								52,
-								89,
 								93,
-								55,
-								101,
+								99,
+								108,
+								83,
+								52,
+								54,
+								91,
+								95,
 								57,
-								70,
-								31,
-								85,
-								38,
+								103,
+								59,
+								72,
 								33,
-								41,
-								76,
+								87,
+								40,
 								35,
-								63,
-								61
+								43,
+								78,
+								37,
+								65,
+								63
 							]
 						}
 					],
@@ -1897,7 +1867,7 @@
 										{
 											"type": "reference",
 											"name": "DeprecatedIconButtonProps",
-											"id": 14
+											"id": 17
 										}
 									]
 								}
@@ -1906,7 +1876,7 @@
 					]
 				},
 				{
-					"id": 14,
+					"id": 17,
 					"name": "DeprecatedIconButtonProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -1915,7 +1885,7 @@
 					},
 					"children": [
 						{
-							"id": 15,
+							"id": 18,
 							"name": "iconOptions",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1939,7 +1909,7 @@
 							}
 						},
 						{
-							"id": 16,
+							"id": 19,
 							"name": "onIconOptions",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1968,8 +1938,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								15,
-								16
+								18,
+								19
 							]
 						}
 					],
@@ -1982,7 +1952,7 @@
 					]
 				},
 				{
-					"id": 17,
+					"id": 20,
 					"name": "IconButtonIconProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -1991,7 +1961,7 @@
 					},
 					"children": [
 						{
-							"id": 19,
+							"id": 22,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2005,7 +1975,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 6
 								}
 							],
@@ -2019,7 +1989,7 @@
 							}
 						},
 						{
-							"id": 20,
+							"id": 23,
 							"name": "iconOptions",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2033,7 +2003,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -2047,7 +2017,7 @@
 							}
 						},
 						{
-							"id": 18,
+							"id": 21,
 							"name": "on",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2086,9 +2056,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								19,
-								20,
-								18
+								22,
+								23,
+								21
 							]
 						}
 					],
@@ -2115,6 +2085,47 @@
 						"isExported": true
 					},
 					"children": [
+						{
+							"id": 14,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
 						{
 							"id": 3,
 							"name": "checked",
@@ -2364,9 +2375,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -2377,6 +2388,88 @@
 								"type": "reference",
 								"name": "WithRippleProps.ripple"
 							}
+						},
+						{
+							"id": 15,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
+							}
+						},
+						{
+							"id": 16,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
+							}
 						}
 					],
 					"groups": [
@@ -2384,12 +2477,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								14,
 								3,
 								10,
 								11,
 								4,
 								12,
-								13
+								13,
+								15,
+								16
 							]
 						}
 					],
@@ -2424,29 +2520,59 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 115,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconButtonIconProps",
+												"id": 20
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "IconButtonIconProps",
+												"id": 20
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -2457,7 +2583,7 @@
 					"defaultValue": " componentFactory<IconButtonIconProps>({\n  displayName: 'IconButtonIcon',\n  tag: Icon,\n  classNames: (props: IconButtonIconProps) => [\n    'mdc-icon-button__icon',\n    {\n      'mdc-icon-button__icon--on': props.on\n    }\n  ],\n  consumeProps: ['on']\n})"
 				},
 				{
-					"id": 111,
+					"id": 113,
 					"name": "IconButtonRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2483,18 +2609,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 112,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconButtonProps",
+												"id": 2
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -2505,10 +2626,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -2526,18 +2643,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 113,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconButtonProps",
+												"id": 2
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -2548,10 +2660,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									}
@@ -2562,7 +2670,7 @@
 					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<IconButtonProps>({\n    displayName: 'IconButtonRoot',\n    tag: 'button',\n    classNames: (props: IconButtonProps) => [\n      'mdc-icon-button',\n      {\n        'mdc-icon-button--on': props.checked\n      }\n    ],\n    defaultProps: {\n      role: 'button',\n      tabIndex: '0'\n    },\n    consumeProps: ['checked']\n  })\n)"
 				},
 				{
-					"id": 116,
+					"id": 115,
 					"name": "IconButton",
 					"kind": 64,
 					"kindString": "Function",
@@ -2572,14 +2680,14 @@
 					},
 					"signatures": [
 						{
-							"id": 117,
+							"id": 116,
 							"name": "IconButton",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 118,
+									"id": 117,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2588,7 +2696,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 119,
+											"id": 118,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -2597,7 +2705,7 @@
 											},
 											"children": [
 												{
-													"id": 120,
+													"id": 119,
 													"name": "icon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2640,7 +2748,7 @@
 													}
 												},
 												{
-													"id": 121,
+													"id": 120,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2657,7 +2765,7 @@
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 121
+														"id": 120
 													}
 												}
 											],
@@ -2666,8 +2774,8 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														120,
-														121
+														119,
+														120
 													]
 												}
 											],
@@ -2702,15 +2810,15 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						21
+						24
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						14,
 						17,
+						20,
 						2
 					]
 				},
@@ -2719,14 +2827,14 @@
 					"kind": 32,
 					"children": [
 						114,
-						111
+						113
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						116
+						115
 					]
 				}
 			],

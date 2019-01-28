@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
 import {
@@ -24,9 +25,9 @@ export const TabScrollerScrollContent = componentFactory({
 });
 
 export class TabScroller extends FoundationComponent<{}> {
-  root = this.createElement('root');
-  area = this.createElement('area');
-  content = this.createElement('content');
+  private root = this.createElement('root');
+  private area = this.createElement('area');
+  private content = this.createElement('content');
 
   constructor(props: {}) {
     super(props);

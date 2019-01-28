@@ -74,7 +74,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 57,
+									"line": 58,
 									"character": 4
 								}
 							],
@@ -94,7 +94,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 51,
+									"line": 52,
 									"character": 16
 								}
 							],
@@ -332,7 +332,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 52,
+									"line": 53,
 									"character": 6
 								}
 							],
@@ -1212,7 +1212,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 66,
+									"line": 67,
 									"character": 14
 								}
 							]
@@ -1432,7 +1432,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 121,
+									"line": 122,
 									"character": 13
 								}
 							]
@@ -1474,7 +1474,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 147,
+									"line": 148,
 									"character": 13
 								}
 							]
@@ -1516,7 +1516,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 125,
+									"line": 126,
 									"character": 15
 								}
 							]
@@ -1549,7 +1549,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 161,
+									"line": 162,
 									"character": 8
 								}
 							],
@@ -1923,7 +1923,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 90,
+									"line": 91,
 									"character": 12
 								}
 							]
@@ -1948,7 +1948,7 @@
 									"sources": [
 										{
 											"fileName": "collapsible-list.tsx",
-											"line": 56,
+											"line": 57,
 											"character": 17
 										}
 									],
@@ -1974,7 +1974,7 @@
 									"sources": [
 										{
 											"fileName": "collapsible-list.tsx",
-											"line": 55,
+											"line": 56,
 											"character": 8
 										}
 									],
@@ -1998,7 +1998,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 54,
+									"line": 55,
 									"character": 7
 								}
 							],
@@ -2069,7 +2069,7 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 47,
+							"line": 48,
 							"character": 28
 						}
 					],
@@ -2117,7 +2117,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 5,
+									"line": 6,
 									"character": 8
 								}
 							],
@@ -2137,7 +2137,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 8,
+									"line": 9,
 									"character": 9
 								}
 							],
@@ -2185,7 +2185,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 7,
+									"line": 8,
 									"character": 8
 								}
 							],
@@ -2233,7 +2233,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 6,
+									"line": 7,
 									"character": 6
 								}
 							],
@@ -2271,7 +2271,7 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 4,
+							"line": 5,
 							"character": 26
 						}
 					]
@@ -2292,7 +2292,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 15
 								}
 							],
@@ -2310,7 +2310,7 @@
 							"sources": [
 								{
 									"fileName": "collapsible-list.tsx",
-									"line": 12,
+									"line": 13,
 									"character": 6
 								}
 							],
@@ -2333,7 +2333,7 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 11,
+							"line": 12,
 							"character": 26
 						}
 					]
@@ -2349,30 +2349,40 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 16,
+							"line": 17,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 114,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2387,7 +2397,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'CollapsibleRoot',\n  classNames: ['rmwc-collapsible-list']\n})"
 				},
 				{
-					"id": 118,
+					"id": 117,
 					"name": "getNextSibling",
 					"kind": 64,
 					"kindString": "Function",
@@ -2396,14 +2406,14 @@
 					},
 					"signatures": [
 						{
-							"id": 119,
+							"id": 118,
 							"name": "getNextSibling",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 120,
+									"id": 119,
 									"name": "el",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2423,7 +2433,7 @@
 									}
 								},
 								{
-									"id": 121,
+									"id": 120,
 									"name": "isBack",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2452,13 +2462,13 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 32,
+							"line": 33,
 							"character": 20
 						}
 					]
 				},
 				{
-					"id": 115,
+					"id": 114,
 					"name": "possiblyFocusElement",
 					"kind": 64,
 					"kindString": "Function",
@@ -2467,14 +2477,14 @@
 					},
 					"signatures": [
 						{
-							"id": 116,
+							"id": 115,
 							"name": "possiblyFocusElement",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 117,
+									"id": 116,
 									"name": "el",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2503,7 +2513,7 @@
 					"sources": [
 						{
 							"fileName": "collapsible-list.tsx",
-							"line": 21,
+							"line": 22,
 							"character": 26
 						}
 					]
@@ -2536,8 +2546,8 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						118,
-						115
+						117,
+						114
 					]
 				}
 			],
@@ -2550,7 +2560,7 @@
 			]
 		},
 		{
-			"id": 286,
+			"id": 278,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2567,7 +2577,7 @@
 			]
 		},
 		{
-			"id": 122,
+			"id": 121,
 			"name": "\"list\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2577,7 +2587,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/list/list.tsx",
 			"children": [
 				{
-					"id": 128,
+					"id": 127,
 					"name": "List",
 					"kind": 128,
 					"kindString": "Class",
@@ -2586,7 +2596,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 159,
+							"id": 157,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -2597,7 +2607,7 @@
 							}
 						},
 						{
-							"id": 193,
+							"id": 191,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -2606,7 +2616,7 @@
 					],
 					"children": [
 						{
-							"id": 130,
+							"id": 128,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -2615,14 +2625,14 @@
 							},
 							"signatures": [
 								{
-									"id": 131,
+									"id": 129,
 									"name": "new List",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 132,
+											"id": 130,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2630,14 +2640,14 @@
 											"type": {
 												"type": "reference",
 												"name": "ListProps",
-												"id": 123
+												"id": 122
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "List",
-										"id": 128
+										"id": 127
 									},
 									"overwrites": {
 										"type": "reference",
@@ -2648,8 +2658,8 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 41,
-									"character": 36
+									"line": 42,
+									"character": 44
 								}
 							],
 							"overwrites": {
@@ -2658,7 +2668,7 @@
 							}
 						},
 						{
-							"id": 162,
+							"id": 160,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2675,21 +2685,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 163,
+									"id": 161,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 164,
+											"id": 162,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 165,
+													"id": 163,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2731,7 +2741,7 @@
 							}
 						},
 						{
-							"id": 161,
+							"id": 159,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2756,38 +2766,7 @@
 							}
 						},
 						{
-							"id": 129,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "list.tsx",
-									"line": 41,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
-							"id": 160,
+							"id": 158,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2813,7 +2792,7 @@
 							}
 						},
 						{
-							"id": 133,
+							"id": 131,
 							"name": "listElements",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -2822,7 +2801,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 134,
+									"id": 132,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -2839,13 +2818,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 52,
+									"line": 53,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 209,
+							"id": 207,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2855,7 +2834,7 @@
 							},
 							"signatures": [
 								{
-									"id": 210,
+									"id": 208,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2901,7 +2880,7 @@
 							}
 						},
 						{
-							"id": 215,
+							"id": 213,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2911,7 +2890,7 @@
 							},
 							"signatures": [
 								{
-									"id": 216,
+									"id": 214,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2936,7 +2915,7 @@
 									},
 									"parameters": [
 										{
-											"id": 217,
+											"id": 215,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2952,7 +2931,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -2960,7 +2939,7 @@
 											}
 										},
 										{
-											"id": 218,
+											"id": 216,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2994,7 +2973,7 @@
 							}
 						},
 						{
-							"id": 224,
+							"id": 222,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3004,7 +2983,7 @@
 							},
 							"signatures": [
 								{
-									"id": 225,
+									"id": 223,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3029,7 +3008,7 @@
 									},
 									"parameters": [
 										{
-											"id": 226,
+											"id": 224,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3045,7 +3024,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -3053,7 +3032,7 @@
 											}
 										},
 										{
-											"id": 227,
+											"id": 225,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3080,7 +3059,7 @@
 											}
 										},
 										{
-											"id": 228,
+											"id": 226,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3114,7 +3093,7 @@
 							}
 						},
 						{
-							"id": 199,
+							"id": 197,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3124,7 +3103,7 @@
 							},
 							"signatures": [
 								{
-									"id": 200,
+									"id": 198,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3134,7 +3113,7 @@
 									},
 									"parameters": [
 										{
-											"id": 201,
+											"id": 199,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3145,7 +3124,7 @@
 											}
 										},
 										{
-											"id": 202,
+											"id": 200,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3179,7 +3158,7 @@
 							}
 						},
 						{
-							"id": 135,
+							"id": 133,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3188,7 +3167,7 @@
 							},
 							"signatures": [
 								{
-									"id": 136,
+									"id": 134,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3206,7 +3185,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 61,
+									"line": 62,
 									"character": 19
 								}
 							],
@@ -3216,7 +3195,7 @@
 							}
 						},
 						{
-							"id": 166,
+							"id": 164,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3225,14 +3204,14 @@
 							},
 							"signatures": [
 								{
-									"id": 167,
+									"id": 165,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 168,
+											"id": 166,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3244,7 +3223,7 @@
 													{
 														"type": "reference",
 														"name": "ListProps",
-														"id": 123
+														"id": 122
 													}
 												]
 											}
@@ -3281,7 +3260,7 @@
 							}
 						},
 						{
-							"id": 207,
+							"id": 205,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3291,7 +3270,7 @@
 							},
 							"signatures": [
 								{
-									"id": 208,
+									"id": 206,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3337,7 +3316,7 @@
 							}
 						},
 						{
-							"id": 211,
+							"id": 209,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3347,7 +3326,7 @@
 							},
 							"signatures": [
 								{
-									"id": 212,
+									"id": 210,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3372,7 +3351,7 @@
 									},
 									"parameters": [
 										{
-											"id": 213,
+											"id": 211,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3388,7 +3367,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -3396,7 +3375,7 @@
 											}
 										},
 										{
-											"id": 214,
+											"id": 212,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3430,7 +3409,7 @@
 							}
 						},
 						{
-							"id": 169,
+							"id": 167,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3439,7 +3418,7 @@
 							},
 							"signatures": [
 								{
-									"id": 170,
+									"id": 168,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3475,7 +3454,7 @@
 							}
 						},
 						{
-							"id": 219,
+							"id": 217,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3485,7 +3464,7 @@
 							},
 							"signatures": [
 								{
-									"id": 220,
+									"id": 218,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3510,7 +3489,7 @@
 									},
 									"parameters": [
 										{
-											"id": 221,
+											"id": 219,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3526,7 +3505,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -3534,7 +3513,7 @@
 											}
 										},
 										{
-											"id": 222,
+											"id": 220,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3561,7 +3540,7 @@
 											}
 										},
 										{
-											"id": 223,
+											"id": 221,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3595,7 +3574,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 169,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3604,14 +3583,14 @@
 							},
 							"signatures": [
 								{
-									"id": 172,
+									"id": 170,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 173,
+											"id": 171,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -3624,7 +3603,7 @@
 									],
 									"parameters": [
 										{
-											"id": 174,
+											"id": 172,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3668,7 +3647,7 @@
 							}
 						},
 						{
-							"id": 188,
+							"id": 186,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3677,7 +3656,7 @@
 							},
 							"signatures": [
 								{
-									"id": 189,
+									"id": 187,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3687,7 +3666,7 @@
 									},
 									"parameters": [
 										{
-											"id": 190,
+											"id": 188,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3698,7 +3677,7 @@
 											}
 										},
 										{
-											"id": 191,
+											"id": 189,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3709,7 +3688,7 @@
 											}
 										},
 										{
-											"id": 192,
+											"id": 190,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3750,7 +3729,7 @@
 							}
 						},
 						{
-							"id": 137,
+							"id": 135,
 							"name": "focusItemAtIndex",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3759,14 +3738,14 @@
 							},
 							"signatures": [
 								{
-									"id": 138,
+									"id": 136,
 									"name": "focusItemAtIndex",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 139,
+											"id": 137,
 											"name": "index",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3786,13 +3765,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 66,
+									"line": 67,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 140,
+							"id": 138,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3801,7 +3780,7 @@
 							},
 							"signatures": [
 								{
-									"id": 141,
+									"id": 139,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3819,7 +3798,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 70,
+									"line": 71,
 									"character": 22
 								}
 							],
@@ -3829,7 +3808,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 140,
 							"name": "getListItemIndex",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3838,7 +3817,7 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 141,
 									"name": "getListItemIndex",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3848,7 +3827,7 @@
 									},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 142,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3881,13 +3860,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 182,
+									"line": 183,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 203,
+							"id": 201,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3897,7 +3876,7 @@
 							},
 							"signatures": [
 								{
-									"id": 204,
+									"id": 202,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3908,7 +3887,7 @@
 									},
 									"parameters": [
 										{
-											"id": 205,
+											"id": 203,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3924,7 +3903,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -3932,7 +3911,7 @@
 											}
 										},
 										{
-											"id": 206,
+											"id": 204,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3991,7 +3970,7 @@
 							}
 						},
 						{
-							"id": 145,
+							"id": 143,
 							"name": "handleClick",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4000,14 +3979,14 @@
 							},
 							"signatures": [
 								{
-									"id": 146,
+									"id": 144,
 									"name": "handleClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 147,
+											"id": 145,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4027,13 +4006,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 212,
+									"line": 213,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 151,
+							"id": 149,
 							"name": "handleFocusIn",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4042,14 +4021,14 @@
 							},
 							"signatures": [
 								{
-									"id": 152,
+									"id": 150,
 									"name": "handleFocusIn",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 153,
+											"id": 151,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4069,13 +4048,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 243,
+									"line": 244,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 154,
+							"id": 152,
 							"name": "handleFocusOut",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4084,14 +4063,14 @@
 							},
 							"signatures": [
 								{
-									"id": 155,
+									"id": 153,
 									"name": "handleFocusOut",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 156,
+											"id": 154,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4111,13 +4090,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 248,
+									"line": 249,
 									"character": 16
 								}
 							]
 						},
 						{
-							"id": 148,
+							"id": 146,
 							"name": "handleKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4126,14 +4105,14 @@
 							},
 							"signatures": [
 								{
-									"id": 149,
+									"id": 147,
 									"name": "handleKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 150,
+											"id": 148,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4159,13 +4138,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 226,
+									"line": 227,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 157,
+							"id": 155,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4174,7 +4153,7 @@
 							},
 							"signatures": [
 								{
-									"id": 158,
+									"id": 156,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4188,13 +4167,13 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 253,
+									"line": 254,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 194,
+							"id": 192,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4204,7 +4183,7 @@
 							},
 							"signatures": [
 								{
-									"id": 195,
+									"id": 193,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4215,7 +4194,7 @@
 									},
 									"parameters": [
 										{
-											"id": 196,
+											"id": 194,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4231,7 +4210,7 @@
 															{
 																"type": "reference",
 																"name": "ListProps",
-																"id": 123
+																"id": 122
 															}
 														]
 													}
@@ -4239,7 +4218,7 @@
 											}
 										},
 										{
-											"id": 197,
+											"id": 195,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4266,7 +4245,7 @@
 											}
 										},
 										{
-											"id": 198,
+											"id": 196,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4300,7 +4279,7 @@
 							}
 						},
 						{
-							"id": 177,
+							"id": 175,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4309,14 +4288,14 @@
 							},
 							"signatures": [
 								{
-									"id": 178,
+									"id": 176,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 179,
+											"id": 177,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4327,7 +4306,7 @@
 											}
 										},
 										{
-											"id": 180,
+											"id": 178,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4363,7 +4342,7 @@
 							}
 						},
 						{
-							"id": 181,
+							"id": 179,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4372,14 +4351,14 @@
 							},
 							"signatures": [
 								{
-									"id": 182,
+									"id": 180,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 183,
+											"id": 181,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4390,7 +4369,7 @@
 											}
 										},
 										{
-											"id": 184,
+											"id": 182,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4401,7 +4380,7 @@
 											}
 										},
 										{
-											"id": 185,
+											"id": 183,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4409,14 +4388,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 186,
+													"id": 184,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 187,
+															"id": 185,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -4461,7 +4440,7 @@
 							}
 						},
 						{
-							"id": 175,
+							"id": 173,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4470,7 +4449,7 @@
 							},
 							"signatures": [
 								{
-									"id": 176,
+									"id": 174,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4503,62 +4482,61 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								130
+								128
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								162,
-								161,
-								129,
-								160
+								160,
+								159,
+								158
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								133
+								131
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								209,
-								215,
-								224,
-								199,
-								135,
-								166,
 								207,
-								211,
+								213,
+								222,
+								197,
+								133,
+								164,
+								205,
+								209,
+								167,
+								217,
 								169,
-								219,
-								171,
-								188,
-								137,
+								186,
+								135,
+								138,
 								140,
-								142,
-								203,
-								145,
-								151,
-								154,
-								148,
-								157,
-								194,
-								177,
-								181,
-								175
+								201,
+								143,
+								149,
+								152,
+								146,
+								155,
+								192,
+								175,
+								179,
+								173
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 40,
+							"line": 41,
 							"character": 17
 						}
 					],
@@ -4570,14 +4548,14 @@
 								{
 									"type": "reference",
 									"name": "ListProps",
-									"id": 123
+									"id": 122
 								}
 							]
 						}
 					]
 				},
 				{
-					"id": 123,
+					"id": 122,
 					"name": "ListProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -4586,7 +4564,7 @@
 					},
 					"children": [
 						{
-							"id": 126,
+							"id": 125,
 							"name": "avatarList",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4600,7 +4578,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 14,
+									"line": 15,
 									"character": 12
 								}
 							],
@@ -4623,7 +4601,7 @@
 							}
 						},
 						{
-							"id": 124,
+							"id": 123,
 							"name": "dense",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4637,7 +4615,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 10,
+									"line": 11,
 									"character": 7
 								}
 							],
@@ -4660,7 +4638,7 @@
 							}
 						},
 						{
-							"id": 127,
+							"id": 126,
 							"name": "nonInteractive",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4674,7 +4652,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 16,
+									"line": 17,
 									"character": 16
 								}
 							],
@@ -4697,7 +4675,7 @@
 							}
 						},
 						{
-							"id": 125,
+							"id": 124,
 							"name": "twoLine",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4711,7 +4689,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 12,
+									"line": 13,
 									"character": 9
 								}
 							],
@@ -4739,23 +4717,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								125,
+								123,
 								126,
-								124,
-								127,
-								125
+								124
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 8,
+							"line": 9,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 229,
+					"id": 227,
 					"name": "ListRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4769,34 +4747,64 @@
 					"sources": [
 						{
 							"fileName": "list.tsx",
-							"line": 20,
+							"line": 21,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 230,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ListProps",
+												"id": 122
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ListProps",
+												"id": 122
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -4812,21 +4820,21 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						128
+						127
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						123
+						122
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						229
+						227
 					]
 				}
 			],
@@ -4839,7 +4847,7 @@
 			]
 		},
 		{
-			"id": 231,
+			"id": 228,
 			"name": "\"list-item\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -4872,7 +4880,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 6
 								}
 							],
@@ -4900,7 +4908,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -4927,7 +4935,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 58,
+							"line": 59,
 							"character": 37
 						}
 					],
@@ -4962,7 +4970,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 6
 								}
 							],
@@ -4990,7 +4998,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -5017,7 +5025,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 67,
+							"line": 68,
 							"character": 34
 						}
 					],
@@ -5029,7 +5037,7 @@
 					]
 				},
 				{
-					"id": 232,
+					"id": 229,
 					"name": "ListItemProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -5039,6 +5047,47 @@
 					"children": [
 						{
 							"id": 234,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
+						{
+							"id": 231,
 							"name": "activated",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5052,7 +5101,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 11
 								}
 							],
@@ -5075,7 +5124,7 @@
 							}
 						},
 						{
-							"id": 235,
+							"id": 232,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5089,7 +5138,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 10
 								}
 							],
@@ -5112,7 +5161,7 @@
 							}
 						},
 						{
-							"id": 236,
+							"id": 233,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5125,9 +5174,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -5140,7 +5189,7 @@
 							}
 						},
 						{
-							"id": 233,
+							"id": 230,
 							"name": "selected",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5154,7 +5203,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 10
 								}
 							],
@@ -5175,6 +5224,88 @@
 									}
 								]
 							}
+						},
+						{
+							"id": 235,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
+							}
+						},
+						{
+							"id": 236,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
+							}
 						}
 					],
 					"groups": [
@@ -5183,16 +5314,19 @@
 							"kind": 1024,
 							"children": [
 								234,
+								231,
+								232,
+								233,
+								230,
 								235,
-								236,
-								233
+								236
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 7,
+							"line": 8,
 							"character": 30
 						}
 					],
@@ -5220,6 +5354,47 @@
 					},
 					"children": [
 						{
+							"id": 254,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
+						{
 							"id": 251,
 							"name": "activated",
 							"kind": 1024,
@@ -5234,7 +5409,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 11
 								}
 							],
@@ -5258,7 +5433,7 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.activated",
-								"id": 234
+								"id": 231
 							}
 						},
 						{
@@ -5276,7 +5451,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 129,
+									"line": 130,
 									"character": 10
 								}
 							],
@@ -5300,7 +5475,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 10
 								}
 							],
@@ -5324,7 +5499,7 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.disabled",
-								"id": 235
+								"id": 232
 							}
 						},
 						{
@@ -5342,7 +5517,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 123,
+									"line": 124,
 									"character": 9
 								}
 							],
@@ -5366,7 +5541,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 127,
+									"line": 128,
 									"character": 6
 								}
 							],
@@ -5390,7 +5565,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 125,
+									"line": 126,
 									"character": 10
 								}
 							],
@@ -5413,9 +5588,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -5442,7 +5617,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 121,
+									"line": 122,
 									"character": 15
 								}
 							],
@@ -5466,7 +5641,7 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 10
 								}
 							],
@@ -5490,7 +5665,48 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ListItemProps.selected",
-								"id": 233
+								"id": 230
+							}
+						},
+						{
+							"id": 255,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
 							}
 						},
 						{
@@ -5508,13 +5724,54 @@
 							"sources": [
 								{
 									"fileName": "list-item.tsx",
-									"line": 119,
+									"line": 120,
 									"character": 6
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "React.ReactNode"
+							}
+						},
+						{
+							"id": 256,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
 							}
 						}
 					],
@@ -5523,6 +5780,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								254,
 								251,
 								249,
 								252,
@@ -5532,14 +5790,16 @@
 								253,
 								245,
 								250,
-								244
+								255,
+								244,
+								256
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 117,
+							"line": 118,
 							"character": 36
 						}
 					],
@@ -5547,12 +5807,12 @@
 						{
 							"type": "reference",
 							"name": "ListItemProps",
-							"id": 232
+							"id": 229
 						}
 					]
 				},
 				{
-					"id": 273,
+					"id": 266,
 					"name": "ListDivider",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5566,30 +5826,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 112,
+							"line": 113,
 							"character": 24
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 274,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -5604,7 +5874,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListDivider',\n  classNames: ['mdc-list-divider']\n})"
 				},
 				{
-					"id": 269,
+					"id": 264,
 					"name": "ListGroup",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5618,30 +5888,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 100,
+							"line": 101,
 							"character": 22
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 270,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -5656,7 +5936,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListGroup',\n  classNames: ['mdc-list-group']\n})"
 				},
 				{
-					"id": 271,
+					"id": 265,
 					"name": "ListGroupSubheader",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5670,30 +5950,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 106,
+							"line": 107,
 							"character": 31
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 272,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -5708,7 +5998,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListGroupSubheader',\n  classNames: ['mdc-list-group__subheader']\n})"
 				},
 				{
-					"id": 254,
+					"id": 257,
 					"name": "ListItem",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5722,7 +6012,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 19,
+							"line": 20,
 							"character": 21
 						}
 					],
@@ -5737,18 +6027,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 255,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "ListItemProps",
+												"id": 229
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -5759,10 +6044,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -5780,18 +6061,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 256,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "ListItemProps",
+												"id": 229
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -5802,10 +6078,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									}
@@ -5816,7 +6088,7 @@
 					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<ListItemProps>({\n    displayName: 'ListItem',\n    defaultProps: {\n      tabIndex: 0\n    },\n    classNames: (props: ListItemProps) => [\n      'mdc-list-item',\n      {\n        'mdc-list-item--selected': props.selected,\n        'mdc-list-item--activated': props.activated,\n        'mdc-list-item--disabled': props.disabled\n      }\n    ],\n    consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element\n  })\n)"
 				},
 				{
-					"id": 263,
+					"id": 261,
 					"name": "ListItemGraphic",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5830,34 +6102,64 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 61,
+							"line": 62,
 							"character": 28
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 264,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ListItemGraphicProps",
+												"id": 237
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ListItemGraphicProps",
+												"id": 237
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -5868,7 +6170,7 @@
 					"defaultValue": " componentFactory<ListItemGraphicProps>({\n  displayName: 'ListItemGraphic',\n  classNames: ['mdc-list-item__graphic'],\n  tag: Icon\n})"
 				},
 				{
-					"id": 265,
+					"id": 262,
 					"name": "ListItemMeta",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5882,34 +6184,64 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 70,
+							"line": 71,
 							"character": 25
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 266,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ListItemMetaProps",
+												"id": 240
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ListItemMetaProps",
+												"id": 240
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -5920,7 +6252,7 @@
 					"defaultValue": " componentFactory<ListItemMetaProps>({\n  displayName: 'ListItemMeta',\n  classNames: ['mdc-list-item__meta'],\n  tag: 'div',\n  render: (props, ref, Tag) => {\n    if (!!props.icon) {\n      return <Icon ref={ref} {...props} />;\n    }\n\n    if (React.isValidElement(props.children)) {\n      const { children, ...rest } = props;\n      return React.cloneElement(props.children, {\n        ...rest,\n        ...props.children.props,\n        className: classNames(props.className, props.children.props.className)\n      });\n    }\n\n    return <Tag ref={ref} {...props} />;\n  }\n})"
 				},
 				{
-					"id": 267,
+					"id": 263,
 					"name": "ListItemMetaIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5933,34 +6265,64 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 93,
+							"line": 94,
 							"character": 22
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 268,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ListItemMetaProps",
+												"id": 240
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ListItemMetaProps",
+												"id": 240
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -5985,30 +6347,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 45,
+							"line": 46,
 							"character": 32
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 260,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -6023,7 +6395,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemPrimaryText',\n  tag: 'span',\n  classNames: ['mdc-list-item__primary-text']\n})"
 				},
 				{
-					"id": 261,
+					"id": 260,
 					"name": "ListItemSecondaryText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -6037,30 +6409,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 52,
+							"line": 53,
 							"character": 34
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 262,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -6075,7 +6457,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemSecondaryText',\n  tag: 'span',\n  classNames: ['mdc-list-item__secondary-text']\n})"
 				},
 				{
-					"id": 257,
+					"id": 258,
 					"name": "ListItemText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -6089,30 +6471,40 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 38,
+							"line": 39,
 							"character": 25
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 258,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -6127,7 +6519,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ListItemText',\n  tag: 'span',\n  classNames: ['mdc-list-item__text']\n})"
 				},
 				{
-					"id": 275,
+					"id": 267,
 					"name": "SimpleListItem",
 					"kind": 64,
 					"kindString": "Function",
@@ -6137,14 +6529,14 @@
 					},
 					"signatures": [
 						{
-							"id": 276,
+							"id": 268,
 							"name": "SimpleListItem",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 277,
+									"id": 269,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6153,14 +6545,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 278,
+											"id": 270,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 284,
+													"id": 276,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6168,7 +6560,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 138,
+															"line": 139,
 															"character": 10
 														}
 													],
@@ -6225,7 +6617,7 @@
 													}
 												},
 												{
-													"id": 281,
+													"id": 273,
 													"name": "graphic",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6233,7 +6625,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 135,
+															"line": 136,
 															"character": 9
 														}
 													],
@@ -6266,7 +6658,7 @@
 													}
 												},
 												{
-													"id": 283,
+													"id": 275,
 													"name": "meta",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6274,7 +6666,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 137,
+															"line": 138,
 															"character": 6
 														}
 													],
@@ -6331,7 +6723,7 @@
 													}
 												},
 												{
-													"id": 282,
+													"id": 274,
 													"name": "metaIcon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6339,7 +6731,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 136,
+															"line": 137,
 															"character": 10
 														}
 													],
@@ -6372,7 +6764,7 @@
 													}
 												},
 												{
-													"id": 285,
+													"id": 277,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6380,18 +6772,18 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 139,
+															"line": 140,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 285
+														"id": 277
 													}
 												},
 												{
-													"id": 280,
+													"id": 272,
 													"name": "secondaryText",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6399,7 +6791,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 134,
+															"line": 135,
 															"character": 15
 														}
 													],
@@ -6456,7 +6848,7 @@
 													}
 												},
 												{
-													"id": 279,
+													"id": 271,
 													"name": "text",
 													"kind": 32,
 													"kindString": "Variable",
@@ -6464,7 +6856,7 @@
 													"sources": [
 														{
 															"fileName": "list-item.tsx",
-															"line": 133,
+															"line": 134,
 															"character": 6
 														}
 													],
@@ -6526,20 +6918,20 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														284,
-														281,
-														283,
-														282,
-														285,
-														280,
-														279
+														276,
+														273,
+														275,
+														274,
+														277,
+														272,
+														271
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "list-item.tsx",
-													"line": 132,
+													"line": 133,
 													"character": 31
 												}
 											]
@@ -6556,7 +6948,7 @@
 					"sources": [
 						{
 							"fileName": "list-item.tsx",
-							"line": 132,
+							"line": 133,
 							"character": 27
 						}
 					]
@@ -6569,7 +6961,7 @@
 					"children": [
 						237,
 						240,
-						232,
+						229,
 						243
 					]
 				},
@@ -6577,23 +6969,23 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						273,
-						269,
-						271,
-						254,
-						263,
+						266,
+						264,
 						265,
-						267,
-						259,
+						257,
 						261,
-						257
+						262,
+						263,
+						259,
+						260,
+						258
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						275
+						267
 					]
 				}
 			],
@@ -6612,9 +7004,9 @@
 			"kind": 1,
 			"children": [
 				1,
-				286,
-				122,
-				231
+				278,
+				121,
+				228
 			]
 		}
 	]

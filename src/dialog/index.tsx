@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 //@ts-ignore
 import { MDCDialogFoundation } from '@material/dialog';
@@ -7,11 +8,11 @@ import {
   componentFactory,
   CustomEventT,
   createFocusTrap,
-  FocusTrap
+  FocusTrap,
+  closest,
+  matches
 } from '@rmwc/base';
-import { noop } from '@rmwc/base/utils/noop';
 import { Button, ButtonProps } from '@rmwc/button';
-import { closest, matches } from '@rmwc/base/utils/ponyfills';
 
 const isScrollable = (el: HTMLElement) => {
   return el.scrollHeight > el.offsetHeight;
@@ -106,7 +107,7 @@ export interface DialogProps {
 export class Dialog extends FoundationComponent<DialogProps> {
   static displayName = 'Dialog';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   container: null | HTMLElement = null;
   content: null | HTMLElement = null;
   buttons: null | HTMLElement[] = null;
@@ -302,7 +303,6 @@ export class SimpleDialog extends React.Component<SimpleDialogProps> {
     acceptLabel: 'Accept',
     cancelLabel: 'Cancel',
     open: false,
-    onClose: noop,
     children: undefined
   };
 

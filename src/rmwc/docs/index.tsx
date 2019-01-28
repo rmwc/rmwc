@@ -44,6 +44,7 @@ import 'prismjs/themes/prism.css';
 import './docs.css';
 import { AppContainer } from 'react-hot-loader';
 import App from './App';
+// @ts-ignore
 import { unregister } from './registerServiceWorker';
 // @ts-ignore
 import { BrowserRouter as Router } from 'react-router-dom';

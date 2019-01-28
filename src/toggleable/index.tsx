@@ -1,7 +1,7 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { FoundationComponent, FoundationProps } from '@rmwc/base';
+import { FoundationComponent, FoundationProps, randomId } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
-import { randomId } from '@rmwc/base/utils/randomId';
 
 export interface ToggleableFoundationProps {
   /** A DOM ID for the toggle. */
@@ -24,7 +24,6 @@ export class ToggleableFoundationComponent<
 > extends FoundationComponent<P & FoundationProps, S> {
   // @ts-ignore
   generatedId = randomId(this.constructor.displayName);
-  root = this.createElement('root');
 
   get hasLabel() {
     return this.props.label || this.props.children;
@@ -38,10 +37,12 @@ export class ToggleableFoundationComponent<
     const { className, style, disabled, rootProps = {} } = this.props;
 
     if (this.hasLabel) {
+      // @ts-ignore
       return this.root.props({ disabled });
     }
 
     return {
+      // @ts-ignore
       ...this.root.props({
         className,
         style,

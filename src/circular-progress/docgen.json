@@ -90,7 +90,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -144,7 +144,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"name": "MergeInterfacesT",
+												"name": "RMWC.MergeInterfacesT",
 												"typeArguments": [
 													{
 														"type": "reference",
@@ -316,7 +316,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"name": "MergeInterfacesT",
+												"name": "RMWC.MergeInterfacesT",
 												"typeArguments": [
 													{
 														"type": "reference",
@@ -584,7 +584,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -681,7 +681,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -1016,7 +1016,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -1189,7 +1189,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -1327,7 +1327,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -1507,7 +1507,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -1696,7 +1696,7 @@
 																				"typeArguments": [
 																					{
 																						"type": "reference",
-																						"name": "MergeInterfacesT",
+																						"name": "RMWC.MergeInterfacesT",
 																						"typeArguments": [
 																							{
 																								"type": "reference",
@@ -1870,7 +1870,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"name": "MergeInterfacesT",
+														"name": "RMWC.MergeInterfacesT",
 														"typeArguments": [
 															{
 																"type": "reference",
@@ -2077,7 +2077,7 @@
 							"typeArguments": [
 								{
 									"type": "reference",
-									"name": "MergeInterfacesT",
+									"name": "RMWC.MergeInterfacesT",
 									"typeArguments": [
 										{
 											"type": "reference",
@@ -2370,29 +2370,59 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 112,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CircularProgressRootProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "CircularProgressRootProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}

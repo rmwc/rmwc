@@ -1,10 +1,12 @@
+import RMWC from '@rmwc/types';
+import * as React from 'react';
+
 import {
   componentFactory,
   FoundationComponent,
   CustomEventT
 } from '@rmwc/base';
 
-import * as React from 'react';
 // @ts-ignore
 import { MDCTabBarFoundation } from '@material/tab-bar';
 import { TabScroller } from './tab-scroller';
@@ -41,7 +43,7 @@ export const TabBarRoot = componentFactory<TabBarProps>({
 export class TabBar extends FoundationComponent<TabBarProps> {
   static displayName = 'TabBar';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   tabScroller: TabScroller | null = null;
   tabList: any[] = [];
   contextApi = {

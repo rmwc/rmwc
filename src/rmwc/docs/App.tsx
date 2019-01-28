@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
@@ -40,8 +41,7 @@ import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
 
 import Home from './Home';
-import { ThemeOptionT } from '@rmwc/base/withTheme';
-import { toCamel } from '@rmwc/base/utils/strings';
+import { toCamel } from '@rmwc/base';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -114,7 +114,7 @@ const getTheme = (themeName: string) => {
     ...colors
   };
 
-  const order: ThemeOptionT[] = [
+  const order: RMWC.ThemeOptionT[] = [
     'primary',
     'secondary',
     'error',

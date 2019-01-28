@@ -1,6 +1,7 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
-import { ComponentProps, componentFactory } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 
 export interface GridListProps {
   /** Use a 1px gutter. */
@@ -43,7 +44,7 @@ export const GridList = componentFactory<GridListProps>({
     'tileAspect'
   ],
   render: (
-    { children, ...rest }: GridListProps & ComponentProps,
+    { children, ...rest }: GridListProps & RMWC.ComponentProps,
     ref: any,
     Tag: any
   ) => (

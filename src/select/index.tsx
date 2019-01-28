@@ -1,15 +1,19 @@
-import { ComponentProps, CustomEventT } from '@rmwc/base';
-import { IconProps, IconPropT } from '@rmwc/icon';
-
+import RMWC from '@rmwc/types';
 import * as React from 'react';
+import {} from '@rmwc/base';
+
 // @ts-ignore
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
+import {
+  componentFactory,
+  FoundationComponent,
+  CustomEventT,
+  randomId
+} from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
-import { Icon } from '@rmwc/icon';
+import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
@@ -263,10 +267,10 @@ interface SelectState {
 }
 
 export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
-  root = this.createElement<HTMLSelectElement>('root');
-  lineRipple = this.createElement<LineRipple>('lineRipple');
-  outline = this.createElement<NotchedOutline>('outline');
-  label = this.createElement<FloatingLabel>('label');
+  private root = this.createElement<HTMLSelectElement>('root');
+  private lineRipple = this.createElement<LineRipple>('lineRipple');
+  private outline = this.createElement<NotchedOutline>('outline');
+  private label = this.createElement<FloatingLabel>('label');
   id: string = this.props.id || randomId('select');
   nativeControl: HTMLSelectElement | null = null;
   selectedText: HTMLElement | null = null;
@@ -755,7 +759,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
 
 export class SelectIcon extends FoundationComponent<IconProps> {
   static displayName = 'SelectIcon';
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
   getDefaultFoundation(): any {
     return new MDCSelectIconFoundation({
@@ -813,7 +817,10 @@ export const SelectHelperText = componentFactory<SelectHelperTextProps>({
 /**
  * A Select Component
  */
-export const Select = ({ enhanced, ...rest }: SelectProps & ComponentProps) => (
+export const Select = ({
+  enhanced,
+  ...rest
+}: SelectProps & RMWC.ComponentProps) => (
   <SelectBase
     key={enhanced ? 'enhanced' : 'native'}
     enhanced={enhanced}

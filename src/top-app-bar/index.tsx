@@ -1,7 +1,7 @@
+import RMWC from '@rmwc/types';
 import {
   componentFactory,
   FoundationComponent,
-  ComponentProps,
   CustomEventT
 } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
@@ -132,7 +132,7 @@ export const TopAppBarFixedAdjust = componentFactory<TopAppBarFixedAdjustProps>(
 class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
   static displayName = 'TopAppBar';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   navIcon: HTMLElement | null = null;
   scrollTarget: Window | null = null;
 
@@ -217,7 +217,7 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
   }
 }
 
-export const TopAppBar = (props: TopAppBarProps & ComponentProps) => (
+export const TopAppBar = (props: TopAppBarProps & RMWC.ComponentProps) => (
   <TopAppBarBase
     key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
     {...props}

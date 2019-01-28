@@ -1,8 +1,9 @@
-import { FoundationComponent } from '@rmwc/base';
-
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 //@ts-ignore
 import { MDCFormFieldFoundation } from '@material/form-field';
+
+import { FoundationComponent } from '@rmwc/base';
 import { componentFactory } from '@rmwc/base';
 
 export interface FormFieldProps {

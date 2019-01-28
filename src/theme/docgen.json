@@ -191,7 +191,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 55,
+									"line": 58,
 									"character": 9
 								}
 							],
@@ -255,7 +255,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 54,
+									"line": 57,
 									"character": 11
 								}
 							],
@@ -510,7 +510,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 52,
+									"line": 55,
 									"character": 20
 								}
 							],
@@ -550,7 +550,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 57,
+									"line": 60,
 									"character": 12
 								}
 							]
@@ -1491,7 +1491,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 80,
+									"line": 83,
 									"character": 8
 								}
 							],
@@ -1863,7 +1863,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 51,
+							"line": 54,
 							"character": 26
 						}
 					],
@@ -1909,20 +1909,8 @@
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reference",
-										"name": "ThemeOptionT"
-									},
-									{
-										"type": "array",
-										"elementType": {
-											"type": "reference",
-											"name": "ThemeOptionT"
-										}
-									}
-								]
+								"type": "reference",
+								"name": "RMWC.ThemeInputT"
 							}
 						},
 						{
@@ -2005,7 +1993,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 47,
+									"line": 50,
 									"character": 10
 								}
 							],
@@ -2028,7 +2016,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 41,
+									"line": 44,
 									"character": 9
 								}
 							],
@@ -2069,7 +2057,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 41,
+											"line": 44,
 											"character": 10
 										}
 									]
@@ -2091,7 +2079,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 43,
+									"line": 46,
 									"character": 7
 								}
 							],
@@ -2115,7 +2103,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 45,
+									"line": 48,
 									"character": 6
 								}
 							],
@@ -2193,25 +2181,35 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 292,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2226,7 +2224,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ThemeRoot',\n  tag: 'span'\n})"
 				},
 				{
-					"id": 293,
+					"id": 292,
 					"name": "Theme",
 					"kind": 64,
 					"kindString": "Function",
@@ -2239,7 +2237,7 @@
 					},
 					"signatures": [
 						{
-							"id": 294,
+							"id": 293,
 							"name": "Theme",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2249,7 +2247,7 @@
 							},
 							"parameters": [
 								{
-									"id": 295,
+									"id": 294,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2258,14 +2256,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 296,
+											"id": 295,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 299,
+													"id": 298,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2280,11 +2278,11 @@
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 299
+														"id": 298
 													}
 												},
 												{
-													"id": 297,
+													"id": 296,
 													"name": "use",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2519,7 +2517,7 @@
 													}
 												},
 												{
-													"id": 298,
+													"id": 297,
 													"name": "wrap",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2555,9 +2553,9 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														299,
-														297,
-														298
+														298,
+														296,
+														297
 													]
 												}
 											],
@@ -2620,7 +2618,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						293
+						292
 					]
 				}
 			],
@@ -2633,7 +2631,7 @@
 			]
 		},
 		{
-			"id": 300,
+			"id": 299,
 			"name": "\"theme-options\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2643,7 +2641,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/theme/theme-options.tsx",
 			"children": [
 				{
-					"id": 301,
+					"id": 300,
 					"name": "themeOptions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2662,7 +2660,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"name": "ThemeOptionT"
+							"name": "RMWC.ThemeOptionT"
 						}
 					},
 					"defaultValue": " [\n  'primary',\n  'secondary',\n  'background',\n  'surface',\n  'error',\n  'onPrimary',\n  'onSecondary',\n  'onSurface',\n  'onError',\n  'textPrimaryOnBackground',\n  'textSecondaryOnBackground',\n  'textHintOnBackground',\n  'textDisabledOnBackground',\n  'textIconOnBackground',\n  'textPrimaryOnLight',\n  'textSecondaryOnLight',\n  'textHintOnLight',\n  'textDisabledOnLight',\n  'textIconOnLight',\n  'textPrimaryOnDark',\n  'textSecondaryOnDark',\n  'textHintOnDark',\n  'textDisabledOnDark',\n  'textIconOnDark'\n]"
@@ -2673,7 +2671,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						301
+						300
 					]
 				}
 			],
@@ -6351,7 +6349,7 @@
 			"kind": 1,
 			"children": [
 				187,
-				300,
+				299,
 				1
 			]
 		}

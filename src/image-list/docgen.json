@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 6,
+									"line": 7,
 									"character": 9
 								}
 							],
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 8,
+									"line": 9,
 									"character": 20
 								}
 							],
@@ -111,7 +111,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 4,
+							"line": 5,
 							"character": 31
 						}
 					]
@@ -131,34 +131,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 12,
+							"line": 13,
 							"character": 22
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 6,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ImageListProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ImageListProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -169,7 +199,7 @@
 					"defaultValue": " componentFactory<ImageListProps>({\n  displayName: 'ImageListRoot',\n  tag: 'ul',\n  classNames: (props: ImageListProps) => [\n    'mdc-image-list',\n    {\n      'mdc-image-list--masonry': props.masonry,\n      'mdc-image-list--with-text-protection': props.withTextProtection\n    }\n  ],\n  consumeProps: ['masonry', 'withTextProtection']\n})"
 				},
 				{
-					"id": 11,
+					"id": 8,
 					"name": "ImageListImage",
 					"kind": 32,
 					"kindString": "Variable",
@@ -183,30 +213,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 39,
+							"line": 40,
 							"character": 27
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 12,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -221,7 +261,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListImage',\n  tag: 'img',\n  classNames: ['mdc-image-list__image']\n})"
 				},
 				{
-					"id": 9,
+					"id": 7,
 					"name": "ImageListImageAspectContainer",
 					"kind": 32,
 					"kindString": "Variable",
@@ -235,30 +275,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 33,
+							"line": 34,
 							"character": 42
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 10,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -273,7 +323,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListImageAspectContainer',\n  classNames: ['mdc-image-list__image-aspect-container']\n})"
 				},
 				{
-					"id": 7,
+					"id": 6,
 					"name": "ImageListItem",
 					"kind": 32,
 					"kindString": "Variable",
@@ -287,30 +337,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 26,
+							"line": 27,
 							"character": 26
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 8,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -325,7 +385,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListItem',\n  tag: 'li',\n  classNames: ['mdc-image-list__item']\n})"
 				},
 				{
-					"id": 15,
+					"id": 10,
 					"name": "ImageListLabel",
 					"kind": 32,
 					"kindString": "Variable",
@@ -339,30 +399,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 52,
+							"line": 53,
 							"character": 27
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 16,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -377,7 +447,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'ImageListLabel',\n  classNames: ['mdc-image-list__label']\n})"
 				},
 				{
-					"id": 13,
+					"id": 9,
 					"name": "ImageListSupporting",
 					"kind": 32,
 					"kindString": "Variable",
@@ -391,30 +461,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 46,
+							"line": 47,
 							"character": 32
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 14,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -442,11 +522,11 @@
 					"kind": 32,
 					"children": [
 						5,
-						11,
-						9,
+						8,
 						7,
-						15,
-						13
+						6,
+						10,
+						9
 					]
 				}
 			],

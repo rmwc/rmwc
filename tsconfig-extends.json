@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": "./",
     "paths": {
-      "*": ["node_modules/*", "src/types/*"],
       "@rmwc/base": ["src/base"],
       "@rmwc/base/*": ["src/base/*"],
       "@rmwc/button": ["src/button"],
@@ -67,6 +67,8 @@
       "@rmwc/switch/*": ["src/switch/*"],
       "@rmwc/tabs": ["src/tabs"],
       "@rmwc/tabs/*": ["src/tabs/*"],
+      "@rmwc/types": ["src/types"],
+      "@rmwc/types/*": ["src/types/*"],
       "@rmwc/textfield": ["src/textfield"],
       "@rmwc/textfield/*": ["src/textfield/*"],
       "@rmwc/theme": ["src/theme"],

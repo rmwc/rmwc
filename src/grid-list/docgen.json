@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 15
 								}
 							],
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 15,
+									"line": 16,
 									"character": 12
 								}
 							],
@@ -124,7 +124,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 7,
+									"line": 8,
 									"character": 13
 								}
 							],
@@ -161,7 +161,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 16
 								}
 							],
@@ -198,7 +198,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 20
 								}
 							],
@@ -237,7 +237,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 5,
+							"line": 6,
 							"character": 30
 						}
 					]
@@ -266,7 +266,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 6
 								}
 							],
@@ -294,7 +294,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -321,7 +321,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 85,
+							"line": 86,
 							"character": 34
 						}
 					],
@@ -347,34 +347,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 19,
+							"line": 20,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 12,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "GridListProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "GridListProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -382,10 +412,10 @@
 							}
 						]
 					},
-					"defaultValue": " componentFactory<GridListProps>({\n  displayName: 'GridList',\n  classNames: (props: GridListProps) => [\n    'mdc-grid-list',\n    {\n      'mdc-grid-list--tile-gutter-1': props.tileGutter1,\n      'mdc-grid-list--header-caption': props.headerCaption,\n      'mdc-grid-list--twoline-caption': props.twolineCaption,\n      'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,\n      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect\n    }\n  ],\n  defaultProps: {\n    tileGutter1: false,\n    headerCaption: false,\n    twolineCaption: false,\n    withIconAlignStart: false,\n    tileAspect: '1x1'\n  },\n  consumeProps: [\n    'tileGutter1',\n    'headerCaption',\n    'twolineCaption',\n    'withIconAlignStart',\n    'tileAspect'\n  ],\n  render: (\n    { children, ...rest }: GridListProps & ComponentProps,\n    ref: any,\n    Tag: any\n  ) => (\n    <Tag {...rest} ref={ref}>\n      <ul className=\"mdc-grid-list__tiles\">{children}</ul>\n    </Tag>\n  )\n})"
+					"defaultValue": " componentFactory<GridListProps>({\n  displayName: 'GridList',\n  classNames: (props: GridListProps) => [\n    'mdc-grid-list',\n    {\n      'mdc-grid-list--tile-gutter-1': props.tileGutter1,\n      'mdc-grid-list--header-caption': props.headerCaption,\n      'mdc-grid-list--twoline-caption': props.twolineCaption,\n      'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,\n      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect\n    }\n  ],\n  defaultProps: {\n    tileGutter1: false,\n    headerCaption: false,\n    twolineCaption: false,\n    withIconAlignStart: false,\n    tileAspect: '1x1'\n  },\n  consumeProps: [\n    'tileGutter1',\n    'headerCaption',\n    'twolineCaption',\n    'withIconAlignStart',\n    'tileAspect'\n  ],\n  render: (\n    { children, ...rest }: GridListProps & RMWC.ComponentProps,\n    ref: any,\n    Tag: any\n  ) => (\n    <Tag {...rest} ref={ref}>\n      <ul className=\"mdc-grid-list__tiles\">{children}</ul>\n    </Tag>\n  )\n})"
 				},
 				{
-					"id": 17,
+					"id": 14,
 					"name": "GridTile",
 					"kind": 32,
 					"kindString": "Variable",
@@ -399,30 +429,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 72,
+							"line": 73,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 18,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -437,7 +477,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTile',\n  tag: 'li',\n  classNames: ['mdc-grid-tile']\n})"
 				},
 				{
-					"id": 21,
+					"id": 16,
 					"name": "GridTileIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -451,34 +491,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 88,
+							"line": 89,
 							"character": 25
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 22,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "GridTileIconProps",
+												"id": 8
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "GridTileIconProps",
+												"id": 8
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -489,7 +559,7 @@
 					"defaultValue": " componentFactory<GridTileIconProps>({\n  displayName: 'GridTileIcon',\n  tag: Icon,\n  classNames: ['mdc-grid-tile__icon']\n})"
 				},
 				{
-					"id": 13,
+					"id": 12,
 					"name": "GridTilePrimary",
 					"kind": 32,
 					"kindString": "Variable",
@@ -503,30 +573,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 57,
+							"line": 58,
 							"character": 28
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 14,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -541,7 +621,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimary',\n  classNames: ['mdc-grid-tile__primary']\n})"
 				},
 				{
-					"id": 15,
+					"id": 13,
 					"name": "GridTilePrimaryContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -552,30 +632,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 62,
+							"line": 63,
 							"character": 35
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 16,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -590,7 +680,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTilePrimaryContent',\n  tag: 'img',\n  classNames: ['mdc-grid-tile__primary-content']\n})"
 				},
 				{
-					"id": 19,
+					"id": 15,
 					"name": "GridTileSecondary",
 					"kind": 32,
 					"kindString": "Variable",
@@ -604,30 +694,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 79,
+							"line": 80,
 							"character": 30
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 20,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -642,7 +742,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileSecondary',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__secondary']\n})"
 				},
 				{
-					"id": 23,
+					"id": 17,
 					"name": "GridTileTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -656,30 +756,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 95,
+							"line": 96,
 							"character": 26
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 24,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -694,7 +804,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'GridTileTitle',\n  tag: 'span',\n  classNames: ['mdc-grid-tile__title']\n})"
 				},
 				{
-					"id": 25,
+					"id": 18,
 					"name": "GridTileTitleSupportText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -708,30 +818,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 102,
+							"line": 103,
 							"character": 37
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 26,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -760,13 +880,13 @@
 					"kind": 32,
 					"children": [
 						11,
-						17,
-						21,
+						14,
+						16,
+						12,
 						13,
 						15,
-						19,
-						23,
-						25
+						17,
+						18
 					]
 				}
 			],

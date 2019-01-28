@@ -1,10 +1,11 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory, ComponentProps, classNames } from '@rmwc/base';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { componentFactory, classNames } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
-export interface ListItemProps extends WithRippleProps {
+export interface ListItemProps extends RMWC.WithRippleProps {
   /** A modifier for a selected state. */
   selected?: boolean;
   /** A modifier for an active state. */
@@ -137,7 +138,7 @@ export const SimpleListItem = ({
   meta,
   children,
   ...rest
-}: SimpleListItemProps & ComponentProps) => {
+}: SimpleListItemProps & RMWC.ComponentProps) => {
   const primaryTextToRender =
     text && secondaryText !== undefined ? (
       <ListItemPrimaryText>{text}</ListItemPrimaryText>

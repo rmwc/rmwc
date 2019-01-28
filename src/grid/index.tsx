@@ -1,5 +1,6 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, ComponentProps } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 
 export interface GridProps {
   /** Specifies the grid should have fixed column width. */
@@ -24,7 +25,7 @@ const GridRoot = componentFactory<GridProps>({
 });
 
 /** A Grid component */
-export const Grid: React.ComponentType<GridProps & ComponentProps> = ({
+export const Grid: React.ComponentType<GridProps & RMWC.ComponentProps> = ({
   children,
   ...rest
 }: GridProps) => {

@@ -1,19 +1,22 @@
-import { ComponentProps } from '@rmwc/base';
-import { IconProps, IconPropT } from '@rmwc/icon';
+import RMWC from '@rmwc/types';
 import * as React from 'react';
+import { IconProps, IconPropT } from '@rmwc/icon';
 import {
   MDCTextFieldFoundation,
   MDCTextFieldIconFoundation
   // @ts-ignore
 } from '@material/textfield';
 
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
+import {
+  componentFactory,
+  FoundationComponent,
+  randomId,
+  deprecationWarning
+} from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
 /*********************************************************************
  * TextField
@@ -104,10 +107,12 @@ export class TextField extends FoundationComponent<
 > {
   static displayName = 'TextField';
   generatedId = randomId('textfield');
-  root = this.createElement('root');
-  input = this.createElement<HTMLInputElement & HTMLTextAreaElement>('input');
-  label = this.createElement<FloatingLabel>('label');
-  lineRipple = this.createElement<LineRipple>('lineRipple');
+  private root = this.createElement('root');
+  private input = this.createElement<HTMLInputElement & HTMLTextAreaElement>(
+    'input'
+  );
+  private label = this.createElement<FloatingLabel>('label');
+  private lineRipple = this.createElement<LineRipple>('lineRipple');
   leadingIcon: null | any;
   trailingIcon: null | any;
   outline: null | any;
@@ -401,7 +406,7 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
  */
 export class TextFieldIcon extends FoundationComponent<IconProps> {
   static displayName = 'TextFieldIcon';
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCTextFieldIconFoundation({

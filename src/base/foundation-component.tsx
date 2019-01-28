@@ -1,22 +1,22 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
 import { toCamel } from './utils/strings';
-import { MergeInterfacesT } from './utils/merge-interfaces';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
 
-class FoundationElement<
+export class FoundationElement<
   Props extends { [key: string]: any },
   ElementType = HTMLElement
 > {
-  _classes = new Set<string>();
-  _events: { [key: string]: (evt: Event) => void } = {};
-  _style: { [key: string]: string | number | null } = {};
-  _props: Partial<Props> = {};
-  _ref = null;
+  private _classes = new Set<string>();
+  private _events: { [key: string]: (evt: Event) => void } = {};
+  private _style: { [key: string]: string | number | null } = {};
+  private _props: Partial<Props> = {};
+  private _ref = null;
   onChange = () => {};
 
   constructor(onChange: () => void) {
@@ -192,7 +192,7 @@ export interface FoundationProps extends React.HTMLProps<any> {
 }
 interface FoundationState {}
 
-type FoundationPropsT<P> = MergeInterfacesT<P, FoundationProps>;
+type FoundationPropsT<P> = RMWC.MergeInterfacesT<P, FoundationProps>;
 type FoundationStateT<S> = S & FoundationState;
 
 export class FoundationComponent<P, S extends any = {}> extends React.Component<

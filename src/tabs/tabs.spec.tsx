@@ -3,6 +3,12 @@ import { mount } from 'enzyme';
 import { TabBar, Tab } from './';
 
 describe('Tabs', () => {
+  beforeAll(() => {
+    // scrollTo is not implemented in JSDOM, mock it
+    // @ts-ignore
+    global.scrollTo = jest.fn();
+  });
+
   it('TabBar renders', () => {
     mount(
       <TabBar activeTabIndex={0} onActivate={evt => {}}>
@@ -81,10 +87,6 @@ describe('Tabs', () => {
   });
 
   it('sets initial active tab', done => {
-    // scrollTo is not implemented in JSDOM, mock it
-    // @ts-ignore
-    global.scrollTo = jest.fn();
-
     const el1 = mount(
       <TabBar activeTabIndex={0}>
         <Tab>1</Tab>

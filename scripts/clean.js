@@ -6,3 +6,7 @@ const fs = require('fs-extra');
 glob('./src/**/dist/', {}, function(er, files) {
   files.forEach(f => fs.removeSync(f));
 });
+
+glob('./src/**/next/', {}, function(er, files) {
+  files.forEach(f => fs.removeSync(f));
+});

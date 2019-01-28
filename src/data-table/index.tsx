@@ -1,5 +1,6 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, ComponentProps } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 
 interface SharedDataTableCellProps {
@@ -125,7 +126,7 @@ const DataTableHeadCellRoot = componentFactory<DataTableHeadCellProps>({
 
 /** A header cell for the data table. */
 export const DataTableHeadCell = (
-  props: DataTableHeadCellProps & ComponentProps
+  props: DataTableHeadCellProps & RMWC.ComponentProps
 ) => {
   const onClickProp =
     props.onSortChange && props.sort !== undefined

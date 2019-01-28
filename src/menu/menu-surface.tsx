@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
 import {
@@ -11,7 +12,6 @@ import {
   CustomEventT,
   FoundationComponent
 } from '@rmwc/base';
-import { raf } from '@rmwc/base/utils/raf';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
@@ -62,7 +62,7 @@ export const MenuSurfaceRoot = componentFactory<{}>({
 
 /** A generic menu component for displaying any type of content. */
 export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
-  root = this.createElement('root');
+  private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
   firstFocusableElement: HTMLElement | null = null;

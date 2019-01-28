@@ -1,6 +1,6 @@
-import { ThemeOptionT } from '@rmwc/base/withTheme';
+import RMWC from '@rmwc/types';
 
-export const themeOptions: ThemeOptionT[] = [
+export const themeOptions: RMWC.ThemeOptionT[] = [
   'primary',
   'secondary',
   'background',

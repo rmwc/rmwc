@@ -37,7 +37,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 20,
+									"line": 22,
 									"character": 5
 								}
 							],
@@ -60,7 +60,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 18,
+							"line": 20,
 							"character": 32
 						}
 					]
@@ -76,7 +76,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 3,
+							"line": 5,
 							"character": 23
 						}
 					],
@@ -153,34 +153,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 24,
+							"line": 26,
 							"character": 23
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 6,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TypographyProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "TypographyProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}

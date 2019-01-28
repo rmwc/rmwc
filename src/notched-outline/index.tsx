@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import { FoundationComponent } from '@rmwc/base';
 // @ts-ignore
@@ -29,8 +30,8 @@ class NotchedOutlineTrailing extends React.Component<{}> {
 
 export class NotchedOutline extends FoundationComponent<NotchedOutlineProps> {
   static displayName = 'NotchedOutline';
-  root = this.createElement('root');
-  notchElement = this.createElement('root');
+  private root = this.createElement('root');
+  private notchElement = this.createElement('root');
   label: HTMLLabelElement | null = null;
 
   componentDidMount() {

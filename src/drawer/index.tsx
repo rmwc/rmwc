@@ -1,8 +1,11 @@
-import { ComponentProps, CustomEventT } from '@rmwc/base';
-
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { noop } from '@rmwc/base/utils/noop';
+
+import {
+  componentFactory,
+  FoundationComponent,
+  CustomEventT
+} from '@rmwc/base';
 import {
   MDCModalDrawerFoundation,
   MDCDismissibleDrawerFoundation
@@ -96,12 +99,10 @@ const slidableDrawerFactory = (
     static displayName = displayName;
 
     static defaultProps = {
-      open: false,
-      onOpen: noop,
-      onClose: noop
+      open: false
     };
 
-    root = this.createElement('root');
+    private root = this.createElement('root');
     previousFocus: HTMLElement | null = null;
     focusTrap: FocusTrap | null = null;
 
@@ -209,7 +210,7 @@ const DismissibleDrawer = slidableDrawerFactory(
   'dismissibleDrawer'
 );
 
-export const Drawer: React.ComponentType<DrawerProps & ComponentProps> = (
+export const Drawer: React.ComponentType<DrawerProps & RMWC.ComponentProps> = (
   props: DrawerProps
 ) => {
   if (props.dismissible) {

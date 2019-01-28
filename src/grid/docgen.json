@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 58,
+									"line": 59,
 									"character": 7
 								}
 							],
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 54,
+									"line": 55,
 									"character": 9
 								}
 							],
@@ -108,7 +108,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 56,
+									"line": 57,
 									"character": 7
 								}
 							],
@@ -141,7 +141,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 7
 								}
 							],
@@ -174,7 +174,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 48,
+									"line": 49,
 									"character": 6
 								}
 							],
@@ -207,7 +207,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 52,
+									"line": 53,
 									"character": 8
 								}
 							],
@@ -243,7 +243,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 46,
+							"line": 47,
 							"character": 30
 						}
 					]
@@ -272,7 +272,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 8,
+									"line": 9,
 									"character": 7
 								}
 							],
@@ -305,7 +305,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 10,
+									"line": 11,
 									"character": 10
 								}
 							],
@@ -329,7 +329,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 6,
+									"line": 7,
 									"character": 18
 								}
 							],
@@ -366,13 +366,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 4,
+							"line": 5,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 21,
+					"id": 20,
 					"name": "GridCell",
 					"kind": 32,
 					"kindString": "Variable",
@@ -386,34 +386,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 62,
+							"line": 63,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 22,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "GridCellProps",
+												"id": 6
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "GridCellProps",
+												"id": 6
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -424,7 +454,7 @@
 					"defaultValue": " componentFactory<GridCellProps>({\n  displayName: 'GridCell',\n  classNames: (props: GridCellProps) => [\n    'mdc-layout-grid__cell',\n    {\n      [`mdc-layout-grid__cell--order-${props.order || ''}`]:\n        props.order !== undefined,\n      [`mdc-layout-grid__cell--align-${props.align || ''}`]:\n        props.align !== undefined,\n      [`mdc-layout-grid__cell--span-${props.span || ''}`]:\n        props.span !== undefined,\n      [`mdc-layout-grid__cell--span-${props.phone || ''}-phone`]:\n        props.phone !== undefined,\n      [`mdc-layout-grid__cell--span-${props.tablet || ''}-tablet`]:\n        props.tablet !== undefined,\n      [`mdc-layout-grid__cell--span-${props.desktop || ''}-desktop`]:\n        props.desktop !== undefined\n    }\n  ],\n  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']\n})"
 				},
 				{
-					"id": 23,
+					"id": 21,
 					"name": "GridInner",
 					"kind": 32,
 					"kindString": "Variable",
@@ -438,30 +468,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 85,
+							"line": 86,
 							"character": 22
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 24,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -486,34 +526,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 13,
+							"line": 14,
 							"character": 14
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 14,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "GridProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "GridProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -524,7 +594,7 @@
 					"defaultValue": " componentFactory<GridProps>({\n  displayName: 'GridRoot',\n  classNames: (props: GridProps) => [\n    'mdc-layout-grid',\n    {\n      [`mdc-layout-grid__cell--align-${props.align || ''}`]:\n        props.align !== undefined,\n      'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth\n    }\n  ],\n  consumeProps: ['fixedColumnWidth', 'align']\n})"
 				},
 				{
-					"id": 15,
+					"id": 14,
 					"name": "Grid",
 					"kind": 64,
 					"kindString": "Function",
@@ -537,7 +607,7 @@
 					},
 					"signatures": [
 						{
-							"id": 16,
+							"id": 15,
 							"name": "Grid",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -547,7 +617,7 @@
 							},
 							"parameters": [
 								{
-									"id": 17,
+									"id": 16,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -556,14 +626,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 18,
+											"id": 17,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 19,
+													"id": 18,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -571,7 +641,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 28,
+															"line": 29,
 															"character": 10
 														}
 													],
@@ -628,7 +698,7 @@
 													}
 												},
 												{
-													"id": 20,
+													"id": 19,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -636,14 +706,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 29,
+															"line": 30,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 20
+														"id": 19
 													}
 												}
 											],
@@ -652,16 +722,16 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														19,
-														20
+														18,
+														19
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 27,
-													"character": 70
+													"line": 28,
+													"character": 75
 												}
 											]
 										}
@@ -677,7 +747,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 27,
+							"line": 28,
 							"character": 17
 						}
 					]
@@ -696,8 +766,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
+						20,
 						21,
-						23,
 						13
 					]
 				},
@@ -705,7 +775,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						15
+						14
 					]
 				}
 			],

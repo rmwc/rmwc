@@ -1,10 +1,10 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
 // @ts-ignore
 import { MDCTabFoundation } from '@material/tab';
 
-import { FoundationComponent, componentFactory } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
+import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';
 import { IconProps, Icon, IconPropT } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
@@ -55,7 +55,7 @@ export const Tab = withTabBarContext()<TabProps>(
     static displayName = 'Tab';
 
     _id = randomId('tab');
-    root = this.createElement('root');
+    private root = this.createElement('root');
     tabIndicator: TabIndicator | null = null;
     content: HTMLDivElement | null = null;
     rippleSurfaceApi: RippleSurface | null = null;

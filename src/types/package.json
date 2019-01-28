@@ -1,7 +1,7 @@
 {
-  "name": "@rmwc/notched-outline",
+  "name": "@rmwc/types",
   "version": "4.0.6",
-  "description": "RMWC NotchedOutline component",
+  "description": "RMWC Shared Typescript Types",
   "main": "dist/index.js",
 "types": "dist/index.js",
 "module": "next/index.js",
@@ -22,13 +22,9 @@
   "bugs": {
     "url": "https://github.com/jamesmfriedman/rmwc/issues"
   },
-  "homepage": "https://github.com/jamesmfriedman/rmwc#readme",
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/types#readme",
   "peerDependencies": {
-    "react": "^15.x.x || ^16.x.x",
-    "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@material/notched-outline": "^0.43.0",
-    "@rmwc/base": "^4.0.6"
   }
 }

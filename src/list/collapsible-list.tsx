@@ -1,5 +1,6 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, ComponentProps, classNames } from '@rmwc/base';
+import { componentFactory, classNames } from '@rmwc/base';
 
 interface CollapsibleProps {
   handle: React.ReactNode;
@@ -45,7 +46,7 @@ const getNextSibling = (
 };
 
 export class CollapsibleList extends React.Component<
-  CollapsibleProps & ComponentProps,
+  CollapsibleProps & RMWC.ComponentProps,
   CollapsibleState
 > {
   childContainer: HTMLDivElement | null = null;
@@ -166,7 +167,7 @@ export class CollapsibleList extends React.Component<
       <CollapsibleRoot
         {...rest}
         onFocus={this.handleFocus}
-        ref={el => (this.root = el)}
+        ref={(el: HTMLDivElement) => (this.root = el)}
         className={classNames('rmwc-collapsible-list', {
           ['rmwc-collapsible-list--open']: open
         })}

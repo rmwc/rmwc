@@ -11,8 +11,8 @@ import { FoundationComponent } from '@rmwc/base';
 export class TabIndicator extends FoundationComponent<{}> {
   static shouldDebounce = false;
 
-  root = this.createElement('root');
-  content = this.createElement('content');
+  private root = this.createElement('root');
+  private content = this.createElement('content');
 
   getDefaultFoundation() {
     const adapter = /** @type {!MDCTabIndicatorAdapter} */ (Object.assign({

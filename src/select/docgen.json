@@ -24,7 +24,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 820,
+							"id": 813,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -33,7 +33,7 @@
 					],
 					"children": [
 						{
-							"id": 649,
+							"id": 642,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -42,14 +42,14 @@
 							},
 							"signatures": [
 								{
-									"id": 650,
+									"id": 643,
 									"name": "new SelectBase",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 651,
+											"id": 644,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 283,
+									"line": 287,
 									"character": 4
 								}
 							],
@@ -85,7 +85,7 @@
 							}
 						},
 						{
-							"id": 795,
+							"id": 788,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -102,21 +102,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 796,
+									"id": 789,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 797,
+											"id": 790,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 798,
+													"id": 791,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -158,7 +158,7 @@
 							}
 						},
 						{
-							"id": 794,
+							"id": 787,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -183,7 +183,7 @@
 							}
 						},
 						{
-							"id": 642,
+							"id": 635,
 							"name": "hiddenInput_",
 							"kind": 1024,
 							"kindString": "Property",
@@ -193,7 +193,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 275,
+									"line": 279,
 									"character": 14
 								}
 							],
@@ -213,7 +213,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 637,
+							"id": 630,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -223,7 +223,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 270,
+									"line": 274,
 									"character": 4
 								}
 							],
@@ -234,53 +234,7 @@
 							"defaultValue": " this.props.id || randomId('select')"
 						},
 						{
-							"id": 635,
-							"name": "label",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 269,
-									"character": 7
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reference",
-												"name": "FloatingLabelProps"
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 636,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
-											}
-										]
-									},
-									{
-										"type": "reference",
-										"name": "FloatingLabel"
-									}
-								]
-							},
-							"defaultValue": " this.createElement<FloatingLabel>('label')"
-						},
-						{
-							"id": 643,
+							"id": 636,
 							"name": "leadingIcon_",
 							"kind": 1024,
 							"kindString": "Property",
@@ -290,7 +244,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 276,
+									"line": 280,
 									"character": 14
 								}
 							],
@@ -300,7 +254,7 @@
 									{
 										"type": "reference",
 										"name": "SelectIcon",
-										"id": 856
+										"id": 849
 									},
 									{
 										"type": "intrinsic",
@@ -311,53 +265,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 631,
-							"name": "lineRipple",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 267,
-									"character": 12
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reference",
-												"name": "LineRippleProps"
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 632,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
-											}
-										]
-									},
-									{
-										"type": "reference",
-										"name": "LineRipple"
-									}
-								]
-							},
-							"defaultValue": " this.createElement<LineRipple>('lineRipple')"
-						},
-						{
-							"id": 641,
+							"id": 634,
 							"name": "menu",
 							"kind": 1024,
 							"kindString": "Property",
@@ -367,7 +275,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 274,
+									"line": 278,
 									"character": 6
 								}
 							],
@@ -387,7 +295,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 640,
+							"id": 633,
 							"name": "menuElement",
 							"kind": 1024,
 							"kindString": "Property",
@@ -397,7 +305,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 273,
+									"line": 277,
 									"character": 13
 								}
 							],
@@ -417,7 +325,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 638,
+							"id": 631,
 							"name": "nativeControl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -427,7 +335,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 271,
+									"line": 275,
 									"character": 15
 								}
 							],
@@ -447,84 +355,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 633,
-							"name": "outline",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 268,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reference",
-												"name": "NotchedOutlineProps"
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 634,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
-											}
-										]
-									},
-									{
-										"type": "reference",
-										"name": "NotchedOutline"
-									}
-								]
-							},
-							"defaultValue": " this.createElement<NotchedOutline>('outline')"
-						},
-						{
-							"id": 630,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 266,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLSelectElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLSelectElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement<HTMLSelectElement>('root')"
-						},
-						{
-							"id": 639,
+							"id": 632,
 							"name": "selectedText",
 							"kind": 1024,
 							"kindString": "Property",
@@ -534,7 +365,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 272,
+									"line": 276,
 									"character": 14
 								}
 							],
@@ -554,7 +385,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 644,
+							"id": 637,
 							"name": "trailingIcon_",
 							"kind": 1024,
 							"kindString": "Property",
@@ -564,7 +395,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 277,
+									"line": 281,
 									"character": 15
 								}
 							],
@@ -584,7 +415,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 793,
+							"id": 786,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -610,7 +441,7 @@
 							}
 						},
 						{
-							"id": 758,
+							"id": 751,
 							"name": "value",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -620,7 +451,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 759,
+									"id": 752,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -636,7 +467,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 760,
+									"id": 753,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -644,7 +475,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 761,
+											"id": 754,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -667,18 +498,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 537,
+									"line": 541,
 									"character": 11
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 544,
+									"line": 548,
 									"character": 11
 								}
 							]
 						},
 						{
-							"id": 836,
+							"id": 829,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -688,7 +519,7 @@
 							},
 							"signatures": [
 								{
-									"id": 837,
+									"id": 830,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -734,7 +565,7 @@
 							}
 						},
 						{
-							"id": 842,
+							"id": 835,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -744,7 +575,7 @@
 							},
 							"signatures": [
 								{
-									"id": 843,
+									"id": 836,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -769,7 +600,7 @@
 									},
 									"parameters": [
 										{
-											"id": 844,
+											"id": 837,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -793,7 +624,7 @@
 											}
 										},
 										{
-											"id": 845,
+											"id": 838,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -827,7 +658,7 @@
 							}
 						},
 						{
-							"id": 851,
+							"id": 844,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -837,7 +668,7 @@
 							},
 							"signatures": [
 								{
-									"id": 852,
+									"id": 845,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -862,7 +693,7 @@
 									},
 									"parameters": [
 										{
-											"id": 853,
+											"id": 846,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -886,7 +717,7 @@
 											}
 										},
 										{
-											"id": 854,
+											"id": 847,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -910,7 +741,7 @@
 											}
 										},
 										{
-											"id": 855,
+											"id": 848,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -944,7 +775,7 @@
 							}
 						},
 						{
-							"id": 826,
+							"id": 819,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -954,7 +785,7 @@
 							},
 							"signatures": [
 								{
-									"id": 827,
+									"id": 820,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -964,7 +795,7 @@
 									},
 									"parameters": [
 										{
-											"id": 828,
+											"id": 821,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -975,7 +806,7 @@
 											}
 										},
 										{
-											"id": 829,
+											"id": 822,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1009,7 +840,7 @@
 							}
 						},
 						{
-							"id": 652,
+							"id": 645,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1018,7 +849,7 @@
 							},
 							"signatures": [
 								{
-									"id": 653,
+									"id": 646,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1036,7 +867,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 298,
+									"line": 302,
 									"character": 19
 								}
 							],
@@ -1046,7 +877,7 @@
 							}
 						},
 						{
-							"id": 799,
+							"id": 792,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1055,14 +886,14 @@
 							},
 							"signatures": [
 								{
-									"id": 800,
+									"id": 793,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 801,
+											"id": 794,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1111,7 +942,7 @@
 							}
 						},
 						{
-							"id": 834,
+							"id": 827,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1121,7 +952,7 @@
 							},
 							"signatures": [
 								{
-									"id": 835,
+									"id": 828,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1167,7 +998,7 @@
 							}
 						},
 						{
-							"id": 838,
+							"id": 831,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1177,7 +1008,7 @@
 							},
 							"signatures": [
 								{
-									"id": 839,
+									"id": 832,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1202,7 +1033,7 @@
 									},
 									"parameters": [
 										{
-											"id": 840,
+											"id": 833,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1226,7 +1057,7 @@
 											}
 										},
 										{
-											"id": 841,
+											"id": 834,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1260,7 +1091,7 @@
 							}
 						},
 						{
-							"id": 654,
+							"id": 647,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1269,7 +1100,7 @@
 							},
 							"signatures": [
 								{
-									"id": 655,
+									"id": 648,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1287,7 +1118,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 331,
+									"line": 335,
 									"character": 22
 								}
 							],
@@ -1297,7 +1128,7 @@
 							}
 						},
 						{
-							"id": 846,
+							"id": 839,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1307,7 +1138,7 @@
 							},
 							"signatures": [
 								{
-									"id": 847,
+									"id": 840,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1332,7 +1163,7 @@
 									},
 									"parameters": [
 										{
-											"id": 848,
+											"id": 841,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1356,7 +1187,7 @@
 											}
 										},
 										{
-											"id": 849,
+											"id": 842,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1380,7 +1211,7 @@
 											}
 										},
 										{
-											"id": 850,
+											"id": 843,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1414,7 +1245,7 @@
 							}
 						},
 						{
-							"id": 802,
+							"id": 795,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1423,14 +1254,14 @@
 							},
 							"signatures": [
 								{
-									"id": 803,
+									"id": 796,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 804,
+											"id": 797,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1443,7 +1274,7 @@
 									],
 									"parameters": [
 										{
-											"id": 805,
+											"id": 798,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1487,7 +1318,7 @@
 							}
 						},
 						{
-							"id": 815,
+							"id": 808,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1496,7 +1327,7 @@
 							},
 							"signatures": [
 								{
-									"id": 816,
+									"id": 809,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1506,7 +1337,7 @@
 									},
 									"parameters": [
 										{
-											"id": 817,
+											"id": 810,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1517,7 +1348,7 @@
 											}
 										},
 										{
-											"id": 818,
+											"id": 811,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1528,7 +1359,7 @@
 											}
 										},
 										{
-											"id": 819,
+											"id": 812,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1569,7 +1400,7 @@
 							}
 						},
 						{
-							"id": 708,
+							"id": 701,
 							"name": "getCommonAdapterMethods_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1578,7 +1409,7 @@
 							},
 							"signatures": [
 								{
-									"id": 709,
+									"id": 702,
 									"name": "getCommonAdapterMethods_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1586,21 +1417,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 710,
+											"id": 703,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 725,
+													"id": 718,
 													"name": "activateBottomLine",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 726,
+															"id": 719,
 															"name": "activateBottomLine",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1614,27 +1445,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 480,
+															"line": 484,
 															"character": 24
 														}
 													]
 												},
 												{
-													"id": 711,
+													"id": 704,
 													"name": "addClass",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 712,
+															"id": 705,
 															"name": "addClass",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 713,
+																	"id": 706,
 																	"name": "className",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1654,20 +1485,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 471,
+															"line": 475,
 															"character": 14
 														}
 													]
 												},
 												{
-													"id": 727,
+													"id": 720,
 													"name": "deactivateBottomLine",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 728,
+															"id": 721,
 															"name": "deactivateBottomLine",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1681,27 +1512,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 481,
+															"line": 485,
 															"character": 26
 														}
 													]
 												},
 												{
-													"id": 717,
+													"id": 710,
 													"name": "hasClass",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 718,
+															"id": 711,
 															"name": "hasClass",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 719,
+																	"id": 712,
 																	"name": "className",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1721,20 +1552,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 473,
+															"line": 477,
 															"character": 14
 														}
 													]
 												},
 												{
-													"id": 720,
+													"id": 713,
 													"name": "isRtl",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 721,
+															"id": 714,
 															"name": "isRtl",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1761,27 +1592,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 474,
+															"line": 478,
 															"character": 11
 														}
 													]
 												},
 												{
-													"id": 729,
+													"id": 722,
 													"name": "notifyChange",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 730,
+															"id": 723,
 															"name": "notifyChange",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 731,
+																	"id": 724,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1801,27 +1632,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 482,
+															"line": 486,
 															"character": 18
 														}
 													]
 												},
 												{
-													"id": 714,
+													"id": 707,
 													"name": "removeClass",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 715,
+															"id": 708,
 															"name": "removeClass",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 716,
+																	"id": 709,
 																	"name": "className",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1841,27 +1672,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 472,
+															"line": 476,
 															"character": 17
 														}
 													]
 												},
 												{
-													"id": 722,
+													"id": 715,
 													"name": "setRippleCenter",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 723,
+															"id": 716,
 															"name": "setRippleCenter",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 724,
+																	"id": 717,
 																	"name": "normalizedX",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -1881,7 +1712,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 478,
+															"line": 482,
 															"character": 21
 														}
 													]
@@ -1892,14 +1723,14 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														725,
-														711,
-														727,
-														717,
+														718,
+														704,
 														720,
-														729,
-														714,
-														722
+														710,
+														713,
+														722,
+														707,
+														715
 													]
 												}
 											]
@@ -1910,13 +1741,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 469,
+									"line": 473,
 									"character": 26
 								}
 							]
 						},
 						{
-							"id": 656,
+							"id": 649,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1925,7 +1756,7 @@
 							},
 							"signatures": [
 								{
-									"id": 657,
+									"id": 650,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1943,7 +1774,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 339,
+									"line": 343,
 									"character": 22
 								}
 							],
@@ -1953,7 +1784,7 @@
 							}
 						},
 						{
-							"id": 683,
+							"id": 676,
 							"name": "getEnhancedSelectAdapterMethods_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1962,7 +1793,7 @@
 							},
 							"signatures": [
 								{
-									"id": 684,
+									"id": 677,
 									"name": "getEnhancedSelectAdapterMethods_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1970,21 +1801,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 685,
+											"id": 678,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 703,
+													"id": 696,
 													"name": "checkValidity",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 704,
+															"id": 697,
 															"name": "checkValidity",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2011,20 +1842,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 442,
+															"line": 446,
 															"character": 19
 														}
 													]
 												},
 												{
-													"id": 693,
+													"id": 686,
 													"name": "closeMenu",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 694,
+															"id": 687,
 															"name": "closeMenu",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2038,20 +1869,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 430,
+															"line": 434,
 															"character": 15
 														}
 													]
 												},
 												{
-													"id": 686,
+													"id": 679,
 													"name": "getValue",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 687,
+															"id": 680,
 															"name": "getValue",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2065,20 +1896,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 381,
+															"line": 385,
 															"character": 14
 														}
 													]
 												},
 												{
-													"id": 695,
+													"id": 688,
 													"name": "isMenuOpen",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 696,
+															"id": 689,
 															"name": "isMenuOpen",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2092,20 +1923,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 435,
+															"line": 439,
 															"character": 16
 														}
 													]
 												},
 												{
-													"id": 691,
+													"id": 684,
 													"name": "openMenu",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 692,
+															"id": 685,
 															"name": "openMenu",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2119,27 +1950,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 425,
+															"line": 429,
 															"character": 14
 														}
 													]
 												},
 												{
-													"id": 700,
+													"id": 693,
 													"name": "setDisabled",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 701,
+															"id": 694,
 															"name": "setDisabled",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 702,
+																	"id": 695,
 																	"name": "isDisabled",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2159,27 +1990,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 439,
+															"line": 443,
 															"character": 17
 														}
 													]
 												},
 												{
-													"id": 697,
+													"id": 690,
 													"name": "setSelectedIndex",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 698,
+															"id": 691,
 															"name": "setSelectedIndex",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 699,
+																	"id": 692,
 																	"name": "index",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2199,27 +2030,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 436,
+															"line": 440,
 															"character": 22
 														}
 													]
 												},
 												{
-													"id": 705,
+													"id": 698,
 													"name": "setValid",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 706,
+															"id": 699,
 															"name": "setValid",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 707,
+																	"id": 700,
 																	"name": "isValid",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2239,27 +2070,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 459,
+															"line": 463,
 															"character": 14
 														}
 													]
 												},
 												{
-													"id": 688,
+													"id": 681,
 													"name": "setValue",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 689,
+															"id": 682,
 															"name": "setValue",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 690,
+																	"id": 683,
 																	"name": "value",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2279,7 +2110,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 396,
+															"line": 400,
 															"character": 14
 														}
 													]
@@ -2290,15 +2121,15 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														703,
-														693,
+														696,
 														686,
-														695,
-														691,
-														700,
-														697,
-														705,
-														688
+														679,
+														688,
+														684,
+														693,
+														690,
+														698,
+														681
 													]
 												}
 											]
@@ -2309,13 +2140,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 379,
+									"line": 383,
 									"character": 34
 								}
 							]
 						},
 						{
-							"id": 750,
+							"id": 743,
 							"name": "getFoundationMap_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2324,7 +2155,7 @@
 							},
 							"signatures": [
 								{
-									"id": 751,
+									"id": 744,
 									"name": "getFoundationMap_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2332,14 +2163,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 752,
+											"id": 745,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 753,
+													"id": 746,
 													"name": "leadingIcon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2347,7 +2178,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 513,
+															"line": 517,
 															"character": 17
 														}
 													],
@@ -2361,7 +2192,7 @@
 															{
 																"type": "reference",
 																"name": "SelectIcon",
-																"id": 856
+																"id": 849
 															}
 														]
 													},
@@ -2373,7 +2204,7 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														753
+														746
 													]
 												}
 											]
@@ -2384,13 +2215,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 511,
+									"line": 515,
 									"character": 19
 								}
 							]
 						},
 						{
-							"id": 742,
+							"id": 735,
 							"name": "getLabelAdapterMethods_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2399,7 +2230,7 @@
 							},
 							"signatures": [
 								{
-									"id": 743,
+									"id": 736,
 									"name": "getLabelAdapterMethods_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2407,28 +2238,28 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 744,
+											"id": 737,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 745,
+													"id": 738,
 													"name": "floatLabel",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 746,
+															"id": 739,
 															"name": "floatLabel",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 747,
+																	"id": 740,
 																	"name": "shouldFloat",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -2448,20 +2279,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 502,
+															"line": 506,
 															"character": 16
 														}
 													]
 												},
 												{
-													"id": 748,
+													"id": 741,
 													"name": "getLabelWidth",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 749,
+															"id": 742,
 															"name": "getLabelWidth",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2475,7 +2306,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 505,
+															"line": 509,
 															"character": 19
 														}
 													]
@@ -2486,8 +2317,8 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														745,
-														748
+														738,
+														741
 													]
 												}
 											]
@@ -2498,13 +2329,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 500,
+									"line": 504,
 									"character": 25
 								}
 							]
 						},
 						{
-							"id": 658,
+							"id": 651,
 							"name": "getNativeSelectAdapterMethods_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2513,7 +2344,7 @@
 							},
 							"signatures": [
 								{
-									"id": 659,
+									"id": 652,
 									"name": "getNativeSelectAdapterMethods_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2521,21 +2352,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 660,
+											"id": 653,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 681,
+													"id": 674,
 													"name": "checkValidity",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 682,
+															"id": 675,
 															"name": "checkValidity",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2562,20 +2393,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 374,
+															"line": 378,
 															"character": 19
 														}
 													]
 												},
 												{
-													"id": 668,
+													"id": 661,
 													"name": "closeMenu",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 669,
+															"id": 662,
 															"name": "closeMenu",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2589,260 +2420,24 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 362,
+															"line": 366,
 															"character": 15
 														}
 													]
 												},
 												{
-													"id": 661,
+													"id": 654,
 													"name": "getValue",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 662,
+															"id": 655,
 															"name": "getValue",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
-															"type": {
-																"type": "union",
-																"types": [
-																	{
-																		"type": "intrinsic",
-																		"name": "null"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																]
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 355,
-															"character": 14
-														}
-													]
-												},
-												{
-													"id": 670,
-													"name": "isMenuOpen",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 671,
-															"name": "isMenuOpen",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "boolean"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 363,
-															"character": 16
-														}
-													]
-												},
-												{
-													"id": 666,
-													"name": "openMenu",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 667,
-															"name": "openMenu",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "void"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 361,
-															"character": 14
-														}
-													]
-												},
-												{
-													"id": 675,
-													"name": "setDisabled",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 676,
-															"name": "setDisabled",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"parameters": [
-																{
-																	"id": 677,
-																	"name": "isDisabled",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {},
-																	"type": {
-																		"type": "intrinsic",
-																		"name": "boolean"
-																	}
-																}
-															],
-															"type": {
-																"type": "union",
-																"types": [
-																	{
-																		"type": "intrinsic",
-																		"name": "null"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "false"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "true"
-																	}
-																]
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 367,
-															"character": 17
-														}
-													]
-												},
-												{
-													"id": 672,
-													"name": "setSelectedIndex",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 673,
-															"name": "setSelectedIndex",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"parameters": [
-																{
-																	"id": 674,
-																	"name": "index",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {},
-																	"type": {
-																		"type": "intrinsic",
-																		"name": "number"
-																	}
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "void"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 364,
-															"character": 22
-														}
-													]
-												},
-												{
-													"id": 678,
-													"name": "setValid",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 679,
-															"name": "setValid",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"parameters": [
-																{
-																	"id": 680,
-																	"name": "isValid",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {},
-																	"type": {
-																		"type": "intrinsic",
-																		"name": "boolean"
-																	}
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "void"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 369,
-															"character": 14
-														}
-													]
-												},
-												{
-													"id": 663,
-													"name": "setValue",
-													"kind": 64,
-													"kindString": "Function",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 664,
-															"name": "setValue",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"parameters": [
-																{
-																	"id": 665,
-																	"name": "value",
-																	"kind": 32768,
-																	"kindString": "Parameter",
-																	"flags": {},
-																	"type": {
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																}
-															],
 															"type": {
 																"type": "union",
 																"types": [
@@ -2865,6 +2460,242 @@
 															"character": 14
 														}
 													]
+												},
+												{
+													"id": 663,
+													"name": "isMenuOpen",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 664,
+															"name": "isMenuOpen",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 367,
+															"character": 16
+														}
+													]
+												},
+												{
+													"id": 659,
+													"name": "openMenu",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 660,
+															"name": "openMenu",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 365,
+															"character": 14
+														}
+													]
+												},
+												{
+													"id": 668,
+													"name": "setDisabled",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 669,
+															"name": "setDisabled",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 670,
+																	"name": "isDisabled",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "boolean"
+																	}
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 371,
+															"character": 17
+														}
+													]
+												},
+												{
+													"id": 665,
+													"name": "setSelectedIndex",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 666,
+															"name": "setSelectedIndex",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 667,
+																	"name": "index",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "number"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 368,
+															"character": 22
+														}
+													]
+												},
+												{
+													"id": 671,
+													"name": "setValid",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 672,
+															"name": "setValid",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 673,
+																	"name": "isValid",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "boolean"
+																	}
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 373,
+															"character": 14
+														}
+													]
+												},
+												{
+													"id": 656,
+													"name": "setValue",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 657,
+															"name": "setValue",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"parameters": [
+																{
+																	"id": 658,
+																	"name": "value",
+																	"kind": 32768,
+																	"kindString": "Parameter",
+																	"flags": {},
+																	"type": {
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "null"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 363,
+															"character": 14
+														}
+													]
 												}
 											],
 											"groups": [
@@ -2872,15 +2703,15 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														681,
-														668,
+														674,
 														661,
-														670,
-														666,
-														675,
-														672,
-														678,
-														663
+														654,
+														663,
+														659,
+														668,
+														665,
+														671,
+														656
 													]
 												}
 											]
@@ -2891,13 +2722,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 353,
+									"line": 357,
 									"character": 32
 								}
 							]
 						},
 						{
-							"id": 732,
+							"id": 725,
 							"name": "getOutlineAdapterMethods_",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2906,7 +2737,7 @@
 							},
 							"signatures": [
 								{
-									"id": 733,
+									"id": 726,
 									"name": "getOutlineAdapterMethods_",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2914,21 +2745,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 734,
+											"id": 727,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 740,
+													"id": 733,
 													"name": "closeOutline",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 741,
+															"id": 734,
 															"name": "closeOutline",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2942,20 +2773,20 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 494,
+															"line": 498,
 															"character": 18
 														}
 													]
 												},
 												{
-													"id": 735,
+													"id": 728,
 													"name": "hasOutline",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 736,
+															"id": 729,
 															"name": "hasOutline",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2969,27 +2800,27 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 490,
+															"line": 494,
 															"character": 16
 														}
 													]
 												},
 												{
-													"id": 737,
+													"id": 730,
 													"name": "notchOutline",
 													"kind": 64,
 													"kindString": "Function",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 738,
+															"id": 731,
 															"name": "notchOutline",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 739,
+																	"id": 732,
 																	"name": "labelWidth",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -3009,7 +2840,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 491,
+															"line": 495,
 															"character": 18
 														}
 													]
@@ -3020,9 +2851,9 @@
 													"title": "Functions",
 													"kind": 64,
 													"children": [
-														740,
-														735,
-														737
+														733,
+														728,
+														730
 													]
 												}
 											]
@@ -3033,13 +2864,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 488,
+									"line": 492,
 									"character": 27
 								}
 							]
 						},
 						{
-							"id": 830,
+							"id": 823,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3049,7 +2880,7 @@
 							},
 							"signatures": [
 								{
-									"id": 831,
+									"id": 824,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3060,7 +2891,7 @@
 									},
 									"parameters": [
 										{
-											"id": 832,
+											"id": 825,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3084,7 +2915,7 @@
 											}
 										},
 										{
-											"id": 833,
+											"id": 826,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3140,7 +2971,7 @@
 							}
 						},
 						{
-							"id": 768,
+							"id": 761,
 							"name": "handleBlur",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3149,14 +2980,14 @@
 							},
 							"signatures": [
 								{
-									"id": 769,
+									"id": 762,
 									"name": "handleBlur",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 770,
+											"id": 763,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3176,13 +3007,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 560,
+									"line": 564,
 									"character": 12
 								}
 							]
 						},
 						{
-							"id": 762,
+							"id": 755,
 							"name": "handleChange",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3191,14 +3022,14 @@
 							},
 							"signatures": [
 								{
-									"id": 763,
+									"id": 756,
 									"name": "handleChange",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 764,
+											"id": 757,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3218,13 +3049,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 548,
+									"line": 552,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 771,
+							"id": 764,
 							"name": "handleClick",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3233,14 +3064,14 @@
 							},
 							"signatures": [
 								{
-									"id": 772,
+									"id": 765,
 									"name": "handleClick",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 773,
+											"id": 766,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3260,13 +3091,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 566,
+									"line": 570,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 765,
+							"id": 758,
 							"name": "handleFocus",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3275,14 +3106,14 @@
 							},
 							"signatures": [
 								{
-									"id": 766,
+									"id": 759,
 									"name": "handleFocus",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 767,
+											"id": 760,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3302,13 +3133,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 554,
+									"line": 558,
 									"character": 13
 								}
 							]
 						},
 						{
-							"id": 774,
+							"id": 767,
 							"name": "handleKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3317,14 +3148,14 @@
 							},
 							"signatures": [
 								{
-									"id": 775,
+									"id": 768,
 									"name": "handleKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 776,
+											"id": 769,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3344,13 +3175,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 582,
+									"line": 586,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 785,
+							"id": 778,
 							"name": "handleMenuClosed",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3359,7 +3190,7 @@
 							},
 							"signatures": [
 								{
-									"id": 786,
+									"id": 779,
 									"name": "handleMenuClosed",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3373,13 +3204,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 610,
+									"line": 614,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 783,
+							"id": 776,
 							"name": "handleMenuOpened",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3388,7 +3219,7 @@
 							},
 							"signatures": [
 								{
-									"id": 784,
+									"id": 777,
 									"name": "handleMenuOpened",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3402,13 +3233,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 603,
+									"line": 607,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 777,
+							"id": 770,
 							"name": "handleMenuSelected",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3417,14 +3248,14 @@
 							},
 							"signatures": [
 								{
-									"id": 778,
+									"id": 771,
 									"name": "handleMenuSelected",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 779,
+											"id": 772,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3436,14 +3267,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 780,
+															"id": 773,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"children": [
 																{
-																	"id": 782,
+																	"id": 775,
 																	"name": "index",
 																	"kind": 32,
 																	"kindString": "Variable",
@@ -3451,7 +3282,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 588,
+																			"line": 592,
 																			"character": 65
 																		}
 																	],
@@ -3461,7 +3292,7 @@
 																	}
 																},
 																{
-																	"id": 781,
+																	"id": 774,
 																	"name": "item",
 																	"kind": 32,
 																	"kindString": "Variable",
@@ -3469,7 +3300,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 588,
+																			"line": 592,
 																			"character": 45
 																		}
 																	],
@@ -3484,15 +3315,15 @@
 																	"title": "Variables",
 																	"kind": 32,
 																	"children": [
-																		782,
-																		781
+																		775,
+																		774
 																	]
 																}
 															],
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 588,
+																	"line": 592,
 																	"character": 39
 																}
 															]
@@ -3511,13 +3342,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 588,
+									"line": 592,
 									"character": 20
 								}
 							]
 						},
 						{
-							"id": 791,
+							"id": 784,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3526,7 +3357,7 @@
 							},
 							"signatures": [
 								{
-									"id": 792,
+									"id": 785,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3540,13 +3371,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 646,
+									"line": 650,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 787,
+							"id": 780,
 							"name": "renderIcon",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3555,14 +3386,14 @@
 							},
 							"signatures": [
 								{
-									"id": 788,
+									"id": 781,
 									"name": "renderIcon",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 789,
+											"id": 782,
 											"name": "iconNode",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3573,7 +3404,7 @@
 											}
 										},
 										{
-											"id": 790,
+											"id": 783,
 											"name": "leadOrTrail",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3602,13 +3433,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 623,
+									"line": 627,
 									"character": 12
 								}
 							]
 						},
 						{
-							"id": 821,
+							"id": 814,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3618,7 +3449,7 @@
 							},
 							"signatures": [
 								{
-									"id": 822,
+									"id": 815,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3629,7 +3460,7 @@
 									},
 									"parameters": [
 										{
-											"id": 823,
+											"id": 816,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3653,7 +3484,7 @@
 											}
 										},
 										{
-											"id": 824,
+											"id": 817,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3677,7 +3508,7 @@
 											}
 										},
 										{
-											"id": 825,
+											"id": 818,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3711,7 +3542,7 @@
 							}
 						},
 						{
-							"id": 754,
+							"id": 747,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3720,14 +3551,14 @@
 							},
 							"signatures": [
 								{
-									"id": 755,
+									"id": 748,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 756,
+											"id": 749,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3739,7 +3570,7 @@
 											}
 										},
 										{
-											"id": 757,
+											"id": 750,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3766,7 +3597,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 518,
+									"line": 522,
 									"character": 6
 								}
 							],
@@ -3776,7 +3607,7 @@
 							}
 						},
 						{
-							"id": 808,
+							"id": 801,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3785,14 +3616,14 @@
 							},
 							"signatures": [
 								{
-									"id": 809,
+									"id": 802,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 810,
+											"id": 803,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3803,7 +3634,7 @@
 											}
 										},
 										{
-											"id": 811,
+											"id": 804,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3814,7 +3645,7 @@
 											}
 										},
 										{
-											"id": 812,
+											"id": 805,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3822,14 +3653,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 813,
+													"id": 806,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 814,
+															"id": 807,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -3874,7 +3705,7 @@
 							}
 						},
 						{
-							"id": 806,
+							"id": 799,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3883,7 +3714,7 @@
 							},
 							"signatures": [
 								{
-									"id": 807,
+									"id": 800,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3911,7 +3742,7 @@
 							}
 						},
 						{
-							"id": 645,
+							"id": 638,
 							"name": "state",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -3920,7 +3751,7 @@
 							},
 							"children": [
 								{
-									"id": 647,
+									"id": 640,
 									"name": "menuOpen",
 									"kind": 32,
 									"kindString": "Variable",
@@ -3930,7 +3761,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 281,
+											"line": 285,
 											"character": 12
 										}
 									],
@@ -3941,7 +3772,7 @@
 									"defaultValue": "false"
 								},
 								{
-									"id": 646,
+									"id": 639,
 									"name": "selectedIndex",
 									"kind": 32,
 									"kindString": "Variable",
@@ -3951,7 +3782,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 280,
+											"line": 284,
 											"character": 17
 										}
 									],
@@ -3962,7 +3793,7 @@
 									"defaultValue": " this.props.placeholder !== undefined ? 0 : -1"
 								},
 								{
-									"id": 648,
+									"id": 641,
 									"name": "selectedTextContent",
 									"kind": 32,
 									"kindString": "Variable",
@@ -3972,7 +3803,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 282,
+											"line": 286,
 											"character": 23
 										}
 									],
@@ -3988,16 +3819,16 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										647,
-										646,
-										648
+										640,
+										639,
+										641
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 279,
+									"line": 283,
 									"character": 7
 								}
 							],
@@ -4012,89 +3843,85 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								649
+								642
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								795,
-								794,
-								642,
-								637,
+								788,
+								787,
 								635,
-								643,
-								631,
-								641,
-								640,
-								638,
-								633,
 								630,
-								639,
-								644,
-								793
+								636,
+								634,
+								633,
+								631,
+								632,
+								637,
+								786
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								758
+								751
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								836,
-								842,
-								851,
-								826,
-								652,
-								799,
-								834,
-								838,
-								654,
-								846,
-								802,
-								815,
-								708,
-								656,
-								683,
-								750,
-								742,
-								658,
-								732,
-								830,
-								768,
-								762,
-								771,
-								765,
-								774,
-								785,
-								783,
-								777,
-								791,
-								787,
-								821,
-								754,
+								829,
+								835,
+								844,
+								819,
+								645,
+								792,
+								827,
+								831,
+								647,
+								839,
+								795,
 								808,
-								806
+								701,
+								649,
+								676,
+								743,
+								735,
+								651,
+								725,
+								823,
+								761,
+								755,
+								764,
+								758,
+								767,
+								778,
+								776,
+								770,
+								784,
+								780,
+								814,
+								747,
+								801,
+								799
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								645
+								638
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 265,
+							"line": 269,
 							"character": 23
 						}
 					],
@@ -5444,7 +5271,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 100,
+									"line": 104,
 									"character": 8
 								}
 							],
@@ -5694,7 +5521,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 96,
+									"line": 100,
 									"character": 23
 								}
 							],
@@ -5748,7 +5575,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 95,
+							"line": 99,
 							"character": 25
 						}
 					],
@@ -7101,7 +6928,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 187,
+									"line": 191,
 									"character": 8
 								}
 							],
@@ -7460,7 +7287,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 184,
+							"line": 188,
 							"character": 27
 						}
 					],
@@ -7479,7 +7306,7 @@
 					]
 				},
 				{
-					"id": 856,
+					"id": 849,
 					"name": "SelectIcon",
 					"kind": 128,
 					"kindString": "Class",
@@ -7488,7 +7315,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 863,
+							"id": 855,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -7499,7 +7326,7 @@
 							}
 						},
 						{
-							"id": 902,
+							"id": 894,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -7508,7 +7335,7 @@
 					],
 					"children": [
 						{
-							"id": 870,
+							"id": 862,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -7517,14 +7344,14 @@
 							},
 							"signatures": [
 								{
-									"id": 871,
+									"id": 863,
 									"name": "new SelectIcon",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 872,
+											"id": 864,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7538,7 +7365,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SelectIcon",
-										"id": 856
+										"id": 849
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -7559,7 +7386,7 @@
 							}
 						},
 						{
-							"id": 866,
+							"id": 858,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7576,21 +7403,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 867,
+									"id": 859,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 868,
+											"id": 860,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 869,
+													"id": 861,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -7632,7 +7459,7 @@
 							}
 						},
 						{
-							"id": 865,
+							"id": 857,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7657,38 +7484,7 @@
 							}
 						},
 						{
-							"id": 858,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 758,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
-							"id": 857,
+							"id": 850,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7699,7 +7495,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 757,
+									"line": 761,
 									"character": 20
 								}
 							],
@@ -7710,7 +7506,7 @@
 							"defaultValue": "\"SelectIcon\""
 						},
 						{
-							"id": 864,
+							"id": 856,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7736,7 +7532,7 @@
 							}
 						},
 						{
-							"id": 918,
+							"id": 910,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7746,7 +7542,7 @@
 							},
 							"signatures": [
 								{
-									"id": 919,
+									"id": 911,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7792,7 +7588,7 @@
 							}
 						},
 						{
-							"id": 924,
+							"id": 916,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7802,7 +7598,7 @@
 							},
 							"signatures": [
 								{
-									"id": 925,
+									"id": 917,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7827,7 +7623,7 @@
 									},
 									"parameters": [
 										{
-											"id": 926,
+											"id": 918,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7850,7 +7646,7 @@
 											}
 										},
 										{
-											"id": 927,
+											"id": 919,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7884,7 +7680,7 @@
 							}
 						},
 						{
-							"id": 933,
+							"id": 925,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7894,7 +7690,7 @@
 							},
 							"signatures": [
 								{
-									"id": 934,
+									"id": 926,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7919,7 +7715,7 @@
 									},
 									"parameters": [
 										{
-											"id": 935,
+											"id": 927,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7942,7 +7738,7 @@
 											}
 										},
 										{
-											"id": 936,
+											"id": 928,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7969,7 +7765,7 @@
 											}
 										},
 										{
-											"id": 937,
+											"id": 929,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8003,7 +7799,7 @@
 							}
 						},
 						{
-							"id": 908,
+							"id": 900,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8013,7 +7809,7 @@
 							},
 							"signatures": [
 								{
-									"id": 909,
+									"id": 901,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8023,7 +7819,7 @@
 									},
 									"parameters": [
 										{
-											"id": 910,
+											"id": 902,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8034,7 +7830,7 @@
 											}
 										},
 										{
-											"id": 911,
+											"id": 903,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8068,7 +7864,7 @@
 							}
 						},
 						{
-							"id": 873,
+							"id": 865,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8077,7 +7873,7 @@
 							},
 							"signatures": [
 								{
-									"id": 874,
+									"id": 866,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8113,7 +7909,7 @@
 							}
 						},
 						{
-							"id": 875,
+							"id": 867,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8122,14 +7918,14 @@
 							},
 							"signatures": [
 								{
-									"id": 876,
+									"id": 868,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 877,
+											"id": 869,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8177,7 +7973,7 @@
 							}
 						},
 						{
-							"id": 916,
+							"id": 908,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8187,7 +7983,7 @@
 							},
 							"signatures": [
 								{
-									"id": 917,
+									"id": 909,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8233,7 +8029,7 @@
 							}
 						},
 						{
-							"id": 920,
+							"id": 912,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8243,7 +8039,7 @@
 							},
 							"signatures": [
 								{
-									"id": 921,
+									"id": 913,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8268,7 +8064,7 @@
 									},
 									"parameters": [
 										{
-											"id": 922,
+											"id": 914,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8291,7 +8087,7 @@
 											}
 										},
 										{
-											"id": 923,
+											"id": 915,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8325,7 +8121,7 @@
 							}
 						},
 						{
-							"id": 878,
+							"id": 870,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8334,7 +8130,7 @@
 							},
 							"signatures": [
 								{
-									"id": 879,
+									"id": 871,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8370,7 +8166,7 @@
 							}
 						},
 						{
-							"id": 928,
+							"id": 920,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8380,7 +8176,7 @@
 							},
 							"signatures": [
 								{
-									"id": 929,
+									"id": 921,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8405,7 +8201,7 @@
 									},
 									"parameters": [
 										{
-											"id": 930,
+											"id": 922,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8428,7 +8224,7 @@
 											}
 										},
 										{
-											"id": 931,
+											"id": 923,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8455,7 +8251,7 @@
 											}
 										},
 										{
-											"id": 932,
+											"id": 924,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8489,7 +8285,7 @@
 							}
 						},
 						{
-							"id": 880,
+							"id": 872,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8498,14 +8294,14 @@
 							},
 							"signatures": [
 								{
-									"id": 881,
+									"id": 873,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 882,
+											"id": 874,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -8518,7 +8314,7 @@
 									],
 									"parameters": [
 										{
-											"id": 883,
+											"id": 875,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8562,7 +8358,7 @@
 							}
 						},
 						{
-							"id": 897,
+							"id": 889,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8571,7 +8367,7 @@
 							},
 							"signatures": [
 								{
-									"id": 898,
+									"id": 890,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8581,7 +8377,7 @@
 									},
 									"parameters": [
 										{
-											"id": 899,
+											"id": 891,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8592,7 +8388,7 @@
 											}
 										},
 										{
-											"id": 900,
+											"id": 892,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8603,7 +8399,7 @@
 											}
 										},
 										{
-											"id": 901,
+											"id": 893,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8644,7 +8440,7 @@
 							}
 						},
 						{
-							"id": 859,
+							"id": 851,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8653,7 +8449,7 @@
 							},
 							"signatures": [
 								{
-									"id": 860,
+									"id": 852,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8671,7 +8467,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 760,
+									"line": 764,
 									"character": 22
 								}
 							],
@@ -8681,7 +8477,7 @@
 							}
 						},
 						{
-							"id": 912,
+							"id": 904,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8691,7 +8487,7 @@
 							},
 							"signatures": [
 								{
-									"id": 913,
+									"id": 905,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8702,7 +8498,7 @@
 									},
 									"parameters": [
 										{
-											"id": 914,
+											"id": 906,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8725,7 +8521,7 @@
 											}
 										},
 										{
-											"id": 915,
+											"id": 907,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8784,7 +8580,7 @@
 							}
 						},
 						{
-							"id": 861,
+							"id": 853,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8793,7 +8589,7 @@
 							},
 							"signatures": [
 								{
-									"id": 862,
+									"id": 854,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8807,13 +8603,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 781,
+									"line": 785,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 903,
+							"id": 895,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8823,7 +8619,7 @@
 							},
 							"signatures": [
 								{
-									"id": 904,
+									"id": 896,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8834,7 +8630,7 @@
 									},
 									"parameters": [
 										{
-											"id": 905,
+											"id": 897,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8857,7 +8653,7 @@
 											}
 										},
 										{
-											"id": 906,
+											"id": 898,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8884,7 +8680,7 @@
 											}
 										},
 										{
-											"id": 907,
+											"id": 899,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8918,7 +8714,7 @@
 							}
 						},
 						{
-							"id": 886,
+							"id": 878,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8927,14 +8723,14 @@
 							},
 							"signatures": [
 								{
-									"id": 887,
+									"id": 879,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 888,
+											"id": 880,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8945,7 +8741,7 @@
 											}
 										},
 										{
-											"id": 889,
+											"id": 881,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8981,7 +8777,7 @@
 							}
 						},
 						{
-							"id": 890,
+							"id": 882,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8990,14 +8786,14 @@
 							},
 							"signatures": [
 								{
-									"id": 891,
+									"id": 883,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 892,
+											"id": 884,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9008,7 +8804,7 @@
 											}
 										},
 										{
-											"id": 893,
+											"id": 885,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9019,7 +8815,7 @@
 											}
 										},
 										{
-											"id": 894,
+											"id": 886,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9027,14 +8823,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 895,
+													"id": 887,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 896,
+															"id": 888,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -9079,7 +8875,7 @@
 							}
 						},
 						{
-							"id": 884,
+							"id": 876,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9088,7 +8884,7 @@
 							},
 							"signatures": [
 								{
-									"id": 885,
+									"id": 877,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -9121,50 +8917,49 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								870
+								862
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								866,
-								865,
 								858,
 								857,
-								864
+								850,
+								856
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								918,
-								924,
-								933,
-								908,
-								873,
-								875,
+								910,
 								916,
-								920,
-								878,
-								928,
-								880,
-								897,
-								859,
+								925,
+								900,
+								865,
+								867,
+								908,
 								912,
-								861,
-								903,
-								886,
-								890,
-								884
+								870,
+								920,
+								872,
+								889,
+								851,
+								904,
+								853,
+								895,
+								878,
+								882,
+								876
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 756,
+							"line": 760,
 							"character": 23
 						}
 					],
@@ -9269,7 +9064,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -9289,7 +9084,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -9307,7 +9102,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -9333,7 +9128,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -9360,7 +9155,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -9378,7 +9173,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -9405,7 +9200,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -9483,7 +9278,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 109,
+																			"line": 113,
 																			"character": 12
 																		}
 																	],
@@ -9503,7 +9298,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 112,
+																			"line": 116,
 																			"character": 16
 																		}
 																	],
@@ -9521,7 +9316,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 110,
+																			"line": 114,
 																			"character": 14
 																		}
 																	],
@@ -9547,7 +9342,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 108,
+																			"line": 112,
 																			"character": 15
 																		}
 																	],
@@ -9574,7 +9369,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 107,
+																			"line": 111,
 																			"character": 17
 																		}
 																	],
@@ -9592,7 +9387,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 111,
+																			"line": 115,
 																			"character": 9
 																		}
 																	],
@@ -9619,7 +9414,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 105,
+																	"line": 109,
 																	"character": 50
 																}
 															]
@@ -9811,7 +9606,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 109,
+																			"line": 113,
 																			"character": 12
 																		}
 																	],
@@ -9831,7 +9626,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 112,
+																			"line": 116,
 																			"character": 16
 																		}
 																	],
@@ -9849,7 +9644,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 110,
+																			"line": 114,
 																			"character": 14
 																		}
 																	],
@@ -9875,7 +9670,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 108,
+																			"line": 112,
 																			"character": 15
 																		}
 																	],
@@ -9902,7 +9697,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 107,
+																			"line": 111,
 																			"character": 17
 																		}
 																	],
@@ -9920,7 +9715,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 111,
+																			"line": 115,
 																			"character": 9
 																		}
 																	],
@@ -9947,7 +9742,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 105,
+																	"line": 109,
 																	"character": 50
 																}
 															]
@@ -10123,7 +9918,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 115,
+									"line": 119,
 									"character": 20
 								}
 							],
@@ -10253,7 +10048,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -10273,7 +10068,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -10291,7 +10086,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -10317,7 +10112,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -10344,7 +10139,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -10362,7 +10157,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -10389,7 +10184,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -10509,7 +10304,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -10529,7 +10324,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -10547,7 +10342,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -10573,7 +10368,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -10600,7 +10395,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -10618,7 +10413,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -10645,7 +10440,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -10872,7 +10667,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -10892,7 +10687,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -10910,7 +10705,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -10936,7 +10731,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -10963,7 +10758,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -10981,7 +10776,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -11008,7 +10803,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -11203,7 +10998,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -11223,7 +11018,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -11241,7 +11036,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -11267,7 +11062,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -11294,7 +11089,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -11312,7 +11107,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -11339,7 +11134,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -11499,7 +11294,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -11519,7 +11314,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -11537,7 +11332,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -11563,7 +11358,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -11590,7 +11385,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -11608,7 +11403,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -11635,7 +11430,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -11836,7 +11631,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -11856,7 +11651,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -11874,7 +11669,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -11900,7 +11695,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -11927,7 +11722,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -11945,7 +11740,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -11972,7 +11767,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -12068,7 +11863,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 117,
+									"line": 121,
 									"character": 8
 								}
 							],
@@ -12181,7 +11976,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 109,
+																													"line": 113,
 																													"character": 12
 																												}
 																											],
@@ -12201,7 +11996,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 112,
+																													"line": 116,
 																													"character": 16
 																												}
 																											],
@@ -12219,7 +12014,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 110,
+																													"line": 114,
 																													"character": 14
 																												}
 																											],
@@ -12245,7 +12040,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 108,
+																													"line": 112,
 																													"character": 15
 																												}
 																											],
@@ -12272,7 +12067,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 107,
+																													"line": 111,
 																													"character": 17
 																												}
 																											],
@@ -12290,7 +12085,7 @@
 																											"sources": [
 																												{
 																													"fileName": "index.tsx",
-																													"line": 111,
+																													"line": 115,
 																													"character": 9
 																												}
 																											],
@@ -12317,7 +12112,7 @@
 																									"sources": [
 																										{
 																											"fileName": "index.tsx",
-																											"line": 105,
+																											"line": 109,
 																											"character": 50
 																										}
 																									]
@@ -12514,7 +12309,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 109,
+																					"line": 113,
 																					"character": 12
 																				}
 																			],
@@ -12534,7 +12329,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 112,
+																					"line": 116,
 																					"character": 16
 																				}
 																			],
@@ -12552,7 +12347,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 110,
+																					"line": 114,
 																					"character": 14
 																				}
 																			],
@@ -12578,7 +12373,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 108,
+																					"line": 112,
 																					"character": 15
 																				}
 																			],
@@ -12605,7 +12400,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 107,
+																					"line": 111,
 																					"character": 17
 																				}
 																			],
@@ -12623,7 +12418,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 111,
+																					"line": 115,
 																					"character": 9
 																				}
 																			],
@@ -12650,7 +12445,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 105,
+																			"line": 109,
 																			"character": 50
 																		}
 																	]
@@ -12768,7 +12563,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 105,
+							"line": 109,
 							"character": 25
 						}
 					],
@@ -12798,7 +12593,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 109,
+																"line": 113,
 																"character": 12
 															}
 														],
@@ -12818,7 +12613,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 112,
+																"line": 116,
 																"character": 16
 															}
 														],
@@ -12836,7 +12631,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 110,
+																"line": 114,
 																"character": 14
 															}
 														],
@@ -12862,7 +12657,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 108,
+																"line": 112,
 																"character": 15
 															}
 														],
@@ -12889,7 +12684,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 107,
+																"line": 111,
 																"character": 17
 															}
 														],
@@ -12907,7 +12702,7 @@
 														"sources": [
 															{
 																"fileName": "index.tsx",
-																"line": 111,
+																"line": 115,
 																"character": 9
 															}
 														],
@@ -12934,7 +12729,7 @@
 												"sources": [
 													{
 														"fileName": "index.tsx",
-														"line": 105,
+														"line": 109,
 														"character": 50
 													}
 												]
@@ -15635,7 +15430,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 19,
+									"line": 23,
 									"character": 7
 								}
 							],
@@ -21292,7 +21087,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 21,
+									"line": 25,
 									"character": 9
 								}
 							],
@@ -22949,7 +22744,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 20,
+									"line": 24,
 									"character": 7
 								}
 							],
@@ -23419,7 +23214,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 18,
+							"line": 22,
 							"character": 32
 						}
 					],
@@ -23457,7 +23252,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
-									"line": 40,
+									"line": 41,
 									"character": 14
 								}
 							],
@@ -23479,7 +23274,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 177,
+									"line": 181,
 									"character": 8
 								}
 							],
@@ -23505,7 +23300,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 180,
+									"line": 184,
 									"character": 10
 								}
 							],
@@ -23529,7 +23324,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 179,
+									"line": 183,
 									"character": 14
 								}
 							],
@@ -23552,7 +23347,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
-									"line": 38,
+									"line": 39,
 									"character": 7
 								}
 							],
@@ -23592,7 +23387,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
-									"line": 44,
+									"line": 45,
 									"character": 9
 								}
 							],
@@ -23666,7 +23461,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
-									"line": 42,
+									"line": 43,
 									"character": 8
 								}
 							],
@@ -23875,7 +23670,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/menu/menu-surface.tsx",
-									"line": 36,
+									"line": 37,
 									"character": 6
 								}
 							],
@@ -23912,7 +23707,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 176,
+									"line": 180,
 									"character": 13
 								}
 							],
@@ -23939,7 +23734,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 174,
+									"line": 178,
 									"character": 15
 								}
 							],
@@ -23957,7 +23752,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 175,
+									"line": 179,
 									"character": 15
 								}
 							],
@@ -23977,7 +23772,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 178,
+									"line": 182,
 									"character": 7
 								}
 							],
@@ -24020,7 +23815,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 173,
+							"line": 177,
 							"character": 36
 						}
 					],
@@ -24032,7 +23827,7 @@
 					]
 				},
 				{
-					"id": 938,
+					"id": 930,
 					"name": "SelectHelperTextProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -24041,7 +23836,7 @@
 					},
 					"children": [
 						{
-							"id": 939,
+							"id": 931,
 							"name": "persistent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -24055,7 +23850,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 795,
+									"line": 799,
 									"character": 12
 								}
 							],
@@ -24078,7 +23873,7 @@
 							}
 						},
 						{
-							"id": 940,
+							"id": 932,
 							"name": "validationMsg",
 							"kind": 1024,
 							"kindString": "Property",
@@ -24092,7 +23887,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 797,
+									"line": 801,
 									"character": 15
 								}
 							],
@@ -24120,15 +23915,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								939,
-								940
+								931,
+								932
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 793,
+							"line": 797,
 							"character": 38
 						}
 					]
@@ -24157,7 +23952,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 42,
+									"line": 46,
 									"character": 11
 								}
 							],
@@ -24190,7 +23985,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 36,
+									"line": 40,
 									"character": 10
 								}
 							],
@@ -24227,7 +24022,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 38,
+									"line": 42,
 									"character": 10
 								}
 							],
@@ -24264,7 +24059,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 30,
+									"line": 34,
 									"character": 7
 								}
 							],
@@ -24297,7 +24092,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 28,
+									"line": 32,
 									"character": 9
 								}
 							],
@@ -24356,7 +24151,7 @@
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 28,
+													"line": 32,
 													"character": 42
 												}
 											]
@@ -24380,7 +24175,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 34,
+									"line": 38,
 									"character": 10
 								}
 							],
@@ -24417,7 +24212,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 32,
+									"line": 36,
 									"character": 13
 								}
 							],
@@ -24450,7 +24245,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 40,
+									"line": 44,
 									"character": 11
 								}
 							],
@@ -24474,7 +24269,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 26,
+									"line": 30,
 									"character": 7
 								}
 							],
@@ -24507,7 +24302,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 44,
+									"line": 48,
 									"character": 17
 								}
 							],
@@ -24538,7 +24333,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 24,
+							"line": 28,
 							"character": 28
 						}
 					]
@@ -24559,7 +24354,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 262,
+									"line": 266,
 									"character": 10
 								}
 							],
@@ -24577,7 +24372,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 260,
+									"line": 264,
 									"character": 15
 								}
 							],
@@ -24595,7 +24390,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 261,
+									"line": 265,
 									"character": 21
 								}
 							],
@@ -24619,13 +24414,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 259,
+							"line": 263,
 							"character": 21
 						}
 					]
 				},
 				{
-					"id": 947,
+					"id": 937,
 					"name": "SelectHelperText",
 					"kind": 32,
 					"kindString": "Variable",
@@ -24636,56 +24431,8 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 800,
+							"line": 804,
 							"character": 29
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 948,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<SelectHelperTextProps>({\n  displayName: 'TextFieldHelperText',\n  tag: 'p',\n  classNames: (props: SelectHelperTextProps) => [\n    'mdc-select-helper-text',\n    {\n      'mdc-select-helper-text--persistent': props.persistent,\n      'mdc-select-helper-text--validation-msg': props.validationMsg\n    }\n  ],\n  consumeProps: ['persistent', 'validationMsg']\n})"
-				},
-				{
-					"id": 944,
-					"name": "SelectRoot",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 78,
-							"character": 16
 						}
 					],
 					"type": {
@@ -24699,32 +24446,19 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 945,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "SelectHelperTextProps",
+												"id": 930
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
 														"name": "any"
 													}
 												]
-											},
-											{
-												"type": "reference",
-												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -24742,18 +24476,61 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 946,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "SelectHelperTextProps",
+												"id": 930
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<SelectHelperTextProps>({\n  displayName: 'TextFieldHelperText',\n  tag: 'p',\n  classNames: (props: SelectHelperTextProps) => [\n    'mdc-select-helper-text',\n    {\n      'mdc-select-helper-text--persistent': props.persistent,\n      'mdc-select-helper-text--validation-msg': props.validationMsg\n    }\n  ],\n  consumeProps: ['persistent', 'validationMsg']\n})"
+				},
+				{
+					"id": 936,
+					"name": "SelectRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 82,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "SelectProps",
+												"id": 314
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -24764,10 +24541,40 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "SelectProps",
+												"id": 314
 											},
 											{
 												"type": "reference",
-												"name": "DeprecatedRippleProps"
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
 											}
 										]
 									}
@@ -24778,7 +24585,7 @@
 					"defaultValue": " withRipple()(\n  componentFactory<SelectProps>({\n    displayName: 'SelectRoot',\n    defaultProps: {\n      role: 'listbox'\n    },\n    classNames: (props: SelectProps) => [\n      'mdc-select',\n      {\n        'mdc-select--outlined': !!props.outlined,\n        'mdc-select--with-leading-icon': !!props.withLeadingIcon\n      }\n    ],\n    consumeProps: ['outlined', 'withLeadingIcon']\n  })\n)"
 				},
 				{
-					"id": 949,
+					"id": 938,
 					"name": "Select",
 					"kind": 64,
 					"kindString": "Function",
@@ -24791,7 +24598,7 @@
 					},
 					"signatures": [
 						{
-							"id": 950,
+							"id": 939,
 							"name": "Select",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -24801,7 +24608,7 @@
 							},
 							"parameters": [
 								{
-									"id": 951,
+									"id": 940,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -24810,7 +24617,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 952,
+											"id": 941,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -24819,7 +24626,7 @@
 											},
 											"children": [
 												{
-													"id": 953,
+													"id": 942,
 													"name": "enhanced",
 													"kind": 32,
 													"kindString": "Variable",
@@ -24829,8 +24636,8 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 816,
-															"character": 33
+															"line": 821,
+															"character": 10
 														}
 													],
 													"type": {
@@ -24852,7 +24659,7 @@
 													}
 												},
 												{
-													"id": 954,
+													"id": 943,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -24862,14 +24669,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 816,
-															"character": 42
+															"line": 822,
+															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 954
+														"id": 943
 													}
 												}
 											],
@@ -24878,15 +24685,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														953,
-														954
+														942,
+														943
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 816,
+													"line": 820,
 													"character": 23
 												}
 											]
@@ -24903,13 +24710,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 816,
+							"line": 820,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 941,
+					"id": 933,
 					"name": "createSelectOptions",
 					"kind": 64,
 					"kindString": "Function",
@@ -24921,7 +24728,7 @@
 					},
 					"signatures": [
 						{
-							"id": 942,
+							"id": 934,
 							"name": "createSelectOptions",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -24931,7 +24738,7 @@
 							},
 							"parameters": [
 								{
-									"id": 943,
+									"id": 935,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -24955,7 +24762,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 50,
+							"line": 54,
 							"character": 25
 						}
 					]
@@ -24969,7 +24776,7 @@
 						629,
 						328,
 						541,
-						856,
+						849,
 						409
 					]
 				},
@@ -24979,7 +24786,7 @@
 					"children": [
 						2,
 						515,
-						938,
+						930,
 						314,
 						625
 					]
@@ -24988,16 +24795,16 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						947,
-						944
+						937,
+						936
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						949,
-						941
+						938,
+						933
 					]
 				}
 			],

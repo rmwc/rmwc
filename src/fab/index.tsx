@@ -1,9 +1,10 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, ComponentProps } from '@rmwc/base';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { componentFactory } from '@rmwc/base';
+import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
-export interface FabProps extends WithRippleProps {
+export interface FabProps extends RMWC.WithRippleProps {
   /** Make the Fab smaller. */
   mini?: boolean;
   /** The icon for the FAB */
@@ -56,7 +57,7 @@ export const Fab = ({
   icon,
   trailingIcon,
   ...rest
-}: FabProps & ComponentProps) => {
+}: FabProps & RMWC.ComponentProps) => {
   if (trailingIcon && !label) {
     console.warn(
       `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`

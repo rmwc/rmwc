@@ -2,7 +2,9 @@
   "name": "rmwc",
   "version": "4.0.6",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
-  "main": "index.js",
+  "main": "dist/index.js",
+"types": "dist/index.js",
+"module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -65,9 +67,10 @@
     "@rmwc/tabs": "^4.0.6",
     "@rmwc/textfield": "^4.0.6",
     "@rmwc/theme": "^4.0.6",
+    "@rmwc/toggleable": "^4.0.6",
     "@rmwc/toolbar": "^4.0.6",
     "@rmwc/top-app-bar": "^4.0.6",
     "@rmwc/typography": "^4.0.6",
-    "material-components-web": "~0.41.0"
+    "material-components-web": "^0.43.0"
   }
 }

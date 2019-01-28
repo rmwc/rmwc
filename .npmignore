@@ -1,6 +1,7 @@
 **/*.spec.js
 **/*.story.js
 build/
+dist/
 config/
 coverage/
 docs/

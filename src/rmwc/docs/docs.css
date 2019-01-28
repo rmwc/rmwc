@@ -536,6 +536,7 @@ ul li {
 
 #page-fabs .example .mdc-fab {
   margin: 1rem;
+  vertical-align: middle;
 }
 
 #page-grid-lists .example .mdc-form-field {

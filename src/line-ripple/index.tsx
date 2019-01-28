@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCLineRippleFoundation } from '@material/line-ripple';
@@ -11,7 +12,7 @@ export interface LineRippleProps {
 export class LineRipple extends FoundationComponent<LineRippleProps> {
   static displayName = 'LineRipple';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCLineRippleFoundation({

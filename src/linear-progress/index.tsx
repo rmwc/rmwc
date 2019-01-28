@@ -1,8 +1,12 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import {
+  componentFactory,
+  FoundationComponent,
+  deprecationWarning
+} from '@rmwc/base';
 
 export interface LinearProgressProps {
   /** Progress float percentage between 0 and 1. */
@@ -72,7 +76,7 @@ export class LinearProgress extends FoundationComponent<
     reversed: false
   };
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   determinate: boolean | null = null;
 
   getDefaultFoundation() {

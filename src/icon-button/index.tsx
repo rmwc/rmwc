@@ -1,17 +1,17 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 //@ts-ignore
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import {
   componentFactory,
-  ComponentProps,
   FoundationComponent,
-  CustomEventT
+  CustomEventT,
+  deprecationWarning
 } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 import { Icon, IconPropT, IconProps, getIconStrategy } from '@rmwc/icon';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { withRipple } from '@rmwc/ripple';
 
-export interface IconButtonProps extends WithRippleProps {
+export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
   /** An onChange callback that receives a custom event. */
@@ -72,9 +72,9 @@ class IconButtonToggle extends FoundationComponent<
 > {
   static displayName = 'IconButton';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
-  constructor(props: IconButtonProps & ComponentProps) {
+  constructor(props: IconButtonProps & RMWC.ComponentProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -146,7 +146,7 @@ class IconButtonToggle extends FoundationComponent<
 export const IconButton = ({
   icon,
   ...rest
-}: IconButtonProps & ComponentProps) => {
+}: IconButtonProps & RMWC.ComponentProps) => {
   if (rest.onIcon) {
     return <IconButtonToggle {...rest} icon={icon} />;
   }

@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 12
 								}
 							],
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 6
 								}
 							],
@@ -111,7 +111,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 7,
+									"line": 8,
 									"character": 3
 								}
 							],
@@ -144,7 +144,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 5,
+							"line": 6,
 							"character": 31
 						}
 					]
@@ -164,34 +164,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 15,
+							"line": 16,
 							"character": 22
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 7,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ElevationProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "ElevationProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}

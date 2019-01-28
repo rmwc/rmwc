@@ -1,10 +1,8 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import classNamesFunc from 'classnames';
-import { parseThemeOptions, ThemeOptionT } from './withTheme';
+import { parseThemeOptions } from './withTheme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
-import { MergeInterfacesT } from './utils/merge-interfaces';
-
-type ThemeInputT = ThemeOptionT | ThemeOptionT[];
 
 type ClassNamesInputT =
   | ((
@@ -17,30 +15,20 @@ type ClassNamesInputT =
     >)
   | string[];
 
-type TagT = string | React.ComponentType<any>;
-
 interface ComponentFactoryOpts<Props> {
   displayName: string;
   classNames?: ClassNamesInputT;
-  tag?: TagT;
+  tag?: RMWC.TagT;
   deprecate?: DeprecateT;
   consumeProps?: string[];
   // TODO, any had to be included
   // Currently causing errors because things like "role" cant be undefined
-  defaultProps?: any & Partial<ComponentProps<any> & Props>;
+  defaultProps?: any & Partial<RMWC.ComponentProps<any> & Props>;
   render?: (
     props: any,
     ref: React.Ref<any>,
-    tag: TagT
+    tag: RMWC.TagT
   ) => React.ReactElement<HTMLElement>;
-}
-
-export interface ComponentProps<T = any> extends React.HTMLProps<T> {
-  tag?: TagT;
-  theme?: ThemeInputT;
-  // // TODO, any had to be included
-  // // This is a type mistmatch between refs in class components vs forwardRef components... string is the
-  ref?: any;
 }
 
 // ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS
@@ -50,7 +38,7 @@ const handleClassNames = (
   props: any,
   classNames: ClassNamesInputT,
   className?: string,
-  theme?: ThemeInputT
+  theme?: RMWC.ThemeInputT
 ) => {
   const finalClassNames = classNamesFunc(
     className,
@@ -61,7 +49,7 @@ const handleClassNames = (
   props.className = finalClassNames;
 };
 
-const handleTag = (props: any, defaultTag: TagT, tag?: TagT) => {
+const handleTag = (props: any, defaultTag: RMWC.TagT, tag?: RMWC.TagT) => {
   // Handle the case where we are extending a component but passing
   // a string as a tag. For instance, extending an Icon but rendering a span
   if (typeof defaultTag !== 'string' && typeof tag === 'string') {
@@ -83,37 +71,35 @@ export const componentFactory = <P extends {}>({
   consumeProps = [],
   render
 }: ComponentFactoryOpts<P>) => {
-  const Component = React.forwardRef<any, MergeInterfacesT<P, ComponentProps>>(
-    (props: P & ComponentProps, ref) => {
-      const { className, theme, tag, ...rest } = props;
+  const Component = React.forwardRef((props: RMWC.ComponentProps & P, ref) => {
+    const { className, theme, tag, ...rest } = props;
 
-      handleClassNames(rest, classNames, className, theme);
-      handleTag(rest, defaultTag, tag);
-      if (deprecate) {
-        props = handleDeprecations(rest, deprecate, displayName);
-      }
-      handleConsumeProps(rest, consumeProps);
-
-      const finalProps: ComponentProps = rest;
-
-      // Do some switching to figure out what tag to use
-      // if we are extending an icon, we can still honor
-      // someone passing in an 'a' tag, while extending the icon
-      const Tag =
-        typeof defaultTag !== 'string' && typeof tag === 'string'
-          ? defaultTag
-          : tag || defaultTag;
-
-      // @ts-ignore
-      return render ? (
-        render(finalProps, ref, Tag)
-      ) : (
-        <Tag {...finalProps} ref={ref} />
-      );
+    handleClassNames(rest, classNames, className, theme);
+    handleTag(rest, defaultTag, tag);
+    if (deprecate) {
+      props = handleDeprecations(rest, deprecate, displayName);
     }
-  );
+    handleConsumeProps(rest, consumeProps);
+
+    const finalProps: RMWC.ComponentProps = rest;
+
+    // Do some switching to figure out what tag to use
+    // if we are extending an icon, we can still honor
+    // someone passing in an 'a' tag, while extending the icon
+    const Tag =
+      typeof defaultTag !== 'string' && typeof tag === 'string'
+        ? defaultTag
+        : tag || defaultTag;
+
+    // @ts-ignore
+    return render ? (
+      render(finalProps, ref, Tag)
+    ) : (
+      <Tag {...finalProps} ref={ref} />
+    );
+  });
 
   Component.displayName = displayName;
   Component.defaultProps = defaultProps;
-  return Component;
+  return (Component as unknown) as React.ComponentType<P & RMWC.ComponentProps>;
 };

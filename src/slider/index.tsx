@@ -1,10 +1,14 @@
-import { ComponentProps, CustomEventT } from '@rmwc/base';
-
+import RMWC from '@rmwc/types';
 import * as React from 'react';
+
 // @ts-ignore
 import { MDCSliderFoundation } from '@material/slider';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { debounce } from '@rmwc/base/utils/debounce';
+import {
+  componentFactory,
+  FoundationComponent,
+  CustomEventT,
+  debounce
+} from '@rmwc/base';
 
 export interface SliderProps {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
@@ -126,9 +130,9 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
     pinContainerStyle: {}
   };
 
-  root = this.createElement('root');
-  thumbContainer = this.createElement('thumbContainer');
-  sliderPin = this.createElement<SliderPin>('sliderPin');
+  private root = this.createElement('root');
+  private thumbContainer = this.createElement('thumbContainer');
+  private sliderPin = this.createElement<SliderPin>('sliderPin');
   track: HTMLElement | null = null;
 
   constructor(props: SliderProps) {

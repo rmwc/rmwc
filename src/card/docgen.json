@@ -15,18 +15,62 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/card/index.tsx",
 			"children": [
 				{
-					"id": 21,
+					"id": 24,
 					"name": "CardActionButtonProps",
 					"kind": 256,
 					"kindString": "Interface",
-					"flags": {},
+					"flags": {
+						"isExported": true
+					},
 					"children": [
 						{
-							"id": 28,
+							"id": 34,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
+						{
+							"id": 31,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -35,7 +79,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 21,
+									"line": 22,
 									"character": 10
 								}
 							],
@@ -49,11 +93,12 @@
 							}
 						},
 						{
-							"id": 22,
+							"id": 25,
 							"name": "dense",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -62,7 +107,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 7
 								}
 							],
@@ -89,11 +134,12 @@
 							}
 						},
 						{
-							"id": 26,
+							"id": 29,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -102,7 +148,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 17,
+									"line": 18,
 									"character": 10
 								}
 							],
@@ -129,11 +175,12 @@
 							}
 						},
 						{
-							"id": 29,
+							"id": 32,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -142,7 +189,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 23,
+									"line": 24,
 									"character": 6
 								}
 							],
@@ -156,11 +203,12 @@
 							}
 						},
 						{
-							"id": 27,
+							"id": 30,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -169,13 +217,22 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 19,
+									"line": 20,
 									"character": 7
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "React.ReactNode"
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"name": "React.ReactNode"
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -183,11 +240,12 @@
 							}
 						},
 						{
-							"id": 25,
+							"id": 28,
 							"name": "outlined",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -196,7 +254,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 15,
+									"line": 16,
 									"character": 10
 								}
 							],
@@ -223,11 +281,12 @@
 							}
 						},
 						{
-							"id": 23,
+							"id": 26,
 							"name": "raised",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -236,7 +295,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 8
 								}
 							],
@@ -263,11 +322,12 @@
 							}
 						},
 						{
-							"id": 30,
+							"id": 33,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -275,9 +335,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -290,11 +350,94 @@
 							}
 						},
 						{
-							"id": 24,
+							"id": 35,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
+							}
+						},
+						{
+							"id": 36,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
+							}
+						},
+						{
+							"id": 27,
 							"name": "unelevated",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -303,7 +446,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/button/index.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 12
 								}
 							],
@@ -335,23 +478,26 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								28,
-								22,
-								26,
-								29,
-								27,
+								34,
+								31,
 								25,
-								23,
+								29,
+								32,
 								30,
-								24
+								28,
+								26,
+								33,
+								35,
+								36,
+								27
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 109,
-							"character": 31
+							"line": 110,
+							"character": 38
 						}
 					],
 					"extendedTypes": [
@@ -366,14 +512,58 @@
 					"name": "CardActionIconProps",
 					"kind": 256,
 					"kindString": "Interface",
-					"flags": {},
+					"flags": {
+						"isExported": true
+					},
 					"children": [
+						{
+							"id": 21,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
 						{
 							"id": 10,
 							"name": "checked",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -414,6 +604,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -454,6 +645,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -481,6 +673,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -597,6 +790,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -624,6 +818,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
+								"isExported": true,
 								"isOptional": true
 							},
 							"comment": {
@@ -631,9 +826,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -644,6 +839,88 @@
 								"type": "reference",
 								"name": "WithRippleProps.ripple"
 							}
+						},
+						{
+							"id": 22,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
+							}
+						},
+						{
+							"id": 23,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
+							}
 						}
 					],
 					"groups": [
@@ -651,20 +928,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								21,
 								10,
 								17,
 								18,
 								11,
 								19,
-								20
+								20,
+								22,
+								23
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 100,
-							"character": 29
+							"line": 101,
+							"character": 36
 						}
 					],
 					"extendedTypes": [
@@ -701,7 +981,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 74,
+									"line": 75,
 									"character": 11
 								}
 							],
@@ -736,7 +1016,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 72,
+							"line": 73,
 							"character": 33
 						}
 					]
@@ -768,7 +1048,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 36,
+									"line": 37,
 									"character": 15
 								}
 							],
@@ -805,7 +1085,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 34,
+									"line": 35,
 									"character": 8
 								}
 							],
@@ -841,7 +1121,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 32,
+							"line": 33,
 							"character": 31
 						}
 					]
@@ -873,7 +1153,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 14,
+									"line": 15,
 									"character": 10
 								}
 							],
@@ -908,13 +1188,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 12,
+							"line": 13,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 50,
+					"id": 46,
 					"name": "CardActionPropsT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -927,7 +1207,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 119,
+							"line": 120,
 							"character": 28
 						}
 					],
@@ -946,7 +1226,7 @@
 					}
 				},
 				{
-					"id": 31,
+					"id": 37,
 					"name": "Card",
 					"kind": 32,
 					"kindString": "Variable",
@@ -960,34 +1240,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 18,
+							"line": 19,
 							"character": 17
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 32,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "CardProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -998,7 +1308,7 @@
 					"defaultValue": " componentFactory<CardProps>({\n  displayName: 'Card',\n  classNames: (props: CardProps) => [\n    'mdc-card',\n    {\n      'mdc-card--outlined': props.outlined\n    }\n  ],\n  consumeProps: ['outlined']\n})"
 				},
 				{
-					"id": 48,
+					"id": 45,
 					"name": "CardActionButton",
 					"kind": 32,
 					"kindString": "Variable",
@@ -1012,34 +1322,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 112,
+							"line": 113,
 							"character": 29
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 49,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardActionButtonProps",
+												"id": 24
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "CardActionButtonProps",
+												"id": 24
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -1064,30 +1404,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 89,
+							"line": 90,
 							"character": 30
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 43,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -1102,7 +1452,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardActionButtons',\n  classNames: ['mdc-card__action-buttons']\n})"
 				},
 				{
-					"id": 46,
+					"id": 44,
 					"name": "CardActionIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -1116,268 +1466,8 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 103,
+							"line": 104,
 							"character": 27
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 47,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<CardActionIconProps>({\n  displayName: 'CardActionIcon',\n  tag: IconButton,\n  classNames: ['mdc-card__action', 'mdc-card__action--icon']\n})"
-				},
-				{
-					"id": 44,
-					"name": "CardActionIcons",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons"
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 95,
-							"character": 28
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 45,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardActionIcons',\n  classNames: ['mdc-card__action-icons']\n})"
-				},
-				{
-					"id": 40,
-					"name": "CardActions",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "Row containing action buttons and/or icons"
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 78,
-							"character": 24
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 41,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<CardActionsProps>({\n  displayName: 'CardActions',\n  tag: 'section',\n  classNames: (props: CardActionsProps) => [\n    'mdc-card__actions',\n    { 'mdc-card__actions--full-bleed': props.fullBleed }\n  ],\n  consumeProps: ['fullBleed']\n})"
-				},
-				{
-					"id": 33,
-					"name": "CardMedia",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "Media area that displays a custom background-image with background-size: cover"
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 40,
-							"character": 22
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 34,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<CardMediaProps>({\n  displayName: 'CardMedia',\n  tag: 'section',\n  classNames: (props: CardMediaProps) => [\n    'mdc-card__media',\n    {\n      'mdc-card__media--square': props.square,\n      'mdc-card__media--16-9': props.sixteenByNine\n    }\n  ],\n  consumeProps: ['square', 'sixteenByNine']\n})"
-				},
-				{
-					"id": 35,
-					"name": "CardMediaContent",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image"
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 54,
-							"character": 29
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
-							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 36,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
-									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardMediaContent',\n  classNames: ['mdc-card__media-content']\n})"
-				},
-				{
-					"id": 37,
-					"name": "CardPrimaryAction",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "The main clickable area for the primary content of the card"
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 60,
-							"character": 30
 						}
 					],
 					"type": {
@@ -1391,32 +1481,19 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 38,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "CardActionIconProps",
+												"id": 9
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
 														"name": "any"
 													}
 												]
-											},
-											{
-												"type": "reference",
-												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -1434,18 +1511,348 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 39,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "CardActionIconProps",
+												"id": 9
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<CardActionIconProps>({\n  displayName: 'CardActionIcon',\n  tag: IconButton,\n  classNames: ['mdc-card__action', 'mdc-card__action--icon']\n})"
+				},
+				{
+					"id": 43,
+					"name": "CardActionIcons",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 96,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardActionIcons',\n  classNames: ['mdc-card__action-icons']\n})"
+				},
+				{
+					"id": 41,
+					"name": "CardActions",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Row containing action buttons and/or icons"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 79,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardActionsProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardActionsProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<CardActionsProps>({\n  displayName: 'CardActions',\n  tag: 'section',\n  classNames: (props: CardActionsProps) => [\n    'mdc-card__actions',\n    { 'mdc-card__actions--full-bleed': props.fullBleed }\n  ],\n  consumeProps: ['fullBleed']\n})"
+				},
+				{
+					"id": 38,
+					"name": "CardMedia",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Media area that displays a custom background-image with background-size: cover"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 41,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardMediaProps",
+												"id": 4
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "CardMediaProps",
+												"id": 4
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<CardMediaProps>({\n  displayName: 'CardMedia',\n  tag: 'section',\n  classNames: (props: CardMediaProps) => [\n    'mdc-card__media',\n    {\n      'mdc-card__media--square': props.square,\n      'mdc-card__media--16-9': props.sixteenByNine\n    }\n  ],\n  consumeProps: ['square', 'sixteenByNine']\n})"
+				},
+				{
+					"id": 39,
+					"name": "CardMediaContent",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 55,
+							"character": 29
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<{}>({\n  displayName: 'CardMediaContent',\n  classNames: ['mdc-card__media-content']\n})"
+				},
+				{
+					"id": 40,
+					"name": "CardPrimaryAction",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "The main clickable area for the primary content of the card"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 61,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -1456,10 +1863,35 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											},
 											{
 												"type": "reference",
-												"name": "DeprecatedRippleProps"
+												"name": "WithRippleProps"
 											}
 										]
 									}
@@ -1470,7 +1902,7 @@
 					"defaultValue": " withRipple({\n  surface: false\n})(\n  componentFactory<{}>({\n    displayName: 'CardPrimaryAction',\n    classNames: ['mdc-card__primary-action']\n  })\n)"
 				},
 				{
-					"id": 51,
+					"id": 47,
 					"name": "CardAction",
 					"kind": 64,
 					"kindString": "Function",
@@ -1480,14 +1912,14 @@
 					},
 					"signatures": [
 						{
-							"id": 52,
+							"id": 48,
 							"name": "CardAction",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 53,
+									"id": 49,
 									"name": "props",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1495,7 +1927,7 @@
 									"type": {
 										"type": "reference",
 										"name": "CardActionPropsT",
-										"id": 50
+										"id": 46
 									}
 								}
 							],
@@ -1508,7 +1940,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 120,
+							"line": 121,
 							"character": 23
 						}
 					]
@@ -1519,7 +1951,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						21,
+						24,
 						9,
 						7,
 						4,
@@ -1530,29 +1962,29 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						50
+						46
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						31,
-						48,
+						37,
+						45,
 						42,
-						46,
 						44,
-						40,
-						33,
-						35,
-						37
+						43,
+						41,
+						38,
+						39,
+						40
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						51
+						47
 					]
 				}
 			],

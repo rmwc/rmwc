@@ -1,7 +1,7 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
-import { componentFactory, classNames, ComponentProps } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import { componentFactory, classNames, deprecationWarning } from '@rmwc/base';
 
 type IconElementT = React.ReactElement<any> | string | undefined;
 
@@ -14,7 +14,7 @@ export type IconStrategyT =
   | 'custom';
 
 export interface IconOptions {
-  icon?: IconElementT;
+  icon: IconElementT;
   /**
    * Handle multiple methods of embedding an icon.
    * 'ligature' uses ligature style embedding like material-icons,
@@ -150,7 +150,7 @@ export const Icon = withProviderContext()(
   }: IconProps &
     DeprecatedIconProps &
     WithProviderContext &
-    ComponentProps) => {
+    RMWC.ComponentProps) => {
     // handle deprecation
     if (!!deprecatedIconOption) {
       const converted = {
@@ -201,12 +201,13 @@ export const Icon = withProviderContext()(
         ? `${String(prefixToUse)}${content}`
         : null;
 
-    const renderToUse =
+    const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];
+
+    // For some reason TS thinks the render method will return undefined...
+    const renderToUse: any =
       strategyToUse === 'custom'
         ? render || providerRender
-        : !!strategyToUse && iconRenderMap[strategyToUse] !== undefined
-        ? iconRenderMap[strategyToUse]
-        : undefined;
+        : rendererFromMap || null;
 
     if (!renderToUse) {
       console.error(
@@ -215,24 +216,20 @@ export const Icon = withProviderContext()(
       return null;
     }
 
-    return (
-      <React.Fragment>
-        {renderToUse({
-          ...rest,
-          ...optionsRest,
-          content: contentToUse,
-          className: classNames(
-            'rmwc-icon',
-            basenameToUse,
-            rest.className,
-            optionsRest.className,
-            iconClassName,
-            {
-              [`rmwc-icon--size-${size || ''}`]: !!size
-            }
-          )
-        })}
-      </React.Fragment>
-    );
+    return renderToUse({
+      ...rest,
+      ...optionsRest,
+      content: contentToUse,
+      className: classNames(
+        'rmwc-icon',
+        basenameToUse,
+        rest.className,
+        optionsRest.className,
+        iconClassName,
+        {
+          [`rmwc-icon--size-${size || ''}`]: !!size
+        }
+      )
+    });
   }
 );

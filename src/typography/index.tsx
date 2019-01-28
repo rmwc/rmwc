@@ -1,3 +1,5 @@
+import RMWC from '@rmwc/types';
+import * as React from 'react';
 import { componentFactory } from '@rmwc/base';
 
 export type TypographyT =

@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-unused-vars
+import RMWC from '@rmwc/types';
+import * as React from 'react';
 import { componentFactory } from '@rmwc/base';
 
 export interface ImageListProps {

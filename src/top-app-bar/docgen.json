@@ -15,7 +15,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/top-app-bar/index.tsx",
 			"children": [
 				{
-					"id": 119,
+					"id": 118,
 					"name": "SimpleTopAppBar",
 					"kind": 128,
 					"kindString": "Class",
@@ -27,21 +27,21 @@
 					},
 					"typeParameter": [
 						{
-							"id": 123,
+							"id": 122,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 124,
+							"id": 123,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 169,
+							"id": 168,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -50,7 +50,7 @@
 					],
 					"children": [
 						{
-							"id": 172,
+							"id": 171,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -71,7 +71,7 @@
 							},
 							"signatures": [
 								{
-									"id": 173,
+									"id": 172,
 									"name": "new SimpleTopAppBar",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -79,7 +79,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 174,
+											"id": 173,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -91,7 +91,7 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
@@ -100,7 +100,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SimpleTopAppBar",
-										"id": 119
+										"id": 118
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -108,7 +108,7 @@
 									}
 								},
 								{
-									"id": 175,
+									"id": 174,
 									"name": "new SimpleTopAppBar",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -127,7 +127,7 @@
 									},
 									"parameters": [
 										{
-											"id": 176,
+											"id": 175,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -135,11 +135,11 @@
 											"type": {
 												"type": "reference",
 												"name": "SimpleTopAppBarProps",
-												"id": 104
+												"id": 103
 											}
 										},
 										{
-											"id": 177,
+											"id": 176,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -155,7 +155,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SimpleTopAppBar",
-										"id": 119
+										"id": 118
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -181,7 +181,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 170,
 							"name": "context",
 							"kind": 1024,
 							"kindString": "Property",
@@ -219,7 +219,7 @@
 							}
 						},
 						{
-							"id": 196,
+							"id": 195,
 							"name": "props",
 							"kind": 1024,
 							"kindString": "Property",
@@ -243,14 +243,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 197,
+													"id": 196,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 198,
+															"id": 197,
 															"name": "children",
 															"kind": 32,
 															"kindString": "Variable",
@@ -275,7 +275,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																198
+																197
 															]
 														}
 													],
@@ -297,7 +297,7 @@
 											{
 												"type": "reference",
 												"name": "SimpleTopAppBarProps",
-												"id": 104
+												"id": 103
 											}
 										]
 									}
@@ -309,7 +309,7 @@
 							}
 						},
 						{
-							"id": 200,
+							"id": 199,
 							"name": "refs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -334,21 +334,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 201,
+									"id": 200,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 202,
+											"id": 201,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 203,
+													"id": 202,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -380,7 +380,7 @@
 							}
 						},
 						{
-							"id": 199,
+							"id": 198,
 							"name": "state",
 							"kind": 1024,
 							"kindString": "Property",
@@ -410,7 +410,7 @@
 							}
 						},
 						{
-							"id": 170,
+							"id": 169,
 							"name": "contextType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -452,7 +452,7 @@
 							}
 						},
 						{
-							"id": 120,
+							"id": 119,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -474,7 +474,7 @@
 							"defaultValue": "\"SimpleTopAppBar\""
 						},
 						{
-							"id": 149,
+							"id": 148,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -484,7 +484,7 @@
 							},
 							"signatures": [
 								{
-									"id": 150,
+									"id": 149,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -530,7 +530,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 154,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -540,7 +540,7 @@
 							},
 							"signatures": [
 								{
-									"id": 156,
+									"id": 155,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -565,7 +565,7 @@
 									},
 									"parameters": [
 										{
-											"id": 157,
+											"id": 156,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -577,13 +577,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 158,
+											"id": 157,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -617,7 +617,7 @@
 							}
 						},
 						{
-							"id": 164,
+							"id": 163,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -627,7 +627,7 @@
 							},
 							"signatures": [
 								{
-									"id": 165,
+									"id": 164,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -652,7 +652,7 @@
 									},
 									"parameters": [
 										{
-											"id": 166,
+											"id": 165,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -664,13 +664,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 167,
+											"id": 166,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -687,7 +687,7 @@
 											}
 										},
 										{
-											"id": 168,
+											"id": 167,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -721,7 +721,7 @@
 							}
 						},
 						{
-							"id": 134,
+							"id": 133,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -731,7 +731,7 @@
 							},
 							"signatures": [
 								{
-									"id": 135,
+									"id": 134,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -741,7 +741,7 @@
 									},
 									"parameters": [
 										{
-											"id": 136,
+											"id": 135,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -752,7 +752,7 @@
 											}
 										},
 										{
-											"id": 137,
+											"id": 136,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -786,7 +786,7 @@
 							}
 						},
 						{
-							"id": 125,
+							"id": 124,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -796,7 +796,7 @@
 							},
 							"signatures": [
 								{
-									"id": 126,
+									"id": 125,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -827,7 +827,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 141,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -837,7 +837,7 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 142,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -848,7 +848,7 @@
 									},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 143,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -860,13 +860,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 145,
+											"id": 144,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -883,7 +883,7 @@
 											}
 										},
 										{
-											"id": 146,
+											"id": 145,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -893,7 +893,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SS",
-												"id": 124
+												"id": 123
 											}
 										}
 									],
@@ -920,7 +920,7 @@
 							}
 						},
 						{
-							"id": 147,
+							"id": 146,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -930,7 +930,7 @@
 							},
 							"signatures": [
 								{
-									"id": 148,
+									"id": 147,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -976,7 +976,7 @@
 							}
 						},
 						{
-							"id": 151,
+							"id": 150,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -986,7 +986,7 @@
 							},
 							"signatures": [
 								{
-									"id": 152,
+									"id": 151,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1011,7 +1011,7 @@
 									},
 									"parameters": [
 										{
-											"id": 153,
+											"id": 152,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1023,13 +1023,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 154,
+											"id": 153,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1063,7 +1063,7 @@
 							}
 						},
 						{
-							"id": 132,
+							"id": 131,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1073,7 +1073,7 @@
 							},
 							"signatures": [
 								{
-									"id": 133,
+									"id": 132,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1104,7 +1104,7 @@
 							}
 						},
 						{
-							"id": 159,
+							"id": 158,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1114,7 +1114,7 @@
 							},
 							"signatures": [
 								{
-									"id": 160,
+									"id": 159,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1139,7 +1139,7 @@
 									},
 									"parameters": [
 										{
-											"id": 161,
+											"id": 160,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1151,13 +1151,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 162,
+											"id": 161,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1174,7 +1174,7 @@
 											}
 										},
 										{
-											"id": 163,
+											"id": 162,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1208,7 +1208,7 @@
 							}
 						},
 						{
-							"id": 191,
+							"id": 190,
 							"name": "forceUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1217,14 +1217,14 @@
 							},
 							"signatures": [
 								{
-									"id": 192,
+									"id": 191,
 									"name": "forceUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 193,
+											"id": 192,
 											"name": "callBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1241,14 +1241,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 194,
+															"id": 193,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 195,
+																	"id": 194,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -1288,7 +1288,7 @@
 							}
 						},
 						{
-							"id": 138,
+							"id": 137,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1298,7 +1298,7 @@
 							},
 							"signatures": [
 								{
-									"id": 139,
+									"id": 138,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1309,7 +1309,7 @@
 									},
 									"parameters": [
 										{
-											"id": 140,
+											"id": 139,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1321,13 +1321,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 141,
+											"id": 140,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1376,7 +1376,7 @@
 							}
 						},
 						{
-							"id": 121,
+							"id": 120,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1385,7 +1385,7 @@
 							},
 							"signatures": [
 								{
-									"id": 122,
+									"id": 121,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1413,7 +1413,7 @@
 							}
 						},
 						{
-							"id": 178,
+							"id": 177,
 							"name": "setState",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1422,14 +1422,14 @@
 							},
 							"signatures": [
 								{
-									"id": 179,
+									"id": 178,
 									"name": "setState",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 180,
+											"id": 179,
 											"name": "K",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1446,7 +1446,7 @@
 									],
 									"parameters": [
 										{
-											"id": 181,
+											"id": 180,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1457,21 +1457,21 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 182,
+															"id": 181,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 183,
+																	"id": 182,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
 																	"flags": {},
 																	"parameters": [
 																		{
-																			"id": 184,
+																			"id": 183,
 																			"name": "prevState",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -1488,7 +1488,7 @@
 																			}
 																		},
 																		{
-																			"id": 185,
+																			"id": 184,
 																			"name": "props",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -1500,7 +1500,7 @@
 																					{
 																						"type": "reference",
 																						"name": "SimpleTopAppBarProps",
-																						"id": 104
+																						"id": 103
 																					}
 																				]
 																			}
@@ -1520,7 +1520,7 @@
 																			{
 																				"type": "reflection",
 																				"declaration": {
-																					"id": 186,
+																					"id": 185,
 																					"name": "__type",
 																					"kind": 65536,
 																					"kindString": "Type literal",
@@ -1554,7 +1554,7 @@
 															{
 																"type": "reflection",
 																"declaration": {
-																	"id": 187,
+																	"id": 186,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
@@ -1567,7 +1567,7 @@
 											}
 										},
 										{
-											"id": 188,
+											"id": 187,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1584,14 +1584,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 189,
+															"id": 188,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 190,
+																	"id": 189,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -1631,7 +1631,7 @@
 							}
 						},
 						{
-							"id": 127,
+							"id": 126,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1641,7 +1641,7 @@
 							},
 							"signatures": [
 								{
-									"id": 128,
+									"id": 127,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1652,7 +1652,7 @@
 									},
 									"parameters": [
 										{
-											"id": 129,
+											"id": 128,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1664,13 +1664,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleTopAppBarProps",
-														"id": 104
+														"id": 103
 													}
 												]
 											}
 										},
 										{
-											"id": 130,
+											"id": 129,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1687,7 +1687,7 @@
 											}
 										},
 										{
-											"id": 131,
+											"id": 130,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1726,40 +1726,40 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								172
+								171
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								171,
-								196,
-								200,
-								199,
 								170,
-								120
+								195,
+								199,
+								198,
+								169,
+								119
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								149,
-								155,
-								164,
-								134,
-								125,
-								142,
-								147,
-								151,
-								132,
-								159,
-								191,
-								138,
-								121,
-								178,
-								127
+								148,
+								154,
+								163,
+								133,
+								124,
+								141,
+								146,
+								150,
+								131,
+								158,
+								190,
+								137,
+								120,
+								177,
+								126
 							]
 						}
 					],
@@ -1778,7 +1778,7 @@
 								{
 									"type": "reference",
 									"name": "SimpleTopAppBarProps",
-									"id": 104
+									"id": 103
 								}
 							]
 						}
@@ -1795,7 +1795,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 31,
+							"id": 30,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -1806,7 +1806,7 @@
 							}
 						},
 						{
-							"id": 68,
+							"id": 67,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -1815,21 +1815,21 @@
 					],
 					"children": [
 						{
-							"id": 38,
+							"id": 37,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 39,
+									"id": 38,
 									"name": "new TopAppBarBase",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 40,
+											"id": 39,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1864,7 +1864,7 @@
 							}
 						},
 						{
-							"id": 34,
+							"id": 33,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1879,21 +1879,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 35,
+									"id": 34,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 36,
+											"id": 35,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 37,
+													"id": 36,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -1935,7 +1935,7 @@
 							}
 						},
 						{
-							"id": 33,
+							"id": 32,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1958,7 +1958,7 @@
 							}
 						},
 						{
-							"id": 23,
+							"id": 22,
 							"name": "navIcon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1986,36 +1986,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 22,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 135,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
-							"id": 24,
+							"id": 23,
 							"name": "scrollTarget",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2064,7 +2035,7 @@
 							"defaultValue": "\"TopAppBar\""
 						},
 						{
-							"id": 32,
+							"id": 31,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2089,7 +2060,7 @@
 							}
 						},
 						{
-							"id": 84,
+							"id": 83,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2098,7 +2069,7 @@
 							},
 							"signatures": [
 								{
-									"id": 85,
+									"id": 84,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2144,7 +2115,7 @@
 							}
 						},
 						{
-							"id": 90,
+							"id": 89,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2153,7 +2124,7 @@
 							},
 							"signatures": [
 								{
-									"id": 91,
+									"id": 90,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2178,7 +2149,7 @@
 									},
 									"parameters": [
 										{
-											"id": 92,
+											"id": 91,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2202,7 +2173,7 @@
 											}
 										},
 										{
-											"id": 93,
+											"id": 92,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2236,7 +2207,7 @@
 							}
 						},
 						{
-							"id": 99,
+							"id": 98,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2245,7 +2216,7 @@
 							},
 							"signatures": [
 								{
-									"id": 100,
+									"id": 99,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2270,7 +2241,7 @@
 									},
 									"parameters": [
 										{
-											"id": 101,
+											"id": 100,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2294,7 +2265,7 @@
 											}
 										},
 										{
-											"id": 102,
+											"id": 101,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2321,7 +2292,7 @@
 											}
 										},
 										{
-											"id": 103,
+											"id": 102,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2355,7 +2326,7 @@
 							}
 						},
 						{
-							"id": 74,
+							"id": 73,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2364,7 +2335,7 @@
 							},
 							"signatures": [
 								{
-									"id": 75,
+									"id": 74,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2374,7 +2345,7 @@
 									},
 									"parameters": [
 										{
-											"id": 76,
+											"id": 75,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2385,7 +2356,7 @@
 											}
 										},
 										{
-											"id": 77,
+											"id": 76,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2419,14 +2390,14 @@
 							}
 						},
 						{
-							"id": 25,
+							"id": 24,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 26,
+									"id": 25,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2454,21 +2425,21 @@
 							}
 						},
 						{
-							"id": 41,
+							"id": 40,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 42,
+									"id": 41,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 43,
+											"id": 42,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2517,7 +2488,7 @@
 							}
 						},
 						{
-							"id": 82,
+							"id": 81,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2526,7 +2497,7 @@
 							},
 							"signatures": [
 								{
-									"id": 83,
+									"id": 82,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2572,7 +2543,7 @@
 							}
 						},
 						{
-							"id": 86,
+							"id": 85,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2581,7 +2552,7 @@
 							},
 							"signatures": [
 								{
-									"id": 87,
+									"id": 86,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2606,7 +2577,7 @@
 									},
 									"parameters": [
 										{
-											"id": 88,
+											"id": 87,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2630,7 +2601,7 @@
 											}
 										},
 										{
-											"id": 89,
+											"id": 88,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2664,14 +2635,14 @@
 							}
 						},
 						{
-							"id": 44,
+							"id": 43,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 45,
+									"id": 44,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2707,7 +2678,7 @@
 							}
 						},
 						{
-							"id": 94,
+							"id": 93,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2716,7 +2687,7 @@
 							},
 							"signatures": [
 								{
-									"id": 95,
+									"id": 94,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2741,7 +2712,7 @@
 									},
 									"parameters": [
 										{
-											"id": 96,
+											"id": 95,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2765,7 +2736,7 @@
 											}
 										},
 										{
-											"id": 97,
+											"id": 96,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2792,7 +2763,7 @@
 											}
 										},
 										{
-											"id": 98,
+											"id": 97,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2826,21 +2797,21 @@
 							}
 						},
 						{
-							"id": 46,
+							"id": 45,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 47,
+									"id": 46,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 48,
+											"id": 47,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -2853,7 +2824,7 @@
 									],
 									"parameters": [
 										{
-											"id": 49,
+											"id": 48,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2897,14 +2868,14 @@
 							}
 						},
 						{
-							"id": 63,
+							"id": 62,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 64,
+									"id": 63,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2914,7 +2885,7 @@
 									},
 									"parameters": [
 										{
-											"id": 65,
+											"id": 64,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2925,7 +2896,7 @@
 											}
 										},
 										{
-											"id": 66,
+											"id": 65,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2936,7 +2907,7 @@
 											}
 										},
 										{
-											"id": 67,
+											"id": 66,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2977,14 +2948,14 @@
 							}
 						},
 						{
-							"id": 27,
+							"id": 26,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 28,
+									"id": 27,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3012,7 +2983,7 @@
 							}
 						},
 						{
-							"id": 78,
+							"id": 77,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3021,7 +2992,7 @@
 							},
 							"signatures": [
 								{
-									"id": 79,
+									"id": 78,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3032,7 +3003,7 @@
 									},
 									"parameters": [
 										{
-											"id": 80,
+											"id": 79,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3056,7 +3027,7 @@
 											}
 										},
 										{
-											"id": 81,
+											"id": 80,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3115,14 +3086,14 @@
 							}
 						},
 						{
-							"id": 29,
+							"id": 28,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 30,
+									"id": 29,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3142,7 +3113,7 @@
 							]
 						},
 						{
-							"id": 69,
+							"id": 68,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3151,7 +3122,7 @@
 							},
 							"signatures": [
 								{
-									"id": 70,
+									"id": 69,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3162,7 +3133,7 @@
 									},
 									"parameters": [
 										{
-											"id": 71,
+											"id": 70,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3186,7 +3157,7 @@
 											}
 										},
 										{
-											"id": 72,
+											"id": 71,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3213,7 +3184,7 @@
 											}
 										},
 										{
-											"id": 73,
+											"id": 72,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3247,21 +3218,21 @@
 							}
 						},
 						{
-							"id": 52,
+							"id": 51,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 53,
+									"id": 52,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 54,
+											"id": 53,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3272,7 +3243,7 @@
 											}
 										},
 										{
-											"id": 55,
+											"id": 54,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3308,21 +3279,21 @@
 							}
 						},
 						{
-							"id": 56,
+							"id": 55,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 57,
+									"id": 56,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 58,
+											"id": 57,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3333,7 +3304,7 @@
 											}
 										},
 										{
-											"id": 59,
+											"id": 58,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3344,7 +3315,7 @@
 											}
 										},
 										{
-											"id": 60,
+											"id": 59,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3352,14 +3323,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 61,
+													"id": 60,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 62,
+															"id": 61,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -3404,14 +3375,14 @@
 							}
 						},
 						{
-							"id": 50,
+							"id": 49,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 51,
+									"id": 50,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3444,45 +3415,44 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								38
+								37
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								34,
 								33,
-								23,
+								32,
 								22,
-								24,
+								23,
 								21,
-								32
+								31
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								84,
-								90,
-								99,
-								74,
-								25,
-								41,
-								82,
-								86,
-								44,
-								94,
-								46,
-								63,
-								27,
-								78,
-								29,
-								69,
-								52,
-								56,
-								50
+								83,
+								89,
+								98,
+								73,
+								24,
+								40,
+								81,
+								85,
+								43,
+								93,
+								45,
+								62,
+								26,
+								77,
+								28,
+								68,
+								51,
+								55,
+								49
 							]
 						}
 					],
@@ -3508,7 +3478,7 @@
 					]
 				},
 				{
-					"id": 104,
+					"id": 103,
 					"name": "SimpleTopAppBarProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -3517,7 +3487,7 @@
 					},
 					"children": [
 						{
-							"id": 106,
+							"id": 105,
 							"name": "actionItems",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3544,7 +3514,7 @@
 							}
 						},
 						{
-							"id": 118,
+							"id": 117,
 							"name": "dense",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3586,7 +3556,7 @@
 							}
 						},
 						{
-							"id": 109,
+							"id": 108,
 							"name": "endContent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3610,7 +3580,7 @@
 							}
 						},
 						{
-							"id": 114,
+							"id": 113,
 							"name": "fixed",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3652,7 +3622,7 @@
 							}
 						},
 						{
-							"id": 107,
+							"id": 106,
 							"name": "navigationIcon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3685,7 +3655,7 @@
 							}
 						},
 						{
-							"id": 110,
+							"id": 109,
 							"name": "onNav",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3713,21 +3683,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 111,
+											"id": 110,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 112,
+													"id": 111,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 113,
+															"id": 112,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -3761,7 +3731,7 @@
 							}
 						},
 						{
-							"id": 115,
+							"id": 114,
 							"name": "prominent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3803,7 +3773,7 @@
 							}
 						},
 						{
-							"id": 116,
+							"id": 115,
 							"name": "short",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3845,7 +3815,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 116,
 							"name": "shortCollapsed",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3887,7 +3857,7 @@
 							}
 						},
 						{
-							"id": 108,
+							"id": 107,
 							"name": "startContent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3911,7 +3881,7 @@
 							}
 						},
 						{
-							"id": 105,
+							"id": 104,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3940,17 +3910,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								106,
-								118,
-								109,
-								114,
-								107,
-								110,
-								115,
-								116,
+								105,
 								117,
 								108,
-								105
+								113,
+								106,
+								109,
+								114,
+								115,
+								116,
+								107,
+								104
 							]
 						}
 					],
@@ -4438,7 +4408,7 @@
 						{
 							"type": "reference",
 							"name": "SimpleTopAppBarProps",
-							"id": 104
+							"id": 103
 						}
 					]
 				},
@@ -4545,7 +4515,7 @@
 					]
 				},
 				{
-					"id": 213,
+					"id": 207,
 					"name": "TopAppBarActionItem",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4574,18 +4544,12 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 214,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconProps"
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -4596,10 +4560,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -4617,18 +4577,12 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 215,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconProps"
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -4639,10 +4593,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									}
@@ -4653,7 +4603,7 @@
 					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<IconProps>({\n    displayName: 'TopAppBarActionItem',\n    classNames: ['mdc-top-app-bar__action-item'],\n    tag: Icon\n  })\n)"
 				},
 				{
-					"id": 218,
+					"id": 209,
 					"name": "TopAppBarFixedAdjust",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4672,29 +4622,59 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 219,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TopAppBarFixedAdjustProps",
+												"id": 15
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "TopAppBarFixedAdjustProps",
+												"id": 15
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -4705,7 +4685,7 @@
 					"defaultValue": " componentFactory<TopAppBarFixedAdjustProps>(\n  {\n    displayName: 'TopAppBarFixedAdjust',\n    classNames: (props: TopAppBarFixedAdjustProps) => [\n      'mdc-top-app-bar--fixed-adjust',\n      {\n        'mdc-top-app-bar--dense-fixed-adjust': props.dense,\n        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,\n        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,\n        'mdc-top-app-bar--short-fixed-adjust': props.short\n      }\n    ],\n    consumeProps: ['dense', 'denseProminent', 'prominent', 'short']\n  }\n)"
 				},
 				{
-					"id": 210,
+					"id": 206,
 					"name": "TopAppBarNavigationIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4734,18 +4714,12 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 211,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconProps"
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -4756,10 +4730,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -4777,18 +4747,12 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 212,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "IconProps"
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -4799,10 +4763,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									}
@@ -4813,7 +4773,7 @@
 					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<IconProps>({\n    displayName: 'TopAppBarNavigationIcon',\n    classNames: ['mdc-top-app-bar__navigation-icon'],\n    tag: Icon\n  })\n)"
 				},
 				{
-					"id": 204,
+					"id": 203,
 					"name": "TopAppBarRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4829,29 +4789,59 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 205,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TopAppBarProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "TopAppBarProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -4862,7 +4852,7 @@
 					"defaultValue": " componentFactory<TopAppBarProps>({\n  displayName: 'TopAppBarRoot',\n  tag: 'header',\n  classNames: (props: TopAppBarProps) => [\n    'mdc-top-app-bar',\n    {\n      'mdc-top-app-bar--fixed': props.fixed,\n      'mdc-top-app-bar--prominent': props.prominent,\n      'mdc-top-app-bar--short': props.short || props.shortCollapsed,\n      'mdc-top-app-bar--short-collapsed': props.shortCollapsed,\n      'mdc-top-app-bar--dense': props.dense\n    }\n  ],\n  consumeProps: ['fixed', 'prominent', 'short', 'shortCollapsed', 'dense']\n})"
 				},
 				{
-					"id": 206,
+					"id": 204,
 					"name": "TopAppBarRow",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4881,25 +4871,35 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 207,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -4914,7 +4914,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'TopAppBarRow',\n  classNames: ['mdc-top-app-bar__row']\n})"
 				},
 				{
-					"id": 208,
+					"id": 205,
 					"name": "TopAppBarSection",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4933,29 +4933,59 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 209,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "TopAppBarSectionProps",
+												"id": 12
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "TopAppBarSectionProps",
+												"id": 12
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -4966,7 +4996,7 @@
 					"defaultValue": " componentFactory<TopAppBarSectionProps>({\n  displayName: 'TopAppBarSection',\n  tag: 'section',\n  classNames: (props: TopAppBarSectionProps) => [\n    'mdc-top-app-bar__section',\n    {\n      'mdc-top-app-bar__section--align-start': props.alignStart,\n      'mdc-top-app-bar__section--align-end': props.alignEnd\n    }\n  ],\n  consumeProps: ['alignStart', 'alignEnd']\n})"
 				},
 				{
-					"id": 216,
+					"id": 208,
 					"name": "TopAppBarTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4985,25 +5015,35 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 217,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -5018,7 +5058,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'TopAppBarTitle',\n  classNames: ['mdc-top-app-bar__title']\n})"
 				},
 				{
-					"id": 220,
+					"id": 210,
 					"name": "TopAppBar",
 					"kind": 64,
 					"kindString": "Function",
@@ -5028,14 +5068,14 @@
 					},
 					"signatures": [
 						{
-							"id": 221,
+							"id": 211,
 							"name": "TopAppBar",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 222,
+									"id": 212,
 									"name": "props",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5076,7 +5116,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						119,
+						118,
 						20
 					]
 				},
@@ -5084,7 +5124,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						104,
+						103,
 						15,
 						2,
 						12
@@ -5094,20 +5134,20 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						213,
-						218,
-						210,
-						204,
+						207,
+						209,
 						206,
-						208,
-						216
+						203,
+						204,
+						205,
+						208
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						220
+						210
 					]
 				}
 			],

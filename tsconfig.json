@@ -15,7 +15,13 @@
     "noEmit": true,
     "jsx": "preserve",
     "downlevelIteration": true,
-    "lib": ["es2015", "es2017", "dom"]
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

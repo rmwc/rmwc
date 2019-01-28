@@ -24,7 +24,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 25,
+							"id": 24,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -35,7 +35,7 @@
 							}
 						},
 						{
-							"id": 60,
+							"id": 59,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -44,7 +44,7 @@
 					],
 					"children": [
 						{
-							"id": 32,
+							"id": 31,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -53,14 +53,14 @@
 							},
 							"signatures": [
 								{
-									"id": 33,
+									"id": 32,
 									"name": "new LinearProgress",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 34,
+											"id": 33,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -95,7 +95,7 @@
 							}
 						},
 						{
-							"id": 16,
+							"id": 15,
 							"name": "determinate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -105,7 +105,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 76,
+									"line": 77,
 									"character": 13
 								}
 							],
@@ -125,7 +125,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 28,
+							"id": 27,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -142,7 +142,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 29,
+									"id": 28,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -151,14 +151,14 @@
 									},
 									"indexSignature": [
 										{
-											"id": 30,
+											"id": 29,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 31,
+													"id": 30,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -200,7 +200,7 @@
 							}
 						},
 						{
-							"id": 27,
+							"id": 26,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -225,37 +225,6 @@
 							}
 						},
 						{
-							"id": 15,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 75,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
 							"id": 10,
 							"name": "displayName",
 							"kind": 1024,
@@ -267,7 +236,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 67,
+									"line": 68,
 									"character": 20
 								}
 							],
@@ -278,7 +247,7 @@
 							"defaultValue": "\"LinearProgress\""
 						},
 						{
-							"id": 26,
+							"id": 25,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -304,7 +273,7 @@
 							}
 						},
 						{
-							"id": 76,
+							"id": 75,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -314,7 +283,7 @@
 							},
 							"signatures": [
 								{
-									"id": 77,
+									"id": 76,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -360,7 +329,7 @@
 							}
 						},
 						{
-							"id": 82,
+							"id": 81,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -370,7 +339,7 @@
 							},
 							"signatures": [
 								{
-									"id": 83,
+									"id": 82,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -395,7 +364,7 @@
 									},
 									"parameters": [
 										{
-											"id": 84,
+											"id": 83,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -429,7 +398,7 @@
 											}
 										},
 										{
-											"id": 85,
+											"id": 84,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -463,7 +432,7 @@
 							}
 						},
 						{
-							"id": 91,
+							"id": 90,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -473,7 +442,7 @@
 							},
 							"signatures": [
 								{
-									"id": 92,
+									"id": 91,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -498,7 +467,7 @@
 									},
 									"parameters": [
 										{
-											"id": 93,
+											"id": 92,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -532,7 +501,7 @@
 											}
 										},
 										{
-											"id": 94,
+											"id": 93,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -559,7 +528,7 @@
 											}
 										},
 										{
-											"id": 95,
+											"id": 94,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -593,7 +562,7 @@
 							}
 						},
 						{
-							"id": 66,
+							"id": 65,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -603,7 +572,7 @@
 							},
 							"signatures": [
 								{
-									"id": 67,
+									"id": 66,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -613,7 +582,7 @@
 									},
 									"parameters": [
 										{
-											"id": 68,
+											"id": 67,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -624,7 +593,7 @@
 											}
 										},
 										{
-											"id": 69,
+											"id": 68,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -658,7 +627,7 @@
 							}
 						},
 						{
-							"id": 35,
+							"id": 34,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -667,7 +636,7 @@
 							},
 							"signatures": [
 								{
-									"id": 36,
+									"id": 35,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -703,7 +672,7 @@
 							}
 						},
 						{
-							"id": 37,
+							"id": 36,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -712,14 +681,14 @@
 							},
 							"signatures": [
 								{
-									"id": 38,
+									"id": 37,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 39,
+											"id": 38,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -778,7 +747,7 @@
 							}
 						},
 						{
-							"id": 74,
+							"id": 73,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -788,7 +757,7 @@
 							},
 							"signatures": [
 								{
-									"id": 75,
+									"id": 74,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -834,7 +803,7 @@
 							}
 						},
 						{
-							"id": 78,
+							"id": 77,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -844,7 +813,7 @@
 							},
 							"signatures": [
 								{
-									"id": 79,
+									"id": 78,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -869,7 +838,7 @@
 									},
 									"parameters": [
 										{
-											"id": 80,
+											"id": 79,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -903,7 +872,7 @@
 											}
 										},
 										{
-											"id": 81,
+											"id": 80,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -937,7 +906,7 @@
 							}
 						},
 						{
-							"id": 40,
+							"id": 39,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -946,7 +915,7 @@
 							},
 							"signatures": [
 								{
-									"id": 41,
+									"id": 40,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -982,7 +951,7 @@
 							}
 						},
 						{
-							"id": 86,
+							"id": 85,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -992,7 +961,7 @@
 							},
 							"signatures": [
 								{
-									"id": 87,
+									"id": 86,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1017,7 +986,7 @@
 									},
 									"parameters": [
 										{
-											"id": 88,
+											"id": 87,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1051,7 +1020,7 @@
 											}
 										},
 										{
-											"id": 89,
+											"id": 88,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1078,7 +1047,7 @@
 											}
 										},
 										{
-											"id": 90,
+											"id": 89,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1112,7 +1081,7 @@
 							}
 						},
 						{
-							"id": 42,
+							"id": 41,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1121,14 +1090,14 @@
 							},
 							"signatures": [
 								{
-									"id": 43,
+									"id": 42,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 44,
+											"id": 43,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1141,7 +1110,7 @@
 									],
 									"parameters": [
 										{
-											"id": 45,
+											"id": 44,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1185,7 +1154,7 @@
 							}
 						},
 						{
-							"id": 55,
+							"id": 54,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1194,7 +1163,7 @@
 							},
 							"signatures": [
 								{
-									"id": 56,
+									"id": 55,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1204,7 +1173,7 @@
 									},
 									"parameters": [
 										{
-											"id": 57,
+											"id": 56,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1215,7 +1184,7 @@
 											}
 										},
 										{
-											"id": 58,
+											"id": 57,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1226,7 +1195,7 @@
 											}
 										},
 										{
-											"id": 59,
+											"id": 58,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1267,7 +1236,7 @@
 							}
 						},
 						{
-							"id": 17,
+							"id": 16,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1276,7 +1245,7 @@
 							},
 							"signatures": [
 								{
-									"id": 18,
+									"id": 17,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1294,7 +1263,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 78,
+									"line": 79,
 									"character": 22
 								}
 							],
@@ -1304,7 +1273,7 @@
 							}
 						},
 						{
-							"id": 70,
+							"id": 69,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1314,7 +1283,7 @@
 							},
 							"signatures": [
 								{
-									"id": 71,
+									"id": 70,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1325,7 +1294,7 @@
 									},
 									"parameters": [
 										{
-											"id": 72,
+											"id": 71,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1359,7 +1328,7 @@
 											}
 										},
 										{
-											"id": 73,
+											"id": 72,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1418,7 +1387,7 @@
 							}
 						},
 						{
-							"id": 23,
+							"id": 22,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1427,7 +1396,7 @@
 							},
 							"signatures": [
 								{
-									"id": 24,
+									"id": 23,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1441,13 +1410,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 139,
+									"line": 140,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 61,
+							"id": 60,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1457,7 +1426,7 @@
 							},
 							"signatures": [
 								{
-									"id": 62,
+									"id": 61,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1468,7 +1437,7 @@
 									},
 									"parameters": [
 										{
-											"id": 63,
+											"id": 62,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1502,7 +1471,7 @@
 											}
 										},
 										{
-											"id": 64,
+											"id": 63,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1529,7 +1498,7 @@
 											}
 										},
 										{
-											"id": 65,
+											"id": 64,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1563,7 +1532,7 @@
 							}
 						},
 						{
-							"id": 19,
+							"id": 18,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1572,14 +1541,14 @@
 							},
 							"signatures": [
 								{
-									"id": 20,
+									"id": 19,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 21,
+											"id": 20,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1591,7 +1560,7 @@
 											}
 										},
 										{
-											"id": 22,
+											"id": 21,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1616,7 +1585,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 101,
+									"line": 102,
 									"character": 6
 								}
 							],
@@ -1626,7 +1595,7 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 47,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1635,14 +1604,14 @@
 							},
 							"signatures": [
 								{
-									"id": 49,
+									"id": 48,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 50,
+											"id": 49,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1653,7 +1622,7 @@
 											}
 										},
 										{
-											"id": 51,
+											"id": 50,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1664,7 +1633,7 @@
 											}
 										},
 										{
-											"id": 52,
+											"id": 51,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1672,7 +1641,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 53,
+													"id": 52,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -1681,7 +1650,7 @@
 													},
 													"signatures": [
 														{
-															"id": 54,
+															"id": 53,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1726,7 +1695,7 @@
 							}
 						},
 						{
-							"id": 46,
+							"id": 45,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1735,7 +1704,7 @@
 							},
 							"signatures": [
 								{
-									"id": 47,
+									"id": 46,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1783,7 +1752,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 71,
+											"line": 72,
 											"character": 10
 										}
 									],
@@ -1804,7 +1773,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 70,
+											"line": 71,
 											"character": 12
 										}
 									],
@@ -1825,7 +1794,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 72,
+											"line": 73,
 											"character": 12
 										}
 									],
@@ -1850,7 +1819,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 69,
+									"line": 70,
 									"character": 21
 								}
 							],
@@ -1865,44 +1834,43 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								32
+								31
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								16,
-								28,
-								27,
 								15,
+								27,
+								26,
 								10,
-								26
+								25
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								76,
-								82,
-								91,
-								66,
-								35,
-								37,
-								74,
-								78,
-								40,
-								86,
-								42,
-								55,
-								17,
-								70,
-								23,
-								61,
-								19,
-								48,
-								46
+								75,
+								81,
+								90,
+								65,
+								34,
+								36,
+								73,
+								77,
+								39,
+								85,
+								41,
+								54,
+								16,
+								69,
+								22,
+								60,
+								18,
+								47,
+								45
 							]
 						},
 						{
@@ -1916,7 +1884,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 64,
+							"line": 65,
 							"character": 27
 						}
 					],
@@ -1968,7 +1936,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 20,
+									"line": 21,
 									"character": 13
 								}
 							],
@@ -2003,7 +1971,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 18,
+							"line": 19,
 							"character": 46
 						}
 					]
@@ -2032,7 +2000,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 11,
+									"line": 12,
 									"character": 8
 								}
 							],
@@ -2065,7 +2033,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 15,
+									"line": 16,
 									"character": 8
 								}
 							],
@@ -2102,7 +2070,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 10
 								}
 							],
@@ -2135,7 +2103,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 13,
+									"line": 14,
 									"character": 10
 								}
 							],
@@ -2173,13 +2141,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 7,
+							"line": 8,
 							"character": 36
 						}
 					]
 				},
 				{
-					"id": 106,
+					"id": 100,
 					"name": "LinearProgressBarInner",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2190,30 +2158,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 59,
+							"line": 60,
 							"character": 35
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 107,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2228,7 +2206,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'LinearProgressBarInner',\n  classNames: ['mdc-linear-progress__bar-inner']\n})"
 				},
 				{
-					"id": 100,
+					"id": 97,
 					"name": "LinearProgressBuffer",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2239,30 +2217,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 44,
+							"line": 45,
 							"character": 33
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 101,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2277,7 +2265,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'LinearProgressBuffer',\n  classNames: ['mdc-linear-progress__buffer']\n})"
 				},
 				{
-					"id": 98,
+					"id": 96,
 					"name": "LinearProgressBufferingDots",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2288,30 +2276,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 39,
+							"line": 40,
 							"character": 40
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 99,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2326,7 +2324,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'LinearProgressBufferingDots',\n  classNames: ['mdc-linear-progress__buffering-dots']\n})"
 				},
 				{
-					"id": 102,
+					"id": 98,
 					"name": "LinearProgressPrimaryBar",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2337,30 +2335,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 49,
+							"line": 50,
 							"character": 37
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 103,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2375,7 +2383,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'LinearProgressPrimaryBar',\n  classNames: ['mdc-linear-progress__bar mdc-linear-progress__primary-bar']\n})"
 				},
 				{
-					"id": 96,
+					"id": 95,
 					"name": "LinearProgressRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2386,34 +2394,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 23,
+							"line": 24,
 							"character": 31
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 97,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "LinearProgressProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "LinearProgressProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -2424,7 +2462,7 @@
 					"defaultValue": " componentFactory<LinearProgressProps>({\n  displayName: 'LinearProgressRoot',\n  tag: 'nav',\n  classNames: (props: LinearProgressProps) => [\n    'mdc-linear-progress',\n    {\n      'mdc-linear-progress--reversed': props.reversed,\n      'mdc-linear-progress--closed': props.closed\n    }\n  ],\n  defaultProps: {\n    role: 'progressbar'\n  },\n  consumeProps: ['determinate', 'reversed', 'accent', 'closed']\n})"
 				},
 				{
-					"id": 104,
+					"id": 99,
 					"name": "LinearProgressSecondaryBar",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2435,30 +2473,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 54,
+							"line": 55,
 							"character": 39
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 105,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -2493,12 +2541,12 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						106,
 						100,
-						98,
-						102,
+						97,
 						96,
-						104
+						98,
+						95,
+						99
 					]
 				}
 			],

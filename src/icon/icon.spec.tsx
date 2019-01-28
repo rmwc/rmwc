@@ -59,7 +59,7 @@ describe('Icon', () => {
     const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 
     sizes.forEach((size: any) => {
-      const el = mount(<Icon icon={{ content: 'favorite', size }} />);
+      const el = mount(<Icon icon={{ icon: 'favorite', size }} />);
       expect(el.html().includes(`rmwc-icon--size-${size}`)).toEqual(true);
     });
   });
@@ -68,7 +68,7 @@ describe('Icon', () => {
     const el = mount(
       <Icon
         icon={{
-          content: 'ionic',
+          icon: 'ionic',
           prefix: 'ion-',
           strategy: 'className',
           basename: 'icon'
@@ -84,7 +84,7 @@ describe('Icon', () => {
       <Icon
         // @ts-ignore
         icon={{
-          content: 'foo',
+          icon: 'foo',
           strategy: 'error'
         }}
       />
@@ -96,7 +96,7 @@ describe('Icon', () => {
     const el = mount(
       <Icon
         icon={{
-          content: 'CUSTOM',
+          icon: 'CUSTOM',
           strategy: 'custom',
           render: props => (
             <div>

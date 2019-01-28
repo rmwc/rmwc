@@ -1,6 +1,6 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, ComponentProps } from '@rmwc/base';
-import { MergeInterfacesT } from '@rmwc/base/utils/merge-interfaces';
+import { componentFactory } from '@rmwc/base';
 
 const SIZE_MAP: { [key: string]: number } = {
   xsmall: 18,
@@ -43,7 +43,7 @@ const CircularProgressRoot = componentFactory<CircularProgressRootProps>({
 
 /** A Circular Progress indicator. */
 export class CircularProgress extends React.Component<
-  MergeInterfacesT<CircularProgressProps, ComponentProps>
+  RMWC.MergeInterfacesT<CircularProgressProps, RMWC.ComponentProps>
 > {
   static defaultProps = {
     progress: undefined,

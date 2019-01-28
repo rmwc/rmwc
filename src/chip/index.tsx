@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 //@ts-ignore
 import { MDCChipFoundation } from '@material/chips';
@@ -6,12 +7,11 @@ import {
   FoundationComponent,
   componentFactory,
   CustomEventT,
-  ComponentProps
+  randomId,
+  deprecationWarning
 } from '@rmwc/base';
-import { randomId } from '@rmwc/base/utils/randomId';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
 
 export interface ChipProps {
   /** Text for your Chip. */
@@ -58,7 +58,7 @@ const ChipRoot = withRipple({})(
 export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
   static displayName = 'Chip';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   id: string = '';
   _reactInternalFiber: any;
 
@@ -243,7 +243,7 @@ const ChipIconRoot = componentFactory<ChipIconProps>({
   consumeProps: ['trailing', 'leading']
 });
 
-export const ChipIcon = (props: ChipIconProps & ComponentProps) => {
+export const ChipIcon = (props: ChipIconProps & RMWC.ComponentProps) => {
   const hasInteractionHandler = Object.keys(props).some(p =>
     p.startsWith('on')
   );

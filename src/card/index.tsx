@@ -1,7 +1,7 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import { componentFactory, deprecationWarning } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
@@ -97,7 +97,7 @@ export const CardActionIcons = componentFactory<{}>({
   classNames: ['mdc-card__action-icons']
 });
 
-interface CardActionIconProps extends IconButtonProps {}
+export interface CardActionIconProps extends IconButtonProps {}
 
 /** A card action Icon */
 export const CardActionIcon = componentFactory<CardActionIconProps>({
@@ -106,7 +106,7 @@ export const CardActionIcon = componentFactory<CardActionIconProps>({
   classNames: ['mdc-card__action', 'mdc-card__action--icon']
 });
 
-interface CardActionButtonProps extends ButtonProps {}
+export interface CardActionButtonProps extends ButtonProps {}
 
 /** A card action Button */
 export const CardActionButton = componentFactory<CardActionButtonProps>({

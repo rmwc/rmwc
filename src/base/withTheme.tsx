@@ -1,38 +1,12 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
+
 import classNames from 'classnames';
 import { toDashCase } from './utils/strings';
 import { deprecationWarning } from './utils/deprecation';
 
-export type ThemeOptionT =
-  | 'primary'
-  | 'secondary'
-  | 'background'
-  | 'surface'
-  | 'error'
-  | 'primaryBg'
-  | 'secondaryBg'
-  | 'onPrimary'
-  | 'onSecondary'
-  | 'onSurface'
-  | 'onError'
-  | 'textPrimaryOnBackground'
-  | 'textSecondaryOnBackground'
-  | 'textHintOnBackground'
-  | 'textDisabledOnBackground'
-  | 'textIconOnBackground'
-  | 'textPrimaryOnLight'
-  | 'textSecondaryOnLight'
-  | 'textHintOnLight'
-  | 'textDisabledOnLight'
-  | 'textIconOnLight'
-  | 'textPrimaryOnDark'
-  | 'textSecondaryOnDark'
-  | 'textHintOnDark'
-  | 'textDisabledOnDark'
-  | 'textIconOnDark';
-
 export interface WithThemeProps {
-  theme?: ThemeOptionT | ThemeOptionT[];
+  theme?: RMWC.ThemeInputT;
   className?: string;
 }
 

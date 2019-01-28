@@ -1,6 +1,6 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
-import { wrapChild } from '@rmwc/base/utils/wrap-child';
+import { componentFactory, wrapChild } from '@rmwc/base';
 
 export interface ElevationProps {
   /** A number from 0 - 24 for different levels of elevation */

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { withTheme } from './withTheme';
-import { noop } from './utils/noop';
-import { randomId } from './utils/randomId';
+import { randomId } from './utils/random-id';
 import { debounce } from './utils/debounce';
 
 jest.spyOn(console, 'warn');
@@ -12,10 +11,6 @@ describe('RMWC', () => {
 });
 
 describe('Utils', () => {
-  it('noop', () => {
-    noop();
-  });
-
   it('randomId', () => {
     process.env.NODE_ENV = 'production';
     randomId();

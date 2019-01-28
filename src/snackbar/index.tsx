@@ -1,6 +1,4 @@
-/**
- * Shows in browser notifications
- */
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
@@ -8,9 +6,9 @@ import { Button } from '@rmwc/button';
 import {
   componentFactory,
   FoundationComponent,
-  CustomEventT
+  CustomEventT,
+  handleDeprecations
 } from '@rmwc/base';
-import { handleDeprecations } from '@rmwc/base/utils/deprecation';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
 export interface SnackbarProps {
@@ -117,7 +115,7 @@ export class Snackbar extends FoundationComponent<
     this.handleSurfaceClick = this.handleSurfaceClick.bind(this);
   }
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   isShowing_ = false;
   dismissesOnAction: any;
   labelEl: HTMLElement | null = null;
@@ -190,39 +188,6 @@ export class Snackbar extends FoundationComponent<
       }
     }
   }
-  // syncWithProps(nextProps: SnackbarProps) {
-  //   syncFoundationProp(
-  //     nextProps.dismissesOnAction,
-  //     this.dismissesOnAction,
-  //     () => (this.dismissesOnAction = !!nextProps.dismissesOnAction)
-  //   );
-
-  //   syncFoundationProp(nextProps.show, this.isShowing, () => {
-  //     this.isShowing = !!nextProps.show;
-
-  //     window.requestAnimationFrame(() => {
-  //       if (nextProps.show) {
-  //         const {
-  //           message,
-  //           timeout,
-  //           actionHandler,
-  //           actionText,
-  //           multiline,
-  //           actionOnBottom
-  //         } = nextProps;
-
-  //         this.show({
-  //           message,
-  //           timeout,
-  //           actionHandler,
-  //           actionText: actionText || ' ',
-  //           multiline,
-  //           actionOnBottom
-  //         });
-  //       }
-  //     });
-  //   });
-  // }
 
   render() {
     // grab these before we try to correct them in the deprecation
@@ -252,7 +217,7 @@ export class Snackbar extends FoundationComponent<
           className="mdc-snackbar__surface"
           onClick={this.handleSurfaceClick}
         >
-          <SnackbarLabel ref={el => (this.labelEl = el)}>
+          <SnackbarLabel ref={(el: HTMLDivElement) => (this.labelEl = el)}>
             {message}
           </SnackbarLabel>
 

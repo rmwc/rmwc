@@ -1,11 +1,15 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // @ts-ignore
 import { MDCRippleFoundation, util } from '@material/ripple';
-import { classNames, FoundationComponent } from '@rmwc/base';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import {
+  classNames,
+  FoundationComponent,
+  deprecationWarning,
+  matches
+} from '@rmwc/base';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
-import { matches } from '@rmwc/base/utils/ponyfills';
 
 export interface RippleSurfaceProps {
   className: string;
@@ -25,15 +29,6 @@ export interface RippleProps {
   surface?: boolean | RippleSurface;
 }
 
-export interface DeprecatedRippleProps {
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}` */
-  accent?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}` */
-  surface?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}` */
-  unbounded?: boolean;
-}
-
 type ActivateEventTypes<S> =
   | React.MouseEvent<S>
   | React.TouchEvent<S>
@@ -44,8 +39,8 @@ type ActivateEventTypes<S> =
 export class Ripple extends FoundationComponent<RippleProps> {
   static displayName = 'Ripple';
 
-  root = this.createElement('root');
-  surface = this.createElement('surface');
+  private root = this.createElement('root');
+  private surface = this.createElement('surface');
 
   constructor(props: RippleProps) {
     super(props);
@@ -268,19 +263,6 @@ export class RippleSurface extends React.PureComponent<
   }
 }
 
-export type RipplePropT =
-  | boolean
-  | {
-      accent?: boolean;
-      surface?: boolean;
-      unbounded?: boolean;
-    };
-
-export interface WithRippleProps {
-  /** Adds a ripple effect to the component */
-  ripple?: RipplePropT;
-}
-
 interface WithRippleOpts {
   accent?: boolean;
   surface?: boolean;
@@ -295,8 +277,8 @@ export const withRipple = ({
   accent: defaultAccent,
   surface: defaultSurface = true
 }: WithRippleOpts = {}) => <P extends {}>(
-  Component: React.ComponentType<P & WithRippleProps & DeprecatedRippleProps>
-): React.ComponentType<P & WithRippleProps & DeprecatedRippleProps> => {
+  Component: React.ComponentType<P & RMWC.WithRippleProps>
+): React.ComponentType<P & RMWC.WithRippleProps> => {
   const WithRippleComponent = withProviderContext()(
     React.forwardRef<any, any>(
       (
@@ -304,7 +286,7 @@ export const withRipple = ({
           providerContext,
           ripple = providerContext.ripple,
           ...rest
-        }: P & WithRippleProps & DeprecatedRippleProps & WithProviderContext,
+        }: P & RMWC.WithRippleProps & WithProviderContext,
         ref
       ) => {
         const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
@@ -339,7 +321,5 @@ export const withRipple = ({
   WithRippleComponent.displayName = `withRipple(${Component.displayName ||
     'Unknown'})`;
 
-  return WithRippleComponent as React.ComponentType<
-    P & WithRippleProps & DeprecatedRippleProps
-  >;
+  return WithRippleComponent as React.ComponentType<P & RMWC.WithRippleProps>;
 };

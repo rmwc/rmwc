@@ -1,10 +1,11 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
 import { componentFactory } from '@rmwc/base';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
 
-export interface ButtonProps extends WithRippleProps {
+export interface ButtonProps extends RMWC.WithRippleProps {
   /** Make the Button dense. */
   dense?: boolean;
   /** Make the Button raised. */
@@ -16,7 +17,7 @@ export interface ButtonProps extends WithRippleProps {
   /** make the button disabled */
   disabled?: boolean;
   /** Content specified as a label prop. */
-  label?: React.ReactNode;
+  label?: React.ReactNode | any;
   /** Content specified as children. */
   children?: React.ReactNode;
   /** An Icon for the Button */

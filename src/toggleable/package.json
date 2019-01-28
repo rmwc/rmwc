@@ -2,7 +2,9 @@
   "name": "@rmwc/toggleable",
   "version": "4.0.6",
   "description": "RMWC toggle module",
-  "main": "index.js",
+  "main": "dist/index.js",
+"types": "dist/index.js",
+"module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"

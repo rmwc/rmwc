@@ -1,8 +1,9 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import { componentFactory } from '@rmwc/base';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { withRipple } from '@rmwc/ripple';
 import {
   ToggleableFoundationComponent,
   ToggleableFoundationProps
@@ -17,7 +18,7 @@ import {
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
 export interface CheckboxProps
-  extends WithRippleProps,
+  extends RMWC.WithRippleProps,
     ToggleableFoundationProps {
   /** Make the control indeterminate */
   indeterminate?: boolean;
@@ -78,8 +79,8 @@ class CheckboxBackground extends React.Component<{}> {
 export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
   static displayName = 'Checkbox';
 
-  nativeCb = this.createElement<HTMLInputElement>('nativeCb');
-  root = this.createElement('root');
+  private nativeCb = this.createElement<HTMLInputElement>('nativeCb');
+  private root = this.createElement('root');
 
   constructor(props: CheckboxProps) {
     super(props);

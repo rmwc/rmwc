@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCToolbarFoundation } from '@material/toolbar';
@@ -127,7 +128,7 @@ export const ToolbarIcon = withRipple({
 export class Toolbar extends FoundationComponent<ToolbarProps> {
   static displayName = 'Toolbar';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
   fixedAdjustElement_: HTMLElement | null = null;
 
   componentDidMount() {

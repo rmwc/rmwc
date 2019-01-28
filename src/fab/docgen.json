@@ -24,6 +24,47 @@
 					},
 					"children": [
 						{
+							"id": 10,
+							"name": "accent",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 53,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.accent"
+							}
+						},
+						{
 							"id": 7,
 							"name": "children",
 							"kind": 1024,
@@ -38,7 +79,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 16,
+									"line": 17,
 									"character": 10
 								}
 							],
@@ -62,7 +103,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 18,
+									"line": 19,
 									"character": 8
 								}
 							],
@@ -99,7 +140,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 10,
+									"line": 11,
 									"character": 6
 								}
 							],
@@ -123,7 +164,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 14,
+									"line": 15,
 									"character": 7
 								}
 							],
@@ -156,7 +197,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 8,
+									"line": 9,
 									"character": 6
 								}
 							],
@@ -192,9 +233,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/ripple/index.tsx",
-									"line": 281,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 62,
+									"character": 10
 								}
 							],
 							"type": {
@@ -204,6 +245,47 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "WithRippleProps.ripple"
+							}
+						},
+						{
+							"id": 11,
+							"name": "surface",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 55,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.surface"
 							}
 						},
 						{
@@ -221,13 +303,54 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 12,
+									"line": 13,
 									"character": 14
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "IconPropT"
+							}
+						},
+						{
+							"id": 12,
+							"name": "unbounded",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`"
+							},
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
+									"line": 57,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedRippleProps.unbounded"
 							}
 						}
 					],
@@ -236,20 +359,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								10,
 								7,
 								8,
 								4,
 								6,
 								3,
 								9,
-								5
+								11,
+								5,
+								12
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 6,
+							"line": 7,
 							"character": 25
 						}
 					],
@@ -261,7 +387,7 @@
 					]
 				},
 				{
-					"id": 13,
+					"id": 14,
 					"name": "FabIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -272,34 +398,62 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 41,
+							"line": 42,
 							"character": 20
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 14,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -321,30 +475,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 47,
+							"line": 48,
 							"character": 21
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 16,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -359,7 +523,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'FabLabel',\n  classNames: ['mdc-fab__label']\n})"
 				},
 				{
-					"id": 10,
+					"id": 13,
 					"name": "FabRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -370,7 +534,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 21,
+							"line": 22,
 							"character": 20
 						}
 					],
@@ -385,18 +549,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 11,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "FabProps",
+												"id": 2
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -407,10 +566,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									},
@@ -428,18 +583,13 @@
 										"type": "intersection",
 										"types": [
 											{
-												"type": "reflection",
-												"declaration": {
-													"id": 12,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {}
-												}
+												"type": "reference",
+												"name": "FabProps",
+												"id": 2
 											},
 											{
 												"type": "reference",
-												"name": "RefAttributes",
+												"name": "ComponentProps",
 												"typeArguments": [
 													{
 														"type": "intrinsic",
@@ -450,10 +600,6 @@
 											{
 												"type": "reference",
 												"name": "WithRippleProps"
-											},
-											{
-												"type": "reference",
-												"name": "DeprecatedRippleProps"
 											}
 										]
 									}
@@ -464,7 +610,7 @@
 					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<FabProps>({\n    displayName: 'FabRoot',\n    tag: 'button',\n    classNames: (props: FabProps) => [\n      'mdc-fab',\n      {\n        'mdc-fab--mini': props.mini,\n        'mdc-fab--exited': props.exited,\n        'mdc-fab--extended': props.label\n      }\n    ],\n    defaultProps: {\n      cssOnly: false,\n      mini: false\n    },\n    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']\n  })\n)"
 				},
 				{
-					"id": 17,
+					"id": 16,
 					"name": "Fab",
 					"kind": 64,
 					"kindString": "Function",
@@ -477,7 +623,7 @@
 					},
 					"signatures": [
 						{
-							"id": 18,
+							"id": 17,
 							"name": "Fab",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -487,7 +633,7 @@
 							},
 							"parameters": [
 								{
-									"id": 19,
+									"id": 18,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -496,14 +642,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 20,
+											"id": 19,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 21,
+													"id": 20,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -511,7 +657,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 54,
+															"line": 55,
 															"character": 10
 														}
 													],
@@ -568,7 +714,7 @@
 													}
 												},
 												{
-													"id": 23,
+													"id": 22,
 													"name": "icon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -576,7 +722,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 56,
+															"line": 57,
 															"character": 6
 														}
 													],
@@ -609,7 +755,7 @@
 													}
 												},
 												{
-													"id": 22,
+													"id": 21,
 													"name": "label",
 													"kind": 32,
 													"kindString": "Variable",
@@ -617,7 +763,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 55,
+															"line": 56,
 															"character": 7
 														}
 													],
@@ -627,7 +773,7 @@
 													}
 												},
 												{
-													"id": 25,
+													"id": 24,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -635,18 +781,18 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 58,
+															"line": 59,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 25
+														"id": 24
 													}
 												},
 												{
-													"id": 24,
+													"id": 23,
 													"name": "trailingIcon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -654,7 +800,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 57,
+															"line": 58,
 															"character": 14
 														}
 													],
@@ -692,18 +838,18 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														21,
-														23,
+														20,
 														22,
-														25,
-														24
+														21,
+														24,
+														23
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 53,
+													"line": 54,
 													"character": 20
 												}
 											]
@@ -720,7 +866,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 53,
+							"line": 54,
 							"character": 16
 						}
 					]
@@ -738,16 +884,16 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						13,
+						14,
 						15,
-						10
+						13
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						17
+						16
 					]
 				}
 			],

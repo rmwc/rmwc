@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IconOptions } from '@rmwc/icon';
-import { deprecationWarning } from '@rmwc/base/utils/deprecation';
+import { deprecationWarning } from '@rmwc/base';
 
 // prettier-ignore
 // eslint-disable-next-line max-len
@@ -10,7 +10,7 @@ export interface RMWCProviderProps {
   /** Set the buttons ripple effect globally */
   ripple?: boolean;
   /** Global options for icons */
-  icon?: IconOptions;
+  icon?: Partial<IconOptions>;
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -36,6 +36,7 @@ export interface DeprecatedRMWCProviderPropsT {
 const providerDefaults: RMWCProviderProps = {
   ripple: true,
   icon: {
+    icon: '',
     basename: 'material-icons',
     prefix: '',
     strategy: 'auto',
@@ -51,14 +52,19 @@ export const ProviderContext = React.createContext(providerDefaults);
 
 export const withProviderContext = () => <P extends {}>(
   Component: React.ComponentType<P & WithProviderContext>
-) =>
-  React.forwardRef((props: P, ref) => (
+) => {
+  const wrapped = React.forwardRef((props: P, ref) => (
     <ProviderContext.Consumer>
       {providerContext => (
         <Component {...props} providerContext={providerContext} ref={ref} />
       )}
     </ProviderContext.Consumer>
   ));
+
+  return (wrapped as unknown) as React.ComponentType<
+    P & Partial<WithProviderContext>
+  >;
+};
 
 /**
  * Provides default options for children
@@ -73,7 +79,7 @@ export const RMWCProvider = ({
   ...rest
 }: RMWCProviderProps & DeprecatedRMWCProviderPropsT) => {
   const value = { ...providerDefaults };
-  const iconOptions: IconOptions = { ...value.icon };
+  const iconOptions = { ...value.icon } as IconOptions;
 
   if (iconClassNameBase || iconClassNamePrefix || iconStrategy || iconRender) {
     deprecationWarning(

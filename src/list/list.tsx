@@ -1,9 +1,9 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
 //@ts-ignore
 import { MDCListFoundation } from '@material/list';
-import { FoundationComponent, componentFactory } from '@rmwc/base';
-import { matches } from '@rmwc/base/utils/ponyfills';
+import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
 export interface ListProps {
   /** Reduces the padding on List items. */
@@ -38,7 +38,7 @@ export const ListRoot = componentFactory<ListProps>({
 });
 
 export class List extends FoundationComponent<ListProps> {
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
   constructor(props: ListProps) {
     super(props);

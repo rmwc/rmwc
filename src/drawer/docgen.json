@@ -41,7 +41,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 73,
+									"line": 77,
 									"character": 13
 								}
 							],
@@ -78,7 +78,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 75,
+									"line": 79,
 									"character": 7
 								}
 							],
@@ -115,7 +115,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 69,
+									"line": 73,
 									"character": 9
 								}
 							],
@@ -186,7 +186,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 71,
+									"line": 75,
 									"character": 8
 								}
 							],
@@ -257,7 +257,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 67,
+									"line": 71,
 									"character": 6
 								}
 							],
@@ -296,13 +296,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 65,
+							"line": 69,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 39,
+					"id": 33,
 					"name": "DismissibleDrawer",
 					"kind": 32,
 					"kindString": "Variable",
@@ -312,7 +312,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 207,
+							"line": 211,
 							"character": 23
 						}
 					],
@@ -323,7 +323,7 @@
 					"defaultValue": " slidableDrawerFactory(\n  MDCDismissibleDrawerFoundation,\n  'dismissibleDrawer'\n)"
 				},
 				{
-					"id": 30,
+					"id": 26,
 					"name": "DrawerAppContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -337,30 +337,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 57,
+							"line": 61,
 							"character": 29
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 31,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -375,7 +385,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DrawerAppContent',\n  classNames: ['mdc-drawer-app-content']\n})"
 				},
 				{
-					"id": 20,
+					"id": 17,
 					"name": "DrawerContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -389,30 +399,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 38,
+							"line": 42,
 							"character": 26
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 21,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -441,30 +461,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 17,
+							"line": 21,
 							"character": 25
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 15,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -479,7 +509,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DrawerHeader',\n  classNames: ['mdc-drawer__header']\n})"
 				},
 				{
-					"id": 32,
+					"id": 27,
 					"name": "DrawerRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -490,34 +520,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 78,
+							"line": 82,
 							"character": 23
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 33,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "DrawerProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "DrawerProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -528,7 +588,7 @@
 					"defaultValue": " componentFactory<DrawerProps>({\n  displayName: 'DrawerRoot',\n  tag: 'aside',\n  classNames: (props: DrawerProps) => [\n    'mdc-drawer',\n    {\n      'mdc-drawer--dismissible': props.dismissible,\n      'mdc-drawer--modal': props.modal\n    }\n  ],\n  consumeProps: ['dismissible', 'modal']\n})"
 				},
 				{
-					"id": 18,
+					"id": 16,
 					"name": "DrawerSubtitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -542,30 +602,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 29,
+							"line": 33,
 							"character": 27
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 19,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -580,7 +650,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DrawerSubtitle',\n  classNames: ['mdc-drawer__subtitle']\n})"
 				},
 				{
-					"id": 16,
+					"id": 15,
 					"name": "DrawerTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -594,30 +664,40 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 23,
+							"line": 27,
 							"character": 24
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 17,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									},
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "RefAttributes",
+										"name": "ComponentProps",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ComponentProps",
 										"typeArguments": [
 											{
 												"type": "intrinsic",
@@ -632,7 +712,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DrawerTitle',\n  classNames: ['mdc-drawer__title']\n})"
 				},
 				{
-					"id": 38,
+					"id": 32,
 					"name": "ModalDrawer",
 					"kind": 32,
 					"kindString": "Variable",
@@ -642,7 +722,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 203,
+							"line": 207,
 							"character": 17
 						}
 					],
@@ -653,7 +733,7 @@
 					"defaultValue": " slidableDrawerFactory(\n  MDCModalDrawerFoundation,\n  'ModalDrawer'\n)"
 				},
 				{
-					"id": 40,
+					"id": 34,
 					"name": "Drawer",
 					"kind": 64,
 					"kindString": "Function",
@@ -663,14 +743,14 @@
 					},
 					"signatures": [
 						{
-							"id": 41,
+							"id": 35,
 							"name": "Drawer",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 42,
+									"id": 36,
 									"name": "props",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -691,13 +771,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 212,
+							"line": 216,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 22,
+					"id": 18,
 					"name": "DrawerScrim",
 					"kind": 64,
 					"kindString": "Function",
@@ -709,7 +789,7 @@
 					},
 					"signatures": [
 						{
-							"id": 23,
+							"id": 19,
 							"name": "DrawerScrim",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -719,7 +799,7 @@
 							},
 							"parameters": [
 								{
-									"id": 24,
+									"id": 20,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -728,14 +808,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 25,
+											"id": 21,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 26,
+													"id": 22,
 													"name": "onClick",
 													"kind": 32,
 													"kindString": "Variable",
@@ -743,28 +823,28 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 48,
+															"line": 52,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reflection",
 														"declaration": {
-															"id": 27,
+															"id": 23,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 28,
+																	"id": 24,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
 																	"flags": {},
 																	"parameters": [
 																		{
-																			"id": 29,
+																			"id": 25,
 																			"name": "evt",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -796,14 +876,14 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														26
+														22
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 47,
+													"line": 51,
 													"character": 21
 												}
 											]
@@ -820,13 +900,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 47,
+							"line": 51,
 							"character": 17
 						}
 					]
 				},
 				{
-					"id": 34,
+					"id": 28,
 					"name": "slidableDrawerFactory",
 					"kind": 64,
 					"kindString": "Function",
@@ -835,14 +915,14 @@
 					},
 					"signatures": [
 						{
-							"id": 35,
+							"id": 29,
 							"name": "slidableDrawerFactory",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 36,
+									"id": 30,
 									"name": "MDCConstructor",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -862,7 +942,7 @@
 									}
 								},
 								{
-									"id": 37,
+									"id": 31,
 									"name": "displayName",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -882,7 +962,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 91,
+							"line": 95,
 							"character": 27
 						}
 					]
@@ -900,23 +980,23 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						39,
-						30,
-						20,
+						33,
+						26,
+						17,
 						14,
-						32,
-						18,
+						27,
 						16,
-						38
+						15,
+						32
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						40,
-						22,
-						34
+						34,
+						18,
+						28
 					]
 				}
 			],

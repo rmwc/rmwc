@@ -204,7 +204,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 28,
+									"line": 29,
 									"character": 20
 								}
 							],
@@ -1181,7 +1181,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 30,
+									"line": 31,
 									"character": 22
 								}
 							],
@@ -1318,7 +1318,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 41,
+									"line": 42,
 									"character": 8
 								}
 							]
@@ -1675,7 +1675,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 27,
+							"line": 28,
 							"character": 22
 						}
 					],
@@ -1717,7 +1717,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 10,
+									"line": 11,
 									"character": 10
 								}
 							],
@@ -1752,7 +1752,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 8,
+							"line": 9,
 							"character": 31
 						}
 					]
@@ -1769,34 +1769,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 13,
+							"line": 14,
 							"character": 26
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 86,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "FormFieldProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "FormFieldProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}

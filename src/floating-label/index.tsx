@@ -1,3 +1,4 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
 import { MDCFloatingLabelFoundation } from '@material/floating-label';
@@ -11,7 +12,7 @@ export interface FloatingLabelProps {
 export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
   static displayName = 'FloatingLabel';
 
-  root = this.createElement('root');
+  private root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCFloatingLabelFoundation({

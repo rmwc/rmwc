@@ -24,7 +24,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 465,
+							"id": 460,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -33,7 +33,7 @@
 					],
 					"children": [
 						{
-							"id": 393,
+							"id": 388,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -42,14 +42,14 @@
 							},
 							"signatures": [
 								{
-									"id": 394,
+									"id": 389,
 									"name": "new Slider",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 395,
+											"id": 390,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -75,7 +75,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 132,
+									"line": 136,
 									"character": 35
 								}
 							],
@@ -85,7 +85,7 @@
 							}
 						},
 						{
-							"id": 436,
+							"id": 431,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -102,7 +102,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 437,
+									"id": 432,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -111,14 +111,14 @@
 									},
 									"indexSignature": [
 										{
-											"id": 438,
+											"id": 433,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 439,
+													"id": 434,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -160,7 +160,7 @@
 							}
 						},
 						{
-							"id": 435,
+							"id": 430,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -186,135 +186,6 @@
 						},
 						{
 							"id": 387,
-							"name": "root",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 129,
-									"character": 6
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('root')"
-						},
-						{
-							"id": 389,
-							"name": "sliderPin",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 131,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 390,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 391,
-													"name": "value",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 78,
-															"character": 51
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "number"
-													}
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														391
-													]
-												}
-											]
-										}
-									},
-									{
-										"type": "reference",
-										"name": "SliderPin",
-										"id": 164
-									}
-								]
-							},
-							"defaultValue": " this.createElement<SliderPin>('sliderPin')"
-						},
-						{
-							"id": 388,
-							"name": "thumbContainer",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "index.tsx",
-									"line": 130,
-									"character": 16
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "FoundationElement",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									},
-									{
-										"type": "reference",
-										"name": "HTMLElement"
-									}
-								]
-							},
-							"defaultValue": " this.createElement('thumbContainer')"
-						},
-						{
-							"id": 392,
 							"name": "track",
 							"kind": 1024,
 							"kindString": "Property",
@@ -324,7 +195,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 132,
+									"line": 136,
 									"character": 7
 								}
 							],
@@ -344,7 +215,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 434,
+							"id": 429,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -370,7 +241,7 @@
 							}
 						},
 						{
-							"id": 412,
+							"id": 407,
 							"name": "disabled",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -380,7 +251,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 413,
+									"id": 408,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -394,7 +265,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 414,
+									"id": 409,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -402,7 +273,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 415,
+											"id": 410,
 											"name": "disabled",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -423,18 +294,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 190,
+									"line": 194,
 									"character": 14
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 195,
+									"line": 199,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 416,
+							"id": 411,
 							"name": "discrete",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -443,7 +314,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 417,
+									"id": 412,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -456,14 +327,14 @@
 							],
 							"setSignature": [
 								{
-									"id": 418,
+									"id": 413,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 419,
+											"id": 414,
 											"name": "isDiscrete",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -483,18 +354,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 199,
+									"line": 203,
 									"character": 14
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 203,
+									"line": 207,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 420,
+							"id": 415,
 							"name": "displayMarkers",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -503,7 +374,7 @@
 							},
 							"getSignature": [
 								{
-									"id": 421,
+									"id": 416,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -516,14 +387,14 @@
 							],
 							"setSignature": [
 								{
-									"id": 422,
+									"id": 417,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 423,
+											"id": 418,
 											"name": "isDisplayMarkers",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -543,18 +414,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 209,
+									"line": 213,
 									"character": 20
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 213,
+									"line": 217,
 									"character": 20
 								}
 							]
 						},
 						{
-							"id": 404,
+							"id": 399,
 							"name": "max",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -564,7 +435,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 405,
+									"id": 400,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -578,7 +449,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 406,
+									"id": 401,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -586,7 +457,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 407,
+											"id": 402,
 											"name": "max",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -607,18 +478,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 170,
+									"line": 174,
 									"character": 9
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 175,
+									"line": 179,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 400,
+							"id": 395,
 							"name": "min",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -628,7 +499,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 401,
+									"id": 396,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -642,7 +513,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 402,
+									"id": 397,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -650,7 +521,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 403,
+											"id": 398,
 											"name": "min",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -671,18 +542,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 160,
+									"line": 164,
 									"character": 9
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 165,
+									"line": 169,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 408,
+							"id": 403,
 							"name": "step",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -692,7 +563,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 409,
+									"id": 404,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -706,7 +577,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 410,
+									"id": 405,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -714,7 +585,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 411,
+											"id": 406,
 											"name": "step",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -735,18 +606,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 180,
+									"line": 184,
 									"character": 10
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 185,
+									"line": 189,
 									"character": 10
 								}
 							]
 						},
 						{
-							"id": 396,
+							"id": 391,
 							"name": "value",
 							"kind": 262144,
 							"kindString": "Accessor",
@@ -756,7 +627,7 @@
 							"comment": {},
 							"getSignature": [
 								{
-									"id": 397,
+									"id": 392,
 									"name": "__get",
 									"kind": 524288,
 									"kindString": "Get signature",
@@ -770,7 +641,7 @@
 							],
 							"setSignature": [
 								{
-									"id": 398,
+									"id": 393,
 									"name": "__set",
 									"kind": 1048576,
 									"kindString": "Set signature",
@@ -778,7 +649,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 399,
+											"id": 394,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -799,18 +670,18 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 150,
+									"line": 154,
 									"character": 11
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 155,
+									"line": 159,
 									"character": 11
 								}
 							]
 						},
 						{
-							"id": 481,
+							"id": 476,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -820,7 +691,7 @@
 							},
 							"signatures": [
 								{
-									"id": 482,
+									"id": 477,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -866,7 +737,7 @@
 							}
 						},
 						{
-							"id": 487,
+							"id": 482,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -876,7 +747,7 @@
 							},
 							"signatures": [
 								{
-									"id": 488,
+									"id": 483,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -901,7 +772,7 @@
 									},
 									"parameters": [
 										{
-											"id": 489,
+											"id": 484,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -925,7 +796,7 @@
 											}
 										},
 										{
-											"id": 490,
+											"id": 485,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -959,7 +830,7 @@
 							}
 						},
 						{
-							"id": 496,
+							"id": 491,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -969,7 +840,7 @@
 							},
 							"signatures": [
 								{
-									"id": 497,
+									"id": 492,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -981,492 +852,6 @@
 											{
 												"tag": "deprecated",
 												"text": "16.3, use getSnapshotBeforeUpdate instead"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 498,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
-															{
-																"type": "reference",
-																"name": "SliderProps",
-																"id": 2
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 499,
-											"name": "nextState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationStateT",
-														"typeArguments": [
-															{
-																"type": "reference",
-																"name": "SliderState",
-																"id": 503
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 500,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 670,
-									"character": 34
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-							}
-						},
-						{
-							"id": 471,
-							"name": "componentDidCatch",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 472,
-									"name": "componentDidCatch",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
-									},
-									"parameters": [
-										{
-											"id": 473,
-											"name": "error",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Error"
-											}
-										},
-										{
-											"id": 474,
-											"name": "errorInfo",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "ErrorInfo"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidCatch"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 539,
-									"character": 25
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidCatch"
-							}
-						},
-						{
-							"id": 440,
-							"name": "componentDidMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 441,
-									"name": "componentDidMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidMount"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentDidMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 217,
-									"character": 19
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidMount"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentDidMount"
-							}
-						},
-						{
-							"id": 442,
-							"name": "componentDidUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 443,
-									"name": "componentDidUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 444,
-											"name": "prevProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "FoundationPropsT",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "SliderProps",
-														"id": 2
-													}
-												]
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "NewLifecycle.componentDidUpdate"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentDidUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 222,
-									"character": 20
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "NewLifecycle.componentDidUpdate"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentDidUpdate"
-							}
-						},
-						{
-							"id": 479,
-							"name": "componentWillMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 480,
-									"name": "componentWillMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
-										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 596,
-									"character": 26
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillMount"
-							}
-						},
-						{
-							"id": 483,
-							"name": "componentWillReceiveProps",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 484,
-									"name": "componentWillReceiveProps",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
-										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 485,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
-															{
-																"type": "reference",
-																"name": "SliderProps",
-																"id": 2
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 486,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillReceiveProps"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 625,
-									"character": 33
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillReceiveProps"
-							}
-						},
-						{
-							"id": 445,
-							"name": "componentWillUnmount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 446,
-									"name": "componentWillUnmount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentWillUnmount"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentWillUnmount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 226,
-									"character": 22
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentWillUnmount"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentWillUnmount"
-							}
-						},
-						{
-							"id": 491,
-							"name": "componentWillUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 492,
-									"name": "componentWillUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
-										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
 											},
 											{
 												"tag": "see",
@@ -1520,7 +905,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 503
+																"id": 497
 															}
 														]
 													}
@@ -1529,6 +914,492 @@
 										},
 										{
 											"id": 495,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 466,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 467,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 468,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 469,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 435,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 436,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 217,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 437,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 438,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 439,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "SliderProps",
+														"id": 2
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 222,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 474,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 475,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 478,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 479,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 480,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "SliderProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 481,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 440,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 441,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 226,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 486,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 487,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 488,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "SliderProps",
+																"id": 2
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 489,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "reference",
+																"name": "SliderState",
+																"id": 497
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 490,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1562,7 +1433,7 @@
 							}
 						},
 						{
-							"id": 447,
+							"id": 442,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1571,14 +1442,14 @@
 							},
 							"signatures": [
 								{
-									"id": 448,
+									"id": 443,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 449,
+											"id": 444,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1591,7 +1462,7 @@
 									],
 									"parameters": [
 										{
-											"id": 450,
+											"id": 445,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1635,7 +1506,7 @@
 							}
 						},
 						{
-							"id": 460,
+							"id": 455,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1644,7 +1515,7 @@
 							},
 							"signatures": [
 								{
-									"id": 461,
+									"id": 456,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1654,7 +1525,7 @@
 									},
 									"parameters": [
 										{
-											"id": 462,
+											"id": 457,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1665,7 +1536,7 @@
 											}
 										},
 										{
-											"id": 463,
+											"id": 458,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1676,7 +1547,7 @@
 											}
 										},
 										{
-											"id": 464,
+											"id": 459,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1717,7 +1588,7 @@
 							}
 						},
 						{
-							"id": 430,
+							"id": 425,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1726,7 +1597,7 @@
 							},
 							"signatures": [
 								{
-									"id": 431,
+									"id": 426,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1744,7 +1615,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 271,
+									"line": 275,
 									"character": 22
 								}
 							],
@@ -1754,7 +1625,7 @@
 							}
 						},
 						{
-							"id": 475,
+							"id": 470,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1764,7 +1635,7 @@
 							},
 							"signatures": [
 								{
-									"id": 476,
+									"id": 471,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1775,7 +1646,7 @@
 									},
 									"parameters": [
 										{
-											"id": 477,
+											"id": 472,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1799,7 +1670,7 @@
 											}
 										},
 										{
-											"id": 478,
+											"id": 473,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1815,7 +1686,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 503
+																"id": 497
 															}
 														]
 													}
@@ -1855,7 +1726,7 @@
 							}
 						},
 						{
-							"id": 424,
+							"id": 419,
 							"name": "layout",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1864,7 +1735,7 @@
 							},
 							"signatures": [
 								{
-									"id": 425,
+									"id": 420,
 									"name": "layout",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1878,13 +1749,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 219,
+									"line": 223,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 432,
+							"id": 427,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1893,7 +1764,7 @@
 							},
 							"signatures": [
 								{
-									"id": 433,
+									"id": 428,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1907,13 +1778,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 351,
+									"line": 355,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 466,
+							"id": 461,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1923,7 +1794,7 @@
 							},
 							"signatures": [
 								{
-									"id": 467,
+									"id": 462,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1934,7 +1805,7 @@
 									},
 									"parameters": [
 										{
-											"id": 468,
+											"id": 463,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1958,7 +1829,7 @@
 											}
 										},
 										{
-											"id": 469,
+											"id": 464,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1974,7 +1845,7 @@
 															{
 																"type": "reference",
 																"name": "SliderState",
-																"id": 503
+																"id": 497
 															}
 														]
 													}
@@ -1982,7 +1853,7 @@
 											}
 										},
 										{
-											"id": 470,
+											"id": 465,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2016,7 +1887,7 @@
 							}
 						},
 						{
-							"id": 426,
+							"id": 421,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2025,14 +1896,14 @@
 							},
 							"signatures": [
 								{
-									"id": 427,
+									"id": 422,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 428,
+											"id": 423,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2044,7 +1915,7 @@
 											}
 										},
 										{
-											"id": 429,
+											"id": 424,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2069,7 +1940,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 223,
+									"line": 227,
 									"character": 6
 								}
 							],
@@ -2079,7 +1950,7 @@
 							}
 						},
 						{
-							"id": 453,
+							"id": 448,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2088,14 +1959,14 @@
 							},
 							"signatures": [
 								{
-									"id": 454,
+									"id": 449,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 455,
+											"id": 450,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2106,7 +1977,7 @@
 											}
 										},
 										{
-											"id": 456,
+											"id": 451,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2117,7 +1988,7 @@
 											}
 										},
 										{
-											"id": 457,
+											"id": 452,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2125,7 +1996,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 458,
+													"id": 453,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -2134,7 +2005,7 @@
 													},
 													"signatures": [
 														{
-															"id": 459,
+															"id": 454,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -2179,7 +2050,7 @@
 							}
 						},
 						{
-							"id": 451,
+							"id": 446,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2188,7 +2059,7 @@
 							},
 							"signatures": [
 								{
-									"id": 452,
+									"id": 447,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2235,7 +2106,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 126,
+											"line": 130,
 											"character": 21
 										}
 									],
@@ -2263,7 +2134,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 125,
+											"line": 129,
 											"character": 21
 										}
 									],
@@ -2287,7 +2158,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 124,
+									"line": 128,
 									"character": 7
 								}
 							],
@@ -2302,59 +2173,56 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								393
+								388
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								436,
-								435,
+								431,
+								430,
 								387,
-								389,
-								388,
-								392,
-								434
+								429
 							]
 						},
 						{
 							"title": "Accessors",
 							"kind": 262144,
 							"children": [
-								412,
-								416,
-								420,
-								404,
-								400,
-								408,
-								396
+								407,
+								411,
+								415,
+								399,
+								395,
+								403,
+								391
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								481,
-								487,
-								496,
-								471,
-								440,
-								442,
-								479,
-								483,
-								445,
+								476,
+								482,
 								491,
-								447,
-								460,
-								430,
-								475,
-								424,
-								432,
 								466,
-								426,
-								453,
-								451
+								435,
+								437,
+								474,
+								478,
+								440,
+								486,
+								442,
+								455,
+								425,
+								470,
+								419,
+								427,
+								461,
+								421,
+								448,
+								446
 							]
 						},
 						{
@@ -2368,7 +2236,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 123,
+							"line": 127,
 							"character": 19
 						}
 					],
@@ -2385,7 +2253,7 @@
 								{
 									"type": "reference",
 									"name": "SliderState",
-									"id": 503
+									"id": 497
 								}
 							]
 						}
@@ -2820,7 +2688,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 108,
+									"line": 112,
 									"character": 20
 								}
 							],
@@ -3739,7 +3607,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 114,
+									"line": 118,
 									"character": 8
 								}
 							],
@@ -3989,7 +3857,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 110,
+									"line": 114,
 									"character": 23
 								}
 							],
@@ -4044,7 +3912,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 107,
+							"line": 111,
 							"character": 21
 						}
 					],
@@ -4095,7 +3963,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 79,
+									"line": 83,
 									"character": 20
 								}
 							],
@@ -4222,7 +4090,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -4244,7 +4112,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -4349,7 +4217,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -4371,7 +4239,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -4583,7 +4451,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -4605,7 +4473,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -4785,7 +4653,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -4807,7 +4675,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -4952,7 +4820,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -4974,7 +4842,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -5082,7 +4950,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -5104,7 +4972,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -5184,7 +5052,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 81,
+									"line": 85,
 									"character": 8
 								}
 							]
@@ -5237,7 +5105,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 78,
+																			"line": 82,
 																			"character": 51
 																		}
 																	],
@@ -5259,7 +5127,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 78,
+																	"line": 82,
 																	"character": 44
 																}
 															]
@@ -5351,7 +5219,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 78,
+							"line": 82,
 							"character": 15
 						}
 					],
@@ -5378,7 +5246,7 @@
 												"sources": [
 													{
 														"fileName": "index.tsx",
-														"line": 78,
+														"line": 82,
 														"character": 51
 													}
 												],
@@ -5400,7 +5268,7 @@
 										"sources": [
 											{
 												"fileName": "index.tsx",
-												"line": 78,
+												"line": 82,
 												"character": 44
 											}
 										]
@@ -5839,7 +5707,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 92,
+									"line": 96,
 									"character": 20
 								}
 							],
@@ -6758,7 +6626,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 98,
+									"line": 102,
 									"character": 8
 								}
 							],
@@ -7008,7 +6876,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 94,
+									"line": 98,
 									"character": 23
 								}
 							],
@@ -7063,7 +6931,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 91,
+							"line": 95,
 							"character": 17
 						}
 					],
@@ -7165,7 +7033,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -7187,7 +7055,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -7250,7 +7118,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 54
 																}
 															],
@@ -7272,7 +7140,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 50,
+															"line": 54,
 															"character": 42
 														}
 													]
@@ -7449,7 +7317,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 54
 																}
 															],
@@ -7471,7 +7339,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 50,
+															"line": 54,
 															"character": 42
 														}
 													]
@@ -7635,7 +7503,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 51,
+									"line": 55,
 									"character": 20
 								}
 							],
@@ -7762,7 +7630,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -7784,7 +7652,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -7889,7 +7757,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -7911,7 +7779,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -8123,7 +7991,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -8145,7 +8013,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -8325,7 +8193,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -8347,7 +8215,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -8492,7 +8360,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -8514,7 +8382,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -8700,7 +8568,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 50,
+																			"line": 54,
 																			"character": 54
 																		}
 																	],
@@ -8722,7 +8590,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 50,
+																	"line": 54,
 																	"character": 42
 																}
 															]
@@ -8806,7 +8674,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 57,
+									"line": 61,
 									"character": 8
 								}
 							],
@@ -8916,7 +8784,7 @@
 																									"sources": [
 																										{
 																											"fileName": "index.tsx",
-																											"line": 50,
+																											"line": 54,
 																											"character": 54
 																										}
 																									],
@@ -8938,7 +8806,7 @@
 																							"sources": [
 																								{
 																									"fileName": "index.tsx",
-																									"line": 50,
+																									"line": 54,
 																									"character": 42
 																								}
 																							]
@@ -9098,7 +8966,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 53,
+									"line": 57,
 									"character": 23
 								}
 							],
@@ -9153,7 +9021,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 50,
+							"line": 54,
 							"character": 17
 						}
 					],
@@ -9180,7 +9048,7 @@
 												"sources": [
 													{
 														"fileName": "index.tsx",
-														"line": 50,
+														"line": 54,
 														"character": 54
 													}
 												],
@@ -9202,7 +9070,7 @@
 										"sources": [
 											{
 												"fileName": "index.tsx",
-												"line": 50,
+												"line": 54,
 												"character": 42
 											}
 										]
@@ -9246,7 +9114,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 65,
+									"line": 69,
 									"character": 20
 								}
 							],
@@ -9373,7 +9241,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -9395,7 +9263,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -9500,7 +9368,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -9522,7 +9390,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -9734,7 +9602,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -9756,7 +9624,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -9936,7 +9804,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -9958,7 +9826,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -10103,7 +9971,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -10125,7 +9993,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -10233,7 +10101,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -10255,7 +10123,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -10335,7 +10203,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 67,
+									"line": 71,
 									"character": 8
 								}
 							]
@@ -10388,7 +10256,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 63,
+																			"line": 67,
 																			"character": 14
 																		}
 																	],
@@ -10410,7 +10278,7 @@
 															"sources": [
 																{
 																	"fileName": "index.tsx",
-																	"line": 62,
+																	"line": 66,
 																	"character": 61
 																}
 															]
@@ -10502,7 +10370,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 62,
+							"line": 66,
 							"character": 32
 						}
 					],
@@ -10529,7 +10397,7 @@
 												"sources": [
 													{
 														"fileName": "index.tsx",
-														"line": 63,
+														"line": 67,
 														"character": 14
 													}
 												],
@@ -10551,7 +10419,7 @@
 										"sources": [
 											{
 												"fileName": "index.tsx",
-												"line": 62,
+												"line": 66,
 												"character": 61
 											}
 										]
@@ -10585,7 +10453,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 35,
+									"line": 39,
 									"character": 10
 								}
 							],
@@ -10622,7 +10490,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 31,
+									"line": 35,
 									"character": 10
 								}
 							],
@@ -10659,7 +10527,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 33,
+									"line": 37,
 									"character": 16
 								}
 							],
@@ -10696,7 +10564,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 27,
+									"line": 31,
 									"character": 5
 								}
 							],
@@ -10729,7 +10597,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 25,
+									"line": 29,
 									"character": 5
 								}
 							],
@@ -10762,7 +10630,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 11,
+									"line": 15,
 									"character": 10
 								}
 							],
@@ -10817,7 +10685,7 @@
 																					"sources": [
 																						{
 																							"fileName": "index.tsx",
-																							"line": 13,
+																							"line": 17,
 																							"character": 11
 																						}
 																					],
@@ -10839,7 +10707,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 12,
+																					"line": 16,
 																					"character": 22
 																				}
 																			]
@@ -10875,7 +10743,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 17,
+									"line": 21,
 									"character": 9
 								}
 							],
@@ -10930,7 +10798,7 @@
 																					"sources": [
 																						{
 																							"fileName": "index.tsx",
-																							"line": 19,
+																							"line": 23,
 																							"character": 11
 																						}
 																					],
@@ -10952,7 +10820,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 18,
+																					"line": 22,
 																					"character": 22
 																				}
 																			]
@@ -10988,7 +10856,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 29,
+									"line": 33,
 									"character": 6
 								}
 							],
@@ -11021,7 +10889,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 23,
+									"line": 27,
 									"character": 7
 								}
 							],
@@ -11060,13 +10928,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 9,
+							"line": 13,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 503,
+					"id": 497,
 					"name": "SliderState",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -11074,21 +10942,21 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 119,
+							"line": 123,
 							"character": 16
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 504,
+							"id": 498,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 505,
+									"id": 499,
 									"name": "trackMarkersCount",
 									"kind": 32,
 									"kindString": "Variable",
@@ -11096,7 +10964,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 120,
+											"line": 124,
 											"character": 19
 										}
 									],
@@ -11111,14 +10979,14 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										505
+										499
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 119,
+									"line": 123,
 									"character": 18
 								}
 							]
@@ -11126,7 +10994,7 @@
 					}
 				},
 				{
-					"id": 501,
+					"id": 496,
 					"name": "SliderRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -11136,34 +11004,64 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 38,
+							"line": 42,
 							"character": 16
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "ForwardRefExoticComponent",
-						"typeArguments": [
+						"type": "union",
+						"types": [
 							{
-								"type": "intersection",
-								"types": [
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
 									{
-										"type": "reflection",
-										"declaration": {
-											"id": 502,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "SliderProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										]
 									},
 									{
-										"type": "reference",
-										"name": "RefAttributes",
-										"typeArguments": [
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "SliderProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
 											}
 										]
 									}
@@ -11198,14 +11096,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						503
+						497
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						501
+						496
 					]
 				}
 			],

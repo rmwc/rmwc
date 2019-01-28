@@ -1,18 +1,17 @@
-import { ComponentProps } from '@rmwc/base';
-
+import RMWC from '@rmwc/types';
 import * as React from 'react';
+
 // @ts-ignore
 import { MDCSwitchFoundation } from '@material/switch';
 import { componentFactory, classNames } from '@rmwc/base';
-import { FormField } from '@rmwc/formfield';
-import { withRipple, WithRippleProps } from '@rmwc/ripple';
+import { withRipple } from '@rmwc/ripple';
 import {
   ToggleableFoundationComponent,
   ToggleableFoundationProps
 } from '@rmwc/toggleable';
 
 export interface SwitchProps
-  extends WithRippleProps,
+  extends RMWC.WithRippleProps,
     ToggleableFoundationProps {}
 
 export const SwitchRoot = componentFactory<SwitchProps>({
@@ -64,10 +63,10 @@ const SwitchNativeControl = componentFactory<{}>({
 
 export class Switch extends ToggleableFoundationComponent<SwitchProps> {
   static displayName = 'Switch';
-  root = this.createElement('root');
-  nativeControl = this.createElement<HTMLInputElement>('nativeControl');
+  private root = this.createElement('root');
+  private nativeControl = this.createElement<HTMLInputElement>('nativeControl');
 
-  constructor(props: SwitchProps & ComponentProps) {
+  constructor(props: SwitchProps & RMWC.ComponentProps) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }

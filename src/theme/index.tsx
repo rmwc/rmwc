@@ -1,11 +1,13 @@
+import RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory, ComponentProps, ThemeOptionT } from '@rmwc/base';
-import { toDashCase } from '@rmwc/base/utils/strings';
+import {
+  componentFactory,
+  toDashCase,
+  parseThemeOptions,
+  wrapChild
+} from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
-import { parseThemeOptions } from '@rmwc/base/withTheme';
-import { wrapChild } from '@rmwc/base/utils/wrap-child';
-import { MergeInterfacesT } from '@rmwc/base/utils/merge-interfaces';
 
 const ThemeRoot = componentFactory<{}>({
   displayName: 'ThemeRoot',
@@ -14,7 +16,7 @@ const ThemeRoot = componentFactory<{}>({
 
 export interface ThemeProps {
   /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
-  use: ThemeOptionT | ThemeOptionT[];
+  use: RMWC.ThemeInputT;
   /** Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors.  */
   wrap?: boolean;
 }
@@ -26,7 +28,7 @@ export const Theme = ({
   use,
   wrap,
   ...rest
-}: MergeInterfacesT<ThemeProps, ComponentProps>) => {
+}: RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>) => {
   if (wrap) {
     return wrapChild({ ...rest, className: parseThemeOptions(use).join(' ') });
   }
@@ -36,7 +38,10 @@ export const Theme = ({
 Theme.displayName = 'Theme';
 
 export interface ThemeProviderProps
-  extends Pick<ComponentProps, Exclude<keyof ComponentProps, 'wrap'>> {
+  extends Pick<
+    RMWC.ComponentProps,
+    Exclude<keyof RMWC.ComponentProps, 'wrap'>
+  > {
   /** Any theme option pointing to a valid CSS value. */
   options: { [key: string]: string };
   /** Additional standard inline styles that will be merged into the style tag. */
