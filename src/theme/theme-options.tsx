@@ -1,4 +1,4 @@
-import RMWC from '@rmwc/types';
+import * as RMWC from '@rmwc/types';
 
 export const themeOptions: RMWC.ThemeOptionT[] = [
   'primary',

@@ -1,4 +1,4 @@
-import RMWC from '@rmwc/types';
+import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 //@ts-ignore
 import { MDCChipFoundation } from '@material/chips';

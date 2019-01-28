@@ -1,4 +1,4 @@
-import RMWC from '@rmwc/types';
+import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
 import { componentFactory } from '@rmwc/base';

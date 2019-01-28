@@ -1,4 +1,4 @@
-import RMWC from '@rmwc/types';
+import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';

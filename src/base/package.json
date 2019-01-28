@@ -1,10 +1,10 @@
 {
   "name": "@rmwc/base",
-  "version": "4.0.6",
+  "version": "5.0.0-alpha.0",
   "description": "RMWC base module",
   "main": "dist/index.js",
-"types": "dist/index.js",
-"module": "next/index.js",
+  "types": "dist/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,10 +28,10 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/types": "^4.0.6",
+    "@rmwc/types": "^5.0.0-alpha.0",
     "classnames": "^2.2.5",
+    "focus-trap": "^2.3.0",
     "hyperform": "^0.9.9",
-    "mutation-observer": "^1.0.3",
-    "focus-trap": "^2.3.0"
+    "mutation-observer": "^1.0.3"
   }
 }

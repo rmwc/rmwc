@@ -1,10 +1,10 @@
 {
   "name": "@rmwc/button",
-  "version": "4.0.6",
+  "version": "5.0.0-alpha.0",
   "description": "RMWC Button component",
   "main": "dist/index.js",
-"types": "dist/index.js",
-"module": "next/index.js",
+  "types": "dist/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@material/button": "^0.43.0",
-    "@rmwc/base": "^4.0.6",
-    "@rmwc/icon": "^4.0.6",
-    "@rmwc/provider": "^4.0.6",
-    "@rmwc/ripple": "^4.0.6"
+    "@rmwc/base": "^5.0.0-alpha.0",
+    "@rmwc/icon": "^5.0.0-alpha.0",
+    "@rmwc/provider": "^5.0.0-alpha.0",
+    "@rmwc/ripple": "^5.0.0-alpha.0"
   }
 }

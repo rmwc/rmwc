@@ -1,10 +1,10 @@
 {
   "name": "@rmwc/menu",
-  "version": "4.0.6",
+  "version": "5.0.0-alpha.0",
   "description": "RMWC Menu component",
   "main": "dist/index.js",
   "types": "dist/index.js",
-"module": "next/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,7 +30,7 @@
   "dependencies": {
     "@material/menu": "^0.43.0",
     "@material/menu-surface": "^0.43.0",
-    "@rmwc/base": "^4.0.6",
-    "@rmwc/list": "^4.0.6"
+    "@rmwc/base": "^5.0.0-alpha.0",
+    "@rmwc/list": "^5.0.0-alpha.0"
   }
 }

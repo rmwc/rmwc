@@ -6,7 +6,7 @@ describe('Chip', () => {
   it('renders', () => {
     const el = mount(
       <ChipSet>
-        <Chip leadingIcon="favorite" trailingIcon="close" text="test-label" />
+        <Chip leadingIcon="favorite" trailingIcon="close" label="test-label" />
       </ChipSet>
     );
 
@@ -28,7 +28,7 @@ describe('Chip', () => {
   it('handles selected', () => {
     const el = mount(
       <ChipSet>
-        <Chip checkmark selected text="test-label" />
+        <Chip checkmark selected label="test-label" />
       </ChipSet>
     );
 
@@ -81,7 +81,7 @@ describe('Chip', () => {
 
   it('adapter checks', () => {
     const el = mount(
-      <Chip leadingIcon="favorite" trailingIcon="close" text="test-label" />
+      <Chip leadingIcon="favorite" trailingIcon="close" label="test-label" />
     );
 
     const inst = el.instance() as Chip;
@@ -92,6 +92,7 @@ describe('Chip', () => {
     a.removeClass('test');
     a.addClassToLeadingIcon('test');
     a.removeClassFromLeadingIcon('test');
+    // @ts-ignore
     a.eventTargetHasClass(inst.root.ref, 'test');
     a.notifyInteraction();
     a.notifySelection(true);

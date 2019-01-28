@@ -1,10 +1,10 @@
 {
   "name": "@rmwc/switch",
-  "version": "4.0.6",
+  "version": "5.0.0-alpha.0",
   "description": "RMWC Switch component",
   "main": "dist/index.js",
-"types": "dist/index.js",
-"module": "next/index.js",
+  "types": "dist/index.js",
+  "module": "next/index.js",
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@material/switch": "^0.43.0",
-    "@rmwc/base": "^4.0.6",
-    "@rmwc/button": "^4.0.6",
-    "@rmwc/formfield": "^4.0.6",
-    "@rmwc/ripple": "^4.0.6"
+    "@rmwc/base": "^5.0.0-alpha.0",
+    "@rmwc/button": "^5.0.0-alpha.0",
+    "@rmwc/formfield": "^5.0.0-alpha.0",
+    "@rmwc/ripple": "^5.0.0-alpha.0"
   }
 }

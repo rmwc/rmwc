@@ -208,7 +208,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 27,
+									"line": 26,
 									"character": 13
 								}
 							],
@@ -316,7 +316,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 29,
+									"line": 28,
 									"character": 14
 								}
 							],
@@ -353,7 +353,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 33,
+									"line": 32,
 									"character": 8
 								}
 							],
@@ -390,7 +390,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 37,
+									"line": 36,
 									"character": 21
 								}
 							],
@@ -1603,7 +1603,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 56,
+									"line": 55,
 									"character": 14
 								}
 							],
@@ -3697,9 +3697,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
-									"line": 53,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 52,
+									"character": 8
 								}
 							],
 							"type": {
@@ -3739,7 +3739,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 13,
+									"line": 12,
 									"character": 9
 								}
 							],
@@ -3780,7 +3780,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 11,
+									"line": 10,
 									"character": 10
 								}
 							],
@@ -3821,7 +3821,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 9,
+									"line": 8,
 									"character": 4
 								}
 							],
@@ -3858,7 +3858,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 17,
+									"line": 16,
 									"character": 7
 								}
 							],
@@ -3885,9 +3885,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
-									"line": 62,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 61,
+									"character": 8
 								}
 							],
 							"type": {
@@ -3914,7 +3914,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 19,
+									"line": 18,
 									"character": 11
 								}
 							],
@@ -3947,9 +3947,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
-									"line": 55,
-									"character": 11
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 54,
+									"character": 9
 								}
 							],
 							"type": {
@@ -3988,9 +3988,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.d.ts",
-									"line": 57,
-									"character": 13
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 56,
+									"character": 11
 								}
 							],
 							"type": {
@@ -4030,7 +4030,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 15,
+									"line": 14,
 									"character": 7
 								}
 							],

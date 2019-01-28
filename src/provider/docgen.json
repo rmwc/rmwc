@@ -391,7 +391,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "IconOptions"
+								"name": "Partial",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "IconOptions"
+									}
+								]
 							}
 						},
 						{
@@ -471,7 +477,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 47,
+									"line": 48,
 									"character": 17
 								}
 							],
@@ -494,7 +500,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 46,
+							"line": 47,
 							"character": 36
 						}
 					]
@@ -543,7 +549,7 @@
 					}
 				},
 				{
-					"id": 29,
+					"id": 30,
 					"name": "ProviderContext",
 					"kind": 32,
 					"kindString": "Variable",
@@ -554,7 +560,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 50,
+							"line": 51,
 							"character": 28
 						}
 					],
@@ -572,7 +578,7 @@
 					"defaultValue": " React.createContext(providerDefaults)"
 				},
 				{
-					"id": 32,
+					"id": 33,
 					"name": "RMWCProvider",
 					"kind": 64,
 					"kindString": "Function",
@@ -585,7 +591,7 @@
 					},
 					"signatures": [
 						{
-							"id": 33,
+							"id": 34,
 							"name": "RMWCProvider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -595,7 +601,7 @@
 							},
 							"parameters": [
 								{
-									"id": 34,
+									"id": 35,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -604,14 +610,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 35,
+											"id": 36,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 36,
+													"id": 37,
 													"name": "children",
 													"kind": 32,
 													"kindString": "Variable",
@@ -619,7 +625,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 73,
+															"line": 74,
 															"character": 10
 														}
 													],
@@ -676,7 +682,7 @@
 													}
 												},
 												{
-													"id": 37,
+													"id": 38,
 													"name": "iconClassNameBase",
 													"kind": 32,
 													"kindString": "Variable",
@@ -684,7 +690,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 74,
+															"line": 75,
 															"character": 19
 														}
 													],
@@ -703,7 +709,7 @@
 													}
 												},
 												{
-													"id": 38,
+													"id": 39,
 													"name": "iconClassNamePrefix",
 													"kind": 32,
 													"kindString": "Variable",
@@ -711,7 +717,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 75,
+															"line": 76,
 															"character": 21
 														}
 													],
@@ -730,7 +736,7 @@
 													}
 												},
 												{
-													"id": 40,
+													"id": 41,
 													"name": "iconRender",
 													"kind": 32,
 													"kindString": "Variable",
@@ -738,7 +744,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 77,
+															"line": 78,
 															"character": 12
 														}
 													],
@@ -752,21 +758,21 @@
 															{
 																"type": "reflection",
 																"declaration": {
-																	"id": 41,
+																	"id": 42,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
 																	"flags": {},
 																	"signatures": [
 																		{
-																			"id": 42,
+																			"id": 43,
 																			"name": "__call",
 																			"kind": 4096,
 																			"kindString": "Call signature",
 																			"flags": {},
 																			"parameters": [
 																				{
-																					"id": 43,
+																					"id": 44,
 																					"name": "props",
 																					"kind": 32768,
 																					"kindString": "Parameter",
@@ -774,14 +780,14 @@
 																					"type": {
 																						"type": "reflection",
 																						"declaration": {
-																							"id": 44,
+																							"id": 45,
 																							"name": "__type",
 																							"kind": 65536,
 																							"kindString": "Type literal",
 																							"flags": {},
 																							"children": [
 																								{
-																									"id": 46,
+																									"id": 47,
 																									"name": "className",
 																									"kind": 32,
 																									"kindString": "Variable",
@@ -799,7 +805,7 @@
 																									}
 																								},
 																								{
-																									"id": 45,
+																									"id": 46,
 																									"name": "content",
 																									"kind": 32,
 																									"kindString": "Variable",
@@ -822,8 +828,8 @@
 																									"title": "Variables",
 																									"kind": 32,
 																									"children": [
-																										46,
-																										45
+																										47,
+																										46
 																									]
 																								}
 																							],
@@ -850,7 +856,7 @@
 													}
 												},
 												{
-													"id": 39,
+													"id": 40,
 													"name": "iconStrategy",
 													"kind": 32,
 													"kindString": "Variable",
@@ -858,7 +864,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 76,
+															"line": 77,
 															"character": 14
 														}
 													],
@@ -897,7 +903,7 @@
 													}
 												},
 												{
-													"id": 47,
+													"id": 48,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -905,14 +911,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 78,
+															"line": 79,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 47
+														"id": 48
 													}
 												}
 											],
@@ -921,19 +927,19 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														36,
 														37,
 														38,
-														40,
 														39,
-														47
+														41,
+														40,
+														48
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 72,
+													"line": 73,
 													"character": 29
 												}
 											]
@@ -950,13 +956,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 72,
+							"line": 73,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 30,
+					"id": 31,
 					"name": "withProviderContext",
 					"kind": 64,
 					"kindString": "Function",
@@ -966,7 +972,7 @@
 					},
 					"signatures": [
 						{
-							"id": 31,
+							"id": 32,
 							"name": "withProviderContext",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -980,7 +986,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 52,
+							"line": 53,
 							"character": 32
 						}
 					]
@@ -1021,7 +1027,7 @@
 							"flags": {},
 							"children": [
 								{
-									"id": 25,
+									"id": 26,
 									"name": "basename",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1029,7 +1035,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 39,
+											"line": 40,
 											"character": 12
 										}
 									],
@@ -1040,7 +1046,26 @@
 									"defaultValue": "\"material-icons\""
 								},
 								{
-									"id": 26,
+									"id": 25,
+									"name": "icon",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "index.tsx",
+											"line": 39,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"\""
+								},
+								{
+									"id": 27,
 									"name": "prefix",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1048,7 +1073,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 40,
+											"line": 41,
 											"character": 10
 										}
 									],
@@ -1059,7 +1084,7 @@
 									"defaultValue": "\"\""
 								},
 								{
-									"id": 28,
+									"id": 29,
 									"name": "render",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1067,7 +1092,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 42,
+											"line": 43,
 											"character": 10
 										}
 									],
@@ -1078,7 +1103,7 @@
 									"defaultValue": " undefined"
 								},
 								{
-									"id": 27,
+									"id": 28,
 									"name": "strategy",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1086,7 +1111,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 41,
+											"line": 42,
 											"character": 12
 										}
 									],
@@ -1102,10 +1127,11 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										25,
 										26,
-										28,
-										27
+										25,
+										27,
+										29,
+										28
 									]
 								}
 							],
@@ -1172,15 +1198,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						29
+						30
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						32,
-						30
+						33,
+						31
 					]
 				},
 				{
