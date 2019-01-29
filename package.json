@@ -39,7 +39,7 @@
     "storybook": "start-storybook -p 6006",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run build:code && npm run changelog && git add CHANGELOG.md",
-    "postversion": "git add docs -f &&  git push && git push --tags",
+    "postversion": "npm run build:docs && git add docs -f &&  git push && git push --tags",
     "flow": "flow"
   },
   "devDependencies": {
