@@ -28,3 +28,4 @@ yarn-error.log*
 .idea
 /index.js.flow
 /.vscode/chrome
+/lerna-debug.log
