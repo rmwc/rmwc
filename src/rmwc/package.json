@@ -4,8 +4,8 @@
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "main": "dist/index.js",
   "types": "index.d.ts",
-  "module": "next/index.js", 
- "publishConfig": {
+  "module": "next/index.js",
+  "publishConfig": {
     "access": "public"
   },
   "scripts": {

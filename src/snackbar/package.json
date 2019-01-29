@@ -4,8 +4,8 @@
   "description": "RMWC Snackbar component",
   "main": "dist/index.js",
   "types": "dist/index.js",
-  "module": "next/index.js", 
- "publishConfig": {
+  "module": "next/index.js",
+  "publishConfig": {
     "access": "public"
   },
   "scripts": {
