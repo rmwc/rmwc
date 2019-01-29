@@ -149,9 +149,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 205,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 55,
+									"character": 12
 								}
 							],
 							"type": {
@@ -202,9 +202,9 @@
 									],
 									"sources": [
 										{
-											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 205,
-											"character": 11
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+											"line": 55,
+											"character": 13
 										}
 									]
 								}
@@ -224,16 +224,15 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
-									"character": 12
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 54,
+									"character": 14
 								}
 							],
 							"type": {
 								"type": "intrinsic",
 								"name": "any"
 							},
-							"defaultValue": " this.getDefaultFoundation()",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.foundation"
@@ -343,16 +342,15 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 202,
-									"character": 23
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 53,
+									"character": 25
 								}
 							],
 							"type": {
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -743,9 +741,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 217,
-									"character": 19
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 59,
+									"character": 21
 								}
 							],
 							"overwrites": {
@@ -818,9 +816,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 222,
-									"character": 20
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 60,
+									"character": 22
 								}
 							],
 							"overwrites": {
@@ -1022,9 +1020,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 226,
-									"character": 22
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 61,
+									"character": 24
 								}
 							],
 							"overwrites": {
@@ -1212,12 +1210,26 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "unknown",
-												"name": "ExtractProps<ElementType>"
+												"type": "reference",
+												"name": "ExtractProps",
+												"typeArguments": [
+													{
+														"type": "typeParameter",
+														"name": "ElementType",
+														"constraint": {
+															"type": "intrinsic",
+															"name": "any"
+														}
+													}
+												]
 											},
 											{
-												"type": "unknown",
-												"name": "ElementType"
+												"type": "typeParameter",
+												"name": "ElementType",
+												"constraint": {
+													"type": "intrinsic",
+													"name": "any"
+												}
 											}
 										]
 									},
@@ -1229,9 +1241,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 232,
-									"character": 15
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 62,
+									"character": 17
 								}
 							],
 							"inheritedFrom": {
@@ -1285,12 +1297,26 @@
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "boolean"
+											"flags": {
+												"isOptional": true
 											},
-											"defaultValue": "false"
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "undefined"
+													},
+													{
+														"type": "intrinsic",
+														"name": "false"
+													},
+													{
+														"type": "intrinsic",
+														"name": "true"
+													}
+												]
+											}
 										}
 									],
 									"type": {
@@ -1311,9 +1337,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 261,
-									"character": 6
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 70,
+									"character": 8
 								}
 							],
 							"inheritedFrom": {
@@ -1876,9 +1902,9 @@
 													],
 													"sources": [
 														{
-															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 247,
-															"character": 46
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+															"line": 65,
+															"character": 48
 														}
 													]
 												}
@@ -1897,9 +1923,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 247,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 65,
+									"character": 12
 								}
 							],
 							"inheritedFrom": {
@@ -1934,9 +1960,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 241,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
+									"line": 63,
+									"character": 10
 								}
 							],
 							"inheritedFrom": {

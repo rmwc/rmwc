@@ -38,8 +38,8 @@
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",
     "preversion": "npm test -- --coverage",
-    "version": "npm run build && npm run changelog && git add CHANGELOG.md && git add docs -f",
-    "postversion": "git push && git push --tags",
+    "version": "npm run build:code && npm run changelog && git add CHANGELOG.md",
+    "postversion": "npm run build:docs && git add docs -f &&  git push && git push --tags",
     "flow": "flow"
   },
   "devDependencies": {
