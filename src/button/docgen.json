@@ -37,9 +37,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/dist/index.d.ts",
-									"line": 39,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 50,
+									"character": 6
 								}
 							],
 							"type": {
@@ -65,9 +65,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/dist/index.d.ts",
-									"line": 43,
-									"character": 15
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 55,
+									"character": 13
 								}
 							],
 							"type": {
@@ -127,9 +127,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 21,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 52,
+									"character": 8
 								}
 							],
 							"type": {
@@ -397,9 +397,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 29,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 61,
+									"character": 8
 								}
 							],
 							"type": {
@@ -425,9 +425,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 23,
-									"character": 11
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 54,
+									"character": 9
 								}
 							],
 							"type": {
@@ -466,9 +466,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 25,
-									"character": 13
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 56,
+									"character": 11
 								}
 							],
 							"type": {

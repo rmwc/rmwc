@@ -32,14 +32,13 @@
     "release": "npm run clean && lerna version && lerna run publish:dist --parallel --no-bail && npm run clean",
     "release:force": "npm run clean && lerna version --force-publish && lerna run publish:dist --parallel --no-bail && npm run clean",
     "clean": "node scripts/clean.js",
-    "postpublish": "npm run clean",
     "docgen": "node scripts/docgen.js",
     "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 6006",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run build:code && npm run changelog && git add CHANGELOG.md",
-    "postversion": "npm run build:docs && git add docs -f &&  git push && git push --tags",
+    "postpublish": "npm run build:docs && git add docs -f &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
   "devDependencies": {

@@ -35,7 +35,7 @@
 							}
 						},
 						{
-							"id": 232,
+							"id": 235,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -105,7 +105,7 @@
 							}
 						},
 						{
-							"id": 205,
+							"id": 208,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -114,15 +114,15 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 55,
-									"character": 12
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 205,
+									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 206,
+									"id": 209,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -131,14 +131,14 @@
 									},
 									"indexSignature": [
 										{
-											"id": 207,
+											"id": 210,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 208,
+													"id": 211,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -167,9 +167,9 @@
 									],
 									"sources": [
 										{
-											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-											"line": 55,
-											"character": 13
+											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+											"line": 205,
+											"character": 11
 										}
 									]
 								}
@@ -180,7 +180,7 @@
 							}
 						},
 						{
-							"id": 204,
+							"id": 207,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -189,15 +189,16 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 54,
-									"character": 14
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 204,
+									"character": 12
 								}
 							],
 							"type": {
 								"type": "intrinsic",
 								"name": "any"
 							},
+							"defaultValue": " this.getDefaultFoundation()",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.foundation"
@@ -213,108 +214,19 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 19,
-									"character": 15
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 26,
+									"character": 13
 								}
 							],
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
 							},
+							"defaultValue": " randomId(this.constructor.displayName)",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ToggleableFoundationComponent.generatedId"
-							}
-						},
-						{
-							"id": 197,
-							"name": "hasLabel",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 20,
-									"character": 21
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "unknown",
-										"name": "MergeInterfacesT<P & FoundationProps, any>[\"label\"]"
-									},
-									{
-										"type": "intersection",
-										"types": [
-											{
-												"type": "reference",
-												"name": "__type"
-											},
-											{
-												"type": "unknown",
-												"name": "MergeInterfacesT<P & FoundationProps, any>[\"children\"]"
-											}
-										]
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ToggleableFoundationComponent.hasLabel"
-							}
-						},
-						{
-							"id": 198,
-							"name": "id",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 21,
-									"character": 15
-								}
-							],
-							"type": {
-								"type": "unknown",
-								"name": "MergeInterfacesT<P & FoundationProps, any>[\"id\"]"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ToggleableFoundationComponent.id"
-							}
-						},
-						{
-							"id": 199,
-							"name": "toggleRootProps",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 22,
-									"character": 28
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ToggleableFoundationComponent.toggleRootProps"
 							}
 						},
 						{
@@ -340,7 +252,7 @@
 							"defaultValue": "\"Switch\""
 						},
 						{
-							"id": 203,
+							"id": 206,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -350,22 +262,152 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 53,
-									"character": 25
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 202,
+									"character": 23
 								}
 							],
 							"type": {
 								"type": "intrinsic",
 								"name": "boolean"
 							},
+							"defaultValue": "false",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
 							}
 						},
 						{
-							"id": 248,
+							"id": 197,
+							"name": "hasLabel",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 198,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "unknown",
+												"name": "MergeInterfacesT<P & FoundationProps, FoundationProps>[\"label\"]"
+											},
+											{
+												"type": "intersection",
+												"types": [
+													{
+														"type": "reference",
+														"name": "__type"
+													},
+													{
+														"type": "unknown",
+														"name": "MergeInterfacesT<P & FoundationProps, FoundationProps>[\"children\"]"
+													}
+												]
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ToggleableFoundationComponent.hasLabel"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 28,
+									"character": 14
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ToggleableFoundationComponent.hasLabel"
+							}
+						},
+						{
+							"id": 199,
+							"name": "id",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 200,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "unknown",
+										"name": "MergeInterfacesT<P & FoundationProps, FoundationProps>[\"id\"]"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ToggleableFoundationComponent.id"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 32,
+									"character": 8
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ToggleableFoundationComponent.id"
+							}
+						},
+						{
+							"id": 201,
+							"name": "toggleRootProps",
+							"kind": 262144,
+							"kindString": "Accessor",
+							"flags": {
+								"isExported": true
+							},
+							"getSignature": [
+								{
+									"id": 202,
+									"name": "__get",
+									"kind": 524288,
+									"kindString": "Get signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ToggleableFoundationComponent.toggleRootProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 36,
+									"character": 21
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ToggleableFoundationComponent.toggleRootProps"
+							}
+						},
+						{
+							"id": 251,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -375,7 +417,7 @@
 							},
 							"signatures": [
 								{
-									"id": 249,
+									"id": 252,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -421,7 +463,7 @@
 							}
 						},
 						{
-							"id": 254,
+							"id": 257,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -431,7 +473,7 @@
 							},
 							"signatures": [
 								{
-									"id": 255,
+									"id": 258,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -456,7 +498,7 @@
 									},
 									"parameters": [
 										{
-											"id": 256,
+											"id": 259,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -489,7 +531,7 @@
 											}
 										},
 										{
-											"id": 257,
+											"id": 260,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -523,7 +565,7 @@
 							}
 						},
 						{
-							"id": 263,
+							"id": 266,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -533,7 +575,7 @@
 							},
 							"signatures": [
 								{
-									"id": 264,
+									"id": 267,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -558,7 +600,7 @@
 									},
 									"parameters": [
 										{
-											"id": 265,
+											"id": 268,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -591,7 +633,7 @@
 											}
 										},
 										{
-											"id": 266,
+											"id": 269,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -618,7 +660,7 @@
 											}
 										},
 										{
-											"id": 267,
+											"id": 270,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -652,7 +694,7 @@
 							}
 						},
 						{
-							"id": 238,
+							"id": 241,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -662,7 +704,7 @@
 							},
 							"signatures": [
 								{
-									"id": 239,
+									"id": 242,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -672,7 +714,7 @@
 									},
 									"parameters": [
 										{
-											"id": 240,
+											"id": 243,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -683,7 +725,7 @@
 											}
 										},
 										{
-											"id": 241,
+											"id": 244,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -754,7 +796,7 @@
 							}
 						},
 						{
-							"id": 209,
+							"id": 212,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -763,14 +805,14 @@
 							},
 							"signatures": [
 								{
-									"id": 210,
+									"id": 213,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 211,
+											"id": 214,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -813,9 +855,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 60,
-									"character": 22
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 222,
+									"character": 20
 								}
 							],
 							"overwrites": {
@@ -828,7 +870,7 @@
 							}
 						},
 						{
-							"id": 246,
+							"id": 249,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -838,7 +880,7 @@
 							},
 							"signatures": [
 								{
-									"id": 247,
+									"id": 250,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -884,7 +926,7 @@
 							}
 						},
 						{
-							"id": 250,
+							"id": 253,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -894,7 +936,7 @@
 							},
 							"signatures": [
 								{
-									"id": 251,
+									"id": 254,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -919,7 +961,7 @@
 									},
 									"parameters": [
 										{
-											"id": 252,
+											"id": 255,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -952,7 +994,7 @@
 											}
 										},
 										{
-											"id": 253,
+											"id": 256,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -986,7 +1028,7 @@
 							}
 						},
 						{
-							"id": 212,
+							"id": 215,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -995,7 +1037,7 @@
 							},
 							"signatures": [
 								{
-									"id": 213,
+									"id": 216,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1016,9 +1058,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 61,
-									"character": 24
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 226,
+									"character": 22
 								}
 							],
 							"overwrites": {
@@ -1031,7 +1073,7 @@
 							}
 						},
 						{
-							"id": 258,
+							"id": 261,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1041,7 +1083,7 @@
 							},
 							"signatures": [
 								{
-									"id": 259,
+									"id": 262,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1066,7 +1108,7 @@
 									},
 									"parameters": [
 										{
-											"id": 260,
+											"id": 263,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1099,7 +1141,7 @@
 											}
 										},
 										{
-											"id": 261,
+											"id": 264,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1126,7 +1168,7 @@
 											}
 										},
 										{
-											"id": 262,
+											"id": 265,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1160,7 +1202,7 @@
 							}
 						},
 						{
-							"id": 214,
+							"id": 217,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1169,14 +1211,14 @@
 							},
 							"signatures": [
 								{
-									"id": 215,
+									"id": 218,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 216,
+											"id": 219,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1189,7 +1231,7 @@
 									],
 									"parameters": [
 										{
-											"id": 217,
+											"id": 220,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1205,26 +1247,12 @@
 										"name": "FoundationElement",
 										"typeArguments": [
 											{
-												"type": "reference",
-												"name": "ExtractProps",
-												"typeArguments": [
-													{
-														"type": "typeParameter",
-														"name": "ElementType",
-														"constraint": {
-															"type": "intrinsic",
-															"name": "any"
-														}
-													}
-												]
+												"type": "unknown",
+												"name": "ExtractProps<ElementType>"
 											},
 											{
-												"type": "typeParameter",
-												"name": "ElementType",
-												"constraint": {
-													"type": "intrinsic",
-													"name": "any"
-												}
+												"type": "unknown",
+												"name": "ElementType"
 											}
 										]
 									},
@@ -1236,9 +1264,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 62,
-									"character": 17
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 232,
+									"character": 15
 								}
 							],
 							"inheritedFrom": {
@@ -1247,7 +1275,7 @@
 							}
 						},
 						{
-							"id": 227,
+							"id": 230,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1256,7 +1284,7 @@
 							},
 							"signatures": [
 								{
-									"id": 228,
+									"id": 231,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1266,7 +1294,7 @@
 									},
 									"parameters": [
 										{
-											"id": 229,
+											"id": 232,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1277,7 +1305,7 @@
 											}
 										},
 										{
-											"id": 230,
+											"id": 233,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1288,30 +1316,16 @@
 											}
 										},
 										{
-											"id": 231,
+											"id": 234,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
+											"flags": {},
 											"type": {
-												"type": "union",
-												"types": [
-													{
-														"type": "intrinsic",
-														"name": "undefined"
-													},
-													{
-														"type": "intrinsic",
-														"name": "false"
-													},
-													{
-														"type": "intrinsic",
-														"name": "true"
-													}
-												]
-											}
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "false"
 										}
 									],
 									"type": {
@@ -1332,9 +1346,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 70,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 261,
+									"character": 6
 								}
 							],
 							"inheritedFrom": {
@@ -1380,7 +1394,7 @@
 							}
 						},
 						{
-							"id": 242,
+							"id": 245,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1390,7 +1404,7 @@
 							},
 							"signatures": [
 								{
-									"id": 243,
+									"id": 246,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1401,7 +1415,7 @@
 									},
 									"parameters": [
 										{
-											"id": 244,
+											"id": 247,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1434,7 +1448,7 @@
 											}
 										},
 										{
-											"id": 245,
+											"id": 248,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1577,7 +1591,7 @@
 							]
 						},
 						{
-							"id": 200,
+							"id": 203,
 							"name": "renderToggle",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1586,14 +1600,14 @@
 							},
 							"signatures": [
 								{
-									"id": 201,
+									"id": 204,
 									"name": "renderToggle",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 202,
+											"id": 205,
 											"name": "toggle",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1608,16 +1622,16 @@
 										"type": "union",
 										"types": [
 											{
-												"type": "reference",
-												"name": "__type"
+												"type": "intrinsic",
+												"name": "undefined"
 											},
 											{
 												"type": "intrinsic",
 												"name": "null"
 											},
 											{
-												"type": "intrinsic",
-												"name": "undefined"
+												"type": "reference",
+												"name": "__type"
 											}
 										]
 									},
@@ -1629,9 +1643,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 23,
-									"character": 16
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 55,
+									"character": 14
 								}
 							],
 							"inheritedFrom": {
@@ -1640,7 +1654,7 @@
 							}
 						},
 						{
-							"id": 233,
+							"id": 236,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1650,7 +1664,7 @@
 							},
 							"signatures": [
 								{
-									"id": 234,
+									"id": 237,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1661,7 +1675,7 @@
 									},
 									"parameters": [
 										{
-											"id": 235,
+											"id": 238,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1694,7 +1708,7 @@
 											}
 										},
 										{
-											"id": 236,
+											"id": 239,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1721,7 +1735,7 @@
 											}
 										},
 										{
-											"id": 237,
+											"id": 240,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1820,7 +1834,7 @@
 							}
 						},
 						{
-							"id": 220,
+							"id": 223,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1829,14 +1843,14 @@
 							},
 							"signatures": [
 								{
-									"id": 221,
+									"id": 224,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 222,
+											"id": 225,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1847,7 +1861,7 @@
 											}
 										},
 										{
-											"id": 223,
+											"id": 226,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1858,7 +1872,7 @@
 											}
 										},
 										{
-											"id": 224,
+											"id": 227,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1866,7 +1880,7 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 225,
+													"id": 228,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -1875,7 +1889,7 @@
 													},
 													"signatures": [
 														{
-															"id": 226,
+															"id": 229,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1888,9 +1902,9 @@
 													],
 													"sources": [
 														{
-															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-															"line": 65,
-															"character": 48
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 247,
+															"character": 46
 														}
 													]
 												}
@@ -1909,9 +1923,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 65,
-									"character": 12
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 247,
+									"character": 10
 								}
 							],
 							"inheritedFrom": {
@@ -1920,7 +1934,7 @@
 							}
 						},
 						{
-							"id": 218,
+							"id": 221,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1929,7 +1943,7 @@
 							},
 							"signatures": [
 								{
-									"id": 219,
+									"id": 222,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1946,9 +1960,9 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/dist/foundation-component.d.ts",
-									"line": 63,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 241,
+									"character": 8
 								}
 							],
 							"inheritedFrom": {
@@ -1969,41 +1983,47 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								205,
-								204,
+								208,
+								207,
 								196,
-								197,
-								198,
-								199,
 								178,
-								203
+								206
+							]
+						},
+						{
+							"title": "Accessors",
+							"kind": 262144,
+							"children": [
+								197,
+								199,
+								201
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								248,
-								254,
-								263,
-								238,
+								251,
+								257,
+								266,
+								241,
 								182,
-								209,
-								246,
-								250,
 								212,
-								258,
-								214,
-								227,
+								249,
+								253,
+								215,
+								261,
+								217,
+								230,
 								184,
-								242,
+								245,
 								186,
 								193,
-								200,
-								233,
+								203,
+								236,
 								189,
-								220,
-								218
+								223,
+								221
 							]
 						}
 					],
@@ -5391,9 +5411,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 21,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 52,
+									"character": 8
 								}
 							],
 							"type": {
@@ -5432,9 +5452,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 10,
-									"character": 11
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 12,
+									"character": 9
 								}
 							],
 							"type": {
@@ -5473,9 +5493,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 8,
-									"character": 12
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 10,
+									"character": 10
 								}
 							],
 							"type": {
@@ -5514,9 +5534,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 6,
-									"character": 6
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 8,
+									"character": 4
 								}
 							],
 							"type": {
@@ -5551,9 +5571,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 14,
-									"character": 9
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 16,
+									"character": 7
 								}
 							],
 							"type": {
@@ -5579,9 +5599,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 29,
-									"character": 10
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 61,
+									"character": 8
 								}
 							],
 							"type": {
@@ -5607,9 +5627,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 16,
-									"character": 13
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 18,
+									"character": 11
 								}
 							],
 							"type": {
@@ -5641,9 +5661,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 23,
-									"character": 11
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 54,
+									"character": 9
 								}
 							],
 							"type": {
@@ -5682,9 +5702,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/dist/index.d.ts",
-									"line": 25,
-									"character": 13
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/types/index.tsx",
+									"line": 56,
+									"character": 11
 								}
 							],
 							"type": {
@@ -5723,9 +5743,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/dist/index.d.ts",
-									"line": 12,
-									"character": 9
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
+									"line": 14,
+									"character": 7
 								}
 							],
 							"type": {
@@ -5791,7 +5811,7 @@
 					]
 				},
 				{
-					"id": 274,
+					"id": 277,
 					"name": "SwitchNativeControl",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5849,7 +5869,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'SwitchNativeControl',\n  defaultProps: {\n    type: 'checkbox'\n  },\n  tag: 'input',\n  classNames: ['mdc-switch__native-control']\n})"
 				},
 				{
-					"id": 268,
+					"id": 271,
 					"name": "SwitchRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5928,7 +5948,7 @@
 					"defaultValue": " componentFactory<SwitchProps>({\n  displayName: 'SwitchRoot',\n  classNames: ['mdc-switch']\n})"
 				},
 				{
-					"id": 269,
+					"id": 272,
 					"name": "SwitchThumbUnderlay",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5955,14 +5975,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 270,
+													"id": 273,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 271,
+															"id": 274,
 															"name": "className",
 															"kind": 32,
 															"kindString": "Variable",
@@ -5996,7 +6016,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																271
+																274
 															]
 														}
 													]
@@ -6024,14 +6044,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 272,
+													"id": 275,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 273,
+															"id": 276,
 															"name": "className",
 															"kind": 32,
 															"kindString": "Variable",
@@ -6065,7 +6085,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																273
+																276
 															]
 														}
 													]
@@ -6105,9 +6125,9 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						274,
-						268,
-						269
+						277,
+						271,
+						272
 					]
 				}
 			],

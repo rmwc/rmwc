@@ -265,9 +265,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/dist/index.d.ts",
-									"line": 39,
-									"character": 8
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 50,
+									"character": 6
 								}
 							],
 							"type": {
@@ -293,9 +293,9 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/dist/index.d.ts",
-									"line": 43,
-									"character": 15
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon/index.tsx",
+									"line": 55,
+									"character": 13
 								}
 							],
 							"type": {
