@@ -33,5 +33,6 @@
   "dependencies": {
     "@material/slider": "^0.43.0",
     "@rmwc/base": "^5.0.0-alpha.0"
-  }
+  },
+  "gitHead": "df9f0ba2ce5984834077b6d7c28b7d2608b1238c"
 }
