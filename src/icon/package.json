@@ -4,7 +4,10 @@
   "description": "RMWC Icon component",
   "main": "dist/index.js",
   "types": "dist/index.js",
-  "module": "next/index.js",
+  "module": "next/index.js", 
+ "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
