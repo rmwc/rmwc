@@ -62,11 +62,11 @@ export class Radio extends ToggleableFoundationComponent<RadioProps> {
   }
 
   render() {
-    const { children, className, label, style, ...rest } = this.props;
+    const { children, className, label, style, inputRef, ...rest } = this.props;
 
     const radio = (
       <RadioRoot {...this.toggleRootProps} ref={this.root.setRef}>
-        <RadioNativeControl {...rest} id={this.id} />
+        <RadioNativeControl {...rest} id={this.id} ref={inputRef} />
         <RadioBackground />
       </RadioRoot>
     );

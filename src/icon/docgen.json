@@ -522,27 +522,8 @@
 						}
 					],
 					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "reference",
-								"name": "ReactElement",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
-							},
-							{
-								"type": "intrinsic",
-								"name": "string"
-							},
-							{
-								"type": "intrinsic",
-								"name": "undefined"
-							}
-						]
+						"type": "reference",
+						"name": "React.ReactNode"
 					}
 				},
 				{
@@ -622,7 +603,7 @@
 					}
 				},
 				{
-					"id": 69,
+					"id": 67,
 					"name": "Icon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -673,7 +654,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 70,
+													"id": 68,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -718,7 +699,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 71,
+													"id": 69,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -734,7 +715,7 @@
 					"defaultValue": " withProviderContext()(\n  ({\n    icon,\n    iconOptions: deprecatedIconOption,\n    providerContext,\n    ...rest\n  }: IconProps &\n    DeprecatedIconProps &\n    WithProviderContext &\n    RMWC.ComponentProps) => {\n    // handle deprecation\n    if (!!deprecatedIconOption) {\n      const converted = {\n        content: typeof icon === 'string' ? icon : `<MyComponent {...}/>`,\n        ...deprecatedIconOption\n      };\n\n      deprecationWarning(\n        `Icon component prop 'iconOptions' is deprecated. You options should now be passed directly to the 'icon' prop. I.E. icon={${JSON.stringify(\n          converted\n        )}}`\n      );\n    }\n\n    // Build icon options object\n    const {\n      icon: content,\n      strategy,\n      prefix,\n      basename,\n      render,\n      size,\n      ...optionsRest\n    }: IconOptions = {\n      ...buildIconOptions(icon),\n      ...deprecatedIconOption\n    };\n\n    // Get provider options\n    const {\n      basename: providerBasename = null,\n      prefix: providerPrefix = null,\n      strategy: providerStrategy = null,\n      render: providerRender = null\n    } = providerContext.icon || {};\n\n    const contentToUse = content;\n\n    const strategyToUse = getIconStrategy(\n      contentToUse,\n      strategy || null,\n      providerStrategy || null\n    );\n    const prefixToUse = prefix || providerPrefix;\n    const basenameToUse = basename === undefined ? providerBasename : basename;\n    const iconClassName =\n      strategyToUse === 'className' && typeof content === 'string'\n        ? `${String(prefixToUse)}${content}`\n        : null;\n\n    const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];\n\n    // For some reason TS thinks the render method will return undefined...\n    const renderToUse: any =\n      strategyToUse === 'custom'\n        ? render || providerRender\n        : rendererFromMap || null;\n\n    if (!renderToUse) {\n      console.error(\n        `Icon: rendering not implemented for ${String(strategyToUse)}.`\n      );\n      return null;\n    }\n\n    return renderToUse({\n      ...rest,\n      ...optionsRest,\n      content: contentToUse,\n      className: classNames(\n        'rmwc-icon',\n        basenameToUse,\n        rest.className,\n        optionsRest.className,\n        iconClassName,\n        {\n          [`rmwc-icon--size-${size || ''}`]: !!size\n        }\n      )\n    });\n  }\n)"
 				},
 				{
-					"id": 68,
+					"id": 66,
 					"name": "IconRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -823,68 +804,9 @@
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reference",
-										"name": "IconOptions",
-										"id": 2
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 66,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 67,
-													"name": "icon",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 133,
-															"character": 10
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "reference",
-																"name": "ReactElement",
-																"typeArguments": [
-																	{
-																		"type": "intrinsic",
-																		"name": "Object"
-																	}
-																]
-															}
-														]
-													}
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														67
-													]
-												}
-											]
-										}
-									}
-								]
+								"type": "reference",
+								"name": "IconOptions",
+								"id": 2
 							}
 						}
 					],
@@ -1753,8 +1675,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						69,
-						68
+						67,
+						66
 					]
 				},
 				{

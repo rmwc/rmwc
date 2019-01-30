@@ -69,7 +69,4 @@ export type TagT = string | React.ComponentType<any>;
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
   tag?: TagT;
   theme?: ThemeInputT;
-  // // TODO, any had to be included
-  // // This is a type mistmatch between refs in class components vs forwardRef components... string is the
-  ref?: any;
 }

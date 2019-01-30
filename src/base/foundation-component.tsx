@@ -187,9 +187,8 @@ type ExtractProps<
   ? TProps
   : TComponentOrTProps;
 
-export interface FoundationProps extends React.HTMLProps<any> {
-  ref?: any;
-}
+export interface FoundationProps extends RMWC.ComponentProps {}
+
 interface FoundationState {}
 
 type FoundationPropsT<P> = RMWC.MergeInterfacesT<P, FoundationProps>;

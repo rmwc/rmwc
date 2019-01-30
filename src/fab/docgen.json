@@ -735,7 +735,27 @@
 															},
 															{
 																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "intrinsic",
 																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															},
+															{
+																"type": "reference",
+																"name": "__type"
 															},
 															{
 																"type": "reference",
@@ -746,6 +766,14 @@
 																		"name": "any"
 																	}
 																]
+															},
+															{
+																"type": "reference",
+																"name": "ReactNodeArray"
+															},
+															{
+																"type": "reference",
+																"name": "ReactPortal"
 															},
 															{
 																"type": "reference",
@@ -813,7 +841,27 @@
 															},
 															{
 																"type": "intrinsic",
+																"name": "null"
+															},
+															{
+																"type": "intrinsic",
 																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															},
+															{
+																"type": "reference",
+																"name": "__type"
 															},
 															{
 																"type": "reference",
@@ -824,6 +872,14 @@
 																		"name": "any"
 																	}
 																]
+															},
+															{
+																"type": "reference",
+																"name": "ReactNodeArray"
+															},
+															{
+																"type": "reference",
+																"name": "ReactPortal"
 															},
 															{
 																"type": "reference",

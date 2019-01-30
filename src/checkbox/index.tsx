@@ -138,6 +138,7 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
       label,
       style,
       indeterminate,
+      inputRef,
       ...rest
     } = this.props;
 
@@ -149,7 +150,10 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
       >
         <CheckboxNativeControl
           {...this.nativeCb.props(rest)}
-          ref={this.nativeCb.setRef}
+          ref={(el: HTMLInputElement | null) => {
+            this.nativeCb.setRef(el);
+            inputRef && inputRef(el);
+          }}
           id={this.id}
           onChange={this.handleOnChange}
         />

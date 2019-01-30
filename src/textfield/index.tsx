@@ -44,6 +44,8 @@ export interface TextFieldProps {
   withTrailingIcon?: IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
+  /** A reference to the native input or textarea. */
+  inputRef?: (ref: HTMLInputElement | HTMLTextAreaElement | null) => void;
   /** The type of input field to render */
   type?: string;
 }
@@ -284,6 +286,7 @@ export class TextField extends FoundationComponent<
       withTrailingIcon,
       children,
       textarea,
+      inputRef,
       rootProps = {},
       ...rest
     } = this.props;
@@ -310,7 +313,10 @@ export class TextField extends FoundationComponent<
     const tagProps = {
       ...this.input.props(rest),
       disabled: disabled,
-      ref: this.input.setRef,
+      ref: (ref: HTMLInputElement | HTMLTextAreaElement | null) => {
+        this.input.setRef(ref);
+        inputRef && inputRef(ref);
+      },
       id: rest.id || this.generatedId
     };
 

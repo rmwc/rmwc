@@ -17,7 +17,8 @@
     "downlevelIteration": true,
     "lib": ["es2015", "es2017", "dom"],
     "outDir": "build/dist",
-    "declaration": true
+    "declaration": true,
+    "stripInternal": true
   },
   "include": ["src"],
   "exclude": ["src/**/*.spec.*", "src/**/*.story.*", "src/rmwc/docs/*"]

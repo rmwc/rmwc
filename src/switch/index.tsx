@@ -114,7 +114,7 @@ export class Switch extends ToggleableFoundationComponent<SwitchProps> {
   }
 
   render() {
-    const { children, className, label, style, ...rest } = this.props;
+    const { children, className, label, style, inputRef, ...rest } = this.props;
 
     const switchTag = (
       <SwitchRoot {...this.toggleRootProps}>
@@ -125,7 +125,10 @@ export class Switch extends ToggleableFoundationComponent<SwitchProps> {
               {...rest}
               onChange={this.handleChange}
               id={this.id}
-              ref={this.nativeControl.setRef}
+              ref={(el: HTMLInputElement | null) => {
+                this.nativeControl.setRef(el);
+                inputRef && inputRef(el);
+              }}
             />
           </div>
         </SwitchThumbUnderlay>

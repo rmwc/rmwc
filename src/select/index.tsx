@@ -42,6 +42,8 @@ export interface SelectProps {
   enhanced?: boolean;
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
+  /** A reference to the native select element. Not applicable when `enhanced` is true. */
+  inputRef?: (ref: HTMLSelectElement | null) => void;
   /** A className for the root element. */
   className?: string;
   /** Add a leading icon. */
@@ -663,6 +665,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       onBlur,
       onClick,
       onKeyDown,
+      inputRef,
       ...rest
     } = this.props;
 
@@ -735,7 +738,10 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
         ) : (
           <SelectNativeControl
             {...rest}
-            elementRef={(el: any) => (this.nativeControl = el)}
+            elementRef={(el: HTMLSelectElement | null) => {
+              this.nativeControl = el;
+              inputRef && inputRef(el);
+            }}
             {...sharedControlProps}
             {...sharedEventProps}
           >

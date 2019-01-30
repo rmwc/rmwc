@@ -285,6 +285,14 @@
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "internal",
+										"text": ""
+									}
+								]
+							},
 							"getSignature": [
 								{
 									"id": 198,
@@ -292,6 +300,14 @@
 									"kind": 524288,
 									"kindString": "Get signature",
 									"flags": {},
+									"comment": {
+										"tags": [
+											{
+												"tag": "internal",
+												"text": ""
+											}
+										]
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -323,7 +339,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 28,
+									"line": 29,
 									"character": 14
 								}
 							],
@@ -340,6 +356,14 @@
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "internal",
+										"text": ""
+									}
+								]
+							},
 							"getSignature": [
 								{
 									"id": 200,
@@ -347,6 +371,14 @@
 									"kind": 524288,
 									"kindString": "Get signature",
 									"flags": {},
+									"comment": {
+										"tags": [
+											{
+												"tag": "internal",
+												"text": ""
+											}
+										]
+									},
 									"type": {
 										"type": "unknown",
 										"name": "MergeInterfacesT<P & FoundationProps, FoundationProps>[\"id\"]"
@@ -360,7 +392,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 32,
+									"line": 33,
 									"character": 8
 								}
 							],
@@ -377,6 +409,14 @@
 							"flags": {
 								"isExported": true
 							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "internal",
+										"text": ""
+									}
+								]
+							},
 							"getSignature": [
 								{
 									"id": 202,
@@ -384,6 +424,14 @@
 									"kind": 524288,
 									"kindString": "Get signature",
 									"flags": {},
+									"comment": {
+										"tags": [
+											{
+												"tag": "internal",
+												"text": ""
+											}
+										]
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "any"
@@ -397,7 +445,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 36,
+									"line": 37,
 									"character": 21
 								}
 							],
@@ -1644,7 +1692,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/toggleable/index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 14
 								}
 							],

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 import { componentFactory, classNames, deprecationWarning } from '@rmwc/base';
 
-type IconElementT = React.ReactElement<any> | string | undefined;
+type IconElementT = React.ReactNode;
 
 export type IconStrategyT =
   | 'auto'
