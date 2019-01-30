@@ -34,7 +34,7 @@ export type ThemeOptionT =
   | 'textDisabledOnDark'
   | 'textIconOnDark';
 
-export type ThemeInputT = ThemeOptionT | ThemeOptionT[];
+export type ThemePropT = ThemeOptionT | ThemeOptionT[];
 
 /**
  * Ripples
@@ -68,5 +68,5 @@ export type TagT = string | React.ComponentType<any>;
 
 export interface ComponentProps<T = any> extends React.HTMLProps<T> {
   tag?: TagT;
-  theme?: ThemeInputT;
+  theme?: ThemePropT;
 }

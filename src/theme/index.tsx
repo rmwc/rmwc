@@ -16,7 +16,7 @@ const ThemeRoot = componentFactory<{}>({
 
 export interface ThemeProps {
   /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
-  use: RMWC.ThemeInputT;
+  use: RMWC.ThemePropT;
   /** Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors.  */
   wrap?: boolean;
 }

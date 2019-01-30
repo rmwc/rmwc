@@ -6,7 +6,7 @@ import { toDashCase } from './utils/strings';
 import { deprecationWarning } from './utils/deprecation';
 
 export interface WithThemeProps {
-  theme?: RMWC.ThemeInputT;
+  theme?: RMWC.ThemePropT;
   className?: string;
 }
 

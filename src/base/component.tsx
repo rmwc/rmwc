@@ -38,7 +38,7 @@ const handleClassNames = (
   props: any,
   classNames: ClassNamesInputT,
   className?: string,
-  theme?: RMWC.ThemeInputT
+  theme?: RMWC.ThemePropT
 ) => {
   const finalClassNames = classNamesFunc(
     className,

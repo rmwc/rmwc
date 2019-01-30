@@ -1910,7 +1910,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "RMWC.ThemeInputT"
+								"name": "RMWC.ThemePropT"
 							}
 						},
 						{
