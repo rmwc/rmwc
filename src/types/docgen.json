@@ -11215,40 +11215,6 @@
 					}
 				},
 				{
-					"id": 331,
-					"name": "ThemePropT",
-					"kind": 4194304,
-					"kindString": "Type alias",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 37,
-							"character": 23
-						}
-					],
-					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "reference",
-								"name": "ThemeOptionT",
-								"id": 330
-							},
-							{
-								"type": "array",
-								"elementType": {
-									"type": "reference",
-									"name": "ThemeOptionT",
-									"id": 330
-								}
-							}
-						]
-					}
-				},
-				{
 					"id": 330,
 					"name": "ThemeOptionT",
 					"kind": 4194304,
@@ -11375,6 +11341,40 @@
 							}
 						]
 					}
+				},
+				{
+					"id": 331,
+					"name": "ThemePropT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 37,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ThemeOptionT",
+								"id": 330
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "ThemeOptionT",
+									"id": 330
+								}
+							}
+						]
+					}
 				}
 			],
 			"groups": [
@@ -11394,8 +11394,8 @@
 						327,
 						332,
 						337,
-						331,
-						330
+						330,
+						331
 					]
 				}
 			],
