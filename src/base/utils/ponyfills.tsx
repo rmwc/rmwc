@@ -3,22 +3,24 @@ export const closest = (
   selector: string
 ) => {
   if (element instanceof Element) {
+    /* istanbul ignore else  */
     if (element && element.closest) {
       return element.closest(selector);
-    }
-
-    let el: HTMLElement | null = element;
-    while (el) {
-      if (matches(el, selector)) {
-        return el;
+    } else {
+      let el: HTMLElement | null = element;
+      while (el) {
+        if (matches(el, selector)) {
+          return el;
+        }
+        el = el.parentElement;
       }
-      el = el.parentElement;
     }
   }
   return null;
 };
 
 export const matches = (element: HTMLElement, selector: string) => {
+  /* istanbul ignore next  */
   const nativeMatches =
     element.matches ||
     element.webkitMatchesSelector ||

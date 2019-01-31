@@ -5,6 +5,7 @@ import {
   CardPrimaryAction,
   CardMedia,
   CardMediaContent,
+  CardAction,
   CardActions,
   CardActionButtons,
   CardActionIcons,
@@ -31,8 +32,10 @@ describe('Card', () => {
           <CardActionButtons>
             <CardActionButton>Read</CardActionButton>
             <CardActionButton>Bookmark</CardActionButton>
+            <CardAction>Foo</CardAction>
           </CardActionButtons>
           <CardActionIcons>
+            <CardAction icon="favorite_border" />
             <CardActionIcon onIcon="favorite" icon="favorite_border" />
             <CardActionIcon icon="share" />
             <CardActionIcon icon="more_vert" />

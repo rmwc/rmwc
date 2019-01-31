@@ -191,7 +191,7 @@ export class Snackbar extends FoundationComponent<
 
   render() {
     // grab these before we try to correct them in the deprecation
-    const { actionText, actionHandler = () => {} } = this.props;
+    const { actionText, actionHandler } = this.props;
 
     const {
       open,

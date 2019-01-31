@@ -94,7 +94,7 @@ describe('TextField', () => {
           true
         );
         done();
-      });
+      }, 100);
     });
   });
 

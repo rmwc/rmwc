@@ -9,7 +9,8 @@ import {
   toCamel,
   toDashCase,
   FoundationComponent,
-  CustomEventT
+  CustomEventT,
+  closest
 } from './';
 
 jest.spyOn(console, 'warn');
@@ -100,11 +101,13 @@ describe('componentFactory', () => {
     let myProps: any = null;
 
     const Foo = componentFactory<{
+      goneProp?: string;
       oldProp?: string;
       oldProp2?: string;
     }>({
       displayName: 'foo',
       deprecate: {
+        goneProp: '',
         oldProp: 'newProp',
         oldProp2: ['newProp2', (val: any) => 'changed']
       },
@@ -114,7 +117,8 @@ describe('componentFactory', () => {
       }
     });
 
-    mount(<Foo oldProp="val1" oldProp2="val2" />);
+    mount(<Foo oldProp="val1" oldProp2="val2" goneProp={'gone'} />);
+    expect(myProps.goneProp).toBe(undefined);
     expect(myProps.newProp).toBe('val1');
     expect(myProps.newProp2).toBe('changed');
   });
@@ -256,7 +260,7 @@ describe('FoundationComponent', () => {
     expect(inst.root.props({}).onChange).toBe(undefined);
 
     // Check to make sure we can add a bogus one
-    inst.root.addEventListener('onFoo', changeHandler);
+    inst.root.addEventListener('onChange', changeHandler);
   });
 
   it('FoundationElement: handles setStyle', () => {
@@ -336,6 +340,17 @@ describe('Utils', () => {
       expect(val).toBe(1);
       done();
     }, 150);
+  });
+
+  it('closest', () => {
+    const parent = document.createElement('div');
+    const child = document.createElement('div');
+    parent.classList.add('foo');
+
+    parent.appendChild(child);
+
+    expect(closest(child, '.foo')).toBe(parent);
+    expect(closest(null, '.foo')).toBe(null);
   });
 
   it('wrapChild', () => {

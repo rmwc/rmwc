@@ -17,6 +17,7 @@ import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
+import { withRipple } from '@rmwc/ripple';
 
 /*********************************************************************
  * TextField
@@ -55,38 +56,38 @@ export interface DeprecatedTextfieldProps {
   dense?: boolean;
 }
 
-const TextFieldRoot = componentFactory<
-  TextFieldProps & DeprecatedTextfieldProps
->({
-  displayName: 'TextFieldRoot',
-  deprecate: {
-    box: ''
-  },
-  classNames: (props: TextFieldProps & DeprecatedTextfieldProps) => [
-    'mdc-text-field',
-    'mdc-text-field--upgraded',
-    {
-      'mdc-text-field--textarea': props.textarea,
-      'mdc-text-field--fullwidth': props.fullwidth,
-      'mdc-text-field--outlined': props.outlined,
-      'mdc-text-field--dense': props.dense,
-      'mdc-text-field--invalid': props.invalid,
-      'mdc-text-field--disabled': props.disabled,
-      'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,
-      'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon
-    }
-  ],
-  consumeProps: [
-    'textarea',
-    'fullwidth',
-    'outlined',
-    'dense',
-    'invalid',
-    'disabled',
-    'withLeadingIcon',
-    'withTrailingIcon'
-  ]
-});
+const TextFieldRoot = withRipple()(
+  componentFactory<TextFieldProps & DeprecatedTextfieldProps>({
+    displayName: 'TextFieldRoot',
+    deprecate: {
+      box: ''
+    },
+    classNames: (props: TextFieldProps & DeprecatedTextfieldProps) => [
+      'mdc-text-field',
+      'mdc-text-field--upgraded',
+      {
+        'mdc-text-field--textarea': props.textarea,
+        'mdc-text-field--fullwidth': props.fullwidth,
+        'mdc-text-field--outlined': props.outlined,
+        'mdc-text-field--dense': props.dense,
+        'mdc-text-field--invalid': props.invalid,
+        'mdc-text-field--disabled': props.disabled,
+        'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,
+        'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon
+      }
+    ],
+    consumeProps: [
+      'textarea',
+      'fullwidth',
+      'outlined',
+      'dense',
+      'invalid',
+      'disabled',
+      'withLeadingIcon',
+      'withTrailingIcon'
+    ]
+  })
+);
 
 const TextFieldInput = componentFactory({
   displayName: 'TextFieldInput',

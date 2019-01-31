@@ -114,6 +114,19 @@ const jestResolver = config => {
   return config;
 };
 
+const jestIgnore = config => {
+  config.collectCoverageFrom = config.collectCoverageFrom.concat([
+    '!src/base/utils/document-component.tsx',
+    '!src/base/utils/story-with-state.js',
+    '!src/base/testPolyfill.js',
+    '!src/index.tsx',
+    '!src/setupTests.tsx',
+    '!src/rmwc/**/*',
+    '!src/**/*.story.*'
+  ]);
+  return config;
+};
+
 // Build the webpack config
 module.exports = {
   webpack: (config, env) => {
@@ -129,7 +142,8 @@ module.exports = {
   jest: config => {
     return pipe(
       jestModuleNameMapper,
-      jestResolver
+      jestResolver,
+      jestIgnore
     )(config);
   }
 };

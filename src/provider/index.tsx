@@ -81,6 +81,7 @@ export const RMWCProvider = ({
   const value = { ...providerDefaults };
   const iconOptions = { ...value.icon } as IconOptions;
 
+  /* istanbul ignore if */
   if (iconClassNameBase || iconClassNamePrefix || iconStrategy || iconRender) {
     deprecationWarning(
       `RMWCProvider component no longer accepts iconClassNameBase, iconClassNamePrefix, iconStrategy, or iconRender props. Please use the 'icon' props instead. icon={{basename: 'material-icons', strategy: 'url'}}`

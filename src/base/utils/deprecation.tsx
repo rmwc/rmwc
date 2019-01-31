@@ -25,6 +25,7 @@ export const handleDeprecations = (
 
     if (props[oldPropName] !== undefined) {
       if (newPropName === '') {
+        /* istanbul ignore next */
         deprecationWarning(
           `${displayName ||
             ''} component prop '${oldPropName}' has been removed from and is no longer a valid prop.`
@@ -38,6 +39,7 @@ export const handleDeprecations = (
           }' to '${props[newPropName]}'`;
         }
 
+        /* istanbul ignore next */
         deprecationWarning(
           `${displayName ||
             ''} component prop '${oldPropName}' has been replaced with '${newPropName}'. ${propTransformMessage}`

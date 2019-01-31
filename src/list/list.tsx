@@ -150,7 +150,8 @@ export class List extends FoundationComponent<ListProps> {
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_SELECTOR
           );
-          return toggleEl.checked;
+
+          return toggleEl ? toggleEl.checked : false;
         },
         setCheckedCheckboxOrRadioAtIndex: (
           index: number,
@@ -160,11 +161,14 @@ export class List extends FoundationComponent<ListProps> {
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
           );
-          toggleEl.checked = isChecked;
 
-          const event = document.createEvent('Event');
-          event.initEvent('change', true, true);
-          toggleEl.dispatchEvent(event);
+          if (toggleEl) {
+            toggleEl.checked = isChecked;
+
+            const event = document.createEvent('Event');
+            event.initEvent('change', true, true);
+            toggleEl.dispatchEvent(event);
+          }
         },
         isFocusInsideList: () => {
           return (

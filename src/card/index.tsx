@@ -115,12 +115,15 @@ export const CardActionButton = componentFactory<CardActionButtonProps>({
   classNames: ['mdc-card__action', 'mdc-card__action--button']
 });
 
-/** DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component. */
 export type CardActionPropsT = IconButtonProps & ButtonProps;
+
+/** DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component. */
 export const CardAction = (props: CardActionPropsT) => {
+  /* istanbul ignore next */
   deprecationWarning(
     'The CardAction component has been removed in favor of CardActionIcon and CardActionButton due to impossible type intersections of IconButtonProps and ButtonProps'
   );
+
   return props.icon ? (
     // @ts-ignore
     <CardActionIcon {...props} />

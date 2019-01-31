@@ -77,4 +77,34 @@ describe('Drawer', () => {
       }
     );
   });
+
+  it('foundation', () => {
+    const el1 = mount(<Drawer open dismissible />);
+    const el2 = mount(<Drawer open modal />);
+
+    [el1, el2].forEach(el => {
+      const inst = el.childAt(0).instance() as any;
+      const a = inst.foundation.adapter_;
+      const root = el.find('.mdc-drawer');
+      root.simulate('keydown');
+      root.simulate('transitionend');
+
+      const scrim = el.find('.mdc-drawer-scrim');
+      if (scrim.length) {
+        scrim.simulate('click');
+      }
+
+      a.addClass('foo');
+      a.removeClass('foo');
+      a.hasClass('foo');
+      a.elementHasClass(document.createElement('div'), 'foo');
+      a.saveFocus();
+      a.restoreFocus();
+      a.focusActiveNavigationItem();
+      // a.notifyClose();
+      // a.notifyOpen();
+      a.trapFocus();
+      a.releaseFocus();
+    });
+  });
 });

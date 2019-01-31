@@ -81,6 +81,48 @@ describe('List', () => {
     const el = mount(<ListItem selected />);
     expect(!!~el.html().search('mdc-list-item--selected')).toEqual(true);
   });
+
+  it('handles events', () => {
+    const el = mount(
+      <List>
+        <SimpleListItem />
+        <SimpleListItem />
+      </List>
+    );
+
+    el.simulate('focus');
+    el.find(SimpleListItem)
+      .first()
+      .simulate('keydown');
+    el.simulate('click');
+    el.simulate('blur');
+  });
+
+  it('foundation', () => {
+    const el = mount(
+      <List>
+        <SimpleListItem />
+        <SimpleListItem />
+      </List>
+    );
+    const inst = el.instance() as List;
+    inst.focusItemAtIndex(0);
+    const a = inst.foundation.adapter_;
+    expect(a.getListItemCount()).toBe(2);
+    a.getFocusedElementIndex();
+    a.setAttributeForElementIndex(0, 'title', 'foo');
+    a.removeAttributeForElementIndex(0, 'title');
+    a.addClassForElementIndex(0, 'foo');
+    a.removeClassForElementIndex(0, 'foo');
+    a.focusItemAtIndex(0);
+    a.setTabIndexForListItemChildren(0, 0);
+    a.followHref(0);
+    a.hasCheckboxAtIndex(0);
+    a.hasRadioAtIndex(0);
+    a.isCheckboxCheckedAtIndex(0);
+    a.setCheckedCheckboxOrRadioAtIndex(0);
+    a.isFocusInsideList();
+  });
 });
 
 describe('Collapsible List', () => {
@@ -93,5 +135,34 @@ describe('Collapsible List', () => {
         </CollapsibleList>
       </List>
     );
+  });
+
+  it('handles events', done => {
+    const el = mount(
+      <List>
+        <ListItem>One</ListItem>
+        <CollapsibleList handle={<ListItem>Handle</ListItem>}>
+          <ListItem>Two</ListItem>
+        </CollapsibleList>
+      </List>
+    );
+
+    const root = el.find('.rmwc-collapsible-list').first();
+    root.simulate('focus');
+
+    const handle = el.find('.rmwc-collapsible-list__handle').first();
+    handle.simulate('click');
+    handle.simulate('keydown', { which: 13 });
+    handle.simulate('keydown', { which: 39 });
+    handle.simulate('keydown', { which: 38 });
+    handle.simulate('keydown', { which: 40 });
+    handle.simulate('keydown', { which: 40, shiftKey: true });
+    handle.simulate('keydown', { which: 9 });
+    handle.simulate('keydown', { which: 37 });
+    handle.simulate('keydown', { which: null });
+
+    setTimeout(() => {
+      done();
+    }, 500);
   });
 });

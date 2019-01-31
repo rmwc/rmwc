@@ -158,8 +158,16 @@ const slidableDrawerFactory = (
         },
         notifyClose: () => this.emit('onClose', {}, true /* shouldBubble */),
         notifyOpen: () => this.emit('onOpen', {}, true /* shouldBubble */),
-        trapFocus: () => this.focusTrap && this.focusTrap.activate(),
-        releaseFocus: () => this.focusTrap && this.focusTrap.deactivate()
+        trapFocus: () => {
+          try {
+            this.focusTrap && this.focusTrap.activate();
+          } catch (err) {}
+        },
+        releaseFocus: () => {
+          try {
+            this.focusTrap && this.focusTrap.deactivate();
+          } catch (err) {}
+        }
       };
 
       return new MDCConstructor(adapter);

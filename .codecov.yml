@@ -1,12 +1,10 @@
 ignore:
-  - "node_modules/"
-  - "src/**/*.flow.js"
-  - "src/**/*.story.js"
-  - "src/index.js"
-  - "src/setupTests.js"
-  - "src/drawer/polyfill.js"
-  - "src/rmwc/**/*",
-  - "src/base/utils/document-component.js"
-  - "src/base/utils/story-with-state.js"
-  - "src/base/testPolyfill.js"
-  - "src/icon/defs.js"
+  - 'node_modules/'
+  - 'src/base/utils/document-component.tsx'
+  - 'src/base/utils/story-with-state.js'
+  - 'src/base/testPolyfill.js'
+  - 'src/index.tsx.js'
+  - 'src/setupTests.js'
+  - 'src/rmwc/**/*'
+  - 'src/**/*.story.*'
+  - 'src/**/*.spec.*'
