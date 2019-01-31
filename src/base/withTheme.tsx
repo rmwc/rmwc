@@ -13,32 +13,27 @@ export interface WithThemeProps {
 /**
  * Actually parses the theme options
  */
-export const parseThemeOptions = (
-  theme: string | string[] | null
-): string[] => {
-  if (theme) {
-    if (typeof theme === 'string' && theme.includes(' ')) {
+export const parseThemeOptions = (theme: string | string[]): string[] => {
+  if (typeof theme === 'string' && theme.includes(' ')) {
+    deprecationWarning(
+      `Theme no longer accepts a string of theme names with spaces. Please pass them as an array instead.`
+    );
+  }
+
+  const themeItems = Array.isArray(theme) ? theme : theme.split(' ');
+  return themeItems.map(v => {
+    if (v.includes('-')) {
       deprecationWarning(
-        `Theme no longer accepts a string of theme names with spaces. Please pass them as an array instead.`
+        `Theme properties need to be passed as camelCase. Please convert ${v} to ${v.replace(
+          /-([a-z])/g,
+          function(m, w) {
+            return w.toUpperCase();
+          }
+        )}`
       );
     }
-
-    const themeItems = Array.isArray(theme) ? theme : theme.split(' ');
-    return themeItems.map(v => {
-      if (v.includes('-')) {
-        deprecationWarning(
-          `Theme properties need to be passed as camelCase. Please convert ${v} to ${v.replace(
-            /-([a-z])/g,
-            function(m, w) {
-              return w.toUpperCase();
-            }
-          )}`
-        );
-      }
-      return `mdc-theme--${toDashCase(v)}`;
-    });
-  }
-  return [];
+    return `mdc-theme--${toDashCase(v)}`;
+  });
 };
 
 /**

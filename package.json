@@ -68,7 +68,7 @@
     "tslint": "^5.12.1",
     "typedoc": "^0.14.2",
     "typescript": "^3.2.2"
-  },
+  },   
   "config-overrides-path": "config/rewire",
   "browserslist": [
     ">0.2%",

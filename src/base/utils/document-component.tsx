@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+/* istanbul ignore file */
+
 interface Type {
   type: string;
   name?: string;

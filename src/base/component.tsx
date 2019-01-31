@@ -73,15 +73,16 @@ export const componentFactory = <P extends {}>({
 }: ComponentFactoryOpts<P>) => {
   const Component = React.forwardRef((props: RMWC.ComponentProps & P, ref) => {
     const { className, theme, tag, ...rest } = props;
+    let newProps = rest;
 
-    handleClassNames(rest, classNames, className, theme);
-    handleTag(rest, defaultTag, tag);
+    handleClassNames(newProps, classNames, className, theme);
+    handleTag(newProps, defaultTag, tag);
     if (deprecate) {
-      props = handleDeprecations(rest, deprecate, displayName);
+      newProps = handleDeprecations(newProps, deprecate, displayName);
     }
-    handleConsumeProps(rest, consumeProps);
+    handleConsumeProps(newProps, consumeProps);
 
-    const finalProps: RMWC.ComponentProps = rest;
+    const finalProps: RMWC.ComponentProps = newProps;
 
     // Do some switching to figure out what tag to use
     // if we are extending an icon, we can still honor

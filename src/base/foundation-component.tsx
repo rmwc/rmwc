@@ -17,10 +17,11 @@ export class FoundationElement<
   private _style: { [key: string]: string | number | null } = {};
   private _props: Partial<Props> = {};
   private _ref = null;
-  onChange = () => {};
+  _onChange: (() => void) | null = null;
 
   constructor(onChange: () => void) {
-    this.onChange = onChange;
+    this._onChange = onChange;
+    this.onChange = this.onChange.bind(this);
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.hasClass = this.hasClass.bind(this);
@@ -33,8 +34,12 @@ export class FoundationElement<
     this.setRef = this.setRef.bind(this);
   }
 
+  onChange() {
+    this._onChange && this._onChange();
+  }
+
   destroy() {
-    this.onChange = () => {};
+    this._onChange = null;
     this._ref = null;
     this._events = {};
     this._style = {};
@@ -85,7 +90,7 @@ export class FoundationElement<
   }
 
   props(propsToMerge: { [key: string]: any }) {
-    const { className = '', style = {}, ...rest } = propsToMerge;
+    const { className = '', style = {} } = propsToMerge;
 
     // handle merging events
     // the foundation should be able to pass something onClick as well as a user
@@ -198,7 +203,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   FoundationPropsT<P>,
   FoundationStateT<S>
 > {
-  static shouldDebounce = false;
+  static shouldDebounce = true;
 
   foundation: any = this.getDefaultFoundation();
   elements: { [key: string]: FoundationElement<any, any> } = {};
@@ -252,28 +257,34 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
     }
   }
 
-  getDefaultFoundation() {}
+  getDefaultFoundation() {
+    return {
+      init: () => {},
+      destroy: () => {}
+    };
+  }
 
   /**
    * Fires a cross-browser-compatible custom event from the component root of the given type,
    */
   emit(evtType: string, evtData: Object, shouldBubble: boolean = false) {
     let evt;
-    if (typeof CustomEvent === 'function') {
-      evt = new CustomEvent(evtType, {
-        detail: evtData,
-        bubbles: shouldBubble
-      });
-    } else {
-      evt = document.createEvent('CustomEvent');
-      evt.initCustomEvent(evtType, shouldBubble, false, evtData);
-    }
+
+    evt = new CustomEvent(evtType, {
+      detail: evtData,
+      bubbles: shouldBubble
+    });
 
     // bugfix for events coming from form elements
     // and also fits with reacts form pattern better...
     // This should always otherwise be null since there is no target
     // for Custom Events
     Object.defineProperty(evt, 'target', {
+      value: evtData,
+      writable: false
+    });
+
+    Object.defineProperty(evt, 'currentTarget', {
       value: evtData,
       writable: false
     });

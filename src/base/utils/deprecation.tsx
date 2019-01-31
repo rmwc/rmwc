@@ -34,8 +34,8 @@ export const handleDeprecations = (
         let propTransformMessage = '';
         if (props[newPropName] !== props[oldPropName]) {
           propTransformMessage = ` The old value has also been converted from '${
-            props[newPropName]
-          }' to '${props[oldPropName]}'`;
+            props[oldPropName]
+          }' to '${props[newPropName]}'`;
         }
 
         deprecationWarning(
