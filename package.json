@@ -1,7 +1,7 @@
 {
   "name": "rmwc-main",
   "author": "James Friedman",
-  "version": "4.0.6",
+  "version": "5.0.8-alpha.0",
   "private": true,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
@@ -38,7 +38,7 @@
     "changelog": "changelog",
     "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
-    "version": "npm run build:code && npm run changelog && git add CHANGELOG.md",
+    "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md",
     "postpublish": "npm run build:docs && git add docs -f &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
