@@ -18,6 +18,41 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
   const content = fs.readFileSync(outputFile, 'utf8');
   let newContent = content;
 
+  const [imports, typeImports] = newContent.split('\n').reduce(
+    (acc, line) => {
+      if (line.trim().startsWith('import')) {
+        if (/import \{(.*?)\} from(.*)/g.test(line)) {
+          line.replace(/import \{(.*?)\} from(.*)/g, (match, p1, p2) => {
+            const parts = p1.split(',');
+
+            const types = [];
+            const nonTypes = [];
+
+            parts.forEach(p => {
+              p = p.trim();
+              if (p.endsWith('T') || p.endsWith('Props')) {
+                types.push(p);
+              } else {
+                nonTypes.push(p);
+              }
+            });
+
+            nonTypes.length &&
+              acc[0].push(`import { ${nonTypes.join(', ')} } from${p2}`);
+
+            types.length &&
+              acc[1].push(`import type { ${types.join(', ')} } from${p2}`);
+            return '';
+          });
+        } else {
+          acc[0].push(line);
+        }
+      }
+      return acc;
+    },
+    [[], []]
+  );
+
   let isModuleDeclaration = outputFile.includes(path.join(pkgName, 'index.js'));
   isModuleDeclaration = outputFile.includes('base/index.js')
     ? false
@@ -41,19 +76,7 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
 
     // .replace(/export const/g, 'export var')
     .replace(/(export class .*){[\S\s\n]*?^}/gm, '$1{}')
-    .replace(/import \{(.*?)\} from/g, (match, p1) => {
-      const parts = p1.split(',');
-
-      const final = parts.map(p => {
-        p = p.trim();
-        if (p.endsWith('T') || p.endsWith('Props')) {
-          return 'type ' + p;
-        }
-
-        return p;
-      });
-      return `import { ${final.join(', ')} } from`;
-    })
+    .replace(/^import.*/gm, '')
     .replace(/React\.CSSProperties/g, 'Object')
     .replace(/React\.HTMLAttributes/g, 'React.Element')
     .replace(/React\.AllHTMLAttributes<.*?>/g, 'Object')
@@ -121,21 +144,21 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
     );
 
   if (isModuleDeclaration) {
-    const lastImportIndex = newContent.lastIndexOf('import');
-    const eol = ~lastImportIndex
-      ? newContent.slice(lastImportIndex).indexOf('\n') + lastImportIndex
-      : newContent.length;
-    const fileName = path.basename(outputFile).split('.')[0];
     const moduleName = `@rmwc/${pkgName}`;
 
-    newContent =
-      newContent.slice(0, eol) +
-      `\n\ndeclare module '${moduleName}' {\n\n` +
-      newContent.slice(eol) +
-      '\n}';
+    newContent = [
+      '// @flow',
+      imports.join('\n'),
+      `\ndeclare module '${moduleName}' {\n`,
+      typeImports.map(l => '  ' + l).join('\n'),
+      newContent
+        .split('\n')
+        .map(l => '  ' + l)
+        .join('\n'),
+      '\n}'
+    ].join('\n');
   }
 
-  newContent = `// @flow\n${newContent}`;
   fs.writeFileSync(outputFile, newContent, 'utf8');
 };
 
