@@ -16,7 +16,10 @@ const writeBuiltFile = (inputFile, outputFile) => {
 const writeFlowFile = (inputFile, outputFile, pkgName) => {
   execSync(`cp ${inputFile} ${outputFile}`);
   const content = fs.readFileSync(outputFile, 'utf8');
-  let newContent = content;
+  let newContent = content.replace(
+    /\/\/\/ <reference types="react" \/>/g,
+    "import * as React from 'react';"
+  );
 
   const [imports, typeImports] = newContent.split('\n').reduce(
     (acc, line) => {
@@ -91,6 +94,7 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
     // keyof B -> $Keys<B>
     .replace(/keyof ([\S\s]+?)([,>])/g, '$Keys<$1>$2')
     .replace(/Partial</g, '$Shape<')
+    .replace(/React\.ComponentType/g, 'React$ComponentType')
     .replace(/React\.ReactNode/g, 'React.Node')
     .replace(/React\.HTMLProps<(.*?)>/g, 'Object')
     .replace(/JSX\.Element/g, 'React.Node')
@@ -137,11 +141,7 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
     .replace(/React\.TouchEvent<(.*?)>/g, 'SyntheticTouchEvent<$1>')
     .replace(/React\.TouchEvent/g, 'SyntheticTouchEvent<any>')
     .replace(/React\.ChangeEvent<(.*?)>/g, 'SyntheticInputEvent<$1>')
-    .replace(/React\.ChangeEvent/g, 'SyntheticInputEvent<any>')
-    .replace(
-      /\/\/\/ <reference types="react" \/>/g,
-      "import * as React from 'react';"
-    );
+    .replace(/React\.ChangeEvent/g, 'SyntheticInputEvent<any>');
 
   if (isModuleDeclaration) {
     const moduleName = `@rmwc/${pkgName}`;
