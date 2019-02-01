@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/switch",
-  "version": "5.0.7-alpha.0",
+  "version": "5.0.8-alpha.0",
   "description": "RMWC Switch component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "@material/switch": "^0.43.0",
-    "@rmwc/base": "^5.0.7-alpha.0",
-    "@rmwc/formfield": "^5.0.7-alpha.0",
-    "@rmwc/ripple": "^5.0.7-alpha.0",
-    "@rmwc/toggleable": "^5.0.7-alpha.0"
+    "@rmwc/base": "^5.0.8-alpha.0",
+    "@rmwc/formfield": "^5.0.8-alpha.0",
+    "@rmwc/ripple": "^5.0.8-alpha.0",
+    "@rmwc/toggleable": "^5.0.8-alpha.0"
   },
   "gitHead": "df9f0ba2ce5984834077b6d7c28b7d2608b1238c"
 }
