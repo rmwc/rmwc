@@ -6,7 +6,6 @@ import { MDCDialogFoundation } from '@material/dialog';
 import {
   FoundationComponent,
   componentFactory,
-  CustomEventT,
   createFocusTrap,
   FocusTrap,
   closest,
@@ -71,7 +70,7 @@ export interface DialogButtonProps extends ButtonProps {
 
 /** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<
-  DialogButtonProps & { className?: string }
+  DialogButtonProps & RMWC.ComponentProps
 > {
   static displayName = 'DialogButton';
   render() {
@@ -96,9 +95,9 @@ export interface DialogProps {
   /** Whether or not the Dialog is showing. */
   open?: boolean;
   /** Callback for when the Dialog opens. */
-  onOpen?: (evt: CustomEventT<{}>) => void;
+  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: CustomEventT<{}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
 }

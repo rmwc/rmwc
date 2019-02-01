@@ -5,12 +5,7 @@ import {} from '@rmwc/base';
 // @ts-ignore
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT,
-  randomId
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon, IconProps, IconPropT } from '@rmwc/icon';
@@ -591,7 +586,9 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
     this.foundation.handleKeydown(evt);
   }
 
-  handleMenuSelected(evt: CustomEventT<{ item: HTMLElement; index: number }>) {
+  handleMenuSelected(
+    evt: RMWC.CustomEventT<{ item: HTMLElement; index: number }>
+  ) {
     const value = evt.detail.item.dataset.value;
     this.emit(
       'onChange',

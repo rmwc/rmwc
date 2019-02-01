@@ -66,7 +66,10 @@ export interface WithRippleProps extends DeprecatedRippleProps {
  */
 export type TagT = string | React.ComponentType<any>;
 
-export interface ComponentProps<T = any> extends React.HTMLProps<T> {
+export interface ComponentProps extends React.HTMLProps<any> {
   tag?: TagT;
   theme?: ThemePropT;
 }
+
+export type CustomEventT<T> = CustomEvent<T> &
+  React.SyntheticEvent<EventTarget>;

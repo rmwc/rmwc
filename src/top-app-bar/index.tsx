@@ -1,9 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
@@ -20,7 +16,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export interface TopAppBarProps {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: CustomEventT<{}>) => void;
+  onNav?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean;
   /** Styles the top app bar as a prominent top app bar. */

@@ -1,8 +1,10 @@
 [ignore]
+<PROJECT_ROOT>/node_modules/findup
 <PROJECT_ROOT>/node_modules/config-chain/.*
 node_modules/config-chain
 
 [include]
+<PROJECT_ROOT>/build/dist/**/*
 
 [libs]
 

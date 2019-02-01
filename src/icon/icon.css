@@ -1,3 +1,15 @@
+.rmwc-icon {
+  min-width: 1em;
+  min-height: 1em;
+}
+
+.rmwc-icon--image {
+  background-repeat: no-repeat;
+  font-size: 1.5rem;
+  background-size: 1em;
+  background-position: center center;
+}
+
 .rmwc-icon--size-xsmall {
   font-size: 1.125rem;
   width: 1em;

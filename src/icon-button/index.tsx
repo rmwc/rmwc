@@ -5,17 +5,16 @@ import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import {
   componentFactory,
   FoundationComponent,
-  CustomEventT,
   deprecationWarning
 } from '@rmwc/base';
-import { Icon, IconPropT, IconProps, getIconStrategy } from '@rmwc/icon';
+import { Icon, IconPropT, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
 export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
   /** An onChange callback that receives a custom event. */
-  onChange?: (evt: CustomEventT<{ isOn: boolean }>) => void;
+  onChange?: (evt: RMWC.CustomEventT<{ isOn: boolean }>) => void;
   /** Makes the button disabled */
   disabled?: boolean;
   /** Icon for the button */
@@ -150,15 +149,6 @@ export const IconButton = ({
   if (rest.onIcon) {
     return <IconButtonToggle {...rest} icon={icon} />;
   }
-
-  const strategy = getIconStrategy(icon, 'auto', null);
-  // URLs are image tags and need to be wrapped
-  if (strategy === 'url')
-    return (
-      <IconButtonRoot aria-hidden="true" {...rest}>
-        <IconButtonIcon icon={icon} />
-      </IconButtonRoot>
-    );
 
   return <IconButtonRoot aria-hidden="true" {...rest} tag={Icon} icon={icon} />;
 };

@@ -107,7 +107,14 @@ const renderClassName = ({
 }) => <IconRoot {...rest} />;
 
 const renderUrl = ({ content, ...rest }: { content: string }) => (
-  <IconRoot {...rest} tag="img" src={content} />
+  <IconRoot
+    {...rest}
+    className={classNames((rest as any).className, 'rmwc-icon--image')}
+    style={{
+      ...(rest as any).style,
+      backgroundImage: `url(${content})`
+    }}
+  />
 );
 
 const renderComponent = ({

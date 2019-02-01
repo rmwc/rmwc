@@ -4,11 +4,7 @@ import * as React from 'react';
 import { MDCMenuFoundation } from '@material/menu';
 
 import { List, ListItem, ListItemProps } from '@rmwc/list';
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 
 import {
   MenuSurface,
@@ -23,7 +19,7 @@ import {
 export interface MenuProps extends MenuSurfaceProps {
   /** Callback that fires when a Menu item is selected. */
   onSelect?: (
-    evt: CustomEventT<{
+    evt: RMWC.CustomEventT<{
       index: number;
       item: HTMLElement;
     }>
@@ -149,7 +145,7 @@ export class Menu extends FoundationComponent<MenuProps> {
     this.foundation.handleKeydown(evt);
   }
 
-  handleOpen(evt: CustomEventT<{}>) {
+  handleOpen(evt: RMWC.CustomEventT<{}>) {
     this.props.onOpen && this.props.onOpen(evt);
     const list = this.items;
     if (list.length > 0 && !list.some(el => el === document.activeElement)) {
@@ -240,7 +236,7 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
       } = this.props;
       const wrappedHandle = React.cloneElement(handle, {
         ...handle.props,
-        onClick: (evt: CustomEventT<void>) => {
+        onClick: (evt: RMWC.CustomEventT<void>) => {
           this.setState({ open: !this.state.open });
           if (handle.props.onClick) {
             handle.props.onClick(evt);
@@ -248,7 +244,7 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
         }
       });
 
-      const wrappedOnClose = (evt: CustomEventT<{}>) => {
+      const wrappedOnClose = (evt: RMWC.CustomEventT<{}>) => {
         this.setState({ open: !!open || false });
         if (onClose) {
           onClose(evt);

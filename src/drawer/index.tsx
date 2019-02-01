@@ -1,11 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 import {
   MDCModalDrawerFoundation,
   MDCDismissibleDrawerFoundation
@@ -69,9 +65,9 @@ export interface DrawerProps {
   /** Opens or closes the Drawer. */
   open?: boolean;
   /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: CustomEventT<{}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: CustomEventT<{}>) => void;
+  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Makes a dismissible drawer. */
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */

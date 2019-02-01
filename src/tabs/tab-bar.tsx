@@ -1,11 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 
 // @ts-ignore
 import { MDCTabBarFoundation } from '@material/tab-bar';
@@ -19,7 +15,7 @@ import { TabBarContext } from './tab-bar-context';
 export interface TabBarProps {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
   onActivate?: (
-    evt: CustomEventT<{
+    evt: RMWC.CustomEventT<{
       index: number;
     }>
   ) => void;
@@ -139,9 +135,9 @@ export class TabBar extends FoundationComponent<TabBarProps> {
   }
 
   sync(props: TabBarProps, prevProps: TabBarProps) {
-    if (props.activeTabIndex !== prevProps.activeTabIndex) {
+    // this will re-activate the appropriate tabs if they get-rendered
+    if (props.activeTabIndex !== undefined)
       this.foundation.activateTab(props.activeTabIndex);
-    }
   }
 
   getTabElements(): Element[] | null {

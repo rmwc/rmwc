@@ -69,5 +69,5 @@ import { CircularProgress } from '@rmwc/circular-progress';
 import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<Docs src={docs} components={['Button', 'ButtonIcon']} />;
+<Docs src={docs} components={['Button', 'ButtonIcon']} />
 ```

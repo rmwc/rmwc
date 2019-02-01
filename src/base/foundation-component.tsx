@@ -8,10 +8,7 @@ import { toCamel } from './utils/strings';
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
 
-export class FoundationElement<
-  Props extends { [key: string]: any },
-  ElementType = HTMLElement
-> {
+export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   private _classes = new Set<string>();
   private _events: { [key: string]: (evt: Event) => void } = {};
   private _style: { [key: string]: string | number | null } = {};

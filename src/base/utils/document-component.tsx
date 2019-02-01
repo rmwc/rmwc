@@ -221,7 +221,12 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
   }
 }
 
-export class Docs extends React.Component<{ src: {}; components: string[] }> {
+export interface DocsInterface {
+  src: {};
+  components: string[];
+}
+
+export class Docs extends React.Component<DocsInterface> {
   docs: { [key: string]: Def | undefined } = {};
 
   constructor(props: any) {

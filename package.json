@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "flowgen": "^1.4.0",
     "focus-trap": "^3.0.0",
     "hyperform": "^0.9.14",
     "mutation-observer": "^1.0.3",
@@ -35,13 +36,16 @@
     "docgen": "node scripts/docgen.js",
     "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run build:code && npm run changelog && git add CHANGELOG.md",
     "postpublish": "npm run build:docs && git add docs -f &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/react": "^4.1.11",
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
@@ -52,6 +56,7 @@
     "copyfiles": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "flow-bin": "^0.91.0",
     "generate-changelog": "^1.7.1",
     "lerna": "^3.10.5",
     "material-components-web": "^0.43.0",
@@ -68,7 +73,7 @@
     "tslint": "^5.12.1",
     "typedoc": "^0.14.2",
     "typescript": "^3.2.2"
-  },   
+  },
   "config-overrides-path": "config/rewire",
   "browserslist": [
     ">0.2%",

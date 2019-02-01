@@ -23,7 +23,7 @@ interface ComponentFactoryOpts<Props> {
   consumeProps?: string[];
   // TODO, any had to be included
   // Currently causing errors because things like "role" cant be undefined
-  defaultProps?: any & Partial<RMWC.ComponentProps<any> & Props>;
+  defaultProps?: any & Partial<RMWC.ComponentProps & Props>;
   render?: (
     props: any,
     ref: React.Ref<any>,

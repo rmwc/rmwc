@@ -6,7 +6,6 @@ import { MDCChipFoundation } from '@material/chips';
 import {
   FoundationComponent,
   componentFactory,
-  CustomEventT,
   randomId,
   deprecationWarning
 } from '@rmwc/base';
@@ -29,11 +28,13 @@ export interface ChipProps {
   /** Additional children will be rendered in the text area. */
   children?: React.ReactNode;
   /** A callback for click or enter key. This should be used over onClick for accessibility reasons. */
-  onInteraction?: (evt: CustomEventT<{ chipId: string }>) => void;
+  onInteraction?: (evt: RMWC.CustomEventT<{ chipId: string }>) => void;
   /** A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. */
-  onTrailingIconInteraction?: (evt: CustomEventT<{ chipId: string }>) => void;
+  onTrailingIconInteraction?: (
+    evt: RMWC.CustomEventT<{ chipId: string }>
+  ) => void;
   /** A callback that is fired once the chip is in an exited state from removing it. */
-  onRemove?: (evt: CustomEventT<{ chipId: string }>) => void;
+  onRemove?: (evt: RMWC.CustomEventT<{ chipId: string }>) => void;
 }
 
 export interface DeprecatedChipProps {

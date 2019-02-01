@@ -345,7 +345,7 @@ ul li {
   color: var(--mdc-theme-on-surface);
 }
 
-.made-by img {
+.made-by .rmwc-icon {
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;

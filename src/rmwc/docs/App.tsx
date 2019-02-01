@@ -443,13 +443,12 @@ const Nav = (props: any) => (
           })}
         </List>
       </DrawerContent>
-      <Ripple>
-        <Typography
-          tag="a"
-          use="caption"
-          className="made-by"
-          href="https://opencollective.com/rmwc"
-        >
+      <Ripple
+        tag="a"
+        href="https://opencollective.com/rmwc"
+        className="made-by"
+      >
+        <Typography use="caption">
           <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
           <div>
             <div>

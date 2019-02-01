@@ -7,11 +7,7 @@ import {
   // @ts-ignore
 } from '@material/menu-surface';
 
-import {
-  componentFactory,
-  CustomEventT,
-  FoundationComponent
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 
 const ANCHOR_CORNER_MAP = {
   bottomEnd: 'BOTTOM_END',
@@ -39,9 +35,9 @@ export interface MenuSurfaceProps {
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
-  onOpen?: (evt: CustomEventT<{}>) => void;
+  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback for when the menu is closed. */
-  onClose?: (evt: CustomEventT<{}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Children to render. */
   children?: React.ReactNode;
 }
@@ -92,7 +88,6 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
     return this.foundation.isOpen();
   }
 
-  /** @param {boolean} value */
   set open(value) {
     if (value) {
       const focusableElements = this.root.ref

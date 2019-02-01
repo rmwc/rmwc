@@ -1,3 +1,4 @@
+import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { mount } from 'enzyme';
 import {
@@ -9,7 +10,6 @@ import {
   toCamel,
   toDashCase,
   FoundationComponent,
-  CustomEventT,
   closest
 } from './';
 
@@ -192,7 +192,9 @@ describe('FoundationComponent', () => {
 
     const el = mount(
       <MyComp
-        onInteraction={(evt: CustomEventT<any>) => (interacted = evt.detail)}
+        onInteraction={(evt: RMWC.CustomEventT<any>) =>
+          (interacted = evt.detail)
+        }
       />
     );
     const inst = el.instance() as MyComp;

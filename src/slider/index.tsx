@@ -3,23 +3,18 @@ import * as React from 'react';
 
 // @ts-ignore
 import { MDCSliderFoundation } from '@material/slider';
-import {
-  componentFactory,
-  FoundationComponent,
-  CustomEventT,
-  debounce
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent, debounce } from '@rmwc/base';
 
 export interface SliderProps {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
   onChange?: (
-    evt: CustomEventT<{
+    evt: RMWC.CustomEventT<{
       value: number;
     }>
   ) => void;
   /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
   onInput?: (
-    evt: CustomEventT<{
+    evt: RMWC.CustomEventT<{
       value: number;
     }>
   ) => void;

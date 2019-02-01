@@ -150,6 +150,8 @@ export class Ripple extends FoundationComponent<RippleProps> {
   }
 
   handleKeyDown(evt: React.KeyboardEvent<HTMLElement>) {
+    // https://reactjs.org/docs/events.html#event-pooling
+    evt.persist();
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.activateRipple(evt);
   }

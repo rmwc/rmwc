@@ -122,7 +122,8 @@ const jestIgnore = config => {
     '!src/index.tsx',
     '!src/setupTests.tsx',
     '!src/rmwc/**/*',
-    '!src/**/*.story.*'
+    '!src/**/*.story.*',
+    '!src/**/*.spec.*'
   ]);
   return config;
 };
