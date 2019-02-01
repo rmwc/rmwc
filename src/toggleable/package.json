@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/toggleable",
-  "version": "5.0.4-alpha.0",
+  "version": "5.0.5-alpha.0",
   "description": "RMWC toggle module",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -31,7 +31,7 @@
     "react-dom": "^15.x.x || ^16.x.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.0.4-alpha.0"
+    "@rmwc/base": "^5.0.5-alpha.0"
   },
   "gitHead": "df9f0ba2ce5984834077b6d7c28b7d2608b1238c"
 }
