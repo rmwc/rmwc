@@ -164,5 +164,3 @@ export class LinearProgress extends FoundationComponent<
     );
   }
 }
-
-export default LinearProgress;

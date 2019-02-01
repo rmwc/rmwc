@@ -15,7 +15,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/dialog/index.tsx",
 			"children": [
 				{
-					"id": 203,
+					"id": 197,
 					"name": "Dialog",
 					"kind": 128,
 					"kindString": "Class",
@@ -27,7 +27,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 233,
+							"id": 227,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -38,7 +38,7 @@
 							}
 						},
 						{
-							"id": 261,
+							"id": 255,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -47,7 +47,7 @@
 					],
 					"children": [
 						{
-							"id": 212,
+							"id": 206,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -56,14 +56,14 @@
 							},
 							"signatures": [
 								{
-									"id": 213,
+									"id": 207,
 									"name": "new Dialog",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 214,
+											"id": 208,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -71,14 +71,14 @@
 											"type": {
 												"type": "reference",
 												"name": "DialogProps",
-												"id": 189
+												"id": 183
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "Dialog",
-										"id": 203
+										"id": 197
 									},
 									"overwrites": {
 										"type": "reference",
@@ -89,7 +89,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 116,
+									"line": 115,
 									"character": 57
 								}
 							],
@@ -99,7 +99,7 @@
 							}
 						},
 						{
-							"id": 207,
+							"id": 201,
 							"name": "buttons",
 							"kind": 1024,
 							"kindString": "Property",
@@ -109,7 +109,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 113,
+									"line": 112,
 									"character": 9
 								}
 							],
@@ -132,7 +132,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 205,
+							"id": 199,
 							"name": "container",
 							"kind": 1024,
 							"kindString": "Property",
@@ -142,7 +142,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 111,
+									"line": 110,
 									"character": 11
 								}
 							],
@@ -162,7 +162,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 206,
+							"id": 200,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -172,7 +172,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 112,
+									"line": 111,
 									"character": 9
 								}
 							],
@@ -192,7 +192,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 208,
+							"id": 202,
 							"name": "defaultButton",
 							"kind": 1024,
 							"kindString": "Property",
@@ -202,7 +202,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 114,
+									"line": 113,
 									"character": 15
 								}
 							],
@@ -222,7 +222,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 236,
+							"id": 230,
 							"name": "elements",
 							"kind": 1024,
 							"kindString": "Property",
@@ -232,28 +232,28 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 237,
+									"id": 231,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 238,
+											"id": 232,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 239,
+													"id": 233,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -283,7 +283,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -295,7 +295,7 @@
 							}
 						},
 						{
-							"id": 209,
+							"id": 203,
 							"name": "focusTrap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -305,7 +305,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 115,
+									"line": 114,
 									"character": 11
 								}
 							],
@@ -325,7 +325,7 @@
 							"defaultValue": " null"
 						},
 						{
-							"id": 235,
+							"id": 229,
 							"name": "foundation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -335,7 +335,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -350,7 +350,7 @@
 							}
 						},
 						{
-							"id": 204,
+							"id": 198,
 							"name": "displayName",
 							"kind": 1024,
 							"kindString": "Property",
@@ -361,7 +361,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 108,
+									"line": 107,
 									"character": 20
 								}
 							],
@@ -372,7 +372,7 @@
 							"defaultValue": "\"Dialog\""
 						},
 						{
-							"id": 234,
+							"id": 228,
 							"name": "shouldDebounce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -383,7 +383,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -391,14 +391,14 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
 							}
 						},
 						{
-							"id": 277,
+							"id": 271,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -408,7 +408,7 @@
 							},
 							"signatures": [
 								{
-									"id": 278,
+									"id": 272,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -454,7 +454,7 @@
 							}
 						},
 						{
-							"id": 283,
+							"id": 277,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -464,7 +464,7 @@
 							},
 							"signatures": [
 								{
-									"id": 284,
+									"id": 278,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -489,7 +489,7 @@
 									},
 									"parameters": [
 										{
-											"id": 285,
+											"id": 279,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -505,7 +505,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -513,7 +513,7 @@
 											}
 										},
 										{
-											"id": 286,
+											"id": 280,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -547,7 +547,7 @@
 							}
 						},
 						{
-							"id": 292,
+							"id": 286,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -557,7 +557,7 @@
 							},
 							"signatures": [
 								{
-									"id": 293,
+									"id": 287,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -582,7 +582,7 @@
 									},
 									"parameters": [
 										{
-											"id": 294,
+											"id": 288,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -598,7 +598,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -606,7 +606,7 @@
 											}
 										},
 										{
-											"id": 295,
+											"id": 289,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -633,7 +633,7 @@
 											}
 										},
 										{
-											"id": 296,
+											"id": 290,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -667,7 +667,7 @@
 							}
 						},
 						{
-							"id": 217,
+							"id": 211,
 							"name": "close",
 							"kind": 2048,
 							"kindString": "Method",
@@ -676,7 +676,7 @@
 							},
 							"signatures": [
 								{
-									"id": 218,
+									"id": 212,
 									"name": "close",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -690,13 +690,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 130,
+									"line": 129,
 									"character": 7
 								}
 							]
 						},
 						{
-							"id": 267,
+							"id": 261,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -706,7 +706,7 @@
 							},
 							"signatures": [
 								{
-									"id": 268,
+									"id": 262,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -716,7 +716,7 @@
 									},
 									"parameters": [
 										{
-											"id": 269,
+											"id": 263,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -727,7 +727,7 @@
 											}
 										},
 										{
-											"id": 270,
+											"id": 264,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -761,7 +761,7 @@
 							}
 						},
 						{
-							"id": 219,
+							"id": 213,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -770,7 +770,7 @@
 							},
 							"signatures": [
 								{
-									"id": 220,
+									"id": 214,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -788,7 +788,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 137,
+									"line": 136,
 									"character": 19
 								}
 							],
@@ -798,7 +798,7 @@
 							}
 						},
 						{
-							"id": 240,
+							"id": 234,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -807,14 +807,14 @@
 							},
 							"signatures": [
 								{
-									"id": 241,
+									"id": 235,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 242,
+											"id": 236,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -826,7 +826,7 @@
 													{
 														"type": "reference",
 														"name": "DialogProps",
-														"id": 189
+														"id": 183
 													}
 												]
 											}
@@ -849,7 +849,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -863,7 +863,7 @@
 							}
 						},
 						{
-							"id": 275,
+							"id": 269,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -873,7 +873,7 @@
 							},
 							"signatures": [
 								{
-									"id": 276,
+									"id": 270,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -919,7 +919,7 @@
 							}
 						},
 						{
-							"id": 279,
+							"id": 273,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -929,7 +929,7 @@
 							},
 							"signatures": [
 								{
-									"id": 280,
+									"id": 274,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -954,7 +954,7 @@
 									},
 									"parameters": [
 										{
-											"id": 281,
+											"id": 275,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -970,7 +970,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -978,7 +978,7 @@
 											}
 										},
 										{
-											"id": 282,
+											"id": 276,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1012,7 +1012,7 @@
 							}
 						},
 						{
-							"id": 221,
+							"id": 215,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1021,7 +1021,7 @@
 							},
 							"signatures": [
 								{
-									"id": 222,
+									"id": 216,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1039,7 +1039,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 174,
+									"line": 173,
 									"character": 22
 								}
 							],
@@ -1049,7 +1049,7 @@
 							}
 						},
 						{
-							"id": 287,
+							"id": 281,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1059,7 +1059,7 @@
 							},
 							"signatures": [
 								{
-									"id": 288,
+									"id": 282,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1084,7 +1084,7 @@
 									},
 									"parameters": [
 										{
-											"id": 289,
+											"id": 283,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1100,7 +1100,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -1108,7 +1108,7 @@
 											}
 										},
 										{
-											"id": 290,
+											"id": 284,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1135,7 +1135,7 @@
 											}
 										},
 										{
-											"id": 291,
+											"id": 285,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1169,7 +1169,7 @@
 							}
 						},
 						{
-							"id": 243,
+							"id": 237,
 							"name": "createElement",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1178,14 +1178,14 @@
 							},
 							"signatures": [
 								{
-									"id": 244,
+									"id": 238,
 									"name": "createElement",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 245,
+											"id": 239,
 											"name": "ElementType",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -1198,7 +1198,7 @@
 									],
 									"parameters": [
 										{
-											"id": 246,
+											"id": 240,
 											"name": "elementName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1232,7 +1232,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -1242,7 +1242,7 @@
 							}
 						},
 						{
-							"id": 256,
+							"id": 250,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1251,7 +1251,7 @@
 							},
 							"signatures": [
 								{
-									"id": 257,
+									"id": 251,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1261,7 +1261,7 @@
 									},
 									"parameters": [
 										{
-											"id": 258,
+											"id": 252,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1272,7 +1272,7 @@
 											}
 										},
 										{
-											"id": 259,
+											"id": 253,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1283,7 +1283,7 @@
 											}
 										},
 										{
-											"id": 260,
+											"id": 254,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1300,8 +1300,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -1314,7 +1314,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -1324,7 +1324,7 @@
 							}
 						},
 						{
-							"id": 226,
+							"id": 220,
 							"name": "getDefaultFoundation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1333,7 +1333,7 @@
 							},
 							"signatures": [
 								{
-									"id": 227,
+									"id": 221,
 									"name": "getDefaultFoundation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1351,7 +1351,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 187,
+									"line": 186,
 									"character": 22
 								}
 							],
@@ -1361,7 +1361,7 @@
 							}
 						},
 						{
-							"id": 271,
+							"id": 265,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1371,7 +1371,7 @@
 							},
 							"signatures": [
 								{
-									"id": 272,
+									"id": 266,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1382,7 +1382,7 @@
 									},
 									"parameters": [
 										{
-											"id": 273,
+											"id": 267,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1398,7 +1398,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -1406,7 +1406,7 @@
 											}
 										},
 										{
-											"id": 274,
+											"id": 268,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1465,7 +1465,7 @@
 							}
 						},
 						{
-							"id": 210,
+							"id": 204,
 							"name": "handleDocumentKeydown",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1474,7 +1474,7 @@
 							},
 							"signatures": [
 								{
-									"id": 211,
+									"id": 205,
 									"name": "handleDocumentKeydown",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1488,13 +1488,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 116,
+									"line": 115,
 									"character": 23
 								}
 							]
 						},
 						{
-							"id": 228,
+							"id": 222,
 							"name": "handleInteraction",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1503,14 +1503,14 @@
 							},
 							"signatures": [
 								{
-									"id": 229,
+									"id": 223,
 									"name": "handleInteraction",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 230,
+											"id": 224,
 											"name": "evt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1539,13 +1539,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 246,
+									"line": 245,
 									"character": 19
 								}
 							]
 						},
 						{
-							"id": 215,
+							"id": 209,
 							"name": "open",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1554,7 +1554,7 @@
 							},
 							"signatures": [
 								{
-									"id": 216,
+									"id": 210,
 									"name": "open",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1568,13 +1568,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 123,
+									"line": 122,
 									"character": 6
 								}
 							]
 						},
 						{
-							"id": 231,
+							"id": 225,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1583,7 +1583,7 @@
 							},
 							"signatures": [
 								{
-									"id": 232,
+									"id": 226,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1597,13 +1597,13 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 252,
+									"line": 251,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 262,
+							"id": 256,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1613,7 +1613,7 @@
 							},
 							"signatures": [
 								{
-									"id": 263,
+									"id": 257,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1624,7 +1624,7 @@
 									},
 									"parameters": [
 										{
-											"id": 264,
+											"id": 258,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1640,7 +1640,7 @@
 															{
 																"type": "reference",
 																"name": "DialogProps",
-																"id": 189
+																"id": 183
 															}
 														]
 													}
@@ -1648,7 +1648,7 @@
 											}
 										},
 										{
-											"id": 265,
+											"id": 259,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1675,7 +1675,7 @@
 											}
 										},
 										{
-											"id": 266,
+											"id": 260,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1709,7 +1709,7 @@
 							}
 						},
 						{
-							"id": 223,
+							"id": 217,
 							"name": "sync",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1718,14 +1718,14 @@
 							},
 							"signatures": [
 								{
-									"id": 224,
+									"id": 218,
 									"name": "sync",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 225,
+											"id": 219,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1733,7 +1733,7 @@
 											"type": {
 												"type": "reference",
 												"name": "DialogProps",
-												"id": 189
+												"id": 183
 											}
 										}
 									],
@@ -1750,7 +1750,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 179,
+									"line": 178,
 									"character": 6
 								}
 							],
@@ -1760,7 +1760,7 @@
 							}
 						},
 						{
-							"id": 249,
+							"id": 243,
 							"name": "syncProp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1769,14 +1769,14 @@
 							},
 							"signatures": [
 								{
-									"id": 250,
+									"id": 244,
 									"name": "syncProp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 251,
+											"id": 245,
 											"name": "prop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1787,7 +1787,7 @@
 											}
 										},
 										{
-											"id": 252,
+											"id": 246,
 											"name": "prevProp",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1798,7 +1798,7 @@
 											}
 										},
 										{
-											"id": 253,
+											"id": 247,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1806,14 +1806,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 254,
+													"id": 248,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 255,
+															"id": 249,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
@@ -1827,7 +1827,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -1848,7 +1848,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -1858,7 +1858,7 @@
 							}
 						},
 						{
-							"id": 247,
+							"id": 241,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1867,7 +1867,7 @@
 							},
 							"signatures": [
 								{
-									"id": 248,
+									"id": 242,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1885,7 +1885,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -1900,58 +1900,58 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								212
+								206
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								207,
-								205,
-								206,
-								208,
-								236,
-								209,
-								235,
-								204,
-								234
+								201,
+								199,
+								200,
+								202,
+								230,
+								203,
+								229,
+								198,
+								228
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								277,
-								283,
-								292,
-								217,
-								267,
-								219,
-								240,
-								275,
-								279,
-								221,
-								287,
-								243,
-								256,
-								226,
 								271,
-								210,
-								228,
+								277,
+								286,
+								211,
+								261,
+								213,
+								234,
+								269,
+								273,
 								215,
-								231,
-								262,
-								223,
-								249,
-								247
+								281,
+								237,
+								250,
+								220,
+								265,
+								204,
+								222,
+								209,
+								225,
+								256,
+								217,
+								243,
+								241
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 107,
+							"line": 106,
 							"character": 19
 						}
 					],
@@ -1963,7 +1963,7 @@
 								{
 									"type": "reference",
 									"name": "DialogProps",
-									"id": 189
+									"id": 183
 								}
 							]
 						}
@@ -1982,21 +1982,21 @@
 					},
 					"typeParameter": [
 						{
-							"id": 106,
+							"id": 102,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 107,
+							"id": 103,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 154,
+							"id": 148,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -2005,7 +2005,7 @@
 					],
 					"children": [
 						{
-							"id": 157,
+							"id": 151,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -2026,7 +2026,7 @@
 							},
 							"signatures": [
 								{
-									"id": 158,
+									"id": 152,
 									"name": "new DialogButton",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -2034,7 +2034,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 159,
+											"id": 153,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2052,61 +2052,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 152,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 153,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				153
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -2125,7 +2072,7 @@
 									}
 								},
 								{
-									"id": 160,
+									"id": 154,
 									"name": "new DialogButton",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -2144,7 +2091,7 @@
 									},
 									"parameters": [
 										{
-											"id": 161,
+											"id": 155,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2158,67 +2105,14 @@
 														"id": 83
 													},
 													{
-														"type": "reflection",
-														"declaration": {
-															"id": 152,
-															"name": "__type",
-															"kind": 65536,
-															"kindString": "Type literal",
-															"flags": {},
-															"children": [
-																{
-																	"id": 153,
-																	"name": "className",
-																	"kind": 32,
-																	"kindString": "Variable",
-																	"flags": {
-																		"isOptional": true
-																	},
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 33
-																		}
-																	],
-																	"type": {
-																		"type": "union",
-																		"types": [
-																			{
-																				"type": "intrinsic",
-																				"name": "undefined"
-																			},
-																			{
-																				"type": "intrinsic",
-																				"name": "string"
-																			}
-																		]
-																	}
-																}
-															],
-															"groups": [
-																{
-																	"title": "Variables",
-																	"kind": 32,
-																	"children": [
-																		153
-																	]
-																}
-															],
-															"sources": [
-																{
-																	"fileName": "index.tsx",
-																	"line": 74,
-																	"character": 21
-																}
-															]
-														}
+														"type": "reference",
+														"name": "ComponentProps"
 													}
 												]
 											}
 										},
 										{
-											"id": 162,
+											"id": 156,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2260,7 +2154,7 @@
 							}
 						},
 						{
-							"id": 156,
+							"id": 150,
 							"name": "context",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2298,7 +2192,7 @@
 							}
 						},
 						{
-							"id": 181,
+							"id": 175,
 							"name": "props",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2322,14 +2216,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 182,
+													"id": 176,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 183,
+															"id": 177,
 															"name": "children",
 															"kind": 32,
 															"kindString": "Variable",
@@ -2354,7 +2248,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																183
+																177
 															]
 														}
 													],
@@ -2382,61 +2276,8 @@
 														"id": 83
 													},
 													{
-														"type": "reflection",
-														"declaration": {
-															"id": 152,
-															"name": "__type",
-															"kind": 65536,
-															"kindString": "Type literal",
-															"flags": {},
-															"children": [
-																{
-																	"id": 153,
-																	"name": "className",
-																	"kind": 32,
-																	"kindString": "Variable",
-																	"flags": {
-																		"isOptional": true
-																	},
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 33
-																		}
-																	],
-																	"type": {
-																		"type": "union",
-																		"types": [
-																			{
-																				"type": "intrinsic",
-																				"name": "undefined"
-																			},
-																			{
-																				"type": "intrinsic",
-																				"name": "string"
-																			}
-																		]
-																	}
-																}
-															],
-															"groups": [
-																{
-																	"title": "Variables",
-																	"kind": 32,
-																	"children": [
-																		153
-																	]
-																}
-															],
-															"sources": [
-																{
-																	"fileName": "index.tsx",
-																	"line": 74,
-																	"character": 21
-																}
-															]
-														}
+														"type": "reference",
+														"name": "ComponentProps"
 													}
 												]
 											}
@@ -2450,7 +2291,7 @@
 							}
 						},
 						{
-							"id": 185,
+							"id": 179,
 							"name": "refs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2475,21 +2316,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 186,
+									"id": 180,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 187,
+											"id": 181,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 188,
+													"id": 182,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2521,7 +2362,7 @@
 							}
 						},
 						{
-							"id": 184,
+							"id": 178,
 							"name": "state",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2551,7 +2392,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 149,
 							"name": "contextType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2604,7 +2445,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 76,
+									"line": 75,
 									"character": 20
 								}
 							],
@@ -2615,7 +2456,7 @@
 							"defaultValue": "\"DialogButton\""
 						},
 						{
-							"id": 132,
+							"id": 128,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2625,7 +2466,7 @@
 							},
 							"signatures": [
 								{
-									"id": 133,
+									"id": 129,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2671,7 +2512,7 @@
 							}
 						},
 						{
-							"id": 138,
+							"id": 134,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2681,7 +2522,7 @@
 							},
 							"signatures": [
 								{
-									"id": 139,
+									"id": 135,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2706,7 +2547,7 @@
 									},
 									"parameters": [
 										{
-											"id": 140,
+											"id": 136,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2724,61 +2565,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -2786,7 +2574,7 @@
 											}
 										},
 										{
-											"id": 141,
+											"id": 137,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2820,7 +2608,7 @@
 							}
 						},
 						{
-							"id": 147,
+							"id": 143,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2830,7 +2618,7 @@
 							},
 							"signatures": [
 								{
-									"id": 148,
+									"id": 144,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2855,7 +2643,7 @@
 									},
 									"parameters": [
 										{
-											"id": 149,
+											"id": 145,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2873,61 +2661,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -2935,7 +2670,7 @@
 											}
 										},
 										{
-											"id": 150,
+											"id": 146,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2952,7 +2687,7 @@
 											}
 										},
 										{
-											"id": 151,
+											"id": 147,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2986,7 +2721,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 113,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2996,7 +2731,7 @@
 							},
 							"signatures": [
 								{
-									"id": 118,
+									"id": 114,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3006,7 +2741,7 @@
 									},
 									"parameters": [
 										{
-											"id": 119,
+											"id": 115,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3017,7 +2752,7 @@
 											}
 										},
 										{
-											"id": 120,
+											"id": 116,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3051,7 +2786,7 @@
 							}
 						},
 						{
-							"id": 108,
+							"id": 104,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3061,7 +2796,7 @@
 							},
 							"signatures": [
 								{
-									"id": 109,
+									"id": 105,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3092,7 +2827,7 @@
 							}
 						},
 						{
-							"id": 125,
+							"id": 121,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3102,7 +2837,7 @@
 							},
 							"signatures": [
 								{
-									"id": 126,
+									"id": 122,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3113,7 +2848,7 @@
 									},
 									"parameters": [
 										{
-											"id": 127,
+											"id": 123,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3131,61 +2866,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -3193,7 +2875,7 @@
 											}
 										},
 										{
-											"id": 128,
+											"id": 124,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3210,7 +2892,7 @@
 											}
 										},
 										{
-											"id": 129,
+											"id": 125,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3220,7 +2902,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SS",
-												"id": 107
+												"id": 103
 											}
 										}
 									],
@@ -3247,7 +2929,7 @@
 							}
 						},
 						{
-							"id": 130,
+							"id": 126,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3257,7 +2939,7 @@
 							},
 							"signatures": [
 								{
-									"id": 131,
+									"id": 127,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3303,7 +2985,7 @@
 							}
 						},
 						{
-							"id": 134,
+							"id": 130,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3313,7 +2995,7 @@
 							},
 							"signatures": [
 								{
-									"id": 135,
+									"id": 131,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3338,7 +3020,7 @@
 									},
 									"parameters": [
 										{
-											"id": 136,
+											"id": 132,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3356,61 +3038,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -3418,7 +3047,7 @@
 											}
 										},
 										{
-											"id": 137,
+											"id": 133,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3452,7 +3081,7 @@
 							}
 						},
 						{
-							"id": 115,
+							"id": 111,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3462,7 +3091,7 @@
 							},
 							"signatures": [
 								{
-									"id": 116,
+									"id": 112,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3493,7 +3122,7 @@
 							}
 						},
 						{
-							"id": 142,
+							"id": 138,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3503,7 +3132,7 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 139,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3528,7 +3157,7 @@
 									},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 140,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3546,61 +3175,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -3608,7 +3184,7 @@
 											}
 										},
 										{
-											"id": 145,
+											"id": 141,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3625,7 +3201,7 @@
 											}
 										},
 										{
-											"id": 146,
+											"id": 142,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3659,7 +3235,7 @@
 							}
 						},
 						{
-							"id": 176,
+							"id": 170,
 							"name": "forceUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3668,14 +3244,14 @@
 							},
 							"signatures": [
 								{
-									"id": 177,
+									"id": 171,
 									"name": "forceUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 178,
+											"id": 172,
 											"name": "callBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3692,14 +3268,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 179,
+															"id": 173,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 180,
+																	"id": 174,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -3739,7 +3315,7 @@
 							}
 						},
 						{
-							"id": 121,
+							"id": 117,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3749,7 +3325,7 @@
 							},
 							"signatures": [
 								{
-									"id": 122,
+									"id": 118,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3760,7 +3336,7 @@
 									},
 									"parameters": [
 										{
-											"id": 123,
+											"id": 119,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3778,61 +3354,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -3840,7 +3363,7 @@
 											}
 										},
 										{
-											"id": 124,
+											"id": 120,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3916,7 +3439,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 77,
+									"line": 76,
 									"character": 8
 								}
 							],
@@ -3926,7 +3449,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 157,
 							"name": "setState",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3935,14 +3458,14 @@
 							},
 							"signatures": [
 								{
-									"id": 164,
+									"id": 158,
 									"name": "setState",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 165,
+											"id": 159,
 											"name": "K",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -3959,7 +3482,7 @@
 									],
 									"parameters": [
 										{
-											"id": 166,
+											"id": 160,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3970,21 +3493,21 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 167,
+															"id": 161,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 168,
+																	"id": 162,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
 																	"flags": {},
 																	"parameters": [
 																		{
-																			"id": 169,
+																			"id": 163,
 																			"name": "prevState",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -4001,7 +3524,7 @@
 																			}
 																		},
 																		{
-																			"id": 170,
+																			"id": 164,
 																			"name": "props",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -4019,61 +3542,8 @@
 																								"id": 83
 																							},
 																							{
-																								"type": "reflection",
-																								"declaration": {
-																									"id": 152,
-																									"name": "__type",
-																									"kind": 65536,
-																									"kindString": "Type literal",
-																									"flags": {},
-																									"children": [
-																										{
-																											"id": 153,
-																											"name": "className",
-																											"kind": 32,
-																											"kindString": "Variable",
-																											"flags": {
-																												"isOptional": true
-																											},
-																											"sources": [
-																												{
-																													"fileName": "index.tsx",
-																													"line": 74,
-																													"character": 33
-																												}
-																											],
-																											"type": {
-																												"type": "union",
-																												"types": [
-																													{
-																														"type": "intrinsic",
-																														"name": "undefined"
-																													},
-																													{
-																														"type": "intrinsic",
-																														"name": "string"
-																													}
-																												]
-																											}
-																										}
-																									],
-																									"groups": [
-																										{
-																											"title": "Variables",
-																											"kind": 32,
-																											"children": [
-																												153
-																											]
-																										}
-																									],
-																									"sources": [
-																										{
-																											"fileName": "index.tsx",
-																											"line": 74,
-																											"character": 21
-																										}
-																									]
-																								}
+																								"type": "reference",
+																								"name": "ComponentProps"
 																							}
 																						]
 																					}
@@ -4095,7 +3565,7 @@
 																			{
 																				"type": "reflection",
 																				"declaration": {
-																					"id": 171,
+																					"id": 165,
 																					"name": "__type",
 																					"kind": 65536,
 																					"kindString": "Type literal",
@@ -4129,7 +3599,7 @@
 															{
 																"type": "reflection",
 																"declaration": {
-																	"id": 172,
+																	"id": 166,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
@@ -4142,7 +3612,7 @@
 											}
 										},
 										{
-											"id": 173,
+											"id": 167,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4159,14 +3629,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 174,
+															"id": 168,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 175,
+																	"id": 169,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -4206,7 +3676,7 @@
 							}
 						},
 						{
-							"id": 110,
+							"id": 106,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4216,7 +3686,7 @@
 							},
 							"signatures": [
 								{
-									"id": 111,
+									"id": 107,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4227,7 +3697,7 @@
 									},
 									"parameters": [
 										{
-											"id": 112,
+											"id": 108,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4245,61 +3715,8 @@
 																"id": 83
 															},
 															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 104,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {},
-																	"children": [
-																		{
-																			"id": 105,
-																			"name": "className",
-																			"kind": 32,
-																			"kindString": "Variable",
-																			"flags": {
-																				"isOptional": true
-																			},
-																			"sources": [
-																				{
-																					"fileName": "index.tsx",
-																					"line": 74,
-																					"character": 33
-																				}
-																			],
-																			"type": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "intrinsic",
-																						"name": "undefined"
-																					},
-																					{
-																						"type": "intrinsic",
-																						"name": "string"
-																					}
-																				]
-																			}
-																		}
-																	],
-																	"groups": [
-																		{
-																			"title": "Variables",
-																			"kind": 32,
-																			"children": [
-																				105
-																			]
-																		}
-																	],
-																	"sources": [
-																		{
-																			"fileName": "index.tsx",
-																			"line": 74,
-																			"character": 21
-																		}
-																	]
-																}
+																"type": "reference",
+																"name": "ComponentProps"
 															}
 														]
 													}
@@ -4307,7 +3724,7 @@
 											}
 										},
 										{
-											"id": 113,
+											"id": 109,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4324,7 +3741,7 @@
 											}
 										},
 										{
-											"id": 114,
+											"id": 110,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4363,18 +3780,18 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								157
+								151
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								156,
-								181,
-								185,
-								184,
-								155,
+								150,
+								175,
+								179,
+								178,
+								149,
 								99
 							]
 						},
@@ -4382,28 +3799,28 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								132,
-								138,
-								147,
-								117,
-								108,
-								125,
-								130,
+								128,
 								134,
-								115,
-								142,
-								176,
+								143,
+								113,
+								104,
 								121,
+								126,
+								130,
+								111,
+								138,
+								170,
+								117,
 								100,
-								163,
-								110
+								157,
+								106
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 73,
+							"line": 72,
 							"character": 25
 						}
 					],
@@ -4421,61 +3838,8 @@
 											"id": 83
 										},
 										{
-											"type": "reflection",
-											"declaration": {
-												"id": 102,
-												"name": "__type",
-												"kind": 65536,
-												"kindString": "Type literal",
-												"flags": {},
-												"children": [
-													{
-														"id": 103,
-														"name": "className",
-														"kind": 32,
-														"kindString": "Variable",
-														"flags": {
-															"isOptional": true
-														},
-														"sources": [
-															{
-																"fileName": "index.tsx",
-																"line": 74,
-																"character": 33
-															}
-														],
-														"type": {
-															"type": "union",
-															"types": [
-																{
-																	"type": "intrinsic",
-																	"name": "undefined"
-																},
-																{
-																	"type": "intrinsic",
-																	"name": "string"
-																}
-															]
-														}
-													}
-												],
-												"groups": [
-													{
-														"title": "Variables",
-														"kind": 32,
-														"children": [
-															103
-														]
-													}
-												],
-												"sources": [
-													{
-														"fileName": "index.tsx",
-														"line": 74,
-														"character": 21
-													}
-												]
-											}
+											"type": "reference",
+											"name": "ComponentProps"
 										}
 									]
 								}
@@ -5810,7 +5174,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 41,
+									"line": 40,
 									"character": 8
 								}
 							],
@@ -6060,7 +5424,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 37,
+									"line": 36,
 									"character": 23
 								}
 							],
@@ -6114,7 +5478,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 36,
+							"line": 35,
 							"character": 17
 						}
 					],
@@ -6132,7 +5496,7 @@
 					]
 				},
 				{
-					"id": 319,
+					"id": 313,
 					"name": "SimpleDialog",
 					"kind": 128,
 					"kindString": "Class",
@@ -6144,21 +5508,21 @@
 					},
 					"typeParameter": [
 						{
-							"id": 331,
+							"id": 325,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 332,
+							"id": 326,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 377,
+							"id": 371,
 							"name": "S",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -6167,7 +5531,7 @@
 					],
 					"children": [
 						{
-							"id": 380,
+							"id": 374,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -6188,7 +5552,7 @@
 							},
 							"signatures": [
 								{
-									"id": 381,
+									"id": 375,
 									"name": "new SimpleDialog",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -6196,7 +5560,7 @@
 									"comment": {},
 									"parameters": [
 										{
-											"id": 382,
+											"id": 376,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6208,7 +5572,7 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
@@ -6217,7 +5581,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SimpleDialog",
-										"id": 319
+										"id": 313
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -6225,7 +5589,7 @@
 									}
 								},
 								{
-									"id": 383,
+									"id": 377,
 									"name": "new SimpleDialog",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -6244,7 +5608,7 @@
 									},
 									"parameters": [
 										{
-											"id": 384,
+											"id": 378,
 											"name": "props",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6252,11 +5616,11 @@
 											"type": {
 												"type": "reference",
 												"name": "SimpleDialogProps",
-												"id": 297
+												"id": 291
 											}
 										},
 										{
-											"id": 385,
+											"id": 379,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6272,7 +5636,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SimpleDialog",
-										"id": 319
+										"id": 313
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -6298,7 +5662,7 @@
 							}
 						},
 						{
-							"id": 379,
+							"id": 373,
 							"name": "context",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6336,7 +5700,7 @@
 							}
 						},
 						{
-							"id": 404,
+							"id": 398,
 							"name": "props",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6360,14 +5724,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 405,
+													"id": 399,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 406,
+															"id": 400,
 															"name": "children",
 															"kind": 32,
 															"kindString": "Variable",
@@ -6392,7 +5756,7 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																406
+																400
 															]
 														}
 													],
@@ -6414,7 +5778,7 @@
 											{
 												"type": "reference",
 												"name": "SimpleDialogProps",
-												"id": 297
+												"id": 291
 											}
 										]
 									}
@@ -6426,7 +5790,7 @@
 							}
 						},
 						{
-							"id": 408,
+							"id": 402,
 							"name": "refs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6451,21 +5815,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 409,
+									"id": 403,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"indexSignature": [
 										{
-											"id": 410,
+											"id": 404,
 											"name": "__index",
 											"kind": 8192,
 											"kindString": "Index signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 411,
+													"id": 405,
 													"name": "key",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -6497,7 +5861,7 @@
 							}
 						},
 						{
-							"id": 407,
+							"id": 401,
 							"name": "state",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6527,7 +5891,7 @@
 							}
 						},
 						{
-							"id": 378,
+							"id": 372,
 							"name": "contextType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6569,7 +5933,7 @@
 							}
 						},
 						{
-							"id": 357,
+							"id": 351,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6579,7 +5943,7 @@
 							},
 							"signatures": [
 								{
-									"id": 358,
+									"id": 352,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6625,7 +5989,7 @@
 							}
 						},
 						{
-							"id": 363,
+							"id": 357,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6635,7 +5999,7 @@
 							},
 							"signatures": [
 								{
-									"id": 364,
+									"id": 358,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6660,7 +6024,7 @@
 									},
 									"parameters": [
 										{
-											"id": 365,
+											"id": 359,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6672,13 +6036,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 366,
+											"id": 360,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6712,7 +6076,7 @@
 							}
 						},
 						{
-							"id": 372,
+							"id": 366,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6722,7 +6086,7 @@
 							},
 							"signatures": [
 								{
-									"id": 373,
+									"id": 367,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6747,7 +6111,7 @@
 									},
 									"parameters": [
 										{
-											"id": 374,
+											"id": 368,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6759,13 +6123,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 375,
+											"id": 369,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6782,7 +6146,7 @@
 											}
 										},
 										{
-											"id": 376,
+											"id": 370,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6816,7 +6180,7 @@
 							}
 						},
 						{
-							"id": 342,
+							"id": 336,
 							"name": "componentDidCatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6826,7 +6190,7 @@
 							},
 							"signatures": [
 								{
-									"id": 343,
+									"id": 337,
 									"name": "componentDidCatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6836,7 +6200,7 @@
 									},
 									"parameters": [
 										{
-											"id": 344,
+											"id": 338,
 											"name": "error",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6847,7 +6211,7 @@
 											}
 										},
 										{
-											"id": 345,
+											"id": 339,
 											"name": "errorInfo",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6881,7 +6245,7 @@
 							}
 						},
 						{
-							"id": 333,
+							"id": 327,
 							"name": "componentDidMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6891,7 +6255,7 @@
 							},
 							"signatures": [
 								{
-									"id": 334,
+									"id": 328,
 									"name": "componentDidMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6922,7 +6286,7 @@
 							}
 						},
 						{
-							"id": 350,
+							"id": 344,
 							"name": "componentDidUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6932,7 +6296,7 @@
 							},
 							"signatures": [
 								{
-									"id": 351,
+									"id": 345,
 									"name": "componentDidUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6943,7 +6307,7 @@
 									},
 									"parameters": [
 										{
-											"id": 352,
+											"id": 346,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6955,13 +6319,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 353,
+											"id": 347,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6978,7 +6342,7 @@
 											}
 										},
 										{
-											"id": 354,
+											"id": 348,
 											"name": "snapshot",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6988,7 +6352,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SS",
-												"id": 332
+												"id": 326
 											}
 										}
 									],
@@ -7015,7 +6379,7 @@
 							}
 						},
 						{
-							"id": 355,
+							"id": 349,
 							"name": "componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7025,7 +6389,7 @@
 							},
 							"signatures": [
 								{
-									"id": 356,
+									"id": 350,
 									"name": "componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7071,7 +6435,7 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 353,
 							"name": "componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7081,7 +6445,7 @@
 							},
 							"signatures": [
 								{
-									"id": 360,
+									"id": 354,
 									"name": "componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7106,7 +6470,7 @@
 									},
 									"parameters": [
 										{
-											"id": 361,
+											"id": 355,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7118,13 +6482,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 362,
+											"id": 356,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7158,7 +6522,7 @@
 							}
 						},
 						{
-							"id": 340,
+							"id": 334,
 							"name": "componentWillUnmount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7168,7 +6532,7 @@
 							},
 							"signatures": [
 								{
-									"id": 341,
+									"id": 335,
 									"name": "componentWillUnmount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7199,7 +6563,7 @@
 							}
 						},
 						{
-							"id": 367,
+							"id": 361,
 							"name": "componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7209,7 +6573,7 @@
 							},
 							"signatures": [
 								{
-									"id": 368,
+									"id": 362,
 									"name": "componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7234,7 +6598,7 @@
 									},
 									"parameters": [
 										{
-											"id": 369,
+											"id": 363,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7246,13 +6610,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 370,
+											"id": 364,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7269,7 +6633,7 @@
 											}
 										},
 										{
-											"id": 371,
+											"id": 365,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7303,7 +6667,7 @@
 							}
 						},
 						{
-							"id": 399,
+							"id": 393,
 							"name": "forceUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7312,14 +6676,14 @@
 							},
 							"signatures": [
 								{
-									"id": 400,
+									"id": 394,
 									"name": "forceUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 401,
+											"id": 395,
 											"name": "callBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7336,14 +6700,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 402,
+															"id": 396,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 403,
+																	"id": 397,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -7383,7 +6747,7 @@
 							}
 						},
 						{
-							"id": 346,
+							"id": 340,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7393,7 +6757,7 @@
 							},
 							"signatures": [
 								{
-									"id": 347,
+									"id": 341,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7404,7 +6768,7 @@
 									},
 									"parameters": [
 										{
-											"id": 348,
+											"id": 342,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7416,13 +6780,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 349,
+											"id": 343,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7471,7 +6835,7 @@
 							}
 						},
 						{
-							"id": 329,
+							"id": 323,
 							"name": "render",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7480,7 +6844,7 @@
 							},
 							"signatures": [
 								{
-									"id": 330,
+									"id": 324,
 									"name": "render",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7498,7 +6862,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 309,
+									"line": 308,
 									"character": 8
 								}
 							],
@@ -7508,7 +6872,7 @@
 							}
 						},
 						{
-							"id": 386,
+							"id": 380,
 							"name": "setState",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7517,14 +6881,14 @@
 							},
 							"signatures": [
 								{
-									"id": 387,
+									"id": 381,
 									"name": "setState",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"typeParameter": [
 										{
-											"id": 388,
+											"id": 382,
 											"name": "K",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -7541,7 +6905,7 @@
 									],
 									"parameters": [
 										{
-											"id": 389,
+											"id": 383,
 											"name": "state",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7552,21 +6916,21 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 390,
+															"id": 384,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 391,
+																	"id": 385,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
 																	"flags": {},
 																	"parameters": [
 																		{
-																			"id": 392,
+																			"id": 386,
 																			"name": "prevState",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -7583,7 +6947,7 @@
 																			}
 																		},
 																		{
-																			"id": 393,
+																			"id": 387,
 																			"name": "props",
 																			"kind": 32768,
 																			"kindString": "Parameter",
@@ -7595,7 +6959,7 @@
 																					{
 																						"type": "reference",
 																						"name": "SimpleDialogProps",
-																						"id": 297
+																						"id": 291
 																					}
 																				]
 																			}
@@ -7615,7 +6979,7 @@
 																			{
 																				"type": "reflection",
 																				"declaration": {
-																					"id": 394,
+																					"id": 388,
 																					"name": "__type",
 																					"kind": 65536,
 																					"kindString": "Type literal",
@@ -7649,7 +7013,7 @@
 															{
 																"type": "reflection",
 																"declaration": {
-																	"id": 395,
+																	"id": 389,
 																	"name": "__type",
 																	"kind": 65536,
 																	"kindString": "Type literal",
@@ -7662,7 +7026,7 @@
 											}
 										},
 										{
-											"id": 396,
+											"id": 390,
 											"name": "callback",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7679,14 +7043,14 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 397,
+															"id": 391,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"signatures": [
 																{
-																	"id": 398,
+																	"id": 392,
 																	"name": "__call",
 																	"kind": 4096,
 																	"kindString": "Call signature",
@@ -7726,7 +7090,7 @@
 							}
 						},
 						{
-							"id": 335,
+							"id": 329,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7736,7 +7100,7 @@
 							},
 							"signatures": [
 								{
-									"id": 336,
+									"id": 330,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -7747,7 +7111,7 @@
 									},
 									"parameters": [
 										{
-											"id": 337,
+											"id": 331,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7759,13 +7123,13 @@
 													{
 														"type": "reference",
 														"name": "SimpleDialogProps",
-														"id": 297
+														"id": 291
 													}
 												]
 											}
 										},
 										{
-											"id": 338,
+											"id": 332,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7782,7 +7146,7 @@
 											}
 										},
 										{
-											"id": 339,
+											"id": 333,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7816,7 +7180,7 @@
 							}
 						},
 						{
-							"id": 320,
+							"id": 314,
 							"name": "defaultProps",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -7826,8 +7190,50 @@
 							},
 							"children": [
 								{
-									"id": 325,
+									"id": 319,
 									"name": "acceptLabel",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "index.tsx",
+											"line": 302,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"Accept\""
+								},
+								{
+									"id": 317,
+									"name": "body",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "index.tsx",
+											"line": 300,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									"defaultValue": " undefined"
+								},
+								{
+									"id": 320,
+									"name": "cancelLabel",
 									"kind": 32,
 									"kindString": "Variable",
 									"flags": {
@@ -7844,52 +7250,10 @@
 										"type": "intrinsic",
 										"name": "string"
 									},
-									"defaultValue": "\"Accept\""
-								},
-								{
-									"id": 323,
-									"name": "body",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "index.tsx",
-											"line": 301,
-											"character": 8
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "undefined"
-									},
-									"defaultValue": " undefined"
-								},
-								{
-									"id": 326,
-									"name": "cancelLabel",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "index.tsx",
-											"line": 304,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									},
 									"defaultValue": "\"Cancel\""
 								},
 								{
-									"id": 328,
+									"id": 322,
 									"name": "children",
 									"kind": 32,
 									"kindString": "Variable",
@@ -7899,7 +7263,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 306,
+											"line": 305,
 											"character": 12
 										}
 									],
@@ -7910,7 +7274,7 @@
 									"defaultValue": " undefined"
 								},
 								{
-									"id": 324,
+									"id": 318,
 									"name": "footer",
 									"kind": 32,
 									"kindString": "Variable",
@@ -7920,7 +7284,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 302,
+											"line": 301,
 											"character": 10
 										}
 									],
@@ -7931,7 +7295,7 @@
 									"defaultValue": " undefined"
 								},
 								{
-									"id": 322,
+									"id": 316,
 									"name": "header",
 									"kind": 32,
 									"kindString": "Variable",
@@ -7941,7 +7305,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 300,
+											"line": 299,
 											"character": 10
 										}
 									],
@@ -7952,7 +7316,7 @@
 									"defaultValue": " undefined"
 								},
 								{
-									"id": 327,
+									"id": 321,
 									"name": "open",
 									"kind": 32,
 									"kindString": "Variable",
@@ -7962,7 +7326,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 305,
+											"line": 304,
 											"character": 8
 										}
 									],
@@ -7973,7 +7337,7 @@
 									"defaultValue": "false"
 								},
 								{
-									"id": 321,
+									"id": 315,
 									"name": "title",
 									"kind": 32,
 									"kindString": "Variable",
@@ -7983,7 +7347,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 299,
+											"line": 298,
 											"character": 9
 										}
 									],
@@ -7999,21 +7363,21 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										325,
-										323,
-										326,
-										328,
-										324,
+										319,
+										317,
+										320,
 										322,
-										327,
-										321
+										318,
+										316,
+										321,
+										315
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 298,
+									"line": 297,
 									"character": 21
 								}
 							],
@@ -8028,53 +7392,53 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								380
+								374
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								379,
-								404,
-								408,
-								407,
-								378
+								373,
+								398,
+								402,
+								401,
+								372
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
+								351,
 								357,
-								363,
-								372,
-								342,
-								333,
-								350,
-								355,
-								359,
+								366,
+								336,
+								327,
+								344,
+								349,
+								353,
+								334,
+								361,
+								393,
 								340,
-								367,
-								399,
-								346,
-								329,
-								386,
-								335
+								323,
+								380,
+								329
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								320
+								314
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 297,
+							"line": 296,
 							"character": 25
 						}
 					],
@@ -8086,7 +7450,7 @@
 								{
 									"type": "reference",
 									"name": "SimpleDialogProps",
-									"id": 297
+									"id": 291
 								}
 							]
 						}
@@ -8157,7 +7521,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 67,
+									"line": 66,
 									"character": 8
 								}
 							],
@@ -8328,7 +7692,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 69,
+									"line": 68,
 									"character": 17
 								}
 							],
@@ -8646,7 +8010,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 65,
+							"line": 64,
 							"character": 34
 						}
 					],
@@ -8658,7 +8022,7 @@
 					]
 				},
 				{
-					"id": 189,
+					"id": 183,
 					"name": "DialogProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -8667,7 +8031,7 @@
 					},
 					"children": [
 						{
-							"id": 195,
+							"id": 189,
 							"name": "onClose",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8681,7 +8045,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 101,
+									"line": 100,
 									"character": 9
 								}
 							],
@@ -8695,28 +8059,28 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 196,
+											"id": 190,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 197,
+													"id": 191,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 198,
+															"id": 192,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -8738,7 +8102,7 @@
 							}
 						},
 						{
-							"id": 191,
+							"id": 185,
 							"name": "onOpen",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8752,7 +8116,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 99,
+									"line": 98,
 									"character": 8
 								}
 							],
@@ -8766,28 +8130,28 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 192,
+											"id": 186,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 193,
+													"id": 187,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 194,
+															"id": 188,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -8809,7 +8173,7 @@
 							}
 						},
 						{
-							"id": 199,
+							"id": 193,
 							"name": "onStateChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8823,7 +8187,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 103,
+									"line": 102,
 									"character": 15
 								}
 							],
@@ -8837,21 +8201,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 200,
+											"id": 194,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 201,
+													"id": 195,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 202,
+															"id": 196,
 															"name": "state",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -8891,7 +8255,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 184,
 							"name": "open",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8905,7 +8269,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 97,
+									"line": 96,
 									"character": 6
 								}
 							],
@@ -8933,17 +8297,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								195,
-								191,
-								199,
-								190
+								189,
+								185,
+								193,
+								184
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 95,
+							"line": 94,
 							"character": 28
 						}
 					],
@@ -8951,12 +8315,12 @@
 						{
 							"type": "reference",
 							"name": "SimpleDialogProps",
-							"id": 297
+							"id": 291
 						}
 					]
 				},
 				{
-					"id": 297,
+					"id": 291,
 					"name": "SimpleDialogProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -8965,7 +8329,7 @@
 					},
 					"children": [
 						{
-							"id": 302,
+							"id": 296,
 							"name": "acceptLabel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8979,7 +8343,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 287,
+									"line": 286,
 									"character": 13
 								}
 							],
@@ -8989,7 +8353,7 @@
 							}
 						},
 						{
-							"id": 300,
+							"id": 294,
 							"name": "body",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9003,7 +8367,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 283,
+									"line": 282,
 									"character": 6
 								}
 							],
@@ -9013,7 +8377,7 @@
 							}
 						},
 						{
-							"id": 303,
+							"id": 297,
 							"name": "cancelLabel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9027,7 +8391,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 289,
+									"line": 288,
 									"character": 13
 								}
 							],
@@ -9037,7 +8401,7 @@
 							}
 						},
 						{
-							"id": 304,
+							"id": 298,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9051,7 +8415,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 291,
+									"line": 290,
 									"character": 10
 								}
 							],
@@ -9061,7 +8425,7 @@
 							}
 						},
 						{
-							"id": 301,
+							"id": 295,
 							"name": "footer",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9075,7 +8439,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 285,
+									"line": 284,
 									"character": 8
 								}
 							],
@@ -9085,7 +8449,7 @@
 							}
 						},
 						{
-							"id": 299,
+							"id": 293,
 							"name": "header",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9099,7 +8463,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 281,
+									"line": 280,
 									"character": 8
 								}
 							],
@@ -9109,7 +8473,7 @@
 							}
 						},
 						{
-							"id": 311,
+							"id": 305,
 							"name": "onClose",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9123,7 +8487,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 101,
+									"line": 100,
 									"character": 9
 								}
 							],
@@ -9137,28 +8501,28 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 312,
+											"id": 306,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 313,
+													"id": 307,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 314,
+															"id": 308,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -9181,11 +8545,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DialogProps.onClose",
-								"id": 195
+								"id": 189
 							}
 						},
 						{
-							"id": 307,
+							"id": 301,
 							"name": "onOpen",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9199,7 +8563,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 99,
+									"line": 98,
 									"character": 8
 								}
 							],
@@ -9213,28 +8577,28 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 308,
+											"id": 302,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 309,
+													"id": 303,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 310,
+															"id": 304,
 															"name": "evt",
 															"kind": 32768,
 															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -9257,11 +8621,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DialogProps.onOpen",
-								"id": 191
+								"id": 185
 							}
 						},
 						{
-							"id": 315,
+							"id": 309,
 							"name": "onStateChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9275,7 +8639,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 103,
+									"line": 102,
 									"character": 15
 								}
 							],
@@ -9289,21 +8653,21 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 316,
+											"id": 310,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 317,
+													"id": 311,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 318,
+															"id": 312,
 															"name": "state",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -9344,11 +8708,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DialogProps.onStateChange",
-								"id": 199
+								"id": 193
 							}
 						},
 						{
-							"id": 306,
+							"id": 300,
 							"name": "open",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9362,7 +8726,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 97,
+									"line": 96,
 									"character": 6
 								}
 							],
@@ -9386,11 +8750,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DialogProps.open",
-								"id": 190
+								"id": 184
 							}
 						},
 						{
-							"id": 305,
+							"id": 299,
 							"name": "scrollable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9404,7 +8768,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 293,
+									"line": 292,
 									"character": 12
 								}
 							],
@@ -9427,7 +8791,7 @@
 							}
 						},
 						{
-							"id": 298,
+							"id": 292,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9441,7 +8805,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 279,
+									"line": 278,
 									"character": 7
 								}
 							],
@@ -9456,25 +8820,25 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								302,
-								300,
-								303,
-								304,
-								301,
-								299,
-								311,
-								307,
-								315,
-								306,
+								296,
+								294,
+								297,
+								298,
+								295,
+								293,
 								305,
-								298
+								301,
+								309,
+								300,
+								299,
+								292
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 277,
+							"line": 276,
 							"character": 34
 						}
 					],
@@ -9482,12 +8846,12 @@
 						{
 							"type": "reference",
 							"name": "DialogProps",
-							"id": 189
+							"id": 183
 						}
 					]
 				},
 				{
-					"id": 421,
+					"id": 415,
 					"name": "DialogActions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9501,7 +8865,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 60,
+							"line": 59,
 							"character": 26
 						}
 					],
@@ -9514,13 +8878,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -9534,13 +8892,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -9549,7 +8901,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DialogActions',\n  classNames: ['mdc-dialog__actions']\n})"
 				},
 				{
-					"id": 420,
+					"id": 414,
 					"name": "DialogContent",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9563,7 +8915,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 54,
+							"line": 53,
 							"character": 26
 						}
 					],
@@ -9576,13 +8928,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -9596,13 +8942,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -9611,7 +8951,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DialogContent',\n  classNames: ['mdc-dialog__content']\n})"
 				},
 				{
-					"id": 418,
+					"id": 412,
 					"name": "DialogRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9621,7 +8961,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 27,
+							"line": 26,
 							"character": 16
 						}
 					],
@@ -9634,13 +8974,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -9654,13 +8988,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -9669,7 +8997,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DialogRoot',\n  defaultProps: {\n    role: 'alertdialog',\n    'aria-modal': true\n  },\n  classNames: ['mdc-dialog']\n})"
 				},
 				{
-					"id": 419,
+					"id": 413,
 					"name": "DialogTitle",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9683,7 +9011,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 47,
+							"line": 46,
 							"character": 24
 						}
 					],
@@ -9696,13 +9024,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -9716,13 +9038,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -9731,7 +9047,7 @@
 					"defaultValue": " componentFactory<{}>({\n  displayName: 'DialogTitle',\n  tag: 'h2',\n  classNames: ['mdc-dialog__title']\n})"
 				},
 				{
-					"id": 415,
+					"id": 409,
 					"name": "areTopsMisaligned",
 					"kind": 64,
 					"kindString": "Function",
@@ -9740,14 +9056,14 @@
 					},
 					"signatures": [
 						{
-							"id": 416,
+							"id": 410,
 							"name": "areTopsMisaligned",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 417,
+									"id": 411,
 									"name": "els",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9779,13 +9095,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 21,
+							"line": 20,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 412,
+					"id": 406,
 					"name": "isScrollable",
 					"kind": 64,
 					"kindString": "Function",
@@ -9794,14 +9110,14 @@
 					},
 					"signatures": [
 						{
-							"id": 413,
+							"id": 407,
 							"name": "isScrollable",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 414,
+									"id": 408,
 									"name": "el",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9821,7 +9137,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 17,
+							"line": 16,
 							"character": 18
 						}
 					]
@@ -9832,10 +9148,10 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						203,
+						197,
 						98,
 						2,
-						319
+						313
 					]
 				},
 				{
@@ -9843,26 +9159,26 @@
 					"kind": 256,
 					"children": [
 						83,
-						189,
-						297
+						183,
+						291
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						421,
-						420,
-						418,
-						419
+						415,
+						414,
+						412,
+						413
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						415,
-						412
+						409,
+						406
 					]
 				}
 			],

@@ -2362,13 +2362,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -2382,13 +2376,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -2678,7 +2666,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -2729,7 +2717,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -2751,7 +2739,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -2777,7 +2765,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -2785,7 +2773,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -3246,7 +3234,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -3440,7 +3428,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -3637,7 +3625,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -3705,8 +3693,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -3719,7 +3707,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -3860,7 +3848,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 182,
+									"line": 186,
 									"character": 18
 								}
 							]
@@ -4006,7 +3994,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 212,
+									"line": 216,
 									"character": 13
 								}
 							]
@@ -4048,7 +4036,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 243,
+									"line": 247,
 									"character": 15
 								}
 							]
@@ -4090,7 +4078,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 248,
+									"line": 252,
 									"character": 16
 								}
 							]
@@ -4138,7 +4126,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 226,
+									"line": 230,
 									"character": 15
 								}
 							]
@@ -4167,7 +4155,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 253,
+									"line": 257,
 									"character": 8
 								}
 							]
@@ -4332,7 +4320,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 244,
+									"line": 246,
 									"character": 6
 								}
 							],
@@ -4409,7 +4397,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -4430,7 +4418,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -4467,7 +4455,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -4768,13 +4756,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -4798,13 +4780,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -5839,13 +5815,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -5859,13 +5829,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -5901,13 +5865,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -5921,13 +5879,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -5963,13 +5915,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -5983,13 +5929,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -6033,13 +5973,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -6067,13 +6001,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -6123,13 +6051,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -6153,13 +6075,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -6205,13 +6121,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -6235,13 +6145,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -6286,13 +6190,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -6316,13 +6214,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -6360,13 +6252,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -6380,13 +6266,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -6422,13 +6302,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -6442,13 +6316,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -6484,13 +6352,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -6504,13 +6366,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}

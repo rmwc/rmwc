@@ -89,7 +89,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 109,
+									"line": 108,
 									"character": 4
 								}
 							],
@@ -109,7 +109,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 123,
+									"line": 122,
 									"character": 10
 								}
 							],
@@ -130,7 +130,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 120,
+									"line": 119,
 									"character": 19
 								}
 							],
@@ -150,7 +150,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -203,7 +203,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -225,7 +225,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -250,7 +250,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 119,
+									"line": 118,
 									"character": 12
 								}
 							],
@@ -271,7 +271,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 121,
+									"line": 120,
 									"character": 9
 								}
 							],
@@ -301,7 +301,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 122,
+									"line": 121,
 									"character": 6
 								}
 							],
@@ -322,7 +322,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 106,
+									"line": 105,
 									"character": 20
 								}
 							],
@@ -344,7 +344,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -352,7 +352,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -744,7 +744,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 216,
+									"line": 218,
 									"character": 19
 								}
 							],
@@ -819,7 +819,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -1023,7 +1023,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -1230,7 +1230,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -1298,8 +1298,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -1312,7 +1312,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -1349,7 +1349,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 125,
+									"line": 124,
 									"character": 22
 								}
 							],
@@ -1396,7 +1396,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 157,
+									"line": 156,
 									"character": 26
 								}
 							]
@@ -1552,7 +1552,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 174,
+									"line": 173,
 									"character": 15
 								}
 							]
@@ -1594,7 +1594,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 179,
+									"line": 178,
 									"character": 20
 								}
 							]
@@ -1623,7 +1623,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 192,
+									"line": 191,
 									"character": 8
 								}
 							]
@@ -1798,7 +1798,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 140,
+									"line": 139,
 									"character": 6
 								}
 							],
@@ -1877,7 +1877,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -1898,7 +1898,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -1935,7 +1935,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -1965,7 +1965,7 @@
 									"sources": [
 										{
 											"fileName": "index.tsx",
-											"line": 108,
+											"line": 107,
 											"character": 21
 										}
 									],
@@ -1988,7 +1988,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 107,
+									"line": 106,
 									"character": 21
 								}
 							],
@@ -2060,7 +2060,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 103,
+							"line": 102,
 							"character": 21
 						}
 					],
@@ -2112,7 +2112,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 51,
+									"line": 50,
 									"character": 15
 								}
 							],
@@ -2164,7 +2164,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 49,
+									"line": 48,
 									"character": 16
 								}
 							],
@@ -2201,7 +2201,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 53,
+									"line": 52,
 									"character": 12
 								}
 							],
@@ -2225,7 +2225,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 45,
+									"line": 44,
 									"character": 12
 								}
 							],
@@ -2262,7 +2262,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 47,
+									"line": 46,
 									"character": 11
 								}
 							],
@@ -2299,7 +2299,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 43,
+									"line": 42,
 									"character": 8
 								}
 							],
@@ -2364,7 +2364,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 41,
+									"line": 40,
 									"character": 8
 								}
 							],
@@ -2429,7 +2429,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 39,
+									"line": 38,
 									"character": 6
 								}
 							],
@@ -2471,7 +2471,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 37,
+							"line": 36,
 							"character": 40
 						}
 					]
@@ -2500,7 +2500,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 24,
+									"line": 23,
 									"character": 8
 								}
 							],
@@ -2533,7 +2533,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 32,
+									"line": 31,
 									"character": 13
 								}
 							],
@@ -2566,7 +2566,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 34,
+									"line": 33,
 									"character": 19
 								}
 							],
@@ -2600,7 +2600,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 30,
+									"line": 29,
 									"character": 9
 								}
 							],
@@ -2637,7 +2637,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 22,
+									"line": 21,
 									"character": 9
 								}
 							],
@@ -2661,7 +2661,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 20,
+									"line": 19,
 									"character": 9
 								}
 							],
@@ -2696,7 +2696,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -2732,7 +2732,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 18,
+									"line": 17,
 									"character": 8
 								}
 							],
@@ -2767,7 +2767,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -2803,7 +2803,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 16,
+									"line": 15,
 									"character": 6
 								}
 							],
@@ -2840,7 +2840,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 28,
+									"line": 27,
 									"character": 9
 								}
 							],
@@ -2877,7 +2877,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 26,
+									"line": 25,
 									"character": 9
 								}
 							],
@@ -2917,7 +2917,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 14,
+							"line": 13,
 							"character": 30
 						}
 					]
@@ -2934,7 +2934,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 88,
+							"line": 87,
 							"character": 27
 						}
 					],
@@ -2947,13 +2947,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -2967,13 +2961,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -2992,7 +2980,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 83,
+							"line": 82,
 							"character": 21
 						}
 					],
@@ -3005,13 +2993,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -3025,13 +3007,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -3051,7 +3027,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 94,
+							"line": 93,
 							"character": 28
 						}
 					],
@@ -3071,13 +3047,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -3100,13 +3070,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -3127,7 +3091,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 74,
+							"line": 73,
 							"character": 19
 						}
 					],
@@ -3140,13 +3104,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -3160,13 +3118,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -3185,7 +3137,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 56,
+							"line": 55,
 							"character": 18
 						}
 					],
@@ -3198,13 +3150,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -3218,13 +3164,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}

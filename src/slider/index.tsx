@@ -409,5 +409,3 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
     );
   }
 }
-
-export default Slider;

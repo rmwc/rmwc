@@ -139,5 +139,3 @@ export class Switch extends ToggleableFoundationComponent<SwitchProps> {
     return this.renderToggle(switchTag);
   }
 }
-
-export default Switch;

@@ -74,5 +74,3 @@ export class Radio extends ToggleableFoundationComponent<RadioProps> {
     return this.renderToggle(radio);
   }
 }
-
-export default Radio;

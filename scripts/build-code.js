@@ -13,14 +13,17 @@ const writeBuiltFile = (inputFile, outputFile) => {
 };
 
 // Writes a typescript version of the file
-const writeFlowFile = (inputFile, outputFile) => {
+const writeFlowFile = (inputFile, outputFile, pkgName) => {
   execSync(`cp ${inputFile} ${outputFile}`);
   const content = fs.readFileSync(outputFile, 'utf8');
   let newContent = `// @flow\n${content}`;
   newContent = newContent
-    // flow doesnt like export and declare, use export
-    .replace(/export declare/g, 'export')
-    .replace(/export const/g, 'export var')
+    // Fix exports and declares
+    .replace(/^export declare const/gm, 'export var')
+    .replace(/^export declare/gm, 'export')
+    .replace(/^export/gm, 'declare export')
+    .replace(/^interface/gm, 'declare interface')
+    // .replace(/export const/g, 'export var')
     .replace(/(export class .*){[\S\s\n]*?^}/gm, '$1{}')
     .replace(/import \{(.*?)\} from/g, (match, p1) => {
       const parts = p1.split(',');
@@ -101,9 +104,18 @@ const writeFlowFile = (inputFile, outputFile) => {
       "import * as React from 'react';"
     );
 
-  //.replace(/\smixed/g, ' any')
-  //.replace(/export type \{/g, 'export {')
-  //.replace(/import type \{/g, 'import {');
+  const lastImportIndex = newContent.lastIndexOf('import');
+  const eol = newContent.slice(lastImportIndex).indexOf('\n') + lastImportIndex;
+  const fileName = path.basename(outputFile).split('.')[0];
+  const moduleName = path.basename(outputFile).startsWith('index')
+    ? pkgName
+    : './' + fileName;
+
+  newContent =
+    newContent.slice(0, eol) +
+    `\n\ndeclare module '${moduleName}' {\n\n` +
+    newContent.slice(eol) +
+    '\n}';
 
   fs.writeFileSync(outputFile, newContent, 'utf8');
 };
@@ -144,12 +156,12 @@ glob(
       }
 
       const output = path
-        .resolve('src', pkg, 'flow-typed', ...restPath)
+        .resolve('src', 'types', 'flow-typed', pkg, ...restPath)
         .replace('.d.ts', '.js');
 
       execSync(`mkdir -p ${path.dirname(output)}`);
 
-      writeFlowFile(input, output);
+      writeFlowFile(input, output, pkg);
     });
   }
 );

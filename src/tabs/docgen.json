@@ -427,13 +427,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -456,13 +450,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -505,13 +493,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -539,13 +521,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -671,7 +647,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 54,
+									"line": 50,
 									"character": 4
 								}
 							],
@@ -691,7 +667,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -742,7 +718,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -764,7 +740,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -789,7 +765,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 48,
+									"line": 44,
 									"character": 9
 								}
 							],
@@ -813,7 +789,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 47,
+									"line": 43,
 									"character": 13
 								}
 							],
@@ -845,7 +821,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 44,
+									"line": 40,
 									"character": 20
 								}
 							],
@@ -867,7 +843,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -875,7 +851,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -1243,7 +1219,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 63,
+									"line": 59,
 									"character": 19
 								}
 							],
@@ -1304,7 +1280,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -1498,7 +1474,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -1695,7 +1671,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -1763,8 +1739,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -1777,7 +1753,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -1814,7 +1790,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 82,
+									"line": 78,
 									"character": 22
 								}
 							],
@@ -1963,7 +1939,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 147,
+									"line": 143,
 									"character": 16
 								}
 							]
@@ -2005,7 +1981,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 158,
+									"line": 154,
 									"character": 15
 								}
 							]
@@ -2047,7 +2023,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 154,
+									"line": 150,
 									"character": 22
 								}
 							]
@@ -2076,7 +2052,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 163,
+									"line": 159,
 									"character": 8
 								}
 							]
@@ -2241,7 +2217,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 141,
+									"line": 137,
 									"character": 6
 								}
 							],
@@ -2318,7 +2294,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -2339,7 +2315,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -2376,7 +2352,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -2431,7 +2407,7 @@
 									"sources": [
 										{
 											"fileName": "tab-bar.tsx",
-											"line": 50,
+											"line": 46,
 											"character": 20
 										}
 									]
@@ -2594,7 +2570,7 @@
 									"sources": [
 										{
 											"fileName": "tab-bar.tsx",
-											"line": 51,
+											"line": 47,
 											"character": 15
 										}
 									]
@@ -2760,7 +2736,7 @@
 									"sources": [
 										{
 											"fileName": "tab-bar.tsx",
-											"line": 52,
+											"line": 48,
 											"character": 17
 										}
 									]
@@ -2780,7 +2756,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 49,
+									"line": 45,
 									"character": 12
 								}
 							],
@@ -2849,7 +2825,7 @@
 					"sources": [
 						{
 							"fileName": "tab-bar.tsx",
-							"line": 43,
+							"line": 39,
 							"character": 19
 						}
 					],
@@ -2894,7 +2870,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 27,
+									"line": 23,
 									"character": 16
 								}
 							],
@@ -2927,7 +2903,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 21,
+									"line": 17,
 									"character": 12
 								}
 							],
@@ -2962,7 +2938,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reflection",
@@ -2982,7 +2958,7 @@
 																					"sources": [
 																						{
 																							"fileName": "tab-bar.tsx",
-																							"line": 23,
+																							"line": 19,
 																							"character": 11
 																						}
 																					],
@@ -3004,8 +2980,8 @@
 																			"sources": [
 																				{
 																					"fileName": "tab-bar.tsx",
-																					"line": 22,
-																					"character": 22
+																					"line": 18,
+																					"character": 27
 																				}
 																			]
 																		}
@@ -3039,7 +3015,7 @@
 					"sources": [
 						{
 							"fileName": "tab-bar.tsx",
-							"line": 19,
+							"line": 15,
 							"character": 28
 						}
 					]
@@ -3056,7 +3032,7 @@
 					"sources": [
 						{
 							"fileName": "tab-bar.tsx",
-							"line": 30,
+							"line": 26,
 							"character": 23
 						}
 					],
@@ -3077,13 +3053,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -3107,13 +3077,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -3692,7 +3656,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 64
 								}
 							],
@@ -3712,7 +3676,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -3763,7 +3727,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -3785,7 +3749,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -4231,7 +4195,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 216,
+									"line": 218,
 									"character": 19
 								}
 							],
@@ -4295,7 +4259,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -4488,7 +4452,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -4713,7 +4677,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -4810,8 +4774,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -4824,7 +4788,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -5161,7 +5125,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 244,
+									"line": 246,
 									"character": 6
 								}
 							],
@@ -5238,7 +5202,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -5259,7 +5223,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -5296,7 +5260,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -5491,7 +5455,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -5542,7 +5506,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -5564,7 +5528,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -5590,7 +5554,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -5598,7 +5562,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -5968,7 +5932,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 216,
+									"line": 218,
 									"character": 19
 								}
 							],
@@ -6032,7 +5996,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -6225,7 +6189,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -6421,7 +6385,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -6489,8 +6453,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -6503,7 +6467,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -7062,7 +7026,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 244,
+									"line": 246,
 									"character": 6
 								}
 							],
@@ -7139,7 +7103,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -7160,7 +7124,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -7197,7 +7161,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -7301,13 +7265,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -7321,13 +7279,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -7360,13 +7312,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -7380,13 +7326,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -7419,13 +7359,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -7439,13 +7373,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}

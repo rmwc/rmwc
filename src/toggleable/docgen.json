@@ -47,7 +47,7 @@
 							}
 						},
 						{
-							"id": 66,
+							"id": 71,
 							"name": "SS",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -97,7 +97,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 64
 								}
 							],
@@ -117,7 +117,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -168,7 +168,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -190,7 +190,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -237,7 +237,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -245,7 +245,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -405,7 +405,7 @@
 							]
 						},
 						{
-							"id": 82,
+							"id": 87,
 							"name": "UNSAFE_componentWillMount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -415,7 +415,7 @@
 							},
 							"signatures": [
 								{
-									"id": 83,
+									"id": 88,
 									"name": "UNSAFE_componentWillMount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -461,7 +461,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 93,
 							"name": "UNSAFE_componentWillReceiveProps",
 							"kind": 2048,
 							"kindString": "Method",
@@ -471,7 +471,7 @@
 							},
 							"signatures": [
 								{
-									"id": 89,
+									"id": 94,
 									"name": "UNSAFE_componentWillReceiveProps",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -496,7 +496,7 @@
 									},
 									"parameters": [
 										{
-											"id": 90,
+											"id": 95,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -533,7 +533,7 @@
 											}
 										},
 										{
-											"id": 91,
+											"id": 96,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -567,7 +567,7 @@
 							}
 						},
 						{
-							"id": 97,
+							"id": 102,
 							"name": "UNSAFE_componentWillUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -577,7 +577,7 @@
 							},
 							"signatures": [
 								{
-									"id": 98,
+									"id": 103,
 									"name": "UNSAFE_componentWillUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -589,6 +589,534 @@
 											{
 												"tag": "deprecated",
 												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 104,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "P",
+																		"constraint": {
+																			"type": "reference",
+																			"name": "ToggleableFoundationProps",
+																			"id": 2
+																		}
+																	},
+																	{
+																		"type": "reference",
+																		"name": "FoundationProps"
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 105,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationStateT",
+														"typeArguments": [
+															{
+																"type": "typeParameter",
+																"name": "S",
+																"constraint": {
+																	"type": "intrinsic",
+																	"name": "any"
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 106,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 670,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 77,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 78,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 79,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 80,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 539,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 35,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 36,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 218,
+									"character": 19
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidMount"
+							}
+						},
+						{
+							"id": 37,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 38,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 39,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "FoundationPropsT",
+												"typeArguments": [
+													{
+														"type": "intersection",
+														"types": [
+															{
+																"type": "typeParameter",
+																"name": "P",
+																"constraint": {
+																	"type": "reference",
+																	"name": "ToggleableFoundationProps",
+																	"id": 2
+																}
+															},
+															{
+																"type": "reference",
+																"name": "FoundationProps"
+															}
+														]
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 223,
+									"character": 20
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentDidUpdate"
+							}
+						},
+						{
+							"id": 85,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 86,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 596,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 89,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 90,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 91,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "FoundationPropsT",
+														"typeArguments": [
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "typeParameter",
+																		"name": "P",
+																		"constraint": {
+																			"type": "reference",
+																			"name": "ToggleableFoundationProps",
+																			"id": 2
+																		}
+																	},
+																	{
+																		"type": "reference",
+																		"name": "FoundationProps"
+																	}
+																]
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 92,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
+									"line": 625,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 40,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 41,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "FoundationComponent.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+									"line": 227,
+									"character": 22
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "FoundationComponent.componentWillUnmount"
+							}
+						},
+						{
+							"id": 97,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 98,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
 											},
 											{
 												"tag": "see",
@@ -667,534 +1195,6 @@
 										},
 										{
 											"id": 101,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 670,
-									"character": 34
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-							}
-						},
-						{
-							"id": 72,
-							"name": "componentDidCatch",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 73,
-									"name": "componentDidCatch",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
-									},
-									"parameters": [
-										{
-											"id": 74,
-											"name": "error",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Error"
-											}
-										},
-										{
-											"id": 75,
-											"name": "errorInfo",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "ErrorInfo"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidCatch"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 539,
-									"character": 25
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidCatch"
-							}
-						},
-						{
-							"id": 35,
-							"name": "componentDidMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 36,
-									"name": "componentDidMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidMount"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentDidMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 216,
-									"character": 19
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidMount"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentDidMount"
-							}
-						},
-						{
-							"id": 37,
-							"name": "componentDidUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 38,
-									"name": "componentDidUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 39,
-											"name": "prevProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "FoundationPropsT",
-												"typeArguments": [
-													{
-														"type": "intersection",
-														"types": [
-															{
-																"type": "typeParameter",
-																"name": "P",
-																"constraint": {
-																	"type": "reference",
-																	"name": "ToggleableFoundationProps",
-																	"id": 2
-																}
-															},
-															{
-																"type": "reference",
-																"name": "FoundationProps"
-															}
-														]
-													}
-												]
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "NewLifecycle.componentDidUpdate"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentDidUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
-									"character": 20
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "NewLifecycle.componentDidUpdate"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentDidUpdate"
-							}
-						},
-						{
-							"id": 80,
-							"name": "componentWillMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 81,
-									"name": "componentWillMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
-										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 596,
-									"character": 26
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillMount"
-							}
-						},
-						{
-							"id": 84,
-							"name": "componentWillReceiveProps",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 85,
-									"name": "componentWillReceiveProps",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
-										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 86,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "typeParameter",
-																		"name": "P",
-																		"constraint": {
-																			"type": "reference",
-																			"name": "ToggleableFoundationProps",
-																			"id": 2
-																		}
-																	},
-																	{
-																		"type": "reference",
-																		"name": "FoundationProps"
-																	}
-																]
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 87,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillReceiveProps"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/node_modules/@types/react/index.d.ts",
-									"line": 625,
-									"character": 33
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillReceiveProps"
-							}
-						},
-						{
-							"id": 40,
-							"name": "componentWillUnmount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 41,
-									"name": "componentWillUnmount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentWillUnmount"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "FoundationComponent.componentWillUnmount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
-									"character": 22
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentWillUnmount"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "FoundationComponent.componentWillUnmount"
-							}
-						},
-						{
-							"id": 92,
-							"name": "componentWillUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 93,
-									"name": "componentWillUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
-										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 94,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationPropsT",
-														"typeArguments": [
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "typeParameter",
-																		"name": "P",
-																		"constraint": {
-																			"type": "reference",
-																			"name": "ToggleableFoundationProps",
-																			"id": 2
-																		}
-																	},
-																	{
-																		"type": "reference",
-																		"name": "FoundationProps"
-																	}
-																]
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 95,
-											"name": "nextState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "FoundationStateT",
-														"typeArguments": [
-															{
-																"type": "typeParameter",
-																"name": "S",
-																"constraint": {
-																	"type": "intrinsic",
-																	"name": "any"
-																}
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 96,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1291,7 +1291,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -1301,7 +1301,7 @@
 							}
 						},
 						{
-							"id": 61,
+							"id": 66,
 							"name": "emit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1310,7 +1310,7 @@
 							},
 							"signatures": [
 								{
-									"id": 62,
+									"id": 67,
 									"name": "emit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1320,7 +1320,7 @@
 									},
 									"parameters": [
 										{
-											"id": 63,
+											"id": 68,
 											"name": "evtType",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1331,7 +1331,7 @@
 											}
 										},
 										{
-											"id": 64,
+											"id": 69,
 											"name": "evtData",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1342,7 +1342,7 @@
 											}
 										},
 										{
-											"id": 65,
+											"id": 70,
 											"name": "shouldBubble",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1359,8 +1359,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -1373,7 +1373,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -1398,8 +1398,80 @@
 									"kindString": "Call signature",
 									"flags": {},
 									"type": {
-										"type": "intrinsic",
-										"name": "void"
+										"type": "reflection",
+										"declaration": {
+											"id": 61,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 64,
+													"name": "destroy",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 65,
+															"name": "destroy",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 260,
+															"character": 13
+														}
+													]
+												},
+												{
+													"id": 62,
+													"name": "init",
+													"kind": 64,
+													"kindString": "Function",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 63,
+															"name": "init",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
+															"line": 259,
+															"character": 10
+														}
+													]
+												}
+											],
+											"groups": [
+												{
+													"title": "Functions",
+													"kind": 64,
+													"children": [
+														64,
+														62
+													]
+												}
+											]
+										}
 									},
 									"inheritedFrom": {
 										"type": "reference",
@@ -1410,7 +1482,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 255,
+									"line": 257,
 									"character": 22
 								}
 							],
@@ -1420,7 +1492,7 @@
 							}
 						},
 						{
-							"id": 76,
+							"id": 81,
 							"name": "getSnapshotBeforeUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1430,7 +1502,7 @@
 							},
 							"signatures": [
 								{
-									"id": 77,
+									"id": 82,
 									"name": "getSnapshotBeforeUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1441,7 +1513,7 @@
 									},
 									"parameters": [
 										{
-											"id": 78,
+											"id": 83,
 											"name": "prevProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1478,7 +1550,7 @@
 											}
 										},
 										{
-											"id": 79,
+											"id": 84,
 											"name": "prevState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1592,7 +1664,7 @@
 							]
 						},
 						{
-							"id": 67,
+							"id": 72,
 							"name": "shouldComponentUpdate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1602,7 +1674,7 @@
 							},
 							"signatures": [
 								{
-									"id": 68,
+									"id": 73,
 									"name": "shouldComponentUpdate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1613,7 +1685,7 @@
 									},
 									"parameters": [
 										{
-											"id": 69,
+											"id": 74,
 											"name": "nextProps",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1650,7 +1722,7 @@
 											}
 										},
 										{
-											"id": 70,
+											"id": 75,
 											"name": "nextState",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1677,7 +1749,7 @@
 											}
 										},
 										{
-											"id": 71,
+											"id": 76,
 											"name": "nextContext",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1764,7 +1836,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 244,
+									"line": 246,
 									"character": 6
 								}
 							],
@@ -1841,7 +1913,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -1862,7 +1934,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -1899,7 +1971,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -1940,22 +2012,22 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								82,
-								88,
-								97,
-								72,
+								87,
+								93,
+								102,
+								77,
 								35,
 								37,
-								80,
-								84,
+								85,
+								89,
 								40,
-								92,
+								97,
 								42,
-								61,
+								66,
 								59,
-								76,
+								81,
 								23,
-								67,
+								72,
 								48,
 								52,
 								46

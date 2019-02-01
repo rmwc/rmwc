@@ -572,7 +572,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-									"line": 16,
+									"line": 15,
 									"character": 9
 								}
 							],
@@ -613,7 +613,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-									"line": 20,
+									"line": 19,
 									"character": 10
 								}
 							],
@@ -654,7 +654,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-									"line": 22,
+									"line": 21,
 									"character": 6
 								}
 							],
@@ -682,7 +682,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-									"line": 18,
+									"line": 17,
 									"character": 10
 								}
 							],
@@ -717,7 +717,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reflection",
@@ -737,8 +737,8 @@
 																					"sources": [
 																						{
 																							"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-																							"line": 18,
-																							"character": 38
+																							"line": 17,
+																							"character": 43
 																						}
 																					],
 																					"type": {
@@ -759,8 +759,8 @@
 																			"sources": [
 																				{
 																					"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-																					"line": 18,
-																					"character": 32
+																					"line": 17,
+																					"character": 37
 																				}
 																			]
 																		}
@@ -799,7 +799,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/icon-button/index.tsx",
-									"line": 24,
+									"line": 23,
 									"character": 8
 								}
 							],
@@ -1201,13 +1201,10 @@
 					"flags": {
 						"isExported": true
 					},
-					"comment": {
-						"shortText": "DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component."
-					},
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 119,
+							"line": 118,
 							"character": 28
 						}
 					],
@@ -1261,13 +1258,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -1291,13 +1282,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -1343,13 +1328,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -1373,13 +1352,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -1417,13 +1390,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -1437,13 +1404,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -1487,13 +1448,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -1517,13 +1472,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -1561,13 +1510,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -1581,13 +1524,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -1631,13 +1568,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -1661,13 +1592,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -1713,13 +1638,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -1743,13 +1662,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -1787,13 +1700,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -1807,13 +1714,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -1852,13 +1753,7 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -1881,13 +1776,7 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											},
 											{
 												"type": "reference",
@@ -1910,6 +1799,9 @@
 						"isExported": true,
 						"isConst": true
 					},
+					"comment": {
+						"shortText": "DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component."
+					},
 					"signatures": [
 						{
 							"id": 48,
@@ -1917,6 +1809,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component."
+							},
 							"parameters": [
 								{
 									"id": 49,
@@ -1940,7 +1835,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 120,
+							"line": 121,
 							"character": 23
 						}
 					]

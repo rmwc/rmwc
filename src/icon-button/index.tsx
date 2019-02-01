@@ -152,5 +152,3 @@ export const IconButton = ({
 
   return <IconButtonRoot aria-hidden="true" {...rest} tag={Icon} icon={icon} />;
 };
-
-export default IconButton;

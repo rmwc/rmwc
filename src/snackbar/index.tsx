@@ -242,5 +242,3 @@ export class Snackbar extends FoundationComponent<
     );
   }
 }
-
-export default Snackbar;

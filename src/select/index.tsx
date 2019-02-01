@@ -830,5 +830,3 @@ export const Select = ({
     {...rest}
   />
 );
-
-export default Select;

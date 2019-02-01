@@ -53,5 +53,3 @@ export class LineRipple extends FoundationComponent<LineRippleProps> {
     );
   }
 }
-
-export default LineRipple;

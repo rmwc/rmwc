@@ -106,7 +106,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 74,
+									"line": 70,
 									"character": 41
 								}
 							],
@@ -126,7 +126,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -177,7 +177,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -199,7 +199,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -224,7 +224,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 73,
+									"line": 69,
 									"character": 6
 								}
 							],
@@ -254,7 +254,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 74,
+									"line": 70,
 									"character": 13
 								}
 							],
@@ -286,7 +286,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 71,
+									"line": 67,
 									"character": 20
 								}
 							],
@@ -308,7 +308,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -316,7 +316,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -349,7 +349,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 83,
+									"line": 79,
 									"character": 11
 								}
 							]
@@ -720,7 +720,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 216,
+									"line": 218,
 									"character": 19
 								}
 							],
@@ -785,7 +785,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -979,7 +979,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -1176,7 +1176,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -1244,8 +1244,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -1258,7 +1258,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -1295,7 +1295,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 99,
+									"line": 95,
 									"character": 22
 								}
 							],
@@ -1445,7 +1445,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 142,
+									"line": 138,
 									"character": 13
 								}
 							]
@@ -1487,7 +1487,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 147,
+									"line": 143,
 									"character": 15
 								}
 							]
@@ -1516,7 +1516,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"name": "CustomEventT",
+												"name": "RMWC.CustomEventT",
 												"typeArguments": [
 													{
 														"type": "reference",
@@ -1535,7 +1535,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 152,
+									"line": 148,
 									"character": 12
 								}
 							]
@@ -1564,7 +1564,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 87,
+									"line": 83,
 									"character": 17
 								}
 							]
@@ -1593,7 +1593,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 160,
+									"line": 156,
 									"character": 8
 								}
 							]
@@ -1635,7 +1635,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 91,
+									"line": 87,
 									"character": 17
 								}
 							]
@@ -1677,7 +1677,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 95,
+									"line": 91,
 									"character": 18
 								}
 							]
@@ -1842,7 +1842,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 244,
+									"line": 246,
 									"character": 6
 								}
 							],
@@ -1919,7 +1919,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -1940,7 +1940,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -1977,7 +1977,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -2049,7 +2049,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 70,
+							"line": 66,
 							"character": 17
 						}
 					],
@@ -2360,7 +2360,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 57,
+							"line": 53,
 							"character": 23
 						}
 					],
@@ -2398,7 +2398,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 40,
+									"line": 36,
 									"character": 14
 								}
 							],
@@ -2428,7 +2428,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 46,
+									"line": 42,
 									"character": 10
 								}
 							],
@@ -2457,7 +2457,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 38,
+									"line": 34,
 									"character": 7
 								}
 							],
@@ -2499,7 +2499,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 44,
+									"line": 40,
 									"character": 9
 								}
 							],
@@ -2534,7 +2534,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -2575,7 +2575,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 42,
+									"line": 38,
 									"character": 8
 								}
 							],
@@ -2610,7 +2610,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -2651,7 +2651,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 25,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -2686,7 +2686,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reflection",
@@ -2706,7 +2706,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu.tsx",
-																							"line": 27,
+																							"line": 23,
 																							"character": 11
 																						}
 																					],
@@ -2724,7 +2724,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu.tsx",
-																							"line": 28,
+																							"line": 24,
 																							"character": 10
 																						}
 																					],
@@ -2747,8 +2747,8 @@
 																			"sources": [
 																				{
 																					"fileName": "menu.tsx",
-																					"line": 26,
-																					"character": 22
+																					"line": 22,
+																					"character": 27
 																				}
 																			]
 																		}
@@ -2783,7 +2783,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 36,
+									"line": 32,
 									"character": 6
 								}
 							],
@@ -2829,7 +2829,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 23,
+							"line": 19,
 							"character": 26
 						}
 					],
@@ -2875,7 +2875,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 40,
+									"line": 36,
 									"character": 14
 								}
 							],
@@ -2905,7 +2905,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 192,
+									"line": 188,
 									"character": 10
 								}
 							],
@@ -2934,7 +2934,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 38,
+									"line": 34,
 									"character": 7
 								}
 							],
@@ -2975,7 +2975,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 188,
+									"line": 184,
 									"character": 8
 								}
 							],
@@ -3005,7 +3005,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 44,
+									"line": 40,
 									"character": 9
 								}
 							],
@@ -3040,7 +3040,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -3081,7 +3081,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 42,
+									"line": 38,
 									"character": 8
 								}
 							],
@@ -3116,7 +3116,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -3157,7 +3157,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 25,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -3192,7 +3192,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reflection",
@@ -3212,7 +3212,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu.tsx",
-																							"line": 27,
+																							"line": 23,
 																							"character": 11
 																						}
 																					],
@@ -3230,7 +3230,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu.tsx",
-																							"line": 28,
+																							"line": 24,
 																							"character": 10
 																						}
 																					],
@@ -3253,8 +3253,8 @@
 																			"sources": [
 																				{
 																					"fileName": "menu.tsx",
-																					"line": 26,
-																					"character": 22
+																					"line": 22,
+																					"character": 27
 																				}
 																			]
 																		}
@@ -3294,7 +3294,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 36,
+									"line": 32,
 									"character": 6
 								}
 							],
@@ -3336,7 +3336,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 190,
+									"line": 186,
 									"character": 11
 								}
 							],
@@ -3366,7 +3366,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 186,
+							"line": 182,
 							"character": 32
 						}
 					],
@@ -3398,7 +3398,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 205,
+									"line": 201,
 									"character": 6
 								}
 							],
@@ -3420,7 +3420,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 204,
+							"line": 200,
 							"character": 32
 						}
 					]
@@ -3449,7 +3449,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 40,
+									"line": 36,
 									"character": 14
 								}
 							],
@@ -3479,7 +3479,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 201,
+									"line": 197,
 									"character": 10
 								}
 							],
@@ -3508,7 +3508,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 38,
+									"line": 34,
 									"character": 7
 								}
 							],
@@ -3549,7 +3549,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 197,
+									"line": 193,
 									"character": 8
 								}
 							],
@@ -3579,7 +3579,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 44,
+									"line": 40,
 									"character": 9
 								}
 							],
@@ -3614,7 +3614,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -3655,7 +3655,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 42,
+									"line": 38,
 									"character": 8
 								}
 							],
@@ -3690,7 +3690,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -3731,7 +3731,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 36,
+									"line": 32,
 									"character": 6
 								}
 							],
@@ -3773,7 +3773,7 @@
 							"sources": [
 								{
 									"fileName": "menu.tsx",
-									"line": 199,
+									"line": 195,
 									"character": 11
 								}
 							],
@@ -3802,7 +3802,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 195,
+							"line": 191,
 							"character": 39
 						}
 					],
@@ -3829,7 +3829,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 60,
+							"line": 56,
 							"character": 21
 						}
 					],
@@ -3850,13 +3850,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -3880,13 +3874,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -3908,7 +3896,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 48,
+							"line": 44,
 							"character": 22
 						}
 					],
@@ -3921,13 +3909,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -3941,13 +3923,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -3967,7 +3943,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 33,
+							"line": 29,
 							"character": 21
 						}
 					],
@@ -3988,13 +3964,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									},
@@ -4018,13 +3988,7 @@
 											},
 											{
 												"type": "reference",
-												"name": "ComponentProps",
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												]
+												"name": "ComponentProps"
 											}
 										]
 									}
@@ -4049,7 +4013,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 276,
+							"line": 272,
 							"character": 23
 						}
 					],
@@ -4101,7 +4065,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 281,
+							"line": 277,
 							"character": 30
 						}
 					],
@@ -4217,7 +4181,7 @@
 					"sources": [
 						{
 							"fileName": "menu.tsx",
-							"line": 208,
+							"line": 204,
 							"character": 23
 						}
 					]
@@ -4354,7 +4318,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 70,
+									"line": 66,
 									"character": 18
 								}
 							],
@@ -4374,7 +4338,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 66,
+									"line": 62,
 									"character": 15
 								}
 							],
@@ -4404,7 +4368,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 204,
+									"line": 206,
 									"character": 10
 								}
 							],
@@ -4455,7 +4419,7 @@
 									"sources": [
 										{
 											"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-											"line": 204,
+											"line": 206,
 											"character": 11
 										}
 									]
@@ -4477,7 +4441,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 68,
+									"line": 64,
 									"character": 23
 								}
 							],
@@ -4507,7 +4471,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 203,
+									"line": 205,
 									"character": 12
 								}
 							],
@@ -4532,7 +4496,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 70,
+									"line": 66,
 									"character": 9
 								}
 							],
@@ -4553,7 +4517,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 69,
+									"line": 65,
 									"character": 22
 								}
 							],
@@ -4583,7 +4547,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 67,
+									"line": 63,
 									"character": 15
 								}
 							],
@@ -4614,7 +4578,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 201,
+									"line": 203,
 									"character": 23
 								}
 							],
@@ -4622,7 +4586,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "false",
+							"defaultValue": "true",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -4636,7 +4600,6 @@
 							"flags": {
 								"isExported": true
 							},
-							"comment": {},
 							"getSignature": [
 								{
 									"id": 27,
@@ -4644,7 +4607,6 @@
 									"kind": 524288,
 									"kindString": "Get signature",
 									"flags": {},
-									"comment": {},
 									"type": {
 										"type": "intrinsic",
 										"name": "any"
@@ -4658,7 +4620,6 @@
 									"kind": 1048576,
 									"kindString": "Set signature",
 									"flags": {},
-									"comment": {},
 									"parameters": [
 										{
 											"id": 29,
@@ -4666,7 +4627,6 @@
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
-											"comment": {},
 											"type": {
 												"type": "intrinsic",
 												"name": "any"
@@ -4682,12 +4642,12 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 91,
+									"line": 87,
 									"character": 10
 								},
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 96,
+									"line": 91,
 									"character": 10
 								}
 							]
@@ -5054,7 +5014,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 78,
+									"line": 74,
 									"character": 19
 								}
 							],
@@ -5115,7 +5075,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 221,
+									"line": 223,
 									"character": 20
 								}
 							],
@@ -5309,7 +5269,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 225,
+									"line": 227,
 									"character": 22
 								}
 							],
@@ -5506,7 +5466,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 231,
+									"line": 233,
 									"character": 15
 								}
 							],
@@ -5539,7 +5499,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 260,
+									"line": 255,
 									"character": 29
 								}
 							]
@@ -5603,8 +5563,8 @@
 										"name": "CustomEvent",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "Object"
 											}
 										]
 									},
@@ -5617,7 +5577,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 260,
+									"line": 267,
 									"character": 6
 								}
 							],
@@ -5654,7 +5614,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 117,
+									"line": 112,
 									"character": 22
 								}
 							],
@@ -5722,7 +5682,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 184,
+															"line": 179,
 															"character": 25
 														}
 													]
@@ -5758,7 +5718,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 192,
+																					"line": 187,
 																					"character": 16
 																				}
 																			],
@@ -5777,7 +5737,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 191,
+																					"line": 186,
 																					"character": 15
 																				}
 																			],
@@ -5805,7 +5765,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 189,
+															"line": 184,
 															"character": 23
 														}
 													]
@@ -5841,7 +5801,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 181,
+																					"line": 176,
 																					"character": 16
 																				}
 																			],
@@ -5869,7 +5829,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 180,
+																					"line": 175,
 																					"character": 15
 																				}
 																			],
@@ -5906,7 +5866,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 178,
+															"line": 173,
 															"character": 24
 														}
 													]
@@ -5942,7 +5902,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 187,
+																					"line": 182,
 																					"character": 49
 																				}
 																			],
@@ -5961,7 +5921,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 187,
+																					"line": 182,
 																					"character": 22
 																				}
 																			],
@@ -5989,7 +5949,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 186,
+															"line": 181,
 															"character": 25
 														}
 													]
@@ -6025,7 +5985,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 196,
+																					"line": 191,
 																					"character": 18
 																				}
 																			],
@@ -6044,7 +6004,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 196,
+																					"line": 191,
 																					"character": 41
 																				}
 																			],
@@ -6072,7 +6032,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 195,
+															"line": 190,
 															"character": 21
 														}
 													]
@@ -6112,7 +6072,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 215,
+															"line": 210,
 															"character": 18
 														}
 													]
@@ -6155,7 +6115,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 201,
+																							"line": 196,
 																							"character": 14
 																						}
 																					],
@@ -6173,7 +6133,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 202,
+																							"line": 197,
 																							"character": 12
 																						}
 																					],
@@ -6191,7 +6151,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 200,
+																							"line": 195,
 																							"character": 13
 																						}
 																					],
@@ -6209,7 +6169,7 @@
 																					"sources": [
 																						{
 																							"fileName": "menu-surface.tsx",
-																							"line": 199,
+																							"line": 194,
 																							"character": 11
 																						}
 																					],
@@ -6234,7 +6194,7 @@
 																			"sources": [
 																				{
 																					"fileName": "menu-surface.tsx",
-																					"line": 198,
+																					"line": 193,
 																					"character": 29
 																				}
 																			]
@@ -6251,7 +6211,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 198,
+															"line": 193,
 															"character": 17
 														}
 													]
@@ -6279,7 +6239,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 176,
+									"line": 171,
 									"character": 28
 								}
 							]
@@ -6339,7 +6299,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 165,
+															"line": 160,
 															"character": 23
 														}
 													]
@@ -6375,7 +6335,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 169,
+															"line": 164,
 															"character": 22
 														}
 													]
@@ -6415,7 +6375,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 159,
+															"line": 154,
 															"character": 27
 														}
 													]
@@ -6442,7 +6402,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 148,
+															"line": 143,
 															"character": 15
 														}
 													]
@@ -6482,7 +6442,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 162,
+															"line": 157,
 															"character": 26
 														}
 													]
@@ -6509,7 +6469,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 152,
+															"line": 147,
 															"character": 18
 														}
 													]
@@ -6536,7 +6496,7 @@
 													"sources": [
 														{
 															"fileName": "menu-surface.tsx",
-															"line": 149,
+															"line": 144,
 															"character": 15
 														}
 													]
@@ -6564,7 +6524,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 146,
+									"line": 141,
 									"character": 24
 								}
 							]
@@ -6710,7 +6670,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 264,
+									"line": 259,
 									"character": 17
 								}
 							]
@@ -6752,7 +6712,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 268,
+									"line": 263,
 									"character": 15
 								}
 							]
@@ -6781,7 +6741,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 243,
+									"line": 238,
 									"character": 17
 								}
 							]
@@ -6810,7 +6770,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 257,
+									"line": 252,
 									"character": 27
 								}
 							]
@@ -6839,7 +6799,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 272,
+									"line": 267,
 									"character": 8
 								}
 							]
@@ -6881,7 +6841,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 253,
+									"line": 248,
 									"character": 17
 								}
 							]
@@ -7046,7 +7006,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 221,
+									"line": 216,
 									"character": 6
 								}
 							],
@@ -7123,7 +7083,7 @@
 													"sources": [
 														{
 															"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-															"line": 246,
+															"line": 248,
 															"character": 46
 														}
 													]
@@ -7144,7 +7104,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 10
 								}
 							],
@@ -7181,7 +7141,7 @@
 							"sources": [
 								{
 									"fileName": "/Users/jamesmfriedman/Sites/rmwc/src/base/foundation-component.tsx",
-									"line": 240,
+									"line": 242,
 									"character": 8
 								}
 							],
@@ -7257,7 +7217,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 64,
+							"line": 60,
 							"character": 24
 						}
 					],
@@ -7299,7 +7259,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 40,
+									"line": 36,
 									"character": 14
 								}
 							],
@@ -7324,7 +7284,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 46,
+									"line": 42,
 									"character": 10
 								}
 							],
@@ -7348,7 +7308,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 38,
+									"line": 34,
 									"character": 7
 								}
 							],
@@ -7385,7 +7345,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 44,
+									"line": 40,
 									"character": 9
 								}
 							],
@@ -7420,7 +7380,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -7456,7 +7416,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 42,
+									"line": 38,
 									"character": 8
 								}
 							],
@@ -7491,7 +7451,7 @@
 															"flags": {},
 															"type": {
 																"type": "reference",
-																"name": "CustomEventT",
+																"name": "RMWC.CustomEventT",
 																"typeArguments": [
 																	{
 																		"type": "reference",
@@ -7527,7 +7487,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 36,
+									"line": 32,
 									"character": 6
 								}
 							],
@@ -7567,7 +7527,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 34,
+							"line": 30,
 							"character": 33
 						}
 					],
@@ -7595,7 +7555,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 32,
+							"line": 28,
 							"character": 19
 						}
 					],
@@ -7652,7 +7612,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 299,
+							"line": 294,
 							"character": 30
 						}
 					],
@@ -7665,13 +7625,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -7685,13 +7639,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -7714,7 +7662,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 52,
+							"line": 48,
 							"character": 28
 						}
 					],
@@ -7727,13 +7675,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									},
 									{
 										"type": "intrinsic",
@@ -7747,13 +7689,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"name": "ComponentProps",
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										]
+										"name": "ComponentProps"
 									}
 								]
 							}
@@ -7804,7 +7740,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 17,
+																"line": 13,
 																"character": 11
 															}
 														],
@@ -7823,7 +7759,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 18,
+																"line": 14,
 																"character": 12
 															}
 														],
@@ -7842,7 +7778,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 19,
+																"line": 15,
 																"character": 13
 															}
 														],
@@ -7861,7 +7797,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 20,
+																"line": 16,
 																"character": 13
 															}
 														],
@@ -7880,7 +7816,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 21,
+																"line": 17,
 																"character": 8
 															}
 														],
@@ -7899,7 +7835,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 22,
+																"line": 18,
 																"character": 9
 															}
 														],
@@ -7918,7 +7854,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 23,
+																"line": 19,
 																"character": 10
 															}
 														],
@@ -7937,7 +7873,7 @@
 														"sources": [
 															{
 																"fileName": "menu-surface.tsx",
-																"line": 24,
+																"line": 20,
 																"character": 10
 															}
 														],
@@ -7967,7 +7903,7 @@
 												"sources": [
 													{
 														"fileName": "menu-surface.tsx",
-														"line": 28,
+														"line": 24,
 														"character": 21
 													}
 												]
@@ -7985,7 +7921,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 27,
+							"line": 23,
 							"character": 29
 						}
 					]
@@ -8008,7 +7944,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 17,
+									"line": 13,
 									"character": 11
 								}
 							],
@@ -8027,7 +7963,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 18,
+									"line": 14,
 									"character": 12
 								}
 							],
@@ -8046,7 +7982,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 19,
+									"line": 15,
 									"character": 13
 								}
 							],
@@ -8065,7 +8001,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 20,
+									"line": 16,
 									"character": 13
 								}
 							],
@@ -8084,7 +8020,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 21,
+									"line": 17,
 									"character": 8
 								}
 							],
@@ -8103,7 +8039,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 22,
+									"line": 18,
 									"character": 9
 								}
 							],
@@ -8122,7 +8058,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 23,
+									"line": 19,
 									"character": 10
 								}
 							],
@@ -8141,7 +8077,7 @@
 							"sources": [
 								{
 									"fileName": "menu-surface.tsx",
-									"line": 24,
+									"line": 20,
 									"character": 10
 								}
 							],
@@ -8171,7 +8107,7 @@
 					"sources": [
 						{
 							"fileName": "menu-surface.tsx",
-							"line": 16,
+							"line": 12,
 							"character": 23
 						}
 					],
