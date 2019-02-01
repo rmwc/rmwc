@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Switch from './';
+import { Switch } from './';
 
 describe('Switch', () => {
   test('renders', () => {
