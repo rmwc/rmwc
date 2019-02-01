@@ -116,7 +116,7 @@ const copyFile = (inputFile, outputFile) => {
 const root = path.resolve(__dirname, '../');
 
 execSync(
-  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS --resolveJsonModule false`,
+  `./node_modules/.bin/tsc --project ${root}/tsconfig-build.json --target es5 --module CommonJS`,
   {
     stdio: [0, 1, 2]
   }
