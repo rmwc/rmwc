@@ -8,6 +8,7 @@
 
 # production
 /build
+**/flow-typed
 **/dist
 **/next
 react-versions

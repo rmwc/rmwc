@@ -144,7 +144,7 @@ glob(
       }
 
       const output = path
-        .resolve('build', 'dist', pkg, 'flow-typed', ...restPath)
+        .resolve('src', pkg, 'flow-typed', ...restPath)
         .replace('.d.ts', '.js');
 
       execSync(`mkdir -p ${path.dirname(output)}`);
@@ -165,11 +165,12 @@ const promises = getPackageDirs().map(d => {
       path.resolve(root, 'build', 'next', d),
       path.resolve(root, 'src', d, 'next')
     );
+
     resolve();
   });
 });
 
 // Compile the TS
 Promise.all(promises).then(() => {
-  console.log('DONE');
+  console.log('Done');
 });
