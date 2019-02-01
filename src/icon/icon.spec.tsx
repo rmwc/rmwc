@@ -13,7 +13,7 @@ describe('Icon', () => {
       <Icon icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
     );
     expect(el2.html()).toBe(
-      `<img src="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" class="rmwc-icon material-icons">`
+      `<i style="background-image: url(https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon);" class="rmwc-icon material-icons rmwc-icon--image"></i>`
     );
   });
 
