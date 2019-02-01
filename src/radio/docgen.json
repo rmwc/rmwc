@@ -119,9 +119,7 @@
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
-									"flags": {
-										"isExported": true
-									},
+									"flags": {},
 									"indexSignature": [
 										{
 											"id": 120,
@@ -1889,9 +1887,7 @@
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
-													"flags": {
-														"isExported": true
-													},
+													"flags": {},
 													"signatures": [
 														{
 															"id": 148,

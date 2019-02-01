@@ -24672,18 +24672,14 @@
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
-											"flags": {
-												"isExported": true
-											},
+											"flags": {},
 											"children": [
 												{
 													"id": 946,
 													"name": "enhanced",
 													"kind": 32,
 													"kindString": "Variable",
-													"flags": {
-														"isExported": true
-													},
+													"flags": {},
 													"sources": [
 														{
 															"fileName": "index.tsx",
@@ -24714,9 +24710,7 @@
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
-													"flags": {
-														"isExported": true
-													},
+													"flags": {},
 													"sources": [
 														{
 															"fileName": "index.tsx",

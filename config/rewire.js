@@ -118,7 +118,7 @@ const jestIgnore = config => {
   config.collectCoverageFrom = config.collectCoverageFrom.concat([
     '!src/base/utils/document-component.tsx',
     '!src/base/utils/story-with-state.js',
-    '!src/base/testPolyfill.js',
+    '!src/base/test-polyfill.js',
     '!src/index.tsx',
     '!src/setupTests.tsx',
     '!src/rmwc/**/*',

@@ -16,13 +16,29 @@ const writeBuiltFile = (inputFile, outputFile) => {
 const writeFlowFile = (inputFile, outputFile, pkgName) => {
   execSync(`cp ${inputFile} ${outputFile}`);
   const content = fs.readFileSync(outputFile, 'utf8');
-  let newContent = `// @flow\n${content}`;
+  let newContent = content;
+
+  let isModuleDeclaration = outputFile.includes(path.join(pkgName, 'index.js'));
+  isModuleDeclaration = outputFile.includes('base/index.js')
+    ? false
+    : isModuleDeclaration;
+
+  if (isModuleDeclaration) {
+    newContent = newContent
+      // Fix exports and declares
+      .replace(/^export declare const/gm, 'export var')
+      .replace(/^export declare/gm, 'export')
+      .replace(/^export/gm, 'declare export')
+      .replace(/^interface/gm, 'declare interface');
+  } else {
+    newContent = newContent
+      // Fix exports and declares
+      .replace(/^export declare const/gm, 'export var')
+      .replace(/^export declare/gm, 'export');
+  }
+
   newContent = newContent
-    // Fix exports and declares
-    .replace(/^export declare const/gm, 'export var')
-    .replace(/^export declare/gm, 'export')
-    .replace(/^export/gm, 'declare export')
-    .replace(/^interface/gm, 'declare interface')
+
     // .replace(/export const/g, 'export var')
     .replace(/(export class .*){[\S\s\n]*?^}/gm, '$1{}')
     .replace(/import \{(.*?)\} from/g, (match, p1) => {
@@ -104,19 +120,22 @@ const writeFlowFile = (inputFile, outputFile, pkgName) => {
       "import * as React from 'react';"
     );
 
-  const lastImportIndex = newContent.lastIndexOf('import');
-  const eol = newContent.slice(lastImportIndex).indexOf('\n') + lastImportIndex;
-  const fileName = path.basename(outputFile).split('.')[0];
-  const moduleName = path.basename(outputFile).startsWith('index')
-    ? pkgName
-    : './' + fileName;
+  if (isModuleDeclaration) {
+    const lastImportIndex = newContent.lastIndexOf('import');
+    const eol = ~lastImportIndex
+      ? newContent.slice(lastImportIndex).indexOf('\n') + lastImportIndex
+      : newContent.length;
+    const fileName = path.basename(outputFile).split('.')[0];
+    const moduleName = `@rmwc/${pkgName}`;
 
-  newContent =
-    newContent.slice(0, eol) +
-    `\n\ndeclare module '${moduleName}' {\n\n` +
-    newContent.slice(eol) +
-    '\n}';
+    newContent =
+      newContent.slice(0, eol) +
+      `\n\ndeclare module '${moduleName}' {\n\n` +
+      newContent.slice(eol) +
+      '\n}';
+  }
 
+  newContent = `// @flow\n${newContent}`;
   fs.writeFileSync(outputFile, newContent, 'utf8');
 };
 

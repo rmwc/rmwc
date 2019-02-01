@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import classNamesFunc from 'classnames';
-import { parseThemeOptions } from './withTheme';
+import { parseThemeOptions } from './with-theme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
 
 type ClassNamesInputT =
