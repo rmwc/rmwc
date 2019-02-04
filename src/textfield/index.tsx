@@ -29,10 +29,6 @@ export interface TextFieldProps {
   value?: string | number;
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean;
-  /** Disables the input. */
-  disabled?: boolean;
-  /** Mark the input as required. */
-  required?: boolean;
   /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean;
   /** Outline the TextField */

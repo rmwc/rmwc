@@ -31,16 +31,14 @@ export interface SelectProps {
   placeholder?: string;
   /** Makes the select outlined. */
   outlined?: boolean;
-  /** Disables the form control. */
-  disabled?: boolean;
+  /** Makes the Select visually invalid. This is sometimes automatically my material-components-web.  */
+  invalid?: boolean;
   /** Renders a non native / enhanced dropdown */
   enhanced?: boolean;
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
   inputRef?: (ref: HTMLSelectElement | null) => void;
-  /** A className for the root element. */
-  className?: string;
   /** Add a leading icon. */
   withLeadingIcon?: IconPropT;
 }
@@ -82,14 +80,16 @@ const SelectRoot = withRipple()(
     defaultProps: {
       role: 'listbox'
     },
-    classNames: (props: SelectProps) => [
+    classNames: (props: SelectProps & RMWC.ComponentProps) => [
       'mdc-select',
       {
         'mdc-select--outlined': !!props.outlined,
+        'mdc-select--required': !!props.required,
+        'mdc-select--invalid': !!props.invalid,
         'mdc-select--with-leading-icon': !!props.withLeadingIcon
       }
     ],
-    consumeProps: ['outlined', 'withLeadingIcon']
+    consumeProps: ['outlined', 'withLeadingIcon', 'required', 'invalid']
   })
 );
 
@@ -662,6 +662,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       onBlur,
       onClick,
       onKeyDown,
+      invalid,
       inputRef,
       ...rest
     } = this.props;
@@ -698,6 +699,8 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       <SelectRoot
         ripple={!outlined}
         {...this.root.props(rootProps)}
+        invalid={invalid}
+        required={rest.required}
         withLeadingIcon={withLeadingIcon}
         outlined={outlined}
         ref={this.root.setRef}

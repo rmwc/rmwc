@@ -42,7 +42,29 @@ import { Select, SelectHelperText } from '@rmwc/select';
   />
   <SelectHelperText>Choose your favorite snack...</SelectHelperText>
 </div>
+```
 
+## Validation
+```jsx render
+import { Select, SelectHelperText } from '@rmwc/select';
+
+<Select
+  label="Required"  
+  required
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Invalid"  
+  invalid
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Disabled"  
+  disabled
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
 ```
 
 ## Data Driven Selects
