@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/button",
-  "version": "5.0.10-alpha.0",
+  "version": "5.0.11-alpha.0",
   "description": "RMWC Button component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -35,7 +35,7 @@
     "@rmwc/base": "^5.0.10-alpha.0",
     "@rmwc/icon": "^5.0.10-alpha.0",
     "@rmwc/provider": "^5.0.10-alpha.0",
-    "@rmwc/ripple": "^5.0.10-alpha.0"
+    "@rmwc/ripple": "^5.0.11-alpha.0"
   },
   "gitHead": "df9f0ba2ce5984834077b6d7c28b7d2608b1238c"
 }
