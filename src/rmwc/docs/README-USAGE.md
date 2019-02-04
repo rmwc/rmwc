@@ -30,11 +30,12 @@ import { Drawer, DrawerContent } from '@rmwc/drawer';
 
 ### `tag`
 
-You can use the `tag` prop to specify the DOM element you would like to render.
+You can use the `tag` prop to specify the DOM element you would like to render For advanced cases, you can actually pass a Component to render.
 
 ```jsx
 import { Typography } from '@rmwc/typography';
 import { Button } from '@rmwc/button';
+import { Link } from 'react-router-dom';
 
 // renders an h1
 const Example1 = props => (
@@ -47,6 +48,13 @@ const Example1 = props => (
 const Example2 = props => (
   <Button tag="a" href="https://google.com">
     Hello World
+  </Button>
+);
+
+// Advanced case, extend another component
+const Example3 = props => (
+  <Button tag={Link} to="https://google.com">
+    Advanced Case
   </Button>
 );
 ```
@@ -63,18 +71,18 @@ import { Button } from '@rmwc/button';
 </Button>;
 ```
 
-### `elementRef`
+### `ref`
 
-React refs are great for accessing DOM nodes. Unfortunately, they can't be passed down via props. `elementRef` is just a way to get a DOM node reference for the component and after it gets passed down the props change, becomes a standard React ref.
+With the advent of ref forwarding in React 16.3, you can pass the `ref` prop to the majority of components to get access to their DomNodes. This currently only works on Stateless components like Elevation, Typography, and Grid.,
 
 ```jsx
-import { TextField } from '@rmwc/textfield';
+import { Elevation } from '@rmwc/elevation';
 
 // renders an h1
 
 class Example1 extends React.Component {
   render() {
-    return <TextField elementRef={el => this.textField = el}>
+    return <Elevation ref={el => this.textField = el}>
   }
 }
 ```

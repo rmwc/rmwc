@@ -18,6 +18,7 @@ import { IconButton } from '@rmwc/icon-button';
   icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
   aria-label="Tweet it!"
 />
+<IconButton icon="favorite" label="Favorite" disabled/>
 
 ```
 
@@ -30,6 +31,12 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 <IconButton
   icon="favorite_border"
   onIcon="favorite"
+/>
+
+<IconButton
+  icon="favorite"
+  onIcon="favorite"
+  disabled
 />
 
 {/* Controlled */}

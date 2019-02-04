@@ -3,13 +3,12 @@
 > Welcome to RMWC, a React wrapper for Material Design (Web) Components.
 
 **Required steps**
-
-* Install **ALL** of RMWC
+* Perferred: Install **INDIVIDUAL** components
+  * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
+  * Include the individual components stylesheets (listed on their docs page)in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
+* OR Install **ALL** of RMWC
   * `npm i rmwc --save` or `yarn add rmwc`
   * include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
-* OR Install **INDIVIDUAL** components
-  * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
-  * Include the individual components stylesheets (listed on their docs page) `node_modules/@material/button/dist/mdc.button.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
 
 
 **Optional steps**
@@ -23,6 +22,7 @@
 * Add global settings by using the optional `<RMWCProvider />` component at the root of your project. See the 'Provider' section for more info.
 
 ```jsx
+// Hello World
 import { Button } from '@rmwc/button';
 
 const MyComponent = props => <Button>Hello World</Button>;
@@ -30,10 +30,10 @@ const MyComponent = props => <Button>Hello World</Button>;
 
 ## Bundle size and Dependency considerations
 
-To keep your build as trim as possible, it is recommended that you install the components individually as you need them instead of installing RMWC. This strategy has several benefits:
+To keep your build as trim as possible, it is recommended that you install the components individually as you need them instead of installing all of RMWC. This strategy has several benefits:
 
 - You will only include the minimal javascript and css to get the component working
-- You can insulate your self from future breaking changes and upgrade components one at a time.
+- You can insulate yourself from future breaking changes and upgrade components one at a time.
 - If you have an existing project you are converting over to RMWC, you can swap out one component at a time.
 
 
@@ -48,40 +48,30 @@ This is for the laziest of lazy, all components are re-exported from the root mo
 
 ```jsx
 /**
- * BAD example, the `Button` component will be imported, as well as all of RMWC.
+ * BAD / LAZY example, the `Button` component will be imported, as well as all of RMWC.
  * This exists for convenience and for projects that are using the majority of material components.
  */
 import { Button } from 'rmwc';
 ```
 
-Deprecated Syntax: this method was available for importing components prior to 2.0.0. It will continue to work for the forseeable future but will be removed in a future release.
+The same is true for importing styles into your project. RMWC only ships with minimal styles for its own custom components. The majority of the CSS comes from Google, and you'll need to import them from the [material-components-web](https://github.com/material-components/material-components-web) package. The pre-minified version of this file is around 240kb. If you only want to Import styles for individual components, you can find the css files in `node_modules/@material/COMPONENT_NAME/dist/mdc.COMPONENT_NAME.min.css`.
 
 ```jsx
-/**
- * Deprecated syntax prior to 2.0.0
- */
-import { Button } from 'rmwc/Button';
+/** GOOD Only imports the styles for the Button component. */
+import '@material/button/dist/mdc.button.min.css';
 ```
 
-The same is true for importing styles into your project. RMWC doesn't ship with any of its own styles, you are required to import them from the [material-components-web](https://github.com/material-components/material-components-web) package. The pre-minified version of this file is around 240kb. If you only want to Import styles for individual components, you can find the css files in `node_modules/@material/COMPONENT_NAME/dist/mdc.COMPONENT_NAME.min.css`.
-
 ```jsx
-/** Imports styles for ALL components */
+/** BAD / LAZY Imports styles for ALL components */
 import 'material-components-web/dist/material-components-web.min.css';
 ```
 
-```jsx
-/**
- * Only imports styles for the Button component.
- */
-import '@material/button/dist/mdc.button.min.css';
-```
 
 ### Additional configuration when using CSS Modules
 
 The material components CSS is intended to be a global CSS dependency which is the opposite of what CSS modules do. If you are using CSS modules, the simplest way to get the material CSS loaded is to have two separate CSS loaders in your webpack configuration, one for CSS modules, and another for global CSS. This is a well documented issue when using global CSS in CSS module projects and is not specific to RMWC.
 
-Please note if you are using Create React App, you'll have to make these changes in both `webpack.config.dev.js` and `webpack.config.prod.js`.
+Please note if you are using Create React App (v2), this is likely not an issue. Files with the .module.css extension automatically use the CSS modules loader.
 
 ```javascript
 // An abbreviated example
@@ -114,11 +104,15 @@ module.exports = {
 };
 ```
 
-## Flow and Typescript Setup
+## Typescript and Flow Setup
 
-There are no additional steps to get Flow to work with your code. If you run into issues, please make sure you are running the most recent version of flow-bin.
+There are no additional steps to get Typescript working for your project. RMWC ships with declarations right alongside the components, so there is no need to install anything from `definitely-typed`.
 
-Typescript is currently in Beta and is being transpiled directly from the Flow types, so they'll always be up to date. If you encounter any issues, please report it on issue [https://github.com/jamesmfriedman/rmwc/issues/40](https://github.com/jamesmfriedman/rmwc/issues/40).
+For flow, please add the following to your `.flowconfig` file.
+```
+[libs]
+node_modules/@rmwc/types/flow-typed
+```
 
 ## Testing with RMWC
 

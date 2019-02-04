@@ -30,7 +30,27 @@ export interface DeprecatedIconButtonProps {
   onIconOptions?: any;
 }
 
-export const IconButtonRoot = withRipple({
+const IconButtonRoot = withRipple({
+  unbounded: true
+})(
+  componentFactory<IconButtonProps>({
+    displayName: 'IconButtonRoot',
+    tag: Icon,
+    classNames: (props: IconButtonProps) => [
+      'mdc-icon-button',
+      {
+        'mdc-icon-button--on': props.checked
+      }
+    ],
+    defaultProps: {
+      role: 'button',
+      tabIndex: '0'
+    },
+    consumeProps: ['checked']
+  })
+);
+
+const IconButtonToggleRoot = withRipple({
   unbounded: true
 })(
   componentFactory<IconButtonProps>({
@@ -129,15 +149,16 @@ class IconButtonToggle extends FoundationComponent<
     }
 
     return (
-      <IconButtonRoot
+      <IconButtonToggleRoot
         aria-pressed={this.isOn()}
         aria-hidden="true"
         {...this.root.props(rest)}
+        tag="button"
         onClick={this.handleClick}
       >
         <IconButtonIcon icon={icon} />
         <IconButtonIcon icon={onIcon} on />
-      </IconButtonRoot>
+      </IconButtonToggleRoot>
     );
   }
 }
@@ -150,5 +171,7 @@ export const IconButton = ({
     return <IconButtonToggle {...rest} icon={icon} />;
   }
 
-  return <IconButtonRoot aria-hidden="true" {...rest} tag={Icon} icon={icon} />;
+  return (
+    <IconButtonRoot aria-hidden="true" {...rest} tag="button" icon={icon} />
+  );
 };
