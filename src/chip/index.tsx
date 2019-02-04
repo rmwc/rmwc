@@ -61,6 +61,7 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
 
   private root = this.createElement('root');
   id: string = '';
+  checkmarkEl: HTMLDivElement | null = null;
   _reactInternalFiber: any;
 
   constructor(props: ChipProps) {
@@ -84,7 +85,9 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
   getDefaultFoundation() {
     return new MDCChipFoundation(
       /** @type {!MDCChipAdapter} */ (Object.assign({
-        addClass: (className: string) => this.root.addClass(className),
+        addClass: (className: string) => {
+          this.root.addClass(className);
+        },
         removeClass: (className: string) => this.root.removeClass(className),
         hasClass: (className: string) => this.root.hasClass(className),
         addClassToLeadingIcon: (className: string) => {
@@ -93,8 +96,12 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
         removeClassFromLeadingIcon: (className: string) => {
           // handled by props
         },
-        eventTargetHasClass: (target: HTMLElement, className: string) =>
-          target.classList.contains(className),
+        eventTargetHasClass: (target: HTMLElement, className: string) => {
+          return (
+            this.root.hasClass(className) ||
+            target.classList.contains(className)
+          );
+        },
         notifyInteraction: () =>
           this.emit(
             'onInteraction',
@@ -122,8 +129,17 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
         getComputedStyleValue: (propertyName: string) =>
           this.root.ref &&
           window.getComputedStyle(this.root.ref).getPropertyValue(propertyName),
-        setStyleProperty: (propertyName: string, value: any) =>
-          this.root.setStyle(propertyName, value)
+        setStyleProperty: (propertyName: string, value: any) => {
+          // for this particular piece, we can't set the style as props
+          // since it is being used for animation and our async render cycles breaks it
+          this.root.ref && this.root.ref.style.setProperty(propertyName, value);
+        },
+
+        hasLeadingIcon: () => !!this.props.leadingIcon,
+        getRootBoundingClientRect: () =>
+          this.root.ref && this.root.ref.getBoundingClientRect(),
+        getCheckmarkBoundingClientRect: () =>
+          this.checkmarkEl && this.checkmarkEl.getBoundingClientRect()
       }))
     );
   }
@@ -134,8 +150,8 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
     return this.foundation.handleInteraction(evt);
   }
 
-  handleTransitionEnd(evt: any) {
-    return this.foundation.handleTransitionEnd(evt);
+  handleTransitionEnd(evt: React.TransitionEvent) {
+    this.foundation.handleTransitionEnd(evt);
   }
 
   handleTrailingIconInteraction(evt: any) {
@@ -180,7 +196,9 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
             hidden={rest.selected && checkmark}
           />
         )}
-        {!!checkmark && <ChipCheckmark />}
+        {!!checkmark && (
+          <ChipCheckmark elementRef={el => (this.checkmarkEl = el)} />
+        )}
         <div className="mdc-chip__text">
           {labelToUse}
           {children}
@@ -199,14 +217,16 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
 }
 
 /** A checkmark for chip selection and filtering. */
-class ChipCheckmark extends React.Component<{}> {
+class ChipCheckmark extends React.Component<{
+  elementRef: (el: HTMLDivElement | null) => void;
+}> {
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
     return (
-      <div className="mdc-chip__checkmark">
+      <div ref={this.props.elementRef} className="mdc-chip__checkmark">
         <svg className="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
           <path
             className="mdc-chip__checkmark-path"

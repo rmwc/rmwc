@@ -87,7 +87,6 @@ describe('Menu', () => {
     const el = mount(
       <SimpleMenuSurface
         handle={<button onClick={() => {}}>Test</button>}
-        open
         onClose={() => {
           val++;
         }}
@@ -100,8 +99,12 @@ describe('Menu', () => {
     button.simulate('click');
 
     setTimeout(() => {
-      expect(val).toBe(1);
-      el.setProps({ open: false, anchorCorner: 'bottomRight' });
+      el.setProps({ anchorCorner: 'bottomRight' });
+      button.simulate('click');
+
+      setTimeout(() => {
+        expect(val).toBe(1);
+      }, 200);
       done();
     }, 200);
   });

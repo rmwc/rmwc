@@ -58,6 +58,7 @@ export const MenuSurfaceRoot = componentFactory<{}>({
 
 /** A generic menu component for displaying any type of content. */
 export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
+  static shouldDebounce = false;
   private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
@@ -89,7 +90,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   }
 
   set open(value) {
-    if (value) {
+    if (value && this.foundation && !this.foundation.isOpen()) {
       const focusableElements = this.root.ref
         ? this.root.ref.querySelectorAll(
             MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
@@ -101,26 +102,38 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         focusableElements.length > 0
           ? focusableElements[focusableElements.length - 1]
           : null;
-      this.registerBodyClickListener();
       this.foundation.open();
     } else {
-      this.deregisterBodyClickListener();
-      this.foundation.close();
+      if (this.foundation && this.foundation.isOpen()) {
+        this.foundation.close();
+      }
     }
   }
 
   getDefaultFoundation() {
     return new MDCMenuSurfaceFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
+      addClass: (className: string) => {
+        this.root.addClass(className);
+      },
+      removeClass: (className: string) => {
+        this.root.removeClass(className);
+      },
       hasClass: (className: string) =>
         className === 'mdc-menu-surface' ? true : this.root.hasClass(className),
       hasAnchor: () => !!this.anchorElement,
       notifyClose: () => {
         this.emit('onClose', {});
+        this.deregisterBodyClickListener();
+        // an annoying hack... this is the only
+        // place to catch bot the normal close and bodyClick handler
+        // and correct it if we still want to be open.
+        if (this.props.open) {
+          this.open = this.props.open;
+        }
       },
       notifyOpen: () => {
         this.emit('onOpen', {});
+        this.registerBodyClickListener();
       },
       isElementInContainer: (el: HTMLElement) =>
         this.root.ref === el || (this.root.ref && this.root.ref.contains(el)),
@@ -230,7 +243,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
     });
 
     // open
-    this.syncProp(!!props.open, this.open, () => {
+    this.syncProp(props.open, prevProps.open, () => {
       this.open = !!props.open;
     });
   }
@@ -262,6 +275,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
 
   handleKeydown(evt: React.KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
+    this.foundation.handleKeydown(evt);
   }
 
   render() {

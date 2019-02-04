@@ -130,6 +130,7 @@ class SelectNativeControl extends React.Component<
 
     return (
       <select
+        tabIndex={0}
         {...rest}
         ref={elementRef}
         className={`mdc-select__native-control ${rest.className || ''}`}
@@ -551,20 +552,17 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
   }
 
   handleChange(evt: any) {
-    const { onChange } = this.props;
-    onChange && onChange(evt);
+    this.props.onChange && this.props.onChange(evt);
     this.foundation.handleChange(true);
   }
 
   handleFocus(evt: any) {
-    const { onFocus } = this.props;
-    onFocus && onFocus(evt);
+    this.props.onFocus && this.props.onFocus(evt);
     this.foundation.handleFocus();
   }
 
   handleBlur(evt: any) {
-    const { onBlur } = this.props;
-    onBlur && onBlur(evt);
+    this.props.onBlur && this.props.onBlur(evt);
     this.foundation.handleBlur();
   }
 
@@ -585,8 +583,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
   }
 
   handleKeydown(evt: any) {
-    const { onKeyDown } = this.props;
-    onKeyDown && onKeyDown(evt);
+    this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeydown(evt);
   }
 
@@ -618,6 +615,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
     // menuOpened_ is used to track the state of the menu opening or closing since the menu.open function
     // will return false if the menu is still closing and this method listens to the closed event which
     // occurs after the menu is already closed.
+
     this.setState({
       menuOpen: false
     });
@@ -678,11 +676,9 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       value !== undefined ? undefined : this.props.defaultValue || '';
 
     const sharedEventProps = {
-      onKeyDown: this.handleKeydown,
       onChange: this.handleChange,
       onFocus: this.handleFocus,
       onBlur: this.handleBlur,
-      onClick: this.handleClick,
       onTouchStart: this.handleClick,
       onMouseDown: this.handleClick
     };
@@ -725,6 +721,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
               tabIndex={this.props.disabled ? -1 : 0}
               aria-disabled={this.props.disabled ? 'true' : 'false'}
               aria-expanded={this.state.menuOpen}
+              onKeyDown={this.handleKeydown}
               {...sharedEventProps}
             >
               {this.state.selectedTextContent}

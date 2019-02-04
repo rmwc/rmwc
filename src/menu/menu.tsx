@@ -64,6 +64,7 @@ export const MenuItem = componentFactory<MenuItemProps>({
 
 /** A menu component for displaying lists items. */
 export class Menu extends FoundationComponent<MenuProps> {
+  static shouldDebounce = false;
   static displayName = 'Menu';
 
   list: List | null = null;

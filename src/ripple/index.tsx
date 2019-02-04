@@ -103,7 +103,9 @@ export class Ripple extends FoundationComponent<RippleProps> {
       updateCssVariable: (varName: string, value: string) =>
         this.surface.setStyle(varName, value),
       computeBoundingRect: () =>
-        this.root.ref && this.root.ref.getBoundingClientRect(),
+        this.root.ref
+          ? this.root.ref.getBoundingClientRect()
+          : { width: 0, height: 0 },
       getWindowPageOffset: () => ({
         x: window.pageXOffset,
         y: window.pageYOffset
