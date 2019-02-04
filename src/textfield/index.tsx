@@ -31,6 +31,10 @@ export interface TextFieldProps {
   fullwidth?: boolean;
   /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean;
+  /** Makes the Textfield disabled.  */
+  disabled?: boolean;
+  /** Makes the Textfield required.  */
+  required?: boolean;
   /** Outline the TextField */
   outlined?: boolean;
   /** A label for the input. */
@@ -58,7 +62,9 @@ const TextFieldRoot = withRipple()(
     deprecate: {
       box: ''
     },
-    classNames: (props: TextFieldProps & DeprecatedTextfieldProps) => [
+    classNames: (
+      props: TextFieldProps & DeprecatedTextfieldProps & RMWC.ComponentProps
+    ) => [
       'mdc-text-field',
       'mdc-text-field--upgraded',
       {

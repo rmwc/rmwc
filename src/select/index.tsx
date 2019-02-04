@@ -33,6 +33,10 @@ export interface SelectProps {
   outlined?: boolean;
   /** Makes the Select visually invalid. This is sometimes automatically my material-components-web.  */
   invalid?: boolean;
+  /** Makes the Select disabled.  */
+  disabled?: boolean;
+  /** Makes the Select required.  */
+  required?: boolean;
   /** Renders a non native / enhanced dropdown */
   enhanced?: boolean;
   /** Props for the root element. By default, additional props spread to the native select element.  */
@@ -655,6 +659,7 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       label = '',
       options = [],
       rootProps = {},
+      className,
       enhanced,
       withLeadingIcon,
       onChange,
@@ -698,7 +703,10 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
     return (
       <SelectRoot
         ripple={!outlined}
-        {...this.root.props(rootProps)}
+        {...this.root.props({
+          className,
+          ...rootProps
+        })}
         invalid={invalid}
         required={rest.required}
         withLeadingIcon={withLeadingIcon}

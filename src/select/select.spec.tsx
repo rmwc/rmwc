@@ -87,7 +87,9 @@ describe('Select', () => {
       />
     );
 
-    expect(!!~el.html().search('my-custom-classname')).toEqual(true);
+    expect(el.find('.mdc-select').hasClass('my-custom-classname')).toEqual(
+      true
+    );
   });
 
   it('adapter checks', () => {
