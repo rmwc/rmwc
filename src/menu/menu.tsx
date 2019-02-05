@@ -155,7 +155,7 @@ export class Menu extends FoundationComponent<MenuProps> {
   }
 
   render() {
-    const { children, anchorCorner, ...rest } = this.props;
+    const { children, ...rest } = this.props;
 
     return (
       <MenuSurface
