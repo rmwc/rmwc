@@ -39,7 +39,7 @@
     "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && git add --all",
-    "postpublish": "npm run build:docs && git add docs -f &&  git push && git push --tags && npm run clean",
+    "postpublish": "npm run build:docs && git add --all -f &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
   "devDependencies": {
