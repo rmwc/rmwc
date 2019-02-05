@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/elevation",
-  "version": "5.0.14-alpha.0",
+  "version": "5.0.15-alpha.0",
   "description": "RMWC Elevation component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@material/elevation": "^0.43.0",
-    "@rmwc/base": "^5.0.14-alpha.0"
+    "@rmwc/base": "^5.0.15-alpha.0"
   },
   "gitHead": "a38a80815ffe15b6a7b8545e415885dd82793ea9"
 }
