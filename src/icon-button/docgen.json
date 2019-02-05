@@ -91,7 +91,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 74,
+									"line": 94,
 									"character": 44
 								}
 							],
@@ -205,7 +205,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 72,
+									"line": 92,
 									"character": 20
 								}
 							],
@@ -288,12 +288,12 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 81,
+									"line": 101,
 									"character": 8
 								},
 								{
 									"fileName": "index.tsx",
-									"line": 85,
+									"line": 105,
 									"character": 8
 								}
 							]
@@ -1270,7 +1270,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 89,
+									"line": 109,
 									"character": 22
 								}
 							],
@@ -1433,7 +1433,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 117,
+									"line": 137,
 									"character": 13
 								}
 							]
@@ -1463,7 +1463,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 102,
+									"line": 122,
 									"character": 6
 								}
 							]
@@ -1490,7 +1490,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 122,
+									"line": 142,
 									"character": 8
 								}
 							]
@@ -1650,7 +1650,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 110,
+									"line": 130,
 									"character": 6
 								}
 							],
@@ -1847,7 +1847,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 69,
+							"line": 89,
 							"character": 22
 						}
 					],
@@ -2028,7 +2028,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 54,
+									"line": 74,
 									"character": 4
 								}
 							],
@@ -2065,7 +2065,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 53,
+							"line": 73,
 							"character": 36
 						}
 					],
@@ -2504,7 +2504,7 @@
 					]
 				},
 				{
-					"id": 114,
+					"id": 115,
 					"name": "IconButtonIcon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2515,7 +2515,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 57,
+							"line": 77,
 							"character": 27
 						}
 					],
@@ -2576,14 +2576,87 @@
 					"kind": 32,
 					"kindString": "Variable",
 					"flags": {
-						"isExported": true,
 						"isConst": true
 					},
 					"sources": [
 						{
 							"fileName": "index.tsx",
 							"line": 33,
-							"character": 27
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconButtonProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconButtonProps",
+												"id": 2
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											},
+											{
+												"type": "reference",
+												"name": "WithRippleProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<IconButtonProps>({\n    displayName: 'IconButtonRoot',\n    tag: Icon,\n    classNames: (props: IconButtonProps) => [\n      'mdc-icon-button',\n      {\n        'mdc-icon-button--on': props.checked\n      }\n    ],\n    defaultProps: {\n      role: 'button',\n      tabIndex: '0'\n    },\n    consumeProps: ['checked']\n  })\n)"
+				},
+				{
+					"id": 114,
+					"name": "IconButtonToggleRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 53,
+							"character": 26
 						}
 					],
 					"type": {
@@ -2646,7 +2719,7 @@
 					"defaultValue": " withRipple({\n  unbounded: true\n})(\n  componentFactory<IconButtonProps>({\n    displayName: 'IconButtonRoot',\n    tag: 'button',\n    classNames: (props: IconButtonProps) => [\n      'mdc-icon-button',\n      {\n        'mdc-icon-button--on': props.checked\n      }\n    ],\n    defaultProps: {\n      role: 'button',\n      tabIndex: '0'\n    },\n    consumeProps: ['checked']\n  })\n)"
 				},
 				{
-					"id": 115,
+					"id": 116,
 					"name": "IconButton",
 					"kind": 64,
 					"kindString": "Function",
@@ -2656,14 +2729,14 @@
 					},
 					"signatures": [
 						{
-							"id": 116,
+							"id": 117,
 							"name": "IconButton",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 117,
+									"id": 118,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2672,14 +2745,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 118,
+											"id": 119,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 119,
+													"id": 120,
 													"name": "icon",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2687,7 +2760,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 146,
+															"line": 167,
 															"character": 6
 														}
 													],
@@ -2748,7 +2821,7 @@
 													}
 												},
 												{
-													"id": 120,
+													"id": 121,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -2756,14 +2829,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 147,
+															"line": 168,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 120
+														"id": 121
 													}
 												}
 											],
@@ -2772,15 +2845,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														119,
-														120
+														120,
+														121
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 145,
+													"line": 166,
 													"character": 27
 												}
 											]
@@ -2797,7 +2870,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 145,
+							"line": 166,
 							"character": 23
 						}
 					]
@@ -2824,15 +2897,16 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						114,
-						113
+						115,
+						113,
+						114
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						115
+						116
 					]
 				}
 			],

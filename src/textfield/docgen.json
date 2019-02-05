@@ -88,7 +88,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 122,
+									"line": 124,
 									"character": 27
 								}
 							],
@@ -206,7 +206,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 112,
+									"line": 114,
 									"character": 13
 								}
 							],
@@ -227,7 +227,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 119,
+									"line": 121,
 									"character": 13
 								}
 							],
@@ -256,7 +256,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 121,
+									"line": 123,
 									"character": 9
 								}
 							],
@@ -285,7 +285,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 120,
+									"line": 122,
 									"character": 14
 								}
 							],
@@ -314,7 +314,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 122,
+									"line": 124,
 									"character": 18
 								}
 							],
@@ -336,7 +336,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 111,
+									"line": 113,
 									"character": 20
 								}
 							],
@@ -1363,7 +1363,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 130,
+									"line": 132,
 									"character": 22
 								}
 							],
@@ -1405,7 +1405,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 239,
+															"line": 241,
 															"character": 16
 														}
 													],
@@ -1424,7 +1424,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 240,
+															"line": 242,
 															"character": 17
 														}
 													],
@@ -1443,7 +1443,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 241,
+															"line": 243,
 															"character": 18
 														}
 													],
@@ -1472,7 +1472,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 236,
+									"line": 238,
 									"character": 18
 								}
 							]
@@ -1556,7 +1556,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 230,
+																					"line": 232,
 																					"character": 16
 																				}
 																			]
@@ -1573,7 +1573,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 228,
+															"line": 230,
 															"character": 39
 														}
 													]
@@ -1618,7 +1618,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 232,
+															"line": 234,
 															"character": 20
 														}
 													]
@@ -1678,7 +1678,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 225,
+																					"line": 227,
 																					"character": 65
 																				}
 																			]
@@ -1695,7 +1695,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 225,
+															"line": 227,
 															"character": 37
 														}
 													]
@@ -1719,7 +1719,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 223,
+									"line": 225,
 									"character": 24
 								}
 							]
@@ -1783,7 +1783,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 186,
+															"line": 188,
 															"character": 16
 														}
 													]
@@ -1810,7 +1810,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 189,
+															"line": 191,
 															"character": 19
 														}
 													]
@@ -1837,7 +1837,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 188,
+															"line": 190,
 															"character": 14
 														}
 													]
@@ -1877,7 +1877,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 184,
+															"line": 186,
 															"character": 16
 														}
 													]
@@ -1902,7 +1902,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 182,
+									"line": 184,
 									"character": 24
 								}
 							]
@@ -1953,7 +1953,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 195,
+															"line": 197,
 															"character": 24
 														}
 													]
@@ -1980,7 +1980,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 200,
+															"line": 202,
 															"character": 26
 														}
 													]
@@ -2020,7 +2020,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 205,
+															"line": 207,
 															"character": 34
 														}
 													]
@@ -2044,7 +2044,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 193,
+									"line": 195,
 									"character": 29
 								}
 							]
@@ -2095,7 +2095,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 218,
+															"line": 220,
 															"character": 18
 														}
 													]
@@ -2122,7 +2122,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 219,
+															"line": 221,
 															"character": 16
 														}
 													]
@@ -2173,7 +2173,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 215,
+															"line": 217,
 															"character": 18
 														}
 													]
@@ -2197,7 +2197,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 213,
+									"line": 215,
 									"character": 26
 								}
 							]
@@ -2359,7 +2359,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 271,
+									"line": 273,
 									"character": 16
 								}
 							]
@@ -2388,7 +2388,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 276,
+									"line": 278,
 									"character": 8
 								}
 							]
@@ -2450,7 +2450,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 246,
+									"line": 248,
 									"character": 12
 								}
 							]
@@ -2613,7 +2613,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 262,
+									"line": 264,
 									"character": 6
 								}
 							],
@@ -2817,7 +2817,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 108,
+							"line": 110,
 							"character": 22
 						}
 					],
@@ -3038,7 +3038,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 415,
+									"line": 417,
 									"character": 20
 								}
 							],
@@ -4010,7 +4010,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 418,
+									"line": 420,
 									"character": 22
 								}
 							],
@@ -4146,7 +4146,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 436,
+									"line": 438,
 									"character": 8
 								}
 							]
@@ -4502,7 +4502,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 414,
+							"line": 416,
 							"character": 26
 						}
 					],
@@ -4610,7 +4610,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 388,
+									"line": 390,
 									"character": 12
 								}
 							],
@@ -4647,7 +4647,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 390,
+									"line": 392,
 									"character": 15
 								}
 							],
@@ -4683,7 +4683,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 386,
+							"line": 388,
 							"character": 41
 						}
 					]
@@ -4701,7 +4701,7 @@
 					},
 					"children": [
 						{
-							"id": 6,
+							"id": 7,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4710,12 +4710,12 @@
 								"isOptional": true
 							},
 							"comment": {
-								"shortText": "Disables the input."
+								"shortText": "Makes the Textfield disabled."
 							},
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 33,
+									"line": 35,
 									"character": 10
 								}
 							],
@@ -4853,7 +4853,7 @@
 							}
 						},
 						{
-							"id": 8,
+							"id": 6,
 							"name": "invalid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4867,7 +4867,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 37,
+									"line": 33,
 									"character": 9
 								}
 							],
@@ -4951,7 +4951,7 @@
 							}
 						},
 						{
-							"id": 7,
+							"id": 8,
 							"name": "required",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4960,12 +4960,12 @@
 								"isOptional": true
 							},
 							"comment": {
-								"shortText": "Mark the input as required."
+								"shortText": "Makes the Textfield required."
 							},
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 35,
+									"line": 37,
 									"character": 10
 								}
 							],
@@ -5168,13 +5168,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								6,
+								7,
 								5,
 								14,
-								8,
+								6,
 								10,
 								9,
-								7,
+								8,
 								13,
 								3,
 								18,
@@ -5207,7 +5207,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 394,
+							"line": 396,
 							"character": 32
 						}
 					],
@@ -5273,7 +5273,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 92,
+							"line": 94,
 							"character": 20
 						}
 					],
@@ -5390,7 +5390,7 @@
 							}
 						]
 					},
-					"defaultValue": " withRipple()(\n  componentFactory<TextFieldProps & DeprecatedTextfieldProps>({\n    displayName: 'TextFieldRoot',\n    deprecate: {\n      box: ''\n    },\n    classNames: (props: TextFieldProps & DeprecatedTextfieldProps) => [\n      'mdc-text-field',\n      'mdc-text-field--upgraded',\n      {\n        'mdc-text-field--textarea': props.textarea,\n        'mdc-text-field--fullwidth': props.fullwidth,\n        'mdc-text-field--outlined': props.outlined,\n        'mdc-text-field--dense': props.dense,\n        'mdc-text-field--invalid': props.invalid,\n        'mdc-text-field--disabled': props.disabled,\n        'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,\n        'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon\n      }\n    ],\n    consumeProps: [\n      'textarea',\n      'fullwidth',\n      'outlined',\n      'dense',\n      'invalid',\n      'disabled',\n      'withLeadingIcon',\n      'withTrailingIcon'\n    ]\n  })\n)"
+					"defaultValue": " withRipple()(\n  componentFactory<TextFieldProps & DeprecatedTextfieldProps>({\n    displayName: 'TextFieldRoot',\n    deprecate: {\n      box: ''\n    },\n    classNames: (\n      props: TextFieldProps & DeprecatedTextfieldProps & RMWC.ComponentProps\n    ) => [\n      'mdc-text-field',\n      'mdc-text-field--upgraded',\n      {\n        'mdc-text-field--textarea': props.textarea,\n        'mdc-text-field--fullwidth': props.fullwidth,\n        'mdc-text-field--outlined': props.outlined,\n        'mdc-text-field--dense': props.dense,\n        'mdc-text-field--invalid': props.invalid,\n        'mdc-text-field--disabled': props.disabled,\n        'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,\n        'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon\n      }\n    ],\n    consumeProps: [\n      'textarea',\n      'fullwidth',\n      'outlined',\n      'dense',\n      'invalid',\n      'disabled',\n      'withLeadingIcon',\n      'withTrailingIcon'\n    ]\n  })\n)"
 				},
 				{
 					"id": 256,
@@ -5403,7 +5403,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 101,
+							"line": 103,
 							"character": 23
 						}
 					],
