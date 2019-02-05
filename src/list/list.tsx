@@ -50,12 +50,14 @@ export class List extends FoundationComponent<ListProps> {
   }
 
   get listElements(): HTMLLIElement[] {
-    return [].slice.call(
-      this.root.ref &&
+    if (this.root.ref) {
+      return [].slice.call(
         this.root.ref.querySelectorAll(
           MDCListFoundation.strings.ENABLED_ITEMS_SELECTOR
         )
-    );
+      );
+    }
+    return [];
   }
 
   componentDidMount() {
