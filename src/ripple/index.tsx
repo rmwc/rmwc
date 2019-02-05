@@ -205,6 +205,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
         className: classNames(
           className,
           surfaceIsRoot && rippleSurfaceProps.className,
+          child.props.className,
           {
             'mdc-ripple-surface':
               typeof surface === 'boolean' ? surface : surface === undefined,
