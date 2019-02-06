@@ -234,7 +234,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "true",
+							"defaultValue": "false",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"

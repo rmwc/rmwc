@@ -2773,7 +2773,7 @@
 								"type": "intrinsic",
 								"name": "boolean"
 							},
-							"defaultValue": "true",
+							"defaultValue": "false",
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "FoundationComponent.shouldDebounce"
@@ -3173,7 +3173,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 61,
+									"line": 63,
 									"character": 19
 								}
 							],
@@ -3753,7 +3753,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 66,
+									"line": 68,
 									"character": 18
 								}
 							]
@@ -3786,7 +3786,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 70,
+									"line": 72,
 									"character": 22
 								}
 							],
@@ -3848,7 +3848,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 186,
+									"line": 188,
 									"character": 18
 								}
 							]
@@ -3994,7 +3994,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 216,
+									"line": 218,
 									"character": 13
 								}
 							]
@@ -4036,7 +4036,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 247,
+									"line": 249,
 									"character": 15
 								}
 							]
@@ -4078,7 +4078,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 252,
+									"line": 254,
 									"character": 16
 								}
 							]
@@ -4126,7 +4126,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 230,
+									"line": 232,
 									"character": 15
 								}
 							]
@@ -4155,7 +4155,7 @@
 							"sources": [
 								{
 									"fileName": "list.tsx",
-									"line": 257,
+									"line": 259,
 									"character": 8
 								}
 							]
