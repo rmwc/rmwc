@@ -70,13 +70,15 @@ describe('Dialog', () => {
 
       el.setProps({ open: false });
       setTimeout(() => {
-        expect(opened).toBe(2);
-        expect(closed).toBe(2);
+        expect(opened).toBe(3);
+        expect(closed).toBe(3);
         expect(lifecycle).toEqual([
           'opening',
           'closing',
           'opening',
           'opened',
+          'closing',
+          'opening',
           'closing',
           'closed'
         ]);

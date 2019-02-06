@@ -200,7 +200,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   FoundationPropsT<P>,
   FoundationStateT<S>
 > {
-  static shouldDebounce = true;
+  static shouldDebounce = false;
 
   foundation: any = this.getDefaultFoundation();
   elements: { [key: string]: FoundationElement<any, any> } = {};
