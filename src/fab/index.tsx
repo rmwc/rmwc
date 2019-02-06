@@ -51,24 +51,29 @@ export const FabLabel = componentFactory<{}>({
 });
 
 /** A floating action button component */
-export const Fab = ({
-  children,
-  label,
-  icon,
-  trailingIcon,
-  ...rest
-}: FabProps & RMWC.ComponentProps) => {
-  if (trailingIcon && !label) {
-    console.warn(
-      `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`
+export const Fab = React.forwardRef(
+  (
+    {
+      children,
+      label,
+      icon,
+      trailingIcon,
+      ...rest
+    }: FabProps & RMWC.ComponentProps,
+    ref
+  ) => {
+    if (trailingIcon && !label) {
+      console.warn(
+        `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`
+      );
+    }
+    return (
+      <FabRoot label={label} {...rest} ref={ref}>
+        {!!icon && <FabIcon icon={icon} />}
+        {!!label && <FabLabel>{label}</FabLabel>}
+        {children}
+        {!!trailingIcon && <FabIcon icon={trailingIcon} />}
+      </FabRoot>
     );
   }
-  return (
-    <FabRoot label={label} {...rest}>
-      {!!icon && <FabIcon icon={icon} />}
-      {!!label && <FabLabel>{label}</FabLabel>}
-      {children}
-      {!!trailingIcon && <FabIcon icon={trailingIcon} />}
-    </FabRoot>
-  );
-};
+);
