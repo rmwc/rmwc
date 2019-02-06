@@ -196,12 +196,14 @@ export class Ripple extends FoundationComponent<RippleProps> {
       surface.setSurfaceProps(rippleSurfaceProps);
     }
 
+    // do some crazy props merging...
     const content = React.cloneElement(child, {
       ...child.props,
       ...unboundedProp,
       ...this.root.props({
         ...rest,
         ...(surfaceIsRoot ? rippleSurfaceProps : undefined),
+        style: child.props.style,
         className: classNames(
           className,
           surfaceIsRoot && rippleSurfaceProps.className,

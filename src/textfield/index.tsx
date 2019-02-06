@@ -341,7 +341,7 @@ export class TextField extends FoundationComponent<
 
     return (
       <TextFieldRoot
-        {...this.root.props({ ...rootProps, className })}
+        {...this.root.props({ ...rootProps, className, style })}
         invalid={invalid}
         withLeadingIcon={!!withLeadingIcon}
         withTrailingIcon={!!withTrailingIcon}
@@ -351,7 +351,6 @@ export class TextField extends FoundationComponent<
         outlined={outlined}
         fullwidth={fullwidth}
         ref={this.root.setRef}
-        style={style}
       >
         {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon')}
         {children}
