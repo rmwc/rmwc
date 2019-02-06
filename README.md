@@ -31,7 +31,6 @@ Features:
 - React 16.3 is the new min version to take advantage of React Fragments, Ref Forwarding, and the new Context Api.
 - elementRef has been removed in favor of refs with ref forwarding in React 16.3
 - Flow types are still in progress, so if you rely on these, don't try it out yet
-- Enhanced Selects are experiencing some buggy behavior and are being worked on
 - If you want the docs, you'll have to run them locally. Clone the repo, `npm i && npm start`.
 
 If none of the things above impact you, 5.x.x is feature complete a ready to try out. It is already being used in production for several internal projects. Please report any issues ASAP and make sure to call out in the issue that you're using the 5.x.x version.
