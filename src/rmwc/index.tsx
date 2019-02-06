@@ -1,5 +1,6 @@
 export const { version } = require('./package.json');
 
+export * from '@rmwc/avatar';
 export * from '@rmwc/base';
 export * from '@rmwc/button';
 export * from '@rmwc/card';

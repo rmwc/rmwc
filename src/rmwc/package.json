@@ -36,6 +36,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
+    "@rmwc/avatar": "^5.0.18-alpha.0",
     "@rmwc/base": "^5.0.18-alpha.0",
     "@rmwc/button": "^5.0.18-alpha.0",
     "@rmwc/card": "^5.0.18-alpha.0",

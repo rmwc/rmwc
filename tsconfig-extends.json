@@ -3,6 +3,8 @@
     "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": "./",
     "paths": {
+      "@rmwc/avatar": ["src/avatar"],
+      "@rmwc/avatar/*": ["src/avatar/*"],
       "@rmwc/base": ["src/base"],
       "@rmwc/base/*": ["src/base/*"],
       "@rmwc/button": ["src/button"],
