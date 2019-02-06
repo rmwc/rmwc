@@ -387,6 +387,58 @@
 					]
 				},
 				{
+					"id": 16,
+					"name": "Fab",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A floating action button component"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 54,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ForwardRefExoticComponent",
+						"typeArguments": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 17,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									},
+									{
+										"type": "reference",
+										"name": "RefAttributes",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "Object"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " React.forwardRef(\n  (\n    {\n      children,\n      label,\n      icon,\n      trailingIcon,\n      ...rest\n    }: FabProps & RMWC.ComponentProps,\n    ref\n  ) => {\n    if (trailingIcon && !label) {\n      console.warn(\n        `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`\n      );\n    }\n    return (\n      <FabRoot label={label} {...rest} ref={ref}>\n        {!!icon && <FabIcon icon={icon} />}\n        {!!label && <FabLabel>{label}</FabLabel>}\n        {children}\n        {!!trailingIcon && <FabIcon icon={trailingIcon} />}\n      </FabRoot>\n    );\n  }\n)"
+				},
+				{
 					"id": 14,
 					"name": "FabIcon",
 					"kind": 32,
@@ -572,324 +624,6 @@
 						]
 					},
 					"defaultValue": " withRipple({ surface: false })(\n  componentFactory<FabProps>({\n    displayName: 'FabRoot',\n    tag: 'button',\n    classNames: (props: FabProps) => [\n      'mdc-fab',\n      {\n        'mdc-fab--mini': props.mini,\n        'mdc-fab--exited': props.exited,\n        'mdc-fab--extended': props.label\n      }\n    ],\n    defaultProps: {\n      cssOnly: false,\n      mini: false\n    },\n    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']\n  })\n)"
-				},
-				{
-					"id": 16,
-					"name": "Fab",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "A floating action button component"
-					},
-					"signatures": [
-						{
-							"id": 17,
-							"name": "Fab",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"shortText": "A floating action button component"
-							},
-							"parameters": [
-								{
-									"id": 18,
-									"name": "__namedParameters",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"originalName": "__0",
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 19,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 20,
-													"name": "children",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 55,
-															"character": 10
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "null"
-															},
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "intrinsic",
-																"name": "number"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															},
-															{
-																"type": "reference",
-																"name": "__type"
-															},
-															{
-																"type": "reference",
-																"name": "ReactElement",
-																"typeArguments": [
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
-																	}
-																]
-															},
-															{
-																"type": "reference",
-																"name": "ReactNodeArray"
-															},
-															{
-																"type": "reference",
-																"name": "ReactPortal"
-															}
-														]
-													}
-												},
-												{
-													"id": 22,
-													"name": "icon",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 57,
-															"character": 6
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "null"
-															},
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "intrinsic",
-																"name": "number"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															},
-															{
-																"type": "reference",
-																"name": "__type"
-															},
-															{
-																"type": "reference",
-																"name": "ReactElement",
-																"typeArguments": [
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
-																	}
-																]
-															},
-															{
-																"type": "reference",
-																"name": "ReactNodeArray"
-															},
-															{
-																"type": "reference",
-																"name": "ReactPortal"
-															},
-															{
-																"type": "reference",
-																"name": "IconOptions"
-															}
-														]
-													}
-												},
-												{
-													"id": 21,
-													"name": "label",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 56,
-															"character": 7
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "any"
-													}
-												},
-												{
-													"id": 24,
-													"name": "rest",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 59,
-															"character": 9
-														}
-													],
-													"type": {
-														"type": "reference",
-														"name": "rest",
-														"id": 24
-													}
-												},
-												{
-													"id": 23,
-													"name": "trailingIcon",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "index.tsx",
-															"line": 58,
-															"character": 14
-														}
-													],
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "undefined"
-															},
-															{
-																"type": "intrinsic",
-																"name": "null"
-															},
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "intrinsic",
-																"name": "number"
-															},
-															{
-																"type": "intrinsic",
-																"name": "false"
-															},
-															{
-																"type": "intrinsic",
-																"name": "true"
-															},
-															{
-																"type": "reference",
-																"name": "__type"
-															},
-															{
-																"type": "reference",
-																"name": "ReactElement",
-																"typeArguments": [
-																	{
-																		"type": "intrinsic",
-																		"name": "any"
-																	}
-																]
-															},
-															{
-																"type": "reference",
-																"name": "ReactNodeArray"
-															},
-															{
-																"type": "reference",
-																"name": "ReactPortal"
-															},
-															{
-																"type": "reference",
-																"name": "IconOptions"
-															}
-														]
-													}
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														20,
-														22,
-														21,
-														24,
-														23
-													]
-												}
-											],
-											"sources": [
-												{
-													"fileName": "index.tsx",
-													"line": 54,
-													"character": 20
-												}
-											]
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Element"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "index.tsx",
-							"line": 54,
-							"character": 16
-						}
-					]
 				}
 			],
 			"groups": [
@@ -904,16 +638,10 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
+						16,
 						14,
 						15,
 						13
-					]
-				},
-				{
-					"title": "Functions",
-					"kind": 64,
-					"children": [
-						16
 					]
 				}
 			],
