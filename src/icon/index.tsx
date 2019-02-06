@@ -4,6 +4,7 @@ import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 import { componentFactory, classNames, deprecationWarning } from '@rmwc/base';
 
 type IconElementT = React.ReactNode;
+export type IconSizeT = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 export type IconStrategyT =
   | 'auto'
@@ -38,7 +39,7 @@ export interface IconOptions {
     props: { content: IconElementT; className: string }
   ) => React.ReactNode;
   /** A size to render the icon  */
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  size?: IconSizeT;
   /** Additional props */
   [key: string]: any;
 }
@@ -60,12 +61,7 @@ export interface DeprecatedIconProps {
  */
 const processAutoStrategy = (content: React.ReactNode): IconStrategyT => {
   // check for URLS
-  if (
-    typeof content === 'string' &&
-    (content.startsWith('/') ||
-      content.startsWith('http://') ||
-      content.startsWith('https://'))
-  ) {
+  if (typeof content === 'string' && content.includes('/')) {
     return 'url';
   }
 
@@ -223,7 +219,7 @@ export const Icon = withProviderContext()(
       return null;
     }
 
-    return renderToUse({
+    const rendered = renderToUse({
       ...rest,
       ...optionsRest,
       content: contentToUse,
@@ -238,5 +234,28 @@ export const Icon = withProviderContext()(
         }
       )
     });
+
+    // Unwrap double layered icons...
+
+    if (
+      rendered.props.children &&
+      rendered.props.children.type &&
+      ['Avatar', 'Icon'].includes(rendered.props.children.type.displayName)
+    ) {
+      return React.cloneElement(rendered.props.children, {
+        ...rendered.props.children.props,
+        ...rendered.props,
+        // prevents an infinite loop
+        children: rendered.props.children.props.children,
+        className: classNames(
+          rendered.props.className,
+          rendered.props.children.props.className
+        )
+      });
+    }
+
+    return rendered;
   }
 );
+
+Icon.displayName = 'Icon';

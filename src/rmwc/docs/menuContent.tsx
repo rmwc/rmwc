@@ -10,6 +10,7 @@ const MethodologyDocs = React.lazy(() => import('./README-METHODOLOGY.md'));
 const LibraryIntegrationsDocs = React.lazy(() =>
   import('./README-LIBRARY-INTEGRATIONS.md')
 );
+const AvatarDocs = React.lazy(() => import('@rmwc/avatar/README.md'));
 const ButtonDocs = React.lazy(() => import('@rmwc/button/README.md'));
 const FabDocs = React.lazy(() => import('@rmwc/fab/README.md'));
 const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/README.md'));
@@ -104,6 +105,11 @@ export const menuContent = [
         component: Loadable(LibraryIntegrationsDocs)
       }
     ]
+  },
+  {
+    label: 'Avatars',
+    url: `/avatars`,
+    component: Loadable(AvatarDocs)
   },
   {
     label: 'Buttons',

@@ -1,7 +1,7 @@
 {
-  "name": "@rmwc/card",
+  "name": "@rmwc/avatar",
   "version": "5.0.18-alpha.0",
-  "description": "RMWC Card component",
+  "description": "RMWC avatar component",
   "main": "dist/index.js",
   "types": "dist/index.js",
   "module": "next/index.js",
@@ -25,17 +25,13 @@
   "bugs": {
     "url": "https://github.com/jamesmfriedman/rmwc/issues"
   },
-  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/card#readme",
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/avatar#readme",
   "peerDependencies": {
     "react": "^16.3.x",
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/card": "^0.43.0",
-    "@rmwc/base": "^5.0.18-alpha.0",
-    "@rmwc/button": "^5.0.18-alpha.0",
-    "@rmwc/icon-button": "^5.0.18-alpha.0",
-    "@rmwc/ripple": "^5.0.18-alpha.0"
+    "@rmwc/base": "^5.0.18-alpha.0"
   },
   "gitHead": "897ce00c1f4266a5022279b18de7b9dbb83fe5fd"
 }

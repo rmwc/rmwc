@@ -38,7 +38,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -61,7 +61,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 53,
+							"line": 54,
 							"character": 36
 						}
 					],
@@ -126,7 +126,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 35,
+									"line": 36,
 									"character": 10
 								}
 							],
@@ -155,7 +155,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 17,
+									"line": 18,
 									"character": 6
 								}
 							],
@@ -180,7 +180,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 33,
+									"line": 34,
 									"character": 8
 								}
 							],
@@ -213,7 +213,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 37,
+									"line": 38,
 									"character": 8
 								}
 							],
@@ -264,7 +264,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 38,
+																					"line": 39,
 																					"character": 45
 																				}
 																			],
@@ -282,7 +282,7 @@
 																			"sources": [
 																				{
 																					"fileName": "index.tsx",
-																					"line": 38,
+																					"line": 39,
 																					"character": 20
 																				}
 																			],
@@ -306,7 +306,7 @@
 																	"sources": [
 																		{
 																			"fileName": "index.tsx",
-																			"line": 38,
+																			"line": 39,
 																			"character": 10
 																		}
 																	]
@@ -340,34 +340,14 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 41,
+									"line": 42,
 									"character": 6
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "stringLiteral",
-										"value": "xsmall"
-									},
-									{
-										"type": "stringLiteral",
-										"value": "small"
-									},
-									{
-										"type": "stringLiteral",
-										"value": "medium"
-									},
-									{
-										"type": "stringLiteral",
-										"value": "large"
-									},
-									{
-										"type": "stringLiteral",
-										"value": "xlarge"
-									}
-								]
+								"type": "reference",
+								"name": "IconSizeT",
+								"id": 23
 							}
 						},
 						{
@@ -385,14 +365,14 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 27,
+									"line": 28,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "IconStrategyT",
-								"id": 23
+								"id": 24
 							}
 						}
 					],
@@ -413,7 +393,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 16,
+							"line": 17,
 							"character": 28
 						}
 					]
@@ -442,14 +422,14 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 50,
+									"line": 51,
 									"character": 6
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "IconPropT",
-								"id": 24
+								"id": 25
 							}
 						},
 						{
@@ -467,7 +447,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 55,
+									"line": 56,
 									"character": 13
 								}
 							],
@@ -496,7 +476,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 48,
+							"line": 49,
 							"character": 26
 						}
 					],
@@ -527,7 +507,7 @@
 					}
 				},
 				{
-					"id": 24,
+					"id": 25,
 					"name": "IconPropT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -537,7 +517,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 46,
+							"line": 47,
 							"character": 21
 						}
 					],
@@ -559,6 +539,47 @@
 				},
 				{
 					"id": 23,
+					"name": "IconSizeT",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 7,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "stringLiteral",
+								"value": "xsmall"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "small"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "medium"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "large"
+							},
+							{
+								"type": "stringLiteral",
+								"value": "xlarge"
+							}
+						]
+					}
+				},
+				{
+					"id": 24,
 					"name": "IconStrategyT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -568,7 +589,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 8,
+							"line": 9,
 							"character": 25
 						}
 					],
@@ -603,7 +624,7 @@
 					}
 				},
 				{
-					"id": 67,
+					"id": 68,
 					"name": "Icon",
 					"kind": 32,
 					"kindString": "Variable",
@@ -617,7 +638,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 151,
+							"line": 147,
 							"character": 17
 						}
 					],
@@ -648,7 +669,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 68,
+													"id": 69,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -687,7 +708,7 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 69,
+													"id": 70,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
@@ -700,10 +721,10 @@
 							}
 						]
 					},
-					"defaultValue": " withProviderContext()(\n  ({\n    icon,\n    iconOptions: deprecatedIconOption,\n    providerContext,\n    ...rest\n  }: IconProps &\n    DeprecatedIconProps &\n    WithProviderContext &\n    RMWC.ComponentProps) => {\n    // handle deprecation\n    if (!!deprecatedIconOption) {\n      const converted = {\n        content: typeof icon === 'string' ? icon : `<MyComponent {...}/>`,\n        ...deprecatedIconOption\n      };\n\n      deprecationWarning(\n        `Icon component prop 'iconOptions' is deprecated. You options should now be passed directly to the 'icon' prop. I.E. icon={${JSON.stringify(\n          converted\n        )}}`\n      );\n    }\n\n    // Build icon options object\n    const {\n      icon: content,\n      strategy,\n      prefix,\n      basename,\n      render,\n      size,\n      ...optionsRest\n    }: IconOptions = {\n      ...buildIconOptions(icon),\n      ...deprecatedIconOption\n    };\n\n    // Get provider options\n    const {\n      basename: providerBasename = null,\n      prefix: providerPrefix = null,\n      strategy: providerStrategy = null,\n      render: providerRender = null\n    } = providerContext.icon || {};\n\n    const contentToUse = content;\n\n    const strategyToUse = getIconStrategy(\n      contentToUse,\n      strategy || null,\n      providerStrategy || null\n    );\n    const prefixToUse = prefix || providerPrefix;\n    const basenameToUse = basename === undefined ? providerBasename : basename;\n    const iconClassName =\n      strategyToUse === 'className' && typeof content === 'string'\n        ? `${String(prefixToUse)}${content}`\n        : null;\n\n    const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];\n\n    // For some reason TS thinks the render method will return undefined...\n    const renderToUse: any =\n      strategyToUse === 'custom'\n        ? render || providerRender\n        : rendererFromMap || null;\n\n    if (!renderToUse) {\n      console.error(\n        `Icon: rendering not implemented for ${String(strategyToUse)}.`\n      );\n      return null;\n    }\n\n    return renderToUse({\n      ...rest,\n      ...optionsRest,\n      content: contentToUse,\n      className: classNames(\n        'rmwc-icon',\n        basenameToUse,\n        rest.className,\n        optionsRest.className,\n        iconClassName,\n        {\n          [`rmwc-icon--size-${size || ''}`]: !!size\n        }\n      )\n    });\n  }\n)"
+					"defaultValue": " withProviderContext()(\n  ({\n    icon,\n    iconOptions: deprecatedIconOption,\n    providerContext,\n    ...rest\n  }: IconProps &\n    DeprecatedIconProps &\n    WithProviderContext &\n    RMWC.ComponentProps) => {\n    // handle deprecation\n    if (!!deprecatedIconOption) {\n      const converted = {\n        content: typeof icon === 'string' ? icon : `<MyComponent {...}/>`,\n        ...deprecatedIconOption\n      };\n\n      deprecationWarning(\n        `Icon component prop 'iconOptions' is deprecated. You options should now be passed directly to the 'icon' prop. I.E. icon={${JSON.stringify(\n          converted\n        )}}`\n      );\n    }\n\n    // Build icon options object\n    const {\n      icon: content,\n      strategy,\n      prefix,\n      basename,\n      render,\n      size,\n      ...optionsRest\n    }: IconOptions = {\n      ...buildIconOptions(icon),\n      ...deprecatedIconOption\n    };\n\n    // Get provider options\n    const {\n      basename: providerBasename = null,\n      prefix: providerPrefix = null,\n      strategy: providerStrategy = null,\n      render: providerRender = null\n    } = providerContext.icon || {};\n\n    const contentToUse = content;\n\n    const strategyToUse = getIconStrategy(\n      contentToUse,\n      strategy || null,\n      providerStrategy || null\n    );\n    const prefixToUse = prefix || providerPrefix;\n    const basenameToUse = basename === undefined ? providerBasename : basename;\n    const iconClassName =\n      strategyToUse === 'className' && typeof content === 'string'\n        ? `${String(prefixToUse)}${content}`\n        : null;\n\n    const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];\n\n    // For some reason TS thinks the render method will return undefined...\n    const renderToUse: any =\n      strategyToUse === 'custom'\n        ? render || providerRender\n        : rendererFromMap || null;\n\n    if (!renderToUse) {\n      console.error(\n        `Icon: rendering not implemented for ${String(strategyToUse)}.`\n      );\n      return null;\n    }\n\n    const rendered = renderToUse({\n      ...rest,\n      ...optionsRest,\n      content: contentToUse,\n      className: classNames(\n        'rmwc-icon',\n        basenameToUse,\n        rest.className,\n        optionsRest.className,\n        iconClassName,\n        {\n          [`rmwc-icon--size-${size || ''}`]: !!size\n        }\n      )\n    });\n\n    // Unwrap double layered icons...\n\n    if (\n      rendered.props.children &&\n      rendered.props.children.type &&\n      ['Avatar', 'Icon'].includes(rendered.props.children.type.displayName)\n    ) {\n      return React.cloneElement(rendered.props.children, {\n        ...rendered.props.children.props,\n        ...rendered.props,\n        // prevents an infinite loop\n        children: rendered.props.children.props.children,\n        className: classNames(\n          rendered.props.className,\n          rendered.props.children.props.className\n        )\n      });\n    }\n\n    return rendered;\n  }\n)"
 				},
 				{
-					"id": 66,
+					"id": 67,
 					"name": "IconRoot",
 					"kind": 32,
 					"kindString": "Variable",
@@ -713,7 +734,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 146,
+							"line": 142,
 							"character": 14
 						}
 					],
@@ -749,7 +770,7 @@
 					"defaultValue": " componentFactory({ displayName: 'IconRoot', tag: 'i' })"
 				},
 				{
-					"id": 63,
+					"id": 64,
 					"name": "buildIconOptions",
 					"kind": 64,
 					"kindString": "Function",
@@ -758,14 +779,14 @@
 					},
 					"signatures": [
 						{
-							"id": 64,
+							"id": 65,
 							"name": "buildIconOptions",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 65,
+									"id": 66,
 									"name": "icon",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -775,7 +796,7 @@
 									"type": {
 										"type": "reference",
 										"name": "IconPropT",
-										"id": 24
+										"id": 25
 									}
 								}
 							],
@@ -789,13 +810,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 137,
+							"line": 133,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 28,
+					"id": 29,
 					"name": "getIconStrategy",
 					"kind": 64,
 					"kindString": "Function",
@@ -808,7 +829,7 @@
 					},
 					"signatures": [
 						{
-							"id": 29,
+							"id": 30,
 							"name": "getIconStrategy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -818,7 +839,7 @@
 							},
 							"parameters": [
 								{
-									"id": 30,
+									"id": 31,
 									"name": "content",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -829,7 +850,7 @@
 									}
 								},
 								{
-									"id": 31,
+									"id": 32,
 									"name": "strategy",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -849,7 +870,7 @@
 									}
 								},
 								{
-									"id": 32,
+									"id": 33,
 									"name": "providerStrategy",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -878,13 +899,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 84,
+							"line": 80,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 25,
+					"id": 26,
 					"name": "processAutoStrategy",
 					"kind": 64,
 					"kindString": "Function",
@@ -896,7 +917,7 @@
 					},
 					"signatures": [
 						{
-							"id": 26,
+							"id": 27,
 							"name": "processAutoStrategy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -906,7 +927,7 @@
 							},
 							"parameters": [
 								{
-									"id": 27,
+									"id": 28,
 									"name": "content",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -920,20 +941,20 @@
 							"type": {
 								"type": "reference",
 								"name": "IconStrategyT",
-								"id": 23
+								"id": 24
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 61,
+							"line": 62,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 39,
+					"id": 40,
 					"name": "renderClassName",
 					"kind": 64,
 					"kindString": "Function",
@@ -942,14 +963,14 @@
 					},
 					"signatures": [
 						{
-							"id": 40,
+							"id": 41,
 							"name": "renderClassName",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 41,
+									"id": 42,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -958,14 +979,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 42,
+											"id": 43,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 43,
+													"id": 44,
 													"name": "content",
 													"kind": 32,
 													"kindString": "Variable",
@@ -973,7 +994,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 103,
+															"line": 99,
 															"character": 9
 														}
 													],
@@ -1030,7 +1051,7 @@
 													}
 												},
 												{
-													"id": 44,
+													"id": 45,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1038,14 +1059,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 104,
+															"line": 100,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 44
+														"id": 45
 													}
 												}
 											],
@@ -1054,15 +1075,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														43,
-														44
+														44,
+														45
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 102,
+													"line": 98,
 													"character": 25
 												}
 											]
@@ -1079,13 +1100,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 102,
+							"line": 98,
 							"character": 21
 						}
 					]
 				},
 				{
-					"id": 51,
+					"id": 52,
 					"name": "renderComponent",
 					"kind": 64,
 					"kindString": "Function",
@@ -1094,14 +1115,14 @@
 					},
 					"signatures": [
 						{
-							"id": 52,
+							"id": 53,
 							"name": "renderComponent",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 53,
+									"id": 54,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1110,14 +1131,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 54,
+											"id": 55,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 55,
+													"id": 56,
 													"name": "content",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1125,7 +1146,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 121,
+															"line": 117,
 															"character": 9
 														}
 													],
@@ -1182,7 +1203,7 @@
 													}
 												},
 												{
-													"id": 56,
+													"id": 57,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1190,14 +1211,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 122,
+															"line": 118,
 															"character": 9
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 56
+														"id": 57
 													}
 												}
 											],
@@ -1206,15 +1227,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														55,
-														56
+														56,
+														57
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 120,
+													"line": 116,
 													"character": 25
 												}
 											]
@@ -1231,13 +1252,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 120,
+							"line": 116,
 							"character": 21
 						}
 					]
 				},
 				{
-					"id": 33,
+					"id": 34,
 					"name": "renderLigature",
 					"kind": 64,
 					"kindString": "Function",
@@ -1246,14 +1267,14 @@
 					},
 					"signatures": [
 						{
-							"id": 34,
+							"id": 35,
 							"name": "renderLigature",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 35,
+									"id": 36,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1262,14 +1283,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 36,
+											"id": 37,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 37,
+													"id": 38,
 													"name": "content",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1277,7 +1298,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 98,
+															"line": 94,
 															"character": 33
 														}
 													],
@@ -1334,7 +1355,7 @@
 													}
 												},
 												{
-													"id": 38,
+													"id": 39,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1342,14 +1363,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 98,
+															"line": 94,
 															"character": 42
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 38
+														"id": 39
 													}
 												}
 											],
@@ -1358,15 +1379,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														37,
-														38
+														38,
+														39
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 98,
+													"line": 94,
 													"character": 24
 												}
 											]
@@ -1383,13 +1404,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 98,
+							"line": 94,
 							"character": 20
 						}
 					]
 				},
 				{
-					"id": 45,
+					"id": 46,
 					"name": "renderUrl",
 					"kind": 64,
 					"kindString": "Function",
@@ -1398,14 +1419,14 @@
 					},
 					"signatures": [
 						{
-							"id": 46,
+							"id": 47,
 							"name": "renderUrl",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 47,
+									"id": 48,
 									"name": "__namedParameters",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1414,14 +1435,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 48,
+											"id": 49,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 49,
+													"id": 50,
 													"name": "content",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1429,7 +1450,7 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 109,
+															"line": 105,
 															"character": 28
 														}
 													],
@@ -1439,7 +1460,7 @@
 													}
 												},
 												{
-													"id": 50,
+													"id": 51,
 													"name": "rest",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1447,14 +1468,14 @@
 													"sources": [
 														{
 															"fileName": "index.tsx",
-															"line": 109,
+															"line": 105,
 															"character": 37
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "rest",
-														"id": 50
+														"id": 51
 													}
 												}
 											],
@@ -1463,15 +1484,15 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														49,
-														50
+														50,
+														51
 													]
 												}
 											],
 											"sources": [
 												{
 													"fileName": "index.tsx",
-													"line": 109,
+													"line": 105,
 													"character": 19
 												}
 											]
@@ -1488,13 +1509,13 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 109,
+							"line": 105,
 							"character": 15
 						}
 					]
 				},
 				{
-					"id": 57,
+					"id": 58,
 					"name": "iconRenderMap",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -1503,7 +1524,7 @@
 					},
 					"children": [
 						{
-							"id": 62,
+							"id": 63,
 							"name": "auto",
 							"kind": 32,
 							"kindString": "Variable",
@@ -1511,7 +1532,7 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 134,
+									"line": 130,
 									"character": 6
 								}
 							],
@@ -1522,7 +1543,7 @@
 							"defaultValue": " undefined"
 						},
 						{
-							"id": 59,
+							"id": 60,
 							"name": "className",
 							"kind": 32,
 							"kindString": "Variable",
@@ -1530,19 +1551,19 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 131,
+									"line": 127,
 									"character": 11
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "renderClassName",
-								"id": 40
+								"id": 41
 							},
 							"defaultValue": " renderClassName"
 						},
 						{
-							"id": 61,
+							"id": 62,
 							"name": "component",
 							"kind": 32,
 							"kindString": "Variable",
@@ -1550,19 +1571,19 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 133,
+									"line": 129,
 									"character": 11
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "renderComponent",
-								"id": 52
+								"id": 53
 							},
 							"defaultValue": " renderComponent"
 						},
 						{
-							"id": 58,
+							"id": 59,
 							"name": "ligature",
 							"kind": 32,
 							"kindString": "Variable",
@@ -1570,19 +1591,19 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 130,
+									"line": 126,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "renderLigature",
-								"id": 34
+								"id": 35
 							},
 							"defaultValue": " renderLigature"
 						},
 						{
-							"id": 60,
+							"id": 61,
 							"name": "url",
 							"kind": 32,
 							"kindString": "Variable",
@@ -1590,14 +1611,14 @@
 							"sources": [
 								{
 									"fileName": "index.tsx",
-									"line": 132,
+									"line": 128,
 									"character": 5
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "renderUrl",
-								"id": 46
+								"id": 47
 							},
 							"defaultValue": " renderUrl"
 						}
@@ -1607,18 +1628,18 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
+								63,
+								60,
 								62,
 								59,
-								61,
-								58,
-								60
+								61
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 127,
+							"line": 123,
 							"character": 19
 						}
 					],
@@ -1643,36 +1664,37 @@
 					"kind": 4194304,
 					"children": [
 						22,
-						24,
-						23
+						25,
+						23,
+						24
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						67,
-						66
+						68,
+						67
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						63,
-						28,
-						25,
-						39,
-						51,
-						33,
-						45
+						64,
+						29,
+						26,
+						40,
+						52,
+						34,
+						46
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						57
+						58
 					]
 				}
 			],

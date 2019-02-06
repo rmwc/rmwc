@@ -619,59 +619,12 @@ ul li {
   min-width: 5rem;
 }
 
-/**
- * Submenu
- */
-.submenu {
-  float: left;
-  width: 100%;
+#page-avatars .example.render-with-code:first-of-type .rmwc-avatar {
+  margin: 0.5rem;
 }
 
-.submenu__children {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s;
-}
-
-.submenu__children--open {
-  max-height: 25rem;
-}
-
-.submenu__icon {
-  transition: transform 0.3s;
-  user-select: none;
-}
-
-.submenu__icon--open {
-  transform: rotate(90deg);
-}
-
-.submenu__children .mdc-list-item > span:before {
-  content: '';
-  display: inline-block;
-  width: 1.5rem;
-}
-
-/**
- * Data Tables
- */
-
-.mdl-data-table__select {
-  width: 1rem;
-}
-
-.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
-  text-align: left;
-}
-
-.mdl-data-table td,
-.mdl-data-table th {
-  text-align: left;
-}
-
-.tabledrag-toggle-weight {
-  float: right;
-  margin-right: -0.75rem;
+#page-avatars .example.render-with-code .mdc-chip {
+  margin: 1rem;
 }
 
 .header code {

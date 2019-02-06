@@ -1,0 +1,1382 @@
+{
+	"id": 0,
+	"name": "@rmwc/avatar",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/avatar/index.tsx",
+			"children": [
+				{
+					"id": 9,
+					"name": "AvatarCountProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 11,
+							"name": "overflow",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Optionally renders a \"+\" to indicate overlow."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 119,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 12,
+							"name": "size",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The size of the avatar"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 121,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconSizeT"
+							}
+						},
+						{
+							"id": 13,
+							"name": "square",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the avatar square."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 123,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 10,
+							"name": "value",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The number of users."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 117,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								11,
+								12,
+								13,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 115,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 7,
+					"name": "AvatarGroupProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 8,
+							"name": "dense",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Makes the list dense"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 64,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								8
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 62,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "AvatarProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 5,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The name of the user. This will get converted to initials and set the hover title."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 12,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "size",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "The size of the avatar"
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 10,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IconSizeT"
+							}
+						},
+						{
+							"id": 6,
+							"name": "square",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "Make the avatar square."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 14,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "false"
+									},
+									{
+										"type": "intrinsic",
+										"name": "true"
+									}
+								]
+							}
+						},
+						{
+							"id": 3,
+							"name": "src",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The url for the image. This gets passed to the Icon component."
+							},
+							"sources": [
+								{
+									"fileName": "index.tsx",
+									"line": 8,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "React.ReactNode"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								5,
+								4,
+								6,
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 6,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 29,
+					"name": "AvatarGroup",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "A container for groups of Avatars"
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 68,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "AvatarGroupProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "AvatarGroupProps",
+												"id": 7
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<AvatarGroupProps>({\n  displayName: 'AvatarGroup',\n  classNames: props => [\n    'rmwc-avatar-group',\n    {\n      'rmwc-avatar-group--dense': props.dense\n    }\n  ],\n  consumeProps: ['dense']\n})"
+				},
+				{
+					"id": 28,
+					"name": "AvatarIcon",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 56,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<IconProps>({\n  displayName: 'AvatarIcon',\n  classNames: ['rmwc-avatar__icon'],\n  tag: Icon\n})"
+				},
+				{
+					"id": 17,
+					"name": "AvatarRoot",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 33,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "ComponentClass",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 18,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 19,
+															"name": "isCount",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 35,
+																	"character": 11
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 20,
+															"name": "overflow",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 36,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 21,
+															"name": "smallerText",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 37,
+																	"character": 15
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 22,
+															"name": "square",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 38,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																19,
+																20,
+																21,
+																22
+															]
+														}
+													]
+												}
+											},
+											{
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "FunctionComponent",
+								"typeArguments": [
+									{
+										"type": "intersection",
+										"types": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 23,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 24,
+															"name": "isCount",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 35,
+																	"character": 11
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 25,
+															"name": "overflow",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 36,
+																	"character": 12
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 26,
+															"name": "smallerText",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 37,
+																	"character": 15
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														},
+														{
+															"id": 27,
+															"name": "square",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "index.tsx",
+																	"line": 38,
+																	"character": 10
+																}
+															],
+															"type": {
+																"type": "union",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "undefined"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "false"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "true"
+																	}
+																]
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																24,
+																25,
+																26,
+																27
+															]
+														}
+													]
+												}
+											},
+											{
+												"type": "reference",
+												"name": "IconProps"
+											},
+											{
+												"type": "reference",
+												"name": "ComponentProps"
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					"defaultValue": " componentFactory<\n  {\n    isCount?: boolean;\n    overflow?: boolean;\n    smallerText?: boolean;\n    square?: boolean;\n  } & IconProps\n>({\n  displayName: 'AvatarRoot',\n  classNames: props => [\n    'rmwc-avatar',\n    {\n      [`rmwc-avatar--${props.size}`]: props.size,\n      'rmwc-avatar--count': props.isCount,\n      'rmwc-avatar--count-overflow': props.overflow,\n      'rmwc-avatar--smaller-text': props.smallerText,\n      'rmwc-avatar--square': props.square\n    }\n  ],\n  tag: Icon,\n  consumeProps: ['isCount', 'overflow', 'smallerText', 'square']\n})"
+				},
+				{
+					"id": 30,
+					"name": "Avatar",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An Avatar component for displaying users in a system."
+					},
+					"signatures": [
+						{
+							"id": 31,
+							"name": "Avatar",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "An Avatar component for displaying users in a system."
+							},
+							"parameters": [
+								{
+									"id": 32,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"originalName": "__0",
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 33,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 36,
+													"name": "name",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 83,
+															"character": 6
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													},
+													"defaultValue": "\"\""
+												},
+												{
+													"id": 37,
+													"name": "rest",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 84,
+															"character": 9
+														}
+													],
+													"type": {
+														"type": "reference",
+														"name": "rest",
+														"id": 37
+													}
+												},
+												{
+													"id": 35,
+													"name": "size",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 82,
+															"character": 6
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "undefined"
+													}
+												},
+												{
+													"id": 34,
+													"name": "src",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 81,
+															"character": 5
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "__type"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															},
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "ReactElement",
+																		"typeArguments": [
+																			{
+																				"type": "intrinsic",
+																				"name": "any"
+																			}
+																		]
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															},
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "ReactNodeArray"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															},
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "reference",
+																		"name": "ReactPortal"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	}
+																]
+															}
+														]
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														36,
+														37,
+														35,
+														34
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 80,
+													"character": 23
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 80,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 38,
+					"name": "AvatarCount",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "An Avatar count for displaying list overflow."
+					},
+					"signatures": [
+						{
+							"id": 39,
+							"name": "AvatarCount",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "An Avatar count for displaying list overflow."
+							},
+							"parameters": [
+								{
+									"id": 40,
+									"name": "__namedParameters",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"originalName": "__0",
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 41,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 43,
+													"name": "overflow",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 129,
+															"character": 10
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
+												},
+												{
+													"id": 45,
+													"name": "rest",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 131,
+															"character": 9
+														}
+													],
+													"type": {
+														"type": "reference",
+														"name": "rest",
+														"id": 45
+													}
+												},
+												{
+													"id": 44,
+													"name": "size",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 130,
+															"character": 6
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "undefined"
+													}
+												},
+												{
+													"id": 42,
+													"name": "value",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "index.tsx",
+															"line": 128,
+															"character": 7
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "number"
+															},
+															{
+																"type": "intersection",
+																"types": [
+																	{
+																		"type": "intrinsic",
+																		"name": "number"
+																	},
+																	{
+																		"type": "array",
+																		"elementType": {
+																			"type": "intrinsic",
+																			"name": "string"
+																		}
+																	}
+																]
+															}
+														]
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														43,
+														45,
+														44,
+														42
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "index.tsx",
+													"line": 127,
+													"character": 28
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Element"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 127,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "getInitialsForName",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 15,
+							"name": "getInitialsForName",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 16,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"\""
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.tsx",
+							"line": 17,
+							"character": 24
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						9,
+						7,
+						2
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						29,
+						28,
+						17
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						30,
+						38,
+						14
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1
+			]
+		}
+	]
+}
