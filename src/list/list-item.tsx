@@ -90,13 +90,6 @@ export const ListItemMeta = componentFactory<ListItemMetaProps>({
   }
 });
 
-/** A meta icon for the ListItem.*/
-const ListItemMetaIcon = componentFactory<ListItemMetaProps>({
-  displayName: 'ListItemMetaIcon',
-  classNames: ['mdc-list-item__meta'],
-  tag: Icon
-});
-
 /** A container to group ListItems */
 export const ListGroup = componentFactory<{}>({
   displayName: 'ListGroup',

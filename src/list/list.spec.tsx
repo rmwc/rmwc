@@ -30,6 +30,26 @@ describe('List', () => {
     el.unmount();
   });
 
+  it('handles onAction', () => {
+    let clickedIndex;
+
+    const el = mount(
+      <List onAction={evt => (clickedIndex = evt.detail)}>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+        <ListItem>
+          <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        </ListItem>
+      </List>
+    );
+
+    el.find(ListItem)
+      .last()
+      .simulate('click');
+    expect(clickedIndex).toBe(1);
+  });
+
   it('SimpleListItem renders', () => {
     mount(
       <List>
@@ -116,8 +136,8 @@ describe('List', () => {
     a.removeClassForElementIndex(0, 'foo');
     a.focusItemAtIndex(0);
     a.setTabIndexForListItemChildren(0, 0);
-    a.followHref(0);
     a.hasCheckboxAtIndex(0);
+    a.notifyAction(0);
     a.hasRadioAtIndex(0);
     a.isCheckboxCheckedAtIndex(0);
     a.setCheckedCheckboxOrRadioAtIndex(0);

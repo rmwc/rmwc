@@ -3,7 +3,8 @@ import * as React from 'react';
 import { IconProps, IconPropT } from '@rmwc/icon';
 import {
   MDCTextFieldFoundation,
-  MDCTextFieldIconFoundation
+  MDCTextFieldIconFoundation,
+  MDCTextFieldCharacterCounterFoundation
   // @ts-ignore
 } from '@material/textfield';
 
@@ -23,12 +24,12 @@ import { withRipple } from '@rmwc/ripple';
  * TextField
  *********************************************************************/
 export interface TextFieldProps {
-  /** Makes a multiline TextField. */
-  textarea?: boolean;
   /** Sets the value for controlled TextFields. */
   value?: string | number;
-  /** Makes the TextField fullwidth. */
-  fullwidth?: boolean;
+  /** Adds help text to the field */
+  helpText?: React.ReactNode | TextFieldHelperTextProps;
+  /** Shows the character count, must be used in conjunction with maxLength. */
+  characterCount?: boolean;
   /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean;
   /** Makes the Textfield disabled.  */
@@ -39,21 +40,29 @@ export interface TextFieldProps {
   outlined?: boolean;
   /** A label for the input. */
   label?: React.ReactNode;
+  /** Makes a multiline TextField. */
+  textarea?: boolean;
+  /** Makes the TextField fullwidth. */
+  fullwidth?: boolean;
   /** Add a leading icon. */
-  withLeadingIcon?: IconPropT;
+  leadingIcon?: IconPropT;
   /** Add a trailing icon. */
-  withTrailingIcon?: IconPropT;
+  trailingIcon?: IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** A reference to the native input or textarea. */
   inputRef?: (ref: HTMLInputElement | HTMLTextAreaElement | null) => void;
-  /** The type of input field to render */
+  /** The type of input field to render, search, number, etc */
   type?: string;
 }
 
 export interface DeprecatedTextfieldProps {
   /** DEPRECATED: Is being removed from MCW. */
   dense?: boolean;
+  /** DEPRECATED: Use leadingIcon. */
+  withLeadingIcon?: IconPropT;
+  /** DEPRECATED: Use trailingIcon. */
+  withTrailingIcon?: IconPropT;
 }
 
 const TextFieldRoot = withRipple()(
@@ -74,8 +83,9 @@ const TextFieldRoot = withRipple()(
         'mdc-text-field--dense': props.dense,
         'mdc-text-field--invalid': props.invalid,
         'mdc-text-field--disabled': props.disabled,
-        'mdc-text-field--with-leading-icon': !!props.withLeadingIcon,
-        'mdc-text-field--with-trailing-icon': !!props.withTrailingIcon
+        'mdc-text-field--with-leading-icon': !!props.leadingIcon,
+        'mdc-text-field--with-trailing-icon': !!props.trailingIcon,
+        'mdc-text-field--no-label': !props.label
       }
     ],
     consumeProps: [
@@ -85,8 +95,9 @@ const TextFieldRoot = withRipple()(
       'dense',
       'invalid',
       'disabled',
-      'withLeadingIcon',
-      'withTrailingIcon'
+      'leadingIcon',
+      'trailingIcon',
+      'label'
     ]
   })
 );
@@ -118,8 +129,9 @@ export class TextField extends FoundationComponent<
   );
   private label = this.createElement<FloatingLabel>('label');
   private lineRipple = this.createElement<LineRipple>('lineRipple');
-  leadingIcon: null | any;
-  trailingIcon: null | any;
+  characterCounter: null | TextFieldCharacterCount = null;
+  leadingIcon: null | TextFieldIcon = null;
+  trailingIcon: null | TextFieldIcon = null;
   outline: null | any;
   valueNeedsUpdate = false;
 
@@ -171,7 +183,6 @@ export class TextField extends FoundationComponent<
           window
             .getComputedStyle(this.root.ref)
             .getPropertyValue('direction') === 'rtl',
-
         ...this.getInputAdapterMethods(),
         ...this.getLabelAdapterMethods(),
         ...this.getLineRippleAdapterMethods(),
@@ -226,7 +237,6 @@ export class TextField extends FoundationComponent<
     return {
       registerInputInteractionHandler: (evtType: string, handler: () => void) =>
         this.input.addEventListener(evtType, handler),
-
       deregisterInputInteractionHandler: (
         evtType: string,
         handler: () => void
@@ -237,10 +247,11 @@ export class TextField extends FoundationComponent<
 
   getFoundationMap() {
     return {
-      // helperText: this.helperText_ ? this.helperText_.foundation : undefined,
+      characterCounter:
+        this.characterCounter && this.characterCounter.foundation,
       helperText: undefined,
-      leadingIcon: this.leadingIcon,
-      trailingIcon: this.trailingIcon
+      leadingIcon: this.leadingIcon && this.leadingIcon.foundation,
+      trailingIcon: this.trailingIcon && this.trailingIcon.foundation
     };
   }
 
@@ -250,9 +261,9 @@ export class TextField extends FoundationComponent<
       <TextFieldIcon
         ref={(ref: TextFieldIcon) => {
           if (leadOrTrail === 'leadingIcon') {
-            this.leadingIcon = ref && ref.foundation;
+            this.leadingIcon = ref;
           } else {
-            this.trailingIcon = ref && ref.foundation;
+            this.trailingIcon = ref;
           }
         }}
         tabIndex={leadOrTrail === 'trailingIcon' ? 0 : undefined}
@@ -277,7 +288,7 @@ export class TextField extends FoundationComponent<
 
   render() {
     const {
-      label = '',
+      label,
       className,
       style,
       outlined,
@@ -285,19 +296,44 @@ export class TextField extends FoundationComponent<
       dense,
       invalid,
       disabled,
-      withLeadingIcon,
-      withTrailingIcon,
+      helpText,
       children,
       textarea,
       inputRef,
+      characterCount,
+      leadingIcon: _leadingIcon,
+      trailingIcon: _trailingIcon,
+      withLeadingIcon: _withLeadingIcon,
+      withTrailingIcon: _withTrailingIcon,
       rootProps = {},
       ...rest
+    } = this.props;
+
+    let {
+      leadingIcon,
+      trailingIcon,
+      withLeadingIcon,
+      withTrailingIcon
     } = this.props;
 
     if (dense !== undefined) {
       deprecationWarning(
         `Textfield prop 'dense' is being removed in a future release by material-components-web.`
       );
+    }
+
+    if (withLeadingIcon !== undefined) {
+      deprecationWarning(
+        `Textfield prop 'withLeadingIcon' is now 'leadingIcon'.`
+      );
+      leadingIcon = withLeadingIcon;
+    }
+
+    if (withTrailingIcon !== undefined) {
+      deprecationWarning(
+        `Textfield prop 'withTrailingIcon' is now 'trailingIcon'.`
+      );
+      trailingIcon = withTrailingIcon;
     }
 
     // Fixes bug #362
@@ -308,6 +344,7 @@ export class TextField extends FoundationComponent<
     // on componentDidUpdate
     if (
       this.props.value !== undefined &&
+      this.foundation &&
       this.props.value !== this.foundation.getValue()
     ) {
       this.valueNeedsUpdate = true;
@@ -323,7 +360,7 @@ export class TextField extends FoundationComponent<
       id: rest.id || this.generatedId
     };
 
-    const tag = textarea ? (
+    const renderedTag = textarea ? (
       <TextFieldTextarea {...tagProps} />
     ) : (
       <TextFieldInput {...tagProps} />
@@ -339,44 +376,73 @@ export class TextField extends FoundationComponent<
       </FloatingLabel>
     ) : null;
 
-    return (
-      <TextFieldRoot
-        {...this.root.props({ ...rootProps, className, style })}
-        invalid={invalid}
-        withLeadingIcon={!!withLeadingIcon}
-        withTrailingIcon={!!withTrailingIcon}
-        textarea={textarea}
-        dense={dense}
-        disabled={disabled}
-        outlined={outlined}
-        fullwidth={fullwidth}
-        ref={this.root.setRef}
+    const renderedCharacterCounter = characterCount ? (
+      <TextFieldCharacterCount
+        ref={(el: TextFieldCharacterCount | null) => {
+          console.log('HERE');
+          this.characterCounter = el;
+        }}
       >
-        {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon')}
-        {children}
-        {tag}
+        F
+      </TextFieldCharacterCount>
+    ) : null;
 
-        {!!outlined ? (
-          <React.Fragment>
-            <NotchedOutline
-              ref={(ref: NotchedOutline) =>
-                (this.outline = ref && ref.foundation)
-              }
-            >
+    return (
+      <React.Fragment>
+        <TextFieldRoot
+          {...this.root.props({
+            ...rootProps,
+            className,
+            style
+          })}
+          label={label}
+          invalid={invalid}
+          leadingIcon={!!leadingIcon}
+          trailingIcon={!!trailingIcon}
+          textarea={textarea}
+          dense={dense}
+          disabled={disabled}
+          outlined={outlined}
+          fullwidth={fullwidth}
+          ref={this.root.setRef}
+        >
+          {!!leadingIcon && this.renderIcon(leadingIcon, 'leadingIcon')}
+          {children}
+          {/** Render character counter in different place for textarea */}
+          {!!textarea && renderedCharacterCounter}
+          {renderedTag}
+
+          {!!outlined ? (
+            <React.Fragment>
+              <NotchedOutline
+                ref={(ref: NotchedOutline) =>
+                  (this.outline = ref && ref.foundation)
+                }
+              >
+                {renderedLabel}
+              </NotchedOutline>
+              {!!trailingIcon && this.renderIcon(trailingIcon, 'trailingIcon')}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
               {renderedLabel}
-            </NotchedOutline>
-            {!!withTrailingIcon &&
-              this.renderIcon(withTrailingIcon, 'trailingIcon')}
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            {renderedLabel}
-            {!!withTrailingIcon &&
-              this.renderIcon(withTrailingIcon, 'trailingIcon')}
-            <LineRipple {...this.lineRipple.props({})} />
-          </React.Fragment>
+              {!!trailingIcon && this.renderIcon(trailingIcon, 'trailingIcon')}
+              <LineRipple {...this.lineRipple.props({})} />
+            </React.Fragment>
+          )}
+        </TextFieldRoot>
+        {(!!helpText || (characterCount && !textarea)) && (
+          <div className="mdc-text-field-helper-line">
+            {helpText && (
+              <TextFieldHelperText
+                children={helpText}
+                {...(React.isValidElement(helpText) ? undefined : helpText)}
+              />
+            )}
+            {!textarea && renderedCharacterCounter}
+          </div>
         )}
-      </TextFieldRoot>
+      </React.Fragment>
     );
   }
 }
@@ -384,17 +450,48 @@ export class TextField extends FoundationComponent<
 /*********************************************************************
  * Helper Text
  *********************************************************************/
+
+interface TextFieldHelperCharacterCount {}
+
+class TextFieldCharacterCount extends FoundationComponent<
+  TextFieldHelperCharacterCount
+> {
+  static displayName = 'TextFieldCharacterCount';
+
+  state = {
+    content: ''
+  };
+
+  getDefaultFoundation() {
+    return new MDCTextFieldCharacterCounterFoundation({
+      setContent: (content: string) => {
+        console.log('SETTING');
+        this.setState({ content });
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div className="mdc-text-field-character-counter">
+        {this.state.content}
+      </div>
+    );
+  }
+}
+
 export interface TextFieldHelperTextProps {
   /** Make the help text always visible */
   persistent?: boolean;
   /** Make the help a validation message style */
   validationMsg?: boolean;
+  /** Content for the help text */
+  children: React.ReactNode;
 }
 
 /** A help text component */
 export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
   displayName: 'TextFieldHelperText',
-  tag: 'p',
   classNames: (props: TextFieldHelperTextProps) => [
     'mdc-text-field-helper-text',
     {

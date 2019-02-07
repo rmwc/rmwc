@@ -58,7 +58,6 @@ export const MenuSurfaceRoot = componentFactory<{}>({
 
 /** A generic menu component for displaying any type of content. */
 export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
-  static shouldDebounce = false;
   private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
@@ -125,7 +124,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         this.emit('onClose', {});
         this.deregisterBodyClickListener();
         // an annoying hack... this is the only
-        // place to catch bot the normal close and bodyClick handler
+        // place to catch the normal close and bodyClick handler
         // and correct it if we still want to be open.
         if (this.props.open) {
           this.open = this.props.open;

@@ -14,10 +14,12 @@ export interface ListProps {
   avatarList?: boolean;
   /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean;
+  /** A callback for when a list item is interacted with. */
+  onAction?: (evt: RMWC.CustomEventT<number>) => void;
 }
 
 /** A List Component */
-export const ListRoot = componentFactory<ListProps>({
+const ListRoot = componentFactory<ListProps>({
   displayName: 'ListRoot',
   defaultProps: {
     dense: undefined,
@@ -34,10 +36,14 @@ export const ListRoot = componentFactory<ListProps>({
       'mdc-list--non-interactive': props.nonInteractive
     }
   ],
-  consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive']
+  consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive', 'onAction']
 });
 
 export class List extends FoundationComponent<ListProps> {
+  static get cssClasses() {
+    return MDCListFoundation.cssClasses;
+  }
+
   private root = this.createElement('root');
 
   constructor(props: ListProps) {
@@ -129,12 +135,6 @@ export class List extends FoundationComponent<ListProps> {
             ele.setAttribute('tabindex', String(tabIndexValue))
           );
         },
-        followHref: (index: number) => {
-          const listItem = this.listElements[index];
-          if (listItem && (listItem as any).href) {
-            listItem.click();
-          }
-        },
         hasCheckboxAtIndex: (index: number) => {
           const listItem = this.listElements[index];
           return !!listItem.querySelector(
@@ -171,6 +171,9 @@ export class List extends FoundationComponent<ListProps> {
             event.initEvent('change', true, true);
             toggleEl.dispatchEvent(event);
           }
+        },
+        notifyAction: (index: number) => {
+          this.emit('onAction', index);
         },
         isFocusInsideList: () => {
           return (

@@ -13,21 +13,18 @@
 ## Text Field Variants
 
 ```jsx render
-import { TextField, TextFieldHelperText } from '@rmwc/textfield';
+import { TextField } from '@rmwc/textfield';
 
 {/* Standard text field. */}
-<TextField label="standard..." />
-
-{/* Help text can be added to appear on focus. Place it directly after TextField. */}
-<TextFieldHelperText>Optional help text.</TextFieldHelperText>
+<TextField label="standard..." helpText="Optional help text."/>
 
 {/* Leading and trailing icons can be used, they look the best with the box prop. You can pass anything the Icon component accepts. */}
-<TextField withLeadingIcon="search" withTrailingIcon="close" label="withLeadingIcon..." />
+<TextField leadingIcon="search" trailingIcon="close" label="leadingIcon..." />
 
 {/* If you need full control over the icon, you can pass the icon as options with your own props. Dont forget the TabIndex to make it clickable*/}
 <TextField
-  label="withTrailingIcon..." 
-  withTrailingIcon={{
+  label="trailingIcon..." 
+  trailingIcon={{
     icon: 'close',
     onClick: () => console.log('Clear')
   }} 
@@ -39,11 +36,19 @@ import { TextField, TextFieldHelperText } from '@rmwc/textfield';
 {/* A fullWidth input. */}
 <TextField fullwidth placeholder="fullWidth..."/>
 
-{/* You can make the TextField a textarea. Make sure to include `outlined` for proper styling */}
-<TextField textarea outlined fullwidth label="textarea..." rows="8" />
-
-{/* You can optionally make HelperText always visible with the persistent prop. */}
-<TextFieldHelperText persistent validationMsg>The field is required.</TextFieldHelperText>
+{/*
+  You can make the TextField a textarea. Make sure to include `outlined` for proper styling
+  You can optionally make help text always visible by passing an object as props with persistent set to true.
+*/}
+<TextField textarea outlined fullwidth label="textarea..." rows="8"       
+  maxLength={20}
+  characterCount
+  helpText={{
+    persistent: true,
+    validationMsg: true,
+    children: 'The field is required'
+  }}
+/>
 
 {/* Disabled text field. */}
 <TextField disabled label="disabled..." />
@@ -51,6 +56,9 @@ import { TextField, TextFieldHelperText } from '@rmwc/textfield';
 {/* Invalid text fields. */}
 <TextField invalid label="Invalid..." value="#@!$" onChange={() => {}}/>
 <TextField label="Validate Pattern" pattern="[A-Za-z]{3}"/>
+
+{/* No Label. */}
+<TextField placeholder="No label"/>
 ```
 
 ## HTML Input Types

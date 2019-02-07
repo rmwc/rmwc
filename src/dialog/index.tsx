@@ -138,7 +138,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
     this.container =
       this.root.ref &&
       this.root.ref.querySelector(
-        MDCDialogFoundation.strings.CONTAINERSELECTOR
+        MDCDialogFoundation.strings.CONTAINER_SELECTOR
       );
     this.content =
       this.root.ref &&
@@ -340,7 +340,9 @@ export class SimpleDialog extends React.Component<SimpleDialogProps> {
               <DialogButton action="close">{cancelLabel}</DialogButton>
             )}
             {!!acceptLabel && (
-              <DialogButton action="accept">{acceptLabel}</DialogButton>
+              <DialogButton action="accept" isDefaultAction>
+                {acceptLabel}
+              </DialogButton>
             )}
           </DialogActions>
         )}

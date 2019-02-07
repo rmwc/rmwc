@@ -130,9 +130,8 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
   private sliderPin = this.createElement<SliderPin>('sliderPin');
   track: HTMLElement | null = null;
 
-  constructor(props: SliderProps) {
-    super(props);
-
+  componentDidMount() {
+    super.componentDidMount();
     // Fixes an issue where synthetic events were being
     // accessed in the Foundation and causing an error
     const existingInteractionStartHandler_ = this.foundation

@@ -45,7 +45,7 @@ class TextFieldUncontrolledStory extends React.Component {
   render() {
     return (
       <div>
-        <TextField label="Hello" />
+        <TextField label="Hello" characterCount />
         <button
           onClick={() => this.setState({ counter: this.state.counter + 1 })}
         >

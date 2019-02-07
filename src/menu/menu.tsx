@@ -64,7 +64,6 @@ export const MenuItem = componentFactory<MenuItemProps>({
 
 /** A menu component for displaying lists items. */
 export class Menu extends FoundationComponent<MenuProps> {
-  static shouldDebounce = false;
   static displayName = 'Menu';
 
   list: List | null = null;
@@ -138,12 +137,24 @@ export class Menu extends FoundationComponent<MenuProps> {
 
   handleClick(evt: React.MouseEvent) {
     this.props.onClick && this.props.onClick(evt);
-    this.foundation.handleClick(evt);
+    this.foundation.handleItemAction(evt.target);
   }
 
   handleKeydown(evt: React.KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeydown(evt);
+
+    // Jump through some hoops to find out
+    // that we are selecting the list item
+    // This is instead of trying to listen to an event on the list item
+    // which is what MDC does
+    if (
+      evt.which === 13 &&
+      evt.target instanceof Element &&
+      evt.target.classList.contains(List.cssClasses.LIST_ITEM_CLASS)
+    ) {
+      this.foundation.handleItemAction(evt.target);
+    }
   }
 
   handleOpen(evt: RMWC.CustomEventT<{}>) {

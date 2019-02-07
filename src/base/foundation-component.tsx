@@ -202,7 +202,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
 > {
   static shouldDebounce = false;
 
-  foundation: any = this.getDefaultFoundation();
+  foundation: any;
   elements: { [key: string]: FoundationElement<any, any> } = {};
 
   constructor(props: any) {
@@ -216,6 +216,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   componentDidMount() {
+    this.foundation = this.getDefaultFoundation();
     this.foundation.init();
     this.sync(this.props, {});
   }
@@ -264,7 +265,7 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   /**
    * Fires a cross-browser-compatible custom event from the component root of the given type,
    */
-  emit(evtType: string, evtData: Object, shouldBubble: boolean = false) {
+  emit(evtType: string, evtData: any, shouldBubble: boolean = false) {
     let evt;
 
     evt = new CustomEvent(evtType, {

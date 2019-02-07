@@ -78,7 +78,7 @@ describe('Menu', () => {
     setTimeout(() => {
       expect(val).toBe(1);
       done();
-    }, 200);
+    }, 300);
   });
 
   it('SimpleMenuSurface renders', done => {

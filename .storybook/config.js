@@ -1,6 +1,6 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
-import 'material-components-web/dist/material-components-web.css';
+import '../src/rmwc/node_modules/material-components-web/dist/material-components-web.css';
 import { withKnobs } from '@storybook/addon-knobs';
 
 function requireAll(requireContext) {

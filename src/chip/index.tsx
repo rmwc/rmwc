@@ -130,9 +130,7 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
           this.root.ref &&
           window.getComputedStyle(this.root.ref).getPropertyValue(propertyName),
         setStyleProperty: (propertyName: string, value: any) => {
-          // for this particular piece, we can't set the style as props
-          // since it is being used for animation and our async render cycles breaks it
-          this.root.ref && this.root.ref.style.setProperty(propertyName, value);
+          this.root.setStyle(propertyName, value);
         },
 
         hasLeadingIcon: () => !!this.props.leadingIcon,

@@ -43,6 +43,15 @@ const getPlugin = (config, pluginName) =>
  ***********************************/
 
 /**
+ * Makes CRA ignore node_modules folders which
+ * Will break with Lerna
+ */
+const fixLinting = config => {
+  config.module.rules[1].use[0].options.ignore = ['node_modules'];
+  return config;
+};
+
+/**
  * This adds aliases for the build ../../common -> common/
  */
 const addAliases = config => {
@@ -133,7 +142,7 @@ module.exports = {
   webpack: (config, env) => {
     console.log(colors.magenta('Starting RMWC ❤️'));
     return pipe(
-      //      enableHotReload,
+      fixLinting,
       addAliases,
       addMarkdownLoader,
       speedUpTypescript

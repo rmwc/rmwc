@@ -77,12 +77,12 @@ describe('TextField', () => {
     expect(getValid()).toBe(true);
   });
 
-  it('can be have withLeadingIcon', () => {
-    mount(<TextField withLeadingIcon="favorite" />);
+  it('can be have leadingIcon', () => {
+    mount(<TextField leadingIcon="favorite" />);
   });
 
-  it('can be have withTrailingIcon', () => {
-    mount(<TextField withTrailingIcon="favorite" />);
+  it('can be have trailingIcon', () => {
+    mount(<TextField trailingIcon="favorite" />);
   });
 
   it('label floats on dynamic change', done => {

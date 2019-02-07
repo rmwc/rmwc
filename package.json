@@ -59,7 +59,6 @@
     "flow-bin": "^0.91.0",
     "generate-changelog": "^1.7.1",
     "lerna": "^3.10.5",
-    "material-components-web": "^0.43.0",
     "prismjs": "^1.15.0",
     "react": "^16.7.0",
     "react-app-rewire-hot-loader": "^1.0.3",
@@ -74,6 +73,9 @@
     "typedoc": "^0.14.2",
     "typescript": "^3.2.2"
   },
+  "eslintIgnore": [
+    "node_modules"
+  ],
   "config-overrides-path": "config/rewire",
   "browserslist": [
     ">0.2%",
