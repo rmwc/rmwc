@@ -7,14 +7,14 @@ execSync('rm -R -f ./build');
 
 const removeFileOrDir = f => execSync(`rm -R -f ${f}`);
 
-glob('./src/**/dist/', {}, function(er, files) {
+glob('./src/*/dist/', { ignore: 'node_modules' }, function(er, files) {
   files.forEach(removeFileOrDir);
 });
 
-glob('./src/**/next/', {}, function(er, files) {
+glob('./src/*/next/', { ignore: 'node_modules' }, function(er, files) {
   files.forEach(removeFileOrDir);
 });
 
-glob('./src/**/flow-typed/', {}, function(er, files) {
+glob('./src/*/flow-typed/', { ignore: 'node_modules' }, function(er, files) {
   files.forEach(removeFileOrDir);
 });

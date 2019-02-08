@@ -21,6 +21,7 @@
     "prop-types": "^15.6.2"
   },
   "scripts": {
+    "install": "lerna bootstrap",
     "start": "react-app-rewired start",
     "build:docs": "npm run clean && npm run docgen && react-app-rewired build && rm -R -f docs && mv build docs",
     "build:code": "npm run clean && node scripts/build-code.js",
