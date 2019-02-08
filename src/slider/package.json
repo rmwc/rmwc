@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/slider",
-  "version": "5.0.19-alpha.0",
+  "version": "5.0.20-alpha.0",
   "description": "RMWC Slider component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@material/slider": "^0.44.0",
-    "@rmwc/base": "^5.0.19-alpha.0"
+    "@rmwc/base": "^5.0.20-alpha.0"
   },
   "gitHead": "897ce00c1f4266a5022279b18de7b9dbb83fe5fd"
 }
