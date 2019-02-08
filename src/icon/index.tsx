@@ -236,13 +236,10 @@ export const Icon = withProviderContext()(
     });
 
     // Unwrap double layered icons...
-
     if (
       rendered.props.children &&
       rendered.props.children.type &&
-      rendered.props.children.type.displayName &&
-      (rendered.props.children.type.displayName === 'Avatar' ||
-        rendered.props.children.type.displayName.endsWith('Icon'))
+      ['Avatar', 'Icon'].includes(rendered.props.children.type.displayName)
     ) {
       return React.cloneElement(rendered.props.children, {
         ...rendered.props.children.props,

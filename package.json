@@ -35,6 +35,7 @@
     "release:force": "npm run clean && lerna version --force-publish && lerna run publish:dist --parallel --no-bail && npm run clean",
     "clean": "node scripts/clean.js",
     "docgen": "node scripts/docgen.js",
+    "update-npmignore": "lerna exec -- cp \\$LERNA_ROOT_PATH/.npmignore .npmignore",
     "deploy:docs": "npm run build:docs && git add docs -f && git commit -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog",
     "storybook": "start-storybook -p 9001",
