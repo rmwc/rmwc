@@ -33,7 +33,7 @@
   "dependencies": {
     "@rmwc/types": "^5.0.22-alpha.0",
     "classnames": "^2.2.5",
-    "focus-trap": "^2.3.0",
+    "focus-trap": "^4.0.2",
     "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3"
   },
