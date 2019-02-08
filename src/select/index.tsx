@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import {} from '@rmwc/base';
+import { deprecationWarning } from '@rmwc/base';
 
 // @ts-ignore
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
@@ -44,6 +44,11 @@ export interface SelectProps {
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
   inputRef?: (ref: HTMLSelectElement | null) => void;
   /** Add a leading icon. */
+  icon?: IconPropT;
+}
+
+export interface DeprecatedSelectProps {
+  /** DEPRECATED: Changed to icon. */
   withLeadingIcon?: IconPropT;
 }
 
@@ -90,10 +95,10 @@ const SelectRoot = withRipple()(
         'mdc-select--outlined': !!props.outlined,
         'mdc-select--required': !!props.required,
         'mdc-select--invalid': !!props.invalid,
-        'mdc-select--with-leading-icon': !!props.withLeadingIcon
+        'mdc-select--with-leading-icon': !!props.icon
       }
     ],
-    consumeProps: ['outlined', 'withLeadingIcon', 'required', 'invalid']
+    consumeProps: ['outlined', 'icon', 'required', 'invalid']
   })
 );
 
@@ -268,7 +273,10 @@ interface SelectState {
   menuOpen: boolean;
 }
 
-export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
+export class SelectBase extends FoundationComponent<
+  SelectProps & DeprecatedSelectProps,
+  SelectState
+> {
   private root = this.createElement<HTMLSelectElement>('root');
   private lineRipple = this.createElement<LineRipple>('lineRipple');
   private outline = this.createElement<NotchedOutline>('outline');
@@ -659,7 +667,8 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       rootProps = {},
       className,
       enhanced,
-      withLeadingIcon,
+      icon: _icon,
+      withLeadingIcon: _withLeadingIcon,
       onChange,
       onFocus,
       onBlur,
@@ -669,6 +678,13 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
       inputRef,
       ...rest
     } = this.props;
+
+    let { icon, withLeadingIcon } = this.props;
+
+    if (withLeadingIcon !== undefined) {
+      deprecationWarning(`Select prop 'withLeadingIcon' is now 'icon'.`);
+      icon = withLeadingIcon;
+    }
 
     const selectOptions = createSelectOptions(options);
 
@@ -705,11 +721,11 @@ export class SelectBase extends FoundationComponent<SelectProps, SelectState> {
         })}
         invalid={invalid}
         required={rest.required}
-        withLeadingIcon={withLeadingIcon}
+        icon={icon}
         outlined={outlined}
         ref={this.root.setRef}
       >
-        {!!withLeadingIcon && this.renderIcon(withLeadingIcon, 'leadingIcon_')}
+        {!!icon && this.renderIcon(icon, 'leadingIcon_')}
         <SelectDropdownArrow />
 
         {enhanced ? (

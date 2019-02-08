@@ -10,7 +10,7 @@ describe('Chip', () => {
   it('renders', () => {
     mount(
       <ChipSet>
-        <Chip leadingIcon="favorite" label="One" />
+        <Chip icon="favorite" label="One" />
       </ChipSet>
     );
   });

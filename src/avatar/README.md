@@ -117,7 +117,7 @@ import { TextField } from '@rmwc/textfield';
 
 <Chip
   label="Hulk Smash"
-  leadingIcon={
+  icon={
     <Avatar
       src="images/avatars/hulk.png"
       name="Bruce Banner"
@@ -128,7 +128,7 @@ import { TextField } from '@rmwc/textfield';
 <TextField
   label="Message Natalia..."
   outlined
-  withLeadingIcon={
+  icon={
     <Avatar
       src="images/avatars/blackwidow.png"
       name="Natalia Alianovna Romanova"

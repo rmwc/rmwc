@@ -131,9 +131,10 @@ import { Typography } from '@rmwc/typography';
   <ListDivider />
 
   <CardActions fullBleed>
-    <CardActionButton>
-      All Business Headlines <Icon icon="arrow_forward" />
-    </CardActionButton>
+    <CardActionButton
+      label="All Business Headlines"
+      trailingIcon="arrow_forward"
+    />
   </CardActions>
 </Card>
 ```

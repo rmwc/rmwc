@@ -37,7 +37,7 @@ import { Select, SelectHelperText } from '@rmwc/select';
   <Select
     label="With Icon"
     defaultChecked="Pizza"
-    withLeadingIcon="favorite"
+    icon="favorite"
     options={['Cookies', 'Pizza', 'Icecream']}
   />
   <SelectHelperText>Choose your favorite snack...</SelectHelperText>

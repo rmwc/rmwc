@@ -240,7 +240,9 @@ export const Icon = withProviderContext()(
     if (
       rendered.props.children &&
       rendered.props.children.type &&
-      ['Avatar', 'Icon'].includes(rendered.props.children.type.displayName)
+      rendered.props.children.type.displayName &&
+      (rendered.props.children.type.displayName === 'Avatar' ||
+        rendered.props.children.type.displayName.endsWith('Icon'))
     ) {
       return React.cloneElement(rendered.props.children, {
         ...rendered.props.children.props,

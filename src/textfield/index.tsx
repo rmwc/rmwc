@@ -45,7 +45,7 @@ export interface TextFieldProps {
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean;
   /** Add a leading icon. */
-  leadingIcon?: IconPropT;
+  icon?: IconPropT;
   /** Add a trailing icon. */
   trailingIcon?: IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
@@ -59,7 +59,7 @@ export interface TextFieldProps {
 export interface DeprecatedTextfieldProps {
   /** DEPRECATED: Is being removed from MCW. */
   dense?: boolean;
-  /** DEPRECATED: Use leadingIcon. */
+  /** DEPRECATED: Use icon. */
   withLeadingIcon?: IconPropT;
   /** DEPRECATED: Use trailingIcon. */
   withTrailingIcon?: IconPropT;
@@ -83,7 +83,7 @@ const TextFieldRoot = withRipple()(
         'mdc-text-field--dense': props.dense,
         'mdc-text-field--invalid': props.invalid,
         'mdc-text-field--disabled': props.disabled,
-        'mdc-text-field--with-leading-icon': !!props.leadingIcon,
+        'mdc-text-field--with-leading-icon': !!props.icon,
         'mdc-text-field--with-trailing-icon': !!props.trailingIcon,
         'mdc-text-field--no-label': !props.label
       }
@@ -95,7 +95,7 @@ const TextFieldRoot = withRipple()(
       'dense',
       'invalid',
       'disabled',
-      'leadingIcon',
+      'icon',
       'trailingIcon',
       'label'
     ]
@@ -301,7 +301,7 @@ export class TextField extends FoundationComponent<
       textarea,
       inputRef,
       characterCount,
-      leadingIcon: _leadingIcon,
+      icon: _icon,
       trailingIcon: _trailingIcon,
       withLeadingIcon: _withLeadingIcon,
       withTrailingIcon: _withTrailingIcon,
@@ -309,12 +309,7 @@ export class TextField extends FoundationComponent<
       ...rest
     } = this.props;
 
-    let {
-      leadingIcon,
-      trailingIcon,
-      withLeadingIcon,
-      withTrailingIcon
-    } = this.props;
+    let { icon, trailingIcon, withLeadingIcon, withTrailingIcon } = this.props;
 
     if (dense !== undefined) {
       deprecationWarning(
@@ -326,7 +321,7 @@ export class TextField extends FoundationComponent<
       deprecationWarning(
         `Textfield prop 'withLeadingIcon' is now 'leadingIcon'.`
       );
-      leadingIcon = withLeadingIcon;
+      icon = withLeadingIcon;
     }
 
     if (withTrailingIcon !== undefined) {
@@ -379,7 +374,6 @@ export class TextField extends FoundationComponent<
     const renderedCharacterCounter = characterCount ? (
       <TextFieldCharacterCount
         ref={(el: TextFieldCharacterCount | null) => {
-          console.log('HERE');
           this.characterCounter = el;
         }}
       >
@@ -397,7 +391,7 @@ export class TextField extends FoundationComponent<
           })}
           label={label}
           invalid={invalid}
-          leadingIcon={!!leadingIcon}
+          icon={!!icon}
           trailingIcon={!!trailingIcon}
           textarea={textarea}
           dense={dense}
@@ -406,7 +400,7 @@ export class TextField extends FoundationComponent<
           fullwidth={fullwidth}
           ref={this.root.setRef}
         >
-          {!!leadingIcon && this.renderIcon(leadingIcon, 'leadingIcon')}
+          {!!icon && this.renderIcon(icon, 'leadingIcon')}
           {children}
           {/** Render character counter in different place for textarea */}
           {!!textarea && renderedCharacterCounter}
@@ -433,11 +427,10 @@ export class TextField extends FoundationComponent<
         </TextFieldRoot>
         {(!!helpText || (characterCount && !textarea)) && (
           <div className="mdc-text-field-helper-line">
-            {helpText && (
-              <TextFieldHelperText
-                children={helpText}
-                {...(React.isValidElement(helpText) ? undefined : helpText)}
-              />
+            {helpText && React.isValidElement(helpText) ? (
+              <TextFieldHelperText {...helpText as any} />
+            ) : (
+              <TextFieldHelperText>helpText</TextFieldHelperText>
             )}
             {!textarea && renderedCharacterCounter}
           </div>
@@ -465,7 +458,6 @@ class TextFieldCharacterCount extends FoundationComponent<
   getDefaultFoundation() {
     return new MDCTextFieldCharacterCounterFoundation({
       setContent: (content: string) => {
-        console.log('SETTING');
         this.setState({ content });
       }
     });

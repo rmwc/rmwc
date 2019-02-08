@@ -6,7 +6,7 @@ describe('Chip', () => {
   it('renders', () => {
     const el = mount(
       <ChipSet>
-        <Chip leadingIcon="favorite" trailingIcon="close" label="test-label" />
+        <Chip icon="favorite" trailingIcon="close" label="test-label" />
       </ChipSet>
     );
 
@@ -16,7 +16,7 @@ describe('Chip', () => {
   it('renders with children', () => {
     const el = mount(
       <ChipSet>
-        <Chip leadingIcon="favorite" trailingIcon="close">
+        <Chip icon="favorite" trailingIcon="close">
           test-label
         </Chip>
       </ChipSet>
@@ -44,7 +44,7 @@ describe('Chip', () => {
   });
 
   it('handles custom ChipIcon', () => {
-    const el = mount(<Chip leadingIcon={<ChipIcon icon="favorite" />} />);
+    const el = mount(<Chip icon={<ChipIcon icon="favorite" />} />);
     expect(el.html().includes('favorite')).toBe(true);
   });
 
@@ -81,7 +81,7 @@ describe('Chip', () => {
 
   it('adapter checks', () => {
     const el = mount(
-      <Chip leadingIcon="favorite" trailingIcon="close" label="test-label" />
+      <Chip icon="favorite" trailingIcon="close" label="test-label" />
     );
 
     const inst = el.instance() as Chip;

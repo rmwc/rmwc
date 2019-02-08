@@ -21,7 +21,7 @@ import { Chip, ChipSet } from '@rmwc/chip';
 {/* With Icons */}
 <ChipSet>
   <Chip
-    leadingIcon="favorite"
+    icon="favorite"
     label="Cookies"
     trailingIcon="close"
   />
@@ -64,7 +64,7 @@ import {
   <Chip
     selected={this.state.pizza}
     onClick={() => this.setState({pizza: !this.state.pizza})}
-    leadingIcon="local_pizza"
+    icon="local_pizza"
     checkmark
     label="Pizza"
     trailingIcon="close"
@@ -73,7 +73,7 @@ import {
     selected={this.state.icecream}
     onClick={() => this.setState({icecream: !this.state.icecream})}
     checkmark
-    leadingIcon="favorite_border"
+    icon="favorite_border"
     trailingIcon="close"
     label="Icecream"
   />
@@ -89,14 +89,14 @@ import {
   <Chip
     selected={this.state.pizzaChoice}
     onClick={() => this.setState({pizzaChoice: !this.state.pizzaChoice})}
-    leadingIcon="local_pizza"
+    icon="local_pizza"
     label="Pizza"
     trailingIcon="close"
   />
   <Chip
     selected={this.state.icecreamChoice}
     onClick={() => this.setState({icecreamChoice: !this.state.icecreamChoice})}
-    leadingIcon="favorite_border"
+    icon="favorite_border"
     trailingIcon="close"
     label="Icecream"
   />

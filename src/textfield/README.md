@@ -19,7 +19,7 @@ import { TextField } from '@rmwc/textfield';
 <TextField label="standard..." helpText="Optional help text."/>
 
 {/* Leading and trailing icons can be used, they look the best with the box prop. You can pass anything the Icon component accepts. */}
-<TextField leadingIcon="search" trailingIcon="close" label="leadingIcon..." />
+<TextField icon="search" trailingIcon="close" label="icon..." />
 
 {/* If you need full control over the icon, you can pass the icon as options with your own props. Dont forget the TabIndex to make it clickable*/}
 <TextField

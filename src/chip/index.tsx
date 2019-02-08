@@ -18,7 +18,7 @@ export interface ChipProps {
   /** makes the Chip appear selected. */
   selected?: boolean;
   /** Instance of an Icon Component. */
-  leadingIcon?: IconPropT;
+  icon?: IconPropT;
   /** Instance of an Icon Component. */
   trailingIcon?: IconPropT;
   /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */
@@ -133,7 +133,7 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
           this.root.setStyle(propertyName, value);
         },
 
-        hasLeadingIcon: () => !!this.props.leadingIcon,
+        hasLeadingIcon: () => !!this.props.icon,
         getRootBoundingClientRect: () =>
           this.root.ref && this.root.ref.getBoundingClientRect(),
         getCheckmarkBoundingClientRect: () =>
@@ -162,7 +162,7 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
       onTrailingIconInteraction,
       onRemove,
       onSelect,
-      leadingIcon,
+      icon,
       trailingIcon,
       checkmark,
       text,
@@ -187,12 +187,8 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
         onTransitionEnd={this.handleTransitionEnd}
         ref={this.root.setRef}
       >
-        {!!leadingIcon && (
-          <ChipIcon
-            icon={leadingIcon}
-            leading
-            hidden={rest.selected && checkmark}
-          />
+        {!!icon && (
+          <ChipIcon icon={icon} leading hidden={rest.selected && checkmark} />
         )}
         {!!checkmark && (
           <ChipCheckmark elementRef={el => (this.checkmarkEl = el)} />

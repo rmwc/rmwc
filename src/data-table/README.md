@@ -179,7 +179,7 @@ import { Switch } from '@rmwc/switch';
             />Label
           </DataTableCell>
           <DataTableCell>
-            <Select options={['Cookies', 'Pizza', 'Icecream']}/>
+            <Select placeholder="--Select--" options={['Cookies', 'Pizza', 'Icecream']}/>
           </DataTableCell>
           <DataTableCell>Row {i} Cell 2</DataTableCell>
           <DataTableCell>Row {i} Cell 3</DataTableCell>

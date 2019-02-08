@@ -162,11 +162,11 @@ The Material spec details multiple sizes for icons. The Icon component doesn't a
 
 ```jsx render
 
-<Icon icon="favorite" iconOptions={{size: "xsmall"}} /> {/* 18px */}
-<Icon icon="favorite" iconOptions={{size: "small"}} />  {/* 20px */}
-<Icon icon="favorite" iconOptions={{size: "medium"}} /> {/* 24px */}
-<Icon icon="favorite" iconOptions={{size: "large"}} />  {/* 36px */}
-<Icon icon="favorite" iconOptions={{size: "xlarge"}} /> {/* 48px */}
+<Icon icon={{icon: 'favorite', size: "xsmall"}} /> {/* 18px */}
+<Icon icon={{icon: 'favorite', size: "small"}} />  {/* 20px */}
+<Icon icon={{icon: 'favorite', size: "medium"}} /> {/* 24px */}
+<Icon icon={{icon: 'favorite', size: "large"}} />  {/* 36px */}
+<Icon icon={{icon: 'favorite', size: "xlarge"}} /> {/* 48px */}
 ```
 
 ## Custom Rendering
@@ -178,8 +178,8 @@ A simplistic example...
 ```jsx render
 import { Icon } from '@rmwc/icon';
 <Icon
-  icon="favorite"
-  iconOptions={{
+  icon={{
+    icon: 'favorite',
     strategy: 'custom',
     render: ({ icon, ...rest }) => <div>Hello + {icon}</div>
   }}

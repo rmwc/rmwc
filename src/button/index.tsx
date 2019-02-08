@@ -22,6 +22,8 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   children?: React.ReactNode;
   /** An Icon for the Button */
   icon?: IconPropT;
+  /** A trailing icon for the Button */
+  trailingIcon?: IconPropT;
 }
 
 /**
@@ -51,14 +53,8 @@ export const Button = withRipple({
       'accent',
       'unbounded'
     ],
-    defaultProps: {
-      dense: false,
-      raised: false,
-      unelevated: false,
-      outlined: false
-    },
     render: (
-      { icon, label, children, ...rest }: ButtonProps,
+      { icon, trailingIcon, label, children, ...rest }: ButtonProps,
       ref: React.Ref<any>,
       Tag: any
     ) => {
@@ -69,6 +65,7 @@ export const Button = withRipple({
             {label}
             {children}
           </span>
+          {!!trailingIcon && <ButtonIcon icon={trailingIcon} />}
         </Tag>
       );
     }

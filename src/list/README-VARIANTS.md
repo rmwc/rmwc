@@ -83,24 +83,46 @@ import {
   ListItemMeta,
 } from '@rmwc/list';
 
+import { Avatar } from '@rmwc/avatar';
+
+
+
 <List twoLine avatarList>
   <ListGroup>
     <ListItem>
-      <ListItemGraphic icon="person" style={{backgroundColor: 'lightgray'}} />
-      Bruce Wayne
+      <ListItemGraphic icon={
+        <Avatar
+          src="images/avatars/blackwidow.png"
+          size="xsmall"
+          name="Natalia Alianovna Romanova"
+        />
+      }/>
+      Natalia Alianovna Romanova
       <ListItemMeta icon="info"/>
     </ListItem>
     <ListItem>
-      <ListItemGraphic icon="person" style={{backgroundColor: 'coral'}} />
-      Clark Kent
+      <ListItemGraphic icon={
+        <Avatar
+          src="images/avatars/hulk.png"
+          size="small"
+          name="Bruce Banner"
+        />
+      }/>
+      Bruce Banner
       <ListItemMeta icon="info"/>
     </ListItem>
   </ListGroup>
   <ListDivider />
   <ListGroup>
     <ListItem>
-      <ListItemGraphic icon="person" style={{backgroundColor: 'lightblue'}} />
-      Diana Prince
+      <ListItemGraphic icon={
+        <Avatar
+          src="images/avatars/thor.png"
+          size="medium"
+          name="Thor Odinson"
+        />
+      }/>
+      Thor Odinson
       <ListItemMeta icon="info"/>
     </ListItem>
   </ListGroup>

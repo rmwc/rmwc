@@ -10,6 +10,9 @@ const MethodologyDocs = React.lazy(() => import('./README-METHODOLOGY.md'));
 const LibraryIntegrationsDocs = React.lazy(() =>
   import('./README-LIBRARY-INTEGRATIONS.md')
 );
+
+const TypeDocs = React.lazy(() => import('./README-TYPES.md'));
+
 const AvatarDocs = React.lazy(() => import('@rmwc/avatar/README.md'));
 const ButtonDocs = React.lazy(() => import('@rmwc/button/README.md'));
 const FabDocs = React.lazy(() => import('@rmwc/fab/README.md'));
@@ -98,6 +101,11 @@ export const menuContent = [
         label: 'Project Methodology',
         url: `/methodology`,
         component: Loadable(MethodologyDocs)
+      },
+      {
+        label: 'Type System',
+        url: `/type-system`,
+        component: Loadable(TypeDocs)
       },
       {
         label: 'Library Integrations',

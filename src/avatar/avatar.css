@@ -47,7 +47,7 @@
 /** Square avatars */
 .rmwc-avatar--square .rmwc-avatar__icon,
 .rmwc-avatar--square .rmwc-avatar__text {
-  border-radius: 0.125rem;
+  border-radius: 0.1875rem;
 }
 
 /** Avatar sizes */

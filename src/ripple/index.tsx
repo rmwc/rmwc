@@ -37,6 +37,7 @@ type ActivateEventTypes<S> =
 
 /** A component for adding Ripples to other components. */
 export class Ripple extends FoundationComponent<RippleProps> {
+  static shouldDebounce = true;
   static displayName = 'Ripple';
 
   private root = this.createElement('root');
