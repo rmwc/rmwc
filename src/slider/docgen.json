@@ -25552,7 +25552,7 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2412
+								"id": 2413
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -25612,7 +25612,7 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2406
+								"id": 2407
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -26722,7 +26722,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 14,
+							"line": 16,
 							"character": 26
 						}
 					],
@@ -36571,7 +36571,7 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2412
+								"id": 2413
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -36631,7 +36631,7 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2406
+								"id": 2407
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -37309,7 +37309,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 13,
+							"line": 15,
 							"character": 32
 						}
 					],
@@ -37322,7 +37322,7 @@
 					]
 				},
 				{
-					"id": 2076,
+					"id": 2077,
 					"name": "WithThemeProps",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -37332,7 +37332,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 12,
+							"line": 14,
 							"character": 26
 						}
 					],
@@ -37340,6 +37340,28 @@
 						"type": "reference",
 						"name": "_WithThemeProps"
 					}
+				},
+				{
+					"id": 2076,
+					"name": "createFocusTrap",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/@rmwc/base/index.tsx",
+							"line": 12,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "focusTrap"
+					},
+					"defaultValue": " _createFocusTrap"
 				}
 			],
 			"groups": [
@@ -37355,6 +37377,13 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
+						2077
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
 						2076
 					]
 				}
@@ -37368,7 +37397,7 @@
 			]
 		},
 		{
-			"id": 2077,
+			"id": 2078,
 			"name": "\"node_modules/@rmwc/base/node_modules/@rmwc/types/index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -37378,7 +37407,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/slider/node_modules/@rmwc/base/node_modules/@rmwc/types/index.tsx",
 			"children": [
 				{
-					"id": 2087,
+					"id": 2088,
 					"name": "ComponentProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -37387,7 +37416,7 @@
 					},
 					"children": [
 						{
-							"id": 2218,
+							"id": 2219,
 							"name": "about",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37421,7 +37450,7 @@
 							}
 						},
 						{
-							"id": 2090,
+							"id": 2091,
 							"name": "accept",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37455,7 +37484,7 @@
 							}
 						},
 						{
-							"id": 2091,
+							"id": 2092,
 							"name": "acceptCharset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37489,7 +37518,7 @@
 							}
 						},
 						{
-							"id": 2200,
+							"id": 2201,
 							"name": "accessKey",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37523,7 +37552,7 @@
 							}
 						},
 						{
-							"id": 2092,
+							"id": 2093,
 							"name": "action",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37557,7 +37586,7 @@
 							}
 						},
 						{
-							"id": 2093,
+							"id": 2094,
 							"name": "allowFullScreen",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37595,7 +37624,7 @@
 							}
 						},
 						{
-							"id": 2094,
+							"id": 2095,
 							"name": "allowTransparency",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37633,7 +37662,7 @@
 							}
 						},
 						{
-							"id": 2095,
+							"id": 2096,
 							"name": "alt",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37667,7 +37696,7 @@
 							}
 						},
 						{
-							"id": 2096,
+							"id": 2097,
 							"name": "as",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37701,7 +37730,7 @@
 							}
 						},
 						{
-							"id": 2097,
+							"id": 2098,
 							"name": "async",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37739,7 +37768,7 @@
 							}
 						},
 						{
-							"id": 2226,
+							"id": 2227,
 							"name": "autoCapitalize",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37773,7 +37802,7 @@
 							}
 						},
 						{
-							"id": 2098,
+							"id": 2099,
 							"name": "autoComplete",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37807,7 +37836,7 @@
 							}
 						},
 						{
-							"id": 2227,
+							"id": 2228,
 							"name": "autoCorrect",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37841,7 +37870,7 @@
 							}
 						},
 						{
-							"id": 2099,
+							"id": 2100,
 							"name": "autoFocus",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37879,7 +37908,7 @@
 							}
 						},
 						{
-							"id": 2100,
+							"id": 2101,
 							"name": "autoPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37917,7 +37946,7 @@
 							}
 						},
 						{
-							"id": 2228,
+							"id": 2229,
 							"name": "autoSave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37951,7 +37980,7 @@
 							}
 						},
 						{
-							"id": 2101,
+							"id": 2102,
 							"name": "capture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37985,7 +38014,7 @@
 							}
 						},
 						{
-							"id": 2102,
+							"id": 2103,
 							"name": "cellPadding",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38019,7 +38048,7 @@
 							}
 						},
 						{
-							"id": 2103,
+							"id": 2104,
 							"name": "cellSpacing",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38053,7 +38082,7 @@
 							}
 						},
 						{
-							"id": 2105,
+							"id": 2106,
 							"name": "challenge",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38087,7 +38116,7 @@
 							}
 						},
 						{
-							"id": 2104,
+							"id": 2105,
 							"name": "charSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38121,7 +38150,7 @@
 							}
 						},
 						{
-							"id": 2106,
+							"id": 2107,
 							"name": "checked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38159,7 +38188,7 @@
 							}
 						},
 						{
-							"id": 2238,
+							"id": 2239,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38184,7 +38213,7 @@
 							}
 						},
 						{
-							"id": 2107,
+							"id": 2108,
 							"name": "cite",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38218,7 +38247,7 @@
 							}
 						},
 						{
-							"id": 2108,
+							"id": 2109,
 							"name": "classID",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38252,7 +38281,7 @@
 							}
 						},
 						{
-							"id": 2201,
+							"id": 2202,
 							"name": "className",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38286,7 +38315,7 @@
 							}
 						},
 						{
-							"id": 2110,
+							"id": 2111,
 							"name": "colSpan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38320,7 +38349,7 @@
 							}
 						},
 						{
-							"id": 2229,
+							"id": 2230,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38354,7 +38383,7 @@
 							}
 						},
 						{
-							"id": 2109,
+							"id": 2110,
 							"name": "cols",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38388,7 +38417,7 @@
 							}
 						},
 						{
-							"id": 2111,
+							"id": 2112,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38422,7 +38451,7 @@
 							}
 						},
 						{
-							"id": 2202,
+							"id": 2203,
 							"name": "contentEditable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38460,7 +38489,7 @@
 							}
 						},
 						{
-							"id": 2203,
+							"id": 2204,
 							"name": "contextMenu",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38494,7 +38523,7 @@
 							}
 						},
 						{
-							"id": 2112,
+							"id": 2113,
 							"name": "controls",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38532,7 +38561,7 @@
 							}
 						},
 						{
-							"id": 2113,
+							"id": 2114,
 							"name": "coords",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38566,7 +38595,7 @@
 							}
 						},
 						{
-							"id": 2114,
+							"id": 2115,
 							"name": "crossOrigin",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38600,7 +38629,7 @@
 							}
 						},
 						{
-							"id": 2239,
+							"id": 2240,
 							"name": "dangerouslySetInnerHTML",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38625,14 +38654,14 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 2240,
+											"id": 2241,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 2241,
+													"id": 2242,
 													"name": "__html",
 													"kind": 32,
 													"kindString": "Variable",
@@ -38655,7 +38684,7 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														2241
+														2242
 													]
 												}
 											]
@@ -38669,7 +38698,7 @@
 							}
 						},
 						{
-							"id": 2115,
+							"id": 2116,
 							"name": "data",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38703,7 +38732,7 @@
 							}
 						},
 						{
-							"id": 2219,
+							"id": 2220,
 							"name": "datatype",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38737,7 +38766,7 @@
 							}
 						},
 						{
-							"id": 2116,
+							"id": 2117,
 							"name": "dateTime",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38771,7 +38800,7 @@
 							}
 						},
 						{
-							"id": 2117,
+							"id": 2118,
 							"name": "default",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38809,7 +38838,7 @@
 							}
 						},
 						{
-							"id": 2196,
+							"id": 2197,
 							"name": "defaultChecked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38847,7 +38876,7 @@
 							}
 						},
 						{
-							"id": 2197,
+							"id": 2198,
 							"name": "defaultValue",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38884,7 +38913,7 @@
 							}
 						},
 						{
-							"id": 2118,
+							"id": 2119,
 							"name": "defer",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38922,7 +38951,7 @@
 							}
 						},
 						{
-							"id": 2204,
+							"id": 2205,
 							"name": "dir",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38956,7 +38985,7 @@
 							}
 						},
 						{
-							"id": 2119,
+							"id": 2120,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38994,7 +39023,7 @@
 							}
 						},
 						{
-							"id": 2120,
+							"id": 2121,
 							"name": "download",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39019,7 +39048,7 @@
 							}
 						},
 						{
-							"id": 2205,
+							"id": 2206,
 							"name": "draggable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39057,7 +39086,7 @@
 							}
 						},
 						{
-							"id": 2121,
+							"id": 2122,
 							"name": "encType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39091,7 +39120,7 @@
 							}
 						},
 						{
-							"id": 2122,
+							"id": 2123,
 							"name": "form",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39125,7 +39154,7 @@
 							}
 						},
 						{
-							"id": 2123,
+							"id": 2124,
 							"name": "formAction",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39159,7 +39188,7 @@
 							}
 						},
 						{
-							"id": 2124,
+							"id": 2125,
 							"name": "formEncType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39193,7 +39222,7 @@
 							}
 						},
 						{
-							"id": 2125,
+							"id": 2126,
 							"name": "formMethod",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39227,7 +39256,7 @@
 							}
 						},
 						{
-							"id": 2126,
+							"id": 2127,
 							"name": "formNoValidate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39265,7 +39294,7 @@
 							}
 						},
 						{
-							"id": 2127,
+							"id": 2128,
 							"name": "formTarget",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39299,7 +39328,7 @@
 							}
 						},
 						{
-							"id": 2128,
+							"id": 2129,
 							"name": "frameBorder",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39333,7 +39362,7 @@
 							}
 						},
 						{
-							"id": 2129,
+							"id": 2130,
 							"name": "headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39367,7 +39396,7 @@
 							}
 						},
 						{
-							"id": 2130,
+							"id": 2131,
 							"name": "height",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39401,7 +39430,7 @@
 							}
 						},
 						{
-							"id": 2206,
+							"id": 2207,
 							"name": "hidden",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39439,7 +39468,7 @@
 							}
 						},
 						{
-							"id": 2131,
+							"id": 2132,
 							"name": "high",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39473,7 +39502,7 @@
 							}
 						},
 						{
-							"id": 2132,
+							"id": 2133,
 							"name": "href",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39507,7 +39536,7 @@
 							}
 						},
 						{
-							"id": 2133,
+							"id": 2134,
 							"name": "hrefLang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39541,7 +39570,7 @@
 							}
 						},
 						{
-							"id": 2134,
+							"id": 2135,
 							"name": "htmlFor",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39575,7 +39604,7 @@
 							}
 						},
 						{
-							"id": 2135,
+							"id": 2136,
 							"name": "httpEquiv",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39609,7 +39638,7 @@
 							}
 						},
 						{
-							"id": 2207,
+							"id": 2208,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39643,7 +39672,7 @@
 							}
 						},
 						{
-							"id": 2220,
+							"id": 2221,
 							"name": "inlist",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39668,7 +39697,7 @@
 							}
 						},
 						{
-							"id": 2214,
+							"id": 2215,
 							"name": "inputMode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39702,7 +39731,7 @@
 							}
 						},
 						{
-							"id": 2136,
+							"id": 2137,
 							"name": "integrity",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39736,7 +39765,7 @@
 							}
 						},
 						{
-							"id": 2215,
+							"id": 2216,
 							"name": "is",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39770,7 +39799,7 @@
 							}
 						},
 						{
-							"id": 2233,
+							"id": 2234,
 							"name": "itemID",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39804,7 +39833,7 @@
 							}
 						},
 						{
-							"id": 2230,
+							"id": 2231,
 							"name": "itemProp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39838,7 +39867,7 @@
 							}
 						},
 						{
-							"id": 2234,
+							"id": 2235,
 							"name": "itemRef",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39872,7 +39901,7 @@
 							}
 						},
 						{
-							"id": 2231,
+							"id": 2232,
 							"name": "itemScope",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39910,7 +39939,7 @@
 							}
 						},
 						{
-							"id": 2232,
+							"id": 2233,
 							"name": "itemType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39944,7 +39973,7 @@
 							}
 						},
 						{
-							"id": 2401,
+							"id": 2402,
 							"name": "key",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39969,7 +39998,7 @@
 							}
 						},
 						{
-							"id": 2137,
+							"id": 2138,
 							"name": "keyParams",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40003,7 +40032,7 @@
 							}
 						},
 						{
-							"id": 2138,
+							"id": 2139,
 							"name": "keyType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40037,7 +40066,7 @@
 							}
 						},
 						{
-							"id": 2139,
+							"id": 2140,
 							"name": "kind",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40071,7 +40100,7 @@
 							}
 						},
 						{
-							"id": 2140,
+							"id": 2141,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40105,7 +40134,7 @@
 							}
 						},
 						{
-							"id": 2208,
+							"id": 2209,
 							"name": "lang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40139,7 +40168,7 @@
 							}
 						},
 						{
-							"id": 2141,
+							"id": 2142,
 							"name": "list",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40173,7 +40202,7 @@
 							}
 						},
 						{
-							"id": 2142,
+							"id": 2143,
 							"name": "loop",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40211,7 +40240,7 @@
 							}
 						},
 						{
-							"id": 2143,
+							"id": 2144,
 							"name": "low",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40245,7 +40274,7 @@
 							}
 						},
 						{
-							"id": 2144,
+							"id": 2145,
 							"name": "manifest",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40279,7 +40308,7 @@
 							}
 						},
 						{
-							"id": 2145,
+							"id": 2146,
 							"name": "marginHeight",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40313,7 +40342,7 @@
 							}
 						},
 						{
-							"id": 2146,
+							"id": 2147,
 							"name": "marginWidth",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40347,7 +40376,7 @@
 							}
 						},
 						{
-							"id": 2147,
+							"id": 2148,
 							"name": "max",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40381,7 +40410,7 @@
 							}
 						},
 						{
-							"id": 2148,
+							"id": 2149,
 							"name": "maxLength",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40415,7 +40444,7 @@
 							}
 						},
 						{
-							"id": 2149,
+							"id": 2150,
 							"name": "media",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40449,7 +40478,7 @@
 							}
 						},
 						{
-							"id": 2150,
+							"id": 2151,
 							"name": "mediaGroup",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40483,7 +40512,7 @@
 							}
 						},
 						{
-							"id": 2151,
+							"id": 2152,
 							"name": "method",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40517,7 +40546,7 @@
 							}
 						},
 						{
-							"id": 2152,
+							"id": 2153,
 							"name": "min",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40551,7 +40580,7 @@
 							}
 						},
 						{
-							"id": 2153,
+							"id": 2154,
 							"name": "minLength",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40585,7 +40614,7 @@
 							}
 						},
 						{
-							"id": 2154,
+							"id": 2155,
 							"name": "multiple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40623,7 +40652,7 @@
 							}
 						},
 						{
-							"id": 2155,
+							"id": 2156,
 							"name": "muted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40661,7 +40690,7 @@
 							}
 						},
 						{
-							"id": 2156,
+							"id": 2157,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40695,7 +40724,7 @@
 							}
 						},
 						{
-							"id": 2158,
+							"id": 2159,
 							"name": "noValidate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40733,7 +40762,7 @@
 							}
 						},
 						{
-							"id": 2157,
+							"id": 2158,
 							"name": "nonce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40767,7 +40796,7 @@
 							}
 						},
 						{
-							"id": 2280,
+							"id": 2281,
 							"name": "onAbort",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40798,7 +40827,7 @@
 							}
 						},
 						{
-							"id": 2281,
+							"id": 2282,
 							"name": "onAbortCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40829,7 +40858,7 @@
 							}
 						},
 						{
-							"id": 2394,
+							"id": 2395,
 							"name": "onAnimationEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40860,7 +40889,7 @@
 							}
 						},
 						{
-							"id": 2395,
+							"id": 2396,
 							"name": "onAnimationEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40891,7 +40920,7 @@
 							}
 						},
 						{
-							"id": 2396,
+							"id": 2397,
 							"name": "onAnimationIteration",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40922,7 +40951,7 @@
 							}
 						},
 						{
-							"id": 2397,
+							"id": 2398,
 							"name": "onAnimationIterationCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40953,7 +40982,7 @@
 							}
 						},
 						{
-							"id": 2392,
+							"id": 2393,
 							"name": "onAnimationStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40984,7 +41013,7 @@
 							}
 						},
 						{
-							"id": 2393,
+							"id": 2394,
 							"name": "onAnimationStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41015,7 +41044,7 @@
 							}
 						},
 						{
-							"id": 2260,
+							"id": 2261,
 							"name": "onBeforeInput",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41046,7 +41075,7 @@
 							}
 						},
 						{
-							"id": 2261,
+							"id": 2262,
 							"name": "onBeforeInputCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41077,7 +41106,7 @@
 							}
 						},
 						{
-							"id": 2256,
+							"id": 2257,
 							"name": "onBlur",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41108,7 +41137,7 @@
 							}
 						},
 						{
-							"id": 2257,
+							"id": 2258,
 							"name": "onBlurCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41139,7 +41168,7 @@
 							}
 						},
 						{
-							"id": 2282,
+							"id": 2283,
 							"name": "onCanPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41170,7 +41199,7 @@
 							}
 						},
 						{
-							"id": 2283,
+							"id": 2284,
 							"name": "onCanPlayCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41201,7 +41230,7 @@
 							}
 						},
 						{
-							"id": 2284,
+							"id": 2285,
 							"name": "onCanPlayThrough",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41232,7 +41261,7 @@
 							}
 						},
 						{
-							"id": 2285,
+							"id": 2286,
 							"name": "onCanPlayThroughCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41263,7 +41292,7 @@
 							}
 						},
 						{
-							"id": 2258,
+							"id": 2259,
 							"name": "onChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41294,7 +41323,7 @@
 							}
 						},
 						{
-							"id": 2259,
+							"id": 2260,
 							"name": "onChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41325,7 +41354,7 @@
 							}
 						},
 						{
-							"id": 2324,
+							"id": 2325,
 							"name": "onClick",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41356,7 +41385,7 @@
 							}
 						},
 						{
-							"id": 2325,
+							"id": 2326,
 							"name": "onClickCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41387,7 +41416,7 @@
 							}
 						},
 						{
-							"id": 2248,
+							"id": 2249,
 							"name": "onCompositionEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41418,7 +41447,7 @@
 							}
 						},
 						{
-							"id": 2249,
+							"id": 2250,
 							"name": "onCompositionEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41449,7 +41478,7 @@
 							}
 						},
 						{
-							"id": 2250,
+							"id": 2251,
 							"name": "onCompositionStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41480,7 +41509,7 @@
 							}
 						},
 						{
-							"id": 2251,
+							"id": 2252,
 							"name": "onCompositionStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41511,7 +41540,7 @@
 							}
 						},
 						{
-							"id": 2252,
+							"id": 2253,
 							"name": "onCompositionUpdate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41542,7 +41571,7 @@
 							}
 						},
 						{
-							"id": 2253,
+							"id": 2254,
 							"name": "onCompositionUpdateCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41573,7 +41602,7 @@
 							}
 						},
 						{
-							"id": 2326,
+							"id": 2327,
 							"name": "onContextMenu",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41604,7 +41633,7 @@
 							}
 						},
 						{
-							"id": 2327,
+							"id": 2328,
 							"name": "onContextMenuCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41635,7 +41664,7 @@
 							}
 						},
 						{
-							"id": 2242,
+							"id": 2243,
 							"name": "onCopy",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41666,7 +41695,7 @@
 							}
 						},
 						{
-							"id": 2243,
+							"id": 2244,
 							"name": "onCopyCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41697,7 +41726,7 @@
 							}
 						},
 						{
-							"id": 2244,
+							"id": 2245,
 							"name": "onCut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41728,7 +41757,7 @@
 							}
 						},
 						{
-							"id": 2245,
+							"id": 2246,
 							"name": "onCutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41759,7 +41788,7 @@
 							}
 						},
 						{
-							"id": 2328,
+							"id": 2329,
 							"name": "onDoubleClick",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41790,7 +41819,7 @@
 							}
 						},
 						{
-							"id": 2329,
+							"id": 2330,
 							"name": "onDoubleClickCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41821,7 +41850,7 @@
 							}
 						},
 						{
-							"id": 2330,
+							"id": 2331,
 							"name": "onDrag",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41852,7 +41881,7 @@
 							}
 						},
 						{
-							"id": 2331,
+							"id": 2332,
 							"name": "onDragCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41883,7 +41912,7 @@
 							}
 						},
 						{
-							"id": 2332,
+							"id": 2333,
 							"name": "onDragEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41914,7 +41943,7 @@
 							}
 						},
 						{
-							"id": 2333,
+							"id": 2334,
 							"name": "onDragEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41945,7 +41974,7 @@
 							}
 						},
 						{
-							"id": 2334,
+							"id": 2335,
 							"name": "onDragEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -41976,7 +42005,7 @@
 							}
 						},
 						{
-							"id": 2335,
+							"id": 2336,
 							"name": "onDragEnterCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42007,7 +42036,7 @@
 							}
 						},
 						{
-							"id": 2336,
+							"id": 2337,
 							"name": "onDragExit",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42038,7 +42067,7 @@
 							}
 						},
 						{
-							"id": 2337,
+							"id": 2338,
 							"name": "onDragExitCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42069,7 +42098,7 @@
 							}
 						},
 						{
-							"id": 2338,
+							"id": 2339,
 							"name": "onDragLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42100,7 +42129,7 @@
 							}
 						},
 						{
-							"id": 2339,
+							"id": 2340,
 							"name": "onDragLeaveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42131,7 +42160,7 @@
 							}
 						},
 						{
-							"id": 2340,
+							"id": 2341,
 							"name": "onDragOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42162,7 +42191,7 @@
 							}
 						},
 						{
-							"id": 2341,
+							"id": 2342,
 							"name": "onDragOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42193,7 +42222,7 @@
 							}
 						},
 						{
-							"id": 2342,
+							"id": 2343,
 							"name": "onDragStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42224,7 +42253,7 @@
 							}
 						},
 						{
-							"id": 2343,
+							"id": 2344,
 							"name": "onDragStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42255,7 +42284,7 @@
 							}
 						},
 						{
-							"id": 2344,
+							"id": 2345,
 							"name": "onDrop",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42286,7 +42315,7 @@
 							}
 						},
 						{
-							"id": 2345,
+							"id": 2346,
 							"name": "onDropCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42317,7 +42346,7 @@
 							}
 						},
 						{
-							"id": 2286,
+							"id": 2287,
 							"name": "onDurationChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42348,7 +42377,7 @@
 							}
 						},
 						{
-							"id": 2287,
+							"id": 2288,
 							"name": "onDurationChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42379,7 +42408,7 @@
 							}
 						},
 						{
-							"id": 2288,
+							"id": 2289,
 							"name": "onEmptied",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42410,7 +42439,7 @@
 							}
 						},
 						{
-							"id": 2289,
+							"id": 2290,
 							"name": "onEmptiedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42441,7 +42470,7 @@
 							}
 						},
 						{
-							"id": 2290,
+							"id": 2291,
 							"name": "onEncrypted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42472,7 +42501,7 @@
 							}
 						},
 						{
-							"id": 2291,
+							"id": 2292,
 							"name": "onEncryptedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42503,7 +42532,7 @@
 							}
 						},
 						{
-							"id": 2292,
+							"id": 2293,
 							"name": "onEnded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42534,7 +42563,7 @@
 							}
 						},
 						{
-							"id": 2293,
+							"id": 2294,
 							"name": "onEndedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42565,7 +42594,7 @@
 							}
 						},
 						{
-							"id": 2272,
+							"id": 2273,
 							"name": "onError",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42596,7 +42625,7 @@
 							}
 						},
 						{
-							"id": 2273,
+							"id": 2274,
 							"name": "onErrorCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42627,7 +42656,7 @@
 							}
 						},
 						{
-							"id": 2254,
+							"id": 2255,
 							"name": "onFocus",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42658,7 +42687,7 @@
 							}
 						},
 						{
-							"id": 2255,
+							"id": 2256,
 							"name": "onFocusCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42689,7 +42718,7 @@
 							}
 						},
 						{
-							"id": 2384,
+							"id": 2385,
 							"name": "onGotPointerCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42720,7 +42749,7 @@
 							}
 						},
 						{
-							"id": 2385,
+							"id": 2386,
 							"name": "onGotPointerCaptureCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42751,7 +42780,7 @@
 							}
 						},
 						{
-							"id": 2262,
+							"id": 2263,
 							"name": "onInput",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42782,7 +42811,7 @@
 							}
 						},
 						{
-							"id": 2263,
+							"id": 2264,
 							"name": "onInputCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42813,7 +42842,7 @@
 							}
 						},
 						{
-							"id": 2268,
+							"id": 2269,
 							"name": "onInvalid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42844,7 +42873,7 @@
 							}
 						},
 						{
-							"id": 2269,
+							"id": 2270,
 							"name": "onInvalidCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42875,7 +42904,7 @@
 							}
 						},
 						{
-							"id": 2274,
+							"id": 2275,
 							"name": "onKeyDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42906,7 +42935,7 @@
 							}
 						},
 						{
-							"id": 2275,
+							"id": 2276,
 							"name": "onKeyDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42937,7 +42966,7 @@
 							}
 						},
 						{
-							"id": 2276,
+							"id": 2277,
 							"name": "onKeyPress",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42968,7 +42997,7 @@
 							}
 						},
 						{
-							"id": 2277,
+							"id": 2278,
 							"name": "onKeyPressCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -42999,7 +43028,7 @@
 							}
 						},
 						{
-							"id": 2278,
+							"id": 2279,
 							"name": "onKeyUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43030,7 +43059,7 @@
 							}
 						},
 						{
-							"id": 2279,
+							"id": 2280,
 							"name": "onKeyUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43061,7 +43090,7 @@
 							}
 						},
 						{
-							"id": 2270,
+							"id": 2271,
 							"name": "onLoad",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43092,7 +43121,7 @@
 							}
 						},
 						{
-							"id": 2271,
+							"id": 2272,
 							"name": "onLoadCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43123,7 +43152,7 @@
 							}
 						},
 						{
-							"id": 2298,
+							"id": 2299,
 							"name": "onLoadStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43154,7 +43183,7 @@
 							}
 						},
 						{
-							"id": 2299,
+							"id": 2300,
 							"name": "onLoadStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43185,7 +43214,7 @@
 							}
 						},
 						{
-							"id": 2294,
+							"id": 2295,
 							"name": "onLoadedData",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43216,7 +43245,7 @@
 							}
 						},
 						{
-							"id": 2295,
+							"id": 2296,
 							"name": "onLoadedDataCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43247,7 +43276,7 @@
 							}
 						},
 						{
-							"id": 2296,
+							"id": 2297,
 							"name": "onLoadedMetadata",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43278,7 +43307,7 @@
 							}
 						},
 						{
-							"id": 2297,
+							"id": 2298,
 							"name": "onLoadedMetadataCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43309,7 +43338,7 @@
 							}
 						},
 						{
-							"id": 2386,
+							"id": 2387,
 							"name": "onLostPointerCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43340,7 +43369,7 @@
 							}
 						},
 						{
-							"id": 2387,
+							"id": 2388,
 							"name": "onLostPointerCaptureCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43371,7 +43400,7 @@
 							}
 						},
 						{
-							"id": 2346,
+							"id": 2347,
 							"name": "onMouseDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43402,7 +43431,7 @@
 							}
 						},
 						{
-							"id": 2347,
+							"id": 2348,
 							"name": "onMouseDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43433,7 +43462,7 @@
 							}
 						},
 						{
-							"id": 2348,
+							"id": 2349,
 							"name": "onMouseEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43464,7 +43493,7 @@
 							}
 						},
 						{
-							"id": 2349,
+							"id": 2350,
 							"name": "onMouseLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43495,7 +43524,7 @@
 							}
 						},
 						{
-							"id": 2350,
+							"id": 2351,
 							"name": "onMouseMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43526,7 +43555,7 @@
 							}
 						},
 						{
-							"id": 2351,
+							"id": 2352,
 							"name": "onMouseMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43557,7 +43586,7 @@
 							}
 						},
 						{
-							"id": 2352,
+							"id": 2353,
 							"name": "onMouseOut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43588,7 +43617,7 @@
 							}
 						},
 						{
-							"id": 2353,
+							"id": 2354,
 							"name": "onMouseOutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43619,7 +43648,7 @@
 							}
 						},
 						{
-							"id": 2354,
+							"id": 2355,
 							"name": "onMouseOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43650,7 +43679,7 @@
 							}
 						},
 						{
-							"id": 2355,
+							"id": 2356,
 							"name": "onMouseOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43681,7 +43710,7 @@
 							}
 						},
 						{
-							"id": 2356,
+							"id": 2357,
 							"name": "onMouseUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43712,7 +43741,7 @@
 							}
 						},
 						{
-							"id": 2357,
+							"id": 2358,
 							"name": "onMouseUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43743,7 +43772,7 @@
 							}
 						},
 						{
-							"id": 2246,
+							"id": 2247,
 							"name": "onPaste",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43774,7 +43803,7 @@
 							}
 						},
 						{
-							"id": 2247,
+							"id": 2248,
 							"name": "onPasteCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43805,7 +43834,7 @@
 							}
 						},
 						{
-							"id": 2300,
+							"id": 2301,
 							"name": "onPause",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43836,7 +43865,7 @@
 							}
 						},
 						{
-							"id": 2301,
+							"id": 2302,
 							"name": "onPauseCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43867,7 +43896,7 @@
 							}
 						},
 						{
-							"id": 2302,
+							"id": 2303,
 							"name": "onPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43898,7 +43927,7 @@
 							}
 						},
 						{
-							"id": 2303,
+							"id": 2304,
 							"name": "onPlayCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43929,7 +43958,7 @@
 							}
 						},
 						{
-							"id": 2304,
+							"id": 2305,
 							"name": "onPlaying",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43960,7 +43989,7 @@
 							}
 						},
 						{
-							"id": 2305,
+							"id": 2306,
 							"name": "onPlayingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -43991,7 +44020,7 @@
 							}
 						},
 						{
-							"id": 2374,
+							"id": 2375,
 							"name": "onPointerCancel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44022,7 +44051,7 @@
 							}
 						},
 						{
-							"id": 2375,
+							"id": 2376,
 							"name": "onPointerCancelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44053,7 +44082,7 @@
 							}
 						},
 						{
-							"id": 2368,
+							"id": 2369,
 							"name": "onPointerDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44084,7 +44113,7 @@
 							}
 						},
 						{
-							"id": 2369,
+							"id": 2370,
 							"name": "onPointerDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44115,7 +44144,7 @@
 							}
 						},
 						{
-							"id": 2376,
+							"id": 2377,
 							"name": "onPointerEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44146,7 +44175,7 @@
 							}
 						},
 						{
-							"id": 2377,
+							"id": 2378,
 							"name": "onPointerEnterCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44177,7 +44206,7 @@
 							}
 						},
 						{
-							"id": 2378,
+							"id": 2379,
 							"name": "onPointerLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44208,7 +44237,7 @@
 							}
 						},
 						{
-							"id": 2379,
+							"id": 2380,
 							"name": "onPointerLeaveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44239,7 +44268,7 @@
 							}
 						},
 						{
-							"id": 2370,
+							"id": 2371,
 							"name": "onPointerMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44270,7 +44299,7 @@
 							}
 						},
 						{
-							"id": 2371,
+							"id": 2372,
 							"name": "onPointerMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44301,7 +44330,7 @@
 							}
 						},
 						{
-							"id": 2382,
+							"id": 2383,
 							"name": "onPointerOut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44332,7 +44361,7 @@
 							}
 						},
 						{
-							"id": 2383,
+							"id": 2384,
 							"name": "onPointerOutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44363,7 +44392,7 @@
 							}
 						},
 						{
-							"id": 2380,
+							"id": 2381,
 							"name": "onPointerOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44394,7 +44423,7 @@
 							}
 						},
 						{
-							"id": 2381,
+							"id": 2382,
 							"name": "onPointerOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44425,7 +44454,7 @@
 							}
 						},
 						{
-							"id": 2372,
+							"id": 2373,
 							"name": "onPointerUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44456,7 +44485,7 @@
 							}
 						},
 						{
-							"id": 2373,
+							"id": 2374,
 							"name": "onPointerUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44487,7 +44516,7 @@
 							}
 						},
 						{
-							"id": 2306,
+							"id": 2307,
 							"name": "onProgress",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44518,7 +44547,7 @@
 							}
 						},
 						{
-							"id": 2307,
+							"id": 2308,
 							"name": "onProgressCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44549,7 +44578,7 @@
 							}
 						},
 						{
-							"id": 2308,
+							"id": 2309,
 							"name": "onRateChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44580,7 +44609,7 @@
 							}
 						},
 						{
-							"id": 2309,
+							"id": 2310,
 							"name": "onRateChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44611,7 +44640,7 @@
 							}
 						},
 						{
-							"id": 2264,
+							"id": 2265,
 							"name": "onReset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44642,7 +44671,7 @@
 							}
 						},
 						{
-							"id": 2265,
+							"id": 2266,
 							"name": "onResetCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44673,7 +44702,7 @@
 							}
 						},
 						{
-							"id": 2388,
+							"id": 2389,
 							"name": "onScroll",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44704,7 +44733,7 @@
 							}
 						},
 						{
-							"id": 2389,
+							"id": 2390,
 							"name": "onScrollCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44735,7 +44764,7 @@
 							}
 						},
 						{
-							"id": 2310,
+							"id": 2311,
 							"name": "onSeeked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44766,7 +44795,7 @@
 							}
 						},
 						{
-							"id": 2311,
+							"id": 2312,
 							"name": "onSeekedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44797,7 +44826,7 @@
 							}
 						},
 						{
-							"id": 2312,
+							"id": 2313,
 							"name": "onSeeking",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44828,7 +44857,7 @@
 							}
 						},
 						{
-							"id": 2313,
+							"id": 2314,
 							"name": "onSeekingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44859,7 +44888,7 @@
 							}
 						},
 						{
-							"id": 2358,
+							"id": 2359,
 							"name": "onSelect",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44890,7 +44919,7 @@
 							}
 						},
 						{
-							"id": 2359,
+							"id": 2360,
 							"name": "onSelectCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44921,7 +44950,7 @@
 							}
 						},
 						{
-							"id": 2314,
+							"id": 2315,
 							"name": "onStalled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44952,7 +44981,7 @@
 							}
 						},
 						{
-							"id": 2315,
+							"id": 2316,
 							"name": "onStalledCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -44983,7 +45012,7 @@
 							}
 						},
 						{
-							"id": 2266,
+							"id": 2267,
 							"name": "onSubmit",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45014,7 +45043,7 @@
 							}
 						},
 						{
-							"id": 2267,
+							"id": 2268,
 							"name": "onSubmitCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45045,7 +45074,7 @@
 							}
 						},
 						{
-							"id": 2316,
+							"id": 2317,
 							"name": "onSuspend",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45076,7 +45105,7 @@
 							}
 						},
 						{
-							"id": 2317,
+							"id": 2318,
 							"name": "onSuspendCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45107,7 +45136,7 @@
 							}
 						},
 						{
-							"id": 2318,
+							"id": 2319,
 							"name": "onTimeUpdate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45138,7 +45167,7 @@
 							}
 						},
 						{
-							"id": 2319,
+							"id": 2320,
 							"name": "onTimeUpdateCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45169,7 +45198,7 @@
 							}
 						},
 						{
-							"id": 2360,
+							"id": 2361,
 							"name": "onTouchCancel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45200,7 +45229,7 @@
 							}
 						},
 						{
-							"id": 2361,
+							"id": 2362,
 							"name": "onTouchCancelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45231,7 +45260,7 @@
 							}
 						},
 						{
-							"id": 2362,
+							"id": 2363,
 							"name": "onTouchEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45262,7 +45291,7 @@
 							}
 						},
 						{
-							"id": 2363,
+							"id": 2364,
 							"name": "onTouchEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45293,7 +45322,7 @@
 							}
 						},
 						{
-							"id": 2364,
+							"id": 2365,
 							"name": "onTouchMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45324,7 +45353,7 @@
 							}
 						},
 						{
-							"id": 2365,
+							"id": 2366,
 							"name": "onTouchMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45355,7 +45384,7 @@
 							}
 						},
 						{
-							"id": 2366,
+							"id": 2367,
 							"name": "onTouchStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45386,7 +45415,7 @@
 							}
 						},
 						{
-							"id": 2367,
+							"id": 2368,
 							"name": "onTouchStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45417,7 +45446,7 @@
 							}
 						},
 						{
-							"id": 2398,
+							"id": 2399,
 							"name": "onTransitionEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45448,7 +45477,7 @@
 							}
 						},
 						{
-							"id": 2399,
+							"id": 2400,
 							"name": "onTransitionEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45479,7 +45508,7 @@
 							}
 						},
 						{
-							"id": 2320,
+							"id": 2321,
 							"name": "onVolumeChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45510,7 +45539,7 @@
 							}
 						},
 						{
-							"id": 2321,
+							"id": 2322,
 							"name": "onVolumeChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45541,7 +45570,7 @@
 							}
 						},
 						{
-							"id": 2322,
+							"id": 2323,
 							"name": "onWaiting",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45572,7 +45601,7 @@
 							}
 						},
 						{
-							"id": 2323,
+							"id": 2324,
 							"name": "onWaitingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45603,7 +45632,7 @@
 							}
 						},
 						{
-							"id": 2390,
+							"id": 2391,
 							"name": "onWheel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45634,7 +45663,7 @@
 							}
 						},
 						{
-							"id": 2391,
+							"id": 2392,
 							"name": "onWheelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45665,7 +45694,7 @@
 							}
 						},
 						{
-							"id": 2159,
+							"id": 2160,
 							"name": "open",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45703,7 +45732,7 @@
 							}
 						},
 						{
-							"id": 2160,
+							"id": 2161,
 							"name": "optimum",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45737,7 +45766,7 @@
 							}
 						},
 						{
-							"id": 2161,
+							"id": 2162,
 							"name": "pattern",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45771,7 +45800,7 @@
 							}
 						},
 						{
-							"id": 2162,
+							"id": 2163,
 							"name": "placeholder",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45809,7 +45838,7 @@
 							}
 						},
 						{
-							"id": 2163,
+							"id": 2164,
 							"name": "playsInline",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45847,7 +45876,7 @@
 							}
 						},
 						{
-							"id": 2164,
+							"id": 2165,
 							"name": "poster",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45881,7 +45910,7 @@
 							}
 						},
 						{
-							"id": 2221,
+							"id": 2222,
 							"name": "prefix",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45915,7 +45944,7 @@
 							}
 						},
 						{
-							"id": 2165,
+							"id": 2166,
 							"name": "preload",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45949,7 +45978,7 @@
 							}
 						},
 						{
-							"id": 2222,
+							"id": 2223,
 							"name": "property",
 							"kind": 1024,
 							"kindString": "Property",
@@ -45983,7 +46012,7 @@
 							}
 						},
 						{
-							"id": 2216,
+							"id": 2217,
 							"name": "radioGroup",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46017,7 +46046,7 @@
 							}
 						},
 						{
-							"id": 2166,
+							"id": 2167,
 							"name": "readOnly",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46055,7 +46084,7 @@
 							}
 						},
 						{
-							"id": 2400,
+							"id": 2401,
 							"name": "ref",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46086,7 +46115,7 @@
 							}
 						},
 						{
-							"id": 2167,
+							"id": 2168,
 							"name": "rel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46120,7 +46149,7 @@
 							}
 						},
 						{
-							"id": 2168,
+							"id": 2169,
 							"name": "required",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46158,7 +46187,7 @@
 							}
 						},
 						{
-							"id": 2223,
+							"id": 2224,
 							"name": "resource",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46192,7 +46221,7 @@
 							}
 						},
 						{
-							"id": 2235,
+							"id": 2236,
 							"name": "results",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46226,7 +46255,7 @@
 							}
 						},
 						{
-							"id": 2169,
+							"id": 2170,
 							"name": "reversed",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46264,7 +46293,7 @@
 							}
 						},
 						{
-							"id": 2217,
+							"id": 2218,
 							"name": "role",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46298,7 +46327,7 @@
 							}
 						},
 						{
-							"id": 2171,
+							"id": 2172,
 							"name": "rowSpan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46332,7 +46361,7 @@
 							}
 						},
 						{
-							"id": 2170,
+							"id": 2171,
 							"name": "rows",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46366,7 +46395,7 @@
 							}
 						},
 						{
-							"id": 2172,
+							"id": 2173,
 							"name": "sandbox",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46400,7 +46429,7 @@
 							}
 						},
 						{
-							"id": 2173,
+							"id": 2174,
 							"name": "scope",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46434,7 +46463,7 @@
 							}
 						},
 						{
-							"id": 2174,
+							"id": 2175,
 							"name": "scoped",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46472,7 +46501,7 @@
 							}
 						},
 						{
-							"id": 2175,
+							"id": 2176,
 							"name": "scrolling",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46506,7 +46535,7 @@
 							}
 						},
 						{
-							"id": 2176,
+							"id": 2177,
 							"name": "seamless",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46544,7 +46573,7 @@
 							}
 						},
 						{
-							"id": 2236,
+							"id": 2237,
 							"name": "security",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46578,7 +46607,7 @@
 							}
 						},
 						{
-							"id": 2177,
+							"id": 2178,
 							"name": "selected",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46616,7 +46645,7 @@
 							}
 						},
 						{
-							"id": 2178,
+							"id": 2179,
 							"name": "shape",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46650,7 +46679,7 @@
 							}
 						},
 						{
-							"id": 2179,
+							"id": 2180,
 							"name": "size",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46684,7 +46713,7 @@
 							}
 						},
 						{
-							"id": 2180,
+							"id": 2181,
 							"name": "sizes",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46718,7 +46747,7 @@
 							}
 						},
 						{
-							"id": 2209,
+							"id": 2210,
 							"name": "slot",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46752,7 +46781,7 @@
 							}
 						},
 						{
-							"id": 2181,
+							"id": 2182,
 							"name": "span",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46786,7 +46815,7 @@
 							}
 						},
 						{
-							"id": 2210,
+							"id": 2211,
 							"name": "spellCheck",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46824,7 +46853,7 @@
 							}
 						},
 						{
-							"id": 2182,
+							"id": 2183,
 							"name": "src",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46858,7 +46887,7 @@
 							}
 						},
 						{
-							"id": 2183,
+							"id": 2184,
 							"name": "srcDoc",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46892,7 +46921,7 @@
 							}
 						},
 						{
-							"id": 2184,
+							"id": 2185,
 							"name": "srcLang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46926,7 +46955,7 @@
 							}
 						},
 						{
-							"id": 2185,
+							"id": 2186,
 							"name": "srcSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46960,7 +46989,7 @@
 							}
 						},
 						{
-							"id": 2186,
+							"id": 2187,
 							"name": "start",
 							"kind": 1024,
 							"kindString": "Property",
@@ -46994,7 +47023,7 @@
 							}
 						},
 						{
-							"id": 2187,
+							"id": 2188,
 							"name": "step",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47028,7 +47057,7 @@
 							}
 						},
 						{
-							"id": 2211,
+							"id": 2212,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47053,7 +47082,7 @@
 							}
 						},
 						{
-							"id": 2188,
+							"id": 2189,
 							"name": "summary",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47087,7 +47116,7 @@
 							}
 						},
 						{
-							"id": 2198,
+							"id": 2199,
 							"name": "suppressContentEditableWarning",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47125,7 +47154,7 @@
 							}
 						},
 						{
-							"id": 2199,
+							"id": 2200,
 							"name": "suppressHydrationWarning",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47163,7 +47192,7 @@
 							}
 						},
 						{
-							"id": 2212,
+							"id": 2213,
 							"name": "tabIndex",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47197,7 +47226,7 @@
 							}
 						},
 						{
-							"id": 2088,
+							"id": 2089,
 							"name": "tag",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47215,11 +47244,11 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2412
+								"id": 2413
 							}
 						},
 						{
-							"id": 2189,
+							"id": 2190,
 							"name": "target",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47253,7 +47282,7 @@
 							}
 						},
 						{
-							"id": 2089,
+							"id": 2090,
 							"name": "theme",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47271,11 +47300,11 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2406
+								"id": 2407
 							}
 						},
 						{
-							"id": 2213,
+							"id": 2214,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47309,7 +47338,7 @@
 							}
 						},
 						{
-							"id": 2190,
+							"id": 2191,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47343,7 +47372,7 @@
 							}
 						},
 						{
-							"id": 2224,
+							"id": 2225,
 							"name": "typeof",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47377,7 +47406,7 @@
 							}
 						},
 						{
-							"id": 2237,
+							"id": 2238,
 							"name": "unselectable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47411,7 +47440,7 @@
 							}
 						},
 						{
-							"id": 2191,
+							"id": 2192,
 							"name": "useMap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47445,7 +47474,7 @@
 							}
 						},
 						{
-							"id": 2192,
+							"id": 2193,
 							"name": "value",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47486,7 +47515,7 @@
 							}
 						},
 						{
-							"id": 2225,
+							"id": 2226,
 							"name": "vocab",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47520,7 +47549,7 @@
 							}
 						},
 						{
-							"id": 2193,
+							"id": 2194,
 							"name": "width",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47554,7 +47583,7 @@
 							}
 						},
 						{
-							"id": 2194,
+							"id": 2195,
 							"name": "wmode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47588,7 +47617,7 @@
 							}
 						},
 						{
-							"id": 2195,
+							"id": 2196,
 							"name": "wrap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -47627,54 +47656,53 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2218,
-								2090,
+								2219,
 								2091,
-								2200,
 								2092,
+								2201,
 								2093,
 								2094,
 								2095,
 								2096,
 								2097,
-								2226,
 								2098,
 								2227,
 								2099,
-								2100,
 								2228,
+								2100,
 								2101,
+								2229,
 								2102,
 								2103,
-								2105,
 								2104,
 								2106,
-								2238,
+								2105,
 								2107,
+								2239,
 								2108,
-								2201,
-								2110,
-								2229,
 								2109,
-								2111,
 								2202,
-								2203,
+								2111,
+								2230,
+								2110,
 								2112,
+								2203,
+								2204,
 								2113,
 								2114,
-								2239,
 								2115,
-								2219,
+								2240,
 								2116,
+								2220,
 								2117,
-								2196,
-								2197,
 								2118,
-								2204,
+								2197,
+								2198,
 								2119,
-								2120,
 								2205,
+								2120,
 								2121,
+								2206,
 								2122,
 								2123,
 								2124,
@@ -47684,29 +47712,29 @@
 								2128,
 								2129,
 								2130,
-								2206,
 								2131,
+								2207,
 								2132,
 								2133,
 								2134,
 								2135,
-								2207,
-								2220,
-								2214,
 								2136,
+								2208,
+								2221,
 								2215,
-								2233,
-								2230,
+								2137,
+								2216,
 								2234,
 								2231,
+								2235,
 								2232,
-								2401,
-								2137,
+								2233,
+								2402,
 								2138,
 								2139,
 								2140,
-								2208,
 								2141,
+								2209,
 								2142,
 								2143,
 								2144,
@@ -47722,41 +47750,41 @@
 								2154,
 								2155,
 								2156,
-								2158,
 								2157,
-								2280,
+								2159,
+								2158,
 								2281,
-								2394,
+								2282,
 								2395,
 								2396,
 								2397,
-								2392,
+								2398,
 								2393,
-								2260,
+								2394,
 								2261,
-								2256,
+								2262,
 								2257,
-								2282,
+								2258,
 								2283,
 								2284,
 								2285,
-								2258,
+								2286,
 								2259,
-								2324,
+								2260,
 								2325,
-								2248,
+								2326,
 								2249,
 								2250,
 								2251,
 								2252,
 								2253,
-								2326,
+								2254,
 								2327,
-								2242,
+								2328,
 								2243,
 								2244,
 								2245,
-								2328,
+								2246,
 								2329,
 								2330,
 								2331,
@@ -47774,7 +47802,7 @@
 								2343,
 								2344,
 								2345,
-								2286,
+								2346,
 								2287,
 								2288,
 								2289,
@@ -47782,33 +47810,33 @@
 								2291,
 								2292,
 								2293,
-								2272,
+								2294,
 								2273,
-								2254,
-								2255,
-								2384,
-								2385,
-								2262,
-								2263,
-								2268,
-								2269,
 								2274,
+								2255,
+								2256,
+								2385,
+								2386,
+								2263,
+								2264,
+								2269,
+								2270,
 								2275,
 								2276,
 								2277,
 								2278,
 								2279,
-								2270,
+								2280,
 								2271,
-								2298,
+								2272,
 								2299,
-								2294,
+								2300,
 								2295,
 								2296,
 								2297,
-								2386,
+								2298,
 								2387,
-								2346,
+								2388,
 								2347,
 								2348,
 								2349,
@@ -47820,53 +47848,53 @@
 								2355,
 								2356,
 								2357,
-								2246,
+								2358,
 								2247,
-								2300,
+								2248,
 								2301,
 								2302,
 								2303,
 								2304,
 								2305,
-								2374,
+								2306,
 								2375,
-								2368,
-								2369,
 								2376,
+								2369,
+								2370,
 								2377,
 								2378,
 								2379,
-								2370,
-								2371,
-								2382,
-								2383,
 								2380,
-								2381,
+								2371,
 								2372,
+								2383,
+								2384,
+								2381,
+								2382,
 								2373,
-								2306,
+								2374,
 								2307,
 								2308,
 								2309,
-								2264,
-								2265,
-								2388,
-								2389,
 								2310,
+								2265,
+								2266,
+								2389,
+								2390,
 								2311,
 								2312,
 								2313,
-								2358,
-								2359,
 								2314,
+								2359,
+								2360,
 								2315,
-								2266,
-								2267,
 								2316,
+								2267,
+								2268,
 								2317,
 								2318,
 								2319,
-								2360,
+								2320,
 								2361,
 								2362,
 								2363,
@@ -47874,71 +47902,72 @@
 								2365,
 								2366,
 								2367,
-								2398,
+								2368,
 								2399,
-								2320,
+								2400,
 								2321,
 								2322,
 								2323,
-								2390,
+								2324,
 								2391,
-								2159,
+								2392,
 								2160,
 								2161,
 								2162,
 								2163,
 								2164,
-								2221,
 								2165,
 								2222,
-								2216,
 								2166,
-								2400,
-								2167,
-								2168,
 								2223,
-								2235,
-								2169,
 								2217,
-								2171,
+								2167,
+								2401,
+								2168,
+								2169,
+								2224,
+								2236,
 								2170,
+								2218,
 								2172,
+								2171,
 								2173,
 								2174,
 								2175,
 								2176,
-								2236,
 								2177,
+								2237,
 								2178,
 								2179,
 								2180,
-								2209,
 								2181,
 								2210,
 								2182,
+								2211,
 								2183,
 								2184,
 								2185,
 								2186,
 								2187,
-								2211,
 								2188,
-								2198,
-								2199,
 								2212,
-								2088,
 								2189,
-								2089,
+								2199,
+								2200,
 								2213,
+								2089,
 								2190,
-								2224,
-								2237,
+								2090,
+								2214,
 								2191,
-								2192,
 								2225,
+								2238,
+								2192,
 								2193,
+								2226,
 								2194,
-								2195
+								2195,
+								2196
 							]
 						}
 					],
@@ -47963,7 +47992,7 @@
 					]
 				},
 				{
-					"id": 2078,
+					"id": 2079,
 					"name": "DeprecatedRippleProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -47972,7 +48001,7 @@
 					},
 					"children": [
 						{
-							"id": 2079,
+							"id": 2080,
 							"name": "accent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48009,7 +48038,7 @@
 							}
 						},
 						{
-							"id": 2080,
+							"id": 2081,
 							"name": "surface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48046,7 +48075,7 @@
 							}
 						},
 						{
-							"id": 2081,
+							"id": 2082,
 							"name": "unbounded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48088,9 +48117,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2079,
 								2080,
-								2081
+								2081,
+								2082
 							]
 						}
 					],
@@ -48105,12 +48134,12 @@
 						{
 							"type": "reference",
 							"name": "WithRippleProps",
-							"id": 2082
+							"id": 2083
 						}
 					]
 				},
 				{
-					"id": 2082,
+					"id": 2083,
 					"name": "WithRippleProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -48119,7 +48148,7 @@
 					},
 					"children": [
 						{
-							"id": 2084,
+							"id": 2085,
 							"name": "accent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48157,11 +48186,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.accent",
-								"id": 2079
+								"id": 2080
 							}
 						},
 						{
-							"id": 2083,
+							"id": 2084,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48182,11 +48211,11 @@
 							"type": {
 								"type": "reference",
 								"name": "RipplePropT",
-								"id": 2407
+								"id": 2408
 							}
 						},
 						{
-							"id": 2085,
+							"id": 2086,
 							"name": "surface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48224,11 +48253,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.surface",
-								"id": 2080
+								"id": 2081
 							}
 						},
 						{
-							"id": 2086,
+							"id": 2087,
 							"name": "unbounded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -48266,7 +48295,7 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.unbounded",
-								"id": 2081
+								"id": 2082
 							}
 						}
 					],
@@ -48275,10 +48304,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2084,
-								2083,
 								2085,
-								2086
+								2084,
+								2086,
+								2087
 							]
 						}
 					],
@@ -48293,12 +48322,12 @@
 						{
 							"type": "reference",
 							"name": "DeprecatedRippleProps",
-							"id": 2078
+							"id": 2079
 						}
 					]
 				},
 				{
-					"id": 2413,
+					"id": 2414,
 					"name": "CustomEventT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48307,7 +48336,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 2414,
+							"id": 2415,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -48348,7 +48377,7 @@
 					}
 				},
 				{
-					"id": 2402,
+					"id": 2403,
 					"name": "MergeInterfacesT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48360,14 +48389,14 @@
 					},
 					"typeParameter": [
 						{
-							"id": 2403,
+							"id": 2404,
 							"name": "A",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 2404,
+							"id": 2405,
 							"name": "B",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -48424,7 +48453,7 @@
 					}
 				},
 				{
-					"id": 2407,
+					"id": 2408,
 					"name": "RipplePropT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48451,14 +48480,14 @@
 							{
 								"type": "reflection",
 								"declaration": {
-									"id": 2408,
+									"id": 2409,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2409,
+											"id": 2410,
 											"name": "accent",
 											"kind": 32,
 											"kindString": "Variable",
@@ -48491,7 +48520,7 @@
 											}
 										},
 										{
-											"id": 2410,
+											"id": 2411,
 											"name": "surface",
 											"kind": 32,
 											"kindString": "Variable",
@@ -48524,7 +48553,7 @@
 											}
 										},
 										{
-											"id": 2411,
+											"id": 2412,
 											"name": "unbounded",
 											"kind": 32,
 											"kindString": "Variable",
@@ -48562,9 +48591,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2409,
 												2410,
-												2411
+												2411,
+												2412
 											]
 										}
 									],
@@ -48581,7 +48610,7 @@
 					}
 				},
 				{
-					"id": 2412,
+					"id": 2413,
 					"name": "TagT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48619,7 +48648,7 @@
 					}
 				},
 				{
-					"id": 2405,
+					"id": 2406,
 					"name": "ThemeOptionT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48747,7 +48776,7 @@
 					}
 				},
 				{
-					"id": 2406,
+					"id": 2407,
 					"name": "ThemePropT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -48767,14 +48796,14 @@
 							{
 								"type": "reference",
 								"name": "ThemeOptionT",
-								"id": 2405
+								"id": 2406
 							},
 							{
 								"type": "array",
 								"elementType": {
 									"type": "reference",
 									"name": "ThemeOptionT",
-									"id": 2405
+									"id": 2406
 								}
 							}
 						]
@@ -48786,21 +48815,21 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2087,
-						2078,
-						2082
+						2088,
+						2079,
+						2083
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
+						2414,
+						2403,
+						2408,
 						2413,
-						2402,
-						2407,
-						2412,
-						2405,
-						2406
+						2406,
+						2407
 					]
 				}
 			],
@@ -66650,7 +66679,7 @@
 				534,
 				691,
 				1749,
-				2077,
+				2078,
 				686,
 				507,
 				1196,

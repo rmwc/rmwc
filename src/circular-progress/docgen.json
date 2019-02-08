@@ -17044,7 +17044,7 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2024
+								"id": 2025
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -17104,7 +17104,7 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2018
+								"id": 2019
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -18214,7 +18214,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 14,
+							"line": 16,
 							"character": 26
 						}
 					],
@@ -28063,7 +28063,7 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2024
+								"id": 2025
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -28123,7 +28123,7 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2018
+								"id": 2019
 							},
 							"inheritedFrom": {
 								"type": "reference",
@@ -28801,7 +28801,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 13,
+							"line": 15,
 							"character": 32
 						}
 					],
@@ -28814,7 +28814,7 @@
 					]
 				},
 				{
-					"id": 1688,
+					"id": 1689,
 					"name": "WithThemeProps",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -28824,7 +28824,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/index.tsx",
-							"line": 12,
+							"line": 14,
 							"character": 26
 						}
 					],
@@ -28832,6 +28832,28 @@
 						"type": "reference",
 						"name": "_WithThemeProps"
 					}
+				},
+				{
+					"id": 1688,
+					"name": "createFocusTrap",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node_modules/@rmwc/base/index.tsx",
+							"line": 12,
+							"character": 28
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "focusTrap"
+					},
+					"defaultValue": " _createFocusTrap"
 				}
 			],
 			"groups": [
@@ -28847,6 +28869,13 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
+						1689
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
 						1688
 					]
 				}
@@ -28860,7 +28889,7 @@
 			]
 		},
 		{
-			"id": 1689,
+			"id": 1690,
 			"name": "\"node_modules/@rmwc/base/node_modules/@rmwc/types/index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -28870,7 +28899,7 @@
 			"originalName": "/Users/jamesmfriedman/Sites/rmwc/src/circular-progress/node_modules/@rmwc/base/node_modules/@rmwc/types/index.tsx",
 			"children": [
 				{
-					"id": 1699,
+					"id": 1700,
 					"name": "ComponentProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -28879,7 +28908,7 @@
 					},
 					"children": [
 						{
-							"id": 1830,
+							"id": 1831,
 							"name": "about",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28913,7 +28942,7 @@
 							}
 						},
 						{
-							"id": 1702,
+							"id": 1703,
 							"name": "accept",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28947,7 +28976,7 @@
 							}
 						},
 						{
-							"id": 1703,
+							"id": 1704,
 							"name": "acceptCharset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28981,7 +29010,7 @@
 							}
 						},
 						{
-							"id": 1812,
+							"id": 1813,
 							"name": "accessKey",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29015,7 +29044,7 @@
 							}
 						},
 						{
-							"id": 1704,
+							"id": 1705,
 							"name": "action",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29049,7 +29078,7 @@
 							}
 						},
 						{
-							"id": 1705,
+							"id": 1706,
 							"name": "allowFullScreen",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29087,7 +29116,7 @@
 							}
 						},
 						{
-							"id": 1706,
+							"id": 1707,
 							"name": "allowTransparency",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29125,7 +29154,7 @@
 							}
 						},
 						{
-							"id": 1707,
+							"id": 1708,
 							"name": "alt",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29159,7 +29188,7 @@
 							}
 						},
 						{
-							"id": 1708,
+							"id": 1709,
 							"name": "as",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29193,7 +29222,7 @@
 							}
 						},
 						{
-							"id": 1709,
+							"id": 1710,
 							"name": "async",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29231,7 +29260,7 @@
 							}
 						},
 						{
-							"id": 1838,
+							"id": 1839,
 							"name": "autoCapitalize",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29265,7 +29294,7 @@
 							}
 						},
 						{
-							"id": 1710,
+							"id": 1711,
 							"name": "autoComplete",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29299,7 +29328,7 @@
 							}
 						},
 						{
-							"id": 1839,
+							"id": 1840,
 							"name": "autoCorrect",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29333,7 +29362,7 @@
 							}
 						},
 						{
-							"id": 1711,
+							"id": 1712,
 							"name": "autoFocus",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29371,7 +29400,7 @@
 							}
 						},
 						{
-							"id": 1712,
+							"id": 1713,
 							"name": "autoPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29409,7 +29438,7 @@
 							}
 						},
 						{
-							"id": 1840,
+							"id": 1841,
 							"name": "autoSave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29443,7 +29472,7 @@
 							}
 						},
 						{
-							"id": 1713,
+							"id": 1714,
 							"name": "capture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29477,7 +29506,7 @@
 							}
 						},
 						{
-							"id": 1714,
+							"id": 1715,
 							"name": "cellPadding",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29511,7 +29540,7 @@
 							}
 						},
 						{
-							"id": 1715,
+							"id": 1716,
 							"name": "cellSpacing",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29545,7 +29574,7 @@
 							}
 						},
 						{
-							"id": 1717,
+							"id": 1718,
 							"name": "challenge",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29579,7 +29608,7 @@
 							}
 						},
 						{
-							"id": 1716,
+							"id": 1717,
 							"name": "charSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29613,7 +29642,7 @@
 							}
 						},
 						{
-							"id": 1718,
+							"id": 1719,
 							"name": "checked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29651,7 +29680,7 @@
 							}
 						},
 						{
-							"id": 1850,
+							"id": 1851,
 							"name": "children",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29676,7 +29705,7 @@
 							}
 						},
 						{
-							"id": 1719,
+							"id": 1720,
 							"name": "cite",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29710,7 +29739,7 @@
 							}
 						},
 						{
-							"id": 1720,
+							"id": 1721,
 							"name": "classID",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29744,7 +29773,7 @@
 							}
 						},
 						{
-							"id": 1813,
+							"id": 1814,
 							"name": "className",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29778,7 +29807,7 @@
 							}
 						},
 						{
-							"id": 1722,
+							"id": 1723,
 							"name": "colSpan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29812,7 +29841,7 @@
 							}
 						},
 						{
-							"id": 1841,
+							"id": 1842,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29846,7 +29875,7 @@
 							}
 						},
 						{
-							"id": 1721,
+							"id": 1722,
 							"name": "cols",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29880,7 +29909,7 @@
 							}
 						},
 						{
-							"id": 1723,
+							"id": 1724,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29914,7 +29943,7 @@
 							}
 						},
 						{
-							"id": 1814,
+							"id": 1815,
 							"name": "contentEditable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29952,7 +29981,7 @@
 							}
 						},
 						{
-							"id": 1815,
+							"id": 1816,
 							"name": "contextMenu",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29986,7 +30015,7 @@
 							}
 						},
 						{
-							"id": 1724,
+							"id": 1725,
 							"name": "controls",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30024,7 +30053,7 @@
 							}
 						},
 						{
-							"id": 1725,
+							"id": 1726,
 							"name": "coords",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30058,7 +30087,7 @@
 							}
 						},
 						{
-							"id": 1726,
+							"id": 1727,
 							"name": "crossOrigin",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30092,7 +30121,7 @@
 							}
 						},
 						{
-							"id": 1851,
+							"id": 1852,
 							"name": "dangerouslySetInnerHTML",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30117,14 +30146,14 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 1852,
+											"id": 1853,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 1853,
+													"id": 1854,
 													"name": "__html",
 													"kind": 32,
 													"kindString": "Variable",
@@ -30147,7 +30176,7 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														1853
+														1854
 													]
 												}
 											]
@@ -30161,7 +30190,7 @@
 							}
 						},
 						{
-							"id": 1727,
+							"id": 1728,
 							"name": "data",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30195,7 +30224,7 @@
 							}
 						},
 						{
-							"id": 1831,
+							"id": 1832,
 							"name": "datatype",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30229,7 +30258,7 @@
 							}
 						},
 						{
-							"id": 1728,
+							"id": 1729,
 							"name": "dateTime",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30263,7 +30292,7 @@
 							}
 						},
 						{
-							"id": 1729,
+							"id": 1730,
 							"name": "default",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30301,7 +30330,7 @@
 							}
 						},
 						{
-							"id": 1808,
+							"id": 1809,
 							"name": "defaultChecked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30339,7 +30368,7 @@
 							}
 						},
 						{
-							"id": 1809,
+							"id": 1810,
 							"name": "defaultValue",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30376,7 +30405,7 @@
 							}
 						},
 						{
-							"id": 1730,
+							"id": 1731,
 							"name": "defer",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30414,7 +30443,7 @@
 							}
 						},
 						{
-							"id": 1816,
+							"id": 1817,
 							"name": "dir",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30448,7 +30477,7 @@
 							}
 						},
 						{
-							"id": 1731,
+							"id": 1732,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30486,7 +30515,7 @@
 							}
 						},
 						{
-							"id": 1732,
+							"id": 1733,
 							"name": "download",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30511,7 +30540,7 @@
 							}
 						},
 						{
-							"id": 1817,
+							"id": 1818,
 							"name": "draggable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30549,7 +30578,7 @@
 							}
 						},
 						{
-							"id": 1733,
+							"id": 1734,
 							"name": "encType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30583,7 +30612,7 @@
 							}
 						},
 						{
-							"id": 1734,
+							"id": 1735,
 							"name": "form",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30617,7 +30646,7 @@
 							}
 						},
 						{
-							"id": 1735,
+							"id": 1736,
 							"name": "formAction",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30651,7 +30680,7 @@
 							}
 						},
 						{
-							"id": 1736,
+							"id": 1737,
 							"name": "formEncType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30685,7 +30714,7 @@
 							}
 						},
 						{
-							"id": 1737,
+							"id": 1738,
 							"name": "formMethod",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30719,7 +30748,7 @@
 							}
 						},
 						{
-							"id": 1738,
+							"id": 1739,
 							"name": "formNoValidate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30757,7 +30786,7 @@
 							}
 						},
 						{
-							"id": 1739,
+							"id": 1740,
 							"name": "formTarget",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30791,7 +30820,7 @@
 							}
 						},
 						{
-							"id": 1740,
+							"id": 1741,
 							"name": "frameBorder",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30825,7 +30854,7 @@
 							}
 						},
 						{
-							"id": 1741,
+							"id": 1742,
 							"name": "headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30859,7 +30888,7 @@
 							}
 						},
 						{
-							"id": 1742,
+							"id": 1743,
 							"name": "height",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30893,7 +30922,7 @@
 							}
 						},
 						{
-							"id": 1818,
+							"id": 1819,
 							"name": "hidden",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30931,7 +30960,7 @@
 							}
 						},
 						{
-							"id": 1743,
+							"id": 1744,
 							"name": "high",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30965,7 +30994,7 @@
 							}
 						},
 						{
-							"id": 1744,
+							"id": 1745,
 							"name": "href",
 							"kind": 1024,
 							"kindString": "Property",
@@ -30999,7 +31028,7 @@
 							}
 						},
 						{
-							"id": 1745,
+							"id": 1746,
 							"name": "hrefLang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31033,7 +31062,7 @@
 							}
 						},
 						{
-							"id": 1746,
+							"id": 1747,
 							"name": "htmlFor",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31067,7 +31096,7 @@
 							}
 						},
 						{
-							"id": 1747,
+							"id": 1748,
 							"name": "httpEquiv",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31101,7 +31130,7 @@
 							}
 						},
 						{
-							"id": 1819,
+							"id": 1820,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31135,7 +31164,7 @@
 							}
 						},
 						{
-							"id": 1832,
+							"id": 1833,
 							"name": "inlist",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31160,7 +31189,7 @@
 							}
 						},
 						{
-							"id": 1826,
+							"id": 1827,
 							"name": "inputMode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31194,7 +31223,7 @@
 							}
 						},
 						{
-							"id": 1748,
+							"id": 1749,
 							"name": "integrity",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31228,7 +31257,7 @@
 							}
 						},
 						{
-							"id": 1827,
+							"id": 1828,
 							"name": "is",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31262,7 +31291,7 @@
 							}
 						},
 						{
-							"id": 1845,
+							"id": 1846,
 							"name": "itemID",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31296,7 +31325,7 @@
 							}
 						},
 						{
-							"id": 1842,
+							"id": 1843,
 							"name": "itemProp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31330,7 +31359,7 @@
 							}
 						},
 						{
-							"id": 1846,
+							"id": 1847,
 							"name": "itemRef",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31364,7 +31393,7 @@
 							}
 						},
 						{
-							"id": 1843,
+							"id": 1844,
 							"name": "itemScope",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31402,7 +31431,7 @@
 							}
 						},
 						{
-							"id": 1844,
+							"id": 1845,
 							"name": "itemType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31436,7 +31465,7 @@
 							}
 						},
 						{
-							"id": 2013,
+							"id": 2014,
 							"name": "key",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31461,7 +31490,7 @@
 							}
 						},
 						{
-							"id": 1749,
+							"id": 1750,
 							"name": "keyParams",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31495,7 +31524,7 @@
 							}
 						},
 						{
-							"id": 1750,
+							"id": 1751,
 							"name": "keyType",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31529,7 +31558,7 @@
 							}
 						},
 						{
-							"id": 1751,
+							"id": 1752,
 							"name": "kind",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31563,7 +31592,7 @@
 							}
 						},
 						{
-							"id": 1752,
+							"id": 1753,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31597,7 +31626,7 @@
 							}
 						},
 						{
-							"id": 1820,
+							"id": 1821,
 							"name": "lang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31631,7 +31660,7 @@
 							}
 						},
 						{
-							"id": 1753,
+							"id": 1754,
 							"name": "list",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31665,7 +31694,7 @@
 							}
 						},
 						{
-							"id": 1754,
+							"id": 1755,
 							"name": "loop",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31703,7 +31732,7 @@
 							}
 						},
 						{
-							"id": 1755,
+							"id": 1756,
 							"name": "low",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31737,7 +31766,7 @@
 							}
 						},
 						{
-							"id": 1756,
+							"id": 1757,
 							"name": "manifest",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31771,7 +31800,7 @@
 							}
 						},
 						{
-							"id": 1757,
+							"id": 1758,
 							"name": "marginHeight",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31805,7 +31834,7 @@
 							}
 						},
 						{
-							"id": 1758,
+							"id": 1759,
 							"name": "marginWidth",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31839,7 +31868,7 @@
 							}
 						},
 						{
-							"id": 1759,
+							"id": 1760,
 							"name": "max",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31873,7 +31902,7 @@
 							}
 						},
 						{
-							"id": 1760,
+							"id": 1761,
 							"name": "maxLength",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31907,7 +31936,7 @@
 							}
 						},
 						{
-							"id": 1761,
+							"id": 1762,
 							"name": "media",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31941,7 +31970,7 @@
 							}
 						},
 						{
-							"id": 1762,
+							"id": 1763,
 							"name": "mediaGroup",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31975,7 +32004,7 @@
 							}
 						},
 						{
-							"id": 1763,
+							"id": 1764,
 							"name": "method",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32009,7 +32038,7 @@
 							}
 						},
 						{
-							"id": 1764,
+							"id": 1765,
 							"name": "min",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32043,7 +32072,7 @@
 							}
 						},
 						{
-							"id": 1765,
+							"id": 1766,
 							"name": "minLength",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32077,7 +32106,7 @@
 							}
 						},
 						{
-							"id": 1766,
+							"id": 1767,
 							"name": "multiple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32115,7 +32144,7 @@
 							}
 						},
 						{
-							"id": 1767,
+							"id": 1768,
 							"name": "muted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32153,7 +32182,7 @@
 							}
 						},
 						{
-							"id": 1768,
+							"id": 1769,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32187,7 +32216,7 @@
 							}
 						},
 						{
-							"id": 1770,
+							"id": 1771,
 							"name": "noValidate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32225,7 +32254,7 @@
 							}
 						},
 						{
-							"id": 1769,
+							"id": 1770,
 							"name": "nonce",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32259,7 +32288,7 @@
 							}
 						},
 						{
-							"id": 1892,
+							"id": 1893,
 							"name": "onAbort",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32290,7 +32319,7 @@
 							}
 						},
 						{
-							"id": 1893,
+							"id": 1894,
 							"name": "onAbortCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32321,7 +32350,7 @@
 							}
 						},
 						{
-							"id": 2006,
+							"id": 2007,
 							"name": "onAnimationEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32352,7 +32381,7 @@
 							}
 						},
 						{
-							"id": 2007,
+							"id": 2008,
 							"name": "onAnimationEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32383,7 +32412,7 @@
 							}
 						},
 						{
-							"id": 2008,
+							"id": 2009,
 							"name": "onAnimationIteration",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32414,7 +32443,7 @@
 							}
 						},
 						{
-							"id": 2009,
+							"id": 2010,
 							"name": "onAnimationIterationCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32445,7 +32474,7 @@
 							}
 						},
 						{
-							"id": 2004,
+							"id": 2005,
 							"name": "onAnimationStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32476,7 +32505,7 @@
 							}
 						},
 						{
-							"id": 2005,
+							"id": 2006,
 							"name": "onAnimationStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32507,7 +32536,7 @@
 							}
 						},
 						{
-							"id": 1872,
+							"id": 1873,
 							"name": "onBeforeInput",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32538,7 +32567,7 @@
 							}
 						},
 						{
-							"id": 1873,
+							"id": 1874,
 							"name": "onBeforeInputCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32569,7 +32598,7 @@
 							}
 						},
 						{
-							"id": 1868,
+							"id": 1869,
 							"name": "onBlur",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32600,7 +32629,7 @@
 							}
 						},
 						{
-							"id": 1869,
+							"id": 1870,
 							"name": "onBlurCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32631,7 +32660,7 @@
 							}
 						},
 						{
-							"id": 1894,
+							"id": 1895,
 							"name": "onCanPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32662,7 +32691,7 @@
 							}
 						},
 						{
-							"id": 1895,
+							"id": 1896,
 							"name": "onCanPlayCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32693,7 +32722,7 @@
 							}
 						},
 						{
-							"id": 1896,
+							"id": 1897,
 							"name": "onCanPlayThrough",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32724,7 +32753,7 @@
 							}
 						},
 						{
-							"id": 1897,
+							"id": 1898,
 							"name": "onCanPlayThroughCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32755,7 +32784,7 @@
 							}
 						},
 						{
-							"id": 1870,
+							"id": 1871,
 							"name": "onChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32786,7 +32815,7 @@
 							}
 						},
 						{
-							"id": 1871,
+							"id": 1872,
 							"name": "onChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32817,7 +32846,7 @@
 							}
 						},
 						{
-							"id": 1936,
+							"id": 1937,
 							"name": "onClick",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32848,7 +32877,7 @@
 							}
 						},
 						{
-							"id": 1937,
+							"id": 1938,
 							"name": "onClickCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32879,7 +32908,7 @@
 							}
 						},
 						{
-							"id": 1860,
+							"id": 1861,
 							"name": "onCompositionEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32910,7 +32939,7 @@
 							}
 						},
 						{
-							"id": 1861,
+							"id": 1862,
 							"name": "onCompositionEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32941,7 +32970,7 @@
 							}
 						},
 						{
-							"id": 1862,
+							"id": 1863,
 							"name": "onCompositionStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -32972,7 +33001,7 @@
 							}
 						},
 						{
-							"id": 1863,
+							"id": 1864,
 							"name": "onCompositionStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33003,7 +33032,7 @@
 							}
 						},
 						{
-							"id": 1864,
+							"id": 1865,
 							"name": "onCompositionUpdate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33034,7 +33063,7 @@
 							}
 						},
 						{
-							"id": 1865,
+							"id": 1866,
 							"name": "onCompositionUpdateCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33065,7 +33094,7 @@
 							}
 						},
 						{
-							"id": 1938,
+							"id": 1939,
 							"name": "onContextMenu",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33096,7 +33125,7 @@
 							}
 						},
 						{
-							"id": 1939,
+							"id": 1940,
 							"name": "onContextMenuCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33127,7 +33156,7 @@
 							}
 						},
 						{
-							"id": 1854,
+							"id": 1855,
 							"name": "onCopy",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33158,7 +33187,7 @@
 							}
 						},
 						{
-							"id": 1855,
+							"id": 1856,
 							"name": "onCopyCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33189,7 +33218,7 @@
 							}
 						},
 						{
-							"id": 1856,
+							"id": 1857,
 							"name": "onCut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33220,7 +33249,7 @@
 							}
 						},
 						{
-							"id": 1857,
+							"id": 1858,
 							"name": "onCutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33251,7 +33280,7 @@
 							}
 						},
 						{
-							"id": 1940,
+							"id": 1941,
 							"name": "onDoubleClick",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33282,7 +33311,7 @@
 							}
 						},
 						{
-							"id": 1941,
+							"id": 1942,
 							"name": "onDoubleClickCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33313,7 +33342,7 @@
 							}
 						},
 						{
-							"id": 1942,
+							"id": 1943,
 							"name": "onDrag",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33344,7 +33373,7 @@
 							}
 						},
 						{
-							"id": 1943,
+							"id": 1944,
 							"name": "onDragCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33375,7 +33404,7 @@
 							}
 						},
 						{
-							"id": 1944,
+							"id": 1945,
 							"name": "onDragEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33406,7 +33435,7 @@
 							}
 						},
 						{
-							"id": 1945,
+							"id": 1946,
 							"name": "onDragEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33437,7 +33466,7 @@
 							}
 						},
 						{
-							"id": 1946,
+							"id": 1947,
 							"name": "onDragEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33468,7 +33497,7 @@
 							}
 						},
 						{
-							"id": 1947,
+							"id": 1948,
 							"name": "onDragEnterCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33499,7 +33528,7 @@
 							}
 						},
 						{
-							"id": 1948,
+							"id": 1949,
 							"name": "onDragExit",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33530,7 +33559,7 @@
 							}
 						},
 						{
-							"id": 1949,
+							"id": 1950,
 							"name": "onDragExitCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33561,7 +33590,7 @@
 							}
 						},
 						{
-							"id": 1950,
+							"id": 1951,
 							"name": "onDragLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33592,7 +33621,7 @@
 							}
 						},
 						{
-							"id": 1951,
+							"id": 1952,
 							"name": "onDragLeaveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33623,7 +33652,7 @@
 							}
 						},
 						{
-							"id": 1952,
+							"id": 1953,
 							"name": "onDragOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33654,7 +33683,7 @@
 							}
 						},
 						{
-							"id": 1953,
+							"id": 1954,
 							"name": "onDragOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33685,7 +33714,7 @@
 							}
 						},
 						{
-							"id": 1954,
+							"id": 1955,
 							"name": "onDragStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33716,7 +33745,7 @@
 							}
 						},
 						{
-							"id": 1955,
+							"id": 1956,
 							"name": "onDragStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33747,7 +33776,7 @@
 							}
 						},
 						{
-							"id": 1956,
+							"id": 1957,
 							"name": "onDrop",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33778,7 +33807,7 @@
 							}
 						},
 						{
-							"id": 1957,
+							"id": 1958,
 							"name": "onDropCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33809,7 +33838,7 @@
 							}
 						},
 						{
-							"id": 1898,
+							"id": 1899,
 							"name": "onDurationChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33840,7 +33869,7 @@
 							}
 						},
 						{
-							"id": 1899,
+							"id": 1900,
 							"name": "onDurationChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33871,7 +33900,7 @@
 							}
 						},
 						{
-							"id": 1900,
+							"id": 1901,
 							"name": "onEmptied",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33902,7 +33931,7 @@
 							}
 						},
 						{
-							"id": 1901,
+							"id": 1902,
 							"name": "onEmptiedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33933,7 +33962,7 @@
 							}
 						},
 						{
-							"id": 1902,
+							"id": 1903,
 							"name": "onEncrypted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33964,7 +33993,7 @@
 							}
 						},
 						{
-							"id": 1903,
+							"id": 1904,
 							"name": "onEncryptedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -33995,7 +34024,7 @@
 							}
 						},
 						{
-							"id": 1904,
+							"id": 1905,
 							"name": "onEnded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34026,7 +34055,7 @@
 							}
 						},
 						{
-							"id": 1905,
+							"id": 1906,
 							"name": "onEndedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34057,7 +34086,7 @@
 							}
 						},
 						{
-							"id": 1884,
+							"id": 1885,
 							"name": "onError",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34088,7 +34117,7 @@
 							}
 						},
 						{
-							"id": 1885,
+							"id": 1886,
 							"name": "onErrorCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34119,7 +34148,7 @@
 							}
 						},
 						{
-							"id": 1866,
+							"id": 1867,
 							"name": "onFocus",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34150,7 +34179,7 @@
 							}
 						},
 						{
-							"id": 1867,
+							"id": 1868,
 							"name": "onFocusCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34181,7 +34210,7 @@
 							}
 						},
 						{
-							"id": 1996,
+							"id": 1997,
 							"name": "onGotPointerCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34212,7 +34241,7 @@
 							}
 						},
 						{
-							"id": 1997,
+							"id": 1998,
 							"name": "onGotPointerCaptureCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34243,7 +34272,7 @@
 							}
 						},
 						{
-							"id": 1874,
+							"id": 1875,
 							"name": "onInput",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34274,7 +34303,7 @@
 							}
 						},
 						{
-							"id": 1875,
+							"id": 1876,
 							"name": "onInputCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34305,7 +34334,7 @@
 							}
 						},
 						{
-							"id": 1880,
+							"id": 1881,
 							"name": "onInvalid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34336,7 +34365,7 @@
 							}
 						},
 						{
-							"id": 1881,
+							"id": 1882,
 							"name": "onInvalidCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34367,7 +34396,7 @@
 							}
 						},
 						{
-							"id": 1886,
+							"id": 1887,
 							"name": "onKeyDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34398,7 +34427,7 @@
 							}
 						},
 						{
-							"id": 1887,
+							"id": 1888,
 							"name": "onKeyDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34429,7 +34458,7 @@
 							}
 						},
 						{
-							"id": 1888,
+							"id": 1889,
 							"name": "onKeyPress",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34460,7 +34489,7 @@
 							}
 						},
 						{
-							"id": 1889,
+							"id": 1890,
 							"name": "onKeyPressCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34491,7 +34520,7 @@
 							}
 						},
 						{
-							"id": 1890,
+							"id": 1891,
 							"name": "onKeyUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34522,7 +34551,7 @@
 							}
 						},
 						{
-							"id": 1891,
+							"id": 1892,
 							"name": "onKeyUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34553,7 +34582,7 @@
 							}
 						},
 						{
-							"id": 1882,
+							"id": 1883,
 							"name": "onLoad",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34584,7 +34613,7 @@
 							}
 						},
 						{
-							"id": 1883,
+							"id": 1884,
 							"name": "onLoadCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34615,7 +34644,7 @@
 							}
 						},
 						{
-							"id": 1910,
+							"id": 1911,
 							"name": "onLoadStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34646,7 +34675,7 @@
 							}
 						},
 						{
-							"id": 1911,
+							"id": 1912,
 							"name": "onLoadStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34677,7 +34706,7 @@
 							}
 						},
 						{
-							"id": 1906,
+							"id": 1907,
 							"name": "onLoadedData",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34708,7 +34737,7 @@
 							}
 						},
 						{
-							"id": 1907,
+							"id": 1908,
 							"name": "onLoadedDataCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34739,7 +34768,7 @@
 							}
 						},
 						{
-							"id": 1908,
+							"id": 1909,
 							"name": "onLoadedMetadata",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34770,7 +34799,7 @@
 							}
 						},
 						{
-							"id": 1909,
+							"id": 1910,
 							"name": "onLoadedMetadataCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34801,7 +34830,7 @@
 							}
 						},
 						{
-							"id": 1998,
+							"id": 1999,
 							"name": "onLostPointerCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34832,7 +34861,7 @@
 							}
 						},
 						{
-							"id": 1999,
+							"id": 2000,
 							"name": "onLostPointerCaptureCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34863,7 +34892,7 @@
 							}
 						},
 						{
-							"id": 1958,
+							"id": 1959,
 							"name": "onMouseDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34894,7 +34923,7 @@
 							}
 						},
 						{
-							"id": 1959,
+							"id": 1960,
 							"name": "onMouseDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34925,7 +34954,7 @@
 							}
 						},
 						{
-							"id": 1960,
+							"id": 1961,
 							"name": "onMouseEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34956,7 +34985,7 @@
 							}
 						},
 						{
-							"id": 1961,
+							"id": 1962,
 							"name": "onMouseLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -34987,7 +35016,7 @@
 							}
 						},
 						{
-							"id": 1962,
+							"id": 1963,
 							"name": "onMouseMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35018,7 +35047,7 @@
 							}
 						},
 						{
-							"id": 1963,
+							"id": 1964,
 							"name": "onMouseMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35049,7 +35078,7 @@
 							}
 						},
 						{
-							"id": 1964,
+							"id": 1965,
 							"name": "onMouseOut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35080,7 +35109,7 @@
 							}
 						},
 						{
-							"id": 1965,
+							"id": 1966,
 							"name": "onMouseOutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35111,7 +35140,7 @@
 							}
 						},
 						{
-							"id": 1966,
+							"id": 1967,
 							"name": "onMouseOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35142,7 +35171,7 @@
 							}
 						},
 						{
-							"id": 1967,
+							"id": 1968,
 							"name": "onMouseOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35173,7 +35202,7 @@
 							}
 						},
 						{
-							"id": 1968,
+							"id": 1969,
 							"name": "onMouseUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35204,7 +35233,7 @@
 							}
 						},
 						{
-							"id": 1969,
+							"id": 1970,
 							"name": "onMouseUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35235,7 +35264,7 @@
 							}
 						},
 						{
-							"id": 1858,
+							"id": 1859,
 							"name": "onPaste",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35266,7 +35295,7 @@
 							}
 						},
 						{
-							"id": 1859,
+							"id": 1860,
 							"name": "onPasteCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35297,7 +35326,7 @@
 							}
 						},
 						{
-							"id": 1912,
+							"id": 1913,
 							"name": "onPause",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35328,7 +35357,7 @@
 							}
 						},
 						{
-							"id": 1913,
+							"id": 1914,
 							"name": "onPauseCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35359,7 +35388,7 @@
 							}
 						},
 						{
-							"id": 1914,
+							"id": 1915,
 							"name": "onPlay",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35390,7 +35419,7 @@
 							}
 						},
 						{
-							"id": 1915,
+							"id": 1916,
 							"name": "onPlayCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35421,7 +35450,7 @@
 							}
 						},
 						{
-							"id": 1916,
+							"id": 1917,
 							"name": "onPlaying",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35452,7 +35481,7 @@
 							}
 						},
 						{
-							"id": 1917,
+							"id": 1918,
 							"name": "onPlayingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35483,7 +35512,7 @@
 							}
 						},
 						{
-							"id": 1986,
+							"id": 1987,
 							"name": "onPointerCancel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35514,7 +35543,7 @@
 							}
 						},
 						{
-							"id": 1987,
+							"id": 1988,
 							"name": "onPointerCancelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35545,7 +35574,7 @@
 							}
 						},
 						{
-							"id": 1980,
+							"id": 1981,
 							"name": "onPointerDown",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35576,7 +35605,7 @@
 							}
 						},
 						{
-							"id": 1981,
+							"id": 1982,
 							"name": "onPointerDownCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35607,7 +35636,7 @@
 							}
 						},
 						{
-							"id": 1988,
+							"id": 1989,
 							"name": "onPointerEnter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35638,7 +35667,7 @@
 							}
 						},
 						{
-							"id": 1989,
+							"id": 1990,
 							"name": "onPointerEnterCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35669,7 +35698,7 @@
 							}
 						},
 						{
-							"id": 1990,
+							"id": 1991,
 							"name": "onPointerLeave",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35700,7 +35729,7 @@
 							}
 						},
 						{
-							"id": 1991,
+							"id": 1992,
 							"name": "onPointerLeaveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35731,7 +35760,7 @@
 							}
 						},
 						{
-							"id": 1982,
+							"id": 1983,
 							"name": "onPointerMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35762,7 +35791,7 @@
 							}
 						},
 						{
-							"id": 1983,
+							"id": 1984,
 							"name": "onPointerMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35793,7 +35822,7 @@
 							}
 						},
 						{
-							"id": 1994,
+							"id": 1995,
 							"name": "onPointerOut",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35824,7 +35853,7 @@
 							}
 						},
 						{
-							"id": 1995,
+							"id": 1996,
 							"name": "onPointerOutCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35855,7 +35884,7 @@
 							}
 						},
 						{
-							"id": 1992,
+							"id": 1993,
 							"name": "onPointerOver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35886,7 +35915,7 @@
 							}
 						},
 						{
-							"id": 1993,
+							"id": 1994,
 							"name": "onPointerOverCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35917,7 +35946,7 @@
 							}
 						},
 						{
-							"id": 1984,
+							"id": 1985,
 							"name": "onPointerUp",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35948,7 +35977,7 @@
 							}
 						},
 						{
-							"id": 1985,
+							"id": 1986,
 							"name": "onPointerUpCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -35979,7 +36008,7 @@
 							}
 						},
 						{
-							"id": 1918,
+							"id": 1919,
 							"name": "onProgress",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36010,7 +36039,7 @@
 							}
 						},
 						{
-							"id": 1919,
+							"id": 1920,
 							"name": "onProgressCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36041,7 +36070,7 @@
 							}
 						},
 						{
-							"id": 1920,
+							"id": 1921,
 							"name": "onRateChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36072,7 +36101,7 @@
 							}
 						},
 						{
-							"id": 1921,
+							"id": 1922,
 							"name": "onRateChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36103,7 +36132,7 @@
 							}
 						},
 						{
-							"id": 1876,
+							"id": 1877,
 							"name": "onReset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36134,7 +36163,7 @@
 							}
 						},
 						{
-							"id": 1877,
+							"id": 1878,
 							"name": "onResetCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36165,7 +36194,7 @@
 							}
 						},
 						{
-							"id": 2000,
+							"id": 2001,
 							"name": "onScroll",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36196,7 +36225,7 @@
 							}
 						},
 						{
-							"id": 2001,
+							"id": 2002,
 							"name": "onScrollCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36227,7 +36256,7 @@
 							}
 						},
 						{
-							"id": 1922,
+							"id": 1923,
 							"name": "onSeeked",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36258,7 +36287,7 @@
 							}
 						},
 						{
-							"id": 1923,
+							"id": 1924,
 							"name": "onSeekedCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36289,7 +36318,7 @@
 							}
 						},
 						{
-							"id": 1924,
+							"id": 1925,
 							"name": "onSeeking",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36320,7 +36349,7 @@
 							}
 						},
 						{
-							"id": 1925,
+							"id": 1926,
 							"name": "onSeekingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36351,7 +36380,7 @@
 							}
 						},
 						{
-							"id": 1970,
+							"id": 1971,
 							"name": "onSelect",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36382,7 +36411,7 @@
 							}
 						},
 						{
-							"id": 1971,
+							"id": 1972,
 							"name": "onSelectCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36413,7 +36442,7 @@
 							}
 						},
 						{
-							"id": 1926,
+							"id": 1927,
 							"name": "onStalled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36444,7 +36473,7 @@
 							}
 						},
 						{
-							"id": 1927,
+							"id": 1928,
 							"name": "onStalledCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36475,7 +36504,7 @@
 							}
 						},
 						{
-							"id": 1878,
+							"id": 1879,
 							"name": "onSubmit",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36506,7 +36535,7 @@
 							}
 						},
 						{
-							"id": 1879,
+							"id": 1880,
 							"name": "onSubmitCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36537,7 +36566,7 @@
 							}
 						},
 						{
-							"id": 1928,
+							"id": 1929,
 							"name": "onSuspend",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36568,7 +36597,7 @@
 							}
 						},
 						{
-							"id": 1929,
+							"id": 1930,
 							"name": "onSuspendCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36599,7 +36628,7 @@
 							}
 						},
 						{
-							"id": 1930,
+							"id": 1931,
 							"name": "onTimeUpdate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36630,7 +36659,7 @@
 							}
 						},
 						{
-							"id": 1931,
+							"id": 1932,
 							"name": "onTimeUpdateCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36661,7 +36690,7 @@
 							}
 						},
 						{
-							"id": 1972,
+							"id": 1973,
 							"name": "onTouchCancel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36692,7 +36721,7 @@
 							}
 						},
 						{
-							"id": 1973,
+							"id": 1974,
 							"name": "onTouchCancelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36723,7 +36752,7 @@
 							}
 						},
 						{
-							"id": 1974,
+							"id": 1975,
 							"name": "onTouchEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36754,7 +36783,7 @@
 							}
 						},
 						{
-							"id": 1975,
+							"id": 1976,
 							"name": "onTouchEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36785,7 +36814,7 @@
 							}
 						},
 						{
-							"id": 1976,
+							"id": 1977,
 							"name": "onTouchMove",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36816,7 +36845,7 @@
 							}
 						},
 						{
-							"id": 1977,
+							"id": 1978,
 							"name": "onTouchMoveCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36847,7 +36876,7 @@
 							}
 						},
 						{
-							"id": 1978,
+							"id": 1979,
 							"name": "onTouchStart",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36878,7 +36907,7 @@
 							}
 						},
 						{
-							"id": 1979,
+							"id": 1980,
 							"name": "onTouchStartCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36909,7 +36938,7 @@
 							}
 						},
 						{
-							"id": 2010,
+							"id": 2011,
 							"name": "onTransitionEnd",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36940,7 +36969,7 @@
 							}
 						},
 						{
-							"id": 2011,
+							"id": 2012,
 							"name": "onTransitionEndCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -36971,7 +37000,7 @@
 							}
 						},
 						{
-							"id": 1932,
+							"id": 1933,
 							"name": "onVolumeChange",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37002,7 +37031,7 @@
 							}
 						},
 						{
-							"id": 1933,
+							"id": 1934,
 							"name": "onVolumeChangeCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37033,7 +37062,7 @@
 							}
 						},
 						{
-							"id": 1934,
+							"id": 1935,
 							"name": "onWaiting",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37064,7 +37093,7 @@
 							}
 						},
 						{
-							"id": 1935,
+							"id": 1936,
 							"name": "onWaitingCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37095,7 +37124,7 @@
 							}
 						},
 						{
-							"id": 2002,
+							"id": 2003,
 							"name": "onWheel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37126,7 +37155,7 @@
 							}
 						},
 						{
-							"id": 2003,
+							"id": 2004,
 							"name": "onWheelCapture",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37157,7 +37186,7 @@
 							}
 						},
 						{
-							"id": 1771,
+							"id": 1772,
 							"name": "open",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37195,7 +37224,7 @@
 							}
 						},
 						{
-							"id": 1772,
+							"id": 1773,
 							"name": "optimum",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37229,7 +37258,7 @@
 							}
 						},
 						{
-							"id": 1773,
+							"id": 1774,
 							"name": "pattern",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37263,7 +37292,7 @@
 							}
 						},
 						{
-							"id": 1774,
+							"id": 1775,
 							"name": "placeholder",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37301,7 +37330,7 @@
 							}
 						},
 						{
-							"id": 1775,
+							"id": 1776,
 							"name": "playsInline",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37339,7 +37368,7 @@
 							}
 						},
 						{
-							"id": 1776,
+							"id": 1777,
 							"name": "poster",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37373,7 +37402,7 @@
 							}
 						},
 						{
-							"id": 1833,
+							"id": 1834,
 							"name": "prefix",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37407,7 +37436,7 @@
 							}
 						},
 						{
-							"id": 1777,
+							"id": 1778,
 							"name": "preload",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37441,7 +37470,7 @@
 							}
 						},
 						{
-							"id": 1834,
+							"id": 1835,
 							"name": "property",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37475,7 +37504,7 @@
 							}
 						},
 						{
-							"id": 1828,
+							"id": 1829,
 							"name": "radioGroup",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37509,7 +37538,7 @@
 							}
 						},
 						{
-							"id": 1778,
+							"id": 1779,
 							"name": "readOnly",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37547,7 +37576,7 @@
 							}
 						},
 						{
-							"id": 2012,
+							"id": 2013,
 							"name": "ref",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37578,7 +37607,7 @@
 							}
 						},
 						{
-							"id": 1779,
+							"id": 1780,
 							"name": "rel",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37612,7 +37641,7 @@
 							}
 						},
 						{
-							"id": 1780,
+							"id": 1781,
 							"name": "required",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37650,7 +37679,7 @@
 							}
 						},
 						{
-							"id": 1835,
+							"id": 1836,
 							"name": "resource",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37684,7 +37713,7 @@
 							}
 						},
 						{
-							"id": 1847,
+							"id": 1848,
 							"name": "results",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37718,7 +37747,7 @@
 							}
 						},
 						{
-							"id": 1781,
+							"id": 1782,
 							"name": "reversed",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37756,7 +37785,7 @@
 							}
 						},
 						{
-							"id": 1829,
+							"id": 1830,
 							"name": "role",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37790,7 +37819,7 @@
 							}
 						},
 						{
-							"id": 1783,
+							"id": 1784,
 							"name": "rowSpan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37824,7 +37853,7 @@
 							}
 						},
 						{
-							"id": 1782,
+							"id": 1783,
 							"name": "rows",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37858,7 +37887,7 @@
 							}
 						},
 						{
-							"id": 1784,
+							"id": 1785,
 							"name": "sandbox",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37892,7 +37921,7 @@
 							}
 						},
 						{
-							"id": 1785,
+							"id": 1786,
 							"name": "scope",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37926,7 +37955,7 @@
 							}
 						},
 						{
-							"id": 1786,
+							"id": 1787,
 							"name": "scoped",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37964,7 +37993,7 @@
 							}
 						},
 						{
-							"id": 1787,
+							"id": 1788,
 							"name": "scrolling",
 							"kind": 1024,
 							"kindString": "Property",
@@ -37998,7 +38027,7 @@
 							}
 						},
 						{
-							"id": 1788,
+							"id": 1789,
 							"name": "seamless",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38036,7 +38065,7 @@
 							}
 						},
 						{
-							"id": 1848,
+							"id": 1849,
 							"name": "security",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38070,7 +38099,7 @@
 							}
 						},
 						{
-							"id": 1789,
+							"id": 1790,
 							"name": "selected",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38108,7 +38137,7 @@
 							}
 						},
 						{
-							"id": 1790,
+							"id": 1791,
 							"name": "shape",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38142,7 +38171,7 @@
 							}
 						},
 						{
-							"id": 1791,
+							"id": 1792,
 							"name": "size",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38176,7 +38205,7 @@
 							}
 						},
 						{
-							"id": 1792,
+							"id": 1793,
 							"name": "sizes",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38210,7 +38239,7 @@
 							}
 						},
 						{
-							"id": 1821,
+							"id": 1822,
 							"name": "slot",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38244,7 +38273,7 @@
 							}
 						},
 						{
-							"id": 1793,
+							"id": 1794,
 							"name": "span",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38278,7 +38307,7 @@
 							}
 						},
 						{
-							"id": 1822,
+							"id": 1823,
 							"name": "spellCheck",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38316,7 +38345,7 @@
 							}
 						},
 						{
-							"id": 1794,
+							"id": 1795,
 							"name": "src",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38350,7 +38379,7 @@
 							}
 						},
 						{
-							"id": 1795,
+							"id": 1796,
 							"name": "srcDoc",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38384,7 +38413,7 @@
 							}
 						},
 						{
-							"id": 1796,
+							"id": 1797,
 							"name": "srcLang",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38418,7 +38447,7 @@
 							}
 						},
 						{
-							"id": 1797,
+							"id": 1798,
 							"name": "srcSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38452,7 +38481,7 @@
 							}
 						},
 						{
-							"id": 1798,
+							"id": 1799,
 							"name": "start",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38486,7 +38515,7 @@
 							}
 						},
 						{
-							"id": 1799,
+							"id": 1800,
 							"name": "step",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38520,7 +38549,7 @@
 							}
 						},
 						{
-							"id": 1823,
+							"id": 1824,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38545,7 +38574,7 @@
 							}
 						},
 						{
-							"id": 1800,
+							"id": 1801,
 							"name": "summary",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38579,7 +38608,7 @@
 							}
 						},
 						{
-							"id": 1810,
+							"id": 1811,
 							"name": "suppressContentEditableWarning",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38617,7 +38646,7 @@
 							}
 						},
 						{
-							"id": 1811,
+							"id": 1812,
 							"name": "suppressHydrationWarning",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38655,7 +38684,7 @@
 							}
 						},
 						{
-							"id": 1824,
+							"id": 1825,
 							"name": "tabIndex",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38689,7 +38718,7 @@
 							}
 						},
 						{
-							"id": 1700,
+							"id": 1701,
 							"name": "tag",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38707,11 +38736,11 @@
 							"type": {
 								"type": "reference",
 								"name": "TagT",
-								"id": 2024
+								"id": 2025
 							}
 						},
 						{
-							"id": 1801,
+							"id": 1802,
 							"name": "target",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38745,7 +38774,7 @@
 							}
 						},
 						{
-							"id": 1701,
+							"id": 1702,
 							"name": "theme",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38763,11 +38792,11 @@
 							"type": {
 								"type": "reference",
 								"name": "ThemePropT",
-								"id": 2018
+								"id": 2019
 							}
 						},
 						{
-							"id": 1825,
+							"id": 1826,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38801,7 +38830,7 @@
 							}
 						},
 						{
-							"id": 1802,
+							"id": 1803,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38835,7 +38864,7 @@
 							}
 						},
 						{
-							"id": 1836,
+							"id": 1837,
 							"name": "typeof",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38869,7 +38898,7 @@
 							}
 						},
 						{
-							"id": 1849,
+							"id": 1850,
 							"name": "unselectable",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38903,7 +38932,7 @@
 							}
 						},
 						{
-							"id": 1803,
+							"id": 1804,
 							"name": "useMap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38937,7 +38966,7 @@
 							}
 						},
 						{
-							"id": 1804,
+							"id": 1805,
 							"name": "value",
 							"kind": 1024,
 							"kindString": "Property",
@@ -38978,7 +39007,7 @@
 							}
 						},
 						{
-							"id": 1837,
+							"id": 1838,
 							"name": "vocab",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39012,7 +39041,7 @@
 							}
 						},
 						{
-							"id": 1805,
+							"id": 1806,
 							"name": "width",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39046,7 +39075,7 @@
 							}
 						},
 						{
-							"id": 1806,
+							"id": 1807,
 							"name": "wmode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39080,7 +39109,7 @@
 							}
 						},
 						{
-							"id": 1807,
+							"id": 1808,
 							"name": "wrap",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39119,54 +39148,53 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1830,
-								1702,
+								1831,
 								1703,
-								1812,
 								1704,
+								1813,
 								1705,
 								1706,
 								1707,
 								1708,
 								1709,
-								1838,
 								1710,
 								1839,
 								1711,
-								1712,
 								1840,
+								1712,
 								1713,
+								1841,
 								1714,
 								1715,
-								1717,
 								1716,
 								1718,
-								1850,
+								1717,
 								1719,
+								1851,
 								1720,
-								1813,
-								1722,
-								1841,
 								1721,
-								1723,
 								1814,
-								1815,
+								1723,
+								1842,
+								1722,
 								1724,
+								1815,
+								1816,
 								1725,
 								1726,
-								1851,
 								1727,
-								1831,
+								1852,
 								1728,
+								1832,
 								1729,
-								1808,
-								1809,
 								1730,
-								1816,
+								1809,
+								1810,
 								1731,
-								1732,
 								1817,
+								1732,
 								1733,
+								1818,
 								1734,
 								1735,
 								1736,
@@ -39176,29 +39204,29 @@
 								1740,
 								1741,
 								1742,
-								1818,
 								1743,
+								1819,
 								1744,
 								1745,
 								1746,
 								1747,
-								1819,
-								1832,
-								1826,
 								1748,
+								1820,
+								1833,
 								1827,
-								1845,
-								1842,
+								1749,
+								1828,
 								1846,
 								1843,
+								1847,
 								1844,
-								2013,
-								1749,
+								1845,
+								2014,
 								1750,
 								1751,
 								1752,
-								1820,
 								1753,
+								1821,
 								1754,
 								1755,
 								1756,
@@ -39214,41 +39242,41 @@
 								1766,
 								1767,
 								1768,
-								1770,
 								1769,
-								1892,
+								1771,
+								1770,
 								1893,
-								2006,
+								1894,
 								2007,
 								2008,
 								2009,
-								2004,
+								2010,
 								2005,
-								1872,
+								2006,
 								1873,
-								1868,
+								1874,
 								1869,
-								1894,
+								1870,
 								1895,
 								1896,
 								1897,
-								1870,
+								1898,
 								1871,
-								1936,
+								1872,
 								1937,
-								1860,
+								1938,
 								1861,
 								1862,
 								1863,
 								1864,
 								1865,
-								1938,
+								1866,
 								1939,
-								1854,
+								1940,
 								1855,
 								1856,
 								1857,
-								1940,
+								1858,
 								1941,
 								1942,
 								1943,
@@ -39266,7 +39294,7 @@
 								1955,
 								1956,
 								1957,
-								1898,
+								1958,
 								1899,
 								1900,
 								1901,
@@ -39274,33 +39302,33 @@
 								1903,
 								1904,
 								1905,
-								1884,
+								1906,
 								1885,
-								1866,
-								1867,
-								1996,
-								1997,
-								1874,
-								1875,
-								1880,
-								1881,
 								1886,
+								1867,
+								1868,
+								1997,
+								1998,
+								1875,
+								1876,
+								1881,
+								1882,
 								1887,
 								1888,
 								1889,
 								1890,
 								1891,
-								1882,
+								1892,
 								1883,
-								1910,
+								1884,
 								1911,
-								1906,
+								1912,
 								1907,
 								1908,
 								1909,
-								1998,
+								1910,
 								1999,
-								1958,
+								2000,
 								1959,
 								1960,
 								1961,
@@ -39312,53 +39340,53 @@
 								1967,
 								1968,
 								1969,
-								1858,
+								1970,
 								1859,
-								1912,
+								1860,
 								1913,
 								1914,
 								1915,
 								1916,
 								1917,
-								1986,
+								1918,
 								1987,
-								1980,
-								1981,
 								1988,
+								1981,
+								1982,
 								1989,
 								1990,
 								1991,
-								1982,
-								1983,
-								1994,
-								1995,
 								1992,
-								1993,
+								1983,
 								1984,
+								1995,
+								1996,
+								1993,
+								1994,
 								1985,
-								1918,
+								1986,
 								1919,
 								1920,
 								1921,
-								1876,
-								1877,
-								2000,
-								2001,
 								1922,
+								1877,
+								1878,
+								2001,
+								2002,
 								1923,
 								1924,
 								1925,
-								1970,
-								1971,
 								1926,
+								1971,
+								1972,
 								1927,
-								1878,
-								1879,
 								1928,
+								1879,
+								1880,
 								1929,
 								1930,
 								1931,
-								1972,
+								1932,
 								1973,
 								1974,
 								1975,
@@ -39366,71 +39394,72 @@
 								1977,
 								1978,
 								1979,
-								2010,
+								1980,
 								2011,
-								1932,
+								2012,
 								1933,
 								1934,
 								1935,
-								2002,
+								1936,
 								2003,
-								1771,
+								2004,
 								1772,
 								1773,
 								1774,
 								1775,
 								1776,
-								1833,
 								1777,
 								1834,
-								1828,
 								1778,
-								2012,
-								1779,
-								1780,
 								1835,
-								1847,
-								1781,
 								1829,
-								1783,
+								1779,
+								2013,
+								1780,
+								1781,
+								1836,
+								1848,
 								1782,
+								1830,
 								1784,
+								1783,
 								1785,
 								1786,
 								1787,
 								1788,
-								1848,
 								1789,
+								1849,
 								1790,
 								1791,
 								1792,
-								1821,
 								1793,
 								1822,
 								1794,
+								1823,
 								1795,
 								1796,
 								1797,
 								1798,
 								1799,
-								1823,
 								1800,
-								1810,
-								1811,
 								1824,
-								1700,
 								1801,
-								1701,
+								1811,
+								1812,
 								1825,
+								1701,
 								1802,
-								1836,
-								1849,
+								1702,
+								1826,
 								1803,
-								1804,
 								1837,
+								1850,
+								1804,
 								1805,
+								1838,
 								1806,
-								1807
+								1807,
+								1808
 							]
 						}
 					],
@@ -39455,7 +39484,7 @@
 					]
 				},
 				{
-					"id": 1690,
+					"id": 1691,
 					"name": "DeprecatedRippleProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -39464,7 +39493,7 @@
 					},
 					"children": [
 						{
-							"id": 1691,
+							"id": 1692,
 							"name": "accent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39501,7 +39530,7 @@
 							}
 						},
 						{
-							"id": 1692,
+							"id": 1693,
 							"name": "surface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39538,7 +39567,7 @@
 							}
 						},
 						{
-							"id": 1693,
+							"id": 1694,
 							"name": "unbounded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39580,9 +39609,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1691,
 								1692,
-								1693
+								1693,
+								1694
 							]
 						}
 					],
@@ -39597,12 +39626,12 @@
 						{
 							"type": "reference",
 							"name": "WithRippleProps",
-							"id": 1694
+							"id": 1695
 						}
 					]
 				},
 				{
-					"id": 1694,
+					"id": 1695,
 					"name": "WithRippleProps",
 					"kind": 256,
 					"kindString": "Interface",
@@ -39611,7 +39640,7 @@
 					},
 					"children": [
 						{
-							"id": 1696,
+							"id": 1697,
 							"name": "accent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39649,11 +39678,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.accent",
-								"id": 1691
+								"id": 1692
 							}
 						},
 						{
-							"id": 1695,
+							"id": 1696,
 							"name": "ripple",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39674,11 +39703,11 @@
 							"type": {
 								"type": "reference",
 								"name": "RipplePropT",
-								"id": 2019
+								"id": 2020
 							}
 						},
 						{
-							"id": 1697,
+							"id": 1698,
 							"name": "surface",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39716,11 +39745,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.surface",
-								"id": 1692
+								"id": 1693
 							}
 						},
 						{
-							"id": 1698,
+							"id": 1699,
 							"name": "unbounded",
 							"kind": 1024,
 							"kindString": "Property",
@@ -39758,7 +39787,7 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "DeprecatedRippleProps.unbounded",
-								"id": 1693
+								"id": 1694
 							}
 						}
 					],
@@ -39767,10 +39796,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1696,
-								1695,
 								1697,
-								1698
+								1696,
+								1698,
+								1699
 							]
 						}
 					],
@@ -39785,12 +39814,12 @@
 						{
 							"type": "reference",
 							"name": "DeprecatedRippleProps",
-							"id": 1690
+							"id": 1691
 						}
 					]
 				},
 				{
-					"id": 2025,
+					"id": 2026,
 					"name": "CustomEventT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -39799,7 +39828,7 @@
 					},
 					"typeParameter": [
 						{
-							"id": 2026,
+							"id": 2027,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -39840,7 +39869,7 @@
 					}
 				},
 				{
-					"id": 2014,
+					"id": 2015,
 					"name": "MergeInterfacesT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -39852,14 +39881,14 @@
 					},
 					"typeParameter": [
 						{
-							"id": 2015,
+							"id": 2016,
 							"name": "A",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
 						},
 						{
-							"id": 2016,
+							"id": 2017,
 							"name": "B",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -39916,7 +39945,7 @@
 					}
 				},
 				{
-					"id": 2019,
+					"id": 2020,
 					"name": "RipplePropT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -39943,14 +39972,14 @@
 							{
 								"type": "reflection",
 								"declaration": {
-									"id": 2020,
+									"id": 2021,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2021,
+											"id": 2022,
 											"name": "accent",
 											"kind": 32,
 											"kindString": "Variable",
@@ -39983,7 +40012,7 @@
 											}
 										},
 										{
-											"id": 2022,
+											"id": 2023,
 											"name": "surface",
 											"kind": 32,
 											"kindString": "Variable",
@@ -40016,7 +40045,7 @@
 											}
 										},
 										{
-											"id": 2023,
+											"id": 2024,
 											"name": "unbounded",
 											"kind": 32,
 											"kindString": "Variable",
@@ -40054,9 +40083,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2021,
 												2022,
-												2023
+												2023,
+												2024
 											]
 										}
 									],
@@ -40073,7 +40102,7 @@
 					}
 				},
 				{
-					"id": 2024,
+					"id": 2025,
 					"name": "TagT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -40111,7 +40140,7 @@
 					}
 				},
 				{
-					"id": 2017,
+					"id": 2018,
 					"name": "ThemeOptionT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -40239,7 +40268,7 @@
 					}
 				},
 				{
-					"id": 2018,
+					"id": 2019,
 					"name": "ThemePropT",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -40259,14 +40288,14 @@
 							{
 								"type": "reference",
 								"name": "ThemeOptionT",
-								"id": 2017
+								"id": 2018
 							},
 							{
 								"type": "array",
 								"elementType": {
 									"type": "reference",
 									"name": "ThemeOptionT",
-									"id": 2017
+									"id": 2018
 								}
 							}
 						]
@@ -40278,21 +40307,21 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1699,
-						1690,
-						1694
+						1700,
+						1691,
+						1695
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
+						2026,
+						2015,
+						2020,
 						2025,
-						2014,
-						2019,
-						2024,
-						2017,
-						2018
+						2018,
+						2019
 					]
 				}
 			],
@@ -58142,7 +58171,7 @@
 				146,
 				303,
 				1361,
-				1689,
+				1690,
 				298,
 				119,
 				808,
