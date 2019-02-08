@@ -1,6 +1,6 @@
 # Usage
 
-> This document contains basic information on usage on styling.
+> This document contains basic information on usage.
 
 ## Basic Example
 

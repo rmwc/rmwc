@@ -134,13 +134,13 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
     super.componentDidMount();
     // Fixes an issue where synthetic events were being
     // accessed in the Foundation and causing an error
-    const existingInteractionStartHandler_ = this.foundation
-      .interactionStartHandler_;
-    this.foundation.interactionStartHandler_ = (
-      evt: React.SyntheticEvent<any>
-    ) => {
+    const existinghandleDown_ = this.foundation.handleDown_.bind(
+      this.foundation
+    );
+
+    this.foundation.handleDown_ = (evt: React.SyntheticEvent<any>) => {
       evt.persist();
-      existingInteractionStartHandler_(evt);
+      existinghandleDown_(evt);
     };
   }
 
@@ -396,8 +396,9 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
           )}
         </div>
         <div
-          className="mdc-slider__thumb-container"
-          {...this.thumbContainer.props({})}
+          {...this.thumbContainer.props({
+            className: 'mdc-slider__thumb-container'
+          })}
         >
           {discrete && <SliderPin {...this.sliderPin.props({})} />}
           <SliderThumb />

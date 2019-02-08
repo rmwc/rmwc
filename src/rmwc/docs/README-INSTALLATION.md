@@ -5,7 +5,7 @@
 **Required steps**
 * Perferred: Install **INDIVIDUAL** components
   * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
-  * Include the individual components stylesheets (listed on their docs page)in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
+  * Include the individual components stylesheets (listed on their docs page) in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
 * OR Install **ALL** of RMWC
   * `npm i rmwc --save` or `yarn add rmwc`
   * include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
@@ -24,6 +24,7 @@
 ```jsx
 // Hello World
 import { Button } from '@rmwc/button';
+import '@material/button/dist/mdc.button.css';
 
 const MyComponent = props => <Button>Hello World</Button>;
 ```
@@ -108,11 +109,7 @@ module.exports = {
 
 There are no additional steps to get Typescript working for your project. RMWC ships with declarations right alongside the components, so there is no need to install anything from `definitely-typed`.
 
-For flow, please add the following to your `.flowconfig` file.
-```
-[libs]
-node_modules/@rmwc/types/flow-typed
-```
+Flow types were previously available in versions 4.x.x and below. Some work has been done to convert to Typescript to FlowTypes, but it has been tabled due to the complexities of building and maintaining an automated conversion. If you're intersted in restoring Flow support, please see issue [#407: Support Flow Types](https://github.com/jamesmfriedman/rmwc/issues/407)
 
 ## Testing with RMWC
 

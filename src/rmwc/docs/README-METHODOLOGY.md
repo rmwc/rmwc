@@ -5,8 +5,7 @@
 ## Project Goals
 
 * To create the thinnest, lightest, and spec compliant wrapper around Google
-  Material Design Components for the Web
-  [https://material.io/components/web/](https://material.io/components/web/)
+  Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)
 * To utilize the Foundation javascript classes and expose their api for
   consumption
 * To be as unobtrusive and sensible as possible.
