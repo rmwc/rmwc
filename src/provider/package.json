@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/provider",
-  "version": "5.0.23-alpha.0",
+  "version": "5.0.23-rc.0",
   "description": "RMWC Provider component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -31,7 +31,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.0.23-alpha.0"
+    "@rmwc/base": "^5.0.23-rc.0"
   },
   "gitHead": "d89f0baed7f3d1fa85bb53d4905fa9f4bccb39f4"
 }

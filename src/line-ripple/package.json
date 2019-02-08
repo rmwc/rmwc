@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/line-ripple",
-  "version": "5.0.23-alpha.0",
+  "version": "5.0.23-rc.0",
   "description": "RMWC LineRipple component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@material/line-ripple": "^0.43.0",
-    "@rmwc/base": "^5.0.23-alpha.0"
+    "@rmwc/base": "^5.0.23-rc.0"
   },
   "gitHead": "d89f0baed7f3d1fa85bb53d4905fa9f4bccb39f4"
 }
