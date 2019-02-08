@@ -26,7 +26,7 @@ Features:
 
 ## Recent updates
 
-5.x.x-alpha is out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless. A few caveats:
+5.x.x-alpha is out and getting nightly updates! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless. At this point the component api is stable and there are no further changes planned other than bug squashing and documentation. A few caveats:
 
 - React 16.3 is the new min version to take advantage of React Fragments, Ref Forwarding, and the new Context Api.
 - elementRef has been removed in favor of refs with ref forwarding in React 16.3
