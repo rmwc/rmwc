@@ -124,6 +124,11 @@ const jestResolver = config => {
 };
 
 const jestIgnore = config => {
+  config.transformIgnorePatterns = ['<rootDir>/node_modules/'];
+  return config;
+};
+
+const jestCoverage = config => {
   config.collectCoverageFrom = config.collectCoverageFrom.concat([
     '!src/base/utils/document-component.tsx',
     '!src/base/utils/story-with-state.js',
@@ -153,6 +158,7 @@ module.exports = {
     return pipe(
       jestModuleNameMapper,
       jestResolver,
+      jestCoverage,
       jestIgnore
     )(config);
   }
