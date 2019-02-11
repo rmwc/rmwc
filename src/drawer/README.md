@@ -58,8 +58,8 @@ import {
 } from '@rmwc/drawer';
 
 import {
-  ListItem,
-  ListItemPrimaryText
+  List,
+  ListItem
 } from '@rmwc/list';
 
 import { Button } from '@rmwc/button';
@@ -109,8 +109,8 @@ import {
 } from '@rmwc/drawer';
 
 import {
-  ListItem,
-  ListItemPrimaryText
+  List,
+  ListItem
 } from '@rmwc/list';
 
 import { Button } from '@rmwc/button';

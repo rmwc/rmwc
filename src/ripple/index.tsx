@@ -192,7 +192,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
       ? { 'data-mdc-ripple-is-unbounded': true }
       : {};
 
-    const surfaceIsRoot = !!surface;
+    const surfaceIsRoot = !surface;
     const rippleSurfaceProps = surfaceIsRoot
       ? this.surface.props({ style: child.props.style })
       : {};
