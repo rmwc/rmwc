@@ -81,6 +81,32 @@ describe('Menu', () => {
     }, 300);
   });
 
+  it('Menu Item can be nested', () => {
+    let val = null;
+
+    const el = mount(
+      <SimpleMenu
+        handle={<button>Test</button>}
+        open
+        onSelect={evt => (val = evt.detail.index)}
+      >
+        <MenuItem>
+          <span>Cookies</span>
+        </MenuItem>
+        <MenuItem>
+          <span>Pizza</span>
+        </MenuItem>
+        <MenuItem>
+          <span>Icecream</span>
+        </MenuItem>
+      </SimpleMenu>
+    );
+
+    const item = el.find(MenuItem).first();
+    item.simulate('click');
+    expect(val).toBe(val);
+  });
+
   it('SimpleMenuSurface renders', done => {
     let val = 0;
 

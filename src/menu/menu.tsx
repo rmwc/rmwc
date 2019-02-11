@@ -4,7 +4,7 @@ import * as React from 'react';
 import { MDCMenuFoundation } from '@material/menu';
 
 import { List, ListItem, ListItemProps } from '@rmwc/list';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 
 import {
   MenuSurface,
@@ -137,7 +137,9 @@ export class Menu extends FoundationComponent<MenuProps> {
 
   handleClick(evt: React.MouseEvent) {
     this.props.onClick && this.props.onClick(evt);
-    this.foundation.handleItemAction(evt.target);
+    // fixes an issue with nested span element on list items
+    const el = closest(evt.target, '.mdc-list-item');
+    this.foundation.handleItemAction(el);
   }
 
   handleKeydown(evt: React.KeyboardEvent) {
