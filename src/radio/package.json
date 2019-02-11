@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/radio",
-  "version": "5.0.25-rc.0",
+  "version": "5.0.26-rc.0",
   "description": "RMWC Radio component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "@material/radio": "^0.44.0",
-    "@rmwc/base": "^5.0.25-rc.0",
-    "@rmwc/formfield": "^5.0.25-rc.0",
-    "@rmwc/ripple": "^5.0.25-rc.0",
-    "@rmwc/toggleable": "^5.0.25-rc.0"
+    "@rmwc/base": "^5.0.26-rc.0",
+    "@rmwc/formfield": "^5.0.26-rc.0",
+    "@rmwc/ripple": "^5.0.26-rc.0",
+    "@rmwc/toggleable": "^5.0.26-rc.0"
   },
   "gitHead": "b6c86f09d1f55067ce0e2fcec652425295af9a8e"
 }

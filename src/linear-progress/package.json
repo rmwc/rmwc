@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/linear-progress",
-  "version": "5.0.25-rc.0",
+  "version": "5.0.26-rc.0",
   "description": "RMWC LinearProgress component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@material/linear-progress": "^0.43.0",
-    "@rmwc/base": "^5.0.25-rc.0"
+    "@rmwc/base": "^5.0.26-rc.0"
   },
   "gitHead": "b6c86f09d1f55067ce0e2fcec652425295af9a8e"
 }
