@@ -17,6 +17,8 @@ import { IconButton } from '@rmwc/icon-button';
 <IconButton
   icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
   aria-label="Tweet it!"
+  tag="a"
+  href="https://twitter.com"
 />
 <IconButton icon="favorite" label="Favorite" disabled/>
 

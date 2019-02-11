@@ -31,6 +31,7 @@ export interface DeprecatedIconButtonProps {
 }
 
 const IconButtonRoot = withRipple({
+  surface: false,
   unbounded: true
 })(
   componentFactory<IconButtonProps>({
@@ -51,6 +52,7 @@ const IconButtonRoot = withRipple({
 );
 
 const IconButtonToggleRoot = withRipple({
+  surface: false,
   unbounded: true
 })(
   componentFactory<IconButtonProps>({
@@ -172,6 +174,6 @@ export const IconButton = ({
   }
 
   return (
-    <IconButtonRoot aria-hidden="true" {...rest} tag="button" icon={icon} />
+    <IconButtonRoot aria-hidden="true" tag="button" {...rest} icon={icon} />
   );
 };

@@ -102,7 +102,7 @@ export interface ToolbarMenuIconProps extends IconProps {}
 /**
  * A Menu Icon For the Toolbar. This is an instance of the Icon component.
  */
-export const ToolbarMenuIcon = withRipple({ unbounded: true })(
+export const ToolbarMenuIcon = withRipple({ unbounded: true, surface: false })(
   componentFactory<ToolbarMenuIconProps>({
     displayName: 'ToolbarMenuIcon',
     tag: Icon,

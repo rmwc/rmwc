@@ -264,10 +264,13 @@ interface WithRippleOpts {
 export const withRipple = ({
   unbounded: defaultUnbounded,
   accent: defaultAccent,
-  surface: defaultSurface = true
+  surface: defaultSurface
 }: WithRippleOpts = {}) => <P extends {}>(
   Component: React.ComponentType<P & RMWC.WithRippleProps>
 ): React.ComponentType<P & RMWC.WithRippleProps> => {
+  defaultSurface =
+    typeof defaultSurface === 'undefined' ? true : defaultSurface;
+
   const WithRippleComponent = withProviderContext()(
     React.forwardRef<any, any>(
       (

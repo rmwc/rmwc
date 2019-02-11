@@ -73,7 +73,10 @@ export const TopAppBarSection = componentFactory<TopAppBarSectionProps>({
 });
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export const TopAppBarNavigationIcon = withRipple({ unbounded: true })(
+export const TopAppBarNavigationIcon = withRipple({
+  unbounded: true,
+  surface: false
+})(
   componentFactory<IconProps>({
     displayName: 'TopAppBarNavigationIcon',
     classNames: ['mdc-top-app-bar__navigation-icon'],
@@ -82,7 +85,10 @@ export const TopAppBarNavigationIcon = withRipple({ unbounded: true })(
 );
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
-export const TopAppBarActionItem = withRipple({ unbounded: true })(
+export const TopAppBarActionItem = withRipple({
+  unbounded: true,
+  surface: false
+})(
   componentFactory<IconProps>({
     displayName: 'TopAppBarActionItem',
     classNames: ['mdc-top-app-bar__action-item'],

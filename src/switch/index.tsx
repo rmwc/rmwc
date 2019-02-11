@@ -43,7 +43,7 @@ class SwitchKnob extends React.Component<{}> {
   }
 }
 
-const SwitchThumbUnderlay = withRipple({ unbounded: true })(
+const SwitchThumbUnderlay = withRipple({ unbounded: true, surface: false })(
   ({ className, ...rest }: { className?: string }) => (
     <div
       className={classNames(className, 'mdc-switch__thumb-underlay')}
