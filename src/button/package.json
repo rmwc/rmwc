@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/button",
-  "version": "5.0.26-rc.0",
+  "version": "5.0.27-rc.0",
   "description": "RMWC Button component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "@material/button": "^0.44.0",
-    "@rmwc/base": "^5.0.26-rc.0",
-    "@rmwc/icon": "^5.0.26-rc.0",
-    "@rmwc/provider": "^5.0.26-rc.0",
-    "@rmwc/ripple": "^5.0.26-rc.0"
+    "@rmwc/base": "^5.0.27-rc.0",
+    "@rmwc/icon": "^5.0.27-rc.0",
+    "@rmwc/provider": "^5.0.27-rc.0",
+    "@rmwc/ripple": "^5.0.27-rc.0"
   },
   "gitHead": "b63aa1417f79cae49a775205bdfd234c50a21439"
 }
