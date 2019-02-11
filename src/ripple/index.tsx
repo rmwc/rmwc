@@ -26,7 +26,7 @@ export interface RippleProps {
   /** makes the ripple disabled */
   disabled?: boolean;
   /** For internal use */
-  surface?: boolean | RippleSurface;
+  surface?: boolean;
 }
 
 type ActivateEventTypes<S> =
