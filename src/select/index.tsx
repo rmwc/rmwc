@@ -23,6 +23,8 @@ export interface FormattedOption extends React.AllHTMLAttributes<any> {
 export interface SelectProps {
   /** The value for a controlled select. */
   value?: string;
+  /** Adds help text to the field */
+  helpText?: React.ReactNode | SelectHelperTextProps;
   /** Options accepts flat arrays, value => label maps, and more. See examples for details. */
   options?: FormattedOption[] | string[] | { [value: string]: string };
   /** A label for the form control. */
@@ -656,6 +658,24 @@ export class SelectBase extends FoundationComponent<
     return iconNode;
   }
 
+  renderHelpText() {
+    const { helpText } = this.props;
+    const shouldRender = !!helpText;
+
+    if (!shouldRender) {
+      return null;
+    }
+
+    const shouldSpread =
+      typeof helpText === 'object' && !React.isValidElement(helpText);
+
+    return helpText && shouldSpread ? (
+      <SelectHelperText {...helpText as any} />
+    ) : (
+      <SelectHelperText>{helpText}</SelectHelperText>
+    );
+  }
+
   render() {
     const {
       placeholder,
@@ -676,6 +696,7 @@ export class SelectBase extends FoundationComponent<
       onKeyDown,
       invalid,
       inputRef,
+      helpText,
       ...rest
     } = this.props;
 
@@ -713,73 +734,76 @@ export class SelectBase extends FoundationComponent<
     );
 
     return (
-      <SelectRoot
-        ripple={!outlined}
-        {...this.root.props({
-          className,
-          ...rootProps
-        })}
-        invalid={invalid}
-        required={rest.required}
-        icon={icon}
-        outlined={outlined}
-        ref={this.root.setRef}
-      >
-        {!!icon && this.renderIcon(icon, 'leadingIcon_')}
-        <SelectDropdownArrow />
+      <React.Fragment>
+        <SelectRoot
+          ripple={!outlined}
+          {...this.root.props({
+            className,
+            ...rootProps
+          })}
+          invalid={invalid}
+          required={rest.required}
+          icon={icon}
+          outlined={outlined}
+          ref={this.root.setRef}
+        >
+          {!!icon && this.renderIcon(icon, 'leadingIcon_')}
+          <SelectDropdownArrow />
 
-        {enhanced ? (
-          <React.Fragment>
-            <input type="hidden" ref={el => (this.hiddenInput_ = el)} />
-            <div
-              ref={el => (this.selectedText = el)}
-              className="mdc-select__selected-text"
-              tabIndex={this.props.disabled ? -1 : 0}
-              aria-disabled={this.props.disabled ? 'true' : 'false'}
-              aria-expanded={this.state.menuOpen}
-              onKeyDown={this.handleKeydown}
+          {enhanced ? (
+            <React.Fragment>
+              <input type="hidden" ref={el => (this.hiddenInput_ = el)} />
+              <div
+                ref={el => (this.selectedText = el)}
+                className="mdc-select__selected-text"
+                tabIndex={this.props.disabled ? -1 : 0}
+                aria-disabled={this.props.disabled ? 'true' : 'false'}
+                aria-expanded={this.state.menuOpen}
+                onKeyDown={this.handleKeydown}
+                {...sharedEventProps}
+              >
+                {this.state.selectedTextContent}
+              </div>
+              <SelectEnhancedControl
+                {...sharedControlProps}
+                selectedIndex={this.state.selectedIndex}
+                apiRef={apiRef => {
+                  this.menu = apiRef;
+                }}
+                open={this.state.menuOpen}
+                onClose={this.handleMenuClosed}
+                onOpen={this.handleMenuOpened}
+                onSelect={this.handleMenuSelected}
+              >
+                {children}
+              </SelectEnhancedControl>
+            </React.Fragment>
+          ) : (
+            <SelectNativeControl
+              {...rest}
+              elementRef={(el: HTMLSelectElement | null) => {
+                this.nativeControl = el;
+                inputRef && inputRef(el);
+              }}
+              {...sharedControlProps}
               {...sharedEventProps}
             >
-              {this.state.selectedTextContent}
-            </div>
-            <SelectEnhancedControl
-              {...sharedControlProps}
-              selectedIndex={this.state.selectedIndex}
-              apiRef={apiRef => {
-                this.menu = apiRef;
-              }}
-              open={this.state.menuOpen}
-              onClose={this.handleMenuClosed}
-              onOpen={this.handleMenuOpened}
-              onSelect={this.handleMenuSelected}
-            >
               {children}
-            </SelectEnhancedControl>
-          </React.Fragment>
-        ) : (
-          <SelectNativeControl
-            {...rest}
-            elementRef={(el: HTMLSelectElement | null) => {
-              this.nativeControl = el;
-              inputRef && inputRef(el);
-            }}
-            {...sharedControlProps}
-            {...sharedEventProps}
-          >
-            {children}
-          </SelectNativeControl>
-        )}
-        {!!outlined ? (
-          <NotchedOutline {...this.outline.props({})}>
-            {renderedLabel}
-          </NotchedOutline>
-        ) : (
-          <React.Fragment>
-            {renderedLabel}
-            <LineRipple {...this.lineRipple.props({})} />
-          </React.Fragment>
-        )}
-      </SelectRoot>
+            </SelectNativeControl>
+          )}
+          {!!outlined ? (
+            <NotchedOutline {...this.outline.props({})}>
+              {renderedLabel}
+            </NotchedOutline>
+          ) : (
+            <React.Fragment>
+              {renderedLabel}
+              <LineRipple {...this.lineRipple.props({})} />
+            </React.Fragment>
+          )}
+        </SelectRoot>
+        {this.renderHelpText()}
+      </React.Fragment>
     );
   }
 }
@@ -829,7 +853,7 @@ export interface SelectHelperTextProps {
 }
 
 export const SelectHelperText = componentFactory<SelectHelperTextProps>({
-  displayName: 'TextFieldHelperText',
+  displayName: 'SelectHelperText',
   tag: 'p',
   classNames: (props: SelectHelperTextProps) => [
     'mdc-select-helper-text',

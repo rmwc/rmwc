@@ -58,7 +58,6 @@ export const Tab = withTabBarContext()<TabProps>(
     private root = this.createElement('root');
     tabIndicator: TabIndicator | null = null;
     content: HTMLDivElement | null = null;
-    rippleSurfaceApi: RippleSurface | null = null;
 
     constructor(props: TabProps & { contextApi?: TabBarContextT }) {
       super(props);
@@ -158,7 +157,7 @@ export const Tab = withTabBarContext()<TabProps>(
           stacked={stacked}
           ref={this.root.setRef}
           ripple={{
-            surface: this.rippleSurfaceApi
+            surface: false
           }}
         >
           <div className="mdc-tab__content" ref={el => (this.content = el)}>
@@ -180,12 +179,7 @@ export const Tab = withTabBarContext()<TabProps>(
               ref={(api: TabIndicator) => (this.tabIndicator = api)}
             />
           )}
-          <RippleSurface
-            ref={(rippleSurfaceApi: RippleSurface) =>
-              (this.rippleSurfaceApi = rippleSurfaceApi)
-            }
-            className="mdc-tab__ripple"
-          />
+          <RippleSurface className="mdc-tab__ripple" />
         </TabRoot>
       );
     }

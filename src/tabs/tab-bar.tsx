@@ -68,7 +68,12 @@ export class TabBar extends FoundationComponent<TabBarProps> {
     const [scrollX, scrollY] = [window.scrollX, window.scrollY];
 
     //activate the tab
-    this.foundation.activateTab(this.props.activeTabIndex || 0);
+
+    this.foundation.adapter_.activateTabAtIndex(
+      this.props.activeTabIndex || 0,
+      this.foundation.adapter_.getTabIndicatorClientRectAtIndex(undefined)
+    );
+    this.foundation.scrollIntoView(this.props.activeTabIndex || 0);
 
     // restore focus and scroll
     activeElement && activeElement.focus();

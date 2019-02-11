@@ -35,6 +35,8 @@ type ActivateEventTypes<S> =
   | React.KeyboardEvent<S>
   | React.FocusEvent<S>;
 
+const RippleSurfaceContext = React.createContext({});
+
 /** A component for adding Ripples to other components. */
 export class Ripple extends FoundationComponent<RippleProps> {
   static shouldDebounce = true;
@@ -190,14 +192,10 @@ export class Ripple extends FoundationComponent<RippleProps> {
       ? { 'data-mdc-ripple-is-unbounded': true }
       : {};
 
-    const surfaceIsRoot = !(surface instanceof RippleSurface);
+    const surfaceIsRoot = !!surface;
     const rippleSurfaceProps = surfaceIsRoot
       ? this.surface.props({ style: child.props.style })
       : {};
-
-    if (surface instanceof RippleSurface) {
-      surface.setSurfaceProps(rippleSurfaceProps);
-    }
 
     // do some crazy props merging...
     const content = React.cloneElement(child, {
@@ -229,49 +227,30 @@ export class Ripple extends FoundationComponent<RippleProps> {
       onKeyUp: this.handleKeyUp
     });
 
-    return <React.Fragment>{content}</React.Fragment>;
-  }
-}
-
-export class RippleSurface extends React.PureComponent<
-  React.HTMLAttributes<HTMLDivElement>
-> {
-  state = {
-    rippleSurfaceProps: { className: '', style: {} }
-  };
-
-  raf: number | null = null;
-
-  setSurfaceProps(rippleSurfaceProps: any) {
-    if (
-      JSON.stringify(rippleSurfaceProps) !==
-      JSON.stringify(this.state.rippleSurfaceProps)
-    )
-      // this is a sucky hack
-      // the whole Ripple surface thing is annoying as it is
-      // but it throws errors trying to setState while rendering
-      // this avoids the issue, albeit causes another render
-      this.raf = window.requestAnimationFrame(() => {
-        this.setState({ rippleSurfaceProps });
-      });
-  }
-
-  componentWillUnmount() {
-    this.raf && window.cancelAnimationFrame(this.raf);
-  }
-
-  render() {
-    const { className, ...rest } = this.props;
     return (
-      <div
-        {...rest}
-        {...this.state.rippleSurfaceProps}
-        className={`${className} ${this.state.rippleSurfaceProps.className ||
-          ''}`}
-      />
+      <RippleSurfaceContext.Provider
+        value={this.surface.props({ style: child.props.style })}
+      >
+        {content}
+      </RippleSurfaceContext.Provider>
     );
   }
 }
+
+export const RippleSurface = ({
+  className,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <RippleSurfaceContext.Consumer>
+    {(rippleSurfaceProps: any) => (
+      <div
+        {...rest}
+        {...rippleSurfaceProps}
+        className={`${className} ${rippleSurfaceProps.className || ''}`}
+      />
+    )}
+  </RippleSurfaceContext.Consumer>
+);
 
 interface WithRippleOpts {
   accent?: boolean;

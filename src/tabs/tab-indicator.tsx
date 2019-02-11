@@ -58,6 +58,9 @@ export class TabIndicator extends FoundationComponent<{}> {
     );
 
     requestAnimationFrame(() => {
+      // Fixes an error of this executing after unmounting
+      if (!this.foundation) return;
+
       this.foundation.adapter_.removeClass(
         MDCTabIndicatorFoundation.cssClasses.NO_TRANSITION
       );

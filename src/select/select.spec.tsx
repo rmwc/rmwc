@@ -12,6 +12,39 @@ describe('Select', () => {
     );
   });
 
+  it('helpText', () => {
+    const el = mount(
+      <div>
+        <Select
+          helpText="selectHelpText"
+          options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
+        />
+      </div>
+    );
+
+    const el2 = mount(
+      <div>
+        <Select
+          helpText={{
+            children: 'selectHelpText',
+            validationMsg: true,
+            persistent: true
+          }}
+          options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
+        />
+      </div>
+    );
+
+    expect(el.contains('selectHelpText')).toBe(true);
+    expect(el2.contains('selectHelpText')).toBe(true);
+    expect(el2.html().includes('mdc-select-helper-text--validation-msg')).toBe(
+      true
+    );
+    expect(el2.html().includes('mdc-select-helper-text--persistent')).toBe(
+      true
+    );
+  });
+
   it('can have empty placeholder', () => {
     const el = mount(
       <Select

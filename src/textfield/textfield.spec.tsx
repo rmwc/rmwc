@@ -15,6 +15,34 @@ describe('TextField', () => {
     );
   });
 
+  it('can have helpText', () => {
+    const el = mount(
+      <div>
+        <TextField helpText="textHelpText" />
+      </div>
+    );
+    const el2 = mount(
+      <div>
+        <TextField
+          helpText={{
+            children: 'textHelpText',
+            validationMsg: true,
+            persistent: true
+          }}
+        />
+      </div>
+    );
+
+    expect(el.contains('textHelpText')).toBe(true);
+    expect(el2.contains('textHelpText')).toBe(true);
+    expect(
+      el2.html().includes('mdc-text-field-helper-text--validation-msg')
+    ).toBe(true);
+    expect(el2.html().includes('mdc-text-field-helper-text--persistent')).toBe(
+      true
+    );
+  });
+
   it('can have custom classnames', () => {
     const el = mount(
       <TextField placeholder="test" className="my-custom-classname">
@@ -78,7 +106,7 @@ describe('TextField', () => {
   });
 
   it('can be have leadingIcon', () => {
-    mount(<TextField leadingIcon="favorite" />);
+    mount(<TextField icon="favorite" />);
   });
 
   it('can be have trailingIcon', () => {

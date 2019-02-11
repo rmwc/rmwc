@@ -286,6 +286,29 @@ export class TextField extends FoundationComponent<
     // this.setState({});
   }
 
+  renderHelpText(renderedCharacterCounter?: React.ReactNode) {
+    const { helpText, characterCount, textarea } = this.props;
+    const shouldRender = !!helpText || (characterCount && !textarea);
+
+    if (!shouldRender) {
+      return null;
+    }
+
+    const shouldSpread =
+      typeof helpText === 'object' && !React.isValidElement(helpText);
+
+    return (
+      <div className="mdc-text-field-helper-line">
+        {helpText && shouldSpread ? (
+          <TextFieldHelperText {...helpText as any} />
+        ) : (
+          <TextFieldHelperText>{helpText}</TextFieldHelperText>
+        )}
+        {!textarea && renderedCharacterCounter}
+      </div>
+    );
+  }
+
   render() {
     const {
       label,
@@ -425,16 +448,7 @@ export class TextField extends FoundationComponent<
             </React.Fragment>
           )}
         </TextFieldRoot>
-        {(!!helpText || (characterCount && !textarea)) && (
-          <div className="mdc-text-field-helper-line">
-            {helpText && React.isValidElement(helpText) ? (
-              <TextFieldHelperText {...helpText as any} />
-            ) : (
-              <TextFieldHelperText>helpText</TextFieldHelperText>
-            )}
-            {!textarea && renderedCharacterCounter}
-          </div>
-        )}
+        {this.renderHelpText(renderedCharacterCounter)}
       </React.Fragment>
     );
   }
