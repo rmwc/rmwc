@@ -2909,10 +2909,22 @@
 														}
 													],
 													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "false"
+															},
+															{
+																"type": "intrinsic",
+																"name": "true"
+															}
+														]
+													}
 												},
 												{
 													"id": 140,

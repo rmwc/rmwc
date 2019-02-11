@@ -2633,7 +2633,7 @@
 							}
 						]
 					},
-					"defaultValue": " withRipple({ unbounded: true })(\n  componentFactory<ToolbarMenuIconProps>({\n    displayName: 'ToolbarMenuIcon',\n    tag: Icon,\n    classNames: ['mdc-toolbar__menu-icon']\n  })\n)"
+					"defaultValue": " withRipple({ unbounded: true, surface: false })(\n  componentFactory<ToolbarMenuIconProps>({\n    displayName: 'ToolbarMenuIcon',\n    tag: Icon,\n    classNames: ['mdc-toolbar__menu-icon']\n  })\n)"
 				},
 				{
 					"id": 108,
