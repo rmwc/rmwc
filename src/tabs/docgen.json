@@ -170027,7 +170027,7 @@
 							}
 						]
 					},
-					"defaultValue": " withTabBarContext()<TabProps>(\n  class extends FoundationComponent<\n    TabProps & { contextApi?: TabBarContextT }\n  > {\n    static displayName = 'Tab';\n\n    _id = randomId('tab');\n    private root = this.createElement('root');\n    tabIndicator: TabIndicator | null = null;\n    content: HTMLDivElement | null = null;\n    rippleSurfaceApi: RippleSurface | null = null;\n\n    constructor(props: TabProps & { contextApi?: TabBarContextT }) {\n      super(props);\n      this.props.contextApi && this.props.contextApi.registerTab(this);\n      this.handleClick = this.handleClick.bind(this);\n    }\n\n    componentWillUnmount() {\n      this.props.contextApi && this.props.contextApi.unregisterTab(this);\n    }\n\n    get id() {\n      return this.props.id\n        ? this.props.id\n        : (this as any)._reactInternalFiber.key || this._id;\n    }\n\n    getDefaultFoundation() {\n      return new MDCTabFoundation(\n        /** @type {!MDCTabAdapter} */ ({\n          setAttr: (attr: string, value: any) =>\n            this.root.setProp(attr as any, value),\n          addClass: (className: string) => this.root.addClass(className),\n          removeClass: (className: string) => this.root.removeClass(className),\n          hasClass: (className: string) => this.root.hasClass(className),\n          activateIndicator: (previousIndicatorClientRect: ClientRect) =>\n            this.tabIndicator &&\n            this.tabIndicator.activate(previousIndicatorClientRect),\n          deactivateIndicator: () =>\n            this.tabIndicator && this.tabIndicator.deactivate(),\n          notifyInteracted: () => {\n            const evt = this.emit(\n              'onInteraction',\n              { tabId: this.id },\n              true /* bubble */\n            );\n\n            this.props.contextApi &&\n              this.props.contextApi.onTabInteraction(evt);\n          },\n          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,\n          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,\n          getContentOffsetLeft: () => this.content && this.content.offsetLeft,\n          getContentOffsetWidth: () => this.content && this.content.offsetWidth,\n          focus: () => this.root.ref && this.root.ref.focus()\n        })\n      );\n    }\n\n    handleClick(evt: React.MouseEvent) {\n      this.props.onClick && this.props.onClick(evt);\n      this.foundation.handleClick(evt);\n    }\n\n    get active() {\n      return this.foundation.isActive();\n    }\n\n    set focusOnActivate(focusOnActivate: string) {\n      this.foundation.setFocusOnActivate(focusOnActivate);\n    }\n\n    activate(computeIndicatorClientRect: ClientRect) {\n      this.foundation.activate(computeIndicatorClientRect);\n    }\n\n    deactivate() {\n      this.foundation.deactivate();\n    }\n\n    computeIndicatorClientRect() {\n      return this.tabIndicator && this.tabIndicator.computeContentClientRect();\n    }\n\n    computeDimensions() {\n      return this.foundation.computeDimensions();\n    }\n\n    focus() {\n      this.root.ref && this.root.ref.focus();\n    }\n\n    render() {\n      const {\n        children,\n        label,\n        icon,\n        stacked,\n        restrictIndicator,\n        contextApi,\n        ...rest\n      } = this.props;\n      return (\n        <TabRoot\n          {...this.root.props(rest)}\n          onClick={this.handleClick}\n          stacked={stacked}\n          ref={this.root.setRef}\n          ripple={{\n            surface: this.rippleSurfaceApi\n          }}\n        >\n          <div className=\"mdc-tab__content\" ref={el => (this.content = el)}>\n            {!!icon && <TabIcon icon={icon} />}\n            {(children !== undefined || label !== undefined) && (\n              <span className=\"mdc-tab__text-label\">\n                {label}\n                {children}\n              </span>\n            )}\n            {!!restrictIndicator && (\n              <TabIndicator\n                ref={(api: TabIndicator) => (this.tabIndicator = api)}\n              />\n            )}\n          </div>\n          {!restrictIndicator && (\n            <TabIndicator\n              ref={(api: TabIndicator) => (this.tabIndicator = api)}\n            />\n          )}\n          <RippleSurface\n            ref={(rippleSurfaceApi: RippleSurface) =>\n              (this.rippleSurfaceApi = rippleSurfaceApi)\n            }\n            className=\"mdc-tab__ripple\"\n          />\n        </TabRoot>\n      );\n    }\n  }\n)"
+					"defaultValue": " withTabBarContext()<TabProps>(\n  class extends FoundationComponent<\n    TabProps & { contextApi?: TabBarContextT }\n  > {\n    static displayName = 'Tab';\n\n    _id = randomId('tab');\n    private root = this.createElement('root');\n    tabIndicator: TabIndicator | null = null;\n    content: HTMLDivElement | null = null;\n\n    constructor(props: TabProps & { contextApi?: TabBarContextT }) {\n      super(props);\n      this.props.contextApi && this.props.contextApi.registerTab(this);\n      this.handleClick = this.handleClick.bind(this);\n    }\n\n    componentWillUnmount() {\n      this.props.contextApi && this.props.contextApi.unregisterTab(this);\n    }\n\n    get id() {\n      return this.props.id\n        ? this.props.id\n        : (this as any)._reactInternalFiber.key || this._id;\n    }\n\n    getDefaultFoundation() {\n      return new MDCTabFoundation(\n        /** @type {!MDCTabAdapter} */ ({\n          setAttr: (attr: string, value: any) =>\n            this.root.setProp(attr as any, value),\n          addClass: (className: string) => this.root.addClass(className),\n          removeClass: (className: string) => this.root.removeClass(className),\n          hasClass: (className: string) => this.root.hasClass(className),\n          activateIndicator: (previousIndicatorClientRect: ClientRect) =>\n            this.tabIndicator &&\n            this.tabIndicator.activate(previousIndicatorClientRect),\n          deactivateIndicator: () =>\n            this.tabIndicator && this.tabIndicator.deactivate(),\n          notifyInteracted: () => {\n            const evt = this.emit(\n              'onInteraction',\n              { tabId: this.id },\n              true /* bubble */\n            );\n\n            this.props.contextApi &&\n              this.props.contextApi.onTabInteraction(evt);\n          },\n          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,\n          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,\n          getContentOffsetLeft: () => this.content && this.content.offsetLeft,\n          getContentOffsetWidth: () => this.content && this.content.offsetWidth,\n          focus: () => this.root.ref && this.root.ref.focus()\n        })\n      );\n    }\n\n    handleClick(evt: React.MouseEvent) {\n      this.props.onClick && this.props.onClick(evt);\n      this.foundation.handleClick(evt);\n    }\n\n    get active() {\n      return this.foundation.isActive();\n    }\n\n    set focusOnActivate(focusOnActivate: string) {\n      this.foundation.setFocusOnActivate(focusOnActivate);\n    }\n\n    activate(computeIndicatorClientRect: ClientRect) {\n      this.foundation.activate(computeIndicatorClientRect);\n    }\n\n    deactivate() {\n      this.foundation.deactivate();\n    }\n\n    computeIndicatorClientRect() {\n      return this.tabIndicator && this.tabIndicator.computeContentClientRect();\n    }\n\n    computeDimensions() {\n      return this.foundation.computeDimensions();\n    }\n\n    focus() {\n      this.root.ref && this.root.ref.focus();\n    }\n\n    render() {\n      const {\n        children,\n        label,\n        icon,\n        stacked,\n        restrictIndicator,\n        contextApi,\n        ...rest\n      } = this.props;\n      return (\n        <TabRoot\n          {...this.root.props(rest)}\n          onClick={this.handleClick}\n          stacked={stacked}\n          ref={this.root.setRef}\n          ripple={{\n            surface: false\n          }}\n        >\n          <div className=\"mdc-tab__content\" ref={el => (this.content = el)}>\n            {!!icon && <TabIcon icon={icon} />}\n            {(children !== undefined || label !== undefined) && (\n              <span className=\"mdc-tab__text-label\">\n                {label}\n                {children}\n              </span>\n            )}\n            {!!restrictIndicator && (\n              <TabIndicator\n                ref={(api: TabIndicator) => (this.tabIndicator = api)}\n              />\n            )}\n          </div>\n          {!restrictIndicator && (\n            <TabIndicator\n              ref={(api: TabIndicator) => (this.tabIndicator = api)}\n            />\n          )}\n          <RippleSurface className=\"mdc-tab__ripple\" />\n        </TabRoot>\n      );\n    }\n  }\n)"
 				},
 				{
 					"id": 225,
@@ -171433,7 +171433,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 78,
+									"line": 83,
 									"character": 22
 								}
 							],
@@ -171584,7 +171584,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 143,
+									"line": 148,
 									"character": 16
 								}
 							]
@@ -171626,7 +171626,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 154,
+									"line": 159,
 									"character": 15
 								}
 							]
@@ -171668,7 +171668,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 150,
+									"line": 155,
 									"character": 22
 								}
 							]
@@ -171697,7 +171697,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 159,
+									"line": 164,
 									"character": 8
 								}
 							]
@@ -171864,7 +171864,7 @@
 							"sources": [
 								{
 									"fileName": "tab-bar.tsx",
-									"line": 137,
+									"line": 142,
 									"character": 6
 								}
 							],
@@ -174261,7 +174261,7 @@
 							"sources": [
 								{
 									"fileName": "tab-indicator.tsx",
-									"line": 75,
+									"line": 78,
 									"character": 26
 								}
 							]
@@ -174363,7 +174363,7 @@
 							"sources": [
 								{
 									"fileName": "tab-indicator.tsx",
-									"line": 71,
+									"line": 74,
 									"character": 12
 								}
 							]
@@ -174616,7 +174616,7 @@
 							"sources": [
 								{
 									"fileName": "tab-indicator.tsx",
-									"line": 79,
+									"line": 82,
 									"character": 8
 								}
 							]
