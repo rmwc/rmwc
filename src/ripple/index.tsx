@@ -188,14 +188,42 @@ export class Ripple extends FoundationComponent<RippleProps> {
     } = this.props;
 
     const child = React.Children.only(children);
+
+    // This flag really determines a lot
+    // is surfaceIsRoot is true, then the surface props are spread
+    // to the underlying component, otherwise the only place they
+    // can be picked up is by the context consumer
+    const surfaceIsRoot = !surface || !unbounded;
+
     const unboundedProp = unbounded
       ? { 'data-mdc-ripple-is-unbounded': true }
       : {};
 
-    const surfaceIsRoot = !surface;
     const rippleSurfaceProps = surfaceIsRoot
       ? this.surface.props({ style: child.props.style })
       : {};
+
+    let finalClassNames = classNames(
+      className,
+      rippleSurfaceProps.className,
+      child.props.className,
+      {
+        'mdc-ripple-surface':
+          typeof surface === 'boolean' ? surface : surface === undefined,
+        'mdc-ripple-surface--primary': primary,
+        'mdc-ripple-surface--accent': accent
+      }
+    );
+
+    // Fixes a ripple artifact issue
+    // that is caused when clicking a button disables it
+    // https://codesandbox.io/s/842vo56019
+    if (rest.disabled) {
+      finalClassNames = finalClassNames.replace(
+        'mdc-ripple-upgraded--background-focused',
+        ''
+      );
+    }
 
     // do some crazy props merging...
     const content = React.cloneElement(child, {
@@ -205,17 +233,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
         ...rest,
         style: child.props.style,
         ...rippleSurfaceProps,
-        className: classNames(
-          className,
-          rippleSurfaceProps.className,
-          child.props.className,
-          {
-            'mdc-ripple-surface':
-              typeof surface === 'boolean' ? surface : surface === undefined,
-            'mdc-ripple-surface--primary': primary,
-            'mdc-ripple-surface--accent': accent
-          }
-        )
+        className: finalClassNames
       }),
       onFocus: this.handleFocus,
       onBlur: this.handleBlur,
@@ -268,9 +286,6 @@ export const withRipple = ({
 }: WithRippleOpts = {}) => <P extends {}>(
   Component: React.ComponentType<P & RMWC.WithRippleProps>
 ): React.ComponentType<P & RMWC.WithRippleProps> => {
-  defaultSurface =
-    typeof defaultSurface === 'undefined' ? true : defaultSurface;
-
   const WithRippleComponent = withProviderContext()(
     React.forwardRef<any, any>(
       (

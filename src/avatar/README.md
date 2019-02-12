@@ -63,15 +63,18 @@ import { Avatar, AvatarCount, AvatarGroup } from '@rmwc/avatar';
     src="images/avatars/captainamerica.png"
     name="Steve Rogers"
     size="large"
+    interactive
   />
   <Avatar
     src="images/avatars/ironman.png"
     name="Tony Stark"
     size="large"
+    interactive
   />
   <AvatarCount
     size="large"
     value={12}
+    interactive
   />
 </AvatarGroup>
 
@@ -80,16 +83,19 @@ import { Avatar, AvatarCount, AvatarGroup } from '@rmwc/avatar';
     src="images/avatars/captainamerica.png"
     name="Steve Rogers"
     size="large"
+    interactive
   />
   <Avatar
     src="images/avatars/ironman.png"
     name="Tony Stark"
     size="large"
+    interactive
   />
   <AvatarCount
     size="large"
     overflow
     value={4}
+    interactive
   />
 </AvatarGroup>
 ```

@@ -65,14 +65,13 @@ import { Icon } from '@rmwc/icon';
 {
   /* Auto detection */
 }
-<Icon icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
+<Icon icon="images/icons/twitter.png" />
 {
   /* Explicit */
 }
 <Icon
   icon={{
-    icon:
-      'https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon',
+    icon: 'images/icons/twitter.png',
     strategy: 'url'
   }}
 />
@@ -158,7 +157,7 @@ import { Icon } from '@rmwc/icon';
 
 ## Icon Sizing
 
-The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size.
+The Material spec details multiple sizes for icons. The Icon component doesn't assign a size by default, but these are available to you to force a size. Please note, this will only work if you've included the RMWC icon css file.
 
 ```jsx render
 

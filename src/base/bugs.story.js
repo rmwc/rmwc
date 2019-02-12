@@ -10,7 +10,8 @@ import {
   Select,
   Switch,
   TabBar,
-  Tab
+  Tab,
+  IconButton
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -358,6 +359,29 @@ class Bug374 extends React.Component {
   }
 }
 
+function Bug842vo56019() {
+  const [disabled, setDisabled] = React.useState(false);
+
+  return (
+    <>
+      <IconButton
+        icon="star"
+        disabled={disabled}
+        onClick={() => setDisabled(true)}
+      />
+
+      <IconButton
+        icon="favorite"
+        disabled={disabled}
+        ripple={false}
+        onClick={() => setDisabled(true)}
+      />
+
+      <Button onClick={() => setDisabled(false)}>Enable</Button>
+    </>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -421,4 +445,5 @@ storiesOf('Bugs', module)
   .add('#350', () => <Bug350 />)
   .add('#361', () => <Bug361 />)
   .add('#370', () => <Bug370 />)
-  .add('#374', () => <Bug374 />);
+  .add('#374', () => <Bug374 />)
+  .add('#842vo56019', () => <Bug842vo56019 />);

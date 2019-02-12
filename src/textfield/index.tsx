@@ -341,9 +341,7 @@ export class TextField extends FoundationComponent<
     }
 
     if (withLeadingIcon !== undefined) {
-      deprecationWarning(
-        `Textfield prop 'withLeadingIcon' is now 'leadingIcon'.`
-      );
+      deprecationWarning(`Textfield prop 'withLeadingIcon' is now 'icon'.`);
       icon = withLeadingIcon;
     }
 

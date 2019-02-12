@@ -5,9 +5,7 @@ import { IconButton } from './';
 describe('', () => {
   it('renders', () => {
     mount(<IconButton icon="star" label="Rate this!" />);
-    mount(
-      <IconButton icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
-    );
+    mount(<IconButton icon="images/icons/twitter.png" />);
     mount(<IconButton icon={<div />} label="Tweet it!" />);
   });
 

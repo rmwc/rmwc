@@ -9,11 +9,9 @@ describe('Icon', () => {
   });
 
   it('renders Url', () => {
-    const el2 = mount(
-      <Icon icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon" />
-    );
+    const el2 = mount(<Icon icon="images/icons/twitter.png" />);
     expect(el2.html()).toBe(
-      `<i style="background-image: url(https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon);" class="rmwc-icon material-icons rmwc-icon--image"></i>`
+      `<i style="background-image: url(images/icons/twitter.png);" class="rmwc-icon material-icons rmwc-icon--image"></i>`
     );
   });
 

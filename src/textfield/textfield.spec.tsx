@@ -105,7 +105,7 @@ describe('TextField', () => {
     expect(getValid()).toBe(true);
   });
 
-  it('can be have leadingIcon', () => {
+  it('can be have icon', () => {
     mount(<TextField icon="favorite" />);
   });
 

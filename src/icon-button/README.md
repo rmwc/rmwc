@@ -15,7 +15,7 @@ import { IconButton } from '@rmwc/icon-button';
 
 <IconButton icon="star" label="Rate this!" />
 <IconButton
-  icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  icon="images/icons/twitter.png"
   aria-label="Tweet it!"
   tag="a"
   href="https://twitter.com"
@@ -51,8 +51,8 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 
 <IconButton
   onChange={(evt) => console.log(evt.detail)}
-  onIcon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  icon="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
+  onIcon="images/icons/twitter.png"
+  icon="images/icons/facebook.png"
 />
 
 <IconButton
