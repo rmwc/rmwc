@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/top-app-bar",
-  "version": "5.0.27-rc.0",
+  "version": "5.0.28-rc.0",
   "description": "RMWC TopAppBar component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@material/top-app-bar": "^0.44.0",
-    "@rmwc/base": "^5.0.27-rc.0",
-    "@rmwc/icon": "^5.0.27-rc.0"
+    "@rmwc/base": "^5.0.28-rc.0",
+    "@rmwc/icon": "^5.0.28-rc.0"
   },
   "gitHead": "cfb1ca54e7862c96bb7b3db217ac17090bac78a6"
 }
