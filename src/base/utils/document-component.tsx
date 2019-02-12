@@ -112,9 +112,9 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
         const sig = found.declaration.signatures[0];
         if (sig.name === '__call') {
           const rType = sig.type && sig.type.name;
-          const params = sig.parameters.map(
-            p => `${p.name}: ${this.simplifyType(p.type)}`
-          );
+          const params = sig.parameters
+            ? sig.parameters.map(p => `${p.name}: ${this.simplifyType(p.type)}`)
+            : [];
           return `(${params.join(', ')}) => ${rType}`;
         }
       }

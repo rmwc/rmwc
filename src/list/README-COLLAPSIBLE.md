@@ -1,13 +1,13 @@
 # Collapsible Lists `RMWC Addon`
 
-> Collapsible lists aren't part of the material spec, but they've been added to RMWC after continuing requests from the community.
+> Collapsible Lists present accordion style navigation elements to progressively reveal content.
 
 - import from **'@rmwc/list'**;
 - Import styles:
   - import **'@material/list/dist/mdc.list.css'**;
   - import **'@material/list/collapsible-list.css'**;
 
-Collapsible Lists present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
+Collapsible lists aren't part of the material spec, but they've been added to RMWC after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
 
 ```jsx render
 import {
@@ -50,8 +50,8 @@ import {
     </CollapsibleList>
   </CollapsibleList>
   
-  <CollapsibleList handle={
-    <SimpleListItem text="Custom Content" 
+  <CollapsibleList open handle={
+    <SimpleListItem text="Custom Content, forced open" 
     graphic="help" metaIcon="chevron_right"/>
   }>
     

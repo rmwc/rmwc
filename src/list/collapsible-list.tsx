@@ -2,10 +2,14 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory, classNames } from '@rmwc/base';
 
-interface CollapsibleProps {
+export interface CollapsibleListProps {
+  /** The handle that opens and closes the collapsible section. Usually a ListItem. */
   handle: React.ReactNode;
+  /** Show the collapsible list as open. */
   open?: boolean;
+  /** Callback for when the collapsible list opens. */
   onOpen?: () => void;
+  /** Callback for when the collapsible list closes. */
   onClose?: () => void;
 }
 
@@ -46,7 +50,7 @@ const getNextSibling = (
 };
 
 export class CollapsibleList extends React.Component<
-  CollapsibleProps & RMWC.ComponentProps,
+  CollapsibleListProps & RMWC.ComponentProps,
   CollapsibleState
 > {
   childContainer: HTMLDivElement | null = null;
@@ -62,6 +66,24 @@ export class CollapsibleList extends React.Component<
     this.handleClick = this.handleClick.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+  }
+
+  static getDerivedStateFromProps(
+    props: CollapsibleListProps,
+    state: CollapsibleState
+  ) {
+    if (props.open !== undefined && props.open !== state.open) {
+      return {
+        ...state,
+        open: props.open
+      };
+    }
+
+    return state;
+  }
+
+  componentDidMount() {
+    this.state.open && this.toggleOpen(this.state.open);
   }
 
   correctFocus(back: boolean) {
