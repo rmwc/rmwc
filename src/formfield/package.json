@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.js",
   "module": "next/index.js",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
@@ -34,5 +35,5 @@
     "@material/form-field": "^0.44.0",
     "@rmwc/base": "^5.0.28-rc.0"
   },
-  "gitHead": "cfb1ca54e7862c96bb7b3db217ac17090bac78a6"
+  "gitHead": "8ffea0c707eebcfe1da303ff09c1c51881af6c60"
 }
