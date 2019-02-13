@@ -20,7 +20,8 @@ interface CollapsibleState {
 
 const CollapsibleRoot = componentFactory<{}>({
   displayName: 'CollapsibleRoot',
-  classNames: ['rmwc-collapsible-list']
+  classNames: ['rmwc-collapsible-list'],
+  consumeProps: ['handle','open','onOpen','onClose']
 });
 
 const possiblyFocusElement = (el: Element | null) => {
