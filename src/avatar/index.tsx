@@ -6,7 +6,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export interface AvatarProps {
   /** The url for the image. This gets passed to the Icon component. */
-  src: React.ReactNode;
+  src?: string;
   /** The size of the avatar */
   size?: IconSizeT;
   /** The name of the user. This will get converted to initials and set the hover title. */
@@ -92,6 +92,11 @@ export const Avatar = ({
   ...rest
 }: AvatarProps & RMWC.ComponentProps) => {
   const initials = getInitialsForName(name);
+  const avatarStyle = src
+    ? {
+        backgroundImage: `url(${src})`
+      }
+    : {};
 
   return (
     <AvatarRoot
@@ -104,12 +109,7 @@ export const Avatar = ({
       icon={{
         icon: (
           <React.Fragment>
-            <div
-              className="rmwc-avatar__icon"
-              style={{
-                backgroundImage: `url(${src})`
-              }}
-            />
+            <div className="rmwc-avatar__icon" style={avatarStyle} />
             <div className="rmwc-avatar__text">
               <div className="rmwc-avatar__text-inner">{initials}</div>
             </div>

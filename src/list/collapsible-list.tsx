@@ -53,6 +53,20 @@ export class CollapsibleList extends React.Component<
   CollapsibleListProps & RMWC.ComponentProps,
   CollapsibleState
 > {
+  static getDerivedStateFromProps(
+    props: CollapsibleListProps,
+    state: CollapsibleState
+  ) {
+    if (props.open !== undefined && props.open !== state.open) {
+      return {
+        ...state,
+        open: props.open
+      };
+    }
+
+    return state;
+  }
+
   childContainer: HTMLDivElement | null = null;
   root: HTMLDivElement | null = null;
 
@@ -66,20 +80,6 @@ export class CollapsibleList extends React.Component<
     this.handleClick = this.handleClick.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
-  }
-
-  static getDerivedStateFromProps(
-    props: CollapsibleListProps,
-    state: CollapsibleState
-  ) {
-    if (props.open !== undefined && props.open !== state.open) {
-      return {
-        ...state,
-        open: props.open
-      };
-    }
-
-    return state;
   }
 
   componentDidMount() {
@@ -182,7 +182,14 @@ export class CollapsibleList extends React.Component<
   }
 
   render() {
-    const { children, handle, ...rest } = this.props;
+    const {
+      children,
+      handle,
+      onOpen,
+      onClose,
+      open: openProp,
+      ...rest
+    } = this.props;
     const { open, childrenStyle } = this.state;
 
     return (
