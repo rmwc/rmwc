@@ -413,7 +413,8 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isOptional": true
 							},
 							"comment": {
 								"shortText": "The url for the image. This gets passed to the Icon component."
@@ -426,8 +427,17 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "React.ReactNode"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
 							}
 						}
 					],
@@ -1111,64 +1121,6 @@
 															{
 																"type": "intrinsic",
 																"name": "string"
-															},
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "reference",
-																		"name": "__type"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																]
-															},
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "reference",
-																		"name": "ReactElement",
-																		"typeArguments": [
-																			{
-																				"type": "intrinsic",
-																				"name": "any"
-																			}
-																		]
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																]
-															},
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "reference",
-																		"name": "ReactNodeArray"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																]
-															},
-															{
-																"type": "intersection",
-																"types": [
-																	{
-																		"type": "reference",
-																		"name": "ReactPortal"
-																	},
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																]
 															}
 														]
 													}
