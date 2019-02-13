@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/chip",
-  "version": "5.0.29-rc.0",
+  "version": "5.0.30-rc.0",
   "description": "RMWC Chip component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@material/chips": "^0.44.0",
-    "@rmwc/base": "^5.0.29-rc.0",
-    "@rmwc/icon": "^5.0.29-rc.0",
-    "@rmwc/ripple": "^5.0.29-rc.0"
+    "@rmwc/base": "^5.0.30-rc.0",
+    "@rmwc/icon": "^5.0.30-rc.0",
+    "@rmwc/ripple": "^5.0.30-rc.0"
   },
   "gitHead": "453e8bbf2361d1e601f4ece71979862e7c7e99af"
 }
