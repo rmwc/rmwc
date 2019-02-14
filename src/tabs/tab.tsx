@@ -48,7 +48,7 @@ export const TabIcon = componentFactory<IconProps>({
 });
 
 /** A Tab component */
-export const Tab = withTabBarContext()<TabProps>(
+export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
   class extends FoundationComponent<
     TabProps & { contextApi?: TabBarContextT }
   > {
