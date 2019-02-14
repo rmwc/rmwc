@@ -24,7 +24,7 @@
   "scripts": {
     "install": "lerna bootstrap",
     "start": "react-app-rewired start",
-    "build:docssite": "react-app-rewired build && rm -R -f docs && mv build docs",
+    "build:docsite": "react-app-rewired build && rm -R -f docs && mv build docs",
     "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
     "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
