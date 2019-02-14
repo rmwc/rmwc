@@ -17,9 +17,17 @@ import {
 } from '@rmwc/list';
 
 <List>
-  <CollapsibleList handle={
-    <SimpleListItem text="Cookies" graphic="favorite" metaIcon="chevron_right"/>
-  }>
+  <CollapsibleList
+    handle={
+      <SimpleListItem
+        text="Cookies"
+        graphic="favorite"
+        metaIcon="chevron_right"
+      />
+    }
+    onOpen={() => console.log('open')}
+    onClose={() => console.log('close')}
+  >
     <SimpleListItem text="Chocolate Chip"/>
     <SimpleListItem text="Ginger Snap"/>
     <SimpleListItem text="Peanut Butter"/>
@@ -62,6 +70,28 @@ import {
     }}>Collapsibles can contain any content</div>
   </CollapsibleList>
 </List>
+```
+
+## Usage as Non-List
+`CollapsibleList` is optimized to work with the `List` component but there is nothing stopping you from using any other kind of content.
+
+```jsx render
+import { CollapsibleList } from '@rmwc/list';
+import { IconButton } from '@rmwc/icon-button';
+<CollapsibleList
+  handle={<IconButton icon="favorite_outline" onIcon="favorite"/>}
+  onOpen={() => console.log('open')}
+  onClose={() => console.log('close')}
+>
+  <div style={{
+    padding: '1rem',
+    background: 'red',
+    color: 'white',
+    display: 'inline-block'
+  }}>
+    Favorited!
+  </div>
+</CollapsibleList>
 ```
 
 ```jsx renderOnly

@@ -1,13 +1,13 @@
 # Methodology
 
-> RMWC is intended to be an unopinionated React wrapper around [material-components-web](https://github.com/material-components/material-components-web/)
+> RMWC is intended to be an un-opinionated React wrapper around [material-components-web](https://github.com/material-components/material-components-web/)
 
 ## Project Goals
 
 * To create the thinnest, lightest, and spec compliant wrapper around Google
-  Material Design Components for the Web [https://material.io/components/web/](https://material.io/components/web/)
-* To utilize the Foundation javascript classes and expose their api for
-  consumption
+  Material Design Components for the Web
+  [https://material.io/components/web/](https://material.io/components/web/)
+* To utilize the Foundation javascript classes from material-components-web
 * To be as unobtrusive and sensible as possible.
 * To fill the gaps in material-components-web with custom React community driven components.
 
@@ -23,7 +23,7 @@ RMWC's goal is to use the Google sanctioned javascript Material Design Component
 
 ## Breaking Changes
 
-As stated in "Why?", the goal of this library is to be unopinionated, and that includes opinions about breaking changes that come downstream from material-components-web. In the future, steps may be taken to insulate consumers by providing a deprecation path, but for the time being please make sure your keep eyes on the official MDC Changelog and RMWC will do its best to also keep its changelog up to date.
+As stated in "Why?", the goal of this library is to be un-opinionated, and that includes opinions about breaking changes that come downstream from material-components-web. While RMWC goes to great lengths to insulate you from  breaking changes through deprecations and warning messages, unfortunately not every breaking change is a candidate for a deprecation.
 
 With that said, you can each release of RMWC is bound to a specific release of material-components-web, so you can safely continue running your current version without upgrading. As of 2.0.0, components are also individually packaged and released. If you have a large code base and want to insulate yourself from change, it is recommended you install one component at a time.
 
@@ -61,9 +61,9 @@ Here's a TextField example in raw MDC and with RMWC.
 </List>
 ```
 
-## Convenient additions
+## Convenience
 
-Even though this is meant to be an unopinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, what's the point? Any non-standard item will be called out in the docs.
+Even though this is meant to be an un-opinionated wrapper, in some areas decisions had to be made to improve utility and the overall developer experience. At the end of the day, if it doesn't make your life easier, what's the point?
 
 ## Something missing from RMWC?
 

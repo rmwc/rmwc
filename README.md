@@ -8,15 +8,15 @@
 
 # RMWC - React Material Web Components
 
-A React (15 / 16) wrapper for the official Material Design (Web) Components v0.41.0
+A React wrapper for the official Material Design (Web) Components v0.44.0
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
 
 * [x] Uses Google's official material-components-web library
 * [x] Includes Addon components for ones missing from the official spec
-* [x] Works in any version of React from 15.5.x to 16.5.x
-* [x] First class Typescript (Beta) and Flow Support
+* [x] Works in React 16.3.x and up
+* [x] First class Typescript Support
 * [x] Server side rendering support
 * [x] Individually packaged and released components
 
@@ -26,16 +26,13 @@ Features:
 
 ## Recent updates
 
-5.x.x-alpha is out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless. A few caveats:
+V5 is officially out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless. A few caveats:
 
-- React 16.3 is the new min version to take advantage of React Fragments, Ref Forwarding, and the new Context Api.
-- elementRef has been removed in favor of refs with ref forwarding in React 16.3
-- Flow types are still in progress, so if you rely on these, don't try it out yet
-- If you want the docs, you'll have to run them locally. Clone the repo, `npm i && npm start`.
+Your quick migration guide:
 
-If none of the things above impact you, 5.x.x is feature complete a ready to try out. It is already being used in production for several internal projects. Please report any issues ASAP and make sure to call out in the issue that you're using the 5.x.x version.
-
-Happy Coding!
+- React 16.3 is the new min version to take advantage of React Fragments, Ref Forwarding, and the new Context Api. If you need React 15 support, you'll have to stay on 4.x.x and below.
+- The library has been rewritten in Typescript instead of Flow. At this time, Flow types are no longer supported. Please comment on issue #407 If you're interested in bringing these back
+- Changelog couldn't be generated for this release, see the release notes for the full details 🚀 https://opencollective.com/rmwc/updates/5-0-0-a-giant-leap-for-rmwc
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 
@@ -46,8 +43,7 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 * To create the thinnest, lightest, and spec compliant wrapper around Google
   Material Design Components for the Web
   [https://material.io/components/web/](https://material.io/components/web/)
-* To utilize the Foundation javascript classes and expose their api for
-  consumption
+* To utilize the Foundation javascript classes from material-components-web
 * To be as unobtrusive and sensible as possible.
 * To fill the gaps in material-components-web with custom React community driven components.
 
@@ -57,15 +53,15 @@ Yes, and here are the differences.
 
 * [x] RMWC is feature complete! It contains all of the components in the MDC catalog.
 * [x] RMWC Includes Addon components for ones missing from the official spec
-* [x] RMWC Works in any version of React from 15.5.x to 16.5.x
-* [x] RMWC includes first class Typescript and Flow Support
+* [x] RMWC 4.x.x and below supports React 15
+* [x] RMWC 4.x.x includes Flow support
 * [x] RMWC has tested server side rendering support
 * [x] RMWC favors deprecations over breaking changes whenever possible
 * [x] RMWC has interactive polished documentation
 * [x] RMWC is about 8 months older than Google's.
+* [x] RMWC is being used by by companies of all sizes with all sorts of use cases, it's not going anywhere.
 
 The MDC team has been nothing but collaborative and kind, even in pursuing their own React wrapper. Both libraries individually package components, so you can use this one, that one, or a mix of both if you want to. There are multiple production apps running RMWC, so this library will continue to exist and be improved. Hopefully in the future there can be a convergence point, but in the meantime you can weigh both libraries on their own merits.
-https://github.com/material-components/material-components-web-react
 
 ## Installation
 

@@ -4,7 +4,7 @@ import { componentFactory, classNames } from '@rmwc/base';
 
 export interface CollapsibleListProps {
   /** The handle that opens and closes the collapsible section. Usually a ListItem. */
-  handle: React.ReactNode;
+  handle: React.ReactElement<any>;
   /** Show the collapsible list as open. */
   open?: boolean;
   /** Callback for when the collapsible list opens. */
@@ -142,10 +142,18 @@ export class CollapsibleList extends React.Component<
   }
 
   handleClick(evt: React.MouseEvent) {
+    // call events that might have been on the handle
+    const { handle } = this.props;
+    handle.props.onClick && handle.props.onClick(evt);
+
     this.toggleOpen(!this.state.open);
   }
 
   handleKeydown(evt: React.KeyboardEvent) {
+    // call events that might have been on the handle
+    const { handle } = this.props;
+    handle.props.onKeyDown && handle.props.onKeyDown(evt);
+
     switch (evt.which) {
       case 13:
         this.toggleOpen(!this.state.open);
@@ -201,12 +209,12 @@ export class CollapsibleList extends React.Component<
           ['rmwc-collapsible-list--open']: open
         })}
       >
-        <div
-          className="rmwc-collapsible-list__handle"
-          onClick={this.handleClick}
-          onKeyDown={this.handleKeydown}
-        >
-          {handle}
+        <div className="rmwc-collapsible-list__handle">
+          {React.cloneElement(handle, {
+            ...handle.props,
+            onClick: this.handleClick,
+            onKeyDown: this.handleKeydown
+          })}
         </div>
         <div className="rmwc-collapsible-list__children" style={childrenStyle}>
           <div

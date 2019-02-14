@@ -30,7 +30,7 @@ import { Drawer, DrawerContent } from '@rmwc/drawer';
 
 ### `tag`
 
-You can use the `tag` prop to specify the DOM element you would like to render For advanced cases, you can actually pass a Component to render.
+You can use the `tag` prop to specify the DOM element you would like to render. For advanced cases, you can actually pass a Component to render.
 
 ```jsx
 import { Typography } from '@rmwc/typography';
@@ -66,7 +66,7 @@ The theming functionality from material-components-web is baked into every compo
 ```jsx
 import { Button } from '@rmwc/button';
 
-<Button raised theme="secondary-bg on-secondary">
+<Button raised theme={['secondaryBg',  'onSecondary']}>
   With Theme
 </Button>;
 ```

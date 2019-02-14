@@ -7,6 +7,7 @@
   font-family: inherit;
   border-radius: 50%;
   background: var(--mdc-theme-surface, white);
+  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38));
 }
 
 .rmwc-avatar--interactive {
@@ -30,8 +31,8 @@
   min-height: 1em;
   line-height: 1em;
   text-align: center;
-  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38));
   border-radius: inherit;
+  user-select: none;
 }
 
 .rmwc-avatar__text-inner {
@@ -81,10 +82,6 @@
 /** Avatar count */
 .rmwc-avatar--count {
   background: var(--mdc-theme-primary, #6200ee);
-}
-
-.rmwc-avatar--count .rmwc-avatar__text {
-  user-select: none;
   color: var(--mdc-theme-on-primary, white);
 }
 
