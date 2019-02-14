@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "RMWC Dialog component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@material/dialog": "^0.44.0",
-    "@rmwc/base": "^5.1.1",
-    "@rmwc/button": "^5.1.1"
+    "@rmwc/base": "^5.1.2",
+    "@rmwc/button": "^5.1.2"
   },
   "gitHead": "6d4bb5b34b9f037b98b7c304acf890b1b65ad529"
 }

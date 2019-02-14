@@ -1,3 +1,9 @@
+#### 5.1.2 (2019-02-14)
+
+##### Bug Fixes
+
+* **TopAppBar:**  Adding missing ripple dependency to top app bar package.json (446fc1fd)
+
 #### 5.1.1 (2019-02-14)
 
 Changelog couldn't be generated for this release, see the release notes for the full details 🚀 https://opencollective.com/rmwc/updates/5-0-0-a-giant-leap-for-rmwc

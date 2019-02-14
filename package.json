@@ -1,7 +1,7 @@
 {
   "name": "rmwc-main",
   "author": "James Friedman",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "private": true,
   "sideEffects": false,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
