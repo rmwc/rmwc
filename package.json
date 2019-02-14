@@ -60,7 +60,7 @@
     "enzyme-adapter-react-16": "1.8.0",
     "flow-bin": "^0.91.0",
     "generate-changelog": "^1.7.1",
-    "lerna": "^3.10.5",
+    "lerna": "^3.11.1",
     "prismjs": "^1.15.0",
     "react": "^16.8.1",
     "react-app-rewire-hot-loader": "^1.0.3",

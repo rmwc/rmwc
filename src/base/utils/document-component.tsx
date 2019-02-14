@@ -243,7 +243,7 @@ export class Docs extends React.Component<DocsInterface> {
       return acc;
     }, {});
 
-    console.log(this.docs);
+    //console.log(this.docs);
   }
 
   shouldComponentUpdate() {
