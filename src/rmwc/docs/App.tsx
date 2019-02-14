@@ -41,7 +41,7 @@ import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
 
 import Home from './Home';
-import { toCamel } from '@rmwc/base';
+import { toCamel, toDashCase } from '@rmwc/base';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -142,7 +142,7 @@ const getTheme = (themeName: string) => {
   ];
 
   return order.reduce((acc, key) => {
-    const newKey = `--mdc-theme-${key}`;
+    const newKey = `--mdc-theme-${toDashCase(key)}`;
     // @ts-ignore
     acc[newKey] = merged[newKey];
     return acc;
