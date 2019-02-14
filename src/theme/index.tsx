@@ -94,6 +94,9 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
 
     if (wrap && rest.children) {
       const child = React.Children.only(rest.children);
+      if (!React.isValidElement<React.HTMLProps<any>>(child)) {
+        return;
+      }
       const childStyle = child.props.style || {};
 
       return React.cloneElement(child, {

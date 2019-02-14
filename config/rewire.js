@@ -91,16 +91,6 @@ const enableHotReload = config => {
   return config;
 };
 
-/**
- * Self explanatory...
- */
-const speedUpTypescript = config => {
-  const plugin = getPlugin(config, 'ForkTsCheckerWebpackPlugin');
-  plugin.async = process.env.NODE_ENV !== 'production';
-  plugin.silent = !plugin.async;
-  return config;
-};
-
 /***********************************
  * Jest Rewiring
  ***********************************/
@@ -150,7 +140,10 @@ module.exports = {
       fixLinting,
       addAliases,
       addMarkdownLoader,
-      speedUpTypescript
+      config => {
+        //console.log(config);
+        return config;
+      }
     )(config);
   },
   storybook: (config, env) => pipe(addAliases)(config),

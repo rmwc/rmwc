@@ -28,7 +28,7 @@ interface ComponentFactoryOpts<Props> {
     props: any,
     ref: React.Ref<any>,
     tag: RMWC.TagT
-  ) => React.ReactElement<HTMLElement>;
+  ) => React.ReactElement<any>;
 }
 
 // ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS

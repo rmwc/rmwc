@@ -189,6 +189,10 @@ export class Ripple extends FoundationComponent<RippleProps> {
 
     const child = React.Children.only(children);
 
+    if (!React.isValidElement<React.HTMLProps<any>>(child)) {
+      return null;
+    }
+
     // This flag really determines a lot
     // is surfaceIsRoot is true, then the surface props are spread
     // to the underlying component, otherwise the only place they

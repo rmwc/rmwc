@@ -3,6 +3,7 @@
   "author": "James Friedman",
   "version": "5.1.0",
   "private": true,
+  "sideEffects": false,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "license": "MIT",
@@ -23,7 +24,8 @@
   "scripts": {
     "install": "lerna bootstrap",
     "start": "react-app-rewired start",
-    "build:docs": "npm run clean && npm run docgen && react-app-rewired build && rm -R -f docs && mv build docs",
+    "build:docssite": "react-app-rewired build && rm -R -f docs && mv build docs",
+    "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
     "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
     "build": "npm run clean && npm run build:docs && npm run build:code",
@@ -53,8 +55,9 @@
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.12",
     "@types/node": "^10.12.18",
-    "@types/react": "^16.7.18",
+    "@types/react": "^16.8.3",
     "@types/react-dom": "^16.0.11",
+    "babel-loader": "^8.0.5",
     "copyfiles": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
@@ -69,11 +72,12 @@
     "react-hot-loader": "^4.6.3",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
+    "react-scripts": "2.1.5",
     "react-styleguidist": "^8.0.6",
     "tslint": "^5.12.1",
     "typedoc": "^0.14.2",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.3"
   },
   "eslintIgnore": [
     "node_modules"

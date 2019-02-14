@@ -64,12 +64,15 @@ const renderApp = (Component: React.ComponentType<any>) => {
   );
 };
 
-renderApp(App);
-
 // @ts-ignore
 if (module.hot) {
   // @ts-ignore
   module.hot.accept(['./App'], () => renderApp(App));
 }
 
-unregister();
+const init = () => {
+  renderApp(App);
+  unregister();
+};
+
+export default init;
