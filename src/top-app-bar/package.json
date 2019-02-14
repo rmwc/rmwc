@@ -34,7 +34,8 @@
   "dependencies": {
     "@material/top-app-bar": "^0.44.0",
     "@rmwc/base": "^5.1.1",
-    "@rmwc/icon": "^5.1.1"
+    "@rmwc/icon": "^5.1.1",
+    "@rmwc/ripple": "^5.1.1"
   },
   "gitHead": "6d4bb5b34b9f037b98b7c304acf890b1b65ad529"
 }
