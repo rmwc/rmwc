@@ -104,13 +104,15 @@ import {
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="ImageList" />
-<DocumentComponent docs={docs} displayName="ImageListItem" />
-<DocumentComponent docs={docs} displayName="ImageListImageAspectContainer" />
-<DocumentComponent docs={docs} displayName="ImageListImage" />
-<DocumentComponent docs={docs} displayName="ImageListSupporting" />
-<DocumentComponent docs={docs} displayName="ImageListLabel" />
+<Docs src={docs} components={[
+  'ImageList',
+  'ImageListItem',
+  'ImageListImageAspectContainer',
+  'ImageListImage',
+  'ImageListSupporting',
+  'ImageListLabel'
+]}/>
 ```

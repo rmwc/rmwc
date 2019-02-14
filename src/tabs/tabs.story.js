@@ -78,7 +78,9 @@ class TabBarStory extends React.Component {
           activeTabIndex={this.state.activeTabIndex}
           onActivate={evt => this.onChange(evt)}
         >
-          {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
+          {this.state.tabs.map(label => (
+            <Tab key={label}>{label}</Tab>
+          ))}
         </TabBar>
         <br />
         <br />
@@ -106,7 +108,9 @@ class TabBarStory extends React.Component {
         <br />
         Always 1
         <TabBar activeTabIndex={1}>
-          {this.state.tabs.map(label => <Tab key={label}>{label}</Tab>)}
+          {this.state.tabs.map(label => (
+            <Tab key={label}>{label}</Tab>
+          ))}
         </TabBar>
         <br />
         <br />

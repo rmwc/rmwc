@@ -1,0 +1,120 @@
+/** Standard avatars */
+.rmwc-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 50%;
+  background: var(--mdc-theme-surface, white);
+  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38));
+}
+
+.rmwc-avatar--interactive {
+  cursor: pointer;
+}
+
+.rmwc-avatar__icon {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background: transparent none no-repeat center center / cover;
+}
+
+.rmwc-avatar__text {
+  text-decoration: uppercase;
+  width: 1em;
+  min-width: 1em;
+  max-width: 1em;
+  height: 1em;
+  max-height: 1em;
+  min-height: 1em;
+  line-height: 1em;
+  text-align: center;
+  border-radius: inherit;
+  user-select: none;
+}
+
+.rmwc-avatar__text-inner {
+  text-decoration: uppercase;
+  font-size: 0.5em;
+  font-weight: bold;
+}
+
+.rmwc-avatar--smaller-text .rmwc-avatar__text-inner {
+  font-size: 0.35em;
+}
+
+.rmwc-avatar__icon {
+  position: absolute;
+}
+
+/** Square avatars */
+.rmwc-avatar--square {
+  border-radius: 0.1875rem;
+}
+
+/** Avatar sizes */
+.rmwc-avatar--xsmall {
+  font-size: 1.125rem;
+}
+
+.rmwc-avatar--small {
+  font-size: 1.25rem;
+}
+
+.rmwc-avatar--medium {
+  font-size: 1.5rem;
+}
+
+.rmwc-avatar--large {
+  font-size: 2.25rem;
+}
+
+.rmwc-avatar--xlarge {
+  font-size: 3rem;
+}
+
+.rmwc-avatar .rmwc-avatar__icon {
+  font-size: 1em;
+}
+
+/** Avatar count */
+.rmwc-avatar--count {
+  background: var(--mdc-theme-primary, #6200ee);
+  color: var(--mdc-theme-on-primary, white);
+}
+
+.rmwc-avatar--count-overflow .rmwc-avatar__text-inner:before {
+  content: '+';
+  font-size: 0.66em;
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+/** Avatar groups */
+.rmwc-avatar-group {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.rmwc-avatar-group .rmwc-avatar {
+  margin: 0.125em;
+}
+
+.rmwc-avatar-group--dense .rmwc-avatar {
+  margin-left: -0.125em;
+  margin-right: -0.125em;
+}
+
+.rmwc-avatar-group--dense .rmwc-avatar:first-of-type {
+  margin-left: 0.125em;
+}
+
+.rmwc-avatar-group--dense .rmwc-avatar:not(:first-of-type) .rmwc-avatar__text {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rmwc-avatar-group--dense .rmwc-avatar:last-of-type {
+  margin-right: 0.125em;
+}

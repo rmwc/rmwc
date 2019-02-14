@@ -31,9 +31,8 @@ import { Select } from '@rmwc/select';
   {[...Array(8)].map((val, i) => (
     <GridTile key={i}>
       <GridTilePrimary>
-        <GridTilePrimaryContent>
-          <img src="https://material-components-web.appspot.com/images/1-1.jpg" alt="test" />
-        </GridTilePrimaryContent>
+        <GridTilePrimaryContent         
+          src="https://material-components-web.appspot.com/images/1-1.jpg" alt="test"/>
       </GridTilePrimary>
       <GridTileSecondary>
         <GridTileIcon icon="info" />
@@ -57,15 +56,16 @@ import { Select } from '@rmwc/select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon//docgen.json';
 
-<DocumentComponent docs={docs} displayName="GridList" />
-<DocumentComponent docs={docs} displayName="GridTile" />
-<DocumentComponent docs={[docs, iconDocs]} displayName="GridTileIcon" composes={['Icon']}/>
-<DocumentComponent docs={docs} displayName="GridTilePrimary" />
-<DocumentComponent docs={docs} displayName="GridTileSecondary" />
-<DocumentComponent docs={docs} displayName="GridTileTitleSupportText" />
-<DocumentComponent docs={docs} displayName="GridTileTitle" />
+<Docs src={docs} components={[
+  'GridList',
+  'GridTile',
+  'GridTileIcon',
+  'GridTilePrimary',
+  'GridTileSecondary',
+  'GridTileTitleSupportText',
+  'GridTileTitle'
+]} />
 ```

@@ -1,6 +1,7 @@
 {
   "extends": "react-app",
   "rules": {
+    "no-undef": 0,
     "space-before-function-paren": "off",
     "indent": ["error", 2],
     "max-len": [
@@ -17,5 +18,14 @@
     "react/prop-types": "off",
     "no-unused-expressions": "off",
     "prefer-reflect": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "no-unused-vars": ["off"],
+        "no-undef": ["off"]
+      }
+    }
+  ]
 }

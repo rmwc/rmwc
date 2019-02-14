@@ -11,26 +11,32 @@
 ```jsx render
 import { Checkbox } from '@rmwc/checkbox';
 
-{/* Controlled with change handlers */}
+{/* Controlled */}
 <Checkbox
+  label="Cookies"
   checked={this.state.cookiesChecked || false}
-  onChange={evt => this.setState({cookiesChecked: evt.target.checked})}>
-  Cookies
-</Checkbox>
+  onChange={evt => this.setState({cookiesChecked: evt.target.checked})}
+/>
 
-{/* Standard Checkbox */}
-<Checkbox>Pizza</Checkbox>
+{/* Uncontrolled */}
+<Checkbox label="Pizza" />
 
-{/* Using the label prop */}
-<Checkbox label="Icecream" />
+{/* Label as children */}
+<Checkbox>Icecream</Checkbox>
 
 {/* Making a "half" checked, indeterminate Checkbox */}
-<Checkbox indeterminate>Broccoli</Checkbox>
+<Checkbox
+  label="Broccoli"
+  indeterminate
+/>
+
+<Checkbox label="Always On" checked />
+<Checkbox label="Always Off" checked={false} />
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Checkbox" />
+<Docs src={docs} components={['Checkbox']} />
 ```

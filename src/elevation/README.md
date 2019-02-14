@@ -26,9 +26,21 @@ import { Elevation } from '@rmwc/elevation';
 </Elevation>
 ```
 
+## Wrapping Children
+
+You can avoid adding extra DOM nodes by using the `wrap` prop on elevation. This will apply the classes directly to the child component. Additionally, Elevation is simply a  `className`, so you can achieve the same effect by adding `className="mdc-elevation--z15"`.
+
+```jsx render
+import { Elevation } from '@rmwc/elevation';
+
+<Elevation z={21} wrap>
+  <i>Wrapped!</i>
+</Elevation>
+```
+
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Elevation" />
+<Docs src={docs} components={['Elevation']} />
 ```

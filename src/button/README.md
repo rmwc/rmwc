@@ -2,21 +2,41 @@
 
 > Buttons communicate the action that will occur when the user touches them.
 
-- Module **@rmwc/button**  
+- Module **@rmwc/button**
 - Import styles:
   - import **'@material/button/dist/mdc.button.css'**;
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 ```jsx render
 import { Button, ButtonIcon } from '@rmwc/button';
+import { CircularProgress } from '@rmwc/circular-progress';
 
-<Button>Default</Button>
-<Button><ButtonIcon icon="favorite" /> With Icon</Button>
-<Button raised>Raised</Button>
-<Button dense>Dense</Button>
-<Button unelevated>Unelevated</Button>
-<Button outlined>Outlined</Button>
-<Button raised theme="secondary-bg on-secondary">With Theme</Button>
+<Button label="Default" />
+<Button
+  label="With Icon"
+  icon="favorite"
+/>
+<Button
+  label="Raised"
+  raised
+/>
+<Button
+  label="Dense"
+  dense
+/>
+<Button
+  label="Unelevated"
+  unelevated
+/>
+<Button
+  label="Outlined"
+  outlined
+/>
+<Button
+  label="With Theme"
+  raised
+  theme={['secondaryBg', 'onSecondary']}
+/>
 
 
 {/*
@@ -25,15 +45,29 @@ import { Button, ButtonIcon } from '@rmwc/button';
   See the documentation on Ripples.
   */
 }
-<Button theme="secondary" accent>With Theme</Button>
-<Button ripple={false}>No Ripple</Button>
+<Button
+  label="With Theme"
+  theme="secondary"
+  ripple={{accent: true}}
+/>
+<Button
+  label="No Ripple"
+  ripple={false}
+/>
+<Button
+  label="Loading"
+  icon={<CircularProgress />}
+/>
+
+{/*
+  Alternatively pass content as children
+*/}
+<Button><ButtonIcon icon="star" /> As Children</Button>
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon/docgen.json';
 
-<DocumentComponent docs={docs} displayName="Button" />
-<DocumentComponent docs={[docs, iconDocs]} displayName="ButtonIcon" composes={['Icon']} />
+<Docs src={docs} components={['Button', 'ButtonIcon']} />
 ```

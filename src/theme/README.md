@@ -143,25 +143,24 @@ import { Theme } from '@rmwc/theme';
 import { Button } from '@rmwc/button';
 
 {/* Add Theme colors to your own components. */}
-<Theme use="primaryBg onPrimary" wrap>
+<Theme use={['primaryBg', 'onPrimary']} wrap>
   <div style={{width: '4rem', height: '4rem', padding: '1rem'}}>Cookies</div>
 </Theme>
 
 {/* These two examples are roughly equivalent. */}
-<Theme use="secondaryBg onSecondary" wrap>
+<Theme use={['secondaryBg', 'onSecondary']} wrap>
   <Button>Pizza</Button>
 </Theme>
 
-<Button theme="secondaryBg onSecondary">Pizza</Button>
+<Button theme={['primaryBg', 'onPrimary']}>Pizza</Button>
 
 {/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
 <h3>I <Theme use="primary">Want</Theme> <Theme use="secondary">Icecream</Theme></h3>
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="ThemeProvider" />
-<DocumentComponent docs={docs} displayName="Theme" />
+<Docs src={docs} components={['ThemeProvider', 'Theme']} />
 ```

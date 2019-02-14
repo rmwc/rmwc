@@ -1,9 +1,8 @@
-const resolver = require('jest-resolve/build/defaultResolver.js');
+const resolver = require('jest-pnp-resolver');
 const ReactTestVersion = process.env.REACT_TEST_VERSION;
 
 module.exports = (moduleName, options) => {
   const resolvedPath = resolver(moduleName, options);
-
   if (
     ReactTestVersion &&
     ['react', 'react-dom', 'react-test-renderer'].some(p =>

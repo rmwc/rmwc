@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig-extends.json",
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "amd",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": false,
+    "jsx": "react",
+    "downlevelIteration": true,
+    "lib": ["es2015", "es2017", "dom"],
+    "outDir": "build/dist",
+    "declaration": true,
+    "stripInternal": true
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.spec.*", "src/**/*.story.*", "src/rmwc/docs/*"]
+}

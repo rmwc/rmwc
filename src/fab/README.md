@@ -10,14 +10,14 @@ import { Fab } from '@rmwc/fab';
 
 <Fab icon="favorite" />
 <Fab icon="favorite" mini />
-<Fab icon="favorite" label="Love It!" />
+<Fab icon="add" label="Create" />
+<Fab trailingIcon="add" label="Create" />
+<Fab label="Label only" />
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon//docgen.json';
 
-
-<DocumentComponent docs={[docs, iconDocs]} displayName="Fab" composes={['Icon']} />
+<Docs src={docs} components={['Fab']} />
 ```

@@ -1,8 +1,20 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const glob = require('glob');
-const fs = require('fs-extra');
+const { execSync } = require('child_process');
 
-glob('./src/**/dist/', {}, function(er, files) {
-  files.forEach(f => fs.removeSync(f));
+execSync('rm -R -f ./build');
+
+const removeFileOrDir = f => execSync(`rm -R -f ${f}`);
+
+glob('./src/*/dist/', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
+
+glob('./src/*/next/', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
+});
+
+glob('./src/*/flow-typed/', { ignore: 'node_modules' }, function(er, files) {
+  files.forEach(removeFileOrDir);
 });

@@ -1,18 +1,16 @@
+"use strict";
 /**
  * @jest-environment node
  */
-
-import * as React from 'react';
-import { renderToString as mount } from 'react-dom/server';
-import { Button, ButtonIcon } from './';
-
-describe('Button', () => {
-  it('renders', () => {
-    mount(
-      <Button>
-        <ButtonIcon icon="favorite" />
+exports.__esModule = true;
+var React = require("react");
+var server_1 = require("react-dom/server");
+var _1 = require("./");
+describe('Button SSR', function () {
+    it('renders', function () {
+        server_1.renderToString(<_1.Button>
+        <_1.ButtonIcon icon="favorite"/>
         Button
-      </Button>
-    );
-  });
+      </_1.Button>);
+    });
 });

@@ -26,8 +26,8 @@ import { Typography } from '@rmwc/typography';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Typography" />
+<Docs src={docs} components={['Typography']} />
 ```

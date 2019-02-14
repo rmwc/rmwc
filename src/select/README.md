@@ -37,12 +37,34 @@ import { Select, SelectHelperText } from '@rmwc/select';
   <Select
     label="With Icon"
     defaultChecked="Pizza"
-    withLeadingIcon="favorite"
+    icon="favorite"
     options={['Cookies', 'Pizza', 'Icecream']}
   />
   <SelectHelperText>Choose your favorite snack...</SelectHelperText>
 </div>
+```
 
+## Validation
+```jsx render
+import { Select, SelectHelperText } from '@rmwc/select';
+
+<Select
+  label="Required"  
+  required
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Invalid"  
+  invalid
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
+
+<Select
+  label="Disabled"  
+  disabled
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
 ```
 
 ## Data Driven Selects
@@ -183,8 +205,8 @@ import { Select } from '@rmwc/select';
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Select" />
+<Docs src={docs} components={['Select']} />
 ```

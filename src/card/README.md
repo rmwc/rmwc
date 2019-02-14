@@ -18,7 +18,8 @@ import {
   Card,
   CardPrimaryAction,
   CardMedia,
-  CardAction,
+  CardActionButton,
+  CardActionIcon,
   CardActions,
   CardActionButtons,
   CardActionIcons
@@ -41,12 +42,12 @@ import { Typography } from '@rmwc/typography';
       <Typography
         use="subtitle2"
         tag="h3"
-        theme="text-secondary-on-background"
+        theme="textSecondaryOnBackground"
         style={{ marginTop: '-1rem' }}
       >
         by Kurt Wagner
       </Typography>
-      <Typography use="body1" tag="div" theme="text-secondary-on-background">
+      <Typography use="body1" tag="div" theme="textSecondaryOnBackground">
         Visit ten places on our planet that are undergoing the biggest changes
         today.
       </Typography>
@@ -54,16 +55,16 @@ import { Typography } from '@rmwc/typography';
   </CardPrimaryAction>
   <CardActions>
     <CardActionButtons>
-      <CardAction>Read</CardAction>
-      <CardAction>Bookmark</CardAction>
+      <CardActionButton>Read</CardActionButton>
+      <CardActionButton>Bookmark</CardActionButton>
     </CardActionButtons>
     <CardActionIcons>
-      <CardAction
+      <CardActionIcon
         onIcon="favorite"
         icon="favorite_border"
       />
-      <CardAction icon="share" />
-      <CardAction icon="more_vert" />
+      <CardActionIcon icon="share" />
+      <CardActionIcon icon="more_vert" />
     </CardActionIcons>
   </CardActions>
 </Card>
@@ -81,7 +82,7 @@ import { Typography } from '@rmwc/typography';
     use="subtitle1"
     tag="div"
     style={{ padding: '0.5rem 1rem' }}
-    theme="text-secondary-on-background"
+    theme="textSecondaryOnBackground"
   >
     Headlines
   </Typography>
@@ -93,7 +94,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         Copper on the rise
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         Copper price soars amid global market optimism and increased demand.
       </Typography>
     </div>
@@ -106,7 +107,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         U.S. tech startups rebound
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         Favorable business conditions have allowed startups to secure more
         fundraising deals compared to last year.
       </Typography>
@@ -120,7 +121,7 @@ import { Typography } from '@rmwc/typography';
       <Typography use="headline5" tag="div">
         Asia's clean energy ambitions
       </Typography>
-      <Typography use="body1" tag="p" theme="text-secondary-on-background">
+      <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
         China plans to invest billions of dollars for the development of over
         300 clean energy projects in Southeast Asia.
       </Typography>
@@ -130,9 +131,10 @@ import { Typography } from '@rmwc/typography';
   <ListDivider />
 
   <CardActions fullBleed>
-    <CardAction>
-      All Business Headlines <Icon icon="arrow_forward" />
-    </CardAction>
+    <CardActionButton
+      label="All Business Headlines"
+      trailingIcon="arrow_forward"
+    />
   </CardActions>
 </Card>
 ```
@@ -180,30 +182,30 @@ import {
   </CardPrimaryAction>
   <CardActions>
     <CardActionIcons>
-      <CardAction
+      <CardActionIcon
         onIcon="favorite"
         icon="favorite_border"
       />
-      <CardAction icon="bookmark_border" />
-      <CardAction icon="share" />
+      <CardActionIcon icon="bookmark_border" />
+      <CardActionIcon icon="share" />
     </CardActionIcons>
   </CardActions>
 </Card>
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon/docgen.json';
-import * as buttonDocs from '@rmwc/button/docgen.json';
-import * as iconButtonDocs from '@rmwc/icon-button/docgen.json';
 
-<DocumentComponent docs={docs} displayName="Card" />
-<DocumentComponent docs={docs} displayName="CardPrimaryAction" />
-<DocumentComponent docs={docs} displayName="CardMedia" />
-<DocumentComponent docs={docs} displayName="CardMediaContent" />
-<DocumentComponent docs={docs} displayName="CardActions" />
-<DocumentComponent docs={docs} displayName="CardActionButtons" />
-<DocumentComponent docs={docs} displayName="CardActionIcons" />
-<DocumentComponent docs={[docs, iconButtonDocs, iconDocs, buttonDocs]} displayName="CardAction" composes={['IconButton', 'Icon', 'Button']}/>
+<Docs src={docs} components={[
+  'Card',
+  'CardPrimaryAction',
+  'CardMedia',
+  'CardMediaContent',
+  'CardActions',
+  'CardActionButtons',
+  'CardActionIcons',
+  'CardActionIcon',
+  'CardActionButton'
+]}/>
 ```

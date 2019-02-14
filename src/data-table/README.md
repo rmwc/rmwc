@@ -8,7 +8,7 @@
 
 ## Standard Table
 
-The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists. With that said, you can easily plug in libraries such as [React Virtualized](https://github.com/bvaughn/react-virtualized).
+The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists.
 
 ```jsx render
 import {
@@ -179,7 +179,7 @@ import { Switch } from '@rmwc/switch';
             />Label
           </DataTableCell>
           <DataTableCell>
-            <Select options={['Cookies', 'Pizza', 'Icecream']}/>
+            <Select placeholder="--Select--" options={['Cookies', 'Pizza', 'Icecream']}/>
           </DataTableCell>
           <DataTableCell>Row {i} Cell 2</DataTableCell>
           <DataTableCell>Row {i} Cell 3</DataTableCell>
@@ -227,14 +227,16 @@ import { SimpleDataTable } from '@rmwc/data-table';
 
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="DataTable" />
-<DocumentComponent docs={docs} displayName="DataTableRow"/>
-<DocumentComponent docs={docs} displayName="DataTableCell"/>
-<DocumentComponent docs={docs} displayName="DataTableHead"/>
-<DocumentComponent docs={docs} displayName="DataTableBody"/>
-<DocumentComponent docs={docs} displayName="DataTableHeadCell"/>
-<DocumentComponent docs={docs} displayName="SimpleDataTable"/>
+<Docs src={docs} components={[
+ 'DataTable',  
+ 'DataTableRow',  
+ 'DataTableCell',  
+ 'DataTableHead',  
+ 'DataTableBody',  
+ 'DataTableHeadCell',  
+ 'SimpleDataTable'
+]}/>
 ```

@@ -15,9 +15,12 @@ import { IconButton } from '@rmwc/icon-button';
 
 <IconButton icon="star" label="Rate this!" />
 <IconButton
-  icon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
+  icon="images/icons/twitter.png"
   aria-label="Tweet it!"
+  tag="a"
+  href="https://twitter.com"
 />
+<IconButton icon="favorite" label="Favorite" disabled/>
 
 ```
 
@@ -32,6 +35,12 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
   onIcon="favorite"
 />
 
+<IconButton
+  icon="favorite"
+  onIcon="favorite"
+  disabled
+/>
+
 {/* Controlled */}
 <IconButton
   checked={this.state.isChecked}
@@ -42,8 +51,8 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 
 <IconButton
   onChange={(evt) => console.log(evt.detail)}
-  onIcon="https://www2.le.ac.uk/departments/law/images/twitter-follow-us-icon"
-  icon="https://en.facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png"
+  onIcon="images/icons/twitter.png"
+  icon="images/icons/facebook.png"
 />
 
 <IconButton
@@ -57,9 +66,8 @@ To use as a toggle, specify an additional toggled on state using 'onIcon'.
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon//docgen.json';
 
-<DocumentComponent docs={[docs, iconDocs]} component={IconButton} displayName="IconButton" composes={['Icon']} />
+<Docs src={docs} components={['IconButton']} />
 ```

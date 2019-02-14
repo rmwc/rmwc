@@ -1,8 +1,14 @@
 {
   "name": "@rmwc/icon",
-  "version": "4.0.6",
+  "version": "5.0.30-rc.0",
   "description": "RMWC Icon component",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.js",
+  "module": "next/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "publish:dist": "npm publish dist --access=public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,11 +28,12 @@
   },
   "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/icon#readme",
   "peerDependencies": {
-    "react": "^15.x.x || ^16.x.x",
-    "react-dom": "^15.x.x || ^16.x.x"
+    "react": "^16.3.x",
+    "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^4.0.6",
-    "@rmwc/provider": "^4.0.6"
-  }
+    "@rmwc/base": "^5.0.30-rc.0",
+    "@rmwc/provider": "^5.0.30-rc.0"
+  },
+  "gitHead": "612aaa66eb387f6fc0d53126d579a77e30a2f4b4"
 }

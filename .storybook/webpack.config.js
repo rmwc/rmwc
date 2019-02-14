@@ -1,37 +1,35 @@
-// you can use this file to add your custom webpack plugins, loaders and anything you like.
-// This is just the basic way to add additional webpack configurations.
-// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
+// Do this as the first thing so that any code reading it knows the right env.
+const {
+  webpack: rewireCRA,
+  storybook: rewireStorybook
+} = require('../config/rewire');
+const craConfigBase = require('react-scripts/config/webpack.config');
 
-// IMPORTANT
-// When you add this file, we won't add the default configurations which is similar
-// to "React Create App". This only has babel loader to load JavaScript.
+module.exports = (storybookBaseConfig, configType) => {
+  storybookBaseConfig = rewireStorybook(storybookBaseConfig);
+  craConfig = rewireCRA(craConfigBase('development'));
 
-const path = require('path');
+  // In the code below, we are going to get a couple
+  // of loaders from CRA that we need for storybook.
+  // This is to ensure storybook and our actual build
+  // are as close as possible
 
-module.exports = {
-  plugins: [
-    // your custom plugins
-  ],
-  resolve: {
-    alias: {
-      rmwc: path.resolve('./src'),
-      '@rmwc': path.resolve('./src')
-    }
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          require.resolve('css-to-string-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1
-            }
-          }
-        ]
-      }
-    ]
-  }
+  // a utility function to get a loader from CRA
+  const getCRALoader = loaderName =>
+    craConfig.module.rules
+      .find(rule => rule.oneOf)
+      .oneOf.find(r => {
+        return r.loader && r.loader.includes(loaderName);
+      });
+
+  // the url loader allows loading of media
+  const urlLoader = getCRALoader('url-loader');
+  storybookBaseConfig.module.rules.push(urlLoader);
+
+  // Use the file loader for svgs
+  const fileLoader = getCRALoader('file-loader');
+  fileLoader.test = /\.svg$/;
+  storybookBaseConfig.module.rules.push(fileLoader);
+
+  return storybookBaseConfig;
 };

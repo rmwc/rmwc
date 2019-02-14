@@ -8,47 +8,54 @@
 - MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ```jsx render
-import { Snackbar } from '@rmwc/snackbar';
+import { Snackbar, SnackbarAction } from '@rmwc/snackbar';
 import { Button } from '@rmwc/button';
 
 {/* A standard snackbar */}
 <Snackbar
-  show={this.state.snackbarIsOpen}
-  onHide={evt => this.setState({snackbarIsOpen: false})}
+  open={this.state.snackbarIsOpen}
+  onClose={evt => this.setState({snackbarIsOpen: false})}
   message="This is a new message"
-  actionText="Action"
-  actionHandler={() => alert('Action clicked')}
-  timeout={1000}
-  dismissesOnAction={false}
+  action={
+    <SnackbarAction
+      label="Dismiss"
+      onClick={() => console.log('Click Me')}
+    />}
 />
 
 <Button
   raised
+  label="Show snackbar"
   onClick={evt => this.setState({snackbarIsOpen: !this.state.snackbarIsOpen})}
->
-  Show snackbar
-</Button>
+/>
 
 {/* A snackbar that is start aligned on larger devices. */}
 <Snackbar
-  show={this.state.snackbarStartIsOpen}
-  onHide={evt => this.setState({snackbarStartIsOpen: false})}
+  open={this.state.snackbarStartIsOpen}
+  onClose={evt => this.setState({snackbarStartIsOpen: false})}
   message="Start aligned"
-  actionText="Dismiss"
-  actionHandler={() => {}}
-  alignStart
+  stacked
+  action={[
+    <SnackbarAction
+      label="Yeah!"
+    />, 
+    <SnackbarAction
+      label="No..."
+    />
+  ]}
+  leading
+  timeout={10000}
 />
 
 <Button
+  label="Show start-aligned"
   onClick={evt => this.setState({snackbarStartIsOpen: !this.state.snackbarStartIsOpen})}
->
-  Show start-aligned
-</Button>
+/>
 ```
 
 ```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
+import { Docs } from '@rmwc/base/utils/document-component';
 import * as docs from './docgen.json';
 
-<DocumentComponent docs={docs} displayName="Snackbar" />
+<Docs src={docs} components={['Snackbar']} />
 ```

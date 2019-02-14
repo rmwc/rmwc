@@ -9,14 +9,16 @@
   - import **'@material/list/dist/mdc.list.css'**;
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
-## Menu with Items
+## Menus
 
-You can compose a menu with the given components, and manually manage the open state.
+You can compose a menu with the given components, and manually manage the open state. `Menu` expects MenuItems as children while `MenuSurface` is a generic container which can have anything as a child.
 
 ```jsx render
-import { Menu, MenuItem, MenuSurfaceAnchor } from '@rmwc/menu';
+import { Menu, MenuItem, MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
+import { ListDivider } from '@rmwc/list';
 import { Button } from '@rmwc/button';
 
+{/** A menu with items */}
 <MenuSurfaceAnchor>
   <Menu
     open={this.state.menuIsOpen}
@@ -25,6 +27,8 @@ import { Button } from '@rmwc/button';
   >
     <MenuItem>Cookies</MenuItem>
     <MenuItem>Pizza</MenuItem>
+    {/** MenuItem is just a ListItem, so you can intermingle other List components */}
+    <ListDivider /> 
     <MenuItem>Icecream</MenuItem>
   </Menu>
 
@@ -35,16 +39,8 @@ import { Button } from '@rmwc/button';
     Open Menu
   </Button>
 </MenuSurfaceAnchor>
-```
 
-## Generic Menu Surface
-
-`MenuSurface` allows you to create a menu with any kind of content.
-
-```jsx render
-import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
-import { Button } from '@rmwc/button';
-
+{/** A Generic menu containing any kind of content. */}
 <MenuSurfaceAnchor>
   <MenuSurface
     open={this.state.genericMenuIsOpen}
@@ -55,7 +51,7 @@ import { Button } from '@rmwc/button';
 
   <Button
     raised
-    onClick={evt => this.setState({'genericMenuIsOpen': !this.state.genericMenuIsOpen})}
+    onClick={evt => this.setState({genericMenuIsOpen: !this.state.genericMenuIsOpen})}
   >
     Open Generic Menu
   </Button>
@@ -85,15 +81,60 @@ import { Button } from '@rmwc/button';
 </SimpleMenuSurface>
 ```
 
-```jsx renderOnly
-import { DocumentComponent } from '@rmwc/base/utils/document-component';
-import * as docs from './docgen.json';
-import * as listDocs from '@rmwc/list//docgen.json';
 
-<DocumentComponent docs={docs} displayName="Menu" />
-<DocumentComponent docs={[docs, listDocs]} displayName="MenuItem" composes={['ListItem']}/>
-<DocumentComponent docs={docs} displayName="MenuSurface" />
-<DocumentComponent docs={docs} displayName="MenuSurfaceAnchor" />
-<DocumentComponent docs={docs} displayName="SimpleMenu" />
-<DocumentComponent docs={docs} displayName="SimpleMenuSurface" />
+## Anchoring
+
+By default, Menus will attempt to automatically position themselves, but this behavior can be overriden by setting the `anchorCorner` prop.
+
+```jsx render
+import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
+import { Select } from '@rmwc/select';
+import { Button } from '@rmwc/button';
+
+<MenuSurfaceAnchor>
+  <MenuSurface
+    anchorCorner={this.state.anchorValue || 'topLeft'}
+    open={true}
+  >
+    <div style={{padding: '1rem', width: '8rem'}}>
+      anchorCorner: {this.state.anchorValue || 'topLeft'}
+    </div>
+  </MenuSurface>
+
+  <Button
+    raised
+    onClick={evt => this.setState({anchorMenuOpen: !this.state.anchorMenuOpen})}
+  >
+    Open Anchored Menu
+  </Button>
+</MenuSurfaceAnchor>
+
+<Select
+  value={this.state.anchorValue || 'topLeft'}
+  label="anchorCorner"
+  onChange={evt => this.setState({anchorValue: evt.currentTarget.value})}
+  options={[
+  'topLeft',
+  'topRight',
+  'bottomLeft',
+  'bottomRight',
+  'topStart',
+  'topEnd',
+  'bottomStart',
+  'bottomEnd'
+]} />
+```
+
+```jsx renderOnly
+import { Docs } from '@rmwc/base/utils/document-component';
+import * as docs from './docgen.json';
+
+<Docs src={docs} components={[
+  'Menu',
+  'MenuItem',
+  'MenuSurface',
+  'MenuSurfaceAnchor',
+  'SimpleMenu',
+  'SimpleMenuSurface'
+]} />
 ```
