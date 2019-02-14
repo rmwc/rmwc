@@ -1,3 +1,9 @@
+#### 5.1.3 (2019-02-14)
+
+##### Bug Fixes
+
+* **Tab:**  Adding missing type signature for component props (4743ffa3)
+
 #### 5.1.2 (2019-02-14)
 
 ##### Bug Fixes

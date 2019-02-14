@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/snackbar",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "description": "RMWC Snackbar component",
   "main": "dist/index.js",
   "types": "dist/index.js",
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@material/snackbar": "^0.44.0",
-    "@rmwc/base": "^5.1.2",
-    "@rmwc/button": "^5.1.2"
+    "@rmwc/base": "^5.1.3",
+    "@rmwc/button": "^5.1.3"
   },
   "gitHead": "0200480881dfd087a25f6a0aa97caf9715aec181"
 }
