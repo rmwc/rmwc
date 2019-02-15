@@ -1,5 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory'
+import ReactGA from 'react-ga';
 
 import '@material/button/dist/mdc.button.css';
 import '@material/card/dist/mdc.card.css';
@@ -47,15 +50,17 @@ import { AppContainer } from 'react-hot-loader';
 import App from './App';
 // @ts-ignore
 import { unregister } from './registerServiceWorker';
-// @ts-ignore
-import { BrowserRouter as Router } from 'react-router-dom';
 import { RMWCProvider } from '@rmwc/provider';
+
+const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL
+});
 
 const renderApp = (Component: React.ComponentType<any>) => {
   ReactDOM.render(
     <RMWCProvider>
       <AppContainer>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router history={history}>
           <Component location={window.location.href} />
         </Router>
       </AppContainer>
@@ -70,8 +75,17 @@ if (module.hot) {
   module.hot.accept(['./App'], () => renderApp(App));
 }
 
+const initAnalytics = () => {
+  ReactGA.initialize('UA-97702366-5');
+  const doPageView = () => ReactGA.pageview(window.location.pathname + window.location.search)
+  history.listen(() => doPageView());
+  doPageView();
+}
+
+
 const init = () => {
   renderApp(App);
+  initAnalytics();
   unregister();
 };
 
