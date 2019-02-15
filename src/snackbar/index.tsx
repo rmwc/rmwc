@@ -6,7 +6,8 @@ import { Button } from '@rmwc/button';
 import {
   componentFactory,
   FoundationComponent,
-  handleDeprecations
+  handleDeprecations,
+  closest
 } from '@rmwc/base';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
@@ -116,7 +117,6 @@ export class Snackbar extends FoundationComponent<
 
   private root = this.createElement('root');
   isShowing_ = false;
-  dismissesOnAction: any;
   labelEl: HTMLElement | null = null;
   show: any;
   announce = util.announce;
@@ -177,12 +177,20 @@ export class Snackbar extends FoundationComponent<
 
   handleSurfaceClick(evt: React.MouseEvent) {
     if (evt.target instanceof Element) {
+      let el = evt.target;
+      // corrects an issue where they were clicking on
+      // the inside a button
+      // TODO, improve this to be more scalable to any element
+      if (el.classList.contains('mdc-button__label')) {
+        el = closest(el, '.mdc-button') as Element;
+      }
+
       if (
         this.props.dismissesOnAction &&
-        evt.target.classList.contains('mdc-snackbar__action')
+        el.classList.contains('mdc-snackbar__action')
       ) {
         this.foundation.handleActionButtonClick(evt);
-      } else if (evt.target.classList.contains('mdc-snackbar__dismiss')) {
+      } else if (el.classList.contains('mdc-snackbar__dismiss')) {
         this.foundation.handleActionIconClick(evt);
       }
     }
