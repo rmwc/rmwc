@@ -1,7 +1,7 @@
 {
   "name": "rmwc-main",
   "author": "James Friedman",
-  "version": "5.1.4",
+  "version": "5.1.3",
   "private": true,
   "sideEffects": false,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
@@ -43,6 +43,7 @@
     "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && git add --all",
+    "postpublish": "npm run build:docs && git add --all && git commit -m 'Building docs' &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
   "devDependencies": {
