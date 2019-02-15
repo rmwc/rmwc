@@ -531,14 +531,11 @@ export class SelectBase extends FoundationComponent<
     };
   }
 
-  sync(props: SelectProps, prevProps?: SelectProps) {
+  sync(props: SelectProps, prevProps: SelectProps) {
     // For controlled selects that are enhanced
     // we need to jump through some checks to see if we need to update the
     // value in our foundation
-    if (
-      props.value !== undefined &&
-      (!prevProps || prevProps.value !== props.value)
-    ) {
+    if (props.value !== prevProps.value) {
       this.foundation.setValue(props.value);
     }
 
@@ -577,8 +574,7 @@ export class SelectBase extends FoundationComponent<
   }
 
   handleClick(evt: any) {
-    const { onClick, onMouseDown, onTouchStart } = this.props;
-    evt.type === 'click' && onClick && onClick(evt);
+    const { onMouseDown, onTouchStart } = this.props;
     evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
     evt.type === 'touchstart' && onTouchStart && onTouchStart(evt);
 
@@ -589,7 +585,13 @@ export class SelectBase extends FoundationComponent<
     };
 
     if (this.selectedText) this.selectedText.focus();
-    this.foundation.handleClick(getNormalizedXCoordinate(evt));
+
+    // Timeout corrects an issue for firefox not changing the value
+    // https://github.com/jamesmfriedman/rmwc/issues/412
+    const coord = getNormalizedXCoordinate(evt);
+    setTimeout(() => {
+      this.foundation.handleClick(coord);
+    });
   }
 
   handleKeydown(evt: any) {
@@ -692,7 +694,6 @@ export class SelectBase extends FoundationComponent<
       onChange,
       onFocus,
       onBlur,
-      onClick,
       onKeyDown,
       invalid,
       inputRef,

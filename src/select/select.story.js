@@ -123,6 +123,53 @@ class EnhancedSelect extends React.Component {
   }
 }
 
+function ControlledSelect() {
+  const [value, setValue] = React.useState(undefined);
+  const opts = [
+    {
+      label: 'Cookies',
+      value: '1'
+    },
+    {
+      label: 'Pizza',
+      value: '2'
+    },
+    {
+      label: 'Icecream',
+      value: '3'
+    }
+  ];
+
+  const opts2 = ['Cookies', 'Pizza', 'Icecream'];
+
+  return (
+    <>
+      <Select
+        value={value}
+        onChange={evt => {
+          setValue(evt.target.value);
+          console.log(evt.target.value, evt.currentTarget.value);
+        }}
+        label="Array"
+        options={opts2}
+      />
+      <select
+        value={value}
+        onChange={evt => {
+          setValue(evt.target.value);
+          console.log(evt.target.value, evt.currentTarget.value);
+        }}
+      >
+        {opts2.map(o => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+    </>
+  );
+}
+
 storiesOf('Inputs and Controls', module)
   .add('Select with object', () => (
     <Select
@@ -164,4 +211,14 @@ storiesOf('Inputs and Controls', module)
       <option value="Icecream">Icecream</option>
     </Select>
   ))
+  .add('Select with children', () => (
+    <Select>
+      <option value="Cookies">Cookies</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Icecream">Icecream</option>
+    </Select>
+  ))
+  .add('Controlled Select', () => {
+    return <ControlledSelect />;
+  })
   .add('Mutating Select', () => <MutatingSelect />);
