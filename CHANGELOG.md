@@ -1,3 +1,9 @@
+#### 5.1.4 (2019-02-15)
+
+##### Bug Fixes
+
+* **Select:**  Fixes #412 Select issue with Firefox (cbebfe97)
+
 #### 5.1.3 (2019-02-14)
 
 ##### Bug Fixes
