@@ -1,7 +1,7 @@
 {
   "name": "rmwc-main",
   "author": "James Friedman",
-  "version": "5.1.5",
+  "version": "5.1.4",
   "private": true,
   "sideEffects": false,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
@@ -25,7 +25,7 @@
     "install": "lerna bootstrap",
     "start": "react-app-rewired start",
     "build:docsite": "react-app-rewired build && rm -R -f docs && mv build docs",
-    "build:docs": "npm run docgen && npm run build:docsite",
+    "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
     "build:code": "npm run clean && node scripts/build-code.js",
     "build:lib": "node scripts/build-lib.js",
     "build": "npm run clean && npm run build:docs && npm run build:code",
@@ -42,8 +42,8 @@
     "changelog": "changelog",
     "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
-    "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && npm run build:docs && git add --all",
-    "postpublish": "npm run clean",
+    "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && npm run docgen && git add --all",
+    "postpublish": "npm run build:docsite && git add --all && git commit -m 'Building docs' &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
   "devDependencies": {
