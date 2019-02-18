@@ -1,3 +1,11 @@
+#### 5.1.5 (2019-02-18)
+
+##### Bug Fixes
+
+* **Docs:**  Correcting doc build change detection issue with Lerna (a31c2497)
+* **Typescript:**  Correct package.json types declaration (1462bdce)
+* **Snackbar:**  Corrects an with dismissing when clicking a button label (d4445d38)
+
 #### 5.1.4 (2019-02-15)
 
 ##### Bug Fixes

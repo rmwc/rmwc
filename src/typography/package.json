@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/typography",
-  "version": "5.1.4",
+  "version": "5.1.5",
   "description": "RMWC Typography component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@material/typography": "^0.44.0",
-    "@rmwc/base": "^5.1.4"
+    "@rmwc/base": "^5.1.5"
   },
   "gitHead": "74349b72e854a76ea441e7d09964b147c68ff35e"
 }
