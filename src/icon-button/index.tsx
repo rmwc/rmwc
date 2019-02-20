@@ -166,14 +166,11 @@ class IconButtonToggle extends FoundationComponent<
 }
 
 export const IconButton = ({
-  icon,
   ...rest
 }: IconButtonProps & RMWC.ComponentProps) => {
   if (rest.onIcon) {
-    return <IconButtonToggle {...rest} icon={icon} />;
+    return <IconButtonToggle {...rest} />;
   }
 
-  return (
-    <IconButtonRoot aria-hidden="true" tag="button" {...rest} icon={icon} />
-  );
+  return <IconButtonRoot aria-hidden="true" tag="button" {...rest} />;
 };

@@ -52,9 +52,12 @@ const handleClassNames = (
 const handleTag = (props: any, defaultTag: RMWC.TagT, tag?: RMWC.TagT) => {
   // Handle the case where we are extending a component but passing
   // a string as a tag. For instance, extending an Icon but rendering a span
-  if (typeof defaultTag !== 'string' && typeof tag === 'string') {
+  if (typeof defaultTag !== 'string') {
     props.tag = tag;
+    return defaultTag;
   }
+
+  return tag || defaultTag;
 };
 
 const handleConsumeProps = (props: any, consumeProps: string[]) => {
@@ -62,6 +65,7 @@ const handleConsumeProps = (props: any, consumeProps: string[]) => {
     delete props[p];
   });
 };
+
 export const componentFactory = <P extends {}>({
   displayName,
   classNames = [],
@@ -76,21 +80,13 @@ export const componentFactory = <P extends {}>({
     let newProps = rest;
 
     handleClassNames(newProps, classNames, className, theme);
-    handleTag(newProps, defaultTag, tag);
+    const Tag = handleTag(newProps, defaultTag, tag);
+
     if (deprecate) {
       newProps = handleDeprecations(newProps, deprecate, displayName);
     }
     handleConsumeProps(newProps, consumeProps);
-
     const finalProps: RMWC.ComponentProps = newProps;
-
-    // Do some switching to figure out what tag to use
-    // if we are extending an icon, we can still honor
-    // someone passing in an 'a' tag, while extending the icon
-    const Tag =
-      typeof defaultTag !== 'string' && typeof tag === 'string'
-        ? defaultTag
-        : tag || defaultTag;
 
     // @ts-ignore
     return render ? (

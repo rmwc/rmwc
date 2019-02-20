@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Link, BrowserRouter } from 'react-router-dom';
+
 import { storiesOf } from '@storybook/react';
 import {
   TextField,
@@ -382,6 +384,19 @@ function Bug842vo56019() {
   );
 }
 
+function Bug415() {
+  return (
+    <BrowserRouter>
+      <IconButton
+        icon={{ icon: 'edit', size: 'medium' }} // or icon="edit"
+        label="some label"
+        tag={Link}
+        to="/link"
+      />
+    </BrowserRouter>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelected={() => console.log('selected')}>
@@ -446,4 +461,5 @@ storiesOf('Bugs', module)
   .add('#361', () => <Bug361 />)
   .add('#370', () => <Bug370 />)
   .add('#374', () => <Bug374 />)
-  .add('#842vo56019', () => <Bug842vo56019 />);
+  .add('#842vo56019', () => <Bug842vo56019 />)
+  .add('#415', () => <Bug415 />);
