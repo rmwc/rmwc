@@ -2983,7 +2983,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 67,
+															"line": 71,
 															"character": 12
 														}
 													],
@@ -3125,7 +3125,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 71,
+															"line": 75,
 															"character": 14
 														}
 													],
@@ -3147,7 +3147,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 70,
+															"line": 74,
 															"character": 14
 														}
 													],
@@ -3165,7 +3165,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 68,
+															"line": 72,
 															"character": 17
 														}
 													],
@@ -3213,7 +3213,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 69,
+															"line": 73,
 															"character": 11
 														}
 													],
@@ -3329,7 +3329,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 66,
+															"line": 70,
 															"character": 13
 														}
 													],
@@ -3347,7 +3347,7 @@
 													"sources": [
 														{
 															"fileName": "node_modules/@rmwc/base/component.tsx",
-															"line": 72,
+															"line": 76,
 															"character": 8
 														}
 													],
@@ -3450,7 +3450,7 @@
 											"sources": [
 												{
 													"fileName": "node_modules/@rmwc/base/component.tsx",
-													"line": 65,
+													"line": 69,
 													"character": 47
 												}
 											]
@@ -3510,7 +3510,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/component.tsx",
-							"line": 65,
+							"line": 69,
 							"character": 29
 						}
 					]
@@ -3655,7 +3655,7 @@
 					"sources": [
 						{
 							"fileName": "node_modules/@rmwc/base/component.tsx",
-							"line": 60,
+							"line": 63,
 							"character": 24
 						}
 					]
@@ -3713,8 +3713,37 @@
 								}
 							],
 							"type": {
-								"type": "intrinsic",
-								"name": "void"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "reference",
+										"name": "ComponentClass",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											},
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									{
+										"type": "reference",
+										"name": "FunctionComponent",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								]
 							}
 						}
 					],

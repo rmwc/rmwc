@@ -1,3 +1,9 @@
+#### 5.1.7 (2019-02-20)
+
+##### Bug Fixes
+
+* **IconButton:**  Corrects issue with extending components where defaultTag is also a component #415 (96dc0be9)
+
 #### 5.1.6 (2019-02-18)
 
 #### 5.1.5 (2019-02-18)
