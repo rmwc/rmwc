@@ -263,12 +263,14 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
 
   registerBodyClickListener() {
     document.body.addEventListener('click', this.handleBodyClick);
+    document.body.addEventListener('touchstart', this.handleBodyClick);
   }
   deregisterBodyClickListener() {
     document.body.removeEventListener('click', this.handleBodyClick);
+    document.body.removeEventListener('touchstart', this.handleBodyClick);
   }
 
-  handleBodyClick(evt: MouseEvent) {
+  handleBodyClick(evt: MouseEvent | TouchEvent) {
     this.foundation && this.foundation.handleBodyClick(evt);
   }
 
