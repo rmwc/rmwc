@@ -1,3 +1,10 @@
+#### 5.1.8 (2019-02-22)
+
+##### Bug Fixes
+
+* **Menu:**  Corrects Menu not closing on touch devices (23598c68)
+* **Snackabar:**  Corrects issue with rendering JSX content in snackbars #418 (f6a5a60b)
+
 #### 5.1.7 (2019-02-20)
 
 ##### Bug Fixes
