@@ -224,8 +224,16 @@ export class Snackbar extends FoundationComponent<
           className="mdc-snackbar__surface"
           onClick={this.handleSurfaceClick}
         >
-          <SnackbarLabel ref={(el: HTMLDivElement) => (this.labelEl = el)}>
+          <SnackbarLabel>
             {message}
+            {/**
+             * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
+             * Wrapping the content for accessibility so it can be announced for screen readers
+             */}
+            <div
+              style={{ display: 'none' }}
+              ref={(el: HTMLDivElement) => (this.labelEl = el)}
+            />
           </SnackbarLabel>
 
           <SnackbarActions>

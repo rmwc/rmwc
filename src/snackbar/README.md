@@ -5,6 +5,7 @@
 - Module **@rmwc/snackbar**  
 - Import styles:
   - import **'@material/snackbar/dist/mdc.snackbar.css'**;
+  - import **'@material/button/dist/mdc.button.css'**;
 - MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ```jsx render
