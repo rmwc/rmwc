@@ -34,7 +34,8 @@
   "dependencies": {
     "@material/snackbar": "^0.44.0",
     "@rmwc/base": "^5.1.8",
-    "@rmwc/button": "^5.1.8"
+    "@rmwc/button": "^5.1.8",
+    "@rmwc/icon-button": "^5.1.8"
   },
   "gitHead": "41bbd3e5cb78bd672ee6a855b5407fbe37a7f815"
 }
