@@ -32,10 +32,10 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/tab": "^0.44.0",
-    "@material/tab-bar": "^0.44.0",
+    "@material/tab": "^1.0.0-0",
+    "@material/tab-bar": "^1.0.0-0",
     "@material/tab-indicator": "^0.43.0",
-    "@material/tab-scroller": "^0.44.0",
+    "@material/tab-scroller": "^1.0.0-0",
     "@rmwc/base": "^5.1.8",
     "@rmwc/icon": "^5.1.8"
   },

@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
