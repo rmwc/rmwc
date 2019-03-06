@@ -39,6 +39,7 @@
   "dependencies": {
     "@rmwc/avatar": "^5.1.8",
     "@rmwc/base": "^5.1.8",
+"@rmwc/types": "^5.1.8",
     "@rmwc/button": "^5.1.8",
     "@rmwc/card": "^5.1.8",
     "@rmwc/checkbox": "^5.1.8",
@@ -75,7 +76,7 @@
     "@rmwc/toolbar": "^5.1.8",
     "@rmwc/top-app-bar": "^5.1.8",
     "@rmwc/typography": "^5.1.8",
-    "material-components-web": "^1.0.0-0"
+    "material-components-web": "^1.0.0-1"
   },
   "gitHead": "41bbd3e5cb78bd672ee6a855b5407fbe37a7f815"
 }

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-// @ts-ignore
+import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCSliderFoundation } from '@material/slider';
 import { componentFactory, FoundationComponent, debounce } from '@rmwc/base';
 
@@ -271,43 +271,62 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
       hasClass: (className: string) => this.root.hasClass(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      getAttribute: (name: string) => this.root.getProp(name as any),
+      getAttribute: (name: string) =>
+        this.root.getProp(name as any) as string | null,
       setAttribute: debounce(
         (name: string, value: any) => this.root.setProp(name as any, value),
         300
       ),
       removeAttribute: (name: string) => this.root.removeProp(name as any),
       computeBoundingRect: () =>
-        this.root.ref && this.root.ref.getBoundingClientRect(),
-      getTabIndex: () => this.root.ref && this.root.ref.tabIndex,
-      registerInteractionHandler: (type: string, handler: () => void) => {
-        this.root.addEventListener(type, handler);
+        this.root.ref
+          ? this.root.ref.getBoundingClientRect()
+          : ({} as ClientRect),
+      getTabIndex: () => (this.root.ref ? this.root.ref.tabIndex : 0),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        this.root.addEventListener(evtType, handler);
       },
-      deregisterInteractionHandler: (type: string, handler: () => void) => {
-        this.root.removeEventListener(type, handler);
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        this.root.removeEventListener(evtType, handler);
       },
-      registerThumbContainerInteractionHandler: (
-        type: string,
-        handler: () => void
-      ) => {
-        this.thumbContainer.addEventListener(type, handler);
+      registerThumbContainerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        this.thumbContainer.addEventListener(evtType, handler);
       },
-      deregisterThumbContainerInteractionHandler: (
-        type: string,
-        handler: () => void
-      ) => {
-        this.thumbContainer.removeEventListener(type, handler);
+      deregisterThumbContainerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        this.thumbContainer.removeEventListener(evtType, handler);
       },
-      registerBodyInteractionHandler: (type: string, handler: () => void) => {
-        document.body && document.body.addEventListener(type, handler);
+      registerBodyInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        document.body && document.body.addEventListener(evtType, handler);
       },
-      deregisterBodyInteractionHandler: (type: string, handler: () => void) => {
-        document.body && document.body.removeEventListener(type, handler);
+      deregisterBodyInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {
+        document.body && document.body.removeEventListener(evtType, handler);
       },
-      registerResizeHandler: (handler: () => void) => {
+      registerResizeHandler: (
+        handler: SpecificEventListener<'resize'>
+      ): void => {
         window.addEventListener('resize', handler);
       },
-      deregisterResizeHandler: (handler: () => void) => {
+      deregisterResizeHandler: (
+        handler: SpecificEventListener<'resize'>
+      ): void => {
         window.removeEventListener('resize', handler);
       },
       notifyInput: () => {
@@ -322,7 +341,7 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
       setTrackStyleProperty: (propertyName: string, value: any) => {
         this.track && this.track.style.setProperty(propertyName, value);
       },
-      setMarkerValue: (value: string) => {
+      setMarkerValue: (value: number) => {
         this.sliderPin.setProp('value', value);
       },
       appendTrackMarkers: (numMarkers: number) => {
@@ -334,15 +353,15 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
       setLastTrackMarkersStyleProperty: (propertyName: string, value: any) => {
         if (this.root.ref) {
           // We remove and append new nodes, thus, the last track marker must be dynamically found.
-          const lastTrackMarker = this.root.ref.querySelector(
-            MDCSliderFoundation.strings.LAST_TRACKMARKER_SELECTOR
+          const lastTrackMarker = this.root.ref.querySelector<HTMLElement>(
+            MDCSliderFoundation.strings.LAST_TRACK_MARKER_SELECTOR
           );
           lastTrackMarker &&
             lastTrackMarker.style.setProperty(propertyName, value);
         }
       },
       isRTL: () =>
-        this.root.ref && getComputedStyle(this.root.ref).direction === 'rtl'
+        !!this.root.ref && getComputedStyle(this.root.ref).direction === 'rtl'
     });
   }
 

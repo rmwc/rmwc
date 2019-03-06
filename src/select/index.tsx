@@ -370,7 +370,7 @@ export class SelectBase extends FoundationComponent<
     return {
       getValue: () => {
         const value = this.nativeControl && this.nativeControl.value;
-        return value === '' && this.props.placeholder ? ' ' : value;
+        return value === '' && this.props.placeholder ? ' ' : value || '';
       },
       setValue: (value: string) =>
         this.nativeControl && (this.nativeControl.value = value),
@@ -388,7 +388,7 @@ export class SelectBase extends FoundationComponent<
           : this.root.addClass(MDCSelectFoundation.cssClasses.INVALID);
       },
       checkValidity: () =>
-        this.nativeControl && this.nativeControl.checkValidity()
+        !!this.nativeControl && this.nativeControl.checkValidity()
     };
   }
 
@@ -466,7 +466,7 @@ export class SelectBase extends FoundationComponent<
           // TL;DR: Invalid if no index is selected, or if the first index is selected and has an empty value.
           return (
             this.state.selectedIndex !== -1 &&
-            (this.state.selectedIndex !== 0 || this.value)
+            (this.state.selectedIndex !== 0 || !!this.value)
           );
         } else {
           return true;
@@ -526,7 +526,8 @@ export class SelectBase extends FoundationComponent<
 
   getFoundationMap_() {
     return {
-      leadingIcon: this.leadingIcon_ || undefined
+      leadingIcon:
+        (this.leadingIcon_ && this.leadingIcon_.foundation) || undefined
       // helperText: this.helperText_ ? this.helperText_.foundation : undefined
     };
   }
@@ -813,9 +814,10 @@ export class SelectIcon extends FoundationComponent<IconProps> {
   static displayName = 'SelectIcon';
   private root = this.createElement('root');
 
-  getDefaultFoundation(): any {
+  getDefaultFoundation() {
     return new MDCSelectIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr as any),
+      getAttr: (attr: string) =>
+        this.root.getProp(attr as any) as string | null,
       setAttr: (attr: string, value: string) =>
         this.root.setProp(attr as any, value),
       removeAttr: (attr: string) => this.root.removeProp(attr as any),

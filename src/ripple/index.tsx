@@ -10,6 +10,7 @@ import {
   matches
 } from '@rmwc/base';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
+import { EventType, SpecificEventListener } from '@material/base/types';
 
 export interface RippleSurfaceProps {
   className: string;
@@ -68,23 +69,23 @@ export class Ripple extends FoundationComponent<RippleProps> {
         }
         return false;
       },
-      isSurfaceDisabled: () => this.props.disabled,
+      isSurfaceDisabled: () => !!this.props.disabled,
       addClass: (className: string) => this.surface.addClass(className),
       removeClass: (className: string) => this.surface.removeClass(className),
       containsEventTarget: (target: HTMLElement) =>
-        this.root.ref && this.root.ref.contains(target),
-      registerInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => this.root.addEventListener(evtType, handler, util.applyPassive()),
-      deregisterInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => this.root.removeEventListener(evtType, handler, util.applyPassive()),
-      registerDocumentInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) =>
+        !!this.root.ref && this.root.ref.contains(target),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.removeEventListener(evtType, handler),
+      registerDocumentInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void =>
         document.documentElement.addEventListener(
           evtType,
           handler,
@@ -99,16 +100,17 @@ export class Ripple extends FoundationComponent<RippleProps> {
           handler,
           util.applyPassive()
         ),
-      registerResizeHandler: (handler: (evt: Event) => void) =>
+      registerResizeHandler: (handler: SpecificEventListener<'resize'>): void =>
         window.addEventListener('resize', handler),
-      deregisterResizeHandler: (handler: (evt: Event) => void) =>
-        window.removeEventListener('resize', handler),
+      deregisterResizeHandler: (
+        handler: SpecificEventListener<'resize'>
+      ): void => window.removeEventListener('resize', handler),
       updateCssVariable: (varName: string, value: string) =>
         this.surface.setStyle(varName, value),
       computeBoundingRect: () =>
         this.root.ref
           ? this.root.ref.getBoundingClientRect()
-          : { width: 0, height: 0 },
+          : ({ width: 0, height: 0 } as ClientRect),
       getWindowPageOffset: () => ({
         x: window.pageXOffset,
         y: window.pageYOffset

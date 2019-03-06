@@ -19,6 +19,7 @@ import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { withRipple } from '@rmwc/ripple';
+import { EventType, SpecificEventListener } from '@material/base/types';
 
 /*********************************************************************
  * TextField
@@ -147,22 +148,22 @@ export class TextField extends FoundationComponent<
         addClass: (className: string) => this.root.addClass(className),
         removeClass: (className: string) => this.root.removeClass(className),
         hasClass: (className: string) => this.root.hasClass(className),
-        registerTextFieldInteractionHandler: (
-          evtType: string,
-          handler: () => void
-        ) => this.root.addEventListener(evtType, handler),
-        deregisterTextFieldInteractionHandler: (
-          evtType: string,
-          handler: () => void
-        ) => this.root.removeEventListener(evtType, handler),
+        registerTextFieldInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => this.root.addEventListener(evtType, handler),
+        deregisterTextFieldInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => this.root.removeEventListener(evtType, handler),
         registerValidationAttributeChangeHandler: (
-          handler: (changes: (string | null)[]) => void
-        ) => {
+          handler: (attributeNames: string[]) => void
+        ): MutationObserver => {
           const getAttributesList = (mutationsList: MutationRecord[]) =>
             mutationsList.map(mutation => mutation.attributeName);
           if (this.input.ref) {
             const observer = new MutationObserver(mutationsList =>
-              handler(getAttributesList(mutationsList))
+              handler(getAttributesList(mutationsList) as string[])
             );
             const targetNode = this.input.ref;
             const config = { attributes: true };
@@ -170,19 +171,16 @@ export class TextField extends FoundationComponent<
             return observer;
           }
 
-          return {};
+          return {} as MutationObserver;
         },
-        deregisterValidationAttributeChangeHandler: (observer: null | any) => {
+        deregisterValidationAttributeChangeHandler: (
+          observer: MutationObserver
+        ) => {
           observer && observer.disconnect();
         },
         isFocused: () => {
           return document.activeElement === this.input.ref;
         },
-        isRtl: () =>
-          this.root.ref &&
-          window
-            .getComputedStyle(this.root.ref)
-            .getPropertyValue('direction') === 'rtl',
         ...this.getInputAdapterMethods(),
         ...this.getLabelAdapterMethods(),
         ...this.getLineRippleAdapterMethods(),
@@ -225,8 +223,8 @@ export class TextField extends FoundationComponent<
 
   getOutlineAdapterMethods() {
     return {
-      notchOutline: (labelWidth: number, isRtl: boolean) => {
-        this.outline && this.outline.notch(labelWidth, isRtl);
+      notchOutline: (labelWidth: number) => {
+        !!this.outline && this.outline.notch(labelWidth);
       },
       closeOutline: () => this.outline && this.outline.closeNotch(),
       hasOutline: () => !!this.outline
@@ -235,12 +233,14 @@ export class TextField extends FoundationComponent<
 
   getInputAdapterMethods() {
     return {
-      registerInputInteractionHandler: (evtType: string, handler: () => void) =>
-        this.input.addEventListener(evtType, handler),
-      deregisterInputInteractionHandler: (
-        evtType: string,
-        handler: () => void
-      ) => this.input.removeEventListener(evtType, handler),
+      registerInputInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.input.addEventListener(evtType, handler),
+      deregisterInputInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.input.removeEventListener(evtType, handler),
       getNativeInput: () => this.input.ref
     };
   }
@@ -519,7 +519,8 @@ export class TextFieldIcon extends FoundationComponent<IconProps> {
 
   getDefaultFoundation() {
     return new MDCTextFieldIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr as any),
+      getAttr: (attr: string) =>
+        this.root.getProp(attr as any) as string | null,
       setAttr: (attr: string, value: string) =>
         this.root.setProp(attr as any, value),
       removeAttr: (attr: string) => this.root.removeProp(attr as any),
@@ -527,10 +528,14 @@ export class TextFieldIcon extends FoundationComponent<IconProps> {
         // @ts-ignore
         this.root.setProp('icon', content);
       },
-      registerInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.addEventListener(evtType, handler),
-      deregisterInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.removeEventListener(evtType, handler),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.removeEventListener(evtType, handler),
       notifyIconAction: () => this.emit('onClick', {}, true)
     });
   }

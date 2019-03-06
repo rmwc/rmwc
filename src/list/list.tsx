@@ -151,7 +151,7 @@ export class List extends FoundationComponent<ListProps> {
           const listItem = this.listElements[index];
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_SELECTOR
-          );
+          ) as HTMLInputElement | null;
 
           return toggleEl ? toggleEl.checked : false;
         },
@@ -162,7 +162,7 @@ export class List extends FoundationComponent<ListProps> {
           const listItem = this.listElements[index];
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-          );
+          ) as HTMLInputElement | null;
 
           if (toggleEl) {
             toggleEl.checked = isChecked;

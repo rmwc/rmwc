@@ -5,7 +5,6 @@ import { componentFactory, FoundationComponent } from '@rmwc/base';
 import {
   MDCModalDrawerFoundation,
   MDCDismissibleDrawerFoundation
-  // @ts-ignore
 } from '@material/drawer';
 import { createFocusTrap, FocusTrap } from '@rmwc/base';
 
@@ -88,7 +87,9 @@ export const DrawerRoot = componentFactory<DrawerProps>({
 });
 
 const slidableDrawerFactory = (
-  MDCConstructor: MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
+  MDCConstructor:
+    | typeof MDCModalDrawerFoundation
+    | typeof MDCDismissibleDrawerFoundation,
   displayName: string
 ) =>
   class extends FoundationComponent<DrawerProps> {

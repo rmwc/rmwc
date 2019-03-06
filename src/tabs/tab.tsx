@@ -98,10 +98,12 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
             this.props.contextApi &&
               this.props.contextApi.onTabInteraction(evt);
           },
-          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,
-          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
-          getContentOffsetLeft: () => this.content && this.content.offsetLeft,
-          getContentOffsetWidth: () => this.content && this.content.offsetWidth,
+          getOffsetLeft: () => (this.root.ref ? this.root.ref.offsetLeft : 0),
+          getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
+          getContentOffsetLeft: () =>
+            this.content ? this.content.offsetLeft : 0,
+          getContentOffsetWidth: () =>
+            this.content ? this.content.offsetWidth : 0,
           focus: () => this.root.ref && this.root.ref.focus()
         })
       );

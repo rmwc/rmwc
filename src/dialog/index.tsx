@@ -142,7 +142,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
       );
     this.content =
       this.root.ref &&
-      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENTSELECTOR);
+      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENT_SELECTOR);
     this.buttons =
       this.root.ref &&
       [].slice.call(
@@ -194,15 +194,13 @@ export class Dialog extends FoundationComponent<DialogProps> {
         document.body && document.body.classList.remove(className),
       eventTargetMatches: (target: HTMLElement, selector: string) =>
         matches(target, selector),
-      computeBoundingRect: () =>
-        this.root.ref && this.root.ref.getBoundingClientRect(),
       trapFocus: () => this.focusTrap && this.focusTrap.activate(),
       releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
       isContentScrollable: () => !!this.content && isScrollable(this.content),
       areButtonsStacked: () => areTopsMisaligned(this.buttons),
-      getActionFromEvent: (event: React.SyntheticEvent<HTMLElement>) => {
+      getActionFromEvent: (evt: React.SyntheticEvent<HTMLElement> & Event) => {
         const element = closest(
-          event.target,
+          evt.target,
           `[${MDCDialogFoundation.strings.ACTION_ATTRIBUTE}]`
         );
         return (

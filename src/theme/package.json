@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@material/theme": "^0.43.0",
-    "@rmwc/base": "^5.1.8"
+    "@rmwc/base": "^5.1.8",
+    "@rmwc/types": "^5.1.8"
   },
   "gitHead": "41bbd3e5cb78bd672ee6a855b5407fbe37a7f815"
 }

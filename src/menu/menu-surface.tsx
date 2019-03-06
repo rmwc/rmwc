@@ -3,13 +3,16 @@ import * as React from 'react';
 
 import {
   MDCMenuSurfaceFoundation,
-  util
-  // @ts-ignore
+  util,
+  MDCMenuDimensions
 } from '@material/menu-surface';
 
 import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { MDCMenuDistance } from '@material/menu-surface';
 
-const ANCHOR_CORNER_MAP = {
+const ANCHOR_CORNER_MAP: {
+  [key: string]: keyof typeof MDCMenuSurfaceFoundation.Corner;
+} = {
   bottomEnd: 'BOTTOM_END',
   bottomLeft: 'BOTTOM_LEFT',
   bottomRight: 'BOTTOM_RIGHT',
@@ -91,7 +94,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   set open(value) {
     if (value && this.foundation && !this.foundation.isOpen()) {
       const focusableElements = this.root.ref
-        ? this.root.ref.querySelectorAll(
+        ? this.root.ref.querySelectorAll<HTMLElement>(
             MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
           )
         : [];
@@ -135,9 +138,9 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         this.registerBodyClickListener();
       },
       isElementInContainer: (el: HTMLElement) =>
-        this.root.ref === el || (this.root.ref && this.root.ref.contains(el)),
+        this.root.ref === el || (!!this.root.ref && this.root.ref.contains(el)),
       isRtl: () =>
-        this.root.ref &&
+        !!this.root.ref &&
         getComputedStyle(this.root.ref).getPropertyValue('direction') === 'rtl',
       setTransformOrigin: (origin: string) => {
         this.root.setStyle(
@@ -164,17 +167,17 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         }
       },
       isFirstElementFocused: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement === document.activeElement,
       isLastElementFocused: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement === document.activeElement,
       focusFirstElement: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement.focus &&
         this.firstFocusableElement.focus(),
       focusLastElement: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement.focus &&
         this.firstFocusableElement.focus()
     };
@@ -182,10 +185,10 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
 
   getDimensionAdapterMethods() {
     return {
-      getInnerDimensions: () => {
+      getInnerDimensions: (): MDCMenuDimensions => {
         return {
-          width: this.root.ref && this.root.ref.offsetWidth,
-          height: this.root.ref && this.root.ref.offsetHeight
+          width: this.root.ref ? this.root.ref.offsetWidth : 0,
+          height: this.root.ref ? this.root.ref.offsetHeight : 0
         };
       },
       getAnchorDimensions: () =>
@@ -202,24 +205,13 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
       getWindowScroll: () => {
         return { x: window.pageXOffset, y: window.pageYOffset };
       },
-      setPosition: (position: {
-        top: string;
-        right: string;
-        bottom: string;
-        left: string;
-      }) => {
-        this.root.setStyle('left', 'left' in position ? position.left : null);
-        this.root.setStyle(
-          'right',
-          'right' in position ? position.right : null
-        );
-        this.root.setStyle('top', 'top' in position ? position.top : null);
-        this.root.setStyle(
-          'bottom',
-          'bottom' in position ? position.bottom : null
-        );
+      setPosition: (position: Partial<MDCMenuDistance>) => {
+        this.root.setStyle('left', position.left || null);
+        this.root.setStyle('right', position.right || null);
+        this.root.setStyle('top', position.top || null);
+        this.root.setStyle('bottom', position.bottom || null);
       },
-      setMaxHeight: (height: number) => {
+      setMaxHeight: (height: string) => {
         this.root.setStyle('maxHeight', height);
       }
     };

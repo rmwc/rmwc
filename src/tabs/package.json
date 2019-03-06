@@ -32,11 +32,13 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/tab": "^1.0.0-0",
-    "@material/tab-bar": "^1.0.0-0",
+    "@material/tab": "^1.0.0-1",
+    "@material/tab-bar": "^1.0.0-1",
     "@material/tab-indicator": "^0.43.0",
-    "@material/tab-scroller": "^1.0.0-0",
+    "@material/tab-scroller": "^1.0.0-1",
     "@rmwc/base": "^5.1.8",
+    "@rmwc/ripple": "^5.1.8",
+    "@rmwc/types": "^5.1.8",
     "@rmwc/icon": "^5.1.8"
   },
   "gitHead": "41bbd3e5cb78bd672ee6a855b5407fbe37a7f815"

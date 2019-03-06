@@ -3,7 +3,6 @@
   "author": "James Friedman",
   "version": "5.1.8",
   "private": true,
-  "sideEffects": false,
   "homepage": "https://jamesmfriedman.github.io/rmwc/",
   "description": "RMWC: A React wrapper for Material Design (Web) Components",
   "license": "MIT",
@@ -22,7 +21,7 @@
     "prop-types": "^15.6.2"
   },
   "scripts": {
-    "install": "lerna bootstrap",
+    "install": "lerna bootstrap --force-local --hoist",
     "start": "react-app-rewired start",
     "build:docsite": "react-app-rewired build && rm -R -f docs && mv build docs",
     "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
@@ -59,7 +58,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-router": "^4.4.4",
     "@types/react-router-dom": "^4.3.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "8.0.5",
     "copyfiles": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
@@ -79,8 +78,8 @@
     "react-styleguidist": "^8.0.6",
     "tslint": "^5.12.1",
     "typedoc": "^0.14.2",
-    "typescript": "^3.2.2",
-    "webpack": "^4.28.3"
+    "typescript": "^3.3.3333",
+    "webpack": "4.28.3"
   },
   "eslintIgnore": [
     "node_modules"

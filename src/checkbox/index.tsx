@@ -14,6 +14,7 @@ import {
  * on a checkbox would be fun which consequently kills Reacts ability
  * to do the same.
  */
+// @ts-ignore
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
 export interface CheckboxProps
@@ -106,12 +107,11 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
         this.nativeCb.setProp(attr as any, value),
       removeNativeControlAttr: (attr: string) =>
         this.nativeCb.removeProp(attr as any),
-      getNativeControl: () => this.nativeCb.ref,
-      isIndeterminate: () => this.props.indeterminate,
+      isIndeterminate: () => !!this.props.indeterminate,
       isChecked: () =>
         this.props.checked !== undefined
-          ? this.props.checked
-          : this.nativeCb.ref && this.nativeCb.ref.checked,
+          ? !!this.props.checked
+          : !!this.nativeCb.ref && this.nativeCb.ref.checked,
       hasNativeControl: () => !!this.nativeCb.ref,
       setNativeControlDisabled: (disabled: boolean) =>
         this.nativeCb.setProp('disabled', disabled),

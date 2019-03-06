@@ -32,8 +32,9 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/switch": "^1.0.0-0",
+    "@material/switch": "^1.0.0-1",
     "@rmwc/base": "^5.1.8",
+"@rmwc/types": "^5.1.8",
     "@rmwc/formfield": "^5.1.8",
     "@rmwc/ripple": "^5.1.8",
     "@rmwc/toggleable": "^5.1.8"

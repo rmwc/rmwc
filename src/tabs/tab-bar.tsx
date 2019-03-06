@@ -93,10 +93,10 @@ export class TabBar extends FoundationComponent<TabBarProps> {
         getScrollPosition: () =>
           this.tabScroller && this.tabScroller.getScrollPosition(),
         getScrollContentWidth: () =>
-          this.tabScroller && this.tabScroller.getScrollContentWidth(),
-        getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
+          this.tabScroller ? this.tabScroller.getScrollContentWidth() : 0,
+        getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
         isRTL: () =>
-          this.root.ref &&
+          !!this.root.ref &&
           window
             .getComputedStyle(this.root.ref)
             .getPropertyValue('direction') === 'rtl',
@@ -122,7 +122,7 @@ export class TabBar extends FoundationComponent<TabBarProps> {
         getFocusedTabIndex: () => {
           const tabElements = this.getTabElements();
           const activeElement = document.activeElement as Element;
-          return tabElements && tabElements.indexOf(activeElement);
+          return tabElements ? tabElements.indexOf(activeElement) : -1;
         },
         getIndexOfTabById: (id: string) => {
           for (let i = 0; i < this.tabList.length; i++) {

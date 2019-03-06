@@ -146,11 +146,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Events
    **************************************************/
-  addEventListener(
-    evtName: string,
-    callback: (evt: Event) => void,
-    shouldBubble?: boolean
-  ) {
+  addEventListener(evtName: string, callback: (evt: Event) => void) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName] !== callback) {
       this._events[propName] = callback;
@@ -158,11 +154,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     }
   }
 
-  removeEventListener(
-    evtName: string,
-    callback: (evt: Event) => void,
-    shouldBubble?: boolean
-  ) {
+  removeEventListener(evtName: string, callback: (evt: Event) => void) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName]) {
       delete this._events[propName];
