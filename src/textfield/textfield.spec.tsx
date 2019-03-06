@@ -178,4 +178,22 @@ describe('TextFieldHelperText', () => {
   it('renders', () => {
     mount(<TextFieldHelperText>Hello</TextFieldHelperText>);
   });
+
+  it('sets the correct classNames', () => {
+    const el = mount(<TextFieldHelperText>Hello</TextFieldHelperText>);
+    expect(el.html().includes('mdc-text-field-helper-line')).toBe(true);
+    expect(el.html().includes('mdc-text-field-helper-text')).toBe(true);
+  })
+
+  it('uses the props', () => {
+    const el = mount(
+      <TextFieldHelperText persistent validationMsg>Hello</TextFieldHelperText>
+    );
+    expect(
+      el.html().includes('mdc-text-field-helper-text--persistent')
+    ).toBe(true);
+    expect(
+      el.html().includes('mdc-text-field-helper-text--validation-msg')
+    ).toBe(true);
+  })
 });

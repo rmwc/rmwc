@@ -298,14 +298,14 @@ export class TextField extends FoundationComponent<
       typeof helpText === 'object' && !React.isValidElement(helpText);
 
     return (
-      <div className="mdc-text-field-helper-line">
+      <React.Fragment>
         {helpText && shouldSpread ? (
           <TextFieldHelperText {...helpText as any} />
         ) : (
           <TextFieldHelperText>{helpText}</TextFieldHelperText>
         )}
         {!textarea && renderedCharacterCounter}
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -503,7 +503,14 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
       'mdc-text-field-helper-text--validation-msg': props.validationMsg
     }
   ],
-  consumeProps: ['persistent', 'validationMsg']
+  consumeProps: ['persistent', 'validationMsg'],
+  render: (props, ref, Tag) => {
+    return (
+      <div className='mdc-text-field-helper-line'>
+        <Tag ref={ref} {...props} />
+      </div>
+    )
+  }
 });
 
 /*********************************************************************
