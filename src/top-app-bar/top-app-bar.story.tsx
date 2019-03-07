@@ -10,11 +10,12 @@ import {
   TopAppBarNavigationIcon,
   TopAppBarActionItem,
   TopAppBarTitle,
-  SimpleTopAppBar
+  SimpleTopAppBar,
+  TopAppBarProps
 } from './';
 
-const ToolbarStory = (props: any) => (
-  <div style={{ margin: '-24px' }}>
+const TopAppBarStory = (props: TopAppBarProps) => (
+  <div style={{ margin: '-24px', boxSizing: 'border-box' }}>
     <TopAppBar {...props} onNav={action('onNav')}>
       <TopAppBarRow>
         <TopAppBarSection alignStart>
@@ -44,6 +45,25 @@ const ToolbarStory = (props: any) => (
   </div>
 );
 
+function NestedTopAppBar() {
+  const [el, setEl] = React.useState<HTMLDivElement | null>(null);
+
+  return (
+    <div
+      ref={el => setEl(el)}
+      style={{
+        padding: '4rem',
+        height: '300px',
+        boxSizing: 'border-box',
+        background: 'red',
+        overflowY: 'auto'
+      }}
+    >
+      <TopAppBarStory scrollTarget={el} />
+    </div>
+  );
+}
+
 storiesOf('TopAppBar', module)
   .add('minimal', () => (
     <div style={{ margin: '-24px' }}>
@@ -56,11 +76,12 @@ storiesOf('TopAppBar', module)
       </TopAppBar>
     </div>
   ))
-  .add('fixed', () => <ToolbarStory fixed />)
-  .add('dense', () => <ToolbarStory dense />)
-  .add('short', () => <ToolbarStory short />)
-  .add('shortCollapsed', () => <ToolbarStory shortCollapsed />)
-  .add('prominent', () => <ToolbarStory prominent />)
+  .add('fixed', () => <TopAppBarStory fixed />)
+  .add('dense', () => <TopAppBarStory dense />)
+  .add('short', () => <TopAppBarStory short />)
+  .add('shortCollapsed', () => <TopAppBarStory shortCollapsed />)
+  .add('prominent', () => <TopAppBarStory prominent />)
+  .add('nested', () => <NestedTopAppBar />)
   .add('SimpleTopAppBar', () => (
     <div style={{ margin: '-24px' }}>
       <SimpleTopAppBar

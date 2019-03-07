@@ -28,7 +28,7 @@ export interface TopAppBarProps {
   /** Styles the top app bar to be dense. */
   dense?: boolean;
   /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.*/
-  scrollTarget?: Element;
+  scrollTarget?: Element | null;
 }
 
 export const TopAppBarRoot = componentFactory<TopAppBarProps>({
@@ -230,9 +230,11 @@ class TopAppBarBase extends FoundationComponent<
     this.foundation.destroyScrollHandler();
     this.scrollTarget = target;
     this.foundation.initScrollHandler();
+    console.log('Setting target', target);
   }
 
   sync(props: TopAppBarProps, prevProps: TopAppBarProps) {
+    console.log(props.scrollTarget, this.scrollTarget);
     this.syncProp(props.scrollTarget, this.scrollTarget, () => {
       this.scrollTarget = props.scrollTarget || window;
       this.setScrollHandler(this.scrollTarget);
@@ -240,7 +242,7 @@ class TopAppBarBase extends FoundationComponent<
   }
 
   render() {
-    const { onNav, ...rest } = this.props;
+    const { onNav, scrollTarget, ...rest } = this.props;
     return <TopAppBarRoot {...this.root.props(rest)} ref={this.root.setRef} />;
   }
 }

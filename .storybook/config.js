@@ -13,6 +13,12 @@ function loadStories() {
 
 const StylesDecorator = storyFn => (
   <div className="mdc-typography" style={{ padding: '24px', height: '100%' }}>
+    <style>{`
+    body {
+      margin: 0;
+    }
+    
+    `}</style>
     {storyFn()}
   </div>
 );
