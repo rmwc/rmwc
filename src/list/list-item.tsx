@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { componentFactory, classNames } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 
 export interface ListItemProps extends RMWC.WithRippleProps {
   /** A modifier for a selected state. */
@@ -114,9 +114,9 @@ export interface SimpleListItemProps extends ListItemProps {
   /** Secondary Text for the ListItem. */
   secondaryText?: React.ReactNode;
   /** A graphic icon for the ListItem. */
-  graphic?: IconPropT;
+  graphic?: RMWC.IconPropT;
   /** A meta icon for the ListItem */
-  metaIcon?: IconPropT;
+  metaIcon?: RMWC.IconPropT;
   /** Meta content for the ListItem instead of an icon. */
   meta?: React.ReactNode;
   /** Children to render */

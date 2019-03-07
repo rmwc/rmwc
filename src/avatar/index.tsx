@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as RMWC from '@rmwc/types';
 import { componentFactory } from '@rmwc/base';
-import { Icon, IconProps, IconSizeT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
 export interface AvatarProps {
   /** The url for the image. This gets passed to the Icon component. */
   src?: string;
   /** The size of the avatar */
-  size?: IconSizeT;
+  size?: RMWC.IconSizeT;
   /** The name of the user. This will get converted to initials and set the hover title. */
   name?: string;
   /** Make the avatar square. */
@@ -128,7 +128,7 @@ export interface AvatarCountProps {
   /** Optionally renders a "+" to indicate overlow. */
   overflow?: boolean;
   /** The size of the avatar */
-  size?: IconSizeT;
+  size?: RMWC.IconSizeT;
   /** Make the avatar square. */
   square?: boolean;
   /** Make the avatar interactive. */

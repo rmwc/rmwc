@@ -13,7 +13,7 @@ import {
   SimpleTopAppBar
 } from './';
 
-const ToolbarStory = props => (
+const ToolbarStory = (props: any) => (
   <div style={{ margin: '-24px' }}>
     <TopAppBar {...props} onNav={action('onNav')}>
       <TopAppBarRow>

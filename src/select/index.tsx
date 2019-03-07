@@ -8,7 +8,7 @@ import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
@@ -16,7 +16,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export interface FormattedOption extends React.AllHTMLAttributes<any> {
   label: string;
-  value: string;
+  value?: string;
   options?: FormattedOption[];
 }
 
@@ -46,12 +46,12 @@ export interface SelectProps {
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
   inputRef?: (ref: HTMLSelectElement | null) => void;
   /** Add a leading icon. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
 }
 
 export interface DeprecatedSelectProps {
   /** DEPRECATED: Changed to icon. */
-  withLeadingIcon?: IconPropT;
+  withLeadingIcon?: RMWC.IconPropT;
 }
 
 /**

@@ -5,7 +5,7 @@ import * as React from 'react';
 import { MDCTabFoundation } from '@material/tab';
 
 import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';
-import { IconProps, Icon, IconPropT } from '@rmwc/icon';
+import { IconProps, Icon } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
 import { withTabBarContext, TabBarContextT } from './tab-bar-context';
@@ -17,7 +17,7 @@ export interface TabProps {
   /** The label for the tab, passed as children. */
   children?: React.ReactNode;
   /** The icon to use for the tab. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** Stacks the icon on top of the text label */
   stacked?: boolean;
   /** Restricts the indicator to the content */

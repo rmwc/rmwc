@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { select } from '@storybook/addon-knobs';
+import { select, array } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
-import { Button } from '@rmwc/button';
+import { Button } from '../button';
 
 class MenuStory extends React.Component {
   state = {
@@ -25,20 +25,22 @@ class MenuStory extends React.Component {
 
         <Menu
           open={this.state.open}
-          anchorCorner={select(
-            'anchorCorner',
-            {
-              bottomEnd: 'BOTTOM_END',
-              bottom: 'BOTTOM_LEFT',
-              bottomRight: 'BOTTOM_RIGHT',
-              bottomStart: 'BOTTOM_START',
-              topEnd: 'TOP_END',
-              topLeft: 'TOP_LEFT',
-              topRight: 'TOP_RIGHT',
-              topStart: 'TOP_START'
-            },
-            'topStart'
-          )}
+          anchorCorner={
+            array(
+              'anchorCorner',
+              [
+                'bottomEnd',
+                'bottom',
+                'bottomRight',
+                'bottomStart',
+                'topEnd',
+                'topLeft',
+                'topRight',
+                'topStart'
+              ],
+              'topStart'
+            ) as any
+          }
           onClose={evt => {
             this.setState({ open: false });
           }}
@@ -70,20 +72,22 @@ class MenuSurfaceStory extends React.Component {
 
         <MenuSurface
           open={this.state.open}
-          anchorCorner={select(
-            'anchorCorner',
-            {
-              bottomEnd: 'BOTTOM_END',
-              bottom: 'BOTTOM_LEFT',
-              bottomRight: 'BOTTOM_RIGHT',
-              bottomStart: 'BOTTOM_START',
-              topEnd: 'TOP_END',
-              topLeft: 'TOP_LEFT',
-              topRight: 'TOP_RIGHT',
-              topStart: 'TOP_START'
-            },
-            'topStart'
-          )}
+          anchorCorner={
+            array(
+              'anchorCorner',
+              [
+                'bottomEnd',
+                'bottom',
+                'bottomRight',
+                'bottomStart',
+                'topEnd',
+                'topLeft',
+                'topRight',
+                'topStart'
+              ],
+              'topStart'
+            ) as any
+          }
           onOpen={evt => {}}
           onClose={evt => {
             this.setState({ open: false });

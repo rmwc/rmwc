@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconOptions } from '@rmwc/icon';
+import * as RMWC from '@rmwc/types';
 import { deprecationWarning } from '@rmwc/base';
 
 // prettier-ignore
@@ -10,7 +10,7 @@ export interface RMWCProviderProps {
   /** Set the buttons ripple effect globally */
   ripple?: boolean;
   /** Global options for icons */
-  icon?: Partial<IconOptions>;
+  icon?: Partial<RMWC.IconOptions>;
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -27,9 +27,10 @@ export interface DeprecatedRMWCProviderPropsT {
   /** DEPRECATED: Use the 'icon' prop. icon={{strategy: 'className'}} */
   iconStrategy?: IconStrategyT;
   /** DEPRECATED: Use the 'icon' prop. icon={{render: () => <div />}} */
-  iconRender?: (
-    props: { content: React.ReactNode; className: string }
-  ) => React.ReactNode;
+  iconRender?: (props: {
+    content: React.ReactNode;
+    className: string;
+  }) => React.ReactNode;
 }
 
 // Default provider options
@@ -79,7 +80,7 @@ export const RMWCProvider = ({
   ...rest
 }: RMWCProviderProps & DeprecatedRMWCProviderPropsT) => {
   const value = { ...providerDefaults };
-  const iconOptions = { ...value.icon } as IconOptions;
+  const iconOptions = { ...value.icon } as RMWC.IconOptions;
 
   /* istanbul ignore if */
   if (iconClassNameBase || iconClassNamePrefix || iconStrategy || iconRender) {

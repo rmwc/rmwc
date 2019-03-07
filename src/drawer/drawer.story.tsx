@@ -10,7 +10,7 @@ import {
   DrawerTitle,
   DrawerSubtitle
 } from './';
-import { List, ListItem, ListItemGraphic } from '@rmwc/list';
+import { List, ListItem, ListItemGraphic } from '../list';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },
@@ -19,13 +19,17 @@ const menuItems = [
   { displayName: 'Contact', icon: 'phone' }
 ];
 
-const ListItems = props =>
-  menuItems.map((section, i) => (
-    <ListItem key={i} onClick={props.onItemClick}>
-      <ListItemGraphic>{section.icon}</ListItemGraphic>
-      {section.displayName}
-    </ListItem>
-  ));
+const ListItems = (props: any) => (
+  <>
+    {menuItems.map((section, i) => (
+      <ListItem key={i} onClick={props.onItemClick}>
+        <ListItemGraphic>{section.icon}</ListItemGraphic>
+        {section.displayName}
+      </ListItem>
+    ))}
+  </>
+);
+
 storiesOf('Drawers', module).add('Drawer', () => (
   <div style={{ margin: '-24px' }}>
     <Drawer

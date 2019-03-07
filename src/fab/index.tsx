@@ -2,15 +2,15 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 
 export interface FabProps extends RMWC.WithRippleProps {
   /** Make the Fab smaller. */
   mini?: boolean;
   /** The icon for the FAB */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** A trialing icon for the FAB */
-  trailingIcon?: IconPropT;
+  trailingIcon?: RMWC.IconPropT;
   /** Make the Fab extended with a label. */
   label?: React.ReactNode & any;
   /** Content specified as children. */

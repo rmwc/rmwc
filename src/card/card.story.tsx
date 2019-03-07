@@ -9,12 +9,13 @@ import {
   CardActions,
   CardActionButtons,
   CardActionIcons,
-  CardAction
+  CardActionIcon,
+  CardActionButton
 } from './';
 
-import { Typography } from '@rmwc/typography';
-import { ListDivider } from '@rmwc/list';
-import { Icon } from '@rmwc/icon';
+import { Typography } from '../typography';
+import { ListDivider } from '../list';
+import { Icon } from '../icon';
 
 storiesOf('Cards', module)
   .add('Full Featured', () => (
@@ -28,22 +29,18 @@ storiesOf('Cards', module)
           }}
         />
         <div style={{ padding: '0 1rem 1rem 1rem' }}>
-          <Typography use="title" tag="h2">
+          <Typography use="headline6" tag="h2">
             Our Changing Planet
           </Typography>
           <Typography
-            use="subheading1"
+            use="subtitle2"
             tag="h3"
-            theme="text-secondary-on-background"
+            theme="textSecondaryOnBackground"
             style={{ marginTop: '-1rem' }}
           >
             by Kurt Wagner
           </Typography>
-          <Typography
-            use="body1"
-            tag="div"
-            theme="text-secondary-on-background"
-          >
+          <Typography use="body1" tag="div" theme="textSecondaryOnBackground">
             Visit ten places on our planet that are undergoing the biggest
             changes today.
           </Typography>
@@ -51,17 +48,13 @@ storiesOf('Cards', module)
       </CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
-          <CardAction>Read</CardAction>
-          <CardAction>Bookmark</CardAction>
+          <CardActionButton>Read</CardActionButton>
+          <CardActionButton>Bookmark</CardActionButton>
         </CardActionButtons>
         <CardActionIcons>
-          <CardAction
-            iconToggle
-            on={{ label: 'Remove from favorites', content: 'favorite' }}
-            off={{ label: 'Add to favorites', content: 'favorite_border' }}
-          />
-          <CardAction icon="share" />
-          <CardAction icon="more_vert" />
+          <CardActionIcon icon="favorite_border" onIcon="favorite" />
+          <CardActionIcon icon="share" />
+          <CardActionIcon icon="more_vert" />
         </CardActionIcons>
       </CardActions>
     </Card>
@@ -69,10 +62,10 @@ storiesOf('Cards', module)
   .add('Article', () => (
     <Card outlined style={{ width: '21rem' }}>
       <Typography
-        use="subheading2"
+        use="subtitle1"
         tag="div"
         style={{ padding: '0.5rem 1rem' }}
-        theme="text-secondary-on-background"
+        theme="textSecondaryOnBackground"
       >
         Headlines
       </Typography>
@@ -81,10 +74,10 @@ storiesOf('Cards', module)
 
       <CardPrimaryAction>
         <div style={{ padding: '1rem' }}>
-          <Typography use="headline" tag="div">
+          <Typography use="headline5" tag="div">
             Copper on the rise
           </Typography>
-          <Typography use="body1" tag="p" theme="text-secondary-on-background">
+          <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
             Copper price soars amid global market optimism and increased demand.
           </Typography>
         </div>
@@ -94,10 +87,10 @@ storiesOf('Cards', module)
 
       <CardPrimaryAction>
         <div style={{ padding: '1rem' }}>
-          <Typography use="headline" tag="div">
+          <Typography use="headline5" tag="div">
             U.S. tech startups rebound
           </Typography>
-          <Typography use="body1" tag="p" theme="text-secondary-on-background">
+          <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
             Favorable business conditions have allowed startups to secure more
             fundraising deals compared to last year.
           </Typography>
@@ -108,10 +101,10 @@ storiesOf('Cards', module)
 
       <CardPrimaryAction>
         <div style={{ padding: '1rem' }}>
-          <Typography use="headline" tag="div">
+          <Typography use="headline5" tag="div">
             Asia's clean energy ambitions
           </Typography>
-          <Typography use="body1" tag="p" theme="text-secondary-on-background">
+          <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
             China plans to invest billions of dollars for the development of
             over 300 clean energy projects in Southeast Asia.
           </Typography>
@@ -121,9 +114,9 @@ storiesOf('Cards', module)
       <ListDivider />
 
       <CardActions fullBleed>
-        <CardAction>
+        <CardActionButton>
           All Business Headlines <Icon icon="arrow_forward" />
-        </CardAction>
+        </CardActionButton>
       </CardActions>
     </Card>
   ))
@@ -139,9 +132,9 @@ storiesOf('Cards', module)
         >
           <CardMediaContent>
             <Typography
-              use="subheading2"
+              use="subtitle1"
               tag="div"
-              theme="text-primary-on-dark"
+              theme="textPrimaryOnDark"
               style={{
                 padding: '0.5rem 1rem',
                 backgroundImage:
@@ -159,13 +152,9 @@ storiesOf('Cards', module)
       </CardPrimaryAction>
       <CardActions>
         <CardActionIcons>
-          <CardAction
-            iconToggle
-            on={{ label: 'Remove from favorites', content: 'favorite' }}
-            off={{ label: 'Add to favorites', content: 'favorite_border' }}
-          />
-          <CardAction icon="bookmark_border" />
-          <CardAction icon="share" />
+          <CardActionIcon icon="favorite_border" onIcon="favorite" />
+          <CardActionIcon icon="bookmark_border" />
+          <CardActionIcon icon="share" />
         </CardActionIcons>
       </CardActions>
     </Card>

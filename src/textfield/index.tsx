@@ -1,11 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { IconProps, IconPropT } from '@rmwc/icon';
+import { IconProps } from '@rmwc/icon';
+
+import { EventType, SpecificEventListener } from '@material/base/types';
 import {
   MDCTextFieldFoundation,
   MDCTextFieldIconFoundation,
   MDCTextFieldCharacterCounterFoundation
-  // @ts-ignore
 } from '@material/textfield';
 
 import {
@@ -19,7 +20,6 @@ import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { withRipple } from '@rmwc/ripple';
-import { EventType, SpecificEventListener } from '@material/base/types';
 
 /*********************************************************************
  * TextField
@@ -46,9 +46,9 @@ export interface TextFieldProps {
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean;
   /** Add a leading icon. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** Add a trailing icon. */
-  trailingIcon?: IconPropT;
+  trailingIcon?: RMWC.IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** A reference to the native input or textarea. */
@@ -61,9 +61,9 @@ export interface DeprecatedTextfieldProps {
   /** DEPRECATED: Is being removed from MCW. */
   dense?: boolean;
   /** DEPRECATED: Use icon. */
-  withLeadingIcon?: IconPropT;
+  withLeadingIcon?: RMWC.IconPropT;
   /** DEPRECATED: Use trailingIcon. */
-  withTrailingIcon?: IconPropT;
+  withTrailingIcon?: RMWC.IconPropT;
 }
 
 const TextFieldRoot = withRipple()(
@@ -256,7 +256,10 @@ export class TextField extends FoundationComponent<
   }
 
   // handle leading and trailing icons
-  renderIcon(icon: IconPropT, leadOrTrail: 'leadingIcon' | 'trailingIcon') {
+  renderIcon(
+    icon: RMWC.IconPropT,
+    leadOrTrail: 'leadingIcon' | 'trailingIcon'
+  ) {
     return (
       <TextFieldIcon
         ref={(ref: TextFieldIcon) => {

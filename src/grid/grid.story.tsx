@@ -1,14 +1,13 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean, number } from '@storybook/addon-knobs';
+import { number } from '@storybook/addon-knobs';
 import { Grid, GridCell } from './';
 
-const cells = Array(24).fill();
+const cells = Array(24).fill(undefined);
 const cellStyle = {
   padding: '16px',
-  backgroundColor: '#f2f2f2',
+  backgroundColor: '#f2f2f2'
 };
 
 storiesOf('Grids', module).add('Grid', () => {

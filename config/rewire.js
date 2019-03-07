@@ -138,8 +138,8 @@ module.exports = {
     console.log(colors.magenta('Starting RMWC ❤️'));
     return pipe(
       fixLinting,
-      addAliases,
       addMarkdownLoader,
+      addAliases,
       config => {
         //console.log(config);
         return config;

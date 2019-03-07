@@ -8,12 +8,12 @@ const elevationStyle = {
   display: 'inline-block',
   width: '96px',
   height: '96px',
-  verticalAlign: 'top',
+  verticalAlign: 'top'
 };
 
 class HoverElevation extends React.Component {
   state = {
-    elevation: 0,
+    elevation: 0
   };
 
   render() {
@@ -36,7 +36,7 @@ storiesOf('Elevation', module).add('Elevation', () => (
     <HoverElevation />
 
     {Array(25)
-      .fill()
+      .fill(undefined)
       .map((val, i) => (
         <Elevation z={i} key={i} style={elevationStyle}>
           {i}dp

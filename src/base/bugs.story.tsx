@@ -17,10 +17,7 @@ import {
 } from '../rmwc';
 
 class Bug216 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isDisabled: false };
-  }
+  state = { isDisabled: false };
 
   GO = () => {
     this.setState({ isDisabled: true });
@@ -82,7 +79,7 @@ class Bug216 extends React.Component {
 class Bug283 extends React.Component {
   state = { value: '' };
 
-  handleChange = event => {
+  handleChange = (event: any) => {
     this.setState({ value: event.target.value });
   };
 
@@ -110,10 +107,7 @@ class Bug283 extends React.Component {
 }
 
 class Bug293 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isLoading: false, checked: false };
-  }
+  state = { isLoading: false, checked: false };
 
   render() {
     return (
@@ -138,6 +132,7 @@ class Bug293 extends React.Component {
     setTimeout(() => {
       this.setState(c => ({
         ...c,
+        // @ts-ignore
         checked: !c.checked,
         isLoading: false
       }));
@@ -179,8 +174,8 @@ class Bug312 extends React.Component {
           <Checkbox
             checked={this.state.checked1}
             onChange={e => {
-              console.log('change', e.target.checked);
-              this.setState({ checked1: e.target.checked });
+              console.log('change', e.currentTarget.checked);
+              this.setState({ checked1: e.currentTarget.checked });
             }}
           >
             Test 1
@@ -203,12 +198,12 @@ const Bug334 = () => {
         <TextField
           className={'tester'}
           label="MDC"
-          onChange={e => console.log(e.target.value)}
+          onChange={e => console.log(e.currentTarget.value)}
           onBlur={() => console.log('rmwc blur')}
           onFocus={() => console.log('rmwc onFocus')}
         />
         <input
-          onChange={e => console.log(e.target.value)}
+          onChange={e => console.log(e.currentTarget.value)}
           onBlur={() => console.log('regular blur')}
         />
       </div>
@@ -246,7 +241,7 @@ class Bug297 extends React.Component {
       <TextField
         label="Foo"
         value={this.state.value}
-        onChange={evt => this.setState({ value: evt.target.value })}
+        onChange={evt => this.setState({ value: evt.currentTarget.value })}
         required
       />
     );
@@ -298,7 +293,7 @@ class Bug361 extends React.Component {
           <Switch
             id="test"
             checked={this.state.checked}
-            onChange={e => this.setState({ checked: e.target.checked })}
+            onChange={e => this.setState({ checked: e.currentTarget.checked })}
             label={`Checked ${this.state.checked ? 'yes' : 'no'}`}
           />
         </div>
@@ -307,13 +302,15 @@ class Bug361 extends React.Component {
           <Switch
             id="test2"
             checked={this.state.checked}
-            onChange={e => this.setState({ checked: e.target.checked })}
+            onChange={e => this.setState({ checked: e.currentTarget.checked })}
             label="Fixed label"
           />
         </div>
 
         <Button
-          onClick={() => this.setState(state => ({ checked: !state.checked }))}
+          onClick={() =>
+            this.setState(state => ({ checked: !this.state.checked }))
+          }
         >
           Toggle
         </Button>
@@ -323,12 +320,9 @@ class Bug361 extends React.Component {
 }
 
 class Bug370 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTab: 0
-    };
-  }
+  state = {
+    activeTab: 0
+  };
 
   render() {
     return (
@@ -354,7 +348,7 @@ class Bug374 extends React.Component {
         label="Label"
         checked={this.state.checked}
         onChange={e => {
-          this.setState({ checked: e.target.checked });
+          this.setState({ checked: e.currentTarget.checked });
         }}
       />
     );
@@ -391,7 +385,7 @@ function Bug415() {
         icon={{ icon: 'edit', size: 'medium' }} // or icon="edit"
         label="some label"
         tag={Link}
-        to="/link"
+        {...{ to: '/link' }}
       />
     </BrowserRouter>
   );
@@ -399,7 +393,7 @@ function Bug415() {
 
 storiesOf('Bugs', module)
   .add('#206', () => (
-    <Menu open={true} onSelected={() => console.log('selected')}>
+    <Menu open={true} onSelect={() => console.log('selected')}>
       <MenuItem>
         <span>Cookies</span>
       </MenuItem>
@@ -412,40 +406,40 @@ storiesOf('Bugs', module)
         <input
           type="checkbox"
           checked={true}
-          onChange={e => console.log('change', e.target.checked)}
+          onChange={e => console.log('change', e.currentTarget.checked)}
         />
         Native
       </label>
 
       <Checkbox
         checked={true}
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="True controlled"
       />
 
       <Checkbox
         checked={false}
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="False controlled"
       />
       <Checkbox
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="Uncontrolled"
       />
 
       <Switch
         checked={true}
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="True controlled"
       />
 
       <Switch
         checked={false}
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="False controlled"
       />
       <Switch
-        onChange={e => console.log('change', e.target.checked)}
+        onChange={e => console.log('change', e.currentTarget.checked)}
         label="Uncontrolled"
       />
     </React.Fragment>

@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
+
 import { MDCChipFoundation } from '@material/chips';
 
 import {
@@ -10,7 +10,7 @@ import {
   deprecationWarning
 } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 
 export interface ChipProps {
   /** Text for your Chip. */
@@ -18,9 +18,9 @@ export interface ChipProps {
   /** makes the Chip appear selected. */
   selected?: boolean;
   /** Instance of an Icon Component. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** Instance of an Icon Component. */
-  trailingIcon?: IconPropT;
+  trailingIcon?: RMWC.IconPropT;
   /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */
   id?: string;
   /** Includes an optional checkmark for the chips selected state. */

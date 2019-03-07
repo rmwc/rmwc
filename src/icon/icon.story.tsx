@@ -1,8 +1,6 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
 import { Icon } from './';
 import { RMWCProvider } from '@rmwc/provider';
 
@@ -67,30 +65,24 @@ storiesOf('Icons', module).add('Icon', () => (
       />
     </li>
     <li>
-      className child:{' '}
-      <Icon prefix="ion-" strategy="className" basename="icon">
-        ionic
-      </Icon>
-    </li>
-    <li>
       className use:{' '}
-      <Icon prefix="ion-" icon="ionic" strategy="className" basename="icon" />
-    </li>
-    <li>
-      custom child:{' '}
       <Icon
-        strategy="custom"
-        render={props => <div>Customized-{props.content}</div>}
-      >
-        CUSTOM
-      </Icon>
+        icon={{
+          prefix: 'ion-',
+          icon: 'ionic',
+          strategy: 'className',
+          basename: 'icon'
+        }}
+      />
     </li>
     <li>
       custom use:{' '}
       <Icon
-        strategy="custom"
-        render={props => <div>Customized-{props.content}</div>}
-        icon="CUSTOM"
+        icon={{
+          strategy: 'custom',
+          render: props => <div>Customized-{props.content}</div>,
+          content: 'CUSTOM'
+        }}
       />
     </li>
     <li>

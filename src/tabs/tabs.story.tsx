@@ -3,6 +3,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Tab, TabBar } from './';
+// @ts-ignore
 import { Button } from '@rmwc/button';
 
 class TabBarStory extends React.Component {
@@ -13,23 +14,23 @@ class TabBarStory extends React.Component {
     icons: ['star', 'favorite', 'info']
   };
 
-  onToggleWithScroller(evt) {
+  onToggleWithScroller(evt: any) {
     this.setState({ withScroller: !this.state.withScroller });
     action('withScroller: ' + !this.state.withScroller)();
   }
 
-  onChange(evt) {
+  onChange(evt: any) {
     this.setState({ activeTabIndex: evt.detail.index });
     action('index: ' + evt.detail.index)();
   }
-  onChangeTabNames(evt) {
+  onChangeTabNames(evt: any) {
     const state = {
       tabs: this.state.tabs.map((label, index) => index)
     };
     this.setState(state);
     action('onChangeTabNames: ' + JSON.stringify(state))();
   }
-  onAddTab(evt) {
+  onAddTab(evt: any) {
     const state = {
       tabs: [...this.state.tabs, `Dynamic Tab #${this.state.tabs.length + 1}`]
     };
@@ -38,7 +39,7 @@ class TabBarStory extends React.Component {
 
     action('onAddTab: ' + JSON.stringify(state))();
   }
-  onRemoveLastTab(evt) {
+  onRemoveLastTab(evt: any) {
     const init = this.state.tabs.slice(0, -1);
     const state = {
       tabs: init
@@ -52,23 +53,23 @@ class TabBarStory extends React.Component {
     return (
       <div>
         <div>
-          <Button raised onClick={evt => this.onChangeTabNames(evt)}>
+          <Button raised onClick={(evt: any) => this.onChangeTabNames(evt)}>
             Change tab labels
           </Button>{' '}
-          <Button raised onClick={evt => this.onAddTab(evt)}>
+          <Button raised onClick={(evt: any) => this.onAddTab(evt)}>
             Add Tab
           </Button>{' '}
           <Button
             disabled={this.state.tabs.length <= 1}
             raised
-            onClick={evt => this.onRemoveLastTab(evt)}
+            onClick={(evt: any) => this.onRemoveLastTab(evt)}
           >
             Remove Last Tab
           </Button>{' '}
           <input
             type="number"
             value={this.state.activeTabIndex}
-            onChange={evt => {
+            onChange={(evt: any) => {
               this.setState({ activeTabIndex: Number(evt.target.value || 0) });
             }}
           />
@@ -76,7 +77,7 @@ class TabBarStory extends React.Component {
         Controlled
         <TabBar
           activeTabIndex={this.state.activeTabIndex}
-          onActivate={evt => this.onChange(evt)}
+          onActivate={(evt: any) => this.onChange(evt)}
         >
           {this.state.tabs.map(label => (
             <Tab key={label}>{label}</Tab>

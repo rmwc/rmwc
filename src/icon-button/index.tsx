@@ -7,7 +7,7 @@ import {
   FoundationComponent,
   deprecationWarning
 } from '@rmwc/base';
-import { Icon, IconPropT, IconProps } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
 export interface IconButtonProps extends RMWC.WithRippleProps {
@@ -18,9 +18,9 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Makes the button disabled */
   disabled?: boolean;
   /** Icon for the button */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
-  onIcon?: IconPropT;
+  onIcon?: RMWC.IconPropT;
 }
 
 export interface DeprecatedIconButtonProps {

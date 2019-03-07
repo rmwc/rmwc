@@ -1,14 +1,14 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
-import '../src/rmwc/node_modules/material-components-web/dist/material-components-web.css';
 import { withKnobs } from '@storybook/addon-knobs';
+import '../src/rmwc/styles';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
 function loadStories() {
-  requireAll(require.context('../', true, /\.story\.js?$/));
+  requireAll(require.context('../', true, /\.story\.(js|tsx)?$/));
 }
 
 const StylesDecorator = storyFn => (

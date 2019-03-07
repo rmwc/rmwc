@@ -97,7 +97,7 @@ export interface DialogProps {
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: RMWC.CustomEventT<{action?: string}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{ action?: string }>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
 }
@@ -286,8 +286,6 @@ export interface SimpleDialogProps extends DialogProps {
   cancelLabel?: React.ReactNode;
   /** Any children will be rendered in the body of the default Dialog template. */
   children?: React.ReactNode;
-  /** Allow the body to be scrollable */
-  scrollable?: boolean;
 }
 
 /** A non-standard SimpleDialog component for ease of use. */

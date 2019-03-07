@@ -26,9 +26,7 @@ storiesOf('Lists', module).add('List', () => (
     <ListItem ripple>
       <ListItemGraphic>mood</ListItemGraphic>
       <ListItemPrimaryText>Icecream</ListItemPrimaryText>
-      <ListItemMeta tag="span" basename="">
-        $1.00
-      </ListItemMeta>
+      <ListItemMeta>$1.00</ListItemMeta>
     </ListItem>
   </List>
 ));
