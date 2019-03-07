@@ -1,16 +1,16 @@
 export default () => {
-  if (global['window']) {
+  if ((global as any)['window']) {
     const hyperform = require('hyperform');
     hyperform(window);
 
-    Object.defineProperty(window['HTMLElement'].prototype, 'dataset', {
+    Object.defineProperty((window as any)['HTMLElement'].prototype, 'dataset', {
       writable: true,
       value: {}
     });
 
-    if (!window['HTMLCanvasElement']) {
+    if (!(window as any)['HTMLCanvasElement']) {
       Object.defineProperty(
-        window['HTMLCanvasElement'].prototype,
+        (window as any)['HTMLCanvasElement'].prototype,
         'getContext',
         {
           writable: true,
@@ -22,7 +22,7 @@ export default () => {
       );
     }
 
-    window['MutationObserver'] =
-      window['MutationObserver'] || require('mutation-observer');
+    (window as any)['MutationObserver'] =
+      (window as any)['MutationObserver'] || require('mutation-observer');
   }
 };
