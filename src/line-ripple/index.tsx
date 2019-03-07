@@ -9,7 +9,10 @@ export interface LineRippleProps {
   center?: number;
 }
 
-export class LineRipple extends FoundationComponent<LineRippleProps> {
+export class LineRipple extends FoundationComponent<
+  MDCLineRippleFoundation,
+  LineRippleProps
+> {
   static displayName = 'LineRipple';
 
   private root = this.createElement('root');

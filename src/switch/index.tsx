@@ -61,7 +61,10 @@ const SwitchNativeControl = componentFactory<{}>({
   classNames: ['mdc-switch__native-control']
 });
 
-export class Switch extends ToggleableFoundationComponent<SwitchProps> {
+export class Switch extends ToggleableFoundationComponent<
+  MDCSwitchFoundation,
+  SwitchProps
+> {
   static displayName = 'Switch';
   private root = this.createElement('root');
   private nativeControl = this.createElement<HTMLInputElement>('nativeControl');
@@ -74,7 +77,9 @@ export class Switch extends ToggleableFoundationComponent<SwitchProps> {
   componentDidMount() {
     super.componentDidMount();
     this.nativeControl.ref &&
-      this.foundation.updateCheckedStyling_(this.nativeControl.ref.checked);
+      (this.foundation as any).updateCheckedStyling_(
+        this.nativeControl.ref.checked
+      );
     this.nativeControl.ref &&
       this.foundation.setDisabled(this.nativeControl.ref.disabled);
   }
@@ -101,7 +106,7 @@ export class Switch extends ToggleableFoundationComponent<SwitchProps> {
       !!prevProps &&
       props.checked !== prevProps.checked
     ) {
-      this.foundation.updateCheckedStyling_(props.checked);
+      (this.foundation as any).updateCheckedStyling_(props.checked);
     }
 
     if (

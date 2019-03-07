@@ -8,12 +8,15 @@ import {
 } from '@material/tab-indicator';
 import { FoundationComponent } from '@rmwc/base';
 
-export class TabIndicator extends FoundationComponent<{}> {
+export class TabIndicator extends FoundationComponent<
+  MDCSlidingTabIndicatorFoundation,
+  {}
+> {
   private root = this.createElement('root');
   private content = this.createElement('content');
 
   getDefaultFoundation() {
-    const adapter = /** @type {!MDCTabIndicatorAdapter} */ (Object.assign({
+    return new MDCSlidingTabIndicatorFoundation({
       addClass: (className: string) => {
         this.root.addClass(className);
       },
@@ -25,14 +28,7 @@ export class TabIndicator extends FoundationComponent<{}> {
       setContentStyleProperty: (prop: string, value: string) => {
         this.content.setStyle(prop, value);
       }
-    }));
-
-    // if (this.root.hasClass(MDCTabIndicatorFoundation.cssClasses.FADE)) {
-    //   return new MDCFadingTabIndicatorFoundation(adapter);
-    // }
-
-    // Default to the sliding indicator
-    return new MDCSlidingTabIndicatorFoundation(adapter);
+    });
   }
 
   activate(previousIndicatorClientRect: ClientRect) {

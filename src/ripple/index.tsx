@@ -39,7 +39,10 @@ type ActivateEventTypes<S> =
 const RippleSurfaceContext = React.createContext({});
 
 /** A component for adding Ripples to other components. */
-export class Ripple extends FoundationComponent<RippleProps> {
+export class Ripple extends FoundationComponent<
+  MDCRippleFoundation,
+  RippleProps
+> {
   static shouldDebounce = true;
   static displayName = 'Ripple';
 
@@ -122,7 +125,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.root.setRef(ReactDOM.findDOMNode(this));
 
     if (props.unbounded !== prevProps.unbounded) {
-      this.foundation.setUnbounded(props.unbounded);
+      this.foundation.setUnbounded(!!props.unbounded);
     }
   }
 
@@ -136,7 +139,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.foundation.handleBlur();
   }
 
-  handleMouseDown(evt: React.MouseEvent<HTMLElement>) {
+  handleMouseDown(evt: React.MouseEvent<HTMLElement> & MouseEvent) {
     this.props.onMouseDown && this.props.onMouseDown(evt);
     this.activateRipple(evt);
   }
@@ -146,7 +149,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  handleTouchStart(evt: React.TouchEvent<HTMLElement>) {
+  handleTouchStart(evt: React.TouchEvent<HTMLElement> & TouchEvent) {
     this.props.onTouchStart && this.props.onTouchStart(evt);
     this.activateRipple(evt);
   }
@@ -156,7 +159,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  handleKeyDown(evt: React.KeyboardEvent<HTMLElement>) {
+  handleKeyDown(evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.activateRipple(evt);
   }
@@ -166,7 +169,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  activateRipple(evt: ActivateEventTypes<HTMLElement>) {
+  activateRipple(evt: ActivateEventTypes<HTMLElement> & Event) {
     // https://reactjs.org/docs/events.html#event-pooling
     evt.persist();
     this.foundation.activate(evt);
@@ -175,7 +178,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
   deactivateRipple(evt: ActivateEventTypes<HTMLElement>) {
     // https://reactjs.org/docs/events.html#event-pooling
     evt.persist();
-    this.foundation.deactivate(evt);
+    this.foundation.deactivate();
   }
 
   render() {

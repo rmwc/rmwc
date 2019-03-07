@@ -66,6 +66,7 @@ export const LinearProgressBarInner = componentFactory<{}>({
 });
 
 export class LinearProgress extends FoundationComponent<
+  MDCLinearProgressFoundation,
   LinearProgressProps & DeprecatedLinearProgressProps
 > {
   static displayName = 'LinearProgress';

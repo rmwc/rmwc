@@ -144,10 +144,13 @@ describe('componentFactory', () => {
 });
 
 describe('FoundationComponent', () => {
-  class MyComp extends FoundationComponent<{
-    onInteraction?: any;
-    value?: any;
-  }> {
+  class MyComp extends FoundationComponent<
+    {},
+    {
+      onInteraction?: any;
+      value?: any;
+    }
+  > {
     root = this.createElement('root');
 
     sync(props: any, prevProps: any) {
@@ -160,10 +163,13 @@ describe('FoundationComponent', () => {
     }
   }
 
-  class MyComp2 extends FoundationComponent<{
-    onInteraction?: any;
-    value?: any;
-  }> {
+  class MyComp2 extends FoundationComponent<
+    {},
+    {
+      onInteraction?: any;
+      value?: any;
+    }
+  > {
     static shouldDebounce = false;
     root = this.createElement('root');
 

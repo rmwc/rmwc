@@ -28,7 +28,10 @@ class NotchedOutlineTrailing extends React.Component<{}> {
   }
 }
 
-export class NotchedOutline extends FoundationComponent<NotchedOutlineProps> {
+export class NotchedOutline extends FoundationComponent<
+  MDCNotchedOutlineFoundation,
+  NotchedOutlineProps
+> {
   static displayName = 'NotchedOutline';
   private root = this.createElement('root');
   private notchElement = this.createElement('root');

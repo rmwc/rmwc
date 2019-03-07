@@ -276,6 +276,7 @@ interface SelectState {
 }
 
 export class SelectBase extends FoundationComponent<
+  MDCSelectFoundation,
   SelectProps & DeprecatedSelectProps,
   SelectState
 > {
@@ -433,7 +434,9 @@ export class SelectBase extends FoundationComponent<
             },
             () => {
               this.foundation.layout();
-              this.foundation.adapter_.floatLabel(!!selectedTextContent);
+              (this.foundation as any).adapter_.floatLabel(
+                !!selectedTextContent
+              );
             }
           );
         }
@@ -537,7 +540,7 @@ export class SelectBase extends FoundationComponent<
     // we need to jump through some checks to see if we need to update the
     // value in our foundation
     if (props.value !== prevProps.value) {
-      this.foundation.setValue(props.value);
+      this.foundation.setValue(props.value || '');
     }
 
     if (
@@ -810,7 +813,10 @@ export class SelectBase extends FoundationComponent<
   }
 }
 
-export class SelectIcon extends FoundationComponent<IconProps> {
+export class SelectIcon extends FoundationComponent<
+  MDCSelectIconFoundation,
+  IconProps
+> {
   static displayName = 'SelectIcon';
   private root = this.createElement('root');
 

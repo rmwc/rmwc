@@ -103,7 +103,10 @@ export interface DialogProps {
 }
 
 /** A Dialog component. */
-export class Dialog extends FoundationComponent<DialogProps> {
+export class Dialog extends FoundationComponent<
+  MDCDialogFoundation,
+  DialogProps
+> {
   static displayName = 'Dialog';
 
   private root = this.createElement('root');
@@ -112,7 +115,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
   buttons: null | HTMLElement[] = null;
   defaultButton: null | HTMLElement = null;
   focusTrap: FocusTrap | null = null;
-  handleDocumentKeydown: (evt: Event) => void = () => {};
+  handleDocumentKeydown: (evt: KeyboardEvent) => void = () => {};
 
   constructor(props: DialogProps) {
     super(props);
@@ -120,14 +123,14 @@ export class Dialog extends FoundationComponent<DialogProps> {
   }
 
   open() {
-    if (!this.foundation.isOpen_) {
+    if (!this.foundation.isOpen()) {
       document.addEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.open();
     }
   }
 
   close() {
-    if (this.foundation.isOpen_) {
+    if (this.foundation.isOpen()) {
       document.removeEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.close();
     }
@@ -240,7 +243,9 @@ export class Dialog extends FoundationComponent<DialogProps> {
     });
   }
 
-  handleInteraction(evt: React.MouseEvent & React.KeyboardEvent) {
+  handleInteraction(
+    evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
+  ) {
     evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
     evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
     return this.foundation.handleInteraction(evt);

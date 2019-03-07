@@ -3,8 +3,8 @@ import * as React from 'react';
 
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 
-// @ts-ignore
 import { MDCTabBarFoundation } from '@material/tab-bar';
+import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { Tab } from './tab';
 import { TabBarContext } from './tab-bar-context';
@@ -36,14 +36,18 @@ export const TabBarRoot = componentFactory<TabBarProps>({
 });
 
 /** The TabBar component */
-export class TabBar extends FoundationComponent<TabBarProps> {
+export class TabBar extends FoundationComponent<
+  MDCTabBarFoundation,
+  TabBarProps
+> {
   static displayName = 'TabBar';
 
   private root = this.createElement('root');
   tabScroller: TabScroller | null = null;
   tabList: any[] = [];
   contextApi = {
-    onTabInteraction: (evt: Event) => this.handleTabInteraction(evt),
+    onTabInteraction: (evt: MDCTabInteractionEvent) =>
+      this.handleTabInteraction(evt),
     registerTab: (tab: typeof Tab) => this.tabList.push(tab),
     unregisterTab: (tab: typeof Tab) =>
       this.tabList.splice(this.tabList.indexOf(tab), 1)
@@ -69,9 +73,11 @@ export class TabBar extends FoundationComponent<TabBarProps> {
 
     //activate the tab
 
-    this.foundation.adapter_.activateTabAtIndex(
+    (this.foundation as any).adapter_.activateTabAtIndex(
       this.props.activeTabIndex || 0,
-      this.foundation.adapter_.getTabIndicatorClientRectAtIndex(undefined)
+      (this.foundation as any).adapter_.getTabIndicatorClientRectAtIndex(
+        undefined
+      )
     );
     this.foundation.scrollIntoView(this.props.activeTabIndex || 0);
 
@@ -91,7 +97,7 @@ export class TabBar extends FoundationComponent<TabBarProps> {
           this.tabScroller &&
           this.tabScroller.incrementScroll(scrollXIncrement),
         getScrollPosition: () =>
-          this.tabScroller && this.tabScroller.getScrollPosition(),
+          this.tabScroller ? this.tabScroller.getScrollPosition() : 0,
         getScrollContentWidth: () =>
           this.tabScroller ? this.tabScroller.getScrollContentWidth() : 0,
         getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
@@ -152,13 +158,13 @@ export class TabBar extends FoundationComponent<TabBarProps> {
     );
   }
 
-  handleTabInteraction(evt: Event) {
+  handleTabInteraction(evt: MDCTabInteractionEvent) {
     this.foundation.handleTabInteraction(evt);
   }
 
-  handleKeyDown(evt: React.KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-    this.foundation.handleKeyDown(evt);
+  handleKeyDown(evt: React.KeyboardEvent | KeyboardEvent) {
+    this.props.onKeyDown && this.props.onKeyDown(evt as React.KeyboardEvent);
+    this.foundation.handleKeyDown(evt as KeyboardEvent);
   }
 
   render() {

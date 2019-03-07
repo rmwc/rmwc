@@ -39,7 +39,7 @@ const ListRoot = componentFactory<ListProps>({
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive', 'onAction']
 });
 
-export class List extends FoundationComponent<ListProps> {
+export class List extends FoundationComponent<MDCListFoundation, ListProps> {
   static get cssClasses() {
     return MDCListFoundation.cssClasses;
   }
@@ -72,6 +72,7 @@ export class List extends FoundationComponent<ListProps> {
   }
 
   focusItemAtIndex(index: number) {
+    // @ts-ignore
     this.foundation.adapter_.focusItemAtIndex(index);
   }
 
@@ -232,7 +233,7 @@ export class List extends FoundationComponent<ListProps> {
     this.foundation.handleClick(index, toggleCheckbox);
   }
 
-  handleKeydown(evt: React.KeyboardEvent<HTMLElement>) {
+  handleKeydown(evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
 
     const index = this.getListItemIndex(evt);
@@ -249,12 +250,12 @@ export class List extends FoundationComponent<ListProps> {
     }
   }
 
-  handleFocusIn(evt: React.FocusEvent) {
+  handleFocusIn(evt: React.FocusEvent & FocusEvent) {
     this.props.onFocus && this.props.onFocus(evt);
     this.foundation.handleFocusIn(evt, this.getListItemIndex(evt));
   }
 
-  handleFocusOut(evt: React.FocusEvent) {
+  handleFocusOut(evt: React.FocusEvent & FocusEvent) {
     this.props.onBlur && this.props.onBlur(evt);
     this.foundation.handleFocusOut(evt, this.getListItemIndex(evt));
   }

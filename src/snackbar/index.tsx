@@ -101,6 +101,7 @@ export const SnackbarDismiss = componentFactory<IconButtonProps>({
  * A Snackbar component for notifications.
  */
 export class Snackbar extends FoundationComponent<
+  MDCSnackbarFoundation,
   SnackbarProps & DeprecatedSnackbarProps
 > {
   static displayName = 'Snackbar';
@@ -149,7 +150,7 @@ export class Snackbar extends FoundationComponent<
     if (props.timeout !== prevProps.timeout) {
       // dont tell me what I can cant set my timeout too...
       // directly patch over using setTimeoutMs
-      this.foundation.autoDismissTimeoutMs_ = props.timeout;
+      (this.foundation as any).autoDismissTimeoutMs_ = props.timeout;
     }
   }
 
@@ -170,12 +171,12 @@ export class Snackbar extends FoundationComponent<
     );
   }
 
-  handleKeyDown(evt: React.KeyboardEvent) {
+  handleKeyDown(evt: React.KeyboardEvent & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeyDown(evt);
   }
 
-  handleSurfaceClick(evt: React.MouseEvent) {
+  handleSurfaceClick(evt: React.MouseEvent | MouseEvent) {
     if (evt.target instanceof Element) {
       let el = evt.target;
       // corrects an issue where they were clicking on
@@ -189,9 +190,9 @@ export class Snackbar extends FoundationComponent<
         this.props.dismissesOnAction &&
         el.classList.contains('mdc-snackbar__action')
       ) {
-        this.foundation.handleActionButtonClick(evt);
+        this.foundation.handleActionButtonClick(evt as MouseEvent);
       } else if (el.classList.contains('mdc-snackbar__dismiss')) {
-        this.foundation.handleActionIconClick(evt);
+        this.foundation.handleActionIconClick(evt as MouseEvent);
       }
     }
   }

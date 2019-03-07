@@ -9,7 +9,10 @@ export interface FloatingLabelProps {
   float?: boolean;
 }
 
-export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
+export class FloatingLabel extends FoundationComponent<
+  MDCFloatingLabelFoundation,
+  FloatingLabelProps
+> {
   static displayName = 'FloatingLabel';
 
   private root = this.createElement('root');
@@ -33,12 +36,12 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
   sync(props: FloatingLabelProps, prevProps: FloatingLabelProps) {
     // shake
     this.syncProp(props.shake, prevProps.shake, () => {
-      this.foundation.shake(props.shake);
+      this.foundation.shake(!!props.shake);
     });
 
     // float
     this.syncProp(props.float, prevProps.float, () => {
-      this.foundation.float(props.float);
+      this.foundation.float(!!props.float);
     });
   }
 

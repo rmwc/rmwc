@@ -50,6 +50,7 @@ export const TabIcon = componentFactory<IconProps>({
 /** A Tab component */
 export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
   class extends FoundationComponent<
+    MDCTabFoundation,
     TabProps & { contextApi?: TabBarContextT }
   > {
     static displayName = 'Tab';
@@ -111,14 +112,14 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
 
     handleClick(evt: React.MouseEvent) {
       this.props.onClick && this.props.onClick(evt);
-      this.foundation.handleClick(evt);
+      this.foundation.handleClick();
     }
 
     get active() {
       return this.foundation.isActive();
     }
 
-    set focusOnActivate(focusOnActivate: string) {
+    set focusOnActivate(focusOnActivate: boolean) {
       this.foundation.setFocusOnActivate(focusOnActivate);
     }
 

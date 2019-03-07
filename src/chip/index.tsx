@@ -56,7 +56,10 @@ const ChipRoot = withRipple({})(
 );
 
 /** A Chip component. */
-export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
+export class Chip extends FoundationComponent<
+  MDCChipFoundation,
+  ChipProps & DeprecatedChipProps
+> {
   static displayName = 'Chip';
 
   private root = this.createElement('root');
@@ -142,13 +145,15 @@ export class Chip extends FoundationComponent<ChipProps & DeprecatedChipProps> {
     );
   }
 
-  handleInteraction(evt: React.MouseEvent & React.KeyboardEvent) {
+  handleInteraction(
+    evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
+  ) {
     evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
     evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
     return this.foundation.handleInteraction(evt);
   }
 
-  handleTransitionEnd(evt: React.TransitionEvent) {
+  handleTransitionEnd(evt: React.TransitionEvent & TransitionEvent) {
     this.foundation.handleTransitionEnd(evt);
   }
 

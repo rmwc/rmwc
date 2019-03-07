@@ -89,6 +89,7 @@ export const IconButtonIcon = componentFactory<IconButtonIconProps>({
 });
 
 class IconButtonToggle extends FoundationComponent<
+  MDCIconButtonToggleFoundation,
   IconButtonProps & DeprecatedIconButtonProps
 > {
   static displayName = 'IconButton';
@@ -138,7 +139,7 @@ class IconButtonToggle extends FoundationComponent<
 
   handleClick(evt: React.MouseEvent<HTMLButtonElement>) {
     this.props.onClick && this.props.onClick(evt);
-    this.foundation.handleClick(evt);
+    this.foundation.handleClick();
   }
 
   render() {

@@ -50,7 +50,10 @@ class RadioBackground extends React.Component<{}> {
 }
 
 /** A Radio button component. */
-export class Radio extends ToggleableFoundationComponent<RadioProps> {
+export class Radio extends ToggleableFoundationComponent<
+  MDCRadioFoundation,
+  RadioProps
+> {
   static displayName = 'Radio';
   private root = this.createElement('root');
 

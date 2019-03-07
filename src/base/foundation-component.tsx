@@ -188,13 +188,14 @@ interface FoundationState {}
 type FoundationPropsT<P> = RMWC.MergeInterfacesT<P, FoundationProps>;
 type FoundationStateT<S> = S & FoundationState;
 
-export class FoundationComponent<P, S extends any = {}> extends React.Component<
-  FoundationPropsT<P>,
-  FoundationStateT<S>
-> {
+export class FoundationComponent<
+  Foundation extends any,
+  P,
+  S extends any = {}
+> extends React.Component<FoundationPropsT<P>, FoundationStateT<S>> {
   static shouldDebounce = false;
 
-  foundation: any;
+  foundation!: Foundation;
   elements: { [key: string]: FoundationElement<any, any> } = {};
 
   constructor(props: any) {
@@ -219,7 +220,8 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
 
   componentWillUnmount() {
     this.foundation && this.foundation.destroy();
-    this.foundation = null;
+    // @ts-ignore
+    this.foundation = undefined;
     Object.values(this.elements).forEach(el => el.destroy());
   }
 
@@ -248,10 +250,10 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   getDefaultFoundation() {
-    return {
+    return ({
       init: () => {},
       destroy: () => {}
-    };
+    } as unknown) as Foundation;
   }
 
   /**

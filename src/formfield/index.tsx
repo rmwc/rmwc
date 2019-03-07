@@ -25,7 +25,10 @@ export const FormFieldRoot = componentFactory<FormFieldProps>({
   consumeProps: ['alignEnd']
 });
 
-export class FormField extends FoundationComponent<FormFieldProps> {
+export class FormField extends FoundationComponent<
+  MDCFormFieldFoundation,
+  FormFieldProps
+> {
   static displayName = 'FormField';
 
   getDefaultFoundation() {

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 // @ts-ignore
-import { MDCMenuFoundation } from '@material/menu';
+import { MDCMenuFoundation, Corner } from '@material/menu';
 
 import { List, ListItem, ListItemProps } from '@rmwc/list';
 import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
@@ -63,7 +63,7 @@ export const MenuItem = componentFactory<MenuItemProps>({
 });
 
 /** A menu component for displaying lists items. */
-export class Menu extends FoundationComponent<MenuProps> {
+export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   static displayName = 'Menu';
 
   list: List | null = null;
@@ -84,7 +84,7 @@ export class Menu extends FoundationComponent<MenuProps> {
     this.menuSurface && this.menuSurface.hoistMenuToBody();
   }
 
-  setAnchorCorner(corner: string) {
+  setAnchorCorner(corner: Corner) {
     this.menuSurface && this.menuSurface.setAnchorCorner(corner);
   }
 
@@ -139,10 +139,10 @@ export class Menu extends FoundationComponent<MenuProps> {
     this.props.onClick && this.props.onClick(evt);
     // fixes an issue with nested span element on list items
     const el = closest(evt.target, '.mdc-list-item');
-    this.foundation.handleItemAction(el);
+    el && this.foundation.handleItemAction(el);
   }
 
-  handleKeydown(evt: React.KeyboardEvent) {
+  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeydown(evt);
 

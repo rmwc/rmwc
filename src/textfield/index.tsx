@@ -120,6 +120,7 @@ const TextFieldTextarea = componentFactory({
 
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<
+  MDCTextFieldFoundation,
   TextFieldProps & DeprecatedTextfieldProps
 > {
   static displayName = 'TextField';
@@ -130,7 +131,7 @@ export class TextField extends FoundationComponent<
   );
   private label = this.createElement<FloatingLabel>('label');
   private lineRipple = this.createElement<LineRipple>('lineRipple');
-  characterCounter: null | TextFieldCharacterCount = null;
+  characterCounter?: null | TextFieldCharacterCount = null;
   leadingIcon: null | TextFieldIcon = null;
   trailingIcon: null | TextFieldIcon = null;
   outline: null | any;
@@ -197,7 +198,7 @@ export class TextField extends FoundationComponent<
       floatLabel: (shouldFloat: boolean) =>
         this.label.setProp('float', shouldFloat),
       hasLabel: () => !!this.props.label,
-      getLabelWidth: () => this.label.ref && this.label.ref.getWidth()
+      getLabelWidth: () => (this.label.ref ? this.label.ref.getWidth() : 0)
     };
   }
 
@@ -247,11 +248,12 @@ export class TextField extends FoundationComponent<
 
   getFoundationMap() {
     return {
-      characterCounter:
-        this.characterCounter && this.characterCounter.foundation,
+      characterCounter: this.characterCounter
+        ? this.characterCounter.foundation
+        : undefined,
       helperText: undefined,
-      leadingIcon: this.leadingIcon && this.leadingIcon.foundation,
-      trailingIcon: this.trailingIcon && this.trailingIcon.foundation
+      leadingIcon: this.leadingIcon ? this.leadingIcon.foundation : undefined,
+      trailingIcon: this.trailingIcon ? this.trailingIcon.foundation : undefined
     };
   }
 
@@ -279,7 +281,7 @@ export class TextField extends FoundationComponent<
     // Bug #362
     // see comments below in render function
     if (this.valueNeedsUpdate) {
-      this.foundation.setValue(props.value);
+      this.foundation.setValue(String(props.value));
       this.valueNeedsUpdate = false;
     }
   }
@@ -462,6 +464,7 @@ export class TextField extends FoundationComponent<
 interface TextFieldHelperCharacterCount {}
 
 class TextFieldCharacterCount extends FoundationComponent<
+  MDCTextFieldCharacterCounterFoundation,
   TextFieldHelperCharacterCount
 > {
   static displayName = 'TextFieldCharacterCount';
@@ -516,7 +519,10 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
 /**
  * An Icon in a TextField
  */
-export class TextFieldIcon extends FoundationComponent<IconProps> {
+export class TextFieldIcon extends FoundationComponent<
+  MDCTextFieldIconFoundation,
+  IconProps
+> {
   static displayName = 'TextFieldIcon';
   private root = this.createElement('root');
 

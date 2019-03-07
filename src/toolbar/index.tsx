@@ -126,7 +126,10 @@ export const ToolbarIcon = withRipple({
   })
 );
 
-export class Toolbar extends FoundationComponent<ToolbarProps> {
+export class Toolbar extends FoundationComponent<
+  MDCToolbarFoundation,
+  ToolbarProps
+> {
   static displayName = 'Toolbar';
 
   private root = this.createElement('root');

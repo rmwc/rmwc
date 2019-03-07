@@ -24,7 +24,10 @@ export const TabScrollerScrollContent = componentFactory({
   classNames: ['mdc-tab-scroller__scroll-content']
 });
 
-export class TabScroller extends FoundationComponent<{}> {
+export class TabScroller extends FoundationComponent<
+  MDCTabScrollerFoundation,
+  {}
+> {
   private root = this.createElement('root');
   private area = this.createElement('area');
   private content = this.createElement('content');
@@ -95,8 +98,8 @@ export class TabScroller extends FoundationComponent<{}> {
     this.foundation.handleInteraction();
   }
 
-  handleTransitionEnd(evt: React.TransitionEvent) {
-    this.foundation.handleTransitionEnd(evt);
+  handleTransitionEnd(evt: React.TransitionEvent | TransitionEvent) {
+    this.foundation.handleTransitionEnd(evt as TransitionEvent);
   }
 
   render() {

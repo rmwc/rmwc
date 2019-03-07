@@ -119,7 +119,11 @@ type SliderState = {
   trackMarkersCount: number;
 };
 
-export class Slider extends FoundationComponent<SliderProps, SliderState> {
+export class Slider extends FoundationComponent<
+  MDCSliderFoundation,
+  SliderProps,
+  SliderState
+> {
   state = {
     trackMarkersCount: 0,
     pinContainerStyle: {}
@@ -134,11 +138,11 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
     super.componentDidMount();
     // Fixes an issue where synthetic events were being
     // accessed in the Foundation and causing an error
-    const existinghandleDown_ = this.foundation.handleDown_.bind(
+    const existinghandleDown_ = (this.foundation as any).handleDown_.bind(
       this.foundation
     );
 
-    this.foundation.handleDown_ = (evt: React.SyntheticEvent<any>) => {
+    (this.foundation as any).handleDown_ = (evt: React.SyntheticEvent<any>) => {
       evt.persist();
       existinghandleDown_(evt);
     };
@@ -195,22 +199,22 @@ export class Slider extends FoundationComponent<SliderProps, SliderState> {
   }
 
   get discrete(): boolean {
-    return !!(this.foundation && this.foundation.isDiscrete_);
+    return !!(this.foundation && (this.foundation as any).isDiscrete_);
   }
 
   set discrete(isDiscrete: boolean) {
     if (this.foundation) {
-      this.foundation.isDiscrete_ = isDiscrete;
+      (this.foundation as any).isDiscrete_ = isDiscrete;
     }
   }
 
   get displayMarkers(): boolean {
-    return !!this.foundation && this.foundation.hasTrackMarker_;
+    return !!this.foundation && (this.foundation as any).hasTrackMarker_;
   }
 
   set displayMarkers(isDisplayMarkers: boolean) {
     if (this.foundation) {
-      this.foundation.hasTrackMarker_ = isDisplayMarkers;
+      (this.foundation as any).hasTrackMarker_ = isDisplayMarkers;
     }
   }
 

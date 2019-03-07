@@ -21,9 +21,10 @@ export interface ToggleableFoundationProps {
 }
 
 export class ToggleableFoundationComponent<
+  Foundation extends any,
   P extends ToggleableFoundationProps,
   S extends any = {}
-> extends FoundationComponent<P & FoundationProps, S> {
+> extends FoundationComponent<Foundation, P & FoundationProps, S> {
   // @ts-ignore
   generatedId = randomId(this.constructor.displayName);
 

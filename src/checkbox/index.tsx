@@ -76,7 +76,10 @@ class CheckboxBackground extends React.Component<{}> {
 /**
  * A Checkbox component
  */
-export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
+export class Checkbox extends ToggleableFoundationComponent<
+  MDCCheckboxFoundation,
+  CheckboxProps
+> {
   static displayName = 'Checkbox';
 
   private nativeCb = this.createElement<HTMLInputElement>('nativeCb');
@@ -89,7 +92,7 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
   }
 
   sync(nextProps: CheckboxProps) {
-    this.foundation.handleChange();
+    this.foundation && this.foundation.handleChange();
 
     if (
       this.nativeCb.ref &&

@@ -4,7 +4,8 @@ import * as React from 'react';
 import {
   MDCMenuSurfaceFoundation,
   util,
-  MDCMenuDimensions
+  MDCMenuDimensions,
+  Corner
 } from '@material/menu-surface';
 
 import { componentFactory, FoundationComponent } from '@rmwc/base';
@@ -60,7 +61,10 @@ export const MenuSurfaceRoot = componentFactory<{}>({
 });
 
 /** A generic menu component for displaying any type of content. */
-export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
+export class MenuSurface extends FoundationComponent<
+  MDCMenuSurfaceFoundation,
+  MenuSurfaceProps
+> {
   private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
@@ -220,17 +224,20 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   sync(props: MenuSurfaceProps, prevProps: MenuSurfaceProps) {
     // fixed
     this.syncProp(props.fixed, prevProps.fixed, () => {
-      this.foundation.setFixedPosition(props.fixed);
+      this.foundation.setFixedPosition(!!props.fixed);
     });
 
     // anchorCorner
     const anchorCorner =
       props.anchorCorner && getAnchorCornerFromProp(props.anchorCorner);
 
-    this.syncProp(anchorCorner, this.foundation.anchorCorner_, () => {
-      this.foundation.setAnchorCorner(anchorCorner);
-      this.foundation.dimensions_ = this.foundation.adapter_.getInnerDimensions();
-      this.foundation.autoPosition_();
+    this.syncProp(anchorCorner, (this.foundation as any).anchorCorner_, () => {
+      if (anchorCorner) {
+        this.foundation.setAnchorCorner(anchorCorner);
+        (this.foundation as any).dimensions_ = (this
+          .foundation as any).adapter_.getInnerDimensions();
+        (this.foundation as any).autoPosition_();
+      }
     });
 
     // open
@@ -249,7 +256,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
     }
   }
 
-  setAnchorCorner(corner: string) {
+  setAnchorCorner(corner: Corner) {
     this.foundation.setAnchorCorner(corner);
   }
 
@@ -263,10 +270,10 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   }
 
   handleBodyClick(evt: MouseEvent | TouchEvent) {
-    this.foundation && this.foundation.handleBodyClick(evt);
+    this.foundation && this.foundation.handleBodyClick(evt as MouseEvent);
   }
 
-  handleKeydown(evt: React.KeyboardEvent) {
+  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeydown(evt);
   }
