@@ -97,7 +97,7 @@ export interface DialogProps {
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{action?: string}>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
 }
