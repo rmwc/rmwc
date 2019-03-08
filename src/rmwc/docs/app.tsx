@@ -428,6 +428,11 @@ const Nav = (props: any) => (
               return (
                 <CollapsibleList
                   key={m.label}
+                  startOpen={m.options.some(
+                    o =>
+                      window.location.pathname.split('/').pop() ===
+                      o.url.split('/').pop()
+                  )}
                   handle={
                     <SimpleListItem text={m.label} metaIcon="chevron_right" />
                   }
