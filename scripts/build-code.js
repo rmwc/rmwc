@@ -203,7 +203,7 @@ glob(
 
       execSync(`mkdir -p ${path.dirname(output)}`);
 
-      writeFlowFile(input, output, pkg);
+      //writeFlowFile(input, output, pkg);
     });
   }
 );
