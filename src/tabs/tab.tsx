@@ -1,7 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-// @ts-ignore
 import { MDCTabFoundation } from '@material/tab';
 
 import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';

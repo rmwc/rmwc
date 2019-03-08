@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCRadioFoundation } from '@material/radio';
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';

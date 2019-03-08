@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, object, array, boolean } from '@storybook/addon-knobs';
+import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
 

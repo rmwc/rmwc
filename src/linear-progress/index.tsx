@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
 import {
   componentFactory,
@@ -10,9 +9,9 @@ import {
 
 export interface LinearProgressProps {
   /** Progress float percentage between 0 and 1. */
-  progress?: number | string;
+  progress?: number;
   /** A Progress buffer float percentage between 0 and 1. */
-  buffer?: number | string;
+  buffer?: number;
   /** Progress goes from right to left. */
   reversed?: boolean;
   /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
@@ -132,7 +131,7 @@ export class LinearProgress extends FoundationComponent<
 
     // reversed
     if (props.reversed !== prevProps.reversed) {
-      this.foundation.setReverse(props.reversed || 0);
+      this.foundation.setReverse(!!props.reversed);
     }
 
     // closed
@@ -151,7 +150,6 @@ export class LinearProgress extends FoundationComponent<
     }
 
     return (
-      // @ts-ignore
       <LinearProgressRoot {...this.root.props(rest)} ref={this.root.setRef}>
         <LinearProgressBufferingDots />
         <LinearProgressBuffer />

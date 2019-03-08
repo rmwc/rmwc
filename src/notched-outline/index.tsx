@@ -1,7 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { FoundationComponent } from '@rmwc/base';
-// @ts-ignore
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 
 export interface NotchedOutlineProps {

@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent } from './menuContent';

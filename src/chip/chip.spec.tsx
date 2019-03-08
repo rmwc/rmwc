@@ -39,7 +39,7 @@ describe('Chip', () => {
     let value = 0;
     const el = mount(<Chip onInteraction={() => value++} />);
     const inst = el.instance() as Chip;
-    inst.foundation.adapter_.notifyInteraction();
+    (inst.foundation as any).adapter_.notifyInteraction();
     expect(value).toEqual(1);
   });
 
@@ -65,7 +65,7 @@ describe('Chip', () => {
 
     expect(onInteraction).toEqual(1);
 
-    const a = (el.instance() as Chip).foundation.adapter_;
+    const a = (el.instance() as any).foundation.adapter_;
     a.notifyRemoval();
     expect(onRemove).toEqual(1);
 
@@ -77,28 +77,5 @@ describe('Chip', () => {
     const el = mount(<Chip onInteraction={() => value++} />);
     el.simulate('click');
     expect(value).toEqual(1);
-  });
-
-  it('adapter checks', () => {
-    const el = mount(
-      <Chip icon="favorite" trailingIcon="close" label="test-label" />
-    );
-
-    const inst = el.instance() as Chip;
-    const a = inst.foundation.adapter_;
-
-    a.addClass('test');
-    a.hasClass('test');
-    a.removeClass('test');
-    a.addClassToLeadingIcon('test');
-    a.removeClassFromLeadingIcon('test');
-    // @ts-ignore
-    a.eventTargetHasClass(inst.root.ref, 'test');
-    a.notifyInteraction();
-    a.notifySelection(true);
-    a.notifyTrailingIconInteraction();
-    a.notifyRemoval();
-    a.getComputedStyleValue('color');
-    a.setStyleProperty('color', 'red');
   });
 });

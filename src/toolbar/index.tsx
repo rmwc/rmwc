@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCToolbarFoundation } from '@material/toolbar';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';

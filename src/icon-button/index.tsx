@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import {
   componentFactory,

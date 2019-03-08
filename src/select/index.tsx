@@ -1,8 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { deprecationWarning } from '@rmwc/base';
-
-// @ts-ignore
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';

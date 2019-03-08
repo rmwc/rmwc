@@ -4,7 +4,6 @@ import * as React from 'react';
 import {
   MDCTabScrollerFoundation,
   util as scrollerUtil
-  // @ts-ignore
 } from '@material/tab-scroller';
 
 import { FoundationComponent, componentFactory, matches } from '@rmwc/base';

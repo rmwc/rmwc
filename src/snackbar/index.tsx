@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
 import { Button } from '@rmwc/button';
 import {

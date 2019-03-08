@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
+
 import { MDCDialogFoundation } from '@material/dialog';
 
 import {
@@ -32,13 +32,20 @@ const DialogRoot = componentFactory<{}>({
   classNames: ['mdc-dialog']
 });
 
-class DialogScrim extends React.Component<{}> {
-  shouldComponentUpdate() {
-    return false;
+interface DialogScrimProps {
+  disableInteraction?: boolean;
+}
+
+class DialogScrim extends React.Component<DialogScrimProps> {
+  shouldComponentUpdate(nextProps: DialogScrimProps) {
+    return this.props.disableInteraction !== nextProps.disableInteraction;
   }
 
   render() {
-    return <div className="mdc-dialog__scrim" />;
+    const style = this.props.disableInteraction
+      ? { pointerEvents: 'none' }
+      : {};
+    return <div className="mdc-dialog__scrim" style={style as any} />;
   }
 }
 
@@ -100,6 +107,8 @@ export interface DialogProps {
   onClose?: (evt: RMWC.CustomEventT<{ action?: string }>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
+  /** Prevent closing the dialog when the scrim is clicked. */
+  preventOutsideDismiss?: boolean;
 }
 
 /** A Dialog component. */
@@ -258,6 +267,7 @@ export class Dialog extends FoundationComponent<
       onOpen,
       onClose,
       onStateChange,
+      preventOutsideDismiss,
       ...rest
     } = this.props;
     return (
@@ -270,7 +280,7 @@ export class Dialog extends FoundationComponent<
         <div className="mdc-dialog__container">
           <div className="mdc-dialog__surface">{children}</div>
         </div>
-        <DialogScrim />
+        <DialogScrim disableInteraction={preventOutsideDismiss} />
       </DialogRoot>
     );
   }

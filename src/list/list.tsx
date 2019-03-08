@@ -1,7 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
-//@ts-ignore
 import { MDCListFoundation } from '@material/list';
 import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
@@ -72,8 +70,7 @@ export class List extends FoundationComponent<MDCListFoundation, ListProps> {
   }
 
   focusItemAtIndex(index: number) {
-    // @ts-ignore
-    this.foundation.adapter_.focusItemAtIndex(index);
+    (this.foundation as any).adapter_.focusItemAtIndex(index);
   }
 
   getDefaultFoundation() {

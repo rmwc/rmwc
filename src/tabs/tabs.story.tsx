@@ -3,8 +3,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Tab, TabBar } from './';
-// @ts-ignore
-import { Button } from '@rmwc/button';
+import { Button } from '../button';
 
 class TabBarStory extends React.Component {
   state = {

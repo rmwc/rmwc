@@ -1,7 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
-// @ts-ignore
 import { MDCSwitchFoundation } from '@material/switch';
 import { componentFactory, classNames } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
