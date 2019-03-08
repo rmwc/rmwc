@@ -230,11 +230,9 @@ class TopAppBarBase extends FoundationComponent<
     this.foundation.destroyScrollHandler();
     this.scrollTarget = target;
     this.foundation.initScrollHandler();
-    console.log('Setting target', target);
   }
 
   sync(props: TopAppBarProps, prevProps: TopAppBarProps) {
-    console.log(props.scrollTarget, this.scrollTarget);
     this.syncProp(props.scrollTarget, this.scrollTarget, () => {
       this.scrollTarget = props.scrollTarget || window;
       this.setScrollHandler(this.scrollTarget);

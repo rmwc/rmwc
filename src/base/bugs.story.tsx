@@ -378,6 +378,16 @@ function Bug842vo56019() {
   );
 }
 
+function Bug383() {
+  return (
+    <TabBar activeTabIndex={0}>
+      <Tab>Cookies</Tab>
+      <Tab>Pizza</Tab>
+      <Tab>Icecream</Tab>
+    </TabBar>
+  );
+}
+
 function Bug415() {
   return (
     <BrowserRouter>
@@ -455,5 +465,6 @@ storiesOf('Bugs', module)
   .add('#361', () => <Bug361 />)
   .add('#370', () => <Bug370 />)
   .add('#374', () => <Bug374 />)
+  .add('#383', () => <Bug383 />)
   .add('#842vo56019', () => <Bug842vo56019 />)
   .add('#415', () => <Bug415 />);
