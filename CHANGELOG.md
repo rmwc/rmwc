@@ -1,3 +1,20 @@
+#### 5.2.0-alpha.1 (2019-03-08)
+
+##### Chores
+
+* **Docs:**
+  *  Fixing 404 (55c5ee35)
+  *  Adding missing import to card docs (fd8e764d)
+  *  increase memory limit for docs site (728c903d)
+* **.gitignore:**  Ignore new report files (3befc9a3)
+* **Contributing:**  Updating guidelines (64ad2269)
+* **Flow:**  Removing unused config (a9b95ba9)
+
+##### New Features
+
+* **CollapsibleList:**  Added ability to start menu as open (9a832634)
+* **Docs:**  Adding resources page (e3ac2cfd)
+
 #### 5.2.0-alpha.0 (2019-03-08)
 
 ##### Breaking Changes

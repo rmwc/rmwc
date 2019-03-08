@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/list",
-  "version": "5.2.0-alpha.0",
+  "version": "5.2.0-alpha.1",
   "description": "RMWC List component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
