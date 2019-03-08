@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/menu",
-  "version": "5.1.8",
+  "version": "5.2.0-alpha.0",
   "description": "RMWC Menu component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,9 +34,9 @@
   "dependencies": {
     "@material/menu": "^1.0.0",
     "@material/menu-surface": "^1.0.0",
-    "@rmwc/base": "^5.1.8",
-"@rmwc/types": "^5.1.8",
-    "@rmwc/list": "^5.1.8"
+    "@rmwc/base": "^5.2.0-alpha.0",
+    "@rmwc/list": "^5.2.0-alpha.0",
+    "@rmwc/types": "^5.2.0-alpha.0"
   },
   "gitHead": "41bbd3e5cb78bd672ee6a855b5407fbe37a7f815"
 }

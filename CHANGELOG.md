@@ -1,3 +1,29 @@
+#### 5.2.0-alpha.0 (2019-03-08)
+
+##### Breaking Changes
+
+* **List:**  onAction evt.detail now equals {index: number} instead of just a raw number (a5af9fa8)
+
+##### New Features
+
+* **Dialog:**  Adds ability to prevent dismiss when Scrim is clicked fixes #376 (38c95192)
+
+##### Bug Fixes
+
+* **Typescript:**
+  *  Correcting more issues hidden by previous ignores (ef3665a5)
+  *  types foundations all the way through, fixes issue #416 (77198c8a)
+  *  Fully integrate with MDC via typescript (62cd4143)
+* **Menu:**  added hoistToBody functionality fixes #396 #347 (cf3a8578)
+* **Select:**  Corrects issue with floating label and deferred options fixes #390 (441fff99)
+* **Tabs:**  Corrects syncronicty issue with controlled tabs fixes #383 (1aa80ec7)
+* **TopAppBar:**  Allows scrollTarget to be set via a prop fixes #430 (48ca8021)
+* **Tests:**  corrects issue with ES6 export in polyfill #426 (46b35fde)
+* **Storybook:**  Upgrades to storybook 5 and convert to TS (5e190104)
+* **Snackbar:**  Add missing icon-button dependency (1edbdb4b)
+* **Base:**  Updating classNames version for SSR (82c1fd5c)
+* **Dev:**  Adding missing type files for contributing #422 (74a0864d)
+
 #### 5.1.8 (2019-02-22)
 
 ##### Bug Fixes
