@@ -30,3 +30,5 @@ yarn-error.log*
 /index.js.flow
 /.vscode/chrome
 /lerna-debug.log
+
+report.*.json
