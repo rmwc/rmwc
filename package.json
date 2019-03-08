@@ -22,7 +22,7 @@
   },
   "scripts": {
     "install": "lerna bootstrap --force-local --hoist",
-    "start": "react-app-rewired start",
+    "start": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired start",
     "build:docsite": "export NODE_OPTIONS='--max-old-space-size=4096' && react-app-rewired build && rm -R -f docs && mv build docs",
     "build:docs": "npm run clean && npm run docgen && npm run build:docsite",
     "build:code": "npm run clean && node scripts/build-code.js",
