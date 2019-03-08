@@ -35,6 +35,7 @@
     "release:patch": "lerna publish patch --npm-tag latest",
     "release:minor": "lerna publish minor --npm-tag latest",
     "release:major": "lerna publish major --npm-tag latest",
+    "alpha": "lerna publish --npm-tag next",
     "alpha:patch": "lerna publish prepatch --npm-tag next",
     "alpha:minor": "lerna publish preminor --npm-tag next",
     "alpha:major": "lerna publish premajor --npm-tag next",
