@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
-import { menuContent } from './menuContent';
+import { menuContent } from './menu-content';
 
 // @ts-ignore
 import { version } from 'rmwc/rmwc';
