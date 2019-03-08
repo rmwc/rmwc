@@ -8,7 +8,7 @@ import {
   Corner
 } from '@material/menu-surface';
 
-import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 import { MDCMenuDistance } from '@material/menu-surface';
 
 const ANCHOR_CORNER_MAP: {
@@ -36,6 +36,8 @@ export interface MenuSurfaceProps {
   open?: boolean;
   /** Make the menu position fixed. */
   fixed?: boolean;
+  /** Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. */
+  hoistToBody?: boolean;
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
@@ -80,15 +82,22 @@ export class MenuSurface extends FoundationComponent<
 
   componentDidMount() {
     super.componentDidMount();
-    if (
-      this.root.ref &&
-      this.root.ref.parentElement &&
-      this.root.ref.parentElement.classList.contains(
-        MDCMenuSurfaceFoundation.cssClasses.ANCHOR
-      )
-    ) {
-      this.anchorElement = this.root.ref.parentElement;
+    if (this.root.ref) {
+      const anchor = closest(
+        this.root.ref,
+        `.${MDCMenuSurfaceFoundation.cssClasses.ANCHOR}`
+      );
+      anchor && (this.anchorElement = anchor);
     }
+  }
+
+  componentWillUnmount() {
+    // if we are hoisted, unhoist the
+    // component so it gets cleaned up properly
+    if (this.hoisted) {
+      this.unhoistMenuFromBody();
+    }
+    super.componentWillUnmount();
   }
 
   get open() {
@@ -210,10 +219,22 @@ export class MenuSurface extends FoundationComponent<
         return { x: window.pageXOffset, y: window.pageYOffset };
       },
       setPosition: (position: Partial<MDCMenuDistance>) => {
-        this.root.setStyle('left', position.left || null);
-        this.root.setStyle('right', position.right || null);
-        this.root.setStyle('top', position.top || null);
-        this.root.setStyle('bottom', position.bottom || null);
+        this.root.setStyle(
+          'left',
+          position.left !== undefined ? position.left : null
+        );
+        this.root.setStyle(
+          'right',
+          position.right !== undefined ? position.right : null
+        );
+        this.root.setStyle(
+          'top',
+          position.top !== undefined ? position.top : null
+        );
+        this.root.setStyle(
+          'bottom',
+          position.bottom !== undefined ? position.bottom : null
+        );
       },
       setMaxHeight: (height: string) => {
         this.root.setStyle('maxHeight', height);
@@ -225,6 +246,11 @@ export class MenuSurface extends FoundationComponent<
     // fixed
     this.syncProp(props.fixed, prevProps.fixed, () => {
       this.foundation.setFixedPosition(!!props.fixed);
+    });
+
+    // hoistToBody
+    this.syncProp(props.hoistToBody, prevProps.hoistToBody, () => {
+      props.hoistToBody ? this.hoistMenuToBody() : this.unhoistMenuFromBody();
     });
 
     // anchorCorner
@@ -253,6 +279,19 @@ export class MenuSurface extends FoundationComponent<
       );
       this.hoisted = true;
       this.foundation.setIsHoisted(true);
+
+      // correct layout for open menu
+      if (this.props.open) {
+        (this.foundation as any).autoPosition_();
+      }
+    }
+  }
+
+  unhoistMenuFromBody() {
+    if (this.anchorElement && this.root.ref) {
+      this.anchorElement.appendChild(this.root.ref);
+      this.hoisted = false;
+      this.foundation.setIsHoisted(false);
     }
   }
 
@@ -285,6 +324,7 @@ export class MenuSurface extends FoundationComponent<
       anchorCorner,
       onOpen,
       onClose,
+      hoistToBody,
       ...rest
     } = this.props;
 

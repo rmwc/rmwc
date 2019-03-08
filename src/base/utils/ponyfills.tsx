@@ -1,11 +1,11 @@
 export const closest = (
   element: HTMLElement | EventTarget | null,
   selector: string
-) => {
+): HTMLElement | null => {
   if (element instanceof Element) {
     /* istanbul ignore else  */
     if (element && element.closest) {
-      return element.closest(selector);
+      return element.closest(selector) as HTMLElement | null;
     } else {
       let el: HTMLElement | null = element;
       while (el) {

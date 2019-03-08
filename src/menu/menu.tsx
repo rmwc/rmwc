@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
+
 import { MDCMenuFoundation, Corner } from '@material/menu';
 
 import { List, ListItem, ListItemProps } from '@rmwc/list';
@@ -221,11 +221,11 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
   class extends React.Component<Props, SimpleMenuState> {
     static displayName = 'SimpleMenu';
 
-    componentWillMount() {
+    componentDidMount() {
       this.syncWithOpenProp(this.props.open);
     }
 
-    componentWillReceiveProps(nextProps: Props) {
+    componentDidUpdate(nextProps: Props) {
       this.syncWithOpenProp(nextProps.open);
     }
 

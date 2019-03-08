@@ -320,6 +320,8 @@ export class SelectBase extends FoundationComponent<
     if (this.menu) {
       this.menuElement =
         this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
+      // tried to replace this with the hoistToBody prop and it made the placeholders
+      // disappear... likely a timing issue. Leaving this for now
       this.menu.hoistMenuToBody();
       this.root.ref && this.menu.setAnchorElement(this.root.ref);
       //this.menu.wrapFocus = false;
@@ -343,14 +345,6 @@ export class SelectBase extends FoundationComponent<
     if (this.props.disabled) {
       this.foundation.setDisabled(true);
     }
-  }
-
-  componentWillUnmount() {
-    super.componentWillUnmount();
-    // TODO: Switch this to a Portal
-    this.menuElement &&
-      this.menuElement.parentNode &&
-      this.menuElement.parentNode.removeChild(this.menuElement);
   }
 
   getDefaultFoundation() {

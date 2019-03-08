@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { select, array } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
 import { Button } from '../button';
+import { useKnob } from '../base/utils/use-knob';
 
 class MenuStory extends React.Component {
   state = {
@@ -26,11 +27,11 @@ class MenuStory extends React.Component {
         <Menu
           open={this.state.open}
           anchorCorner={
-            array(
+            select(
               'anchorCorner',
               [
                 'bottomEnd',
-                'bottom',
+                'bottomLeft',
                 'bottomRight',
                 'bottomStart',
                 'topEnd',
@@ -73,11 +74,11 @@ class MenuSurfaceStory extends React.Component {
         <MenuSurface
           open={this.state.open}
           anchorCorner={
-            array(
+            select(
               'anchorCorner',
               [
                 'bottomEnd',
-                'bottom',
+                'bottomLeft',
                 'bottomRight',
                 'bottomStart',
                 'topEnd',
@@ -100,6 +101,35 @@ class MenuSurfaceStory extends React.Component {
   }
 }
 
+function MenuHoist() {
+  const [hoisted] = useKnob('boolean', 'hoisted', false);
+  const [open, setOpen] = useKnob('boolean', 'open', false);
+  const [options] = useKnob('array', 'options', [
+    'Cookies',
+    'Pizza',
+    'Icecream'
+  ]);
+  return (
+    <div style={{ margin: '200px', height: '56px', overflow: 'hidden' }}>
+      <MenuSurfaceAnchor>
+        <Button
+          raised
+          onClick={evt => {
+            setOpen(true);
+          }}
+        >
+          Open Menu
+        </Button>
+        <Menu open={open} hoistToBody={hoisted} onClose={() => setOpen(false)}>
+          {options.map((o: string) => (
+            <MenuItem key={o}>{o}</MenuItem>
+          ))}
+        </Menu>
+      </MenuSurfaceAnchor>
+    </div>
+  );
+}
+
 storiesOf('Menus', module)
   .add('Menu', () => <MenuStory />)
   .add('MenuSurface', () => <MenuSurfaceStory />)
@@ -110,6 +140,7 @@ storiesOf('Menus', module)
       <MenuItem>Icecream</MenuItem>
     </Menu>
   ))
+  .add('Menu: hoistToBody', () => <MenuHoist />)
   .add('SimpleMenu', () => (
     <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
       <MenuItem>Cookies</MenuItem>
