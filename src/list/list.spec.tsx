@@ -47,7 +47,7 @@ describe('List', () => {
     el.find(ListItem)
       .last()
       .simulate('click');
-    expect(clickedIndex).toEqual({ index: 1 });
+    expect(clickedIndex).toBe(1);
   });
 
   it('SimpleListItem renders', () => {
@@ -116,6 +116,32 @@ describe('List', () => {
       .simulate('keydown');
     el.simulate('click');
     el.simulate('blur');
+  });
+
+  it('foundation', () => {
+    const el = mount(
+      <List>
+        <SimpleListItem />
+        <SimpleListItem />
+      </List>
+    );
+    const inst = el.instance() as List;
+    inst.focusItemAtIndex(0);
+    const a = inst.foundation.adapter_;
+    expect(a.getListItemCount()).toBe(2);
+    a.getFocusedElementIndex();
+    a.setAttributeForElementIndex(0, 'title', 'foo');
+    a.removeAttributeForElementIndex(0, 'title');
+    a.addClassForElementIndex(0, 'foo');
+    a.removeClassForElementIndex(0, 'foo');
+    a.focusItemAtIndex(0);
+    a.setTabIndexForListItemChildren(0, 0);
+    a.hasCheckboxAtIndex(0);
+    a.notifyAction(0);
+    a.hasRadioAtIndex(0);
+    a.isCheckboxCheckedAtIndex(0);
+    a.setCheckedCheckboxOrRadioAtIndex(0);
+    a.isFocusInsideList();
   });
 });
 
