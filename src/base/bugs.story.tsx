@@ -388,6 +388,20 @@ function Bug383() {
   );
 }
 
+function Bug390() {
+  const [options, setOptions] = React.useState<string[]>([]);
+
+  return (
+    <>
+      <Select outlined label="Label" options={options} value="Apples" />
+
+      <Button onClick={() => setOptions(['Apples', 'Oranges'])}>
+        Update Options
+      </Button>
+    </>
+  );
+}
+
 function Bug415() {
   return (
     <BrowserRouter>
@@ -466,5 +480,6 @@ storiesOf('Bugs', module)
   .add('#370', () => <Bug370 />)
   .add('#374', () => <Bug374 />)
   .add('#383', () => <Bug383 />)
+  .add('#390', () => <Bug390 />)
   .add('#842vo56019', () => <Bug842vo56019 />)
   .add('#415', () => <Bug415 />);

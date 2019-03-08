@@ -539,7 +539,11 @@ export class SelectBase extends FoundationComponent<
     // For controlled selects that are enhanced
     // we need to jump through some checks to see if we need to update the
     // value in our foundation
-    if (props.value !== prevProps.value) {
+    if (
+      props.value !== prevProps.value ||
+      props.options !== prevProps.options ||
+      JSON.stringify(props.options) !== JSON.stringify(prevProps.options)
+    ) {
       this.foundation.setValue(props.value || '');
     }
 

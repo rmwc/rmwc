@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, object, array, boolean } from '@storybook/addon-knobs';
 import { Select } from './';
-import { storyWithState } from '@rmwc/base/utils/story-with-state';
 import { useKnob } from '@rmwc/base/utils/use-knob';
 
 function MutatingSelect(props: any) {
@@ -197,7 +196,13 @@ storiesOf('Inputs and Controls', module)
     />
   ))
   .add('Select with many values', () => (
-    <Select options={[...Array(100)].map(() => Math.random().toString(16))} />
+    <>
+      <Select options={[...Array(100)].map(() => Math.random().toString(16))} />
+      <Select
+        enhanced
+        options={[...Array(100)].map(() => Math.random().toString(16))}
+      />
+    </>
   ))
   .add('Select with children', () => (
     <Select>
