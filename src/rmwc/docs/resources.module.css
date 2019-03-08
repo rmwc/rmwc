@@ -1,0 +1,43 @@
+.cardGridInner {
+  display: grid !important;
+  grid-gap: 1rem;
+}
+
+.icon {
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  color: white;
+  fill: currentColor;
+  transition: 0.3s;
+}
+
+.card .cardMedia {
+  transition: 0.3s;
+  background-size: 120%;
+}
+
+.card:hover .cardMedia {
+  background-size: 100%;
+}
+
+.card:hover .icon {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+@media (min-width: 37.5rem) {
+}
+
+@media (min-width: 48rem) {
+  .cardGridInner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 90rem) {
+  .cardGridInner {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

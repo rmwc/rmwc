@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CircularProgress } from '@rmwc/circular-progress';
 
 const InstallationDocs = React.lazy(() => import('./README-INSTALLATION.md'));
+const ResourcesDocs = React.lazy(() => import('./resources'));
 const UsageDocs = React.lazy(() => import('./README-USAGE.md'));
 const StylingThemingDocs = React.lazy(() =>
   import('./README-STYLING-THEMING.md')
@@ -86,6 +87,11 @@ export const menuContent = [
         label: 'Installation',
         url: `/installation`,
         component: Loadable(InstallationDocs)
+      },
+      {
+        label: 'Resources',
+        url: `/resources`,
+        component: Loadable(ResourcesDocs)
       },
       {
         label: 'Usage',

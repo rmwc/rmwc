@@ -39,7 +39,7 @@ import {
 import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
 
-import Home from './Home';
+import Home from './home';
 import { toCamel, toDashCase } from '@rmwc/base';
 
 const DEFAULT_THEME = {

@@ -72,8 +72,7 @@ export const Home = () => {
                 <CardMedia
                   style={{
                     backgroundSize: 'fill',
-                    backgroundImage:
-                      'url(https://material.io/assets/1KmITLHaWxyCaX9IbEu3WL9piFpb03LHs/making-more-material-1x1-small.png)',
+                    backgroundImage: 'url(images/backgrounds/home-1.png)',
                     height: '12.313rem'
                   }}
                 />
@@ -105,8 +104,7 @@ export const Home = () => {
               <CardMedia
                 style={{
                   backgroundSize: 'cover',
-                  backgroundImage:
-                    'url(https://material.io/assets/1n0USi3jGBT9CHS9YH-1x7L0grDc_MToO/gm-2x1-large.png)',
+                  backgroundImage: 'url(images/backgrounds/home-2.png)',
                   height: '12.313rem'
                 }}
               />
@@ -134,8 +132,7 @@ export const Home = () => {
                 <CardMedia
                   style={{
                     backgroundSize: 'cover',
-                    backgroundImage:
-                      'url(https://material.io/assets/1KaOG1QEZWBZTKIP93WDPAHTDplrgri6j/material-poster.png)',
+                    backgroundImage: 'url(images/backgrounds/home-3.png)',
                     height: '12.313rem'
                   }}
                 />
