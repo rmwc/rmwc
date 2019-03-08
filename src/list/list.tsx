@@ -15,7 +15,7 @@ export interface ListProps {
   /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean;
   /** A callback for when a list item is interacted with. */
-  onAction?: (evt: RMWC.CustomEventT<number>) => void;
+  onAction?: (evt: RMWC.CustomEventT<{ index: number }>) => void;
 }
 
 /** A List Component */
@@ -77,112 +77,101 @@ export class List extends FoundationComponent<MDCListFoundation, ListProps> {
   }
 
   getDefaultFoundation() {
-    return new MDCListFoundation(
-      /** @type {!MDCListAdapter} */ (Object.assign({
-        getListItemCount: () => this.listElements.length,
-        getFocusedElementIndex: () =>
-          this.listElements.indexOf(document.activeElement as HTMLLIElement),
-        setAttributeForElementIndex: (
-          index: number,
-          attr: string,
-          value: string | number
-        ) => {
-          // This value is getting set and never getting set back
-          // This is causing list items to be un-tabbable
-          if (attr === 'tabindex' && value === -1) {
-            return;
-          }
-
-          const element = this.listElements[index];
-          if (element) {
-            element.setAttribute(attr, String(value));
-          }
-        },
-        removeAttributeForElementIndex: (index: number, attr: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.removeAttribute(attr);
-          }
-        },
-        addClassForElementIndex: (index: number, className: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.classList.add(className);
-          }
-        },
-        removeClassForElementIndex: (index: number, className: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.classList.remove(className);
-          }
-        },
-        focusItemAtIndex: (index: number) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.focus();
-          }
-        },
-        setTabIndexForListItemChildren: (
-          listItemIndex: number,
-          tabIndexValue: string | number
-        ) => {
-          const element = this.listElements[listItemIndex];
-          const listItemChildren: Element[] = [].slice.call(
-            element.querySelectorAll(
-              MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
-            )
-          );
-          listItemChildren.forEach(ele =>
-            ele.setAttribute('tabindex', String(tabIndexValue))
-          );
-        },
-        hasCheckboxAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          return !!listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_SELECTOR
-          );
-        },
-        hasRadioAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          return !!listItem.querySelector(
-            MDCListFoundation.strings.RADIO_SELECTOR
-          );
-        },
-        isCheckboxCheckedAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          const toggleEl = listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_SELECTOR
-          ) as HTMLInputElement | null;
-
-          return toggleEl ? toggleEl.checked : false;
-        },
-        setCheckedCheckboxOrRadioAtIndex: (
-          index: number,
-          isChecked: boolean
-        ) => {
-          const listItem = this.listElements[index];
-          const toggleEl = listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-          ) as HTMLInputElement | null;
-
-          if (toggleEl) {
-            toggleEl.checked = isChecked;
-
-            const event = document.createEvent('Event');
-            event.initEvent('change', true, true);
-            toggleEl.dispatchEvent(event);
-          }
-        },
-        notifyAction: (index: number) => {
-          this.emit('onAction', index);
-        },
-        isFocusInsideList: () => {
-          return (
-            this.root.ref && this.root.ref.contains(document.activeElement)
-          );
+    return new MDCListFoundation({
+      getListItemCount: () => this.listElements.length,
+      getFocusedElementIndex: () =>
+        this.listElements.indexOf(document.activeElement as HTMLLIElement),
+      setAttributeForElementIndex: (
+        index: number,
+        attr: string,
+        value: string | number
+      ) => {
+        // This value is getting set and never getting set back
+        // This is causing list items to be un-tabbable
+        if (attr === 'tabindex' && value === -1) {
+          return;
         }
-      }))
-    );
+
+        const element = this.listElements[index];
+        if (element) {
+          element.setAttribute(attr, String(value));
+        }
+      },
+      addClassForElementIndex: (index: number, className: string) => {
+        const element = this.listElements[index];
+        if (element) {
+          element.classList.add(className);
+        }
+      },
+      removeClassForElementIndex: (index: number, className: string) => {
+        const element = this.listElements[index];
+        if (element) {
+          element.classList.remove(className);
+        }
+      },
+      focusItemAtIndex: (index: number) => {
+        const element = this.listElements[index];
+        if (element) {
+          element.focus();
+        }
+      },
+      setTabIndexForListItemChildren: (
+        listItemIndex: number,
+        tabIndexValue: string | number
+      ) => {
+        const element = this.listElements[listItemIndex];
+        const listItemChildren: Element[] = [].slice.call(
+          element.querySelectorAll(
+            MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
+          )
+        );
+        listItemChildren.forEach(ele =>
+          ele.setAttribute('tabindex', String(tabIndexValue))
+        );
+      },
+      hasCheckboxAtIndex: (index: number) => {
+        const listItem = this.listElements[index];
+        return !!listItem.querySelector(
+          MDCListFoundation.strings.CHECKBOX_SELECTOR
+        );
+      },
+      hasRadioAtIndex: (index: number) => {
+        const listItem = this.listElements[index];
+        return !!listItem.querySelector(
+          MDCListFoundation.strings.RADIO_SELECTOR
+        );
+      },
+      isCheckboxCheckedAtIndex: (index: number) => {
+        const listItem = this.listElements[index];
+        const toggleEl = listItem.querySelector(
+          MDCListFoundation.strings.CHECKBOX_SELECTOR
+        ) as HTMLInputElement | null;
+
+        return toggleEl ? toggleEl.checked : false;
+      },
+      setCheckedCheckboxOrRadioAtIndex: (index: number, isChecked: boolean) => {
+        const listItem = this.listElements[index];
+        const toggleEl = listItem.querySelector(
+          MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
+        ) as HTMLInputElement | null;
+
+        if (toggleEl) {
+          toggleEl.checked = isChecked;
+
+          const event = document.createEvent('Event');
+          event.initEvent('change', true, true);
+          toggleEl.dispatchEvent(event);
+        }
+      },
+      notifyAction: (index: number) => {
+        this.emit('onAction', { index });
+      },
+      isFocusInsideList: () => {
+        return (
+          !!this.root.ref && this.root.ref.contains(document.activeElement)
+        );
+      }
+    });
   }
 
   /**
