@@ -107,7 +107,7 @@ export interface DialogProps {
   onClose?: (evt: RMWC.CustomEventT<{ action?: string }>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
-  /** Prevent closing the dialog when the scrim is clicked. */
+  /** Prevent the dialog from closing when the scrim is clicked. */
   preventOutsideDismiss?: boolean;
 }
 
