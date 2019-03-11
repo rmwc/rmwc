@@ -2,8 +2,11 @@ export type DeprecateT = {
   [oldPropName: string]: string | [string, (value: any) => void];
 };
 
-export const deprecationWarning = (message: string) =>
-  console.warn(`RMWC Deprecation Warning: ${message}`);
+export const deprecationWarning = (message: string) => {
+  if (process && process.env && process.env.NODE_ENV !== 'production') {
+    console.warn(`RMWC Deprecation Warning: ${message}`);
+  }
+}
 
 export const handleDeprecations = (
   props: any,

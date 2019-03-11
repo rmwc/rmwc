@@ -23,9 +23,19 @@ RMWC's goal is to use the Google sanctioned javascript Material Design Component
 
 ## Breaking Changes
 
-As stated in "Why?", the goal of this library is to be un-opinionated, and that includes opinions about breaking changes that come downstream from material-components-web. While RMWC goes to great lengths to insulate you from  breaking changes through deprecations and warning messages, unfortunately not every breaking change is a candidate for a deprecation.
+The goal of the project is to have ZERO breaking changes and rely heavily on deprecations between major versions. While its a novel goal, in practice it is quite difficult. `material-components-web` (in classic Google fashion) was in alpha for 2 years and contained a litany of brekaing changes along the way. Since adopting an official 1.0.0 breaking changes have been reduced, but still exist.
 
-With that said, you can each release of RMWC is bound to a specific release of material-components-web, so you can safely continue running your current version without upgrading. As of 2.0.0, components are also individually packaged and released. If you have a large code base and want to insulate yourself from change, it is recommended you install one component at a time.
+As of the 5.x.x version RMWC, the apis have stablizied for the foreseeable future and intensive work has been done to make sure that breaking changes are limited in scope and obey semver rules. Where possible, deprecations will be used, and you can count on deprecations being valid until the next major version. If you are using Typescript, your IDE will not tell you the properties are deprecated, but your runtime compiled code, as well as the comments in your IDE will say "DEPRECATED" across the top. 
+
+The good news is, since components are indiviudally packaged and released, you can generally safely upgrade a components one at a time.
+
+So to sum it up:
+
+- RMWC works hard to minimize breaking changes between releases
+- Deprecations are favored over breaking changes. These will be logged out anytime NODE_ENV !== 'production'
+- Any breaking change will honor semver and bump a major version
+- Minor versions are used for releases that contain new features but no breaking changes
+- Patch versions are for bugfixes
 
 ## Basic Layout
 
