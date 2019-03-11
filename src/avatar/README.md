@@ -49,6 +49,15 @@ import { Avatar } from '@rmwc/avatar';
   square
 />
 
+{/** Contained */}
+<Avatar
+  src="images/avatars/google.svg"
+  size="large"
+  contain
+  name="Google"
+  square
+/>
+
 ```
 
 ## Avatar Groups

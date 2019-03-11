@@ -15,6 +15,8 @@ export interface AvatarProps {
   square?: boolean;
   /** Make the avatar interactive. */
   interactive?: boolean;
+  /** Contain the avatar image instead of covering. */
+  contain?: boolean;
 }
 
 const getInitialsForName = (name = '') => {
@@ -41,6 +43,7 @@ const AvatarRoot = withRipple()(
       smallerText?: boolean;
       square?: boolean;
       interactive?: boolean;
+      hasImage?: boolean;
     } & IconProps
   >({
     displayName: 'AvatarRoot',
@@ -52,7 +55,8 @@ const AvatarRoot = withRipple()(
         'rmwc-avatar--interactive': props.interactive,
         'rmwc-avatar--count-overflow': props.overflow,
         'rmwc-avatar--smaller-text': props.smallerText,
-        'rmwc-avatar--square': props.square
+        'rmwc-avatar--square': props.square,
+        'rmwc-avatar--has-image': props.hasImage
       }
     ],
     tag: Icon,
@@ -61,7 +65,8 @@ const AvatarRoot = withRipple()(
       'overflow',
       'smallerText',
       'square',
-      'interactive'
+      'interactive',
+      'hasImage'
     ]
   })
 );
@@ -89,12 +94,14 @@ export const Avatar = ({
   size,
   name = '',
   interactive = false,
+  contain = false,
   ...rest
 }: AvatarProps & RMWC.ComponentProps) => {
   const initials = getInitialsForName(name);
   const avatarStyle = src
     ? {
-        backgroundImage: `url(${src})`
+        backgroundImage: `url(${src})`,
+        backgroundSize: contain ? 'contain' : 'cover'
       }
     : {};
 
@@ -102,6 +109,7 @@ export const Avatar = ({
     <AvatarRoot
       ripple={interactive}
       interactive={interactive}
+      hasImage={!!src}
       size={size}
       title={name}
       tag={'span'}
