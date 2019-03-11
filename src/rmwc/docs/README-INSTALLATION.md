@@ -67,6 +67,21 @@ import '@material/button/dist/mdc.button.min.css';
 import 'material-components-web/dist/material-components-web.min.css';
 ```
 
+### Tree Shaking Support
+
+Webpack 4 / Create React App 2 and other build tools like Rollup provider opt in support for tree shaking. As of version 5.1.x, RMWC as well as `material-components-web` both include support for tree shaking behavior out of the box. 
+
+Directions for Webpack / CRA
+[https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free](https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free)
+
+```json
+/** Example with Create React App 2. */
+{
+  "name": "My Package JSON file",
+  "sideEffects": false // just add this line
+}
+```
+
 
 ### Additional configuration when using CSS Modules
 
