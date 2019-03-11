@@ -83,8 +83,8 @@ import { Select } from '@rmwc/select';
 
 <DataTable
   style={{ height: '300px', width: '375px' }}
-  stickyRows={this.state.rows !== undefined ? this.state.rows : 0}
-  stickyColumns={this.state.cols !== undefined ? this.state.cols : 0}
+  stickyRows={this.state.rows !== undefined ? +this.state.rows : 0}
+  stickyColumns={this.state.cols !== undefined ? +this.state.cols : 0}
 >
   <DataTableContent>
     <DataTableHead >
@@ -116,16 +116,16 @@ import { Select } from '@rmwc/select';
   Sticky
   <Select
     label="Rows"
-    options={[0,1]}
-    value={this.state.rows || 0}
-    onChange={evt => this.setState({rows: +evt.target.value})}
+    options={['0','1']}
+    value={this.state.rows || '0'}
+    onChange={evt => this.setState({rows: evt.target.value})}
   />
 
   <Select
     label="Cols"
-    options={[0,1]}
-    value={this.state.cols || 0}
-    onChange={evt => this.setState({cols: +evt.target.value})}
+    options={['0','1']}
+    value={this.state.cols || '0'}
+    onChange={evt => this.setState({cols: evt.target.value})}
   />
 </div>
 
