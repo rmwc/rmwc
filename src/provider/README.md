@@ -12,9 +12,9 @@ import * as ReactDOM from 'react-dom';
 import App from './App'; // your main app component
 import { RMWCProvider } from '@rmwc/provider';
 
-// This example disables the button ripple effect by default
+// This example disables ripples globally by default
 ReactDOM.render(
-  <RMWCProvider buttonDefaultRipple={false}>
+  <RMWCProvider ripple={false}>
     <App />
   </RMWCProvider>,
   document.getElementById('root'),
