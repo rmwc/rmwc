@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "index.d.ts",
   "module": "next/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
