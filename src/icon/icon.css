@@ -1,9 +1,10 @@
 .rmwc-icon {
-  min-width: 1em;
-  min-height: 1em;
+  
 }
 
 .rmwc-icon--image {
+  min-width: 1em;
+  min-height: 1em;
   background-repeat: no-repeat;
   font-size: 1.5rem;
   background-size: 1em;
