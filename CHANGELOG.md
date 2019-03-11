@@ -1,3 +1,21 @@
+#### 5.2.0 (2019-03-11)
+
+##### Documentation Changes
+
+* **Installation:**  Updating path to polyfill in docs (354c8b12)
+* **DataTable:**  Correcting issue with data-table sticky menu select (b83145d3)
+* **Drawer:**  Added right to left example (1b57b4f9)
+* **Provider:**  Correct deprecated provider example (0d29926a)
+* **Icon:**  Clean up examples (21cf790c)
+
+##### Bug Fixes
+
+* **Icon:**  Corrects a regression in icon sizing for the chip component (ccdebafc)
+* **Docs:**
+  *  Include information on Tree Shaking (fcb0b0f1)
+  *  Update stance on breaking changes (c3ef24f3)
+* **Avatar:**  Allows usage for avatars with transparent backgrounds and containing the image fixes #434 (29e21473)
+
 #### 5.2.0-alpha.1 (2019-03-08)
 
 ##### Chores
