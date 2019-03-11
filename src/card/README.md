@@ -26,6 +26,8 @@ import {
 } from '@rmwc/card';
 
 import { Typography } from '@rmwc/typography';
+
+import { Typography } from '@rmwc/typography';
 <Card style={{ width: '21rem' }}>
   <CardPrimaryAction>
     <CardMedia

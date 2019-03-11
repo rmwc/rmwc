@@ -1,7 +1,6 @@
 ignore:
   - 'node_modules/'
   - 'src/base/utils/document-component.tsx'
-  - 'src/base/utils/story-with-state.js'
   - 'src/base/test-polyfill.js'
   - 'src/index.tsx.js'
   - 'src/setupTests.js'

@@ -1,10 +1,10 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCToolbarFoundation } from '@material/toolbar';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
+import { SpecificEventListener } from '@material/base/types';
 
 export interface ToolbarProps {
   /** Makes the toolbar fixed */
@@ -125,7 +125,10 @@ export const ToolbarIcon = withRipple({
   })
 );
 
-export class Toolbar extends FoundationComponent<ToolbarProps> {
+export class Toolbar extends FoundationComponent<
+  MDCToolbarFoundation,
+  ToolbarProps
+> {
   static displayName = 'Toolbar';
 
   private root = this.createElement('root');
@@ -178,19 +181,19 @@ export class Toolbar extends FoundationComponent<ToolbarProps> {
       hasClass: (className: string) => this.root.hasClass(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      registerScrollHandler: (handler: (evt: Event) => void) =>
+      registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
         window.addEventListener('scroll', handler),
-      deregisterScrollHandler: (handler: (evt: Event) => void) =>
+      deregisterScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
         window.removeEventListener('scroll', handler),
-      registerResizeHandler: (handler: (evt: Event) => void) =>
+      registerResizeHandler: (handler: SpecificEventListener<'resize'>) =>
         window.addEventListener('resize', handler),
-      deregisterResizeHandler: (handler: (evt: Event) => void) =>
+      deregisterResizeHandler: (handler: SpecificEventListener<'resize'>) =>
         window.removeEventListener('resize', handler),
       getViewportWidth: () => window.innerWidth,
       getViewportScrollY: () => window.pageYOffset,
-      getOffsetHeight: () => this.root.ref && this.root.ref.offsetHeight,
+      getOffsetHeight: () => (this.root.ref ? this.root.ref.offsetHeight : 0),
       getFirstRowElementOffsetHeight: () =>
-        this.firstRowElement && this.firstRowElement.offsetHeight,
+        this.firstRowElement ? this.firstRowElement.offsetHeight : 0,
       notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
         this.emit('onChange', evtData),
       setStyle: (property: string, value: string) =>

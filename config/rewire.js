@@ -121,7 +121,6 @@ const jestIgnore = config => {
 const jestCoverage = config => {
   config.collectCoverageFrom = config.collectCoverageFrom.concat([
     '!src/base/utils/document-component.tsx',
-    '!src/base/utils/story-with-state.js',
     '!src/base/test-polyfill.js',
     '!src/index.tsx',
     '!src/setupTests.tsx',
@@ -138,8 +137,8 @@ module.exports = {
     console.log(colors.magenta('Starting RMWC ❤️'));
     return pipe(
       fixLinting,
-      addAliases,
       addMarkdownLoader,
+      addAliases,
       config => {
         //console.log(config);
         return config;

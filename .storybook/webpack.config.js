@@ -5,7 +5,7 @@ const {
 } = require('../config/rewire');
 const craConfigBase = require('react-scripts/config/webpack.config');
 
-module.exports = (storybookBaseConfig, configType) => {
+module.exports = ({ config: storybookBaseConfig, mode }) => {
   storybookBaseConfig = rewireStorybook(storybookBaseConfig);
   craConfig = rewireCRA(craConfigBase('development'));
 

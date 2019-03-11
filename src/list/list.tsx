@@ -1,7 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
-//@ts-ignore
 import { MDCListFoundation } from '@material/list';
 import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
@@ -39,7 +37,7 @@ const ListRoot = componentFactory<ListProps>({
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive', 'onAction']
 });
 
-export class List extends FoundationComponent<ListProps> {
+export class List extends FoundationComponent<MDCListFoundation, ListProps> {
   static get cssClasses() {
     return MDCListFoundation.cssClasses;
   }
@@ -72,7 +70,7 @@ export class List extends FoundationComponent<ListProps> {
   }
 
   focusItemAtIndex(index: number) {
-    this.foundation.adapter_.focusItemAtIndex(index);
+    (this.foundation as any).adapter_.focusItemAtIndex(index);
   }
 
   getDefaultFoundation() {
@@ -151,7 +149,7 @@ export class List extends FoundationComponent<ListProps> {
           const listItem = this.listElements[index];
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_SELECTOR
-          );
+          ) as HTMLInputElement | null;
 
           return toggleEl ? toggleEl.checked : false;
         },
@@ -162,7 +160,7 @@ export class List extends FoundationComponent<ListProps> {
           const listItem = this.listElements[index];
           const toggleEl = listItem.querySelector(
             MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-          );
+          ) as HTMLInputElement | null;
 
           if (toggleEl) {
             toggleEl.checked = isChecked;
@@ -232,7 +230,7 @@ export class List extends FoundationComponent<ListProps> {
     this.foundation.handleClick(index, toggleCheckbox);
   }
 
-  handleKeydown(evt: React.KeyboardEvent<HTMLElement>) {
+  handleKeydown(evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
 
     const index = this.getListItemIndex(evt);
@@ -249,12 +247,12 @@ export class List extends FoundationComponent<ListProps> {
     }
   }
 
-  handleFocusIn(evt: React.FocusEvent) {
+  handleFocusIn(evt: React.FocusEvent & FocusEvent) {
     this.props.onFocus && this.props.onFocus(evt);
     this.foundation.handleFocusIn(evt, this.getListItemIndex(evt));
   }
 
-  handleFocusOut(evt: React.FocusEvent) {
+  handleFocusOut(evt: React.FocusEvent & FocusEvent) {
     this.props.onBlur && this.props.onBlur(evt);
     this.foundation.handleFocusOut(evt, this.getListItemIndex(evt));
   }

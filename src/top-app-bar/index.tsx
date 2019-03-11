@@ -8,11 +8,11 @@ import {
   MDCTopAppBarFoundation,
   MDCFixedTopAppBarFoundation,
   MDCShortTopAppBarFoundation
-  // @ts-ignore
 } from '@material/top-app-bar';
 
 import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
+import { SpecificEventListener } from '@material/base/types';
 
 export interface TopAppBarProps {
   /** Emits when the navigation icon is clicked. */
@@ -27,6 +27,8 @@ export interface TopAppBarProps {
   shortCollapsed?: boolean;
   /** Styles the top app bar to be dense. */
   dense?: boolean;
+  /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.*/
+  scrollTarget?: Element | null;
 }
 
 export const TopAppBarRoot = componentFactory<TopAppBarProps>({
@@ -131,16 +133,25 @@ export const TopAppBarFixedAdjust = componentFactory<TopAppBarFixedAdjustProps>(
 );
 
 /** A TopAppBar component */
-class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
+class TopAppBarBase extends FoundationComponent<
+  | MDCShortTopAppBarFoundation
+  | MDCFixedTopAppBarFoundation
+  | MDCTopAppBarFoundation,
+  TopAppBarProps
+> {
   static displayName = 'TopAppBar';
 
   private root = this.createElement('root');
   navIcon: HTMLElement | null = null;
-  scrollTarget: Window | null = null;
+  scrollTarget: EventTarget | null = null;
 
   componentDidMount() {
     super.componentDidMount();
-    this.scrollTarget = window;
+
+    if (!this.props.scrollTarget) {
+      this.setScrollHandler(window);
+    }
+
     this.navIcon =
       this.root.ref &&
       this.root.ref.querySelector(
@@ -149,15 +160,14 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
   }
 
   getDefaultFoundation() {
-    /** @type {!MDCTopAppBarAdapter} */
-    const adapter = /** @type {!MDCTopAppBarAdapter} */ (Object.assign({
+    const adapter = {
       hasClass: (className: string) => this.root.hasClass(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       setStyle: (property: string, value: string) =>
         this.root.ref && this.root.ref.style.setProperty(property, value),
       getTopAppBarHeight: () =>
-        this.root && this.root.ref && this.root.ref.clientHeight,
+        this.root.ref ? this.root.ref.clientHeight : 0,
       registerNavigationIconInteractionHandler: (
         evtType: string,
         handler: (evt: Event) => void
@@ -177,30 +187,32 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
       notifyNavigationIconClicked: () => {
         this.emit(MDCTopAppBarFoundation.strings.NAVIGATION_EVENT, {});
       },
-      registerScrollHandler: (handler: (evt: Event) => void) =>
+      registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
         this.scrollTarget &&
-        this.scrollTarget.addEventListener('scroll', handler),
-      deregisterScrollHandler: (handler: (evt: Event) => void) =>
+        this.scrollTarget.addEventListener('scroll', handler as EventListener),
+      deregisterScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
         this.scrollTarget &&
-        this.scrollTarget.removeEventListener('scroll', handler),
-      registerResizeHandler: (handler: (evt: Event) => void) =>
+        this.scrollTarget.removeEventListener(
+          'scroll',
+          handler as EventListener
+        ),
+      registerResizeHandler: (handler: SpecificEventListener<'resize'>) =>
         window.addEventListener('resize', handler),
-      deregisterResizeHandler: (handler: (evt: Event) => void) =>
+      deregisterResizeHandler: (handler: SpecificEventListener<'resize'>) =>
         window.removeEventListener('resize', handler),
       getViewportScrollY: () =>
         this.scrollTarget &&
-        this.scrollTarget[
-          // @ts-ignore
+        (this.scrollTarget as any)[
           this.scrollTarget === window ? 'pageYOffset' : 'scrollTop'
         ],
       getTotalActionItems: () =>
-        this.root.ref &&
-        this.root.ref.querySelectorAll(
-          MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
-        ).length
-    }));
+        this.root.ref
+          ? this.root.ref.querySelectorAll(
+              MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
+            ).length
+          : 0
+    };
 
-    /** @type {!MDCTopAppBarBaseFoundation} */
     let foundation;
     if (this.props.short) {
       foundation = new MDCShortTopAppBarFoundation(adapter);
@@ -213,8 +225,22 @@ class TopAppBarBase extends FoundationComponent<TopAppBarProps> {
     return foundation;
   }
 
+  setScrollHandler(target: EventTarget) {
+    if (!this.foundation) return;
+    this.foundation.destroyScrollHandler();
+    this.scrollTarget = target;
+    this.foundation.initScrollHandler();
+  }
+
+  sync(props: TopAppBarProps, prevProps: TopAppBarProps) {
+    this.syncProp(props.scrollTarget, this.scrollTarget, () => {
+      this.scrollTarget = props.scrollTarget || window;
+      this.setScrollHandler(this.scrollTarget);
+    });
+  }
+
   render() {
-    const { onNav, ...rest } = this.props;
+    const { onNav, scrollTarget, ...rest } = this.props;
     return <TopAppBarRoot {...this.root.props(rest)} ref={this.root.setRef} />;
   }
 }

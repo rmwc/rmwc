@@ -4,10 +4,9 @@ import * as React from 'react';
 import {
   MDCTabScrollerFoundation,
   util as scrollerUtil
-  // @ts-ignore
 } from '@material/tab-scroller';
 
-import { FoundationComponent, componentFactory } from '@rmwc/base';
+import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
 export const TabScrollerRoot = componentFactory({
   displayName: 'TabScroller',
@@ -24,7 +23,10 @@ export const TabScrollerScrollContent = componentFactory({
   classNames: ['mdc-tab-scroller__scroll-content']
 });
 
-export class TabScroller extends FoundationComponent<{}> {
+export class TabScroller extends FoundationComponent<
+  MDCTabScrollerFoundation,
+  {}
+> {
   private root = this.createElement('root');
   private area = this.createElement('area');
   private content = this.createElement('content');
@@ -37,14 +39,9 @@ export class TabScroller extends FoundationComponent<{}> {
   }
 
   getDefaultFoundation() {
-    const adapter = /** @type {!MDCTabScrollerAdapter} */ ({
-      eventTargetMatchesSelector: (
-        evtTarget: EventTarget,
-        selector: string
-      ) => {
-        const MATCHES = scrollerUtil.getMatchesProperty(HTMLElement.prototype);
-        return (evtTarget as any)[MATCHES](selector);
-      },
+    return new MDCTabScrollerFoundation({
+      eventTargetMatchesSelector: (evtTarget: EventTarget, selector: string) =>
+        matches(evtTarget as HTMLElement, selector),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       addScrollAreaClass: (className: string) => this.area.addClass(className),
@@ -61,20 +58,23 @@ export class TabScroller extends FoundationComponent<{}> {
       },
       setScrollAreaScrollLeft: (scrollX: number) =>
         this.area.ref && (this.area.ref.scrollLeft = scrollX),
-      getScrollAreaScrollLeft: () => this.area.ref && this.area.ref.scrollLeft,
+      getScrollAreaScrollLeft: () =>
+        this.area.ref ? this.area.ref.scrollLeft : 0,
       getScrollContentOffsetWidth: () =>
-        this.content.ref && this.content.ref.offsetWidth,
+        this.content.ref ? this.content.ref.offsetWidth : 0,
       getScrollAreaOffsetWidth: () =>
-        this.area.ref && this.area.ref.offsetWidth,
+        this.area.ref ? this.area.ref.offsetWidth : 0,
       computeScrollAreaClientRect: () =>
-        this.area.ref && this.area.ref.getBoundingClientRect(),
+        this.area.ref
+          ? this.area.ref.getBoundingClientRect()
+          : ({} as ClientRect),
       computeScrollContentClientRect: () =>
-        this.content.ref && this.content.ref.getBoundingClientRect(),
+        this.content.ref
+          ? this.content.ref.getBoundingClientRect()
+          : ({} as ClientRect),
       computeHorizontalScrollbarHeight: () =>
         scrollerUtil.computeHorizontalScrollbarHeight(document)
     });
-
-    return new MDCTabScrollerFoundation(adapter);
   }
 
   getScrollPosition() {
@@ -82,7 +82,7 @@ export class TabScroller extends FoundationComponent<{}> {
   }
 
   getScrollContentWidth() {
-    return this.content.ref && this.content.ref.offsetWidth;
+    return this.content.ref ? this.content.ref.offsetWidth : 0;
   }
 
   incrementScroll(scrollXIncrement: number) {
@@ -97,8 +97,8 @@ export class TabScroller extends FoundationComponent<{}> {
     this.foundation.handleInteraction();
   }
 
-  handleTransitionEnd(evt: React.TransitionEvent) {
-    this.foundation.handleTransitionEnd(evt);
+  handleTransitionEnd(evt: React.TransitionEvent | TransitionEvent) {
+    this.foundation.handleTransitionEnd(evt as TransitionEvent);
   }
 
   render() {

@@ -1,11 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { IconProps, IconPropT } from '@rmwc/icon';
+import { IconProps } from '@rmwc/icon';
+
+import { EventType, SpecificEventListener } from '@material/base/types';
 import {
   MDCTextFieldFoundation,
   MDCTextFieldIconFoundation,
   MDCTextFieldCharacterCounterFoundation
-  // @ts-ignore
 } from '@material/textfield';
 
 import {
@@ -45,9 +46,9 @@ export interface TextFieldProps {
   /** Makes the TextField fullwidth. */
   fullwidth?: boolean;
   /** Add a leading icon. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** Add a trailing icon. */
-  trailingIcon?: IconPropT;
+  trailingIcon?: RMWC.IconPropT;
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** A reference to the native input or textarea. */
@@ -60,9 +61,9 @@ export interface DeprecatedTextfieldProps {
   /** DEPRECATED: Is being removed from MCW. */
   dense?: boolean;
   /** DEPRECATED: Use icon. */
-  withLeadingIcon?: IconPropT;
+  withLeadingIcon?: RMWC.IconPropT;
   /** DEPRECATED: Use trailingIcon. */
-  withTrailingIcon?: IconPropT;
+  withTrailingIcon?: RMWC.IconPropT;
 }
 
 const TextFieldRoot = withRipple()(
@@ -119,6 +120,7 @@ const TextFieldTextarea = componentFactory({
 
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<
+  MDCTextFieldFoundation,
   TextFieldProps & DeprecatedTextfieldProps
 > {
   static displayName = 'TextField';
@@ -129,7 +131,7 @@ export class TextField extends FoundationComponent<
   );
   private label = this.createElement<FloatingLabel>('label');
   private lineRipple = this.createElement<LineRipple>('lineRipple');
-  characterCounter: null | TextFieldCharacterCount = null;
+  characterCounter?: null | TextFieldCharacterCount = null;
   leadingIcon: null | TextFieldIcon = null;
   trailingIcon: null | TextFieldIcon = null;
   outline: null | any;
@@ -147,22 +149,22 @@ export class TextField extends FoundationComponent<
         addClass: (className: string) => this.root.addClass(className),
         removeClass: (className: string) => this.root.removeClass(className),
         hasClass: (className: string) => this.root.hasClass(className),
-        registerTextFieldInteractionHandler: (
-          evtType: string,
-          handler: () => void
-        ) => this.root.addEventListener(evtType, handler),
-        deregisterTextFieldInteractionHandler: (
-          evtType: string,
-          handler: () => void
-        ) => this.root.removeEventListener(evtType, handler),
+        registerTextFieldInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => this.root.addEventListener(evtType, handler),
+        deregisterTextFieldInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => this.root.removeEventListener(evtType, handler),
         registerValidationAttributeChangeHandler: (
-          handler: (changes: (string | null)[]) => void
-        ) => {
+          handler: (attributeNames: string[]) => void
+        ): MutationObserver => {
           const getAttributesList = (mutationsList: MutationRecord[]) =>
             mutationsList.map(mutation => mutation.attributeName);
           if (this.input.ref) {
             const observer = new MutationObserver(mutationsList =>
-              handler(getAttributesList(mutationsList))
+              handler(getAttributesList(mutationsList) as string[])
             );
             const targetNode = this.input.ref;
             const config = { attributes: true };
@@ -170,19 +172,16 @@ export class TextField extends FoundationComponent<
             return observer;
           }
 
-          return {};
+          return {} as MutationObserver;
         },
-        deregisterValidationAttributeChangeHandler: (observer: null | any) => {
+        deregisterValidationAttributeChangeHandler: (
+          observer: MutationObserver
+        ) => {
           observer && observer.disconnect();
         },
         isFocused: () => {
           return document.activeElement === this.input.ref;
         },
-        isRtl: () =>
-          this.root.ref &&
-          window
-            .getComputedStyle(this.root.ref)
-            .getPropertyValue('direction') === 'rtl',
         ...this.getInputAdapterMethods(),
         ...this.getLabelAdapterMethods(),
         ...this.getLineRippleAdapterMethods(),
@@ -199,7 +198,7 @@ export class TextField extends FoundationComponent<
       floatLabel: (shouldFloat: boolean) =>
         this.label.setProp('float', shouldFloat),
       hasLabel: () => !!this.props.label,
-      getLabelWidth: () => this.label.ref && this.label.ref.getWidth()
+      getLabelWidth: () => (this.label.ref ? this.label.ref.getWidth() : 0)
     };
   }
 
@@ -225,8 +224,8 @@ export class TextField extends FoundationComponent<
 
   getOutlineAdapterMethods() {
     return {
-      notchOutline: (labelWidth: number, isRtl: boolean) => {
-        this.outline && this.outline.notch(labelWidth, isRtl);
+      notchOutline: (labelWidth: number) => {
+        !!this.outline && this.outline.notch(labelWidth);
       },
       closeOutline: () => this.outline && this.outline.closeNotch(),
       hasOutline: () => !!this.outline
@@ -235,28 +234,34 @@ export class TextField extends FoundationComponent<
 
   getInputAdapterMethods() {
     return {
-      registerInputInteractionHandler: (evtType: string, handler: () => void) =>
-        this.input.addEventListener(evtType, handler),
-      deregisterInputInteractionHandler: (
-        evtType: string,
-        handler: () => void
-      ) => this.input.removeEventListener(evtType, handler),
+      registerInputInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.input.addEventListener(evtType, handler),
+      deregisterInputInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.input.removeEventListener(evtType, handler),
       getNativeInput: () => this.input.ref
     };
   }
 
   getFoundationMap() {
     return {
-      characterCounter:
-        this.characterCounter && this.characterCounter.foundation,
+      characterCounter: this.characterCounter
+        ? this.characterCounter.foundation
+        : undefined,
       helperText: undefined,
-      leadingIcon: this.leadingIcon && this.leadingIcon.foundation,
-      trailingIcon: this.trailingIcon && this.trailingIcon.foundation
+      leadingIcon: this.leadingIcon ? this.leadingIcon.foundation : undefined,
+      trailingIcon: this.trailingIcon ? this.trailingIcon.foundation : undefined
     };
   }
 
   // handle leading and trailing icons
-  renderIcon(icon: IconPropT, leadOrTrail: 'leadingIcon' | 'trailingIcon') {
+  renderIcon(
+    icon: RMWC.IconPropT,
+    leadOrTrail: 'leadingIcon' | 'trailingIcon'
+  ) {
     return (
       <TextFieldIcon
         ref={(ref: TextFieldIcon) => {
@@ -276,7 +281,7 @@ export class TextField extends FoundationComponent<
     // Bug #362
     // see comments below in render function
     if (this.valueNeedsUpdate) {
-      this.foundation.setValue(props.value);
+      this.foundation.setValue(String(props.value));
       this.valueNeedsUpdate = false;
     }
   }
@@ -459,6 +464,7 @@ export class TextField extends FoundationComponent<
 interface TextFieldHelperCharacterCount {}
 
 class TextFieldCharacterCount extends FoundationComponent<
+  MDCTextFieldCharacterCounterFoundation,
   TextFieldHelperCharacterCount
 > {
   static displayName = 'TextFieldCharacterCount';
@@ -513,13 +519,17 @@ export const TextFieldHelperText = componentFactory<TextFieldHelperTextProps>({
 /**
  * An Icon in a TextField
  */
-export class TextFieldIcon extends FoundationComponent<IconProps> {
+export class TextFieldIcon extends FoundationComponent<
+  MDCTextFieldIconFoundation,
+  IconProps
+> {
   static displayName = 'TextFieldIcon';
   private root = this.createElement('root');
 
   getDefaultFoundation() {
     return new MDCTextFieldIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr as any),
+      getAttr: (attr: string) =>
+        this.root.getProp(attr as any) as string | null,
       setAttr: (attr: string, value: string) =>
         this.root.setProp(attr as any, value),
       removeAttr: (attr: string) => this.root.removeProp(attr as any),
@@ -527,10 +537,14 @@ export class TextFieldIcon extends FoundationComponent<IconProps> {
         // @ts-ignore
         this.root.setProp('icon', content);
       },
-      registerInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.addEventListener(evtType, handler),
-      deregisterInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.removeEventListener(evtType, handler),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.removeEventListener(evtType, handler),
       notifyIconAction: () => this.emit('onClick', {}, true)
     });
   }

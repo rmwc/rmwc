@@ -1,14 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { deprecationWarning } from '@rmwc/base';
-
-// @ts-ignore
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
@@ -16,7 +14,7 @@ import { withRipple } from '@rmwc/ripple';
 
 export interface FormattedOption extends React.AllHTMLAttributes<any> {
   label: string;
-  value: string;
+  value?: string;
   options?: FormattedOption[];
 }
 
@@ -46,12 +44,12 @@ export interface SelectProps {
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
   inputRef?: (ref: HTMLSelectElement | null) => void;
   /** Add a leading icon. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
 }
 
 export interface DeprecatedSelectProps {
   /** DEPRECATED: Changed to icon. */
-  withLeadingIcon?: IconPropT;
+  withLeadingIcon?: RMWC.IconPropT;
 }
 
 /**
@@ -276,6 +274,7 @@ interface SelectState {
 }
 
 export class SelectBase extends FoundationComponent<
+  MDCSelectFoundation,
   SelectProps & DeprecatedSelectProps,
   SelectState
 > {
@@ -319,6 +318,8 @@ export class SelectBase extends FoundationComponent<
     if (this.menu) {
       this.menuElement =
         this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
+      // tried to replace this with the hoistToBody prop and it made the placeholders
+      // disappear... likely a timing issue. Leaving this for now
       this.menu.hoistMenuToBody();
       this.root.ref && this.menu.setAnchorElement(this.root.ref);
       //this.menu.wrapFocus = false;
@@ -344,14 +345,6 @@ export class SelectBase extends FoundationComponent<
     }
   }
 
-  componentWillUnmount() {
-    super.componentWillUnmount();
-    // TODO: Switch this to a Portal
-    this.menuElement &&
-      this.menuElement.parentNode &&
-      this.menuElement.parentNode.removeChild(this.menuElement);
-  }
-
   getDefaultFoundation() {
     return new MDCSelectFoundation(
       {
@@ -370,7 +363,7 @@ export class SelectBase extends FoundationComponent<
     return {
       getValue: () => {
         const value = this.nativeControl && this.nativeControl.value;
-        return value === '' && this.props.placeholder ? ' ' : value;
+        return value === '' && this.props.placeholder ? ' ' : value || '';
       },
       setValue: (value: string) =>
         this.nativeControl && (this.nativeControl.value = value),
@@ -388,7 +381,7 @@ export class SelectBase extends FoundationComponent<
           : this.root.addClass(MDCSelectFoundation.cssClasses.INVALID);
       },
       checkValidity: () =>
-        this.nativeControl && this.nativeControl.checkValidity()
+        !!this.nativeControl && this.nativeControl.checkValidity()
     };
   }
 
@@ -433,7 +426,9 @@ export class SelectBase extends FoundationComponent<
             },
             () => {
               this.foundation.layout();
-              this.foundation.adapter_.floatLabel(!!selectedTextContent);
+              (this.foundation as any).adapter_.floatLabel(
+                !!selectedTextContent
+              );
             }
           );
         }
@@ -466,7 +461,7 @@ export class SelectBase extends FoundationComponent<
           // TL;DR: Invalid if no index is selected, or if the first index is selected and has an empty value.
           return (
             this.state.selectedIndex !== -1 &&
-            (this.state.selectedIndex !== 0 || this.value)
+            (this.state.selectedIndex !== 0 || !!this.value)
           );
         } else {
           return true;
@@ -526,7 +521,8 @@ export class SelectBase extends FoundationComponent<
 
   getFoundationMap_() {
     return {
-      leadingIcon: this.leadingIcon_ || undefined
+      leadingIcon:
+        (this.leadingIcon_ && this.leadingIcon_.foundation) || undefined
       // helperText: this.helperText_ ? this.helperText_.foundation : undefined
     };
   }
@@ -535,8 +531,12 @@ export class SelectBase extends FoundationComponent<
     // For controlled selects that are enhanced
     // we need to jump through some checks to see if we need to update the
     // value in our foundation
-    if (props.value !== prevProps.value) {
-      this.foundation.setValue(props.value);
+    if (
+      props.value !== prevProps.value ||
+      props.options !== prevProps.options ||
+      JSON.stringify(props.options) !== JSON.stringify(prevProps.options)
+    ) {
+      this.foundation.setValue(props.value || '');
     }
 
     if (
@@ -809,13 +809,17 @@ export class SelectBase extends FoundationComponent<
   }
 }
 
-export class SelectIcon extends FoundationComponent<IconProps> {
+export class SelectIcon extends FoundationComponent<
+  MDCSelectIconFoundation,
+  IconProps
+> {
   static displayName = 'SelectIcon';
   private root = this.createElement('root');
 
-  getDefaultFoundation(): any {
+  getDefaultFoundation() {
     return new MDCSelectIconFoundation({
-      getAttr: (attr: string) => this.root.getProp(attr as any),
+      getAttr: (attr: string) =>
+        this.root.getProp(attr as any) as string | null,
       setAttr: (attr: string, value: string) =>
         this.root.setProp(attr as any, value),
       removeAttr: (attr: string) => this.root.removeProp(attr as any),

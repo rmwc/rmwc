@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCRadioFoundation } from '@material/radio';
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
@@ -50,7 +49,10 @@ class RadioBackground extends React.Component<{}> {
 }
 
 /** A Radio button component. */
-export class Radio extends ToggleableFoundationComponent<RadioProps> {
+export class Radio extends ToggleableFoundationComponent<
+  MDCRadioFoundation,
+  RadioProps
+> {
   static displayName = 'Radio';
   private root = this.createElement('root');
 

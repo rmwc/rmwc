@@ -1,7 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { FoundationComponent } from '@rmwc/base';
-// @ts-ignore
 import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
 
 export interface NotchedOutlineProps {
@@ -28,7 +27,10 @@ class NotchedOutlineTrailing extends React.Component<{}> {
   }
 }
 
-export class NotchedOutline extends FoundationComponent<NotchedOutlineProps> {
+export class NotchedOutline extends FoundationComponent<
+  MDCNotchedOutlineFoundation,
+  NotchedOutlineProps
+> {
   static displayName = 'NotchedOutline';
   private root = this.createElement('root');
   private notchElement = this.createElement('root');

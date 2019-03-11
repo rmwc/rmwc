@@ -41,8 +41,6 @@ import {
 </Drawer>
 ```
 
----
-
 ## Dismissible Drawers
 
 These are drawers that can be toggled to an open or closed state inside of a view, but still takes up viewable space when closed.
@@ -93,8 +91,6 @@ import { Button } from '@rmwc/button';
 </Button>
 ```
 
----
-
 ## Modal Drawers
 
 These are drawers that can be temporarily displayed fixed on the side of the entire viewport.
@@ -138,6 +134,46 @@ import { Button } from '@rmwc/button';
   raised
 >
   Toggle Drawer
+</Button>
+```
+
+## Right Side Drawers
+
+`material-components-web` doesn't directly support right hand drawers, but it respects the `dir` attribute on DOM elements. This simple hack will allow you to get drawers that appear from the right hand side of your app. As an aside, the `dir` attribute can be used to invert many other behaviors where the element is anchored on the left.
+
+```jsx render
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle,
+} from '@rmwc/drawer';
+
+import {
+  List,
+  ListItem
+} from '@rmwc/list';
+
+import { Button } from '@rmwc/button';
+
+{/** Make the drawer appear right-to-left */}
+<Drawer
+  dir="rtl"
+  modal
+  open={this.state.rightModalOpen}
+  onClose={() => this.setState({rightModalOpen: false})}
+>
+  {/** Set the content back to left-to-right */}
+  <DrawerContent dir="ltr">
+    <div style={{padding: '1rem'}}>Right hand side drawer example</div>
+  </DrawerContent>
+</Drawer>
+
+<Button
+  onClick={() => this.setState({rightModalOpen: !this.state.rightModalOpen})}
+  raised
+>
+  Toggle Right Drawer
 </Button>
 ```
 

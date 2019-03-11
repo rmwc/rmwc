@@ -1,20 +1,22 @@
 import * as React from 'react';
 import * as RMWC from '@rmwc/types';
 import { componentFactory } from '@rmwc/base';
-import { Icon, IconProps, IconSizeT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
 export interface AvatarProps {
   /** The url for the image. This gets passed to the Icon component. */
   src?: string;
   /** The size of the avatar */
-  size?: IconSizeT;
+  size?: RMWC.IconSizeT;
   /** The name of the user. This will get converted to initials and set the hover title. */
   name?: string;
   /** Make the avatar square. */
   square?: boolean;
   /** Make the avatar interactive. */
   interactive?: boolean;
+  /** Contain the avatar image instead of covering. */
+  contain?: boolean;
 }
 
 const getInitialsForName = (name = '') => {
@@ -41,6 +43,7 @@ const AvatarRoot = withRipple()(
       smallerText?: boolean;
       square?: boolean;
       interactive?: boolean;
+      hasImage?: boolean;
     } & IconProps
   >({
     displayName: 'AvatarRoot',
@@ -52,7 +55,8 @@ const AvatarRoot = withRipple()(
         'rmwc-avatar--interactive': props.interactive,
         'rmwc-avatar--count-overflow': props.overflow,
         'rmwc-avatar--smaller-text': props.smallerText,
-        'rmwc-avatar--square': props.square
+        'rmwc-avatar--square': props.square,
+        'rmwc-avatar--has-image': props.hasImage
       }
     ],
     tag: Icon,
@@ -61,7 +65,8 @@ const AvatarRoot = withRipple()(
       'overflow',
       'smallerText',
       'square',
-      'interactive'
+      'interactive',
+      'hasImage'
     ]
   })
 );
@@ -89,12 +94,14 @@ export const Avatar = ({
   size,
   name = '',
   interactive = false,
+  contain = false,
   ...rest
 }: AvatarProps & RMWC.ComponentProps) => {
   const initials = getInitialsForName(name);
   const avatarStyle = src
     ? {
-        backgroundImage: `url(${src})`
+        backgroundImage: `url(${src})`,
+        backgroundSize: contain ? 'contain' : 'cover'
       }
     : {};
 
@@ -102,6 +109,7 @@ export const Avatar = ({
     <AvatarRoot
       ripple={interactive}
       interactive={interactive}
+      hasImage={!!src}
       size={size}
       title={name}
       tag={'span'}
@@ -128,7 +136,7 @@ export interface AvatarCountProps {
   /** Optionally renders a "+" to indicate overlow. */
   overflow?: boolean;
   /** The size of the avatar */
-  size?: IconSizeT;
+  size?: RMWC.IconSizeT;
   /** Make the avatar square. */
   square?: boolean;
   /** Make the avatar interactive. */

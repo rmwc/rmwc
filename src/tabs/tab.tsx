@@ -1,11 +1,10 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-// @ts-ignore
 import { MDCTabFoundation } from '@material/tab';
 
 import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';
-import { IconProps, Icon, IconPropT } from '@rmwc/icon';
+import { IconProps, Icon } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
 import { withTabBarContext, TabBarContextT } from './tab-bar-context';
@@ -17,7 +16,7 @@ export interface TabProps {
   /** The label for the tab, passed as children. */
   children?: React.ReactNode;
   /** The icon to use for the tab. */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** Stacks the icon on top of the text label */
   stacked?: boolean;
   /** Restricts the indicator to the content */
@@ -50,6 +49,7 @@ export const TabIcon = componentFactory<IconProps>({
 /** A Tab component */
 export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
   class extends FoundationComponent<
+    MDCTabFoundation,
     TabProps & { contextApi?: TabBarContextT }
   > {
     static displayName = 'Tab';
@@ -98,10 +98,12 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
             this.props.contextApi &&
               this.props.contextApi.onTabInteraction(evt);
           },
-          getOffsetLeft: () => this.root.ref && this.root.ref.offsetLeft,
-          getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
-          getContentOffsetLeft: () => this.content && this.content.offsetLeft,
-          getContentOffsetWidth: () => this.content && this.content.offsetWidth,
+          getOffsetLeft: () => (this.root.ref ? this.root.ref.offsetLeft : 0),
+          getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
+          getContentOffsetLeft: () =>
+            this.content ? this.content.offsetLeft : 0,
+          getContentOffsetWidth: () =>
+            this.content ? this.content.offsetWidth : 0,
           focus: () => this.root.ref && this.root.ref.focus()
         })
       );
@@ -109,14 +111,14 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
 
     handleClick(evt: React.MouseEvent) {
       this.props.onClick && this.props.onClick(evt);
-      this.foundation.handleClick(evt);
+      this.foundation.handleClick();
     }
 
     get active() {
       return this.foundation.isActive();
     }
 
-    set focusOnActivate(focusOnActivate: string) {
+    set focusOnActivate(focusOnActivate: boolean) {
       this.foundation.setFocusOnActivate(focusOnActivate);
     }
 

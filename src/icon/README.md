@@ -10,7 +10,7 @@
 
 Icons are not part of the official material-components-web spec, but they are referenced many times in the documentation. RMWC provides a declarative way to use icons. Note that RMWC does not ship with any icons of its own. You can include [Material Icons](https://material.io/icons/), any other font icon set, use SVGs, or your own images.
 
-By default, the Icon component will attempt to detect the strategy for the icon you are embedding. For example, it assumes if pass something that starts with `http://'` to the `icon` prop that you are attempting to load an image and will render it accordingly. Beacuse of ambiguity with ligatures verses icons added using classNames, you might have to explicitly set the strategy by passing it in as an option, or setting it as a global default using the `RMWCProvider`.`RMWCProvider` provides other global icon options. Please see the "Provider" section for more detail.
+By default, the Icon component will attempt to detect the strategy for the icon you are embedding. For example, it assumes if pass something that starts with `http://` to the `icon` prop that you are attempting to load an image and will render it accordingly. Beacuse of ambiguity with ligatures verses icons added using classNames, you might have to explicitly set the strategy by passing it in as an option, or setting it as a global default using the `RMWCProvider`.`RMWCProvider` provides other global icon options. Please see the "Provider" section for more detail.
 
 The default strategy is 'ligature' which works with the material.io font icon set.
 
@@ -31,10 +31,12 @@ import { Button } from '@rmwc/button';
       borderRadius: '100px'
       }}
 />}/>
-{/* Pass your content + additional options and props */}
+{/* If you have additional options, you can pass an object of options to the icon prop. */}
 <Icon icon={{icon: 'star', strategy: 'ligature'}} />
 
-{/* Passing additional props is especially helpful when the entire icon component isn't exposed. In this example we pass the additional onMouseOver prop directly to the icon */}
+{/* Passing additional props is especially helpful when the entire icon
+  component isn't exposed. In this example we pass the additional
+  onMouseOver prop directly to the icon */}
 <Button
   label="Hello!"
   icon={{

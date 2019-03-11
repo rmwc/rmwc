@@ -1,7 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// @ts-ignore
 import { MDCRippleFoundation, util } from '@material/ripple';
 import {
   classNames,
@@ -10,6 +9,7 @@ import {
   matches
 } from '@rmwc/base';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
+import { EventType, SpecificEventListener } from '@material/base/types';
 
 export interface RippleSurfaceProps {
   className: string;
@@ -38,7 +38,10 @@ type ActivateEventTypes<S> =
 const RippleSurfaceContext = React.createContext({});
 
 /** A component for adding Ripples to other components. */
-export class Ripple extends FoundationComponent<RippleProps> {
+export class Ripple extends FoundationComponent<
+  MDCRippleFoundation,
+  RippleProps
+> {
   static shouldDebounce = true;
   static displayName = 'Ripple';
 
@@ -68,23 +71,23 @@ export class Ripple extends FoundationComponent<RippleProps> {
         }
         return false;
       },
-      isSurfaceDisabled: () => this.props.disabled,
+      isSurfaceDisabled: () => !!this.props.disabled,
       addClass: (className: string) => this.surface.addClass(className),
       removeClass: (className: string) => this.surface.removeClass(className),
       containsEventTarget: (target: HTMLElement) =>
-        this.root.ref && this.root.ref.contains(target),
-      registerInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => this.root.addEventListener(evtType, handler, util.applyPassive()),
-      deregisterInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => this.root.removeEventListener(evtType, handler, util.applyPassive()),
-      registerDocumentInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) =>
+        !!this.root.ref && this.root.ref.contains(target),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.removeEventListener(evtType, handler),
+      registerDocumentInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void =>
         document.documentElement.addEventListener(
           evtType,
           handler,
@@ -99,16 +102,17 @@ export class Ripple extends FoundationComponent<RippleProps> {
           handler,
           util.applyPassive()
         ),
-      registerResizeHandler: (handler: (evt: Event) => void) =>
+      registerResizeHandler: (handler: SpecificEventListener<'resize'>): void =>
         window.addEventListener('resize', handler),
-      deregisterResizeHandler: (handler: (evt: Event) => void) =>
-        window.removeEventListener('resize', handler),
+      deregisterResizeHandler: (
+        handler: SpecificEventListener<'resize'>
+      ): void => window.removeEventListener('resize', handler),
       updateCssVariable: (varName: string, value: string) =>
         this.surface.setStyle(varName, value),
       computeBoundingRect: () =>
         this.root.ref
           ? this.root.ref.getBoundingClientRect()
-          : { width: 0, height: 0 },
+          : ({ width: 0, height: 0 } as ClientRect),
       getWindowPageOffset: () => ({
         x: window.pageXOffset,
         y: window.pageYOffset
@@ -120,7 +124,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.root.setRef(ReactDOM.findDOMNode(this));
 
     if (props.unbounded !== prevProps.unbounded) {
-      this.foundation.setUnbounded(props.unbounded);
+      this.foundation.setUnbounded(!!props.unbounded);
     }
   }
 
@@ -134,7 +138,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.foundation.handleBlur();
   }
 
-  handleMouseDown(evt: React.MouseEvent<HTMLElement>) {
+  handleMouseDown(evt: React.MouseEvent<HTMLElement> & MouseEvent) {
     this.props.onMouseDown && this.props.onMouseDown(evt);
     this.activateRipple(evt);
   }
@@ -144,7 +148,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  handleTouchStart(evt: React.TouchEvent<HTMLElement>) {
+  handleTouchStart(evt: React.TouchEvent<HTMLElement> & TouchEvent) {
     this.props.onTouchStart && this.props.onTouchStart(evt);
     this.activateRipple(evt);
   }
@@ -154,7 +158,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  handleKeyDown(evt: React.KeyboardEvent<HTMLElement>) {
+  handleKeyDown(evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.activateRipple(evt);
   }
@@ -164,7 +168,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
     this.deactivateRipple(evt);
   }
 
-  activateRipple(evt: ActivateEventTypes<HTMLElement>) {
+  activateRipple(evt: ActivateEventTypes<HTMLElement> & Event) {
     // https://reactjs.org/docs/events.html#event-pooling
     evt.persist();
     this.foundation.activate(evt);
@@ -173,7 +177,7 @@ export class Ripple extends FoundationComponent<RippleProps> {
   deactivateRipple(evt: ActivateEventTypes<HTMLElement>) {
     // https://reactjs.org/docs/events.html#event-pooling
     evt.persist();
-    this.foundation.deactivate(evt);
+    this.foundation.deactivate();
   }
 
   render() {

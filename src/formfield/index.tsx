@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
+import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCFormFieldFoundation } from '@material/form-field';
 
 import { FoundationComponent } from '@rmwc/base';
@@ -25,15 +25,24 @@ export const FormFieldRoot = componentFactory<FormFieldProps>({
   consumeProps: ['alignEnd']
 });
 
-export class FormField extends FoundationComponent<FormFieldProps> {
+export class FormField extends FoundationComponent<
+  MDCFormFieldFoundation,
+  FormFieldProps
+> {
   static displayName = 'FormField';
 
   getDefaultFoundation() {
     // For RMWC, the entire foundation is a noop. Interactions and ripples are controlled
     // on the components themselves
     return new MDCFormFieldFoundation({
-      registerInteractionHandler: (type: string, handler: () => void) => {},
-      deregisterInteractionHandler: (type: string, handler: () => void) => {},
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {},
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => {},
       activateInputRipple: () => {},
       deactivateInputRipple: () => {}
     });

@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-  <script type="text/javascript">window.location.replace('/rmwc/?p=' + window.location.pathname.split('/rmwc/')[1] + (window.location.search ? '&' + window.location.search.slice(1) : ''));</script>
+  <script>
+    sessionStorage.setItem('redirect', location.pathname);
+  </script>
   <meta name="google-site-verification" content="zArJNTXiV31Ctcf8DTTd9DHQxIcRv5j67mRvpyMN8VE" />
   <meta name="description" content="RMWC is a React wrapper for the official Material Components Web library.">
   <meta name="keywords" content="RMWC, Material, Design, Components, Web, React, material-components-web">
+  <meta http-equiv="refresh" content="0;URL='/rmwc'"></meta>
 </head>
 
 <body class="mdc-typography">

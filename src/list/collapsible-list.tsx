@@ -7,6 +7,8 @@ export interface CollapsibleListProps {
   handle: React.ReactElement<any>;
   /** Show the collapsible list as open. */
   open?: boolean;
+  /** Starts the collapsible list as open. */
+  startOpen?: boolean;
   /** Callback for when the collapsible list opens. */
   onOpen?: () => void;
   /** Callback for when the collapsible list closes. */
@@ -71,7 +73,7 @@ export class CollapsibleList extends React.Component<
   root: HTMLDivElement | null = null;
 
   state: CollapsibleState = {
-    open: !!this.props.open,
+    open: !!this.props.startOpen || !!this.props.open,
     childrenStyle: {}
   };
 
@@ -196,6 +198,7 @@ export class CollapsibleList extends React.Component<
       onOpen,
       onClose,
       open: openProp,
+      startOpen,
       ...rest
     } = this.props;
     const { open, childrenStyle } = this.state;

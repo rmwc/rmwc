@@ -81,6 +81,7 @@ Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology
 
 ## About Breaking Changes
 
+RMWC avoids them at all costs!
 Read the docs on [Methodology](https://jamesmfriedman.github.io/rmwc/methodology)
 
 ## To run the tests

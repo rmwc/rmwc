@@ -3,8 +3,8 @@ import * as React from 'react';
 
 import { componentFactory, FoundationComponent } from '@rmwc/base';
 
-// @ts-ignore
 import { MDCTabBarFoundation } from '@material/tab-bar';
+import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { Tab } from './tab';
 import { TabBarContext } from './tab-bar-context';
@@ -36,14 +36,19 @@ export const TabBarRoot = componentFactory<TabBarProps>({
 });
 
 /** The TabBar component */
-export class TabBar extends FoundationComponent<TabBarProps> {
+export class TabBar extends FoundationComponent<
+  MDCTabBarFoundation,
+  TabBarProps
+> {
   static displayName = 'TabBar';
 
   private root = this.createElement('root');
+  private currentActiveTabIndex = this.props.activeTabIndex || 0;
   tabScroller: TabScroller | null = null;
   tabList: any[] = [];
   contextApi = {
-    onTabInteraction: (evt: Event) => this.handleTabInteraction(evt),
+    onTabInteraction: (evt: MDCTabInteractionEvent) =>
+      this.handleTabInteraction(evt),
     registerTab: (tab: typeof Tab) => this.tabList.push(tab),
     unregisterTab: (tab: typeof Tab) =>
       this.tabList.splice(this.tabList.indexOf(tab), 1)
@@ -68,16 +73,44 @@ export class TabBar extends FoundationComponent<TabBarProps> {
     const [scrollX, scrollY] = [window.scrollX, window.scrollY];
 
     //activate the tab
-
-    this.foundation.adapter_.activateTabAtIndex(
+    (this.foundation as any).adapter_.activateTabAtIndex(
       this.props.activeTabIndex || 0,
-      this.foundation.adapter_.getTabIndicatorClientRectAtIndex(undefined)
+      (this.foundation as any).adapter_.getTabIndicatorClientRectAtIndex(
+        undefined
+      )
     );
     this.foundation.scrollIntoView(this.props.activeTabIndex || 0);
 
     // restore focus and scroll
     activeElement && activeElement.focus();
     window.scrollTo(scrollX, scrollY);
+  }
+
+  activateTab(index: number) {
+    const foundation = this.foundation as any;
+    this.currentActiveTabIndex = index;
+    const previousActiveIndex = foundation.adapter_.getPreviousActiveTabIndex();
+    if (!foundation.indexIsInRange_(index) || index === previousActiveIndex) {
+      return;
+    }
+
+    foundation.adapter_.notifyTabActivated(index);
+
+    setTimeout(() => {
+      if (
+        this.props.activeTabIndex === index ||
+        this.props.activeTabIndex === undefined
+      ) {
+        foundation.adapter_.deactivateTabAtIndex(previousActiveIndex);
+        foundation.adapter_.activateTabAtIndex(
+          index,
+          foundation.adapter_.getTabIndicatorClientRectAtIndex(
+            previousActiveIndex
+          )
+        );
+        foundation.scrollIntoView(index);
+      }
+    });
   }
 
   getDefaultFoundation() {
@@ -91,18 +124,19 @@ export class TabBar extends FoundationComponent<TabBarProps> {
           this.tabScroller &&
           this.tabScroller.incrementScroll(scrollXIncrement),
         getScrollPosition: () =>
-          this.tabScroller && this.tabScroller.getScrollPosition(),
+          this.tabScroller ? this.tabScroller.getScrollPosition() : 0,
         getScrollContentWidth: () =>
-          this.tabScroller && this.tabScroller.getScrollContentWidth(),
-        getOffsetWidth: () => this.root.ref && this.root.ref.offsetWidth,
+          this.tabScroller ? this.tabScroller.getScrollContentWidth() : 0,
+        getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
         isRTL: () =>
-          this.root.ref &&
+          !!this.root.ref &&
           window
             .getComputedStyle(this.root.ref)
             .getPropertyValue('direction') === 'rtl',
-        setActiveTab: (index: number) => this.foundation.activateTab(index),
-        activateTabAtIndex: (index: number, clientRect: ClientRect) =>
-          this.tabList[index] && this.tabList[index].activate(clientRect),
+        setActiveTab: (index: number) => this.activateTab(index),
+        activateTabAtIndex: (index: number, clientRect: ClientRect) => {
+          this.tabList[index] && this.tabList[index].activate(clientRect);
+        },
         deactivateTabAtIndex: (index: number) =>
           this.tabList[index] && this.tabList[index].deactivate(),
         focusTabAtIndex: (index: number) => this.tabList[index].focus(),
@@ -122,7 +156,7 @@ export class TabBar extends FoundationComponent<TabBarProps> {
         getFocusedTabIndex: () => {
           const tabElements = this.getTabElements();
           const activeElement = document.activeElement as Element;
-          return tabElements && tabElements.indexOf(activeElement);
+          return tabElements ? tabElements.indexOf(activeElement) : -1;
         },
         getIndexOfTabById: (id: string) => {
           for (let i = 0; i < this.tabList.length; i++) {
@@ -141,8 +175,13 @@ export class TabBar extends FoundationComponent<TabBarProps> {
 
   sync(props: TabBarProps, prevProps: TabBarProps) {
     // this will re-activate the appropriate tabs if they get-rendered
-    if (props.activeTabIndex !== undefined)
-      this.foundation.activateTab(props.activeTabIndex);
+    if (
+      props.activeTabIndex !== prevProps.activeTabIndex &&
+      props.activeTabIndex !== this.currentActiveTabIndex
+    ) {
+      typeof props.activeTabIndex === 'number' &&
+        this.activateTab(props.activeTabIndex);
+    }
   }
 
   getTabElements(): Element[] | null {
@@ -152,13 +191,13 @@ export class TabBar extends FoundationComponent<TabBarProps> {
     );
   }
 
-  handleTabInteraction(evt: Event) {
+  handleTabInteraction(evt: MDCTabInteractionEvent) {
     this.foundation.handleTabInteraction(evt);
   }
 
-  handleKeyDown(evt: React.KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-    this.foundation.handleKeyDown(evt);
+  handleKeyDown(evt: React.KeyboardEvent | KeyboardEvent) {
+    this.props.onKeyDown && this.props.onKeyDown(evt as React.KeyboardEvent);
+    this.foundation.handleKeyDown(evt as KeyboardEvent);
   }
 
   render() {

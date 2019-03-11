@@ -49,23 +49,4 @@ describe('Checkbox', () => {
     const el = mount(<Checkbox className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
-
-  test('foundation check', () => {
-    const el = mount(
-      <Checkbox checked={false} className={'my-custom-classname'} />
-    );
-    const adapter = (el.instance() as any).foundation.adapter_;
-    adapter.addClass('test');
-    adapter.removeClass('test');
-    adapter.setNativeControlAttr('checked', true);
-    adapter.removeNativeControlAttr('checked');
-    adapter.getNativeControl();
-    adapter.isIndeterminate();
-    adapter.isChecked();
-    adapter.hasNativeControl();
-    adapter.setNativeControlDisabled(true);
-    adapter.setNativeControlDisabled(false);
-    adapter.forceLayout();
-    adapter.isAttachedToDOM();
-  });
 });

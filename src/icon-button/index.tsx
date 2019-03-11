@@ -1,13 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import {
   componentFactory,
   FoundationComponent,
   deprecationWarning
 } from '@rmwc/base';
-import { Icon, IconPropT, IconProps } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
 export interface IconButtonProps extends RMWC.WithRippleProps {
@@ -18,9 +17,9 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Makes the button disabled */
   disabled?: boolean;
   /** Icon for the button */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
-  onIcon?: IconPropT;
+  onIcon?: RMWC.IconPropT;
 }
 
 export interface DeprecatedIconButtonProps {
@@ -89,6 +88,7 @@ export const IconButtonIcon = componentFactory<IconButtonIconProps>({
 });
 
 class IconButtonToggle extends FoundationComponent<
+  MDCIconButtonToggleFoundation,
   IconButtonProps & DeprecatedIconButtonProps
 > {
   static displayName = 'IconButton';
@@ -138,7 +138,7 @@ class IconButtonToggle extends FoundationComponent<
 
   handleClick(evt: React.MouseEvent<HTMLButtonElement>) {
     this.props.onClick && this.props.onClick(evt);
-    this.foundation.handleClick(evt);
+    this.foundation.handleClick();
   }
 
   render() {

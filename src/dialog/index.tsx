@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-//@ts-ignore
+
 import { MDCDialogFoundation } from '@material/dialog';
 
 import {
@@ -32,13 +32,20 @@ const DialogRoot = componentFactory<{}>({
   classNames: ['mdc-dialog']
 });
 
-class DialogScrim extends React.Component<{}> {
-  shouldComponentUpdate() {
-    return false;
+interface DialogScrimProps {
+  disableInteraction?: boolean;
+}
+
+class DialogScrim extends React.Component<DialogScrimProps> {
+  shouldComponentUpdate(nextProps: DialogScrimProps) {
+    return this.props.disableInteraction !== nextProps.disableInteraction;
   }
 
   render() {
-    return <div className="mdc-dialog__scrim" />;
+    const style = this.props.disableInteraction
+      ? { pointerEvents: 'none' }
+      : {};
+    return <div className="mdc-dialog__scrim" style={style as any} />;
   }
 }
 
@@ -97,13 +104,18 @@ export interface DialogProps {
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
   /** Callback for when the Dialog closes. */
-  onClose?: (evt: RMWC.CustomEventT<{action?: string}>) => void;
+  onClose?: (evt: RMWC.CustomEventT<{ action?: string }>) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
+  /** Prevent the dialog from closing when the scrim is clicked. */
+  preventOutsideDismiss?: boolean;
 }
 
 /** A Dialog component. */
-export class Dialog extends FoundationComponent<DialogProps> {
+export class Dialog extends FoundationComponent<
+  MDCDialogFoundation,
+  DialogProps
+> {
   static displayName = 'Dialog';
 
   private root = this.createElement('root');
@@ -112,7 +124,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
   buttons: null | HTMLElement[] = null;
   defaultButton: null | HTMLElement = null;
   focusTrap: FocusTrap | null = null;
-  handleDocumentKeydown: (evt: Event) => void = () => {};
+  handleDocumentKeydown: (evt: KeyboardEvent) => void = () => {};
 
   constructor(props: DialogProps) {
     super(props);
@@ -120,14 +132,14 @@ export class Dialog extends FoundationComponent<DialogProps> {
   }
 
   open() {
-    if (!this.foundation.isOpen_) {
+    if (!this.foundation.isOpen()) {
       document.addEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.open();
     }
   }
 
   close() {
-    if (this.foundation.isOpen_) {
+    if (this.foundation.isOpen()) {
       document.removeEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.close();
     }
@@ -142,7 +154,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
       );
     this.content =
       this.root.ref &&
-      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENTSELECTOR);
+      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENT_SELECTOR);
     this.buttons =
       this.root.ref &&
       [].slice.call(
@@ -194,15 +206,13 @@ export class Dialog extends FoundationComponent<DialogProps> {
         document.body && document.body.classList.remove(className),
       eventTargetMatches: (target: HTMLElement, selector: string) =>
         matches(target, selector),
-      computeBoundingRect: () =>
-        this.root.ref && this.root.ref.getBoundingClientRect(),
       trapFocus: () => this.focusTrap && this.focusTrap.activate(),
       releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
       isContentScrollable: () => !!this.content && isScrollable(this.content),
       areButtonsStacked: () => areTopsMisaligned(this.buttons),
-      getActionFromEvent: (event: React.SyntheticEvent<HTMLElement>) => {
+      getActionFromEvent: (evt: React.SyntheticEvent<HTMLElement> & Event) => {
         const element = closest(
-          event.target,
+          evt.target,
           `[${MDCDialogFoundation.strings.ACTION_ATTRIBUTE}]`
         );
         return (
@@ -242,7 +252,9 @@ export class Dialog extends FoundationComponent<DialogProps> {
     });
   }
 
-  handleInteraction(evt: React.MouseEvent & React.KeyboardEvent) {
+  handleInteraction(
+    evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
+  ) {
     evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
     evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
     return this.foundation.handleInteraction(evt);
@@ -255,6 +267,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
       onOpen,
       onClose,
       onStateChange,
+      preventOutsideDismiss,
       ...rest
     } = this.props;
     return (
@@ -267,7 +280,7 @@ export class Dialog extends FoundationComponent<DialogProps> {
         <div className="mdc-dialog__container">
           <div className="mdc-dialog__surface">{children}</div>
         </div>
-        <DialogScrim />
+        <DialogScrim disableInteraction={preventOutsideDismiss} />
       </DialogRoot>
     );
   }
@@ -288,8 +301,6 @@ export interface SimpleDialogProps extends DialogProps {
   cancelLabel?: React.ReactNode;
   /** Any children will be rendered in the body of the default Dialog template. */
   children?: React.ReactNode;
-  /** Allow the body to be scrollable */
-  scrollable?: boolean;
 }
 
 /** A non-standard SimpleDialog component for ease of use. */

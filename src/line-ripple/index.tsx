@@ -1,15 +1,18 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCLineRippleFoundation } from '@material/line-ripple';
 import { FoundationComponent } from '@rmwc/base';
+import { SpecificEventListener, EventType } from '@material/base/types';
 
 export interface LineRippleProps {
   active?: boolean;
   center?: number;
 }
 
-export class LineRipple extends FoundationComponent<LineRippleProps> {
+export class LineRipple extends FoundationComponent<
+  MDCLineRippleFoundation,
+  LineRippleProps
+> {
   static displayName = 'LineRipple';
 
   private root = this.createElement('root');
@@ -21,10 +24,14 @@ export class LineRipple extends FoundationComponent<LineRippleProps> {
       hasClass: (className: string) => this.root.hasClass(className),
       setStyle: (propertyName: any, value: any) =>
         this.root.setStyle(propertyName, value),
-      registerEventHandler: (evtType: string, handler: () => void) =>
-        this.root.addEventListener(evtType, handler),
-      deregisterEventHandler: (evtType: string, handler: () => void) =>
-        this.root.removeEventListener(evtType, handler)
+      registerEventHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ) => this.root.addEventListener(evtType, handler),
+      deregisterEventHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ) => this.root.removeEventListener(evtType, handler)
     });
   }
 
@@ -36,7 +43,8 @@ export class LineRipple extends FoundationComponent<LineRippleProps> {
 
     // center
     this.syncProp(props.center, prevProps.center, () => {
-      this.foundation.setRippleCenter(props.center);
+      typeof props.center === 'number' &&
+        this.foundation.setRippleCenter(props.center);
     });
   }
 

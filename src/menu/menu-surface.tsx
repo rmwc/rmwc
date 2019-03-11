@@ -3,13 +3,17 @@ import * as React from 'react';
 
 import {
   MDCMenuSurfaceFoundation,
-  util
-  // @ts-ignore
+  util,
+  MDCMenuDimensions,
+  Corner
 } from '@material/menu-surface';
 
-import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
+import { MDCMenuDistance } from '@material/menu-surface';
 
-const ANCHOR_CORNER_MAP = {
+const ANCHOR_CORNER_MAP: {
+  [key: string]: keyof typeof MDCMenuSurfaceFoundation.Corner;
+} = {
   bottomEnd: 'BOTTOM_END',
   bottomLeft: 'BOTTOM_LEFT',
   bottomRight: 'BOTTOM_RIGHT',
@@ -32,6 +36,8 @@ export interface MenuSurfaceProps {
   open?: boolean;
   /** Make the menu position fixed. */
   fixed?: boolean;
+  /** Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. */
+  hoistToBody?: boolean;
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
@@ -57,7 +63,10 @@ export const MenuSurfaceRoot = componentFactory<{}>({
 });
 
 /** A generic menu component for displaying any type of content. */
-export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
+export class MenuSurface extends FoundationComponent<
+  MDCMenuSurfaceFoundation,
+  MenuSurfaceProps
+> {
   private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
@@ -73,15 +82,22 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
 
   componentDidMount() {
     super.componentDidMount();
-    if (
-      this.root.ref &&
-      this.root.ref.parentElement &&
-      this.root.ref.parentElement.classList.contains(
-        MDCMenuSurfaceFoundation.cssClasses.ANCHOR
-      )
-    ) {
-      this.anchorElement = this.root.ref.parentElement;
+    if (this.root.ref) {
+      const anchor = closest(
+        this.root.ref,
+        `.${MDCMenuSurfaceFoundation.cssClasses.ANCHOR}`
+      );
+      anchor && (this.anchorElement = anchor);
     }
+  }
+
+  componentWillUnmount() {
+    // if we are hoisted, unhoist the
+    // component so it gets cleaned up properly
+    if (this.hoisted) {
+      this.unhoistMenuFromBody();
+    }
+    super.componentWillUnmount();
   }
 
   get open() {
@@ -91,7 +107,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   set open(value) {
     if (value && this.foundation && !this.foundation.isOpen()) {
       const focusableElements = this.root.ref
-        ? this.root.ref.querySelectorAll(
+        ? this.root.ref.querySelectorAll<HTMLElement>(
             MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
           )
         : [];
@@ -135,9 +151,9 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         this.registerBodyClickListener();
       },
       isElementInContainer: (el: HTMLElement) =>
-        this.root.ref === el || (this.root.ref && this.root.ref.contains(el)),
+        this.root.ref === el || (!!this.root.ref && this.root.ref.contains(el)),
       isRtl: () =>
-        this.root.ref &&
+        !!this.root.ref &&
         getComputedStyle(this.root.ref).getPropertyValue('direction') === 'rtl',
       setTransformOrigin: (origin: string) => {
         this.root.setStyle(
@@ -164,17 +180,17 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
         }
       },
       isFirstElementFocused: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement === document.activeElement,
       isLastElementFocused: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement === document.activeElement,
       focusFirstElement: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement.focus &&
         this.firstFocusableElement.focus(),
       focusLastElement: () =>
-        this.firstFocusableElement &&
+        !!this.firstFocusableElement &&
         this.firstFocusableElement.focus &&
         this.firstFocusableElement.focus()
     };
@@ -182,10 +198,10 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
 
   getDimensionAdapterMethods() {
     return {
-      getInnerDimensions: () => {
+      getInnerDimensions: (): MDCMenuDimensions => {
         return {
-          width: this.root.ref && this.root.ref.offsetWidth,
-          height: this.root.ref && this.root.ref.offsetHeight
+          width: this.root.ref ? this.root.ref.offsetWidth : 0,
+          height: this.root.ref ? this.root.ref.offsetHeight : 0
         };
       },
       getAnchorDimensions: () =>
@@ -202,24 +218,25 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
       getWindowScroll: () => {
         return { x: window.pageXOffset, y: window.pageYOffset };
       },
-      setPosition: (position: {
-        top: string;
-        right: string;
-        bottom: string;
-        left: string;
-      }) => {
-        this.root.setStyle('left', 'left' in position ? position.left : null);
+      setPosition: (position: Partial<MDCMenuDistance>) => {
+        this.root.setStyle(
+          'left',
+          position.left !== undefined ? position.left : null
+        );
         this.root.setStyle(
           'right',
-          'right' in position ? position.right : null
+          position.right !== undefined ? position.right : null
         );
-        this.root.setStyle('top', 'top' in position ? position.top : null);
+        this.root.setStyle(
+          'top',
+          position.top !== undefined ? position.top : null
+        );
         this.root.setStyle(
           'bottom',
-          'bottom' in position ? position.bottom : null
+          position.bottom !== undefined ? position.bottom : null
         );
       },
-      setMaxHeight: (height: number) => {
+      setMaxHeight: (height: string) => {
         this.root.setStyle('maxHeight', height);
       }
     };
@@ -228,17 +245,25 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   sync(props: MenuSurfaceProps, prevProps: MenuSurfaceProps) {
     // fixed
     this.syncProp(props.fixed, prevProps.fixed, () => {
-      this.foundation.setFixedPosition(props.fixed);
+      this.foundation.setFixedPosition(!!props.fixed);
+    });
+
+    // hoistToBody
+    this.syncProp(props.hoistToBody, prevProps.hoistToBody, () => {
+      props.hoistToBody ? this.hoistMenuToBody() : this.unhoistMenuFromBody();
     });
 
     // anchorCorner
     const anchorCorner =
       props.anchorCorner && getAnchorCornerFromProp(props.anchorCorner);
 
-    this.syncProp(anchorCorner, this.foundation.anchorCorner_, () => {
-      this.foundation.setAnchorCorner(anchorCorner);
-      this.foundation.dimensions_ = this.foundation.adapter_.getInnerDimensions();
-      this.foundation.autoPosition_();
+    this.syncProp(anchorCorner, (this.foundation as any).anchorCorner_, () => {
+      if (anchorCorner) {
+        this.foundation.setAnchorCorner(anchorCorner);
+        (this.foundation as any).dimensions_ = (this
+          .foundation as any).adapter_.getInnerDimensions();
+        (this.foundation as any).autoPosition_();
+      }
     });
 
     // open
@@ -254,10 +279,23 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
       );
       this.hoisted = true;
       this.foundation.setIsHoisted(true);
+
+      // correct layout for open menu
+      if (this.props.open) {
+        (this.foundation as any).autoPosition_();
+      }
     }
   }
 
-  setAnchorCorner(corner: string) {
+  unhoistMenuFromBody() {
+    if (this.anchorElement && this.root.ref) {
+      this.anchorElement.appendChild(this.root.ref);
+      this.hoisted = false;
+      this.foundation.setIsHoisted(false);
+    }
+  }
+
+  setAnchorCorner(corner: Corner) {
     this.foundation.setAnchorCorner(corner);
   }
 
@@ -271,10 +309,10 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
   }
 
   handleBodyClick(evt: MouseEvent | TouchEvent) {
-    this.foundation && this.foundation.handleBodyClick(evt);
+    this.foundation && this.foundation.handleBodyClick(evt as MouseEvent);
   }
 
-  handleKeydown(evt: React.KeyboardEvent) {
+  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
     this.props.onKeyDown && this.props.onKeyDown(evt);
     this.foundation.handleKeydown(evt);
   }
@@ -286,6 +324,7 @@ export class MenuSurface extends FoundationComponent<MenuSurfaceProps> {
       anchorCorner,
       onOpen,
       onClose,
+      hoistToBody,
       ...rest
     } = this.props;
 

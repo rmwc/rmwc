@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
+import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCFloatingLabelFoundation } from '@material/floating-label';
 import { FoundationComponent } from '@rmwc/base';
 
@@ -9,7 +9,10 @@ export interface FloatingLabelProps {
   float?: boolean;
 }
 
-export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
+export class FloatingLabel extends FoundationComponent<
+  MDCFloatingLabelFoundation,
+  FloatingLabelProps
+> {
   static displayName = 'FloatingLabel';
 
   private root = this.createElement('root');
@@ -18,23 +21,27 @@ export class FloatingLabel extends FoundationComponent<FloatingLabelProps> {
     return new MDCFloatingLabelFoundation({
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      getWidth: () => this.root.ref && this.root.ref.scrollWidth,
-      registerInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.addEventListener(evtType, handler),
-      deregisterInteractionHandler: (evtType: string, handler: () => void) =>
-        this.root.removeEventListener(evtType, handler)
+      getWidth: () => (this.root.ref ? this.root.ref.scrollWidth : 0),
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.addEventListener(evtType, handler),
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
+      ): void => this.root.removeEventListener(evtType, handler)
     });
   }
 
   sync(props: FloatingLabelProps, prevProps: FloatingLabelProps) {
     // shake
     this.syncProp(props.shake, prevProps.shake, () => {
-      this.foundation.shake(props.shake);
+      this.foundation.shake(!!props.shake);
     });
 
     // float
     this.syncProp(props.float, prevProps.float, () => {
-      this.foundation.float(props.float);
+      this.foundation.float(!!props.float);
     });
   }
 

@@ -14,13 +14,16 @@
 import { IconButton } from '@rmwc/icon-button';
 
 <IconButton icon="star" label="Rate this!" />
+<IconButton icon="favorite" label="Favorite" disabled/>
 <IconButton
   icon="images/icons/twitter.png"
   aria-label="Tweet it!"
   tag="a"
-  href="https://twitter.com"
+  target="_blank"
+  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    'You should definitely be using RMWC for your next project! https://jamesmfriedman.github.io/rmwc/'
+  )}`}
 />
-<IconButton icon="favorite" label="Favorite" disabled/>
 
 ```
 

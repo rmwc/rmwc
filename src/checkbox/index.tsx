@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-// @ts-ignore
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
@@ -15,6 +14,7 @@ import {
  * on a checkbox would be fun which consequently kills Reacts ability
  * to do the same.
  */
+// @ts-ignore
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
 export interface CheckboxProps
@@ -76,7 +76,10 @@ class CheckboxBackground extends React.Component<{}> {
 /**
  * A Checkbox component
  */
-export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
+export class Checkbox extends ToggleableFoundationComponent<
+  MDCCheckboxFoundation,
+  CheckboxProps
+> {
   static displayName = 'Checkbox';
 
   private nativeCb = this.createElement<HTMLInputElement>('nativeCb');
@@ -89,7 +92,7 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
   }
 
   sync(nextProps: CheckboxProps) {
-    this.foundation.handleChange();
+    this.foundation && this.foundation.handleChange();
 
     if (
       this.nativeCb.ref &&
@@ -107,12 +110,11 @@ export class Checkbox extends ToggleableFoundationComponent<CheckboxProps> {
         this.nativeCb.setProp(attr as any, value),
       removeNativeControlAttr: (attr: string) =>
         this.nativeCb.removeProp(attr as any),
-      getNativeControl: () => this.nativeCb.ref,
-      isIndeterminate: () => this.props.indeterminate,
+      isIndeterminate: () => !!this.props.indeterminate,
       isChecked: () =>
         this.props.checked !== undefined
-          ? this.props.checked
-          : this.nativeCb.ref && this.nativeCb.ref.checked,
+          ? !!this.props.checked
+          : !!this.nativeCb.ref && this.nativeCb.ref.checked,
       hasNativeControl: () => !!this.nativeCb.ref,
       setNativeControlDisabled: (disabled: boolean) =>
         this.nativeCb.setProp('disabled', disabled),

@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { Icon, IconProps, IconPropT } from '@rmwc/icon';
+import { Icon, IconProps } from '@rmwc/icon';
 
 export interface ButtonProps extends RMWC.WithRippleProps {
   /** Make the Button dense. */
@@ -21,9 +21,9 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   /** Content specified as children. */
   children?: React.ReactNode;
   /** An Icon for the Button */
-  icon?: IconPropT;
+  icon?: RMWC.IconPropT;
   /** A trailing icon for the Button */
-  trailingIcon?: IconPropT;
+  trailingIcon?: RMWC.IconPropT;
 }
 
 /**

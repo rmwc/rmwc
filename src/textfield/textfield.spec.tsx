@@ -125,52 +125,11 @@ describe('TextField', () => {
       }, 100);
     });
   });
-
-  it('foundation checks', () => {
-    const el = mount(<TextField />);
-    const adapter = (el.instance() as TextField).foundation.adapter_;
-    adapter.addClass('test');
-    adapter.removeClass('test');
-    adapter.hasClass('test');
-    adapter.registerTextFieldInteractionHandler('click', () => {});
-    adapter.deregisterTextFieldInteractionHandler('click', () => {});
-    adapter.registerValidationAttributeChangeHandler(() => {});
-    adapter.deregisterValidationAttributeChangeHandler({
-      disconnect: () => {}
-    });
-    adapter.isFocused();
-    adapter.isRtl();
-    adapter.registerInputInteractionHandler('click', () => {});
-    adapter.deregisterInputInteractionHandler('click', () => {});
-    adapter.getNativeInput();
-    adapter.notchOutline(200, false);
-    adapter.closeOutline();
-    adapter.hasOutline();
-    adapter.activateLineRipple();
-    adapter.deactivateLineRipple();
-    adapter.setLineRippleTransformOrigin(1);
-    adapter.shakeLabel(true);
-    adapter.floatLabel(true);
-    adapter.hasLabel();
-    adapter.getLabelWidth();
-  });
 });
 
 describe('TextFieldIcon', () => {
   it('renders', () => {
     mount(<TextFieldIcon icon="favorite" />);
-  });
-
-  it('foundation checks', () => {
-    const el = mount(<TextFieldIcon icon="favorite" />);
-    const adapter = (el.instance() as TextField).foundation.adapter_;
-    adapter.getAttr('test');
-    adapter.setAttr('test', 1);
-    adapter.removeAttr('test');
-    adapter.setContent('test');
-    adapter.registerInteractionHandler('click', () => {});
-    adapter.deregisterInteractionHandler('click', () => {});
-    adapter.notifyIconAction();
   });
 });
 

@@ -5,7 +5,6 @@ import { componentFactory, FoundationComponent } from '@rmwc/base';
 import {
   MDCModalDrawerFoundation,
   MDCDismissibleDrawerFoundation
-  // @ts-ignore
 } from '@material/drawer';
 import { createFocusTrap, FocusTrap } from '@rmwc/base';
 
@@ -88,10 +87,15 @@ export const DrawerRoot = componentFactory<DrawerProps>({
 });
 
 const slidableDrawerFactory = (
-  MDCConstructor: MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
+  MDCConstructor:
+    | typeof MDCModalDrawerFoundation
+    | typeof MDCDismissibleDrawerFoundation,
   displayName: string
 ) =>
-  class extends FoundationComponent<DrawerProps> {
+  class extends FoundationComponent<
+    MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
+    DrawerProps
+  > {
     static displayName = displayName;
 
     static defaultProps = {
@@ -170,15 +174,16 @@ const slidableDrawerFactory = (
     }
 
     handleScrimClick() {
-      this.foundation.handleScrimClick();
+      'handleScrimClick' in this.foundation &&
+        this.foundation.handleScrimClick();
     }
 
-    handleKeyDown(evt: React.KeyboardEvent) {
+    handleKeyDown(evt: React.KeyboardEvent & KeyboardEvent) {
       this.props.onKeyDown && this.props.onKeyDown(evt);
       this.foundation.handleKeydown(evt);
     }
 
-    handleTransitionEnd(evt: React.TransitionEvent) {
+    handleTransitionEnd(evt: React.TransitionEvent & TransitionEvent) {
       this.props.onTransitionEnd && this.props.onTransitionEnd(evt);
       this.foundation.handleTransitionEnd(evt);
     }

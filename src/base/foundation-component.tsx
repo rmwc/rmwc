@@ -146,11 +146,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Events
    **************************************************/
-  addEventListener(
-    evtName: string,
-    callback: (evt: Event) => void,
-    shouldBubble?: boolean
-  ) {
+  addEventListener(evtName: string, callback: (evt: Event) => void) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName] !== callback) {
       this._events[propName] = callback;
@@ -158,11 +154,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     }
   }
 
-  removeEventListener(
-    evtName: string,
-    callback: (evt: Event) => void,
-    shouldBubble?: boolean
-  ) {
+  removeEventListener(evtName: string, callback: (evt: Event) => void) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName]) {
       delete this._events[propName];
@@ -196,13 +188,14 @@ interface FoundationState {}
 type FoundationPropsT<P> = RMWC.MergeInterfacesT<P, FoundationProps>;
 type FoundationStateT<S> = S & FoundationState;
 
-export class FoundationComponent<P, S extends any = {}> extends React.Component<
-  FoundationPropsT<P>,
-  FoundationStateT<S>
-> {
+export class FoundationComponent<
+  Foundation extends any,
+  P,
+  S extends any = {}
+> extends React.Component<FoundationPropsT<P>, FoundationStateT<S>> {
   static shouldDebounce = false;
 
-  foundation: any;
+  foundation!: Foundation;
   elements: { [key: string]: FoundationElement<any, any> } = {};
 
   constructor(props: any) {
@@ -227,7 +220,8 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
 
   componentWillUnmount() {
     this.foundation && this.foundation.destroy();
-    this.foundation = null;
+    // @ts-ignore
+    this.foundation = undefined;
     Object.values(this.elements).forEach(el => el.destroy());
   }
 
@@ -256,10 +250,10 @@ export class FoundationComponent<P, S extends any = {}> extends React.Component<
   }
 
   getDefaultFoundation() {
-    return {
+    return ({
       init: () => {},
       destroy: () => {}
-    };
+    } as unknown) as Foundation;
   }
 
   /**
