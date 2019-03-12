@@ -36,21 +36,17 @@ import {
       <TopAppBarTitle>Title</TopAppBarTitle>
     </TopAppBarSection>
     <TopAppBarSection alignEnd>
-      <TopAppBarActionItem aria-label="Download" alt="Download">
-        file_download
-      </TopAppBarActionItem>
+      <TopAppBarActionItem aria-label="Download" alt="Download" icon="file_download" />
       <TopAppBarActionItem
         aria-label="Print this page"
         alt="Print this page"
-      >
-        print
-      </TopAppBarActionItem>
+        icon="print"
+      />
       <TopAppBarActionItem
         aria-label="Bookmark this page"
         alt="Bookmark this page"
-      >
-        bookmark
-      </TopAppBarActionItem>
+        icon="bookmark"
+      />
     </TopAppBarSection>
   </TopAppBarRow>
 </TopAppBar>
