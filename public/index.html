@@ -92,10 +92,18 @@
     </style>
 
     <script type="text/javascript">
-      var redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        sessionStorage.removeItem('redirect');
-        window.history.replaceState(null, null, redirect);
+      if (window.location.search.indexOf('p=') !== -1) {
+        const params = window.location.search
+          .slice(1)
+          .split('&')
+          .reduce((acc, part) => {
+            const [key, val] = part.split('=', 2);
+            acc[key] = val;
+            return acc;
+          }, {});
+        if (params.p) {
+          window.history.replaceState(null, null, params.p);
+        }
       }
     </script>
   </head>

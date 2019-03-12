@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    sessionStorage.setItem('redirect', location.pathname);
-  </script>
-  <meta http-equiv="refresh" content="0;URL='/rmwc'"></meta>
+  <script type="text/javascript">window.location.replace('/rmwc/?p=' + window.location.pathname.split('/rmwc/')[1] + (window.location.search ? '&' + window.location.search.slice(1) : ''));</script>
 </head>
 <body>
 </body>
