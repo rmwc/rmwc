@@ -216,7 +216,7 @@ self.__precacheManifest = [
     "url": "/rmwc/static/js/50.22b0d501.chunk.js"
   },
   {
-    "revision": "21e4210c88169547a8f4cc675ed71f6f",
+    "revision": "2be644462d237ccf518ab645f2443921",
     "url": "/rmwc/index.html"
   }
 ];
