@@ -81,7 +81,6 @@ export class MenuSurface extends FoundationComponent<
   }
 
   componentDidMount() {
-    super.componentDidMount();
     if (this.root.ref) {
       const anchor = closest(
         this.root.ref,
@@ -89,6 +88,8 @@ export class MenuSurface extends FoundationComponent<
       );
       anchor && (this.anchorElement = anchor);
     }
+    // this has to be run AFTER we try to get our anchor
+    super.componentDidMount();
   }
 
   componentWillUnmount() {
