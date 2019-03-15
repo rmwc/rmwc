@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/formfield",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "RMWC FormField component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@material/form-field": "^1.0.0",
-    "@rmwc/base": "^5.2.0",
-    "@rmwc/types": "^5.2.0"
+    "@rmwc/base": "^5.2.1",
+    "@rmwc/types": "^5.2.1"
   },
   "gitHead": "3cd925b458a24ed320fa9f7faab52a53d6421e20"
 }

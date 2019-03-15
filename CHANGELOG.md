@@ -1,3 +1,14 @@
+#### 5.2.1 (2019-03-15)
+
+##### Documentation Changes
+
+* **TopAppBar:**  Correct examples (985102cc)
+
+##### Bug Fixes
+
+* **Menu:**  Corrects race condition with hoistMenuToBody no detecting anchor (492fa2d6)
+* **Docs:**  Corrects doc build tree shaking dropping CSS (d1c86a43)
+
 #### 5.2.0 (2019-03-11)
 
 ##### Documentation Changes
