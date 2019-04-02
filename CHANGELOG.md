@@ -1,3 +1,18 @@
+#### 5.2.2 (2019-04-02)
+
+##### Chores
+
+* **npm:**  Running audit, updating lock (f4f033cd)
+
+##### Bug Fixes
+
+* **DataTable:**  Removes hover animation, fixes #443 (79574049)
+* **Tabs:**  Fixes typings for Tab.onInteraction #438 (b51d39f8)
+* **Base:**  Corrects potential conflict with built in component prop names and HTMLProps (76d89fd4)
+* **Avatar:**  Corrects type signature error for size (b7a1e9ae)
+* **Dialog:**  Render footer in SimpleDialog (9df9d395)
+* **Checkbox:**  Adding missing dependency (8db8026a)
+
 #### 5.2.1 (2019-03-15)
 
 ##### Documentation Changes
