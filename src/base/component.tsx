@@ -98,5 +98,7 @@ export const componentFactory = <P extends {}>({
 
   Component.displayName = displayName;
   Component.defaultProps = defaultProps;
-  return (Component as unknown) as React.ComponentType<P & RMWC.ComponentProps>;
+  return (Component as unknown) as React.ComponentType<
+    RMWC.MergeInterfacesT<P, RMWC.ComponentProps>
+  >;
 };
