@@ -44,6 +44,7 @@ const AvatarRoot = withRipple()(
       square?: boolean;
       interactive?: boolean;
       hasImage?: boolean;
+      size?: RMWC.IconSizeT;
     } & IconProps
   >({
     displayName: 'AvatarRoot',
@@ -96,7 +97,7 @@ export const Avatar = ({
   interactive = false,
   contain = false,
   ...rest
-}: AvatarProps & RMWC.ComponentProps) => {
+}: RMWC.MergeInterfacesT<AvatarProps, RMWC.ComponentProps>) => {
   const initials = getInitialsForName(name);
   const avatarStyle = src
     ? {
@@ -150,7 +151,7 @@ export const AvatarCount = ({
   size,
   interactive = false,
   ...rest
-}: AvatarCountProps & RMWC.ComponentProps) => {
+}: RMWC.MergeInterfacesT<AvatarCountProps, RMWC.ComponentProps>) => {
   const smallerText = String(value).length > 2;
   return (
     <AvatarRoot

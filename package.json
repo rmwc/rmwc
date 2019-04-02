@@ -46,7 +46,7 @@
     "changelog": "changelog",
     "storybook": "start-storybook -p 9001",
     "preversion": "npm run clean && npm test -- --coverage",
-    "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && npm run docgen && git add --all",
+    "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && npm run docgen && git add --all && git push",
     "postpublish": "npm run clean && npm run build:docsite && git add --all && git commit -m 'Building docs' &&  git push && git push --tags && npm run clean",
     "flow": "flow"
   },
