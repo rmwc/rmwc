@@ -22,7 +22,7 @@ export interface TabProps {
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean;
   /** Fires when a tab has been interacted with. This is captures both keyboard and click events. */
-  onInteraction?: boolean;
+  onInteraction?: (evt: RMWC.CustomEventT<{ tabId: string }>) => void;
 }
 
 export const TabRoot = withRipple({ surface: false })(
