@@ -78,7 +78,7 @@ export interface DialogButtonProps extends ButtonProps {
 /** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<
   DialogButtonProps & RMWC.ComponentProps
-> {
+  > {
   static displayName = 'DialogButton';
   render() {
     const { action = '', className, isDefaultAction, ...rest } = this.props;
@@ -115,7 +115,7 @@ export interface DialogProps {
 export class Dialog extends FoundationComponent<
   MDCDialogFoundation,
   DialogProps
-> {
+  > {
   static displayName = 'Dialog';
 
   private root = this.createElement('root');
@@ -344,9 +344,9 @@ export class SimpleDialog extends React.Component<SimpleDialogProps> {
           </DialogContent>
         )}
 
-        {(!!cancelLabel || !!acceptLabel) && (
+        {(!!cancelLabel || !!acceptLabel || !!footer) && (
           <DialogActions>
-            {!!footer && { footer }}
+            {!!footer && footer}
             {!!cancelLabel && (
               <DialogButton action="close">{cancelLabel}</DialogButton>
             )}
