@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@material/checkbox": "^1.0.0",
+    "@material/form-field": "^1.0.0",
     "@rmwc/base": "^5.2.1",
     "@rmwc/formfield": "^5.2.1",
     "@rmwc/ripple": "^5.2.1",
