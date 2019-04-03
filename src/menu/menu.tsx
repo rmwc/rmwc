@@ -216,7 +216,8 @@ export interface SimpleMenuState {
 }
 
 const simpleMenuFactory = <Props extends SimpleMenuProps>(
-  MenuComponent: React.ComponentType<MenuProps | MenuSurfaceProps>
+  MenuComponent: React.ComponentType<MenuProps | MenuSurfaceProps> &
+    RMWC.ComponentProps
 ): React.ComponentType<Props> =>
   class extends React.Component<Props, SimpleMenuState> {
     static displayName = 'SimpleMenu';
