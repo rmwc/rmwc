@@ -22,6 +22,13 @@ export default () => {
       );
     }
 
+    if (!(window as any).scrollTo) {
+      Object.defineProperty(window as any, 'scrollTo', {
+        writable: true,
+        value: () => {}
+      });
+    }
+
     (window as any)['MutationObserver'] =
       (window as any)['MutationObserver'] || require('mutation-observer');
   }
