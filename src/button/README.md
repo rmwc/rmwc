@@ -17,6 +17,10 @@ import { CircularProgress } from '@rmwc/circular-progress';
   icon="favorite"
 />
 <Button
+  label="With Trailing Icon"
+  trailingIcon="favorite"
+/>
+<Button
   label="Raised"
   raised
 />
