@@ -14,7 +14,7 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   unelevated?: boolean;
   /** Make the button outlined. */
   outlined?: boolean;
-  /** make the button disabled */
+  /** Make the button disabled */
   disabled?: boolean;
   /** Content specified as a label prop. */
   label?: React.ReactNode | any;
