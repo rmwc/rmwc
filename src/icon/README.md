@@ -233,8 +233,8 @@ import { TextFieldIcon } from '@rmwc/textfield';
 ```
 
 ```jsx renderOnly
-import { Docs } from '@rmwc/base/utils/document-component';
-import * as docs from './docgen.json';
+import { DocProps } from '../doc-utils';
+import * as docs from './generated-props.json';
 
-<Docs src={docs} components={['Icon']} />
+<DocProps src={docs} components={['Icon']} />
 ```

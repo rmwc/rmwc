@@ -205,8 +205,8 @@ import { Select } from '@rmwc/select';
 ```
 
 ```jsx renderOnly
-import { Docs } from '@rmwc/base/utils/document-component';
-import * as docs from './docgen.json';
+import { DocProps } from '../doc-utils';
+import * as docs from './generated-props.json';
 
-<Docs src={docs} components={['Select']} />
+<DocProps src={docs} components={['Select']} />
 ```

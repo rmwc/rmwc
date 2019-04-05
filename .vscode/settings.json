@@ -1,8 +1,5 @@
 {
   "git.ignoreLimitWarning": true,
-  "flow.useNPMPackagedFlow": true,
-  "javascript.validate.enable": false,
-  "flow.runOnEdit": true,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "cSpell.words": [

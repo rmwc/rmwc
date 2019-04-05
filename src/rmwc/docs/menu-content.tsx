@@ -15,11 +15,11 @@ const LibraryIntegrationsDocs = React.lazy(() =>
 const TypeDocs = React.lazy(() => import('./README-TYPES.md'));
 
 const AvatarDocs = React.lazy(() => import('@rmwc/avatar/README.md'));
-const ButtonDocs = React.lazy(() => import('@rmwc/button/README.md'));
-const FabDocs = React.lazy(() => import('@rmwc/fab/README.md'));
-const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/README.md'));
-const CardDocs = React.lazy(() => import('@rmwc/card/README.md'));
-const ChipDocs = React.lazy(() => import('@rmwc/chip/README.md'));
+const ButtonDocs = React.lazy(() => import('@rmwc/button/readme'));
+const FabDocs = React.lazy(() => import('@rmwc/fab/readme'));
+const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/readme'));
+const CardDocs = React.lazy(() => import('@rmwc/card/readme'));
+const ChipDocs = React.lazy(() => import('@rmwc/chip/readme'));
 const DataTableDocs = React.lazy(() => import('@rmwc/data-table/README.md'));
 const DialogDocs = React.lazy(() => import('@rmwc/dialog/README.md'));
 const DrawerDocs = React.lazy(() => import('@rmwc/drawer/README.md'));

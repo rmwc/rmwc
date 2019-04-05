@@ -81,6 +81,7 @@
     "react-dom": "^16.8.1",
     "react-ga": "^2.5.7",
     "react-hot-loader": "^4.6.3",
+    "react-live": "^2.0.0",
     "react-markdown-loader": "git+https://github.com/jamesmfriedman/react-markdown-loader.git#master",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",

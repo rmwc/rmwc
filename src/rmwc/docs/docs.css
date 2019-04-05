@@ -2,6 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-size: 16px;
 }
 
 html {
@@ -139,8 +140,7 @@ body ul li {
 
 .app__content > div,
 .container {
-  padding: 1rem;
-  max-width: 72.5rem;
+  padding: 3rem;
   margin: 0 auto;
   display: block;
 }
@@ -457,6 +457,11 @@ ul li {
   margin-bottom: 3rem;
 }
 
+/* page cards */
+#page-cards .live-preview {
+  justify-content: center;
+}
+
 /* page menus */
 #page-menus .example .mdc-menu-surface--anchor {
   display: inline-block;
@@ -472,12 +477,13 @@ ul li {
 }
 
 /* page icon-buttons */
-#page-icon-buttons .example > div .mdc-icon-button {
+#page-icon-buttons .live-example .mdc-icon-button {
   vertical-align: top;
+  margin: 1rem;
 }
 
 /* page buttons */
-#page-buttons .example .mdc-button {
+#page-buttons .live-example .mdc-button {
   margin: 0.5rem;
 }
 
@@ -534,7 +540,7 @@ ul li {
   padding: 1rem;
 }
 
-#page-fabs .example .mdc-fab {
+#page-fabs .live-example .mdc-fab {
   margin: 1rem;
   vertical-align: middle;
 }
@@ -631,31 +637,70 @@ ul li {
   color: rgb(0, 0, 128);
 }
 
-.example.render-only table th,
-.example.render-only table td {
+.document-component table th,
+.document-component table td {
   text-align: left;
   padding: 16px;
 }
 
-.example.render-only table {
+.document-component table {
   margin-left: -16px;
 }
 
-.example.render-only table th {
+.document-component table th {
   font-weight: bold;
 }
 
 @media (min-width: 37.5rem) {
 }
 
-@media (min-width: 48rem) {
-  .app__content > div {
-    padding: 1.5rem;
-  }
+.live-example {
+  display: flex;
+  margin: 0 -3rem;
 }
 
-@media (min-width: 90rem) {
-  .app__content > div {
-    padding: 3.75rem 1.5rem;
-  }
+.live-example:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.live-example:hover .live-editor {
+  background: #181818;
+}
+
+.live-preview {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  display: flex;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.live-preview-label {
+  opacity: 0.5;
+  margin-bottom: 0.25rem;
+}
+
+.live-editor {
+  background: #242424;
+  font-size: 1rem;
+  flex: 1;
+  color: white;
+  position: relative;
+}
+
+.live-editor textarea,
+.live-editor pre {
+  padding: 1rem !important;
+}
+
+.live-error {
+  position: absolute;
+  background: var(--mdc-theme-error);
+  color: var(--mdc-theme-on-error);
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;
 }

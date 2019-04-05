@@ -104,9 +104,9 @@ import {
 ```
 
 ```jsx renderOnly
-import { Docs } from '@rmwc/base/utils/document-component';
-import * as docs from './docgen.json';
-import * as iconDocs from '@rmwc/icon/docgen.json';
+import { DocProps } from '../doc-utils';
+import * as docs from './generated-props.json';
+import * as iconDocs from '@rmwc/icon/generated-props.json';
 
-<Docs src={docs} components={['Chip', 'ChipSet']} />
+<DocProps src={docs} components={['Chip', 'ChipSet']} />
 ```

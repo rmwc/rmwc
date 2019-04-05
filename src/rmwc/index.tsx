@@ -4,6 +4,7 @@ export * from '@rmwc/avatar';
 export * from '@rmwc/base';
 export * from '@rmwc/button';
 export * from '@rmwc/card';
+export * from '@rmwc/circular-progress';
 export * from '@rmwc/checkbox';
 export * from '@rmwc/chip';
 export * from '@rmwc/data-table';

@@ -19,8 +19,8 @@ import { FormField } from '@rmwc/formfield';
 ```
 
 ```jsx renderOnly
-import { Docs } from '@rmwc/base/utils/document-component';
-import * as docs from './docgen.json';
+import { DocProps } from '../doc-utils';
+import * as docs from './generated-props.json';
 
-<Docs src={docs} components={['FormField']} />
+<DocProps src={docs} components={['FormField']} />
 ```
