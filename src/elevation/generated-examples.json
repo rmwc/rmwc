@@ -1,1 +1,1 @@
-[]
+["<>\n  {Array(25)\n    .fill(undefined)\n    .map((val, i) => (\n      <Elevation z={i} key={i}>\n        {i}dp\n      </Elevation>\n    ))}\n</>","function Example() {\n  const [elevation, setElevation] = React.useState(0);\n\n  return (\n    <Elevation\n      z={elevation}\n      transition\n      onMouseOver={() => setElevation(24)}\n      onMouseOut={() => setElevation(0)}\n    >\n      Hover Me {elevation}dp\n    </Elevation>\n  );\n}","<Elevation z={21} wrap>\n  <span>Wrapped!</span>\n</Elevation>"]

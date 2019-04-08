@@ -69,6 +69,7 @@
     "@types/storybook__react": "^4.0.1",
     "babel-loader": "8.0.5",
     "copyfiles": "^2.1.0",
+    "documentalist": "^1.6.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
     "flow-bin": "^0.91.0",

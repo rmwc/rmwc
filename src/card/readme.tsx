@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle } from '../doc-utils';
-import * as propsSrc from './generated-props.json';
+import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
 import {
@@ -23,6 +23,7 @@ export default function() {
   return (
     <Docs
       title="Cards"
+      lead="Cards contain content and actions about a single subject."
       module="@rmwc/card"
       styles={[
         '@material/card/dist/mdc.card.css',
@@ -30,10 +31,11 @@ export default function() {
         '@material/icon-button/dist/mdc.icon-button.css'
       ]}
       docsLink="https://material.io/develop/web/components/cards/"
+      examples={examples}
     >
       <DocsSubtitle>Fully Featured Example</DocsSubtitle>
 
-      <DocsExample src={examples}>
+      <DocsExample>
         <Card style={{ width: '21rem' }}>
           <CardPrimaryAction>
             <CardMedia
@@ -81,7 +83,7 @@ export default function() {
 
       <DocsSubtitle>Article Preview Example</DocsSubtitle>
 
-      <DocsExample src={examples}>
+      <DocsExample>
         <Card outlined style={{ width: '21rem' }}>
           <Typography
             use="subtitle1"
@@ -147,7 +149,7 @@ export default function() {
 
       <DocsSubtitle>Mini Card Example</DocsSubtitle>
 
-      <DocsExample src={examples}>
+      <DocsExample>
         <Card style={{ width: '12.5rem' }}>
           <CardPrimaryAction>
             <CardMedia

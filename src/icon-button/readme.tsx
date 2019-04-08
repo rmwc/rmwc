@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle } from '../doc-utils';
-import * as propsSrc from './generated-props.json';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
 import { IconButton } from '.';
@@ -14,14 +14,15 @@ export default function() {
       module="@rmwc/icon-button"
       styles={['@material/icon-button/dist/mdc.icon-button.css']}
       docsLink="https://material.io/develop/web/components/buttons/icon-buttons/"
+      examples={examples}
     >
       <DocsSubtitle>Basic Usage</DocsSubtitle>
-      <p>
+      <DocsP>
         `IconButton` inherits from the `Icon` component and can be passed icons
         in the same way.
-      </p>
+      </DocsP>
 
-      <DocsExample src={examples} label="Default">
+      <DocsExample label="Default">
         <>
           <IconButton icon="star" label="Rate this!" />
 
@@ -40,19 +41,19 @@ export default function() {
       </DocsExample>
 
       <DocsSubtitle>Usage as a Toggle</DocsSubtitle>
-      <p>
+      <DocsP>
         To use as a toggle, specify an additional toggled on state using
         'onIcon'.
-      </p>
+      </DocsP>
 
-      <DocsExample src={examples} label="Uncontrolled">
+      <DocsExample label="Uncontrolled">
         <>
           <IconButton icon="favorite_border" onIcon="favorite" />
           <IconButton icon="favorite" onIcon="favorite" disabled />
         </>
       </DocsExample>
 
-      <DocsExample src={examples} label="Controlled">
+      <DocsExample label="Controlled">
         {function Controlled() {
           const [isChecked, setIsChecked] = React.useState(false);
           return (
@@ -75,7 +76,7 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocsExample src={examples} label="Component as Icon">
+      <DocsExample label="Component as Icon">
         <IconButton
           onIcon={
             <div

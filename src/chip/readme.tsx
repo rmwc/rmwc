@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle } from '../doc-utils';
-import * as propsSrc from './generated-props.json';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
 import { Chip, ChipSet } from '.';
@@ -14,20 +14,21 @@ export default function() {
       module="@rmwc/chip"
       styles={['@material/chips/dist/mdc.chips.css']}
       docsLink="https://material.io/develop/web/components/chips/"
+      examples={examples}
     >
-      <DocsExample src={examples} label="Default">
+      <DocsExample label="Default">
         <ChipSet>
           <Chip selected label="Cookies" />
           <Chip label="Pizza" />
           <Chip label="Icecream" />
         </ChipSet>
       </DocsExample>
-      <DocsExample src={examples} label="With Icons">
+      <DocsExample label="With Icons">
         <ChipSet>
           <Chip icon="favorite" label="Cookies" trailingIcon="close" />
         </ChipSet>
       </DocsExample>
-      <DocsExample src={examples} label="Event Handling">
+      <DocsExample label="Event Handling">
         {function Example() {
           const [selected, setSelected] = React.useState(false);
           return (
@@ -53,22 +54,22 @@ export default function() {
       </DocsExample>
 
       <DocsSubtitle>Filter and Choice Chipsets</DocsSubtitle>
-      <p>
+      <DocsP>
         You can specify a `ChipSet` as either a `filter` of `choice` which
         slightly changes the visual styling of selected chips. While
         `material-components-web` has some built in functionality for chip sets,
         it doesn't fit well with React's unidirectional data flow. It is
         recommended you use standard React patterns to store selected chips in
         your state and render them accordingly.
-      </p>
-      <p>
+      </DocsP>
+      <DocsP>
         Clicking on the trailing close icon will trigger a close animation and
         put the chip in an exited state, but it is up to you to remove component
         out from rendering. The you use the `onRemove` prop implement this
         behavior.
-      </p>
+      </DocsP>
 
-      <DocsExample src={examples} label="Filter">
+      <DocsExample label="Filter">
         {function Example() {
           const [selected, setSelected] = React.useState({
             cookies: false,
@@ -113,7 +114,7 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocsExample src={examples} label="Choice">
+      <DocsExample label="Choice">
         {function Example() {
           const [selected, setSelected] = React.useState({
             cookies: false,

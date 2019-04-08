@@ -11,7 +11,7 @@ const genDocExample = packageName => {
   );
   if (fs.existsSync(docsExamplePath)) {
     const code = fs.readFileSync(docsExamplePath).toString();
-    const regexp = /\<DocsExample.+?\>([\S\s]+?)\<\/DocsExample/gm;
+    const regexp = /\<DocsExample.*?\>([\S\s]+?)\<\/DocsExample/gm;
     let match;
     const matches = [];
     while (match !== null) {
@@ -57,9 +57,8 @@ try {
       console.log(`Building Docs For: ${d}`);
       genDocExample(d);
       return;
-
       const proc = exec(
-        `export NODE_ENV=development && typedoc ./src/${d} --options ./typedoc.js --json ./src/${d}/generated-props.json`
+        `documentalist ./src/${d}/*.tsx --no-css --no-md > ./src/${d}/generated-props.json`
       );
 
       proc.stdout.on('data', data => {

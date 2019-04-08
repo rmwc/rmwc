@@ -1,144 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-// @ts-ignore
-import theme from 'prism-react-renderer/themes/nightOwl';
-import * as rmwc from './rmwc';
 import { Typography } from './rmwc';
+import * as rmwc from './rmwc';
 
 /* istanbul ignore file */
-
-interface Type {
-  type: string;
-  name?: string;
-  value?: string;
-  elementType?: Type;
-  types?: Array<{
-    type: string;
-    name: string;
-    value?: string;
-    declaration: Def & { signatures?: Array<Def & { parameters: Def[] }> };
-  }>;
-  typeArguments: Array<{ declaration: Def }>;
-}
-
-interface Def {
-  comment: {
-    shortText?: string;
-  };
-  children?: Def[];
-  flags: {
-    isExported?: boolean;
-    isOptional?: boolean;
-  };
-  kindString: string;
-  name: string;
-  type?: Type;
-}
-
 interface DocumentComponentProps {
-  docs: { [key: string]: Def | undefined };
+  docs: { [key: string]: any };
   displayName: string;
 }
 
 class DocumentComponent extends React.Component<DocumentComponentProps> {
-  constructor(props: any) {
-    super(props);
-    this.simplifyType = this.simplifyType.bind(this);
-  }
-
-  simplifyType(type?: Type | { declaration: Def }): string {
-    // unknown
-    if (!type) {
-      return 'undefined';
-    }
-
-    if ('value' in type) {
-      return type.value ? `'${type.value}'` : '';
-    }
-
-    if ('declaration' in type) {
-      if (type.declaration.name === '__type' && type.declaration.children) {
-        return `{${type.declaration.children
-          .map(c => {
-            return `${c.name}: ${this.simplifyType(c.type)}`;
-          })
-          .join(', ')}}`;
-      }
-
-      return '';
-    }
-
-    // arrays
-    if (type.type && type.type === 'array') {
-      return `${this.simplifyType(type.elementType)}[]`;
-    }
-
-    if ('elementType' in type) {
-      return this.simplifyType(type.elementType);
-    }
-
-    // strings, numbers, any
-    if (
-      type.name &&
-      ['any', 'string', 'number', 'boolean'].includes(type.name)
-    ) {
-      return type.name;
-    }
-
-    // catches type literals
-    if (type.name && type.name === '__type' && type.type === 'reference') {
-      return '{}';
-    }
-
-    // Named returns
-    if (type.type === 'reference' && type.name) {
-      const args = type.typeArguments
-        ? `<${type.typeArguments.map(t => this.simplifyType(t)).join(', ')}>`
-        : '';
-      return `${type.name}${args}`;
-    }
-
-    // booleans
-    if (type.type === 'union' && type.types && type.types.length <= 3) {
-      const combined = type.types.map(t => t.name).join('');
-      if (combined.includes('true') && combined.includes('false')) {
-        return 'boolean';
-      }
-    }
-
-    // functions
-    if (
-      type.type === 'union' &&
-      type.types &&
-      type.types.some(t => !!t.declaration)
-    ) {
-      const found = type.types.find(t => !!t.declaration);
-      if (found && found.declaration.signatures) {
-        const sig = found.declaration.signatures[0];
-        if (sig.name === '__call') {
-          const rType = sig.type && sig.type.name;
-          const params = sig.parameters
-            ? sig.parameters.map(p => `${p.name}: ${this.simplifyType(p.type)}`)
-            : [];
-          return `(${params.join(', ')}) => ${rType}`;
-        }
-      }
-    }
-
-    if (type.type === 'union' && type.types) {
-      // generic unions
-      return type.types
-        .filter(t => t.name !== 'undefined')
-        .map(this.simplifyType)
-        .join(' | ');
-    }
-
-    return 'undefined';
-  }
-
   getComponentDef(displayName: string) {
     const componentDef = this.props.docs[displayName];
-    const propsDef = this.props.docs[displayName + 'Props'];
+    const propsDef: any = this.props.docs[displayName + 'Props'];
 
     const def: {
       name: string;
@@ -159,26 +33,21 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
       props: []
     };
 
-    if (propsDef && propsDef.children) {
-      def.props = propsDef.children
-        .map(p => {
-          const simpleType = this.simplifyType(p.type);
-          return {
-            name: p.name,
-            description: (p.comment && p.comment.shortText) || '',
-            required: !p.flags.isOptional,
-            type:
-              // Do some wrapping for unions
-              simpleType.includes(' | ') &&
-              p.flags.isOptional &&
-              !simpleType.startsWith('(')
-                ? `(${simpleType})`
-                : simpleType
-          };
-        })
-        // remove deprecated props from UI
-        .filter(p => !p.description.toLowerCase().includes('deprecated'));
-    }
+    def.props = propsDef
+      ? propsDef.properties
+          .map((p: any) => {
+            const description = p.documentation.contentsRaw;
+            return description.includes('DEPRECATED')
+              ? null
+              : {
+                  name: p.name,
+                  description,
+                  required: !p.flags.isOptional,
+                  type: p.type
+                };
+          })
+          .filter(Boolean)
+      : [];
 
     return def;
   }
@@ -186,6 +55,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
   render() {
     const { displayName } = this.props;
     const def = this.getComponentDef(displayName);
+
     return (
       <div className="document-component">
         <h2>{def.name}</h2>
@@ -208,10 +78,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
                       <code>{prop.name}</code>
                     </td>
                     <td>
-                      <code>
-                        {!prop.required && <span className="optional">?</span>}
-                        {prop.type}
-                      </code>
+                      <code>{prop.type}</code>
                     </td>
 
                     <td>{prop.description}</td>
@@ -227,29 +94,12 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 }
 
 export interface DocsInterface {
-  src: {};
+  src: any;
   components: string[];
 }
 
 export class DocProps extends React.Component<DocsInterface> {
-  docs: { [key: string]: Def | undefined } = {};
-
-  constructor(props: any) {
-    super(props);
-    const docs = props.src.default ? props.src.default.children : [];
-
-    this.docs = docs.reduce((acc: { [key: string]: Def }, val: Def) => {
-      val.children &&
-        val.children.forEach(c => {
-          if (c.flags.isExported) {
-            acc[c.name] = c;
-          }
-        });
-      return acc;
-    }, {});
-
-    //console.log(this.docs);
-  }
+  docs: { [key: string]: any } = this.props.src.typescript;
 
   shouldComponentUpdate() {
     return false;
@@ -263,43 +113,55 @@ export class DocProps extends React.Component<DocsInterface> {
   }
 }
 
+const DocsContext = React.createContext<{
+  scope: Object;
+  examples: string[];
+}>({
+  scope: {},
+  examples: []
+});
+
 export function Docs({
   children,
   title,
   lead,
   module,
   styles,
-  docsLink
+  docsLink,
+  examples
 }: {
   children: React.ReactNode;
   title: string;
-  lead?: string;
+  lead: string;
   module: string;
   styles: string[];
   docsLink?: string;
+  examples: string[];
 }) {
   let index = -1;
   return (
-    <div>
-      <DocsTitle>{title}</DocsTitle>
-      {!!lead && <DocsLead>{lead}</DocsLead>}
-      <DocsSetup module={module} styles={styles} docsLink={docsLink} />
-      {React.Children.map(children, child => {
-        if (
-          React.isValidElement(child) &&
-          // @ts-ignore
-          child.type.displayName === 'DocsExample'
-        ) {
-          index++;
-          return React.cloneElement(child, {
-            ...child.props,
-            index
-          } as any);
-        }
+    <DocsContext.Provider value={{ scope: rmwc, examples }}>
+      <div>
+        <DocsTitle>{title}</DocsTitle>
+        <DocsLead>{lead}</DocsLead>
+        <DocsSetup module={module} styles={styles} docsLink={docsLink} />
+        {React.Children.map(children, child => {
+          if (
+            React.isValidElement(child) &&
+            // @ts-ignore
+            child.type.displayName === 'DocsExample'
+          ) {
+            index++;
+            return React.cloneElement(child, {
+              ...child.props,
+              index
+            } as any);
+          }
 
-        return child;
-      })}
-    </div>
+          return child;
+        })}
+      </div>
+    </DocsContext.Provider>
   );
 }
 
@@ -322,7 +184,7 @@ function DocsSetup({
           Import styles:
           <ul>
             {styles.map(s => (
-              <li>
+              <li key={s}>
                 import <strong>'{s}'</strong>;
               </li>
             ))}
@@ -350,21 +212,25 @@ function DocsLead({ children }: { children: React.ReactNode }) {
   return <blockquote>{children}</blockquote>;
 }
 
+export function DocsP({ children }: { children: React.ReactNode }) {
+  const __html = String(children).replace(/`(.+?)`/g, '<code>$1</code>');
+  return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
+}
+
 export function DocsExample({
   children,
-  src,
   index = 0,
   label
 }: {
   children: React.ReactNode;
-  src: string[];
   index?: number;
   label?: string;
 }) {
-  const [code, setCode] = useState(src[index]);
+  const { scope, examples } = useContext(DocsContext);
+  const [code] = useState(examples[index]);
 
   return (
-    <LiveProvider code={code} scope={rmwc} {...{ theme }}>
+    <LiveProvider code={code} scope={scope}>
       <div className="live-example">
         <div className="live-preview">
           <div>

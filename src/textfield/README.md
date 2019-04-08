@@ -80,7 +80,7 @@ import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 
 ```jsx renderOnly
 import { DocProps } from '../doc-utils';
-import * as docs from './generated-props.json';
+import { default as docs}  from './generated-props.json';
 
 <DocProps src={docs} components={['TextField', 'TextFieldIcon', 'TextFieldHelperText']} />
 ```

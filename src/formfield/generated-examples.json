@@ -1,1 +1,1 @@
-[]
+["<FormField>\n  <input type=\"checkbox\" id=\"input\" />\n  <label htmlFor=\"input\">Input Label</label>\n</FormField>"]

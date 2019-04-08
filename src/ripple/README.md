@@ -29,7 +29,7 @@ import { Ripple } from '@rmwc/ripple';
 
 ```jsx renderOnly
 import { DocProps } from '../doc-utils';
-import * as docs from './generated-props.json';
+import { default as docs}  from './generated-props.json';
 
 <DocProps src={docs} components={["Ripple"]} />
 ```

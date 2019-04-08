@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Docs, DocsExample, DocProps } from '../doc-utils';
-import * as propsSrc from './generated-props.json';
+import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
 import { Button } from '.';
@@ -16,18 +16,19 @@ export default function() {
       module="@rmwc/button"
       styles={['@material/button/dist/mdc.button.css']}
       docsLink="https://material.io/develop/web/components/buttons/"
+      examples={examples}
     >
-      <DocsExample src={examples} label="Default">
+      <DocsExample label="Default">
         <Button label="Button" />
       </DocsExample>
-      <DocsExample src={examples} label="Icons">
+      <DocsExample label="Icons">
         <>
           <Button label="Icon" icon="favorite" />
-          <Button label="Trailing Icon" trailingIcon="keyboard_arrow_right" />
+          <Button label="Trailing" trailingIcon="keyboard_arrow_right" />
           <Button label="Loading" icon={<CircularProgress />} />
         </>
       </DocsExample>
-      <DocsExample src={examples} label="Variants">
+      <DocsExample label="Variants">
         <>
           <Button label="Raised" raised />
           <Button label="Unelevated" unelevated />
@@ -36,7 +37,7 @@ export default function() {
           <Button label="No Ripple" ripple={false} />
         </>
       </DocsExample>
-      <DocsExample src={examples} label="Theming">
+      <DocsExample label="Theming">
         <>
           <Button
             label="With Theme"
@@ -54,14 +55,14 @@ export default function() {
           />
         </>
       </DocsExample>
-      <DocsExample src={examples}>
+      <DocsExample>
         <Button>
           {/** Alternatively pass content as children */}
           As Children
         </Button>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['Button', 'ButtonIcon']} />
+      <DocProps src={propsSrc} components={['Button']} />
     </Docs>
   );
 }

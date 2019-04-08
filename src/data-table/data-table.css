@@ -163,7 +163,7 @@
 .rmwc-data-table__cell .mdc-checkbox {
   vertical-align: text-top;
   position: relative;
-  top: 0.0625rem; /** Fixes 1px offset */
+  top: -1px; /** Fixes 1px offset */
   margin: -0.6875rem 0.25rem -0.6875rem -1rem;
 }
 

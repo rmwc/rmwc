@@ -12,6 +12,7 @@
   color: white;
   fill: currentColor;
   transition: 0.3s;
+  min-width: 1em;
 }
 
 .card .cardMedia {

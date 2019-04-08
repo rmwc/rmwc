@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Docs, DocsExample, DocProps } from '../doc-utils';
-import * as propsSrc from './generated-props.json';
+import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
 import { Fab } from '.';
@@ -10,24 +10,26 @@ export default function() {
   return (
     <Docs
       title="Fabs"
+      lead="A floating action button (FAB) represents the primary action of a screen."
       module="@rmwc/fab"
       styles={['@material/fab/dist/mdc.fab.css']}
       docsLink="https://material.io/develop/web/components/buttons/floating-action-buttons/"
+      examples={examples}
     >
-      <DocsExample src={examples} label="Default">
+      <DocsExample label="Default">
         <Fab icon="favorite" />
       </DocsExample>
-      <DocsExample src={examples} label="Mini">
+      <DocsExample label="Mini">
         <Fab icon="favorite" mini />
       </DocsExample>
-      <DocsExample src={examples} label="Extended">
+      <DocsExample label="Extended">
         <>
           <Fab icon="add" label="Create" />
           <Fab trailingIcon="add" label="Create" />
           <Fab label="Label only" />
         </>
       </DocsExample>
-      <DocsExample src={examples} label="Theming">
+      <DocsExample label="Theming">
         <>
           <Fab icon="favorite_outline" theme={['primaryBg', 'onPrimary']} />
           <Fab
