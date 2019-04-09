@@ -184,25 +184,39 @@ class ToolbarBase extends FoundationComponent<
     return this.fixedAdjustElement_;
   }
 
+  get window() {
+    if (
+      this.root.ref &&
+      this.root.ref.ownerDocument &&
+      this.root.ref.ownerDocument.defaultView
+    ) {
+      return this.root.ref.ownerDocument.defaultView;
+    }
+    return window;
+  }
+
   getDefaultFoundation() {
     return new MDCToolbarFoundation({
       hasClass: (className: string) =>
         !!this.root.ref && this.root.ref.classList.contains(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
-      registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
-        window.addEventListener('scroll', handler),
+      registerScrollHandler: (handler: SpecificEventListener<'scroll'>) => {
+        this.window.addEventListener('scroll', handler);
+      },
       deregisterScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
-        window.removeEventListener('scroll', handler),
+        this.window.removeEventListener('scroll', handler),
       registerResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        window.addEventListener('resize', handler),
+        this.window.addEventListener('resize', handler),
       deregisterResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        window.removeEventListener('resize', handler),
-      getViewportWidth: () => window.innerWidth,
-      getViewportScrollY: () => window.pageYOffset,
+        this.window.removeEventListener('resize', handler),
+      getViewportWidth: () => this.window.innerWidth,
+      getViewportScrollY: () => this.window.pageYOffset,
       getOffsetHeight: () => (this.root.ref ? this.root.ref.offsetHeight : 0),
-      getFirstRowElementOffsetHeight: () =>
-        this.firstRowElement ? this.firstRowElement.offsetHeight : 0,
+      getFirstRowElementOffsetHeight: () => {
+        console.log(this.firstRowElement && this.firstRowElement.offsetHeight);
+        return this.firstRowElement ? this.firstRowElement.offsetHeight : 0;
+      },
       notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
         this.emit('onChange', evtData),
       setStyle: (property: string, value: string) =>
