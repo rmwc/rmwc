@@ -145,11 +145,19 @@ class TopAppBarBase extends FoundationComponent<
   navIcon: HTMLElement | null = null;
   scrollTarget: EventTarget | null = null;
 
+  get window() {
+    return this.root.ref &&
+      this.root.ref.ownerDocument &&
+      this.root.ref.ownerDocument.defaultView
+      ? this.root.ref.ownerDocument.defaultView
+      : window;
+  }
+
   componentDidMount() {
     super.componentDidMount();
 
     if (!this.props.scrollTarget) {
-      this.setScrollHandler(window);
+      this.setScrollHandler(this.window);
     }
 
     this.navIcon =
@@ -197,13 +205,18 @@ class TopAppBarBase extends FoundationComponent<
           handler as EventListener
         ),
       registerResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        window.addEventListener('resize', handler),
+        this.scrollTarget &&
+        this.scrollTarget.addEventListener('resize', handler as EventListener),
       deregisterResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        window.removeEventListener('resize', handler),
+        this.scrollTarget &&
+        this.scrollTarget.removeEventListener(
+          'resize',
+          handler as EventListener
+        ),
       getViewportScrollY: () =>
         this.scrollTarget &&
         (this.scrollTarget as any)[
-          this.scrollTarget === window ? 'pageYOffset' : 'scrollTop'
+          'pageYOffset' in this.scrollTarget ? 'pageYOffset' : 'scrollTop'
         ],
       getTotalActionItems: () =>
         this.root.ref
@@ -232,9 +245,9 @@ class TopAppBarBase extends FoundationComponent<
     this.foundation.initScrollHandler();
   }
 
-  sync(props: TopAppBarProps, prevProps: TopAppBarProps) {
+  sync(props: TopAppBarProps) {
     this.syncProp(props.scrollTarget, this.scrollTarget, () => {
-      this.scrollTarget = props.scrollTarget || window;
+      this.scrollTarget = props.scrollTarget || this.window;
       this.setScrollHandler(this.scrollTarget);
     });
   }
