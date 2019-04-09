@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useLayoutEffect } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { createPortal } from 'react-dom';
 import { Typography } from './rmwc';
 import * as rmwc from './rmwc';
 
@@ -36,7 +37,9 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
     def.props = propsDef
       ? propsDef.properties
           .map((p: any) => {
-            const description = p.documentation.contentsRaw;
+            const description = p.documentation
+              ? p.documentation.contentsRaw
+              : '';
             return description.includes('DEPRECATED')
               ? null
               : {
@@ -95,7 +98,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
 export interface DocsInterface {
   src: any;
-  components: string[];
+  components: Array<React.ComponentType<any> | string>;
 }
 
 export class DocProps extends React.Component<DocsInterface> {
@@ -107,9 +110,12 @@ export class DocProps extends React.Component<DocsInterface> {
 
   render() {
     const { components } = this.props;
-    return components.map(c => (
-      <DocumentComponent key={c} displayName={c} docs={this.docs} />
-    ));
+    return components.map(c => {
+      const name = typeof c === 'string' ? c : c.displayName || '';
+      return (
+        <DocumentComponent key={name} displayName={name} docs={this.docs} />
+      );
+    });
   }
 }
 
@@ -128,7 +134,8 @@ export function Docs({
   module,
   styles,
   docsLink,
-  examples
+  examples,
+  addon
 }: {
   children: React.ReactNode;
   title: string;
@@ -137,12 +144,16 @@ export function Docs({
   styles: string[];
   docsLink?: string;
   examples: string[];
+  addon?: boolean;
 }) {
   let index = -1;
   return (
     <DocsContext.Provider value={{ scope: rmwc, examples }}>
       <div>
-        <DocsTitle>{title}</DocsTitle>
+        <DocsTitle>
+          {title}
+          {addon && <DocsAddon />}
+        </DocsTitle>
         <DocsLead>{lead}</DocsLead>
         <DocsSetup module={module} styles={styles} docsLink={docsLink} />
         {React.Children.map(children, child => {
@@ -165,6 +176,10 @@ export function Docs({
   );
 }
 
+function DocsAddon() {
+  return <code>RMWC ADDON</code>;
+}
+
 function DocsSetup({
   module,
   styles,
@@ -175,7 +190,7 @@ function DocsSetup({
   docsLink?: string;
 }) {
   return (
-    <ul>
+    <ul className="docs-setup">
       <li>
         Module <strong>{module}</strong>
       </li>
@@ -217,35 +232,95 @@ export function DocsP({ children }: { children: React.ReactNode }) {
   return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
 }
 
+export const IFrame = ({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+  head?: React.ReactNode;
+}) => {
+  const [contentRef, setContentRef] = useState<HTMLIFrameElement | null>(null);
+  const [canMount, setCanMount] = React.useState(false);
+
+  const mountNode =
+    contentRef &&
+    contentRef.contentWindow &&
+    contentRef.contentWindow.document.body;
+
+  const headNode =
+    contentRef &&
+    contentRef.contentWindow &&
+    contentRef.contentWindow.document.head;
+
+  useEffect(() => {
+    if (headNode) {
+      headNode.innerHTML = document.head.innerHTML;
+    }
+
+    if (mountNode) {
+      mountNode.classList.add('mdc-typography');
+      window.requestAnimationFrame(() => {
+        setCanMount(true);
+      });
+    }
+  });
+
+  return (
+    <iframe {...props} ref={setContentRef} className="docs-iframe">
+      {mountNode && canMount && createPortal(<>{children}</>, mountNode)}
+    </iframe>
+  );
+};
+
 export function DocsExample({
   children,
   index = 0,
-  label
+  label,
+  codeOnly,
+  iframe
 }: {
   children: React.ReactNode;
   index?: number;
   label?: string;
+  codeOnly?: boolean;
+  iframe?: boolean;
 }) {
   const { scope, examples } = useContext(DocsContext);
   const [code] = useState(examples[index]);
 
   return (
-    <LiveProvider code={code} scope={scope}>
-      <div className="live-example">
-        <div className="live-preview">
-          <div>
-            {label && (
-              <Typography
-                use="caption"
-                className="live-preview-label"
-                tag="div"
-              >
-                {label}
-              </Typography>
-            )}
-            <LivePreview>{children}</LivePreview>
+    <LiveProvider
+      code={code}
+      scope={scope}
+      noInline={!!codeOnly}
+      disabled={!!codeOnly}
+    >
+      <div
+        className={`live-example ${codeOnly ? 'live-example-code-only' : ''}`}
+      >
+        {!codeOnly && (
+          <div className="live-preview">
+            <div>
+              {label && (
+                <Typography
+                  use="caption"
+                  className="live-preview-label"
+                  tag="div"
+                >
+                  {label}
+                </Typography>
+              )}
+
+              {!!iframe ? (
+                <IFrame>
+                  <LivePreview>{children}</LivePreview>
+                </IFrame>
+              ) : (
+                <LivePreview>{children}</LivePreview>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="live-editor">
           <LiveEditor />

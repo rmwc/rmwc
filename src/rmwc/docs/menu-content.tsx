@@ -14,7 +14,7 @@ const LibraryIntegrationsDocs = React.lazy(() =>
 
 const TypeDocs = React.lazy(() => import('./README-TYPES.md'));
 
-const AvatarDocs = React.lazy(() => import('@rmwc/avatar/README.md'));
+const AvatarDocs = React.lazy(() => import('@rmwc/avatar/readme'));
 const ButtonDocs = React.lazy(() => import('@rmwc/button/readme'));
 const FabDocs = React.lazy(() => import('@rmwc/fab/readme'));
 const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/readme'));
@@ -33,30 +33,28 @@ const SelectDocs = React.lazy(() => import('@rmwc/select/readme'));
 const SliderDocs = React.lazy(() => import('@rmwc/slider/readme'));
 const SwitchDocs = React.lazy(() => import('@rmwc/switch/readme'));
 const TextfieldDocs = React.lazy(() => import('@rmwc/textfield/readme'));
-const GridDocs = React.lazy(() => import('@rmwc/grid/README.md'));
+const GridDocs = React.lazy(() => import('@rmwc/grid/readme'));
 const LinearProgressDocs = React.lazy(() =>
-  import('@rmwc/linear-progress/README.md')
+  import('@rmwc/linear-progress/readme')
 );
 const CircularProgressDocsDocs = React.lazy(() =>
-  import('@rmwc/circular-progress/README.md')
+  import('@rmwc/circular-progress/readme')
 );
-const ListDocs = React.lazy(() => import('@rmwc/list/README.md'));
+const ListDocs = React.lazy(() => import('@rmwc/list/readme'));
 const ListCollapsibleDocs = React.lazy(() =>
-  import('@rmwc/list/README-COLLAPSIBLE.md')
+  import('@rmwc/list/readme-collapsible')
 );
-const ListVariantsDocs = React.lazy(() =>
-  import('@rmwc/list/README-VARIANTS.md')
-);
-const MenuDocs = React.lazy(() => import('@rmwc/menu/README.md'));
-const RippleDocs = React.lazy(() => import('@rmwc/ripple/README.md'));
-const SnackbarDocs = React.lazy(() => import('@rmwc/snackbar/README.md'));
-const TabsDocs = React.lazy(() => import('@rmwc/tabs/README.md'));
-const ThemeDocs = React.lazy(() => import('@rmwc/theme/README.md'));
-const ToolbarDocs = React.lazy(() => import('@rmwc/toolbar/README.md'));
-const TopAppBarDocs = React.lazy(() => import('@rmwc/top-app-bar/README.md'));
-const TypographyDocs = React.lazy(() => import('@rmwc/typography/README.md'));
-const IconDocs = React.lazy(() => import('@rmwc/icon/README.md'));
-const ProviderDocs = React.lazy(() => import('@rmwc/provider/README.md'));
+const ListVariantsDocs = React.lazy(() => import('@rmwc/list/readme-variants'));
+const MenuDocs = React.lazy(() => import('@rmwc/menu/readme'));
+const RippleDocs = React.lazy(() => import('@rmwc/ripple/readme'));
+const SnackbarDocs = React.lazy(() => import('@rmwc/snackbar/readme'));
+const TabsDocs = React.lazy(() => import('@rmwc/tabs/readme'));
+const ThemeDocs = React.lazy(() => import('@rmwc/theme/readme'));
+const ToolbarDocs = React.lazy(() => import('@rmwc/toolbar/readme'));
+const TopAppBarDocs = React.lazy(() => import('@rmwc/top-app-bar/readme'));
+const TypographyDocs = React.lazy(() => import('@rmwc/typography/readme'));
+const IconDocs = React.lazy(() => import('@rmwc/icon/readme'));
+const ProviderDocs = React.lazy(() => import('@rmwc/provider/readme'));
 
 const Loading = () => (
   <div

@@ -3,42 +3,51 @@ const path = require('path');
 const fs = require('fs');
 
 const genDocExample = packageName => {
-  const docsExamplePath = path.resolve('src', packageName, 'readme.tsx');
-  const examplePath = path.resolve(
-    'src',
-    packageName,
-    'generated-examples.json'
-  );
-  if (fs.existsSync(docsExamplePath)) {
-    const code = fs.readFileSync(docsExamplePath).toString();
-    const regexp = /\<DocsExample.*?\>([\S\s]+?)\<\/DocsExample/gm;
-    let match;
-    const matches = [];
-    while (match !== null) {
-      match = regexp.exec(code);
-      match && matches.push(match[1]);
+  const readmeFiles = fs
+    .readdirSync(path.resolve('src', packageName))
+    .filter(fName => fName.startsWith('readme') && fName.endsWith('.tsx'));
+
+  readmeFiles.forEach(fName => {
+    const docsExamplePath = path.resolve('src', packageName, fName);
+    const examplesFilename =
+      fName === 'readme.tsx'
+        ? 'generated-examples.json'
+        : `generated-examples-${fName.slice(7, -4)}.json`;
+    const examplePath = path.resolve('src', packageName, examplesFilename);
+
+    if (fs.existsSync(docsExamplePath)) {
+      const code = fs.readFileSync(docsExamplePath).toString();
+      const regexp = /\<DocsExample.*?\>([\S\s]+?)\<\/DocsExample/gm;
+      let match;
+      const matches = [];
+      while (match !== null) {
+        match = regexp.exec(code);
+        match && matches.push(match[1]);
+      }
+
+      const formattedMatches = matches.map(m => {
+        // do some global find and replace
+        m = m.replace(/\<any\>/g, '');
+
+        const parts = m
+          .split('\n')
+          .slice(1, -1)
+          .filter(l => !l.includes('@ts-ignore'));
+        const regexp = /(^\s+)/g;
+        const trimLength = regexp.exec(parts[0])[1].length;
+        let cleaned = parts.map(p => p.slice(trimLength));
+        if (cleaned[0] && cleaned[0].startsWith('{')) {
+          cleaned = cleaned.slice(1, -1);
+        }
+
+        return cleaned.join('\n');
+      });
+
+      fs.writeFileSync(examplePath, JSON.stringify(formattedMatches));
+    } else {
+      fs.writeFileSync(examplePath, JSON.stringify([]));
     }
-
-    const formattedMatches = matches.map(m => {
-      const parts = m.split('\n').slice(1, -1);
-      const regexp = /(^\s+)/g;
-      const trimLength = regexp.exec(parts[0])[1].length;
-      let joined = parts.map(p => p.slice(trimLength)).join('\n');
-      if (joined.startsWith('{')) {
-        joined = joined.slice(1);
-      }
-
-      if (joined.endsWith('}')) {
-        joined = joined.slice(0, -1);
-      }
-
-      return joined;
-    });
-
-    fs.writeFileSync(examplePath, JSON.stringify(formattedMatches));
-  } else {
-    fs.writeFileSync(examplePath, JSON.stringify([]));
-  }
+  });
 };
 
 const getChangedPackages = () => {

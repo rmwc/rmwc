@@ -27,6 +27,7 @@ export default function() {
       module="@rmwc/data-table"
       styles={['@rmwc/data-table/data-table.css']}
       examples={examples}
+      addon
     >
       <DocsSubtitle>Standard Table</DocsSubtitle>
 
