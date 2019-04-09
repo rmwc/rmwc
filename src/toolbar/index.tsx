@@ -125,7 +125,15 @@ export const ToolbarIcon = withRipple({
   })
 );
 
-export class Toolbar extends FoundationComponent<
+export const Toolbar = (props: ToolbarProps & RMWC.ComponentProps) => {
+  /** Generate a key that will force a re-init if props change */
+  const key = `${props.fixed ? 'fixed' : ''} ${
+    props.fixedLastrowOnly ? 'fixed-last-row' : ''
+  } ${props.flexible ? 'flexible' : ''}`;
+  return <ToolbarBase key={key} {...props} />;
+};
+
+class ToolbarBase extends FoundationComponent<
   MDCToolbarFoundation,
   ToolbarProps
 > {
@@ -178,7 +186,8 @@ export class Toolbar extends FoundationComponent<
 
   getDefaultFoundation() {
     return new MDCToolbarFoundation({
-      hasClass: (className: string) => this.root.hasClass(className),
+      hasClass: (className: string) =>
+        !!this.root.ref && this.root.ref.classList.contains(className),
       addClass: (className: string) => this.root.addClass(className),
       removeClass: (className: string) => this.root.removeClass(className),
       registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
@@ -197,7 +206,7 @@ export class Toolbar extends FoundationComponent<
       notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
         this.emit('onChange', evtData),
       setStyle: (property: string, value: string) =>
-        this.root.ref && this.root.ref.style.setProperty(property, value),
+        this.root.ref && this.root.setStyle(property, value),
       setStyleForTitleElement: (property: string, value: string) =>
         this.titleElement &&
         this.titleElement.style.setProperty(property, value),
@@ -214,6 +223,6 @@ export class Toolbar extends FoundationComponent<
 
   render() {
     const { ...rest } = this.props;
-    return <ToolbarRoot ref={this.root.setRef} {...rest} />;
+    return <ToolbarRoot {...this.root.props(rest)} ref={this.root.setRef} />;
   }
 }
