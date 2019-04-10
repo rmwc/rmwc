@@ -222,10 +222,8 @@ class ToolbarBase extends FoundationComponent<
       getViewportWidth: () => this.window.innerWidth,
       getViewportScrollY: () => this.window.pageYOffset,
       getOffsetHeight: () => (this.root.ref ? this.root.ref.offsetHeight : 0),
-      getFirstRowElementOffsetHeight: () => {
-        console.log(this.firstRowElement && this.firstRowElement.offsetHeight);
-        return this.firstRowElement ? this.firstRowElement.offsetHeight : 0;
-      },
+      getFirstRowElementOffsetHeight: () =>
+        this.firstRowElement ? this.firstRowElement.offsetHeight : 0,
       notifyChange: (evtData: { flexibleExpansionRatio: number }) =>
         this.emit('onChange', evtData),
       setStyle: (property: string, value: string) =>

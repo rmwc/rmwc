@@ -274,7 +274,7 @@ interface SelectState {
   menuOpen: boolean;
 }
 
-class SelectBase extends FoundationComponent<
+export class SelectBase extends FoundationComponent<
   MDCSelectFoundation,
   SelectProps & DeprecatedSelectProps,
   SelectState
