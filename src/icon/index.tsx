@@ -3,6 +3,7 @@ import * as React from 'react';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 import { componentFactory, classNames, deprecationWarning } from '@rmwc/base';
 
+/** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export interface IconProps extends DeprecatedIconProps {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: RMWC.IconPropT;
@@ -98,9 +99,7 @@ const buildIconOptions = (icon?: RMWC.IconPropT) => {
 
 const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });
 
-/**
- * An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.
- */
+/** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export const Icon = withProviderContext()(
   ({
     icon,

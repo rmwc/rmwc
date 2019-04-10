@@ -4,9 +4,9 @@
     "CardProps": {
       "documentation": {
         "contents": [
-          "<p>Card</p>\n"
+          "<p>A Card Component</p>\n"
         ],
-        "contentsRaw": "Card",
+        "contentsRaw": "A Card Component",
         "metadata": {}
       },
       "fileName": "src/card/index.tsx",
@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "CardProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L12",
           "type": "undefined | false | true"
         }
       ]
@@ -54,9 +54,9 @@
     "CardMediaProps": {
       "documentation": {
         "contents": [
-          "<p>Card Media</p>\n"
+          "<p>Media area that displays a custom background-image with background-size: cover</p>\n"
         ],
-        "contentsRaw": "Card Media",
+        "contentsRaw": "Media area that displays a custom background-image with background-size: cover",
         "metadata": {}
       },
       "fileName": "src/card/index.tsx",
@@ -72,7 +72,7 @@
       },
       "kind": "interface",
       "name": "CardMediaProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L32",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L28",
       "methods": [],
       "properties": [
         {
@@ -96,7 +96,7 @@
           },
           "kind": "property",
           "name": "sixteenByNine",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L32",
           "type": "undefined | false | true"
         },
         {
@@ -120,17 +120,67 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L30",
           "type": "undefined | false | true"
         }
       ]
     },
+    "CardMediaContentProps": {
+      "documentation": {
+        "contents": [
+          "<p>An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image</p>\n"
+        ],
+        "contentsRaw": "An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image",
+        "metadata": {}
+      },
+      "fileName": "src/card/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "CardMediaContentProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L50",
+      "methods": [],
+      "properties": []
+    },
+    "CardPrimaryActionProps": {
+      "documentation": {
+        "contents": [
+          "<p>The main clickable area for the primary content of the card</p>\n"
+        ],
+        "contentsRaw": "The main clickable area for the primary content of the card",
+        "metadata": {}
+      },
+      "fileName": "src/card/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "CardPrimaryActionProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L59",
+      "methods": [],
+      "properties": []
+    },
     "CardActionsProps": {
       "documentation": {
         "contents": [
-          "<p>Card Actions</p>\n"
+          "<p>Row containing action buttons and/or icons</p>\n"
         ],
-        "contentsRaw": "Card Actions",
+        "contentsRaw": "Row containing action buttons and/or icons",
         "metadata": {}
       },
       "fileName": "src/card/index.tsx",
@@ -146,7 +196,7 @@
       },
       "kind": "interface",
       "name": "CardActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L72",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L72",
       "methods": [],
       "properties": [
         {
@@ -170,12 +220,69 @@
           },
           "kind": "property",
           "name": "fullBleed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L74",
           "type": "undefined | false | true"
         }
       ]
     },
+    "CardActionButtonsProps": {
+      "documentation": {
+        "contents": [
+          "<p>A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons</p>\n"
+        ],
+        "contentsRaw": "A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons",
+        "metadata": {}
+      },
+      "fileName": "src/card/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "CardActionButtonsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L89",
+      "methods": [],
+      "properties": []
+    },
+    "CardActionIconsProps": {
+      "documentation": {
+        "contents": [
+          "<p>A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons</p>\n"
+        ],
+        "contentsRaw": "A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons",
+        "metadata": {}
+      },
+      "fileName": "src/card/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "CardActionIconsProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L98",
+      "methods": [],
+      "properties": []
+    },
     "CardActionIconProps": {
+      "documentation": {
+        "contents": [
+          "<p>A card action Icon</p>\n"
+        ],
+        "contentsRaw": "A card action Icon",
+        "metadata": {}
+      },
       "fileName": "src/card/index.tsx",
       "flags": {
         "isExported": true,
@@ -189,7 +296,7 @@
       },
       "kind": "interface",
       "name": "CardActionIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L100",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L107",
       "extends": [
         "IconButtonProps"
       ],
@@ -414,6 +521,13 @@
       ]
     },
     "CardActionButtonProps": {
+      "documentation": {
+        "contents": [
+          "<p>A card action Button</p>\n"
+        ],
+        "contentsRaw": "A card action Button",
+        "metadata": {}
+      },
       "fileName": "src/card/index.tsx",
       "flags": {
         "isExported": true,
@@ -427,7 +541,7 @@
       },
       "kind": "interface",
       "name": "CardActionButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L109",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L117",
       "extends": [
         "ButtonProps"
       ],
@@ -761,7 +875,7 @@
       },
       "kind": "type alias",
       "name": "CardActionPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/card/index.tsx#L118",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/card/index.tsx#L126",
       "type": "IconButtonProps & ButtonProps"
     }
   }

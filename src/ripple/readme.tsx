@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -41,7 +41,7 @@ export default function() {
         </Ripple>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['Ripple']} />
+      <DocProps src={propsSrc} components={[Ripple]} />
     </Docs>
   );
 }

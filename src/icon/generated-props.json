@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "IconProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.</p>\n"
+        ],
+        "contentsRaw": "An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.",
+        "metadata": {}
+      },
       "fileName": "src/icon/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "interface",
       "name": "IconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon/index.tsx#L6",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon/index.tsx#L7",
       "extends": [
         "DeprecatedIconProps"
       ],
@@ -42,7 +49,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon/index.tsx#L9",
           "type": "RMWC.IconPropT"
         },
         {
@@ -66,7 +73,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon/index.tsx#L14",
           "inheritedFrom": "DeprecatedIconProps.iconOptions",
           "type": "RMWC.IconOptions"
         }
@@ -86,7 +93,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon/index.tsx#L12",
       "methods": [],
       "properties": [
         {
@@ -110,7 +117,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon/index.tsx#L14",
           "type": "RMWC.IconOptions"
         }
       ]

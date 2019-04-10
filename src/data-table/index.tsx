@@ -12,6 +12,7 @@ interface SharedDataTableCellProps {
   alignEnd?: boolean;
 }
 
+/** The DataTable Component. */
 export interface DataTableProps {
   /** The number of rows to affix to the top of the table when scrolling. */
   stickyRows?: 0 | 1;
@@ -35,26 +36,36 @@ export const DataTable = componentFactory<DataTableProps>({
 });
 
 /** The data table content. */
-export const DataTableContent = componentFactory<{}>({
+export interface DataTableContentProps {}
+
+/** The data table content. */
+export const DataTableContent = componentFactory<DataTableContentProps>({
   displayName: 'DataTableContent',
   tag: 'table',
   classNames: ['rmwc-data-table__content']
 });
 
 /** A header for the data table. */
-export const DataTableHead = componentFactory<{}>({
+export interface DataTableHeadProps {}
+
+/** A header for the data table. */
+export const DataTableHead = componentFactory<DataTableHeadProps>({
   displayName: 'DataTableHead',
   tag: 'thead',
   classNames: ['rmwc-data-table__head']
 });
 
 /** A body for the data table. */
-export const DataTableBody = componentFactory<{}>({
+export interface DataTableBodyProps {}
+
+/** A body for the data table. */
+export const DataTableBody = componentFactory<DataTableBodyProps>({
   displayName: 'DataTableBody',
   tag: 'tbody',
   classNames: ['rmwc-data-table__body']
 });
 
+/** A row for the data table. */
 export interface DataTableRowProps {
   /** Styles the row in a selected state. */
   selected?: boolean;
@@ -90,6 +101,7 @@ const DataTableSortIcon = () => (
   />
 );
 
+/** A header cell for the data table. */
 export interface DataTableHeadCellProps extends SharedDataTableCellProps {
   /** Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. */
   sort?: null | number;
@@ -152,6 +164,7 @@ export const DataTableHeadCell = (
 
 DataTableHeadCell.displayName = 'DataTableHeadCell';
 
+/** A cell for the DataTable */
 export interface DataTableCellProps extends SharedDataTableCellProps {}
 
 /** A cell for the DataTable */
@@ -169,6 +182,7 @@ export const DataTableCell = componentFactory<DataTableCellProps>({
   consumeProps: ['alignStart', 'alignMiddle', 'alignEnd']
 });
 
+/** A simple data table to render matrices. */
 export interface SimpleDataTableProps extends DataTableProps {
   /** Data to render. */
   data: Array<any[]>;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -21,7 +21,7 @@ export default function() {
       </DocsP>
 
       <DocsExample codeOnly>
-        {/* javascript */ `
+        {/* jsx */ `
           import * as React from 'react';
           import * as ReactDOM from 'react-dom';
           import App from './App'; // your main app component

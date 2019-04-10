@@ -14,6 +14,7 @@ const ThemeRoot = componentFactory<{}>({
   tag: 'span'
 });
 
+/** A Theme Component. */
 export interface ThemeProps {
   /** A theme option as a string, a space separated string for multiple values, or an array of valid theme options. */
   use: RMWC.ThemePropT;
@@ -21,9 +22,7 @@ export interface ThemeProps {
   wrap?: boolean;
 }
 
-/**
- * A Theme Component.
- */
+/** A Theme Component. */
 export const Theme = ({
   use,
   wrap,
@@ -37,6 +36,7 @@ export const Theme = ({
 
 Theme.displayName = 'Theme';
 
+/** A ThemeProvider. This sets theme colors for its child tree. */
 export interface ThemeProviderProps
   extends Pick<
     RMWC.ComponentProps,
@@ -85,7 +85,6 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
   render() {
     const { options, style = {}, wrap, ...rest } = this.props;
     // Casting styles to avoid TSX error
-    // $FlowFixMe
     const tsxSafeStyle: React.CSSProperties = style;
     const themeStyles = {
       ...tsxSafeStyle,

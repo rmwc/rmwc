@@ -14,7 +14,3 @@ glob('./src/*/dist/', { ignore: 'node_modules' }, function(er, files) {
 glob('./src/*/next/', { ignore: 'node_modules' }, function(er, files) {
   files.forEach(removeFileOrDir);
 });
-
-glob('./src/*/flow-typed/', { ignore: 'node_modules' }, function(er, files) {
-  files.forEach(removeFileOrDir);
-});

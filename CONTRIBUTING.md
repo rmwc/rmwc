@@ -25,9 +25,7 @@ cd rmwc && npm i
 As of V5, RMWC has been rebuilt in Typescript which makes the developer experience much easier to navigate. `material-components-web` converted to Typescript as well which allows for a very robust and tight integration.
 
 - Storybook is used for developing components in isolation, but the docs can be used for development as well
-- The Prop types in the docs are automatically generated at release time from the Typescript types. DO NOT UPDATE a docgen.json file manually
-- The markdown files are actually pulled in at build time and are the actual docs you see on the doc site. The code examples are written directly in the markdown files and are parsed into working examples.
-- A small caveat for the Markdown code examples is that each markdown file shares a global React component. You can imagine the entire docs page is wrapped in a component like so:
+- The README.md in the docs are automatically generated at release time from the Typescript readme.tsx files. DO NOT UPDATE a generated-*.json, or a README.md file fro a component manually
 
 ```jsx
 class DocsExample {
@@ -47,6 +45,7 @@ class DocsExample {
 - It is also worth noting that the foundation / adapter integration that `material-components-web` suggests using can appear daunting at times. Don't let it scare you out of trying to give back. When in doubt, just ping us on [Discord](https://discordapp.com/invite/4BSUxCW)
 
 ## Cheat sheet
+
 - `npm install` - does all of the installing and setup
 - `npm start` - run the docs site
 - `npm run storybook` - develop components in storybook
@@ -68,7 +67,7 @@ Each component requires the following items in order to be complete:
 * A **story.tsx** file using Storybook. This is where the component can be developed in isolation.
 * A **test.spec.tsx** file using enzyme
 * A **test-ssr.spec.tsx** file using enzyme testing server side rendering
-* A **README.md** file. 
+* A **readme.tsx** file. 
 * A **package.json** file with the appropriate dependencies listed
 * It needs to be added to the src/rmwc/package.json
 * It needs to be re-exported from rmwc/index for people using the RMWC global

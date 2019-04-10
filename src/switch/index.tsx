@@ -8,11 +8,12 @@ import {
   ToggleableFoundationProps
 } from '@rmwc/toggleable';
 
+/** A Switch component. */
 export interface SwitchProps
   extends RMWC.WithRippleProps,
     ToggleableFoundationProps {}
 
-export const SwitchRoot = componentFactory<SwitchProps>({
+const SwitchRoot = componentFactory<SwitchProps>({
   displayName: 'SwitchRoot',
   classNames: ['mdc-switch']
 });
@@ -59,6 +60,7 @@ const SwitchNativeControl = componentFactory<{}>({
   classNames: ['mdc-switch__native-control']
 });
 
+/** A Switch component. */
 export class Switch extends ToggleableFoundationComponent<
   MDCSwitchFoundation,
   SwitchProps

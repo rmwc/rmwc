@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "AvatarProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Avatar component for displaying users in a system.</p>\n"
+        ],
+        "contentsRaw": "An Avatar component for displaying users in a system.",
+        "metadata": {}
+      },
       "fileName": "src/avatar/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "interface",
       "name": "AvatarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L8",
       "methods": [],
       "properties": [
         {
@@ -39,7 +46,7 @@
           },
           "kind": "property",
           "name": "contain",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L20",
           "type": "undefined | false | true"
         },
         {
@@ -63,7 +70,7 @@
           },
           "kind": "property",
           "name": "interactive",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L18",
           "type": "undefined | false | true"
         },
         {
@@ -87,7 +94,7 @@
           },
           "kind": "property",
           "name": "name",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L14",
           "type": "undefined | string"
         },
         {
@@ -111,7 +118,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L12",
           "type": "RMWC.IconSizeT"
         },
         {
@@ -135,7 +142,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L16",
           "type": "undefined | false | true"
         },
         {
@@ -159,12 +166,19 @@
           },
           "kind": "property",
           "name": "src",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L9",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L10",
           "type": "undefined | string"
         }
       ]
     },
     "AvatarGroupProps": {
+      "documentation": {
+        "contents": [
+          "<p>A container for groups of Avatars</p>\n"
+        ],
+        "contentsRaw": "A container for groups of Avatars",
+        "metadata": {}
+      },
       "fileName": "src/avatar/index.tsx",
       "flags": {
         "isExported": true,
@@ -178,7 +192,7 @@
       },
       "kind": "interface",
       "name": "AvatarGroupProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L75",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L77",
       "methods": [],
       "properties": [
         {
@@ -202,12 +216,19 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L79",
           "type": "undefined | false | true"
         }
       ]
     },
     "AvatarCountProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Avatar count for displaying list overflow.</p>\n"
+        ],
+        "contentsRaw": "An Avatar count for displaying list overflow.",
+        "metadata": {}
+      },
       "fileName": "src/avatar/index.tsx",
       "flags": {
         "isExported": true,
@@ -221,7 +242,7 @@
       },
       "kind": "interface",
       "name": "AvatarCountProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L134",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L137",
       "methods": [],
       "properties": [
         {
@@ -245,7 +266,7 @@
           },
           "kind": "property",
           "name": "interactive",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L144",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L147",
           "type": "undefined | false | true"
         },
         {
@@ -269,7 +290,7 @@
           },
           "kind": "property",
           "name": "overflow",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L141",
           "type": "undefined | false | true"
         },
         {
@@ -293,7 +314,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L143",
           "type": "RMWC.IconSizeT"
         },
         {
@@ -317,7 +338,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L145",
           "type": "undefined | false | true"
         },
         {
@@ -341,7 +362,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/avatar/index.tsx#L136",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/avatar/index.tsx#L139",
           "type": "number"
         }
       ]

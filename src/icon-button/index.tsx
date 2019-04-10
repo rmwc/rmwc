@@ -9,6 +9,7 @@ import {
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
+/** An IconButton component that can also be used as a toggle. */
 export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
@@ -71,11 +72,11 @@ const IconButtonToggleRoot = withRipple({
   })
 );
 
-export interface IconButtonIconProps extends IconProps {
+interface IconButtonIconProps extends IconProps {
   on?: boolean;
 }
 
-export const IconButtonIcon = componentFactory<IconButtonIconProps>({
+const IconButtonIcon = componentFactory<IconButtonIconProps>({
   displayName: 'IconButtonIcon',
   tag: Icon,
   classNames: (props: IconButtonIconProps) => [
@@ -165,6 +166,7 @@ class IconButtonToggle extends FoundationComponent<
   }
 }
 
+/** An IconButton component that can also be used as a toggle. */
 export const IconButton = ({
   ...rest
 }: IconButtonProps & RMWC.ComponentProps) => {
@@ -174,3 +176,5 @@ export const IconButton = ({
 
   return <IconButtonRoot aria-hidden="true" tag="button" {...rest} />;
 };
+
+IconButton.displayName = 'IconButton';

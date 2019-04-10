@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "CircularProgress",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L45",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L46",
       "extends": [
         "Component<RMWC.MergeInterfacesT<CircularProgressProps, ComponentProps>>"
       ],
@@ -241,13 +241,13 @@
           },
           "kind": "method",
           "name": "calculateRatio",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L56",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "calculateRatio",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L53",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L56",
               "parameters": [
                 {
                   "flags": {
@@ -284,13 +284,13 @@
           },
           "kind": "method",
           "name": "circularStyle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L61",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L64",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "circularStyle",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L61",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L64",
               "parameters": [
                 {
                   "flags": {
@@ -842,13 +842,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L72",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L75",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L72",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L75",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1020,6 +1020,24 @@
           "name": "contextType",
           "inheritedFrom": "Component.contextType",
           "type": "Context<any>"
+        },
+        {
+          "fileName": "src/circular-progress/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": true
+          },
+          "kind": "property",
+          "name": "displayName",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L49",
+          "defaultValue": "\"CircularProgress\"",
+          "type": "string"
         },
         {
           "documentation": {
@@ -1217,6 +1235,13 @@
       }
     },
     "CircularProgressProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Circular Progress indicator.</p>\n"
+        ],
+        "contentsRaw": "A Circular Progress indicator.",
+        "metadata": {}
+      },
       "fileName": "src/circular-progress/index.tsx",
       "flags": {
         "isExported": true,
@@ -1230,7 +1255,7 @@
       },
       "kind": "interface",
       "name": "CircularProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L14",
       "methods": [],
       "properties": [
         {
@@ -1254,7 +1279,7 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L16",
           "type": "undefined | number"
         },
         {
@@ -1278,7 +1303,7 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L18",
           "type": "undefined | number"
         },
         {
@@ -1302,7 +1327,7 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L20",
           "type": "undefined | number"
         },
         {
@@ -1326,7 +1351,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/circular-progress/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/circular-progress/index.tsx#L22",
           "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\" | number"
         }
       ]

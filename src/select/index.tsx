@@ -18,6 +18,7 @@ export interface FormattedOption extends React.AllHTMLAttributes<any> {
   options?: FormattedOption[];
 }
 
+/** A Select Component */
 export interface SelectProps {
   /** The value for a controlled select. */
   value?: string;
@@ -273,7 +274,7 @@ interface SelectState {
   menuOpen: boolean;
 }
 
-export class SelectBase extends FoundationComponent<
+class SelectBase extends FoundationComponent<
   MDCSelectFoundation,
   SelectProps & DeprecatedSelectProps,
   SelectState
@@ -870,9 +871,7 @@ export const SelectHelperText = componentFactory<SelectHelperTextProps>({
   consumeProps: ['persistent', 'validationMsg']
 });
 
-/**
- * A Select Component
- */
+/** A Select Component */
 export const Select = ({
   enhanced,
   ...rest
@@ -883,3 +882,5 @@ export const Select = ({
     {...rest}
   />
 );
+
+Select.displayName = 'Select';

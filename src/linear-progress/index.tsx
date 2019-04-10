@@ -7,6 +7,7 @@ import {
   deprecationWarning
 } from '@rmwc/base';
 
+/** A component to display linear progress. */
 export interface LinearProgressProps {
   /** Progress float percentage between 0 and 1. */
   progress?: number;
@@ -23,7 +24,7 @@ export interface DeprecatedLinearProgressProps {
   determinate?: boolean;
 }
 
-export const LinearProgressRoot = componentFactory<LinearProgressProps>({
+const LinearProgressRoot = componentFactory<LinearProgressProps>({
   displayName: 'LinearProgressRoot',
   tag: 'nav',
   classNames: (props: LinearProgressProps) => [
@@ -39,31 +40,32 @@ export const LinearProgressRoot = componentFactory<LinearProgressProps>({
   consumeProps: ['determinate', 'reversed', 'accent', 'closed']
 });
 
-export const LinearProgressBufferingDots = componentFactory<{}>({
+const LinearProgressBufferingDots = componentFactory<{}>({
   displayName: 'LinearProgressBufferingDots',
   classNames: ['mdc-linear-progress__buffering-dots']
 });
 
-export const LinearProgressBuffer = componentFactory<{}>({
+const LinearProgressBuffer = componentFactory<{}>({
   displayName: 'LinearProgressBuffer',
   classNames: ['mdc-linear-progress__buffer']
 });
 
-export const LinearProgressPrimaryBar = componentFactory<{}>({
+const LinearProgressPrimaryBar = componentFactory<{}>({
   displayName: 'LinearProgressPrimaryBar',
   classNames: ['mdc-linear-progress__bar mdc-linear-progress__primary-bar']
 });
 
-export const LinearProgressSecondaryBar = componentFactory<{}>({
+const LinearProgressSecondaryBar = componentFactory<{}>({
   displayName: 'LinearProgressSecondaryBar',
   classNames: ['mdc-linear-progress__bar mdc-linear-progress__secondary-bar']
 });
 
-export const LinearProgressBarInner = componentFactory<{}>({
+const LinearProgressBarInner = componentFactory<{}>({
   displayName: 'LinearProgressBarInner',
   classNames: ['mdc-linear-progress__bar-inner']
 });
 
+/** A component to display linear progress. */
 export class LinearProgress extends FoundationComponent<
   MDCLinearProgressFoundation,
   LinearProgressProps & DeprecatedLinearProgressProps

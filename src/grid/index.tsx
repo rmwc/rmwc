@@ -2,6 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory } from '@rmwc/base';
 
+/** A Grid component */
 export interface GridProps {
   /** Specifies the grid should have fixed column width. */
   fixedColumnWidth?: boolean;
@@ -44,6 +45,7 @@ export const Grid: React.ComponentType<GridProps & RMWC.ComponentProps> = ({
 
 Grid.displayName = 'Grid';
 
+/** A Grid cell */
 export interface GridCellProps {
   /** Default number of columns to span. */
   span?: number;
@@ -83,7 +85,10 @@ export const GridCell = componentFactory<GridCellProps>({
 });
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export const GridInner = componentFactory<{}>({
+export interface GridInnerProps {}
+
+/** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
+export const GridInner = componentFactory<GridInnerProps>({
   displayName: 'GridInner',
   classNames: ['mdc-layout-grid__inner']
 });

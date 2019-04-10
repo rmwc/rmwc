@@ -31,7 +31,7 @@ export interface TopAppBarProps {
   scrollTarget?: Element | null;
 }
 
-export const TopAppBarRoot = componentFactory<TopAppBarProps>({
+const TopAppBarRoot = componentFactory<TopAppBarProps>({
   displayName: 'TopAppBarRoot',
   tag: 'header',
   classNames: (props: TopAppBarProps) => [
@@ -48,11 +48,15 @@ export const TopAppBarRoot = componentFactory<TopAppBarProps>({
 });
 
 /** A row for the app bar. */
-export const TopAppBarRow = componentFactory<{}>({
+export interface TopAppBarRowProps {}
+
+/** A row for the app bar. */
+export const TopAppBarRow = componentFactory<TopAppBarRowProps>({
   displayName: 'TopAppBarRow',
   classNames: ['mdc-top-app-bar__row']
 });
 
+/** A section for the app bar. */
 export interface TopAppBarSectionProps {
   /** Aligns the section to the start. */
   alignStart?: boolean;
@@ -75,11 +79,14 @@ export const TopAppBarSection = componentFactory<TopAppBarSectionProps>({
 });
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
+export interface TopAppBarNavigationIconProps extends IconProps {}
+
+/** A navigation icon for the top app bar. This is an instance of the Icon component. */
 export const TopAppBarNavigationIcon = withRipple({
   unbounded: true,
   surface: false
 })(
-  componentFactory<IconProps>({
+  componentFactory<TopAppBarNavigationIconProps>({
     displayName: 'TopAppBarNavigationIcon',
     classNames: ['mdc-top-app-bar__navigation-icon'],
     tag: Icon
@@ -87,11 +94,14 @@ export const TopAppBarNavigationIcon = withRipple({
 );
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
+export interface TopAppBarActionItemProps extends IconProps {}
+
+/** Action items for the top app bar. This is an instance of the Icon component.*/
 export const TopAppBarActionItem = withRipple({
   unbounded: true,
   surface: false
 })(
-  componentFactory<IconProps>({
+  componentFactory<TopAppBarActionItemProps>({
     displayName: 'TopAppBarActionItem',
     classNames: ['mdc-top-app-bar__action-item'],
     tag: Icon
@@ -99,11 +109,15 @@ export const TopAppBarActionItem = withRipple({
 );
 
 /** A title for the top app bar. */
-export const TopAppBarTitle = componentFactory<{}>({
+export interface TopAppBarTitleProps {}
+
+/** A title for the top app bar. */
+export const TopAppBarTitle = componentFactory<TopAppBarTitleProps>({
   displayName: 'TopAppBarTitle',
   classNames: ['mdc-top-app-bar__title']
 });
 
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
 export interface TopAppBarFixedAdjustProps {
   /** Class used to style the content below the dense top app bar to prevent the top app bar from covering it. */
   dense?: boolean;
@@ -265,6 +279,7 @@ export const TopAppBar = (props: TopAppBarProps & RMWC.ComponentProps) => (
   />
 );
 
+/** A simplified syntax for creating an AppBar. */
 export interface SimpleTopAppBarProps extends TopAppBarProps {
   /** The title for the App Bar. */
   title?: React.ReactNode;

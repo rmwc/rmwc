@@ -3,6 +3,7 @@ import * as React from 'react';
 import { MDCListFoundation } from '@material/list';
 import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
+/** A List Component */
 export interface ListProps {
   /** Reduces the padding on List items. */
   dense?: boolean;
@@ -37,6 +38,7 @@ const ListRoot = componentFactory<ListProps>({
   consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive', 'onAction']
 });
 
+/** A List Component */
 export class List extends FoundationComponent<MDCListFoundation, ListProps> {
   static get cssClasses() {
     return MDCListFoundation.cssClasses;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '../doc-utils';
+import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -32,7 +32,7 @@ export default function() {
         <LinearProgress progress={0.2} reversed />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['LinearProgress']} />
+      <DocProps src={propsSrc} components={[LinearProgress]} />
     </Docs>
   );
 }

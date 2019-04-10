@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "FabProps": {
+      "documentation": {
+        "contents": [
+          "<p>A floating action button component</p>\n"
+        ],
+        "contentsRaw": "A floating action button component",
+        "metadata": {}
+      },
       "fileName": "src/fab/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "interface",
       "name": "FabProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L8",
       "extends": [
         "WithRippleProps"
       ],
@@ -66,7 +73,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L18",
           "type": "React.ReactNode"
         },
         {
@@ -90,7 +97,7 @@
           },
           "kind": "property",
           "name": "exited",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L20",
           "type": "undefined | false | true"
         },
         {
@@ -114,7 +121,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L12",
           "type": "RMWC.IconPropT"
         },
         {
@@ -138,7 +145,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L16",
           "type": "React.ReactNode & any"
         },
         {
@@ -162,7 +169,7 @@
           },
           "kind": "property",
           "name": "mini",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L9",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L10",
           "type": "undefined | false | true"
         },
         {
@@ -234,7 +241,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/fab/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/fab/index.tsx#L14",
           "type": "RMWC.IconPropT"
         },
         {

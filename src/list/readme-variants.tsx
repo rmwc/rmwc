@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples-variants.json';
 
-import { List, ListItem } from '.';
 import {
+  List,
+  ListItem,
+  ListGroupSubheader,
   ListItemText,
   ListItemPrimaryText,
   ListItemSecondaryText,
@@ -13,11 +15,13 @@ import {
   ListItemMeta,
   ListDivider,
   ListGroup,
-  Avatar,
-  Checkbox,
-  Switch,
-  Radio
-} from '../rmwc';
+  SimpleListItem
+} from '.';
+
+import { Avatar } from '../avatar';
+import { Checkbox } from '../checkbox';
+import { Switch } from '../switch';
+import { Radio } from '../radio';
 
 export default function() {
   return (
@@ -220,16 +224,16 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'List',
-          'ListItem',
-          'ListItemPrimaryText',
-          'ListItemSecondaryText',
-          'ListItemGraphic',
-          'ListItemMeta',
-          'ListDivider',
-          'ListGroup',
-          'ListGroupSubheader',
-          'SimpleListItem'
+          List,
+          ListItem,
+          ListItemPrimaryText,
+          ListItemSecondaryText,
+          ListItemGraphic,
+          ListItemMeta,
+          ListDivider,
+          ListGroup,
+          ListGroupSubheader,
+          SimpleListItem
         ]}
       />
     </Docs>

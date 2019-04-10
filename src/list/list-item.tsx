@@ -5,6 +5,7 @@ import { componentFactory, classNames } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
+/** A ListItem component. */
 export interface ListItemProps extends RMWC.WithRippleProps {
   /** A modifier for a selected state. */
   selected?: boolean;
@@ -14,9 +15,7 @@ export interface ListItemProps extends RMWC.WithRippleProps {
   disabled?: boolean;
 }
 
-/**
- * The ListItem component.
- */
+/** A ListItem component. */
 export const ListItem = withRipple({ surface: false })(
   componentFactory<ListItemProps>({
     displayName: 'ListItem',
@@ -36,26 +35,38 @@ export const ListItem = withRipple({ surface: false })(
 );
 
 /** Text Wrapper for the ListItem */
-export const ListItemText = componentFactory<{}>({
+export interface ListItemTextProps {}
+
+/** Text Wrapper for the ListItem */
+export const ListItemText = componentFactory<ListItemTextProps>({
   displayName: 'ListItemText',
   tag: 'span',
   classNames: ['mdc-list-item__text']
 });
 
 /** Primary Text for the ListItem */
-export const ListItemPrimaryText = componentFactory<{}>({
+export interface ListItemPrimaryTextProps {}
+
+/** Primary Text for the ListItem */
+export const ListItemPrimaryText = componentFactory<ListItemPrimaryTextProps>({
   displayName: 'ListItemPrimaryText',
   tag: 'span',
   classNames: ['mdc-list-item__primary-text']
 });
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = componentFactory<{}>({
+export interface ListItemSecondaryTextProps {}
+
+/** Secondary text for the ListItem */
+export const ListItemSecondaryText = componentFactory<
+  ListItemSecondaryTextProps
+>({
   displayName: 'ListItemSecondaryText',
   tag: 'span',
   classNames: ['mdc-list-item__secondary-text']
 });
 
+/** A graphic / icon for the ListItem */
 export interface ListItemGraphicProps extends IconProps {}
 
 /** A graphic / icon for the ListItem */
@@ -65,6 +76,7 @@ export const ListItemGraphic = componentFactory<ListItemGraphicProps>({
   tag: Icon
 });
 
+/** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export interface ListItemMetaProps extends IconProps {}
 
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
@@ -91,23 +103,33 @@ export const ListItemMeta = componentFactory<ListItemMetaProps>({
 });
 
 /** A container to group ListItems */
-export const ListGroup = componentFactory<{}>({
+export interface ListGroupProps {}
+
+/** A container to group ListItems */
+export const ListGroup = componentFactory<ListGroupProps>({
   displayName: 'ListGroup',
   classNames: ['mdc-list-group']
 });
 
 /** A subheader for the ListGroup */
-export const ListGroupSubheader = componentFactory<{}>({
+export interface ListGroupSubheaderProps {}
+
+/** A subheader for the ListGroup */
+export const ListGroupSubheader = componentFactory<ListGroupSubheaderProps>({
   displayName: 'ListGroupSubheader',
   classNames: ['mdc-list-group__subheader']
 });
 
 /** A divider for the List */
-export const ListDivider = componentFactory<{}>({
+export interface ListDividerProps {}
+
+/** A divider for the List */
+export const ListDivider = componentFactory<ListDividerProps>({
   displayName: 'ListDivider',
   classNames: ['mdc-list-divider']
 });
 
+/** A simple list item template. */
 export interface SimpleListItemProps extends ListItemProps {
   /** Text for the ListItem. */
   text?: React.ReactNode;
@@ -123,6 +145,7 @@ export interface SimpleListItemProps extends ListItemProps {
   children?: React.ReactNode;
 }
 
+/** A simple list item template. */
 export const SimpleListItem = ({
   text,
   secondaryText,

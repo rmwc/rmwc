@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Docs, DocsExample, DocsSubtitle, DocProps, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocsSubtitle, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -249,13 +249,13 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'DataTable',
-          'DataTableRow',
-          'DataTableCell',
-          'DataTableHead',
-          'DataTableBody',
-          'DataTableHeadCell',
-          'SimpleDataTable'
+          DataTable,
+          DataTableRow,
+          DataTableCell,
+          DataTableHead,
+          DataTableBody,
+          DataTableHeadCell,
+          SimpleDataTable
         ]}
       />
     </Docs>

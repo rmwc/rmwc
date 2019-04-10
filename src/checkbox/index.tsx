@@ -17,6 +17,7 @@ import {
 // @ts-ignore
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
+/** A Checkbox component. */
 export interface CheckboxProps
   extends RMWC.WithRippleProps,
     ToggleableFoundationProps {
@@ -73,9 +74,7 @@ class CheckboxBackground extends React.Component<{}> {
   }
 }
 
-/**
- * A Checkbox component
- */
+/** A Checkbox component. */
 export class Checkbox extends ToggleableFoundationComponent<
   MDCCheckboxFoundation,
   CheckboxProps

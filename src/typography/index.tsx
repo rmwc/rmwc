@@ -17,6 +17,7 @@ export type TypographyT =
   | 'button'
   | 'overline';
 
+/** The Typography Component */
 export interface TypographyProps {
   /** The typography style.*/
   use: TypographyT;

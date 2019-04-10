@@ -16,6 +16,7 @@ export interface RippleSurfaceProps {
   style: React.CSSProperties;
 }
 
+/** A component for adding Ripples to other components. */
 export interface RippleProps {
   /** Makes the ripple unbounded */
   unbounded?: boolean;

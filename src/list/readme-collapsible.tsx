@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples-collapsible.json';
 
@@ -135,7 +135,7 @@ export default function() {
         </CollapsibleList>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['CollapsibleList']} />
+      <DocProps src={propsSrc} components={[CollapsibleList] as any} />
     </Docs>
   );
 }

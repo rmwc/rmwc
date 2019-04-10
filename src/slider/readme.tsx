@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -58,7 +58,7 @@ export default function() {
         <Slider discrete displayMarkers min={100} max={200} step={5} />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['Slider']} />
+      <DocProps src={propsSrc} components={[Slider]} />
     </Docs>
   );
 }

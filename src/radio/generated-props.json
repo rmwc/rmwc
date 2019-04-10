@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Radio",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L52",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L53",
       "extends": [
         "ToggleableFoundationComponent<MDCRadioFoundation, RadioProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L60",
           "signatures": [
             {
               "fileName": "src/radio/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L59",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L60",
               "parameters": [],
               "returnType": "MDCRadioFoundation",
               "type": "() => MDCRadioFoundation"
@@ -812,13 +812,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L67",
           "signatures": [
             {
               "fileName": "src/radio/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L66",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L67",
               "parameters": [],
               "returnType": "undefined | null | {}",
               "type": "() => undefined | null | {}"
@@ -1117,7 +1117,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L57",
           "defaultValue": "\"Radio\"",
           "type": "string"
         },
@@ -1236,6 +1236,13 @@
       }
     },
     "RadioProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Radio button component.</p>\n"
+        ],
+        "contentsRaw": "A Radio button component.",
+        "metadata": {}
+      },
       "fileName": "src/radio/index.tsx",
       "flags": {
         "isExported": true,
@@ -1249,7 +1256,7 @@
       },
       "kind": "interface",
       "name": "RadioProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/radio/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/radio/index.tsx#L12",
       "extends": [
         "WithRippleProps",
         "ToggleableFoundationProps"

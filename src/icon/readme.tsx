@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -251,7 +251,7 @@ export default function() {
         problem you need to solve.
       </DocsP>
       <DocsExample codeOnly>
-        {/* javascript */ `
+        {/* jsx */ `
           // 1) Your app has an icon component you use
           import { MyIconComponent } from '@rmwc/icon';
           <MyIconComponent name="search" />

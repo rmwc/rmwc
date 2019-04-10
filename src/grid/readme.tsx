@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '../doc-utils';
+import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -27,19 +27,18 @@ export default function() {
         <Grid>
           {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridInner components. */}
           <GridInner>
-            <GridCell span={4}>1</GridCell>
-            <GridCell span={4}>
+            <GridCell span={6}>1</GridCell>
+            <GridCell span={6}>
               <GridInner>
-                <GridCell span={4}>a</GridCell>
-                <GridCell span={4}>b</GridCell>
-                <GridCell span={4}>c</GridCell>
+                <GridCell span={6}>a</GridCell>
+                <GridCell span={6}>b</GridCell>
               </GridInner>
             </GridCell>
           </GridInner>
         </Grid>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['Grid', 'GridCell', 'GridInner']} />
+      <DocProps src={propsSrc} components={[Grid, GridCell, GridInner]} />
     </Docs>
   );
 }

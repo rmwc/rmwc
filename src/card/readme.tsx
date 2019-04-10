@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -192,15 +192,15 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'Card',
-          'CardPrimaryAction',
-          'CardMedia',
-          'CardMediaContent',
-          'CardActions',
-          'CardActionButtons',
-          'CardActionIcons',
-          'CardActionIcon',
-          'CardActionButton'
+          Card,
+          CardPrimaryAction,
+          CardMedia,
+          CardMediaContent,
+          CardActions,
+          CardActionButtons,
+          CardActionIcons,
+          CardActionIcon,
+          CardActionButton
         ]}
       />
     </Docs>

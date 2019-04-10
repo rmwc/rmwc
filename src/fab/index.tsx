@@ -4,6 +4,7 @@ import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
+/** A floating action button component */
 export interface FabProps extends RMWC.WithRippleProps {
   /** Make the Fab smaller. */
   mini?: boolean;
@@ -19,7 +20,7 @@ export interface FabProps extends RMWC.WithRippleProps {
   exited?: boolean;
 }
 
-export const FabRoot = withRipple({ surface: false })(
+const FabRoot = withRipple({ surface: false })(
   componentFactory<FabProps>({
     displayName: 'FabRoot',
     tag: 'button',
@@ -45,7 +46,7 @@ export const FabIcon = componentFactory<IconProps>({
   classNames: ['mdc-fab__icon']
 });
 
-export const FabLabel = componentFactory<{}>({
+const FabLabel = componentFactory<{}>({
   displayName: 'FabLabel',
   classNames: ['mdc-fab__label']
 });
@@ -77,3 +78,5 @@ export const Fab = React.forwardRef(
     );
   }
 );
+
+Fab.displayName = 'Fab';

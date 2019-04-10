@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
 import { componentFactory } from '@rmwc/base';
 
+/** Grid List Component */
 export interface GridListProps {
   /** Use a 1px gutter. */
   tileGutter1?: boolean;
@@ -55,34 +56,47 @@ export const GridList = componentFactory<GridListProps>({
 });
 
 /** The primary content for a Grid tile */
-export const GridTilePrimary = componentFactory<{}>({
+export interface GridTilePrimaryProps {}
+
+/** The primary content for a Grid tile */
+export const GridTilePrimary = componentFactory<GridTilePrimaryProps>({
   displayName: 'GridTilePrimary',
   classNames: ['mdc-grid-tile__primary']
 });
 
-export const GridTilePrimaryContent = componentFactory<{}>({
+/** The inner primary content for a Grid tile */
+export interface GridTilePrimaryContentProps {}
+
+/** The inner primary content for a Grid tile */
+export const GridTilePrimaryContent = componentFactory<
+  GridTilePrimaryContentProps
+>({
   displayName: 'GridTilePrimaryContent',
   tag: 'img',
   classNames: ['mdc-grid-tile__primary-content']
 });
-/****************************************************************
- * Public
- ****************************************************************/
 
-/** A grid tile  */
-export const GridTile = componentFactory<{}>({
+/** A grid tile */
+export interface GridTileProps {}
+
+/** A grid tile */
+export const GridTile = componentFactory<GridTileProps>({
   displayName: 'GridTile',
   tag: 'li',
   classNames: ['mdc-grid-tile']
 });
 
 /** The secondary content for a Grid tile */
-export const GridTileSecondary = componentFactory<{}>({
+export interface GridTileSecondaryProps {}
+
+/** The secondary content for a Grid tile */
+export const GridTileSecondary = componentFactory<GridTileSecondaryProps>({
   displayName: 'GridTileSecondary',
   tag: 'span',
   classNames: ['mdc-grid-tile__secondary']
 });
 
+/** The icon for a Grid tile. This is an instance of Icon component. */
 export interface GridTileIconProps extends IconProps {}
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
@@ -93,14 +107,22 @@ export const GridTileIcon = componentFactory<GridTileIconProps>({
 });
 
 /** The title for a Grid tile */
-export const GridTileTitle = componentFactory<{}>({
+export interface GridTileTitleProps {}
+
+/** The title for a Grid tile */
+export const GridTileTitle = componentFactory<GridTileTitleProps>({
   displayName: 'GridTileTitle',
   tag: 'span',
   classNames: ['mdc-grid-tile__title']
 });
 
 /** Supporting Text for the Grid Tile */
-export const GridTileTitleSupportText = componentFactory<{}>({
+export interface GridTileTitleSupportTextProps {}
+
+/** Supporting Text for the Grid Tile */
+export const GridTileTitleSupportText = componentFactory<
+  GridTileTitleSupportTextProps
+>({
   displayName: 'GridTileTitleSupportText',
   tag: 'span',
   classNames: ['mdc-grid-tile__support-text']

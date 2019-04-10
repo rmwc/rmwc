@@ -2,17 +2,14 @@
 
 > RMWC doesn't include any styles of its own, but there are multiple ways you can style and customize your components.
 
-- [Standard CSS](#css)
-- [CSS Modules](#css-modules)
-- [Styled Components](#styled-components)
-- [Runtime Color Theming](#runtime-color-theming)
+- [Standard CSS](#using-standard-css)
+- [CSS Modules](#using-css-modules)
+- [Styled Components](#using-the-styled-components-library)
+- [Runtime Color Theming](#theming-with-runtime-css-variables.)
 - [Dark Mode Support](#dark-mode)
 - [SASS Customization](#sass-customization)
-- [Theme and ThemeProvider](#theme-themeprovider)
+- [Theme and ThemeProvider](#theme-and-themeprovider)
 
-```jsx renderOnly
-<div id="css" />
-```
 
 ## Using Standard CSS
 
@@ -38,10 +35,6 @@ const MyComponent = props => (
 }
 ```
 
-```jsx renderOnly
-<div id="css-modules" />
-```
-
 ## Using CSS Modules
 
 Just add your className. If you need to target a node that is not directly exposed by RMWC, you can use the global modifier in your CSS. In this example, you can target the inner wrapper of a DrawerHeader.
@@ -61,10 +54,6 @@ const MyComponent = props => (
 .myDrawerHeader :global(.mdc-drawer__header-content) {
     color: red;
 }
-```
-
-```jsx renderOnly
-<div id="styled-components" />
 ```
 
 ## Using the Styled Components library
@@ -195,10 +184,6 @@ You can then import this and use it like so:
 </inputs.SelectIcon>
 ```
 
-```jsx renderOnly
-<div id="runtime-color-theming" />
-```
-
 ## Theming with runtime CSS variables.
 
 You can easily theme the library at runtime using CSS variables. Inspect the `<html>` node in your web inspector and you should see a list of variables you can modify on the `:root` selector.
@@ -212,25 +197,16 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 }
 ```
 
-```jsx renderOnly
-<div id="dark-mode" />
-```
 
 ## Dark Mode
 
-Earlier versions of `material-components-web` shipped with a built in Dark Mode but it has since be removed. Please refer to the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+Earlier versions of `material-components-web` shipped with a built in Dark Mode but it has since be removed. You can now achieve similar results using RMWC's `ThemeProvider` component. Please refer to the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
 
-```jsx renderOnly
-<div id="sass-customization" />
-```
 
 ## SASS customization
 
 Additional customization can be done through your own SASS build. This is a feature of the `material-components-web`, not RMWC. If you want your own custom SASS build, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
 
-```jsx renderOnly
-<div id="theme-themeprovider" />
-```
 
 ## Theme and ThemeProvider
 

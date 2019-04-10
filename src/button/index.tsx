@@ -5,6 +5,9 @@ import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
+/**
+ * The Button component.
+ */
 export interface ButtonProps extends RMWC.WithRippleProps {
   /** Make the Button dense. */
   dense?: boolean;
@@ -27,7 +30,7 @@ export interface ButtonProps extends RMWC.WithRippleProps {
 }
 
 /**
- * The Button component. Buttons also accepts all of the props from the Ripple component.
+ * The Button component.
  */
 export const Button = withRipple({
   surface: false

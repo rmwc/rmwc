@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "Slider": {
+      "documentation": {
+        "contents": [
+          "<p>A Slider component.</p>\n"
+        ],
+        "contentsRaw": "A Slider component.",
+        "metadata": {}
+      },
       "fileName": "src/slider/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "class",
       "name": "Slider",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L122",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L124",
       "extends": [
         "FoundationComponent<MDCSliderFoundation, SliderProps, SliderState>"
       ],
@@ -298,13 +305,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L140",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L137",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L140",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -715,13 +722,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L273",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L276",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L273",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L276",
               "parameters": [],
               "returnType": "MDCSliderFoundation",
               "type": "() => MDCSliderFoundation"
@@ -806,13 +813,13 @@
           },
           "kind": "method",
           "name": "layout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L221",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L224",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "layout",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L221",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L224",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -833,13 +840,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L372",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L375",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L372",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L375",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -939,13 +946,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L225",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L228",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L225",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L228",
               "parameters": [
                 {
                   "flags": {
@@ -1084,6 +1091,24 @@
       ],
       "properties": [
         {
+          "fileName": "src/slider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": true
+          },
+          "kind": "property",
+          "name": "displayName",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L133",
+          "defaultValue": "\"Slider\"",
+          "type": "string"
+        },
+        {
           "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
@@ -1149,7 +1174,7 @@
           },
           "kind": "property",
           "name": "track",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L135",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L138",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         }
@@ -1198,6 +1223,13 @@
       }
     },
     "SliderProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Slider component.</p>\n"
+        ],
+        "contentsRaw": "A Slider component.",
+        "metadata": {}
+      },
       "fileName": "src/slider/index.tsx",
       "flags": {
         "isExported": true,
@@ -1211,7 +1243,7 @@
       },
       "kind": "interface",
       "name": "SliderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L8",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -1235,7 +1267,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L35",
           "type": "undefined | false | true"
         },
         {
@@ -1259,7 +1291,7 @@
           },
           "kind": "property",
           "name": "discrete",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L31",
           "type": "undefined | false | true"
         },
         {
@@ -1283,7 +1315,7 @@
           },
           "kind": "property",
           "name": "displayMarkers",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -1307,7 +1339,7 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L27",
           "type": "number | string"
         },
         {
@@ -1331,7 +1363,7 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L25",
           "type": "number | string"
         },
         {
@@ -1355,7 +1387,7 @@
           },
           "kind": "property",
           "name": "onChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L11",
           "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
         },
         {
@@ -1379,7 +1411,7 @@
           },
           "kind": "property",
           "name": "onInput",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L17",
           "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
         },
         {
@@ -1403,7 +1435,7 @@
           },
           "kind": "property",
           "name": "step",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L29",
           "type": "number | string"
         },
         {
@@ -1427,7 +1459,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/slider/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L23",
           "type": "number | string"
         }
       ]

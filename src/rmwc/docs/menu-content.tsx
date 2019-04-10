@@ -1,18 +1,24 @@
-import * as React from 'react';
+import React from 'react';
 import { CircularProgress } from '@rmwc/circular-progress';
+import { DocsMarkdown } from '../../doc-utils';
 
-const InstallationDocs = React.lazy(() => import('./README-INSTALLATION.md'));
+import InstallationMD from './README-INSTALLATION.md';
+import UsageMD from './README-USAGE.md';
+import StylingMD from './README-STYLING-THEMING.md';
+import MethodologyMD from './README-METHODOLOGY.md';
+import LibraryIntegrationsMD from './README-LIBRARY-INTEGRATIONS.md';
+import TypesMD from './README-TYPES.md';
+
+const InstallationDocs = () => <DocsMarkdown fileSrc={InstallationMD} />;
+const UsageDocs = () => <DocsMarkdown fileSrc={UsageMD} />;
+const StylingThemingDocs = () => <DocsMarkdown fileSrc={StylingMD} />;
+const MethodologyDocs = () => <DocsMarkdown fileSrc={MethodologyMD} />;
+const LibraryIntegrationsDocs = () => (
+  <DocsMarkdown fileSrc={LibraryIntegrationsMD} />
+);
+const TypeDocs = () => <DocsMarkdown fileSrc={TypesMD} />;
+
 const ResourcesDocs = React.lazy(() => import('./resources'));
-const UsageDocs = React.lazy(() => import('./README-USAGE.md'));
-const StylingThemingDocs = React.lazy(() =>
-  import('./README-STYLING-THEMING.md')
-);
-const MethodologyDocs = React.lazy(() => import('./README-METHODOLOGY.md'));
-const LibraryIntegrationsDocs = React.lazy(() =>
-  import('./README-LIBRARY-INTEGRATIONS.md')
-);
-
-const TypeDocs = React.lazy(() => import('./README-TYPES.md'));
 
 const AvatarDocs = React.lazy(() => import('@rmwc/avatar/readme'));
 const ButtonDocs = React.lazy(() => import('@rmwc/button/readme'));

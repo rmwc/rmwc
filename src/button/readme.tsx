@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '../doc-utils';
+import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -11,8 +11,7 @@ export default function() {
   return (
     <Docs
       title="Buttons"
-      lead="Buttons communicate the action that will occur when the user touches
-        them."
+      lead="Buttons communicate the action that will occur when the user touches them."
       module="@rmwc/button"
       styles={['@material/button/dist/mdc.button.css']}
       docsLink="https://material.io/develop/web/components/buttons/"
@@ -62,7 +61,7 @@ export default function() {
         </Button>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['Button']} />
+      <DocProps src={propsSrc} components={[Button]} />
     </Docs>
   );
 }

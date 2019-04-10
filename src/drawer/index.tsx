@@ -12,19 +12,28 @@ import { createFocusTrap, FocusTrap } from '@rmwc/base';
  * Drawer Headers
  ***************************************************************************************/
 /** An optional header for the Drawer. */
-export const DrawerHeader = componentFactory<{}>({
+export interface DrawerHeaderProps {}
+
+/** An optional header for the Drawer. */
+export const DrawerHeader = componentFactory<DrawerHeaderProps>({
   displayName: 'DrawerHeader',
   classNames: ['mdc-drawer__header']
 });
 
 /** An title for the DrawerHeader. */
-export const DrawerTitle = componentFactory<{}>({
+export interface DrawerTitleProps {}
+
+/** An title for the DrawerHeader. */
+export const DrawerTitle = componentFactory<DrawerTitleProps>({
   displayName: 'DrawerTitle',
   classNames: ['mdc-drawer__title']
 });
 
 /** A subtitle for the DrawerHeader. */
-export const DrawerSubtitle = componentFactory<{}>({
+export interface DrawerSubtitleProps {}
+
+/** A subtitle for the DrawerHeader. */
+export const DrawerSubtitle = componentFactory<DrawerSubtitleProps>({
   displayName: 'DrawerSubtitle',
   classNames: ['mdc-drawer__subtitle']
 });
@@ -32,8 +41,11 @@ export const DrawerSubtitle = componentFactory<{}>({
 /***************************************************************************************
  * Drawer Content
  ***************************************************************************************/
-/** Content for Drawers. Please note this is an instance of mdc-list by default. You can change this to a a non list container by specifying the tag as 'div' or anything else. */
-export const DrawerContent = componentFactory<{}>({
+/** Content for Drawers. */
+export interface DrawerContentProps {}
+
+/** Content for Drawers. */
+export const DrawerContent = componentFactory<DrawerContentProps>({
   displayName: 'DrawerContent',
   classNames: ['mdc-drawer__content']
 });
@@ -52,7 +64,10 @@ const DrawerScrim = ({
  * DrawerAppContent
  ***************************************************************************************/
 /** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export const DrawerAppContent = componentFactory<{}>({
+export interface DrawerAppContentProps {}
+
+/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
+export const DrawerAppContent = componentFactory<DrawerAppContentProps>({
   displayName: 'DrawerAppContent',
   classNames: ['mdc-drawer-app-content']
 });
@@ -60,6 +75,8 @@ export const DrawerAppContent = componentFactory<{}>({
 /***************************************************************************************
  * Drawers
  ***************************************************************************************/
+
+/** A Drawer component. */
 export interface DrawerProps {
   /** Opens or closes the Drawer. */
   open?: boolean;
@@ -219,6 +236,7 @@ const DismissibleDrawer = slidableDrawerFactory(
   'dismissibleDrawer'
 );
 
+/** A Drawer component. */
 export const Drawer: React.ComponentType<DrawerProps & RMWC.ComponentProps> = (
   props: DrawerProps
 ) => {

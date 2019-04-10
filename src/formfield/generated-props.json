@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "FormField": {
+      "documentation": {
+        "contents": [
+          "<p>A FormField component.</p>\n"
+        ],
+        "contentsRaw": "A FormField component.",
+        "metadata": {}
+      },
       "fileName": "src/formfield/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "class",
       "name": "FormField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L28",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L30",
       "extends": [
         "FoundationComponent<MDCFormFieldFoundation, FormFieldProps>"
       ],
@@ -714,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L36",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L34",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L36",
               "parameters": [],
               "returnType": "MDCFormFieldFoundation",
               "type": "() => MDCFormFieldFoundation"
@@ -805,13 +812,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L51",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L53",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L51",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L53",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1068,7 +1075,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L34",
           "defaultValue": "\"FormField\"",
           "type": "string"
         },
@@ -1169,6 +1176,13 @@
       }
     },
     "FormFieldProps": {
+      "documentation": {
+        "contents": [
+          "<p>A FormField component.</p>\n"
+        ],
+        "contentsRaw": "A FormField component.",
+        "metadata": {}
+      },
       "fileName": "src/formfield/index.tsx",
       "flags": {
         "isExported": true,
@@ -1182,7 +1196,7 @@
       },
       "kind": "interface",
       "name": "FormFieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -1206,7 +1220,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/formfield/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L12",
           "type": "undefined | false | true"
         }
       ]

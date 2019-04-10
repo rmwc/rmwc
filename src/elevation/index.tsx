@@ -2,6 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory, wrapChild } from '@rmwc/base';
 
+/** The Elevation Component */
 export interface ElevationProps {
   /** A number from 0 - 24 for different levels of elevation */
   z: number | string;

@@ -1,4 +1,5 @@
-import React, { useState, useContext, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { createPortal } from 'react-dom';
 import { Typography } from './rmwc';
@@ -27,9 +28,9 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
     } = {
       name: displayName,
       description:
-        (componentDef &&
-          componentDef.comment &&
-          componentDef.comment.shortText) ||
+        (propsDef &&
+          propsDef.documentation &&
+          propsDef.documentation.contentsRaw) ||
         '',
       props: []
     };
@@ -96,12 +97,12 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
   }
 }
 
-export interface DocsInterface {
+export interface DocPropsI {
   src: any;
-  components: Array<React.ComponentType<any> | string>;
+  components: Array<React.ComponentType<any>>;
 }
 
-export class DocProps extends React.Component<DocsInterface> {
+export class DocProps extends React.Component<DocPropsI> {
   docs: { [key: string]: any } = this.props.src.typescript;
 
   shouldComponentUpdate() {
@@ -111,7 +112,8 @@ export class DocProps extends React.Component<DocsInterface> {
   render() {
     const { components } = this.props;
     return components.map(c => {
-      const name = typeof c === 'string' ? c : c.displayName || '';
+      let name = c.displayName || '';
+      name = name.includes('(') ? name.replace(/.+?\((.+?)\)/g, '$1') : name;
       return (
         <DocumentComponent key={name} displayName={name} docs={this.docs} />
       );
@@ -232,7 +234,7 @@ export function DocsP({ children }: { children: React.ReactNode }) {
   return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
 }
 
-export const IFrame = ({
+const IFrame = ({
   children,
   ...props
 }: {
@@ -273,11 +275,8 @@ export const IFrame = ({
 };
 
 export function DocsExample({
-  children,
   index = 0,
-  label,
-  codeOnly,
-  iframe
+  ...rest
 }: {
   children: React.ReactNode;
   index?: number;
@@ -285,13 +284,29 @@ export function DocsExample({
   codeOnly?: boolean;
   iframe?: boolean;
 }) {
-  const { scope, examples } = useContext(DocsContext);
+  const { examples } = useContext(DocsContext);
   const [code] = useState(examples[index]);
 
+  return <DocsExampleBase code={code} {...rest} />;
+}
+
+function DocsExampleBase({
+  code,
+  codeOnly,
+  iframe,
+  label,
+  children
+}: {
+  code: string;
+  codeOnly?: boolean;
+  iframe?: boolean;
+  label?: string;
+  children?: React.ReactNode;
+}) {
   return (
     <LiveProvider
       code={code}
-      scope={scope}
+      scope={rmwc}
       noInline={!!codeOnly}
       disabled={!!codeOnly}
     >
@@ -328,6 +343,74 @@ export function DocsExample({
         </div>
       </div>
     </LiveProvider>
+  );
+}
+
+export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
+  const [src, setSrc] = useState<string | null>(null);
+  useEffect(() => {
+    fetch(fileSrc)
+      .then(src => src.text())
+      .then(src => setSrc(src));
+  }, []);
+
+  return src ? (
+    <div>
+      <ReactMarkdown
+        source={src}
+        renderers={
+          {
+            heading: ({
+              level,
+              children
+            }: {
+              level: number;
+              children: any;
+            }) => {
+              let Tag: any = 'h1';
+              switch (level) {
+                case 1:
+                  Tag = 'h1';
+                  break;
+                case 2:
+                  Tag = 'h2';
+                  break;
+                case 3:
+                  Tag = 'h3';
+                  break;
+                case 4:
+                  Tag = 'h4';
+                  break;
+                case 5:
+                  Tag = 'h5';
+                  break;
+                default:
+                  break;
+              }
+              console.log(children);
+              return (
+                <Tag
+                  id={children[0].props.children
+                    .toLowerCase()
+                    .split(' ')
+                    .join('-')}
+                >
+                  {children}
+                </Tag>
+              );
+            },
+            paragraph: ({ children }: { children: any }) => (
+              <p className="docs-p">{children}</p>
+            ),
+            code: ({ value }: { value: string }) => (
+              <DocsExampleBase code={value} codeOnly />
+            )
+          } as any
+        }
+      />
+    </div>
+  ) : (
+    <></>
   );
 }
 

@@ -2,6 +2,13 @@
   "npm": {},
   "typescript": {
     "IconButtonProps": {
+      "documentation": {
+        "contents": [
+          "<p>An IconButton component that can also be used as a toggle.</p>\n"
+        ],
+        "contentsRaw": "An IconButton component that can also be used as a toggle.",
+        "metadata": {}
+      },
       "fileName": "src/icon-button/index.tsx",
       "flags": {
         "isExported": true,
@@ -15,7 +22,7 @@
       },
       "kind": "interface",
       "name": "IconButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L13",
       "extends": [
         "WithRippleProps"
       ],
@@ -66,7 +73,7 @@
           },
           "kind": "property",
           "name": "checked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L15",
           "type": "undefined | false | true"
         },
         {
@@ -90,7 +97,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L19",
           "type": "undefined | false | true"
         },
         {
@@ -114,7 +121,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L21",
           "type": "RMWC.IconPropT"
         },
         {
@@ -138,7 +145,7 @@
           },
           "kind": "property",
           "name": "onChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L17",
           "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
         },
         {
@@ -162,7 +169,7 @@
           },
           "kind": "property",
           "name": "onIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L23",
           "type": "RMWC.IconPropT"
         },
         {
@@ -253,7 +260,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedIconButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L25",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L26",
       "methods": [],
       "properties": [
         {
@@ -277,7 +284,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L28",
           "type": "any"
         },
         {
@@ -301,95 +308,8 @@
           },
           "kind": "property",
           "name": "onIconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/icon-button/index.tsx#L30",
           "type": "any"
-        }
-      ]
-    },
-    "IconButtonIconProps": {
-      "fileName": "src/icon-button/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "IconButtonIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L74",
-      "extends": [
-        "IconProps"
-      ],
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
-            ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconProps.icon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/icon-button/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
-        },
-        {
-          "fileName": "src/icon-button/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "on",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/bf0a8ec74/src/icon-button/index.tsx#L75",
-          "type": "undefined | false | true"
         }
       ]
     }

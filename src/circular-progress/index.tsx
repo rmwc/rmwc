@@ -10,6 +10,7 @@ const SIZE_MAP: { [key: string]: number } = {
   xlarge: 48
 };
 
+/** A Circular Progress indicator. */
 export interface CircularProgressProps {
   /** Max value for determinate progress bars. */
   max?: number;
@@ -45,6 +46,8 @@ const CircularProgressRoot = componentFactory<CircularProgressRootProps>({
 export class CircularProgress extends React.Component<
   RMWC.MergeInterfacesT<CircularProgressProps, RMWC.ComponentProps>
 > {
+  static displayName = 'CircularProgress';
+
   static defaultProps = {
     progress: undefined,
     size: 'medium'

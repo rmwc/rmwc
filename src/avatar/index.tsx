@@ -4,6 +4,7 @@ import { componentFactory } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
+/** An Avatar component for displaying users in a system. */
 export interface AvatarProps {
   /** The url for the image. This gets passed to the Icon component. */
   src?: string;
@@ -72,6 +73,7 @@ const AvatarRoot = withRipple()(
   })
 );
 
+/** A container for groups of Avatars */
 export interface AvatarGroupProps {
   /** Makes the list dense */
   dense?: boolean;
@@ -131,6 +133,7 @@ export const Avatar = ({
 
 Avatar.displayName = 'Avatar';
 
+/** An Avatar count for displaying list overflow. */
 export interface AvatarCountProps {
   /** The number of users. */
   value: number;

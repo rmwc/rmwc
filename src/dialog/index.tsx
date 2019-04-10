@@ -50,24 +50,34 @@ class DialogScrim extends React.Component<DialogScrimProps> {
 }
 
 /** The Dialog title. */
-export const DialogTitle = componentFactory<{}>({
+export interface DialogTitleProps {}
+
+/** The Dialog title. */
+export const DialogTitle = componentFactory<DialogTitleProps>({
   displayName: 'DialogTitle',
   tag: 'h2',
   classNames: ['mdc-dialog__title']
 });
 
 /** The Dialog content. */
-export const DialogContent = componentFactory<{}>({
+export interface DialogContentProps {}
+
+/** The Dialog content. */
+export const DialogContent = componentFactory<DialogContentProps>({
   displayName: 'DialogContent',
   classNames: ['mdc-dialog__content']
 });
 
 /** Actions container for the Dialog. */
-export const DialogActions = componentFactory<{}>({
+export interface DialogActionsProps {}
+
+/** Actions container for the Dialog. */
+export const DialogActions = componentFactory<DialogActionsProps>({
   displayName: 'DialogActions',
   classNames: ['mdc-dialog__actions']
 });
 
+/** Action buttons for the Dialog. */
 export interface DialogButtonProps extends ButtonProps {
   /** An action returned in evt.detail.action to the onClose handler. */
   action?: string;
@@ -78,7 +88,7 @@ export interface DialogButtonProps extends ButtonProps {
 /** Action buttons for the Dialog. */
 export class DialogButton extends React.Component<
   DialogButtonProps & RMWC.ComponentProps
-  > {
+> {
   static displayName = 'DialogButton';
   render() {
     const { action = '', className, isDefaultAction, ...rest } = this.props;
@@ -98,6 +108,7 @@ export class DialogButton extends React.Component<
   }
 }
 
+/** A Dialog component. */
 export interface DialogProps {
   /** Whether or not the Dialog is showing. */
   open?: boolean;
@@ -115,7 +126,7 @@ export interface DialogProps {
 export class Dialog extends FoundationComponent<
   MDCDialogFoundation,
   DialogProps
-  > {
+> {
   static displayName = 'Dialog';
 
   private root = this.createElement('root');
@@ -286,6 +297,7 @@ export class Dialog extends FoundationComponent<
   }
 }
 
+/** A SimpleDialog component for ease of use. */
 export interface SimpleDialogProps extends DialogProps {
   /** A title for the default Dialog template. */
   title?: React.ReactNode;
@@ -303,7 +315,7 @@ export interface SimpleDialogProps extends DialogProps {
   children?: React.ReactNode;
 }
 
-/** A non-standard SimpleDialog component for ease of use. */
+/** A SimpleDialog component for ease of use. */
 export class SimpleDialog extends React.Component<SimpleDialogProps> {
   static defaultProps = {
     title: undefined,

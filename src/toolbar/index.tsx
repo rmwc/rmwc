@@ -19,7 +19,7 @@ export interface ToolbarProps {
   flexibleDefaultBehavior?: boolean;
 }
 
-export const ToolbarRoot = componentFactory<ToolbarProps>({
+const ToolbarRoot = componentFactory<ToolbarProps>({
   displayName: 'TabBarRoot',
   tag: 'header',
   classNames: (props: ToolbarProps) => [
@@ -49,11 +49,15 @@ export const ToolbarRoot = componentFactory<ToolbarProps>({
 });
 
 /** A Toolbar title  */
-export const ToolbarTitle = componentFactory<{}>({
+export interface ToolbarTitleProps {}
+
+/** A Toolbar title  */
+export const ToolbarTitle = componentFactory<ToolbarTitleProps>({
   displayName: 'ToolbarTitle',
   classNames: ['mdc-toolbar__title']
 });
 
+/** A section of the Toolbar */
 export interface ToolbarSectionProps {
   /** Aligns the ToolbarSection at the start. */
   alignStart?: boolean;
@@ -84,24 +88,27 @@ export const ToolbarSection = componentFactory<ToolbarSectionProps>({
 });
 
 /** A Toolbar row  */
-export const ToolbarRow = componentFactory<{}>({
+export interface ToolbarRowProps {}
+
+/** A Toolbar row  */
+export const ToolbarRow = componentFactory<ToolbarRowProps>({
   displayName: 'ToolbarRow',
   classNames: ['mdc-toolbar__row']
 });
 
-/**
- * This component can be placed after a fixed Toolbar component to fill in the space.
- */
-export const ToolbarFixedAdjust = componentFactory<{}>({
+/** This component can be placed after a fixed Toolbar component to fill in the space. */
+export interface ToolbarFixedAdjustProps {}
+
+/** This component can be placed after a fixed Toolbar component to fill in the space. */
+export const ToolbarFixedAdjust = componentFactory<ToolbarFixedAdjustProps>({
   displayName: 'ToolbarFixedAdjust',
   classNames: ['mdc-toolbar-fixed-adjust']
 });
 
+/** A Menu Icon For the Toolbar. This is an instance of the Icon component. */
 export interface ToolbarMenuIconProps extends IconProps {}
 
-/**
- * A Menu Icon For the Toolbar. This is an instance of the Icon component.
- */
+/** A Menu Icon For the Toolbar. This is an instance of the Icon component. */
 export const ToolbarMenuIcon = withRipple({ unbounded: true, surface: false })(
   componentFactory<ToolbarMenuIconProps>({
     displayName: 'ToolbarMenuIcon',
@@ -110,11 +117,10 @@ export const ToolbarMenuIcon = withRipple({ unbounded: true, surface: false })(
   })
 );
 
+/** A standard Icon for toolbar actions. This is an instance of the Icon component. */
 export interface ToolbarIconProps extends IconProps {}
 
-/**
- * A standard Icon for toolbar actions. This is an instance of the Icon component.
- */
+/** A standard Icon for toolbar actions. This is an instance of the Icon component. */
 export const ToolbarIcon = withRipple({
   unbounded: true
 })(
@@ -125,6 +131,7 @@ export const ToolbarIcon = withRipple({
   })
 );
 
+/** A Toolbar component. */
 export const Toolbar = (props: ToolbarProps & RMWC.ComponentProps) => {
   /** Generate a key that will force a re-init if props change */
   const key = `${props.fixed ? 'fixed' : ''} ${
@@ -132,6 +139,8 @@ export const Toolbar = (props: ToolbarProps & RMWC.ComponentProps) => {
   } ${props.flexible ? 'flexible' : ''}`;
   return <ToolbarBase key={key} {...props} />;
 };
+
+Toolbar.displayName = 'Toolbar';
 
 class ToolbarBase extends FoundationComponent<
   MDCToolbarFoundation,

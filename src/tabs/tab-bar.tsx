@@ -12,6 +12,8 @@ import { TabBarContext } from './tab-bar-context';
 /************************************************************
  * TabBar
  ************************************************************/
+
+/** The TabBar component */
 export interface TabBarProps {
   /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
   onActivate?: (

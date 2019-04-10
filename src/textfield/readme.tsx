@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -111,7 +111,7 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={['TextField']} />
+      <DocProps src={propsSrc} components={[TextField]} />
     </Docs>
   );
 }

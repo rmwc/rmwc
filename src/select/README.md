@@ -2,66 +2,72 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-- Module **@rmwc/select**  
+- Module **@rmwc/fab**
 - Import styles:
-  - import **'@material/select/dist/mdc.select.css'**;
-  - import **'@material/floating-label/dist/mdc.floating-label.css'**;
-  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**;
-  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**;
+  - import **'@material/select/dist/mdc.select.css'**
+  - import **'@material/floating-label/dist/mdc.floating-label.css'**
+  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**
+  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**
+  - import **'@material/list/dist/mdc.list.css'**
+  - import **'@material/menu/dist/mdc.menu.css'**
+  - import **'@material/menu-surface/dist/mdc.menu-surface.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
 ## Select Styles
-Selects come in three different styles: standard, box, and outlined.
 
-```jsx render
-import { Select, SelectHelperText } from '@rmwc/select';
+Selects come in three different styles: standard,outlined, and enhanced.
 
-<Select
-  label="Standard"  
-  options={['Cookies', 'Pizza', 'Icecream']}
-/>
+```jsx
+<Select label="Standard" options={['Cookies', 'Pizza', 'Icecream']} />
+```
 
+```jsx
 <Select
   label="Outlined"
   outlined
   options={['Cookies', 'Pizza', 'Icecream']}
 />
+```
 
+```jsx
 <Select
   label="Enhanced"
   enhanced
   options={['Cookies', 'Pizza', 'Icecream']}
 />
+```
 
-<div>
-  <Select
-    label="With Icon"
-    defaultChecked="Pizza"
-    icon="favorite"
-    options={['Cookies', 'Pizza', 'Icecream']}
-  />
-  <SelectHelperText>Choose your favorite snack...</SelectHelperText>
-</div>
+```jsx
+<Select
+  label="With Icon"
+  defaultValue="Pizza"
+  helpText="Choose your favorite snack..."
+  icon="favorite"
+  options={['Cookies', 'Pizza', 'Icecream']}
+/>
 ```
 
 ## Validation
-```jsx render
-import { Select, SelectHelperText } from '@rmwc/select';
 
+```jsx
 <Select
-  label="Required"  
+  label="Required"
   required
   options={['Cookies', 'Pizza', 'Icecream']}
 />
+```
 
+```jsx
 <Select
-  label="Invalid"  
+  label="Invalid"
   invalid
   options={['Cookies', 'Pizza', 'Icecream']}
 />
+```
 
+```jsx
 <Select
-  label="Disabled"  
+  label="Disabled"
   disabled
   options={['Cookies', 'Pizza', 'Icecream']}
 />
@@ -71,23 +77,10 @@ import { Select, SelectHelperText } from '@rmwc/select';
 
 To fit common use cases, RMWC Select provides a data driven method for rendering select menus. There are multiple formats you can pass data in, use the one that best fits your requirements. To make your label not float by default and to have an unselected blank value, set the `placeholder` prop to a blank string.
 
-```jsx render
-import { Select } from '@rmwc/select';
-
-{/*
-  A controlled select
-  Using a formatted array of options
-  [
-    {label: string, value: string, ...props},
-    {label: string, value: string, ...props}
-  ]
-*/}
-
-<Select
-  value={this.state.value}
-  onChange={evt => this.setState({value: evt.target.value})}
-  label="Array"
-  options={[
+```jsx
+function Example() {
+  // A controlled select Using a formatted array of options
+  const options = [
     {
       label: 'Cookies',
       value: '1'
@@ -95,56 +88,45 @@ import { Select } from '@rmwc/select';
     {
       label: 'Pizza',
       value: '2',
-
       /** Any additional items will be passed to the
-       child ListItem as props */
-
+         child ListItem as props */
       'aria-disabled': true,
-      'tabIndex': -1
+      tabIndex: -1
     },
     {
       label: 'Icecream',
       value: '3'
     }
-  ]}
-/>
+  ];
 
-{/*  
-  An uncontrolled select
-  A simple value => label map */
+  return <Select label="Array" options={options} />;
 }
+```
+
+```jsx
 <Select
   label="Object map"
-  options={{'1': 'Cookies', '2': 'Pizza', '3': 'Icecream'}}
+  options={{ '1': 'Cookies', '2': 'Pizza', '3': 'Icecream' }}
 />
+```
 
-{/* a simple array of options with box styling, value will be the same as label */}
+```jsx
 <Select
   label="Simple Array"
   placeholder="-- Select One --"
   options={['Cookies', 'Pizza', 'Icecream']}
 />
 ```
-## Manually building the list
+
+## Manually Building the List
 
 If you want full control over the child `ListItems`, you can manually build the list yourself.
 
-```jsx render
-import { Select } from '@rmwc/select';
-
-<Select
-  label="Manual"
-  defaultValue="Cookies"
->
-  <option value="Cookies">
-    Cookies
-  </option>
-  <option value="Pizza">
-    Pizza
-  </option>
-  <option value="Icecream">
-    Icecream
-  </option>
+```jsx
+<Select label="Manual" defaultValue="Cookies">
+  <option value="Cookies">Cookies</option>
+  <option value="Pizza">Pizza</option>
+  <option value="Icecream">Icecream</option>
 </Select>
 ```
 
@@ -152,9 +134,7 @@ import { Select } from '@rmwc/select';
 
 Both native and enhanced Selects can contain option groups. Just nest additional options arrays in your data.
 
-```jsx render
-import { Select } from '@rmwc/select';
-
+```jsx
 <Select
   label="Formatted"
   enhanced
@@ -164,7 +144,7 @@ import { Select } from '@rmwc/select';
       options: [
         {
           label: 'Pizza',
-          value: '2',
+          value: '2'
         }
       ]
     },
@@ -184,29 +164,20 @@ import { Select } from '@rmwc/select';
     }
   ]}
 />
+```
 
-<Select
-  label="Manually Built"
->
+```jsx
+<Select label="Manually Built">
   <optgroup label="Dinner">
-    <option value="Pizza">
-      Pizza
-    </option>
+    <option value="Pizza">Pizza</option>
   </optgroup>
   <optgroup label="Dessert">
-    <option value="Cookies">
-      Cookies
-    </option>
-    <option value="Icecream">
-      Icecream
-    </option>
+    <option value="Cookies">Cookies</option>
+    <option value="Icecream">Icecream</option>
   </optgroup>
 </Select>
 ```
 
-```jsx renderOnly
-import { DocProps } from '../doc-utils';
-import { default as docs}  from './generated-props.json';
+## 
 
-<DocProps src={docs} components={['Select']} />
-```
+

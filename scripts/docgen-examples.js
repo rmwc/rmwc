@@ -1,6 +1,6 @@
-const { exec, execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
+const getChangedPackages = require('./get-changed-packages');
 
 const genDocExample = packageName => {
   const readmeFiles = fs
@@ -28,6 +28,7 @@ const genDocExample = packageName => {
       const formattedMatches = matches.map(m => {
         // do some global find and replace
         m = m.replace(/\<any\>/g, '');
+        m = m.replace(/\/\* jsx \*\/ /g, '');
 
         const parts = m
           .split('\n')
@@ -35,50 +36,31 @@ const genDocExample = packageName => {
           .filter(l => !l.includes('@ts-ignore'));
         const regexp = /(^\s+)/g;
         const trimLength = regexp.exec(parts[0])[1].length;
-        let cleaned = parts.map(p => p.slice(trimLength));
-        if (cleaned[0] && cleaned[0].startsWith('{')) {
+        let cleaned = parts.map(p => p.slice(trimLength)).join('\n');
+        if (cleaned.startsWith('{')) {
           cleaned = cleaned.slice(1, -1);
         }
 
-        return cleaned.join('\n');
+        if (cleaned.startsWith('`')) {
+          cleaned = cleaned.slice(1, -1);
+        }
+
+        return cleaned;
       });
 
-      fs.writeFileSync(examplePath, JSON.stringify(formattedMatches));
+      fs.writeFile(examplePath, JSON.stringify(formattedMatches), () => {});
     } else {
-      fs.writeFileSync(examplePath, JSON.stringify([]));
+      fs.writeFile(examplePath, JSON.stringify([]), () => {});
     }
   });
-};
-
-const getChangedPackages = () => {
-  const changed = execSync('node_modules/.bin/lerna changed')
-    .toString()
-    .split('\n')
-    .map(v => v.replace('@rmwc/', ''))
-    .filter(Boolean);
-  return changed;
 };
 
 try {
   getChangedPackages()
     .filter(name => !['base', 'rmwc', '@types'].includes(name))
     .forEach(d => {
-      console.log(`Building Docs For: ${d}`);
+      console.log(`Generating Examples For: ${d}`);
       genDocExample(d);
-      return;
-      const proc = exec(
-        `documentalist ./src/${d}/*.tsx --no-css --no-md > ./src/${d}/generated-props.json`
-      );
-
-      proc.stdout.on('data', data => {
-        console.log(data.toString());
-      });
-
-      proc.stderr.on('data', data => {
-        console.log('Error: ' + data.toString());
-      });
-
-      proc.on('exit', code => {});
     });
 } catch (err) {
   console.error(err.toString());

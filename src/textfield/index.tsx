@@ -24,6 +24,8 @@ import { withRipple } from '@rmwc/ripple';
 /*********************************************************************
  * TextField
  *********************************************************************/
+
+/** A TextField component for accepting text input from a user. */
 export interface TextFieldProps {
   /** Sets the value for controlled TextFields. */
   value?: string | number;

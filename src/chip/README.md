@@ -2,43 +2,48 @@
 
 > Chips represent complex entities in small blocks, such as a contact.
 
-- Module **@rmwc/chip**  
+- Module **@rmwc/chip**
 - Import styles:
-  - import **'@material/chips/dist/mdc.chips.css'**;
+  - import **'@material/chips/dist/mdc.chips.css'**
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
-Please note that in MDC, the ChipSet code contains logic for selecting single and multiple chips (filter and choice chip sets). This doesn't fit well with React's uni-directional data flow. Instead it is recommended to write your own filtering and selection logic and just apply the `selected` prop to the `Chip` component directly.
-
-```jsx render
-import { Chip, ChipSet } from '@rmwc/chip';
-
+```jsx
 <ChipSet>
   <Chip selected label="Cookies" />
   <Chip label="Pizza" />
   <Chip label="Icecream" />
 </ChipSet>
+```
 
-{/* With Icons */}
+```jsx
 <ChipSet>
-  <Chip
-    icon="favorite"
-    label="Cookies"
-    trailingIcon="close"
-  />
+  <Chip icon="favorite" label="Cookies" trailingIcon="close" />
 </ChipSet>
+```
 
-{/* Events */}
-<ChipSet>
-  <Chip
-    key="my-chip"
-    label="Click Me"
-    selected={this.state.evtSelected}
-    onRemove={evt => console.log('onRemove', evt.detail)}
-    onInteraction={evt => console.log('onInteraction', evt.detail)}
-    onTrailingIconInteraction={evt => console.log('onTrailingIconIteraction', evt.detail)}
-    trailingIcon="close"
-  />
-</ChipSet>
+```jsx
+function Example() {
+  const [selected, setSelected] = React.useState(false);
+  return (
+    <ChipSet>
+      <Chip
+        key="my-chip"
+        label="Click Me"
+        checkmark
+        selected={selected}
+        onRemove={evt => console.log('onRemove', evt.detail)}
+        onInteraction={evt => {
+          console.log('onInteraction', evt.detail);
+          setSelected(!selected);
+        }}
+        onTrailingIconInteraction={evt =>
+          console.log('onTrailingIconIteraction', evt.detail)
+        }
+        trailingIcon="close"
+      />
+    </ChipSet>
+  );
+}
 ```
 
 ## Filter and Choice Chipsets
@@ -47,66 +52,112 @@ You can specify a `ChipSet` as either a `filter` of `choice` which slightly chan
 
 Clicking on the trailing close icon will trigger a close animation and put the chip in an exited state, but it is up to you to remove component out from rendering. The you use the `onRemove` prop implement this behavior.
 
-```jsx render
-import {
-  Chip,
-  ChipSet
-} from '@rmwc/chip';
+```jsx
+function Example() {
+  const [selected, setSelected] = React.useState({
+    cookies: false,
+    pizza: false,
+    icecream: false
+  });
+  const toggleSelected = key =>
+    setSelected({
+      ...selected,
+      [key]: !selected[key]
+    });
 
-<ChipSet filter>
-  <Chip
-    selected={this.state.cookies}
-    onClick={() => this.setState({cookies: !this.state.cookies})}
-    checkmark
-    label="Cookies"
-    trailingIcon="close"
-  />
-  <Chip
-    selected={this.state.pizza}
-    onClick={() => this.setState({pizza: !this.state.pizza})}
-    icon="local_pizza"
-    checkmark
-    label="Pizza"
-    trailingIcon="close"
-  />
-  <Chip
-    selected={this.state.icecream}
-    onClick={() => this.setState({icecream: !this.state.icecream})}
-    checkmark
-    icon="favorite_border"
-    trailingIcon="close"
-    label="Icecream"
-  />
-</ChipSet>
-
-<ChipSet choice>
-  <Chip
-    selected={this.state.cookiesChoice}
-    onClick={() => this.setState({cookiesChoice: !this.state.cookiesChoice})}
-    label="Cookies"
-    trailingIcon="close"
-  />
-  <Chip
-    selected={this.state.pizzaChoice}
-    onClick={() => this.setState({pizzaChoice: !this.state.pizzaChoice})}
-    icon="local_pizza"
-    label="Pizza"
-    trailingIcon="close"
-  />
-  <Chip
-    selected={this.state.icecreamChoice}
-    onClick={() => this.setState({icecreamChoice: !this.state.icecreamChoice})}
-    icon="favorite_border"
-    trailingIcon="close"
-    label="Icecream"
-  />
-</ChipSet>
+  return (
+    <ChipSet filter>
+      <Chip
+        selected={selected.cookies}
+        checkmark
+        onClick={() => toggleSelected('cookies')}
+        label="Cookies"
+        trailingIcon="close"
+      />
+      <Chip
+        selected={selected.pizza}
+        checkmark
+        onClick={() => toggleSelected('pizza')}
+        icon="local_pizza"
+        label="Pizza"
+        trailingIcon="close"
+      />
+      <Chip
+        selected={selected.icecream}
+        checkmark
+        onClick={() => toggleSelected('icecream')}
+        icon="favorite_border"
+        trailingIcon="close"
+        label="Icecream"
+      />
+    </ChipSet>
+  );
+}
 ```
 
-```jsx renderOnly
-import { DocProps } from '../doc-utils';
-import { default as docs}  from './generated-props.json';
-import * as iconDocs from '@rmwc/icon/generated-props.json';
+```jsx
+function Example() {
+  const [selected, setSelected] = React.useState({
+    cookies: false,
+    pizza: false,
+    icecream: false
+  });
+  const toggleSelected = key =>
+    setSelected({
+      ...selected,
+      [key]: !selected[key]
+    });
 
-<DocProps src={docs} components={['Chip', 'ChipSet']} />
+  return (
+    <ChipSet choice>
+      <Chip
+        selected={selected.cookies}
+        onClick={() => toggleSelected('cookies')}
+        label="Cookies"
+        trailingIcon="close"
+      />
+      <Chip
+        selected={selected.pizza}
+        onClick={() => toggleSelected('pizza')}
+        icon="local_pizza"
+        label="Pizza"
+        trailingIcon="close"
+      />
+      <Chip
+        selected={selected.icecream}
+        onClick={() => toggleSelected('icecream')}
+        icon="favorite_border"
+        trailingIcon="close"
+        label="Icecream"
+      />
+    </ChipSet>
+  );
+}
 ```
+
+## Chip
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `checkmark` | `undefined | false | true` | Includes an optional checkmark for the chips selected state. |
+| `children` | `React.ReactNode` | Additional children will be rendered in the text area. |
+| `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
+| `id` | `undefined | string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
+| `label` | `React.ReactNode` | Text for your Chip. |
+| `onInteraction` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. |
+| `onRemove` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback that is fired once the chip is in an exited state from removing it. |
+| `onTrailingIconInteraction` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. |
+| `selected` | `undefined | false | true` | makes the Chip appear selected. |
+| `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
+
+
+## ChipSet
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `choice` | `undefined | false | true` | Creates a choice chipset |
+| `filter` | `undefined | false | true` | Creates a filter chipset |
+
+

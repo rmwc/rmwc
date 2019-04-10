@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsP, DocsSubtitle } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsP, DocsSubtitle } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -106,12 +106,12 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'ImageList',
-          'ImageListItem',
-          'ImageListImageAspectContainer',
-          'ImageListImage',
-          'ImageListSupporting',
-          'ImageListLabel'
+          ImageList,
+          ImageListItem,
+          ImageListImageAspectContainer,
+          ImageListImage,
+          ImageListSupporting,
+          ImageListLabel
         ]}
       />
     </Docs>

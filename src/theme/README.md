@@ -1,18 +1,18 @@
-# Theme
+# Theming
 
 > MDC Theme is a foundational module that themes MDC Web components.
 
-- Module **@rmwc/theme**  
+- Module **@rmwc/theme**
 - Import styles:
-  - import **'@material/theme/dist/mdc.theme.css'**;
+  - import **'@material/theme/dist/mdc.theme.css'**
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
 
-```jsx renderOnly
-import { Theme } from '@rmwc/theme';
+**Important** You should include the theme style sheet BEFORE any of your other styles.
 
-<div>
+```jsx
+<>
   <div style={{ backgroundColor: '#ddd' }}>
     {[
       'primary',
@@ -54,62 +54,60 @@ import { Theme } from '@rmwc/theme';
       </Theme>
     ))}
   </div>
-</div>
+</>
 ```
 
 ## ThemeProvider
+
 The `ThemeProvider` is an optional component that allows you to specify theme colors and settings for all of its subtree. This is useful to use once at the top of your app, or in parts of your app where the styles or color scheme differ.
 
 You don't have to pass in all options. The `ThemeProvider` will automatically adjust some of the values like `onSurface` white or black text depending on colors contrast ratio.
 
 Theming in `material-components-web` isn't perfect, but a few basic options will get you most of the way. Try using the ThemePicker at the top and selecting "Shrine". You'll see that most things are colored appropriately, but the defaults provided for things like Buttons and tabs still have to have their colors overridden.
 
-```jsx render
-import { ThemeProvider } from '@rmwc/theme';
-
-import { Button } from '@rmwc/button';
-import { Checkbox } from '@rmwc/checkbox';
-import { Radio } from '@rmwc/radio';
-
-{/* Without ThemeProvider, the defaults. */}
-<div>
+```jsx
+<>
   <Button raised>Cookies</Button>
   <Checkbox label="Pizza" defaultChecked />
   <Radio label="Icecream" defaultChecked />
-</div>
+</>
+```
 
-{/* With ThemeProvider. */}
-<ThemeProvider options={{
-  primary: 'red',
-  secondary: 'blue'
-}}>
-  <Button raised>Cookies</Button>
-  <Checkbox label="Pizza" defaultChecked />
-  <Radio label="Icecream" defaultChecked />
-</ThemeProvider>
-
-{/* Specify as many options as you want. */}
-<ThemeProvider options={{
-  primary: 'lightpink',
-  secondary: 'black',
-  onPrimary: '#000',
-  textPrimaryOnBackground: 'black'
-}}>
+```jsx
+<ThemeProvider
+  options={{
+    primary: 'red',
+    secondary: 'blue'
+  }}
+>
   <Button raised>Cookies</Button>
   <Checkbox label="Pizza" defaultChecked />
   <Radio label="Icecream" defaultChecked />
 </ThemeProvider>
 ```
 
-## Using the ThemeProvider to fix built in styles
+```jsx
+<ThemeProvider
+  options={{
+    primary: 'lightpink',
+    secondary: 'black',
+    onPrimary: '#000',
+    textPrimaryOnBackground: 'black'
+  }}
+>
+  <Button raised>Cookies</Button>
+  <Checkbox label="Pizza" defaultChecked />
+  <Radio label="Icecream" defaultChecked />
+</ThemeProvider>
+```
+
+## Using the ThemeProvider to fix broken styles
+
 As stated above, theming in `material-components-web` isn't perfect, but the ThemeProvider can be used to conveniently fix some of the built in style issues. For instance, the Tab bar doesn't respond correctly when used in the TopAppBar or on any other dark color surface.
 
-```jsx render
-import { Toolbar, ToolbarRow } from '@rmwc/toolbar';
-import { TabBar, Tab } from '@rmwc/tabs';
-
-{/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
+```jsx
 <Toolbar>
+  {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
   <ToolbarRow>
     <TabBar>
       <Tab>Cookies</Tab>
@@ -118,11 +116,16 @@ import { TabBar, Tab } from '@rmwc/tabs';
     </TabBar>
   </ToolbarRow>
 </Toolbar>
+```
 
-{/* Fixed using ThemeProvider. Use "wrap" to not screw up layout. */}
+```jsx
 <Toolbar>
+  {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
   <ToolbarRow>
-    <ThemeProvider options={{primary: 'white', onSurface: 'white'}} wrap>
+    <ThemeProvider
+      options={{ primary: 'white', onSurface: 'white' }}
+      wrap
+    >
       <TabBar>
         <Tab>Cookies</Tab>
         <Tab>Pizza</Tab>
@@ -133,34 +136,57 @@ import { TabBar, Tab } from '@rmwc/tabs';
 </Toolbar>
 ```
 
-
 ## Theme Component
+
 The Theme component allows you to apply theme colors to RMWC components, or components of your own. Almost every component in RMWC has a `theme` prop that you can use that takes the same options as the `Theme` component's `use` prop.
 
-```jsx render
-import { Theme } from '@rmwc/theme';
-
-import { Button } from '@rmwc/button';
-
-{/* Add Theme colors to your own components. */}
+```jsx
 <Theme use={['primaryBg', 'onPrimary']} wrap>
-  <div style={{width: '4rem', height: '4rem', padding: '1rem'}}>Cookies</div>
+  {/* Add Theme colors to your own components. */}
+  <div style={{ width: '4rem', height: '4rem', padding: '1rem' }}>
+    Cookies
+  </div>
 </Theme>
-
-{/* These two examples are roughly equivalent. */}
-<Theme use={['secondaryBg', 'onSecondary']} wrap>
-  <Button>Pizza</Button>
-</Theme>
-
-<Button theme={['primaryBg', 'onPrimary']}>Pizza</Button>
-
-{/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
-<h3>I <Theme use="primary">Want</Theme> <Theme use="secondary">Icecream</Theme></h3>
 ```
 
-```jsx renderOnly
-import { DocProps } from '../doc-utils';
-import { default as docs}  from './generated-props.json';
+```jsx
+<>
+  {/* These two examples are roughly equivalent. */}
+  <Theme use={['secondaryBg', 'onSecondary']} wrap>
+    <Button>Pizza</Button>
+  </Theme>
 
-<DocProps src={docs} components={['ThemeProvider', 'Theme']} />
+  <Button theme={['secondaryBg', 'onSecondary']}>Pizza</Button>
+</>
 ```
+
+```jsx
+<>
+  {/* Text is one of the cases where `wrap` is not required. By default `Theme` will insert `span` tags. */}
+  <h3>
+    I <Theme use="primary">Want</Theme>{' '}
+    <Theme use="secondary">Icecream</Theme>
+  </h3>
+</>
+```
+
+## ThemeProvider
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `children` | `React.ReactNode` | Children to render |
+| `options` | `{ [key: string]: string }` | Any theme option pointing to a valid CSS value. |
+| `style` | `Object` | Additional standard inline styles that will be merged into the style tag. |
+| `wrap` | `undefined | false | true` | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
+
+
+## Theme
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `use` | `RMWC.ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
+| `wrap` | `undefined | false | true` | Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors. |
+
+

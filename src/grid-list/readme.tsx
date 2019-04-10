@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '../doc-utils';
+import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
@@ -11,7 +11,8 @@ import {
   GridTilePrimary,
   GridTilePrimaryContent,
   GridTileSecondary,
-  GridTileTitle
+  GridTileTitle,
+  GridTileTitleSupportText
 } from '.';
 
 import { Checkbox } from '../checkbox';
@@ -96,13 +97,13 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'GridList',
-          'GridTile',
-          'GridTileIcon',
-          'GridTilePrimary',
-          'GridTileSecondary',
-          'GridTileTitleSupportText',
-          'GridTileTitle'
+          GridList,
+          GridTile,
+          GridTileIcon,
+          GridTilePrimary,
+          GridTileSecondary,
+          GridTileTitleSupportText,
+          GridTileTitle
         ]}
       />
     </Docs>

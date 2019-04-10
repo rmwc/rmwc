@@ -42,3 +42,9 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media (min-width: 100rem) {
+  .cardGridInner {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

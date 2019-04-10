@@ -13,7 +13,8 @@ img {
   vertical-align: top;
 }
 
-p {
+p,
+ul {
   max-width: 56rem;
 }
 
@@ -98,9 +99,16 @@ body ul li {
 
 .app__content > div,
 .container {
-  padding: 3rem;
+  padding: 1.5rem;
   margin: 0 auto;
   display: block;
+}
+
+@media (min-width: 37.5rem) {
+  .app__content > div,
+  .container {
+    padding: 3rem;
+  }
 }
 
 .app__content > div p code,
@@ -234,6 +242,7 @@ ul {
 .app__top-app-bar {
   z-index: 7;
   color: var(--mdc-theme-on-primary, white);
+  max-width: 100vw;
 }
 
 .app__top-app-bar .mdc-top-app-bar__title {
@@ -674,6 +683,7 @@ ul li {
 
 .document-component table {
   margin-left: -16px;
+  min-width: 37rem;
 }
 
 .document-component table th {
@@ -690,12 +700,12 @@ ul li {
   width: 100%;
 }
 
-@media (min-width: 37.5rem) {
-}
+/**
+ * Code Examples
+ */
 
 .live-example {
-  display: flex;
-  margin: 0 -3rem;
+  margin: 0 -1.5rem;
   background-color: rgba(0, 0, 100, 0.03);
   padding: 0.25rem 0;
 }
@@ -704,7 +714,7 @@ ul li {
 }
 
 .live-example:hover .live-editor {
-  background: #f1f1f5;
+  background: #eaeaef;
 }
 
 .live-preview {
@@ -712,9 +722,7 @@ ul li {
   padding: 0.5rem 1rem;
   align-items: center;
   display: flex;
-  padding-left: 3rem;
   position: relative;
-  max-width: 50%;
   box-sizing: border-box;
 }
 
@@ -733,8 +741,8 @@ ul li {
   flex: 1;
   color: #343c5a;
   position: relative;
-  margin-right: 1.5rem;
   display: flex;
+  box-sizing: border-box;
 }
 
 .live-editor > * {
@@ -761,6 +769,35 @@ ul li {
   display: none;
 }
 
+@media (min-width: 37.5rem) {
+  .live-example {
+    display: flex;
+    margin: 0 -3rem;
+  }
+
+  .live-example:not(.live-example-code-only) .live-preview,
+  .live-example:not(.live-example-code-only) .live-editor {
+    max-width: 50%;
+    min-width: 50%;
+  }
+
+  .live-preview {
+    padding-left: 3rem;
+  }
+
+  .live-editor {
+    margin-right: 1.5rem;
+  }
+
+  .live-example-code-only .live-editor textarea,
+  .live-example-code-only .live-editor pre {
+    padding: 1.5rem 3rem !important;
+  }
+}
+
+/**
+ * Code Styles
+ */
 .live-editor code[class*='language-'],
 .live-editor pre[class*='language-'] {
   color: #343c5a !important;

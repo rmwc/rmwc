@@ -51,7 +51,7 @@ export interface MenuSurfaceProps {
 /****************************************************************
  * MenuSurface
  ****************************************************************/
-export const MenuSurfaceRoot = componentFactory<{}>({
+const MenuSurfaceRoot = componentFactory<{}>({
   displayName: 'MenuSurfaceRoot',
   classNames: (props: MenuSurfaceProps) => [
     'mdc-menu-surface',

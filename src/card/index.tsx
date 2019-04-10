@@ -6,9 +6,7 @@ import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
-/****************************************************************
- * Card
- ****************************************************************/
+/** A Card Component */
 export interface CardProps {
   /** Removes the shadow and displays a hairline outline instead */
   outlined?: boolean;
@@ -26,9 +24,7 @@ export const Card = componentFactory<CardProps>({
   consumeProps: ['outlined']
 });
 
-/****************************************************************
- * Card Media
- ****************************************************************/
+/** Media area that displays a custom background-image with background-size: cover */
 export interface CardMediaProps {
   /** Automatically scales the media area’s height to equal its width */
   square?: boolean;
@@ -51,24 +47,28 @@ export const CardMedia = componentFactory<CardMediaProps>({
 });
 
 /** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
-export const CardMediaContent = componentFactory<{}>({
+export interface CardMediaContentProps {}
+
+/** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
+export const CardMediaContent = componentFactory<CardMediaContentProps>({
   displayName: 'CardMediaContent',
   classNames: ['mdc-card__media-content']
 });
 
 /** The main clickable area for the primary content of the card */
+export interface CardPrimaryActionProps {}
+
+/** The main clickable area for the primary content of the card */
 export const CardPrimaryAction = withRipple({
   surface: false
 })(
-  componentFactory<{}>({
+  componentFactory<CardPrimaryActionProps>({
     displayName: 'CardPrimaryAction',
     classNames: ['mdc-card__primary-action']
   })
 );
 
-/****************************************************************
- * Card Actions
- ****************************************************************/
+/** Row containing action buttons and/or icons */
 export interface CardActionsProps {
   /** Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width */
   fullBleed?: boolean;
@@ -86,17 +86,24 @@ export const CardActions = componentFactory<CardActionsProps>({
 });
 
 /** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
-export const CardActionButtons = componentFactory<{}>({
+export interface CardActionButtonsProps {}
+
+/** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
+export const CardActionButtons = componentFactory<CardActionButtonsProps>({
   displayName: 'CardActionButtons',
   classNames: ['mdc-card__action-buttons']
 });
 
 /** A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons */
-export const CardActionIcons = componentFactory<{}>({
+export interface CardActionIconsProps {}
+
+/** A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons */
+export const CardActionIcons = componentFactory<CardActionIconsProps>({
   displayName: 'CardActionIcons',
   classNames: ['mdc-card__action-icons']
 });
 
+/** A card action Icon */
 export interface CardActionIconProps extends IconButtonProps {}
 
 /** A card action Icon */
@@ -106,6 +113,7 @@ export const CardActionIcon = componentFactory<CardActionIconProps>({
   classNames: ['mdc-card__action', 'mdc-card__action--icon']
 });
 
+/** A card action Button */
 export interface CardActionButtonProps extends ButtonProps {}
 
 /** A card action Button */

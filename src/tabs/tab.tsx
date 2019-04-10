@@ -10,6 +10,7 @@ import { withRipple, RippleSurface } from '@rmwc/ripple';
 import { withTabBarContext, TabBarContextT } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';
 
+/** A Tab component */
 export interface TabProps {
   /** A label for the tab. */
   label?: any;
@@ -25,7 +26,7 @@ export interface TabProps {
   onInteraction?: (evt: RMWC.CustomEventT<{ tabId: string }>) => void;
 }
 
-export const TabRoot = withRipple({ surface: false })(
+const TabRoot = withRipple({ surface: false })(
   componentFactory<TabProps>({
     displayName: 'TabRoot',
     tag: 'button',
@@ -40,7 +41,7 @@ export const TabRoot = withRipple({ surface: false })(
 );
 
 /** A Tab icon. This is an instance of the Icon component. */
-export const TabIcon = componentFactory<IconProps>({
+const TabIcon = componentFactory<IconProps>({
   displayName: 'TabIcon',
   tag: Icon,
   classNames: ['mdc-tab__icon']
@@ -52,7 +53,7 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
     MDCTabFoundation,
     TabProps & { contextApi?: TabBarContextT }
   > {
-    static displayName = 'Tab';
+    static displayName = 'TabFoundation';
 
     _id = randomId('tab');
     private root = this.createElement('root');
@@ -187,3 +188,5 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
     }
   }
 );
+
+Tab.displayName = 'Tab';

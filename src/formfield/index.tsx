@@ -6,6 +6,7 @@ import { MDCFormFieldFoundation } from '@material/form-field';
 import { FoundationComponent } from '@rmwc/base';
 import { componentFactory } from '@rmwc/base';
 
+/** A FormField component. */
 export interface FormFieldProps {
   /** Position the input after the label. */
   alignEnd?: boolean;
@@ -25,6 +26,7 @@ export const FormFieldRoot = componentFactory<FormFieldProps>({
   consumeProps: ['alignEnd']
 });
 
+/** A FormField component. */
 export class FormField extends FoundationComponent<
   MDCFormFieldFoundation,
   FormFieldProps

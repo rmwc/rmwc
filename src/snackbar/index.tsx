@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
-import { Button } from '@rmwc/button';
+import { Button, ButtonProps } from '@rmwc/button';
 import {
   componentFactory,
   FoundationComponent,
@@ -10,6 +10,7 @@ import {
 } from '@rmwc/base';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
+/** A Snackbar component for notifications. */
 export interface SnackbarProps {
   /** Show the Snackbar. */
   open?: boolean;
@@ -52,7 +53,7 @@ export interface DeprecatedSnackbarProps {
   actionText?: React.ReactNode;
 }
 
-const SnackbarRoot = componentFactory({
+const SnackbarRoot = componentFactory<{}>({
   displayName: 'SnackbarRoot',
   classNames: (props: SnackbarProps) => [
     'mdc-snackbar',
@@ -70,7 +71,7 @@ const SnackbarRoot = componentFactory({
   consumeProps: ['leading', 'stacked']
 });
 
-const SnackbarLabel = componentFactory({
+const SnackbarLabel = componentFactory<{}>({
   displayName: 'SnackbarText',
   classNames: ['mdc-snackbar__label'],
   defaultProps: {
@@ -79,26 +80,28 @@ const SnackbarLabel = componentFactory({
   }
 });
 
-const SnackbarActions = componentFactory({
+const SnackbarActions = componentFactory<{}>({
   displayName: 'SnackbarActions',
   classNames: ['mdc-snackbar__actions']
 });
 
-export const SnackbarAction = componentFactory({
+/** A button for a snackbar action. */
+export interface SnackbarAction extends ButtonProps {}
+
+/** A button for a snackbar action. */
+export const SnackbarAction = componentFactory<SnackbarAction>({
   displayName: 'SnackbarAction',
   tag: Button,
   classNames: ['mdc-snackbar__action']
 });
 
-export const SnackbarDismiss = componentFactory<IconButtonProps>({
+const SnackbarDismiss = componentFactory<IconButtonProps>({
   displayName: 'SnackbarDismiss',
   tag: IconButton,
   classNames: ['mdc-snackbar__dismiss']
 });
 
-/**
- * A Snackbar component for notifications.
- */
+/** A Snackbar component for notifications. */
 export class Snackbar extends FoundationComponent<
   MDCSnackbarFoundation,
   SnackbarProps & DeprecatedSnackbarProps

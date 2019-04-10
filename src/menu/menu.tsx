@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { MDCMenuFoundation, Corner } from '@material/menu';
 
-import { List, ListItem, ListItemProps } from '@rmwc/list';
+import { List, ListItem, ListItemProps, ListProps } from '@rmwc/list';
 import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 
 import {
@@ -16,6 +16,7 @@ import {
  * Menu
  ****************************************************************/
 
+/** A menu component for displaying lists items. */
 export interface MenuProps extends MenuSurfaceProps {
   /** Callback that fires when a Menu item is selected. */
   onSelect?: (
@@ -26,22 +27,11 @@ export interface MenuProps extends MenuSurfaceProps {
   ) => void;
 }
 
-export const MenuRoot = componentFactory<MenuProps>({
-  displayName: 'MenuRoot',
-  classNames: (props: MenuProps) => [
-    'mdc-menu',
-    'mdc-menu-surface',
-    {
-      'mdc-menu-surface--fixed': props.fixed
-    }
-  ],
-  consumeProps: ['fixed'],
-  defaultProps: {
-    tabIndex: -1
-  }
-});
+/** A wrapper for menu items */
+export interface MenuItemsProps extends ListProps {}
 
-export const MenuItems = componentFactory<{}>({
+/** A wrapper for menu items */
+export const MenuItems = componentFactory<MenuItemsProps>({
   displayName: 'MenuItems',
   tag: List,
   classNames: ['mdc-list mdc-menu__items'],
@@ -50,7 +40,8 @@ export const MenuItems = componentFactory<{}>({
   }
 });
 
-interface MenuItemProps extends ListItemProps {}
+/** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
+export interface MenuItemProps extends ListItemProps {}
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export const MenuItem = componentFactory<MenuItemProps>({
@@ -193,6 +184,8 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
 /****************************************************************
  * Simple Menu
  ****************************************************************/
+
+/** A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor */
 export interface SimpleMenuProps extends MenuProps {
   /** An element that will open the menu when clicked  */
   handle: React.ReactElement<any>;
@@ -202,6 +195,7 @@ export interface SimpleMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
+/** The same as SimpleMenu, but a generic surface. */
 export interface SimpleMenuSurfaceProps extends MenuSurfaceProps {
   /** An element that will open the menu when clicked  */
   handle: React.ReactElement<any>;
@@ -281,14 +275,10 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
     }
   };
 
-/**
- * A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
- */
+/** A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor */
 export const SimpleMenu = simpleMenuFactory<SimpleMenuProps>(Menu);
 
-/**
- * The same as SimpleMenu, but a generic surface.
- */
+/** The same as SimpleMenu, but a generic surface. */
 export const SimpleMenuSurface = simpleMenuFactory<SimpleMenuSurfaceProps>(
   MenuSurface
 );

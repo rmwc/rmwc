@@ -183,30 +183,30 @@ execSync(
   }
 );
 
-glob(
-  `build/dist/**/*.d.ts`,
-  { cwd: root, ignore: 'build/dist/rmwc/**/*' },
-  (err, files) => {
-    files.forEach(f => {
-      const input = path.resolve(root, f);
-      const outDir = path.resolve(path.dirname(input), 'flow-typed');
-      const pkg = f.split(path.sep).slice(2, 3)[0];
-      const restPath = f.split(path.sep).slice(3);
+// glob(
+//   `build/dist/**/*.d.ts`,
+//   { cwd: root, ignore: 'build/dist/rmwc/**/*' },
+//   (err, files) => {
+//     files.forEach(f => {
+//       const input = path.resolve(root, f);
+//       const outDir = path.resolve(path.dirname(input), 'flow-typed');
+//       const pkg = f.split(path.sep).slice(2, 3)[0];
+//       const restPath = f.split(path.sep).slice(3);
 
-      if (pkg.includes('.')) {
-        return;
-      }
+//       if (pkg.includes('.')) {
+//         return;
+//       }
 
-      const output = path
-        .resolve('src', 'types', 'flow-typed', pkg, ...restPath)
-        .replace('.d.ts', '.js');
+//       const output = path
+//         .resolve('src', 'types', 'flow-typed', pkg, ...restPath)
+//         .replace('.d.ts', '.js');
 
-      execSync(`mkdir -p ${path.dirname(output)}`);
+//       execSync(`mkdir -p ${path.dirname(output)}`);
 
-      //writeFlowFile(input, output, pkg);
-    });
-  }
-);
+//       //writeFlowFile(input, output, pkg);
+//     });
+//   }
+// );
 
 const promises = getPackageDirs().map(d => {
   return new Promise((resolve, reject) => {

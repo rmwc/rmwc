@@ -1,17 +1,22 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '../doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { List, ListItem, SimpleListItem } from '.';
 import {
+  List,
+  ListItem,
   ListItemText,
   ListItemPrimaryText,
   ListItemSecondaryText,
   ListItemGraphic,
-  ListItemMeta
-} from '../rmwc';
+  ListItemMeta,
+  ListDivider,
+  ListGroup,
+  ListGroupSubheader,
+  SimpleListItem
+} from '.';
 
 export default function() {
   return (
@@ -97,16 +102,16 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          'List',
-          'ListItem',
-          'ListItemPrimaryText',
-          'ListItemSecondaryText',
-          'ListItemGraphic',
-          'ListItemMeta',
-          'ListDivider',
-          'ListGroup',
-          'ListGroupSubheader',
-          'SimpleListItem'
+          List,
+          ListItem,
+          ListItemPrimaryText,
+          ListItemSecondaryText,
+          ListItemGraphic,
+          ListItemMeta,
+          ListDivider,
+          ListGroup,
+          ListGroupSubheader,
+          SimpleListItem
         ]}
       />
     </Docs>

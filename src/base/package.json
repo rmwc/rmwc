@@ -38,5 +38,8 @@
     "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3"
   },
+  "devDependencies": {
+    "@types/classnames": "^2.2.7"
+  },
   "gitHead": "c9f965e8c82b587888f61a430c06b78c28969d1c"
 }

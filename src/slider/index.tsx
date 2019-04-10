@@ -5,6 +5,7 @@ import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCSliderFoundation } from '@material/slider';
 import { componentFactory, FoundationComponent, debounce } from '@rmwc/base';
 
+/** A Slider component. */
 export interface SliderProps {
   /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
   onChange?: (
@@ -119,6 +120,7 @@ type SliderState = {
   trackMarkersCount: number;
 };
 
+/** A Slider component. */
 export class Slider extends FoundationComponent<
   MDCSliderFoundation,
   SliderProps,
@@ -128,6 +130,7 @@ export class Slider extends FoundationComponent<
     trackMarkersCount: 0,
     pinContainerStyle: {}
   };
+  static displayName = 'Slider';
 
   private root = this.createElement('root');
   private thumbContainer = this.createElement('thumbContainer');

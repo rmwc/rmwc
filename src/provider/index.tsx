@@ -6,6 +6,7 @@ import { deprecationWarning } from '@rmwc/base';
 // eslint-disable-next-line max-len
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
+/** A provider for setting global options in RMWC. */
 export interface RMWCProviderProps {
   /** Set the buttons ripple effect globally */
   ripple?: boolean;
@@ -67,10 +68,7 @@ export const withProviderContext = () => <P extends {}>(
   >;
 };
 
-/**
- * Provides default options for children
- * Prop override options in providerDefaults with the same name
- */
+/** A provider for setting global options in RMWC. */
 export const RMWCProvider = ({
   children,
   iconClassNameBase,

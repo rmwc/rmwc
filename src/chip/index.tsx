@@ -12,6 +12,7 @@ import {
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
+/** A Chip component. */
 export interface ChipProps {
   /** Text for your Chip. */
   label?: React.ReactNode;
@@ -277,6 +278,7 @@ export const ChipIcon = (props: ChipIconProps & RMWC.ComponentProps) => {
 
 ChipIcon.displayName = 'ChipIcon';
 
+/** A container for multiple chips. */
 export interface ChipSetProps {
   /** Creates a choice chipset */
   choice?: boolean;

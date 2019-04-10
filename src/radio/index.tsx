@@ -8,6 +8,7 @@ import {
   ToggleableFoundationProps
 } from '@rmwc/toggleable';
 
+/** A Radio button component. */
 export interface RadioProps
   extends RMWC.WithRippleProps,
     ToggleableFoundationProps {}

@@ -2,6 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory, classNames } from '@rmwc/base';
 
+/** A collapsible list component. */
 export interface CollapsibleListProps {
   /** The handle that opens and closes the collapsible section. Usually a ListItem. */
   handle: React.ReactElement<any>;
@@ -51,10 +52,13 @@ const getNextSibling = (
   return next as HTMLElement;
 };
 
+/** A collapsible list component. */
 export class CollapsibleList extends React.Component<
   CollapsibleListProps & RMWC.ComponentProps,
   CollapsibleState
 > {
+  static displayName = 'CollapsibleList';
+
   static getDerivedStateFromProps(
     props: CollapsibleListProps,
     state: CollapsibleState
