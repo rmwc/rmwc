@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/rmwc/static/js/0.e45e1f29.chunk.js"
   },
   {
-    "revision": "e0e8eff87a767f62854f",
+    "revision": "c021cdf38d5a6f1106b4",
     "url": "/rmwc/static/css/main.d4cd0807.chunk.css"
   },
   {
-    "revision": "e0e8eff87a767f62854f",
-    "url": "/rmwc/static/js/main.039e7680.chunk.js"
+    "revision": "c021cdf38d5a6f1106b4",
+    "url": "/rmwc/static/js/main.d485fd20.chunk.js"
   },
   {
     "revision": "a4e28cdbcab0279185ec",
@@ -196,7 +196,7 @@ self.__precacheManifest = [
     "url": "/rmwc/static/media/README-TYPES.35bcc832.md"
   },
   {
-    "revision": "ed9b1cb5a10eaa28ccb6fc48fcf2b272",
+    "revision": "1c322e11d38cacee47fef72c2fb52214",
     "url": "/rmwc/index.html"
   }
 ];
