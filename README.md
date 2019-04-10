@@ -27,6 +27,7 @@ Features:
 
 ## Recent updates
 
+V5.3.0 is up. Other than some internal cleanup, the major change is some bright shiny new docs with better examples, and live editing. Enjoy!
 
 V5 is officially out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless.
 
