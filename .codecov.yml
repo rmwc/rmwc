@@ -7,3 +7,5 @@ ignore:
   - 'src/rmwc/**/*'
   - 'src/**/*.story.*'
   - 'src/**/*.spec.*'
+  - 'src/**/readme*'
+  - 'src/doc-utils*'

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useState, useContext, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -5,7 +6,6 @@ import { createPortal } from 'react-dom';
 import { Typography } from './rmwc';
 import * as rmwc from './rmwc';
 
-/* istanbul ignore file */
 interface DocumentComponentProps {
   docs: { [key: string]: any };
   displayName: string;

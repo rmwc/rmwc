@@ -104,7 +104,9 @@ const jestCoverage = config => {
     '!src/setupTests.tsx',
     '!src/rmwc/**/*',
     '!src/**/*.story.*',
-    '!src/**/*.spec.*'
+    '!src/**/*.spec.*',
+    '!src/**/readme*',
+    '!src/doc-utils*'
   ]);
   return config;
 };

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { useState } from 'react';
 import * as knobTypes from '@storybook/addon-knobs';
 

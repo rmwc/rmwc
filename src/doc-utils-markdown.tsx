@@ -1,7 +1,7 @@
+/* istanbul ignore file */
 import React, { useState, useContext, useEffect } from 'react';
 import * as rmwc from './rmwc';
 
-/* istanbul ignore file */
 interface DocumentComponentProps {
   docs: { [key: string]: any };
   displayName: string;
