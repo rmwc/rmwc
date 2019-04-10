@@ -257,6 +257,12 @@ const IFrame = ({
   useEffect(() => {
     if (headNode) {
       headNode.innerHTML = document.head.innerHTML;
+      const nodes: Element[] = [];
+      document.body
+        .querySelectorAll('link[rel="stylesheet"]')
+        .forEach(n => nodes.push(n));
+      document.body.querySelectorAll('script[src]').forEach(n => nodes.push(n));
+      nodes.forEach(n => headNode.appendChild(n));
     }
 
     if (mountNode) {
@@ -265,7 +271,7 @@ const IFrame = ({
         setCanMount(true);
       });
     }
-  });
+  }, [headNode, mountNode]);
 
   return (
     <iframe {...props} ref={setContentRef} className="docs-iframe">
