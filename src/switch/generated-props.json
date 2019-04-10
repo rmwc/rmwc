@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Switch",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L64",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L64",
       "extends": [
         "ToggleableFoundationComponent<MDCSwitchFoundation, SwitchProps>"
       ],
@@ -305,13 +305,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L77",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L77",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L77",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -319,7 +319,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -335,7 +335,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -474,7 +474,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -490,7 +490,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -587,7 +587,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -603,7 +603,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -629,7 +629,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -652,7 +652,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -690,7 +690,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": false,
+                    "isOptional": true,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -699,12 +699,11 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
+                  "type": "undefined | false | true"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
             }
           ]
         },
@@ -722,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L87",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L87",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L87",
               "parameters": [],
               "returnType": "MDCSwitchFoundation",
               "type": "() => MDCSwitchFoundation"
@@ -813,13 +812,13 @@
           },
           "kind": "method",
           "name": "handleChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L98",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L98",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "handleChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L98",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L98",
               "parameters": [
                 {
                   "flags": {
@@ -856,13 +855,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L121",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L121",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L121",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L121",
               "parameters": [],
               "returnType": "undefined | null | {}",
               "type": "() => undefined | null | {}"
@@ -870,7 +869,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -886,7 +885,7 @@
           "inheritedFrom": "ToggleableFoundationComponent.renderToggle",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
               "kind": "signature",
               "name": "renderToggle",
               "parameters": [
@@ -906,8 +905,8 @@
                   "type": "React.ReactNode"
                 }
               ],
-              "returnType": "undefined | null | {}",
-              "type": "(toggle: React.ReactNode) => undefined | null | {}"
+              "returnType": "{} | null | undefined",
+              "type": "(toggle: React.ReactNode) => {} | null | undefined"
             }
           ]
         },
@@ -1004,13 +1003,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L103",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L103",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L103",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L103",
               "parameters": [
                 {
                   "flags": {
@@ -1049,7 +1048,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1065,7 +1064,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1121,7 +1120,7 @@
           ]
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1137,7 +1136,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1162,12 +1161,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L68",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L68",
           "defaultValue": "\"Switch\"",
           "type": "string"
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1180,12 +1179,11 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
-          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1202,7 +1200,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1219,7 +1217,7 @@
           "type": "MDCSwitchFoundation"
         },
         {
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1232,7 +1230,6 @@
           },
           "kind": "property",
           "name": "generatedId",
-          "defaultValue": " randomId(this.constructor.displayName)",
           "inheritedFrom": "ToggleableFoundationComponent.generatedId",
           "type": "string"
         }
@@ -1251,13 +1248,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L70",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L70",
         "signatures": [
           {
             "fileName": "src/switch/index.tsx",
             "kind": "signature",
             "name": "new Switch",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L70",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L70",
             "parameters": [
               {
                 "flags": {
@@ -1302,7 +1299,7 @@
       },
       "kind": "interface",
       "name": "SwitchProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/switch/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/switch/index.tsx#L12",
       "extends": [
         "WithRippleProps",
         "ToggleableFoundationProps"
@@ -1317,7 +1314,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/types/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1341,7 +1338,7 @@
             "contentsRaw": "Toggle the control on and off.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1365,7 +1362,7 @@
             "contentsRaw": "Disables the control.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1389,7 +1386,7 @@
             "contentsRaw": "A DOM ID for the toggle.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1413,7 +1410,7 @@
             "contentsRaw": "A reference to the native input.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1437,7 +1434,7 @@
             "contentsRaw": "A label for the control.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1461,7 +1458,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/types/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1485,7 +1482,7 @@
             "contentsRaw": "By default, all props except className and style spread to the input. These are additional props for the root of the checkbox.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1509,7 +1506,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/types/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1533,7 +1530,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/types/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/types/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1557,7 +1554,7 @@
             "contentsRaw": "The value of the control.",
             "metadata": {}
           },
-          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/dist/index.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,

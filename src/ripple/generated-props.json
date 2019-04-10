@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Ripple",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L42",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L42",
       "extends": [
         "FoundationComponent<MDCRippleFoundation, RippleProps>"
       ],
@@ -241,13 +241,13 @@
           },
           "kind": "method",
           "name": "activateRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L172",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L172",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "activateRipple",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L172",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L172",
               "parameters": [
                 {
                   "flags": {
@@ -335,7 +335,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -351,7 +351,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -361,7 +361,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -377,7 +377,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -516,7 +516,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -532,7 +532,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -629,7 +629,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -645,7 +645,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -684,13 +684,13 @@
           },
           "kind": "method",
           "name": "deactivateRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L178",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L178",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "deactivateRipple",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L178",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L178",
               "parameters": [
                 {
                   "flags": {
@@ -714,7 +714,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -737,7 +737,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -775,7 +775,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": false,
+                    "isOptional": true,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -784,12 +784,11 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
+                  "type": "undefined | false | true"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
             }
           ]
         },
@@ -807,13 +806,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L65",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L65",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L65",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L65",
               "parameters": [],
               "returnType": "MDCRippleFoundation",
               "type": "() => MDCRippleFoundation"
@@ -898,13 +897,13 @@
           },
           "kind": "method",
           "name": "handleBlur",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L137",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleBlur",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L137",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L137",
               "parameters": [
                 {
                   "flags": {
@@ -941,13 +940,13 @@
           },
           "kind": "method",
           "name": "handleFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L132",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L132",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L132",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L132",
               "parameters": [
                 {
                   "flags": {
@@ -984,13 +983,13 @@
           },
           "kind": "method",
           "name": "handleKeyDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L162",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L162",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleKeyDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L162",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L162",
               "parameters": [
                 {
                   "flags": {
@@ -1027,13 +1026,13 @@
           },
           "kind": "method",
           "name": "handleKeyUp",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L167",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L167",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleKeyUp",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L167",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L167",
               "parameters": [
                 {
                   "flags": {
@@ -1070,13 +1069,13 @@
           },
           "kind": "method",
           "name": "handleMouseDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L142",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleMouseDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L142",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L142",
               "parameters": [
                 {
                   "flags": {
@@ -1113,13 +1112,13 @@
           },
           "kind": "method",
           "name": "handleMouseUp",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L147",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L147",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleMouseUp",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L147",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L147",
               "parameters": [
                 {
                   "flags": {
@@ -1156,13 +1155,13 @@
           },
           "kind": "method",
           "name": "handleTouchEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L157",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L157",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleTouchEnd",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L157",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L157",
               "parameters": [
                 {
                   "flags": {
@@ -1199,13 +1198,13 @@
           },
           "kind": "method",
           "name": "handleTouchStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L152",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L152",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "handleTouchStart",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L152",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L152",
               "parameters": [
                 {
                   "flags": {
@@ -1242,13 +1241,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L184",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L184",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L184",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L184",
               "parameters": [],
               "returnType": "null | Element",
               "type": "() => null | Element"
@@ -1348,13 +1347,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L124",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L124",
           "signatures": [
             {
               "fileName": "src/ripple/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L124",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L124",
               "parameters": [
                 {
                   "flags": {
@@ -1393,7 +1392,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1409,7 +1408,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1465,7 +1464,7 @@
           ]
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1481,7 +1480,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1506,7 +1505,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L47",
           "defaultValue": "\"Ripple\"",
           "type": "string"
         },
@@ -1524,12 +1523,12 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L46",
           "defaultValue": "true",
           "type": "boolean"
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1546,7 +1545,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/ripple/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1577,13 +1576,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L50",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L50",
         "signatures": [
           {
             "fileName": "src/ripple/index.tsx",
             "kind": "signature",
             "name": "new Ripple",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L50",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L50",
             "parameters": [
               {
                 "flags": {
@@ -1621,7 +1620,7 @@
       },
       "kind": "interface",
       "name": "RippleSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L14",
       "methods": [],
       "properties": [
         {
@@ -1638,7 +1637,7 @@
           },
           "kind": "property",
           "name": "className",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L15",
           "type": "string"
         },
         {
@@ -1655,7 +1654,7 @@
           },
           "kind": "property",
           "name": "style",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L16",
           "type": "CSSProperties"
         }
       ]
@@ -1681,7 +1680,7 @@
       },
       "kind": "interface",
       "name": "RippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L20",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L20",
       "methods": [],
       "properties": [
         {
@@ -1705,7 +1704,7 @@
           },
           "kind": "property",
           "name": "accent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L26",
           "type": "undefined | false | true"
         },
         {
@@ -1729,7 +1728,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L28",
           "type": "undefined | false | true"
         },
         {
@@ -1753,7 +1752,7 @@
           },
           "kind": "property",
           "name": "primary",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L24",
           "type": "undefined | false | true"
         },
         {
@@ -1777,7 +1776,7 @@
           },
           "kind": "property",
           "name": "surface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -1801,7 +1800,7 @@
           },
           "kind": "property",
           "name": "unbounded",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/ripple/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/ripple/index.tsx#L22",
           "type": "undefined | false | true"
         }
       ]

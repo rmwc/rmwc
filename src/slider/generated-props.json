@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Slider",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L124",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L124",
       "extends": [
         "FoundationComponent<MDCSliderFoundation, SliderProps, SliderState>"
       ],
@@ -305,13 +305,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L140",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L140",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L140",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -319,7 +319,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -335,7 +335,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -474,7 +474,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -490,7 +490,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -587,7 +587,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -603,7 +603,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -629,7 +629,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -652,7 +652,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -690,7 +690,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": false,
+                    "isOptional": true,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -699,12 +699,11 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
+                  "type": "undefined | false | true"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
             }
           ]
         },
@@ -722,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L276",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L276",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L276",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L276",
               "parameters": [],
               "returnType": "MDCSliderFoundation",
               "type": "() => MDCSliderFoundation"
@@ -813,13 +812,13 @@
           },
           "kind": "method",
           "name": "layout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L224",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L224",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "layout",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L224",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L224",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -840,13 +839,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L375",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L375",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L375",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L375",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -946,13 +945,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L228",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L228",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L228",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L228",
               "parameters": [
                 {
                   "flags": {
@@ -991,7 +990,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1007,7 +1006,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1063,7 +1062,7 @@
           ]
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1079,7 +1078,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1104,12 +1103,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L133",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L133",
           "defaultValue": "\"Slider\"",
           "type": "string"
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1122,12 +1121,11 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
-          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1144,7 +1142,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1174,13 +1172,13 @@
           },
           "kind": "property",
           "name": "track",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L138",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         }
       ],
       "constructorType": {
-        "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+        "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1196,7 +1194,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/slider/node_modules/@rmwc/base/foundation-component.tsx",
+            "fileName": "src/slider/node_modules/@rmwc/base/dist/foundation-component.d.ts",
             "kind": "signature",
             "name": "new Slider",
             "parameters": [
@@ -1243,7 +1241,7 @@
       },
       "kind": "interface",
       "name": "SliderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L9",
       "methods": [],
       "properties": [
         {
@@ -1267,7 +1265,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L35",
           "type": "undefined | false | true"
         },
         {
@@ -1291,7 +1289,7 @@
           },
           "kind": "property",
           "name": "discrete",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L31",
           "type": "undefined | false | true"
         },
         {
@@ -1315,7 +1313,7 @@
           },
           "kind": "property",
           "name": "displayMarkers",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -1339,7 +1337,7 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L27",
           "type": "number | string"
         },
         {
@@ -1363,7 +1361,7 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L25",
           "type": "number | string"
         },
         {
@@ -1387,7 +1385,7 @@
           },
           "kind": "property",
           "name": "onChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L11",
           "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
         },
         {
@@ -1411,7 +1409,7 @@
           },
           "kind": "property",
           "name": "onInput",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L17",
           "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
         },
         {
@@ -1435,7 +1433,7 @@
           },
           "kind": "property",
           "name": "step",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L29",
           "type": "number | string"
         },
         {
@@ -1459,7 +1457,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/slider/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/slider/index.tsx#L23",
           "type": "number | string"
         }
       ]

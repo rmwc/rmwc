@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "FormField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L30",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L30",
       "extends": [
         "FoundationComponent<MDCFormFieldFoundation, FormFieldProps>"
       ],
@@ -292,7 +292,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -308,7 +308,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -473,7 +473,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -489,7 +489,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -586,7 +586,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -602,7 +602,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -689,7 +689,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": false,
+                    "isOptional": true,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -698,12 +698,11 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
+                  "type": "undefined | false | true"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
             }
           ]
         },
@@ -721,13 +720,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L36",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L36",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L36",
               "parameters": [],
               "returnType": "MDCFormFieldFoundation",
               "type": "() => MDCFormFieldFoundation"
@@ -812,13 +811,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L53",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L53",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L53",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -905,7 +904,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -921,7 +920,7 @@
           "inheritedFrom": "FoundationComponent.sync",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "sync",
               "parameters": [
@@ -962,7 +961,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -978,7 +977,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1034,7 +1033,7 @@
           ]
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1050,7 +1049,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1075,12 +1074,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L34",
           "defaultValue": "\"FormField\"",
           "type": "string"
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1093,12 +1092,11 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
-          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1115,7 +1113,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1133,7 +1131,7 @@
         }
       ],
       "constructorType": {
-        "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+        "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1149,7 +1147,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/formfield/node_modules/@rmwc/base/foundation-component.tsx",
+            "fileName": "src/formfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
             "kind": "signature",
             "name": "new FormField",
             "parameters": [
@@ -1196,7 +1194,7 @@
       },
       "kind": "interface",
       "name": "FormFieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -1220,7 +1218,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/formfield/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/formfield/index.tsx#L12",
           "type": "undefined | false | true"
         }
       ]

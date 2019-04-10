@@ -1,3 +1,14 @@
+#### 5.3.0 (2019-04-10)
+
+##### Bug Fixes
+
+* **TopAppBar:**  Improving usage in iframes (6d862e61)
+* **Toolbar:**
+  *  Improved usage in different window contexts (1624c298)
+  *  Corrects regressions and missing behaviors (ba929568)
+* **Menu:**  Adding ComponentProps to type signature of SimpleMenu (a801a089)
+* **TestPolyfill:**  Adding scrollTo mock if not present for JSDOM (8741ce93)
+
 #### 5.2.2 (2019-04-02)
 
 ##### Chores

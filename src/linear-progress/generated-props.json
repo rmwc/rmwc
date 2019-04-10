@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "LinearProgress",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L69",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L69",
       "extends": [
         "FoundationComponent<MDCLinearProgressFoundation, LinearProgressProps & DeprecatedLinearProgressProps>"
       ],
@@ -292,7 +292,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -308,7 +308,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -473,7 +473,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -489,7 +489,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -586,7 +586,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -602,7 +602,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -689,7 +689,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": false,
+                    "isOptional": true,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -698,12 +698,11 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
+                  "type": "undefined | false | true"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
             }
           ]
         },
@@ -721,13 +720,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L84",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L84",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L84",
               "parameters": [],
               "returnType": "MDCLinearProgressFoundation",
               "type": "() => MDCLinearProgressFoundation"
@@ -812,13 +811,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L145",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L145",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L145",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -918,13 +917,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L107",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L107",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L107",
               "parameters": [
                 {
                   "flags": {
@@ -963,7 +962,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -979,7 +978,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1035,7 +1034,7 @@
           ]
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1051,7 +1050,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+              "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1076,12 +1075,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L73",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L73",
           "defaultValue": "\"LinearProgress\"",
           "type": "string"
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1094,7 +1093,6 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
-          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
@@ -1112,12 +1110,12 @@
           },
           "kind": "property",
           "name": "determinate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L82",
           "defaultValue": " null",
           "type": "boolean | null"
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1134,7 +1132,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+          "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1152,7 +1150,7 @@
         }
       ],
       "constructorType": {
-        "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+        "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1168,7 +1166,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/linear-progress/node_modules/@rmwc/base/foundation-component.tsx",
+            "fileName": "src/linear-progress/node_modules/@rmwc/base/dist/foundation-component.d.ts",
             "kind": "signature",
             "name": "new LinearProgress",
             "parameters": [
@@ -1215,7 +1213,7 @@
       },
       "kind": "interface",
       "name": "LinearProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -1239,7 +1237,7 @@
           },
           "kind": "property",
           "name": "buffer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L15",
           "type": "undefined | number"
         },
         {
@@ -1263,7 +1261,7 @@
           },
           "kind": "property",
           "name": "closed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L19",
           "type": "undefined | false | true"
         },
         {
@@ -1287,7 +1285,7 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L13",
           "type": "undefined | number"
         },
         {
@@ -1311,7 +1309,7 @@
           },
           "kind": "property",
           "name": "reversed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L17",
           "type": "undefined | false | true"
         }
       ]
@@ -1330,7 +1328,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedLinearProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L22",
       "methods": [],
       "properties": [
         {
@@ -1354,7 +1352,7 @@
           },
           "kind": "property",
           "name": "determinate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/linear-progress/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/linear-progress/index.tsx#L24",
           "type": "undefined | false | true"
         }
       ]

@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "RMWCProviderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L16",
           "type": "React.ReactNode"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L14",
           "type": "Partial<IconOptions>"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L12",
           "type": "undefined | false | true"
         }
       ]
@@ -113,7 +113,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedRMWCProviderPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L19",
       "methods": [],
       "properties": [
         {
@@ -137,7 +137,7 @@
           },
           "kind": "property",
           "name": "buttonDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L21",
           "type": "undefined | false | true"
         },
         {
@@ -161,7 +161,7 @@
           },
           "kind": "property",
           "name": "iconClassNameBase",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L25",
           "type": "undefined | string"
         },
         {
@@ -185,7 +185,7 @@
           },
           "kind": "property",
           "name": "iconClassNamePrefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L27",
           "type": "undefined | string"
         },
         {
@@ -209,7 +209,7 @@
           },
           "kind": "property",
           "name": "iconRender",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L31",
           "type": "undefined | (props: ) => React.ReactNode"
         },
         {
@@ -233,7 +233,7 @@
           },
           "kind": "property",
           "name": "iconStrategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L29",
           "type": "IconStrategyT"
         },
         {
@@ -257,7 +257,7 @@
           },
           "kind": "property",
           "name": "listItemDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L23",
           "type": "undefined | false | true"
         }
       ]
@@ -276,7 +276,7 @@
       },
       "kind": "interface",
       "name": "WithProviderContext",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L49",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L49",
       "methods": [],
       "properties": [
         {
@@ -293,7 +293,7 @@
           },
           "kind": "property",
           "name": "providerContext",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/f803aa881/src/provider/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/provider/index.tsx#L50",
           "type": "RMWCProviderProps"
         }
       ]
