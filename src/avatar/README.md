@@ -150,12 +150,12 @@ An Avatar component for displaying users in a system.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `contain` | `undefined | false | true` | Contain the avatar image instead of covering. |
-| `interactive` | `undefined | false | true` | Make the avatar interactive. |
-| `name` | `undefined | string` | The name of the user. This will get converted to initials and set the hover title. |
+| `contain` | `undefined \| false \| true` | Contain the avatar image instead of covering. |
+| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
+| `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
 | `size` | `RMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined | false | true` | Make the avatar square. |
-| `src` | `undefined | string` | The url for the image. This gets passed to the Icon component. |
+| `square` | `undefined \| false \| true` | Make the avatar square. |
+| `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |
 
 
 ## AvatarGroup
@@ -165,7 +165,7 @@ A container for groups of Avatars
 
 | Name | Type | Description |
 |------|------|-------------|
-| `dense` | `undefined | false | true` | Makes the list dense |
+| `dense` | `undefined \| false \| true` | Makes the list dense |
 
 
 ## AvatarCount
@@ -175,10 +175,10 @@ An Avatar count for displaying list overflow.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `interactive` | `undefined | false | true` | Make the avatar interactive. |
-| `overflow` | `undefined | false | true` | Optionally renders a "+" to indicate overlow. |
+| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
+| `overflow` | `undefined \| false \| true` | Optionally renders a "+" to indicate overlow. |
 | `size` | `RMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined | false | true` | Make the avatar square. |
+| `square` | `undefined \| false \| true` | Make the avatar square. |
 | `value` | `number` | The number of users. |
 
 

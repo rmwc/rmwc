@@ -74,11 +74,11 @@ A Dialog component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `onClose` | `undefined | (evt: RMWC.CustomEventT<>) => void` | Callback for when the Dialog closes. |
-| `onOpen` | `undefined | (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the Dialog opens. |
-| `onStateChange` | `undefined | (state: "opening" | "opened" | "closing" | "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
-| `open` | `undefined | false | true` | Whether or not the Dialog is showing. |
-| `preventOutsideDismiss` | `undefined | false | true` | Prevent the dialog from closing when the scrim is clicked. |
+| `onClose` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback for when the Dialog closes. |
+| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the Dialog opens. |
+| `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
+| `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
+| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
 
 
 ## DialogTitle
@@ -103,18 +103,18 @@ Action buttons for the Dialog.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `action` | `undefined | string` | An action returned in evt.detail.action to the onClose handler. |
+| `action` | `undefined \| string` | An action returned in evt.detail.action to the onClose handler. |
 | `children` | `React.ReactNode` | Content specified as children. |
-| `dense` | `undefined | false | true` | Make the Button dense. |
-| `disabled` | `undefined | false | true` | Make the button disabled |
+| `dense` | `undefined \| false \| true` | Make the Button dense. |
+| `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `icon` | `RMWC.IconPropT` | An Icon for the Button |
-| `isDefaultAction` | `undefined | false | true` | Indicates this is the default selected action when pressing enter |
-| `label` | `React.ReactNode | any` | Content specified as a label prop. |
-| `outlined` | `undefined | false | true` | Make the button outlined. |
-| `raised` | `undefined | false | true` | Make the Button raised. |
+| `isDefaultAction` | `undefined \| false \| true` | Indicates this is the default selected action when pressing enter |
+| `label` | `React.ReactNode \| any` | Content specified as a label prop. |
+| `outlined` | `undefined \| false \| true` | Make the button outlined. |
+| `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
-| `unelevated` | `undefined | false | true` | Make the button unelevated. |
+| `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 
 ## 

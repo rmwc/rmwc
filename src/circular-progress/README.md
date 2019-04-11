@@ -59,9 +59,9 @@ A Circular Progress indicator.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `max` | `undefined | number` | Max value for determinate progress bars. |
-| `min` | `undefined | number` | Min value for determinate progress bars. |
-| `progress` | `undefined | number` | Value for determinate progress bars. |
-| `size` | `"xsmall" | "small" | "medium" | "large" | "xlarge" | number` | The size of the loader you would like to render. |
+| `max` | `undefined \| number` | Max value for determinate progress bars. |
+| `min` | `undefined \| number` | Min value for determinate progress bars. |
+| `progress` | `undefined \| number` | Value for determinate progress bars. |
+| `size` | `"xsmall" \| "small" \| "medium" \| "large" \| "xlarge" \| number` | The size of the loader you would like to render. |
 
 

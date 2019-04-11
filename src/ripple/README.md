@@ -40,10 +40,10 @@ A component for adding Ripples to other components.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `accent` | `undefined | false | true` | Makes the ripple an accent color |
-| `disabled` | `undefined | false | true` | makes the ripple disabled |
-| `primary` | `undefined | false | true` | Makes the ripple primary |
-| `surface` | `undefined | false | true` | For internal use |
-| `unbounded` | `undefined | false | true` | Makes the ripple unbounded |
+| `accent` | `undefined \| false \| true` | Makes the ripple an accent color |
+| `disabled` | `undefined \| false \| true` | makes the ripple disabled |
+| `primary` | `undefined \| false \| true` | Makes the ripple primary |
+| `surface` | `undefined \| false \| true` | For internal use |
+| `unbounded` | `undefined \| false \| true` | Makes the ripple unbounded |
 
 

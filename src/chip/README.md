@@ -142,15 +142,15 @@ A Chip component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `checkmark` | `undefined | false | true` | Includes an optional checkmark for the chips selected state. |
+| `checkmark` | `undefined \| false \| true` | Includes an optional checkmark for the chips selected state. |
 | `children` | `React.ReactNode` | Additional children will be rendered in the text area. |
 | `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
-| `id` | `undefined | string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
+| `id` | `undefined \| string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
 | `label` | `React.ReactNode` | Text for your Chip. |
-| `onInteraction` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. |
-| `onRemove` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback that is fired once the chip is in an exited state from removing it. |
-| `onTrailingIconInteraction` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. |
-| `selected` | `undefined | false | true` | makes the Chip appear selected. |
+| `onInteraction` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. |
+| `onRemove` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that is fired once the chip is in an exited state from removing it. |
+| `onTrailingIconInteraction` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. |
+| `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
 | `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 
 
@@ -161,7 +161,7 @@ A container for multiple chips.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `choice` | `undefined | false | true` | Creates a choice chipset |
-| `filter` | `undefined | false | true` | Creates a filter chipset |
+| `choice` | `undefined \| false \| true` | Creates a choice chipset |
+| `filter` | `undefined \| false \| true` | Creates a filter chipset |
 
 

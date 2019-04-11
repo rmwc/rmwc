@@ -53,8 +53,8 @@ The Elevation Component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `transition` | `undefined | false | true` | Allows for smooth transitions between elevations when the z value changes. |
-| `wrap` | `undefined | false | true` | Allows the elevation classes to be merged onto the child component instead of creating an new DOM node. |
-| `z` | `number | string` | A number from 0 - 24 for different levels of elevation |
+| `transition` | `undefined \| false \| true` | Allows for smooth transitions between elevations when the z value changes. |
+| `wrap` | `undefined \| false \| true` | Allows the elevation classes to be merged onto the child component instead of creating an new DOM node. |
+| `z` | `number \| string` | A number from 0 - 24 for different levels of elevation |
 
 

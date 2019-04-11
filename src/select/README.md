@@ -185,18 +185,18 @@ A Select Component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `disabled` | `undefined | false | true` | Makes the Select disabled. |
-| `enhanced` | `undefined | false | true` | Renders a non native / enhanced dropdown |
-| `helpText` | `React.ReactNode | SelectHelperTextProps` | Adds help text to the field |
+| `disabled` | `undefined \| false \| true` | Makes the Select disabled. |
+| `enhanced` | `undefined \| false \| true` | Renders a non native / enhanced dropdown |
+| `helpText` | `React.ReactNode \| SelectHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
-| `inputRef` | `undefined | (ref: HTMLSelectElement | null) => void` | A reference to the native select element. Not applicable when `enhanced` is true. |
-| `invalid` | `undefined | false | true` | Makes the Select visually invalid. This is sometimes automatically my material-components-web. |
-| `label` | `undefined | string` | A label for the form control. |
-| `options` | `FormattedOption[] | string[] | { [value: string]: string }` | Options accepts flat arrays, value => label maps, and more. See examples for details. |
-| `outlined` | `undefined | false | true` | Makes the select outlined. |
-| `placeholder` | `undefined | string` | Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. |
-| `required` | `undefined | false | true` | Makes the Select required. |
+| `inputRef` | `undefined \| (ref: HTMLSelectElement \| null) => void` | A reference to the native select element. Not applicable when `enhanced` is true. |
+| `invalid` | `undefined \| false \| true` | Makes the Select visually invalid. This is sometimes automatically my material-components-web. |
+| `label` | `undefined \| string` | A label for the form control. |
+| `options` | `FormattedOption[] \| string[] \| { [value: string]: string }` | Options accepts flat arrays, value => label maps, and more. See examples for details. |
+| `outlined` | `undefined \| false \| true` | Makes the select outlined. |
+| `placeholder` | `undefined \| string` | Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. |
+| `required` | `undefined \| false \| true` | Makes the Select required. |
 | `rootProps` | `Object` | Props for the root element. By default, additional props spread to the native select element. |
-| `value` | `undefined | string` | The value for a controlled select. |
+| `value` | `undefined \| string` | The value for a controlled select. |
 
 

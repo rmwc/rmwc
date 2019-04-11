@@ -96,11 +96,11 @@ When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` com
 
 | Name | Type | Description |
 |------|------|-------------|
-| `fixed` | `undefined | false | true` | Makes the toolbar fixed |
-| `fixedLastrowOnly` | `undefined | false | true` | Fixes the last row of a multi-row toolbar |
-| `flexible` | `undefined | false | true` | makes the toolbar flexible |
-| `flexibleDefaultBehavior` | `undefined | false | true` | further defines the background and title movement behavior, use in conjunction with flexible. |
-| `waterfall` | `undefined | false | true` | Adds a waterfall effect on scroll |
+| `fixed` | `undefined \| false \| true` | Makes the toolbar fixed |
+| `fixedLastrowOnly` | `undefined \| false \| true` | Fixes the last row of a multi-row toolbar |
+| `flexible` | `undefined \| false \| true` | makes the toolbar flexible |
+| `flexibleDefaultBehavior` | `undefined \| false \| true` | further defines the background and title movement behavior, use in conjunction with flexible. |
+| `waterfall` | `undefined \| false \| true` | Adds a waterfall effect on scroll |
 
 
 ## ToolbarRow
@@ -115,9 +115,9 @@ A section of the Toolbar
 
 | Name | Type | Description |
 |------|------|-------------|
-| `alignEnd` | `undefined | false | true` | Aligns the ToolbarSection at the end. |
-| `alignStart` | `undefined | false | true` | Aligns the ToolbarSection at the start. |
-| `shrinkToFit` | `undefined | false | true` | Makes the ToolbarSection shrink to fit. |
+| `alignEnd` | `undefined \| false \| true` | Aligns the ToolbarSection at the end. |
+| `alignStart` | `undefined \| false \| true` | Aligns the ToolbarSection at the start. |
+| `shrinkToFit` | `undefined \| false \| true` | Makes the ToolbarSection shrink to fit. |
 
 
 ## ToolbarTitle

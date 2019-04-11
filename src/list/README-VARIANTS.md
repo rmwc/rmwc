@@ -199,10 +199,10 @@ A ListItem component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `activated` | `undefined | false | true` | A modifier for an active state. |
-| `disabled` | `undefined | false | true` | A modifier for a disabled state. |
+| `activated` | `undefined \| false \| true` | A modifier for an active state. |
+| `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `selected` | `undefined | false | true` | A modifier for a selected state. |
+| `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 
 
 ## ListItemPrimaryText
@@ -257,15 +257,15 @@ A simple list item template.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `activated` | `undefined | false | true` | A modifier for an active state. |
+| `activated` | `undefined \| false \| true` | A modifier for an active state. |
 | `children` | `React.ReactNode` | Children to render |
-| `disabled` | `undefined | false | true` | A modifier for a disabled state. |
+| `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
 | `graphic` | `RMWC.IconPropT` | A graphic icon for the ListItem. |
 | `meta` | `React.ReactNode` | Meta content for the ListItem instead of an icon. |
 | `metaIcon` | `RMWC.IconPropT` | A meta icon for the ListItem |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `secondaryText` | `React.ReactNode` | Secondary Text for the ListItem. |
-| `selected` | `undefined | false | true` | A modifier for a selected state. |
+| `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 | `text` | `React.ReactNode` | Text for the ListItem. |
 
 

@@ -48,14 +48,14 @@ A Slider component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `disabled` | `undefined | false | true` | Disables the control. |
-| `discrete` | `undefined | false | true` | Displays the exact value of the Slider on the knob. |
-| `displayMarkers` | `undefined | false | true` | Displays the individual step markers on the Slider track. |
-| `max` | `number | string` | The maximum value of the Slider. |
-| `min` | `number | string` | The minimum value of the Slider. |
-| `onChange` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. |
-| `onInput` | `undefined | (evt: RMWC.CustomEventT<>) => void` | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. |
-| `step` | `number | string` | A step to quantize values by. |
-| `value` | `number | string` | The value of the Slider. |
+| `disabled` | `undefined \| false \| true` | Disables the control. |
+| `discrete` | `undefined \| false \| true` | Displays the exact value of the Slider on the knob. |
+| `displayMarkers` | `undefined \| false \| true` | Displays the individual step markers on the Slider track. |
+| `max` | `number \| string` | The maximum value of the Slider. |
+| `min` | `number \| string` | The minimum value of the Slider. |
+| `onChange` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. |
+| `onInput` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. |
+| `step` | `number \| string` | A step to quantize values by. |
+| `value` | `number \| string` | The value of the Slider. |
 
 

@@ -42,10 +42,10 @@ A floating action button component
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
-| `exited` | `undefined | false | true` | Animates the FAB out of view. When this class is removed, the FAB will return to view. |
+| `exited` | `undefined \| false \| true` | Animates the FAB out of view. When this class is removed, the FAB will return to view. |
 | `icon` | `RMWC.IconPropT` | The icon for the FAB |
 | `label` | `React.ReactNode &amp; any` | Make the Fab extended with a label. |
-| `mini` | `undefined | false | true` | Make the Fab smaller. |
+| `mini` | `undefined \| false \| true` | Make the Fab smaller. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `trailingIcon` | `RMWC.IconPropT` | A trialing icon for the FAB |
 

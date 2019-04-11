@@ -37,9 +37,9 @@ A Grid component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `align` | `"left" | "right"` | Specifies the alignment of the whole grid. |
+| `align` | `"left" \| "right"` | Specifies the alignment of the whole grid. |
 | `children` | `React.ReactNode` | Children for the Grid |
-| `fixedColumnWidth` | `undefined | false | true` | Specifies the grid should have fixed column width. |
+| `fixedColumnWidth` | `undefined \| false \| true` | Specifies the grid should have fixed column width. |
 
 
 ## GridCell
@@ -49,12 +49,12 @@ A Grid cell
 
 | Name | Type | Description |
 |------|------|-------------|
-| `align` | `"top" | "middle" | "bottom"` | Specifies the alignment of cell |
-| `desktop` | `undefined | number` | Number of columns to span on a desktop. |
-| `order` | `undefined | number` | Specifies the order of the cell. |
-| `phone` | `undefined | number` | Number of columns to span on a phone. |
-| `span` | `undefined | number` | Default number of columns to span. |
-| `tablet` | `undefined | number` | Number of columns to span on a tablet. |
+| `align` | `"top" \| "middle" \| "bottom"` | Specifies the alignment of cell |
+| `desktop` | `undefined \| number` | Number of columns to span on a desktop. |
+| `order` | `undefined \| number` | Specifies the order of the cell. |
+| `phone` | `undefined \| number` | Number of columns to span on a phone. |
+| `span` | `undefined \| number` | Default number of columns to span. |
+| `tablet` | `undefined \| number` | Number of columns to span on a tablet. |
 
 
 ## GridInner

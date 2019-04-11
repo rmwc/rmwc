@@ -63,14 +63,14 @@ The Button component.
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
-| `dense` | `undefined | false | true` | Make the Button dense. |
-| `disabled` | `undefined | false | true` | Make the button disabled |
+| `dense` | `undefined \| false \| true` | Make the Button dense. |
+| `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `icon` | `RMWC.IconPropT` | An Icon for the Button |
-| `label` | `React.ReactNode | any` | Content specified as a label prop. |
-| `outlined` | `undefined | false | true` | Make the button outlined. |
-| `raised` | `undefined | false | true` | Make the Button raised. |
+| `label` | `React.ReactNode \| any` | Content specified as a label prop. |
+| `outlined` | `undefined \| false \| true` | Make the button outlined. |
+| `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
-| `unelevated` | `undefined | false | true` | Make the button unelevated. |
+| `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 

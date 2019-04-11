@@ -79,11 +79,11 @@ Grid List Component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `headerCaption` | `undefined | false | true` | Move the caption to the top of the card. |
-| `tileAspect` | `"1x1" | "16x9" | "2x3" | "3x2" | "4x3" | "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
-| `tileGutter1` | `undefined | false | true` | Use a 1px gutter. |
-| `twolineCaption` | `undefined | false | true` | Make the caption two lines. |
-| `withIconAlignStart` | `undefined | false | true` | Leaves space for a start aligned icon. |
+| `headerCaption` | `undefined \| false \| true` | Move the caption to the top of the card. |
+| `tileAspect` | `"1x1" \| "16x9" \| "2x3" \| "3x2" \| "4x3" \| "3x4"` | One of the following values: 1x1, 16x9, 2x3, 3x2, 4x3, 3x4. |
+| `tileGutter1` | `undefined \| false \| true` | Use a 1px gutter. |
+| `twolineCaption` | `undefined \| false \| true` | Make the caption two lines. |
+| `withIconAlignStart` | `undefined \| false \| true` | Leaves space for a start aligned icon. |
 
 
 ## GridTile

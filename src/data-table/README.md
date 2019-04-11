@@ -210,8 +210,8 @@ The DataTable Component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `stickyColumns` | `0 | 1` | The number of columns to affix to the side of the table when scrolling. |
-| `stickyRows` | `0 | 1` | The number of rows to affix to the top of the table when scrolling. |
+| `stickyColumns` | `0 \| 1` | The number of columns to affix to the side of the table when scrolling. |
+| `stickyRows` | `0 \| 1` | The number of rows to affix to the top of the table when scrolling. |
 
 
 ## DataTableRow
@@ -221,8 +221,8 @@ A row for the data table.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `activated` | `undefined | false | true` | Styles the row in an activated state. |
-| `selected` | `undefined | false | true` | Styles the row in a selected state. |
+| `activated` | `undefined \| false \| true` | Styles the row in an activated state. |
+| `selected` | `undefined \| false \| true` | Styles the row in a selected state. |
 
 
 ## DataTableCell
@@ -232,9 +232,9 @@ A cell for the DataTable
 
 | Name | Type | Description |
 |------|------|-------------|
-| `alignEnd` | `undefined | false | true` | Align content to the end of the cell. |
-| `alignMiddle` | `undefined | false | true` | Align content to the middle of the cell. |
-| `alignStart` | `undefined | false | true` | Align content to the start of the cell. |
+| `alignEnd` | `undefined \| false \| true` | Align content to the end of the cell. |
+| `alignMiddle` | `undefined \| false \| true` | Align content to the middle of the cell. |
+| `alignStart` | `undefined \| false \| true` | Align content to the start of the cell. |
 
 
 ## DataTableHead
@@ -254,12 +254,12 @@ A header cell for the data table.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `alignEnd` | `undefined | false | true` | Align content to the end of the cell. |
-| `alignMiddle` | `undefined | false | true` | Align content to the middle of the cell. |
-| `alignStart` | `undefined | false | true` | Align content to the start of the cell. |
+| `alignEnd` | `undefined \| false \| true` | Align content to the end of the cell. |
+| `alignMiddle` | `undefined \| false \| true` | Align content to the middle of the cell. |
+| `alignStart` | `undefined \| false \| true` | Align content to the start of the cell. |
 | `children` | `React.ReactNode` | Children to pass to the cell. |
-| `onSortChange` | `undefined | (dir: null | number) => void` | A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending. |
-| `sort` | `null | number` | Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. |
+| `onSortChange` | `undefined \| (dir: null \| number) => void` | A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending. |
+| `sort` | `null \| number` | Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. |
 
 
 ## 

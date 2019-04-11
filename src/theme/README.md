@@ -180,7 +180,7 @@ A ThemeProvider. This sets theme colors for its child tree.
 | `children` | `React.ReactNode` | Children to render |
 | `options` | `{ [key: string]: string }` | Any theme option pointing to a valid CSS value. |
 | `style` | `Object` | Additional standard inline styles that will be merged into the style tag. |
-| `wrap` | `undefined | false | true` | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
+| `wrap` | `undefined \| false \| true` | Instead of injecting a div tag, wrap a child component by merging the theme styles directly onto it. Useful when you don't want to mess with layout. |
 
 
 ## Theme
@@ -191,6 +191,6 @@ A Theme Component.
 | Name | Type | Description |
 |------|------|-------------|
 | `use` | `RMWC.ThemePropT` | A theme option as a string, a space separated string for multiple values, or an array of valid theme options. |
-| `wrap` | `undefined | false | true` | Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors. |
+| `wrap` | `undefined \| false \| true` | Collapse the styles directly onto the child component. This eliminates the need for a wrapping `span` element and may be required for applying things like background-colors. |
 
 

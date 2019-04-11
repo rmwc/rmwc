@@ -158,8 +158,8 @@ A section for the app bar.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `alignEnd` | `undefined | false | true` | Aligns the section to the end. |
-| `alignStart` | `undefined | false | true` | Aligns the section to the start. |
+| `alignEnd` | `undefined \| false \| true` | Aligns the section to the end. |
+| `alignStart` | `undefined \| false \| true` | Aligns the section to the start. |
 
 
 ## TopAppBarTitle
@@ -194,10 +194,10 @@ An optional component to fill the space when the TopAppBar is fixed. Place it di
 
 | Name | Type | Description |
 |------|------|-------------|
-| `dense` | `undefined | false | true` | Class used to style the content below the dense top app bar to prevent the top app bar from covering it. |
-| `denseProminent` | `undefined | false | true` | Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it. |
-| `prominent` | `undefined | false | true` | Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. |
-| `short` | `undefined | false | true` | Class used to style the content below the short top app bar to prevent the top app bar from covering it. |
+| `dense` | `undefined \| false \| true` | Class used to style the content below the dense top app bar to prevent the top app bar from covering it. |
+| `denseProminent` | `undefined \| false \| true` | Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it. |
+| `prominent` | `undefined \| false \| true` | Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. |
+| `short` | `undefined \| false \| true` | Class used to style the content below the short top app bar to prevent the top app bar from covering it. |
 
 
 ## SimpleTopAppBar
@@ -208,15 +208,15 @@ A simplified syntax for creating an AppBar.
 | Name | Type | Description |
 |------|------|-------------|
 | `actionItems` | `Object[]` | An array of props that will be used to create TopAppBarActionItems. |
-| `dense` | `undefined | false | true` | Styles the top app bar to be dense. |
+| `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
 | `endContent` | `React.ReactNode` | Additional content to place in the end section. |
-| `fixed` | `undefined | false | true` | Styles the top app bar as a fixed top app bar. |
-| `navigationIcon` | `Object | boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
-| `onNav` | `undefined | (evt: RMWC.CustomEventT<{}>) => void` | Emits when the navigation icon is clicked. |
-| `prominent` | `undefined | false | true` | Styles the top app bar as a prominent top app bar. |
-| `scrollTarget` | `Element | null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
-| `short` | `undefined | false | true` | Styles the top app bar as a short top app bar. |
-| `shortCollapsed` | `undefined | false | true` | Styles the top app bar to always be collapsed. |
+| `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `navigationIcon` | `Object \| boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
+| `onNav` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Emits when the navigation icon is clicked. |
+| `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
+| `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
+| `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 | `startContent` | `React.ReactNode` | Additional content to place in the start section. |
 | `title` | `React.ReactNode` | The title for the App Bar. |
 

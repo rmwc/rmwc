@@ -80,13 +80,13 @@ A Radio button component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `checked` | `undefined | false | true` | Toggle the control on and off. |
-| `disabled` | `undefined | false | true` | Disables the control. |
-| `id` | `undefined | string` | A DOM ID for the toggle. |
-| `inputRef` | `undefined | (ref: HTMLInputElement | null) => void` | A reference to the native input. |
+| `checked` | `undefined \| false \| true` | Toggle the control on and off. |
+| `disabled` | `undefined \| false \| true` | Disables the control. |
+| `id` | `undefined \| string` | A DOM ID for the toggle. |
+| `inputRef` | `undefined \| (ref: HTMLInputElement \| null) => void` | A reference to the native input. |
 | `label` | `React.ReactNode` | A label for the control. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |
-| `value` | `string | number | string[]` | The value of the control. |
+| `value` | `string \| number \| string[]` | The value of the control. |
 
 

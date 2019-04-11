@@ -79,7 +79,8 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
               <Br />
               {def.props.map(prop => (
                 <>
-                  | `{prop.name}` | `{prop.type}` | {prop.description} |
+                  | `{prop.name}` | `{prop.type.replace(/\|/g, '\\|')}` |{' '}
+                  {prop.description} |
                   <Br />
                 </>
               ))}

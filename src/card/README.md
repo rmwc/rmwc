@@ -172,7 +172,7 @@ A Card Component
 
 | Name | Type | Description |
 |------|------|-------------|
-| `outlined` | `undefined | false | true` | Removes the shadow and displays a hairline outline instead |
+| `outlined` | `undefined \| false \| true` | Removes the shadow and displays a hairline outline instead |
 
 
 ## CardPrimaryAction
@@ -187,8 +187,8 @@ Media area that displays a custom background-image with background-size: cover
 
 | Name | Type | Description |
 |------|------|-------------|
-| `sixteenByNine` | `undefined | false | true` | Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio |
-| `square` | `undefined | false | true` | Automatically scales the media area’s height to equal its width |
+| `sixteenByNine` | `undefined \| false \| true` | Automatically scales the media area’s height according to its width, maintaining a 16:9 aspect ratio |
+| `square` | `undefined \| false \| true` | Automatically scales the media area’s height to equal its width |
 
 
 ## CardMediaContent
@@ -203,7 +203,7 @@ Row containing action buttons and/or icons
 
 | Name | Type | Description |
 |------|------|-------------|
-| `fullBleed` | `undefined | false | true` | Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width |
+| `fullBleed` | `undefined \| false \| true` | Removes the action area’s padding and causes its only child (an mdc-card__action element) to consume 100% of the action area’s width |
 
 
 ## CardActionButtons
@@ -223,10 +223,10 @@ A card action Icon
 
 | Name | Type | Description |
 |------|------|-------------|
-| `checked` | `undefined | false | true` | Controls the on / off state of the a toggleable button. |
-| `disabled` | `undefined | false | true` | Makes the button disabled |
+| `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
+| `disabled` | `undefined \| false \| true` | Makes the button disabled |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
-| `onChange` | `undefined | (evt: RMWC.CustomEventT<>) => void` | An onChange callback that receives a custom event. |
+| `onChange` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | An onChange callback that receives a custom event. |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
@@ -239,14 +239,14 @@ A card action Button
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
-| `dense` | `undefined | false | true` | Make the Button dense. |
-| `disabled` | `undefined | false | true` | Make the button disabled |
+| `dense` | `undefined \| false \| true` | Make the Button dense. |
+| `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `icon` | `RMWC.IconPropT` | An Icon for the Button |
-| `label` | `React.ReactNode | any` | Content specified as a label prop. |
-| `outlined` | `undefined | false | true` | Make the button outlined. |
-| `raised` | `undefined | false | true` | Make the Button raised. |
+| `label` | `React.ReactNode \| any` | Content specified as a label prop. |
+| `outlined` | `undefined \| false \| true` | Make the button outlined. |
+| `raised` | `undefined \| false \| true` | Make the Button raised. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `trailingIcon` | `RMWC.IconPropT` | A trailing icon for the Button |
-| `unelevated` | `undefined | false | true` | Make the button unelevated. |
+| `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 

@@ -93,8 +93,8 @@ The root of the Image List.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `masonry` | `undefined | false | true` | Indicates that this Image List should use the Masonry variant. |
-| `withTextProtection` | `undefined | false | true` | Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image). |
+| `masonry` | `undefined \| false \| true` | Indicates that this Image List should use the Masonry variant. |
+| `withTextProtection` | `undefined \| false \| true` | Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image). |
 
 
 ## ImageListItem
