@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "DrawerHeaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L15",
       "methods": [],
       "properties": []
     },
@@ -47,7 +47,7 @@
       },
       "kind": "interface",
       "name": "DrawerTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L24",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L24",
       "methods": [],
       "properties": []
     },
@@ -72,7 +72,7 @@
       },
       "kind": "interface",
       "name": "DrawerSubtitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L33",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L33",
       "methods": [],
       "properties": []
     },
@@ -97,7 +97,7 @@
       },
       "kind": "interface",
       "name": "DrawerContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L45",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L45",
       "methods": [],
       "properties": []
     },
@@ -122,7 +122,7 @@
       },
       "kind": "interface",
       "name": "DrawerAppContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L67",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L67",
       "methods": [],
       "properties": []
     },
@@ -147,7 +147,7 @@
       },
       "kind": "interface",
       "name": "DrawerProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L80",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L80",
       "methods": [],
       "properties": [
         {
@@ -171,7 +171,7 @@
           },
           "kind": "property",
           "name": "dismissible",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L88",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L88",
           "type": "undefined | false | true"
         },
         {
@@ -195,7 +195,7 @@
           },
           "kind": "property",
           "name": "modal",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L90",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L90",
           "type": "undefined | false | true"
         },
         {
@@ -219,7 +219,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L84",
           "type": "undefined | (evt: RMWC.CustomEventT<{}>) => void"
         },
         {
@@ -243,7 +243,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L86",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L86",
           "type": "undefined | (evt: RMWC.CustomEventT<{}>) => void"
         },
         {
@@ -267,7 +267,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/drawer/index.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/drawer/index.tsx#L82",
           "type": "undefined | false | true"
         }
       ]
