@@ -40,6 +40,8 @@ function Example() {
 ```
 
 ## Switch
+A Switch component.
+
 ### Props
 
 | Name | Type | Description |

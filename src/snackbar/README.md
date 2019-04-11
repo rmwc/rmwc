@@ -66,6 +66,8 @@ function Example() {
 ```
 
 ## Snackbar
+A Snackbar component for notifications.
+
 ### Props
 
 | Name | Type | Description |

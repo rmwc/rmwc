@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "TextField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L124",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L124",
       "extends": [
         "FoundationComponent<MDCTextFieldFoundation, TextFieldProps & DeprecatedTextfieldProps>"
       ],
@@ -292,7 +292,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -308,7 +308,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -473,7 +473,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -489,7 +489,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -586,7 +586,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -602,7 +602,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -689,7 +689,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -698,11 +698,12 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
@@ -720,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L148",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L148",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L148",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L148",
               "parameters": [],
               "returnType": "MDCTextFieldFoundation",
               "type": "() => MDCTextFieldFoundation"
@@ -747,13 +748,13 @@
           },
           "kind": "method",
           "name": "getFoundationMap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L251",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L251",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getFoundationMap",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L251",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L251",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -774,13 +775,13 @@
           },
           "kind": "method",
           "name": "getInputAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L237",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L237",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getInputAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L237",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L237",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -801,13 +802,13 @@
           },
           "kind": "method",
           "name": "getLabelAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L196",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L196",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getLabelAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L196",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L196",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -828,13 +829,13 @@
           },
           "kind": "method",
           "name": "getLineRippleAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L207",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L207",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getLineRippleAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L207",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L207",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -855,13 +856,13 @@
           },
           "kind": "method",
           "name": "getOutlineAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L227",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L227",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getOutlineAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L227",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L227",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -946,13 +947,13 @@
           },
           "kind": "method",
           "name": "handleOnChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L291",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L291",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "handleOnChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L291",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L291",
               "parameters": [
                 {
                   "flags": {
@@ -989,13 +990,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L319",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L319",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L319",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L319",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1016,13 +1017,13 @@
           },
           "kind": "method",
           "name": "renderHelpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L296",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L296",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "renderHelpText",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L296",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L296",
               "parameters": [
                 {
                   "flags": {
@@ -1059,13 +1060,13 @@
           },
           "kind": "method",
           "name": "renderIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L263",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L263",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "renderIcon",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L263",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L263",
               "parameters": [
                 {
                   "flags": {
@@ -1196,13 +1197,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L282",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L282",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L282",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L282",
               "parameters": [
                 {
                   "flags": {
@@ -1226,7 +1227,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1242,7 +1243,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1298,7 +1299,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1314,7 +1315,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1339,12 +1340,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L128",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L128",
           "defaultValue": "\"TextField\"",
           "type": "string"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1357,6 +1358,7 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
@@ -1374,12 +1376,12 @@
           },
           "kind": "property",
           "name": "characterCounter",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L136",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L136",
           "defaultValue": " null",
           "type": "null | TextFieldCharacterCount"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1396,7 +1398,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1426,7 +1428,7 @@
           },
           "kind": "property",
           "name": "generatedId",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L129",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L129",
           "defaultValue": " randomId('textfield')",
           "type": "string"
         },
@@ -1444,7 +1446,7 @@
           },
           "kind": "property",
           "name": "leadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L137",
           "defaultValue": " null",
           "type": "null | TextFieldIcon"
         },
@@ -1462,7 +1464,7 @@
           },
           "kind": "property",
           "name": "outline",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L139",
           "type": "null | any"
         },
         {
@@ -1479,7 +1481,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L138",
           "defaultValue": " null",
           "type": "null | TextFieldIcon"
         },
@@ -1497,7 +1499,7 @@
           },
           "kind": "property",
           "name": "valueNeedsUpdate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L140",
           "defaultValue": "false",
           "type": "boolean"
         }
@@ -1516,13 +1518,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L140",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L140",
         "signatures": [
           {
             "fileName": "src/textfield/index.tsx",
             "kind": "signature",
             "name": "new TextField",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L140",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L140",
             "parameters": [
               {
                 "flags": {
@@ -1567,7 +1569,7 @@
       },
       "kind": "class",
       "name": "TextFieldIcon",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L524",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L524",
       "extends": [
         "FoundationComponent<MDCTextFieldIconFoundation, IconProps>"
       ],
@@ -1837,7 +1839,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1853,7 +1855,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -1863,7 +1865,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1879,7 +1881,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -2018,7 +2020,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2034,7 +2036,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -2131,7 +2133,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2147,7 +2149,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -2173,7 +2175,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2196,7 +2198,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -2234,7 +2236,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -2243,11 +2245,12 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
@@ -2265,13 +2268,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L531",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L531",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L531",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L531",
               "parameters": [],
               "returnType": "MDCTextFieldIconFoundation",
               "type": "() => MDCTextFieldIconFoundation"
@@ -2356,13 +2359,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L554",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L554",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L554",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L554",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2449,7 +2452,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2465,7 +2468,7 @@
           "inheritedFrom": "FoundationComponent.sync",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "sync",
               "parameters": [
@@ -2506,7 +2509,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2522,7 +2525,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -2578,7 +2581,7 @@
           ]
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2594,7 +2597,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -2619,12 +2622,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L528",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L528",
           "defaultValue": "\"TextFieldIcon\"",
           "type": "string"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2637,11 +2640,12 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2658,7 +2662,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2676,7 +2680,7 @@
         }
       ],
       "constructorType": {
-        "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+        "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -2692,7 +2696,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/textfield/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+            "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/provider/node_modules/@rmwc/base/foundation-component.tsx",
             "kind": "signature",
             "name": "new TextFieldIcon",
             "parameters": [
@@ -2739,7 +2743,7 @@
       },
       "kind": "interface",
       "name": "TextFieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L29",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L29",
       "methods": [],
       "properties": [
         {
@@ -2763,7 +2767,7 @@
           },
           "kind": "property",
           "name": "characterCount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L35",
           "type": "undefined | false | true"
         },
         {
@@ -2787,7 +2791,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L39",
           "type": "undefined | false | true"
         },
         {
@@ -2811,7 +2815,7 @@
           },
           "kind": "property",
           "name": "fullwidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L49",
           "type": "undefined | false | true"
         },
         {
@@ -2835,7 +2839,7 @@
           },
           "kind": "property",
           "name": "helpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L33",
           "type": "React.ReactNode | TextFieldHelperTextProps"
         },
         {
@@ -2859,7 +2863,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L51",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L51",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2883,7 +2887,7 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L57",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L57",
           "type": "undefined | (ref: HTMLInputElement | HTMLTextAreaElement | null) => void"
         },
         {
@@ -2907,7 +2911,7 @@
           },
           "kind": "property",
           "name": "invalid",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L37",
           "type": "undefined | false | true"
         },
         {
@@ -2931,7 +2935,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L45",
           "type": "React.ReactNode"
         },
         {
@@ -2955,7 +2959,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L43",
           "type": "undefined | false | true"
         },
         {
@@ -2979,7 +2983,7 @@
           },
           "kind": "property",
           "name": "required",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L41",
           "type": "undefined | false | true"
         },
         {
@@ -3003,7 +3007,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L55",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L55",
           "type": "Object"
         },
         {
@@ -3027,7 +3031,7 @@
           },
           "kind": "property",
           "name": "textarea",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L47",
           "type": "undefined | false | true"
         },
         {
@@ -3051,7 +3055,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L53",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3075,7 +3079,7 @@
           },
           "kind": "property",
           "name": "type",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L59",
           "type": "undefined | string"
         },
         {
@@ -3099,7 +3103,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L31",
           "type": "string | number"
         }
       ]
@@ -3118,7 +3122,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedTextfieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L62",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L62",
       "methods": [],
       "properties": [
         {
@@ -3142,7 +3146,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L64",
           "type": "undefined | false | true"
         },
         {
@@ -3166,7 +3170,7 @@
           },
           "kind": "property",
           "name": "withLeadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L66",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3190,7 +3194,7 @@
           },
           "kind": "property",
           "name": "withTrailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L68",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L68",
           "type": "RMWC.IconPropT"
         }
       ]
@@ -3209,7 +3213,7 @@
       },
       "kind": "interface",
       "name": "TextFieldHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L495",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L495",
       "methods": [],
       "properties": [
         {
@@ -3233,7 +3237,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L501",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L501",
           "type": "React.ReactNode"
         },
         {
@@ -3257,7 +3261,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L497",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L497",
           "type": "undefined | false | true"
         },
         {
@@ -3281,7 +3285,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/textfield/index.tsx#L499",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/textfield/index.tsx#L499",
           "type": "undefined | false | true"
         }
       ]

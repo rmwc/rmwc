@@ -53,6 +53,8 @@
 ```
 
 ## CircularProgress
+A Circular Progress indicator.
+
 ### Props
 
 | Name | Type | Description |

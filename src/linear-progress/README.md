@@ -24,6 +24,8 @@
 ```
 
 ## LinearProgress
+A component to display linear progress.
+
 ### Props
 
 | Name | Type | Description |

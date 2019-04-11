@@ -102,7 +102,7 @@ A preview of how `material-components-web` handles styling input types for your 
 ```
 
 ## TextField
-TextField
+A TextField component for accepting text input from a user.
 
 ### Props
 

@@ -86,21 +86,39 @@ Image Lists will give you basic layout, but you will have to use inline styling 
 </ImageList>
 ```
 
-## ImageListRoot
+## ImageList
+The root of the Image List.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `masonry` | `undefined | false | true` | Indicates that this Image List should use the Masonry variant. |
+| `withTextProtection` | `undefined | false | true` | Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image). |
 
 
 ## ImageListItem
+Indicates each item in an Image List.
+
 
 
 ## ImageListImageAspectContainer
+Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio.
+
 
 
 ## ImageListImage
+Indicates the image element in each item.
+
 
 
 ## ImageListSupporting
+Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels.
+
 
 
 ## ImageListLabel
+Optional. Indicates the text label in each item, if the Image List contains text labels.
+
 
 

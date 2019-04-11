@@ -147,9 +147,13 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 
 
 ## TopAppBarRow
+A row for the app bar.
+
 
 
 ## TopAppBarSection
+A section for the app bar.
+
 ### Props
 
 | Name | Type | Description |
@@ -159,15 +163,33 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 
 
 ## TopAppBarTitle
+A title for the top app bar.
+
 
 
 ## TopAppBarNavigationIcon
+A navigation icon for the top app bar. This is an instance of the Icon component.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## TopAppBarActionItem
+Action items for the top app bar. This is an instance of the Icon component.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `icon` | `RMWC.IconPropT` | The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. |
 
 
 ## TopAppBarFixedAdjust
+An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar.
+
 ### Props
 
 | Name | Type | Description |
@@ -179,6 +201,8 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 
 
 ## SimpleTopAppBar
+A simplified syntax for creating an AppBar.
+
 ### Props
 
 | Name | Type | Description |

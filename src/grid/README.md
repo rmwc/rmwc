@@ -19,12 +19,11 @@
 <Grid>
   {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridInner components. */}
   <GridInner>
-    <GridCell span={4}>1</GridCell>
-    <GridCell span={4}>
+    <GridCell span={6}>1</GridCell>
+    <GridCell span={6}>
       <GridInner>
-        <GridCell span={4}>a</GridCell>
-        <GridCell span={4}>b</GridCell>
-        <GridCell span={4}>c</GridCell>
+        <GridCell span={6}>a</GridCell>
+        <GridCell span={6}>b</GridCell>
       </GridInner>
     </GridCell>
   </GridInner>
@@ -32,6 +31,8 @@
 ```
 
 ## Grid
+A Grid component
+
 ### Props
 
 | Name | Type | Description |
@@ -42,6 +43,8 @@
 
 
 ## GridCell
+A Grid cell
+
 ### Props
 
 | Name | Type | Description |
@@ -55,5 +58,7 @@
 
 
 ## GridInner
+By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.
+
 
 

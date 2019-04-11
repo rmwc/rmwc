@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "LineRipple",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L12",
       "extends": [
         "FoundationComponent<MDCLineRippleFoundation, LineRippleProps>"
       ],
@@ -285,7 +285,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -301,7 +301,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -311,7 +311,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -327,7 +327,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -466,7 +466,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -482,7 +482,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -579,7 +579,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -595,7 +595,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -621,7 +621,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -644,7 +644,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -682,7 +682,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -691,11 +691,12 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
@@ -713,13 +714,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L20",
           "signatures": [
             {
               "fileName": "src/line-ripple/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L20",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L20",
               "parameters": [],
               "returnType": "MDCLineRippleFoundation",
               "type": "() => MDCLineRippleFoundation"
@@ -804,13 +805,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L51",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L51",
           "signatures": [
             {
               "fileName": "src/line-ripple/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L51",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L51",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -910,13 +911,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L38",
           "signatures": [
             {
               "fileName": "src/line-ripple/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L38",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L38",
               "parameters": [
                 {
                   "flags": {
@@ -955,7 +956,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -971,7 +972,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1027,7 +1028,7 @@
           ]
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1043,7 +1044,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1068,12 +1069,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L16",
           "defaultValue": "\"LineRipple\"",
           "type": "string"
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1086,11 +1087,12 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1107,7 +1109,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1125,7 +1127,7 @@
         }
       ],
       "constructorType": {
-        "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+        "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1141,7 +1143,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/line-ripple/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+            "fileName": "src/line-ripple/node_modules/@rmwc/base/foundation-component.tsx",
             "kind": "signature",
             "name": "new LineRipple",
             "parameters": [
@@ -1181,7 +1183,7 @@
       },
       "kind": "interface",
       "name": "LineRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -1198,7 +1200,7 @@
           },
           "kind": "property",
           "name": "active",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L8",
           "type": "undefined | false | true"
         },
         {
@@ -1215,7 +1217,7 @@
           },
           "kind": "property",
           "name": "center",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/line-ripple/index.tsx#L9",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/line-ripple/index.tsx#L9",
           "type": "undefined | number"
         }
       ]

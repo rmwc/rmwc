@@ -246,6 +246,8 @@ A more relevant example involves an app that has a custom / existing icon compon
 ```
 
 ## Icon
+An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info.
+
 ### Props
 
 | Name | Type | Description |

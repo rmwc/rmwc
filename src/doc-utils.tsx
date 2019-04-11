@@ -261,14 +261,17 @@ const IFrame = ({
       document.body
         .querySelectorAll('link[rel="stylesheet"]')
         .forEach(n => nodes.push(n));
+
       document.body.querySelectorAll('script[src]').forEach(n => nodes.push(n));
-      nodes.forEach(n => headNode.appendChild(n));
+      nodes.forEach(n => headNode.appendChild(n.cloneNode()));
     }
 
     if (mountNode) {
       mountNode.classList.add('mdc-typography');
       window.requestAnimationFrame(() => {
-        setCanMount(true);
+        window.requestAnimationFrame(() => {
+          setCanMount(true);
+        });
       });
     }
   }, [headNode, mountNode]);

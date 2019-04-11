@@ -193,6 +193,8 @@ function Example() {
 
 
 ## ListItem
+A ListItem component.
+
 ### Props
 
 | Name | Type | Description |
@@ -204,12 +206,18 @@ function Example() {
 
 
 ## ListItemPrimaryText
+Primary Text for the ListItem
+
 
 
 ## ListItemSecondaryText
+Secondary text for the ListItem
+
 
 
 ## ListItemGraphic
+A graphic / icon for the ListItem
+
 ### Props
 
 | Name | Type | Description |
@@ -218,6 +226,8 @@ function Example() {
 
 
 ## ListItemMeta
+Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content.
+
 ### Props
 
 | Name | Type | Description |
@@ -226,15 +236,23 @@ function Example() {
 
 
 ## ListDivider
+A divider for the List
+
 
 
 ## ListGroup
+A container to group ListItems
+
 
 
 ## ListGroupSubheader
+A subheader for the ListGroup
+
 
 
 ## SimpleListItem
+A simple list item template.
+
 ### Props
 
 | Name | Type | Description |

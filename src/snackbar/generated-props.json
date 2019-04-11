@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Snackbar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L105",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L105",
       "extends": [
         "FoundationComponent<MDCSnackbarFoundation, SnackbarProps & DeprecatedSnackbarProps>"
       ],
@@ -292,7 +292,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -308,7 +308,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -473,7 +473,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -489,7 +489,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -586,7 +586,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -602,7 +602,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -689,7 +689,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -698,11 +698,12 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
@@ -720,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L127",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L127",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L127",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L127",
               "parameters": [],
               "returnType": "MDCSnackbarFoundation",
               "type": "() => MDCSnackbarFoundation"
@@ -747,13 +748,13 @@
           },
           "kind": "method",
           "name": "getPropsWithDeprecations",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L159",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L159",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "getPropsWithDeprecations",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L159",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L159",
               "parameters": [
                 {
                   "flags": {
@@ -854,13 +855,13 @@
           },
           "kind": "method",
           "name": "handleKeyDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L176",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L176",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "handleKeyDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L176",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L176",
               "parameters": [
                 {
                   "flags": {
@@ -897,13 +898,13 @@
           },
           "kind": "method",
           "name": "handleSurfaceClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L181",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L181",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "handleSurfaceClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L181",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L181",
               "parameters": [
                 {
                   "flags": {
@@ -940,13 +941,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L202",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L202",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L202",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L202",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1046,13 +1047,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L142",
           "signatures": [
             {
               "fileName": "src/snackbar/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L142",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L142",
               "parameters": [
                 {
                   "flags": {
@@ -1091,7 +1092,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1107,7 +1108,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1163,7 +1164,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1179,7 +1180,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1204,12 +1205,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L109",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L109",
           "defaultValue": "\"Snackbar\"",
           "type": "string"
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1222,6 +1223,7 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
@@ -1239,12 +1241,12 @@
           },
           "kind": "property",
           "name": "announce",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L125",
           "defaultValue": " util.announce",
           "type": "announce"
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1261,7 +1263,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/snackbar/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1291,7 +1293,7 @@
           },
           "kind": "property",
           "name": "isShowing_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L122",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L122",
           "defaultValue": "false",
           "type": "boolean"
         },
@@ -1309,7 +1311,7 @@
           },
           "kind": "property",
           "name": "labelEl",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L123",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L123",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         },
@@ -1327,7 +1329,7 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L124",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L124",
           "type": "any"
         }
       ],
@@ -1345,13 +1347,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L112",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L112",
         "signatures": [
           {
             "fileName": "src/snackbar/index.tsx",
             "kind": "signature",
             "name": "new Snackbar",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L112",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L112",
             "parameters": [
               {
                 "flags": {
@@ -1396,7 +1398,7 @@
       },
       "kind": "interface",
       "name": "SnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L14",
       "methods": [],
       "properties": [
         {
@@ -1420,7 +1422,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L24",
           "type": "React.ReactNode | React.ReactNode[]"
         },
         {
@@ -1437,7 +1439,7 @@
           },
           "kind": "property",
           "name": "dismissIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L32",
           "type": "boolean | string"
         },
         {
@@ -1461,7 +1463,7 @@
           },
           "kind": "property",
           "name": "dismissesOnAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L34",
           "type": "undefined | false | true"
         },
         {
@@ -1478,7 +1480,7 @@
           },
           "kind": "property",
           "name": "leading",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -1502,7 +1504,7 @@
           },
           "kind": "property",
           "name": "message",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L22",
           "type": "React.ReactNode"
         },
         {
@@ -1526,7 +1528,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L20",
           "type": "undefined | (evt: RMWC.CustomEventT<{}>) => void"
         },
         {
@@ -1550,7 +1552,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L18",
           "type": "undefined | (evt: RMWC.CustomEventT<{}>) => void"
         },
         {
@@ -1574,7 +1576,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L16",
           "type": "undefined | false | true"
         },
         {
@@ -1598,7 +1600,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L28",
           "type": "undefined | false | true"
         },
         {
@@ -1622,7 +1624,7 @@
           },
           "kind": "property",
           "name": "timeout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L26",
           "type": "undefined | number"
         }
       ]
@@ -1641,7 +1643,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedSnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L37",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L37",
       "methods": [],
       "properties": [
         {
@@ -1665,7 +1667,7 @@
           },
           "kind": "property",
           "name": "actionHandler",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L51",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L51",
           "type": "undefined | () => void"
         },
         {
@@ -1689,7 +1691,7 @@
           },
           "kind": "property",
           "name": "actionOnBottom",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L49",
           "type": "undefined | false | true"
         },
         {
@@ -1713,7 +1715,7 @@
           },
           "kind": "property",
           "name": "actionText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L53",
           "type": "React.ReactNode"
         },
         {
@@ -1737,7 +1739,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L45",
           "type": "undefined | false | true"
         },
         {
@@ -1761,7 +1763,7 @@
           },
           "kind": "property",
           "name": "multiline",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L47",
           "type": "undefined | false | true"
         },
         {
@@ -1785,7 +1787,7 @@
           },
           "kind": "property",
           "name": "onHide",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L43",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -1809,7 +1811,7 @@
           },
           "kind": "property",
           "name": "onShow",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L41",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -1833,7 +1835,7 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L39",
           "type": "undefined | false | true"
         }
       ]
@@ -1859,7 +1861,7 @@
       },
       "kind": "interface",
       "name": "SnackbarAction",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/snackbar/index.tsx#L89",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/snackbar/index.tsx#L89",
       "extends": [
         "ButtonProps"
       ],
@@ -1873,7 +1875,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1897,7 +1899,7 @@
             "contentsRaw": "Content specified as children.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1921,7 +1923,7 @@
             "contentsRaw": "Make the Button dense.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1945,7 +1947,7 @@
             "contentsRaw": "Make the button disabled",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1969,7 +1971,7 @@
             "contentsRaw": "An Icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1993,7 +1995,7 @@
             "contentsRaw": "Content specified as a label prop.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2017,7 +2019,7 @@
             "contentsRaw": "Make the button outlined.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2041,7 +2043,7 @@
             "contentsRaw": "Make the Button raised.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2065,7 +2067,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2089,7 +2091,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2113,7 +2115,7 @@
             "contentsRaw": "A trailing icon for the Button",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2137,7 +2139,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -2161,7 +2163,7 @@
             "contentsRaw": "Make the button unelevated.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/node_modules/@rmwc/button/dist/index.d.ts",
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,

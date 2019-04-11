@@ -204,6 +204,8 @@ If you just need to throw a table on the screen, you can pass an array of data t
 ```
 
 ## DataTable
+The DataTable Component.
+
 ### Props
 
 | Name | Type | Description |
@@ -213,6 +215,8 @@ If you just need to throw a table on the screen, you can pass an array of data t
 
 
 ## DataTableRow
+A row for the data table.
+
 ### Props
 
 | Name | Type | Description |
@@ -222,6 +226,8 @@ If you just need to throw a table on the screen, you can pass an array of data t
 
 
 ## DataTableCell
+A cell for the DataTable
+
 ### Props
 
 | Name | Type | Description |
@@ -232,12 +238,18 @@ If you just need to throw a table on the screen, you can pass an array of data t
 
 
 ## DataTableHead
+A header for the data table.
+
 
 
 ## DataTableBody
+A body for the data table.
+
 
 
 ## DataTableHeadCell
+A header cell for the data table.
+
 ### Props
 
 | Name | Type | Description |

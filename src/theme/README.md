@@ -171,6 +171,8 @@ The Theme component allows you to apply theme colors to RMWC components, or comp
 ```
 
 ## ThemeProvider
+A ThemeProvider. This sets theme colors for its child tree.
+
 ### Props
 
 | Name | Type | Description |
@@ -182,6 +184,8 @@ The Theme component allows you to apply theme colors to RMWC components, or comp
 
 
 ## Theme
+A Theme Component.
+
 ### Props
 
 | Name | Type | Description |

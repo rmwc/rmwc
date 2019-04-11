@@ -91,13 +91,26 @@ When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` com
 </>
 ```
 
-## 
+## Toolbar
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `fixed` | `undefined | false | true` | Makes the toolbar fixed |
+| `fixedLastrowOnly` | `undefined | false | true` | Fixes the last row of a multi-row toolbar |
+| `flexible` | `undefined | false | true` | makes the toolbar flexible |
+| `flexibleDefaultBehavior` | `undefined | false | true` | further defines the background and title movement behavior, use in conjunction with flexible. |
+| `waterfall` | `undefined | false | true` | Adds a waterfall effect on scroll |
 
 
 ## ToolbarRow
+A Toolbar row
+
 
 
 ## ToolbarSection
+A section of the Toolbar
+
 ### Props
 
 | Name | Type | Description |
@@ -108,9 +121,13 @@ When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` com
 
 
 ## ToolbarTitle
+A Toolbar title
+
 
 
 ## ToolbarMenuIcon
+A Menu Icon For the Toolbar. This is an instance of the Icon component.
+
 ### Props
 
 | Name | Type | Description |
@@ -119,6 +136,8 @@ When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` com
 
 
 ## ToolbarIcon
+A standard Icon for toolbar actions. This is an instance of the Icon component.
+
 ### Props
 
 | Name | Type | Description |
@@ -127,5 +146,7 @@ When using the `fixed` prop, you can optionally add the `ToolbarFixedAdjust` com
 
 
 ## ToolbarFixedAdjust
+This component can be placed after a fixed Toolbar component to fill in the space.
+
 
 

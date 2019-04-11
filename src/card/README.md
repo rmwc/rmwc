@@ -166,7 +166,7 @@
 ```
 
 ## Card
-Card
+A Card Component
 
 ### Props
 
@@ -176,10 +176,12 @@ Card
 
 
 ## CardPrimaryAction
+The main clickable area for the primary content of the card
+
 
 
 ## CardMedia
-Card Media
+Media area that displays a custom background-image with background-size: cover
 
 ### Props
 
@@ -190,10 +192,12 @@ Card Media
 
 
 ## CardMediaContent
+An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image
+
 
 
 ## CardActions
-Card Actions
+Row containing action buttons and/or icons
 
 ### Props
 
@@ -203,12 +207,18 @@ Card Actions
 
 
 ## CardActionButtons
+A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons
+
 
 
 ## CardActionIcons
+A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons
+
 
 
 ## CardActionIcon
+A card action Icon
+
 ### Props
 
 | Name | Type | Description |
@@ -222,6 +232,8 @@ Card Actions
 
 
 ## CardActionButton
+A card action Button
+
 ### Props
 
 | Name | Type | Description |

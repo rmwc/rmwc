@@ -114,6 +114,17 @@ Collapsible lists aren't part of the material spec, but they've been added to RM
 </CollapsibleList>
 ```
 
-## 
+## CollapsibleList
+A collapsible list component.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `handle` | `ReactElement<any>` | The handle that opens and closes the collapsible section. Usually a ListItem. |
+| `onClose` | `undefined | () => void` | Callback for when the collapsible list closes. |
+| `onOpen` | `undefined | () => void` | Callback for when the collapsible list opens. |
+| `open` | `undefined | false | true` | Show the collapsible list as open. |
+| `startOpen` | `undefined | false | true` | Starts the collapsible list as open. |
 
 

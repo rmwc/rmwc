@@ -145,7 +145,7 @@ function Example() {
 ```
 
 ## Drawer
-Drawers
+A Drawer component.
 
 ### Props
 
@@ -159,17 +159,27 @@ Drawers
 
 
 ## DrawerHeader
+An optional header for the Drawer.
+
 
 
 ## DrawerTitle
+An title for the DrawerHeader.
+
 
 
 ## DrawerSubtitle
+A subtitle for the DrawerHeader.
+
 
 
 ## DrawerContent
+Content for Drawers.
+
 
 
 ## DrawerAppContent
+For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes.
+
 
 

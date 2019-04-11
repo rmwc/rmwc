@@ -73,6 +73,8 @@ function Example() {
 ```
 
 ## GridList
+Grid List Component
+
 ### Props
 
 | Name | Type | Description |
@@ -85,9 +87,13 @@ function Example() {
 
 
 ## GridTile
+A grid tile
+
 
 
 ## GridTileIcon
+The icon for a Grid tile. This is an instance of Icon component.
+
 ### Props
 
 | Name | Type | Description |
@@ -96,14 +102,22 @@ function Example() {
 
 
 ## GridTilePrimary
+The primary content for a Grid tile
+
 
 
 ## GridTileSecondary
+The secondary content for a Grid tile
+
 
 
 ## GridTileTitleSupportText
+Supporting Text for the Grid Tile
+
 
 
 ## GridTileTitle
+The title for a Grid tile
+
 
 

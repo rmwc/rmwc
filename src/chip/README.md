@@ -136,6 +136,8 @@ function Example() {
 ```
 
 ## Chip
+A Chip component.
+
 ### Props
 
 | Name | Type | Description |
@@ -153,6 +155,8 @@ function Example() {
 
 
 ## ChipSet
+A container for multiple chips.
+
 ### Props
 
 | Name | Type | Description |

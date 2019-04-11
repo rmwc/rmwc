@@ -34,6 +34,8 @@ Ripples will wrap whatever child component you pass it and apply the appropriate
 ```
 
 ## Ripple
+A component for adding Ripples to other components.
+
 ### Props
 
 | Name | Type | Description |

@@ -35,6 +35,8 @@
 ```
 
 ## Fab
+A floating action button component
+
 ### Props
 
 | Name | Type | Description |

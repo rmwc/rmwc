@@ -68,6 +68,8 @@ function Example() {
 ```
 
 ## Dialog
+A Dialog component.
+
 ### Props
 
 | Name | Type | Description |
@@ -80,15 +82,23 @@ function Example() {
 
 
 ## DialogTitle
+The Dialog title.
+
 
 
 ## DialogContent
+The Dialog content.
+
 
 
 ## DialogActions
+Actions container for the Dialog.
+
 
 
 ## DialogButton
+Action buttons for the Dialog.
+
 ### Props
 
 | Name | Type | Description |

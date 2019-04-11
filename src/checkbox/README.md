@@ -39,6 +39,8 @@ function Example() {
 ```
 
 ## Checkbox
+A Checkbox component.
+
 ### Props
 
 | Name | Type | Description |

@@ -47,6 +47,8 @@ You can avoid adding extra DOM nodes by using the `wrap` prop on elevation. This
 ```
 
 ## Elevation
+The Elevation Component
+
 ### Props
 
 | Name | Type | Description |

@@ -144,6 +144,8 @@ The avatar component has been designed to work nicely in any of the places you w
 ```
 
 ## Avatar
+An Avatar component for displaying users in a system.
+
 ### Props
 
 | Name | Type | Description |
@@ -157,6 +159,8 @@ The avatar component has been designed to work nicely in any of the places you w
 
 
 ## AvatarGroup
+A container for groups of Avatars
+
 ### Props
 
 | Name | Type | Description |
@@ -165,6 +169,8 @@ The avatar component has been designed to work nicely in any of the places you w
 
 
 ## AvatarCount
+An Avatar count for displaying list overflow.
+
 ### Props
 
 | Name | Type | Description |

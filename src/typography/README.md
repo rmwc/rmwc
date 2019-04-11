@@ -26,6 +26,8 @@
 ```
 
 ## Typography
+The Typography Component
+
 ### Props
 
 | Name | Type | Description |

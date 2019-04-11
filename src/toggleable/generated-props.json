@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "ToggleableFoundationComponent",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L23",
       "extends": [
         "FoundationComponent<Foundation, P & FoundationProps, S>"
       ],
@@ -285,7 +285,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -301,7 +301,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -311,7 +311,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -327,7 +327,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -466,7 +466,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -482,7 +482,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -579,7 +579,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -595,7 +595,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -621,7 +621,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -644,7 +644,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -682,7 +682,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -691,16 +691,17 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -716,7 +717,7 @@
           "inheritedFrom": "FoundationComponent.getDefaultFoundation",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
               "parameters": [],
@@ -803,13 +804,13 @@
           },
           "kind": "method",
           "name": "renderToggle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L59",
           "signatures": [
             {
               "fileName": "src/toggleable/index.tsx",
               "kind": "signature",
               "name": "renderToggle",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L59",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L59",
               "parameters": [
                 {
                   "flags": {
@@ -912,7 +913,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -928,7 +929,7 @@
           "inheritedFrom": "FoundationComponent.sync",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "sync",
               "parameters": [
@@ -969,7 +970,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -985,7 +986,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1041,7 +1042,7 @@
           ]
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1057,7 +1058,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1069,7 +1070,7 @@
       ],
       "properties": [
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1082,11 +1083,12 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1103,7 +1105,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1133,13 +1135,13 @@
           },
           "kind": "property",
           "name": "generatedId",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L29",
           "defaultValue": " randomId(this.constructor.displayName)",
           "type": "string"
         }
       ],
       "constructorType": {
-        "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+        "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1155,7 +1157,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/toggleable/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+            "fileName": "src/toggleable/node_modules/@rmwc/base/foundation-component.tsx",
             "kind": "signature",
             "name": "new ToggleableFoundationComponent",
             "parameters": [
@@ -1195,7 +1197,7 @@
       },
       "kind": "interface",
       "name": "ToggleableFoundationProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L6",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L6",
       "methods": [],
       "properties": [
         {
@@ -1219,7 +1221,7 @@
           },
           "kind": "property",
           "name": "checked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L12",
           "type": "undefined | false | true"
         },
         {
@@ -1243,7 +1245,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L10",
           "type": "undefined | false | true"
         },
         {
@@ -1267,7 +1269,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L8",
           "type": "undefined | string"
         },
         {
@@ -1291,7 +1293,7 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L20",
           "type": "undefined | (ref: HTMLInputElement | null) => void"
         },
         {
@@ -1315,7 +1317,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L16",
           "type": "React.ReactNode"
         },
         {
@@ -1339,7 +1341,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L18",
           "type": "React.HTMLProps<any>"
         },
         {
@@ -1363,7 +1365,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/toggleable/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/toggleable/index.tsx#L14",
           "type": "string | number | string[]"
         }
       ]

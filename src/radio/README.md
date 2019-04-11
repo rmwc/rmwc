@@ -74,6 +74,8 @@ You can use Radio Buttons and receive change events without having to manually s
 ```
 
 ## Radio
+A Radio button component.
+
 ### Props
 
 | Name | Type | Description |

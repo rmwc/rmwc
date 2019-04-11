@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Radio",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L53",
       "extends": [
         "ToggleableFoundationComponent<MDCRadioFoundation, RadioProps>"
       ],
@@ -292,7 +292,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -308,7 +308,7 @@
           "inheritedFrom": "FoundationComponent.componentDidMount",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidMount",
               "parameters": [],
@@ -318,7 +318,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -334,7 +334,7 @@
           "inheritedFrom": "FoundationComponent.componentDidUpdate",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
               "parameters": [
@@ -473,7 +473,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -489,7 +489,7 @@
           "inheritedFrom": "FoundationComponent.componentWillUnmount",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
               "parameters": [],
@@ -586,7 +586,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -602,7 +602,7 @@
           "inheritedFrom": "FoundationComponent.createElement",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "createElement",
               "parameters": [
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -651,7 +651,7 @@
                 "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
                 "metadata": {}
               },
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "emit",
               "parameters": [
@@ -689,7 +689,7 @@
                   "flags": {
                     "isExported": false,
                     "isExternal": false,
-                    "isOptional": true,
+                    "isOptional": false,
                     "isPrivate": false,
                     "isProtected": false,
                     "isPublic": false,
@@ -698,11 +698,12 @@
                   },
                   "kind": "parameter",
                   "name": "shouldBubble",
-                  "type": "undefined | false | true"
+                  "defaultValue": "false",
+                  "type": "boolean"
                 }
               ],
               "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: undefined | false | true) => CustomEvent<any>"
+              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
             }
           ]
         },
@@ -720,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L60",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L60",
           "signatures": [
             {
               "fileName": "src/radio/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L60",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L60",
               "parameters": [],
               "returnType": "MDCRadioFoundation",
               "type": "() => MDCRadioFoundation"
@@ -811,13 +812,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L67",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L67",
           "signatures": [
             {
               "fileName": "src/radio/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L67",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L67",
               "parameters": [],
               "returnType": "undefined | null | {}",
               "type": "() => undefined | null | {}"
@@ -825,7 +826,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -841,7 +842,7 @@
           "inheritedFrom": "ToggleableFoundationComponent.renderToggle",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
               "kind": "signature",
               "name": "renderToggle",
               "parameters": [
@@ -861,8 +862,8 @@
                   "type": "React.ReactNode"
                 }
               ],
-              "returnType": "{} | null | undefined",
-              "type": "(toggle: React.ReactNode) => {} | null | undefined"
+              "returnType": "undefined | null | {}",
+              "type": "(toggle: React.ReactNode) => undefined | null | {}"
             }
           ]
         },
@@ -946,7 +947,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -962,7 +963,7 @@
           "inheritedFrom": "FoundationComponent.sync",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "sync",
               "parameters": [
@@ -1003,7 +1004,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1019,7 +1020,7 @@
           "inheritedFrom": "FoundationComponent.syncProp",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "syncProp",
               "parameters": [
@@ -1075,7 +1076,7 @@
           ]
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1091,7 +1092,7 @@
           "inheritedFrom": "FoundationComponent.update",
           "signatures": [
             {
-              "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+              "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
               "kind": "signature",
               "name": "update",
               "parameters": [],
@@ -1116,12 +1117,12 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L57",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L57",
           "defaultValue": "\"Radio\"",
           "type": "string"
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1134,11 +1135,12 @@
           },
           "kind": "property",
           "name": "shouldDebounce",
+          "defaultValue": "false",
           "inheritedFrom": "FoundationComponent.shouldDebounce",
           "type": "boolean"
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1155,7 +1157,7 @@
           "type": "{ [key: string]: FoundationElement<any, any> }"
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1172,7 +1174,7 @@
           "type": "MDCRadioFoundation"
         },
         {
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1185,12 +1187,13 @@
           },
           "kind": "property",
           "name": "generatedId",
+          "defaultValue": " randomId(this.constructor.displayName)",
           "inheritedFrom": "ToggleableFoundationComponent.generatedId",
           "type": "string"
         }
       ],
       "constructorType": {
-        "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+        "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1206,7 +1209,7 @@
         "inheritedFrom": "FoundationComponent.__constructor",
         "signatures": [
           {
-            "fileName": "src/radio/node_modules/@rmwc/base/dist/foundation-component.d.ts",
+            "fileName": "src/radio/node_modules/@rmwc/base/foundation-component.tsx",
             "kind": "signature",
             "name": "new Radio",
             "parameters": [
@@ -1253,7 +1256,7 @@
       },
       "kind": "interface",
       "name": "RadioProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/99bf40822/src/radio/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/e655eca89/src/radio/index.tsx#L12",
       "extends": [
         "WithRippleProps",
         "ToggleableFoundationProps"
@@ -1268,7 +1271,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1292,7 +1295,7 @@
             "contentsRaw": "Toggle the control on and off.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1316,7 +1319,7 @@
             "contentsRaw": "Disables the control.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1340,7 +1343,7 @@
             "contentsRaw": "A DOM ID for the toggle.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1364,7 +1367,7 @@
             "contentsRaw": "A reference to the native input.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1388,7 +1391,7 @@
             "contentsRaw": "A label for the control.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1412,7 +1415,7 @@
             "contentsRaw": "Adds a ripple effect to the component",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1436,7 +1439,7 @@
             "contentsRaw": "By default, all props except className and style spread to the input. These are additional props for the root of the checkbox.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1460,7 +1463,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1484,7 +1487,7 @@
             "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/types/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1508,7 +1511,7 @@
             "contentsRaw": "The value of the control.",
             "metadata": {}
           },
-          "fileName": "src/radio/node_modules/@rmwc/toggleable/dist/index.d.ts",
+          "fileName": "src/radio/node_modules/@rmwc/toggleable/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
