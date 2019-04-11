@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Select Menus"
       lead="Menus display a list of choices on a transient sheet of material."
-      module="@rmwc/fab"
+      module="@rmwc/select"
       styles={[
         '@material/select/dist/mdc.select.css',
         '@material/floating-label/dist/mdc.floating-label.css',

@@ -20,7 +20,7 @@ export default function() {
     <Docs
       title="Dialogs"
       lead="Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks."
-      module="@rmwc/- Module **@rmwc/dialog**"
+      module="@rmwc/dialog"
       styles={[
         '@material/dialog/dist/mdc.dialog.css',
         '@material/button/dist/mdc.button.css'
