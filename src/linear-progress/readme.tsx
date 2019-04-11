@@ -11,7 +11,7 @@ export default function() {
     <Docs
       title="Linear Progress"
       lead="Progress and activity indicators are visual indications of an app loading content."
-      module="@rmwc/fab"
+      module="@rmwc/linear-progress"
       styles={['@material/linear-progress/dist/mdc.linear-progress.css']}
       docsLink="https://material.io/develop/web/components/linear-progress/"
       examples={examples}
