@@ -1,4 +1,4 @@
-export const { version } = require('./package.json');
+export { version } from '@rmwc/base/package.json';
 
 export * from '@rmwc/avatar';
 export * from '@rmwc/base';

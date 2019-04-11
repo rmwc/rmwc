@@ -269,9 +269,9 @@ const IFrame = ({
     if (mountNode) {
       mountNode.classList.add('mdc-typography');
       window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
+        setTimeout(() => {
           setCanMount(true);
-        });
+        }, 100);
       });
     }
   }, [headNode, mountNode]);
