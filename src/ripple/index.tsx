@@ -48,6 +48,7 @@ export class Ripple extends FoundationComponent<
 
   private root = this.createElement('root');
   private surface = this.createElement('surface');
+  private isTouched = false;
 
   constructor(props: RippleProps) {
     super(props);
@@ -141,7 +142,9 @@ export class Ripple extends FoundationComponent<
 
   handleMouseDown(evt: React.MouseEvent<HTMLElement> & MouseEvent) {
     this.props.onMouseDown && this.props.onMouseDown(evt);
-    this.activateRipple(evt);
+    if (!this.isTouched) {
+      this.activateRipple(evt);
+    }
   }
 
   handleMouseUp(evt: React.MouseEvent<HTMLElement>) {
@@ -150,6 +153,7 @@ export class Ripple extends FoundationComponent<
   }
 
   handleTouchStart(evt: React.TouchEvent<HTMLElement> & TouchEvent) {
+    this.isTouched = true;
     this.props.onTouchStart && this.props.onTouchStart(evt);
     this.activateRipple(evt);
   }
