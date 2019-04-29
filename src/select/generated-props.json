@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "SelectBase",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L277",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L277",
       "extends": [
         "FoundationComponent<MDCSelectFoundation, SelectProps & DeprecatedSelectProps, SelectState>"
       ],
@@ -298,13 +298,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L314",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L314",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L314",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L314",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -715,13 +715,13 @@
           },
           "kind": "method",
           "name": "getCommonAdapterMethods_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L485",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L485",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getCommonAdapterMethods_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L485",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L485",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -742,13 +742,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L353",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L353",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L353",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L353",
               "parameters": [],
               "returnType": "MDCSelectFoundation",
               "type": "() => MDCSelectFoundation"
@@ -769,13 +769,13 @@
           },
           "kind": "method",
           "name": "getEnhancedSelectAdapterMethods_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L393",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L393",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getEnhancedSelectAdapterMethods_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L393",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L393",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -796,13 +796,13 @@
           },
           "kind": "method",
           "name": "getFoundationMap_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L527",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L527",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getFoundationMap_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L527",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L527",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -823,13 +823,13 @@
           },
           "kind": "method",
           "name": "getLabelAdapterMethods_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L516",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L516",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getLabelAdapterMethods_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L516",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L516",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -850,13 +850,13 @@
           },
           "kind": "method",
           "name": "getNativeSelectAdapterMethods_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L367",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L367",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getNativeSelectAdapterMethods_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L367",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L367",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -877,13 +877,13 @@
           },
           "kind": "method",
           "name": "getOutlineAdapterMethods_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L504",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L504",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getOutlineAdapterMethods_",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L504",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L504",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -968,13 +968,13 @@
           },
           "kind": "method",
           "name": "handleBlur",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L576",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L576",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleBlur",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L576",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L576",
               "parameters": [
                 {
                   "flags": {
@@ -1011,13 +1011,13 @@
           },
           "kind": "method",
           "name": "handleChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L566",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L566",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L566",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L566",
               "parameters": [
                 {
                   "flags": {
@@ -1054,13 +1054,13 @@
           },
           "kind": "method",
           "name": "handleClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L581",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L581",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L581",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L581",
               "parameters": [
                 {
                   "flags": {
@@ -1097,13 +1097,13 @@
           },
           "kind": "method",
           "name": "handleFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L571",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L571",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L571",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L571",
               "parameters": [
                 {
                   "flags": {
@@ -1140,13 +1140,13 @@
           },
           "kind": "method",
           "name": "handleKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L602",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L602",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L602",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L602",
               "parameters": [
                 {
                   "flags": {
@@ -1183,13 +1183,13 @@
           },
           "kind": "method",
           "name": "handleMenuClosed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L631",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L631",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleMenuClosed",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L631",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L631",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1210,13 +1210,13 @@
           },
           "kind": "method",
           "name": "handleMenuOpened",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L624",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L624",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleMenuOpened",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L624",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L624",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1237,13 +1237,13 @@
           },
           "kind": "method",
           "name": "handleMenuSelected",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L607",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L607",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "handleMenuSelected",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L607",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L607",
               "parameters": [
                 {
                   "flags": {
@@ -1280,13 +1280,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L686",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L686",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L686",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L686",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1307,13 +1307,13 @@
           },
           "kind": "method",
           "name": "renderHelpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L668",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L668",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "renderHelpText",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L668",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L668",
               "parameters": [],
               "returnType": "null | Element",
               "type": "() => null | Element"
@@ -1334,13 +1334,13 @@
           },
           "kind": "method",
           "name": "renderIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L645",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L645",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "renderIcon",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L645",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L645",
               "parameters": [
                 {
                   "flags": {
@@ -1471,13 +1471,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L535",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L535",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L535",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L535",
               "parameters": [
                 {
                   "flags": {
@@ -1681,7 +1681,7 @@
           },
           "kind": "property",
           "name": "hiddenInput_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L291",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L291",
           "defaultValue": " null",
           "type": "HTMLInputElement | null"
         },
@@ -1699,7 +1699,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L286",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L286",
           "defaultValue": " this.props.id || randomId('select')",
           "type": "string"
         },
@@ -1717,7 +1717,7 @@
           },
           "kind": "property",
           "name": "leadingIcon_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L292",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L292",
           "defaultValue": " null",
           "type": "SelectIcon | null"
         },
@@ -1735,7 +1735,7 @@
           },
           "kind": "property",
           "name": "menu",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L290",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L290",
           "defaultValue": " null",
           "type": "Menu | null"
         },
@@ -1753,7 +1753,7 @@
           },
           "kind": "property",
           "name": "menuElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L289",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L289",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         },
@@ -1771,7 +1771,7 @@
           },
           "kind": "property",
           "name": "nativeControl",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L287",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L287",
           "defaultValue": " null",
           "type": "HTMLSelectElement | null"
         },
@@ -1789,7 +1789,7 @@
           },
           "kind": "property",
           "name": "selectedText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L288",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L288",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         },
@@ -1807,7 +1807,7 @@
           },
           "kind": "property",
           "name": "trailingIcon_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L293",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L293",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         }
@@ -1826,13 +1826,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L299",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L299",
         "signatures": [
           {
             "fileName": "src/select/index.tsx",
             "kind": "signature",
             "name": "new SelectBase",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L299",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L299",
             "parameters": [
               {
                 "flags": {
@@ -1870,7 +1870,7 @@
       },
       "kind": "class",
       "name": "SelectIcon",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L817",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L817",
       "extends": [
         "FoundationComponent<MDCSelectIconFoundation, IconProps>"
       ],
@@ -2569,13 +2569,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L824",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L824",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L824",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L824",
               "parameters": [],
               "returnType": "MDCSelectIconFoundation",
               "type": "() => MDCSelectIconFoundation"
@@ -2660,13 +2660,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L846",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L846",
           "signatures": [
             {
               "fileName": "src/select/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L846",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L846",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2923,7 +2923,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L821",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L821",
           "defaultValue": "\"SelectIcon\"",
           "type": "string"
         },
@@ -3037,7 +3037,7 @@
       },
       "kind": "interface",
       "name": "FormattedOption",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L15",
       "extends": [
         "AllHTMLAttributes<any>"
       ],
@@ -4349,7 +4349,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L16",
           "type": "string"
         },
         {
@@ -7443,7 +7443,7 @@
           },
           "kind": "property",
           "name": "options",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L18",
           "type": "FormattedOption[]"
         },
         {
@@ -8259,7 +8259,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L17",
           "type": "undefined | string"
         },
         {
@@ -8353,7 +8353,7 @@
       },
       "kind": "interface",
       "name": "SelectProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L22",
       "methods": [],
       "properties": [
         {
@@ -8377,7 +8377,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L38",
           "type": "undefined | false | true"
         },
         {
@@ -8401,7 +8401,7 @@
           },
           "kind": "property",
           "name": "enhanced",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L42",
           "type": "undefined | false | true"
         },
         {
@@ -8425,7 +8425,7 @@
           },
           "kind": "property",
           "name": "helpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L26",
           "type": "React.ReactNode | SelectHelperTextProps"
         },
         {
@@ -8449,7 +8449,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L48",
           "type": "RMWC.IconPropT"
         },
         {
@@ -8473,7 +8473,7 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L46",
           "type": "undefined | (ref: HTMLSelectElement | null) => void"
         },
         {
@@ -8497,7 +8497,7 @@
           },
           "kind": "property",
           "name": "invalid",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L36",
           "type": "undefined | false | true"
         },
         {
@@ -8521,7 +8521,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L30",
           "type": "undefined | string"
         },
         {
@@ -8545,7 +8545,7 @@
           },
           "kind": "property",
           "name": "options",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L28",
           "type": "FormattedOption[] | string[] | { [value: string]: string }"
         },
         {
@@ -8569,7 +8569,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L34",
           "type": "undefined | false | true"
         },
         {
@@ -8593,7 +8593,7 @@
           },
           "kind": "property",
           "name": "placeholder",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L32",
           "type": "undefined | string"
         },
         {
@@ -8617,7 +8617,7 @@
           },
           "kind": "property",
           "name": "required",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L40",
           "type": "undefined | false | true"
         },
         {
@@ -8641,7 +8641,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L44",
           "type": "Object"
         },
         {
@@ -8665,7 +8665,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L24",
           "type": "undefined | string"
         }
       ]
@@ -8684,7 +8684,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedSelectProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L51",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L51",
       "methods": [],
       "properties": [
         {
@@ -8708,7 +8708,7 @@
           },
           "kind": "property",
           "name": "withLeadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L53",
           "type": "RMWC.IconPropT"
         }
       ]
@@ -8727,7 +8727,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L858",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L858",
       "methods": [],
       "properties": [
         {
@@ -8751,7 +8751,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L860",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L860",
           "type": "undefined | false | true"
         },
         {
@@ -8775,7 +8775,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/select/index.tsx#L862",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/select/index.tsx#L862",
           "type": "undefined | false | true"
         }
       ]

@@ -1,3 +1,9 @@
+#### 5.4.1 (2019-04-29)
+
+##### Bug Fixes
+
+* **Snackbar:**  Corrects issues with es5 compilation extending built in Array (602f4855)
+
 #### 5.4.0 (2019-04-29)
 
 ##### Chores

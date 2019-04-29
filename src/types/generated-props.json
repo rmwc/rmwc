@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L50",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L50",
       "methods": [],
       "properties": [
         {
@@ -39,7 +39,7 @@
           },
           "kind": "property",
           "name": "accent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L52",
           "type": "undefined | false | true"
         },
         {
@@ -63,7 +63,7 @@
           },
           "kind": "property",
           "name": "surface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L54",
           "type": "undefined | false | true"
         },
         {
@@ -87,7 +87,7 @@
           },
           "kind": "property",
           "name": "unbounded",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L56",
           "type": "undefined | false | true"
         }
       ]
@@ -106,7 +106,7 @@
       },
       "kind": "interface",
       "name": "WithRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L59",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L59",
       "extends": [
         "DeprecatedRippleProps"
       ],
@@ -133,7 +133,7 @@
           },
           "kind": "property",
           "name": "accent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L52",
           "inheritedFrom": "DeprecatedRippleProps.accent",
           "type": "undefined | false | true"
         },
@@ -158,7 +158,7 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L61",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L61",
           "type": "RipplePropT"
         },
         {
@@ -182,7 +182,7 @@
           },
           "kind": "property",
           "name": "surface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L54",
           "inheritedFrom": "DeprecatedRippleProps.surface",
           "type": "undefined | false | true"
         },
@@ -207,7 +207,7 @@
           },
           "kind": "property",
           "name": "unbounded",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L56",
           "inheritedFrom": "DeprecatedRippleProps.unbounded",
           "type": "undefined | false | true"
         }
@@ -227,7 +227,7 @@
       },
       "kind": "interface",
       "name": "ComponentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L69",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L69",
       "extends": [
         "HTMLProps<any>"
       ],
@@ -5364,7 +5364,7 @@
           },
           "kind": "property",
           "name": "tag",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L70",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L70",
           "type": "TagT"
         },
         {
@@ -5398,7 +5398,7 @@
           },
           "kind": "property",
           "name": "theme",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L71",
           "type": "ThemePropT"
         },
         {
@@ -5587,7 +5587,7 @@
       },
       "kind": "interface",
       "name": "IconOptions",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L88",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L88",
       "indexSignature": {
         "documentation": {
           "contents": [
@@ -5599,7 +5599,7 @@
         "fileName": "src/types/index.tsx",
         "kind": "signature",
         "name": "__index",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L114",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L114",
         "parameters": [
           {
             "flags": {
@@ -5643,7 +5643,7 @@
           },
           "kind": "property",
           "name": "basename",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L107",
           "type": "undefined | string"
         },
         {
@@ -5660,7 +5660,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L89",
           "type": "IconElementT"
         },
         {
@@ -5684,7 +5684,7 @@
           },
           "kind": "property",
           "name": "prefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L105",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L105",
           "type": "undefined | string"
         },
         {
@@ -5708,7 +5708,7 @@
           },
           "kind": "property",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L109",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L109",
           "type": "undefined | (props: ) => React.ReactNode"
         },
         {
@@ -5732,7 +5732,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L114",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L114",
           "type": "IconSizeT"
         },
         {
@@ -5756,7 +5756,7 @@
           },
           "kind": "property",
           "name": "strategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L99",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L99",
           "type": "IconStrategyT"
         }
       ]
@@ -5782,7 +5782,7 @@
       },
       "kind": "type alias",
       "name": "MergeInterfacesT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L4",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L4",
       "type": "A & Pick<B, Exclude<keyof B, keyof A>>"
     },
     "ThemeOptionT": {
@@ -5806,7 +5806,7 @@
       },
       "kind": "type alias",
       "name": "ThemeOptionT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L9",
       "type": "\"primary\" | \"secondary\" | \"background\" | \"surface\" | \"error\" | \"primaryBg\" | \"secondaryBg\" | \"onPrimary\" | \"onSecondary\" | \"onSurface\" | \"onError\" | \"textPrimaryOnBackground\" | \"textSecondaryOnBackground\" | \"textHintOnBackground\" | \"textDisabledOnBackground\" | \"textIconOnBackground\" | \"textPrimaryOnLight\" | \"textSecondaryOnLight\" | \"textHintOnLight\" | \"textDisabledOnLight\" | \"textIconOnLight\" | \"textPrimaryOnDark\" | \"textSecondaryOnDark\" | \"textHintOnDark\" | \"textDisabledOnDark\" | \"textIconOnDark\""
     },
     "ThemePropT": {
@@ -5823,7 +5823,7 @@
       },
       "kind": "type alias",
       "name": "ThemePropT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L37",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L37",
       "type": "ThemeOptionT | ThemeOptionT[]"
     },
     "RipplePropT": {
@@ -5847,7 +5847,7 @@
       },
       "kind": "type alias",
       "name": "RipplePropT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L42",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L42",
       "type": "boolean | "
     },
     "TagT": {
@@ -5871,7 +5871,7 @@
       },
       "kind": "type alias",
       "name": "TagT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L67",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L67",
       "type": "string | React.ComponentType<any>"
     },
     "CustomEventT": {
@@ -5888,7 +5888,7 @@
       },
       "kind": "type alias",
       "name": "CustomEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L74",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L74",
       "type": "CustomEvent<T> & SyntheticEvent<EventTarget>"
     },
     "IconSizeT": {
@@ -5905,7 +5905,7 @@
       },
       "kind": "type alias",
       "name": "IconSizeT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L78",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L78",
       "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\""
     },
     "IconStrategyT": {
@@ -5922,7 +5922,7 @@
       },
       "kind": "type alias",
       "name": "IconStrategyT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L80",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L80",
       "type": "\"auto\" | \"ligature\" | \"className\" | \"url\" | \"component\" | \"custom\""
     },
     "IconPropT": {
@@ -5939,7 +5939,7 @@
       },
       "kind": "type alias",
       "name": "IconPropT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/15f167a1b/src/types/index.tsx#L119",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/748de1f81/src/types/index.tsx#L119",
       "type": "IconElementT | IconOptions"
     }
   }
