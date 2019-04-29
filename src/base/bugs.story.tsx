@@ -14,7 +14,10 @@ import {
   TabBar,
   Tab,
   IconButton,
-  SimpleDialog
+  SimpleDialog,
+  Dialog,
+  DialogContent,
+  MenuSurfaceAnchor
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -472,6 +475,24 @@ class Bug442 extends React.Component {
   }
 }
 
+class Bug453 extends React.Component {
+  render() {
+    return (
+      <Dialog open={true}>
+        <DialogContent>
+          <MenuSurfaceAnchor>
+            <Menu open={true} hoistToBody={true}>
+              <MenuItem>Hello</MenuItem>
+              <MenuItem>World</MenuItem>
+            </Menu>
+            <button>Menu button</button>
+          </MenuSurfaceAnchor>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -540,4 +561,5 @@ storiesOf('Bugs', module)
   .add('#390', () => <Bug390 />)
   .add('#842vo56019', () => <Bug842vo56019 />)
   .add('#415', () => <Bug415 />)
-  .add('#442', () => <Bug442 />);
+  .add('#442', () => <Bug442 />)
+  .add('#453', () => <Bug453 />);

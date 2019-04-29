@@ -295,7 +295,9 @@ export class MenuSurface extends FoundationComponent<
 
       // correct layout for open menu
       if (this.props.open) {
-        (this.foundation as any).autoPosition_();
+        // wait an extra frame so that the element is actually
+        // done being hoisted and painting. Fixes Issue #453
+        setTimeout(() => (this.foundation as any).autoPosition_());
       }
     }
   }
