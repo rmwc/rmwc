@@ -155,7 +155,7 @@ A Snackbar component for notifications.
 | `icon` | `RMWC.IconPropT` | An icon for the snackbar |
 | `leading` | `undefined \| false \| true` |  |
 | `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |
-| `onClose` | `undefined \| (evt: SnackbarOnCloseEventT) => void` | A callback thats fired when the Snackbar hides. |
+| `onClose` | `undefined \| (evt: SnackbarOnCloseEventT) => void` | A callback thats fired when the Snackbar hides. evt.detail = { reason?: string } |
 | `onOpen` | `undefined \| (evt: SnackbarOnOpenEventT) => void` | A callback thats fired when the Snackbar shows. |
 | `open` | `undefined \| false \| true` | Show the Snackbar. |
 | `stacked` | `undefined \| false \| true` | Places the action underneath the message text. |

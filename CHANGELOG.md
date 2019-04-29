@@ -1,3 +1,26 @@
+#### 5.4.0 (2019-04-29)
+
+##### Chores
+
+* **Base:**  Updating dependencies (6647cde9)
+* **TextField:**  Adding autoFocus test #439 (f7f175e3)
+* **Storybook:**  Updating Storybook (f180beaf)
+
+##### New Features
+
+* **Snackbar:**  Adding SnackbarQueue (4d6625b4)
+* **Typescript:**  export all custom events for consumers (22a02d7c)
+
+##### Bug Fixes
+
+* **Menu:**  Corrects issue with using hoistToBody inside of Dialogs #453 (d1ecea0d)
+* **TabBar:**  Corrects issue with delayed setting of tabIndex #442 (a87d2d5f)
+* **Select:**  Corrects issue with autoFocusing of selects #439 (1d9c8de6)
+* **Docs:**  Corrects double SimpleMenu entry in docs #455 (59333780)
+* **Ripple:**
+  *  Reset is touch for devices that support both mouse and touch events (d8171320)
+  *  Fix ripple gets triggered twice on touch devices (bc887084)
+
 #### 5.3.1 (2019-04-11)
 
 #### 5.3.0 (2019-04-10)
