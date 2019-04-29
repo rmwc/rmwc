@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/toolbar",
-  "version": "5.3.1",
+  "version": "5.4.0",
   "description": "RMWC Toolbar component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,10 +33,10 @@
   },
   "dependencies": {
     "@material/toolbar": "^1.1.0",
-    "@rmwc/base": "^5.3.1",
-    "@rmwc/icon": "^5.3.1",
-    "@rmwc/ripple": "^5.3.1",
-    "@rmwc/types": "^5.3.1"
+    "@rmwc/base": "^5.4.0",
+    "@rmwc/icon": "^5.4.0",
+    "@rmwc/ripple": "^5.4.0",
+    "@rmwc/types": "^5.4.0"
   },
   "gitHead": "5ae98ed32a2827431980ce949d5c95078ea9e3c9"
 }
