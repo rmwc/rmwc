@@ -9,12 +9,14 @@ import {
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
+export type IconButtonOnChangeEventT = RMWC.CustomEventT<{ isOn: boolean }>;
+
 /** An IconButton component that can also be used as a toggle. */
 export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
-  /** An onChange callback that receives a custom event. */
-  onChange?: (evt: RMWC.CustomEventT<{ isOn: boolean }>) => void;
+  /** An onChange callback that receives a custom event. evt.detail = { isOn: boolean } */
+  onChange?: (evt: IconButtonOnChangeEventT) => void;
   /** Makes the button disabled */
   disabled?: boolean;
   /** Icon for the button */

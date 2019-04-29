@@ -28,8 +28,18 @@ const getAnchorCornerFromProp = (
   anchorCorner: keyof typeof ANCHOR_CORNER_MAP
 ) => MDCMenuSurfaceFoundation.Corner[ANCHOR_CORNER_MAP[anchorCorner]];
 
-// prettier-ignore
-export type AnchorT = 'bottomEnd' | 'bottomLeft' | 'bottomRight' | 'bottomStart' | 'topEnd' | 'topLeft' | 'topRight' | 'topStart';
+export type AnchorT =
+  | 'bottomEnd'
+  | 'bottomLeft'
+  | 'bottomRight'
+  | 'bottomStart'
+  | 'topEnd'
+  | 'topLeft'
+  | 'topRight'
+  | 'topStart';
+
+export type MenuSurfaceOnOpenEventT = RMWC.CustomEventT<{}>;
+export type MenuSurfaceOnCloseEventT = RMWC.CustomEventT<{}>;
 
 export interface MenuSurfaceProps {
   /** Opens the menu. */
@@ -41,9 +51,9 @@ export interface MenuSurfaceProps {
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
-  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
+  onOpen?: (evt: MenuSurfaceOnOpenEventT) => void;
   /** Callback for when the menu is closed. */
-  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
+  onClose?: (evt: MenuSurfaceOnCloseEventT) => void;
   /** Children to render. */
   children?: React.ReactNode;
 }

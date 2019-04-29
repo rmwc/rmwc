@@ -153,8 +153,8 @@ A Drawer component.
 |------|------|-------------|
 | `dismissible` | `undefined \| false \| true` | Makes a dismissible drawer. |
 | `modal` | `undefined \| false \| true` | Makes a modal / temporary drawer. |
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback that fires when the Drawer is closed. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback that fires when the Drawer is opened. |
+| `onClose` | `undefined \| (evt: DrawerOnOpenEventT) => void` | Callback that fires when the Drawer is closed. |
+| `onOpen` | `undefined \| (evt: DrawerOnCloseEventT) => void` | Callback that fires when the Drawer is opened. |
 | `open` | `undefined \| false \| true` | Opens or closes the Drawer. |
 
 

@@ -10,14 +10,17 @@ import {
 } from '@rmwc/base';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 
+export type SnackbarOnOpenEventT = RMWC.CustomEventT<{}>;
+export type SnackbarOnCloseEventT = RMWC.CustomEventT<{}>;
+
 /** A Snackbar component for notifications. */
 export interface SnackbarProps {
   /** Show the Snackbar. */
   open?: boolean;
   /** A callback thats fired when the Snackbar shows. */
-  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
+  onOpen?: (evt: SnackbarOnOpenEventT) => void;
   /** A callback thats fired when the Snackbar hides. */
-  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
+  onClose?: (evt: SnackbarOnCloseEventT) => void;
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.ReactNode;
   /** One or more actions to add to the snackbar. */

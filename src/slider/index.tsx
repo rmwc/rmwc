@@ -5,20 +5,20 @@ import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCSliderFoundation } from '@material/slider';
 import { componentFactory, FoundationComponent, debounce } from '@rmwc/base';
 
+export type SliderOnChangeEventT = RMWC.CustomEventT<{
+  value: number;
+}>;
+
+export type SliderOnInputEventT = RMWC.CustomEventT<{
+  value: number;
+}>;
+
 /** A Slider component. */
 export interface SliderProps {
-  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. */
-  onChange?: (
-    evt: RMWC.CustomEventT<{
-      value: number;
-    }>
-  ) => void;
-  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. */
-  onInput?: (
-    evt: RMWC.CustomEventT<{
-      value: number;
-    }>
-  ) => void;
+  /** A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} */
+  onChange?: (evt: SliderOnChangeEventT) => void;
+  /** A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} */
+  onInput?: (evt: SliderOnInputEventT) => void;
   /** The value of the Slider. */
   value?: number | string;
   /** The minimum value of the Slider. */

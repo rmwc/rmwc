@@ -9,22 +9,23 @@ import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 import {
   MenuSurface,
   MenuSurfaceAnchor,
-  MenuSurfaceProps
+  MenuSurfaceProps,
+  MenuSurfaceOnOpenEventT,
+  MenuSurfaceOnCloseEventT
 } from './menu-surface';
 
 /****************************************************************
  * Menu
  ****************************************************************/
+export type MenuOnSelectEventT = RMWC.CustomEventT<{
+  index: number;
+  item: HTMLElement;
+}>;
 
 /** A menu component for displaying lists items. */
 export interface MenuProps extends MenuSurfaceProps {
-  /** Callback that fires when a Menu item is selected. */
-  onSelect?: (
-    evt: RMWC.CustomEventT<{
-      index: number;
-      item: HTMLElement;
-    }>
-  ) => void;
+  /** Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } */
+  onSelect?: (evt: MenuOnSelectEventT) => void;
 }
 
 /** A wrapper for menu items */
@@ -150,7 +151,7 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
     }
   }
 
-  handleOpen(evt: RMWC.CustomEventT<{}>) {
+  handleOpen(evt: MenuSurfaceOnOpenEventT) {
     this.props.onOpen && this.props.onOpen(evt);
     const list = this.items;
     if (list.length > 0 && !list.some(el => el === document.activeElement)) {
@@ -245,7 +246,7 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
       } = this.props;
       const wrappedHandle = React.cloneElement(handle, {
         ...handle.props,
-        onClick: (evt: RMWC.CustomEventT<void>) => {
+        onClick: (evt: React.MouseEvent) => {
           this.setState({ open: !this.state.open });
           if (handle.props.onClick) {
             handle.props.onClick(evt);
@@ -253,7 +254,7 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
         }
       });
 
-      const wrappedOnClose = (evt: RMWC.CustomEventT<{}>) => {
+      const wrappedOnClose = (evt: MenuSurfaceOnCloseEventT) => {
         this.setState({ open: !!open || false });
         if (onClose) {
           onClose(evt);

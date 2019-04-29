@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "IconButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L15",
       "extends": [
         "WithRippleProps"
       ],
@@ -73,7 +73,7 @@
           },
           "kind": "property",
           "name": "checked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L17",
           "type": "undefined | false | true"
         },
         {
@@ -97,7 +97,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L21",
           "type": "undefined | false | true"
         },
         {
@@ -121,15 +121,15 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L23",
           "type": "RMWC.IconPropT"
         },
         {
           "documentation": {
             "contents": [
-              "<p>An onChange callback that receives a custom event.</p>\n"
+              "<p>An onChange callback that receives a custom event. evt.detail = { isOn: boolean }</p>\n"
             ],
-            "contentsRaw": "An onChange callback that receives a custom event.",
+            "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
           "fileName": "src/icon-button/index.tsx",
@@ -145,8 +145,8 @@
           },
           "kind": "property",
           "name": "onChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L17",
-          "type": "undefined | (evt: RMWC.CustomEventT<>) => void"
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L19",
+          "type": "undefined | (evt: IconButtonOnChangeEventT) => void"
         },
         {
           "documentation": {
@@ -169,7 +169,7 @@
           },
           "kind": "property",
           "name": "onIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L25",
           "type": "RMWC.IconPropT"
         },
         {
@@ -260,7 +260,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedIconButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L26",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L28",
       "methods": [],
       "properties": [
         {
@@ -284,7 +284,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L30",
           "type": "any"
         },
         {
@@ -308,10 +308,27 @@
           },
           "kind": "property",
           "name": "onIconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/40cb74678/src/icon-button/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L32",
           "type": "any"
         }
       ]
+    },
+    "IconButtonOnChangeEventT": {
+      "fileName": "src/icon-button/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "IconButtonOnChangeEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/icon-button/index.tsx#L12",
+      "type": "RMWC.CustomEventT<>"
     }
   }
 }

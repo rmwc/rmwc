@@ -14,9 +14,11 @@ import { Icon } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 import { SpecificEventListener } from '@material/base/types';
 
+export type TopAppBarOnNavEventT = RMWC.CustomEventT<{}>;
+
 export interface TopAppBarProps {
   /** Emits when the navigation icon is clicked. */
-  onNav?: (evt: RMWC.CustomEventT<{}>) => void;
+  onNav?: (evt: TopAppBarOnNavEventT) => void;
   /** Styles the top app bar as a fixed top app bar. */
   fixed?: boolean;
   /** Styles the top app bar as a prominent top app bar. */

@@ -3,6 +3,8 @@ import * as React from 'react';
 import { MDCListFoundation } from '@material/list';
 import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
 
+export type ListOnActionEventT = RMWC.CustomEventT<number>;
+
 /** A List Component */
 export interface ListProps {
   /** Reduces the padding on List items. */
@@ -13,8 +15,8 @@ export interface ListProps {
   avatarList?: boolean;
   /** Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. */
   nonInteractive?: boolean;
-  /** A callback for when a list item is interacted with. */
-  onAction?: (evt: RMWC.CustomEventT<number>) => void;
+  /** A callback for when a list item is interacted with. evt.detail = number */
+  onAction?: (evt: ListOnActionEventT) => void;
 }
 
 /** A List Component */

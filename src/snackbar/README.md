@@ -77,8 +77,8 @@ A Snackbar component for notifications.
 | `dismissesOnAction` | `undefined \| false \| true` | Whether or not your want clicking an action to close the Snackbar. |
 | `leading` | `undefined \| false \| true` |  |
 | `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | A callback thats fired when the Snackbar hides. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | A callback thats fired when the Snackbar shows. |
+| `onClose` | `undefined \| (evt: SnackbarOnCloseEventT) => void` | A callback thats fired when the Snackbar hides. |
+| `onOpen` | `undefined \| (evt: SnackbarOnOpenEventT) => void` | A callback thats fired when the Snackbar shows. |
 | `open` | `undefined \| false \| true` | Show the Snackbar. |
 | `stacked` | `undefined \| false \| true` | Places the action underneath the message text. |
 | `timeout` | `undefined \| number` | Milliseconds to show the Snackbar for. |

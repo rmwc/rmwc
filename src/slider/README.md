@@ -53,8 +53,8 @@ A Slider component.
 | `displayMarkers` | `undefined \| false \| true` | Displays the individual step markers on the Slider track. |
 | `max` | `number \| string` | The maximum value of the Slider. |
 | `min` | `number \| string` | The minimum value of the Slider. |
-| `onChange` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. |
-| `onInput` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. |
+| `onChange` | `undefined \| (evt: SliderOnChangeEventT) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} |
+| `onInput` | `undefined \| (evt: SliderOnInputEventT) => void` | A callback that fires continuously while the Slider is sliding that takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} |
 | `step` | `number \| string` | A step to quantize values by. |
 | `value` | `number \| string` | The value of the Slider. |
 

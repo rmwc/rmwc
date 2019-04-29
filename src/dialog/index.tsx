@@ -108,14 +108,17 @@ export class DialogButton extends React.Component<
   }
 }
 
+export type DialogOnOpenEventT = RMWC.CustomEventT<{}>;
+export type DialogOnCloseEventT = RMWC.CustomEventT<{ action?: string }>;
+
 /** A Dialog component. */
 export interface DialogProps {
   /** Whether or not the Dialog is showing. */
   open?: boolean;
   /** Callback for when the Dialog opens. */
-  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
-  /** Callback for when the Dialog closes. */
-  onClose?: (evt: RMWC.CustomEventT<{ action?: string }>) => void;
+  onOpen?: (evt: DialogOnOpenEventT) => void;
+  /** Callback for when the Dialog closes. evt.detail = { action?: string }*/
+  onClose?: (evt: DialogOnCloseEventT) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
   /** Prevent the dialog from closing when the scrim is clicked. */

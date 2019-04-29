@@ -106,7 +106,7 @@ The TabBar component
 | Name | Type | Description |
 |------|------|-------------|
 | `activeTabIndex` | `undefined \| number` | The index of the active tab. |
-| `onActivate` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. |
+| `onActivate` | `undefined \| (evt: TabBarOnActivateEventT) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } |
 
 
 ## Tab
@@ -119,7 +119,7 @@ A Tab component
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
 | `label` | `any` | A label for the tab. |
-| `onInteraction` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. |
+| `onInteraction` | `undefined \| (evt: TabOnInteractionEventT) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } |
 | `restrictIndicator` | `undefined \| false \| true` | Restricts the indicator to the content |
 | `stacked` | `undefined \| false \| true` | Stacks the icon on top of the text label |
 

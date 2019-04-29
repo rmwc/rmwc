@@ -10,6 +10,8 @@ import { withRipple, RippleSurface } from '@rmwc/ripple';
 import { withTabBarContext, TabBarContextT } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';
 
+export type TabOnInteractionEventT = RMWC.CustomEventT<{ tabId: string }>;
+
 /** A Tab component */
 export interface TabProps {
   /** A label for the tab. */
@@ -22,8 +24,8 @@ export interface TabProps {
   stacked?: boolean;
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean;
-  /** Fires when a tab has been interacted with. This is captures both keyboard and click events. */
-  onInteraction?: (evt: RMWC.CustomEventT<{ tabId: string }>) => void;
+  /** Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } */
+  onInteraction?: (evt: TabOnInteractionEventT) => void;
 }
 
 const TabRoot = withRipple({ surface: false })(

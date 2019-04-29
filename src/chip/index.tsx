@@ -12,6 +12,12 @@ import {
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
+export type ChipOnInteractionEventT = RMWC.CustomEventT<{ chipId: string }>;
+export type ChipOnTrailingIconInteractionEventT = RMWC.CustomEventT<{
+  chipId: string;
+}>;
+export type ChipOnRemoveEventT = RMWC.CustomEventT<{ chipId: string }>;
+
 /** A Chip component. */
 export interface ChipProps {
   /** Text for your Chip. */
@@ -28,14 +34,14 @@ export interface ChipProps {
   checkmark?: boolean;
   /** Additional children will be rendered in the text area. */
   children?: React.ReactNode;
-  /** A callback for click or enter key. This should be used over onClick for accessibility reasons. */
-  onInteraction?: (evt: RMWC.CustomEventT<{ chipId: string }>) => void;
-  /** A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. */
+  /** A callback for click or enter key. This should be used over onClick for accessibility reasons. evt.detail = { chipId: string }  */
+  onInteraction?: (evt: ChipOnInteractionEventT) => void;
+  /** A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } */
   onTrailingIconInteraction?: (
-    evt: RMWC.CustomEventT<{ chipId: string }>
+    evt: ChipOnTrailingIconInteractionEventT
   ) => void;
-  /** A callback that is fired once the chip is in an exited state from removing it. */
-  onRemove?: (evt: RMWC.CustomEventT<{ chipId: string }>) => void;
+  /** A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string } */
+  onRemove?: (evt: ChipOnRemoveEventT) => void;
 }
 
 export interface DeprecatedChipProps {

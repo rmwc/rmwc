@@ -76,14 +76,17 @@ export const DrawerAppContent = componentFactory<DrawerAppContentProps>({
  * Drawers
  ***************************************************************************************/
 
+export type DrawerOnCloseEventT = RMWC.CustomEventT<{}>;
+export type DrawerOnOpenEventT = RMWC.CustomEventT<{}>;
+
 /** A Drawer component. */
 export interface DrawerProps {
   /** Opens or closes the Drawer. */
   open?: boolean;
   /** Callback that fires when the Drawer is closed. */
-  onClose?: (evt: RMWC.CustomEventT<{}>) => void;
+  onClose?: (evt: DrawerOnOpenEventT) => void;
   /** Callback that fires when the Drawer is opened. */
-  onOpen?: (evt: RMWC.CustomEventT<{}>) => void;
+  onOpen?: (evt: DrawerOnCloseEventT) => void;
   /** Makes a dismissible drawer. */
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */

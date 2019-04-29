@@ -212,7 +212,7 @@ A simplified syntax for creating an AppBar.
 | `endContent` | `React.ReactNode` | Additional content to place in the end section. |
 | `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
 | `navigationIcon` | `Object \| boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
-| `onNav` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Emits when the navigation icon is clicked. |
+| `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
 | `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
 | `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |

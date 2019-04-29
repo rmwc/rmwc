@@ -147,9 +147,9 @@ A Chip component.
 | `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 | `id` | `undefined \| string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
 | `label` | `React.ReactNode` | Text for your Chip. |
-| `onInteraction` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. |
-| `onRemove` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback that is fired once the chip is in an exited state from removing it. |
-| `onTrailingIconInteraction` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. |
+| `onInteraction` | `undefined \| (evt: ChipOnInteractionEventT) => void` | A callback for click or enter key. This should be used over onClick for accessibility reasons. evt.detail = { chipId: string } |
+| `onRemove` | `undefined \| (evt: ChipOnRemoveEventT) => void` | A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string } |
+| `onTrailingIconInteraction` | `undefined \| (evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
 | `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
 | `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 

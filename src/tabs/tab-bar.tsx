@@ -12,15 +12,14 @@ import { TabBarContext } from './tab-bar-context';
 /************************************************************
  * TabBar
  ************************************************************/
+export type TabBarOnActivateEventT = RMWC.CustomEventT<{
+  index: number;
+}>;
 
 /** The TabBar component */
 export interface TabBarProps {
-  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. */
-  onActivate?: (
-    evt: RMWC.CustomEventT<{
-      index: number;
-    }>
-  ) => void;
+  /** Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } */
+  onActivate?: (evt: TabBarOnActivateEventT) => void;
   /** The index of the active tab. */
   activeTabIndex?: number;
 }

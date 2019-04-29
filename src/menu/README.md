@@ -147,9 +147,9 @@ A menu component for displaying lists items.
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback that fires when a Menu item is selected. |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 | `open` | `undefined \| false \| true` | Opens the menu. |
 
 
@@ -184,9 +184,9 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback that fires when a Menu item is selected. |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 | `open` | `undefined \| false \| true` | Opens the menu. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
@@ -203,9 +203,9 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback that fires when a Menu item is selected. |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 | `open` | `undefined \| false \| true` | Opens the menu. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 

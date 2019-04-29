@@ -12,8 +12,9 @@ interface DocumentComponentProps {
 }
 
 class DocumentComponent extends React.Component<DocumentComponentProps> {
+  def = this.getComponentDef(this.props.displayName);
+
   getComponentDef(displayName: string) {
-    const componentDef = this.props.docs[displayName];
     const propsDef: any = this.props.docs[displayName + 'Props'];
 
     const def: {
@@ -47,7 +48,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
                   name: p.name,
                   description,
                   required: !p.flags.isOptional,
-                  type: p.type
+                  type: this.getType(p.type)
                 };
           })
           .filter(Boolean)
@@ -56,15 +57,23 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
     return def;
   }
 
-  render() {
-    const { displayName } = this.props;
-    const def = this.getComponentDef(displayName);
+  getType(type: string) {
+    // do some cleaning to add the type signature to the events
+    const eventMatches = type.match(/\S+?EventT/);
+    if (eventMatches) {
+      const evtName = eventMatches[0];
+      console.log(this.props.docs[evtName]);
+    }
 
+    return type;
+  }
+
+  render() {
     return (
       <div className="document-component">
-        <h2>{def.name}</h2>
-        <p>{def.description}</p>
-        {!!def.props.length && (
+        <h2>{this.def.name}</h2>
+        <p>{this.def.description}</p>
+        {!!this.def.props.length && (
           <div>
             <h3>Props</h3>
             <table>
@@ -76,7 +85,7 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
                 </tr>
               </thead>
               <tbody>
-                {def.props.map(prop => (
+                {this.def.props.map(prop => (
                   <tr key={prop.name}>
                     <td>
                       <code>{prop.name}</code>

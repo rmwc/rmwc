@@ -2,7 +2,7 @@
 
 > Menus display a list of choices on a transient sheet of material.
 
-- Module **@rmwc/fab**
+- Module **@rmwc/select**
 - Import styles:
   - import **'@material/select/dist/mdc.select.css'**
   - import **'@material/floating-label/dist/mdc.floating-label.css'**

@@ -2,7 +2,7 @@
 
 > Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
 
-- Module **@rmwc/- Module **@rmwc/dialog****
+- Module **@rmwc/dialog**
 - Import styles:
   - import **'@material/dialog/dist/mdc.dialog.css'**
   - import **'@material/button/dist/mdc.button.css'**
@@ -74,8 +74,8 @@ A Dialog component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `onClose` | `undefined \| (evt: RMWC.CustomEventT<>) => void` | Callback for when the Dialog closes. |
-| `onOpen` | `undefined \| (evt: RMWC.CustomEventT<{}>) => void` | Callback for when the Dialog opens. |
+| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
+| `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
 | `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
 | `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
 | `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
