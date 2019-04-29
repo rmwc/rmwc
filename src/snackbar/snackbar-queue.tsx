@@ -21,13 +21,14 @@ export interface SnackbarQueueMessage
   extends SnackbarProps,
     MergeInterfacesT<SnackbarQueueMessageBase, NotificationOptions> {}
 
-class ArrayEmitter<T> extends Array<T> {
+class MessagesEmitter<T> {
   events_: { [evtName: string]: Array<Function> } = {};
+  array: T[] = [];
 
   push(...items: T[]) {
-    super.push(...items);
+    const rVal = this.array.push(...items);
     this.trigger('change');
-    return items.length;
+    return rVal;
   }
 
   on(event: string, cb: Function) {
@@ -54,7 +55,7 @@ class ArrayEmitter<T> extends Array<T> {
 
 /** A snackbar queue for rendering messages */
 export interface SnackbarQueueProps extends SnackbarProps {
-  messages: ArrayEmitter<SnackbarQueueMessage>;
+  messages: MessagesEmitter<SnackbarQueueMessage>;
 }
 
 interface SnackbarQueueState {
@@ -67,7 +68,7 @@ export class SnackbarQueue extends React.Component<
   SnackbarQueueState
 > {
   state: SnackbarQueueState = {
-    message: this.props.messages[0]
+    message: this.props.messages.array[0]
   };
 
   constructor(props: SnackbarQueueProps) {
@@ -81,9 +82,9 @@ export class SnackbarQueue extends React.Component<
   }
 
   getMessage() {
-    if (this.props.messages[0] !== this.state.message) {
+    if (this.props.messages.array[0] !== this.state.message) {
       this.setState({
-        message: this.props.messages[0]
+        message: this.props.messages.array[0]
       });
     }
   }
@@ -92,8 +93,8 @@ export class SnackbarQueue extends React.Component<
     if (!message) return;
 
     setTimeout(() => {
-      const index = this.props.messages.indexOf(message);
-      !!~index && this.props.messages.splice(index, 1);
+      const index = this.props.messages.array.indexOf(message);
+      !!~index && this.props.messages.array.splice(index, 1);
       this.setState(
         {
           message: undefined
@@ -158,10 +159,10 @@ export class SnackbarQueue extends React.Component<
 
 /** Creates a snackbar queue */
 export const createSnackbarQueue = (): {
-  messages: ArrayEmitter<SnackbarQueueMessage>;
+  messages: MessagesEmitter<SnackbarQueueMessage>;
   notify: (message: SnackbarQueueMessage) => void;
 } => {
-  const messages = new ArrayEmitter<SnackbarQueueMessage>();
+  const messages = new MessagesEmitter<SnackbarQueueMessage>();
 
   return {
     messages,
