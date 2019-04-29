@@ -3,7 +3,7 @@
  */
 import * as React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Snackbar } from './';
+import { Snackbar } from './snackbar';
 
 describe('Snackbar', () => {
   it('renders', () => {

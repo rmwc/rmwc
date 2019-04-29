@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Docs, DocsExample, DocProps } from '@doc-utils';
+import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { Snackbar, SnackbarAction } from '.';
+import { Snackbar, SnackbarAction } from './snackbar';
 import { Button } from '@rmwc/button';
 
 export default function() {
@@ -20,6 +20,10 @@ export default function() {
       docsLink="https://material.io/develop/web/components/snackbars/"
       examples={examples}
     >
+      <DocsSubtitle>Basic Usage</DocsSubtitle>
+      <DocsP>
+        You can render a snackbar in your UI and control its open state.
+      </DocsP>
       <DocsExample label="Default">
         {function Example() {
           const [open, setOpen] = React.useState(false);
@@ -75,6 +79,93 @@ export default function() {
             </>
           );
         }}
+      </DocsExample>
+
+      <DocsSubtitle>Usage with SnackbarQueue</DocsSubtitle>
+      <DocsP>
+        While rendering the Snackbar inline works for simple cases, you'll
+        likely have a notification system for your app, or want to send
+        notifications from anywhere in your app. The SnackbarQueue exists as a
+        convenience method for handling notifications in your app.
+      </DocsP>
+      <DocsP>
+        Setup is nice and easy, create a queue object you can pass around in
+        your code base, pass the queues messages to the SnackbarQueue component,
+        and then use the notify api to send notifications.
+      </DocsP>
+      <DocsExample codeOnly>
+        {/* jsx */ `
+        // Create a file that exports your queue
+        // myQueue.js
+        import { createSnackbarQueue } from '@rmwc/snackbar';
+
+        export const queue = createSnackbarQueue();
+      `}
+      </DocsExample>
+      <DocsExample codeOnly>
+        {/* jsx */ `
+        // Somewhere at the top level of your app
+        // Render the SnackbarQueue
+        import React from 'react';
+        import { queue } from './myQueue';
+
+        export default function App() {
+          return (
+            <div>
+              ...
+              <SnackbarQueue
+                messages={queue.messages}
+                // You can also pass default options to pass to your notifications
+                // ie, make them all leading, stacked, etc
+                leading
+                stacked
+              />
+            </div>
+          )
+        }
+        
+      `}
+      </DocsExample>
+
+      <DocsP>
+        The notify function was designed to mimic the the built-in browser
+        Notifications api and can accept most of the relevant options (icon,
+        image, title, body, actions, ,etc). It also can accept any of the
+        Snackbar props. Just import your queue, and call the notify method.
+      </DocsP>
+
+      <DocsExample codeOnly>
+        {/* jsx */ `
+        // Somewhere else in your app
+        // Could be a view, your redux store, anywhere you want...
+        import { queue } from './myQueue';
+
+        // Simple example
+        queue.notify({
+          title: 'Hi there'
+        });
+
+        // With some features
+        queue.notify({
+          title: <b>Warning</b>,
+          body: 'You have selected pizza instead icecream!',
+          icon: 'warning',
+          actions: [
+            {
+              // NotificationAction api format
+              title: 'Fix It!',
+              icon: 'close',
+              action: 'fixit' // action will be available as evt.detail.reason in the onClose event
+            },
+            {
+              // OR SnackbarActionProps format
+              label: 'Continue...',
+              icon: 'check',
+              onClick: () => {}
+            },
+          ]
+        });
+      `}
       </DocsExample>
 
       <DocProps src={propsSrc} components={[Snackbar, SnackbarAction]} />

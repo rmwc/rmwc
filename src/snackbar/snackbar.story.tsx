@@ -2,39 +2,81 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Snackbar } from './';
 import { useKnob } from '../base/utils/use-knob';
+import {
+  SnackbarQueue,
+  createSnackbarQueue,
+  Snackbar,
+  SnackbarAction
+} from '.';
+import { Button } from '../button';
 
 function SnackbarStory() {
-  const [show, setShow] = useKnob('boolean', 'show', true);
-  const [alignStart] = useKnob('boolean', 'alignStart', false);
+  const [open, setOpen] = useKnob('boolean', 'open', true);
+  const [leading] = useKnob('boolean', 'leading', false);
   const [message] = useKnob('text', 'message', 'This is a new message');
   const [actionText] = useKnob('text', 'actionText', 'Action');
   const [timeout] = useKnob('number', 'timeout', 2750);
-  const [multiline] = useKnob('boolean', 'multiline', false);
-  const [actionOnBottom] = useKnob('boolean', 'actionOnBottom', false);
+  const [stacked] = useKnob('boolean', 'stacked', false);
   const [dismissesOnAction] = useKnob('boolean', 'dismissesOnAction', false);
 
   return (
     <Snackbar
-      show={show}
+      open={open}
       message={message}
-      alignStart={alignStart}
-      actionOnBottom={actionOnBottom}
+      leading={leading}
+      stacked={stacked}
       dismissesOnAction={dismissesOnAction}
-      multiline={multiline}
-      actionText={actionText}
+      action={
+        <SnackbarAction
+          label={actionText}
+          onClick={() => console.log('Click Me')}
+        />
+      }
       timeout={timeout}
-      onHide={() => {
-        setShow(false);
-        action('onHide')();
+      onClose={() => {
+        setOpen(false);
+        action('onClose')();
       }}
-      onShow={() => {
-        action('onShow')();
+      onOpen={() => {
+        action('onOpen')();
       }}
-      actionHandler={action('actionHandler')}
     />
   );
 }
 
-storiesOf('Snackbar', module).add('Snackbar', () => <SnackbarStory />);
+const { messages, notify } = createSnackbarQueue();
+
+storiesOf('Snackbar', module)
+  .add('Snackbar', () => <SnackbarStory />)
+  .add('SnackbarQueue', function() {
+    return (
+      <>
+        <SnackbarQueue messages={messages} />
+        <Button
+          label="Notify"
+          onClick={() =>
+            notify({
+              title: <b>Warning</b>,
+              body: 'You have selected pizza instead icecream!',
+              icon: 'warning',
+              actions: [
+                {
+                  // NotificationAction api format
+                  title: 'Fix It!',
+                  icon: 'close',
+                  action: 'fixit'
+                },
+                {
+                  // OR SnackbarActionProps format
+                  label: 'Continue...',
+                  icon: 'check',
+                  onClick: () => {}
+                }
+              ]
+            })
+          }
+        />
+      </>
+    );
+  });
