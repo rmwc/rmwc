@@ -166,7 +166,18 @@ This is just the ListItem component exported from the Menu module for convenienc
 | `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 
 
-## 
+## MenuSurface
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `children` | `React.ReactNode` | Children to render. |
+| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
+| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
+| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
+| `open` | `undefined \| false \| true` | Opens the menu. |
 
 
 ## MenuSurfaceAnchor
@@ -191,8 +202,8 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 
-## SimpleMenu
-A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
+## SimpleMenuSurface
+The same as SimpleMenu, but a generic surface.
 
 ### Props
 
@@ -205,7 +216,6 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 | `open` | `undefined \| false \| true` | Opens the menu. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 

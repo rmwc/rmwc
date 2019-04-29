@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "ElevationProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/elevation/index.tsx#L6",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/elevation/index.tsx#L6",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "transition",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/elevation/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/elevation/index.tsx#L10",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "wrap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/elevation/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/elevation/index.tsx#L12",
           "type": "undefined | false | true"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "z",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/elevation/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/elevation/index.tsx#L8",
           "type": "number | string"
         }
       ]

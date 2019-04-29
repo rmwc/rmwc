@@ -9,7 +9,7 @@
         "contentsRaw": "A Snackbar component for notifications.",
         "metadata": {}
       },
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Snackbar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L108",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L133",
       "extends": [
         "FoundationComponent<MDCSnackbarFoundation, SnackbarProps & DeprecatedSnackbarProps>"
       ],
@@ -708,7 +708,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L130",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L155",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L130",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L155",
               "parameters": [],
               "returnType": "MDCSnackbarFoundation",
               "type": "() => MDCSnackbarFoundation"
@@ -735,7 +735,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -748,13 +748,13 @@
           },
           "kind": "method",
           "name": "getPropsWithDeprecations",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L162",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L187",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "getPropsWithDeprecations",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L162",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L187",
               "parameters": [
                 {
                   "flags": {
@@ -842,7 +842,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -855,13 +855,13 @@
           },
           "kind": "method",
           "name": "handleKeyDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L179",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L204",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "handleKeyDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L179",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L204",
               "parameters": [
                 {
                   "flags": {
@@ -885,7 +885,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -898,13 +898,13 @@
           },
           "kind": "method",
           "name": "handleSurfaceClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L184",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L209",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "handleSurfaceClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L184",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L209",
               "parameters": [
                 {
                   "flags": {
@@ -928,7 +928,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -941,13 +941,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L205",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L232",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L205",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L232",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1034,7 +1034,7 @@
           ]
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1047,13 +1047,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L170",
           "signatures": [
             {
-              "fileName": "src/snackbar/index.tsx",
+              "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L145",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L170",
               "parameters": [
                 {
                   "flags": {
@@ -1192,7 +1192,7 @@
       ],
       "properties": [
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1205,7 +1205,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L112",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L137",
           "defaultValue": "\"Snackbar\"",
           "type": "string"
         },
@@ -1228,7 +1228,7 @@
           "type": "boolean"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1241,7 +1241,7 @@
           },
           "kind": "property",
           "name": "announce",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L128",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L153",
           "defaultValue": " util.announce",
           "type": "announce"
         },
@@ -1280,7 +1280,7 @@
           "type": "MDCSnackbarFoundation"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1293,12 +1293,12 @@
           },
           "kind": "property",
           "name": "isShowing_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L150",
           "defaultValue": "false",
           "type": "boolean"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1311,12 +1311,12 @@
           },
           "kind": "property",
           "name": "labelEl",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L126",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L151",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1329,12 +1329,12 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L127",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L152",
           "type": "any"
         }
       ],
       "constructorType": {
-        "fileName": "src/snackbar/index.tsx",
+        "fileName": "src/snackbar/snackbar.tsx",
         "flags": {
           "isExported": true,
           "isExternal": false,
@@ -1347,13 +1347,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L115",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L140",
         "signatures": [
           {
-            "fileName": "src/snackbar/index.tsx",
+            "fileName": "src/snackbar/snackbar.tsx",
             "kind": "signature",
             "name": "new Snackbar",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L115",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L140",
             "parameters": [
               {
                 "flags": {
@@ -1377,6 +1377,1118 @@
         ]
       }
     },
+    "SnackbarQueue": {
+      "documentation": {
+        "contents": [
+          "<p>A snackbar queue for rendering messages</p>\n"
+        ],
+        "contentsRaw": "A snackbar queue for rendering messages",
+        "metadata": {}
+      },
+      "fileName": "src/snackbar/snackbar-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "class",
+      "name": "SnackbarQueue",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L65",
+      "extends": [
+        "Component<SnackbarQueueProps, SnackbarQueueState>"
+      ],
+      "methods": [
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "UNSAFE_componentWillMount",
+          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillMount",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "UNSAFE_componentWillMount",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "UNSAFE_componentWillReceiveProps",
+          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "UNSAFE_componentWillReceiveProps",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextContext",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(nextProps: Readonly<SnackbarQueueProps>, nextContext: any) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "UNSAFE_componentWillUpdate",
+          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillUpdate",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "UNSAFE_componentWillUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextState",
+                  "type": "Readonly<SnackbarQueueState>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextContext",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(nextProps: Readonly<SnackbarQueueProps>, nextState: Readonly<SnackbarQueueState>, nextContext: any) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentDidCatch",
+          "inheritedFrom": "ComponentLifecycle.componentDidCatch",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.</p>\n"
+                ],
+                "contentsRaw": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentDidCatch",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "error",
+                  "type": "Error"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "errorInfo",
+                  "type": "ErrorInfo"
+                }
+              ],
+              "returnType": "void",
+              "type": "(error: Error, errorInfo: ErrorInfo) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentDidMount",
+          "inheritedFrom": "ComponentLifecycle.componentDidMount",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately after a component is mounted. Setting state here will trigger re-rendering.</p>\n"
+                ],
+                "contentsRaw": "Called immediately after a component is mounted. Setting state here will trigger re-rendering.",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentDidMount",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentDidUpdate",
+          "inheritedFrom": "NewLifecycle.componentDidUpdate",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately after updating occurs. Not called for the initial render.</p>\n<p>The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.</p>\n"
+                ],
+                "contentsRaw": "Called immediately after updating occurs. Not called for the initial render.\n\nThe snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentDidUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "prevProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "prevState",
+                  "type": "Readonly<SnackbarQueueState>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": true,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "snapshot",
+                  "type": "SS"
+                }
+              ],
+              "returnType": "void",
+              "type": "(prevProps: Readonly<SnackbarQueueProps>, prevState: Readonly<SnackbarQueueState>, snapshot?: SS) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentWillMount",
+          "inheritedFrom": "DeprecatedLifecycle.componentWillMount",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentWillMount",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentWillReceiveProps",
+          "inheritedFrom": "DeprecatedLifecycle.componentWillReceiveProps",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentWillReceiveProps",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextContext",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(nextProps: Readonly<SnackbarQueueProps>, nextContext: any) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentWillUnmount",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L79",
+          "signatures": [
+            {
+              "fileName": "src/snackbar/snackbar-queue.tsx",
+              "kind": "signature",
+              "name": "componentWillUnmount",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L79",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "componentWillUpdate",
+          "inheritedFrom": "DeprecatedLifecycle.componentWillUpdate",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+                  },
+                  {
+                    "tag": "see",
+                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
+                  }
+                ],
+                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "componentWillUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextState",
+                  "type": "Readonly<SnackbarQueueState>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextContext",
+                  "type": "any"
+                }
+              ],
+              "returnType": "void",
+              "type": "(nextProps: Readonly<SnackbarQueueProps>, nextState: Readonly<SnackbarQueueState>, nextContext: any) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "forceUpdate",
+          "inheritedFrom": "Component.forceUpdate",
+          "signatures": [
+            {
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "forceUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": true,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "callBack",
+                  "type": "undefined | () => void"
+                }
+              ],
+              "returnType": "void",
+              "type": "(callBack?: undefined | () => void) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "getMessage",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L83",
+          "signatures": [
+            {
+              "fileName": "src/snackbar/snackbar-queue.tsx",
+              "kind": "signature",
+              "name": "getMessage",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L83",
+              "parameters": [],
+              "returnType": "void",
+              "type": "() => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "getSnapshotBeforeUpdate",
+          "inheritedFrom": "NewLifecycle.getSnapshotBeforeUpdate",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Runs before React applies the result of <code>render</code> to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before <code>render</code> causes changes to it.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.</p>\n"
+                ],
+                "contentsRaw": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.\n\nNote: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "getSnapshotBeforeUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "prevProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "prevState",
+                  "type": "Readonly<SnackbarQueueState>"
+                }
+              ],
+              "returnType": "SS | null",
+              "type": "(prevProps: Readonly<SnackbarQueueProps>, prevState: Readonly<SnackbarQueueState>) => SS | null"
+            }
+          ]
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "removeMessage",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L91",
+          "signatures": [
+            {
+              "fileName": "src/snackbar/snackbar-queue.tsx",
+              "kind": "signature",
+              "name": "removeMessage",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L91",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": true,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "message",
+                  "type": "SnackbarQueueMessage"
+                }
+              ],
+              "returnType": "void",
+              "type": "(message?: SnackbarQueueMessage) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "render",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L106",
+          "signatures": [
+            {
+              "fileName": "src/snackbar/snackbar-queue.tsx",
+              "kind": "signature",
+              "name": "render",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L106",
+              "parameters": [],
+              "returnType": "Element",
+              "type": "() => Element"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "setState",
+          "inheritedFrom": "Component.setState",
+          "signatures": [
+            {
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "setState",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "state",
+                  "type": "(prevState: Readonly<SnackbarQueueState>, props: Readonly<SnackbarQueueProps>) => null | S |  | null | S | "
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": true,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "callback",
+                  "type": "undefined | () => void"
+                }
+              ],
+              "returnType": "void",
+              "type": "(state: (prevState: Readonly<SnackbarQueueState>, props: Readonly<SnackbarQueueProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
+            }
+          ]
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "method",
+          "name": "shouldComponentUpdate",
+          "inheritedFrom": "ComponentLifecycle.shouldComponentUpdate",
+          "signatures": [
+            {
+              "documentation": {
+                "contents": [
+                  "<p>Called to determine whether the change in props and state should trigger a re-render.</p>\n<p><code>Component</code> always returns true.\n<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any\nprops or states have changed.</p>\n<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>\nand <code>componentDidUpdate</code> will not be called.</p>\n"
+                ],
+                "contentsRaw": "Called to determine whether the change in props and state should trigger a re-render.\n\n`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.",
+                "metadata": {}
+              },
+              "fileName": "node_modules/@types/react/index.d.ts",
+              "kind": "signature",
+              "name": "shouldComponentUpdate",
+              "parameters": [
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextProps",
+                  "type": "Readonly<SnackbarQueueProps>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextState",
+                  "type": "Readonly<SnackbarQueueState>"
+                },
+                {
+                  "flags": {
+                    "isExported": false,
+                    "isExternal": false,
+                    "isOptional": false,
+                    "isPrivate": false,
+                    "isProtected": false,
+                    "isPublic": false,
+                    "isRest": false,
+                    "isStatic": false
+                  },
+                  "kind": "parameter",
+                  "name": "nextContext",
+                  "type": "any"
+                }
+              ],
+              "returnType": "boolean",
+              "type": "(nextProps: Readonly<SnackbarQueueProps>, nextState: Readonly<SnackbarQueueState>, nextContext: any) => boolean"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>If set, <code>this.context</code> will be set at runtime to the current value of the given Context.</p>\n<p>Usage:</p>\n<pre><code class=\"lang-ts\">type MyContext = number\nconst Ctx = React.createContext&lt;MyContext&gt;(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType&lt;typeof Ctx&gt;\n  render () {\n    return &lt;&gt;My context&#39;s value: {this.context}&lt;/&gt;;\n  }\n}\n</code></pre>\n",
+              {
+                "tag": "see",
+                "value": "https://reactjs.org/docs/context.html#classcontexttype"
+              }
+            ],
+            "contentsRaw": "If set, `this.context` will be set at runtime to the current value of the given Context.\n\nUsage:\n\n```ts\ntype MyContext = number\nconst Ctx = React.createContext<MyContext>(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType<typeof Ctx>\n  render () {\n    return <>My context's value: {this.context}</>;\n  }\n}\n```\n\n\n@see https://reactjs.org/docs/context.html#classcontexttype",
+            "metadata": {}
+          },
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": true
+          },
+          "kind": "property",
+          "name": "contextType",
+          "inheritedFrom": "Component.contextType",
+          "type": "Context<any>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>If using the new style context, re-declare this in your class to be the\n<code>React.ContextType</code> of your <code>static contextType</code>.</p>\n<pre><code class=\"lang-ts\">static contextType = MyContext\ncontext!: React.ContextType&lt;typeof MyContext&gt;\n</code></pre>\n",
+              {
+                "tag": "see",
+                "value": "https://reactjs.org/docs/legacy-context.html"
+              }
+            ],
+            "contentsRaw": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.\n\n```ts\nstatic contextType = MyContext\ncontext!: React.ContextType<typeof MyContext>\n```\n\n\n@see https://reactjs.org/docs/legacy-context.html",
+            "metadata": {}
+          },
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isDeprecated": "if used without a type annotation, or without static contextType",
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "context",
+          "inheritedFrom": "Component.context",
+          "type": "any"
+        },
+        {
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "props",
+          "inheritedFrom": "Component.props",
+          "type": "Readonly<SnackbarQueueProps> & Readonly<>"
+        },
+        {
+          "documentation": {
+            "contents": [],
+            "contentsRaw": "",
+            "metadata": {}
+          },
+          "fileName": "node_modules/@types/react/index.d.ts",
+          "flags": {
+            "isDeprecated": "https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs",
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "refs",
+          "inheritedFrom": "Component.refs",
+          "type": "{ [key: string]: ReactInstance }"
+        }
+      ],
+      "constructorType": {
+        "fileName": "src/snackbar/snackbar-queue.tsx",
+        "flags": {
+          "isExported": true,
+          "isExternal": false,
+          "isOptional": false,
+          "isPrivate": false,
+          "isProtected": false,
+          "isPublic": false,
+          "isRest": false,
+          "isStatic": false
+        },
+        "kind": "constructor",
+        "name": "constructor",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L71",
+        "signatures": [
+          {
+            "fileName": "src/snackbar/snackbar-queue.tsx",
+            "kind": "signature",
+            "name": "new SnackbarQueue",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L71",
+            "parameters": [
+              {
+                "flags": {
+                  "isExported": false,
+                  "isExternal": false,
+                  "isOptional": false,
+                  "isPrivate": false,
+                  "isProtected": false,
+                  "isPublic": false,
+                  "isRest": false,
+                  "isStatic": false
+                },
+                "kind": "parameter",
+                "name": "props",
+                "type": "SnackbarQueueProps"
+              }
+            ],
+            "returnType": "SnackbarQueue",
+            "type": "(props: SnackbarQueueProps) => SnackbarQueue"
+          }
+        ]
+      }
+    },
     "SnackbarProps": {
       "documentation": {
         "contents": [
@@ -1385,7 +2497,7 @@
         "contentsRaw": "A Snackbar component for notifications.",
         "metadata": {}
       },
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1398,7 +2510,7 @@
       },
       "kind": "interface",
       "name": "SnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L17",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L27",
       "methods": [],
       "properties": [
         {
@@ -1409,7 +2521,7 @@
             "contentsRaw": "One or more actions to add to the snackbar.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1422,11 +2534,11 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L37",
           "type": "React.ReactNode | React.ReactNode[]"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1439,7 +2551,7 @@
           },
           "kind": "property",
           "name": "dismissIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L45",
           "type": "boolean | string"
         },
         {
@@ -1450,7 +2562,7 @@
             "contentsRaw": "Whether or not your want clicking an action to close the Snackbar.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1463,11 +2575,35 @@
           },
           "kind": "property",
           "name": "dismissesOnAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L47",
           "type": "undefined | false | true"
         },
         {
-          "fileName": "src/snackbar/index.tsx",
+          "documentation": {
+            "contents": [
+              "<p>An icon for the snackbar</p>\n"
+            ],
+            "contentsRaw": "An icon for the snackbar",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L49",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1480,7 +2616,7 @@
           },
           "kind": "property",
           "name": "leading",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L43",
           "type": "undefined | false | true"
         },
         {
@@ -1491,7 +2627,7 @@
             "contentsRaw": "A string or other renderable JSX to be used as the message body.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1504,7 +2640,7 @@
           },
           "kind": "property",
           "name": "message",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L35",
           "type": "React.ReactNode"
         },
         {
@@ -1515,7 +2651,7 @@
             "contentsRaw": "A callback thats fired when the Snackbar hides.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1528,7 +2664,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L33",
           "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
         },
         {
@@ -1539,7 +2675,7 @@
             "contentsRaw": "A callback thats fired when the Snackbar shows.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1552,7 +2688,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L31",
           "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
         },
         {
@@ -1563,7 +2699,7 @@
             "contentsRaw": "Show the Snackbar.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1576,7 +2712,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L29",
           "type": "undefined | false | true"
         },
         {
@@ -1587,7 +2723,7 @@
             "contentsRaw": "Places the action underneath the message text.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1600,7 +2736,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L41",
           "type": "undefined | false | true"
         },
         {
@@ -1611,7 +2747,7 @@
             "contentsRaw": "Milliseconds to show the Snackbar for.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1624,13 +2760,13 @@
           },
           "kind": "property",
           "name": "timeout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L39",
           "type": "undefined | number"
         }
       ]
     },
     "DeprecatedSnackbarProps": {
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1643,7 +2779,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedSnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L40",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L52",
       "methods": [],
       "properties": [
         {
@@ -1654,7 +2790,7 @@
             "contentsRaw": "DEPRECATED: Use the actions prop.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1667,7 +2803,7 @@
           },
           "kind": "property",
           "name": "actionHandler",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L66",
           "type": "undefined | () => void"
         },
         {
@@ -1678,7 +2814,7 @@
             "contentsRaw": "DEPRECATED: Use stacked.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1691,7 +2827,7 @@
           },
           "kind": "property",
           "name": "actionOnBottom",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L64",
           "type": "undefined | false | true"
         },
         {
@@ -1702,7 +2838,7 @@
             "contentsRaw": "DEPRECATED: Use the actions prop.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1715,7 +2851,7 @@
           },
           "kind": "property",
           "name": "actionText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L68",
           "type": "React.ReactNode"
         },
         {
@@ -1726,7 +2862,7 @@
             "contentsRaw": "DEPRECATED: Use leading.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1739,7 +2875,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L60",
           "type": "undefined | false | true"
         },
         {
@@ -1750,7 +2886,7 @@
             "contentsRaw": "DEPRECATED: No longer applicable.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1763,7 +2899,7 @@
           },
           "kind": "property",
           "name": "multiline",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L62",
           "type": "undefined | false | true"
         },
         {
@@ -1774,7 +2910,7 @@
             "contentsRaw": "DEPRECATED: Use onClose.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1787,7 +2923,7 @@
           },
           "kind": "property",
           "name": "onHide",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L58",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -1798,7 +2934,7 @@
             "contentsRaw": "DEPRECATED: Use onOpen.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1811,7 +2947,7 @@
           },
           "kind": "property",
           "name": "onShow",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L56",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -1822,7 +2958,7 @@
             "contentsRaw": "DEPRECATED: Use open.",
             "metadata": {}
           },
-          "fileName": "src/snackbar/index.tsx",
+          "fileName": "src/snackbar/snackbar.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1835,20 +2971,20 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L54",
           "type": "undefined | false | true"
         }
       ]
     },
-    "SnackbarAction": {
+    "SnackbarActionProps": {
       "documentation": {
         "contents": [
-          "<p>A button for a snackbar action.\nA button for a snackbar action.</p>\n"
+          "<p>A button for a snackbar action.</p>\n"
         ],
-        "contentsRaw": "A button for a snackbar action.\nA button for a snackbar action.",
+        "contentsRaw": "A button for a snackbar action.",
         "metadata": {}
       },
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -1860,8 +2996,8 @@
         "isStatic": false
       },
       "kind": "interface",
-      "name": "SnackbarAction",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L92",
+      "name": "SnackbarActionProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L104",
       "extends": [
         "ButtonProps"
       ],
@@ -1890,6 +3026,30 @@
           "name": "accent",
           "inheritedFrom": "DeprecatedRippleProps.accent",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>An action returned in evt.detail.reason to the onClose handler.</p>\n"
+            ],
+            "contentsRaw": "An action returned in evt.detail.reason to the onClose handler.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "action",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L106",
+          "type": "undefined | string"
         },
         {
           "documentation": {
@@ -2181,8 +3341,599 @@
         }
       ]
     },
+    "SnackbarQueueMessage": {
+      "fileName": "src/snackbar/snackbar-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "SnackbarQueueMessage",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L20",
+      "extends": [
+        "SnackbarProps",
+        "SnackbarQueueMessageBase & "
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>One or more actions to add to the snackbar.</p>\n"
+            ],
+            "contentsRaw": "One or more actions to add to the snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "action",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L37",
+          "inheritedFrom": "SnackbarProps.action",
+          "type": "React.ReactNode | React.ReactNode[]"
+        },
+        {
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dismissIcon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L45",
+          "inheritedFrom": "SnackbarProps.dismissIcon",
+          "type": "boolean | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Whether or not your want clicking an action to close the Snackbar.</p>\n"
+            ],
+            "contentsRaw": "Whether or not your want clicking an action to close the Snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dismissesOnAction",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L47",
+          "inheritedFrom": "SnackbarProps.dismissesOnAction",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>An icon for the snackbar</p>\n"
+            ],
+            "contentsRaw": "An icon for the snackbar",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L49",
+          "inheritedFrom": "SnackbarProps.icon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "leading",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L43",
+          "inheritedFrom": "SnackbarProps.leading",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A string or other renderable JSX to be used as the message body.</p>\n"
+            ],
+            "contentsRaw": "A string or other renderable JSX to be used as the message body.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "message",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L35",
+          "inheritedFrom": "SnackbarProps.message",
+          "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A callback thats fired when the Snackbar hides.</p>\n"
+            ],
+            "contentsRaw": "A callback thats fired when the Snackbar hides.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClose",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L33",
+          "inheritedFrom": "SnackbarProps.onClose",
+          "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A callback thats fired when the Snackbar shows.</p>\n"
+            ],
+            "contentsRaw": "A callback thats fired when the Snackbar shows.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L31",
+          "inheritedFrom": "SnackbarProps.onOpen",
+          "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Show the Snackbar.</p>\n"
+            ],
+            "contentsRaw": "Show the Snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L29",
+          "inheritedFrom": "SnackbarProps.open",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Places the action underneath the message text.</p>\n"
+            ],
+            "contentsRaw": "Places the action underneath the message text.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "stacked",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L41",
+          "inheritedFrom": "SnackbarProps.stacked",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Milliseconds to show the Snackbar for.</p>\n"
+            ],
+            "contentsRaw": "Milliseconds to show the Snackbar for.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "timeout",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L39",
+          "inheritedFrom": "SnackbarProps.timeout",
+          "type": "undefined | number"
+        }
+      ]
+    },
+    "SnackbarQueueProps": {
+      "documentation": {
+        "contents": [
+          "<p>A snackbar queue for rendering messages</p>\n"
+        ],
+        "contentsRaw": "A snackbar queue for rendering messages",
+        "metadata": {}
+      },
+      "fileName": "src/snackbar/snackbar-queue.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "SnackbarQueueProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L56",
+      "extends": [
+        "SnackbarProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>One or more actions to add to the snackbar.</p>\n"
+            ],
+            "contentsRaw": "One or more actions to add to the snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "action",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L37",
+          "inheritedFrom": "SnackbarProps.action",
+          "type": "React.ReactNode | React.ReactNode[]"
+        },
+        {
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dismissIcon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L45",
+          "inheritedFrom": "SnackbarProps.dismissIcon",
+          "type": "boolean | string"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Whether or not your want clicking an action to close the Snackbar.</p>\n"
+            ],
+            "contentsRaw": "Whether or not your want clicking an action to close the Snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dismissesOnAction",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L47",
+          "inheritedFrom": "SnackbarProps.dismissesOnAction",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>An icon for the snackbar</p>\n"
+            ],
+            "contentsRaw": "An icon for the snackbar",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L49",
+          "inheritedFrom": "SnackbarProps.icon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "leading",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L43",
+          "inheritedFrom": "SnackbarProps.leading",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A string or other renderable JSX to be used as the message body.</p>\n"
+            ],
+            "contentsRaw": "A string or other renderable JSX to be used as the message body.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "message",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L35",
+          "inheritedFrom": "SnackbarProps.message",
+          "type": "React.ReactNode"
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "messages",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar-queue.tsx#L57",
+          "type": "ArrayEmitter<SnackbarQueueMessage>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A callback thats fired when the Snackbar hides.</p>\n"
+            ],
+            "contentsRaw": "A callback thats fired when the Snackbar hides.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClose",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L33",
+          "inheritedFrom": "SnackbarProps.onClose",
+          "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A callback thats fired when the Snackbar shows.</p>\n"
+            ],
+            "contentsRaw": "A callback thats fired when the Snackbar shows.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L31",
+          "inheritedFrom": "SnackbarProps.onOpen",
+          "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Show the Snackbar.</p>\n"
+            ],
+            "contentsRaw": "Show the Snackbar.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L29",
+          "inheritedFrom": "SnackbarProps.open",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Places the action underneath the message text.</p>\n"
+            ],
+            "contentsRaw": "Places the action underneath the message text.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "stacked",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L41",
+          "inheritedFrom": "SnackbarProps.stacked",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Milliseconds to show the Snackbar for.</p>\n"
+            ],
+            "contentsRaw": "Milliseconds to show the Snackbar for.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/snackbar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "timeout",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L39",
+          "inheritedFrom": "SnackbarProps.timeout",
+          "type": "undefined | number"
+        }
+      ]
+    },
     "SnackbarOnOpenEventT": {
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -2195,11 +3946,11 @@
       },
       "kind": "type alias",
       "name": "SnackbarOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L23",
       "type": "RMWC.CustomEventT<{}>"
     },
     "SnackbarOnCloseEventT": {
-      "fileName": "src/snackbar/index.tsx",
+      "fileName": "src/snackbar/snackbar.tsx",
       "flags": {
         "isExported": true,
         "isExternal": false,
@@ -2212,8 +3963,8 @@
       },
       "kind": "type alias",
       "name": "SnackbarOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/snackbar/index.tsx#L14",
-      "type": "RMWC.CustomEventT<{}>"
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/snackbar/snackbar.tsx#L24",
+      "type": "RMWC.CustomEventT<>"
     }
   }
 }

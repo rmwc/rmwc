@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "FloatingLabel",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L12",
       "extends": [
         "FoundationComponent<MDCFloatingLabelFoundation, FloatingLabelProps>"
       ],
@@ -714,13 +714,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L20",
           "signatures": [
             {
               "fileName": "src/floating-label/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L20",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L20",
               "parameters": [],
               "returnType": "MDCFloatingLabelFoundation",
               "type": "() => MDCFloatingLabelFoundation"
@@ -805,13 +805,13 @@
           },
           "kind": "method",
           "name": "getWidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L48",
           "signatures": [
             {
               "fileName": "src/floating-label/index.tsx",
               "kind": "signature",
               "name": "getWidth",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L48",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L48",
               "parameters": [],
               "returnType": "number",
               "type": "() => number"
@@ -832,13 +832,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L52",
           "signatures": [
             {
               "fileName": "src/floating-label/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L52",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L52",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -938,13 +938,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L36",
           "signatures": [
             {
               "fileName": "src/floating-label/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L36",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L36",
               "parameters": [
                 {
                   "flags": {
@@ -1096,7 +1096,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L16",
           "defaultValue": "\"FloatingLabel\"",
           "type": "string"
         },
@@ -1210,7 +1210,7 @@
       },
       "kind": "interface",
       "name": "FloatingLabelProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L7",
       "methods": [],
       "properties": [
         {
@@ -1227,7 +1227,7 @@
           },
           "kind": "property",
           "name": "float",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L9",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L9",
           "type": "undefined | false | true"
         },
         {
@@ -1244,7 +1244,7 @@
           },
           "kind": "property",
           "name": "shake",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/08d775852/src/floating-label/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/36c0b82d0/src/floating-label/index.tsx#L8",
           "type": "undefined | false | true"
         }
       ]

@@ -29,7 +29,7 @@ export interface SnackbarProps {
   open?: boolean;
   /** A callback thats fired when the Snackbar shows. */
   onOpen?: (evt: SnackbarOnOpenEventT) => void;
-  /** A callback thats fired when the Snackbar hides. */
+  /** A callback thats fired when the Snackbar hides. evt.detail = { reason?: string } */
   onClose?: (evt: SnackbarOnCloseEventT) => void;
   /** A string or other renderable JSX to be used as the message body. */
   message?: React.ReactNode;
