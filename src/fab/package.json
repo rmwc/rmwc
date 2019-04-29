@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/fab": "^1.0.0",
+    "@material/fab": "^1.1.1",
     "@rmwc/base": "^5.3.1",
     "@rmwc/icon": "^5.3.1",
     "@rmwc/provider": "^5.3.1",

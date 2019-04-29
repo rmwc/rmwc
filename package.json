@@ -68,7 +68,7 @@
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
     "generate-changelog": "^1.7.1",
-    "lerna": "^3.11.1",
+    "lerna": "^3.13.4",
     "module-alias": "^2.2.0",
     "react": "^16.8.1",
     "react-app-rewire-hot-loader": "^1.0.3",

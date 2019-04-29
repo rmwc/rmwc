@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/line-ripple": "^1.0.0",
+    "@material/line-ripple": "^1.1.0",
     "@rmwc/base": "^5.3.1",
     "@rmwc/types": "^5.3.1"
   },
