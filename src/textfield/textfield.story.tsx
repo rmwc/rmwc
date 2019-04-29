@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { boolean, text, number } from '@storybook/addon-knobs';
 import { TextField } from './';
 
@@ -35,7 +34,7 @@ class TextFieldUncontrolledStory extends React.Component {
   render() {
     return (
       <div>
-        <TextField label="Hello" characterCount />
+        <TextField label="Hello" />
         <button
           onClick={() => this.setState({ counter: this.state.counter + 1 })}
         >
@@ -46,6 +45,7 @@ class TextFieldUncontrolledStory extends React.Component {
   }
 }
 
-storiesOf('Inputs and Controls', module)
+storiesOf('TextField', module)
   .add('TextField (Controlled)', () => <TextFieldStory />)
-  .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />);
+  .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
+  .add('autoFocus', () => <TextField label="Hello" autoFocus />);

@@ -7,6 +7,11 @@ describe('TextField', () => {
     mount(<TextField label="test" placeholder="test" />);
   });
 
+  it('can autoFocus', () => {
+    const el = mount(<TextField label="test" placeholder="test" autoFocus />);
+    expect(document.activeElement).toBe(el.find('input').getDOMNode());
+  });
+
   it('can have children', () => {
     mount(
       <TextField placeholder="test">
