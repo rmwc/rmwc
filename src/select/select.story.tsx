@@ -164,7 +164,7 @@ function ControlledSelect() {
   );
 }
 
-storiesOf('Inputs and Controls', module)
+storiesOf('Select', module)
   .add('Select with object', () => (
     <Select
       label={text('label', 'Foods')}
@@ -221,4 +221,12 @@ storiesOf('Inputs and Controls', module)
   .add('Controlled Select', () => {
     return <ControlledSelect />;
   })
-  .add('Mutating Select', () => <MutatingSelect />);
+  .add('Mutating Select', () => <MutatingSelect />)
+  .add('autoFocus', () => (
+    <Select
+      label="Autofocus"
+      autoFocus
+      value="one"
+      options={['one', 'two', 'three']}
+    />
+  ));

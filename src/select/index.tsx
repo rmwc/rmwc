@@ -344,6 +344,10 @@ export class SelectBase extends FoundationComponent<
     if (this.props.disabled) {
       this.foundation.setDisabled(true);
     }
+
+    if (this.nativeControl && document.activeElement === this.nativeControl) {
+      this.foundation.handleFocus();
+    }
   }
 
   getDefaultFoundation() {
@@ -566,7 +570,7 @@ export class SelectBase extends FoundationComponent<
 
   handleFocus(evt: any) {
     this.props.onFocus && this.props.onFocus(evt);
-    this.foundation.handleFocus();
+    this.foundation && this.foundation.handleFocus();
   }
 
   handleBlur(evt: any) {

@@ -132,7 +132,7 @@ export class Ripple extends FoundationComponent<
 
   handleFocus(evt: React.FocusEvent<HTMLElement>) {
     this.props.onFocus && this.props.onFocus(evt);
-    this.foundation.handleFocus();
+    this.foundation && this.foundation.handleFocus();
   }
 
   handleBlur(evt: React.FocusEvent<HTMLElement>) {

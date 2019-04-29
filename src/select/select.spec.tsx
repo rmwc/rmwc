@@ -125,6 +125,11 @@ describe('Select', () => {
     );
   });
 
+  it('can autofocus', () => {
+    const el = mount(<Select options={['one', 'two', 'three']} autoFocus />);
+    expect(document.activeElement).toBe(el.find('select').getDOMNode());
+  });
+
   it('adapter checks', () => {
     const standard = mount(
       <SelectBase options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }} />
