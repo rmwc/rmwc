@@ -145,6 +145,8 @@ export class Ripple extends FoundationComponent<
     if (!this.isTouched) {
       this.activateRipple(evt);
     }
+
+    this.isTouched = false;
   }
 
   handleMouseUp(evt: React.MouseEvent<HTMLElement>) {
