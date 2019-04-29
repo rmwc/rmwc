@@ -215,7 +215,7 @@ const simpleMenuFactory = <Props extends SimpleMenuProps>(
     RMWC.ComponentProps
 ): React.ComponentType<Props> =>
   class extends React.Component<Props, SimpleMenuState> {
-    static displayName = 'SimpleMenu';
+    static displayName = 'Simple' + MenuComponent.displayName;
 
     componentDidMount() {
       this.syncWithOpenProp(this.props.open);

@@ -77,6 +77,8 @@ export class MenuSurface extends FoundationComponent<
   MDCMenuSurfaceFoundation,
   MenuSurfaceProps
 > {
+  static displayName = 'MenuSurface';
+
   private root = this.createElement('root');
   anchorElement: HTMLElement | null = null;
   previousFocus: HTMLElement | null = null;
