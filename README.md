@@ -9,7 +9,7 @@
 
 # RMWC - React Material Web Components
 
-A React wrapper for the official Material Design (Web) Components v0.44.0
+A React wrapper for the official Material Design (Web) Components v1.1.1
 [https://jamesmfriedman.github.io/rmwc/](https://jamesmfriedman.github.io/rmwc/)
 
 Features:
@@ -27,7 +27,7 @@ Features:
 
 ## Recent updates
 
-V5.3.0 is up. Other than some internal cleanup, the major change is some bright shiny new docs with better examples, and live editing. Enjoy!
+V5.4.0 is up. This includes some minor bug fixes as well as a new SnackbarQueue api to simplify handling notifications in your apps. Enjoy!
 
 V5 is officially out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless.
 
