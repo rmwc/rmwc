@@ -13,7 +13,8 @@ import {
   Switch,
   TabBar,
   Tab,
-  IconButton
+  IconButton,
+  SimpleDialog
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -415,6 +416,62 @@ function Bug415() {
   );
 }
 
+class Bug442 extends React.Component {
+  newTab: any = null;
+
+  state = {
+    /** The index of the currently active tab. */
+    tabIndex: 0,
+    /** True if the chnage tabs dialog is open. */
+    changingTabs: false
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <TabBar
+          activeTabIndex={this.state.tabIndex}
+          onActivate={tab => {
+            // Store the new tab index for later
+            if (this.newTab !== tab.detail.index) {
+              this.newTab = tab.detail.index;
+              // Open the dialog
+              this.setState({
+                changingTabs: true
+              });
+            }
+          }}
+        >
+          <Tab>Cookies</Tab>
+          <Tab>Pizza</Tab>
+          <Tab>Icecream</Tab>
+        </TabBar>
+        Selected tab: {this.state.tabIndex}
+        <SimpleDialog
+          title={'Switch tabs?'}
+          open={this.state.changingTabs}
+          acceptLabel={'Really change'}
+          cancelLabel={"Don't change"}
+          onClose={evt => {
+            // Close the dialog
+            let stateChanges: any = {
+              changingTabs: false
+            };
+            // If the user pressed accept, change tabs
+            if (evt.detail.action === 'accept') {
+              stateChanges.tabIndex = this.newTab;
+            } else {
+              this.newTab = null;
+            }
+
+            this.setState(stateChanges);
+          }}
+        />
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -482,4 +539,5 @@ storiesOf('Bugs', module)
   .add('#383', () => <Bug383 />)
   .add('#390', () => <Bug390 />)
   .add('#842vo56019', () => <Bug842vo56019 />)
-  .add('#415', () => <Bug415 />);
+  .add('#415', () => <Bug415 />)
+  .add('#442', () => <Bug442 />);

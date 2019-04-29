@@ -110,6 +110,9 @@ export class TabBar extends FoundationComponent<
           )
         );
         foundation.scrollIntoView(index);
+      } else {
+        // reset the currentActiveTab index because we didnt actually change
+        this.currentActiveTabIndex = previousActiveIndex;
       }
     });
   }
