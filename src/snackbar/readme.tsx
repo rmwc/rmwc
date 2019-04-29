@@ -84,9 +84,9 @@ export default function() {
       <DocsSubtitle>Usage with SnackbarQueue</DocsSubtitle>
       <DocsP>
         While rendering the Snackbar inline works for simple cases, you'll
-        likely have a notification system for your app, or want to send
-        notifications from anywhere in your app. The SnackbarQueue exists as a
-        convenience method for handling notifications in your app.
+        likely have a notification system, or want to send notifications from
+        anywhere in your app. The SnackbarQueue exists as a convenience method
+        for handling these cases and rendering the snackbar messages for you.
       </DocsP>
       <DocsP>
         Setup is nice and easy, create a queue object you can pass around in
