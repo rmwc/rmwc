@@ -26,6 +26,8 @@ export type MenuOnSelectEventT = RMWC.CustomEventT<{
 export interface MenuProps extends MenuSurfaceProps {
   /** Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } */
   onSelect?: (evt: MenuOnSelectEventT) => void;
+  /** Whether or not to focus the first list item on open. Defaults to true. */
+  focusOnOpen?: boolean;
 }
 
 /** A wrapper for menu items */
@@ -57,6 +59,9 @@ export const MenuItem = componentFactory<MenuItemProps>({
 /** A menu component for displaying lists items. */
 export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   static displayName = 'Menu';
+  static defaultProps = {
+    focusOnOpen: true
+  };
 
   list: List | null = null;
   menuSurface: MenuSurface | null = null;
@@ -152,15 +157,25 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   }
 
   handleOpen(evt: MenuSurfaceOnOpenEventT) {
-    this.props.onOpen && this.props.onOpen(evt);
     const list = this.items;
-    if (list.length > 0 && !list.some(el => el === document.activeElement)) {
+    if (
+      this.props.focusOnOpen &&
+      list.length > 0 &&
+      !list.some(el => el === document.activeElement)
+    ) {
       list[0].focus();
     }
+    this.props.onOpen && this.props.onOpen(evt);
   }
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, focusOnOpen, ...rest } = this.props;
+
+    const needsMenuItemsWrapper = !(
+      children &&
+      typeof children === 'object' &&
+      ((children as any).type || {}).displayName === 'MenuItems'
+    );
 
     return (
       <MenuSurface
@@ -174,9 +189,15 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
           (this.menuSurface = menuSurfaceApi)
         }
       >
-        <MenuItems ref={(listApi: List) => (this.list = listApi)}>
-          {children}
-        </MenuItems>
+        {needsMenuItemsWrapper ? (
+          <MenuItems ref={(listApi: List) => (this.list = listApi)}>
+            {children}
+          </MenuItems>
+        ) : (
+          React.cloneElement(children as React.ReactElement<any>, {
+            ref: (listApi: List) => (this.list = listApi)
+          })
+        )}
       </MenuSurface>
     );
   }
