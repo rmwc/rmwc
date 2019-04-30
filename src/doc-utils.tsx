@@ -404,7 +404,7 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
                 default:
                   break;
               }
-              console.log(children);
+
               return (
                 <Tag
                   id={children[0].props.children
