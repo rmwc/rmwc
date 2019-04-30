@@ -107,7 +107,8 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
             this.content ? this.content.offsetLeft : 0,
           getContentOffsetWidth: () =>
             this.content ? this.content.offsetWidth : 0,
-          focus: () => this.root.ref && this.root.ref.focus()
+          focus: () =>
+            this.root.ref && this.root.ref.focus && this.root.ref.focus()
         })
       );
     }
@@ -142,7 +143,7 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
     }
 
     focus() {
-      this.root.ref && this.root.ref.focus();
+      this.root.ref && this.root.ref && this.root.ref.focus();
     }
 
     render() {

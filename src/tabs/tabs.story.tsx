@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Tab, TabBar } from './';
@@ -119,4 +120,14 @@ class TabBarStory extends React.Component {
   }
 }
 
-storiesOf('Tabs', module).add('TabBar', () => <TabBarStory />);
+storiesOf('Tabs', module)
+  .add('TabBar', () => <TabBarStory />)
+  .add('TabBar Links', () => (
+    <Router>
+      <TabBar>
+        <Tab icon="stars" tag={Link} {...{ to: '' }} />
+        <Tab icon="groups" tag={Link} {...{ to: '' }} />
+        <Tab icon="settings" tag={Link} {...{ to: '' }} />
+      </TabBar>
+    </Router>
+  ));
