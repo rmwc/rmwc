@@ -1,3 +1,9 @@
+#### 5.4.2 (2019-04-30)
+
+##### Bug Fixes
+
+* **Tabs:**  Corrects issue with Link as Tabs (76326d1e)
+
 #### 5.4.1 (2019-04-29)
 
 ##### Bug Fixes
