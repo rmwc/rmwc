@@ -4,7 +4,12 @@ import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { Snackbar, SnackbarAction } from './snackbar';
+import {
+  Snackbar,
+  SnackbarAction,
+  createSnackbarQueue,
+  SnackbarQueue
+} from './';
 import { Button } from '@rmwc/button';
 
 export default function() {
@@ -166,6 +171,36 @@ export default function() {
           ]
         });
       `}
+      </DocsExample>
+
+      <DocsExample label="Inline Example">
+        {() => {
+          const { messages, notify } = createSnackbarQueue();
+
+          function App() {
+            return (
+              <div>
+                <Button
+                  label="Notify"
+                  onClick={() =>
+                    notify({
+                      title: <b>Success</b>,
+                      body: 'You have selected pizza!',
+                      icon: 'check',
+                      actions: [
+                        {
+                          title: 'Dismiss'
+                        }
+                      ]
+                    })
+                  }
+                />
+                <SnackbarQueue messages={messages} />
+              </div>
+            );
+          }
+          return <App />;
+        }}
       </DocsExample>
 
       <DocProps src={propsSrc} components={[Snackbar, SnackbarAction]} />
