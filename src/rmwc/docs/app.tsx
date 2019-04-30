@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent } from './menu-content';
@@ -24,7 +24,12 @@ import { Ripple } from '@rmwc/ripple';
 import { getAutoColorsForTheme } from '@rmwc/theme/utils';
 import { TabBar, Tab } from '@rmwc/tabs';
 
-import { Drawer, DrawerContent, DrawerAppContent } from '@rmwc/drawer';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerAppContent,
+  DrawerProps
+} from '@rmwc/drawer';
 
 import {
   ListItem,
@@ -38,9 +43,10 @@ import {
 
 import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
+import { toCamel, toDashCase } from '@rmwc/base';
 
 import Home from './home';
-import { toCamel, toDashCase } from '@rmwc/base';
+import { SiteSearch } from './site-search';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -172,24 +178,24 @@ const GithubIcon = () => (
   </svg>
 );
 
-const AppBar = ({
+function AppBar({
   onNavClick,
   children
 }: {
   onNavClick: (evt: React.SyntheticEvent<HTMLElement>) => void;
   children: React.ReactNode;
-}) => {
+}) {
   return (
-    <React.Fragment>
+    <>
       <TopAppBar fixed className="app__top-app-bar">
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
-
             <TopAppBarTitle tag={Link} {...{ to: '/' }}>
               RMWC
             </TopAppBarTitle>
             <span className="app__version">{version}</span>
+            <SiteSearch />
           </TopAppBarSection>
           <TopAppBarSection alignEnd>
             {children}
@@ -202,9 +208,9 @@ const AppBar = ({
         </TopAppBarRow>
       </TopAppBar>
       <TopAppBarFixedAdjust />
-    </React.Fragment>
+    </>
   );
-};
+}
 
 const ColorBlock = ({
   color,
@@ -418,57 +424,59 @@ class ThemePicker extends React.Component<{
   }
 }
 
-const Nav = (props: any) => (
-  <React.Fragment>
-    <Drawer id="main-nav" {...props}>
-      <DrawerContent>
-        <List>
-          {menuContent.map(m => {
-            if (m.options) {
-              return (
-                <CollapsibleList
-                  key={m.label}
-                  startOpen={m.options.some(
-                    o =>
-                      window.location.pathname.split('/').pop() ===
-                      o.url.split('/').pop()
-                  )}
-                  handle={
-                    <SimpleListItem text={m.label} metaIcon="chevron_right" />
-                  }
-                >
-                  {m.options.map(v => (
-                    <MainMenuItem key={v.label} label={v.label} url={v.url} />
-                  ))}
-                </CollapsibleList>
-              );
-            }
-            return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
-          })}
-        </List>
-      </DrawerContent>
-      <Ripple
-        tag="a"
-        href="https://opencollective.com/rmwc"
-        className="made-by"
-      >
-        <Typography use="caption">
-          <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
-          <div>
+function Nav(props: DrawerProps) {
+  return (
+    <>
+      <Drawer id="main-nav" {...props}>
+        <DrawerContent>
+          <List>
+            {menuContent.map(m => {
+              if (m.options) {
+                return (
+                  <CollapsibleList
+                    key={m.label}
+                    startOpen={m.options.some(
+                      o =>
+                        window.location.pathname.split('/').pop() ===
+                        o.url.split('/').pop()
+                    )}
+                    handle={
+                      <SimpleListItem text={m.label} metaIcon="chevron_right" />
+                    }
+                  >
+                    {m.options.map(v => (
+                      <MainMenuItem key={v.label} label={v.label} url={v.url} />
+                    ))}
+                  </CollapsibleList>
+                );
+              }
+              return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
+            })}
+          </List>
+        </DrawerContent>
+        <Ripple
+          tag="a"
+          href="https://opencollective.com/rmwc"
+          className="made-by"
+        >
+          <Typography use="caption">
+            <Icon icon="https://s.gravatar.com/avatar/0b38f1a5ae97a182822f4bca53a2368f?s=80" />
             <div>
-              Made with{' '}
-              <span role="img" aria-label="heart">
-                ❤️
-              </span>{' '}
-              in Sunny FL.
+              <div>
+                Made with{' '}
+                <span role="img" aria-label="heart">
+                  ❤️
+                </span>{' '}
+                in Sunny FL.
+              </div>
+              <div className="made-by__link">Donate on Open Collective</div>
             </div>
-            <div className="made-by__link">Donate on Open Collective</div>
-          </div>
-        </Typography>
-      </Ripple>
-    </Drawer>
-  </React.Fragment>
-);
+          </Typography>
+        </Ripple>
+      </Drawer>
+    </>
+  );
+}
 
 export class App extends React.Component {
   componentDidMount() {

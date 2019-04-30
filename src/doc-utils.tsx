@@ -62,7 +62,6 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
     const eventMatches = type.match(/\S+?EventT/);
     if (eventMatches) {
       const evtName = eventMatches[0];
-      console.log(this.props.docs[evtName]);
     }
 
     return type;

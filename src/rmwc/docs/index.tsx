@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-import ReactGA from 'react-ga';
 
+import { history } from './history';
+import ReactGA from 'react-ga';
 import '../styles';
 
 import 'prismjs/themes/prism.css';
@@ -13,10 +13,6 @@ import App from './app';
 // @ts-ignore
 import { unregister } from './register-service-worker';
 import { RMWCProvider } from '@rmwc/provider';
-
-const history = createBrowserHistory({
-  basename: process.env.PUBLIC_URL
-});
 
 const renderApp = (Component: React.ComponentType<any>) => {
   ReactDOM.render(
@@ -38,7 +34,7 @@ if (module.hot) {
 }
 
 const initAnalytics = () => {
-  ReactGA.initialize('UA-97702366-5');
+  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID as string);
   const doPageView = () =>
     ReactGA.pageview(window.location.pathname + window.location.search);
   history.listen(() => doPageView());
