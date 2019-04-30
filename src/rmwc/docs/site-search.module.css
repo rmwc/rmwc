@@ -4,7 +4,7 @@
 
 .siteSearch {
   height: 2.5rem;
-  color: white !important;
+  color: var(--mdc-theme-on-primary, white) !important;
 }
 
 .siteSearch input {
@@ -17,7 +17,7 @@
 }
 
 .siteSearch :global([class*='mdc-notched-outline__']) {
-  border-color: white !important;
+  border-color: var(--mdc-theme-on-primary, white) !important;
   opacity: 0.6;
 }
 

@@ -23,6 +23,60 @@ type SiteSearchItemT = {
   title: string; //"RMWC | React Material Web Components | Installation"
 };
 
+const searchComponents = (val: string) =>
+  menuContent
+    .reduce<Array<{ label: string; url: string }>>((acc, val) => {
+      if (val.options) {
+        acc.push(...val.options);
+      } else {
+        acc.push(val);
+      }
+      return acc;
+    }, [])
+    .filter(c => {
+      return c.label.toLowerCase().includes(val.toLowerCase());
+    })
+    .map(c => ({
+      id: c.label,
+      icon: {
+        icon: 'code',
+        theme: 'primary'
+      },
+      sectionName: c.label,
+      snippet: `View docs for ${c.label}`,
+      url: c.url
+    }));
+
+const searchGoogle = async (val: string, abortController: AbortController) => {
+  const { items = [] } = await fetch(
+    `https://www.googleapis.com/customsearch/v1/siterestrict?key=${
+      process.env.REACT_APP_CUSTOM_SEARCH_KEY
+    }&cx=${process.env.REACT_APP_CUSTOM_SEARCH_ID}&q=${val}`,
+    { signal: abortController.signal }
+  ).then<{ items?: SiteSearchItemT[] }>(res => res.json());
+
+  return (
+    items
+      // shitty hack to ignore things in the index that just reference them homepage
+      .filter(r => !r.snippet.startsWith('RMWC is a React wrapper'))
+      .map(r => ({
+        id: r.cacheId,
+        icon: {
+          icon: 'notes',
+          theme: 'primary'
+        },
+        sectionName: (r.title.split('|').pop() || '').trim(),
+        snippet: r.snippet,
+        // resolve from the full url into the page
+        url: (
+          (r.formattedUrl.split('?').pop() || '')
+            .split('&')
+            .find(p => p.startsWith('p=')) || ''
+        ).slice(2)
+      }))
+  );
+};
+
 export function SiteSearch() {
   const [searchVal, _setSearchVal] = useState('');
   const [isSearching, setIsSearching] = useState(false);
@@ -52,57 +106,13 @@ export function SiteSearch() {
     abortControllerRef.current = abortController;
 
     timerIdRef.current = window.setTimeout(async () => {
-      const components = menuContent
-        .reduce<Array<{ label: string; url: string }>>((acc, val) => {
-          if (val.options) {
-            acc.push(...val.options);
-          } else {
-            acc.push(val);
-          }
-          return acc;
-        }, [])
-        .filter(c => {
-          return c.label.toLowerCase().includes(val.toLowerCase());
-        })
-        .map(c => ({
-          id: c.label,
-          icon: {
-            icon: 'code',
-            theme: 'primary'
-          },
-          sectionName: c.label,
-          snippet: `View docs for ${c.label}`,
-          url: c.url
-        }));
-
+      const components = searchComponents(val);
       setResults(components);
 
       try {
-        const { items = [] } = await fetch(
-          `https://www.googleapis.com/customsearch/v1/siterestrict?key=${
-            process.env.REACT_APP_CUSTOM_SEARCH_KEY
-          }&cx=${process.env.REACT_APP_CUSTOM_SEARCH_ID}&q=${val}`,
-          { signal: abortController.signal }
-        ).then<{ items?: SiteSearchItemT[] }>(res => res.json());
-
-        const filteredItems = items
-          // shitty hack to ignore things in the index that just reference them homepage
-          .filter(r => !r.snippet.startsWith('RMWC is a React wrapper'))
-          .map(r => ({
-            id: r.cacheId,
-            icon: 'chrome_reader_mode',
-            sectionName: (r.title.split('|').pop() || '').trim(),
-            snippet: r.snippet,
-            // resolve from the full url into the page
-            url: (
-              (r.formattedUrl.split('?').pop() || '')
-                .split('&')
-                .find(p => p.startsWith('p=')) || ''
-            ).slice(2)
-          }));
-
+        const searchResults = await searchGoogle(val, abortController);
         abortControllerRef.current = undefined;
-        setResults([...components, ...filteredItems]);
+        setResults([...components, ...searchResults]);
       } catch (err) {
         console.warn(err);
         abortControllerRef.current = undefined;
