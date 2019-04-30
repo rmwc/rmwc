@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "LinearProgress",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L69",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L69",
       "extends": [
         "FoundationComponent<MDCLinearProgressFoundation, LinearProgressProps & DeprecatedLinearProgressProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L84",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L84",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L84",
               "parameters": [],
               "returnType": "MDCLinearProgressFoundation",
               "type": "() => MDCLinearProgressFoundation"
@@ -812,13 +812,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L145",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L145",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L145",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -918,13 +918,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L107",
           "signatures": [
             {
               "fileName": "src/linear-progress/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L107",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L107",
               "parameters": [
                 {
                   "flags": {
@@ -1076,7 +1076,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L73",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L73",
           "defaultValue": "\"LinearProgress\"",
           "type": "string"
         },
@@ -1112,7 +1112,7 @@
           },
           "kind": "property",
           "name": "determinate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L82",
           "defaultValue": " null",
           "type": "boolean | null"
         },
@@ -1215,7 +1215,7 @@
       },
       "kind": "interface",
       "name": "LinearProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -1239,7 +1239,7 @@
           },
           "kind": "property",
           "name": "buffer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L15",
           "type": "undefined | number"
         },
         {
@@ -1263,7 +1263,7 @@
           },
           "kind": "property",
           "name": "closed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L19",
           "type": "undefined | false | true"
         },
         {
@@ -1287,7 +1287,7 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L13",
           "type": "undefined | number"
         },
         {
@@ -1311,7 +1311,7 @@
           },
           "kind": "property",
           "name": "reversed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L17",
           "type": "undefined | false | true"
         }
       ]
@@ -1330,7 +1330,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedLinearProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L22",
       "methods": [],
       "properties": [
         {
@@ -1354,7 +1354,7 @@
           },
           "kind": "property",
           "name": "determinate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/linear-progress/index.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/linear-progress/index.tsx#L24",
           "type": "undefined | false | true"
         }
       ]

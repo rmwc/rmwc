@@ -146,6 +146,7 @@ A menu component for displaying lists items.
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
@@ -193,6 +194,7 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
 | `children` | `React.ReactNode` | Children to render |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |

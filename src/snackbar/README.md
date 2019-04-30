@@ -142,6 +142,36 @@ queue.notify({
 })
 ```
 
+```jsx
+() => {
+  const { messages, notify } = createSnackbarQueue();
+
+  function App() {
+    return (
+      <div>
+        <Button
+          label="Notify"
+          onClick={() =>
+            notify({
+              title: <b>Success</b>,
+              body: 'You have selected pizza!',
+              icon: 'check',
+              actions: [
+                {
+                  title: 'Dismiss'
+                }
+              ]
+            })
+          }
+        />
+        <SnackbarQueue messages={messages} />
+      </div>
+    );
+  }
+  return <App />;
+}
+```
+
 ## Snackbar
 A Snackbar component for notifications.
 

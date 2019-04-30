@@ -1,3 +1,9 @@
+#### 5.4.3 (2019-04-30)
+
+##### New Features
+
+* **Menu:**  Add ability to disable focusOnOpen (0ea5342f)
+
 #### 5.4.2 (2019-04-30)
 
 ##### Bug Fixes

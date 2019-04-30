@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "IconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/icon/index.tsx#L7",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/icon/index.tsx#L7",
       "extends": [
         "DeprecatedIconProps"
       ],
@@ -49,7 +49,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/icon/index.tsx#L9",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/icon/index.tsx#L9",
           "type": "RMWC.IconPropT"
         },
         {
@@ -73,7 +73,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/icon/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/icon/index.tsx#L14",
           "inheritedFrom": "DeprecatedIconProps.iconOptions",
           "type": "RMWC.IconOptions"
         }
@@ -93,7 +93,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/icon/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/icon/index.tsx#L12",
       "methods": [],
       "properties": [
         {
@@ -117,7 +117,7 @@
           },
           "kind": "property",
           "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/76326d1e5/src/icon/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/9f05a35bf/src/icon/index.tsx#L14",
           "type": "RMWC.IconOptions"
         }
       ]
