@@ -128,7 +128,14 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
         this.emit('onSelect', {
           index: evtData.index,
           item: this.items[evtData.index]
-        })
+        }),
+      getMenuItemCount: () => this.items.length,
+      focusItemAtIndex: index => (this.items[index] as HTMLElement).focus(),
+      focusListRoot: () =>
+        this.list &&
+        this.list.root &&
+        this.list.root.ref &&
+        this.list.root.ref.focus()
     });
   }
 
@@ -158,6 +165,7 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
 
   handleOpen(evt: MenuSurfaceOnOpenEventT) {
     const list = this.items;
+
     if (
       this.props.focusOnOpen &&
       list.length > 0 &&
