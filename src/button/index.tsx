@@ -19,6 +19,8 @@ export interface ButtonProps extends RMWC.WithRippleProps {
   outlined?: boolean;
   /** Make the button disabled */
   disabled?: boolean;
+  /** Used to indicate a dangerous action. */
+  danger?: boolean;
   /** Content specified as a label prop. */
   label?: React.ReactNode | any;
   /** Content specified as children. */
@@ -49,7 +51,6 @@ export const Button = withRipple({
     ],
     consumeProps: [
       'dense',
-      'raised',
       'unelevated',
       'outlined',
       'primary',
@@ -57,10 +58,30 @@ export const Button = withRipple({
       'unbounded'
     ],
     render: (
-      { icon, trailingIcon, label, children, ...rest }: ButtonProps,
+      {
+        icon,
+        trailingIcon,
+        label,
+        children,
+        raised,
+        danger,
+        ...rest
+      }: ButtonProps & React.HTMLProps<any>,
       ref: React.Ref<any>,
       Tag: any
     ) => {
+      if (danger) {
+        const existingStyle = rest.style || {};
+        const dangerStyle = {
+          '--mdc-theme-primary': 'var(--mdc-theme-error)',
+          '--mdc-theme-on-primary': 'var(--mdc-theme-on-error)'
+        };
+        rest.style = {
+          ...dangerStyle,
+          ...existingStyle
+        };
+      }
+
       return (
         <Tag {...rest} ref={ref}>
           {!!icon && <ButtonIcon icon={icon} />}

@@ -36,6 +36,13 @@ export default function() {
           <Button label="No Ripple" ripple={false} />
         </>
       </DocsExample>
+      <DocsExample label="Danger">
+        <>
+          <Button label="Danger" danger raised />
+          <Button label="Danger" danger outlined />
+          <Button label="Danger" danger />
+        </>
+      </DocsExample>
       <DocsExample label="Theming">
         <>
           <Button
