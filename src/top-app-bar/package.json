@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/top-app-bar": "^1.1.1",
+    "@material/top-app-bar": "^2.0.0",
     "@rmwc/base": "^5.4.3",
     "@rmwc/icon": "^5.4.3",
     "@rmwc/ripple": "^5.4.3",
