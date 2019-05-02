@@ -220,7 +220,13 @@ export class Dialog extends FoundationComponent<
         document.body && document.body.classList.remove(className),
       eventTargetMatches: (target: HTMLElement, selector: string) =>
         matches(target, selector),
-      trapFocus: () => this.focusTrap && this.focusTrap.activate(),
+      trapFocus: () => {
+        try {
+          // we dont always have an item to focus
+          // so we try catch it
+          this.focusTrap && this.focusTrap.activate();
+        } catch (err) {}
+      },
       releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
       isContentScrollable: () => !!this.content && isScrollable(this.content),
       areButtonsStacked: () => areTopsMisaligned(this.buttons),
