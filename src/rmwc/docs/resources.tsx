@@ -103,7 +103,7 @@ const RESOURCES: ResourceT[] = [
     description:
       "Don't keep letting your friends build software with bad UI libraries. Spread the word about RMWC.",
     url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'You should definitely be using RMWC for your next project! https://jamesmfriedman.github.io/rmwc/'
+      'You should definitely be using RMWC for your next project! https://rmwc.io'
     )}`,
     img: 'images/backgrounds/mb-bg-fb-15.png',
     icon: (
@@ -118,7 +118,7 @@ const RESOURCES: ResourceT[] = [
       {
         label: 'Tweet',
         url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-          'You should definitely be using RMWC for your next project! https://jamesmfriedman.github.io/rmwc/'
+          'You should definitely be using RMWC for your next project! https://rmwc.io'
         )}`
       },
       {

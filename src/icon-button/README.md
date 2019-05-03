@@ -23,7 +23,7 @@
     tag="a"
     target="_blank"
     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      'You should definitely be using RMWC for your next project! https://jamesmfriedman.github.io/rmwc/'
+      'You should definitely be using RMWC for your next project! https://rmwc.io'
     )}`}
   />
 </>
