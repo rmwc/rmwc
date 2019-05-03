@@ -46,7 +46,7 @@ export class List extends FoundationComponent<MDCListFoundation, ListProps> {
     return MDCListFoundation.cssClasses;
   }
 
-  root = this.createElement('root');
+  root: any = this.createElement('root');
 
   constructor(props: ListProps) {
     super(props);
