@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Switch",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L64",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L64",
       "extends": [
         "ToggleableFoundationComponent<MDCSwitchFoundation, SwitchProps>"
       ],
@@ -305,13 +305,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L77",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L77",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L77",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -722,13 +722,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L87",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L87",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L87",
               "parameters": [],
               "returnType": "MDCSwitchFoundation",
               "type": "() => MDCSwitchFoundation"
@@ -813,13 +813,13 @@
           },
           "kind": "method",
           "name": "handleChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L98",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L98",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "handleChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L98",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L98",
               "parameters": [
                 {
                   "flags": {
@@ -856,13 +856,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L121",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L121",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L121",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L121",
               "parameters": [],
               "returnType": "undefined | null | {}",
               "type": "() => undefined | null | {}"
@@ -1004,13 +1004,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L103",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L103",
           "signatures": [
             {
               "fileName": "src/switch/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L103",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L103",
               "parameters": [
                 {
                   "flags": {
@@ -1162,7 +1162,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L68",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L68",
           "defaultValue": "\"Switch\"",
           "type": "string"
         },
@@ -1251,13 +1251,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L70",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L70",
         "signatures": [
           {
             "fileName": "src/switch/index.tsx",
             "kind": "signature",
             "name": "new Switch",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L70",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L70",
             "parameters": [
               {
                 "flags": {
@@ -1302,7 +1302,7 @@
       },
       "kind": "interface",
       "name": "SwitchProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/switch/index.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/switch/index.tsx#L12",
       "extends": [
         "WithRippleProps",
         "ToggleableFoundationProps"

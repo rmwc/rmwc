@@ -1,3 +1,25 @@
+#### 5.5.0 (2019-05-03)
+
+##### Chores
+
+* **Base:**
+  *  updating to CRA3 (cb42368e)
+  *  Updating deps to mwc@2.x.x (11223f59)
+* **Docs:**  Copying CNAME over to persistent public dir (3fa19458)
+* **List:**  Fixing issue with CRA3 build (8a74e9af)
+* **Snackbar:**  Updating SnackbarQueue docs and making ArrayEmitter reusable (08084986)
+* **Card:**  Fixing deprecation in test (eb91bb38)
+* **Menu:**  Implementing changed behavior from MCW (1701a5d0)
+
+##### New Features
+
+* **Dialog:**  Adding dialog queue (3596c6f0)
+* **Button:**  Implementing danger button (5852be65)
+
+##### Bug Fixes
+
+* **Dialog:**  Correcting focus trap issue for when there are no focusable elements (88e46b24)
+
 #### 5.4.3 (2019-04-30)
 
 ##### New Features

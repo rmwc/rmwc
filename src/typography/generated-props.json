@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "TypographyProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/typography/index.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/typography/index.tsx#L21",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "use",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/typography/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/typography/index.tsx#L23",
           "type": "TypographyT"
         }
       ]
@@ -65,7 +65,7 @@
       },
       "kind": "type alias",
       "name": "TypographyT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/typography/index.tsx#L5",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/typography/index.tsx#L5",
       "type": "\"headline1\" | \"headline2\" | \"headline3\" | \"headline4\" | \"headline5\" | \"headline6\" | \"subtitle1\" | \"subtitle2\" | \"body1\" | \"body2\" | \"caption\" | \"button\" | \"overline\""
     }
   }
