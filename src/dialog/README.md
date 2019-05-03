@@ -67,6 +67,116 @@ function Example() {
 }
 ```
 
+## Usage with DialogQueue
+
+Some dialog interactions are complex, but a lot of the time you just need a simple alert or confirm dialog. `DialogQueue` allows you to open dialogs from anywhere in your app and emulates the browsers built in `alert`, `confirm` and `prompt` dialogs. If you've used the `SnackbarQueue`, the `DialogQueue` is very similar.
+
+Setup is nice and easy, create a queue object you can pass around in your code base, pass the queues `dialogs` to the `DialogQueue`component, and then use the `alert`, `prompt` or `confirm` api to open dialogs.
+
+```jsx
+
+// Create a file that exports your queue
+// myQueue.js
+import { createDialogQueue } from '@rmwc/dialog';
+
+export const queue = createDialogQueue()
+```
+
+```jsx
+
+// Somewhere at the top level of your app
+// Render the DialogQueue
+import React from 'react';
+import { queue } from './myQueue';
+
+export default function App() {
+  return (
+    <div>
+      ...
+      <DialogQueue
+        dialogs={queue.dialogs}
+        // You can also pass default options to pass to your dialogs
+        // ie, prevent all dialogs from dismissing from a click on the background scrim
+        preventOutsideDismiss
+      />
+    </div>
+  )
+}
+```
+
+The `alert`, `confirm`, and `prompt` functions were designed to mimic the the built-in browser methods with a couple of small difference. First, they all return a promise. The promise will always resolve successfully with the response indicating the appropriate action. `alert` the response will be `accept` for clicking the ok button, or `close`. `confirm` will resolve `true` or `false`, and `prompt` will resolve with the value entered into the input, or `null` if the closed the dialog. Second, all methods the methods accept any valid prop for `SimpleDialog`.
+
+```jsx
+
+// Somewhere else in your app
+// Could be a view, your redux store, anywhere you want...
+import { queue } from './myQueue';
+
+queue.alert({
+  title: 'Hi there',
+  body: 'Whats going on?'
+});
+
+queue.confirm({
+  title: <b>Are you positive?</b>,
+  body: 'You have selected pizza instead icecream!',
+  acceptLabel: 'CONFIRM'
+});
+
+queue.prompt({
+  title: 'Whats your name?',
+  body: 'Anything will do',
+  acceptLabel: 'Submit',
+  cancelLabel: 'Skip',
+  // For prompts only, you can pass props to the input
+  inputProps: {
+    outlined: true
+  }
+})
+```
+
+```jsx
+() => {
+  const { dialogs, alert, confirm, prompt } = createDialogQueue();
+
+  function App() {
+    const [response, setResponse] = React.useState('____________');
+
+    const fireAlert = () =>
+      alert({ title: 'Hello!' }).then(res => setResponse(res));
+
+    const fireConfirm = () => confirm({}).then(res => setResponse(res));
+
+    const firePrompt = () =>
+      prompt({ inputProps: { outlined: true } }).then(res =>
+        setResponse(res)
+      );
+
+    return (
+      <div>
+        <Button label="Alert" onClick={fireAlert} />
+        <Button label="Confirm" onClick={fireConfirm} />
+        <Button label="Prompt" onClick={firePrompt} />
+        <Button
+          label="In Sequence"
+          onClick={() => {
+            fireAlert();
+            fireConfirm();
+            firePrompt();
+          }}
+        />
+
+        <p>
+          Response: <b>{String(response)}</b>
+        </p>
+        <DialogQueue dialogs={dialogs} />
+      </div>
+    );
+  }
+  return <App />;
+}
+```
+
 ## Dialog
 A Dialog component.
 
@@ -105,6 +215,7 @@ Action buttons for the Dialog.
 |------|------|-------------|
 | `action` | `undefined \| string` | An action returned in evt.detail.action to the onClose handler. |
 | `children` | `React.ReactNode` | Content specified as children. |
+| `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `icon` | `RMWC.IconPropT` | An Icon for the Button |

@@ -9,9 +9,12 @@ import {
   DialogContent,
   DialogActions,
   DialogButton,
-  SimpleDialog
-} from '.';
+  SimpleDialog,
+  createDialogQueue,
+  DialogQueue
+} from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
+import { Button } from '@rmwc/button';
 
 const DialogStory = function() {
   let [open, setOpen] = useKnob('boolean', 'open', true);
@@ -62,6 +65,31 @@ function SimpleDialogStory() {
   );
 }
 
+const { dialogs, alert, confirm, prompt } = createDialogQueue();
+
 storiesOf('Dialogs', module)
   .add('Dialog', () => <DialogStory />)
-  .add('SimpleDialog', () => <SimpleDialogStory />);
+  .add('SimpleDialog', () => <SimpleDialogStory />)
+  .add('DialogQueue', () => {
+    const fireAlert = () => alert({}).then(res => console.log(res));
+    const fireConfirm = () => confirm({}).then(res => console.log(res));
+    const firePrompt = () =>
+      prompt({ inputProps: { outlined: true } }).then(res => console.log(res));
+
+    return (
+      <>
+        <Button label="Alert" onClick={fireAlert} />
+        <Button label="Confirm" onClick={fireConfirm} />
+        <Button label="Prompt" onClick={firePrompt} />
+        <Button
+          label="All"
+          onClick={() => {
+            fireAlert();
+            fireConfirm();
+            firePrompt();
+          }}
+        />
+        <DialogQueue dialogs={dialogs} />
+      </>
+    );
+  });
