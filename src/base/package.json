@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/base",
-  "version": "5.4.3",
+  "version": "5.5.0",
   "description": "RMWC base module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/types": "^5.4.3",
+    "@rmwc/types": "^5.5.0",
     "classnames": "^2.2.6",
     "focus-trap": "^5.0.0",
     "hyperform": "^0.9.9",
