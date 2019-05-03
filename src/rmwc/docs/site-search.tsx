@@ -13,12 +13,12 @@ import { IconPropT } from '@rmwc/types';
 
 type SiteSearchItemT = {
   cacheId: string; //"-uBq3tnNfuMJ"
-  displayLink: string; //"jamesmfriedman.github.io"
-  formattedUrl: string; //"https://jamesmfriedman.github.io/rmwc/?p=installation"
+  displayLink: string; //"rmwc.io"
+  formattedUrl: string; //"https://rmwc.io/?p=installation"
   htmlSnippet: string; //"npm i @rmwc/<b>button</b> --save or yarn add @rmwc/<b>button</b>; Include the individual <br>↵components stylesheets (listed on their docs page) in your project via your <br>↵method&nbsp;..."
   htmlTitle: string; //"RMWC | React Material Web Components | Installation"
   kind: string; //"customsearch#result"
-  link: string; //"https://jamesmfriedman.github.io/rmwc/?p=installation"
+  link: string; //"https://rmwc.io/?p=installation"
   snippet: string; //"npm i @rmwc/button --save or yarn add @rmwc/button; Include the individual ↵components stylesheets (listed on their docs page) in your project via your ↵method ..."
   title: string; //"RMWC | React Material Web Components | Installation"
 };
