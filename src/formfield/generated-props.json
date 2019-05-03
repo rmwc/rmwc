@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "FormField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L30",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L30",
       "extends": [
         "FoundationComponent<MDCFormFieldFoundation, FormFieldProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L36",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L36",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L36",
               "parameters": [],
               "returnType": "MDCFormFieldFoundation",
               "type": "() => MDCFormFieldFoundation"
@@ -812,13 +812,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L53",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L53",
           "signatures": [
             {
               "fileName": "src/formfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L53",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L53",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1075,7 +1075,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L34",
           "defaultValue": "\"FormField\"",
           "type": "string"
         },
@@ -1196,7 +1196,7 @@
       },
       "kind": "interface",
       "name": "FormFieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L10",
       "methods": [],
       "properties": [
         {
@@ -1220,7 +1220,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/formfield/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/formfield/index.tsx#L12",
           "type": "undefined | false | true"
         }
       ]

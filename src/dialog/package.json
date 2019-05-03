@@ -32,9 +32,10 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/dialog": "^1.1.1",
+    "@material/dialog": "^2.0.0",
     "@rmwc/base": "^5.4.3",
     "@rmwc/button": "^5.4.3",
+    "@rmwc/textfield": "^5.4.3",
     "@rmwc/types": "^5.4.3"
   },
   "gitHead": "0a17a6ae16d49710cd8638aee484a4415556fdc3"

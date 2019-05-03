@@ -5,3 +5,4 @@ export * from './ponyfills';
 export * from './random-id';
 export * from './strings';
 export * from './wrap-child';
+export * from './emitter';

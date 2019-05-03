@@ -22,6 +22,10 @@ describe('Button', () => {
     expect(!!~btn.html().search('mdc-button--raised')).toEqual(true);
   });
 
+  it('can be danger', () => {
+    const btn = mount(<Button danger />);
+  });
+
   it('can be unelevated', () => {
     const btn = mount(<Button unelevated />);
     expect(!!~btn.html().search('mdc-button--unelevated')).toEqual(true);

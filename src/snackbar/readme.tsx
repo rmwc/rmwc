@@ -90,13 +90,15 @@ export default function() {
       <DocsP>
         While rendering the Snackbar inline works for simple cases, you'll
         likely have a notification system, or want to send notifications from
-        anywhere in your app. The SnackbarQueue exists as a convenience method
-        for handling these cases and rendering the snackbar messages for you.
+        anywhere in your app. The `SnackbarQueue` exists as a convenient
+        interface for handling these cases and rendering the snackbar messages
+        for you. If you've used the `DialogQueue`, the `SnackbarQueue` is very
+        similar.
       </DocsP>
       <DocsP>
         Setup is nice and easy, create a queue object you can pass around in
-        your code base, pass the queues messages to the SnackbarQueue component,
-        and then use the notify api to send notifications.
+        your code base, pass the queues `messages` to the `SnackbarQueue`
+        component, and then use the `notify` function to send notifications.
       </DocsP>
       <DocsExample codeOnly>
         {/* jsx */ `
@@ -133,7 +135,7 @@ export default function() {
       </DocsExample>
 
       <DocsP>
-        The notify function was designed to mimic the the built-in browser
+        The `notify` function was designed to mimic the the built-in browser
         Notifications api and can accept most of the relevant options (icon,
         image, title, body, actions, ,etc). It also can accept any of the
         Snackbar props. Just import your queue, and call the notify method.

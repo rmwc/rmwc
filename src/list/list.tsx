@@ -46,7 +46,7 @@ export class List extends FoundationComponent<MDCListFoundation, ListProps> {
     return MDCListFoundation.cssClasses;
   }
 
-  private root = this.createElement('root');
+  root: any = this.createElement('root');
 
   constructor(props: ListProps) {
     super(props);
@@ -61,7 +61,7 @@ export class List extends FoundationComponent<MDCListFoundation, ListProps> {
     if (this.root.ref) {
       return [].slice.call(
         this.root.ref.querySelectorAll(
-          MDCListFoundation.strings.ENABLED_ITEMS_SELECTOR
+          `.${MDCListFoundation.cssClasses.LIST_ITEM_CLASS}`
         )
       );
     }

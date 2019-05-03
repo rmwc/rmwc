@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/button": "^1.1.1",
+    "@material/button": "^2.0.0",
     "@rmwc/base": "^5.4.3",
     "@rmwc/icon": "^5.4.3",
     "@rmwc/provider": "^5.4.3",

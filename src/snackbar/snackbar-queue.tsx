@@ -6,6 +6,7 @@ import {
   SnackbarActionProps
 } from './snackbar';
 import { MergeInterfacesT, IconPropT } from '@rmwc/types';
+import { ArrayEmitter } from '@rmwc/base';
 
 interface SnackbarQueueMessageBase {
   title?: React.ReactNode;
@@ -21,41 +22,9 @@ export interface SnackbarQueueMessage
   extends SnackbarProps,
     MergeInterfacesT<SnackbarQueueMessageBase, NotificationOptions> {}
 
-class MessagesEmitter<T> {
-  events_: { [evtName: string]: Array<Function> } = {};
-  array: T[] = [];
-
-  push(...items: T[]) {
-    const rVal = this.array.push(...items);
-    this.trigger('change');
-    return rVal;
-  }
-
-  on(event: string, cb: Function) {
-    this.events_ = this.events_ || {};
-    this.events_[event] = this.events_[event] || [];
-    this.events_[event].push(cb);
-  }
-  off(event: string, cb: Function) {
-    this.events_ = this.events_ || {};
-    if (event in this.events_ === false) return;
-    this.events_[event].splice(this.events_[event].indexOf(cb), 1);
-  }
-  trigger(event: string, ...args: any) {
-    this.events_ = this.events_ || {};
-    if (event in this.events_ === false) return;
-    for (var i = 0; i < this.events_[event].length; i++) {
-      this.events_[event][i].apply(
-        this,
-        Array.prototype.slice.call(arguments, 1)
-      );
-    }
-  }
-}
-
 /** A snackbar queue for rendering messages */
 export interface SnackbarQueueProps extends SnackbarProps {
-  messages: MessagesEmitter<SnackbarQueueMessage>;
+  messages: ArrayEmitter<SnackbarQueueMessage>;
 }
 
 interface SnackbarQueueState {
@@ -67,6 +36,8 @@ export class SnackbarQueue extends React.Component<
   SnackbarQueueProps,
   SnackbarQueueState
 > {
+  static displayName = 'SnackbarQueue';
+
   state: SnackbarQueueState = {
     message: this.props.messages.array[0]
   };
@@ -136,11 +107,14 @@ export class SnackbarQueue extends React.Component<
             {!!image && (
               <div
                 className="rmwc-snackbar__image"
-                style={{ margin: '1rem auto', textAlign: 'center' }}
+                style={{
+                  margin: '1rem auto',
+                  textAlign: 'center'
+                }}
               >
                 <img
                   src={image}
-                  alt={`Image from ${image}`}
+                  alt={`${image}`}
                   style={{ maxWidth: '100%', maxHeight: '18rem' }}
                 />
               </div>
@@ -159,10 +133,10 @@ export class SnackbarQueue extends React.Component<
 
 /** Creates a snackbar queue */
 export const createSnackbarQueue = (): {
-  messages: MessagesEmitter<SnackbarQueueMessage>;
+  messages: ArrayEmitter<SnackbarQueueMessage>;
   notify: (message: SnackbarQueueMessage) => void;
 } => {
-  const messages = new MessagesEmitter<SnackbarQueueMessage>();
+  const messages = new ArrayEmitter<SnackbarQueueMessage>();
 
   return {
     messages,

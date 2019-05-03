@@ -66,7 +66,7 @@ function Example() {
   return (
     <MenuSurfaceAnchor>
       <MenuSurface open={open} onClose={evt => setOpen(false)}>
-        <div style={{ padding: '1rem', width: '8rem' }}>Menu.</div>
+        <div style={{ padding: '1rem', width: '8rem' }}>Menu</div>
       </MenuSurface>
       {/** The handle can be any component you want */}
       <IconButton icon="menu" onClick={evt => setOpen(!open)} />

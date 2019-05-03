@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Snackbar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L133",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L133",
       "extends": [
         "FoundationComponent<MDCSnackbarFoundation, SnackbarProps & DeprecatedSnackbarProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L155",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L155",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L155",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L155",
               "parameters": [],
               "returnType": "MDCSnackbarFoundation",
               "type": "() => MDCSnackbarFoundation"
@@ -748,13 +748,13 @@
           },
           "kind": "method",
           "name": "getPropsWithDeprecations",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L187",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L187",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "getPropsWithDeprecations",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L187",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L187",
               "parameters": [
                 {
                   "flags": {
@@ -855,13 +855,13 @@
           },
           "kind": "method",
           "name": "handleKeyDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L204",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L204",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "handleKeyDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L204",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L204",
               "parameters": [
                 {
                   "flags": {
@@ -898,13 +898,13 @@
           },
           "kind": "method",
           "name": "handleSurfaceClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L209",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L209",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "handleSurfaceClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L209",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L209",
               "parameters": [
                 {
                   "flags": {
@@ -941,13 +941,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L232",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L232",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L232",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L232",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1047,13 +1047,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L170",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L170",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L170",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L170",
               "parameters": [
                 {
                   "flags": {
@@ -1205,7 +1205,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L137",
           "defaultValue": "\"Snackbar\"",
           "type": "string"
         },
@@ -1241,7 +1241,7 @@
           },
           "kind": "property",
           "name": "announce",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L153",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L153",
           "defaultValue": " util.announce",
           "type": "announce"
         },
@@ -1293,7 +1293,7 @@
           },
           "kind": "property",
           "name": "isShowing_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L150",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L150",
           "defaultValue": "false",
           "type": "boolean"
         },
@@ -1311,7 +1311,7 @@
           },
           "kind": "property",
           "name": "labelEl",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L151",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L151",
           "defaultValue": " null",
           "type": "HTMLElement | null"
         },
@@ -1329,7 +1329,7 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L152",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L152",
           "type": "any"
         }
       ],
@@ -1347,13 +1347,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L140",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L140",
         "signatures": [
           {
             "fileName": "src/snackbar/snackbar.tsx",
             "kind": "signature",
             "name": "new Snackbar",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L140",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L140",
             "parameters": [
               {
                 "flags": {
@@ -1398,7 +1398,7 @@
       },
       "kind": "class",
       "name": "SnackbarQueue",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L66",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L35",
       "extends": [
         "Component<SnackbarQueueProps, SnackbarQueueState>"
       ],
@@ -1906,13 +1906,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L80",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L51",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar-queue.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L80",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L51",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2062,13 +2062,13 @@
           },
           "kind": "method",
           "name": "getMessage",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L55",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar-queue.tsx",
               "kind": "signature",
               "name": "getMessage",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L84",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L55",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2153,13 +2153,13 @@
           },
           "kind": "method",
           "name": "removeMessage",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L92",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L63",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar-queue.tsx",
               "kind": "signature",
               "name": "removeMessage",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L92",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L63",
               "parameters": [
                 {
                   "flags": {
@@ -2196,13 +2196,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L78",
           "signatures": [
             {
               "fileName": "src/snackbar/snackbar-queue.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L107",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L78",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2376,6 +2376,24 @@
           "type": "Context<any>"
         },
         {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": true
+          },
+          "kind": "property",
+          "name": "displayName",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L39",
+          "defaultValue": "\"SnackbarQueue\"",
+          "type": "string"
+        },
+        {
           "documentation": {
             "contents": [
               "<p>If using the new style context, re-declare this in your class to be the\n<code>React.ContextType</code> of your <code>static contextType</code>.</p>\n<pre><code class=\"lang-ts\">static contextType = MyContext\ncontext!: React.ContextType&lt;typeof MyContext&gt;\n</code></pre>\n",
@@ -2459,13 +2477,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L72",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L43",
         "signatures": [
           {
             "fileName": "src/snackbar/snackbar-queue.tsx",
             "kind": "signature",
             "name": "new SnackbarQueue",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L72",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L43",
             "parameters": [
               {
                 "flags": {
@@ -2510,7 +2528,7 @@
       },
       "kind": "interface",
       "name": "SnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L27",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L27",
       "methods": [],
       "properties": [
         {
@@ -2534,7 +2552,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L37",
           "type": "React.ReactNode | React.ReactNode[]"
         },
         {
@@ -2551,7 +2569,7 @@
           },
           "kind": "property",
           "name": "dismissIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L45",
           "type": "boolean | string"
         },
         {
@@ -2575,7 +2593,7 @@
           },
           "kind": "property",
           "name": "dismissesOnAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L47",
           "type": "undefined | false | true"
         },
         {
@@ -2599,7 +2617,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L49",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2616,7 +2634,7 @@
           },
           "kind": "property",
           "name": "leading",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L43",
           "type": "undefined | false | true"
         },
         {
@@ -2640,7 +2658,7 @@
           },
           "kind": "property",
           "name": "message",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L35",
           "type": "React.ReactNode"
         },
         {
@@ -2664,7 +2682,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L33",
           "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
         },
         {
@@ -2688,7 +2706,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L31",
           "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
         },
         {
@@ -2712,7 +2730,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L29",
           "type": "undefined | false | true"
         },
         {
@@ -2736,7 +2754,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L41",
           "type": "undefined | false | true"
         },
         {
@@ -2760,7 +2778,7 @@
           },
           "kind": "property",
           "name": "timeout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L39",
           "type": "undefined | number"
         }
       ]
@@ -2779,7 +2797,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedSnackbarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L52",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L52",
       "methods": [],
       "properties": [
         {
@@ -2803,7 +2821,7 @@
           },
           "kind": "property",
           "name": "actionHandler",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L66",
           "type": "undefined | () => void"
         },
         {
@@ -2827,7 +2845,7 @@
           },
           "kind": "property",
           "name": "actionOnBottom",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L64",
           "type": "undefined | false | true"
         },
         {
@@ -2851,7 +2869,7 @@
           },
           "kind": "property",
           "name": "actionText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L68",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L68",
           "type": "React.ReactNode"
         },
         {
@@ -2875,7 +2893,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L60",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L60",
           "type": "undefined | false | true"
         },
         {
@@ -2899,7 +2917,7 @@
           },
           "kind": "property",
           "name": "multiline",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L62",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L62",
           "type": "undefined | false | true"
         },
         {
@@ -2923,7 +2941,7 @@
           },
           "kind": "property",
           "name": "onHide",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L58",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L58",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -2947,7 +2965,7 @@
           },
           "kind": "property",
           "name": "onShow",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L56",
           "type": "undefined | (evt: Event) => void"
         },
         {
@@ -2971,7 +2989,7 @@
           },
           "kind": "property",
           "name": "show",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L54",
           "type": "undefined | false | true"
         }
       ]
@@ -2997,7 +3015,7 @@
       },
       "kind": "interface",
       "name": "SnackbarActionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L104",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L104",
       "extends": [
         "ButtonProps"
       ],
@@ -3048,7 +3066,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L106",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L106",
           "type": "undefined | string"
         },
         {
@@ -3074,6 +3092,30 @@
           "name": "children",
           "inheritedFrom": "ButtonProps.children",
           "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Used to indicate a dangerous action.</p>\n"
+            ],
+            "contentsRaw": "Used to indicate a dangerous action.",
+            "metadata": {}
+          },
+          "fileName": "src/snackbar/node_modules/@rmwc/button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "danger",
+          "inheritedFrom": "ButtonProps.danger",
+          "type": "undefined | false | true"
         },
         {
           "documentation": {
@@ -3355,7 +3397,7 @@
       },
       "kind": "interface",
       "name": "SnackbarQueueMessage",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L20",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L21",
       "extends": [
         "SnackbarProps",
         "SnackbarQueueMessageBase & "
@@ -3383,7 +3425,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L37",
           "inheritedFrom": "SnackbarProps.action",
           "type": "React.ReactNode | React.ReactNode[]"
         },
@@ -3401,7 +3443,7 @@
           },
           "kind": "property",
           "name": "dismissIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L45",
           "inheritedFrom": "SnackbarProps.dismissIcon",
           "type": "boolean | string"
         },
@@ -3426,7 +3468,7 @@
           },
           "kind": "property",
           "name": "dismissesOnAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L47",
           "inheritedFrom": "SnackbarProps.dismissesOnAction",
           "type": "undefined | false | true"
         },
@@ -3451,7 +3493,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L49",
           "inheritedFrom": "SnackbarProps.icon",
           "type": "RMWC.IconPropT"
         },
@@ -3469,7 +3511,7 @@
           },
           "kind": "property",
           "name": "leading",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L43",
           "inheritedFrom": "SnackbarProps.leading",
           "type": "undefined | false | true"
         },
@@ -3494,7 +3536,7 @@
           },
           "kind": "property",
           "name": "message",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L35",
           "inheritedFrom": "SnackbarProps.message",
           "type": "React.ReactNode"
         },
@@ -3519,7 +3561,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L33",
           "inheritedFrom": "SnackbarProps.onClose",
           "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
         },
@@ -3544,7 +3586,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L31",
           "inheritedFrom": "SnackbarProps.onOpen",
           "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
         },
@@ -3569,7 +3611,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L29",
           "inheritedFrom": "SnackbarProps.open",
           "type": "undefined | false | true"
         },
@@ -3594,7 +3636,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L41",
           "inheritedFrom": "SnackbarProps.stacked",
           "type": "undefined | false | true"
         },
@@ -3619,7 +3661,7 @@
           },
           "kind": "property",
           "name": "timeout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L39",
           "inheritedFrom": "SnackbarProps.timeout",
           "type": "undefined | number"
         }
@@ -3646,7 +3688,7 @@
       },
       "kind": "interface",
       "name": "SnackbarQueueProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L57",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L26",
       "extends": [
         "SnackbarProps"
       ],
@@ -3673,7 +3715,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L37",
           "inheritedFrom": "SnackbarProps.action",
           "type": "React.ReactNode | React.ReactNode[]"
         },
@@ -3691,7 +3733,7 @@
           },
           "kind": "property",
           "name": "dismissIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L45",
           "inheritedFrom": "SnackbarProps.dismissIcon",
           "type": "boolean | string"
         },
@@ -3716,7 +3758,7 @@
           },
           "kind": "property",
           "name": "dismissesOnAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L47",
           "inheritedFrom": "SnackbarProps.dismissesOnAction",
           "type": "undefined | false | true"
         },
@@ -3741,7 +3783,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L49",
           "inheritedFrom": "SnackbarProps.icon",
           "type": "RMWC.IconPropT"
         },
@@ -3759,7 +3801,7 @@
           },
           "kind": "property",
           "name": "leading",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L43",
           "inheritedFrom": "SnackbarProps.leading",
           "type": "undefined | false | true"
         },
@@ -3784,7 +3826,7 @@
           },
           "kind": "property",
           "name": "message",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L35",
           "inheritedFrom": "SnackbarProps.message",
           "type": "React.ReactNode"
         },
@@ -3802,8 +3844,8 @@
           },
           "kind": "property",
           "name": "messages",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar-queue.tsx#L58",
-          "type": "MessagesEmitter<SnackbarQueueMessage>"
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar-queue.tsx#L27",
+          "type": "ArrayEmitter<SnackbarQueueMessage>"
         },
         {
           "documentation": {
@@ -3826,7 +3868,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L33",
           "inheritedFrom": "SnackbarProps.onClose",
           "type": "undefined | (evt: SnackbarOnCloseEventT) => void"
         },
@@ -3851,7 +3893,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L31",
           "inheritedFrom": "SnackbarProps.onOpen",
           "type": "undefined | (evt: SnackbarOnOpenEventT) => void"
         },
@@ -3876,7 +3918,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L29",
           "inheritedFrom": "SnackbarProps.open",
           "type": "undefined | false | true"
         },
@@ -3901,7 +3943,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L41",
           "inheritedFrom": "SnackbarProps.stacked",
           "type": "undefined | false | true"
         },
@@ -3926,7 +3968,7 @@
           },
           "kind": "property",
           "name": "timeout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L39",
           "inheritedFrom": "SnackbarProps.timeout",
           "type": "undefined | number"
         }
@@ -3946,7 +3988,7 @@
       },
       "kind": "type alias",
       "name": "SnackbarOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L23",
       "type": "RMWC.CustomEventT<{}>"
     },
     "SnackbarOnCloseEventT": {
@@ -3963,7 +4005,7 @@
       },
       "kind": "type alias",
       "name": "SnackbarOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/snackbar/snackbar.tsx#L24",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/snackbar/snackbar.tsx#L24",
       "type": "RMWC.CustomEventT<>"
     }
   }
