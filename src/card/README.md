@@ -239,6 +239,7 @@ A card action Button
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | Content specified as children. |
+| `danger` | `undefined \| false \| true` | Used to indicate a dangerous action. |
 | `dense` | `undefined \| false \| true` | Make the Button dense. |
 | `disabled` | `undefined \| false \| true` | Make the button disabled |
 | `icon` | `RMWC.IconPropT` | An Icon for the Button |

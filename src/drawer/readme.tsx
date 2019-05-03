@@ -13,7 +13,7 @@ import {
   DrawerAppContent
 } from '.';
 
-import { List, ListItem, ListItemPrimaryText } from '../list';
+import { List, ListItem } from '../list';
 
 import { Button } from '../button';
 
