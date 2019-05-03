@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "TabScroller",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L26",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L26",
       "extends": [
         "FoundationComponent<MDCTabScrollerFoundation, {}>"
       ],
@@ -714,13 +714,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L41",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L41",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L41",
               "parameters": [],
               "returnType": "MDCTabScrollerFoundation",
               "type": "() => MDCTabScrollerFoundation"
@@ -741,13 +741,13 @@
           },
           "kind": "method",
           "name": "getScrollContentWidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L84",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "getScrollContentWidth",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L84",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L84",
               "parameters": [],
               "returnType": "number",
               "type": "() => number"
@@ -768,13 +768,13 @@
           },
           "kind": "method",
           "name": "getScrollPosition",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L80",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L80",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "getScrollPosition",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L80",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L80",
               "parameters": [],
               "returnType": "number",
               "type": "() => number"
@@ -859,13 +859,13 @@
           },
           "kind": "method",
           "name": "handleInteraction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L96",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L96",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "handleInteraction",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L96",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L96",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -886,13 +886,13 @@
           },
           "kind": "method",
           "name": "handleTransitionEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L100",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L100",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "handleTransitionEnd",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L100",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L100",
               "parameters": [
                 {
                   "flags": {
@@ -929,13 +929,13 @@
           },
           "kind": "method",
           "name": "incrementScroll",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L88",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L88",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "incrementScroll",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L88",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L88",
               "parameters": [
                 {
                   "flags": {
@@ -972,13 +972,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L104",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L104",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L104",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L104",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -999,13 +999,13 @@
           },
           "kind": "method",
           "name": "scrollTo",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L92",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L92",
           "signatures": [
             {
               "fileName": "src/tabs/tab-scroller.tsx",
               "kind": "signature",
               "name": "scrollTo",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L92",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L92",
               "parameters": [
                 {
                   "flags": {
@@ -1331,13 +1331,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L32",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L32",
         "signatures": [
           {
             "fileName": "src/tabs/tab-scroller.tsx",
             "kind": "signature",
             "name": "new TabScroller",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-scroller.tsx#L32",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-scroller.tsx#L32",
             "parameters": [
               {
                 "flags": {
@@ -1375,7 +1375,7 @@
       },
       "kind": "class",
       "name": "TabIndicator",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L10",
       "extends": [
         "FoundationComponent<MDCSlidingTabIndicatorFoundation, {}>"
       ],
@@ -1594,13 +1594,13 @@
           },
           "kind": "method",
           "name": "activate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L35",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L35",
           "signatures": [
             {
               "fileName": "src/tabs/tab-indicator.tsx",
               "kind": "signature",
               "name": "activate",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L35",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L35",
               "parameters": [
                 {
                   "flags": {
@@ -1995,13 +1995,13 @@
           },
           "kind": "method",
           "name": "computeContentClientRect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L43",
           "signatures": [
             {
               "fileName": "src/tabs/tab-indicator.tsx",
               "kind": "signature",
               "name": "computeContentClientRect",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L43",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L43",
               "parameters": [],
               "returnType": "ClientRect",
               "type": "() => ClientRect"
@@ -2064,13 +2064,13 @@
           },
           "kind": "method",
           "name": "deactivate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L39",
           "signatures": [
             {
               "fileName": "src/tabs/tab-indicator.tsx",
               "kind": "signature",
               "name": "deactivate",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L39",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L39",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2171,13 +2171,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L17",
           "signatures": [
             {
               "fileName": "src/tabs/tab-indicator.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L17",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L17",
               "parameters": [],
               "returnType": "MDCSlidingTabIndicatorFoundation",
               "type": "() => MDCSlidingTabIndicatorFoundation"
@@ -2262,13 +2262,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L47",
           "signatures": [
             {
               "fileName": "src/tabs/tab-indicator.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-indicator.tsx#L47",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-indicator.tsx#L47",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2628,7 +2628,7 @@
       },
       "kind": "class",
       "name": "TabBar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L40",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L40",
       "extends": [
         "FoundationComponent<MDCTabBarFoundation, TabBarProps>"
       ],
@@ -2847,13 +2847,13 @@
           },
           "kind": "method",
           "name": "activateTab",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L90",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L90",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "activateTab",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L90",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L90",
               "parameters": [
                 {
                   "flags": {
@@ -2954,13 +2954,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L65",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L65",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L65",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L65",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -3371,13 +3371,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L120",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L120",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L120",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L120",
               "parameters": [],
               "returnType": "MDCTabBarFoundation",
               "type": "() => MDCTabBarFoundation"
@@ -3462,13 +3462,13 @@
           },
           "kind": "method",
           "name": "getTabElements",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L191",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L191",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "getTabElements",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L191",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L191",
               "parameters": [],
               "returnType": "Element[] | null",
               "type": "() => Element[] | null"
@@ -3489,13 +3489,13 @@
           },
           "kind": "method",
           "name": "handleKeyDown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L202",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L202",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "handleKeyDown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L202",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L202",
               "parameters": [
                 {
                   "flags": {
@@ -3532,13 +3532,13 @@
           },
           "kind": "method",
           "name": "handleTabInteraction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L198",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L198",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "handleTabInteraction",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L198",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L198",
               "parameters": [
                 {
                   "flags": {
@@ -3575,13 +3575,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L207",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L207",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L207",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L207",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -3681,13 +3681,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L180",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L180",
           "signatures": [
             {
               "fileName": "src/tabs/tab-bar.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L180",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L180",
               "parameters": [
                 {
                   "flags": {
@@ -3839,7 +3839,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L44",
           "defaultValue": "\"TabBar\"",
           "type": "string"
         },
@@ -3909,7 +3909,7 @@
           },
           "kind": "property",
           "name": "tabList",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L49",
           "defaultValue": " []",
           "type": "any[]"
         },
@@ -3927,7 +3927,7 @@
           },
           "kind": "property",
           "name": "tabScroller",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L48",
           "defaultValue": " null",
           "type": "TabScroller | null"
         }
@@ -3946,13 +3946,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L56",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L56",
         "signatures": [
           {
             "fileName": "src/tabs/tab-bar.tsx",
             "kind": "signature",
             "name": "new TabBar",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L56",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L56",
             "parameters": [
               {
                 "flags": {
@@ -3997,7 +3997,7 @@
       },
       "kind": "interface",
       "name": "TabProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L16",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L16",
       "methods": [],
       "properties": [
         {
@@ -4021,7 +4021,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L20",
           "type": "React.ReactNode"
         },
         {
@@ -4045,7 +4045,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L22",
           "type": "RMWC.IconPropT"
         },
         {
@@ -4069,7 +4069,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L18",
           "type": "any"
         },
         {
@@ -4093,7 +4093,7 @@
           },
           "kind": "property",
           "name": "onInteraction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L28",
           "type": "undefined | (evt: TabOnInteractionEventT) => void"
         },
         {
@@ -4117,7 +4117,7 @@
           },
           "kind": "property",
           "name": "restrictIndicator",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L26",
           "type": "undefined | false | true"
         },
         {
@@ -4141,7 +4141,7 @@
           },
           "kind": "property",
           "name": "stacked",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L24",
           "type": "undefined | false | true"
         }
       ]
@@ -4167,7 +4167,7 @@
       },
       "kind": "interface",
       "name": "TabBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L20",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L20",
       "methods": [],
       "properties": [
         {
@@ -4191,7 +4191,7 @@
           },
           "kind": "property",
           "name": "activeTabIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L24",
           "type": "undefined | number"
         },
         {
@@ -4215,7 +4215,7 @@
           },
           "kind": "property",
           "name": "onActivate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L22",
           "type": "undefined | (evt: TabBarOnActivateEventT) => void"
         }
       ]
@@ -4234,7 +4234,7 @@
       },
       "kind": "type alias",
       "name": "TabBarContextT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar-context.tsx#L3",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar-context.tsx#L3",
       "type": ""
     },
     "TabOnInteractionEventT": {
@@ -4251,7 +4251,7 @@
       },
       "kind": "type alias",
       "name": "TabOnInteractionEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab.tsx#L13",
       "type": "RMWC.CustomEventT<>"
     },
     "TabBarOnActivateEventT": {
@@ -4275,7 +4275,7 @@
       },
       "kind": "type alias",
       "name": "TabBarOnActivateEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/tabs/tab-bar.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/tabs/tab-bar.tsx#L15",
       "type": "RMWC.CustomEventT<>"
     }
   }

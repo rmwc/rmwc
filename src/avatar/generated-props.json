@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "AvatarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L8",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L8",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "contain",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L20",
           "type": "undefined | false | true"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "interactive",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L18",
           "type": "undefined | false | true"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "name",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L14",
           "type": "undefined | string"
         },
         {
@@ -118,7 +118,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L12",
           "type": "RMWC.IconSizeT"
         },
         {
@@ -142,7 +142,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L16",
           "type": "undefined | false | true"
         },
         {
@@ -166,7 +166,7 @@
           },
           "kind": "property",
           "name": "src",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L10",
           "type": "undefined | string"
         }
       ]
@@ -192,7 +192,7 @@
       },
       "kind": "interface",
       "name": "AvatarGroupProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L77",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L77",
       "methods": [],
       "properties": [
         {
@@ -216,7 +216,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L79",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L79",
           "type": "undefined | false | true"
         }
       ]
@@ -242,7 +242,7 @@
       },
       "kind": "interface",
       "name": "AvatarCountProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L137",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L137",
       "methods": [],
       "properties": [
         {
@@ -266,7 +266,7 @@
           },
           "kind": "property",
           "name": "interactive",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L147",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L147",
           "type": "undefined | false | true"
         },
         {
@@ -290,7 +290,7 @@
           },
           "kind": "property",
           "name": "overflow",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L141",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L141",
           "type": "undefined | false | true"
         },
         {
@@ -314,7 +314,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L143",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L143",
           "type": "RMWC.IconSizeT"
         },
         {
@@ -338,7 +338,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L145",
           "type": "undefined | false | true"
         },
         {
@@ -362,7 +362,7 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/avatar/index.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/avatar/index.tsx#L139",
           "type": "number"
         }
       ]

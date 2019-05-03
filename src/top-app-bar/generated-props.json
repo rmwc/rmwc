@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "SimpleTopAppBar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L299",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L299",
       "extends": [
         "Component<SimpleTopAppBarProps>"
       ],
@@ -756,13 +756,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L302",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L302",
           "signatures": [
             {
               "fileName": "src/top-app-bar/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L302",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L302",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -949,7 +949,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L300",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L300",
           "defaultValue": "\"SimpleTopAppBar\"",
           "type": "string"
         },
@@ -1162,7 +1162,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L19",
       "methods": [],
       "properties": [
         {
@@ -1186,7 +1186,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L31",
           "type": "undefined | false | true"
         },
         {
@@ -1210,7 +1210,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L23",
           "type": "undefined | false | true"
         },
         {
@@ -1234,7 +1234,7 @@
           },
           "kind": "property",
           "name": "onNav",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L21",
           "type": "undefined | (evt: TopAppBarOnNavEventT) => void"
         },
         {
@@ -1258,7 +1258,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L25",
           "type": "undefined | false | true"
         },
         {
@@ -1282,7 +1282,7 @@
           },
           "kind": "property",
           "name": "scrollTarget",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L33",
           "type": "Element | null"
         },
         {
@@ -1306,7 +1306,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L27",
           "type": "undefined | false | true"
         },
         {
@@ -1330,7 +1330,7 @@
           },
           "kind": "property",
           "name": "shortCollapsed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L29",
           "type": "undefined | false | true"
         }
       ]
@@ -1356,7 +1356,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarRowProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L53",
       "methods": [],
       "properties": []
     },
@@ -1381,7 +1381,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarSectionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L62",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L62",
       "methods": [],
       "properties": [
         {
@@ -1405,7 +1405,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L66",
           "type": "undefined | false | true"
         },
         {
@@ -1429,7 +1429,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L64",
           "type": "undefined | false | true"
         }
       ]
@@ -1455,7 +1455,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarNavigationIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L84",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L84",
       "extends": [
         "IconProps"
       ],
@@ -1532,7 +1532,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarActionItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L99",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L99",
       "extends": [
         "IconProps"
       ],
@@ -1609,7 +1609,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L114",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L114",
       "methods": [],
       "properties": []
     },
@@ -1634,7 +1634,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarFixedAdjustProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L123",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L123",
       "methods": [],
       "properties": [
         {
@@ -1658,7 +1658,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L125",
           "type": "undefined | false | true"
         },
         {
@@ -1682,7 +1682,7 @@
           },
           "kind": "property",
           "name": "denseProminent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L129",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L129",
           "type": "undefined | false | true"
         },
         {
@@ -1706,7 +1706,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L127",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L127",
           "type": "undefined | false | true"
         },
         {
@@ -1730,7 +1730,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L131",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L131",
           "type": "undefined | false | true"
         }
       ]
@@ -1756,7 +1756,7 @@
       },
       "kind": "interface",
       "name": "SimpleTopAppBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L285",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L285",
       "extends": [
         "TopAppBarProps"
       ],
@@ -1783,7 +1783,7 @@
           },
           "kind": "property",
           "name": "actionItems",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L289",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L289",
           "type": "Object[]"
         },
         {
@@ -1807,7 +1807,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L31",
           "inheritedFrom": "TopAppBarProps.dense",
           "type": "undefined | false | true"
         },
@@ -1832,7 +1832,7 @@
           },
           "kind": "property",
           "name": "endContent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L295",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L295",
           "type": "React.ReactNode"
         },
         {
@@ -1856,7 +1856,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L23",
           "inheritedFrom": "TopAppBarProps.fixed",
           "type": "undefined | false | true"
         },
@@ -1881,7 +1881,7 @@
           },
           "kind": "property",
           "name": "navigationIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L291",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L291",
           "type": "Object | boolean"
         },
         {
@@ -1905,7 +1905,7 @@
           },
           "kind": "property",
           "name": "onNav",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L21",
           "inheritedFrom": "TopAppBarProps.onNav",
           "type": "undefined | (evt: TopAppBarOnNavEventT) => void"
         },
@@ -1930,7 +1930,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L25",
           "inheritedFrom": "TopAppBarProps.prominent",
           "type": "undefined | false | true"
         },
@@ -1955,7 +1955,7 @@
           },
           "kind": "property",
           "name": "scrollTarget",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L33",
           "inheritedFrom": "TopAppBarProps.scrollTarget",
           "type": "Element | null"
         },
@@ -1980,7 +1980,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L27",
           "inheritedFrom": "TopAppBarProps.short",
           "type": "undefined | false | true"
         },
@@ -2005,7 +2005,7 @@
           },
           "kind": "property",
           "name": "shortCollapsed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L29",
           "inheritedFrom": "TopAppBarProps.shortCollapsed",
           "type": "undefined | false | true"
         },
@@ -2030,7 +2030,7 @@
           },
           "kind": "property",
           "name": "startContent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L293",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L293",
           "type": "React.ReactNode"
         },
         {
@@ -2054,7 +2054,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L287",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L287",
           "type": "React.ReactNode"
         }
       ]
@@ -2073,7 +2073,7 @@
       },
       "kind": "type alias",
       "name": "TopAppBarOnNavEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/fd325869e/src/top-app-bar/index.tsx#L17",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/8fd47a23c/src/top-app-bar/index.tsx#L17",
       "type": "RMWC.CustomEventT<{}>"
     }
   }
