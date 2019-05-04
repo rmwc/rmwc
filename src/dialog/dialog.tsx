@@ -343,7 +343,7 @@ export interface SimpleDialogProps extends DialogProps {
 export class SimpleDialog extends React.Component<
   RMWC.MergeInterfacesT<SimpleDialogProps, RMWC.ComponentProps>
 > {
-  static displayName: 'SimpleDialog';
+  static displayName = 'SimpleDialog';
 
   static defaultProps = {
     title: undefined,
