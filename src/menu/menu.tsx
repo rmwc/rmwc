@@ -133,9 +133,9 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
       focusItemAtIndex: index => (this.items[index] as HTMLElement).focus(),
       focusListRoot: () =>
         this.list &&
-        this.list.root &&
-        this.list.root.ref &&
-        this.list.root.ref.focus()
+        (this.list as any).root &&
+        (this.list as any).root.ref &&
+        (this.list as any).root.ref.focus()
     });
   }
 
