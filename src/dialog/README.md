@@ -228,6 +228,24 @@ Action buttons for the Dialog.
 | `unelevated` | `undefined \| false \| true` | Make the button unelevated. |
 
 
-## 
+## SimpleDialog
+A SimpleDialog component for ease of use.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `acceptLabel` | `React.ReactNode` | Creates an accept button for the default Dialog template with a given label. You can pass `null` to remove the button. |
+| `body` | `React.ReactNode` | Body content for the default Dialog template, rendered before children. |
+| `cancelLabel` | `React.ReactNode` | Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button. |
+| `children` | `React.ReactNode` | Any children will be rendered in the body of the default Dialog template. |
+| `footer` | `React.ReactNode` | Additional footer content for the default Dialog template, rendered before any buttons. |
+| `header` | `React.ReactNode` | Additional Dialog header content for the default Dialog template. |
+| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
+| `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
+| `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
+| `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
+| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
+| `title` | `React.ReactNode` | A title for the default Dialog template. |
 
 

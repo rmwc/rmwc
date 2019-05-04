@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "CircularProgress",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L46",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L46",
       "extends": [
         "Component<RMWC.MergeInterfacesT<CircularProgressProps, ComponentProps>>"
       ],
@@ -241,13 +241,13 @@
           },
           "kind": "method",
           "name": "calculateRatio",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L56",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "calculateRatio",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L56",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L56",
               "parameters": [
                 {
                   "flags": {
@@ -284,13 +284,13 @@
           },
           "kind": "method",
           "name": "circularStyle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L64",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "circularStyle",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L64",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L64",
               "parameters": [
                 {
                   "flags": {
@@ -842,13 +842,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L75",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L75",
           "signatures": [
             {
               "fileName": "src/circular-progress/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L75",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L75",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1035,7 +1035,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L49",
           "defaultValue": "\"CircularProgress\"",
           "type": "string"
         },
@@ -1255,7 +1255,7 @@
       },
       "kind": "interface",
       "name": "CircularProgressProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L14",
       "methods": [],
       "properties": [
         {
@@ -1279,7 +1279,7 @@
           },
           "kind": "property",
           "name": "max",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L16",
           "type": "undefined | number"
         },
         {
@@ -1303,7 +1303,7 @@
           },
           "kind": "property",
           "name": "min",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L18",
           "type": "undefined | number"
         },
         {
@@ -1327,7 +1327,7 @@
           },
           "kind": "property",
           "name": "progress",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L20",
           "type": "undefined | number"
         },
         {
@@ -1351,7 +1351,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/circular-progress/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/circular-progress/index.tsx#L22",
           "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\" | number"
         }
       ]

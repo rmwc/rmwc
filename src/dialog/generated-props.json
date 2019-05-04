@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "DialogButton",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L89",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
       "extends": [
         "Component<DialogButtonProps & ComponentProps>"
       ],
@@ -756,13 +756,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L93",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L93",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -949,7 +949,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L92",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L92",
           "defaultValue": "\"DialogButton\"",
           "type": "string"
         },
@@ -1169,7 +1169,7 @@
       },
       "kind": "class",
       "name": "Dialog",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L129",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L129",
       "extends": [
         "FoundationComponent<MDCDialogFoundation, DialogProps>"
       ],
@@ -1388,13 +1388,13 @@
           },
           "kind": "method",
           "name": "close",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L169",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L169",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "close",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L169",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L169",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1479,13 +1479,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L176",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L176",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L176",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L176",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1661,13 +1661,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L214",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L214",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L214",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L214",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1897,13 +1897,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L227",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L227",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L227",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L227",
               "parameters": [],
               "returnType": "MDCDialogFoundation",
               "type": "() => MDCDialogFoundation"
@@ -1988,13 +1988,13 @@
           },
           "kind": "method",
           "name": "handleDocumentKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L141",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L141",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "handleDocumentKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L141",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L141",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2015,13 +2015,13 @@
           },
           "kind": "method",
           "name": "handleInteraction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L290",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L290",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "handleInteraction",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L290",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L290",
               "parameters": [
                 {
                   "flags": {
@@ -2058,13 +2058,13 @@
           },
           "kind": "method",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L148",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L148",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "open",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L148",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L148",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2085,13 +2085,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L298",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L298",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L298",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L298",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2191,13 +2191,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L219",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L219",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L219",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L219",
               "parameters": [
                 {
                   "flags": {
@@ -2334,7 +2334,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L133",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L133",
           "defaultValue": "\"Dialog\"",
           "type": "string"
         },
@@ -2370,7 +2370,7 @@
           },
           "kind": "property",
           "name": "buttons",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L138",
           "defaultValue": " null",
           "type": "null | HTMLElement[]"
         },
@@ -2388,7 +2388,7 @@
           },
           "kind": "property",
           "name": "container",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L136",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L136",
           "defaultValue": " null",
           "type": "null | HTMLElement"
         },
@@ -2406,7 +2406,7 @@
           },
           "kind": "property",
           "name": "content",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L137",
           "defaultValue": " null",
           "type": "null | HTMLElement"
         },
@@ -2424,7 +2424,7 @@
           },
           "kind": "property",
           "name": "defaultButton",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L139",
           "defaultValue": " null",
           "type": "null | HTMLElement"
         },
@@ -2459,7 +2459,7 @@
           },
           "kind": "property",
           "name": "focusTrap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L140",
           "defaultValue": " null",
           "type": "FocusTrap | null"
         },
@@ -2495,13 +2495,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L141",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L141",
         "signatures": [
           {
             "fileName": "src/dialog/dialog.tsx",
             "kind": "signature",
             "name": "new Dialog",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L141",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L141",
             "parameters": [
               {
                 "flags": {
@@ -2546,7 +2546,7 @@
       },
       "kind": "class",
       "name": "SimpleDialog",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L343",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L343",
       "extends": [
         "Component<RMWC.MergeInterfacesT<SimpleDialogProps, ComponentProps>>"
       ],
@@ -3280,13 +3280,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L359",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L359",
           "signatures": [
             {
               "fileName": "src/dialog/dialog.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L359",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L359",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -3473,8 +3473,9 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L346",
-          "type": "\"SimpleDialog\""
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L346",
+          "defaultValue": "\"SimpleDialog\"",
+          "type": "string"
         },
         {
           "documentation": {
@@ -3692,7 +3693,7 @@
       },
       "kind": "class",
       "name": "DialogQueue",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L32",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L32",
       "extends": [
         "Component<MergeInterfacesT<DialogQueueProps, ComponentProps>, DialogQueueState>"
       ],
@@ -4200,13 +4201,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L48",
           "signatures": [
             {
               "fileName": "src/dialog/dialog-queue.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L48",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L48",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -4420,13 +4421,13 @@
           },
           "kind": "method",
           "name": "removeDialog",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L52",
           "signatures": [
             {
               "fileName": "src/dialog/dialog-queue.tsx",
               "kind": "signature",
               "name": "removeDialog",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L52",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L52",
               "parameters": [
                 {
                   "flags": {
@@ -4478,13 +4479,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L77",
           "signatures": [
             {
               "fileName": "src/dialog/dialog-queue.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L77",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L77",
               "parameters": [],
               "returnType": "Element[]",
               "type": "() => Element[]"
@@ -4671,7 +4672,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L36",
           "defaultValue": "\"DialogQueue\"",
           "type": "string"
         },
@@ -4759,13 +4760,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L40",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L40",
         "signatures": [
           {
             "fileName": "src/dialog/dialog-queue.tsx",
             "kind": "signature",
             "name": "new DialogQueue",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L40",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L40",
             "parameters": [
               {
                 "flags": {
@@ -4810,7 +4811,7 @@
       },
       "kind": "interface",
       "name": "DialogTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L53",
       "methods": [],
       "properties": []
     },
@@ -4835,7 +4836,7 @@
       },
       "kind": "interface",
       "name": "DialogContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L63",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L63",
       "methods": [],
       "properties": []
     },
@@ -4860,7 +4861,7 @@
       },
       "kind": "interface",
       "name": "DialogActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L72",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L72",
       "methods": [],
       "properties": []
     },
@@ -4885,7 +4886,7 @@
       },
       "kind": "interface",
       "name": "DialogButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L81",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
       "extends": [
         "ButtonProps"
       ],
@@ -4936,7 +4937,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L83",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
           "type": "undefined | string"
         },
         {
@@ -5080,7 +5081,7 @@
           },
           "kind": "property",
           "name": "isDefaultAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
           "type": "undefined | false | true"
         },
         {
@@ -5298,7 +5299,7 @@
       },
       "kind": "interface",
       "name": "DialogProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L115",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L115",
       "methods": [],
       "properties": [
         {
@@ -5322,7 +5323,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L121",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L121",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -5346,7 +5347,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L119",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L119",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
@@ -5370,7 +5371,7 @@
           },
           "kind": "property",
           "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L123",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L123",
           "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
         },
         {
@@ -5394,7 +5395,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L117",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L117",
           "type": "undefined | false | true"
         },
         {
@@ -5418,7 +5419,7 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L125",
           "type": "undefined | false | true"
         }
       ]
@@ -5444,7 +5445,7 @@
       },
       "kind": "interface",
       "name": "SimpleDialogProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L325",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L325",
       "extends": [
         "DialogProps"
       ],
@@ -5471,7 +5472,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L335",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L335",
           "type": "React.ReactNode"
         },
         {
@@ -5495,7 +5496,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L331",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L331",
           "type": "React.ReactNode"
         },
         {
@@ -5519,7 +5520,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L337",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L337",
           "type": "React.ReactNode"
         },
         {
@@ -5543,7 +5544,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L339",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L339",
           "type": "React.ReactNode"
         },
         {
@@ -5567,7 +5568,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L333",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L333",
           "type": "React.ReactNode"
         },
         {
@@ -5591,7 +5592,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L329",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L329",
           "type": "React.ReactNode"
         },
         {
@@ -5615,7 +5616,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L121",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L121",
           "inheritedFrom": "DialogProps.onClose",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
@@ -5640,7 +5641,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L119",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L119",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
@@ -5665,7 +5666,7 @@
           },
           "kind": "property",
           "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L123",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L123",
           "inheritedFrom": "DialogProps.onStateChange",
           "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
         },
@@ -5690,7 +5691,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L117",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L117",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
@@ -5715,7 +5716,7 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L125",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
         },
@@ -5740,7 +5741,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L327",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L327",
           "type": "React.ReactNode"
         }
       ]
@@ -5759,7 +5760,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueInput",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L13",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
       "extends": [
         "DialogQueueInputBase & "
       ],
@@ -5787,7 +5788,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L23",
       "extends": [
         "SimpleDialogProps"
       ],
@@ -5814,7 +5815,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L335",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L335",
           "inheritedFrom": "SimpleDialogProps.acceptLabel",
           "type": "React.ReactNode"
         },
@@ -5839,7 +5840,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L331",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L331",
           "inheritedFrom": "SimpleDialogProps.body",
           "type": "React.ReactNode"
         },
@@ -5864,7 +5865,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L337",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L337",
           "inheritedFrom": "SimpleDialogProps.cancelLabel",
           "type": "React.ReactNode"
         },
@@ -5889,7 +5890,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L339",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L339",
           "inheritedFrom": "SimpleDialogProps.children",
           "type": "React.ReactNode"
         },
@@ -5907,7 +5908,7 @@
           },
           "kind": "property",
           "name": "dialogs",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog-queue.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L24",
           "type": "ArrayEmitter<DialogQueueSpec>"
         },
         {
@@ -5931,7 +5932,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L333",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L333",
           "inheritedFrom": "SimpleDialogProps.footer",
           "type": "React.ReactNode"
         },
@@ -5956,7 +5957,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L329",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L329",
           "inheritedFrom": "SimpleDialogProps.header",
           "type": "React.ReactNode"
         },
@@ -5981,7 +5982,7 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L121",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L121",
           "inheritedFrom": "DialogProps.onClose",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
@@ -6006,7 +6007,7 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L119",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L119",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
@@ -6031,7 +6032,7 @@
           },
           "kind": "property",
           "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L123",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L123",
           "inheritedFrom": "DialogProps.onStateChange",
           "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
         },
@@ -6056,7 +6057,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L117",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L117",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
@@ -6081,7 +6082,7 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L125",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
         },
@@ -6106,7 +6107,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L327",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L327",
           "inheritedFrom": "SimpleDialogProps.title",
           "type": "React.ReactNode"
         }
@@ -6126,7 +6127,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L111",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L111",
       "type": "RMWC.CustomEventT<{}>"
     },
     "DialogOnCloseEventT": {
@@ -6143,7 +6144,7 @@
       },
       "kind": "type alias",
       "name": "DialogOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/dialog/dialog.tsx#L112",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L112",
       "type": "RMWC.CustomEventT<>"
     }
   }

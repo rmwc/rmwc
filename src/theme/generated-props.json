@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "ThemeProvider",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L56",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L56",
       "extends": [
         "Component<ThemeProviderProps>"
       ],
@@ -756,13 +756,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L85",
           "signatures": [
             {
               "fileName": "src/theme/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L85",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L85",
               "parameters": [],
               "returnType": "undefined | Element",
               "type": "() => undefined | Element"
@@ -949,7 +949,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L57",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L57",
           "defaultValue": "\"ThemeProvider\"",
           "type": "string"
         },
@@ -967,7 +967,7 @@
           },
           "kind": "property",
           "name": "colors_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L60",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L60",
           "type": ""
         },
         {
@@ -1013,7 +1013,7 @@
           },
           "kind": "property",
           "name": "prevOpts_",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L59",
           "defaultValue": "\"\"",
           "type": "string"
         },
@@ -1204,7 +1204,7 @@
       },
       "kind": "interface",
       "name": "ThemeProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L18",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L18",
       "methods": [],
       "properties": [
         {
@@ -1228,7 +1228,7 @@
           },
           "kind": "property",
           "name": "use",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L20",
           "type": "RMWC.ThemePropT"
         },
         {
@@ -1252,7 +1252,7 @@
           },
           "kind": "property",
           "name": "wrap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L22",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L22",
           "type": "undefined | false | true"
         }
       ]
@@ -1278,7 +1278,7 @@
       },
       "kind": "interface",
       "name": "ThemeProviderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L40",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L40",
       "extends": [
         ""
       ],
@@ -1305,7 +1305,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L52",
           "type": "React.ReactNode"
         },
         {
@@ -1329,7 +1329,7 @@
           },
           "kind": "property",
           "name": "options",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L46",
           "type": "{ [key: string]: string }"
         },
         {
@@ -1353,7 +1353,7 @@
           },
           "kind": "property",
           "name": "style",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L48",
           "type": "Object"
         },
         {
@@ -1377,7 +1377,7 @@
           },
           "kind": "property",
           "name": "wrap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/theme/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L50",
           "type": "undefined | false | true"
         }
       ]

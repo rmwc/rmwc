@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "Checkbox",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L78",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L78",
       "extends": [
         "ToggleableFoundationComponent<MDCCheckboxFoundation, CheckboxProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L104",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L104",
           "signatures": [
             {
               "fileName": "src/checkbox/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L104",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L104",
               "parameters": [],
               "returnType": "MDCCheckboxFoundation",
               "type": "() => MDCCheckboxFoundation"
@@ -812,13 +812,13 @@
           },
           "kind": "method",
           "name": "handleAnimationEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L125",
           "signatures": [
             {
               "fileName": "src/checkbox/index.tsx",
               "kind": "signature",
               "name": "handleAnimationEnd",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L125",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L125",
               "parameters": [
                 {
                   "flags": {
@@ -855,13 +855,13 @@
           },
           "kind": "method",
           "name": "handleOnChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L130",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L130",
           "signatures": [
             {
               "fileName": "src/checkbox/index.tsx",
               "kind": "signature",
               "name": "handleOnChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L130",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L130",
               "parameters": [
                 {
                   "flags": {
@@ -898,13 +898,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L135",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L135",
           "signatures": [
             {
               "fileName": "src/checkbox/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L135",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L135",
               "parameters": [],
               "returnType": "undefined | null | {}",
               "type": "() => undefined | null | {}"
@@ -1046,13 +1046,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L93",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L93",
           "signatures": [
             {
               "fileName": "src/checkbox/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L93",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L93",
               "parameters": [
                 {
                   "flags": {
@@ -1189,7 +1189,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L82",
           "defaultValue": "\"Checkbox\"",
           "type": "string"
         },
@@ -1278,13 +1278,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L85",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L85",
         "signatures": [
           {
             "fileName": "src/checkbox/index.tsx",
             "kind": "signature",
             "name": "new Checkbox",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L85",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L85",
             "parameters": [
               {
                 "flags": {
@@ -1329,7 +1329,7 @@
       },
       "kind": "interface",
       "name": "CheckboxProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L21",
       "extends": [
         "WithRippleProps",
         "ToggleableFoundationProps"
@@ -1453,7 +1453,7 @@
           },
           "kind": "property",
           "name": "indeterminate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/c93f2227b/src/checkbox/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L25",
           "type": "undefined | false | true"
         },
         {
