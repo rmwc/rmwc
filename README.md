@@ -30,7 +30,7 @@ Features:
 V5.5.0 is live with some great new features!
 - Added the concept of "danger" buttons for those destructive actions
 - SnackbarQueue is a new way to easily create notifications from anywhere in your app
-- DialogQueue emulates the browsers built in alert, confirm, and prompt apis and gives you an easy way to create dialgos from anywhere in your app
+- DialogQueue emulates the browsers built in alert, confirm, and prompt apis and gives you an easy way to create dialogs from anywhere in your app
 - Full docs search has been added so make navigating a bit easier
 - The docs have a new domain, rmwc.io
 - Upgraded to material-components-web 2.x.x which includes a host of fixes and cleanup
