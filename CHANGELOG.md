@@ -1,3 +1,10 @@
+#### 5.5.1 (2019-05-06)
+
+##### Bug Fixes
+
+* **Icon:**  Corrects an issue with nested markup when rendering svg icons (0bec2c50)
+* **Docs:**  adding SImpleDialog (5134250a)
+
 #### 5.5.0 (2019-05-03)
 
 ##### Chores

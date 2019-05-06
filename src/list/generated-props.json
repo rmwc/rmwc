@@ -2747,24 +2747,6 @@
           "name": "foundation",
           "inheritedFrom": "FoundationComponent.foundation",
           "type": "MDCListFoundation"
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "root",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L49",
-          "defaultValue": " this.createElement('root')",
-          "type": "any"
         }
       ],
       "constructorType": {
