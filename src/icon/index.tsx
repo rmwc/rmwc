@@ -75,8 +75,19 @@ const renderComponent = ({
   content,
   ...rest
 }: {
-  content: React.ReactNode;
-}) => <IconRoot {...rest}>{content}</IconRoot>;
+  content: React.ReactElement<any>;
+}) => {
+  if (content.type === 'svg') {
+    const { children, ...svgRest } = content.props;
+    return (
+      <IconRoot {...svgRest} {...rest} tag="svg">
+        {children}
+      </IconRoot>
+    );
+  }
+
+  return <IconRoot {...rest}>{content}</IconRoot>;
+};
 
 const iconRenderMap: {
   [key: string]: ((content: any, ...rest: any) => React.ReactNode) | undefined;

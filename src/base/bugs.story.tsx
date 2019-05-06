@@ -493,6 +493,44 @@ class Bug453 extends React.Component {
   }
 }
 
+class Bugywlnkjnmpx extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <div>
+          <Button icon={{ icon: 'done', size: 'large' }} label="hello" />
+          <Button
+            icon={
+              <svg version="1.1" viewBox="0 0 32 32">
+                <title>o</title>
+                <path d="M16 2.667c-7.373 0-13.333 5.96-13.333 13.333s5.96 13.333 13.333 13.333 13.333-5.96 13.333-13.333-5.96-13.333-13.333-13.333zM16 26.667c-5.88 0-10.667-4.787-10.667-10.667s4.787-10.667 10.667-10.667 10.667 4.787 10.667 10.667-4.787 10.667-10.667 10.667z" />
+              </svg>
+            }
+            label="hello"
+            disabled
+          />
+          <Button
+            icon={
+              <svg
+                className="mdc-button__icon"
+                version="1.1"
+                viewBox="0 0 32 32"
+                fill="#fff"
+              >
+                <title>o</title>
+                <path d="M16 2.667c-7.373 0-13.333 5.96-13.333 13.333s5.96 13.333 13.333 13.333 13.333-5.96 13.333-13.333-5.96-13.333-13.333-13.333zM16 26.667c-5.88 0-10.667-4.787-10.667-10.667s4.787-10.667 10.667-10.667 10.667 4.787 10.667 10.667-4.787 10.667-10.667 10.667z" />
+              </svg>
+            }
+            label="hello"
+            disabled
+            raised
+          />
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -562,4 +600,5 @@ storiesOf('Bugs', module)
   .add('#842vo56019', () => <Bug842vo56019 />)
   .add('#415', () => <Bug415 />)
   .add('#442', () => <Bug442 />)
-  .add('#453', () => <Bug453 />);
+  .add('#453', () => <Bug453 />)
+  .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />);

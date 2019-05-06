@@ -48,6 +48,21 @@ describe('Icon', () => {
     );
   });
 
+  it('renders svg', () => {
+    const el = mount(
+      <Icon
+        icon={
+          <svg>
+            <path />
+          </svg>
+        }
+      />
+    );
+    expect(el.html()).toBe(
+      `<svg class="rmwc-icon material-icons"><path></path></svg>`
+    );
+  });
+
   it('renders nested Icons', () => {
     const el = mount(<Icon icon={<Icon icon={<div>Hello World</div>} />} />);
     expect(!!~el.html().search('Hello World')).toEqual(true);
