@@ -41,12 +41,19 @@ import {
   List
 } from '@rmwc/list';
 
-import { MenuSurface, MenuSurfaceAnchor } from '@rmwc/menu';
+import {
+  MenuSurface,
+  MenuSurfaceAnchor,
+  SimpleMenu,
+  MenuItem
+} from '@rmwc/menu';
 import { Button } from '@rmwc/button';
 import { toCamel, toDashCase } from '@rmwc/base';
 
 import Home from './home';
 import { SiteSearch } from './site-search';
+
+const OLDER_VERSIONS = ['4.0.6', '3.0.11', '2.2.3', '1.9.4'];
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -194,7 +201,21 @@ function AppBar({
             <TopAppBarTitle tag={Link} {...{ to: '/' }}>
               RMWC
             </TopAppBarTitle>
-            <span className="app__version">{version}</span>
+            <SimpleMenu
+              handle={
+                <span className="app__version">
+                  <span>{version}</span> <Icon icon="arrow_drop_down" />
+                </span>
+              }
+            >
+              <MenuItem>{version}</MenuItem>
+              {OLDER_VERSIONS.map(v => (
+                <MenuItem tag="a" href={`/version/${v}`}>
+                  {v}
+                </MenuItem>
+              ))}
+            </SimpleMenu>
+
             <SiteSearch />
           </TopAppBarSection>
           <TopAppBarSection alignEnd>
