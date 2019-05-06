@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
+      var parts = window.location.pathname.split('/');
+      var page = parts.pop();
+      var leading = parts.join('/') || '/';
       window.location.replace(
-        '/?p=' +
-          window.location.pathname.split('/')[1] +
+        leading +
+          '?p=' +
+          page +
           (window.location.search ? '&' + window.location.search.slice(1) : '')
       );
     </script>
