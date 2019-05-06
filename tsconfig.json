@@ -24,5 +24,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "public/version"
   ]
 }
