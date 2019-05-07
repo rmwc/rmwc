@@ -296,7 +296,9 @@ export interface SimpleTopAppBarProps extends TopAppBarProps {
 }
 
 /** A simplified syntax for creating an AppBar. */
-export class SimpleTopAppBar extends React.Component<SimpleTopAppBarProps> {
+export class SimpleTopAppBar extends React.Component<
+  SimpleTopAppBarProps & RMWC.ComponentProps
+> {
   static displayName = 'SimpleTopAppBar';
 
   render() {
