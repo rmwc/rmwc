@@ -38,3 +38,17 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <div style={{ transform: 'scale(1.5)' }}>
+    <Typography tag="div" use="headline6">
+      headline6
+    </Typography>
+    <Typography tag="div" use="body1">
+      body1
+    </Typography>
+    <Typography tag="div" use="caption">
+      caption
+    </Typography>
+  </div>
+);

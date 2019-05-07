@@ -300,3 +300,20 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <Icon
+      style={{ margin: '0.75rem' }}
+      icon={{ icon: 'favorite_outline', size: 'large' }}
+    />
+    <Icon
+      style={{ margin: '0.75rem' }}
+      icon={{ icon: 'mood', size: 'large' }}
+    />
+    <Icon
+      style={{ margin: '0.75rem' }}
+      icon={{ icon: 'local_pizza', size: 'large' }}
+    />
+  </>
+);

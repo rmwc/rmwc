@@ -163,3 +163,21 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <AvatarGroup dense>
+    <Avatar
+      src="images/avatars/captainamerica.png"
+      name="Steve Rogers"
+      size="large"
+      interactive
+    />
+    <Avatar
+      src="images/avatars/ironman.png"
+      name="Tony Stark"
+      size="large"
+      interactive
+    />
+    <AvatarCount size="large" overflow value={4} interactive />
+  </AvatarGroup>
+);

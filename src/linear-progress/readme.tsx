@@ -36,3 +36,7 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <LinearProgress style={{ minWidth: '10rem' }} progress={0.6} />
+);

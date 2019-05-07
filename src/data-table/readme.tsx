@@ -261,3 +261,34 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <DataTable style={{ transform: 'scale(0.66)' }}>
+    <DataTableContent>
+      <DataTableHead>
+        <DataTableRow>
+          <DataTableHeadCell>Item</DataTableHeadCell>
+          <DataTableHeadCell alignEnd>Quantity (Click Me)</DataTableHeadCell>
+          <DataTableHeadCell alignEnd>Unit price</DataTableHeadCell>
+        </DataTableRow>
+      </DataTableHead>
+      <DataTableBody>
+        <DataTableRow>
+          <DataTableCell>Cookies</DataTableCell>
+          <DataTableCell alignEnd>25</DataTableCell>
+          <DataTableCell alignEnd>$2.90</DataTableCell>
+        </DataTableRow>
+        <DataTableRow activated>
+          <DataTableCell>Pizza</DataTableCell>
+          <DataTableCell alignEnd>50</DataTableCell>
+          <DataTableCell alignEnd>$1.25</DataTableCell>
+        </DataTableRow>
+        <DataTableRow>
+          <DataTableCell>Icecream</DataTableCell>
+          <DataTableCell alignEnd>10</DataTableCell>
+          <DataTableCell alignEnd>$2.35</DataTableCell>
+        </DataTableRow>
+      </DataTableBody>
+    </DataTableContent>
+  </DataTable>
+);

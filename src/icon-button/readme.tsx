@@ -104,3 +104,5 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = <IconButton icon="favorite_outlined" />;

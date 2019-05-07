@@ -109,3 +109,24 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <GridList tileGutter1 style={{ transform: 'scale(0.5)' }}>
+    {Array(4)
+      .fill(undefined)
+      .map((val, i) => (
+        <GridTile key={i} style={{ maxWidth: '100px' }}>
+          <GridTilePrimary>
+            <GridTilePrimaryContent
+              src="images/backgrounds/mb-bg-fb-06.png"
+              alt="test"
+            />
+          </GridTilePrimary>
+          <GridTileSecondary>
+            <GridTileIcon icon="info" />
+            <GridTileTitle>Tile {i + 1}</GridTileTitle>
+          </GridTileSecondary>
+        </GridTile>
+      ))}
+  </GridList>
+);

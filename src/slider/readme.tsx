@@ -62,3 +62,7 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <Slider style={{ minWidth: '10rem' }} value={66} onChange={() => {}} />
+);

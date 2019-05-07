@@ -68,3 +68,16 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    {[0.3, 0.6, 0.9].map(num => (
+      <CircularProgress
+        key={num}
+        style={{ margin: '0.4rem' }}
+        progress={num}
+        size="large"
+      />
+    ))}
+  </>
+);

@@ -236,3 +236,35 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <div
+    role="alertdialog"
+    aria-modal="true"
+    className="mdc-dialog--open mdc-dialog"
+    style={{
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      zIndex: 0
+    }}
+  >
+    <div className="mdc-dialog__container" style={{ transform: 'scale(0.75)' }}>
+      <div className="mdc-dialog__surface">
+        <h2 className="mdc-dialog__title">Hello!</h2>
+        <div className="mdc-dialog__content">You have been alerted!</div>
+        <div className="mdc-dialog__actions">
+          <button
+            data-mdc-dialog-action="accept"
+            className="mdc-dialog__button mdc-dialog__button--default mdc-ripple-upgraded mdc-dialog__button mdc-dialog__button--default mdc-button"
+          >
+            <span className="mdc-button__label">OK</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div className="mdc-dialog__scrim" style={{ position: 'absolute' }} />
+  </div>
+);

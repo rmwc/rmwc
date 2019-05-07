@@ -9,7 +9,7 @@
 
 # RMWC - React Material Web Components
 
-A React wrapper for the official Material Design (Web) Components v2.x.x
+RMWC is a React UI Kit built on Google's official Material Components Web library v2.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
@@ -55,22 +55,6 @@ View the changelog for detailed updates: [https://github.com/jamesmfriedman/rmwc
 * To utilize the Foundation javascript classes from material-components-web
 * To be as unobtrusive and sensible as possible.
 * To fill the gaps in material-components-web with custom React community driven components.
-
-### *Doesn't Google have their own React Wrapper?*
-
-Yes, and here are the differences.
-
-* [x] RMWC is feature complete! It contains all of the components in the MDC catalog.
-* [x] RMWC Includes Addon components for ones missing from the official spec
-* [x] RMWC 4.x.x and below supports React 15
-* [x] RMWC 4.x.x includes Flow support
-* [x] RMWC has tested server side rendering support
-* [x] RMWC favors deprecations over breaking changes whenever possible
-* [x] RMWC has interactive polished documentation
-* [x] RMWC is about 8 months older than Google's.
-* [x] RMWC is being used by by companies of all sizes with all sorts of use cases, it's not going anywhere.
-
-The MDC team has been nothing but collaborative and kind, even in pursuing their own React wrapper. Both libraries individually package components, so you can use this one, that one, or a mix of both if you want to. There are multiple production apps running RMWC, so this library will continue to exist and be improved. Hopefully in the future there can be a convergence point, but in the meantime you can weigh both libraries on their own merits.
 
 ## Installation
 

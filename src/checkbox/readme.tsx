@@ -50,3 +50,10 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <Checkbox checked />
+    <Checkbox />
+  </>
+);

@@ -72,3 +72,5 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = <Button raised label="Raised" />;

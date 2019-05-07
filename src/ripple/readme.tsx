@@ -45,3 +45,21 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <Ripple unbounded>
+      <p
+        style={{
+          width: '6rem',
+          height: '6rem',
+          lineHeight: '6rem',
+          textAlign: 'center'
+        }}
+        className="mdc-ripple-upgraded--foreground-activation"
+      >
+        Ripple
+      </p>
+    </Ripple>
+  </>
+);

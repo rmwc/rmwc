@@ -91,3 +91,10 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <Radio checked />
+    <Radio />
+  </>
+);

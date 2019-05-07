@@ -44,3 +44,5 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = <Fab icon="add" />;

@@ -117,3 +117,34 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <ImageList
+    masonry
+    withTextProtection
+    style={{
+      transform: 'scale(0.5)',
+      columnCount: 3,
+      columnGap: '16px',
+      maxWidth: '1000px'
+    }}
+  >
+    {[
+      'images/photos/3x2-1.jpg',
+      'images/photos/2x3-1.jpg',
+      'images/photos/3x2-4.jpg',
+      'images/photos/3x2-5.jpg',
+      'images/photos/2x3-5.jpg',
+      'images/photos/3x2-6.jpg',
+      'images/photos/2x3-2.jpg',
+      'images/photos/3x2-8.jpg',
+      'images/photos/3x2-11.jpg',
+      'images/photos/3x2-13.jpg',
+      'images/photos/3x2-14.jpg'
+    ].map(src => (
+      <ImageListItem key={src} style={{ marginBottom: '16px' }}>
+        <ImageListImage src={src} />
+      </ImageListItem>
+    ))}
+  </ImageList>
+);

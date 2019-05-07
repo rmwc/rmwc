@@ -63,3 +63,19 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = [2, 24].map(num => (
+  <Elevation
+    z={num}
+    style={{
+      backgroundColor: 'var(--mdc-theme-primary)',
+      width: '3rem',
+      height: '3rem',
+      lineHeight: '3rem',
+      textAlign: 'center',
+      margin: '0.5rem',
+      borderRadius: '6px',
+      display: 'inline-block'
+    }}
+  />
+));

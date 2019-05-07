@@ -1,7 +1,7 @@
 {
   "name": "rmwc",
   "version": "5.5.1",
-  "description": "RMWC: A React wrapper for Material Design (Web) Components",
+  "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
   "main": "dist/index.js",
   "types": "index.d.ts",
   "module": "next/index.js",

@@ -199,3 +199,7 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <Select options={[]} placeholder="--Select One--" label="Favorite Food" />
+);

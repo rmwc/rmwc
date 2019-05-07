@@ -188,3 +188,21 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <Drawer
+    style={{ transform: 'scale(0.75', boxShadow: '0 0 4px rgba(0,0,0,0.1)' }}
+  >
+    <DrawerHeader>
+      <DrawerTitle>DrawerHeader</DrawerTitle>
+      <DrawerSubtitle>Subtitle</DrawerSubtitle>
+    </DrawerHeader>
+    <DrawerContent>
+      <List>
+        <ListItem>Cookies</ListItem>
+        <ListItem>Pizza</ListItem>
+        <ListItem>Icecream</ListItem>
+      </List>
+    </DrawerContent>
+  </Drawer>
+);

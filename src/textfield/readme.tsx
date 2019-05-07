@@ -115,3 +115,5 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = <TextField icon="search" placeholder="Search" />;

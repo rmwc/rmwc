@@ -117,3 +117,27 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <List twoLine style={{ transform: 'scale(0.75)' }}>
+    <SimpleListItem
+      graphic="star_border"
+      text="Cookies"
+      secondaryText="Chocolate chip"
+      metaIcon="info"
+    />
+    <SimpleListItem
+      graphic="local_pizza"
+      text="Pizza"
+      secondaryText="Pepperoni"
+      metaIcon="info"
+    />
+    <SimpleListItem
+      activated
+      graphic="mood"
+      text="Icecream"
+      secondaryText="Chocolate cookie dough"
+      meta="Winner!"
+    />
+  </List>
+);

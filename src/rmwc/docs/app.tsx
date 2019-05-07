@@ -452,7 +452,7 @@ function Nav(props: DrawerProps) {
         <DrawerContent>
           <List>
             {menuContent.map(m => {
-              if (m.options) {
+              if ('options' in m) {
                 return (
                   <CollapsibleList
                     key={m.label}
@@ -572,7 +572,7 @@ export class App extends React.Component {
           <DrawerAppContent tag="main" className="app__content">
             <RouterSwitch>
               {menuContent.map(m => {
-                if (m.options) {
+                if ('options' in m) {
                   return m.options.map(v => (
                     <Route
                       path={v.url}

@@ -209,3 +209,15 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <Snackbar
+    open={true}
+    timeout={999999999}
+    message="This is a new message"
+    style={{ transform: 'scale(0.75)', position: 'static' }}
+    action={
+      <SnackbarAction label="Dismiss" onClick={() => console.log('Click Me')} />
+    }
+  />
+);

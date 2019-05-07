@@ -114,3 +114,13 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <div style={{ margin: '1rem' }}>
+    <TabBar>
+      <Tab>One</Tab>
+      <Tab>Two</Tab>
+      <Tab>Three</Tab>
+    </TabBar>
+  </div>
+);

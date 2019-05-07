@@ -160,3 +160,5 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = <Chip selected checkmark label="Cookies" />;

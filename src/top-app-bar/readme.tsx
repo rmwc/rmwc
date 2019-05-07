@@ -184,3 +184,23 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <SimpleTopAppBar
+      style={{ position: 'static', top: 0, transform: 'scale(0.9)' }}
+      title="App Bar"
+      navigationIcon={{ onClick: () => console.log('Navigate') }}
+      actionItems={[
+        {
+          icon: 'file_download',
+          onClick: () => console.log('Do Something')
+        },
+        {
+          icon: 'print',
+          onClick: () => console.log('Do Something')
+        }
+      ]}
+    />
+  </>
+);

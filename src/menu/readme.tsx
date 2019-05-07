@@ -180,3 +180,23 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <div
+    aria-hidden="false"
+    className="mdc-menu  mdc-menu-surface--open mdc-menu-surface"
+    style={{ position: 'static' }}
+  >
+    <div role="menu" className="mdc-list mdc-menu__items mdc-list">
+      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+        Cookies
+      </div>
+      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+        Pizza
+      </div>
+      <div role="menuitem" className="mdc-ripple-upgraded mdc-list-item">
+        Icecream
+      </div>
+    </div>
+  </div>
+);

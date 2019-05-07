@@ -56,3 +56,12 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <div style={{ marginBottom: '1rem' }}>
+      <Switch checked />
+    </div>
+    <Switch />
+  </>
+);

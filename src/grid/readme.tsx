@@ -42,3 +42,20 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <Grid>
+    {[1, 2, 3].map(num => (
+      <GridCell
+        style={{
+          textAlign: 'center',
+          background: 'rgba(0,0,0,.1)',
+          padding: '1rem 0'
+        }}
+        span={4}
+      >
+        {num}
+      </GridCell>
+    ))}
+  </Grid>
+);

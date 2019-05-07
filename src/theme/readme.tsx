@@ -208,3 +208,28 @@ export default function() {
     </Docs>
   );
 }
+
+export const galleryExample = (
+  <>
+    <Theme
+      style={{
+        margin: '0.5rem',
+        borderRadius: '6px',
+        height: '3rem',
+        width: '3rem',
+        display: 'inline-block'
+      }}
+      use="primaryBg"
+    />
+    <Theme
+      style={{
+        margin: '0.5rem',
+        borderRadius: '6px',
+        height: '3rem',
+        width: '3rem',
+        display: 'inline-block'
+      }}
+      use="secondaryBg"
+    />
+  </>
+);

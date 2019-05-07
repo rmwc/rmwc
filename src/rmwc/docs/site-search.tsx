@@ -26,7 +26,7 @@ type SiteSearchItemT = {
 const searchComponents = (val: string) =>
   menuContent
     .reduce<Array<{ label: string; url: string }>>((acc, val) => {
-      if (val.options) {
+      if ('options' in val) {
         acc.push(...val.options);
       } else {
         acc.push(val);
