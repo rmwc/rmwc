@@ -4,7 +4,7 @@
 
 - Module **@rmwc/slider**
 - Import styles:
-  - import **'@material/fab/dist/mdc.fab.css'**
+  - import **'@material/slider/dist/mdc.slider.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/sliders/](https://material.io/develop/web/components/input-controls/sliders/)
 
 Sliders can be both uncontrolled and controlled. When creating a controlled `Slider`, you should be listening to the `onInput` event and use `evt.detail.value` to set your new value.

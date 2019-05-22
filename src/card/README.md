@@ -17,8 +17,7 @@
     <CardMedia
       sixteenByNine
       style={{
-        backgroundImage:
-          'url(https://material-components-web.appspot.com/images/16-9.jpg)'
+        backgroundImage: 'url(images/backgrounds/mb-bg-fb-16.png)'
       }}
     />
     <div style={{ padding: '0 1rem 1rem 1rem' }}>
@@ -131,8 +130,7 @@
     <CardMedia
       square
       style={{
-        backgroundImage:
-          'url(https://material-components-web.appspot.com/images/1-1.jpg)'
+        backgroundImage: 'url(images/backgrounds/mb-bg-fb-06.png)'
       }}
     >
       <CardMediaContent>
