@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/toggleable",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "description": "RMWC toggle module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,8 +32,8 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.5.1",
-    "@rmwc/formfield": "^5.5.1",
-    "@rmwc/types": "^5.5.1"
+    "@rmwc/base": "^5.5.2",
+    "@rmwc/formfield": "^5.5.2",
+    "@rmwc/types": "^5.5.2"
   }
 }

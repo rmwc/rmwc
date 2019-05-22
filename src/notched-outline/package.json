@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/notched-outline",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "description": "RMWC NotchedOutline component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@material/notched-outline": "^1.1.1",
-    "@rmwc/base": "^5.5.1",
-    "@rmwc/types": "^5.5.1"
+    "@rmwc/base": "^5.5.2",
+    "@rmwc/types": "^5.5.2"
   }
 }
