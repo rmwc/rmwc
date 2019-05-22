@@ -17,7 +17,10 @@ import {
   SimpleDialog,
   Dialog,
   DialogContent,
-  MenuSurfaceAnchor
+  MenuSurfaceAnchor,
+  List,
+  CollapsibleList,
+  SimpleListItem
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -531,6 +534,59 @@ class Bugywlnkjnmpx extends React.Component {
   }
 }
 
+class Bug460 extends React.Component {
+  state = {
+    cookieClose: true
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <Button
+          raised
+          onClick={() => {
+            this.setState({ cookieClose: !this.state.cookieClose });
+          }}
+        >
+          Button
+        </Button>
+        <List>
+          <CollapsibleList
+            open={this.state.cookieClose}
+            handle={
+              <SimpleListItem
+                text="Cookies"
+                graphic="favorite"
+                metaIcon="chevron_right"
+              />
+            }
+            onOpen={() => console.log('open')}
+            onClose={() => console.log('close')}
+          >
+            <SimpleListItem text="Chocolate Chip" />
+            <SimpleListItem text="Ginger Snap" />
+            <SimpleListItem text="Peanut Butter" />
+          </CollapsibleList>
+
+          <CollapsibleList
+            handle={
+              <SimpleListItem
+                text="Pizza"
+                graphic="local_pizza"
+                metaIcon="chevron_right"
+              />
+            }
+          >
+            <SimpleListItem text="Cheese" />
+            <SimpleListItem text="Pepperoni" />
+            <SimpleListItem text="Supreme" />
+          </CollapsibleList>
+        </List>
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -601,4 +657,5 @@ storiesOf('Bugs', module)
   .add('#415', () => <Bug415 />)
   .add('#442', () => <Bug442 />)
   .add('#453', () => <Bug453 />)
-  .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />);
+  .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />)
+  .add('#460', () => <Bug460 />);

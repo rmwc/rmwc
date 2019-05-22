@@ -131,11 +131,40 @@ describe('Collapsible List', () => {
     );
   });
 
+  it('handles lifecycle', done => {
+    const el = mount(
+      <List>
+        <ListItem>One</ListItem>
+        <CollapsibleList
+          startOpen
+          handle={<ListItem className="handle">Handle</ListItem>}
+        >
+          <ListItem>Two</ListItem>
+        </CollapsibleList>
+      </List>
+    );
+
+    el.update();
+    setTimeout(() => {
+      el.setProps({ open: false });
+      el.update();
+
+      el.find('.handle')
+        .first()
+        .simulate('click');
+
+      done();
+    }, 300);
+  });
+
   it('handles events', done => {
     const el = mount(
       <List>
         <ListItem>One</ListItem>
-        <CollapsibleList handle={<ListItem>Handle</ListItem>}>
+        <CollapsibleList
+          startOpen
+          handle={<ListItem className="handle">Handle</ListItem>}
+        >
           <ListItem>Two</ListItem>
         </CollapsibleList>
       </List>
@@ -144,7 +173,7 @@ describe('Collapsible List', () => {
     const root = el.find('.rmwc-collapsible-list').first();
     root.simulate('focus');
 
-    const handle = el.find('.rmwc-collapsible-list__handle').first();
+    const handle = el.find('.handle').first();
     handle.simulate('click');
     handle.simulate('keydown', { which: 13 });
     handle.simulate('keydown', { which: 39 });

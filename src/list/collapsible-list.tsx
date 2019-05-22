@@ -89,7 +89,47 @@ export class CollapsibleList extends React.Component<
   }
 
   componentDidMount() {
-    this.state.open && this.toggleOpen(this.state.open);
+    this.syncOpenState();
+  }
+
+  componentDidUpdate(
+    prevProps: CollapsibleListProps,
+    prevState: CollapsibleState
+  ) {
+    if (prevState.open !== this.state.open) {
+      this.syncOpenState();
+    }
+  }
+
+  syncOpenState() {
+    const { onOpen, onClose } = this.props;
+    const childrenStyle = {
+      maxHeight: this.childContainer
+        ? `${this.childContainer.offsetHeight}px`
+        : '0px'
+    };
+
+    this.setState({ childrenStyle }, () => {
+      if (this.state.open) {
+        onOpen && onOpen();
+        setTimeout(() => {
+          if (this.state.open) {
+            this.setState({
+              childrenStyle: {
+                maxHeight: 'none'
+              }
+            });
+          }
+        }, 300);
+      } else {
+        onClose && onClose();
+        window.requestAnimationFrame(() => {
+          this.setState({
+            childrenStyle: {}
+          });
+        });
+      }
+    });
   }
 
   correctFocus(back: boolean) {
@@ -117,34 +157,7 @@ export class CollapsibleList extends React.Component<
   }
 
   toggleOpen(isOpen: boolean) {
-    const { onOpen, onClose } = this.props;
-    const childrenStyle = {
-      maxHeight: this.childContainer
-        ? `${this.childContainer.offsetHeight}px`
-        : '0px'
-    };
-
-    this.setState({ open: isOpen, childrenStyle }, () => {
-      if (this.state.open) {
-        onOpen && onOpen();
-        setTimeout(() => {
-          if (this.state.open) {
-            this.setState({
-              childrenStyle: {
-                maxHeight: 'none'
-              }
-            });
-          }
-        }, 300);
-      } else {
-        onClose && onClose();
-        window.requestAnimationFrame(() => {
-          this.setState({
-            childrenStyle: {}
-          });
-        });
-      }
-    });
+    this.setState({ open: isOpen });
   }
 
   handleClick(evt: React.MouseEvent) {
