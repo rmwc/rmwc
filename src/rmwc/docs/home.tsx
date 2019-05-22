@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { version } from '../';
 import { Typography } from '@rmwc/typography';
 
-import { Card, CardMedia, CardActions, CardActionButton } from '@rmwc/card';
+import { Card, CardMedia } from '@rmwc/card';
 import { Grid, GridCell } from '@rmwc/grid';
 import { Theme } from '@rmwc/theme';
 import { Icon } from '@rmwc/icon';

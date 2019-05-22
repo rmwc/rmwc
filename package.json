@@ -44,7 +44,6 @@
     "storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest @types/storybook__addon-actions@latest @types/storybook__addon-knobs@latest @types/storybook__react@latest",
     "preversion": "npm run clean && npm test -- --coverage",
     "version": "npm run docgen && npm run build:code && node scripts/fix-package-version && npm run changelog",
-    "postversion": "git add --all && git push",
     "postpublish": "npm run clean && npm run build:docsite && git add --all && git commit -m 'Building docs' &&  git push && git push --tags && npm run clean"
   },
   "devDependencies": {
@@ -68,7 +67,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "generate-changelog": "^1.7.1",
-    "lerna": "^3.13.4",
+    "lerna": "^3.14.1",
     "module-alias": "^2.2.0",
     "react": "^16.8.1",
     "react-app-rewire-hot-loader": "^1.0.3",

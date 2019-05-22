@@ -40,6 +40,5 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7"
-  },
-  "gitHead": "768350d6fdf62da6c7a01b8f676fd4c881440788"
+  }
 }

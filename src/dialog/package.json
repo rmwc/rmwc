@@ -37,6 +37,5 @@
     "@rmwc/button": "^5.5.1",
     "@rmwc/textfield": "^5.5.1",
     "@rmwc/types": "^5.5.1"
-  },
-  "gitHead": "768350d6fdf62da6c7a01b8f676fd4c881440788"
+  }
 }
