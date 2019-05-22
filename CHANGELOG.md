@@ -1,3 +1,16 @@
+#### 5.5.2 (2019-05-22)
+
+##### Chores
+
+* **Base:**  Removing githead artifacts causing lerna to bump all versions (766be134)
+
+##### Bug Fixes
+
+* **List:**  Corrects CollapsibleList behavior for controlled components #460 (95fa4fe8)
+* **Slider:**  fix incorrect style import for docs #464 (8a3d3c1b)
+* **Dialog|Snackbar:**  broken dialog and snackbar types (4f77264b)
+* **TopAppBar:**  Add component props to props interface (f0e7c7b4)
+
 #### 5.5.1 (2019-05-06)
 
 ##### Bug Fixes
