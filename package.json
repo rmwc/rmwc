@@ -1,7 +1,7 @@
 {
   "name": "rmwc-main",
   "author": "James Friedman",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "private": true,
   "homepage": "https://rmwc.io",
   "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
