@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { SimpleDialog, SimpleDialogProps, DialogOnCloseEventT } from './dialog';
 import { ArrayEmitter, randomId } from '@rmwc/base';
 import { TextField, TextFieldProps } from '@rmwc/textfield';
