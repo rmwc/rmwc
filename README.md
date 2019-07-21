@@ -9,7 +9,7 @@
 
 # RMWC - React Material Web Components
 
-RMWC is a React UI Kit built on Google's official Material Components Web library v2.x.x
+RMWC is a React UI Kit built on Google's official Material Components Web library v3.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
@@ -26,6 +26,8 @@ Features:
 > - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
 
 ## Recent updates
+
+v5.6.0 is a maintenance release, no breaking changes :)
 
 V5.5.0 is live with some great new features!
 - Added the concept of "danger" buttons for those destructive actions
