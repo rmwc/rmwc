@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "SimpleTopAppBar",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L299",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L311",
       "extends": [
         "Component<SimpleTopAppBarProps & ComponentProps>"
       ],
@@ -756,13 +756,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L304",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L316",
           "signatures": [
             {
               "fileName": "src/top-app-bar/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L304",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L316",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -949,7 +949,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L302",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L314",
           "defaultValue": "\"SimpleTopAppBar\"",
           "type": "string"
         },
@@ -1162,7 +1162,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L18",
       "methods": [],
       "properties": [
         {
@@ -1186,7 +1186,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -1210,7 +1210,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L22",
           "type": "undefined | false | true"
         },
         {
@@ -1234,7 +1234,7 @@
           },
           "kind": "property",
           "name": "onNav",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L20",
           "type": "undefined | (evt: TopAppBarOnNavEventT) => void"
         },
         {
@@ -1258,7 +1258,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L24",
           "type": "undefined | false | true"
         },
         {
@@ -1282,7 +1282,7 @@
           },
           "kind": "property",
           "name": "scrollTarget",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L32",
           "type": "Element | null"
         },
         {
@@ -1306,7 +1306,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L26",
           "type": "undefined | false | true"
         },
         {
@@ -1330,7 +1330,7 @@
           },
           "kind": "property",
           "name": "shortCollapsed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L28",
           "type": "undefined | false | true"
         }
       ]
@@ -1356,7 +1356,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarRowProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L53",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L52",
       "methods": [],
       "properties": []
     },
@@ -1381,7 +1381,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarSectionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L62",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L61",
       "methods": [],
       "properties": [
         {
@@ -1405,7 +1405,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L65",
           "type": "undefined | false | true"
         },
         {
@@ -1429,7 +1429,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L63",
           "type": "undefined | false | true"
         }
       ]
@@ -1455,21 +1455,93 @@
       },
       "kind": "interface",
       "name": "TopAppBarNavigationIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L84",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L83",
       "extends": [
-        "IconProps"
+        "IconButtonProps"
       ],
       "methods": [],
       "properties": [
         {
           "documentation": {
             "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
             ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "accent",
+          "inheritedFrom": "DeprecatedRippleProps.accent",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Controls the on / off state of the a toggleable button.</p>\n"
+            ],
+            "contentsRaw": "Controls the on / off state of the a toggleable button.",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "checked",
+          "inheritedFrom": "IconButtonProps.checked",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the button disabled</p>\n"
+            ],
+            "contentsRaw": "Makes the button disabled",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "disabled",
+          "inheritedFrom": "IconButtonProps.disabled",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Icon for the button</p>\n"
+            ],
+            "contentsRaw": "Icon for the button",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1482,18 +1554,18 @@
           },
           "kind": "property",
           "name": "icon",
-          "inheritedFrom": "IconProps.icon",
+          "inheritedFrom": "IconButtonProps.icon",
           "type": "RMWC.IconPropT"
         },
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
+              "<p>An onChange callback that receives a custom event. evt.detail = { isOn: boolean }</p>\n"
             ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
+            "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1505,9 +1577,105 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
+          "name": "onChange",
+          "inheritedFrom": "IconButtonProps.onChange",
+          "type": "undefined | (evt: IconButtonOnChangeEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>If specified, renders a toggle with this icon as the on state.</p>\n"
+            ],
+            "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onIcon",
+          "inheritedFrom": "IconButtonProps.onIcon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
+            ],
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "surface",
+          "inheritedFrom": "DeprecatedRippleProps.surface",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
+            ],
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "unbounded",
+          "inheritedFrom": "DeprecatedRippleProps.unbounded",
+          "type": "undefined | false | true"
         }
       ]
     },
@@ -1532,21 +1700,93 @@
       },
       "kind": "interface",
       "name": "TopAppBarActionItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L99",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L98",
       "extends": [
-        "IconProps"
+        "IconButtonProps"
       ],
       "methods": [],
       "properties": [
         {
           "documentation": {
             "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
             ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "accent",
+          "inheritedFrom": "DeprecatedRippleProps.accent",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Controls the on / off state of the a toggleable button.</p>\n"
+            ],
+            "contentsRaw": "Controls the on / off state of the a toggleable button.",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "checked",
+          "inheritedFrom": "IconButtonProps.checked",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes the button disabled</p>\n"
+            ],
+            "contentsRaw": "Makes the button disabled",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "disabled",
+          "inheritedFrom": "IconButtonProps.disabled",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Icon for the button</p>\n"
+            ],
+            "contentsRaw": "Icon for the button",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1559,18 +1799,18 @@
           },
           "kind": "property",
           "name": "icon",
-          "inheritedFrom": "IconProps.icon",
+          "inheritedFrom": "IconButtonProps.icon",
           "type": "RMWC.IconPropT"
         },
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
+              "<p>An onChange callback that receives a custom event. evt.detail = { isOn: boolean }</p>\n"
             ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
+            "contentsRaw": "An onChange callback that receives a custom event. evt.detail = { isOn: boolean }",
             "metadata": {}
           },
-          "fileName": "src/top-app-bar/node_modules/@rmwc/icon/index.tsx",
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -1582,9 +1822,105 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
+          "name": "onChange",
+          "inheritedFrom": "IconButtonProps.onChange",
+          "type": "undefined | (evt: IconButtonOnChangeEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>If specified, renders a toggle with this icon as the on state.</p>\n"
+            ],
+            "contentsRaw": "If specified, renders a toggle with this icon as the on state.",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onIcon",
+          "inheritedFrom": "IconButtonProps.onIcon",
+          "type": "RMWC.IconPropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
+            ],
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "surface",
+          "inheritedFrom": "DeprecatedRippleProps.surface",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
+            ],
+            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
+            "metadata": {}
+          },
+          "fileName": "src/top-app-bar/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "unbounded",
+          "inheritedFrom": "DeprecatedRippleProps.unbounded",
+          "type": "undefined | false | true"
         }
       ]
     },
@@ -1609,7 +1945,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L114",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L113",
       "methods": [],
       "properties": []
     },
@@ -1634,7 +1970,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarFixedAdjustProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L123",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L122",
       "methods": [],
       "properties": [
         {
@@ -1658,7 +1994,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L125",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L124",
           "type": "undefined | false | true"
         },
         {
@@ -1682,7 +2018,7 @@
           },
           "kind": "property",
           "name": "denseProminent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L129",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L128",
           "type": "undefined | false | true"
         },
         {
@@ -1706,7 +2042,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L127",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L126",
           "type": "undefined | false | true"
         },
         {
@@ -1730,7 +2066,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L131",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L130",
           "type": "undefined | false | true"
         }
       ]
@@ -1756,7 +2092,7 @@
       },
       "kind": "interface",
       "name": "SimpleTopAppBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L285",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L297",
       "extends": [
         "TopAppBarProps"
       ],
@@ -1783,7 +2119,7 @@
           },
           "kind": "property",
           "name": "actionItems",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L289",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L301",
           "type": "Object[]"
         },
         {
@@ -1807,7 +2143,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L30",
           "inheritedFrom": "TopAppBarProps.dense",
           "type": "undefined | false | true"
         },
@@ -1832,7 +2168,7 @@
           },
           "kind": "property",
           "name": "endContent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L295",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L307",
           "type": "React.ReactNode"
         },
         {
@@ -1856,7 +2192,7 @@
           },
           "kind": "property",
           "name": "fixed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L22",
           "inheritedFrom": "TopAppBarProps.fixed",
           "type": "undefined | false | true"
         },
@@ -1881,7 +2217,7 @@
           },
           "kind": "property",
           "name": "navigationIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L291",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L303",
           "type": "Object | boolean"
         },
         {
@@ -1905,7 +2241,7 @@
           },
           "kind": "property",
           "name": "onNav",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L20",
           "inheritedFrom": "TopAppBarProps.onNav",
           "type": "undefined | (evt: TopAppBarOnNavEventT) => void"
         },
@@ -1930,7 +2266,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L24",
           "inheritedFrom": "TopAppBarProps.prominent",
           "type": "undefined | false | true"
         },
@@ -1955,7 +2291,7 @@
           },
           "kind": "property",
           "name": "scrollTarget",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L32",
           "inheritedFrom": "TopAppBarProps.scrollTarget",
           "type": "Element | null"
         },
@@ -1980,7 +2316,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L26",
           "inheritedFrom": "TopAppBarProps.short",
           "type": "undefined | false | true"
         },
@@ -2005,7 +2341,7 @@
           },
           "kind": "property",
           "name": "shortCollapsed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L28",
           "inheritedFrom": "TopAppBarProps.shortCollapsed",
           "type": "undefined | false | true"
         },
@@ -2030,7 +2366,7 @@
           },
           "kind": "property",
           "name": "startContent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L293",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L305",
           "type": "React.ReactNode"
         },
         {
@@ -2054,7 +2390,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L287",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L299",
           "type": "React.ReactNode"
         }
       ]
@@ -2073,7 +2409,7 @@
       },
       "kind": "type alias",
       "name": "TopAppBarOnNavEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L17",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L16",
       "type": "RMWC.CustomEventT<{}>"
     }
   }
