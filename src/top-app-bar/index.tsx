@@ -159,6 +159,7 @@ class TopAppBarBase extends FoundationComponent<
   private root = this.createElement('root');
   navIcon: HTMLElement | null = null;
   scrollTarget: EventTarget | null = null;
+  handleTargetScroll!: SpecificEventListener<'scroll'>;
 
   get window() {
     return this.root.ref &&
@@ -172,7 +173,10 @@ class TopAppBarBase extends FoundationComponent<
     super.componentDidMount();
 
     if (!this.props.scrollTarget) {
-      this.setScrollHandler(this.window);
+      this.handleTargetScroll = this.foundation.handleTargetScroll.bind(
+        this.foundation
+      );
+      this.setScrollTarget(this.window);
     }
 
     this.navIcon =
@@ -253,15 +257,26 @@ class TopAppBarBase extends FoundationComponent<
     return foundation;
   }
 
-  setScrollHandler(target: EventTarget) {
-    if (!this.foundation) return;
+  setScrollTarget(target: EventTarget) {
+    // Remove scroll handler from the previous scroll target
+    this.scrollTarget &&
+      this.scrollTarget.removeEventListener('scroll', this
+        .handleTargetScroll as EventListener);
+
     this.scrollTarget = target;
+
+    // Initialize scroll handler on the new scroll target
+    this.handleTargetScroll = this.foundation.handleTargetScroll.bind(
+      this.foundation
+    );
+    this.scrollTarget.addEventListener('scroll', this
+      .handleTargetScroll as EventListener);
   }
 
   sync(props: TopAppBarProps) {
     this.syncProp(props.scrollTarget, this.scrollTarget, () => {
       this.scrollTarget = props.scrollTarget || this.window;
-      this.setScrollHandler(this.scrollTarget);
+      this.setScrollTarget(this.scrollTarget);
     });
   }
 
