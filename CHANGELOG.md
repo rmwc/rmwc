@@ -1,3 +1,15 @@
+#### 5.6.0 (2019-07-21)
+
+##### Chores
+
+* **TopAppBar:**  Update adapter methods from mdc (64b802f8)
+* **Dialog:**  Update adapter methods from MDC (c956139c)
+* **Chip:**  Update to semantic button element (ec495306)
+
+##### Bug Fixes
+
+* **Theme:**  Corrects issue with ThemProvider wrap duplicating children (ea3dd031)
+
 #### 5.5.2 (2019-05-22)
 
 ##### Chores
