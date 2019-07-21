@@ -83,7 +83,7 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
   }
 
   render() {
-    const { options, style = {}, wrap, ...rest } = this.props;
+    const { options, style = {}, wrap, children, ...rest } = this.props;
     // Casting styles to avoid TSX error
     const tsxSafeStyle: React.CSSProperties = style;
     const themeStyles = {
@@ -91,8 +91,8 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
       ...this.colors
     };
 
-    if (wrap && rest.children) {
-      const child = React.Children.only(rest.children);
+    if (wrap && children) {
+      const child = React.Children.only(children);
       if (!React.isValidElement<React.HTMLProps<any>>(child)) {
         return;
       }
@@ -105,6 +105,6 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
       });
     }
 
-    return <div {...rest} style={themeStyles} />;
+    return <div {...rest} children={children} style={themeStyles} />;
   }
 }
