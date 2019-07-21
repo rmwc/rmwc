@@ -282,7 +282,11 @@ export class Dialog extends FoundationComponent<
       notifyClosed: (action: string) => {
         this.emit('onClosed', action ? { action } : {});
         this.props.onStateChange && this.props.onStateChange('closed');
-      }
+      },
+      getInitialFocusEl: () =>
+        document.querySelector(
+          `[${MDCDialogFoundation.strings.INITIAL_FOCUS_ATTRIBUTE}]`
+        )
     });
   }
 
