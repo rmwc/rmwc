@@ -6,3 +6,4 @@ export * from './random-id';
 export * from './strings';
 export * from './wrap-child';
 export * from './emitter';
+export * from './apply-passive';

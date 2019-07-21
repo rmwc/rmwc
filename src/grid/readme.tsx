@@ -47,6 +47,7 @@ export const galleryExample = (
   <Grid>
     {[1, 2, 3].map(num => (
       <GridCell
+        key={num}
         style={{
           textAlign: 'center',
           background: 'rgba(0,0,0,.1)',

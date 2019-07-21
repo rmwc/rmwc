@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/chips": "^2.0.0",
+    "@material/chips": "^3.0.0",
     "@rmwc/base": "^5.5.2",
     "@rmwc/icon": "^5.5.2",
     "@rmwc/ripple": "^5.5.2",

@@ -118,12 +118,7 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
       },
       getElementIndex: (element: HTMLElement) =>
         this.items.indexOf(element as HTMLLIElement),
-      getParentElement: (element: HTMLElement) => element.parentElement,
-      getSelectedElementIndex: (selectionGroup: HTMLElement) => {
-        return this.items.indexOf(selectionGroup.querySelector(
-          `.${MDCMenuFoundation.cssClasses.MENU_SELECTED_LIST_ITEM}`
-        ) as HTMLLIElement);
-      },
+
       notifySelected: (evtData: { index: number; item: HTMLElement }) =>
         this.emit('onSelect', {
           index: evtData.index,

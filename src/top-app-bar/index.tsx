@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import { componentFactory, FoundationComponent } from '@rmwc/base';
-import { IconProps } from '@rmwc/icon';
 
 import * as React from 'react';
 
@@ -10,7 +9,7 @@ import {
   MDCShortTopAppBarFoundation
 } from '@material/top-app-bar';
 
-import { Icon } from '@rmwc/icon';
+import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { withRipple } from '@rmwc/ripple';
 import { SpecificEventListener } from '@material/base/types';
 
@@ -81,7 +80,7 @@ export const TopAppBarSection = componentFactory<TopAppBarSectionProps>({
 });
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export interface TopAppBarNavigationIconProps extends IconProps {}
+export interface TopAppBarNavigationIconProps extends IconButtonProps {}
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
 export const TopAppBarNavigationIcon = withRipple({
@@ -91,12 +90,12 @@ export const TopAppBarNavigationIcon = withRipple({
   componentFactory<TopAppBarNavigationIconProps>({
     displayName: 'TopAppBarNavigationIcon',
     classNames: ['mdc-top-app-bar__navigation-icon'],
-    tag: Icon
+    tag: IconButton
   })
 );
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
-export interface TopAppBarActionItemProps extends IconProps {}
+export interface TopAppBarActionItemProps extends IconButtonProps {}
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
 export const TopAppBarActionItem = withRipple({
@@ -106,7 +105,7 @@ export const TopAppBarActionItem = withRipple({
   componentFactory<TopAppBarActionItemProps>({
     displayName: 'TopAppBarActionItem',
     classNames: ['mdc-top-app-bar__action-item'],
-    tag: Icon
+    tag: IconButton
   })
 );
 
@@ -256,9 +255,7 @@ class TopAppBarBase extends FoundationComponent<
 
   setScrollHandler(target: EventTarget) {
     if (!this.foundation) return;
-    this.foundation.destroyScrollHandler();
     this.scrollTarget = target;
-    this.foundation.initScrollHandler();
   }
 
   sync(props: TopAppBarProps) {

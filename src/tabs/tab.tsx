@@ -153,6 +153,7 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
         icon,
         stacked,
         restrictIndicator,
+        onInteraction,
         contextApi,
         ...rest
       } = this.props;
