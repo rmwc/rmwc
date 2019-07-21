@@ -66,6 +66,7 @@ export default function() {
 
 export const galleryExample = [2, 24].map(num => (
   <Elevation
+    key={num}
     z={num}
     style={{
       backgroundColor: 'var(--mdc-theme-primary)',

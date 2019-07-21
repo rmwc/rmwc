@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocProps, DocsSubtitle, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';

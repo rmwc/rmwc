@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { MDCSnackbarFoundation, util, MDCSnackbar } from '@material/snackbar';
+import { MDCSnackbarFoundation, util } from '@material/snackbar';
 import { Button, ButtonProps } from '@rmwc/button';
 import {
   componentFactory,

@@ -53,7 +53,7 @@ export default function() {
 
 export const galleryExample = (
   <>
-    <Checkbox checked />
+    <Checkbox defaultChecked />
     <Checkbox />
   </>
 );

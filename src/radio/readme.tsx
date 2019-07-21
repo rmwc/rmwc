@@ -94,7 +94,7 @@ export default function() {
 
 export const galleryExample = (
   <>
-    <Radio checked />
+    <Radio defaultChecked />
     <Radio />
   </>
 );

@@ -6,7 +6,8 @@ import {
   classNames,
   FoundationComponent,
   deprecationWarning,
-  matches
+  matches,
+  applyPassive
 } from '@rmwc/base';
 import { withProviderContext, WithProviderContext } from '@rmwc/provider';
 import { EventType, SpecificEventListener } from '@material/base/types';
@@ -81,11 +82,11 @@ export class Ripple extends FoundationComponent<
       registerInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
-      ): void => this.root.addEventListener(evtType, handler),
+      ): void => this.root.addEventListener(evtType, handler as any),
       deregisterInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
-      ): void => this.root.removeEventListener(evtType, handler),
+      ): void => this.root.removeEventListener(evtType, handler as any),
       registerDocumentInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
@@ -93,16 +94,16 @@ export class Ripple extends FoundationComponent<
         document.documentElement.addEventListener(
           evtType,
           handler,
-          util.applyPassive()
+          applyPassive()
         ),
-      deregisterDocumentInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
+      deregisterDocumentInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
       ) =>
         document.documentElement.removeEventListener(
           evtType,
-          handler,
-          util.applyPassive()
+          handler as any,
+          applyPassive() as any
         ),
       registerResizeHandler: (handler: SpecificEventListener<'resize'>): void =>
         window.addEventListener('resize', handler),

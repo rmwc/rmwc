@@ -210,7 +210,7 @@ function AppBar({
             >
               <MenuItem>{version}</MenuItem>
               {OLDER_VERSIONS.map(v => (
-                <MenuItem tag="a" href={`/version/${v}`}>
+                <MenuItem key={v} tag="a" href={`/version/${v}`}>
                   {v}
                 </MenuItem>
               ))}

@@ -162,14 +162,16 @@ export const Home = () => {
       </header>
 
       <div className={styles.examples}>
-        {galleryContent.map(ex => (
-          <Example
-            key={ex.label}
-            name={ex.label}
-            ex={ex.gallery}
-            url={ex.url}
-          />
-        ))}
+        {galleryContent.map(ex => {
+          return (
+            <Example
+              key={ex.label}
+              name={ex.label}
+              ex={ex.gallery}
+              url={ex.url}
+            />
+          );
+        })}
       </div>
     </React.Fragment>
   );

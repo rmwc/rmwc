@@ -92,17 +92,15 @@ export class DialogButton extends React.Component<
   static displayName = 'DialogButton';
   render() {
     const { action = '', className, isDefaultAction, ...rest } = this.props;
+    const defaultProp = !!isDefaultAction
+      ? { [MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE]: true }
+      : {};
     return (
       <Button
         {...rest}
+        {...defaultProp}
         data-mdc-dialog-action={action}
-        className={[
-          className,
-          'mdc-dialog__button',
-          isDefaultAction && 'mdc-dialog__button--default'
-        ]
-          .filter(Boolean)
-          .join(' ')}
+        className={[className, 'mdc-dialog__button'].filter(Boolean).join(' ')}
       />
     );
   }
@@ -142,7 +140,8 @@ export class Dialog extends FoundationComponent<
 
   constructor(props: DialogProps) {
     super(props);
-    this.handleInteraction = this.handleInteraction.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
   }
 
   open() {
@@ -150,7 +149,7 @@ export class Dialog extends FoundationComponent<
       document.addEventListener('keydown', this.handleDocumentKeydown);
       this.foundation.open();
 
-      // Dont like this fix
+      // Don't like this fix
       // This corrects an issue where the default button was stealing focus
       // When something else in the dialog should have it
       setTimeout(() => {
@@ -162,7 +161,7 @@ export class Dialog extends FoundationComponent<
         ) {
           this.defaultButton.focus();
         }
-      }, 180);
+      }, 200);
     }
   }
 
@@ -194,7 +193,7 @@ export class Dialog extends FoundationComponent<
     this.defaultButton =
       this.root.ref &&
       this.root.ref.querySelector(
-        MDCDialogFoundation.strings.DEFAULT_BUTTON_SELECTOR
+        `[${MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE}]`
       );
 
     this.container &&
@@ -283,16 +282,23 @@ export class Dialog extends FoundationComponent<
       notifyClosed: (action: string) => {
         this.emit('onClosed', action ? { action } : {});
         this.props.onStateChange && this.props.onStateChange('closed');
-      }
+      },
+      getInitialFocusEl: () =>
+        document.querySelector(
+          `[${MDCDialogFoundation.strings.INITIAL_FOCUS_ATTRIBUTE}]`
+        )
     });
   }
 
-  handleInteraction(
-    evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
-  ) {
-    evt.type === 'click' && this.props.onClick && this.props.onClick(evt);
-    evt.type === 'keydown' && this.props.onKeyDown && this.props.onKeyDown(evt);
-    return this.foundation.handleInteraction(evt);
+  handleClick(evt: React.MouseEvent & MouseEvent) {
+    this.props.onClick && this.props.onClick(evt);
+
+    return this.foundation.handleClick(evt);
+  }
+
+  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
+    this.props.onKeyDown && this.props.onKeyDown(evt);
+    return this.foundation.handleKeydown(evt);
   }
 
   render() {
@@ -309,8 +315,8 @@ export class Dialog extends FoundationComponent<
       <DialogRoot
         {...this.root.props(rest)}
         ref={this.root.setRef}
-        onClick={this.handleInteraction}
-        onKeyDown={this.handleInteraction}
+        onClick={this.handleClick}
+        onKeyDown={this.handleKeydown}
       >
         <div className="mdc-dialog__container">
           <div className="mdc-dialog__surface">{children}</div>

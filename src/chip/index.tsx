@@ -51,6 +51,7 @@ export interface DeprecatedChipProps {
 
 const ChipRoot = withRipple({})(
   componentFactory<ChipProps>({
+    tag: 'button',
     displayName: 'ChipRoot',
     classNames: (props: ChipProps) => [
       'mdc-chip',
@@ -93,63 +94,66 @@ export class Chip extends FoundationComponent<
   }
 
   getDefaultFoundation() {
-    return new MDCChipFoundation(
-      /** @type {!MDCChipAdapter} */ (Object.assign({
-        addClass: (className: string) => {
-          this.root.addClass(className);
-        },
-        removeClass: (className: string) => this.root.removeClass(className),
-        hasClass: (className: string) => this.root.hasClass(className),
-        addClassToLeadingIcon: (className: string) => {
-          // handled by props
-        },
-        removeClassFromLeadingIcon: (className: string) => {
-          // handled by props
-        },
-        eventTargetHasClass: (target: HTMLElement, className: string) => {
-          return (
-            this.root.hasClass(className) ||
-            target.classList.contains(className)
-          );
-        },
-        notifyInteraction: () =>
-          this.emit(
-            'onInteraction',
-            { chipId: this.id },
-            true /* shouldBubble */
-          ),
-        notifySelection: (selected: boolean) =>
-          this.emit(
-            'onSelect',
-            { chipId: this.id, selected: selected },
-            true /* shouldBubble */
-          ),
-        notifyTrailingIconInteraction: () =>
-          this.emit(
-            'onTrailingIconInteraction',
-            { chipId: this.id },
-            true /* shouldBubble */
-          ),
-        notifyRemoval: () =>
-          this.emit(
-            'onRemove',
-            { chipId: this.id, root: this.root.ref },
-            true /* shouldBubble */
-          ),
-        getComputedStyleValue: (propertyName: string) =>
-          this.root.ref &&
-          window.getComputedStyle(this.root.ref).getPropertyValue(propertyName),
-        setStyleProperty: (propertyName: string, value: any) => {
-          this.root.setStyle(propertyName, value);
-        },
+    return new MDCChipFoundation({
+      addClass: className => {
+        this.root.addClass(className);
+      },
+      removeClass: className => this.root.removeClass(className),
+      hasClass: className => this.root.hasClass(className),
+      addClassToLeadingIcon: className => {
+        // handled by props
+      },
+      removeClassFromLeadingIcon: className => {
+        // handled by props
+      },
+      eventTargetHasClass: (target: HTMLElement, className) => {
+        return (
+          this.root.hasClass(className) || target.classList.contains(className)
+        );
+      },
+      notifyInteraction: () =>
+        this.emit(
+          'onInteraction',
+          { chipId: this.id },
+          true /* shouldBubble */
+        ),
+      notifySelection: selected =>
+        this.emit(
+          'onSelect',
+          { chipId: this.id, selected: selected },
+          true /* shouldBubble */
+        ),
+      notifyTrailingIconInteraction: () =>
+        this.emit(
+          'onTrailingIconInteraction',
+          { chipId: this.id },
+          true /* shouldBubble */
+        ),
+      notifyRemoval: () =>
+        this.emit(
+          'onRemove',
+          { chipId: this.id, root: this.root.ref },
+          true /* shouldBubble */
+        ),
+      getComputedStyleValue: propertyName =>
+        this.root.ref
+          ? window
+              .getComputedStyle(this.root.ref)
+              .getPropertyValue(propertyName)
+          : '',
+      setStyleProperty: (propertyName, value) => {
+        this.root.setStyle(propertyName, value);
+      },
 
-        hasLeadingIcon: () => !!this.props.icon,
-        getRootBoundingClientRect: () =>
-          this.root.ref && this.root.ref.getBoundingClientRect(),
-        getCheckmarkBoundingClientRect: () =>
-          this.checkmarkEl && this.checkmarkEl.getBoundingClientRect()
-      }))
-    );
+      hasLeadingIcon: () => !!this.props.icon,
+      getRootBoundingClientRect: () =>
+        this.root.ref
+          ? this.root.ref.getBoundingClientRect()
+          : ({} as ClientRect),
+      getCheckmarkBoundingClientRect: () =>
+        this.checkmarkEl && this.checkmarkEl.getBoundingClientRect(),
+      setAttr: (attr, value) => this.root.setProp(attr as any, value)
+    });
   }
 
   handleInteraction(
