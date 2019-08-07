@@ -17,7 +17,9 @@ export interface ToggleableFoundationProps {
   /** By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. */
   rootProps?: React.HTMLProps<any>;
   /** A reference to the native input. */
-  inputRef?: (ref: HTMLInputElement | null) => void;
+  inputRef?:
+    | React.MutableRefObject<HTMLInputElement | null>
+    | ((ref: HTMLInputElement | null) => void);
 }
 
 export class ToggleableFoundationComponent<
