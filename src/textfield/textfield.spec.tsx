@@ -118,6 +118,25 @@ describe('TextField', () => {
     mount(<TextField trailingIcon="favorite" />);
   });
 
+  it('supports inputRef as an object reference', () => {
+    const textObjectRef: any = { current: null };
+    mount(<TextField inputRef={textObjectRef} />);
+    expect(textObjectRef.current instanceof HTMLInputElement).toBeTruthy();
+
+    const areaObjectRef: any = { current: null };
+    mount(<TextField inputRef={areaObjectRef} textarea />);
+    expect(areaObjectRef.current instanceof HTMLTextAreaElement).toBeTruthy();
+  });
+
+  it('supports inputRef as a function reference', () => {
+    let inputObjectRef: any;
+    const objectRefFunc: any = (el: HTMLInputElement) => {
+      inputObjectRef = el;
+    };
+    mount(<TextField inputRef={objectRefFunc} />);
+    expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
+  });
+
   it('label floats on dynamic change', done => {
     const el = mount(<TextField label="test" value="" onChange={() => {}} />);
     expect(el.html().includes('mdc-floating-label--float-above')).toBe(false);
