@@ -56,4 +56,19 @@ describe('Switch', () => {
     const el = mount(<Switch className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
+
+  it('supports inputRef as an object reference', () => {
+    const inputObjectRef: any = { current: null };
+    mount(<Switch inputRef={inputObjectRef} />);
+    expect(inputObjectRef.current instanceof HTMLInputElement).toBeTruthy();
+  });
+
+  it('supports inputRef as a function reference', () => {
+    let inputObjectRef: any;
+    const objectRefFunc: any = (el: HTMLInputElement) => {
+      inputObjectRef = el;
+    };
+    mount(<Switch inputRef={objectRefFunc} />);
+    expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
+  });
 });

@@ -54,7 +54,9 @@ export interface TextFieldProps {
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** A reference to the native input or textarea. */
-  inputRef?: (ref: HTMLInputElement | HTMLTextAreaElement | null) => void;
+  inputRef?:
+    | React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>
+    | ((ref: HTMLInputElement | HTMLTextAreaElement | null) => void);
   /** The type of input field to render, search, number, etc */
   type?: string;
 }
@@ -307,7 +309,7 @@ export class TextField extends FoundationComponent<
     return (
       <div className="mdc-text-field-helper-line">
         {helpText && shouldSpread ? (
-          <TextFieldHelperText {...helpText as any} />
+          <TextFieldHelperText {...(helpText as any)} />
         ) : (
           <TextFieldHelperText>{helpText}</TextFieldHelperText>
         )}
@@ -378,7 +380,11 @@ export class TextField extends FoundationComponent<
       disabled: disabled,
       ref: (ref: HTMLInputElement | HTMLTextAreaElement | null) => {
         this.input.setRef(ref);
-        inputRef && inputRef(ref);
+        if (typeof inputRef === 'function') {
+          inputRef && inputRef(ref);
+        } else if (typeof inputRef === 'object') {
+          inputRef.current = ref;
+        }
       },
       id: rest.id || this.generatedId
     };

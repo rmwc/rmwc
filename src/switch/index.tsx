@@ -132,7 +132,11 @@ export class Switch extends ToggleableFoundationComponent<
               id={this.id}
               ref={(el: HTMLInputElement | null) => {
                 this.nativeControl.setRef(el);
-                inputRef && inputRef(el);
+                if (typeof inputRef === 'function') {
+                  inputRef && inputRef(el);
+                } else if (typeof inputRef === 'object') {
+                  inputRef.current = el;
+                }
               }}
             />
           </div>
