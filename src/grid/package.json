@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/layout-grid": "^3.0.0",
+    "@material/layout-grid": "^3.1.0",
     "@rmwc/base": "^5.6.0",
     "@rmwc/types": "^5.6.0"
   }

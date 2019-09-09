@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/select": "^3.0.0",
+    "@material/select": "^3.1.0",
     "@rmwc/base": "^5.6.0",
     "@rmwc/floating-label": "^5.6.0",
     "@rmwc/icon": "^5.6.0",

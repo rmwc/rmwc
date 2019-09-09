@@ -1,4 +1,5 @@
 import * as RMWC from '@rmwc/types';
+import { SpecificEventListener } from '@material/base/types';
 import * as React from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
@@ -146,7 +147,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Events
    **************************************************/
-  addEventListener(evtName: string, callback: (evt: Event) => void) {
+  addEventListener(evtName: string, callback: SpecificEventListener<any>) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName] !== callback) {
       this._events[propName] = callback;
@@ -154,7 +155,7 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     }
   }
 
-  removeEventListener(evtName: string, callback: (evt: Event) => void) {
+  removeEventListener(evtName: string, callback: SpecificEventListener<any>) {
     const propName = reactPropFromEventName(evtName);
     if (this._events[propName]) {
       delete this._events[propName];

@@ -82,11 +82,11 @@ export class Ripple extends FoundationComponent<
       registerInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
-      ): void => this.root.addEventListener(evtType, handler as any),
+      ): void => this.root.addEventListener(evtType, handler),
       deregisterInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
-      ): void => this.root.removeEventListener(evtType, handler as any),
+      ): void => this.root.removeEventListener(evtType, handler),
       registerDocumentInteractionHandler: <K extends EventType>(
         evtType: K,
         handler: SpecificEventListener<K>
@@ -102,7 +102,7 @@ export class Ripple extends FoundationComponent<
       ) =>
         document.documentElement.removeEventListener(
           evtType,
-          handler as any,
+          handler,
           applyPassive() as any
         ),
       registerResizeHandler: (handler: SpecificEventListener<'resize'>): void =>
@@ -331,12 +331,12 @@ export const withRipple = ({
               unbounded={rippleOptions.unbounded || defaultUnbounded}
               surface={rippleOptions.surface || defaultSurface}
             >
-              <Component {...rest as P} ref={ref} />
+              <Component {...(rest as P)} ref={ref} />
             </Ripple>
           );
         }
 
-        return <Component {...rest as P} ref={ref} />;
+        return <Component {...(rest as P)} ref={ref} />;
       }
     )
   );
