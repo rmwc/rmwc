@@ -110,6 +110,67 @@ export default function() {
         </TabBar>
       </DocsExample>
 
+      <DocsSubtitle>Transitions</DocsSubtitle>
+      <DocsExample label="Slide (Default)">
+        <TabBar>
+          <Tab>Cookies</Tab>
+          <Tab>Pizza</Tab>
+          <Tab>Icecream</Tab>
+        </TabBar>
+      </DocsExample>
+
+      <DocsSubtitle>Icons as Indicators</DocsSubtitle>
+      <DocsP>
+        `material-components-web` has some light support for using icons as
+        indicators (it's buried in their docs but there are no working examples
+        or demos). Support has been added to RMWC, but your mileage may vary
+        since it will require quite a bit of manual positioning and styling. By
+        default, the icons appear full size at the center of the tab,
+        effectively making them overlay images.
+      </DocsP>
+      <DocsExample label="Default Positioning">
+        <TabBar>
+          <Tab iconIndicator="star">Cookies</Tab>
+          <Tab iconIndicator="favorite">Pizza</Tab>
+          <Tab iconIndicator="mood">Icecream</Tab>
+        </TabBar>
+      </DocsExample>
+
+      <DocsExample label="Manually Positioned">
+        {function IconIndicatorExample() {
+          const style = {
+            transformOrigin: 'center center',
+            transform: 'translateY(1rem) scale(0.45)'
+          };
+
+          return (
+            <TabBar>
+              <Tab
+                label="Cookies"
+                iconIndicator={{
+                  icon: 'star',
+                  style: style
+                }}
+              />
+              <Tab
+                label="Pizza"
+                iconIndicator={{
+                  icon: 'favorite',
+                  style: style
+                }}
+              />
+              <Tab
+                label="Icecream"
+                iconIndicator={{
+                  icon: 'mood',
+                  style: style
+                }}
+              />
+            </TabBar>
+          );
+        }}
+      </DocsExample>
+
       <DocProps src={propsSrc} components={[TabBar, Tab]} />
     </Docs>
   );

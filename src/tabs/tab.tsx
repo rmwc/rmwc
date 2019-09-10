@@ -20,6 +20,8 @@ export interface TabProps {
   children?: React.ReactNode;
   /** The icon to use for the tab. */
   icon?: RMWC.IconPropT;
+  /** Optionally use a custom icon for the active indicator, instead of the underline. */
+  iconIndicator?: RMWC.IconPropT;
   /** Stacks the icon on top of the text label */
   stacked?: boolean;
   /** Restricts the indicator to the content */
@@ -80,7 +82,7 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
 
     getDefaultFoundation() {
       return new MDCTabFoundation(
-        /** @type {!MDCTabAdapter} */ ({
+        /** @type {!MDCTabAdapter} */ {
           setAttr: (attr: string, value: any) =>
             this.root.setProp(attr as any, value),
           addClass: (className: string) => this.root.addClass(className),
@@ -109,7 +111,7 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
             this.content ? this.content.offsetWidth : 0,
           focus: () =>
             this.root.ref && this.root.ref.focus && this.root.ref.focus()
-        })
+        }
       );
     }
 
@@ -155,8 +157,18 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
         restrictIndicator,
         onInteraction,
         contextApi,
+        iconIndicator,
         ...rest
       } = this.props;
+
+      const tabIndicator = (
+        <TabIndicator
+          ref={(api: TabIndicator) => (this.tabIndicator = api)}
+          transition={contextApi && contextApi.indicatorTransition}
+          icon={iconIndicator}
+        />
+      );
+
       return (
         <TabRoot
           {...this.root.props(rest)}
@@ -175,17 +187,9 @@ export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
                 {children}
               </span>
             )}
-            {!!restrictIndicator && (
-              <TabIndicator
-                ref={(api: TabIndicator) => (this.tabIndicator = api)}
-              />
-            )}
+            {!!restrictIndicator && tabIndicator}
           </div>
-          {!restrictIndicator && (
-            <TabIndicator
-              ref={(api: TabIndicator) => (this.tabIndicator = api)}
-            />
-          )}
+          {!restrictIndicator && tabIndicator}
           <RippleSurface className="mdc-tab__ripple" />
         </TabRoot>
       );
