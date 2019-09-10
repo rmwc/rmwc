@@ -22,7 +22,8 @@ import {
   CollapsibleList,
   SimpleListItem,
   Typography,
-  Icon
+  Icon,
+  Slider
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -622,6 +623,10 @@ function Bug485() {
   );
 }
 
+function Bug358() {
+  return <Slider value={1.5} min={1} max={2} />;
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -694,4 +699,5 @@ storiesOf('Bugs', module)
   .add('#453', () => <Bug453 />)
   .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />)
   .add('#460', () => <Bug460 />)
-  .add('#485', () => <Bug485 />);
+  .add('#485', () => <Bug485 />)
+  .add('#358', () => <Bug358 />);
