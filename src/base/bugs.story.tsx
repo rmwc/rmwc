@@ -20,7 +20,9 @@ import {
   MenuSurfaceAnchor,
   List,
   CollapsibleList,
-  SimpleListItem
+  SimpleListItem,
+  Typography,
+  Icon
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -587,6 +589,39 @@ class Bug460 extends React.Component {
   }
 }
 
+function Bug485() {
+  return (
+    <CollapsibleList
+      handle={
+        <div className={'d-flex cursor-pointer'}>
+          <Typography use="headline6" tag={'div'}>
+            Collapse Header (Click here)
+          </Typography>
+          <div>
+            <Icon
+              className={'accordion-icon mdc-list-item__meta'}
+              icon={'expand_less'}
+            />
+          </div>
+        </div>
+      }
+      onOpen={() => console.log('open')}
+      onClose={() => console.log('close')}
+    >
+      <Typography use={'subtitle2'} tag={'div'} className={'collapseBody'}>
+        <ul>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+        </ul>
+      </Typography>
+    </CollapsibleList>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -658,4 +693,5 @@ storiesOf('Bugs', module)
   .add('#442', () => <Bug442 />)
   .add('#453', () => <Bug453 />)
   .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />)
-  .add('#460', () => <Bug460 />);
+  .add('#460', () => <Bug460 />)
+  .add('#485', () => <Bug485 />);

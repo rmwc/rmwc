@@ -27,3 +27,7 @@
 .rmwc-collapsible-list__children .mdc-list-item {
   padding-left: 2rem;
 }
+
+.rmwc-collapsible-list__children-inner {
+  overflow: auto;
+}
