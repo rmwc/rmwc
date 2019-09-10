@@ -15,9 +15,9 @@ interface SharedDataTableCellProps {
 /** The DataTable Component. */
 export interface DataTableProps {
   /** The number of rows to affix to the top of the table when scrolling. */
-  stickyRows?: 0 | 1;
+  stickyRows?: number;
   /** The number of columns to affix to the side of the table when scrolling. */
-  stickyColumns?: 0 | 1;
+  stickyColumns?: number;
 }
 
 /** The DataTable Component. */
