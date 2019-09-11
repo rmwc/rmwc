@@ -23,7 +23,11 @@ import {
   SimpleListItem,
   Typography,
   Icon,
-  Slider
+  Slider,
+  ListItem,
+  ListItemGraphic,
+  ListItemText,
+  ListItemMeta
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -627,6 +631,40 @@ function Bug358() {
   return <Slider value={1.5} min={1} max={2} />;
 }
 
+function Bug486() {
+  const [value, setValue] = React.useState('');
+
+  const currencies = [
+    { value: 'USD', name: 'US Dollar', symbol: '$' },
+    { value: 'GBP', name: 'British Pound', symbol: '£' },
+    { value: 'EUR', name: 'Euro', symbol: '€' }
+  ];
+
+  console.log(value);
+
+  return (
+    <Select
+      enhanced
+      outlined
+      label="Select currency"
+      value={value}
+      onChange={event => {
+        setValue(event.currentTarget.value);
+      }}
+    >
+      <>
+        {currencies.map(({ value, name, symbol }) => (
+          <ListItem key={value} data-value={value} data-label={name}>
+            <ListItemGraphic icon="star" />
+            <ListItemText style={{ paddingRight: 16 }}>{name}</ListItemText>
+            <ListItemMeta>{symbol}</ListItemMeta>
+          </ListItem>
+        ))}
+      </>
+    </Select>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -700,4 +738,5 @@ storiesOf('Bugs', module)
   .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />)
   .add('#460', () => <Bug460 />)
   .add('#485', () => <Bug485 />)
-  .add('#358', () => <Bug358 />);
+  .add('#358', () => <Bug358 />)
+  .add('#486', () => <Bug486 />);
