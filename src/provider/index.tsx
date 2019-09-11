@@ -37,6 +37,22 @@ export interface RMWCProviderProps {
     /** Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. */
     leaveDelay?: number;
   };
+  typography?: {
+    defaultTag?: string | React.ComponentType<any>;
+    headline1?: string | React.ComponentType<any>;
+    headline2?: string | React.ComponentType<any>;
+    headline3?: string | React.ComponentType<any>;
+    headline4?: string | React.ComponentType<any>;
+    headline5?: string | React.ComponentType<any>;
+    headline6?: string | React.ComponentType<any>;
+    subtitle1?: string | React.ComponentType<any>;
+    subtitle2?: string | React.ComponentType<any>;
+    body1?: string | React.ComponentType<any>;
+    body2?: string | React.ComponentType<any>;
+    caption?: string | React.ComponentType<any>;
+    button?: string | React.ComponentType<any>;
+    overline?: string | React.ComponentType<any>;
+  };
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -69,6 +85,7 @@ const providerDefaults: RMWCProviderProps = {
     enterDelay: 0,
     leaveDelay: 0
   },
+  typography: {},
   icon: {
     icon: '',
     basename: 'material-icons',

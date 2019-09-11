@@ -1,6 +1,11 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { componentFactory } from '@rmwc/base';
+import {
+  withProviderContext,
+  WithProviderContext,
+  RMWCProviderProps
+} from '@rmwc/provider';
 
 export type TypographyT =
   | 'headline1'
@@ -23,8 +28,7 @@ export interface TypographyProps {
   use: TypographyT;
 }
 
-/** The Typography Component */
-export const Typography = componentFactory<TypographyProps>({
+const TypographyRoot = componentFactory<TypographyProps>({
   displayName: 'Typography',
   tag: 'span',
   classNames: (props: TypographyProps) => [
@@ -33,4 +37,17 @@ export const Typography = componentFactory<TypographyProps>({
     }
   ],
   consumeProps: ['use']
+});
+
+/** The Typography Component */
+export const Typography = withProviderContext()(function Typography({
+  providerContext,
+  ...rest
+}: TypographyProps & RMWC.ComponentProps & WithProviderContext) {
+  const typographyOptions = providerContext.typography;
+  const tag =
+    (typographyOptions
+      ? typographyOptions[rest.use] || typographyOptions.defaultTag
+      : undefined) || rest.tag;
+  return <TypographyRoot {...rest} tag={tag} />;
 });
