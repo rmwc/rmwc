@@ -6,12 +6,37 @@ import { deprecationWarning } from '@rmwc/base';
 // eslint-disable-next-line max-len
 type IconStrategyT = 'auto' | 'ligature' | 'className' | 'url' | 'component' | 'custom';
 
+type TooltipActivationT = 'hover' | 'click' | 'focus';
+
+type TooltipAlignT =
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'topLeft'
+  | 'topRight'
+  | 'bottomLeft'
+  | 'bottomRight';
+
 /** A provider for setting global options in RMWC. */
 export interface RMWCProviderProps {
   /** Set the buttons ripple effect globally */
   ripple?: boolean;
   /** Global options for icons */
   icon?: Partial<RMWC.IconOptions>;
+  /** Global tooltip options */
+  tooltip?: {
+    /** How to align the tooltip. Defaults to `top`. */
+    align?: TooltipAlignT;
+    /** Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. */
+    activateOn?: TooltipActivationT | TooltipActivationT[];
+    /** Whether or not to show an arrow on the Tooltip. Defaults to `false`. */
+    showArrow?: boolean;
+    /** Delay in milliseconds before showing the tooltip when interacting via touch or mouse. */
+    enterDelay?: number;
+    /** Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. */
+    leaveDelay?: number;
+  };
   /** Children to render */
   children?: React.ReactNode;
 }
@@ -37,6 +62,13 @@ export interface DeprecatedRMWCProviderPropsT {
 // Default provider options
 const providerDefaults: RMWCProviderProps = {
   ripple: true,
+  tooltip: {
+    align: 'top',
+    showArrow: false,
+    activateOn: ['hover', 'focus'],
+    enterDelay: 0,
+    leaveDelay: 0
+  },
   icon: {
     icon: '',
     basename: 'material-icons',

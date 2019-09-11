@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const getChangedPackages = require('./get-changed-packages');
+const getAllPackages = require('./get-all-packages');
 
 const genDocExample = packageName => {
   const readmeFiles = fs
@@ -56,7 +56,7 @@ const genDocExample = packageName => {
 };
 
 try {
-  getChangedPackages()
+  getAllPackages()
     .filter(name => !['base', 'rmwc', '@types'].includes(name))
     .forEach(d => {
       console.log(`Generating Examples For: ${d}`);

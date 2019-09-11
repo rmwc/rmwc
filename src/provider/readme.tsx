@@ -37,6 +37,12 @@ export default function() {
               icon={{
                 basename: 'material-icons'
               }}
+              // Global options for tooltips
+              // Takes most of the options for tooltips
+              // See the tooltip docs for more info
+              tootlip={{
+                align: 'right'
+              }}
             >
               <App />
             </RMWCProvider>,

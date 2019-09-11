@@ -37,6 +37,7 @@ import { galleryExample as snackbarExample } from '@rmwc/snackbar/readme';
 import { galleryExample as tabsExample } from '@rmwc/tabs/readme';
 import { galleryExample as themeExample } from '@rmwc/theme/readme';
 import { galleryExample as topAppBarExample } from '@rmwc/top-app-bar/readme';
+import { galleryExample as tooltipExample } from '@rmwc/tooltip/readme';
 import { galleryExample as typographyExample } from '@rmwc/typography/readme';
 import { galleryExample as iconExample } from '@rmwc/icon/readme';
 
@@ -92,6 +93,7 @@ const TopAppBarDocs = React.lazy(() => import('@rmwc/top-app-bar/readme'));
 const TypographyDocs = React.lazy(() => import('@rmwc/typography/readme'));
 const IconDocs = React.lazy(() => import('@rmwc/icon/readme'));
 const ProviderDocs = React.lazy(() => import('@rmwc/provider/readme'));
+const TooltipDocs = React.lazy(() => import('@rmwc/tooltip/readme'));
 
 const Loading = () => (
   <div
@@ -371,6 +373,12 @@ export const menuContent: MenuItemT[] = [
     label: 'Toolbars',
     url: `/toolbars`,
     component: Loadable(ToolbarDocs)
+  },
+  {
+    label: 'Tooltips',
+    url: `/tooltips`,
+    gallery: tooltipExample,
+    component: Loadable(TooltipDocs)
   },
   {
     label: 'Top App Bar',

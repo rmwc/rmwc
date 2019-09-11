@@ -33,7 +33,8 @@ import '@material/typography/dist/mdc.typography.css';
 
 // rmwc additions
 import '@rmwc/avatar/avatar.css';
+import '@rmwc/circular-progress/circular-progress.css';
 import '@rmwc/data-table/data-table.css';
 import '@rmwc/icon/icon.css';
-import '@rmwc/circular-progress/circular-progress.css';
 import '@rmwc/list/collapsible-list.css';
+import '@rmwc/tooltip/tooltip.css';
