@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/avatar",
-  "version": "5.6.0",
+  "version": "5.7.0",
   "description": "RMWC avatar component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,9 +32,9 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.6.0",
-    "@rmwc/icon": "^5.6.0",
-    "@rmwc/ripple": "^5.6.0",
+    "@rmwc/base": "^5.7.0",
+    "@rmwc/icon": "^5.7.0",
+    "@rmwc/ripple": "^5.7.0",
     "@rmwc/types": "^5.6.0"
   }
 }
