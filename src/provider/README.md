@@ -45,6 +45,17 @@ You can wrap your top level App component with RMWC provider to set global confi
 
 ```
 
-## 
+## RMWCProvider
+A provider for setting global options in RMWC.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `children` | `React.ReactNode` | Children to render |
+| `icon` | `Partial<IconOptions>` | Global options for icons |
+| `ripple` | `undefined \| false \| true` | Enable / Disable interaction ripples globally |
+| `tooltip` | `Partial<TooltipOptions>` | Global tooltip options |
+| `typography` | `Partial<TypographyOptions>` | Global typography options |
 
 
