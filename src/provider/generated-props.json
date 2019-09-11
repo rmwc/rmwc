@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L57",
           "type": "React.ReactNode"
         },
         {
@@ -120,6 +120,23 @@
           "name": "tooltip",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L28",
           "type": "undefined | "
+        },
+        {
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "typography",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L40",
+          "type": "undefined | "
         }
       ]
     },
@@ -137,7 +154,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedRMWCProviderPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L44",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L60",
       "methods": [],
       "properties": [
         {
@@ -161,7 +178,7 @@
           },
           "kind": "property",
           "name": "buttonDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L62",
           "type": "undefined | false | true"
         },
         {
@@ -185,7 +202,7 @@
           },
           "kind": "property",
           "name": "iconClassNameBase",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L66",
           "type": "undefined | string"
         },
         {
@@ -209,7 +226,7 @@
           },
           "kind": "property",
           "name": "iconClassNamePrefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L68",
           "type": "undefined | string"
         },
         {
@@ -233,7 +250,7 @@
           },
           "kind": "property",
           "name": "iconRender",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L72",
           "type": "undefined | (props: ) => React.ReactNode"
         },
         {
@@ -257,7 +274,7 @@
           },
           "kind": "property",
           "name": "iconStrategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L70",
           "type": "IconStrategyT"
         },
         {
@@ -281,7 +298,7 @@
           },
           "kind": "property",
           "name": "listItemDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L64",
           "type": "undefined | false | true"
         }
       ]
@@ -300,7 +317,7 @@
       },
       "kind": "interface",
       "name": "WithProviderContext",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L81",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L98",
       "methods": [],
       "properties": [
         {
@@ -317,7 +334,7 @@
           },
           "kind": "property",
           "name": "providerContext",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L99",
           "type": "RMWCProviderProps"
         }
       ]

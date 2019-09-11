@@ -24,9 +24,16 @@ You can wrap your top level App component with RMWC provider to set global confi
       icon={{
         basename: 'material-icons'
       }}
+      // Global options for typography
+      // allows mapping of a defaultTag or specific classes
+      // See the Typography docs for more info
+      typography={{
+        defaultTag: 'div',
+        headline1: 'h1'
+      }}
       // Global options for tooltips
       // Takes most of the options for tooltips
-      // See the tooltip docs for more info
+      // See the Tooltip docs for more info
       tootlip={{
         align: 'right'
       }}
