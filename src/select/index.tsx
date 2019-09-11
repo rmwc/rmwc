@@ -512,7 +512,6 @@ export class SelectBase extends FoundationComponent<
         this.outline.setProp('notch', labelWidth);
       },
       closeOutline: () => {
-        console.log('Closing');
         this.outline.removeProp('notch');
       }
     };
