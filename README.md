@@ -27,6 +27,14 @@ Features:
 
 ## Recent updates
 
+v5.7.0 is out with some great new features and fixes!
+- A new Tooltip component has been added
+- The Typography component can now use semantic tags defined by RMWCProvider
+- Added a fading tab transition as well as tab indicators
+- Bugfixes for Selects, Sliders, Lists, and Chips
+- Updated all dependencies
+- See the changelog for more details.
+
 v5.6.0 is a maintenance release, no breaking changes :)
 
 V5.5.0 is live with some great new features!
