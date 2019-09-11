@@ -20,7 +20,14 @@ import {
   MenuSurfaceAnchor,
   List,
   CollapsibleList,
-  SimpleListItem
+  SimpleListItem,
+  Typography,
+  Icon,
+  Slider,
+  ListItem,
+  ListItemGraphic,
+  ListItemText,
+  ListItemMeta
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -587,6 +594,77 @@ class Bug460 extends React.Component {
   }
 }
 
+function Bug485() {
+  return (
+    <CollapsibleList
+      handle={
+        <div className={'d-flex cursor-pointer'}>
+          <Typography use="headline6" tag={'div'}>
+            Collapse Header (Click here)
+          </Typography>
+          <div>
+            <Icon
+              className={'accordion-icon mdc-list-item__meta'}
+              icon={'expand_less'}
+            />
+          </div>
+        </div>
+      }
+      onOpen={() => console.log('open')}
+      onClose={() => console.log('close')}
+    >
+      <Typography use={'subtitle2'} tag={'div'} className={'collapseBody'}>
+        <ul>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+          <li>TESTSETSETSETSET</li>
+        </ul>
+      </Typography>
+    </CollapsibleList>
+  );
+}
+
+function Bug358() {
+  return <Slider value={1.5} min={1} max={2} />;
+}
+
+function Bug486() {
+  const [value, setValue] = React.useState('');
+
+  const currencies = [
+    { value: 'USD', name: 'US Dollar', symbol: '$' },
+    { value: 'GBP', name: 'British Pound', symbol: '£' },
+    { value: 'EUR', name: 'Euro', symbol: '€' }
+  ];
+
+  console.log(value);
+
+  return (
+    <Select
+      enhanced
+      outlined
+      label="Select currency"
+      value={value}
+      onChange={event => {
+        setValue(event.currentTarget.value);
+      }}
+    >
+      <>
+        {currencies.map(({ value, name, symbol }) => (
+          <ListItem key={value} data-value={value} data-label={name}>
+            <ListItemGraphic icon="star" />
+            <ListItemText style={{ paddingRight: 16 }}>{name}</ListItemText>
+            <ListItemMeta>{symbol}</ListItemMeta>
+          </ListItem>
+        ))}
+      </>
+    </Select>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -658,4 +736,7 @@ storiesOf('Bugs', module)
   .add('#442', () => <Bug442 />)
   .add('#453', () => <Bug453 />)
   .add('#ywlnkjnmpx', () => <Bugywlnkjnmpx />)
-  .add('#460', () => <Bug460 />);
+  .add('#460', () => <Bug460 />)
+  .add('#485', () => <Bug485 />)
+  .add('#358', () => <Bug358 />)
+  .add('#486', () => <Bug486 />);

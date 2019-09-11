@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent } from './menu-content';
@@ -52,6 +52,7 @@ import { toCamel, toDashCase } from '@rmwc/base';
 
 import Home from './home';
 import { SiteSearch } from './site-search';
+import { history } from './history';
 
 const OLDER_VERSIONS = ['4.0.6', '3.0.11', '2.2.3', '1.9.4'];
 
@@ -165,7 +166,7 @@ const MainMenuItem = ({ url, label }: { url: string; label: string }) => {
   return (
     <ListItem
       tag={Link}
-      {...{ to: url } as any}
+      {...({ to: url } as any)}
       onClick={() => window.scrollTo(0, 0)}
       activated={
         window.location.pathname.split('/').pop() === url.split('/').pop()
@@ -499,116 +500,103 @@ function Nav(props: DrawerProps) {
   );
 }
 
-export class App extends React.Component {
-  componentDidMount() {
-    window.addEventListener('resize', () => this.doSizeCheck());
-    this.doSizeCheck(true);
-  }
+export function App() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  const [theme, setTheme] = useState(
+    window.localStorage.getItem('rmwcTheme') || 'Baseline'
+  );
 
-  componentDidUpdate(prevProps: any, prevState: any) {
-    // a hack to help components layout that depend on window events
-    // The size of the content changes on drawer open and close
-    if (prevState.menuIsOpen !== this.state.menuIsOpen) {
+  const [, forceUpdate] = useState(Math.random());
+
+  const doSizeCheck = (initial?: boolean) => {
+    const _isMobile = window.innerWidth < 640;
+    const _menuIsOpen = initial && window.innerWidth > 640 ? true : menuIsOpen;
+
+    if (isMobile !== _isMobile || menuIsOpen !== _menuIsOpen) {
+      setIsMobile(_isMobile);
+      setMenuIsOpen(_menuIsOpen);
       setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
       }, 300);
     }
-  }
-
-  state = {
-    menuIsOpen: false,
-    isMobile: true,
-    theme: window.localStorage.getItem('rmwcTheme') || 'Baseline'
   };
 
-  doSizeCheck(initial?: boolean) {
-    const isMobile = window.innerWidth < 640;
-    const menuIsOpen =
-      initial && window.innerWidth > 640 ? true : this.state.menuIsOpen;
+  useEffect(() => {
+    doSizeCheck(true);
+    history.listen(() => forceUpdate(Math.random()));
+  }, []);
 
-    if (
-      this.state.isMobile !== isMobile ||
-      this.state.menuIsOpen !== menuIsOpen
-    ) {
-      this.setState({ isMobile, menuIsOpen });
-    }
-  }
+  useEffect(() => {
+    const listener = () => doSizeCheck();
+    window.addEventListener('resize', listener);
+    return () => window.removeEventListener('resize', listener);
+  });
 
-  render() {
-    const pageId = `page-${window.location.pathname.split('/').pop() ||
-      'home'}`;
+  const pageId = `page-${window.location.pathname.split('/').pop() || 'home'}`;
 
-    return (
-      <ThemeProvider
-        options={getTheme(this.state.theme)}
-        className="app__root"
-        tag="div"
-        id={pageId}
-      >
-        <AppBar
-          onNavClick={evt =>
-            this.setState({ menuIsOpen: !this.state.menuIsOpen })
-          }
-        >
-          {!this.state.isMobile && (
-            <ThemePicker
-              selectedThemeName={this.state.theme}
-              onThemeClick={themeName => {
-                window.localStorage.setItem('rmwcTheme', themeName);
-                this.setState({ theme: themeName });
-              }}
-            />
-          )}
-        </AppBar>
-
-        <div className="demo-content">
-          <Nav
-            open={this.state.menuIsOpen}
-            dismissible={!this.state.isMobile}
-            modal={this.state.isMobile}
-            onClose={() => this.setState({ menuIsOpen: false })}
+  return (
+    <ThemeProvider
+      options={getTheme(theme)}
+      className="app__root"
+      tag="div"
+      id={pageId}
+    >
+      <AppBar onNavClick={evt => setMenuIsOpen(!menuIsOpen)}>
+        {!isMobile && (
+          <ThemePicker
+            selectedThemeName={theme}
+            onThemeClick={themeName => {
+              window.localStorage.setItem('rmwcTheme', themeName);
+              setTheme(themeName);
+            }}
           />
+        )}
+      </AppBar>
 
-          <DrawerAppContent tag="main" className="app__content">
-            <RouterSwitch>
-              {menuContent.map(m => {
-                if ('options' in m) {
-                  return m.options.map(v => (
-                    <Route
-                      path={v.url}
-                      exact
-                      render={() => {
-                        document.title = `RMWC | React Material Web Components | ${
-                          v.label
-                        }`;
-                        return <v.component />;
-                      }}
-                      key={v.label + 'sub'}
-                    />
-                  ));
-                }
+      <div className="demo-content">
+        <Nav
+          open={menuIsOpen}
+          dismissible={!isMobile}
+          modal={isMobile}
+          onClose={() => setMenuIsOpen(false)}
+        />
 
-                return (
+        <DrawerAppContent tag="main" className="app__content">
+          <RouterSwitch>
+            {menuContent.map(m => {
+              if ('options' in m) {
+                return m.options.map(v => (
                   <Route
-                    path={m.url}
+                    path={v.url}
                     exact
-                    key={m.label}
                     render={() => {
-                      document.title = `RMWC | React Material Web Components | ${
-                        m.label
-                      }`;
-                      return <m.component />;
+                      document.title = `RMWC | React Material Web Components | ${v.label}`;
+                      return <v.component />;
                     }}
+                    key={v.label + 'sub'}
                   />
-                );
-              })}
-              <Route path="/" exact component={Home} />
-            </RouterSwitch>
-          </DrawerAppContent>
-        </div>
-      </ThemeProvider>
-    );
-  }
+                ));
+              }
+
+              return (
+                <Route
+                  path={m.url}
+                  exact
+                  key={m.label}
+                  render={() => {
+                    document.title = `RMWC | React Material Web Components | ${m.label}`;
+                    return <m.component />;
+                  }}
+                />
+              );
+            })}
+            <Route path="/" exact component={Home} />
+          </RouterSwitch>
+        </DrawerAppContent>
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App;

@@ -76,9 +76,10 @@
     "@rmwc/theme": "^5.6.0",
     "@rmwc/toggleable": "^5.6.0",
     "@rmwc/toolbar": "^5.6.0",
+    "@rmwc/tooltip": "^5.6.0",
     "@rmwc/top-app-bar": "^5.6.0",
     "@rmwc/types": "^5.6.0",
     "@rmwc/typography": "^5.6.0",
-    "material-components-web": "^1.0.0"
+    "material-components-web": "^3.1.1"
   }
 }

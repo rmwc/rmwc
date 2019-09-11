@@ -2,6 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { deprecationWarning } from '@rmwc/base';
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
+import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
@@ -395,8 +396,7 @@ export class SelectBase extends FoundationComponent<
       getValue: () => {
         let value = '';
         const listItem: any =
-          this.menuElement &&
-          this.menuElement.querySelector('.mdc-list-item--activated');
+          this.menu && this.menu.items[this.state.selectedIndex];
         if (
           listItem &&
           listItem.hasAttribute(MDCSelectFoundation.strings.ENHANCED_VALUE_ATTR)
@@ -419,10 +419,14 @@ export class SelectBase extends FoundationComponent<
               : -1;
           const selectedItem = this.menu && this.menu.items[selectedIndex];
 
-          const selectedTextContent =
-            selectedItem && selectedItem.textContent
-              ? selectedItem.textContent.trim()
-              : '';
+          let selectedTextContent = '';
+
+          if (!!selectedItem) {
+            selectedTextContent =
+              selectedItem.dataset['label'] ||
+              ((selectedItem.textContent && selectedItem.textContent.trim()) ||
+                '');
+          }
 
           this.setState(
             {
@@ -677,7 +681,7 @@ export class SelectBase extends FoundationComponent<
       typeof helpText === 'object' && !React.isValidElement(helpText);
 
     return helpText && shouldSpread ? (
-      <SelectHelperText {...helpText as any} />
+      <SelectHelperText {...(helpText as any)} />
     ) : (
       <SelectHelperText>{helpText}</SelectHelperText>
     );
@@ -831,13 +835,13 @@ export class SelectIcon extends FoundationComponent<
       setContent: (content: string) => {
         this.root.ref && (this.root.ref.textContent = content);
       },
-      registerInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
+      registerInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
       ) => this.root.addEventListener(evtType, handler),
-      deregisterInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
+      deregisterInteractionHandler: <K extends EventType>(
+        evtType: K,
+        handler: SpecificEventListener<K>
       ) => this.root.removeEventListener(evtType, handler),
       notifyIconAction: () => this.emit('onClick', {}, true)
     });

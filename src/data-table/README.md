@@ -11,6 +11,8 @@
 
 The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists.
 
+**Heads Up!** RMWC implemented data tables before they were available in `material-components-web`. In the future, they will be refactored to implement the official spec. For the time being, please do not file issues against functionality in comparison to the ones from mat-web.
+
 ```jsx
 function Example() {
   const [sortDir, setSortDir] = React.useState(null);
@@ -210,8 +212,8 @@ The DataTable Component.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `stickyColumns` | `0 \| 1` | The number of columns to affix to the side of the table when scrolling. |
-| `stickyRows` | `0 \| 1` | The number of rows to affix to the top of the table when scrolling. |
+| `stickyColumns` | `undefined \| number` | The number of columns to affix to the side of the table when scrolling. |
+| `stickyRows` | `undefined \| number` | The number of rows to affix to the top of the table when scrolling. |
 
 
 ## DataTableRow

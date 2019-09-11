@@ -98,6 +98,63 @@ function Example() {
 </TabBar>
 ```
 
+## Transitions
+
+```jsx
+<TabBar>
+  <Tab>Cookies</Tab>
+  <Tab>Pizza</Tab>
+  <Tab>Icecream</Tab>
+</TabBar>
+```
+
+## Icons as Indicators
+
+`material-components-web` has some light support for using icons as indicators (it's buried in their docs but there are no working examples or demos). Support has been added to RMWC, but your mileage may vary since it will require quite a bit of manual positioning and styling. By default, the icons appear full size at the center of the tab, effectively making them overlay images.
+
+```jsx
+<TabBar>
+  <Tab iconIndicator="star">Cookies</Tab>
+  <Tab iconIndicator="favorite">Pizza</Tab>
+  <Tab iconIndicator="mood">Icecream</Tab>
+</TabBar>
+```
+
+```jsx
+function IconIndicatorExample() {
+  const style = {
+    transformOrigin: 'center center',
+    transform: 'translateY(1rem) scale(0.45)'
+  };
+
+  return (
+    <TabBar>
+      <Tab
+        label="Cookies"
+        iconIndicator={{
+          icon: 'star',
+          style: style
+        }}
+      />
+      <Tab
+        label="Pizza"
+        iconIndicator={{
+          icon: 'favorite',
+          style: style
+        }}
+      />
+      <Tab
+        label="Icecream"
+        iconIndicator={{
+          icon: 'mood',
+          style: style
+        }}
+      />
+    </TabBar>
+  );
+}
+```
+
 ## TabBar
 The TabBar component
 
@@ -106,6 +163,7 @@ The TabBar component
 | Name | Type | Description |
 |------|------|-------------|
 | `activeTabIndex` | `undefined \| number` | The index of the active tab. |
+| `indicatorTransition` | `"slide" \| "fade"` | Specifies whether the indicator should slide or fade. Defaults to slide. |
 | `onActivate` | `undefined \| (evt: TabBarOnActivateEventT) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } |
 
 
@@ -118,6 +176,7 @@ A Tab component
 |------|------|-------------|
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
+| `iconIndicator` | `RMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
 | `label` | `any` | A label for the tab. |
 | `onInteraction` | `undefined \| (evt: TabOnInteractionEventT) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } |
 | `restrictIndicator` | `undefined \| false \| true` | Restricts the indicator to the content |

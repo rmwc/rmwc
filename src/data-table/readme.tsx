@@ -38,6 +38,13 @@ export default function() {
         handle pagination, data fetching, sorting, or performance of long lists.
       </DocsP>
 
+      <DocsP>
+        **Heads Up!** RMWC implemented data tables before they were available in
+        `material-components-web`. In the future, they will be refactored to
+        implement the official spec. For the time being, please do not file
+        issues against functionality in comparison to the ones from mat-web.
+      </DocsP>
+
       <DocsExample>
         {function Example() {
           const [sortDir, setSortDir] = React.useState(null);
@@ -103,9 +110,7 @@ export default function() {
             <>
               <DataTable
                 style={{ height: '300px', width: '375px' }}
-                // @ts-ignore
                 stickyRows={rows}
-                // @ts-ignore
                 stickyColumns={cols}
               >
                 <DataTableContent>

@@ -722,13 +722,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L276",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L291",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L276",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L291",
               "parameters": [],
               "returnType": "MDCSliderFoundation",
               "type": "() => MDCSliderFoundation"
@@ -813,13 +813,13 @@
           },
           "kind": "method",
           "name": "layout",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L224",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L239",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "layout",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L224",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L239",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -840,13 +840,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L375",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L390",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L375",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L390",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -946,13 +946,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L228",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L243",
           "signatures": [
             {
               "fileName": "src/slider/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L228",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L243",
               "parameters": [
                 {
                   "flags": {

@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "RMWCProviderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L52",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L16",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L62",
           "type": "React.ReactNode"
         },
         {
@@ -70,15 +70,15 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L14",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L56",
           "type": "Partial<IconOptions>"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Set the buttons ripple effect globally</p>\n"
+              "<p>Enable / Disable interaction ripples globally</p>\n"
             ],
-            "contentsRaw": "Set the buttons ripple effect globally",
+            "contentsRaw": "Enable / Disable interaction ripples globally",
             "metadata": {}
           },
           "fileName": "src/provider/index.tsx",
@@ -94,8 +94,56 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L54",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Global tooltip options</p>\n"
+            ],
+            "contentsRaw": "Global tooltip options",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "tooltip",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L58",
+          "type": "Partial<TooltipOptions>"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Global typography options</p>\n"
+            ],
+            "contentsRaw": "Global typography options",
+            "metadata": {}
+          },
+          "fileName": "src/provider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "typography",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L60",
+          "type": "Partial<TypographyOptions>"
         }
       ]
     },
@@ -113,7 +161,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedRMWCProviderPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L65",
       "methods": [],
       "properties": [
         {
@@ -137,7 +185,7 @@
           },
           "kind": "property",
           "name": "buttonDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L67",
           "type": "undefined | false | true"
         },
         {
@@ -161,7 +209,7 @@
           },
           "kind": "property",
           "name": "iconClassNameBase",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L71",
           "type": "undefined | string"
         },
         {
@@ -185,7 +233,7 @@
           },
           "kind": "property",
           "name": "iconClassNamePrefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L73",
           "type": "undefined | string"
         },
         {
@@ -209,7 +257,7 @@
           },
           "kind": "property",
           "name": "iconRender",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L77",
           "type": "undefined | (props: ) => React.ReactNode"
         },
         {
@@ -233,7 +281,7 @@
           },
           "kind": "property",
           "name": "iconStrategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L75",
           "type": "IconStrategyT"
         },
         {
@@ -257,7 +305,7 @@
           },
           "kind": "property",
           "name": "listItemDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L69",
           "type": "undefined | false | true"
         }
       ]
@@ -276,7 +324,7 @@
       },
       "kind": "interface",
       "name": "WithProviderContext",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L49",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L103",
       "methods": [],
       "properties": [
         {
@@ -293,7 +341,7 @@
           },
           "kind": "property",
           "name": "providerContext",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L104",
           "type": "RMWCProviderProps"
         }
       ]

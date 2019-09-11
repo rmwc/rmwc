@@ -37,6 +37,19 @@ export default function() {
               icon={{
                 basename: 'material-icons'
               }}
+              // Global options for typography
+              // allows mapping of a defaultTag or specific classes
+              // See the Typography docs for more info
+              typography={{
+                defaultTag: 'div',
+                headline1: 'h1'
+              }}
+              // Global options for tooltips
+              // Takes most of the options for tooltips
+              // See the Tooltip docs for more info
+              tootlip={{
+                align: 'right'
+              }}
             >
               <App />
             </RMWCProvider>,

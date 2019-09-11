@@ -22,7 +22,7 @@
       },
       "kind": "class",
       "name": "TextField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L124",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L126",
       "extends": [
         "FoundationComponent<MDCTextFieldFoundation, TextFieldProps & DeprecatedTextfieldProps>"
       ],
@@ -721,13 +721,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L148",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L150",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L148",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L150",
               "parameters": [],
               "returnType": "MDCTextFieldFoundation",
               "type": "() => MDCTextFieldFoundation"
@@ -748,13 +748,13 @@
           },
           "kind": "method",
           "name": "getFoundationMap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L251",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L253",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getFoundationMap",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L251",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L253",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -775,13 +775,13 @@
           },
           "kind": "method",
           "name": "getInputAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L237",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L239",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getInputAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L237",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L239",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -802,13 +802,13 @@
           },
           "kind": "method",
           "name": "getLabelAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L196",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L198",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getLabelAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L196",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L198",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -829,13 +829,13 @@
           },
           "kind": "method",
           "name": "getLineRippleAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L207",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L209",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getLineRippleAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L207",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L209",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -856,13 +856,13 @@
           },
           "kind": "method",
           "name": "getOutlineAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L227",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L229",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getOutlineAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L227",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L229",
               "parameters": [],
               "returnType": "",
               "type": "() => "
@@ -947,13 +947,13 @@
           },
           "kind": "method",
           "name": "handleOnChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L291",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L293",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "handleOnChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L291",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L293",
               "parameters": [
                 {
                   "flags": {
@@ -990,13 +990,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L319",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L321",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L319",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L321",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1017,13 +1017,13 @@
           },
           "kind": "method",
           "name": "renderHelpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L296",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L298",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "renderHelpText",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L296",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L298",
               "parameters": [
                 {
                   "flags": {
@@ -1060,13 +1060,13 @@
           },
           "kind": "method",
           "name": "renderIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L263",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L265",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "renderIcon",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L263",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L265",
               "parameters": [
                 {
                   "flags": {
@@ -1197,13 +1197,13 @@
           },
           "kind": "method",
           "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L282",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L284",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L282",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L284",
               "parameters": [
                 {
                   "flags": {
@@ -1340,7 +1340,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L128",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L130",
           "defaultValue": "\"TextField\"",
           "type": "string"
         },
@@ -1376,7 +1376,7 @@
           },
           "kind": "property",
           "name": "characterCounter",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L136",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L138",
           "defaultValue": " null",
           "type": "null | TextFieldCharacterCount"
         },
@@ -1428,7 +1428,7 @@
           },
           "kind": "property",
           "name": "generatedId",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L129",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L131",
           "defaultValue": " randomId('textfield')",
           "type": "string"
         },
@@ -1446,7 +1446,7 @@
           },
           "kind": "property",
           "name": "leadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L139",
           "defaultValue": " null",
           "type": "null | TextFieldIcon"
         },
@@ -1464,7 +1464,7 @@
           },
           "kind": "property",
           "name": "outline",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L141",
           "type": "null | any"
         },
         {
@@ -1481,7 +1481,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L140",
           "defaultValue": " null",
           "type": "null | TextFieldIcon"
         },
@@ -1499,7 +1499,7 @@
           },
           "kind": "property",
           "name": "valueNeedsUpdate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L142",
           "defaultValue": "false",
           "type": "boolean"
         }
@@ -1518,13 +1518,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L140",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L142",
         "signatures": [
           {
             "fileName": "src/textfield/index.tsx",
             "kind": "signature",
             "name": "new TextField",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L140",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L142",
             "parameters": [
               {
                 "flags": {
@@ -1569,7 +1569,7 @@
       },
       "kind": "class",
       "name": "TextFieldIcon",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L524",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L530",
       "extends": [
         "FoundationComponent<MDCTextFieldIconFoundation, IconProps>"
       ],
@@ -2268,13 +2268,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L531",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L537",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L531",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L537",
               "parameters": [],
               "returnType": "MDCTextFieldIconFoundation",
               "type": "() => MDCTextFieldIconFoundation"
@@ -2359,13 +2359,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L554",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L560",
           "signatures": [
             {
               "fileName": "src/textfield/index.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L554",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L560",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2622,7 +2622,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L528",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L534",
           "defaultValue": "\"TextFieldIcon\"",
           "type": "string"
         },
@@ -2888,7 +2888,7 @@
           "kind": "property",
           "name": "inputRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L57",
-          "type": "undefined | (ref: HTMLInputElement | HTMLTextAreaElement | null) => void"
+          "type": "MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null> | (ref: HTMLInputElement | HTMLTextAreaElement | null) => void"
         },
         {
           "documentation": {
@@ -3079,7 +3079,7 @@
           },
           "kind": "property",
           "name": "type",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L61",
           "type": "undefined | string"
         },
         {
@@ -3122,7 +3122,7 @@
       },
       "kind": "interface",
       "name": "DeprecatedTextfieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L62",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L64",
       "methods": [],
       "properties": [
         {
@@ -3146,7 +3146,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L64",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L66",
           "type": "undefined | false | true"
         },
         {
@@ -3170,7 +3170,7 @@
           },
           "kind": "property",
           "name": "withLeadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L68",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3194,7 +3194,7 @@
           },
           "kind": "property",
           "name": "withTrailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L68",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L70",
           "type": "RMWC.IconPropT"
         }
       ]
@@ -3213,7 +3213,7 @@
       },
       "kind": "interface",
       "name": "TextFieldHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L495",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L501",
       "methods": [],
       "properties": [
         {
@@ -3237,7 +3237,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L501",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L507",
           "type": "React.ReactNode"
         },
         {
@@ -3261,7 +3261,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L497",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L503",
           "type": "undefined | false | true"
         },
         {
@@ -3285,7 +3285,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L499",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L505",
           "type": "undefined | false | true"
         }
       ]

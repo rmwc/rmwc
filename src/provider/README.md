@@ -24,6 +24,19 @@ You can wrap your top level App component with RMWC provider to set global confi
       icon={{
         basename: 'material-icons'
       }}
+      // Global options for typography
+      // allows mapping of a defaultTag or specific classes
+      // See the Typography docs for more info
+      typography={{
+        defaultTag: 'div',
+        headline1: 'h1'
+      }}
+      // Global options for tooltips
+      // Takes most of the options for tooltips
+      // See the Tooltip docs for more info
+      tootlip={{
+        align: 'right'
+      }}
     >
       <App />
     </RMWCProvider>,
@@ -32,6 +45,17 @@ You can wrap your top level App component with RMWC provider to set global confi
 
 ```
 
-## 
+## RMWCProvider
+A provider for setting global options in RMWC.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `children` | `React.ReactNode` | Children to render |
+| `icon` | `Partial<IconOptions>` | Global options for icons |
+| `ripple` | `undefined \| false \| true` | Enable / Disable interaction ripples globally |
+| `tooltip` | `Partial<TooltipOptions>` | Global tooltip options |
+| `typography` | `Partial<TypographyOptions>` | Global typography options |
 
 

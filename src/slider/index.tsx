@@ -158,6 +158,21 @@ export class Slider extends FoundationComponent<
 
   /** @param {number} value */
   set value(value: number) {
+    // make value in bounds
+    if (value < this.min) {
+      console.warn(
+        `Attempted to set slider to ${value} which is less than min: ${this.min}`
+      );
+      value = this.min;
+    }
+
+    if (value > this.max) {
+      console.warn(
+        `Attempted to set slider to ${value} which is greater than max: ${this.max}`
+      );
+      value = this.max;
+    }
+
     this.foundation.setValue(value);
   }
 

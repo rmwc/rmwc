@@ -122,6 +122,40 @@ class TabBarStory extends React.Component {
 
 storiesOf('Tabs', module)
   .add('TabBar', () => <TabBarStory />)
+  .add('TabBar Icon Indicators', () => (
+    <TabBar>
+      <Tab
+        label="Cookies"
+        iconIndicator={{
+          icon: 'star',
+          style: {
+            transformOrigin: 'center center',
+            transform: 'translateY(1rem) scale(0.5)'
+          }
+        }}
+      />
+      <Tab
+        label="Pizza"
+        iconIndicator={{
+          icon: 'favorite',
+          style: {
+            transformOrigin: 'center center',
+            transform: 'translateY(1rem) scale(0.5)'
+          }
+        }}
+      />
+      <Tab
+        label="Icecream"
+        iconIndicator={{
+          icon: 'mood',
+          style: {
+            transformOrigin: 'center center',
+            transform: 'translateY(1rem) scale(0.5)'
+          }
+        }}
+      />
+    </TabBar>
+  ))
   .add('TabBar Links', () => (
     <Router>
       <TabBar>

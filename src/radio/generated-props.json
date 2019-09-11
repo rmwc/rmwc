@@ -1381,7 +1381,7 @@
           "kind": "property",
           "name": "inputRef",
           "inheritedFrom": "ToggleableFoundationProps.inputRef",
-          "type": "undefined | (ref: HTMLInputElement | null) => void"
+          "type": "MutableRefObject<HTMLInputElement | null> | (ref: HTMLInputElement | null) => void"
         },
         {
           "documentation": {

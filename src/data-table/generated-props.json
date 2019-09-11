@@ -669,12 +669,12 @@
                     "isStatic": false
                   },
                   "kind": "parameter",
-                  "name": "callBack",
+                  "name": "callback",
                   "type": "undefined | () => void"
                 }
               ],
               "returnType": "void",
-              "type": "(callBack?: undefined | () => void) => void"
+              "type": "(callback?: undefined | () => void) => void"
             }
           ]
         },
@@ -1176,7 +1176,7 @@
           "kind": "property",
           "name": "stickyColumns",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L20",
-          "type": "0 | 1"
+          "type": "undefined | number"
         },
         {
           "documentation": {
@@ -1200,7 +1200,7 @@
           "kind": "property",
           "name": "stickyRows",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L18",
-          "type": "0 | 1"
+          "type": "undefined | number"
         }
       ]
     },
@@ -1779,7 +1779,7 @@
           "name": "stickyColumns",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L20",
           "inheritedFrom": "DataTableProps.stickyColumns",
-          "type": "0 | 1"
+          "type": "undefined | number"
         },
         {
           "documentation": {
@@ -1804,7 +1804,7 @@
           "name": "stickyRows",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L18",
           "inheritedFrom": "DataTableProps.stickyRows",
-          "type": "0 | 1"
+          "type": "undefined | number"
         }
       ]
     }

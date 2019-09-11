@@ -71,6 +71,7 @@ Each component requires the following items in order to be complete:
 * A **package.json** file with the appropriate dependencies listed
 * It needs to be added to the src/rmwc/package.json
 * It needs to be re-exported from rmwc/index for people using the RMWC global
+* Its css exports should be added to src/rmwc/styles.tsx
 
 ### Running development server
 

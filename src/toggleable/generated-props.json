@@ -15,7 +15,7 @@
       },
       "kind": "class",
       "name": "ToggleableFoundationComponent",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L25",
       "extends": [
         "FoundationComponent<Foundation, P & FoundationProps, S>"
       ],
@@ -804,13 +804,13 @@
           },
           "kind": "method",
           "name": "renderToggle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L59",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L61",
           "signatures": [
             {
               "fileName": "src/toggleable/index.tsx",
               "kind": "signature",
               "name": "renderToggle",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L59",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L61",
               "parameters": [
                 {
                   "flags": {
@@ -1135,7 +1135,7 @@
           },
           "kind": "property",
           "name": "generatedId",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L31",
           "defaultValue": " randomId(this.constructor.displayName)",
           "type": "string"
         }
@@ -1294,7 +1294,7 @@
           "kind": "property",
           "name": "inputRef",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L20",
-          "type": "undefined | (ref: HTMLInputElement | null) => void"
+          "type": "MutableRefObject<HTMLInputElement | null> | (ref: HTMLInputElement | null) => void"
         },
         {
           "documentation": {

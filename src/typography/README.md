@@ -7,6 +7,8 @@
   - import **'@material/typography/dist/mdc.typography.css'**
 - MDC Docs: [https://material.io/develop/web/components/typography/](https://material.io/develop/web/components/typography/)
 
+## Basic Usage
+
 ```jsx
 <>
   <Typography use="headline1">headline1</Typography>
@@ -25,13 +27,40 @@
 </>
 ```
 
-## Typography
-The Typography Component
+```jsx
+<Typography use="headline6" tag="h3">
+  headline6
+</Typography>
+```
 
-### Props
+## Provider Setup
 
-| Name | Type | Description |
-|------|------|-------------|
-| `use` | `TypographyT` | The typography style. |
+You can globally map specify type classes to HTML tags for semantics, or specify a default to be used instead of `span`.
+
+```jsx
+<RMWCProvider
+  typography={{
+    /** Make all Typography components default to <div>  */
+    defaultTag: 'div',
+    /** Make headline5 <h5>  */
+    headline5: 'h5',
+    /** Make body2 <p>  */
+    body2: 'p',
+    /** Use your own component  */
+    body1: ({ children, ...rest }) => (
+      <span>
+        <b>{children}!!!</b>
+      </span>
+    )
+  }}
+>
+  <Typography use="headline6">Rendered default `div`</Typography>
+  <Typography use="headline5">Rendered with `h5`</Typography>
+  <Typography use="body2">Rendered with `p`</Typography>
+  <Typography use="body1">Custom rendering</Typography>
+</RMWCProvider>
+```
+
+## 
 
 

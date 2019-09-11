@@ -7,7 +7,7 @@ import { MDCTabBarFoundation } from '@material/tab-bar';
 import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { Tab } from './tab';
-import { TabBarContext } from './tab-bar-context';
+import { TabBarContext, TabBarContextT } from './tab-bar-context';
 
 /************************************************************
  * TabBar
@@ -22,6 +22,8 @@ export interface TabBarProps {
   onActivate?: (evt: TabBarOnActivateEventT) => void;
   /** The index of the active tab. */
   activeTabIndex?: number;
+  /** Specifies whether the indicator should slide or fade. Defaults to slide. */
+  indicatorTransition?: 'slide' | 'fade';
 }
 
 export const TabBarRoot = componentFactory<TabBarProps>({
@@ -47,12 +49,13 @@ export class TabBar extends FoundationComponent<
   private currentActiveTabIndex = this.props.activeTabIndex || 0;
   tabScroller: TabScroller | null = null;
   tabList: any[] = [];
-  contextApi = {
+  contextApi: TabBarContextT = {
     onTabInteraction: (evt: MDCTabInteractionEvent) =>
       this.handleTabInteraction(evt),
     registerTab: (tab: typeof Tab) => this.tabList.push(tab),
     unregisterTab: (tab: typeof Tab) =>
-      this.tabList.splice(this.tabList.indexOf(tab), 1)
+      this.tabList.splice(this.tabList.indexOf(tab), 1),
+    indicatorTransition: 'slide'
   };
 
   constructor(props: TabBarProps) {
@@ -119,7 +122,7 @@ export class TabBar extends FoundationComponent<
 
   getDefaultFoundation() {
     return new MDCTabBarFoundation(
-      /** @type {!MDCTabBarAdapter} */ ({
+      /** @type {!MDCTabBarAdapter} */ {
         scrollTo: (scrollX: number) => {
           this.tabScroller && this.tabScroller.scrollTo(scrollX);
         },
@@ -173,7 +176,7 @@ export class TabBar extends FoundationComponent<
         getTabListLength: () => this.tabList.length,
         notifyTabActivated: (index: number) =>
           this.emit('onActivate', { index }, true)
-      })
+      }
     );
   }
 
@@ -208,7 +211,12 @@ export class TabBar extends FoundationComponent<
     const { children, activeTabIndex, onActivate, ...rest } = this.props;
 
     return (
-      <TabBarContext.Provider value={this.contextApi}>
+      <TabBarContext.Provider
+        value={{
+          ...this.contextApi,
+          indicatorTransition: this.props.indicatorTransition || 'slide'
+        }}
+      >
         <TabBarRoot
           {...rest}
           ref={this.root.setRef}

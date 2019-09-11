@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/notched-outline": "^3.0.0",
+    "@material/notched-outline": "^3.1.0",
     "@rmwc/base": "^5.6.0",
     "@rmwc/types": "^5.6.0"
   }

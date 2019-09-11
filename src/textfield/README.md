@@ -113,7 +113,7 @@ A TextField component for accepting text input from a user.
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
-| `inputRef` | `undefined \| (ref: HTMLInputElement \| HTMLTextAreaElement \| null) => void` | A reference to the native input or textarea. |
+| `inputRef` | `MutableRefObject<HTMLInputElement \| HTMLTextAreaElement \| null> \| (ref: HTMLInputElement \| HTMLTextAreaElement \| null) => void` | A reference to the native input or textarea. |
 | `invalid` | `undefined \| false \| true` | Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used. |
 | `label` | `React.ReactNode` | A label for the input. |
 | `outlined` | `undefined \| false \| true` | Outline the TextField |

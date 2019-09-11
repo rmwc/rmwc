@@ -73,7 +73,7 @@ describe('Slider', () => {
     let value = 0;
     const el = mount(<Slider onChange={() => value++} />);
     const inst = el.instance() as Slider;
-    inst.foundation.adapter_.notifyChange();
+    (inst.foundation as any).adapter_.notifyChange();
 
     expect(value).toEqual(1);
   });
@@ -82,13 +82,18 @@ describe('Slider', () => {
     let value = 0;
     const el = mount(<Slider onInput={() => value++} />);
     const inst = el.instance() as Slider;
-    inst.foundation.adapter_.notifyInput();
+    (inst.foundation as any).adapter_.notifyInput();
 
     expect(value).toEqual(1);
   });
 
   it('handles min > 100', () => {
     mount(<Slider min={101} max={200} />);
+  });
+
+  it('handles out of bounds', () => {
+    mount(<Slider value={0} min={1} max={2} />);
+    mount(<Slider value={3} min={1} max={2} />);
   });
 
   it('can have custom classnames', () => {
@@ -98,7 +103,11 @@ describe('Slider', () => {
 
   it('adapter checks', () => {
     const el = mount(<Slider />);
-    const a = (el.instance() as Slider).foundation.adapter_;
+    const a = ((el.instance() as Slider).foundation as any).adapter_;
+    (el.instance() as Slider).layout();
+
+    el.simulate('mousedown');
+
     a.hasClass('test');
     a.addClass('test');
     a.removeClass('test');
