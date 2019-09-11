@@ -669,12 +669,12 @@
                     "isStatic": false
                   },
                   "kind": "parameter",
-                  "name": "callBack",
+                  "name": "callback",
                   "type": "undefined | () => void"
                 }
               ],
               "returnType": "void",
-              "type": "(callBack?: undefined | () => void) => void"
+              "type": "(callback?: undefined | () => void) => void"
             }
           ]
         },
@@ -3236,12 +3236,12 @@
                     "isStatic": false
                   },
                   "kind": "parameter",
-                  "name": "callBack",
+                  "name": "callback",
                   "type": "undefined | () => void"
                 }
               ],
               "returnType": "void",
-              "type": "(callBack?: undefined | () => void) => void"
+              "type": "(callback?: undefined | () => void) => void"
             }
           ]
         },
@@ -4377,12 +4377,12 @@
                     "isStatic": false
                   },
                   "kind": "parameter",
-                  "name": "callBack",
+                  "name": "callback",
                   "type": "undefined | () => void"
                 }
               ],
               "returnType": "void",
-              "type": "(callBack?: undefined | () => void) => void"
+              "type": "(callback?: undefined | () => void) => void"
             }
           ]
         },

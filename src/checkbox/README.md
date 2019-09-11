@@ -49,7 +49,7 @@ A Checkbox component.
 | `disabled` | `undefined \| false \| true` | Disables the control. |
 | `id` | `undefined \| string` | A DOM ID for the toggle. |
 | `indeterminate` | `undefined \| false \| true` | Make the control indeterminate |
-| `inputRef` | `undefined \| (ref: HTMLInputElement \| null) => void` | A reference to the native input. |
+| `inputRef` | `MutableRefObject<HTMLInputElement \| null> \| (ref: HTMLInputElement \| null) => void` | A reference to the native input. |
 | `label` | `React.ReactNode` | A label for the control. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |

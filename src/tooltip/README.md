@@ -1,184 +1,185 @@
-# Avatars `RMWC ADDON`
+# Tooltips `RMWC ADDON`
 
-> Avatars are virtual representations of users in a system.
+> Tooltips display informative text when users hover over, focus on, or tap an element.
 
-- Module **@rmwc/avatar**
+- Module **@rmwc/tooltip**
 - Import styles:
-  - import **'@rmwc/avatar/avatar.css'**
+  - import **'@rmwc/tooltip/tooltip.css'**
 
+
+## Basic Usage
+
+Wrap any component in a `Tooltip` and provide the content attribute. The only requirement is that is has a single React child, and that the child can accept `onMouseEnter`, `onMouseLeave`, `onFocus`, and `onClick` props.
 
 ```jsx
 <>
-  <Avatar
-    src="images/avatars/blackwidow.png"
-    size="xsmall"
-    name="Natalia Alianovna Romanova"
-  />
-  <Avatar
-    src="images/avatars/hulk.png"
-    size="small"
-    name="Bruce Banner"
-  />
-  <Avatar
-    src="images/avatars/thor.png"
-    size="medium"
-    name="Thor Odinson"
-  />
-  <Avatar
-    src="images/avatars/captainamerica.png"
-    size="large"
-    name="Steve Rogers"
-  />
-  <Avatar
-    src="images/avatars/ironman.png"
-    size="xlarge"
-    name="Tony Stark"
-  />
+  <Tooltip content="Cookies">
+    <IconButton icon="star_border" />
+  </Tooltip>
+
+  <Tooltip content="Pizza">
+    <IconButton icon="favorite_border" />
+  </Tooltip>
+
+  <Tooltip content="Icecream">
+    <IconButton icon="mood" />
+  </Tooltip>
+</>
+```
+
+## Variants
+
+```jsx
+<Tooltip content="Cake" showArrow>
+  <IconButton icon="cake" />
+</Tooltip>
+```
+
+```jsx
+<Tooltip content="Hello" align="right" open={true}>
+  <IconButton icon="mood" />
+</Tooltip>
+```
+
+```jsx
+<Tooltip
+  content={
+    <div style={{ display: 'flex' }}>
+      <Avatar
+        src="images/avatars/captainamerica.png"
+        size="large"
+        name="Steve Rogers"
+      />
+      <div style={{ marginLeft: '0.5rem' }}>
+        <b>Captain America</b>
+        <div>Steve Rogers</div>
+      </div>
+    </div>
+  }
+>
+  <a href="#">S. Rogers</a>
+</Tooltip>
+```
+
+```jsx
+<Tooltip
+  /** You make something like a popover window by just styling your inner content. */
+  content={
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'white',
+        width: '20rem',
+        height: '8rem',
+        color: 'black',
+        borderRadius: '3px',
+        margin: '0 -3px'
+      }}
+    >
+      Hello World!
+    </div>
+  }
+>
+  <a href="#">Popover Window</a>
+</Tooltip>
+```
+
+```jsx
+<>
+  <Tooltip content="Cookies" enterDelay={1000}>
+    <Button label="Enter Delay" />
+  </Tooltip>
+
+  <Tooltip content="Pizza" leaveDelay={1000}>
+    <Button label="Leave Delay" />
+  </Tooltip>
+
+  <Tooltip content="Icecream" enterDelay={1000} leaveDelay={1000}>
+    <Button label="Both" />
+  </Tooltip>
 </>
 ```
 
 ```jsx
+function AlignmentExample() {
+  return [
+    'left',
+    'right',
+    'top',
+    'bottom',
+    'topLeft',
+    'topRight',
+    'bottomLeft',
+    'bottomRight'
+  ].map(align => (
+    <Tooltip key={align} content={`Align: ${align}`} align={align}>
+      <IconButton icon="trip_origin" />
+    </Tooltip>
+  ));
+}
+```
+
+## Activation
+
+By default, tooltips will activate on hover and focus. You can change this behavior by passing one or more options to the `activateOn` prop.
+
+```jsx
 <>
-  <Avatar name="Natalia Alianovna Romanova" size="xsmall" />
-  <Avatar name="Bruce Banner" size="small" />
-  <Avatar name="Thor Odinson" size="medium" />
-  <Avatar name="Steve Rogers" size="large" />
-  <Avatar name="Tony Stark" size="xlarge" />
+  <Tooltip content="Cookies" activateOn="hover">
+    <Button label="Hover" />
+  </Tooltip>
+
+  <Tooltip content="Pizza" activateOn="click">
+    <Button label="Click" />
+  </Tooltip>
+
+  <Tooltip content="Icecream" activateOn="focus">
+    <Button label="Focus" />
+  </Tooltip>
+
+  <Tooltip content="Cake" activateOn={['hover', 'focus']}>
+    <Button label="Multiple" />
+  </Tooltip>
 </>
 ```
 
-```jsx
-<Avatar
-  src="images/avatars/blackwidow.png"
-  size="large"
-  name="Natalia Alianovna Romanova"
-  square
-/>
-```
+## Usage with RMWCProvider
+
+The RMWCProvider allows you to specify global defaults for your tooltips.
 
 ```jsx
-<Avatar
-  src="images/avatars/google.svg"
-  size="large"
-  contain
-  name="Google"
-  square
-/>
+<RMWCProvider
+  tooltip={{
+    align: 'right',
+    activateOn: 'hover',
+    showArrow: true,
+    leaveDelay: 500,
+    enterDelay: 0
+  }}
+>
+  <Tooltip content="Hello World!">
+    <Button label="With Provider" />
+  </Tooltip>
+</RMWCProvider>
 ```
 
-## Avatar Groups
-
-This is for Avatars that are displayed in a corellated grouping or list.
-
-```jsx
-<AvatarGroup>
-  <Avatar
-    src="images/avatars/captainamerica.png"
-    name="Steve Rogers"
-    size="large"
-    interactive
-  />
-  <Avatar
-    src="images/avatars/ironman.png"
-    name="Tony Stark"
-    size="large"
-    interactive
-  />
-  <AvatarCount size="large" value={12} interactive />
-</AvatarGroup>
-```
-
-```jsx
-<AvatarGroup dense>
-  <Avatar
-    src="images/avatars/captainamerica.png"
-    name="Steve Rogers"
-    size="large"
-    interactive
-  />
-  <Avatar
-    src="images/avatars/ironman.png"
-    name="Tony Stark"
-    size="large"
-    interactive
-  />
-  <AvatarCount size="large" overflow value={4} interactive />
-</AvatarGroup>
-```
-
-## Usage with other components
-
-The avatar component has been designed to work nicely in any of the places you would use an icon.
-
-```jsx
-<Button
-  label="Enlist now!"
-  icon={
-    <Avatar
-      src="images/avatars/captainamerica.png"
-      name="Steve Rogers"
-    />
-  }
-/>
-```
-
-```jsx
-<Chip
-  label="Hulk Smash"
-  icon={<Avatar src="images/avatars/hulk.png" name="Bruce Banner" />}
-/>
-```
-
-```jsx
-<TextField
-  label="Message Natalia..."
-  outlined
-  icon={
-    <Avatar
-      src="images/avatars/blackwidow.png"
-      name="Natalia Alianovna Romanova"
-      square
-    />
-  }
-/>
-```
-
-## Avatar
-An Avatar component for displaying users in a system.
+## Tooltip
+A Tooltip component for displaying informative popover information.
 
 ### Props
 
 | Name | Type | Description |
 |------|------|-------------|
-| `contain` | `undefined \| false \| true` | Contain the avatar image instead of covering. |
-| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
-| `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
-| `size` | `RMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined \| false \| true` | Make the avatar square. |
-| `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |
-
-
-## AvatarGroup
-A container for groups of Avatars
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `dense` | `undefined \| false \| true` | Makes the list dense |
-
-
-## AvatarCount
-An Avatar count for displaying list overflow.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
-| `overflow` | `undefined \| false \| true` | Optionally renders a "+" to indicate overlow. |
-| `size` | `RMWC.IconSizeT` | The size of the avatar |
-| `square` | `undefined \| false \| true` | Make the avatar square. |
-| `value` | `number` | The number of users. |
+| `activateOn` | `TooltipActivationT \| TooltipActivationT[]` | Activate the tooltip through one or more interactions. Defaults to `['hover', 'focus']`. |
+| `align` | `TooltipAlignT` | How to align the tooltip. Defaults to `top`. |
+| `children` | `React.ReactChild` | The children that the tooltip belongs to. Must be a single React.child. |
+| `className` | `undefined \| string` | Custom className to add to the tooltip overlay container. |
+| `content` | `React.ReactNode` | The overlay content for the tooltip. |
+| `enterDelay` | `undefined \| number` | Delay in milliseconds before showing the tooltip when interacting via touch or mouse. |
+| `leaveDelay` | `undefined \| number` | Delay in milliseconds before hiding the tooltip when interacting via touch or mouse. |
+| `open` | `undefined \| false \| true` | Manually control the open state |
+| `showArrow` | `undefined \| false \| true` | Whether or not to show an arrow on the Tooltip. Defaults to `false`. |
 
 
