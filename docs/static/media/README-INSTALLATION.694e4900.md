@@ -3,7 +3,7 @@
 > Welcome to RMWC, a React wrapper for Material Design (Web) Components.
 
 **Required steps**
-* Perferred: Install **INDIVIDUAL** components
+* Preferred: Install **INDIVIDUAL** components
   * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
   * Include the individual components stylesheets (listed on their docs page) in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
 * OR Install **ALL** of RMWC
