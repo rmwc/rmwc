@@ -1,3 +1,34 @@
+#### 5.7.0 (2019-09-11)
+
+##### Chores
+
+* **Provider:**  Fix missing doc props (a3e688cc)
+* **Slider:**  Improve test cov (ffff8437)
+* **Docs:**
+  *  generating content (d2bed10e)
+  *  Generating updated docs (ecf01d64)
+  *  Update contrib guidelines (785125f3)
+  *  Fix issue with new react router not re-rendering on url change (6ef8fea2)
+* **Select:**  Removing console.log (76027171)
+* **Avatar:**  Improve test cov (94ea0c52)
+* **DataTable:**
+  *  Update type signature to allow a number instead of a union. (6575c7d8)
+  *  Update documentation about comparison to official spec. (047eb5ef)
+* **Base:**  Updating all deps (b0925bc2)
+
+##### New Features
+
+* **Typography:**  Added ability to provide a mapping for type classes to HTML tags. (73e870dc)
+* **Tooltip:**  Added new tooltip component  #346 (c08e5be5)
+* **Tabs:**  Adding tab transitions and icon indicators #478 (56970b63)
+
+##### Bug Fixes
+
+* **Select:**  Corrects issues with enhanced select not floating label when using manual rendering. #486 (870f4eaf)
+* **Slider:**  Corrects issue where Slider would crash when value was out of bounds #358 (1520ce70)
+* **List:**  Corrects issue with collapsible list items that have margin #485 (abe9edf0)
+* **Chip:**  Correct outdated dependency when using the main rmwc install. Fixes #476 (fb4a52e5)
+
 #### 5.6.0 (2019-07-21)
 
 ##### Chores
