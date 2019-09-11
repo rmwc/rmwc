@@ -20,12 +20,14 @@ export interface AvatarProps {
   contain?: boolean;
 }
 
-const getInitialsForName = (name = '') => {
+const getInitialsForName = (name: string) => {
   if (name) {
     const parts = name.split(' ');
+    /* istanbul ignore next */
     let letters = (parts[0] || '')[0];
     if (parts.length > 1) {
       const part = parts.pop();
+        /* istanbul ignore next */
       if (part) {
         letters += part[0];
       }
