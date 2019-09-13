@@ -40,14 +40,16 @@ const TypographyRoot = componentFactory<TypographyProps>({
 });
 
 /** The Typography Component */
-export const Typography = withProviderContext()(function Typography({
-  providerContext,
-  ...rest
-}: TypographyProps & RMWC.ComponentProps & WithProviderContext) {
-  const typographyOptions = providerContext.typography;
-  const tag =
-    (typographyOptions
-      ? typographyOptions[rest.use] || typographyOptions.defaultTag
-      : undefined) || rest.tag;
-  return <TypographyRoot {...rest} tag={tag} />;
-});
+export const Typography = withProviderContext()(
+  React.forwardRef<
+    any,
+    TypographyProps & RMWC.ComponentProps & Partial<WithProviderContext>
+  >(function Typography({ providerContext = {}, ...rest }, ref) {
+    const typographyOptions = providerContext.typography;
+    const tag =
+      (typographyOptions
+        ? typographyOptions[rest.use] || typographyOptions.defaultTag
+        : undefined) || rest.tag;
+    return <TypographyRoot {...rest} tag={tag} ref={ref} />;
+  })
+);

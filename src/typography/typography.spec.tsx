@@ -15,6 +15,22 @@ describe('Typography', () => {
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
   });
 
+  it('supports refs', () => {
+    let myRef = null;
+    mount(
+      <Typography
+        use="body1"
+        ref={el => {
+          myRef = el;
+        }}
+      >
+        Hello
+      </Typography>
+    );
+
+    expect(myRef).toBeTruthy();
+  });
+
   it('works with RMWCProvider', () => {
     mount(
       <RMWCProvider
