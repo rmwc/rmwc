@@ -1,3 +1,22 @@
+#### 5.7.1 (2019-09-13)
+
+##### New Features
+
+* **Select:**  Expose MenuProps interface via the enhanced prop. (07302bde)
+
+##### Bug Fixes
+
+* **Docs:**  Add back missing Typography props (b25f4e7b)
+* **Typography:**  Corrects regression where Refs could no longer be passed (13e41236)
+* **Menu:**
+  *  Corrects broken logic check (c6497d48)
+  *  Improves MenuItems wrapper detection when passing your own MenuItems wrapper. (1d0e45c7)
+  *  Corrects issue with MenuSurface causing menus to close immediately on devices that don't support fast click for touch. (035d31b6)
+
+##### Other Changes
+
+* //github.com/jamesmfriedman/rmwc (0f27c9fa)
+
 #### 5.7.0 (2019-09-11)
 
 ##### Chores
