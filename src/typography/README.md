@@ -61,6 +61,13 @@ You can globally map specify type classes to HTML tags for semantics, or specify
 </RMWCProvider>
 ```
 
-## 
+## Typography
+The Typography Component
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `use` | `TypographyT` | The typography style. |
 
 

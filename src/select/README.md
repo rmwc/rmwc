@@ -186,7 +186,7 @@ A Select Component
 | Name | Type | Description |
 |------|------|-------------|
 | `disabled` | `undefined \| false \| true` | Makes the Select disabled. |
-| `enhanced` | `undefined \| false \| true` | Renders a non native / enhanced dropdown |
+| `enhanced` | `boolean \| MenuProps` | Renders a non native / enhanced dropdown |
 | `helpText` | `React.ReactNode \| SelectHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
 | `inputRef` | `undefined \| (ref: HTMLSelectElement \| null) => void` | A reference to the native select element. Not applicable when `enhanced` is true. |
