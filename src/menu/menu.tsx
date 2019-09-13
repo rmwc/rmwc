@@ -56,6 +56,11 @@ export const MenuItem = componentFactory<MenuItemProps>({
   }
 });
 
+const isMenuItems = (child: React.ReactNode) =>
+  React.isValidElement(child) &&
+  ('displayName' in (child as any).type && (child.type as any).displayName) ===
+    'MenuItems';
+
 /** A menu component for displaying lists items. */
 export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   static displayName = 'Menu';
@@ -174,11 +179,10 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   render() {
     const { children, focusOnOpen, ...rest } = this.props;
 
-    const needsMenuItemsWrapper = !(
-      children &&
-      typeof children === 'object' &&
-      ((children as any).type || {}).displayName === 'MenuItems'
-    );
+    const needsMenuItemsWrapper = React.Children.map(
+      children,
+      isMenuItems
+    ).every(val => false);
 
     return (
       <MenuSurface
@@ -197,8 +201,13 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
             {children}
           </MenuItems>
         ) : (
-          React.cloneElement(children as React.ReactElement<any>, {
-            ref: (listApi: List) => (this.list = listApi)
+          React.Children.map(children, child => {
+            if (isMenuItems(child)) {
+              return React.cloneElement(child as React.ReactElement<any>, {
+                ref: (listApi: List) => (this.list = listApi)
+              });
+            }
+            return child;
           })
         )}
       </MenuSurface>

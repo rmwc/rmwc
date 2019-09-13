@@ -215,7 +215,26 @@ storiesOf('Select', module)
     />
   ))
 
-  .add('Select Enhanced', () => <EnhancedSelect />)
+  .add('Select All', () => <EnhancedSelect />)
+  .add('Select Enhanced', () => (
+    <div>
+      <Select
+        label={'Manual Enhanced'}
+        enhanced={{
+          anchorCorner: 'bottomStart'
+        }}
+        onChange={evt => {
+          console.log('onChange', evt.currentTarget.value);
+        }}
+      >
+        <MenuItems twoLine style={{ width: '400px' }}>
+          <MenuItem data-value="cookies">Cookies</MenuItem>
+          <MenuItem data-value="pizza">Pizza</MenuItem>
+          <MenuItem data-value="icecream">Icecream</MenuItem>
+        </MenuItems>
+      </Select>
+    </div>
+  ))
   .add('Select without placeholder', () => (
     <Select
       label={text('label', 'Foods')}
