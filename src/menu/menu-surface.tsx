@@ -315,8 +315,14 @@ export class MenuSurface extends FoundationComponent<
   }
 
   registerBodyClickListener() {
-    document.body.addEventListener('click', this.handleBodyClick);
-    document.body.addEventListener('touchstart', this.handleBodyClick);
+    /**
+     * Corrects issue on mobile devices that don't support fast click
+     * Causing the menu to close as soon as its open
+     **/
+    setTimeout(() => {
+      document.body.addEventListener('click', this.handleBodyClick);
+      document.body.addEventListener('touchstart', this.handleBodyClick);
+    }, 150);
   }
   deregisterBodyClickListener() {
     document.body.removeEventListener('click', this.handleBodyClick);
