@@ -179,10 +179,9 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   render() {
     const { children, focusOnOpen, ...rest } = this.props;
 
-    const needsMenuItemsWrapper = React.Children.map(
-      children,
-      isMenuItems
-    ).every(val => false);
+    const needsMenuItemsWrapper = (
+      React.Children.map(children, isMenuItems) || []
+    ).every(val => val === false);
 
     return (
       <MenuSurface
