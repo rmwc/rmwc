@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/menu",
-  "version": "5.7.0",
+  "version": "5.7.1",
   "description": "RMWC Menu component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
