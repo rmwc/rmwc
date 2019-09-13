@@ -29,7 +29,7 @@ export interface TypographyProps {
 }
 
 const TypographyRoot = componentFactory<TypographyProps>({
-  displayName: 'Typography',
+  displayName: 'TypographyRoot',
   tag: 'span',
   classNames: (props: TypographyProps) => [
     {
@@ -53,3 +53,5 @@ export const Typography = withProviderContext()(
     return <TypographyRoot {...rest} tag={tag} ref={ref} />;
   })
 );
+
+Typography.displayName = 'Typography';
