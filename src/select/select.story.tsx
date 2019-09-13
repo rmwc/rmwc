@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { text, object, array } from '@storybook/addon-knobs';
 import { Select } from './';
 import { useKnob } from '@rmwc/base/utils/use-knob';
+import { MenuItems, MenuItem } from '@rmwc/menu';
 
 function MutatingSelect(props: any) {
   const [value, setValue] = useKnob('text', 'value', 'Cookies');
@@ -42,18 +43,52 @@ function EnhancedSelect() {
 
   return (
     <div>
-      <Select
-        label={'Foods'}
-        placeholder={'Select a Food'}
-        enhanced
-        options={['Cookies', 'Pizza', 'Icecream']}
-        icon="favorite"
-      />
+      <div>
+        <Select
+          label={'Foods'}
+          placeholder={'Select a Food'}
+          enhanced
+          options={['Cookies', 'Pizza', 'Icecream']}
+          icon="favorite"
+        />
+      </div>
+
+      <div>
+        <Select
+          label={'Controlled'}
+          placeholder={'Select a Food'}
+          enhanced
+          options={['Cookies', 'Pizza', 'Icecream']}
+          value={value}
+          onChange={evt => {
+            console.log('onChange', evt.currentTarget.value);
+            setValue(evt.currentTarget.value);
+          }}
+        />
+      </div>
+      <div>
+        <Select
+          label={'Manual Enhanced'}
+          enhanced={{
+            anchorCorner: 'bottomStart'
+          }}
+          onChange={evt => {
+            console.log('onChange', evt.currentTarget.value);
+            setValue(evt.currentTarget.value);
+          }}
+        >
+          <MenuItems twoLine style={{ width: '400px' }}>
+            <MenuItem data-value="cookies">Cookies</MenuItem>
+            <MenuItem data-value="pizza">Pizza</MenuItem>
+            <MenuItem data-value="icecream">Icecream</MenuItem>
+          </MenuItems>
+        </Select>
+      </div>
+
+      <Select label={'Foods'} options={['Cookies', 'Pizza', 'Icecream']} />
 
       <Select
         label={'Controlled'}
-        placeholder={'Select a Food'}
-        enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         value={value}
         onChange={evt => {
@@ -62,10 +97,10 @@ function EnhancedSelect() {
         }}
       />
 
-      <Select label={'Foods'} options={['Cookies', 'Pizza', 'Icecream']} />
-
       <Select
         label={'Controlled'}
+        placeholder={'Select a Food'}
+        enhanced
         options={['Cookies', 'Pizza', 'Icecream']}
         value={value}
         onChange={evt => {

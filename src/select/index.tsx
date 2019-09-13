@@ -40,7 +40,7 @@ export interface SelectProps {
   /** Makes the Select required.  */
   required?: boolean;
   /** Renders a non native / enhanced dropdown */
-  enhanced?: boolean;
+  enhanced?: boolean | MenuProps;
   /** Props for the root element. By default, additional props spread to the native select element.  */
   rootProps?: Object;
   /** A reference to the native select element. Not applicable when `enhanced` is true. */
@@ -775,6 +775,8 @@ export class SelectBase extends FoundationComponent<
                 {this.state.selectedTextContent}
               </div>
               <SelectEnhancedControl
+                anchorCorner="bottomStart"
+                {...(typeof enhanced === 'object' ? enhanced : {})}
                 {...sharedControlProps}
                 selectedIndex={this.state.selectedIndex}
                 apiRef={apiRef => {
