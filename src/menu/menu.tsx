@@ -58,6 +58,7 @@ export const MenuItem = componentFactory<MenuItemProps>({
 
 const isMenuItems = (child: React.ReactNode) =>
   React.isValidElement(child) &&
+  typeof (child as any).type === 'object' &&
   ('displayName' in (child as any).type && (child.type as any).displayName) ===
     'MenuItems';
 
