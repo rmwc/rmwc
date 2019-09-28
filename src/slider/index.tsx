@@ -241,11 +241,6 @@ export class Slider extends FoundationComponent<
   }
 
   sync(props: SliderProps, prevProps: SliderProps) {
-    // value
-    if (props.value !== undefined && props.value !== this.value) {
-      this.value = props.value !== undefined ? Number(props.value) : this.value;
-    }
-
     // max
     if (props.max !== undefined && props.max !== this.max) {
       this.max = props.max !== undefined ? +props.max : this.max;
@@ -256,6 +251,11 @@ export class Slider extends FoundationComponent<
       this.min = props.min !== undefined ? +props.min : this.min;
     }
 
+    // value
+    if (props.value !== undefined && props.value !== this.value) {
+      this.value = props.value !== undefined ? Number(props.value) : this.value;
+    }
+    
     // step
     if (props.step !== undefined && props.step !== this.step) {
       this.step = props.step !== undefined ? +props.step : this.step;
