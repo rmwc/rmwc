@@ -9,7 +9,7 @@
 
 # RMWC - React Material Web Components
 
-RMWC is a React UI Kit built on Google's official Material Components Web library v3.x.x
+RMWC is a React UI Kit built on Google's official Material Components Web library v4.x.x
 [https://rmwc.io/](https://rmwc.io/)
 
 Features:
