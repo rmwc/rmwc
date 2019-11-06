@@ -5,7 +5,6 @@ import { MDCRippleFoundation, util } from '@material/ripple';
 import {
   classNames,
   FoundationComponent,
-  deprecationWarning,
   matches,
   applyPassive
 } from '@rmwc/base';
@@ -307,15 +306,6 @@ export const withRipple = ({
       const providerContext = useProviderContext();
       ripple = ripple || providerContext.ripple;
       const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
-
-      if (rest.accent || rest.unbounded || rest.surface) {
-        deprecationWarning(
-          `'accent', 'unbounded', and 'surface' have been deprecated as individual props. Please pass an options object to the ripple prop directly. ripple={{accent: true, unbounded: true}} `
-        );
-        rippleOptions.accent = rest.accent || rippleOptions.accent;
-        rippleOptions.unbounded = rest.unbounded || rippleOptions.unbounded;
-        rippleOptions.surface = rest.surface || rippleOptions.surface;
-      }
 
       if (ripple) {
         return (

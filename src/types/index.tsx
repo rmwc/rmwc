@@ -47,16 +47,7 @@ export type RipplePropT =
       unbounded?: boolean;
     };
 
-export interface DeprecatedRippleProps {
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}` */
-  accent?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}` */
-  surface?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}` */
-  unbounded?: boolean;
-}
-
-export interface WithRippleProps extends DeprecatedRippleProps {
+export interface WithRippleProps {
   /** Adds a ripple effect to the component */
   ripple?: RipplePropT;
 }
