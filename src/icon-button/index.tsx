@@ -1,11 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import {
-  componentFactory,
-  FoundationComponent,
-  deprecationWarning
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 
@@ -23,13 +19,6 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   icon?: RMWC.IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
   onIcon?: RMWC.IconPropT;
-}
-
-export interface DeprecatedIconButtonProps {
-  /** DEPRECATED: Pass options directly to icon */
-  iconOptions?: any;
-  /** DEPRECATED: Pass options directly to onIcon */
-  onIconOptions?: any;
 }
 
 const IconButtonRoot = withRipple({
@@ -92,7 +81,7 @@ const IconButtonIcon = componentFactory<IconButtonIconProps>({
 
 class IconButtonToggle extends FoundationComponent<
   MDCIconButtonToggleFoundation,
-  IconButtonProps & DeprecatedIconButtonProps
+  IconButtonProps
 > {
   static displayName = 'IconButton';
 
@@ -145,13 +134,7 @@ class IconButtonToggle extends FoundationComponent<
   }
 
   render() {
-    const { icon, iconOptions, onIcon, onIconOptions, ...rest } = this.props;
-
-    if (iconOptions || onIconOptions) {
-      deprecationWarning(
-        'IconButton component props iconOptions and onIconOptions must be passed directly to the icon and onIcon prop. This issue has NOT been automatically fixed for you, please update your code.'
-      );
-    }
+    const { icon, onIcon, ...rest } = this.props;
 
     return (
       <IconButtonToggleRoot
