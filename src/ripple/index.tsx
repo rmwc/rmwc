@@ -9,7 +9,7 @@ import {
   matches,
   applyPassive
 } from '@rmwc/base';
-import { withProviderContext, WithProviderContext } from '@rmwc/provider';
+import { useProviderContext } from '@rmwc/provider';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 export interface RippleSurfaceProps {
@@ -302,43 +302,36 @@ export const withRipple = ({
 }: WithRippleOpts = {}) => <P extends {}>(
   Component: React.ComponentType<P & RMWC.WithRippleProps>
 ): React.ComponentType<P & RMWC.WithRippleProps> => {
-  const WithRippleComponent = withProviderContext()(
-    React.forwardRef<any, any>(
-      (
-        {
-          providerContext,
-          ripple = providerContext.ripple,
-          ...rest
-        }: P & RMWC.WithRippleProps & WithProviderContext,
-        ref
-      ) => {
-        const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
+  const WithRippleComponent = React.forwardRef<any, any>(
+    ({ ripple, ...rest }: P & RMWC.WithRippleProps, ref) => {
+      const providerContext = useProviderContext();
+      ripple = ripple || providerContext.ripple;
+      const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
 
-        if (rest.accent || rest.unbounded || rest.surface) {
-          deprecationWarning(
-            `'accent', 'unbounded', and 'surface' have been deprecated as indiviudal props. Please pass an options object to the ripple prop directly. ripple={{accent: true, unbounded: true}} `
-          );
-          rippleOptions.accent = rest.accent || rippleOptions.accent;
-          rippleOptions.unbounded = rest.unbounded || rippleOptions.unbounded;
-          rippleOptions.surface = rest.surface || rippleOptions.surface;
-        }
-
-        if (ripple) {
-          return (
-            <Ripple
-              {...rest}
-              accent={rippleOptions.accent || defaultAccent}
-              unbounded={rippleOptions.unbounded || defaultUnbounded}
-              surface={rippleOptions.surface || defaultSurface}
-            >
-              <Component {...(rest as P)} ref={ref} />
-            </Ripple>
-          );
-        }
-
-        return <Component {...(rest as P)} ref={ref} />;
+      if (rest.accent || rest.unbounded || rest.surface) {
+        deprecationWarning(
+          `'accent', 'unbounded', and 'surface' have been deprecated as individual props. Please pass an options object to the ripple prop directly. ripple={{accent: true, unbounded: true}} `
+        );
+        rippleOptions.accent = rest.accent || rippleOptions.accent;
+        rippleOptions.unbounded = rest.unbounded || rippleOptions.unbounded;
+        rippleOptions.surface = rest.surface || rippleOptions.surface;
       }
-    )
+
+      if (ripple) {
+        return (
+          <Ripple
+            {...rest}
+            accent={rippleOptions.accent || defaultAccent}
+            unbounded={rippleOptions.unbounded || defaultUnbounded}
+            surface={rippleOptions.surface || defaultSurface}
+          >
+            <Component {...(rest as P)} ref={ref} />
+          </Ripple>
+        );
+      }
+
+      return <Component {...(rest as P)} ref={ref} />;
+    }
   );
 
   WithRippleComponent.displayName = `withRipple(${Component.displayName ||

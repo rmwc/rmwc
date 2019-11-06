@@ -100,27 +100,9 @@ const providerDefaults: RMWCProviderProps = {
   }
 };
 
-export interface WithProviderContext {
-  providerContext: RMWCProviderProps;
-}
-
 export const ProviderContext = React.createContext(providerDefaults);
 
-export const withProviderContext = () => <P extends {}>(
-  Component: React.ComponentType<P & WithProviderContext>
-) => {
-  const wrapped = React.forwardRef((props: P, ref) => (
-    <ProviderContext.Consumer>
-      {providerContext => (
-        <Component {...props} providerContext={providerContext} ref={ref} />
-      )}
-    </ProviderContext.Consumer>
-  ));
-
-  return (wrapped as unknown) as React.ComponentType<
-    P & Partial<WithProviderContext>
-  >;
-};
+export const useProviderContext = () => React.useContext(ProviderContext);
 
 /** A provider for setting global options in RMWC. */
 export const RMWCProvider = ({

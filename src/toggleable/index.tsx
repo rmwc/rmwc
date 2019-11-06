@@ -32,6 +32,7 @@ export class ToggleableFoundationComponent<
 
   /** @internal */
   get hasLabel() {
+    // @ts-ignore
     return this.props.label || this.props.children;
   }
   /** @internal */
