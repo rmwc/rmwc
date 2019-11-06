@@ -4,9 +4,9 @@ import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
 
-type ClassNamesInputT =
+type ClassNamesInputT<Props> =
   | ((
-      props: any
+      props: Props
     ) => Array<
       | string
       | undefined
@@ -17,7 +17,7 @@ type ClassNamesInputT =
 
 interface ComponentFactoryOpts<Props> {
   displayName: string;
-  classNames?: ClassNamesInputT;
+  classNames?: ClassNamesInputT<Props>;
   tag?: RMWC.TagT;
   deprecate?: DeprecateT;
   consumeProps?: string[];
@@ -25,7 +25,7 @@ interface ComponentFactoryOpts<Props> {
   // Currently causing errors because things like "role" cant be undefined
   defaultProps?: any & Partial<RMWC.ComponentProps & Props>;
   render?: (
-    props: any,
+    props: Props & RMWC.ComponentProps,
     ref: React.Ref<any>,
     tag: RMWC.TagT
   ) => React.ReactElement<any>;
@@ -34,9 +34,9 @@ interface ComponentFactoryOpts<Props> {
 // ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS
 // this is intentional and done for speed and memory
 
-const handleClassNames = (
+const handleClassNames = <Props extends any>(
   props: any,
-  classNames: ClassNamesInputT,
+  classNames: ClassNamesInputT<Props>,
   className?: string,
   theme?: RMWC.ThemePropT
 ) => {
@@ -90,7 +90,7 @@ export const componentFactory = <P extends {}>({
 
     // @ts-ignore
     return render ? (
-      render(finalProps, ref, Tag)
+      render(finalProps as RMWC.ComponentProps & P, ref, Tag)
     ) : (
       <Tag {...finalProps} ref={ref} />
     );

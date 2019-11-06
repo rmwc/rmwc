@@ -76,9 +76,7 @@ const TextFieldRoot = withRipple()(
     deprecate: {
       box: ''
     },
-    classNames: (
-      props: TextFieldProps & DeprecatedTextfieldProps & RMWC.ComponentProps
-    ) => [
+    classNames: props => [
       'mdc-text-field',
       'mdc-text-field--upgraded',
       {
