@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory, deprecationWarning } from '@rmwc/base';
+import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
@@ -124,20 +124,3 @@ export const CardActionButton = componentFactory<CardActionButtonProps>({
 });
 
 export type CardActionPropsT = IconButtonProps & ButtonProps;
-
-/** DEPRECATED: A Card action Button. Depending on the props that are passed, this will either render an instance of the Button component, or the IconButton component. */
-export const CardAction = (props: CardActionPropsT) => {
-  /* istanbul ignore next */
-  deprecationWarning(
-    'The CardAction component has been removed in favor of CardActionIcon and CardActionButton due to impossible type intersections of IconButtonProps and ButtonProps'
-  );
-
-  return props.icon ? (
-    // @ts-ignore
-    <CardActionIcon {...props} />
-  ) : (
-    <CardActionButton {...props} />
-  );
-};
-
-CardAction.displayName = 'CardAction';
