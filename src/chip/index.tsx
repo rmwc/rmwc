@@ -3,12 +3,7 @@ import * as React from 'react';
 
 import { MDCChipFoundation } from '@material/chips';
 
-import {
-  FoundationComponent,
-  componentFactory,
-  randomId,
-  deprecationWarning
-} from '@rmwc/base';
+import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
@@ -44,11 +39,6 @@ export interface ChipProps {
   onRemove?: (evt: ChipOnRemoveEventT) => void;
 }
 
-export interface DeprecatedChipProps {
-  /** Deprecated, use label instead */
-  text?: React.ReactNode;
-}
-
 const ChipRoot = withRipple({})(
   componentFactory<ChipProps>({
     tag: 'button',
@@ -64,10 +54,7 @@ const ChipRoot = withRipple({})(
 );
 
 /** A Chip component. */
-export class Chip extends FoundationComponent<
-  MDCChipFoundation,
-  ChipProps & DeprecatedChipProps
-> {
+export class Chip extends FoundationComponent<MDCChipFoundation, ChipProps> {
   static displayName = 'Chip';
 
   private root = this.createElement('root');
@@ -181,18 +168,10 @@ export class Chip extends FoundationComponent<
       icon,
       trailingIcon,
       checkmark,
-      text,
       label,
       children,
       ...rest
     } = this.props;
-
-    let labelToUse = label;
-
-    if (text) {
-      deprecationWarning('Chip `text` is now `label`');
-      labelToUse = text;
-    }
 
     return (
       <ChipRoot
@@ -210,7 +189,7 @@ export class Chip extends FoundationComponent<
           <ChipCheckmark elementRef={el => (this.checkmarkEl = el)} />
         )}
         <div className="mdc-chip__text">
-          {labelToUse}
+          {label}
           {children}
         </div>
         {!!trailingIcon && (
