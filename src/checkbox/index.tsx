@@ -50,14 +50,8 @@ const CheckboxNativeControl = componentFactory<{}>({
   classNames: ['mdc-checkbox__native-control']
 });
 
-class CheckboxBackground extends React.Component<{}> {
-  static displayName = 'CheckboxBackground';
-
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
+const CheckboxBackground = React.memo(
+  () => {
     return (
       <div className="mdc-checkbox__background">
         <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
@@ -71,8 +65,11 @@ class CheckboxBackground extends React.Component<{}> {
         <div className="mdc-checkbox__mixedmark" />
       </div>
     );
-  }
-}
+  },
+  () => false
+);
+
+CheckboxBackground.displayName = 'CheckboxBackground';
 
 /** A Checkbox component. */
 export class Checkbox extends ToggleableFoundationComponent<
