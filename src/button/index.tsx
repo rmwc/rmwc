@@ -57,7 +57,7 @@ export const Button = withRipple({
       'accent',
       'unbounded'
     ],
-    render: (
+    useRender: (
       {
         icon,
         trailingIcon,

@@ -111,7 +111,7 @@ describe('componentFactory', () => {
         oldProp: 'newProp',
         oldProp2: ['newProp2', (val: any) => 'changed']
       },
-      render: (props, ref, Tag) => {
+      useRender: (props, ref, Tag) => {
         myProps = props;
         return <Tag />;
       }

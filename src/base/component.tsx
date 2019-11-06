@@ -24,7 +24,7 @@ interface ComponentFactoryOpts<Props> {
   // TODO, any had to be included
   // Currently causing errors because things like "role" cant be undefined
   defaultProps?: any & Partial<RMWC.ComponentProps & Props>;
-  render?: (
+  useRender?: (
     props: Props & RMWC.ComponentProps,
     ref: React.Ref<any>,
     tag: RMWC.TagT
@@ -73,7 +73,7 @@ export const componentFactory = <P extends {}>({
   deprecate,
   defaultProps,
   consumeProps = [],
-  render
+  useRender
 }: ComponentFactoryOpts<P>) => {
   const Component = React.forwardRef((props: RMWC.ComponentProps & P, ref) => {
     const { className, theme, tag, ...rest } = props;
@@ -88,9 +88,8 @@ export const componentFactory = <P extends {}>({
     handleConsumeProps(newProps, consumeProps);
     const finalProps: RMWC.ComponentProps = newProps;
 
-    // @ts-ignore
-    return render ? (
-      render(finalProps as RMWC.ComponentProps & P, ref, Tag)
+    return useRender ? (
+      useRender(finalProps as RMWC.ComponentProps & P, ref, Tag)
     ) : (
       <Tag {...finalProps} ref={ref} />
     );

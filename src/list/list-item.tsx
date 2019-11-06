@@ -84,7 +84,7 @@ export const ListItemMeta = componentFactory<ListItemMetaProps>({
   displayName: 'ListItemMeta',
   classNames: ['mdc-list-item__meta'],
   tag: 'div',
-  render: (props, ref, Tag) => {
+  useRender: (props, ref, Tag) => {
     if (!!props.icon) {
       return <Icon ref={ref} {...props} />;
     }

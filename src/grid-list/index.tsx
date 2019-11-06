@@ -44,7 +44,7 @@ export const GridList = componentFactory<GridListProps>({
     'withIconAlignStart',
     'tileAspect'
   ],
-  render: (
+  useRender: (
     { children, ...rest }: GridListProps & RMWC.ComponentProps,
     ref: any,
     Tag: any

@@ -24,7 +24,7 @@ export const Elevation = componentFactory<ElevationProps>({
     { 'mdc-elevation-transition': props.transition }
   ],
   consumeProps: ['z', 'transition'],
-  render: (props, ref, Tag) => {
+  useRender: (props, ref, Tag) => {
     const { wrap, ...rest } = props;
     if (wrap) {
       return wrapChild({ ...rest, ref });

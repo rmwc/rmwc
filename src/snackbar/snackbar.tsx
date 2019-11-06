@@ -111,7 +111,7 @@ export const SnackbarAction = componentFactory<SnackbarActionProps>({
   displayName: 'SnackbarAction',
   tag: Button,
   classNames: ['mdc-snackbar__action'],
-  render: (
+  useRender: (
     {
       action = MDCSnackbarFoundation.strings.REASON_ACTION,
       ...rest
