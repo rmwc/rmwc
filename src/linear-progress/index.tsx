@@ -1,11 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCLinearProgressFoundation } from '@material/linear-progress';
-import {
-  componentFactory,
-  FoundationComponent,
-  deprecationWarning
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent } from '@rmwc/base';
 
 /** A component to display linear progress. */
 export interface LinearProgressProps {
@@ -17,11 +13,6 @@ export interface LinearProgressProps {
   reversed?: boolean;
   /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
   closed?: boolean;
-}
-
-export interface DeprecatedLinearProgressProps {
-  /** Whether or not the Progress bar is determinate. */
-  determinate?: boolean;
 }
 
 const LinearProgressRoot = componentFactory<LinearProgressProps>({
@@ -68,7 +59,7 @@ const LinearProgressBarInner = componentFactory<{}>({
 /** A component to display linear progress. */
 export class LinearProgress extends FoundationComponent<
   MDCLinearProgressFoundation,
-  LinearProgressProps & DeprecatedLinearProgressProps
+  LinearProgressProps
 > {
   static displayName = 'LinearProgress';
 
@@ -143,13 +134,7 @@ export class LinearProgress extends FoundationComponent<
   }
 
   render() {
-    const { progress, buffer, determinate, ...rest } = this.props;
-
-    if (determinate !== undefined) {
-      deprecationWarning(
-        'LinearProgress determinate is no longer a valid prop. Determinate is set automatically be the presence of the progress prop.'
-      );
-    }
+    const { progress, buffer, ...rest } = this.props;
 
     return (
       <LinearProgressRoot {...this.root.props(rest)} ref={this.root.setRef}>
