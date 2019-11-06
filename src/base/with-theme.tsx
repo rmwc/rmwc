@@ -3,7 +3,6 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 import { toDashCase } from './utils/strings';
-import { deprecationWarning } from './utils/deprecation';
 
 export interface WithThemeProps {
   theme?: RMWC.ThemePropT;
@@ -14,26 +13,8 @@ export interface WithThemeProps {
  * Actually parses the theme options
  */
 export const parseThemeOptions = (theme: string | string[]): string[] => {
-  if (typeof theme === 'string' && theme.includes(' ')) {
-    deprecationWarning(
-      `Theme no longer accepts a string of theme names with spaces. Please pass them as an array instead.`
-    );
-  }
-
-  const themeItems = Array.isArray(theme) ? theme : theme.split(' ');
-  return themeItems.map(v => {
-    if (v.includes('-')) {
-      deprecationWarning(
-        `Theme properties need to be passed as camelCase. Please convert ${v} to ${v.replace(
-          /-([a-z])/g,
-          function(m, w) {
-            return w.toUpperCase();
-          }
-        )}`
-      );
-    }
-    return `mdc-theme--${toDashCase(v)}`;
-  });
+  const themeItems = Array.isArray(theme) ? theme : [theme];
+  return themeItems.map(v => `mdc-theme--${toDashCase(v)}`);
 };
 
 /**
