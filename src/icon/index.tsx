@@ -1,17 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { componentFactory, classNames, deprecationWarning } from '@rmwc/base';
+import { componentFactory, classNames } from '@rmwc/base';
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
-export interface IconProps extends DeprecatedIconProps {
+export interface IconProps {
   /** The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs. */
   icon?: RMWC.IconPropT;
-}
-
-export interface DeprecatedIconProps {
-  /** DEPRECATED: Additional Icon Options. See the Icon component documentation. */
-  iconOptions?: RMWC.IconOptions;
 }
 
 /**
@@ -111,25 +106,7 @@ const buildIconOptions = (icon?: RMWC.IconPropT) => {
 const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
-export const Icon = ({
-  icon,
-  iconOptions: deprecatedIconOption,
-  ...rest
-}: IconProps & DeprecatedIconProps & RMWC.ComponentProps) => {
-  // handle deprecation
-  if (!!deprecatedIconOption) {
-    const converted = {
-      content: typeof icon === 'string' ? icon : `<MyComponent {...}/>`,
-      ...deprecatedIconOption
-    };
-
-    deprecationWarning(
-      `Icon component prop 'iconOptions' is deprecated. You options should now be passed directly to the 'icon' prop. I.E. icon={${JSON.stringify(
-        converted
-      )}}`
-    );
-  }
-
+export const Icon = ({ icon, ...rest }: IconProps & RMWC.ComponentProps) => {
   const providerContext = useProviderContext();
 
   // Build icon options object
@@ -142,8 +119,7 @@ export const Icon = ({
     size,
     ...optionsRest
   }: RMWC.IconOptions = {
-    ...buildIconOptions(icon),
-    ...deprecatedIconOption
+    ...buildIconOptions(icon)
   };
 
   // Get provider options
