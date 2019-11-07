@@ -59,9 +59,6 @@ export interface TextFieldProps {
 const TextFieldRoot = withRipple()(
   componentFactory<TextFieldProps>({
     displayName: 'TextFieldRoot',
-    deprecate: {
-      box: ''
-    },
     classNames: props => [
       'mdc-text-field',
       'mdc-text-field--upgraded',
