@@ -60,6 +60,7 @@ export type TagT = string | React.ComponentType<any>;
 export interface ComponentProps extends React.HTMLProps<any> {
   tag?: TagT;
   theme?: ThemePropT;
+  ref?: React.Ref<any>;
 }
 
 export type CustomEventT<T> = CustomEvent<T> &

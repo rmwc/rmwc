@@ -151,8 +151,9 @@ export class Checkbox extends ToggleableFoundationComponent<
           ref={(el: HTMLInputElement | null) => {
             this.nativeCb.setRef(el);
             if (typeof inputRef === 'function') {
-              inputRef && inputRef(el);
-            } else if (typeof inputRef === 'object') {
+              inputRef(el);
+            } else if (inputRef && typeof inputRef === 'object') {
+              // @ts-ignore
               inputRef.current = el;
             }
           }}

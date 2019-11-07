@@ -1,9 +1,13 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
+import { useTag, useClassNames } from '@rmwc/base/component';
+
+/*********************************************************************
+ * Button
+ *********************************************************************/
 
 /**
  * The Button component.
@@ -37,70 +41,72 @@ export interface ButtonProps extends RMWC.WithRippleProps {
 export const Button = withRipple({
   surface: false
 })(
-  componentFactory<ButtonProps>({
-    displayName: 'Button',
-    tag: 'button',
-    classNames: (props: ButtonProps) => [
+  React.forwardRef<any, ButtonProps & RMWC.ComponentProps>(function Button(
+    props,
+    ref
+  ) {
+    const {
+      dense,
+      raised,
+      unelevated,
+      outlined,
+      danger,
+      icon,
+      label,
+      trailingIcon,
+      children,
+      ...rest
+    } = props;
+
+    const Tag = useTag(props, 'button');
+
+    const className = useClassNames(props, [
       'mdc-button',
       {
-        'mdc-button--dense': props.dense,
-        'mdc-button--raised': props.raised,
-        'mdc-button--unelevated': props.unelevated,
-        'mdc-button--outlined': props.outlined
+        'mdc-button--dense': dense,
+        'mdc-button--raised': raised,
+        'mdc-button--unelevated': unelevated,
+        'mdc-button--outlined': outlined
       }
-    ],
-    consumeProps: [
-      'dense',
-      'unelevated',
-      'outlined',
-      'primary',
-      'accent',
-      'unbounded'
-    ],
-    useRender: (
-      {
-        icon,
-        trailingIcon,
-        label,
-        children,
-        raised,
-        danger,
-        ...rest
-      }: ButtonProps & React.HTMLProps<any>,
-      ref: React.Ref<any>,
-      Tag: any
-    ) => {
-      if (danger) {
-        const existingStyle = rest.style || {};
-        const dangerStyle = {
-          '--mdc-theme-primary': 'var(--mdc-theme-error)',
-          '--mdc-theme-on-primary': 'var(--mdc-theme-on-error)'
-        };
-        rest.style = {
-          ...dangerStyle,
-          ...existingStyle
-        };
-      }
+    ]);
 
-      return (
-        <Tag {...rest} ref={ref}>
-          {!!icon && <ButtonIcon icon={icon} />}
-          <span className="mdc-button__label">
-            {label}
-            {children}
-          </span>
-          {!!trailingIcon && <ButtonIcon icon={trailingIcon} />}
-        </Tag>
-      );
+    if (danger) {
+      const existingStyle = rest.style || {};
+      const dangerStyle = {
+        '--mdc-theme-primary': 'var(--mdc-theme-error)',
+        '--mdc-theme-on-primary': 'var(--mdc-theme-on-error)'
+      };
+      rest.style = {
+        ...dangerStyle,
+        ...existingStyle
+      };
     }
+
+    return (
+      <Tag {...rest} ref={ref} className={className}>
+        {!!icon && <ButtonIcon icon={icon} />}
+        <span className="mdc-button__label">
+          {label}
+          {children}
+        </span>
+        {!!trailingIcon && <ButtonIcon icon={trailingIcon} />}
+      </Tag>
+    );
   })
 );
+
+Button.displayName = 'Button';
+
+/*********************************************************************
+ * ButtonIcon
+ *********************************************************************/
 
 export interface ButtonIconProps extends IconProps {}
 
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export const ButtonIcon = componentFactory<ButtonIconProps>({
-  displayName: 'ButtonIcon',
-  tag: Icon,
-  classNames: ['mdc-button__icon']
+const ButtonIcon = React.memo(function ButtonIcon(props: ButtonIconProps) {
+  const className = useClassNames(props, ['mdc-button__icon']);
+  return <Icon {...props} className={className} />;
 });
+
+ButtonIcon.displayName = 'ButtonIcon';

@@ -17,9 +17,7 @@ export interface ToggleableFoundationProps {
   /** By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. */
   rootProps?: React.HTMLProps<any>;
   /** A reference to the native input. */
-  inputRef?:
-    | React.MutableRefObject<HTMLInputElement | null>
-    | ((ref: HTMLInputElement | null) => void);
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export class ToggleableFoundationComponent<
@@ -67,7 +65,7 @@ export class ToggleableFoundationComponent<
     const { className, style, rootProps, label, children } = this.props;
     if (this.hasLabel) {
       return (
-        <FormField {...rootProps} className={className} style={style}>
+        <FormField {...(rootProps as any)} className={className} style={style}>
           {toggle}
           <label id={this.id + 'label'} htmlFor={this.id}>
             {label}

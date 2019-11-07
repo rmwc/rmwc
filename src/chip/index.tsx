@@ -136,7 +136,7 @@ interface ChipIconProps extends IconProps {
 
 /** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
 const ChipIcon = React.memo(function ChipIcon(
-  props: ChipIconProps & React.HTMLProps<any>
+  props: ChipIconProps & RMWC.ComponentProps
 ) {
   const { leading, trailing, hidden, ...rest } = props;
   const className = useClassNames(props, [
