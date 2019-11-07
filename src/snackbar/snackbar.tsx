@@ -2,12 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
 import { Button, ButtonProps } from '@rmwc/button';
-import {
-  componentFactory,
-  FoundationComponent,
-  handleDeprecations,
-  closest
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { Icon } from '@rmwc/icon';
 
