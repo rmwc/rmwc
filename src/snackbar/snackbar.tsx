@@ -49,25 +49,6 @@ export interface SnackbarProps {
   icon?: RMWC.IconPropT;
 }
 
-export interface DeprecatedSnackbarProps {
-  /** DEPRECATED: Use open. */
-  show?: boolean;
-  /** DEPRECATED: Use onOpen. */
-  onShow?: (evt: Event) => void;
-  /** DEPRECATED: Use onClose. */
-  onHide?: (evt: Event) => void;
-  /** DEPRECATED: Use leading. */
-  alignStart?: boolean;
-  /** DEPRECATED: No longer applicable. */
-  multiline?: boolean;
-  /** DEPRECATED: Use stacked. */
-  actionOnBottom?: boolean;
-  /** DEPRECATED: Use the actions prop. */
-  actionHandler?: () => void;
-  /** DEPRECATED: Use the actions prop. */
-  actionText?: React.ReactNode;
-}
-
 const SnackbarRoot = componentFactory<{}>({
   displayName: 'SnackbarRoot',
   classNames: (props: SnackbarProps) => [
@@ -132,7 +113,7 @@ const SnackbarDismiss = componentFactory<IconButtonProps>({
 /** A Snackbar component for notifications. */
 export class Snackbar extends FoundationComponent<
   MDCSnackbarFoundation,
-  SnackbarProps & DeprecatedSnackbarProps
+  SnackbarProps
 > {
   static displayName = 'Snackbar';
   static defaultProps = {
@@ -168,9 +149,6 @@ export class Snackbar extends FoundationComponent<
   }
 
   sync(props: SnackbarProps, prevProps: SnackbarProps) {
-    props = this.getPropsWithDeprecations(props);
-    prevProps = this.getPropsWithDeprecations(prevProps);
-
     // open
     if (props.open !== prevProps.open && props.open) {
       this.foundation.open();
@@ -178,27 +156,10 @@ export class Snackbar extends FoundationComponent<
 
     // timeout
     if (props.timeout !== prevProps.timeout) {
-      // dont tell me what I can cant set my timeout too...
+      // don't tell me what I can cant set my timeout too...
       // directly patch over using setTimeoutMs
       (this.foundation as any).autoDismissTimeoutMs_ = props.timeout;
     }
-  }
-
-  getPropsWithDeprecations(props: SnackbarProps) {
-    return handleDeprecations(
-      props,
-      {
-        show: 'open',
-        onShow: 'onOpen',
-        onHide: 'onClose',
-        alignStart: 'leading',
-        multiline: '',
-        actionOnBottom: 'stacked',
-        actionHandler: '',
-        actionText: ''
-      },
-      'Snackbar'
-    );
   }
 
   handleKeyDown(evt: React.KeyboardEvent & KeyboardEvent) {
@@ -231,8 +192,6 @@ export class Snackbar extends FoundationComponent<
 
   render() {
     // grab these before we try to correct them in the deprecation
-    const { actionText, actionHandler } = this.props;
-
     const {
       open,
       message,
@@ -245,7 +204,7 @@ export class Snackbar extends FoundationComponent<
       icon,
       dismissesOnAction,
       ...rest
-    } = this.getPropsWithDeprecations(this.props);
+    } = this.props;
 
     const actions = Array.isArray(action) ? action : action ? [action] : [];
     return (
@@ -281,12 +240,6 @@ export class Snackbar extends FoundationComponent<
           </SnackbarLabel>
 
           <SnackbarActions>
-            {/** HANDLE DEPRECATED  */}
-            {!!actionText && (
-              <SnackbarAction onClick={actionHandler}>
-                {actionText}
-              </SnackbarAction>
-            )}
             {actions.map((a, i) => (
               <React.Fragment key={i}>{a}</React.Fragment>
             ))}
