@@ -101,7 +101,7 @@ Button.displayName = 'Button';
  * ButtonIcon
  *********************************************************************/
 
-export interface ButtonIconProps extends IconProps {}
+interface ButtonIconProps extends IconProps {}
 
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
 const ButtonIcon = React.memo(function ButtonIcon(props: ButtonIconProps) {

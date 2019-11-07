@@ -4,15 +4,10 @@
 
 import * as React from 'react';
 import { renderToString as mount } from 'react-dom/server';
-import { Button, ButtonIcon } from './';
+import { Button } from './';
 
 describe('Button SSR', () => {
   it('renders', () => {
-    mount(
-      <Button>
-        <ButtonIcon icon="favorite" />
-        Button
-      </Button>
-    );
+    mount(<Button icon="favorite">Button</Button>);
   });
 });

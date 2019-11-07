@@ -128,6 +128,13 @@ const jestCoverage = config => {
   return config;
 };
 
+const jestEnableOptionalChaining = config => {
+  config.transform['^.+\\.(js|jsx|ts|tsx)$'] = require.resolve(
+    './jest-transformer'
+  );
+  return config;
+};
+
 // Build the webpack config
 module.exports = {
   webpack: (config, env) => {
@@ -148,7 +155,9 @@ module.exports = {
       addAliases
     )(config),
   jest: config => {
+    console.log(config);
     return pipe(
+      jestEnableOptionalChaining,
       jestModuleNameMapper,
       jestResolver,
       jestCoverage,
