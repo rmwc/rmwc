@@ -186,7 +186,6 @@ export class Snackbar extends FoundationComponent<
   }
 
   render() {
-    // grab these before we try to correct them in the deprecation
     const {
       open,
       message,
