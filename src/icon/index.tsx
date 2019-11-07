@@ -23,7 +23,7 @@ const processAutoStrategy = (content: React.ReactNode): RMWC.IconStrategyT => {
     return 'component';
   }
 
-  // we dont know what it is, default to ligature for compat with material icons
+  // we don't know what it is, default to ligature for compat with material icons
   return 'ligature';
 };
 
