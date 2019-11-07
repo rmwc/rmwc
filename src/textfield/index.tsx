@@ -9,12 +9,7 @@ import {
   MDCTextFieldCharacterCounterFoundation
 } from '@material/textfield';
 
-import {
-  componentFactory,
-  FoundationComponent,
-  randomId,
-  deprecationWarning
-} from '@rmwc/base';
+import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
@@ -61,17 +56,8 @@ export interface TextFieldProps {
   type?: string;
 }
 
-export interface DeprecatedTextfieldProps {
-  /** DEPRECATED: Is being removed from MCW. */
-  dense?: boolean;
-  /** DEPRECATED: Use icon. */
-  withLeadingIcon?: RMWC.IconPropT;
-  /** DEPRECATED: Use trailingIcon. */
-  withTrailingIcon?: RMWC.IconPropT;
-}
-
 const TextFieldRoot = withRipple()(
-  componentFactory<TextFieldProps & DeprecatedTextfieldProps>({
+  componentFactory<TextFieldProps>({
     displayName: 'TextFieldRoot',
     deprecate: {
       box: ''
@@ -83,7 +69,6 @@ const TextFieldRoot = withRipple()(
         'mdc-text-field--textarea': props.textarea,
         'mdc-text-field--fullwidth': props.fullwidth,
         'mdc-text-field--outlined': props.outlined,
-        'mdc-text-field--dense': props.dense,
         'mdc-text-field--invalid': props.invalid,
         'mdc-text-field--disabled': props.disabled,
         'mdc-text-field--with-leading-icon': !!props.icon,
@@ -95,7 +80,6 @@ const TextFieldRoot = withRipple()(
       'textarea',
       'fullwidth',
       'outlined',
-      'dense',
       'invalid',
       'disabled',
       'icon',
@@ -123,7 +107,7 @@ const TextFieldTextarea = componentFactory({
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<
   MDCTextFieldFoundation,
-  TextFieldProps & DeprecatedTextfieldProps
+  TextFieldProps
 > {
   static displayName = 'TextField';
   generatedId = randomId('textfield');
@@ -323,7 +307,6 @@ export class TextField extends FoundationComponent<
       style,
       outlined,
       fullwidth,
-      dense,
       invalid,
       disabled,
       helpText,
@@ -331,33 +314,11 @@ export class TextField extends FoundationComponent<
       textarea,
       inputRef,
       characterCount,
-      icon: _icon,
-      trailingIcon: _trailingIcon,
-      withLeadingIcon: _withLeadingIcon,
-      withTrailingIcon: _withTrailingIcon,
+      icon,
+      trailingIcon,
       rootProps = {},
       ...rest
     } = this.props;
-
-    let { icon, trailingIcon, withLeadingIcon, withTrailingIcon } = this.props;
-
-    if (dense !== undefined) {
-      deprecationWarning(
-        `Textfield prop 'dense' is being removed in a future release by material-components-web.`
-      );
-    }
-
-    if (withLeadingIcon !== undefined) {
-      deprecationWarning(`Textfield prop 'withLeadingIcon' is now 'icon'.`);
-      icon = withLeadingIcon;
-    }
-
-    if (withTrailingIcon !== undefined) {
-      deprecationWarning(
-        `Textfield prop 'withTrailingIcon' is now 'trailingIcon'.`
-      );
-      trailingIcon = withTrailingIcon;
-    }
 
     // Fixes bug #362
     // MDC breaks Reacts unidirectional data flow...
@@ -426,7 +387,6 @@ export class TextField extends FoundationComponent<
           icon={!!icon}
           trailingIcon={!!trailingIcon}
           textarea={textarea}
-          dense={dense}
           disabled={disabled}
           outlined={outlined}
           fullwidth={fullwidth}

@@ -13,7 +13,6 @@ function TextFieldStory() {
       label={text('label', 'Hello world')}
       value={text('value', value)}
       disabled={boolean('disabled', false)}
-      dense={boolean('dense', false)}
       required={boolean('required', false)}
       outlined={boolean('outlined', false)}
       invalid={boolean('invalid', false)}
