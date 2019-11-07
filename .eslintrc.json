@@ -1,9 +1,10 @@
 {
   "extends": "react-app",
+  "plugins": ["babel"],
   "rules": {
     "no-undef": 0,
     "space-before-function-paren": "off",
-    "indent": ["error", 2],
+    "indent": ["off", 2],
     "max-len": [
       "warn",
       80,
@@ -17,6 +18,7 @@
     ],
     "react/prop-types": "off",
     "no-unused-expressions": "off",
+    "babel/no-unused-expressions": "off",
     "prefer-reflect": "off"
   },
   "overrides": [

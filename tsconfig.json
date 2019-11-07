@@ -9,6 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "preserveWatchOutput": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

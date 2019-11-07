@@ -41,6 +41,23 @@ const getPlugin = (config, pluginName) =>
  * CRA Rewiring
  ***********************************/
 
+const enableOptionalChaining = config => {
+  const loaders = getLoaderRoot(config);
+
+  const babelLoader = loaders.find(
+    l =>
+      l.options &&
+      l.test &&
+      l.test.toString() === /\.(js|mjs|jsx|ts|tsx)$/.toString()
+  );
+
+  babelLoader.options.plugins.push(
+    require.resolve('@babel/plugin-proposal-optional-chaining')
+  );
+
+  return config;
+};
+
 /**
  * Makes CRA ignore node_modules folders which
  * Will break with Lerna
@@ -116,6 +133,7 @@ module.exports = {
   webpack: (config, env) => {
     console.log(colors.magenta('Starting RMWC ❤️'));
     return pipe(
+      enableOptionalChaining,
       fixLinting,
       addAliases,
       config => {
@@ -124,7 +142,11 @@ module.exports = {
       }
     )(config);
   },
-  storybook: (config, env) => pipe(addAliases)(config),
+  storybook: (config, env) =>
+    pipe(
+      enableOptionalChaining,
+      addAliases
+    )(config),
   jest: config => {
     return pipe(
       jestModuleNameMapper,
