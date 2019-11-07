@@ -1,6 +1,7 @@
 export * from './debounce';
 export * from './deprecation';
 export * from './events-map';
+export * from './hooks';
 export * from './ponyfills';
 export * from './random-id';
 export * from './strings';

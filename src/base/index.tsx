@@ -6,7 +6,7 @@ import _createFocusTrap from 'focus-trap';
 export { default as classNames } from 'classnames';
 export * from './with-theme';
 export * from './utils';
-export { FoundationComponent } from './foundation-component';
+export { FoundationComponent, useFoundation } from './foundation-component';
 export { componentFactory } from './component';
 
 export const createFocusTrap = _createFocusTrap;

@@ -334,8 +334,10 @@ describe('FoundationComponent', () => {
 
 describe('Utils', () => {
   it('randomId', () => {
+    // @ts-ignore
     process.env.NODE_ENV = 'production';
     randomId();
+    // @ts-ignore
     process.env.NODE_ENV = 'test';
   });
 

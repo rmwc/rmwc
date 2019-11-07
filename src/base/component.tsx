@@ -5,6 +5,7 @@ import { parseThemeOptions } from './with-theme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
 
 type ClassNamesInputT<Props> =
+  | undefined
   | ((
       props: Props
     ) => Array<
@@ -13,7 +14,13 @@ type ClassNamesInputT<Props> =
       | null
       | { [className: string]: boolean | undefined | string | number }
     >)
-  | string[];
+  | string[]
+  | Array<
+      | string
+      | undefined
+      | null
+      | { [className: string]: boolean | undefined | string | number }
+    >;
 
 interface ComponentFactoryOpts<Props> {
   displayName: string;
@@ -100,4 +107,34 @@ export const componentFactory = <P extends {}>({
   return (Component as unknown) as React.ComponentType<
     RMWC.MergeInterfacesT<P, RMWC.ComponentProps>
   >;
+};
+
+export const useTag = <Props extends { [key: string]: any }>(
+  props: Props,
+  defaultTag: RMWC.TagT = 'div'
+) => {
+  const Tag = handleTag(props, defaultTag, props.tag);
+  return Tag;
+};
+
+export const useClassNames = <Props extends { [key: string]: any }>(
+  props: Props,
+  classNames: ClassNamesInputT<Props>
+) => {
+  return classNamesFunc(
+    props.className,
+    ...(!!props.theme ? parseThemeOptions(props.theme) : []),
+    ...(typeof classNames === 'function' ? classNames(props) : classNames)
+  );
+};
+
+export const mergeRefs = (...refs: React.Ref<any>[]) => (el: any) => {
+  for (const ref of refs) {
+    if (typeof ref === 'function') {
+      ref(el);
+    } else if (ref && 'current' in ref) {
+      // @ts-ignore
+      ref.current = el;
+    }
+  }
 };

@@ -1,10 +1,11 @@
 import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import * as React from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
 import { toCamel } from './utils/strings';
+import MDCFoundation from '@material/base/foundation';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
@@ -69,10 +70,10 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Props
    **************************************************/
-  setProp(propName: keyof Props, value: any) {
+  setProp(propName: keyof Props, value: any, silent: boolean = false) {
     if (this._props[propName] !== value) {
       this._props[propName] = value;
-      this.onChange();
+      !silent && this.onChange();
     }
   }
 
@@ -296,3 +297,75 @@ export class FoundationComponent<
     return evt;
   }
 }
+
+const emit = (props: any) => (
+  evtType: string,
+  evtData: any,
+  shouldBubble: boolean = false
+) => {
+  let evt;
+
+  evt = new CustomEvent(evtType, {
+    detail: evtData,
+    bubbles: shouldBubble
+  });
+
+  // bugfix for events coming from form elements
+  // and also fits with reacts form pattern better...
+  // This should always otherwise be null since there is no target
+  // for Custom Events
+  Object.defineProperty(evt, 'target', {
+    value: evtData,
+    writable: false
+  });
+
+  Object.defineProperty(evt, 'currentTarget', {
+    value: evtData,
+    writable: false
+  });
+
+  // Custom handling for React
+  const propName = evtType;
+
+  props[propName] && props[propName](evt);
+
+  return evt;
+};
+
+export const useFoundation = <
+  Foundation extends MDCFoundation,
+  Elements extends { [key: string]: true },
+  Props extends { [key: string]: any }
+>({
+  foundation: _foundation,
+  props,
+  elements: elementsInput
+}: {
+  foundation: (
+    els: { [key in keyof Elements]: FoundationElement<Props, HTMLElement> },
+    emitFunc: ReturnType<typeof emit>
+  ) => Foundation;
+  props: Props;
+  elements: Elements;
+}) => {
+  const [, setIteration] = React.useState(0);
+
+  const elements = useMemo(
+    () =>
+      Object.keys(elementsInput).reduce<
+        { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
+      >(
+        (acc, key: keyof Elements) => {
+          acc[key] = new FoundationElement<Props, HTMLElement>(() =>
+            setIteration(val => val + 1)
+          );
+          return acc;
+        },
+        {} as any
+      ),
+    []
+  );
+
+  const foundation = useMemo(() => _foundation(elements, emit(props)), []);
+  return { foundation, elements };
+};

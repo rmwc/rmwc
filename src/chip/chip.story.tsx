@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { Chip, ChipIcon, ChipSet } from '.';
+import { Chip, ChipSet } from '.';
 
 class ChipFiltering extends React.Component {
   state = {
@@ -56,7 +56,7 @@ storiesOf('Chips', module)
   ))
   .add('Chip selected', () => (
     <ChipSet>
-      <Chip label="Cookies" selected />
+      <Chip label="Cookies" selected checkmark />
       <Chip label="Pizza" />
       <Chip label="Icecream" />
     </ChipSet>
@@ -68,4 +68,12 @@ storiesOf('Chips', module)
       <Chip icon="mood" trailingIcon="close" label="Icecream" />
     </ChipSet>
   ))
-  .add('Chip filtering', () => <ChipFiltering />);
+  .add('Chip filtering', () => <ChipFiltering />)
+  .add('Chip: New Foundation', () => (
+    <Chip
+      label="Cookies"
+      trailingIcon="close"
+      onRemove={() => console.log('onRemove')}
+      onTrailingIconInteraction={() => console.log('onTrailingIconInteraction')}
+    />
+  ));
