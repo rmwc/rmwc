@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { deprecationWarning } from '@rmwc/base';
 import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
@@ -47,11 +46,6 @@ export interface SelectProps {
   inputRef?: (ref: HTMLSelectElement | null) => void;
   /** Add a leading icon. */
   icon?: RMWC.IconPropT;
-}
-
-export interface DeprecatedSelectProps {
-  /** DEPRECATED: Changed to icon. */
-  withLeadingIcon?: RMWC.IconPropT;
 }
 
 /**
@@ -277,7 +271,7 @@ interface SelectState {
 
 export class SelectBase extends FoundationComponent<
   MDCSelectFoundation,
-  SelectProps & DeprecatedSelectProps,
+  SelectProps,
   SelectState
 > {
   private root = this.createElement<HTMLSelectElement>('root');
@@ -698,8 +692,7 @@ export class SelectBase extends FoundationComponent<
       rootProps = {},
       className,
       enhanced,
-      icon: _icon,
-      withLeadingIcon: _withLeadingIcon,
+      icon,
       onChange,
       onFocus,
       onBlur,
@@ -709,13 +702,6 @@ export class SelectBase extends FoundationComponent<
       helpText,
       ...rest
     } = this.props;
-
-    let { icon, withLeadingIcon } = this.props;
-
-    if (withLeadingIcon !== undefined) {
-      deprecationWarning(`Select prop 'withLeadingIcon' is now 'icon'.`);
-      icon = withLeadingIcon;
-    }
 
     const selectOptions = createSelectOptions(options);
 
