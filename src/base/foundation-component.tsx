@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
@@ -298,7 +298,7 @@ export class FoundationComponent<
   }
 }
 
-const emit = (props: any) => (
+export const emitFactory = (props: { [key: string]: any }) => (
   evtType: string,
   evtData: any,
   shouldBubble: boolean = false
@@ -338,31 +338,42 @@ export const useFoundation = <
   Props extends { [key: string]: any }
 >({
   foundation: _foundation,
-  props,
+  props: _props,
   elements: elementsInput
 }: {
   foundation: (
-    els: { [key in keyof Elements]: FoundationElement<Props, HTMLElement> },
-    emitFunc: ReturnType<typeof emit>
+    els: {
+      [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+    },
+    emit: (
+      evtType: string,
+      evtData: any,
+      shouldBubble?: boolean
+    ) => CustomEvent<any>
   ) => Foundation;
   props: Props;
   elements: Elements;
 }) => {
-  const [, setIteration] = React.useState(0);
-
-  const elements = useMemo(
-    () =>
-      Object.keys(elementsInput).reduce<
-        { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
-      >((acc, key: keyof Elements) => {
-        acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-          setIteration(val => val + 1);
-        });
-        return acc;
-      }, {} as any),
-    []
+  const [, setIteration] = useState(0);
+  const elements = useRef(
+    Object.keys(elementsInput).reduce<
+      { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
+    >((acc, key: keyof Elements) => {
+      acc[key] = new FoundationElement<Props, HTMLElement>(() => {
+        setIteration(val => val + 1);
+      });
+      return acc;
+    }, {} as any)
   );
 
-  const foundation = useMemo(() => _foundation(elements, emit(props)), []);
-  return { foundation, ...elements };
+  const props = useRef(_props);
+  props.current = _props;
+
+  const foundation = useRef(
+    _foundation(elements.current, (...args) =>
+      emitFactory(props.current)(...args)
+    )
+  );
+
+  return { foundation: foundation.current, ...elements.current };
 };

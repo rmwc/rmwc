@@ -1,10 +1,11 @@
 import { ChipProps } from './';
 import { useId } from '@rmwc/base';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, emitFactory } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
 
 export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   const chipId = useId('chip', props);
+  const emit = emitFactory(props);
 
   const foundationWithElements = useFoundation({
     props,
@@ -13,7 +14,7 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       trailingIconEl: true,
       checkmarkEl: true
     },
-    foundation: ({ rootEl, checkmarkEl }, emit) =>
+    foundation: ({ rootEl, checkmarkEl }) =>
       new MDCChipFoundation({
         addClass: className => {
           rootEl.addClass(className);
@@ -68,7 +69,7 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       })
   });
 
-  const {rootEl, trailingIconEl, foundation} = foundationWithElements;
+  const { rootEl, trailingIconEl, foundation } = foundationWithElements;
 
   const handleInteraction = (
     evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
@@ -91,16 +92,8 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   rootEl.setProp('onClick', handleInteraction, true);
   rootEl.setProp('onKeyDown', handleInteraction, true);
   rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-  trailingIconEl.setProp(
-    'onClick',
-    handleTrailingIconInteraction,
-    true
-  );
-  trailingIconEl.setProp(
-    'onKeyDown',
-    handleTrailingIconInteraction,
-    true
-  );
+  trailingIconEl.setProp('onClick', handleTrailingIconInteraction, true);
+  trailingIconEl.setProp('onKeyDown', handleTrailingIconInteraction, true);
 
   return foundationWithElements;
 };

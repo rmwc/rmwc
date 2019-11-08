@@ -39,6 +39,7 @@ export default function() {
                 open={open}
                 onClose={evt => setOpen(false)}
                 message="This is a new message"
+                dismissesOnAction
                 action={
                   <SnackbarAction
                     label="Dismiss"
@@ -188,6 +189,7 @@ export default function() {
                     notify({
                       title: <b>Success</b>,
                       body: 'You have selected pizza!',
+                      dismissesOnAction: true,
                       icon: 'check',
                       actions: [
                         {

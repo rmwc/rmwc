@@ -1,22 +1,22 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { MDCSnackbarFoundation, util } from '@material/snackbar';
+import { MDCSnackbarFoundation } from '@material/snackbar';
 import { Button, ButtonProps } from '@rmwc/button';
-import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
+import { useClassNames, useTag } from '@rmwc/base';
+import { useSnackbarFoundation } from './foundation';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { Icon } from '@rmwc/icon';
 
-/** Monkey patch the foundation to accept dynamic reasons rather than just "action" */
-// @ts-ignore
-MDCSnackbarFoundation.prototype.handleActionButtonClick = function(
-  evt: any,
-  reason: string
-) {
-  this.close(reason);
-};
+/*********************************************************************
+ * Events
+ *********************************************************************/
 
 export type SnackbarOnOpenEventT = RMWC.CustomEventT<{}>;
 export type SnackbarOnCloseEventT = RMWC.CustomEventT<{ reason?: string }>;
+
+/*********************************************************************
+ * Snackbar
+ *********************************************************************/
 
 /** A Snackbar component for notifications. */
 export interface SnackbarProps {
@@ -44,37 +44,108 @@ export interface SnackbarProps {
   icon?: RMWC.IconPropT;
 }
 
-const SnackbarRoot = componentFactory<{}>({
-  displayName: 'SnackbarRoot',
-  classNames: (props: SnackbarProps) => [
+/** A Snackbar component for notifications. */
+export function Snackbar(
+  props: SnackbarProps & Omit<RMWC.ComponentProps, 'action'>
+) {
+  const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
+
+  const Tag = useTag(props);
+
+  const {
+    open,
+    message,
+    timeout,
+    dismissIcon,
+    onOpen,
+    onClose,
+    children,
+    action,
+    icon,
+    leading,
+    stacked,
+    dismissesOnAction,
+    ...rest
+  } = props;
+
+  const className = useClassNames(props, [
     'mdc-snackbar',
     {
-      'mdc-snackbar--leading': props.leading,
-      'mdc-snackbar--stacked': props.stacked
+      'mdc-snackbar--leading': leading,
+      'mdc-snackbar--stacked': stacked
     }
-  ],
-  defaultProps: {
-    leading: false,
-    'aria-live': 'assertive',
-    'aria-atomic': true,
-    'aria-hidden': true
-  },
-  consumeProps: ['leading', 'stacked']
-});
+  ]);
 
-const SnackbarLabel = componentFactory<{}>({
-  displayName: 'SnackbarText',
-  classNames: ['mdc-snackbar__label'],
-  defaultProps: {
-    role: 'status',
-    'aria-live': 'polite'
-  }
-});
+  const actions: SnackbarProps['action'][] = Array.isArray(action)
+    ? action
+    : action
+    ? [action]
+    : [];
 
-const SnackbarActions = componentFactory<{}>({
-  displayName: 'SnackbarActions',
-  classNames: ['mdc-snackbar__actions']
-});
+  return (
+    <Tag
+      aria-live="assertive"
+      aria-atomic
+      aria-hidden
+      {...rootEl.props({ ...rest, className })}
+      ref={rootEl.setRef}
+    >
+      <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
+        {!!icon && (
+          <Icon
+            style={{
+              color: 'rgba(255, 255, 255, 0.87)',
+              fill: 'currentColor',
+              marginLeft: '1rem'
+            }}
+            icon={icon}
+          />
+        )}
+        <SnackbarLabel>
+          {message}
+          {/**
+           * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
+           * Wrapping the content for accessibility so it can be announced for screen readers
+           */}
+          <div style={{ display: 'none' }} ref={labelEl.setRef} />
+        </SnackbarLabel>
+
+        <SnackbarActions>
+          {actions.map((a, i) => (
+            <React.Fragment key={i}>{a}</React.Fragment>
+          ))}
+          {dismissIcon && (
+            <SnackbarDismiss
+              icon={dismissIcon === true ? 'close' : dismissIcon}
+            />
+          )}
+        </SnackbarActions>
+        {children}
+      </div>
+    </Tag>
+  );
+}
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+function SnackbarLabel(props: { children: React.ReactNode }) {
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      {...props}
+    />
+  );
+}
+SnackbarLabel.displayName = 'SnackbarLabel';
+
+function SnackbarActions(props: { children: React.ReactNode }) {
+  return <div className="mdc-snackbar__actions" {...props} />;
+}
+SnackbarActions.displayName = 'SnackbarActions';
 
 /** A button for a snackbar action. */
 export interface SnackbarActionProps extends ButtonProps {
@@ -83,169 +154,27 @@ export interface SnackbarActionProps extends ButtonProps {
 }
 
 /** A button for a snackbar action. */
-export const SnackbarAction = componentFactory<SnackbarActionProps>({
-  displayName: 'SnackbarAction',
-  tag: Button,
-  classNames: ['mdc-snackbar__action'],
-  useRender: (
-    {
-      action = MDCSnackbarFoundation.strings.REASON_ACTION,
-      ...rest
-    }: SnackbarActionProps,
-    ref: React.Ref<any>,
-    Tag: any
-  ) => {
-    return <Tag {...rest} ref={ref} data-mdc-snackbar-action={action} />;
-  }
+export const SnackbarAction = React.forwardRef<
+  any,
+  SnackbarActionProps & Omit<RMWC.ComponentProps, 'action'>
+>(function SnackbarAction(props, ref) {
+  const className = useClassNames(props, ['mdc-snackbar__action']);
+  const {
+    action = MDCSnackbarFoundation.strings.REASON_ACTION,
+    ...rest
+  } = props;
+  return (
+    <Button
+      {...rest}
+      className={className}
+      ref={ref}
+      data-mdc-snackbar-action={action}
+    />
+  );
 });
+SnackbarAction.displayName = 'SnackbarAction';
 
-const SnackbarDismiss = componentFactory<IconButtonProps>({
-  displayName: 'SnackbarDismiss',
-  tag: IconButton,
-  classNames: ['mdc-snackbar__dismiss']
-});
-
-/** A Snackbar component for notifications. */
-export class Snackbar extends FoundationComponent<
-  MDCSnackbarFoundation,
-  SnackbarProps
-> {
-  static displayName = 'Snackbar';
-  static defaultProps = {
-    dismissesOnAction: true
-  };
-
-  constructor(props: SnackbarProps) {
-    super(props);
-
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleSurfaceClick = this.handleSurfaceClick.bind(this);
-  }
-
-  private root = this.createElement('root');
-  isShowing_ = false;
-  labelEl: HTMLElement | null = null;
-  show: any;
-  announce = util.announce;
-
-  getDefaultFoundation() {
-    /* eslint brace-style: "off" */
-    return new MDCSnackbarFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      announce: () => this.labelEl && this.announce(this.labelEl),
-      notifyOpening: () => this.emit('onOpen', {}),
-      notifyOpened: () => this.emit('onOpened', {}),
-      notifyClosing: (reason: string) =>
-        this.emit('onClose', reason ? { reason } : {}),
-      notifyClosed: (reason: string) =>
-        this.emit('onClosed', reason ? { reason } : {})
-    });
-  }
-
-  sync(props: SnackbarProps, prevProps: SnackbarProps) {
-    // open
-    if (props.open !== prevProps.open && props.open) {
-      this.foundation.open();
-    }
-
-    // timeout
-    if (props.timeout !== prevProps.timeout) {
-      // don't tell me what I can cant set my timeout too...
-      // directly patch over using setTimeoutMs
-      (this.foundation as any).autoDismissTimeoutMs_ = props.timeout;
-    }
-  }
-
-  handleKeyDown(evt: React.KeyboardEvent & KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-    this.foundation.handleKeyDown(evt);
-  }
-
-  handleSurfaceClick(evt: React.MouseEvent | MouseEvent) {
-    if (evt.target instanceof Element) {
-      let el = evt.target;
-      const button = closest(el, '.mdc-button') as Element;
-      if (button) {
-        el = button;
-      }
-
-      if (
-        this.props.dismissesOnAction &&
-        el.classList.contains('mdc-snackbar__action')
-      ) {
-        this.foundation.handleActionButtonClick(
-          evt as MouseEvent,
-          // @ts-ignore
-          el.dataset.mdcSnackbarAction
-        );
-      } else if (el.classList.contains('mdc-snackbar__dismiss')) {
-        this.foundation.handleActionIconClick(evt as MouseEvent);
-      }
-    }
-  }
-
-  render() {
-    const {
-      open,
-      message,
-      timeout,
-      dismissIcon,
-      onOpen,
-      onClose,
-      children,
-      action,
-      icon,
-      dismissesOnAction,
-      ...rest
-    } = this.props;
-
-    const actions = Array.isArray(action) ? action : action ? [action] : [];
-    return (
-      <SnackbarRoot
-        {...this.root.props(rest)}
-        ref={this.root.setRef}
-        onKeyDown={this.handleKeyDown}
-      >
-        <div
-          className="mdc-snackbar__surface"
-          onClick={this.handleSurfaceClick}
-        >
-          {!!icon && (
-            <Icon
-              style={{
-                color: 'rgba(255, 255, 255, 0.87)',
-                fill: 'currentColor',
-                marginLeft: '1rem'
-              }}
-              icon={icon}
-            />
-          )}
-          <SnackbarLabel>
-            {message}
-            {/**
-             * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
-             * Wrapping the content for accessibility so it can be announced for screen readers
-             */}
-            <div
-              style={{ display: 'none' }}
-              ref={(el: HTMLDivElement) => (this.labelEl = el)}
-            />
-          </SnackbarLabel>
-
-          <SnackbarActions>
-            {actions.map((a, i) => (
-              <React.Fragment key={i}>{a}</React.Fragment>
-            ))}
-            {dismissIcon && (
-              <SnackbarDismiss
-                icon={dismissIcon === true ? 'close' : dismissIcon}
-              />
-            )}
-          </SnackbarActions>
-          {children}
-        </div>
-      </SnackbarRoot>
-    );
-  }
+function SnackbarDismiss(props: IconButtonProps) {
+  return <IconButton {...props} className="mdc-snackbar__dismiss" />;
 }
+SnackbarDismiss.displayName = 'SnackbarDismiss';
