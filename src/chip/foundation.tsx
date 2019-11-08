@@ -6,7 +6,7 @@ import { MDCChipFoundation } from '@material/chips';
 export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   const chipId = useId('chip', props);
 
-  const { elements, foundation } = useFoundation({
+  const foundationWithElements = useFoundation({
     props,
     elements: {
       rootEl: true,
@@ -68,6 +68,8 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       })
   });
 
+  const {rootEl, trailingIconEl, foundation} = foundationWithElements;
+
   const handleInteraction = (
     evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
   ) => {
@@ -86,19 +88,19 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
     return foundation.handleTrailingIconInteraction(evt);
   };
 
-  elements.rootEl.setProp('onClick', handleInteraction, true);
-  elements.rootEl.setProp('onKeyDown', handleInteraction, true);
-  elements.rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
-  elements.trailingIconEl.setProp(
+  rootEl.setProp('onClick', handleInteraction, true);
+  rootEl.setProp('onKeyDown', handleInteraction, true);
+  rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
+  trailingIconEl.setProp(
     'onClick',
     handleTrailingIconInteraction,
     true
   );
-  elements.trailingIconEl.setProp(
+  trailingIconEl.setProp(
     'onKeyDown',
     handleTrailingIconInteraction,
     true
   );
 
-  return { ...elements, foundation };
+  return foundationWithElements;
 };

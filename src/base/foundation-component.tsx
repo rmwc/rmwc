@@ -367,5 +367,5 @@ export const useFoundation = <
   );
 
   const foundation = useMemo(() => _foundation(elements, emit(props)), []);
-  return { foundation, elements };
+  return { foundation, ...elements };
 };
