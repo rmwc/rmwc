@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, useTag, useClassNames } from '@rmwc/base';
+import { useTag, useClassNames } from '@rmwc/base';
 
 /** The root of the Image List. */
 export interface ImageListProps {
