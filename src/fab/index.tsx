@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useTag, useClassNames } from '@rmwc/base/component';
+import { useTag, useClassNames } from '@rmwc/base';
 
 /** A floating action button component */
 export interface FabProps extends RMWC.WithRippleProps {

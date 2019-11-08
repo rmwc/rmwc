@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { useChipFoundation } from './foundation';
-import { useTag, useClassNames, mergeRefs } from '@rmwc/base/component';
+import { useTag, useClassNames, mergeRefs } from '@rmwc/base';
 
 /*********************************************************************
  * Events

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { useTag, useClassNames } from '@rmwc/base/component';
+import { useTag, useClassNames } from '@rmwc/base';
 
 export type TypographyT =
   | 'headline1'

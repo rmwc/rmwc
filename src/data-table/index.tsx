@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon } from '@rmwc/icon';
-import { useClassNames, useTag } from '@rmwc/base/component';
+import { useClassNames, useTag } from '@rmwc/base';
 
 interface SharedDataTableCellProps {
   /** Align content to the start of the cell. */

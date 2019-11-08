@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
-import { useTag, useClassNames } from '@rmwc/base/component';
+import { useTag, useClassNames } from '@rmwc/base';
 
 /** A Card Component */
 export interface CardProps {

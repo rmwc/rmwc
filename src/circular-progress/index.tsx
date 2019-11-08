@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useClassNames, useTag } from '@rmwc/base/component';
+import { useClassNames, useTag } from '@rmwc/base';
 
 const SIZE_MAP: { [key: string]: number } = {
   xsmall: 18,

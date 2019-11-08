@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as RMWC from '@rmwc/types';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
-import { useClassNames, useTag } from '@rmwc/base/component';
+import { useClassNames, useTag } from '@rmwc/base';
 
 /** An Avatar component for displaying users in a system. */
 export interface AvatarProps {

@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 
 import { toDashCase, parseThemeOptions, wrapChild } from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
-import { useTag, useClassNames } from '@rmwc/base/component';
+import { useTag, useClassNames } from '@rmwc/base';
 
 /** A Theme Component. */
 export interface ThemeProps {

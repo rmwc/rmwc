@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { wrapChild } from '@rmwc/base';
-import { useTag, useClassNames } from '@rmwc/base/component';
+import { useTag, useClassNames } from '@rmwc/base';
 
 /** The Elevation Component */
 export interface ElevationProps {

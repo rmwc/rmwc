@@ -6,7 +6,6 @@ import {
   randomId,
   wrapChild,
   debounce,
-  componentFactory,
   toCamel,
   toDashCase,
   FoundationComponent,
@@ -17,130 +16,6 @@ jest.spyOn(console, 'warn');
 
 describe('RMWC', () => {
   it('works', () => {});
-});
-
-describe('componentFactory', () => {
-  it('sets displayName', () => {
-    const Foo = componentFactory({ displayName: 'foo' });
-    expect(Foo.displayName).toBe('foo');
-  });
-
-  it('handle classNames', () => {
-    const Foo = componentFactory({
-      displayName: 'foo',
-      classNames: ['my-foo']
-    });
-    const el = mount(<Foo />);
-    expect(el.html().includes('my-foo')).toBe(true);
-
-    const Baz = componentFactory({
-      displayName: 'baz',
-      classNames: props => ['my-baz']
-    });
-
-    const el2 = mount(<Baz />);
-    expect(el2.html().includes('my-baz')).toBe(true);
-  });
-
-  it('handles DOM tags', () => {
-    const Foo = componentFactory({
-      displayName: 'foo',
-      classNames: ['my-foo'],
-      tag: 'span'
-    });
-
-    const el = mount(<Foo />);
-    expect(el.getDOMNode() instanceof HTMLSpanElement).toBe(true);
-
-    const el2 = mount(<Foo tag="div" />);
-    expect(el2.getDOMNode() instanceof HTMLDivElement).toBe(true);
-  });
-
-  it('handles extending other components as tag', () => {
-    const Foo = componentFactory({
-      displayName: 'foo',
-      classNames: ['my-foo'],
-      tag: 'span'
-    });
-
-    const Baz = componentFactory({
-      displayName: 'baz',
-      classNames: ['my-baz'],
-      tag: Foo
-    });
-
-    const Duz = componentFactory({
-      displayName: 'duz',
-      classNames: ['my-duz'],
-      tag: 'a'
-    });
-
-    const el = mount(<Baz tag="button" />);
-    expect(el.html().includes('my-baz') && el.html().includes('my-foo')).toBe(
-      true
-    );
-
-    // assert dynamic passthrough of string tag works
-    expect(el.getDOMNode() instanceof HTMLButtonElement).toBe(true);
-
-    const el2 = mount(<Baz tag={Duz} />);
-    expect(el2.getDOMNode() instanceof HTMLAnchorElement).toBe(true);
-  });
-
-  it('handles prop consumption', () => {
-    const Foo = componentFactory<{ testprop: string }>({
-      displayName: 'foo',
-      consumeProps: ['testprop']
-    });
-
-    const el = mount(<Foo testprop="test" />);
-    expect(el.html().includes('testprop')).toBe(false);
-  });
-
-  it('handles deprecations', () => {
-    let myProps: any = null;
-
-    const Foo = componentFactory<{
-      goneProp?: string;
-      oldProp?: string;
-      oldProp2?: string;
-    }>({
-      displayName: 'foo',
-      deprecate: {
-        goneProp: '',
-        oldProp: 'newProp',
-        oldProp2: ['newProp2', (val: any) => 'changed']
-      },
-      useRender: (props, ref, Tag) => {
-        myProps = props;
-        return <Tag />;
-      }
-    });
-
-    mount(<Foo oldProp="val1" oldProp2="val2" goneProp={'gone'} />);
-    expect(myProps.goneProp).toBe(undefined);
-    expect(myProps.newProp).toBe('val1');
-    expect(myProps.newProp2).toBe('changed');
-  });
-
-  it('handles themes', () => {
-    const Foo = componentFactory({
-      displayName: 'foo'
-    });
-
-    const el = mount(<Foo theme="onPrimary" />);
-    expect(el.html().includes('class="mdc-theme--on-primary"')).toBe(true);
-  });
-
-  it('handles ref forwarding', () => {
-    const Foo = componentFactory({
-      displayName: 'foo'
-    });
-
-    let myRef: any;
-    mount(<Foo ref={el => (myRef = el)} />);
-    expect(myRef).toBeTruthy();
-  });
 });
 
 describe('FoundationComponent', () => {

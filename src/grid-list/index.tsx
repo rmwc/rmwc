@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useClassNames, useTag } from '@rmwc/base/component';
+import { useClassNames, useTag } from '@rmwc/base';
 
 /** Grid List Component */
 export interface GridListProps {

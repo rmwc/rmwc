@@ -7,7 +7,7 @@ export { default as classNames } from 'classnames';
 export * from './with-theme';
 export * from './utils';
 export { FoundationComponent, useFoundation } from './foundation-component';
-export { componentFactory } from './component';
+export * from './component';
 
 export const createFocusTrap = _createFocusTrap;
 
