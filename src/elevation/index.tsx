@@ -1,6 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, wrapChild } from '@rmwc/base';
+import { wrapChild } from '@rmwc/base';
+import { useTag, useClassNames } from '@rmwc/base/component';
 
 /** The Elevation Component */
 export interface ElevationProps {
@@ -13,23 +14,23 @@ export interface ElevationProps {
 }
 
 /** The Elevation Component */
-export const Elevation = componentFactory<ElevationProps>({
-  displayName: 'Elevation',
-  defaultProps: {
-    z: 0,
-    transition: false
-  },
-  classNames: (props: ElevationProps) => [
-    `mdc-elevation--z${props.z}`,
-    { 'mdc-elevation-transition': props.transition }
-  ],
-  consumeProps: ['z', 'transition'],
-  useRender: (props, ref, Tag) => {
-    const { wrap, ...rest } = props;
-    if (wrap) {
-      return wrapChild({ ...rest, ref });
-    }
+export const Elevation = React.forwardRef<
+  any,
+  ElevationProps & Omit<RMWC.ComponentProps, 'wrap'>
+>(function Elevation(props, ref) {
+  const Tag = useTag(props);
 
-    return <Tag {...rest} ref={ref} />;
+  const { z = 0, transition = false, wrap, ...rest } = props;
+
+  const className = useClassNames(props, [
+    `mdc-elevation--z${z}`,
+    { 'mdc-elevation-transition': transition }
+  ]);
+
+  if (wrap) {
+    return wrapChild({ ...rest, className, ref });
   }
+
+  return <Tag {...rest} ref={ref} className={className} />;
 });
+Elevation.displayName = 'Elevation';
