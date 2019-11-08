@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
+import { getDisplayName, useTag, useClassNames } from '@rmwc/base';
 
 /** A Grid component */
 export interface GridProps {
@@ -12,37 +12,28 @@ export interface GridProps {
   children?: React.ReactNode;
 }
 
-const GridRoot = componentFactory<GridProps>({
-  displayName: 'GridRoot',
-  classNames: (props: GridProps) => [
-    'mdc-layout-grid',
-    {
-      [`mdc-layout-grid__cell--align-${props.align || ''}`]:
-        props.align !== undefined,
-      'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth
-    }
-  ],
-  consumeProps: ['fixedColumnWidth', 'align']
-});
-
 /** A Grid component */
-export const Grid: React.ComponentType<GridProps & RMWC.ComponentProps> = ({
-  children,
-  ...rest
-}: GridProps) => {
-  const child: any = children;
-  const needsInnerGrid = !(
-    child &&
-    typeof child === 'object' &&
-    (child.type || {}).displayName === 'GridInner'
-  );
-  return (
-    <GridRoot {...rest}>
-      {!!needsInnerGrid ? <GridInner>{children}</GridInner> : children}
-    </GridRoot>
-  );
-};
+export const Grid = React.forwardRef<any, GridProps & RMWC.ComponentProps>(
+  function Grid(props, ref) {
+    const Tag = useTag(props);
+    const { children, fixedColumnWidth, align, ...rest } = props;
+    const needsInnerGrid = !(getDisplayName(children) === 'GridInner');
+    const className = useClassNames(props, [
+      'mdc-layout-grid',
+      {
+        [`mdc-layout-grid__cell--align-${align || ''}`]:
+          props.align !== undefined,
+        'mdc-layout-grid--fixed-column-width': fixedColumnWidth
+      }
+    ]);
 
+    return (
+      <Tag {...rest} className={className}>
+        {!!needsInnerGrid ? <GridInner>{children}</GridInner> : children}
+      </Tag>
+    );
+  }
+);
 Grid.displayName = 'Grid';
 
 /** A Grid cell */
@@ -62,33 +53,39 @@ export interface GridCellProps {
 }
 
 /** A Grid cell */
-export const GridCell = componentFactory<GridCellProps>({
-  displayName: 'GridCell',
-  classNames: (props: GridCellProps) => [
+export const GridCell = React.forwardRef<
+  any,
+  GridCellProps & RMWC.ComponentProps
+>(function GridCell(props, ref) {
+  const Tag = useTag(props);
+  const { span, phone, tablet, desktop, order, align, ...rest } = props;
+  const className = useClassNames(props, [
     'mdc-layout-grid__cell',
     {
-      [`mdc-layout-grid__cell--order-${props.order || ''}`]:
-        props.order !== undefined,
-      [`mdc-layout-grid__cell--align-${props.align || ''}`]:
-        props.align !== undefined,
-      [`mdc-layout-grid__cell--span-${props.span || ''}`]:
-        props.span !== undefined,
-      [`mdc-layout-grid__cell--span-${props.phone || ''}-phone`]:
-        props.phone !== undefined,
-      [`mdc-layout-grid__cell--span-${props.tablet || ''}-tablet`]:
-        props.tablet !== undefined,
-      [`mdc-layout-grid__cell--span-${props.desktop || ''}-desktop`]:
+      [`mdc-layout-grid__cell--order-${order || ''}`]: order !== undefined,
+      [`mdc-layout-grid__cell--align-${align || ''}`]: align !== undefined,
+      [`mdc-layout-grid__cell--span-${span || ''}`]: span !== undefined,
+      [`mdc-layout-grid__cell--span-${phone || ''}-phone`]: phone !== undefined,
+      [`mdc-layout-grid__cell--span-${tablet || ''}-tablet`]:
+        tablet !== undefined,
+      [`mdc-layout-grid__cell--span-${desktop || ''}-desktop`]:
         props.desktop !== undefined
     }
-  ],
-  consumeProps: ['span', 'phone', 'tablet', 'desktop', 'order', 'align']
+  ]);
+  return <Tag ref={ref} {...rest} className={className} />;
 });
+GridCell.displayName = 'GridCell';
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
 export interface GridInnerProps {}
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export const GridInner = componentFactory<GridInnerProps>({
-  displayName: 'GridInner',
-  classNames: ['mdc-layout-grid__inner']
+export const GridInner = React.forwardRef<
+  any,
+  GridInnerProps & RMWC.ComponentProps
+>(function GridInner(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-layout-grid__inner']);
+  return <Tag ref={ref} {...props} className={className} />;
 });
+GridInner.displayName = 'GridInner';
