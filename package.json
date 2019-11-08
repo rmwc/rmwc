@@ -47,6 +47,7 @@
     "postpublish": "npm run clean && npm run build:docsite && git add docs && git commit -m 'Building docs' &&  git push && git push --tags && npm run clean"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-knobs": "^5.2.5",

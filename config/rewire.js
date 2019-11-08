@@ -52,7 +52,8 @@ const enableOptionalChaining = config => {
   );
 
   babelLoader.options.plugins.push(
-    require.resolve('@babel/plugin-proposal-optional-chaining')
+    require.resolve('@babel/plugin-proposal-optional-chaining'),
+    require.resolve('@babel/plugin-proposal-nullish-coalescing-operator')
   );
 
   return config;
