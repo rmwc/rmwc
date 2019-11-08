@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as RMWC from '@rmwc/types';
-import { componentFactory } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
+import { useClassNames, useTag } from '@rmwc/base/component';
 
 /** An Avatar component for displaying users in a system. */
 export interface AvatarProps {
@@ -27,7 +27,7 @@ const getInitialsForName = (name: string) => {
     let letters = (parts[0] || '')[0];
     if (parts.length > 1) {
       const part = parts.pop();
-        /* istanbul ignore next */
+      /* istanbul ignore next */
       if (part) {
         letters += part[0];
       }
@@ -38,41 +38,46 @@ const getInitialsForName = (name: string) => {
   return '';
 };
 
+interface AvatarRootProps extends IconProps {
+  isCount?: boolean;
+  overflow?: boolean;
+  smallerText?: boolean;
+  square?: boolean;
+  interactive?: boolean;
+  hasImage?: boolean;
+  size?: RMWC.IconSizeT;
+}
+
 const AvatarRoot = withRipple()(
-  componentFactory<
-    {
-      isCount?: boolean;
-      overflow?: boolean;
-      smallerText?: boolean;
-      square?: boolean;
-      interactive?: boolean;
-      hasImage?: boolean;
-      size?: RMWC.IconSizeT;
-    } & IconProps
-  >({
-    displayName: 'AvatarRoot',
-    classNames: props => [
-      'rmwc-avatar',
-      {
-        [`rmwc-avatar--${props.size}`]: props.size,
-        'rmwc-avatar--count': props.isCount,
-        'rmwc-avatar--interactive': props.interactive,
-        'rmwc-avatar--count-overflow': props.overflow,
-        'rmwc-avatar--smaller-text': props.smallerText,
-        'rmwc-avatar--square': props.square,
-        'rmwc-avatar--has-image': props.hasImage
+  React.memo(
+    React.forwardRef<any, AvatarRootProps & Omit<RMWC.ComponentProps, 'size'>>(
+      function AvatarRoot(props, ref) {
+        const {
+          isCount,
+          overflow,
+          smallerText,
+          square,
+          interactive,
+          hasImage,
+          ...rest
+        } = props;
+
+        const className = useClassNames(props, [
+          'rmwc-avatar',
+          {
+            [`rmwc-avatar--${props.size}`]: rest.size,
+            'rmwc-avatar--count': isCount,
+            'rmwc-avatar--interactive': interactive,
+            'rmwc-avatar--count-overflow': overflow,
+            'rmwc-avatar--smaller-text': smallerText,
+            'rmwc-avatar--square': square,
+            'rmwc-avatar--has-image': hasImage
+          }
+        ]);
+        return <Icon {...rest} className={className} ref={ref} />;
       }
-    ],
-    tag: Icon,
-    consumeProps: [
-      'isCount',
-      'overflow',
-      'smallerText',
-      'square',
-      'interactive',
-      'hasImage'
-    ]
-  })
+    )
+  )
 );
 
 /** A container for groups of Avatars */
@@ -82,26 +87,33 @@ export interface AvatarGroupProps {
 }
 
 /** A container for groups of Avatars */
-export const AvatarGroup = componentFactory<AvatarGroupProps>({
-  displayName: 'AvatarGroup',
-  classNames: props => [
+export const AvatarGroup = React.forwardRef<
+  any,
+  AvatarGroupProps & RMWC.ComponentProps
+>(function AvatarGroup(props, ref) {
+  const Tag = useTag(props);
+
+  const { dense, ...rest } = props;
+
+  const className = useClassNames(props, [
     'rmwc-avatar-group',
     {
-      'rmwc-avatar-group--dense': props.dense
+      'rmwc-avatar-group--dense': dense
     }
-  ],
-  consumeProps: ['dense']
+  ]);
+
+  return <Tag ref={ref} {...rest} className={className} />;
 });
+AvatarGroup.displayName = 'AvatarGroup';
 
 /** An Avatar component for displaying users in a system. */
-export const Avatar = ({
-  src,
-  size,
-  name = '',
-  interactive = false,
-  contain = false,
-  ...rest
-}: RMWC.MergeInterfacesT<AvatarProps, RMWC.ComponentProps>) => {
+export const Avatar = React.forwardRef<
+  any,
+  AvatarProps & Omit<RMWC.ComponentProps, 'size'>
+>(function Avatar(
+  { src, size, name = '', interactive = false, contain = false, ...rest },
+  ref
+) {
   const initials = getInitialsForName(name);
   const avatarStyle = src
     ? {
@@ -112,6 +124,7 @@ export const Avatar = ({
 
   return (
     <AvatarRoot
+      ref={ref}
       ripple={interactive}
       interactive={interactive}
       hasImage={!!src}
@@ -121,17 +134,17 @@ export const Avatar = ({
       {...rest}
       icon={{
         icon: (
-          <React.Fragment>
+          <>
             <div className="rmwc-avatar__icon" style={avatarStyle} />
             <div className="rmwc-avatar__text">
               <div className="rmwc-avatar__text-inner">{initials}</div>
             </div>
-          </React.Fragment>
+          </>
         )
       }}
     />
   );
-};
+});
 
 Avatar.displayName = 'Avatar';
 
@@ -150,36 +163,37 @@ export interface AvatarCountProps {
 }
 
 /** An Avatar count for displaying list overflow. */
-export const AvatarCount = ({
-  value,
-  overflow,
-  size,
-  interactive = false,
-  ...rest
-}: RMWC.MergeInterfacesT<AvatarCountProps, RMWC.ComponentProps>) => {
-  const smallerText = String(value).length > 2;
-  return (
-    <AvatarRoot
-      {...rest}
-      ripple={interactive}
-      interactive={interactive}
-      isCount
-      size={size}
-      overflow={overflow}
-      smallerText={smallerText}
-      tag={'span'}
-      {...rest}
-      icon={{
-        icon: (
-          <React.Fragment>
-            <div className="rmwc-avatar__text">
-              <div className="rmwc-avatar__text-inner">{value}</div>
-            </div>
-          </React.Fragment>
-        )
-      }}
-    />
-  );
-};
+export const AvatarCount = React.memo(
+  React.forwardRef<any, AvatarCountProps & Omit<RMWC.ComponentProps, 'size'>>(
+    function AvatarCount(
+      { value, overflow, size, interactive = false, ...rest },
+      ref
+    ) {
+      const smallerText = String(value).length > 2;
+      return (
+        <AvatarRoot
+          ref={ref}
+          ripple={interactive}
+          interactive={interactive}
+          isCount
+          size={size}
+          overflow={overflow}
+          smallerText={smallerText}
+          tag={'span'}
+          {...rest}
+          icon={{
+            icon: (
+              <>
+                <div className="rmwc-avatar__text">
+                  <div className="rmwc-avatar__text-inner">{value}</div>
+                </div>
+              </>
+            )
+          }}
+        />
+      );
+    }
+  )
+);
 
 AvatarCount.displayName = 'AvatarCount';
