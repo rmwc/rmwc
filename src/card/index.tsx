@@ -1,7 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
@@ -27,7 +26,6 @@ export const Card = React.forwardRef<any, CardProps & RMWC.ComponentProps>(
     return <Tag ref={ref} {...rest} className={className} />;
   }
 );
-
 Card.displayName = 'Card';
 
 /** Media area that displays a custom background-image with background-size: cover */
@@ -54,7 +52,6 @@ export const CardMedia = React.forwardRef<
   ]);
   return <Tag ref={ref} {...rest} className={className} />;
 });
-
 CardMedia.displayName = 'CardMedia';
 
 /** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
@@ -69,7 +66,6 @@ export const CardMediaContent = React.forwardRef<
   const className = useClassNames(props, ['mdc-card__media-content']);
   return <Tag ref={ref} {...props} className={className} />;
 });
-
 CardMediaContent.displayName = 'CardMediaContent';
 
 /** The main clickable area for the primary content of the card */
@@ -87,7 +83,6 @@ export const CardPrimaryAction = withRipple({
     }
   )
 );
-
 CardPrimaryAction.displayName = 'CardPrimaryAction';
 
 /** Row containing action buttons and/or icons */
@@ -109,7 +104,6 @@ export const CardActions = React.forwardRef<
   ]);
   return <Tag ref={ref} {...rest} className={className} />;
 });
-
 CardActions.displayName = 'CardActions';
 
 /** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
