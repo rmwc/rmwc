@@ -1,18 +1,9 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React, { useMemo } from 'react';
 
-import {
-  componentFactory,
-  toDashCase,
-  parseThemeOptions,
-  wrapChild
-} from '@rmwc/base';
+import { toDashCase, parseThemeOptions, wrapChild } from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
-
-const ThemeRoot = componentFactory<{}>({
-  displayName: 'ThemeRoot',
-  tag: 'span'
-});
+import { useTag, useClassNames } from '@rmwc/base/component';
 
 /** A Theme Component. */
 export interface ThemeProps {
@@ -23,25 +14,31 @@ export interface ThemeProps {
 }
 
 /** A Theme Component. */
-export const Theme = ({
-  use,
-  wrap,
-  ...rest
-}: RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>) => {
+export const Theme = React.forwardRef<
+  any,
+  RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>
+>(function Theme(props, ref) {
+  const Tag = useTag(props, 'span');
+
+  const { use, wrap, ...rest } = props;
+
+  const className = useClassNames(props, [parseThemeOptions(use).join(' ')]);
+
   if (wrap) {
-    return wrapChild({ ...rest, className: parseThemeOptions(use).join(' ') });
+    return wrapChild({
+      ...rest,
+      ref,
+      className
+    });
   }
-  return <ThemeRoot theme={use} {...rest} />;
-};
+
+  return <Tag theme={use} {...rest} ref={ref} className={className} />;
+});
 
 Theme.displayName = 'Theme';
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
-export interface ThemeProviderProps
-  extends Pick<
-    RMWC.ComponentProps,
-    Exclude<keyof RMWC.ComponentProps, 'wrap'>
-  > {
+export interface ThemeProviderProps {
   /** Any theme option pointing to a valid CSS value. */
   options: { [key: string]: string };
   /** Additional standard inline styles that will be merged into the style tag. */
@@ -53,58 +50,38 @@ export interface ThemeProviderProps
 }
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
-export class ThemeProvider extends React.Component<ThemeProviderProps> {
-  static displayName = 'ThemeProvider';
+export function ThemeProvider(
+  props: ThemeProviderProps & Omit<RMWC.ComponentProps, 'wrap' | 'options'>
+) {
+  const parsed = JSON.stringify(props.options);
 
-  prevOpts_ = '';
-  colors_ = {};
+  const colors = useMemo(() => {
+    const processedColors = Object.keys(props.options).reduce(
+      (acc: any, key) => {
+        const val = props.options[key];
+        key = key.startsWith('--') ? key : `--mdc-theme-${toDashCase(key)}`;
+        acc[key] = val;
+        return acc;
+      },
+      {}
+    );
 
-  get colors() {
-    // implement some caching to prevent the color checking from being called over and over again.
-    const parsed = JSON.stringify(this.props.options);
-    if (parsed !== this.prevOpts_) {
-      this.prevOpts_ = parsed;
+    return getAutoColorsForTheme(processedColors);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [parsed]);
 
-      const processedColors = Object.keys(this.props.options).reduce(
-        (acc: any, key) => {
-          const val = this.props.options[key];
+  const { options, style = {}, wrap, ...rest } = props;
 
-          key = key.startsWith('--') ? key : `--mdc-theme-${toDashCase(key)}`;
-          acc[key] = val;
-          return acc;
-        },
-        {}
-      );
+  const themeStyles = {
+    ...style,
+    ...colors
+  };
 
-      this.colors_ = getAutoColorsForTheme(processedColors);
-    }
-
-    return this.colors_;
+  if (wrap && rest.children) {
+    return wrapChild({ ...rest, style: themeStyles });
   }
 
-  render() {
-    const { options, style = {}, wrap, children, ...rest } = this.props;
-    // Casting styles to avoid TSX error
-    const tsxSafeStyle: React.CSSProperties = style;
-    const themeStyles = {
-      ...tsxSafeStyle,
-      ...this.colors
-    };
-
-    if (wrap && children) {
-      const child = React.Children.only(children);
-      if (!React.isValidElement<React.HTMLProps<any>>(child)) {
-        return;
-      }
-      const childStyle = child.props.style || {};
-
-      return React.cloneElement(child, {
-        ...child.props,
-        ...rest,
-        style: { ...themeStyles, ...childStyle }
-      });
-    }
-
-    return <div {...rest} children={children} style={themeStyles} />;
-  }
+  return <div {...rest} style={themeStyles} />;
 }
+
+ThemeProvider.displayName = 'ThemeProvider';

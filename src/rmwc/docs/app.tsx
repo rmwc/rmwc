@@ -122,7 +122,7 @@ const getTheme = (themeName: string) => {
   };
 
   const colors = getAutoColorsForTheme(theme);
-  const merged = {
+  const merged: { [key: string]: string } = {
     ...TEXT_DEFAULTS,
     ...colors
   };
@@ -154,9 +154,8 @@ const getTheme = (themeName: string) => {
     'textIconOnDark'
   ];
 
-  return order.reduce((acc, key) => {
+  return order.reduce<{ [key: string]: string }>((acc, key) => {
     const newKey = `--mdc-theme-${toDashCase(key)}`;
-    // @ts-ignore
     acc[newKey] = merged[newKey];
     return acc;
   }, {});
