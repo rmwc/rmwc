@@ -1,6 +1,5 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useTag, useClassNames } from '@rmwc/base/component';
 
