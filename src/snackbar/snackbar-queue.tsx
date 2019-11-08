@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Snackbar,
   SnackbarProps,
@@ -36,21 +36,12 @@ export function SnackbarQueue({
     messages.array[0]
   );
 
-  useEffect(() => {
-    messages.on('change', getMessage);
-    return () => messages.off('change', getMessage);
-  }, []);
-
-  useEffect(() => {
-    getMessage();
-  });
-
-  const getMessage = () => {
+  const getMessage = useCallback(() => {
     const newMessage = messages.array[0];
     if (newMessage && newMessage !== message) {
       setMessage(newMessage);
     }
-  };
+  }, [message, messages]);
 
   const removeMessage = (message?: SnackbarQueueMessage) => {
     if (!message) return;
@@ -61,6 +52,15 @@ export function SnackbarQueue({
       setMessage(undefined);
     }, 75);
   };
+
+  useEffect(() => {
+    messages.on('change', getMessage);
+    return () => messages.off('change', getMessage);
+  }, [messages, getMessage]);
+
+  useEffect(() => {
+    getMessage();
+  });
 
   const {
     body = '',

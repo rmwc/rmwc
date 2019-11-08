@@ -376,5 +376,10 @@ export const useFoundation = <
     )
   );
 
+  useEffect(() => {
+    // eslint-disable-next-line
+    return () => foundation.current.destroy();
+  }, []);
+
   return { foundation: foundation.current, ...elements.current };
 };
