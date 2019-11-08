@@ -106,7 +106,10 @@ const buildIconOptions = (icon?: RMWC.IconPropT) => {
 const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
-export const Icon = ({ icon, ...rest }: IconProps & RMWC.ComponentProps) => {
+export const Icon = ({
+  icon,
+  ...rest
+}: IconProps & Omit<RMWC.ComponentProps, 'size'>) => {
   const providerContext = useProviderContext();
 
   // Build icon options object
