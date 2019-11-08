@@ -354,15 +354,12 @@ export const useFoundation = <
     () =>
       Object.keys(elementsInput).reduce<
         { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
-      >(
-        (acc, key: keyof Elements) => {
-          acc[key] = new FoundationElement<Props, HTMLElement>(() =>
-            setIteration(val => val + 1)
-          );
-          return acc;
-        },
-        {} as any
-      ),
+      >((acc, key: keyof Elements) => {
+        acc[key] = new FoundationElement<Props, HTMLElement>(() => {
+          setIteration(val => val + 1);
+        });
+        return acc;
+      }, {} as any),
     []
   );
 
