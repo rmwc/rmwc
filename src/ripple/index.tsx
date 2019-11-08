@@ -304,7 +304,7 @@ export const withRipple = ({
   const WithRippleComponent = React.forwardRef<any, any>(
     ({ ripple, ...rest }: P & RMWC.WithRippleProps, ref) => {
       const providerContext = useProviderContext();
-      ripple = ripple || providerContext.ripple;
+      ripple = ripple ?? providerContext.ripple;
       const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
 
       if (ripple) {
@@ -325,6 +325,7 @@ export const withRipple = ({
   );
 
   WithRippleComponent.displayName = `withRipple(${Component.displayName ||
+    Component.constructor.name ||
     'Unknown'})`;
 
   return WithRippleComponent as React.ComponentType<P & RMWC.WithRippleProps>;
