@@ -298,7 +298,7 @@ export class FoundationComponent<
   }
 }
 
-export const emitFactory = (props: { [key: string]: any }) => (
+const emitFactory = (props: { [key: string]: any }) => (
   evtType: string,
   evtData: any,
   shouldBubble: boolean = false
@@ -355,6 +355,10 @@ export const useFoundation = <
   elements: Elements;
 }) => {
   const [, setIteration] = useState(0);
+
+  const props = useRef(_props);
+  props.current = _props;
+
   const elements = useRef(
     Object.keys(elementsInput).reduce<
       { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
@@ -365,9 +369,6 @@ export const useFoundation = <
       return acc;
     }, {} as any)
   );
-
-  const props = useRef(_props);
-  props.current = _props;
 
   const foundation = useRef(
     _foundation(elements.current, (...args) =>

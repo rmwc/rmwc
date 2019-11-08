@@ -1,11 +1,10 @@
 import { ChipProps } from './';
 import { useId } from '@rmwc/base';
-import { useFoundation, emitFactory } from '@rmwc/base';
+import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
 
 export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   const chipId = useId('chip', props);
-  const emit = emitFactory(props);
 
   const foundationWithElements = useFoundation({
     props,
@@ -14,7 +13,7 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       trailingIconEl: true,
       checkmarkEl: true
     },
-    foundation: ({ rootEl, checkmarkEl }) =>
+    foundation: ({ rootEl, checkmarkEl }, emit) =>
       new MDCChipFoundation({
         addClass: className => {
           rootEl.addClass(className);
