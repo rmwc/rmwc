@@ -269,6 +269,7 @@ interface SelectState {
   menuOpen: boolean;
   lineRippleActive: boolean;
   lineRippleCenter: number;
+  notchWidth?: number;
 }
 
 export class SelectBase extends FoundationComponent<
@@ -277,7 +278,6 @@ export class SelectBase extends FoundationComponent<
   SelectState
 > {
   private root = this.createElement<HTMLSelectElement>('root');
-  private outline = this.createElement<NotchedOutline>('outline');
   private label = this.createElement<any>('label');
   private labelApi: FloatingLabelApi | undefined = undefined;
 
@@ -295,7 +295,8 @@ export class SelectBase extends FoundationComponent<
     menuOpen: false,
     selectedTextContent: '',
     lineRippleActive: false,
-    lineRippleCenter: 0
+    lineRippleCenter: 0,
+    notchWidth: 0
   };
 
   constructor(props: SelectProps) {
@@ -509,10 +510,10 @@ export class SelectBase extends FoundationComponent<
     return {
       hasOutline: () => !!this.props.outlined,
       notchOutline: (labelWidth: number) => {
-        this.outline.setProp('notch', labelWidth);
+        this.setState({ notchWidth: labelWidth });
       },
       closeOutline: () => {
-        this.outline.removeProp('notch');
+        this.setState({ notchWidth: undefined });
       }
     };
   }
@@ -800,7 +801,7 @@ export class SelectBase extends FoundationComponent<
             </SelectNativeControl>
           )}
           {!!outlined ? (
-            <NotchedOutline {...this.outline.props({})}>
+            <NotchedOutline notch={this.state.notchWidth}>
               {renderedLabel}
             </NotchedOutline>
           ) : (

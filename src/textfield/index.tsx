@@ -105,7 +105,11 @@ const TextFieldTextarea = componentFactory({
 export class TextField extends FoundationComponent<
   MDCTextFieldFoundation,
   TextFieldProps,
-  { lineRippleActive: boolean; lineRippleCenter: number }
+  {
+    lineRippleActive: boolean;
+    lineRippleCenter: number;
+    notchWidth?: number;
+  }
 > {
   static displayName = 'TextField';
   generatedId = randomId('textfield');
@@ -119,17 +123,16 @@ export class TextField extends FoundationComponent<
   characterCounter?: null | TextFieldCharacterCount = null;
   leadingIcon: null | TextFieldIcon = null;
   trailingIcon: null | TextFieldIcon = null;
-  outline: null | any;
   valueNeedsUpdate = false;
 
   state = {
     lineRippleActive: false,
-    lineRippleCenter: 0
+    lineRippleCenter: 0,
+    notchWidth: undefined
   };
 
   constructor(props: any) {
     super(props);
-
     this.handleOnChange = this.handleOnChange.bind(this);
   }
 
@@ -209,10 +212,10 @@ export class TextField extends FoundationComponent<
   getOutlineAdapterMethods() {
     return {
       notchOutline: (labelWidth: number) => {
-        !!this.outline && this.outline.notch(labelWidth);
+        this.setState({ notchWidth: labelWidth });
       },
-      closeOutline: () => this.outline && this.outline.closeNotch(),
-      hasOutline: () => !!this.outline
+      closeOutline: () => this.setState({ notchWidth: undefined }),
+      hasOutline: () => !!this.state.notchWidth
     };
   }
 
@@ -399,11 +402,7 @@ export class TextField extends FoundationComponent<
 
           {!!outlined ? (
             <React.Fragment>
-              <NotchedOutline
-                ref={(ref: NotchedOutline) =>
-                  (this.outline = ref && ref.foundation)
-                }
-              >
+              <NotchedOutline notch={this.state.notchWidth}>
                 {renderedLabel}
               </NotchedOutline>
               {!!trailingIcon && this.renderIcon(trailingIcon, 'trailingIcon')}

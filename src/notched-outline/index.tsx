@@ -1,96 +1,52 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
-import { FoundationComponent } from '@rmwc/base';
-import { MDCNotchedOutlineFoundation } from '@material/notched-outline';
+import React from 'react';
+import { useNotchedOutlineFoundation } from './foundation';
 
 export interface NotchedOutlineProps {
   notch?: number;
 }
 
-class NotchedOutlineLeading extends React.Component<{}> {
-  shouldComponentUpdate() {
-    return false;
-  }
+/*********************************************************************
+ * Notched Outline
+ *********************************************************************/
 
-  render() {
-    return <div className="mdc-notched-outline__leading" />;
-  }
-}
+export function NotchedOutline(
+  props: NotchedOutlineProps & RMWC.ComponentProps
+) {
+  const { children, ...rest } = props;
+  const { rootEl, notchedEl } = useNotchedOutlineFoundation(props);
 
-class NotchedOutlineTrailing extends React.Component<{}> {
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return <div className="mdc-notched-outline__trailing" />;
-  }
-}
-
-export class NotchedOutline extends FoundationComponent<
-  MDCNotchedOutlineFoundation,
-  NotchedOutlineProps
-> {
-  static displayName = 'NotchedOutline';
-  private root = this.createElement('root');
-  private notchElement = this.createElement('root');
-  label: HTMLLabelElement | null = null;
-
-  componentDidMount() {
-    super.componentDidMount();
-    this.label = this.root.ref && this.root.ref.querySelector('label');
-
-    if (this.label) {
-      this.label.style.transitionDuration = '0s';
-      this.root.addClass(
-        MDCNotchedOutlineFoundation.cssClasses.OUTLINE_UPGRADED
-      );
-      requestAnimationFrame(() => {
-        this.label && (this.label.style.transitionDuration = '');
-      });
-    } else {
-      this.root.addClass(MDCNotchedOutlineFoundation.cssClasses.NO_LABEL);
-    }
-  }
-
-  getDefaultFoundation() {
-    return new MDCNotchedOutlineFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      setNotchWidthProperty: (width: number) =>
-        this.notchElement.setStyle('width', width + 'px'),
-      removeNotchWidthProperty: () => this.notchElement.setStyle('width', '')
-    });
-  }
-
-  sync(props: NotchedOutlineProps, prevProps: NotchedOutlineProps) {
-    this.syncProp(props.notch, prevProps.notch, () => {
-      !!props.notch
-        ? this.foundation.notch(props.notch)
-        : this.foundation.closeNotch();
-    });
-  }
-
-  render() {
-    const { children, ...rest } = this.props;
-    return (
+  return (
+    <div
+      {...rootEl.props({
+        ...rest,
+        className: 'mdc-notched-outline'
+      })}
+      ref={rootEl.setRef}
+    >
+      <NotchedOutlineLeading />
       <div
-        {...this.root.props({
-          ...rest,
-          className: 'mdc-notched-outline'
+        {...notchedEl.props({
+          className: 'mdc-notched-outline__notch'
         })}
-        ref={this.root.setRef}
+        ref={notchedEl.setRef}
       >
-        <NotchedOutlineLeading />
-        <div
-          {...this.notchElement.props({})}
-          className="mdc-notched-outline__notch"
-          ref={this.notchElement.setRef}
-        >
-          {children}
-        </div>
-        <NotchedOutlineTrailing />
+        {children}
       </div>
-    );
-  }
+      <NotchedOutlineTrailing />
+    </div>
+  );
 }
+NotchedOutline.displayName = 'NotchedOutline';
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+const NotchedOutlineLeading = React.memo(function NotchedOutlineLeading() {
+  return <div className="mdc-notched-outline__leading" />;
+});
+
+const NotchedOutlineTrailing = React.memo(function NotchedOutlineTrailing() {
+  return <div className="mdc-notched-outline__trailing" />;
+});
