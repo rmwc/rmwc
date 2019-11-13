@@ -267,6 +267,8 @@ interface SelectState {
   selectedIndex: number;
   selectedTextContent: string;
   menuOpen: boolean;
+  lineRippleActive: boolean;
+  lineRippleCenter: number;
 }
 
 export class SelectBase extends FoundationComponent<
@@ -275,7 +277,6 @@ export class SelectBase extends FoundationComponent<
   SelectState
 > {
   private root = this.createElement<HTMLSelectElement>('root');
-  private lineRipple = this.createElement<LineRipple>('lineRipple');
   private outline = this.createElement<NotchedOutline>('outline');
   private label = this.createElement<any>('label');
   private labelApi: FloatingLabelApi | undefined = undefined;
@@ -292,7 +293,9 @@ export class SelectBase extends FoundationComponent<
   state = {
     selectedIndex: this.props.placeholder !== undefined ? 0 : -1,
     menuOpen: false,
-    selectedTextContent: ''
+    selectedTextContent: '',
+    lineRippleActive: false,
+    lineRippleCenter: 0
   };
 
   constructor(props: SelectProps) {
@@ -491,10 +494,11 @@ export class SelectBase extends FoundationComponent<
         this.root.ref &&
         window.getComputedStyle(this.root.ref).getPropertyValue('direction') ===
           'rtl',
-      setRippleCenter: (normalizedX: number) =>
-        this.lineRipple.setProp('center', normalizedX),
-      activateBottomLine: () => this.lineRipple.setProp('active', true),
-      deactivateBottomLine: () => this.lineRipple.setProp('active', false),
+      setRippleCenter: (normalizedX: number) => {
+        this.setState({ lineRippleCenter: normalizedX });
+      },
+      activateBottomLine: () => this.setState({ lineRippleActive: true }),
+      deactivateBottomLine: () => this.setState({ lineRippleActive: false }),
       notifyChange: (value: any) => {
         // handled byt the onChange event
       }
@@ -802,7 +806,10 @@ export class SelectBase extends FoundationComponent<
           ) : (
             <React.Fragment>
               {renderedLabel}
-              <LineRipple {...this.lineRipple.props({})} />
+              <LineRipple
+                active={this.state.lineRippleActive}
+                center={this.state.lineRippleCenter}
+              />
             </React.Fragment>
           )}
         </SelectRoot>

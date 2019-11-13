@@ -104,7 +104,8 @@ const TextFieldTextarea = componentFactory({
 /** A TextField component for accepting text input from a user. */
 export class TextField extends FoundationComponent<
   MDCTextFieldFoundation,
-  TextFieldProps
+  TextFieldProps,
+  { lineRippleActive: boolean; lineRippleCenter: number }
 > {
   static displayName = 'TextField';
   generatedId = randomId('textfield');
@@ -114,12 +115,17 @@ export class TextField extends FoundationComponent<
   );
   private label = this.createElement<any>('label');
   private labelApi: FloatingLabelApi | undefined = undefined;
-  private lineRipple = this.createElement<LineRipple>('lineRipple');
+
   characterCounter?: null | TextFieldCharacterCount = null;
   leadingIcon: null | TextFieldIcon = null;
   trailingIcon: null | TextFieldIcon = null;
   outline: null | any;
   valueNeedsUpdate = false;
+
+  state = {
+    lineRippleActive: false,
+    lineRippleCenter: 0
+  };
 
   constructor(props: any) {
     super(props);
@@ -189,19 +195,13 @@ export class TextField extends FoundationComponent<
   getLineRippleAdapterMethods() {
     return {
       activateLineRipple: () => {
-        if (this.lineRipple) {
-          this.lineRipple.setProp('active', true);
-        }
+        this.setState({ lineRippleActive: true });
       },
       deactivateLineRipple: () => {
-        if (this.lineRipple) {
-          this.lineRipple.setProp('active', false);
-        }
+        this.setState({ lineRippleActive: false });
       },
       setLineRippleTransformOrigin: (normalizedX: number) => {
-        if (this.lineRipple) {
-          this.lineRipple.setProp('center', normalizedX);
-        }
+        this.setState({ lineRippleCenter: normalizedX });
       }
     };
   }
@@ -412,7 +412,10 @@ export class TextField extends FoundationComponent<
             <React.Fragment>
               {renderedLabel}
               {!!trailingIcon && this.renderIcon(trailingIcon, 'trailingIcon')}
-              <LineRipple {...this.lineRipple.props({})} />
+              <LineRipple
+                active={this.state.lineRippleActive}
+                center={this.state.lineRippleCenter}
+              />
             </React.Fragment>
           )}
         </TextFieldRoot>
