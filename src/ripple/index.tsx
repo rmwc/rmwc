@@ -219,8 +219,7 @@ export class Ripple extends FoundationComponent<
       : {};
 
     let finalClassNames = classNames(
-      // TODO, this was causing duplicate classnames on ripple elements
-      // className,
+      className !== child.props.className && className,
       rippleSurfaceProps.className,
       child.props.className,
       {
