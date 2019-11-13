@@ -342,14 +342,16 @@ export const useFoundation = <
   elements: elementsInput
 }: {
   foundation: (
-    els: {
+    elements: {
       [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
-    },
-    emit: (
-      evtType: string,
-      evtData: any,
-      shouldBubble?: boolean
-    ) => CustomEvent<any>
+    } & {
+      getProps: () => Props;
+      emit: (
+        evtType: string,
+        evtData: any,
+        shouldBubble?: boolean
+      ) => CustomEvent<any>;
+    }
   ) => Foundation;
   props: Props;
   elements: Elements;
@@ -371,9 +373,11 @@ export const useFoundation = <
   );
 
   const foundation = useRef(
-    _foundation(elements.current, (...args) =>
-      emitFactory(props.current)(...args)
-    )
+    _foundation({
+      ...elements.current,
+      getProps: () => props.current,
+      emit: (...args) => emitFactory(props.current)(...args)
+    })
   );
 
   useEffect(() => {

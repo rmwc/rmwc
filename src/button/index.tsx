@@ -59,7 +59,6 @@ export const Button = withRipple({
     } = props;
 
     const Tag = useTag(props, 'button');
-
     const className = useClassNames(props, [
       'mdc-button',
       {

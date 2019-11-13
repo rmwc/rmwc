@@ -23,7 +23,7 @@ export function useSnackbarFoundation(
       surfaceEl: true,
       labelEl: true
     },
-    foundation: ({ rootEl, labelEl }, emit) => {
+    foundation: ({ rootEl, labelEl, emit }) => {
       return new MDCSnackbarFoundation({
         addClass: (className: string) => rootEl.addClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),

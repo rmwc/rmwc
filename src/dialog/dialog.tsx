@@ -3,111 +3,20 @@ import * as React from 'react';
 
 import { MDCDialogFoundation } from '@material/dialog';
 
-import {
-  FoundationComponent,
-  componentFactory,
-  createFocusTrap,
-  FocusTrap,
-  closest,
-  matches
-} from '@rmwc/base';
+import { useClassNames, useTag } from '@rmwc/base';
 import { Button, ButtonProps } from '@rmwc/button';
+import { useDialogFoundation } from './foundation';
 
-const isScrollable = (el: HTMLElement) => {
-  return el.scrollHeight > el.offsetHeight;
-};
-
-const areTopsMisaligned = (els: HTMLElement[] | null) => {
-  const tops = new Set();
-  [].forEach.call(els, (el: HTMLElement) => tops.add(el.offsetTop));
-  return tops.size > 1;
-};
-
-const DialogRoot = componentFactory<{}>({
-  displayName: 'DialogRoot',
-  defaultProps: {
-    role: 'alertdialog',
-    'aria-modal': true
-  },
-  classNames: ['mdc-dialog']
-});
-
-interface DialogScrimProps {
-  disableInteraction?: boolean;
-}
-
-class DialogScrim extends React.Component<DialogScrimProps> {
-  shouldComponentUpdate(nextProps: DialogScrimProps) {
-    return this.props.disableInteraction !== nextProps.disableInteraction;
-  }
-
-  render() {
-    const style: React.CSSProperties = this.props.disableInteraction
-      ? { pointerEvents: 'none' }
-      : {};
-    return <div className="mdc-dialog__scrim" style={style} />;
-  }
-}
-
-/** The Dialog title. */
-export interface DialogTitleProps {}
-
-/** The Dialog title. */
-export const DialogTitle = componentFactory<DialogTitleProps>({
-  displayName: 'DialogTitle',
-  tag: 'h2',
-  classNames: ['mdc-dialog__title']
-});
-
-/** The Dialog content. */
-export interface DialogContentProps {}
-
-/** The Dialog content. */
-export const DialogContent = componentFactory<DialogContentProps>({
-  displayName: 'DialogContent',
-  classNames: ['mdc-dialog__content']
-});
-
-/** Actions container for the Dialog. */
-export interface DialogActionsProps {}
-
-/** Actions container for the Dialog. */
-export const DialogActions = componentFactory<DialogActionsProps>({
-  displayName: 'DialogActions',
-  classNames: ['mdc-dialog__actions']
-});
-
-/** Action buttons for the Dialog. */
-export interface DialogButtonProps extends ButtonProps {
-  /** An action returned in evt.detail.action to the onClose handler. */
-  action?: string;
-  /** Indicates this is the default selected action when pressing enter */
-  isDefaultAction?: boolean;
-}
-
-/** Action buttons for the Dialog. */
-export class DialogButton extends React.Component<
-  DialogButtonProps & RMWC.ComponentProps
-> {
-  static displayName = 'DialogButton';
-  render() {
-    const { action = '', className, isDefaultAction, ...rest } = this.props;
-    const defaultProp = !!isDefaultAction
-      ? { [MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE]: true }
-      : {};
-    return (
-      <Button
-        {...rest}
-        {...defaultProp}
-        data-mdc-dialog-action={action}
-        className={[className, 'mdc-dialog__button'].filter(Boolean).join(' ')}
-      />
-    );
-  }
-}
+/*********************************************************************
+ * Events
+ *********************************************************************/
 
 export type DialogOnOpenEventT = RMWC.CustomEventT<{}>;
 export type DialogOnCloseEventT = RMWC.CustomEventT<{ action?: string }>;
+
+/*********************************************************************
+ * Dialogs
+ *********************************************************************/
 
 /** A Dialog component. */
 export interface DialogProps {
@@ -124,207 +33,35 @@ export interface DialogProps {
 }
 
 /** A Dialog component. */
-export class Dialog extends FoundationComponent<
-  MDCDialogFoundation,
-  DialogProps
-> {
-  static displayName = 'Dialog';
+export function Dialog(props: DialogProps & RMWC.ComponentProps) {
+  const { rootEl } = useDialogFoundation(props);
 
-  private root = this.createElement('root');
-  container: null | HTMLElement = null;
-  content: null | HTMLElement = null;
-  buttons: null | HTMLElement[] = null;
-  defaultButton: null | HTMLElement = null;
-  focusTrap: FocusTrap | null = null;
-  handleDocumentKeydown: (evt: KeyboardEvent) => void = () => {};
+  const Tag = useTag(props);
 
-  constructor(props: DialogProps) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
-  }
+  const className = useClassNames(props, ['mdc-dialog']);
 
-  open() {
-    if (!this.foundation.isOpen()) {
-      document.addEventListener('keydown', this.handleDocumentKeydown);
-      this.foundation.open();
-
-      // Don't like this fix
-      // This corrects an issue where the default button was stealing focus
-      // When something else in the dialog should have it
-      setTimeout(() => {
-        if (
-          this.defaultButton &&
-          document.activeElement !== this.defaultButton &&
-          document.activeElement &&
-          document.activeElement.classList.contains('mdc-dialog__button')
-        ) {
-          this.defaultButton.focus();
-        }
-      }, 200);
-    }
-  }
-
-  close() {
-    if (this.foundation.isOpen()) {
-      document.removeEventListener('keydown', this.handleDocumentKeydown);
-      this.foundation.close();
-    }
-  }
-
-  componentDidMount() {
-    super.componentDidMount();
-    this.container =
-      this.root.ref &&
-      this.root.ref.querySelector(
-        MDCDialogFoundation.strings.CONTAINER_SELECTOR
-      );
-    this.content =
-      this.root.ref &&
-      this.root.ref.querySelector(MDCDialogFoundation.strings.CONTENT_SELECTOR);
-    this.buttons =
-      this.root.ref &&
-      [].slice.call(
-        this.root.ref.querySelectorAll(
-          MDCDialogFoundation.strings.BUTTON_SELECTOR
-        )
-      );
-
-    this.defaultButton =
-      this.root.ref &&
-      this.root.ref.querySelector(
-        `[${MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE}]`
-      );
-
-    this.container &&
-      (this.focusTrap = createFocusTrap(this.container, {
-        initialFocus: undefined,
-        escapeDeactivates: false,
-        clickOutsideDeactivates: true
-      }));
-
-    this.handleDocumentKeydown = this.foundation.handleDocumentKeydown.bind(
-      this.foundation
-    );
-
-    document.addEventListener('keydown', this.handleDocumentKeydown);
-  }
-
-  componentWillUnmount() {
-    super.componentWillUnmount();
-    document.removeEventListener('keydown', this.handleDocumentKeydown);
-  }
-
-  sync(props: DialogProps) {
-    if (this.props.open) {
-      this.open();
-    } else {
-      this.close();
-    }
-  }
-
-  getDefaultFoundation() {
-    return new MDCDialogFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      hasClass: (className: string) => this.root.hasClass(className),
-      addBodyClass: (className: string) =>
-        document.body && document.body.classList.add(className),
-      removeBodyClass: (className: string) =>
-        document.body && document.body.classList.remove(className),
-      eventTargetMatches: (target: HTMLElement, selector: string) =>
-        matches(target, selector),
-      trapFocus: () => {
-        try {
-          // we dont always have an item to focus
-          // so we try catch it
-          this.focusTrap && this.focusTrap.activate();
-        } catch (err) {}
-      },
-      releaseFocus: () => this.focusTrap && this.focusTrap.deactivate(),
-      isContentScrollable: () => !!this.content && isScrollable(this.content),
-      areButtonsStacked: () => areTopsMisaligned(this.buttons),
-      getActionFromEvent: (evt: React.SyntheticEvent<HTMLElement> & Event) => {
-        const element = closest(
-          evt.target,
-          `[${MDCDialogFoundation.strings.ACTION_ATTRIBUTE}]`
-        );
-        return (
-          element &&
-          element.getAttribute(MDCDialogFoundation.strings.ACTION_ATTRIBUTE)
-        );
-      },
-      clickDefaultButton: () => {
-        if (this.defaultButton) {
-          this.defaultButton.click();
-        }
-      },
-      reverseButtons: () => {
-        this.buttons && this.buttons.reverse();
-        this.buttons &&
-          this.buttons.forEach(
-            button =>
-              button.parentElement && button.parentElement.appendChild(button)
-          );
-      },
-      notifyOpening: () => {
-        this.emit('onOpen', {});
-        this.props.onStateChange && this.props.onStateChange('opening');
-      },
-      notifyOpened: () => {
-        this.emit('onOpened', {});
-        this.props.onStateChange && this.props.onStateChange('opened');
-      },
-      notifyClosing: (action: string) => {
-        this.emit('onClose', action ? { action } : {});
-        this.props.onStateChange && this.props.onStateChange('closing');
-      },
-      notifyClosed: (action: string) => {
-        this.emit('onClosed', action ? { action } : {});
-        this.props.onStateChange && this.props.onStateChange('closed');
-      },
-      getInitialFocusEl: () =>
-        document.querySelector(
-          `[${MDCDialogFoundation.strings.INITIAL_FOCUS_ATTRIBUTE}]`
-        )
-    });
-  }
-
-  handleClick(evt: React.MouseEvent & MouseEvent) {
-    this.props.onClick && this.props.onClick(evt);
-
-    return this.foundation.handleClick(evt);
-  }
-
-  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-    return this.foundation.handleKeydown(evt);
-  }
-
-  render() {
-    const {
-      children,
-      open,
-      onOpen,
-      onClose,
-      onStateChange,
-      preventOutsideDismiss,
-      ...rest
-    } = this.props;
-    return (
-      <DialogRoot
-        {...this.root.props(rest)}
-        ref={this.root.setRef}
-        onClick={this.handleClick}
-        onKeyDown={this.handleKeydown}
-      >
-        <div className="mdc-dialog__container">
-          <div className="mdc-dialog__surface">{children}</div>
-        </div>
-        <DialogScrim disableInteraction={preventOutsideDismiss} />
-      </DialogRoot>
-    );
-  }
+  const {
+    children,
+    open,
+    onOpen,
+    onClose,
+    onStateChange,
+    preventOutsideDismiss,
+    ...rest
+  } = props;
+  return (
+    <Tag
+      role="alertdialog"
+      aria-modal
+      {...rootEl.props({ ...rest, className })}
+      ref={rootEl.setRef}
+    >
+      <div className="mdc-dialog__container">
+        <div className="mdc-dialog__surface">{children}</div>
+      </div>
+      <DialogScrim disableInteraction={preventOutsideDismiss} />
+    </Tag>
+  );
 }
 
 /** A SimpleDialog component for ease of use. */
@@ -346,64 +83,136 @@ export interface SimpleDialogProps extends DialogProps {
 }
 
 /** A SimpleDialog component for ease of use. */
-export class SimpleDialog extends React.Component<
-  RMWC.MergeInterfacesT<SimpleDialogProps, RMWC.ComponentProps>
-> {
-  static displayName = 'SimpleDialog';
+export function SimpleDialog({
+  title,
+  header,
+  body,
+  footer,
+  acceptLabel = 'Accept',
+  cancelLabel = 'Cancel',
+  children,
+  open,
+  ...rest
+}: RMWC.MergeInterfacesT<SimpleDialogProps, RMWC.ComponentProps>) {
+  return (
+    <Dialog open={open} {...rest}>
+      {(!!title || !!header) && (
+        <DialogTitle>
+          {!!title && title}
+          {!!header && header}
+        </DialogTitle>
+      )}
+      {(!!body || children) && (
+        <DialogContent>
+          {body}
+          {children}
+        </DialogContent>
+      )}
 
-  static defaultProps = {
-    title: undefined,
-    header: undefined,
-    body: undefined,
-    footer: undefined,
-    acceptLabel: 'Accept',
-    cancelLabel: 'Cancel',
-    open: false,
-    children: undefined
-  };
-
-  render() {
-    const {
-      title,
-      header,
-      body,
-      footer,
-      acceptLabel,
-      cancelLabel,
-      children,
-      open,
-      ...rest
-    } = this.props;
-
-    return (
-      <Dialog open={open} {...rest}>
-        {(!!title || !!header) && (
-          <DialogTitle>
-            {!!title && title}
-            {!!header && header}
-          </DialogTitle>
-        )}
-        {(!!body || children) && (
-          <DialogContent>
-            {body}
-            {children}
-          </DialogContent>
-        )}
-
-        {(!!cancelLabel || !!acceptLabel || !!footer) && (
-          <DialogActions>
-            {!!footer && footer}
-            {!!cancelLabel && (
-              <DialogButton action="close">{cancelLabel}</DialogButton>
-            )}
-            {!!acceptLabel && (
-              <DialogButton action="accept" isDefaultAction>
-                {acceptLabel}
-              </DialogButton>
-            )}
-          </DialogActions>
-        )}
-      </Dialog>
-    );
-  }
+      {(!!cancelLabel || !!acceptLabel || !!footer) && (
+        <DialogActions>
+          {!!footer && footer}
+          {!!cancelLabel && (
+            <DialogButton action="close">{cancelLabel}</DialogButton>
+          )}
+          {!!acceptLabel && (
+            <DialogButton action="accept" isDefaultAction>
+              {acceptLabel}
+            </DialogButton>
+          )}
+        </DialogActions>
+      )}
+    </Dialog>
+  );
 }
+SimpleDialog.displayName = 'SimpleDialog';
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+interface DialogScrimProps {
+  disableInteraction?: boolean;
+}
+
+const DialogScrim = React.memo(function DialogScrim({
+  disableInteraction
+}: DialogScrimProps) {
+  const style: React.CSSProperties = disableInteraction
+    ? { pointerEvents: 'none' }
+    : {};
+  return <div className="mdc-dialog__scrim" style={style} />;
+});
+
+/** The Dialog title. */
+export interface DialogTitleProps {}
+
+/** The Dialog title. */
+export const DialogTitle = React.forwardRef<
+  any,
+  DialogTitleProps & RMWC.ComponentProps
+>(function DialogTitle(props, ref) {
+  const Tag = useTag(props, 'h2');
+  const className = useClassNames(props, ['mdc-dialog__title']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DialogTitle.displayName = 'DialogTitle';
+
+/** The Dialog content. */
+export interface DialogContentProps {}
+
+/** The Dialog content. */
+export const DialogContent = React.forwardRef<
+  any,
+  DialogContentProps & RMWC.ComponentProps
+>(function DialogContent(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-dialog__content']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DialogContent.displayName = 'DialogContent';
+
+/** Actions container for the Dialog. */
+export interface DialogActionsProps {}
+
+/** Actions container for the Dialog. */
+export const DialogActions = React.forwardRef<
+  any,
+  DialogActionsProps & RMWC.ComponentProps
+>(function DialogActions(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-dialog__actions']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DialogActions.displayName = 'DialogActions';
+
+/** Action buttons for the Dialog. */
+export interface DialogButtonProps extends ButtonProps {
+  /** An action returned in evt.detail.action to the onClose handler. */
+  action?: string;
+  /** Indicates this is the default selected action when pressing enter */
+  isDefaultAction?: boolean;
+}
+
+/** Action buttons for the Dialog. */
+export const DialogButton = React.forwardRef<
+  any,
+  DialogButtonProps & RMWC.ComponentProps
+>(function DialogButton(props, ref) {
+  const className = useClassNames(props, ['mdc-dialog__button']);
+  const { action = '', isDefaultAction, ...rest } = props;
+  const defaultProp = !!isDefaultAction
+    ? { [MDCDialogFoundation.strings.BUTTON_DEFAULT_ATTRIBUTE]: true }
+    : {};
+
+  return (
+    <Button
+      {...rest}
+      {...defaultProp}
+      ref={ref}
+      className={className}
+      data-mdc-dialog-action={action}
+    />
+  );
+});
+DialogButton.displayName = 'DialogButton';

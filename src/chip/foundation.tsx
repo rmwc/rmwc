@@ -13,7 +13,7 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       trailingIconEl: true,
       checkmarkEl: true
     },
-    foundation: ({ rootEl, checkmarkEl }, emit) =>
+    foundation: ({ rootEl, checkmarkEl, emit }) =>
       new MDCChipFoundation({
         addClass: className => {
           rootEl.addClass(className);
