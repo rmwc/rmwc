@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { useId, randomId } from '@rmwc/base';
+import { useId } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
-import {
-  FoundationProps,
-  FoundationComponent
-} from '@rmwc/base/foundation-component';
 
 export interface ToggleableFoundationProps {
   /** A DOM ID for the toggle. */
@@ -64,63 +60,4 @@ export function useToggleFoundation(
     renderToggle,
     toggleRootProps
   };
-}
-
-export class ToggleableFoundationComponent<
-  Foundation extends any,
-  P extends ToggleableFoundationProps,
-  S extends any = {}
-> extends FoundationComponent<Foundation, P & FoundationProps, S> {
-  // @ts-ignore
-  generatedId = randomId(this.constructor.displayName);
-
-  /** @internal */
-  get hasLabel() {
-    // @ts-ignore
-    return this.props.label || this.props.children;
-  }
-  /** @internal */
-  get id() {
-    return this.props.id || this.generatedId;
-  }
-  /** @internal */
-  get toggleRootProps() {
-    const { className, style, disabled, rootProps = {} } = this.props;
-
-    if (this.hasLabel) {
-      // @ts-ignore
-      return this.root.props({ disabled });
-    }
-
-    return {
-      // @ts-ignore
-      ...this.root.props({
-        className,
-        style,
-        disabled,
-        ...rootProps
-      })
-    };
-  }
-
-  renderToggle(toggle: React.ReactNode) {
-    /**
-     * We have to conditionally wrap our checkbox in a formfield
-     * If we have a label
-     */
-    const { className, style, rootProps, label, children } = this.props;
-    if (this.hasLabel) {
-      return (
-        <FormField {...(rootProps as any)} className={className} style={style}>
-          {toggle}
-          <label id={this.id + 'label'} htmlFor={this.id}>
-            {label}
-            {children}
-          </label>
-        </FormField>
-      );
-    } else {
-      return toggle;
-    }
-  }
 }
