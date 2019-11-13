@@ -30,13 +30,6 @@ describe('Radio', () => {
     ).toEqual(true);
   });
 
-  test('foundation check', () => {
-    const radio = mount(<Radio disabled />);
-    const adapter = (radio.instance() as Radio).foundation.adapter_;
-    adapter.addClass('test');
-    adapter.removeClass('test');
-  });
-
   test('can have custom classnames on input', () => {
     const el = mount(<Radio className={'my-custom-classname'} />);
     expect(!!~el.html().search('my-custom-classname')).toEqual(true);
