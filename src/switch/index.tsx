@@ -15,42 +15,47 @@ export interface SwitchProps
     ToggleableFoundationProps {}
 
 /** A Switch component. */
-export function Switch(props: SwitchProps & RMWC.ComponentProps) {
-  const Tag = useTag(props);
+export const Switch = React.forwardRef<any, SwitchProps & RMWC.ComponentProps>(
+  function Switch(props, ref) {
+    const Tag = useTag(props);
 
-  const {
-    renderToggle,
-    id,
-    toggleRootProps,
-    rootEl,
-    checkboxEl
-  } = useSwitchFoundation(props);
+    const {
+      renderToggle,
+      id,
+      toggleRootProps,
+      rootEl,
+      checkboxEl
+    } = useSwitchFoundation(props);
 
-  const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
-  const { children, className, label, style, inputRef, ...rest } = props;
+    const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
+    const { children, className, label, style, inputRef, ...rest } = props;
 
-  const renderedSwitch = (
-    <Tag {...rootEl.props({ ...toggleRootProps, className: rootClassName })}>
-      <SwitchTrack />
-      <SwitchThumbUnderlay>
-        <div className="mdc-switch__thumb">
-          <input
-            {...checkboxEl.props({
-              ...rest,
-              className: 'mdc-switch__native-control'
-            })}
-            type="checkbox"
-            id={id}
-            ref={mergeRefs(checkboxEl.setRef, inputRef)}
-          />
-        </div>
-      </SwitchThumbUnderlay>
-      <SwitchKnob />
-    </Tag>
-  );
+    const renderedSwitch = (
+      <Tag
+        {...rootEl.props({ ...toggleRootProps, className: rootClassName })}
+        ref={ref}
+      >
+        <SwitchTrack />
+        <SwitchThumbUnderlay>
+          <div className="mdc-switch__thumb">
+            <input
+              {...checkboxEl.props({
+                ...rest,
+                className: 'mdc-switch__native-control'
+              })}
+              type="checkbox"
+              id={id}
+              ref={mergeRefs(checkboxEl.setRef, inputRef)}
+            />
+          </div>
+        </SwitchThumbUnderlay>
+        <SwitchKnob />
+      </Tag>
+    );
 
-  return renderToggle(renderedSwitch);
-}
+    return renderToggle(renderedSwitch);
+  }
+);
 Switch.displayName = 'Switch';
 
 /*********************************************************************
