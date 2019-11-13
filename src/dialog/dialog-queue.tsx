@@ -138,7 +138,6 @@ function PromptBody({
         {...inputProps}
         value={value}
         onChange={evt => {
-          console.log('onChange');
           setValue(evt.currentTarget.value);
         }}
       />

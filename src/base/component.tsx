@@ -128,7 +128,9 @@ export const useClassNames = <Props extends { [key: string]: any }>(
   );
 };
 
-export const mergeRefs = (...refs: React.Ref<any>[]) => (el: any) => {
+export const mergeRefs = (
+  ...refs: Array<React.Ref<any> | undefined | null>
+) => (el: any) => {
   for (const ref of refs) {
     if (typeof ref === 'function') {
       ref(el);

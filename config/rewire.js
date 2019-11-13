@@ -140,23 +140,13 @@ const jestEnableOptionalChaining = config => {
 module.exports = {
   webpack: (config, env) => {
     console.log(colors.magenta('Starting RMWC ❤️'));
-    return pipe(
-      enableOptionalChaining,
-      fixLinting,
-      addAliases,
-      config => {
-        //console.log(config);
-        return config;
-      }
-    )(config);
+    return pipe(enableOptionalChaining, fixLinting, addAliases, config => {
+      //console.log(config);
+      return config;
+    })(config);
   },
-  storybook: (config, env) =>
-    pipe(
-      enableOptionalChaining,
-      addAliases
-    )(config),
+  storybook: (config, env) => pipe(enableOptionalChaining, addAliases)(config),
   jest: config => {
-    console.log(config);
     return pipe(
       jestEnableOptionalChaining,
       jestModuleNameMapper,

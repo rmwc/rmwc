@@ -1,12 +1,14 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { componentFactory } from '@rmwc/base';
+import { useTag, useClassNames, mergeRefs } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import {
-  ToggleableFoundationComponent,
-  ToggleableFoundationProps
-} from '@rmwc/toggleable';
+import { ToggleableFoundationProps } from '@rmwc/toggleable';
+import { useCheckboxFoundation } from './foundation';
+
+/*********************************************************************
+ * Events
+ *********************************************************************/
 
 /**
  * This is an awful freaking bugfix
@@ -17,6 +19,10 @@ import {
 // @ts-ignore
 MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
 
+/*********************************************************************
+ * Checkbox
+ *********************************************************************/
+
 /** A Checkbox component. */
 export interface CheckboxProps
   extends RMWC.WithRippleProps,
@@ -25,145 +31,89 @@ export interface CheckboxProps
   indeterminate?: boolean;
 }
 
+/** A Checkbox component. */
+export const Checkbox = React.forwardRef<
+  any,
+  CheckboxProps & RMWC.ComponentProps
+>(function Checkbox(props, ref) {
+  const {
+    renderToggle,
+    id,
+    toggleRootProps,
+    rootEl,
+    checkboxEl
+  } = useCheckboxFoundation(props);
+
+  const {
+    children,
+    className,
+    label,
+    style,
+    indeterminate,
+    inputRef,
+    ...rest
+  } = props;
+
+  const checkbox = (
+    <CheckboxRoot
+      {...rootEl.props(toggleRootProps)}
+      ref={mergeRefs(rootEl.setRef, ref)}
+    >
+      <input
+        {...checkboxEl.props({
+          ...rest,
+          className: 'mdc-checkbox__native-control'
+        })}
+        type="checkbox"
+        ref={mergeRefs(checkboxEl.setRef, inputRef)}
+        id={id}
+      />
+      <CheckboxBackground />
+    </CheckboxRoot>
+  );
+
+  return renderToggle(checkbox);
+});
+Checkbox.displayName = 'Checkbox';
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
 const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  componentFactory<CheckboxProps>({
-    displayName: 'CheckboxRoot',
-    classNames: (props: CheckboxProps) => [
-      'mdc-checkbox',
-      {
-        'mdc-checkbox--disabled': props.disabled
-      }
-    ],
-    consumeProps: ['disabled']
-  })
+  React.forwardRef<any, CheckboxProps & RMWC.ComponentProps>(
+    function CheckboxRoot(props, ref) {
+      const Tag = useTag(props);
+      const { disabled, ...rest } = props;
+      const className = useClassNames(props, [
+        'mdc-checkbox',
+        {
+          'mdc-checkbox--disabled': disabled
+        }
+      ]);
+      return <Tag {...rest} className={className} />;
+    }
+  )
 );
+CheckboxRoot.displayName = 'CheckboxRoot';
 
-const CheckboxNativeControl = componentFactory<{}>({
-  displayName: 'CheckboxNativeControl',
-  defaultProps: {
-    type: 'checkbox'
-  },
-  tag: 'input',
-  classNames: ['mdc-checkbox__native-control']
+const CheckboxBackground = React.memo(() => {
+  return (
+    <div className="mdc-checkbox__background">
+      <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+        <path
+          className="mdc-checkbox__checkmark-path"
+          fill="none"
+          stroke="white"
+          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+        />
+      </svg>
+      <div className="mdc-checkbox__mixedmark" />
+    </div>
+  );
 });
 
-const CheckboxBackground = React.memo(
-  () => {
-    return (
-      <div className="mdc-checkbox__background">
-        <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-          <path
-            className="mdc-checkbox__checkmark-path"
-            fill="none"
-            stroke="white"
-            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          />
-        </svg>
-        <div className="mdc-checkbox__mixedmark" />
-      </div>
-    );
-  },
-  () => false
-);
-
 CheckboxBackground.displayName = 'CheckboxBackground';
-
-/** A Checkbox component. */
-export class Checkbox extends ToggleableFoundationComponent<
-  MDCCheckboxFoundation,
-  CheckboxProps
-> {
-  static displayName = 'Checkbox';
-
-  private nativeCb = this.createElement<HTMLInputElement>('nativeCb');
-  private root = this.createElement('root');
-
-  constructor(props: CheckboxProps) {
-    super(props);
-    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
-
-  sync(nextProps: CheckboxProps) {
-    this.foundation && this.foundation.handleChange();
-
-    if (
-      this.nativeCb.ref &&
-      nextProps.indeterminate !== this.nativeCb.ref.indeterminate
-    ) {
-      this.nativeCb.ref.indeterminate = !!nextProps.indeterminate;
-    }
-  }
-
-  getDefaultFoundation() {
-    return new MDCCheckboxFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      setNativeControlAttr: (attr: string, value: any) =>
-        this.nativeCb.setProp(attr as any, value),
-      removeNativeControlAttr: (attr: string) =>
-        this.nativeCb.removeProp(attr as any),
-      isIndeterminate: () => !!this.props.indeterminate,
-      isChecked: () =>
-        this.props.checked !== undefined
-          ? !!this.props.checked
-          : !!this.nativeCb.ref && this.nativeCb.ref.checked,
-      hasNativeControl: () => !!this.nativeCb.ref,
-      setNativeControlDisabled: (disabled: boolean) =>
-        this.nativeCb.setProp('disabled', disabled),
-      forceLayout: () => this.root.ref && this.root.ref.offsetWidth,
-      isAttachedToDOM: () => true
-    });
-  }
-
-  handleAnimationEnd(evt: React.AnimationEvent) {
-    this.props.onAnimationEnd && this.props.onAnimationEnd(evt);
-    this.foundation && this.foundation.handleAnimationEnd();
-  }
-
-  handleOnChange(evt: React.ChangeEvent<HTMLInputElement>) {
-    this.props.onChange && this.props.onChange(evt);
-    this.sync(this.props);
-  }
-
-  render() {
-    const {
-      children,
-      className,
-      label,
-      style,
-      indeterminate,
-      inputRef,
-      ...rest
-    } = this.props;
-
-    const checkbox = (
-      <CheckboxRoot
-        {...this.toggleRootProps}
-        ref={this.root.setRef}
-        onAnimationEnd={this.handleAnimationEnd}
-      >
-        <CheckboxNativeControl
-          {...this.nativeCb.props(rest)}
-          ref={(el: HTMLInputElement | null) => {
-            this.nativeCb.setRef(el);
-            if (typeof inputRef === 'function') {
-              inputRef(el);
-            } else if (inputRef && typeof inputRef === 'object') {
-              // @ts-ignore
-              inputRef.current = el;
-            }
-          }}
-          id={this.id}
-          onChange={this.handleOnChange}
-        />
-        <CheckboxBackground />
-      </CheckboxRoot>
-    );
-
-    return this.renderToggle(checkbox);
-  }
-}
