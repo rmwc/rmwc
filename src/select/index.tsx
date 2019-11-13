@@ -4,7 +4,7 @@ import { MDCSelectFoundation, MDCSelectIconFoundation } from '@material/select';
 import { EventType, SpecificEventListener } from '@material/base/types';
 
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
-import { FloatingLabel } from '@rmwc/floating-label';
+import { FloatingLabel, FloatingLabelApi } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { NotchedOutline } from '@rmwc/notched-outline';
@@ -277,7 +277,9 @@ export class SelectBase extends FoundationComponent<
   private root = this.createElement<HTMLSelectElement>('root');
   private lineRipple = this.createElement<LineRipple>('lineRipple');
   private outline = this.createElement<NotchedOutline>('outline');
-  private label = this.createElement<FloatingLabel>('label');
+  private label = this.createElement<any>('label');
+  private labelApi: FloatingLabelApi | undefined = undefined;
+
   id: string = this.props.id || randomId('select');
   nativeControl: HTMLSelectElement | null = null;
   selectedText: HTMLElement | null = null;
@@ -517,7 +519,7 @@ export class SelectBase extends FoundationComponent<
         this.label.setProp('float', shouldFloat);
       },
       getLabelWidth: () => {
-        return this.label.ref ? this.label.ref.getWidth() : 0;
+        return this.labelApi ? this.labelApi.getWidth() : 0;
       }
     };
   }
@@ -724,7 +726,11 @@ export class SelectBase extends FoundationComponent<
     };
 
     const renderedLabel = (
-      <FloatingLabel {...this.label.props({})} ref={this.label.setRef}>
+      <FloatingLabel
+        {...this.label.props({})}
+        ref={this.label.setRef}
+        apiRef={api => (this.labelApi = api)}
+      >
         {label}
       </FloatingLabel>
     );

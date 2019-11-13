@@ -12,7 +12,7 @@ import {
 import { componentFactory, FoundationComponent, randomId } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
-import { FloatingLabel } from '@rmwc/floating-label';
+import { FloatingLabel, FloatingLabelApi } from '@rmwc/floating-label';
 import { NotchedOutline } from '@rmwc/notched-outline';
 import { withRipple } from '@rmwc/ripple';
 
@@ -112,7 +112,8 @@ export class TextField extends FoundationComponent<
   private input = this.createElement<HTMLInputElement & HTMLTextAreaElement>(
     'input'
   );
-  private label = this.createElement<FloatingLabel>('label');
+  private label = this.createElement<any>('label');
+  private labelApi: FloatingLabelApi | undefined = undefined;
   private lineRipple = this.createElement<LineRipple>('lineRipple');
   characterCounter?: null | TextFieldCharacterCount = null;
   leadingIcon: null | TextFieldIcon = null;
@@ -181,7 +182,7 @@ export class TextField extends FoundationComponent<
       floatLabel: (shouldFloat: boolean) =>
         this.label.setProp('float', shouldFloat),
       hasLabel: () => !!this.props.label,
-      getLabelWidth: () => (this.label.ref ? this.label.ref.getWidth() : 0)
+      getLabelWidth: () => (this.labelApi ? this.labelApi.getWidth() : 0)
     };
   }
 
@@ -355,6 +356,7 @@ export class TextField extends FoundationComponent<
       <FloatingLabel
         {...this.label.props({})}
         ref={this.label.setRef}
+        apiRef={api => (this.labelApi = api)}
         htmlFor={tagProps.id}
       >
         {label}

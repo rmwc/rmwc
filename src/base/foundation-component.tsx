@@ -335,11 +335,13 @@ const emitFactory = (props: { [key: string]: any }) => (
 export const useFoundation = <
   Foundation extends MDCFoundation,
   Elements extends { [key: string]: true },
-  Props extends { [key: string]: any }
+  Props extends { [key: string]: any },
+  Api
 >({
   foundation: _foundation,
   props: _props,
-  elements: elementsInput
+  elements: elementsInput,
+  api
 }: {
   foundation: (
     elements: {
@@ -355,6 +357,7 @@ export const useFoundation = <
   ) => Foundation;
   props: Props;
   elements: Elements;
+  api?: (params: { foundation: Foundation }) => Api;
 }) => {
   const [, setIteration] = useState(0);
 
@@ -384,6 +387,9 @@ export const useFoundation = <
     // eslint-disable-next-line
     return () => foundation.current.destroy();
   }, []);
+
+  // handle apiRefs
+  api && props.current.apiRef?.(api({ foundation: foundation.current }));
 
   return { foundation: foundation.current, ...elements.current };
 };
