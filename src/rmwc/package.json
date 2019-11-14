@@ -75,7 +75,6 @@
     "@rmwc/textfield": "^5.7.0",
     "@rmwc/theme": "^5.7.0",
     "@rmwc/toggleable": "^5.7.0",
-    "@rmwc/toolbar": "^5.7.0",
     "@rmwc/tooltip": "^5.7.0",
     "@rmwc/top-app-bar": "^5.7.0",
     "@rmwc/types": "^5.6.0",

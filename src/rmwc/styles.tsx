@@ -27,7 +27,6 @@ import '@material/tab-scroller/dist/mdc.tab-scroller.css';
 import '@material/tab-indicator/dist/mdc.tab-indicator.css';
 import '@material/textfield/dist/mdc.textfield.css';
 import '@material/theme/dist/mdc.theme.css';
-import '@material/toolbar/dist/mdc.toolbar.css';
 import '@material/top-app-bar/dist/mdc.top-app-bar.css';
 import '@material/typography/dist/mdc.typography.css';
 

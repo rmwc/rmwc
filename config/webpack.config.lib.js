@@ -42,9 +42,9 @@ const appLibBuild = path.resolve(path.join(paths.appPath, 'lib'));
 // (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
 // However, our output is structured with css, js and media folders.
 // To have this structure working with relative paths, we have to use custom options.
-const extractTextPluginOptions = shouldUseRelativeAssetPaths ? // Making sure that the publicPath goes back to to build folder.
-{ publicPath: Array(cssFilename.split('/').length).join('../') } :
-  {};
+const extractTextPluginOptions = shouldUseRelativeAssetPaths // Making sure that the publicPath goes back to to build folder.
+  ? { publicPath: Array(cssFilename.split('/').length).join('../') }
+  : {};
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
@@ -110,14 +110,13 @@ module.exports = (libraryTarget, filename = 'rmwc') => ({
       'tabs',
       'textfield',
       'theme',
-      'toolbar',
       'typography'
     ].map(name => {
       const parts = name.split('-');
       const upperName =
-        parts.length > 1 ?
-          `${parts[0]}${parts[1].charAt(0).toUpperCase()}${parts[1].slice(1)}` :
-          name;
+        parts.length > 1
+          ? `${parts[0]}${parts[1].charAt(0).toUpperCase()}${parts[1].slice(1)}`
+          : name;
       const moduleName = `@material/${name}/dist/mdc.${upperName}`;
 
       return {

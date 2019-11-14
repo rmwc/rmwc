@@ -35,7 +35,6 @@ export * from '@rmwc/tabs';
 export * from '@rmwc/textfield';
 export * from '@rmwc/theme';
 export * from '@rmwc/toggleable';
-export * from '@rmwc/toolbar';
 export * from '@rmwc/tooltip';
 export * from '@rmwc/top-app-bar';
 export * from '@rmwc/typography';

@@ -88,7 +88,6 @@ const RippleDocs = React.lazy(() => import('@rmwc/ripple/readme'));
 const SnackbarDocs = React.lazy(() => import('@rmwc/snackbar/readme'));
 const TabsDocs = React.lazy(() => import('@rmwc/tabs/readme'));
 const ThemeDocs = React.lazy(() => import('@rmwc/theme/readme'));
-const ToolbarDocs = React.lazy(() => import('@rmwc/toolbar/readme'));
 const TopAppBarDocs = React.lazy(() => import('@rmwc/top-app-bar/readme'));
 const TypographyDocs = React.lazy(() => import('@rmwc/typography/readme'));
 const IconDocs = React.lazy(() => import('@rmwc/icon/readme'));
@@ -368,11 +367,6 @@ export const menuContent: MenuItemT[] = [
     url: `/theme`,
     gallery: themeExample,
     component: Loadable(ThemeDocs)
-  },
-  {
-    label: 'Toolbars',
-    url: `/toolbars`,
-    component: Loadable(ToolbarDocs)
   },
   {
     label: 'Tooltips',

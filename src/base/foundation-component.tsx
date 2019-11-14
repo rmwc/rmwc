@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';

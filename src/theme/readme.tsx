@@ -8,8 +8,8 @@ import { Theme, ThemeProvider } from '.';
 import { Button } from '../button';
 import { Radio } from '../radio';
 import { Checkbox } from '../checkbox';
-import { Toolbar, ToolbarRow } from '../toolbar';
 import { Tab, TabBar } from '../tabs';
+import { TopAppBar, TopAppBarRow } from '../top-app-bar';
 
 export default function() {
   return (
@@ -139,22 +139,22 @@ export default function() {
         used in the TopAppBar or on any other dark color surface.
       </DocsP>
       <DocsExample label="Broken Styles">
-        <Toolbar>
+        <TopAppBar style={{ position: 'static' }}>
           {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
-          <ToolbarRow>
+          <TopAppBarRow style={{ alignItems: 'center' }}>
             <TabBar>
               <Tab>Cookies</Tab>
               <Tab>Pizza</Tab>
               <Tab>Icecream</Tab>
             </TabBar>
-          </ToolbarRow>
-        </Toolbar>
+          </TopAppBarRow>
+        </TopAppBar>
       </DocsExample>
 
       <DocsExample label="Fixed Styles">
-        <Toolbar>
+        <TopAppBar style={{ position: 'static' }}>
           {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
-          <ToolbarRow>
+          <TopAppBarRow style={{ alignItems: 'center' }}>
             <ThemeProvider
               options={{ primary: 'white', onSurface: 'white' }}
               wrap
@@ -165,8 +165,8 @@ export default function() {
                 <Tab>Icecream</Tab>
               </TabBar>
             </ThemeProvider>
-          </ToolbarRow>
-        </Toolbar>
+          </TopAppBarRow>
+        </TopAppBar>
       </DocsExample>
 
       <DocsSubtitle>Theme Component</DocsSubtitle>
