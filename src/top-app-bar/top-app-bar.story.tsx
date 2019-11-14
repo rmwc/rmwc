@@ -65,7 +65,7 @@ function NestedTopAppBar() {
 }
 
 storiesOf('TopAppBar', module)
-  .add('minimal', () => (
+  .add('standard', () => (
     <div style={{ margin: '-24px' }}>
       <TopAppBar>
         <TopAppBarRow>
@@ -74,6 +74,7 @@ storiesOf('TopAppBar', module)
           </TopAppBarSection>
         </TopAppBarRow>
       </TopAppBar>
+      <div style={{ height: '300vh' }} />
     </div>
   ))
   .add('fixed', () => <TopAppBarStory fixed />)

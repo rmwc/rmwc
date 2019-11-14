@@ -384,9 +384,10 @@ export const useFoundation = <
   );
 
   useEffect(() => {
-    // eslint-disable-next-line
-    return () => foundation.current.destroy();
-  }, []);
+    const f = foundation.current;
+    f.init();
+    return () => f.destroy();
+  }, [foundation]);
 
   // handle apiRefs
   api && props.current.apiRef?.(api({ foundation: foundation.current }));
