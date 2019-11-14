@@ -1,83 +1,21 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
-import { componentFactory, FoundationComponent } from '@rmwc/base';
+import { mergeRefs, useTag, useClassNames } from '@rmwc/base';
 import {
-  MDCModalDrawerFoundation,
-  MDCDismissibleDrawerFoundation
-} from '@material/drawer';
-import { createFocusTrap, FocusTrap } from '@rmwc/base';
+  useDismissableDrawerFoundation,
+  useModalDrawerFoundation
+} from './foundation';
 
 /***************************************************************************************
- * Drawer Headers
- ***************************************************************************************/
-/** An optional header for the Drawer. */
-export interface DrawerHeaderProps {}
-
-/** An optional header for the Drawer. */
-export const DrawerHeader = componentFactory<DrawerHeaderProps>({
-  displayName: 'DrawerHeader',
-  classNames: ['mdc-drawer__header']
-});
-
-/** An title for the DrawerHeader. */
-export interface DrawerTitleProps {}
-
-/** An title for the DrawerHeader. */
-export const DrawerTitle = componentFactory<DrawerTitleProps>({
-  displayName: 'DrawerTitle',
-  classNames: ['mdc-drawer__title']
-});
-
-/** A subtitle for the DrawerHeader. */
-export interface DrawerSubtitleProps {}
-
-/** A subtitle for the DrawerHeader. */
-export const DrawerSubtitle = componentFactory<DrawerSubtitleProps>({
-  displayName: 'DrawerSubtitle',
-  classNames: ['mdc-drawer__subtitle']
-});
-
-/***************************************************************************************
- * Drawer Content
- ***************************************************************************************/
-/** Content for Drawers. */
-export interface DrawerContentProps {}
-
-/** Content for Drawers. */
-export const DrawerContent = componentFactory<DrawerContentProps>({
-  displayName: 'DrawerContent',
-  classNames: ['mdc-drawer__content']
-});
-
-/***************************************************************************************
- * Drawer Scrim
- ***************************************************************************************/
-/** Protects the app's UI from interactions while a modal drawer is open. */
-const DrawerScrim = ({
-  onClick
-}: {
-  onClick: (evt: React.MouseEvent<HTMLDivElement>) => void;
-}) => <div className="mdc-drawer-scrim" onClick={onClick} />;
-
-/***************************************************************************************
- * DrawerAppContent
- ***************************************************************************************/
-/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export interface DrawerAppContentProps {}
-
-/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export const DrawerAppContent = componentFactory<DrawerAppContentProps>({
-  displayName: 'DrawerAppContent',
-  classNames: ['mdc-drawer-app-content']
-});
-
-/***************************************************************************************
- * Drawers
+ * Events
  ***************************************************************************************/
 
 export type DrawerOnCloseEventT = RMWC.CustomEventT<{}>;
 export type DrawerOnOpenEventT = RMWC.CustomEventT<{}>;
+
+/***************************************************************************************
+ * Drawers
+ ***************************************************************************************/
 
 /** A Drawer component. */
 export interface DrawerProps {
@@ -93,165 +31,151 @@ export interface DrawerProps {
   modal?: boolean;
 }
 
-export const DrawerRoot = componentFactory<DrawerProps>({
-  displayName: 'DrawerRoot',
-  tag: 'aside',
-  classNames: (props: DrawerProps) => [
-    'mdc-drawer',
-    {
-      'mdc-drawer--dismissible': props.dismissible,
-      'mdc-drawer--modal': props.modal
+/** A Drawer component. */
+export const Drawer = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
+  function Drawer(props, ref) {
+    if (props.dismissible) {
+      return <DismissibleDrawer {...props} ref={ref} />;
     }
-  ],
-  consumeProps: ['dismissible', 'modal']
-});
+
+    if (props.modal) {
+      return <ModalDrawer {...props} ref={ref} />;
+    }
+
+    return <DrawerRoot {...props} ref={ref} />;
+  }
+);
+Drawer.displayName = 'Drawer';
 
 const slidableDrawerFactory = (
-  MDCConstructor:
-    | typeof MDCModalDrawerFoundation
-    | typeof MDCDismissibleDrawerFoundation,
+  useDrawerFoundation:
+    | typeof useDismissableDrawerFoundation
+    | typeof useModalDrawerFoundation,
   displayName: string
-) =>
-  class extends FoundationComponent<
-    MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation,
-    DrawerProps
-  > {
-    static displayName = displayName;
-
-    static defaultProps = {
-      open: false
-    };
-
-    private root = this.createElement('root');
-    previousFocus: HTMLElement | null = null;
-    focusTrap: FocusTrap | null = null;
-
-    constructor(props: DrawerProps) {
-      super(props);
-
-      ['handleScrimClick', 'handleTransitionEnd', 'handleKeyDown'].forEach(
-        k => {
-          (this as any)[k] = (this as any)[k].bind(this);
-        }
-      );
-    }
-
-    componentDidMount() {
-      super.componentDidMount();
-      this.root.ref &&
-        (this.focusTrap = createFocusTrap(this.root.ref, {
-          clickOutsideDeactivates: true,
-          initialFocus: undefined,
-          escapeDeactivates: false,
-          returnFocusOnDeactivate: false
-        }));
-    }
-
-    getDefaultFoundation() {
-      /** @type {!MDCDrawerAdapter} */
-      const adapter = /** @type {!MDCDrawerAdapter} */ {
-        addClass: (className: string) => this.root.addClass(className),
-        removeClass: (className: string) => this.root.removeClass(className),
-        hasClass: (className: string) => this.root.hasClass(className),
-        elementHasClass: (element: HTMLElement, className: string) =>
-          element.classList.contains(className),
-        saveFocus: () => {
-          this.previousFocus = document.activeElement as HTMLElement;
-        },
-        restoreFocus: () => {
-          const previousFocus = this.previousFocus && this.previousFocus.focus;
-          if (
-            this.root.ref &&
-            this.root.ref.contains(document.activeElement) &&
-            previousFocus
-          ) {
-            this.previousFocus && this.previousFocus.focus();
-          }
-        },
-        focusActiveNavigationItem: () => {
-          const activeNavItemEl =
-            this.root.ref &&
-            this.root.ref.querySelector(`.mdc-list-item--activated`);
-          if (activeNavItemEl) {
-            (activeNavItemEl as HTMLElement).focus();
-          }
-        },
-        notifyClose: () => this.emit('onClose', {}, true /* shouldBubble */),
-        notifyOpen: () => this.emit('onOpen', {}, true /* shouldBubble */),
-        trapFocus: () => {
-          try {
-            this.focusTrap && this.focusTrap.activate();
-          } catch (err) {}
-        },
-        releaseFocus: () => {
-          try {
-            this.focusTrap && this.focusTrap.deactivate();
-          } catch (err) {}
-        }
-      };
-
-      return new MDCConstructor(adapter);
-    }
-
-    handleScrimClick() {
-      'handleScrimClick' in this.foundation &&
-        this.foundation.handleScrimClick();
-    }
-
-    handleKeyDown(evt: React.KeyboardEvent & KeyboardEvent) {
-      this.props.onKeyDown && this.props.onKeyDown(evt);
-      this.foundation.handleKeydown(evt);
-    }
-
-    handleTransitionEnd(evt: React.TransitionEvent & TransitionEvent) {
-      this.props.onTransitionEnd && this.props.onTransitionEnd(evt);
-      this.foundation.handleTransitionEnd(evt);
-    }
-
-    sync(props: DrawerProps, prevProps: DrawerProps) {
-      if (props.open !== prevProps.open) {
-        props.open ? this.foundation.open() : this.foundation.close();
-      }
-    }
-
-    render() {
-      const { onOpen, onClose, open, ...rest } = this.props;
+) => {
+  const DrawerInner = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
+    function DrawerInner(props, ref) {
+      const { rootEl, scrimEl } = useDrawerFoundation(props);
+      const { onOpen, onClose, open, ...rest } = props;
       return (
-        <React.Fragment>
+        <>
           <DrawerRoot
-            ref={this.root.setRef}
-            {...this.root.props(rest)}
-            onKeyDown={this.handleKeyDown}
-            onTransitionEnd={this.handleTransitionEnd}
+            ref={mergeRefs(rootEl.setRef, ref)}
+            {...rootEl.props(rest)}
           />
-          {rest.modal && <DrawerScrim onClick={this.handleScrimClick} />}
-        </React.Fragment>
+          {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
+        </>
       );
     }
-  };
+  );
+
+  DrawerInner.displayName = displayName;
+
+  return DrawerInner;
+};
 
 const ModalDrawer = slidableDrawerFactory(
-  MDCModalDrawerFoundation,
+  useModalDrawerFoundation,
   'ModalDrawer'
 );
 const DismissibleDrawer = slidableDrawerFactory(
-  MDCDismissibleDrawerFoundation,
+  useDismissableDrawerFoundation,
   'dismissibleDrawer'
 );
 
-/** A Drawer component. */
-export const Drawer: React.ComponentType<DrawerProps & RMWC.ComponentProps> = (
-  props: DrawerProps
-) => {
-  if (props.dismissible) {
-    return <DismissibleDrawer {...props} />;
+const DrawerRoot = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
+  function DrawerRoot(props, ref) {
+    const { dismissible, modal, ...rest } = props;
+    const Tag = useTag(props, 'aside');
+    const className = useClassNames(props, [
+      'mdc-drawer',
+      {
+        'mdc-drawer--dismissible': dismissible,
+        'mdc-drawer--modal': modal
+      }
+    ]);
+
+    return <Tag ref={ref} {...rest} className={className} />;
   }
+);
 
-  if (props.modal) {
-    return <ModalDrawer {...props} />;
-  }
+/***************************************************************************************
+ * Bits
+ ***************************************************************************************/
 
-  return <DrawerRoot {...props} />;
-};
+/** An optional header for the Drawer. */
+export interface DrawerHeaderProps {}
 
-Drawer.displayName = 'Drawer';
+/** An optional header for the Drawer. */
+export const DrawerHeader = React.forwardRef<
+  any,
+  DrawerHeaderProps & RMWC.ComponentProps
+>(function DrawerHeader(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-drawer__header']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DrawerHeader.displayName = 'DrawerHeader';
+
+/** An title for the DrawerHeader. */
+export interface DrawerTitleProps {}
+
+/** An title for the DrawerHeader. */
+export const DrawerTitle = React.forwardRef<
+  any,
+  DrawerTitleProps & RMWC.ComponentProps
+>(function DrawerTitle(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-drawer__title']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DrawerTitle.displayName = 'DrawerTitle';
+
+/** A subtitle for the DrawerHeader. */
+export interface DrawerSubtitleProps {}
+
+/** A subtitle for the DrawerHeader. */
+export const DrawerSubtitle = React.forwardRef<
+  any,
+  DrawerSubtitleProps & RMWC.ComponentProps
+>(function DrawerSubtitle(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-drawer__subtitle']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DrawerSubtitle.displayName = 'DrawerSubtitle';
+
+/** Content for Drawers. */
+export interface DrawerContentProps {}
+
+/** Content for Drawers. */
+export const DrawerContent = React.forwardRef<
+  any,
+  DrawerContentProps & RMWC.ComponentProps
+>(function DrawerContent(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-drawer__content']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DrawerContent.displayName = 'DrawerContent';
+
+/** Protects the app's UI from interactions while a modal drawer is open. */
+const DrawerScrim = ({
+  onClick
+}: {
+  onClick: (evt: React.MouseEvent<HTMLDivElement>) => void;
+}) => <div className="mdc-drawer-scrim" onClick={onClick} />;
+
+/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
+export interface DrawerAppContentProps {}
+
+/** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
+export const DrawerAppContent = React.forwardRef<
+  any,
+  DrawerAppContentProps & RMWC.ComponentProps
+>(function DrawerAppContent(props, ref) {
+  const Tag = useTag(props);
+  const className = useClassNames(props, ['mdc-drawer-app-content']);
+  return <Tag ref={ref} {...props} className={className} />;
+});
+DrawerAppContent.displayName = 'DrawerAppContent';
