@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
 import { useIconButtonFoundation } from './foundation';
@@ -101,7 +101,6 @@ const IconButtonToggleRoot = withRipple({
   React.forwardRef<any, IconButtonProps & RMWC.ComponentProps>(
     function IconButtonToggleRoot(props, ref) {
       const { checked, ...rest } = props;
-      const Tag = useTag(props, 'button');
       const className = useClassNames(props, [
         'mdc-icon-button',
         {
@@ -110,6 +109,7 @@ const IconButtonToggleRoot = withRipple({
       ]);
       return (
         <Tag
+          tag="button"
           role="button"
           tabIndex={0}
           {...rest}

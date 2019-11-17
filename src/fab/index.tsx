@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 
 /** A floating action button component */
 export interface FabProps extends RMWC.WithRippleProps {
@@ -40,8 +40,6 @@ export const Fab = withRipple()(
       ...rest
     } = props;
 
-    const Tag = useTag(props, 'button');
-
     const className = useClassNames(props, [
       'mdc-fab',
       {
@@ -58,7 +56,7 @@ export const Fab = withRipple()(
     }
 
     return (
-      <Tag label={label} {...rest} ref={ref} className={className}>
+      <Tag tag="button" label={label} {...rest} ref={ref} className={className}>
         {!!icon && <FabIcon icon={icon} />}
         {!!label && <div className="mdc-fab__label">{label}</div>}
         {children}

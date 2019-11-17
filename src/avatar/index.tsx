@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as RMWC from '@rmwc/types';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 
 /** An Avatar component for displaying users in a system. */
 export interface AvatarProps {
@@ -91,8 +91,6 @@ export const AvatarGroup = React.forwardRef<
   any,
   AvatarGroupProps & RMWC.ComponentProps
 >(function AvatarGroup(props, ref) {
-  const Tag = useTag(props);
-
   const { dense, ...rest } = props;
 
   const className = useClassNames(props, [

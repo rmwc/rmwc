@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { classNames, mergeRefs, useTag, useClassNames } from '@rmwc/base';
+import { classNames, mergeRefs, Tag, useClassNames } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useSwitchFoundation } from './foundation';
@@ -17,8 +17,6 @@ export interface SwitchProps
 /** A Switch component. */
 export const Switch = React.forwardRef<any, SwitchProps & RMWC.ComponentProps>(
   function Switch(props, ref) {
-    const Tag = useTag(props);
-
     const {
       renderToggle,
       id,

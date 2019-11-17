@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { getDisplayName, useTag, useClassNames } from '@rmwc/base';
+import { getDisplayName, Tag, useClassNames } from '@rmwc/base';
 
 /** A Grid component */
 export interface GridProps {
@@ -15,7 +15,6 @@ export interface GridProps {
 /** A Grid component */
 export const Grid = React.forwardRef<any, GridProps & RMWC.ComponentProps>(
   function Grid(props, ref) {
-    const Tag = useTag(props);
     const { children, fixedColumnWidth, align, ...rest } = props;
     const needsInnerGrid = !(getDisplayName(children) === 'GridInner');
     const className = useClassNames(props, [
@@ -57,7 +56,6 @@ export const GridCell = React.forwardRef<
   any,
   GridCellProps & RMWC.ComponentProps
 >(function GridCell(props, ref) {
-  const Tag = useTag(props);
   const { span, phone, tablet, desktop, order, align, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-layout-grid__cell',
@@ -84,7 +82,6 @@ export const GridInner = React.forwardRef<
   any,
   GridInnerProps & RMWC.ComponentProps
 >(function GridInner(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-layout-grid__inner']);
   return <Tag ref={ref} {...props} className={className} />;
 });

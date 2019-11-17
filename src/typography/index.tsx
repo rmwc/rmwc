@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 
 export type TypographyT =
   | 'headline1'
@@ -29,22 +29,21 @@ export const Typography = React.forwardRef<
   any,
   TypographyProps & RMWC.ComponentProps
 >(function Typography(props, ref) {
-  const {use, ...rest} = props;
+  const { use, ...rest } = props;
 
   const providerContext = useProviderContext();
 
   const typographyOptions = providerContext.typography;
 
-  const defaultTag = useTag(props, 'span');
+  const tag =
+    typographyOptions?.[use] || typographyOptions?.defaultTag || 'span';
 
-  const Tag = typographyOptions?.[use] || typographyOptions?.defaultTag || defaultTag;
-  
   const className = useClassNames(props, [
     {
       [`mdc-typography--${props.use}`]: props.use
     }
   ]);
-      
-  return <Tag {...rest} ref={ref} className={className} />;
+
+  return <Tag tag={tag} {...rest} ref={ref} className={className} />;
 });
 Typography.displayName = 'Typography';

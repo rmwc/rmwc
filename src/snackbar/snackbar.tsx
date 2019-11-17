@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCSnackbarFoundation } from '@material/snackbar';
 import { Button, ButtonProps } from '@rmwc/button';
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 import { useSnackbarFoundation } from './foundation';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { Icon } from '@rmwc/icon';
@@ -49,8 +49,6 @@ export function Snackbar(
   props: SnackbarProps & Omit<RMWC.ComponentProps, 'action'>
 ) {
   const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
-
-  const Tag = useTag(props);
 
   const {
     open,

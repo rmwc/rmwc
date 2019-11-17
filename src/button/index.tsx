@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 
 /*********************************************************************
  * Button
@@ -58,7 +58,6 @@ export const Button = withRipple({
       ...rest
     } = props;
 
-    const Tag = useTag(props, 'button');
     const className = useClassNames(props, [
       'mdc-button',
       {
@@ -82,7 +81,7 @@ export const Button = withRipple({
     }
 
     return (
-      <Tag {...rest} ref={ref} className={className}>
+      <Tag tag="button" {...rest} ref={ref} className={className}>
         {!!icon && <ButtonIcon icon={icon} />}
         <span className="mdc-button__label">
           {label}

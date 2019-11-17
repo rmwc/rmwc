@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { useChipFoundation } from './foundation';
-import { useTag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
 
 /*********************************************************************
  * Events
@@ -68,8 +68,6 @@ export const Chip = withRipple()(
 
     const { rootEl, checkmarkEl, trailingIconEl } = useChipFoundation(props);
 
-    const Tag = useTag(props, 'button');
-
     const className = useClassNames(props, [
       'mdc-chip',
       {
@@ -79,6 +77,7 @@ export const Chip = withRipple()(
 
     return (
       <Tag
+        tag="button"
         tabIndex={0}
         {...rootEl.props({ ...rest, className })}
         ref={mergeRefs(ref, rootEl.setRef)}
@@ -178,8 +177,6 @@ export const ChipSet = React.forwardRef<
   ChipSetProps & RMWC.ComponentProps
 >(function ChipSet(props, ref) {
   const { choice, filter, ...rest } = props;
-
-  const Tag = useTag(props);
 
   const className = useClassNames(props, [
     'mdc-chip-set',

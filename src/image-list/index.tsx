@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 
 /** The root of the Image List. */
 export interface ImageListProps {
@@ -15,7 +15,6 @@ export const ImageList = React.forwardRef<
   any,
   ImageListProps & RMWC.ComponentProps
 >(function ImageList(props, ref) {
-  const Tag = useTag(props, 'ul');
   const { masonry, withTextProtection, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-image-list',
@@ -24,7 +23,7 @@ export const ImageList = React.forwardRef<
       'mdc-image-list--with-text-protection': withTextProtection
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag tag="ul" ref={ref} {...rest} className={className} />;
 });
 ImageList.displayName = 'ImageList';
 
@@ -36,9 +35,8 @@ export const ImageListItem = React.forwardRef<
   any,
   ImageListItemProps & RMWC.ComponentProps
 >(function ImageListItem(props, ref) {
-  const Tag = useTag(props, 'li');
   const className = useClassNames(props, ['mdc-image-list__item']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="li" ref={ref} {...props} className={className} />;
 });
 ImageListItem.displayName = 'ImageListItem';
 
@@ -50,7 +48,6 @@ export const ImageListImageAspectContainer = React.forwardRef<
   any,
   ImageListImageAspectContainerProps & RMWC.ComponentProps
 >(function ImageListImageAspectContainer(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, [
     'mdc-image-list__image-aspect-container'
   ]);
@@ -66,9 +63,8 @@ export const ImageListImage = React.forwardRef<
   any,
   ImageListImageProps & RMWC.ComponentProps
 >(function ImageListImage(props, ref) {
-  const Tag = useTag(props, 'img');
   const className = useClassNames(props, ['mdc-image-list__image']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="img" ref={ref} {...props} className={className} />;
 });
 ImageListImage.displayName = 'ImageListImage';
 
@@ -80,7 +76,6 @@ export const ImageListSupporting = React.forwardRef<
   any,
   ImageListSupportingProps & RMWC.ComponentProps
 >(function ImageListSupporting(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-image-list__supporting']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -94,7 +89,6 @@ export const ImageListLabel = React.forwardRef<
   any,
   ImageListLabelProps & RMWC.ComponentProps
 >(function ImageListLabel(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-image-list__label']);
   return <Tag ref={ref} {...props} className={className} />;
 });

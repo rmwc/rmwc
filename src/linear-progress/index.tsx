@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useLinearProgressFoundation } from './foundation';
-import { mergeRefs, useTag, useClassNames } from '@rmwc/base';
+import { mergeRefs, Tag, useClassNames } from '@rmwc/base';
 
 /** A component to display linear progress. */
 export interface LinearProgressProps {
@@ -20,7 +20,6 @@ export const LinearProgress = React.forwardRef<
   any,
   LinearProgressProps & RMWC.ComponentProps
 >(function LinearProgress(props, ref) {
-  const Tag = useTag(props, 'nav');
   const { reversed, closed, progress, buffer, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-linear-progress',
@@ -33,6 +32,7 @@ export const LinearProgress = React.forwardRef<
 
   return (
     <Tag
+      tag="nav"
       role="progressbar"
       {...rootEl.props({ ...rest, className })}
       ref={mergeRefs(rootEl.setRef, ref)}

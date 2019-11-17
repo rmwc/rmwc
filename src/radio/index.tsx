@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useTag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useRadioFoundation } from './foundation';
@@ -56,7 +56,6 @@ const RadioRoot = withRipple({
     props,
     ref
   ) {
-    const Tag = useTag(props);
     const { disabled, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-radio',

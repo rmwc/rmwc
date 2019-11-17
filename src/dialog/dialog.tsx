@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { MDCDialogFoundation } from '@material/dialog';
 
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 import { Button, ButtonProps } from '@rmwc/button';
 import { useDialogFoundation } from './foundation';
 
@@ -35,8 +35,6 @@ export interface DialogProps {
 /** A Dialog component. */
 export function Dialog(props: DialogProps & RMWC.ComponentProps) {
   const { rootEl } = useDialogFoundation(props);
-
-  const Tag = useTag(props);
 
   const className = useClassNames(props, ['mdc-dialog']);
 
@@ -152,9 +150,8 @@ export const DialogTitle = React.forwardRef<
   any,
   DialogTitleProps & RMWC.ComponentProps
 >(function DialogTitle(props, ref) {
-  const Tag = useTag(props, 'h2');
   const className = useClassNames(props, ['mdc-dialog__title']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="h2" ref={ref} {...props} className={className} />;
 });
 DialogTitle.displayName = 'DialogTitle';
 
@@ -166,7 +163,6 @@ export const DialogContent = React.forwardRef<
   any,
   DialogContentProps & RMWC.ComponentProps
 >(function DialogContent(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-dialog__content']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -180,7 +176,6 @@ export const DialogActions = React.forwardRef<
   any,
   DialogActionsProps & RMWC.ComponentProps
 >(function DialogActions(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-dialog__actions']);
   return <Tag ref={ref} {...props} className={className} />;
 });

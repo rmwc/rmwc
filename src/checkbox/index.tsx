@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { useTag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useCheckboxFoundation } from './foundation';
@@ -86,7 +86,6 @@ const CheckboxRoot = withRipple({
 })(
   React.forwardRef<any, CheckboxProps & RMWC.ComponentProps>(
     function CheckboxRoot(props, ref) {
-      const Tag = useTag(props);
       const { disabled, ...rest } = props;
       const className = useClassNames(props, [
         'mdc-checkbox',

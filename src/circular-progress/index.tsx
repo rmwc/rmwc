@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 
 const SIZE_MAP: { [key: string]: number } = {
   xsmall: 18,
@@ -26,8 +26,6 @@ export const CircularProgress = React.forwardRef<
   any,
   CircularProgressProps & Omit<RMWC.ComponentProps, 'size'>
 >(function CircularProgress(props, ref) {
-  const Tag = useTag(props, 'div');
-
   const { size = 'medium', max = 1, min = 0, progress, ...rest } = props;
 
   const className = useClassNames(props, [

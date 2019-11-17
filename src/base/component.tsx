@@ -109,13 +109,12 @@ export const componentFactory = <P extends {}>({
   >;
 };
 
-export const useTag = <Props extends { [key: string]: any }>(
-  props: Props,
-  defaultTag: RMWC.TagT = 'div'
-) => {
-  const Tag = handleTag(props, defaultTag, props.tag);
-  return Tag;
-};
+export const Tag = React.forwardRef<any, RMWC.ComponentProps>(function Tag(
+  { tag: TagEl = 'div', theme, ...rest },
+  ref
+) {
+  return <TagEl {...rest} ref={ref} />;
+});
 
 export const useClassNames = <Props extends { [key: string]: any }>(
   props: Props,

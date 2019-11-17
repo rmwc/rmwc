@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 
 /** Grid List Component */
 export interface GridListProps {
@@ -22,8 +22,6 @@ export const GridList = React.forwardRef<
   any,
   GridListProps & RMWC.ComponentProps
 >(function GridList(props, ref) {
-  const Tag = useTag(props, 'div');
-
   const {
     tileGutter1,
     headerCaption,
@@ -61,7 +59,6 @@ export const GridTilePrimary = React.forwardRef<
   any,
   GridTilePrimaryProps & RMWC.ComponentProps
 >(function GridTilePrimary(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-grid-tile__primary']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -75,9 +72,8 @@ export const GridTilePrimaryContent = React.forwardRef<
   any,
   GridTilePrimaryContentProps & RMWC.ComponentProps
 >(function GridTilePrimaryContent(props, ref) {
-  const Tag = useTag(props, 'img');
   const className = useClassNames(props, ['mdc-grid-tile__primary-content']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="img" ref={ref} {...props} className={className} />;
 });
 GridTilePrimaryContent.displayName = 'GridTilePrimaryContent';
 
@@ -89,9 +85,8 @@ export const GridTile = React.forwardRef<
   any,
   GridTileProps & RMWC.ComponentProps
 >(function GridTile(props, ref) {
-  const Tag = useTag(props, 'li');
   const className = useClassNames(props, ['mdc-grid-tile']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="li" ref={ref} {...props} className={className} />;
 });
 GridTile.displayName = 'GridTile';
 
@@ -103,9 +98,8 @@ export const GridTileSecondary = React.forwardRef<
   any,
   GridTileSecondaryProps & RMWC.ComponentProps
 >(function GridTileSecondary(props, ref) {
-  const Tag = useTag(props, 'span');
   const className = useClassNames(props, ['mdc-grid-tile__secondary']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="span" ref={ref} {...props} className={className} />;
 });
 GridTileSecondary.displayName = 'GridTileSecondary';
 
@@ -131,9 +125,8 @@ export const GridTileTitle = React.forwardRef<
   any,
   GridTileTitleProps & RMWC.ComponentProps
 >(function GridTileTitle(props, ref) {
-  const Tag = useTag(props, 'span');
   const className = useClassNames(props, ['mdc-grid-tile__title']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="span" ref={ref} {...props} className={className} />;
 });
 GridTileTitle.displayName = 'GridTileTitle';
 
@@ -145,8 +138,7 @@ export const GridTileTitleSupportText = React.forwardRef<
   any,
   GridTileTitleSupportTextProps & RMWC.ComponentProps
 >(function GridTileTitleSupportText(props, ref) {
-  const Tag = useTag(props, 'span');
   const className = useClassNames(props, ['mdc-grid-tile__support-text']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="span" ref={ref} {...props} className={className} />;
 });
 GridTileTitleSupportText.displayName = 'GridTileTitleSupportText';

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon } from '@rmwc/icon';
-import { useClassNames, useTag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 
 interface SharedDataTableCellProps {
   /** Align content to the start of the cell. */
@@ -25,7 +25,6 @@ export const DataTable = React.forwardRef<
   any,
   DataTableProps & RMWC.ComponentProps
 >(function DataTable(props, ref) {
-  const Tag = useTag(props);
   const { stickyColumns, stickyRows, ...rest } = props;
   const className = useClassNames(props, [
     'rmwc-data-table',
@@ -48,9 +47,8 @@ export const DataTableContent = React.forwardRef<
   any,
   DataTableContentProps & RMWC.ComponentProps
 >(function DataTableContent(props, ref) {
-  const Tag = useTag(props, 'table');
   const className = useClassNames(props, ['rmwc-data-table__content']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="table" ref={ref} {...props} className={className} />;
 });
 DataTableContent.displayName = 'DataTableContent';
 
@@ -62,9 +60,8 @@ export const DataTableHead = React.forwardRef<
   any,
   DataTableHeadProps & RMWC.ComponentProps
 >(function DataTableHead(props, ref) {
-  const Tag = useTag(props, 'thead');
   const className = useClassNames(props, ['rmwc-data-table__head']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="thead" ref={ref} {...props} className={className} />;
 });
 DataTableHead.displayName = 'DataTableHead';
 
@@ -76,9 +73,8 @@ export const DataTableBody = React.forwardRef<
   any,
   DataTableBodyProps & RMWC.ComponentProps
 >(function DataTableBody(props, ref) {
-  const Tag = useTag(props, 'tbody');
   const className = useClassNames(props, ['rmwc-data-table__body']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag tag="tbody" ref={ref} {...props} className={className} />;
 });
 DataTableBody.displayName = 'DataTableBody';
 
@@ -95,7 +91,6 @@ export const DataTableRow = React.forwardRef<
   any,
   DataTableRowProps & RMWC.ComponentProps
 >(function DataTableRow(props, ref) {
-  const Tag = useTag(props, 'tr');
   const { activated, selected, ...rest } = props;
   const className = useClassNames(props, [
     'rmwc-data-table__row',
@@ -104,7 +99,7 @@ export const DataTableRow = React.forwardRef<
       'rmwc-data-table__row--activated': props.activated
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag tag="tr" ref={ref} {...rest} className={className} />;
 });
 DataTableRow.displayName = 'DataTableRow';
 
@@ -139,8 +134,6 @@ export const DataTableHeadCell = React.forwardRef<
   any,
   DataTableHeadCellProps & RMWC.ComponentProps
 >(function DataTableHeadCell(props, ref) {
-  const Tag = useTag(props, 'th');
-
   const {
     alignStart,
     alignMiddle,
@@ -179,7 +172,7 @@ export const DataTableHeadCell = React.forwardRef<
       : {};
 
   return (
-    <Tag {...rest} {...onClickProp} className={className} ref={ref}>
+    <Tag tag="th" {...rest} {...onClickProp} className={className} ref={ref}>
       {sort !== undefined && <DataTableSortIcon />}
       {children}
     </Tag>
@@ -195,7 +188,6 @@ export const DataTableCell = React.forwardRef<
   any,
   DataTableCellProps & RMWC.ComponentProps
 >(function DataTableCell(props, ref) {
-  const Tag = useTag(props, 'td');
   const { alignStart, alignMiddle, alignEnd, ...rest } = props;
   const className = useClassNames(props, [
     'rmwc-data-table__cell',
@@ -205,7 +197,7 @@ export const DataTableCell = React.forwardRef<
       'rmwc-data-table__cell--align-end': props.alignEnd
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag tag="td" ref={ref} {...rest} className={className} />;
 });
 DataTableCell.displayName = 'DataTableCell';
 

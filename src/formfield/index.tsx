@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 import { useFormfieldFoundation } from './foundation';
 
 /** A FormField component. */
@@ -16,7 +16,6 @@ export const FormField = React.forwardRef<
 >(function FormField(props, ref) {
   useFormfieldFoundation(props);
 
-  const Tag = useTag(props);
   const { alignEnd, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-form-field',

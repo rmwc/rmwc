@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { mergeRefs, useTag, useClassNames } from '@rmwc/base';
+import { mergeRefs, Tag, useClassNames } from '@rmwc/base';
 import {
   useDismissableDrawerFoundation,
   useModalDrawerFoundation
@@ -86,7 +86,6 @@ const DismissibleDrawer = slidableDrawerFactory(
 const DrawerRoot = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
   function DrawerRoot(props, ref) {
     const { dismissible, modal, ...rest } = props;
-    const Tag = useTag(props, 'aside');
     const className = useClassNames(props, [
       'mdc-drawer',
       {
@@ -95,7 +94,7 @@ const DrawerRoot = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
       }
     ]);
 
-    return <Tag ref={ref} {...rest} className={className} />;
+    return <Tag tag="aside" ref={ref} {...rest} className={className} />;
   }
 );
 
@@ -111,7 +110,6 @@ export const DrawerHeader = React.forwardRef<
   any,
   DrawerHeaderProps & RMWC.ComponentProps
 >(function DrawerHeader(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-drawer__header']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -125,7 +123,6 @@ export const DrawerTitle = React.forwardRef<
   any,
   DrawerTitleProps & RMWC.ComponentProps
 >(function DrawerTitle(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-drawer__title']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -139,7 +136,6 @@ export const DrawerSubtitle = React.forwardRef<
   any,
   DrawerSubtitleProps & RMWC.ComponentProps
 >(function DrawerSubtitle(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-drawer__subtitle']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -153,7 +149,6 @@ export const DrawerContent = React.forwardRef<
   any,
   DrawerContentProps & RMWC.ComponentProps
 >(function DrawerContent(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-drawer__content']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -174,7 +169,6 @@ export const DrawerAppContent = React.forwardRef<
   any,
   DrawerAppContentProps & RMWC.ComponentProps
 >(function DrawerAppContent(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-drawer-app-content']);
   return <Tag ref={ref} {...props} className={className} />;
 });

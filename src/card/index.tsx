@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Button, ButtonProps } from '@rmwc/button';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
-import { useTag, useClassNames } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 
 /** A Card Component */
 export interface CardProps {
@@ -15,7 +15,6 @@ export interface CardProps {
 /** A Card Component */
 export const Card = React.forwardRef<any, CardProps & RMWC.ComponentProps>(
   function Card(props, ref) {
-    const Tag = useTag(props);
     const { outlined, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-card',
@@ -41,7 +40,6 @@ export const CardMedia = React.forwardRef<
   any,
   CardMediaProps & RMWC.ComponentProps
 >(function CardMedia(props, ref) {
-  const Tag = useTag(props, 'section');
   const { square, sixteenByNine, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-card__media',
@@ -50,7 +48,7 @@ export const CardMedia = React.forwardRef<
       'mdc-card__media--16-9': sixteenByNine
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag tag="section" ref={ref} {...rest} className={className} />;
 });
 CardMedia.displayName = 'CardMedia';
 
@@ -62,7 +60,6 @@ export const CardMediaContent = React.forwardRef<
   any,
   CardMediaContentProps & RMWC.ComponentProps
 >(function CardMediaContent(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-card__media-content']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -77,7 +74,6 @@ export const CardPrimaryAction = withRipple({
 })(
   React.forwardRef<any, CardMediaContentProps & RMWC.ComponentProps>(
     function CardPrimaryAction(props, ref) {
-      const Tag = useTag(props);
       const className = useClassNames(props, ['mdc-card__primary-action']);
       return <Tag ref={ref} {...props} className={className} />;
     }
@@ -96,13 +92,12 @@ export const CardActions = React.forwardRef<
   any,
   CardActionsProps & RMWC.ComponentProps
 >(function CardActions(props, ref) {
-  const Tag = useTag(props, 'section');
   const { fullBleed, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-card__actions',
     { 'mdc-card__actions--full-bleed': fullBleed }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag tag="section" ref={ref} {...rest} className={className} />;
 });
 CardActions.displayName = 'CardActions';
 
@@ -114,7 +109,6 @@ export const CardActionButtons = React.forwardRef<
   any,
   CardActionButtonsProps & RMWC.ComponentProps
 >(function CardActionButtons(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-card__action-buttons']);
   return <Tag ref={ref} {...props} className={className} />;
 });
@@ -128,7 +122,6 @@ export const CardActionIcons = React.forwardRef<
   any,
   CardActionIconsProps & RMWC.ComponentProps
 >(function CardActionIcons(props, ref) {
-  const Tag = useTag(props);
   const className = useClassNames(props, ['mdc-card__action-icons']);
   return <Tag ref={ref} {...props} className={className} />;
 });

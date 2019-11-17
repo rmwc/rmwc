@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 
 import { toDashCase, parseThemeOptions, wrapChild } from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
-import { useTag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames } from '@rmwc/base';
 
 /** A Theme Component. */
 export interface ThemeProps {
@@ -18,8 +18,6 @@ export const Theme = React.forwardRef<
   any,
   RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>
 >(function Theme(props, ref) {
-  const Tag = useTag(props, 'span');
-
   const { use, wrap, ...rest } = props;
 
   const className = useClassNames(props, [parseThemeOptions(use).join(' ')]);
@@ -32,7 +30,9 @@ export const Theme = React.forwardRef<
     });
   }
 
-  return <Tag theme={use} {...rest} ref={ref} className={className} />;
+  return (
+    <Tag tag="span" theme={use} {...rest} ref={ref} className={className} />
+  );
 });
 
 Theme.displayName = 'Theme';
