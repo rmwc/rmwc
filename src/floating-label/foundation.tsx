@@ -13,7 +13,11 @@ export const useFloatingLabelFoundation = (
     elements: {
       rootEl: true
     },
-    api: ({ foundation }): FloatingLabelApi => {
+    api: ({
+      foundation
+    }: {
+      foundation: MDCFloatingLabelFoundation;
+    }): FloatingLabelApi => {
       return {
         getWidth() {
           return foundation.getWidth();

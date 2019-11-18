@@ -3,12 +3,13 @@ import * as React from 'react';
 
 import { MDCTabFoundation } from '@material/tab';
 
-import { FoundationComponent, componentFactory, randomId } from '@rmwc/base';
+import { useClassNames, Tag, FoundationElement } from '@rmwc/base';
 import { IconProps, Icon } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
-import { withTabBarContext, TabBarContextT } from './tab-bar-context';
+import { TabBarContext } from './tab-bar-context';
 import { TabIndicator } from './tab-indicator';
+import { useTabFoundation } from './tab-foundation';
 
 export type TabOnInteractionEventT = RMWC.CustomEventT<{ tabId: string }>;
 
@@ -30,171 +31,83 @@ export interface TabProps {
   onInteraction?: (evt: TabOnInteractionEventT) => void;
 }
 
+export type TabApi = {
+  getActive: () => boolean;
+  activate: (computeIndicatorClientRect: ClientRect) => void;
+  deactivate: () => void;
+  computeIndicatorClientRect: () => ClientRect;
+  computeDimensions: MDCTabFoundation['computeDimensions'];
+  focus: () => void;
+  id: string;
+  getIndex: () => number;
+};
+
 const TabRoot = withRipple({ surface: false })(
-  componentFactory<TabProps>({
-    displayName: 'TabRoot',
-    tag: 'button',
-    classNames: (props: TabProps) => [
+  React.forwardRef(function TabRoot(
+    props: TabProps & { element: FoundationElement<any, any> },
+    ref
+  ) {
+    const { stacked, ...rest } = props;
+    const className = useClassNames(props, [
       'mdc-tab',
       {
-        'mdc-tab--stacked': props.stacked
+        'mdc-tab--stacked': stacked
       }
-    ],
-    consumeProps: ['stacked']
+    ]);
+    return <Tag tag="button" {...rest} className={className} ref={ref} />;
   })
 );
 
 /** A Tab icon. This is an instance of the Icon component. */
-const TabIcon = componentFactory<IconProps>({
-  displayName: 'TabIcon',
-  tag: Icon,
-  classNames: ['mdc-tab__icon']
+const TabIcon = React.memo(function TabIcon(
+  props: IconProps & RMWC.ComponentProps
+) {
+  return <Icon {...props} className="mdc-tab__icon" />;
 });
 
 /** A Tab component */
-export const Tab = withTabBarContext()<TabProps & RMWC.ComponentProps>(
-  class extends FoundationComponent<
-    MDCTabFoundation,
-    TabProps & { contextApi?: TabBarContextT }
-  > {
-    static displayName = 'TabFoundation';
+export const Tab = React.forwardRef(function Tab(
+  props: TabProps & RMWC.ComponentProps,
+  ref
+) {
+  const {
+    children,
+    label,
+    icon,
+    stacked,
+    restrictIndicator,
+    onInteraction,
+    iconIndicator,
+    ...rest
+  } = props;
 
-    _id = randomId('tab');
-    private root = this.createElement('root');
-    tabIndicator: TabIndicator | null = null;
-    content: HTMLDivElement | null = null;
+  const { rootEl, contentEl, setTabIndicatorApi } = useTabFoundation(props);
 
-    constructor(props: TabProps & { contextApi?: TabBarContextT }) {
-      super(props);
-      this.props.contextApi && this.props.contextApi.registerTab(this);
-      this.handleClick = this.handleClick.bind(this);
-    }
+  const contextApi = React.useContext(TabBarContext);
 
-    componentWillUnmount() {
-      this.props.contextApi && this.props.contextApi.unregisterTab(this);
-    }
+  const tabIndicator = (
+    <TabIndicator
+      apiRef={setTabIndicatorApi}
+      transition={contextApi.indicatorTransition}
+      icon={iconIndicator}
+    />
+  );
 
-    get id() {
-      return this.props.id
-        ? this.props.id
-        : (this as any)._reactInternalFiber.key || this._id;
-    }
-
-    getDefaultFoundation() {
-      return new MDCTabFoundation(
-        /** @type {!MDCTabAdapter} */ {
-          setAttr: (attr: string, value: any) =>
-            this.root.setProp(attr as any, value),
-          addClass: (className: string) => this.root.addClass(className),
-          removeClass: (className: string) => this.root.removeClass(className),
-          hasClass: (className: string) => this.root.hasClass(className),
-          activateIndicator: (previousIndicatorClientRect: ClientRect) =>
-            this.tabIndicator &&
-            this.tabIndicator.activate(previousIndicatorClientRect),
-          deactivateIndicator: () =>
-            this.tabIndicator && this.tabIndicator.deactivate(),
-          notifyInteracted: () => {
-            const evt = this.emit(
-              'onInteraction',
-              { tabId: this.id },
-              true /* bubble */
-            );
-
-            this.props.contextApi &&
-              this.props.contextApi.onTabInteraction(evt);
-          },
-          getOffsetLeft: () => (this.root.ref ? this.root.ref.offsetLeft : 0),
-          getOffsetWidth: () => (this.root.ref ? this.root.ref.offsetWidth : 0),
-          getContentOffsetLeft: () =>
-            this.content ? this.content.offsetLeft : 0,
-          getContentOffsetWidth: () =>
-            this.content ? this.content.offsetWidth : 0,
-          focus: () =>
-            this.root.ref && this.root.ref.focus && this.root.ref.focus()
-        }
-      );
-    }
-
-    handleClick(evt: React.MouseEvent) {
-      this.props.onClick && this.props.onClick(evt);
-      this.foundation.handleClick();
-    }
-
-    get active() {
-      return this.foundation.isActive();
-    }
-
-    set focusOnActivate(focusOnActivate: boolean) {
-      this.foundation.setFocusOnActivate(focusOnActivate);
-    }
-
-    activate(computeIndicatorClientRect: ClientRect) {
-      this.foundation.activate(computeIndicatorClientRect);
-    }
-
-    deactivate() {
-      this.foundation.deactivate();
-    }
-
-    computeIndicatorClientRect() {
-      return this.tabIndicator && this.tabIndicator.computeContentClientRect();
-    }
-
-    computeDimensions() {
-      return this.foundation.computeDimensions();
-    }
-
-    focus() {
-      this.root.ref && this.root.ref && this.root.ref.focus();
-    }
-
-    render() {
-      const {
-        children,
-        label,
-        icon,
-        stacked,
-        restrictIndicator,
-        onInteraction,
-        contextApi,
-        iconIndicator,
-        ...rest
-      } = this.props;
-
-      const tabIndicator = (
-        <TabIndicator
-          ref={(api: TabIndicator) => (this.tabIndicator = api)}
-          transition={contextApi && contextApi.indicatorTransition}
-          icon={iconIndicator}
-        />
-      );
-
-      return (
-        <TabRoot
-          {...this.root.props(rest)}
-          onClick={this.handleClick}
-          stacked={stacked}
-          ref={this.root.setRef}
-          ripple={{
-            surface: false
-          }}
-        >
-          <div className="mdc-tab__content" ref={el => (this.content = el)}>
-            {!!icon && <TabIcon icon={icon} />}
-            {(children !== undefined || label !== undefined) && (
-              <span className="mdc-tab__text-label">
-                {label}
-                {children}
-              </span>
-            )}
-            {!!restrictIndicator && tabIndicator}
-          </div>
-          {!restrictIndicator && tabIndicator}
-          <RippleSurface className="mdc-tab__ripple" />
-        </TabRoot>
-      );
-    }
-  }
-);
-
+  return (
+    <TabRoot element={rootEl} stacked={stacked} {...rest} ref={ref}>
+      <div className="mdc-tab__content" ref={contentEl.setRef}>
+        {!!icon && <TabIcon icon={icon} />}
+        {(children !== undefined || label !== undefined) && (
+          <span className="mdc-tab__text-label">
+            {label}
+            {children}
+          </span>
+        )}
+        {!!restrictIndicator && tabIndicator}
+      </div>
+      {!restrictIndicator && tabIndicator}
+      <RippleSurface className="mdc-tab__ripple" />
+    </TabRoot>
+  );
+});
 Tab.displayName = 'Tab';

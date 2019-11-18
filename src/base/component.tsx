@@ -3,6 +3,7 @@ import * as React from 'react';
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
 import { handleDeprecations, DeprecateT } from './utils/deprecation';
+import { FoundationElement } from './foundation-component';
 
 type ClassNamesInputT<Props> =
   | undefined
@@ -109,11 +110,14 @@ export const componentFactory = <P extends {}>({
   >;
 };
 
-export const Tag = React.forwardRef<any, RMWC.ComponentProps>(function Tag(
-  { tag: TagEl = 'div', theme, ...rest },
-  ref
-) {
-  return <TagEl {...rest} ref={ref} />;
+export const Tag = React.forwardRef<
+  any,
+  RMWC.ComponentProps & { element?: FoundationElement<any, any> }
+>(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
+  const finalProps = element ? element.props(rest) : rest;
+  const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
+
+  return <TagEl {...finalProps} ref={finalRef} />;
 });
 
 export const useClassNames = <Props extends { [key: string]: any }>(

@@ -336,7 +336,11 @@ export const useFoundation = <
   Foundation extends MDCFoundation,
   Elements extends { [key: string]: true },
   Props extends { [key: string]: any },
-  Api
+  Api extends (
+    params: {
+      [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+    } & { foundation: Foundation }
+  ) => void
 >({
   foundation: _foundation,
   props: _props,
@@ -357,7 +361,7 @@ export const useFoundation = <
   ) => Foundation;
   props: Props;
   elements: Elements;
-  api?: (params: { foundation: Foundation }) => Api;
+  api?: Api;
 }) => {
   const [, setIteration] = useState(0);
 
@@ -390,7 +394,10 @@ export const useFoundation = <
   }, [foundation]);
 
   // handle apiRefs
-  api && props.current.apiRef?.(api({ foundation: foundation.current }));
+  api &&
+    props.current.apiRef?.(
+      api({ foundation: foundation.current, ...elements.current })
+    );
 
   return { foundation: foundation.current, ...elements.current };
 };

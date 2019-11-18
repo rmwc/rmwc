@@ -122,6 +122,25 @@ class TabBarStory extends React.Component {
 
 storiesOf('Tabs', module)
   .add('TabBar', () => <TabBarStory />)
+  .add('TabBar Scrolls', () => {
+    return (
+      <TabBar>
+        {/* Tabs automatically scroll with lots of content. */}
+        <Tab>Cookies</Tab>
+        <Tab>Pizza</Tab>
+        <Tab>Icecream</Tab>
+        <Tab>Chocolate</Tab>
+        <Tab>Fishsticks</Tab>
+        <Tab>Ratatouille</Tab>
+        <Tab>Bread</Tab>
+        <Tab>Rolls</Tab>
+        <Tab>Sushi</Tab>
+        <Tab>Cupcake</Tab>
+        <Tab>Cheesecake</Tab>
+      </TabBar>
+    );
+  })
+  .add('TabBar', () => <TabBarStory />)
   .add('TabBar Icon Indicators', () => (
     <TabBar>
       <Tab

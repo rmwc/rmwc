@@ -82,11 +82,12 @@ export function Snackbar(
 
   return (
     <Tag
+      {...rest}
+      element={rootEl}
       aria-live="assertive"
       aria-atomic
       aria-hidden
-      {...rootEl.props({ ...rest, className })}
-      ref={rootEl.setRef}
+      className={className}
     >
       <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
         {!!icon && (
