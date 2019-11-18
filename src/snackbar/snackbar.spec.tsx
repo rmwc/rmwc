@@ -70,8 +70,7 @@ describe('Snackbar', () => {
       />
     );
 
-    const root = el.find('.mdc-snackbar');
-    root.simulate('keydown');
+    el.simulate('keydown');
 
     const surface = el.find('.mdc-snackbar__surface');
     surface.simulate('click');

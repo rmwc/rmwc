@@ -177,7 +177,7 @@ describe('DataTable', () => {
       );
 
     const clickCell = (el: any) => {
-      const cell = el.find('.rmwc-data-table__head-cell--sortable');
+      const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
       cell.simulate('click');
     };
 
@@ -231,7 +231,7 @@ it('Sorted columns can have an onClick', () => {
     </DataTable>
   );
 
-  const cell = el.find('.rmwc-data-table__head-cell--sortable');
+  const cell = el.find('.rmwc-data-table__head-cell--sortable').first();
   cell.simulate('click');
   expect(value).toBe(1);
 });
