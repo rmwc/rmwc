@@ -32,6 +32,7 @@ export function List(props: ListProps & RMWC.ComponentProps) {
     dense,
     twoLine,
     avatarList,
+    apiRef,
     nonInteractive,
     onAction,
     ...rest

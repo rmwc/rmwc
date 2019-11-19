@@ -9,3 +9,4 @@ export * from './wrap-child';
 export * from './emitter';
 export * from './apply-passive';
 export * from './get-display-name';
+export * from './empty-client-rect';

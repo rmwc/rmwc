@@ -1,5 +1,5 @@
 import { TabIndicatorProps, TabIndicatorApi } from './tab-indicator';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@rmwc/base';
 import {
   MDCFadingTabIndicatorFoundation,
   MDCSlidingTabIndicatorFoundation,
@@ -22,7 +22,7 @@ export const useTabIndicatorFoundation = (props: TabIndicatorProps) => {
         computeContentClientRect: () =>
           contentEl.ref
             ? contentEl.ref.getBoundingClientRect()
-            : ({} as ClientRect),
+            : emptyClientRect,
         setContentStyleProperty: (prop: string, value: string) => {
           contentEl.setStyle(prop, value);
         }

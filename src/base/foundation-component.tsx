@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { debounce } from './utils/debounce';
@@ -342,7 +342,7 @@ export const useFoundation = <
     } & { foundation: Foundation }
   ) => void
 >({
-  foundation: _foundation,
+  foundation: foundationFactory,
   props: _props,
   elements: elementsInput,
   api
@@ -368,36 +368,40 @@ export const useFoundation = <
   const props = useRef(_props);
   props.current = _props;
 
-  const elements = useRef(
-    Object.keys(elementsInput).reduce<
-      { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
-    >((acc, key: keyof Elements) => {
-      acc[key] = new FoundationElement<Props, HTMLElement>(() => {
-        setIteration(val => val + 1);
-      });
-      return acc;
-    }, {} as any)
+  const elements = useMemo(
+    () =>
+      Object.keys(elementsInput).reduce<
+        { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
+      >((acc, key: keyof Elements) => {
+        acc[key] = new FoundationElement<Props, HTMLElement>(() => {
+          setIteration(val => val + 1);
+        });
+        return acc;
+      }, {} as any),
+    []
   );
 
-  const foundation = useRef(
-    _foundation({
-      ...elements.current,
-      getProps: () => props.current,
-      emit: (...args) => emitFactory(props.current)(...args)
-    })
+  const foundation = useMemo(
+    () =>
+      foundationFactory({
+        ...elements,
+        getProps: () => props.current,
+        emit: (...args) => emitFactory(props.current)(...args)
+      }),
+    []
   );
 
   useEffect(() => {
-    const f = foundation.current;
+    const f = foundation;
     f.init();
-    return () => f.destroy();
-  }, [foundation]);
+    return () => {
+      f.destroy();
+      Object.values(elements).map(element => element.destroy());
+    };
+  }, [foundation, elements]);
 
   // handle apiRefs
-  api &&
-    props.current.apiRef?.(
-      api({ foundation: foundation.current, ...elements.current })
-    );
+  api && props.current.apiRef?.(api({ foundation: foundation, ...elements }));
 
-  return { foundation: foundation.current, ...elements.current };
+  return { foundation: foundation, ...elements };
 };

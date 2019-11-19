@@ -102,8 +102,8 @@ class MenuSurfaceStory extends React.Component {
 }
 
 function MenuHoist() {
-  const [hoisted] = useKnob('boolean', 'hoisted', false);
-  const [open, setOpen] = useKnob('boolean', 'open', false);
+  const [hoisted] = useKnob('boolean', 'hoisted', true);
+  const [open, setOpen] = React.useState(true);
   const [options] = useKnob('array', 'options', [
     'Cookies',
     'Pizza',

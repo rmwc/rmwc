@@ -1,5 +1,5 @@
 import { ChipProps } from './';
-import { useId } from '@rmwc/base';
+import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
 
@@ -61,9 +61,9 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
 
         hasLeadingIcon: () => !!props.icon,
         getRootBoundingClientRect: () =>
-          rootEl.ref?.getBoundingClientRect() || ({} as ClientRect),
+          rootEl.ref?.getBoundingClientRect() || emptyClientRect,
         getCheckmarkBoundingClientRect: () =>
-          checkmarkEl.ref?.getBoundingClientRect() || ({} as ClientRect),
+          checkmarkEl.ref?.getBoundingClientRect() || emptyClientRect,
         setAttr: (attr, value) => rootEl.setProp(attr as any, value)
       })
   });

@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@rmwc/base';
 import { matches } from '@rmwc/base';
 import {
   MDCTabScrollerFoundation,
@@ -50,11 +50,11 @@ export const useTabScrollerFoundation = (
         getScrollAreaOffsetWidth: () =>
           areaEl.ref ? areaEl.ref.offsetWidth : 0,
         computeScrollAreaClientRect: () =>
-          areaEl.ref ? areaEl.ref.getBoundingClientRect() : ({} as ClientRect),
+          areaEl.ref ? areaEl.ref.getBoundingClientRect() : emptyClientRect,
         computeScrollContentClientRect: () =>
           contentEl.ref
             ? contentEl.ref.getBoundingClientRect()
-            : ({} as ClientRect),
+            : emptyClientRect,
         computeHorizontalScrollbarHeight: () =>
           scrollerUtil.computeHorizontalScrollbarHeight(document)
       });

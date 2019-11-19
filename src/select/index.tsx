@@ -8,7 +8,7 @@ import { FloatingLabel, FloatingLabelApi } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { NotchedOutline } from '@rmwc/notched-outline';
-import { Menu, MenuItem, MenuItems, MenuProps } from '@rmwc/menu';
+import { Menu, MenuItem, MenuItems, MenuProps, MenuApi } from '@rmwc/menu';
 import { ListGroup, ListGroupSubheader, ListDivider } from '@rmwc/list';
 import { withRipple } from '@rmwc/ripple';
 
@@ -181,7 +181,7 @@ interface SelectEnhancedControlProps extends MenuProps {
   selectOptions: any;
   selectedIndex: number;
   placeholder?: string;
-  apiRef: React.Ref<any>;
+  apiRef2: (api: MenuApi) => void;
   value?: string;
   defaultValue?: any;
   children?: React.ReactNode;
@@ -194,7 +194,7 @@ class SelectEnhancedControl extends React.Component<
   render() {
     const {
       selectOptions,
-      apiRef,
+      apiRef2,
       selectedIndex,
       placeholder,
       children,
@@ -209,7 +209,7 @@ class SelectEnhancedControl extends React.Component<
       currentIndex++ === 0;
 
     return (
-      <Menu {...rest} ref={apiRef} className="mdc-select__menu">
+      <Menu {...rest} apiRef={apiRef2} className="mdc-select__menu" hoistToBody>
         {showPlaceholder && (
           <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
             {placeholder}
@@ -285,7 +285,7 @@ export class SelectBase extends FoundationComponent<
   nativeControl: HTMLSelectElement | null = null;
   selectedText: HTMLElement | null = null;
   menuElement: HTMLElement | null = null;
-  menu: Menu | null = null;
+  menu: MenuApi | null = null;
   hiddenInput_: HTMLInputElement | null = null;
   leadingIcon_: SelectIcon | null = null;
   trailingIcon_: HTMLElement | null = null;
@@ -315,28 +315,21 @@ export class SelectBase extends FoundationComponent<
   componentDidMount() {
     super.componentDidMount();
 
+    this.menuElement =
+      this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
+
     const { enhanced, value } = this.props;
 
-    if (this.menu) {
-      this.menuElement =
-        this.root.ref && this.root.ref.querySelector('.mdc-select__menu');
-      // tried to replace this with the hoistToBody prop and it made the placeholders
-      // disappear... likely a timing issue. Leaving this for now
-      this.menu.hoistMenuToBody();
-      this.root.ref && this.menu.setAnchorElement(this.root.ref);
-      //this.menu.wrapFocus = false;
-
-      if (this.hiddenInput_ && this.hiddenInput_.value) {
-        // If the hidden input already has a value, use it to restore the select's value.
-        // This can happen e.g. if the user goes back or (in some browsers) refreshes the page.
-        const enhancedAdapterMethods = this.getEnhancedSelectAdapterMethods_();
-        enhancedAdapterMethods.setValue(
-          this.hiddenInput_ ? this.hiddenInput_.value : ''
-        );
-      } else if (enhanced) {
-        // If an element is selected, the select should set the initial selected text.
-        this.getEnhancedSelectAdapterMethods_().setValue(value || '');
-      }
+    if (this.hiddenInput_ && this.hiddenInput_.value) {
+      // If the hidden input already has a value, use it to restore the select's value.
+      // This can happen e.g. if the user goes back or (in some browsers) refreshes the page.
+      const enhancedAdapterMethods = this.getEnhancedSelectAdapterMethods_();
+      enhancedAdapterMethods.setValue(
+        this.hiddenInput_ ? this.hiddenInput_.value : ''
+      );
+    } else if (enhanced) {
+      // If an element is selected, the select should set the initial selected text.
+      this.getEnhancedSelectAdapterMethods_().setValue(value || '');
     }
 
     // Initially sync floating label
@@ -348,6 +341,13 @@ export class SelectBase extends FoundationComponent<
 
     if (this.nativeControl && document.activeElement === this.nativeControl) {
       this.foundation.handleFocus();
+    }
+  }
+
+  componentDidUpdate(prevProps: any) {
+    super.componentDidUpdate(prevProps);
+    if (this.menu) {
+      this.root.ref && this.menu.setAnchorElement(this.root.ref);
     }
   }
 
@@ -396,7 +396,7 @@ export class SelectBase extends FoundationComponent<
       getValue: () => {
         let value = '';
         const listItem: any =
-          this.menu && this.menu.items[this.state.selectedIndex];
+          this.menu && this.menu.items()[this.state.selectedIndex];
         if (
           listItem &&
           listItem.hasAttribute(MDCSelectFoundation.strings.ENHANCED_VALUE_ATTR)
@@ -415,17 +415,17 @@ export class SelectBase extends FoundationComponent<
 
           const selectedIndex =
             element && this.menu
-              ? this.menu.items.indexOf(element as HTMLLIElement)
+              ? this.menu.items().indexOf(element as HTMLLIElement)
               : -1;
-          const selectedItem = this.menu && this.menu.items[selectedIndex];
+          const selectedItem = this.menu && this.menu.items()[selectedIndex];
 
           let selectedTextContent = '';
 
           if (!!selectedItem) {
             selectedTextContent =
               selectedItem.dataset['label'] ||
-              ((selectedItem.textContent && selectedItem.textContent.trim()) ||
-                '');
+              (selectedItem.textContent && selectedItem.textContent.trim()) ||
+              '';
           }
 
           this.setState(
@@ -549,6 +549,7 @@ export class SelectBase extends FoundationComponent<
       this.foundation.setValue(props.value || '');
     }
 
+    console.log(props.disabled);
     if (
       props.disabled !== undefined &&
       (!prevProps || prevProps.disabled !== props.disabled)
@@ -629,7 +630,7 @@ export class SelectBase extends FoundationComponent<
   handleMenuOpened() {
     // Menu should open to the last selected element.
     if (this.menu && this.state.selectedIndex >= 0) {
-      this.menu.items[this.state.selectedIndex].focus();
+      this.menu.items()[this.state.selectedIndex].focus();
     }
   }
 
@@ -745,8 +746,8 @@ export class SelectBase extends FoundationComponent<
         <SelectRoot
           ripple={!outlined}
           {...this.root.props({
-            className,
-            ...rootProps
+            ...rootProps,
+            className
           })}
           invalid={invalid}
           required={rest.required}
@@ -776,7 +777,7 @@ export class SelectBase extends FoundationComponent<
                 {...(typeof enhanced === 'object' ? enhanced : {})}
                 {...sharedControlProps}
                 selectedIndex={this.state.selectedIndex}
-                apiRef={apiRef => {
+                apiRef2={apiRef => {
                   this.menu = apiRef;
                 }}
                 open={this.state.menuOpen}

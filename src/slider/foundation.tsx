@@ -1,5 +1,5 @@
 import { SliderProps } from '.';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, emptyClientRect } from '@rmwc/base';
 
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { debounce } from '@rmwc/base';
@@ -34,7 +34,7 @@ export const useSliderFoundation = (
         ),
         removeAttribute: (name: string) => rootEl.removeProp(name as any),
         computeBoundingRect: () =>
-          rootEl.ref ? rootEl.ref.getBoundingClientRect() : ({} as ClientRect),
+          rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
         getTabIndex: () => (rootEl.ref ? rootEl.ref.tabIndex : 0),
         registerInteractionHandler: <K extends EventType>(
           evtType: K,

@@ -1,18 +1,18 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
-
-import { MDCMenuFoundation, Corner } from '@material/menu';
+import React from 'react';
 
 import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
-import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
+import { componentFactory, getDisplayName, classNames } from '@rmwc/base';
 
 import {
   MenuSurface,
   MenuSurfaceAnchor,
   MenuSurfaceProps,
-  MenuSurfaceOnOpenEventT,
-  MenuSurfaceOnCloseEventT
+  MenuSurfaceOnCloseEventT,
+  MenuSurfaceApi
 } from './menu-surface';
+
+import { useMenuFoundation } from './menu-foundation';
 
 /****************************************************************
  * Menu
@@ -22,12 +22,18 @@ export type MenuOnSelectEventT = RMWC.CustomEventT<{
   item: HTMLElement;
 }>;
 
+export interface MenuApi extends ListApi, MenuSurfaceApi {
+  items: () => HTMLLIElement[];
+}
+
 /** A menu component for displaying lists items. */
-export interface MenuProps extends MenuSurfaceProps {
+export interface MenuProps extends Omit<MenuSurfaceProps, 'apiRef'> {
   /** Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } */
   onSelect?: (evt: MenuOnSelectEventT) => void;
   /** Whether or not to focus the first list item on open. Defaults to true. */
   focusOnOpen?: boolean;
+  /** Internal api reference for cross component communication. */
+  apiRef?: (api: MenuApi) => void;
 }
 
 /** A wrapper for menu items */
@@ -57,164 +63,49 @@ export const MenuItem = componentFactory<MenuItemProps>({
 });
 
 const isMenuItems = (child: React.ReactNode) =>
-  React.isValidElement(child) &&
-  typeof (child as any).type === 'object' &&
-  ('displayName' in (child as any).type && (child.type as any).displayName) ===
-    'MenuItems';
+  getDisplayName(child) === 'MenuItems';
 
 /** A menu component for displaying lists items. */
-export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
-  static displayName = 'Menu';
-  static defaultProps = {
-    focusOnOpen: true
+export const Menu = React.forwardRef(function Menu(
+  props: MenuProps & Omit<RMWC.ComponentProps, 'onSelect'>,
+  ref: React.Ref<any>
+) {
+  const { children, focusOnOpen, onSelect, ...rest } = props;
+  const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
+
+  const needsMenuItemsWrapper = (
+    React.Children.map(children, isMenuItems) || []
+  ).every(val => val === false);
+
+  const menuItemsProps = {
+    apiRef: setListApi
   };
 
-  list: ListApi | null = null;
-  menuSurface: MenuSurface | null = null;
-
-  constructor(props: MenuProps) {
-    super(props);
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleOpen = this.handleOpen.bind(this);
-  }
-
-  get items() {
-    return this.list ? this.list.listElements() : [];
-  }
-
-  hoistMenuToBody() {
-    this.menuSurface && this.menuSurface.hoistMenuToBody();
-  }
-
-  setAnchorCorner(corner: Corner) {
-    this.menuSurface && this.menuSurface.setAnchorCorner(corner);
-  }
-
-  setAnchorElement(element: HTMLElement) {
-    this.menuSurface && (this.menuSurface.anchorElement = element);
-  }
-
-  getDefaultFoundation() {
-    return new MDCMenuFoundation({
-      addClassToElementAtIndex: (index: number, className: string) => {
-        const list = this.items;
-        list[index].classList.add(className);
-      },
-      removeClassFromElementAtIndex: (index: number, className: string) => {
-        const list = this.items;
-        list[index].classList.remove(className);
-      },
-      addAttributeToElementAtIndex: (
-        index: number,
-        attr: string,
-        value: string
-      ) => {
-        const list = this.items;
-        list[index].setAttribute(attr, value);
-      },
-      removeAttributeFromElementAtIndex: (index: number, attr: string) => {
-        const list = this.items;
-        list[index].removeAttribute(attr);
-      },
-      elementContainsClass: (element: HTMLElement, className: string) =>
-        element.classList.contains(className),
-      closeSurface: () => {
-        this.menuSurface && (this.menuSurface.open = false);
-      },
-      getElementIndex: (element: HTMLElement) =>
-        this.items.indexOf(element as HTMLLIElement),
-
-      notifySelected: (evtData: { index: number; item: HTMLElement }) =>
-        this.emit('onSelect', {
-          index: evtData.index,
-          item: this.items[evtData.index]
-        }),
-      getMenuItemCount: () => this.items.length,
-      focusItemAtIndex: index => (this.items[index] as HTMLElement).focus(),
-      focusListRoot: () =>
-        this.list &&
-        (this.list as any).root &&
-        (this.list as any).root.ref &&
-        (this.list as any).root.ref.focus()
-    });
-  }
-
-  handleClick(evt: React.MouseEvent) {
-    this.props.onClick && this.props.onClick(evt);
-    // fixes an issue with nested span element on list items
-    const el = closest(evt.target, '.mdc-list-item');
-    el && this.foundation.handleItemAction(el);
-  }
-
-  handleKeydown(evt: React.KeyboardEvent & KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-    this.foundation.handleKeydown(evt);
-
-    // Jump through some hoops to find out
-    // that we are selecting the list item
-    // This is instead of trying to listen to an event on the list item
-    // which is what MDC does
-    if (
-      evt.which === 13 &&
-      evt.target instanceof Element &&
-      this.list &&
-      evt.target.classList.contains(this.list.getClasses())
-    ) {
-      this.foundation.handleItemAction(evt.target);
-    }
-  }
-
-  handleOpen(evt: MenuSurfaceOnOpenEventT) {
-    const list = this.items;
-
-    if (
-      this.props.focusOnOpen &&
-      list.length > 0 &&
-      !list.some(el => el === document.activeElement)
-    ) {
-      list[0].focus();
-    }
-    this.props.onOpen && this.props.onOpen(evt);
-  }
-
-  render() {
-    const { children, focusOnOpen, ...rest } = this.props;
-
-    const needsMenuItemsWrapper = (
-      React.Children.map(children, isMenuItems) || []
-    ).every(val => val === false);
-
-    return (
-      <MenuSurface
-        {...rest}
-        aria-hidden={!rest.open}
-        className={`mdc-menu ${rest.className || ''}`}
-        onKeyDown={this.handleKeydown}
-        onClick={this.handleClick}
-        onOpen={this.handleOpen}
-        ref={(menuSurfaceApi: MenuSurface) =>
-          (this.menuSurface = menuSurfaceApi)
-        }
-      >
-        {needsMenuItemsWrapper ? (
-          <MenuItems apiRef={listApi => (this.list = listApi)}>
-            {children}
-          </MenuItems>
-        ) : (
-          React.Children.map(children, child => {
-            if (isMenuItems(child)) {
-              return React.cloneElement(child as React.ReactElement<any>, {
-                apiRef: (listApi: ListApi) => (this.list = listApi)
-              });
-            }
-            return child;
-          })
-        )}
-      </MenuSurface>
-    );
-  }
-}
+  return (
+    <MenuSurface
+      {...rootEl.props(rest)}
+      aria-hidden={!rest.open}
+      className={classNames('mdc-menu', rest.className)}
+      apiRef={setMenuSurfaceApi}
+      ref={ref}
+    >
+      {needsMenuItemsWrapper ? (
+        <MenuItems {...menuItemsProps}>{children}</MenuItems>
+      ) : (
+        React.Children.map(children, child => {
+          if (isMenuItems(child)) {
+            return React.cloneElement(child as React.ReactElement<any>, {
+              ...(React.isValidElement(child) && child.props),
+              ...menuItemsProps
+            });
+          }
+          return child;
+        })
+      )}
+    </MenuSurface>
+  );
+});
+Menu.displayName = 'Menu';
 
 /****************************************************************
  * Simple Menu
@@ -315,5 +206,5 @@ export const SimpleMenu = simpleMenuFactory<SimpleMenuProps>(Menu);
 
 /** The same as SimpleMenu, but a generic surface. */
 export const SimpleMenuSurface = simpleMenuFactory<SimpleMenuSurfaceProps>(
-  MenuSurface
+  MenuSurface as any
 );

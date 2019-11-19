@@ -1,5 +1,5 @@
 import { TabProps, TabApi } from './tab';
-import { useFoundation, useId } from '@rmwc/base';
+import { useFoundation, useId, emptyClientRect } from '@rmwc/base';
 import { MDCTabFoundation } from '@material/tab';
 import { TabIndicatorApi } from './tab-indicator';
 import { useRef, useContext, useEffect, useMemo } from 'react';
@@ -58,8 +58,7 @@ export const useTabFoundation = (props: TabProps & React.HTMLProps<any>) => {
         foundation.activate(computeIndicatorClientRect),
       deactivate: () => foundation.deactivate(),
       computeIndicatorClientRect: () =>
-        tabIndicatorApi.current?.computeContentClientRect() ||
-        ({ width: 0, height: 0 } as ClientRect),
+        tabIndicatorApi.current?.computeContentClientRect() || emptyClientRect,
       computeDimensions: () => foundation.computeDimensions(),
       focus: () => rootEl.ref && rootEl.ref.focus(),
       id,

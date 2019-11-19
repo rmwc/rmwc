@@ -48,7 +48,7 @@ const withDomNode = () => <P extends any>(
     }
 
     render() {
-      return <Component {...this.props} domNode={this.state.domNode} />;
+      return <Component {...this.props} />;
     }
   };
 };
