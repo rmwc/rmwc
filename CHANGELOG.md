@@ -1,3 +1,77 @@
+#### 6.0.0-alpha.0 (2019-11-19)
+
+##### Breaking Changes
+
+* **Toolbar:**  Remove the (long) deprecated Toolbar component (9741e724)
+* **TextField:**  Removed deprecated handling for `dense`, `withLeadingIcon` and `withTrailingIcon` props (4c4a5ea8)
+* **Snackbar:**  Remove deprecated handling (603096c4)
+* **Select:**  Removed deprecated `withLeadingIcon` prop (b26d66e5)
+* **Ripple:**  Removed deprecated handling of `rippleOptions` (82bcde1c)
+* **Provider:**  Remove deprecated props `buttonDefaultRipple`,`listItemDefaultRipple`,`iconClassNameBase`,`iconClassNamePrefix`,`iconStrategy`, and `iconRender` (ea1f8b5d)
+* **LinearProgress:**  Removed deprecated `determinate` prop (12553651)
+* **Icon:**  Removed deprecated handling of `iconOptions` prop (0e9c5c8b)
+* **IconButton:**  Removed deprecated warning for iconOptions and onIconOptions (1250700e)
+* **Chip:**  Removed deprecated chip prop `text` in favor of `label` (a53cb914)
+* **Card:**  Removed deprecated CardAction component. (ecdae704)
+* **Theme:**  Removed deprated behavior for handling space separated an non camelCased theme options. (5ddda049)
+
+##### Chores
+
+* **Test:**  Added test util for hook mounting (742a913e)
+* **Base:**
+  *  Upgrade to Typescript 3.7 and enable optional chaining (dfe2613e)
+  *  Updating deps (816c79c2)
+* **TextField:**  Remove old box prop (d7008d84)
+
+##### New Features
+
+* **Base:**  Adds nullish-coalescing (16af875b)
+
+##### Bug Fixes
+
+* **Icon:**  Correct type issue with size prop (1e33ad88)
+* **Ripple:**  Corrects an issue where setting the ripple to false explicilty would use the provider default value. (65936491)
+* **Base:**  Properly forwarding Props generic to handler functions (05f24bfd)
+* **Slider:**  Sync min/max props before value to avoid warnings. (34d36798)
+* **Menu:**  fixed "isMenuItems" check to not break on Symbol and string element types. (d707c3d1)
+
+##### Refactors
+
+* **Menu:**  Change to new foundation pattern (9f3b0293)
+* **List:**  Change to new foundation pattern (1296cfff)
+* **Ripple:**  Update to new foundation pattern (45208b15)
+* **Slider:**  Convert to new foundation pattern (5dd4fcca)
+* **Tab:**  Convert to new foundation pattern (33d4b7a4)
+* **TopAppBar:**  Convert to new foundation pattern (968fed03)
+* **Drawer:**  Convert to new foundation pattern (116097ec)
+* **IconButton:**  Change to new foundation pattern (186dc959)
+* **NotchedOutline:**  Change to new foundation pattern (5d285fb7)
+* **LineRipple:**  Change to new foundation pattern (2d3135ad)
+* **FloatingLabel:**  Change to new foundation pattern (9415109b)
+* **Radio:**  Change to new foundation pattern (8729a5ed)
+* **Switch:**  Convert to new foundation pattern (b02cfab3)
+* **Checkbox:**
+  *  Convert to new foundation pattern (a071101e)
+  *  Replace class component for CheckboxBackground with functional + React.memo. (8bd72205)
+* **Dialog:**  Convert to new foundation pattern (9375b672)
+* **Snackbar:**  Convert to new foundation pattern (cf2634cf)
+* **Formfield:**  New foundation pattern (7241562b)
+* **Grid:**  Refactor to be more idiomatic react (7dbab5b2)
+* **ImageList:**  Refactor to be more idiomatic react (9fdb355b)
+* **GridList:**  Refactor GridList to be more idiomatic react (35a980f3)
+* **Theme:**  Refactored to be more idiotmatic react (011db9e6)
+* **Typography:**  Refactor typography to be more idiomatic React (5222c88f)
+* **Fab:**  Refactor fab to be more idiomatic react (27b76411)
+* **Elevation:**  Refactor to be more idiomatic react (c26e27e3)
+* **Avatar:**  Refactor to be more idiomatic react (c6e2af2e)
+* **DataTable:**  Refactor to idiomatic React (9468451d)
+* **Cards:**  Refactor to be more idiomatic React (33556534)
+* **CircularProgress:**  Refactor to be more idiomatic react (b55bd0d1)
+* **Button:**  Change button to be more idiomatic react (161332d6)
+* **Chip:**  Converted to new foundation pattern (16eb1200)
+* **Base:**  Changed componentFactory render to useRender to allow use of hooks without React error (7e243a16)
+* **Provider:**  Change consumers to use hooks context api (fdda0a1d)
+
 #### 5.7.1 (2019-09-13)
 
 ##### New Features
