@@ -1,9 +1,8 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { EventType, SpecificEventListener } from '@material/base/types';
-import { MDCSliderFoundation } from '@material/slider';
-import { componentFactory, FoundationComponent, debounce } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
+import { useSliderFoundation } from './foundation';
 
 export type SliderOnChangeEventT = RMWC.CustomEventT<{
   value: number;
@@ -35,418 +34,118 @@ export interface SliderProps {
   disabled?: boolean;
 }
 
-const SliderRoot = componentFactory<SliderProps>({
-  displayName: 'SliderRoot',
-  classNames: (props: SliderProps) => [
-    'mdc-slider',
-    {
-      'mdc-slider--discrete': props.discrete,
-      'mdc-slider--display-markers': props.displayMarkers && props.discrete
-    }
-  ],
-  consumeProps: ['discrete', 'displayMarkers']
-});
+const SliderTrack = React.memo(
+  React.forwardRef(function SliderTrack({}, ref: React.Ref<any>) {
+    return <div ref={ref} className="mdc-slider__track" />;
+  })
+);
 
-class SliderTrack extends React.Component<{ elementRef: any }> {
-  static displayName = 'SliderTrack';
-
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return <div ref={this.props.elementRef} className="mdc-slider__track" />;
-  }
-}
-
-class SliderTrackMarkerContainer extends React.PureComponent<{
-  markersCount: number;
-}> {
-  static displayName = 'SliderTrackMarkerContainer';
-
-  render() {
+const SliderTrackMarkerContainer = React.memo(
+  function SliderTrackMarkerContainer({
+    markersCount
+  }: {
+    markersCount: number;
+  }) {
     return (
       <div className="mdc-slider__track-marker-container">
-        {[...Array(this.props.markersCount)].map((v, i) => (
+        {[...Array(markersCount)].map((v, i) => (
           <div className="mdc-slider__track-marker" key={i} />
         ))}
       </div>
     );
   }
-}
+);
 
-class SliderPin extends React.PureComponent<{ value: number }> {
-  static displayName = 'SliderPin';
+const SliderPin = React.memo(function SliderPin({ value }: { value: number }) {
+  return (
+    <div className="mdc-slider__pin">
+      <span className="mdc-slider__pin-value-marker">{value}</span>
+    </div>
+  );
+});
 
-  render() {
-    const { value } = this.props;
-    return (
-      <div className="mdc-slider__pin">
-        <span className="mdc-slider__pin-value-marker">{value}</span>
-      </div>
-    );
-  }
-}
+const SliderThumb = React.memo(function SliderThumb() {
+  return (
+    <svg className="mdc-slider__thumb" width="21" height="21">
+      <circle cx="10.5" cy="10.5" r="7.875" />
+    </svg>
+  );
+});
 
-class SliderThumb extends React.Component<{}> {
-  static displayName = 'SliderThumb';
+const SliderFocusRing = React.memo(function SliderFocusRing() {
+  return <div className="mdc-slider__focus-ring" />;
+});
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export function Slider(
+  props: SliderProps & Omit<RMWC.ComponentProps, 'onInput' | 'onChange'>
+) {
+  const {
+    rootEl,
+    thumbContainerEl,
+    sliderPinEl,
+    setTrackRef,
+    trackMarkersCount
+  } = useSliderFoundation(props);
 
-  render() {
-    return (
-      <svg className="mdc-slider__thumb" width="21" height="21">
-        <circle cx="10.5" cy="10.5" r="7.875" />
-      </svg>
-    );
-  }
-}
+  const {
+    value,
+    min,
+    max,
+    discrete,
+    displayMarkers,
+    step,
+    disabled,
+    onChange,
+    onInput,
+    children,
+    ...rest
+  } = props;
 
-class SliderFocusRing extends React.Component<{}> {
-  static displayName = 'SliderFocusRing';
-
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return <div className="mdc-slider__focus-ring" />;
-  }
-}
-
-type SliderState = {
-  trackMarkersCount: number;
-};
-
-/** A Slider component. */
-export class Slider extends FoundationComponent<
-  MDCSliderFoundation,
-  SliderProps,
-  SliderState
-> {
-  state = {
-    trackMarkersCount: 0,
-    pinContainerStyle: {}
-  };
-  static displayName = 'Slider';
-
-  private root = this.createElement('root');
-  private thumbContainer = this.createElement('thumbContainer');
-  private sliderPin = this.createElement<SliderPin>('sliderPin');
-  track: HTMLElement | null = null;
-
-  componentDidMount() {
-    super.componentDidMount();
-    // Fixes an issue where synthetic events were being
-    // accessed in the Foundation and causing an error
-    const existinghandleDown_ = (this.foundation as any).handleDown_.bind(
-      this.foundation
-    );
-
-    (this.foundation as any).handleDown_ = (evt: React.SyntheticEvent<any>) => {
-      evt.persist();
-      existinghandleDown_(evt);
-    };
-  }
-
-  /** @return {number} */
-  get value() {
-    return this.foundation.getValue();
-  }
-
-  /** @param {number} value */
-  set value(value: number) {
-    // make value in bounds
-    if (value < this.min) {
-      console.warn(
-        `Attempted to set slider to ${value} which is less than min: ${this.min}`
-      );
-      value = this.min;
+  const className = useClassNames(props, [
+    'mdc-slider',
+    {
+      'mdc-slider--discrete': discrete,
+      'mdc-slider--display-markers': displayMarkers && discrete
     }
+  ]);
 
-    if (value > this.max) {
-      console.warn(
-        `Attempted to set slider to ${value} which is greater than max: ${this.max}`
-      );
-      value = this.max;
-    }
+  const dataStep = step ? { 'data-step': step } : {};
 
-    this.foundation.setValue(value);
-  }
-
-  /** @return {number} */
-  get min() {
-    return this.foundation.getMin();
-  }
-
-  /** @param {number} min */
-  set min(min: number) {
-    this.foundation.setMin(min);
-  }
-
-  /** @return {number} */
-  get max() {
-    return this.foundation.getMax();
-  }
-
-  /** @param {number} max */
-  set max(max: number) {
-    this.foundation.setMax(max);
-  }
-
-  /** @return {number} */
-  get step() {
-    return this.foundation.getStep();
-  }
-
-  /** @param {number} step */
-  set step(step: number) {
-    this.foundation.setStep(step);
-  }
-
-  /** @return {boolean} */
-  get disabled() {
-    return this.foundation.isDisabled();
-  }
-
-  /** @param {boolean} disabled */
-  set disabled(disabled: boolean) {
-    this.foundation.setDisabled(disabled);
-  }
-
-  get discrete(): boolean {
-    return !!(this.foundation && (this.foundation as any).isDiscrete_);
-  }
-
-  set discrete(isDiscrete: boolean) {
-    if (this.foundation) {
-      (this.foundation as any).isDiscrete_ = isDiscrete;
-    }
-  }
-
-  get displayMarkers(): boolean {
-    return !!this.foundation && (this.foundation as any).hasTrackMarker_;
-  }
-
-  set displayMarkers(isDisplayMarkers: boolean) {
-    if (this.foundation) {
-      (this.foundation as any).hasTrackMarker_ = isDisplayMarkers;
-    }
-  }
-
-  layout() {
-    this.foundation.layout();
-  }
-
-  sync(props: SliderProps, prevProps: SliderProps) {
-    // max
-    if (props.max !== undefined && props.max !== this.max) {
-      this.max = props.max !== undefined ? +props.max : this.max;
-    }
-
-    // min
-    if (props.min !== undefined && props.min !== this.min) {
-      this.min = props.min !== undefined ? +props.min : this.min;
-    }
-
-    // value
-    if (props.value !== undefined && props.value !== this.value) {
-      this.value = props.value !== undefined ? Number(props.value) : this.value;
-    }
-    
-    // step
-    if (props.step !== undefined && props.step !== this.step) {
-      this.step = props.step !== undefined ? +props.step : this.step;
-    }
-
-    // disabled
-    if (props.disabled !== undefined && props.disabled !== this.disabled) {
-      this.disabled = !!props.disabled;
-    }
-
-    // discrete
-    if (props.discrete !== undefined && props.discrete !== this.discrete) {
-      this.discrete = !!props.discrete;
-    }
-
-    //eslint-disable-next-line eqeqeq
-    if (this.discrete && this.foundation && this.foundation.getStep() == 0) {
-      this.step = 1;
-    }
-
-    // displayMarkers
-    if (
-      props.displayMarkers !== undefined &&
-      props.displayMarkers !== this.displayMarkers
-    ) {
-      this.displayMarkers = !!props.displayMarkers;
-      window.requestAnimationFrame(
-        () => this.foundation && this.foundation.setupTrackMarker()
-      );
-    }
-  }
-
-  getDefaultFoundation() {
-    return new MDCSliderFoundation({
-      hasClass: (className: string) => this.root.hasClass(className),
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      getAttribute: (name: string) =>
-        this.root.getProp(name as any) as string | null,
-      setAttribute: debounce(
-        (name: string, value: any) => this.root.setProp(name as any, value),
-        300
-      ),
-      removeAttribute: (name: string) => this.root.removeProp(name as any),
-      computeBoundingRect: () =>
-        this.root.ref
-          ? this.root.ref.getBoundingClientRect()
-          : ({} as ClientRect),
-      getTabIndex: () => (this.root.ref ? this.root.ref.tabIndex : 0),
-      registerInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        this.root.addEventListener(evtType, handler);
-      },
-      deregisterInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        this.root.removeEventListener(evtType, handler);
-      },
-      registerThumbContainerInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        this.thumbContainer.addEventListener(evtType, handler);
-      },
-      deregisterThumbContainerInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        this.thumbContainer.removeEventListener(evtType, handler);
-      },
-      registerBodyInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        document.body && document.body.addEventListener(evtType, handler);
-      },
-      deregisterBodyInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {
-        document.body && document.body.removeEventListener(evtType, handler);
-      },
-      registerResizeHandler: (
-        handler: SpecificEventListener<'resize'>
-      ): void => {
-        window.addEventListener('resize', handler);
-      },
-      deregisterResizeHandler: (
-        handler: SpecificEventListener<'resize'>
-      ): void => {
-        window.removeEventListener('resize', handler);
-      },
-      notifyInput: () => {
-        this.emit('onInput', { value: this.value });
-      },
-      notifyChange: () => {
-        this.emit('onChange', { value: this.value });
-      },
-      setThumbContainerStyleProperty: (propertyName: string, value: any) => {
-        this.thumbContainer.setStyle(propertyName, value);
-      },
-      setTrackStyleProperty: (propertyName: string, value: any) => {
-        this.track && this.track.style.setProperty(propertyName, value);
-      },
-      setMarkerValue: (value: number) => {
-        this.sliderPin.setProp('value', value);
-      },
-      appendTrackMarkers: (numMarkers: number) => {
-        this.setState({ trackMarkersCount: numMarkers });
-      },
-      removeTrackMarkers: () => {
-        this.setState({ trackMarkersCount: 0 });
-      },
-      setLastTrackMarkersStyleProperty: (propertyName: string, value: any) => {
-        if (this.root.ref) {
-          // We remove and append new nodes, thus, the last track marker must be dynamically found.
-          const lastTrackMarker = this.root.ref.querySelector<HTMLElement>(
-            MDCSliderFoundation.strings.LAST_TRACK_MARKER_SELECTOR
-          );
-          lastTrackMarker &&
-            lastTrackMarker.style.setProperty(propertyName, value);
-        }
-      },
-      isRTL: () =>
-        !!this.root.ref && getComputedStyle(this.root.ref).direction === 'rtl'
-    });
-  }
-
-  render() {
-    const {
-      value,
-      min,
-      max,
-      discrete,
-      displayMarkers,
-      step,
-      disabled,
-      onChange,
-      onInput,
-      children,
-      ...rest
-    } = this.props;
-
-    const dataStep = step ? { 'data-step': step } : {};
-    const tsxValue: any = value;
-    const tsxMax: any = max;
-
-    if (displayMarkers && !discrete) {
-      console.warn(
-        `The 'displayMarkers' prop on rmwc Slider will
+  if (displayMarkers && !discrete) {
+    console.warn(
+      `The 'displayMarkers' prop on rmwc Slider will
         only work in conjunction with the 'discrete' prop`
-      );
-    }
-
-    return (
-      <SliderRoot
-        tabIndex={0}
-        //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-        role="slider"
-        aria-valuemax={tsxMax}
-        aria-valuenow={tsxValue}
-        aria-label="Select Value"
-        ref={this.root.setRef}
-        discrete={discrete}
-        displayMarkers={displayMarkers}
-        {...(disabled ? { 'aria-disabled': disabled } : {})}
-        {...dataStep}
-        {...this.root.props(rest)}
-      >
-        <div className="mdc-slider__track-container">
-          <SliderTrack elementRef={(ref: HTMLElement) => (this.track = ref)} />
-          {displayMarkers && (
-            <SliderTrackMarkerContainer
-              markersCount={this.state.trackMarkersCount}
-            />
-          )}
-        </div>
-        <div
-          {...this.thumbContainer.props({
-            className: 'mdc-slider__thumb-container'
-          })}
-        >
-          {discrete && <SliderPin {...this.sliderPin.props({})} />}
-          <SliderThumb />
-          <SliderFocusRing />
-        </div>
-        {children}
-      </SliderRoot>
     );
   }
+
+  return (
+    <Tag
+      tabIndex={0}
+      //eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+      role="slider"
+      aria-valuemax={max as any}
+      aria-valuenow={value as any}
+      aria-label="Select Value"
+      {...(disabled ? { 'aria-disabled': disabled } : {})}
+      {...dataStep}
+      {...rest}
+      element={rootEl}
+      className={className}
+    >
+      <div className="mdc-slider__track-container">
+        <SliderTrack ref={setTrackRef} />
+        {displayMarkers && (
+          <SliderTrackMarkerContainer markersCount={trackMarkersCount} />
+        )}
+      </div>
+      <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">
+        {discrete && <SliderPin value={sliderPinEl.getProp('value')} />}
+        <SliderThumb />
+        <SliderFocusRing />
+      </Tag>
+      {children}
+    </Tag>
+  );
 }
+
+Slider.displayName = 'Slider';
