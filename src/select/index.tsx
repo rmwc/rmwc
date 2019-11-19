@@ -209,7 +209,13 @@ class SelectEnhancedControl extends React.Component<
       currentIndex++ === 0;
 
     return (
-      <Menu {...rest} apiRef={apiRef2} className="mdc-select__menu" hoistToBody>
+      <Menu
+        {...rest}
+        apiRef={apiRef2}
+        className="mdc-select__menu"
+        hoistToBody
+        focusOnOpen
+      >
         {showPlaceholder && (
           <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
             {placeholder}
@@ -549,7 +555,6 @@ export class SelectBase extends FoundationComponent<
       this.foundation.setValue(props.value || '');
     }
 
-    console.log(props.disabled);
     if (
       props.disabled !== undefined &&
       (!prevProps || prevProps.disabled !== props.disabled)

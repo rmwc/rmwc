@@ -8,13 +8,7 @@ import {
   Corner
 } from '@material/menu-surface';
 import { MDCMenuDistance } from '@material/menu-surface';
-import {
-  useCallback,
-  useEffect,
-  useState,
-  useRef,
-  useLayoutEffect
-} from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 
 const ANCHOR_CORNER_MAP: {
   [key: string]: keyof typeof MDCMenuSurfaceFoundation.Corner;
@@ -172,9 +166,12 @@ export const useMenuSurfaceFoundation = (
           className === 'mdc-menu-surface' ? true : rootEl.hasClass(className),
         hasAnchor: () => !!anchorElementRef.current,
         notifyClose: () => {
+          console.log('notifyClose');
           deregisterBodyClickListener();
+          setOpen(false);
         },
         notifyOpen: () => {
+          console.log('notifyOpen');
           emit('onOpen', {});
           registerBodyClickListener();
         },
@@ -308,8 +305,8 @@ export const useMenuSurfaceFoundation = (
   }, [open, foundation, rootEl.ref]);
 
   useEffect(() => {
-    open !== props.open && setOpen(!!props.open);
-  }, [props.open, open]);
+    setOpen(!!props.open);
+  }, [props.open]);
 
   return { ...elements };
 };

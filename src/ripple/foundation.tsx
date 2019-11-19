@@ -39,49 +39,49 @@ export const useRippleFoundation = (
         },
         removeClass: (className: string) => {
           surfaceEl.removeClass(className);
-        }
-        // containsEventTarget: (target: HTMLElement) =>
-        //   !!rootEl.ref && rootEl.ref.contains(target),
-        // registerInteractionHandler: <K extends EventType>(
-        //   evtType: K,
-        //   handler: SpecificEventListener<K>
-        // ): void => rootEl.addEventListener(evtType, handler),
-        // deregisterInteractionHandler: <K extends EventType>(
-        //   evtType: K,
-        //   handler: SpecificEventListener<K>
-        // ): void => rootEl.removeEventListener(evtType, handler),
-        // registerDocumentInteractionHandler: <K extends EventType>(
-        //   evtType: K,
-        //   handler: SpecificEventListener<K>
-        // ): void =>
-        //   document.documentElement.addEventListener(
-        //     evtType,
-        //     handler,
-        //     applyPassive()
-        //   ),
-        // deregisterDocumentInteractionHandler: <K extends EventType>(
-        //   evtType: K,
-        //   handler: SpecificEventListener<K>
-        // ) =>
-        //   document.documentElement.removeEventListener(
-        //     evtType,
-        //     handler,
-        //     applyPassive() as any
-        //   ),
-        // registerResizeHandler: (
-        //   handler: SpecificEventListener<'resize'>
-        // ): void => window.addEventListener('resize', handler),
-        // deregisterResizeHandler: (
-        //   handler: SpecificEventListener<'resize'>
-        // ): void => window.removeEventListener('resize', handler),
-        // updateCssVariable: (varName: string, value: string) =>
-        //   surfaceEl.setStyle(varName, value),
-        // computeBoundingRect: () =>
-        //   rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
-        // getWindowPageOffset: () => ({
-        //   x: window.pageXOffset,
-        //   y: window.pageYOffset
-        // })
+        },
+        containsEventTarget: (target: HTMLElement) =>
+          !!rootEl.ref && rootEl.ref.contains(target),
+        registerInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => rootEl.addEventListener(evtType, handler),
+        deregisterInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void => rootEl.removeEventListener(evtType, handler),
+        registerDocumentInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ): void =>
+          document.documentElement.addEventListener(
+            evtType,
+            handler,
+            applyPassive()
+          ),
+        deregisterDocumentInteractionHandler: <K extends EventType>(
+          evtType: K,
+          handler: SpecificEventListener<K>
+        ) =>
+          document.documentElement.removeEventListener(
+            evtType,
+            handler,
+            applyPassive() as any
+          ),
+        registerResizeHandler: (
+          handler: SpecificEventListener<'resize'>
+        ): void => window.addEventListener('resize', handler),
+        deregisterResizeHandler: (
+          handler: SpecificEventListener<'resize'>
+        ): void => window.removeEventListener('resize', handler),
+        updateCssVariable: (varName: string, value: string) =>
+          surfaceEl.setStyle(varName, value),
+        computeBoundingRect: () =>
+          rootEl.ref ? rootEl.ref.getBoundingClientRect() : emptyClientRect,
+        getWindowPageOffset: () => ({
+          x: window.pageXOffset,
+          y: window.pageYOffset
+        })
       });
     }
   });
