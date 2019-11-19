@@ -123,8 +123,13 @@ class TabBarStory extends React.Component {
 storiesOf('Tabs', module)
   .add('TabBar', () => <TabBarStory />)
   .add('TabBar Scrolls', () => {
+    const [tabIndex, setTabIndex] = React.useState(0);
+
     return (
-      <TabBar>
+      <TabBar
+        activeTabIndex={tabIndex}
+        onActivate={evt => setTabIndex(evt.detail.index)}
+      >
         {/* Tabs automatically scroll with lots of content. */}
         <Tab>Cookies</Tab>
         <Tab>Pizza</Tab>

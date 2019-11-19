@@ -9,6 +9,9 @@ import { TabApi } from './tab';
 export const useTabBarFoundation = (
   props: TabBarProps & React.HTMLProps<any>
 ) => {
+  const [activeTabIndex, setActiveTabIndex] = useState(
+    props.activeTabIndex || 0
+  );
   const tabScrollerApi = useRef<TabScrollerApi>();
   const setTabScrollerApi = (api: TabScrollerApi) =>
     (tabScrollerApi.current = api);
@@ -35,8 +38,7 @@ export const useTabBarFoundation = (
           !!rootEl.ref &&
           window.getComputedStyle(rootEl.ref).getPropertyValue('direction') ===
             'rtl',
-        setActiveTab: (index: number) =>
-          activateTab(index, () => getProps().activeTabIndex),
+        setActiveTab: (index: number) => setActiveTabIndex(index),
         activateTabAtIndex: (index: number, clientRect: ClientRect) => {
           tabListRef.current[index] &&
             tabListRef.current[index].activate(clientRect);
@@ -84,43 +86,9 @@ export const useTabBarFoundation = (
 
   const { rootEl } = elements;
 
-  const activateTab = useCallback(
-    (index: number, getControlledTabIndex: () => number | undefined) => {
-      // @ts-ignore ignoring unsafe protected access
-      const adapter = foundation.adapter_;
-      const previousActiveIndex = adapter.getPreviousActiveTabIndex();
-
-      // @ts-ignore private method access
-      if (!foundation.indexIsInRange_(index) || index === previousActiveIndex) {
-        return;
-      }
-
-      adapter.notifyTabActivated(index);
-
-      window.requestAnimationFrame(() => {
-        if (
-          getControlledTabIndex() === index ||
-          getControlledTabIndex() === undefined
-        ) {
-          adapter.deactivateTabAtIndex(previousActiveIndex);
-          adapter.activateTabAtIndex(
-            index,
-            adapter.getTabIndicatorClientRectAtIndex(previousActiveIndex)
-          );
-          foundation.scrollIntoView(index);
-        }
-      });
-    },
-    [foundation]
-  );
-
   const registerTab = (tab: TabApi) => {
     tabListRef.current.push(tab);
     tabListRef.current.sort((a, b) => a.getIndex() - b.getIndex());
-    const tabIndex = tab.getIndex();
-    if (props.activeTabIndex === tabIndex) {
-      activateTab(tabIndex, () => props.activeTabIndex);
-    }
   };
 
   const unregisterTab = (tab: TabApi) => {
@@ -142,11 +110,43 @@ export const useTabBarFoundation = (
 
   rootEl.setProp('onKeyDown', handleKeyDown, true);
 
+  // sync active tab index
   useEffect(() => {
-    const index = props.activeTabIndex || 0;
-    activateTab(index, () => props.activeTabIndex);
-  }, [props.activeTabIndex, foundation, activateTab]);
+    props.activeTabIndex !== undefined &&
+      setActiveTabIndex(props.activeTabIndex);
+  }, [props.activeTabIndex]);
 
+  // activate tabs
+  useEffect(() => {
+    const index = activeTabIndex;
+
+    // @ts-ignore ignoring unsafe protected access
+    const adapter = foundation.adapter_;
+    const previousActiveIndex = adapter.getPreviousActiveTabIndex();
+
+    // @ts-ignore private method access
+    if (!foundation.indexIsInRange_(index) || index === previousActiveIndex) {
+      return;
+    }
+
+    adapter.notifyTabActivated(index);
+
+    window.requestAnimationFrame(() => {
+      adapter.activateTabAtIndex(
+        index,
+        adapter.getTabIndicatorClientRectAtIndex(previousActiveIndex)
+      );
+      foundation.scrollIntoView(index);
+    });
+
+    return () => {
+      window.requestAnimationFrame(() => {
+        adapter.deactivateTabAtIndex(index);
+      });
+    };
+  }, [activeTabIndex, foundation]);
+
+  // on mount
   useEffect(() => {
     // This corrects an issue where passing in 0 or no activeTabIndex
     // causes the first tab of the set to not be active

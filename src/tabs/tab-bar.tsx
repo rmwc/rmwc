@@ -41,18 +41,13 @@ export function TabBar(props: TabBarProps & RMWC.ComponentProps) {
       handleTabInteraction(evt),
     registerTab,
     unregisterTab,
-    indicatorTransition: 'slide'
+    indicatorTransition: props.indicatorTransition || 'slide'
   });
 
   const className = useClassNames(props, ['mdc-tab-bar']);
 
   return (
-    <TabBarContext.Provider
-      value={{
-        ...contextApi.current,
-        indicatorTransition: props.indicatorTransition || 'slide'
-      }}
-    >
+    <TabBarContext.Provider value={contextApi.current}>
       <Tag tag="nav" element={rootEl} {...rest} className={className}>
         <TabScroller apiRef={setTabScrollerApi}>{children}</TabScroller>
       </Tag>

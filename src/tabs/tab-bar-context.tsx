@@ -13,11 +13,3 @@ export const TabBarContext = React.createContext<TabBarContextT>({
   unregisterTab: (tab: any) => {},
   indicatorTransition: 'slide'
 });
-
-export const withTabBarContext = () => <P extends {}>(
-  Component: React.ComponentType<P & { contextApi?: TabBarContextT }>
-): React.ComponentType<P & { contextApi?: TabBarContextT }> => (props: P) => (
-  <TabBarContext.Consumer>
-    {contextApi => <Component {...props} contextApi={contextApi} />}
-  </TabBarContext.Consumer>
-);
