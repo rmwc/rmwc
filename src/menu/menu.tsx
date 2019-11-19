@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { MDCMenuFoundation, Corner } from '@material/menu';
 
-import { List, ListItem, ListItemProps, ListProps } from '@rmwc/list';
+import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
 import { componentFactory, FoundationComponent, closest } from '@rmwc/base';
 
 import {
@@ -69,7 +69,7 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
     focusOnOpen: true
   };
 
-  list: List | null = null;
+  list: ListApi | null = null;
   menuSurface: MenuSurface | null = null;
 
   constructor(props: MenuProps) {
@@ -80,7 +80,7 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
   }
 
   get items() {
-    return this.list ? this.list.listElements : [];
+    return this.list ? this.list.listElements() : [];
   }
 
   hoistMenuToBody() {
@@ -158,7 +158,8 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
     if (
       evt.which === 13 &&
       evt.target instanceof Element &&
-      evt.target.classList.contains(List.cssClasses.LIST_ITEM_CLASS)
+      this.list &&
+      evt.target.classList.contains(this.list.getClasses())
     ) {
       this.foundation.handleItemAction(evt.target);
     }
@@ -197,14 +198,14 @@ export class Menu extends FoundationComponent<MDCMenuFoundation, MenuProps> {
         }
       >
         {needsMenuItemsWrapper ? (
-          <MenuItems ref={(listApi: List) => (this.list = listApi)}>
+          <MenuItems apiRef={listApi => (this.list = listApi)}>
             {children}
           </MenuItems>
         ) : (
           React.Children.map(children, child => {
             if (isMenuItems(child)) {
               return React.cloneElement(child as React.ReactElement<any>, {
-                ref: (listApi: List) => (this.list = listApi)
+                apiRef: (listApi: ListApi) => (this.list = listApi)
               });
             }
             return child;
