@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/circular-progress",
-  "version": "5.7.0",
+  "version": "6.0.0-alpha.0",
   "description": "RMWC Circular Progress",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.7.0",
-    "@rmwc/types": "^5.6.0"
+    "@rmwc/base": "^6.0.0-alpha.0",
+    "@rmwc/types": "^6.0.0-alpha.0"
   }
 }
