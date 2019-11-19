@@ -143,15 +143,9 @@ A menu component for displaying lists items.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `children` | `React.ReactNode` | Children to render. |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
 | `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
-| `open` | `undefined \| false \| true` | Opens the menu. |
 
 
 ## MenuItem
@@ -173,6 +167,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | Name | Type | Description |
 |------|------|-------------|
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
@@ -191,16 +186,11 @@ A Simplified menu component that allows you to pass a handle element and will au
 
 | Name | Type | Description |
 |------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
 | `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
-| `open` | `undefined \| false \| true` | Opens the menu. |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 
@@ -212,6 +202,7 @@ The same as SimpleMenu, but a generic surface.
 | Name | Type | Description |
 |------|------|-------------|
 | `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
+| `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |

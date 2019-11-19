@@ -72,7 +72,7 @@
       },
       "kind": "interface",
       "name": "CardMediaProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L28",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L31",
       "methods": [],
       "properties": [
         {
@@ -96,7 +96,7 @@
           },
           "kind": "property",
           "name": "sixteenByNine",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L35",
           "type": "undefined | false | true"
         },
         {
@@ -120,7 +120,7 @@
           },
           "kind": "property",
           "name": "square",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L33",
           "type": "undefined | false | true"
         }
       ]
@@ -146,7 +146,7 @@
       },
       "kind": "interface",
       "name": "CardMediaContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L50",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L56",
       "methods": [],
       "properties": []
     },
@@ -171,7 +171,7 @@
       },
       "kind": "interface",
       "name": "CardPrimaryActionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L59",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L69",
       "methods": [],
       "properties": []
     },
@@ -196,7 +196,7 @@
       },
       "kind": "interface",
       "name": "CardActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L72",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L85",
       "methods": [],
       "properties": [
         {
@@ -220,7 +220,7 @@
           },
           "kind": "property",
           "name": "fullBleed",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L87",
           "type": "undefined | false | true"
         }
       ]
@@ -246,7 +246,7 @@
       },
       "kind": "interface",
       "name": "CardActionButtonsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L89",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L105",
       "methods": [],
       "properties": []
     },
@@ -271,7 +271,7 @@
       },
       "kind": "interface",
       "name": "CardActionIconsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L98",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L118",
       "methods": [],
       "properties": []
     },
@@ -296,36 +296,12 @@
       },
       "kind": "interface",
       "name": "CardActionIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L107",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L131",
       "extends": [
         "IconButtonProps"
       ],
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -469,54 +445,6 @@
           "name": "ripple",
           "inheritedFrom": "WithRippleProps.ripple",
           "type": "RipplePropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         }
       ]
     },
@@ -541,36 +469,12 @@
       },
       "kind": "interface",
       "name": "CardActionButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L117",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L147",
       "extends": [
         "ButtonProps"
       ],
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -790,30 +694,6 @@
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
               "<p>A trailing icon for the Button</p>\n"
             ],
             "contentsRaw": "A trailing icon for the Button",
@@ -834,30 +714,6 @@
           "name": "trailingIcon",
           "inheritedFrom": "ButtonProps.trailingIcon",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/card/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         },
         {
           "documentation": {
@@ -884,23 +740,6 @@
           "type": "undefined | false | true"
         }
       ]
-    },
-    "CardActionPropsT": {
-      "fileName": "src/card/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "type alias",
-      "name": "CardActionPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/card/index.tsx#L126",
-      "type": "IconButtonProps & ButtonProps"
     }
   }
 }

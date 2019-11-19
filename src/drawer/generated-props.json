@@ -1,6 +1,152 @@
 {
   "npm": {},
   "typescript": {
+    "DrawerProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Drawer component.</p>\n"
+        ],
+        "contentsRaw": "A Drawer component.",
+        "metadata": {}
+      },
+      "fileName": "src/drawer/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "DrawerProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L21",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes a dismissible drawer.</p>\n"
+            ],
+            "contentsRaw": "Makes a dismissible drawer.",
+            "metadata": {}
+          },
+          "fileName": "src/drawer/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "dismissible",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L29",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Makes a modal / temporary drawer.</p>\n"
+            ],
+            "contentsRaw": "Makes a modal / temporary drawer.",
+            "metadata": {}
+          },
+          "fileName": "src/drawer/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "modal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L31",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback that fires when the Drawer is closed.</p>\n"
+            ],
+            "contentsRaw": "Callback that fires when the Drawer is closed.",
+            "metadata": {}
+          },
+          "fileName": "src/drawer/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClose",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L25",
+          "type": "undefined | (evt: DrawerOnOpenEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback that fires when the Drawer is opened.</p>\n"
+            ],
+            "contentsRaw": "Callback that fires when the Drawer is opened.",
+            "metadata": {}
+          },
+          "fileName": "src/drawer/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L27",
+          "type": "undefined | (evt: DrawerOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Opens or closes the Drawer.</p>\n"
+            ],
+            "contentsRaw": "Opens or closes the Drawer.",
+            "metadata": {}
+          },
+          "fileName": "src/drawer/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "open",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L23",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
     "DrawerHeaderProps": {
       "documentation": {
         "contents": [
@@ -22,7 +168,7 @@
       },
       "kind": "interface",
       "name": "DrawerHeaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L106",
       "methods": [],
       "properties": []
     },
@@ -47,7 +193,7 @@
       },
       "kind": "interface",
       "name": "DrawerTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L24",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L119",
       "methods": [],
       "properties": []
     },
@@ -72,7 +218,7 @@
       },
       "kind": "interface",
       "name": "DrawerSubtitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L33",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L132",
       "methods": [],
       "properties": []
     },
@@ -97,7 +243,7 @@
       },
       "kind": "interface",
       "name": "DrawerContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L45",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L145",
       "methods": [],
       "properties": []
     },
@@ -122,162 +268,16 @@
       },
       "kind": "interface",
       "name": "DrawerAppContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L67",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L165",
       "methods": [],
       "properties": []
-    },
-    "DrawerProps": {
-      "documentation": {
-        "contents": [
-          "<p>A Drawer component.</p>\n"
-        ],
-        "contentsRaw": "A Drawer component.",
-        "metadata": {}
-      },
-      "fileName": "src/drawer/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "DrawerProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L83",
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>Makes a dismissible drawer.</p>\n"
-            ],
-            "contentsRaw": "Makes a dismissible drawer.",
-            "metadata": {}
-          },
-          "fileName": "src/drawer/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "dismissible",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L91",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Makes a modal / temporary drawer.</p>\n"
-            ],
-            "contentsRaw": "Makes a modal / temporary drawer.",
-            "metadata": {}
-          },
-          "fileName": "src/drawer/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "modal",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L93",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Callback that fires when the Drawer is closed.</p>\n"
-            ],
-            "contentsRaw": "Callback that fires when the Drawer is closed.",
-            "metadata": {}
-          },
-          "fileName": "src/drawer/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L87",
-          "type": "undefined | (evt: DrawerOnOpenEventT) => void"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Callback that fires when the Drawer is opened.</p>\n"
-            ],
-            "contentsRaw": "Callback that fires when the Drawer is opened.",
-            "metadata": {}
-          },
-          "fileName": "src/drawer/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L89",
-          "type": "undefined | (evt: DrawerOnCloseEventT) => void"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Opens or closes the Drawer.</p>\n"
-            ],
-            "contentsRaw": "Opens or closes the Drawer.",
-            "metadata": {}
-          },
-          "fileName": "src/drawer/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L85",
-          "type": "undefined | false | true"
-        }
-      ]
     },
     "DrawerOnCloseEventT": {
       "documentation": {
         "contents": [
-          "<p>Drawers</p>\n"
+          "<p>Events</p>\n"
         ],
-        "contentsRaw": "Drawers",
+        "contentsRaw": "Events",
         "metadata": {}
       },
       "fileName": "src/drawer/index.tsx",
@@ -293,7 +293,7 @@
       },
       "kind": "type alias",
       "name": "DrawerOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L79",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L13",
       "type": "RMWC.CustomEventT<{}>"
     },
     "DrawerOnOpenEventT": {
@@ -310,7 +310,7 @@
       },
       "kind": "type alias",
       "name": "DrawerOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L80",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L14",
       "type": "RMWC.CustomEventT<{}>"
     }
   }

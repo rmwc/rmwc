@@ -23,9 +23,6 @@
       "kind": "interface",
       "name": "IconProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L7",
-      "extends": [
-        "DeprecatedIconProps"
-      ],
       "methods": [],
       "properties": [
         {
@@ -51,74 +48,6 @@
           "name": "icon",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L9",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L14",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
-        }
-      ]
-    },
-    "DeprecatedIconProps": {
-      "fileName": "src/icon/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "DeprecatedIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L12",
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/icon/index.tsx#L14",
-          "type": "RMWC.IconOptions"
         }
       ]
     }

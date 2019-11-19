@@ -106,22 +106,22 @@ Theming in `material-components-web` isn't perfect, but a few basic options will
 As stated above, theming in `material-components-web` isn't perfect, but the ThemeProvider can be used to conveniently fix some of the built in style issues. For instance, the Tab bar doesn't respond correctly when used in the TopAppBar or on any other dark color surface.
 
 ```jsx
-<Toolbar>
+<TopAppBar style={{ position: 'static' }}>
   {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
-  <ToolbarRow>
+  <TopAppBarRow style={{ alignItems: 'center' }}>
     <TabBar>
       <Tab>Cookies</Tab>
       <Tab>Pizza</Tab>
       <Tab>Icecream</Tab>
     </TabBar>
-  </ToolbarRow>
-</Toolbar>
+  </TopAppBarRow>
+</TopAppBar>
 ```
 
 ```jsx
-<Toolbar>
+<TopAppBar style={{ position: 'static' }}>
   {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
-  <ToolbarRow>
+  <TopAppBarRow style={{ alignItems: 'center' }}>
     <ThemeProvider
       options={{ primary: 'white', onSurface: 'white' }}
       wrap
@@ -132,8 +132,8 @@ As stated above, theming in `material-components-web` isn't perfect, but the The
         <Tab>Icecream</Tab>
       </TabBar>
     </ThemeProvider>
-  </ToolbarRow>
-</Toolbar>
+  </TopAppBarRow>
+</TopAppBar>
 ```
 
 ## Theme Component

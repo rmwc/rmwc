@@ -167,34 +167,10 @@ A title for the top app bar.
 
 
 
-## TopAppBarNavigationIcon
-A navigation icon for the top app bar. This is an instance of the Icon component.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
-| `disabled` | `undefined \| false \| true` | Makes the button disabled |
-| `icon` | `RMWC.IconPropT` | Icon for the button |
-| `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+## Function
 
 
-## TopAppBarActionItem
-Action items for the top app bar. This is an instance of the Icon component.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
-| `disabled` | `undefined \| false \| true` | Makes the button disabled |
-| `icon` | `RMWC.IconPropT` | Icon for the button |
-| `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
-| `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
+## Function
 
 
 ## TopAppBarFixedAdjust

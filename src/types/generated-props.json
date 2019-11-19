@@ -1,97 +1,6 @@
 {
   "npm": {},
   "typescript": {
-    "DeprecatedRippleProps": {
-      "fileName": "src/types/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "DeprecatedRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L50",
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L52",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L54",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L56",
-          "type": "undefined | false | true"
-        }
-      ]
-    },
     "WithRippleProps": {
       "fileName": "src/types/index.tsx",
       "flags": {
@@ -106,37 +15,9 @@
       },
       "kind": "interface",
       "name": "WithRippleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L59",
-      "extends": [
-        "DeprecatedRippleProps"
-      ],
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L50",
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L52",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -158,58 +39,8 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L61",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L52",
           "type": "RipplePropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L54",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L56",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         }
       ]
     },
@@ -227,7 +58,7 @@
       },
       "kind": "interface",
       "name": "ComponentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L69",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L60",
       "extends": [
         "HTMLProps<any>"
       ],
@@ -2195,7 +2026,7 @@
           "kind": "property",
           "name": "defaultValue",
           "inheritedFrom": "HTMLAttributes.defaultValue",
-          "type": "string | string[]"
+          "type": "string | number | string[]"
         },
         {
           "fileName": "node_modules/@types/react/index.d.ts",
@@ -2589,6 +2420,17 @@
           "type": "any"
         },
         {
+          "documentation": {
+            "contents": [
+              "<p>Hints at the type of data that might be entered by the user while editing the element or its contents</p>\n",
+              {
+                "tag": "see",
+                "value": "https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute"
+              }
+            ],
+            "contentsRaw": "Hints at the type of data that might be entered by the user while editing the element or its contents\n\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+            "metadata": {}
+          },
           "fileName": "node_modules/@types/react/index.d.ts",
           "flags": {
             "isExported": true,
@@ -2603,7 +2445,7 @@
           "kind": "property",
           "name": "inputMode",
           "inheritedFrom": "HTMLAttributes.inputMode",
-          "type": "undefined | string"
+          "type": "\"none\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\" | \"search\""
         },
         {
           "fileName": "node_modules/@types/react/index.d.ts",
@@ -2623,6 +2465,17 @@
           "type": "undefined | string"
         },
         {
+          "documentation": {
+            "contents": [
+              "<p>Specify that a standard HTML element should behave like a defined custom built-in element</p>\n",
+              {
+                "tag": "see",
+                "value": "https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is"
+              }
+            ],
+            "contentsRaw": "Specify that a standard HTML element should behave like a defined custom built-in element\n\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+            "metadata": {}
+          },
           "fileName": "node_modules/@types/react/index.d.ts",
           "flags": {
             "isExported": true,
@@ -6040,7 +5893,7 @@
           "type": "undefined | false | true"
         },
         {
-          "fileName": "node_modules/@types/react/index.d.ts",
+          "fileName": "src/types/index.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
@@ -6053,8 +5906,8 @@
           },
           "kind": "property",
           "name": "ref",
-          "inheritedFrom": "ClassAttributes.ref",
-          "type": "LegacyRef<any>"
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L63",
+          "type": "React.Ref<any>"
         },
         {
           "fileName": "node_modules/@types/react/index.d.ts",
@@ -6614,7 +6467,7 @@
           },
           "kind": "property",
           "name": "tag",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L70",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L61",
           "type": "TagT"
         },
         {
@@ -6648,7 +6501,7 @@
           },
           "kind": "property",
           "name": "theme",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L62",
           "type": "ThemePropT"
         },
         {
@@ -6837,7 +6690,7 @@
       },
       "kind": "interface",
       "name": "IconOptions",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L88",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L80",
       "indexSignature": {
         "documentation": {
           "contents": [
@@ -6849,7 +6702,7 @@
         "fileName": "src/types/index.tsx",
         "kind": "signature",
         "name": "__index",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L114",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L106",
         "parameters": [
           {
             "flags": {
@@ -6893,7 +6746,7 @@
           },
           "kind": "property",
           "name": "basename",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L99",
           "type": "undefined | string"
         },
         {
@@ -6910,7 +6763,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L81",
           "type": "IconElementT"
         },
         {
@@ -6934,7 +6787,7 @@
           },
           "kind": "property",
           "name": "prefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L105",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L97",
           "type": "undefined | string"
         },
         {
@@ -6958,7 +6811,7 @@
           },
           "kind": "property",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L109",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L101",
           "type": "undefined | (props: ) => React.ReactNode"
         },
         {
@@ -6982,7 +6835,7 @@
           },
           "kind": "property",
           "name": "size",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L114",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L106",
           "type": "IconSizeT"
         },
         {
@@ -7006,7 +6859,7 @@
           },
           "kind": "property",
           "name": "strategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L99",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L91",
           "type": "IconStrategyT"
         }
       ]
@@ -7121,7 +6974,7 @@
       },
       "kind": "type alias",
       "name": "TagT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L67",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L58",
       "type": "string | React.ComponentType<any>"
     },
     "CustomEventT": {
@@ -7138,7 +6991,7 @@
       },
       "kind": "type alias",
       "name": "CustomEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L74",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L66",
       "type": "CustomEvent<T> & SyntheticEvent<EventTarget>"
     },
     "IconSizeT": {
@@ -7155,7 +7008,7 @@
       },
       "kind": "type alias",
       "name": "IconSizeT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L78",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L70",
       "type": "\"xsmall\" | \"small\" | \"medium\" | \"large\" | \"xlarge\""
     },
     "IconStrategyT": {
@@ -7172,7 +7025,7 @@
       },
       "kind": "type alias",
       "name": "IconStrategyT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L80",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L72",
       "type": "\"auto\" | \"ligature\" | \"className\" | \"url\" | \"component\" | \"custom\""
     },
     "IconPropT": {
@@ -7189,7 +7042,7 @@
       },
       "kind": "type alias",
       "name": "IconPropT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L119",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/types/index.tsx#L111",
       "type": "IconElementT | IconOptions"
     }
   }

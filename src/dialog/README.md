@@ -177,18 +177,7 @@ queue.prompt({
 }
 ```
 
-## Dialog
-A Dialog component.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
-| `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
-| `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
-| `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
-| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
+## 
 
 
 ## DialogTitle

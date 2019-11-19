@@ -31,30 +31,6 @@
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/fab/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
               "<p>Content specified as children.</p>\n"
             ],
             "contentsRaw": "Content specified as children.",
@@ -199,30 +175,6 @@
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/fab/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
               "<p>A trialing icon for the FAB</p>\n"
             ],
             "contentsRaw": "A trialing icon for the FAB",
@@ -243,30 +195,6 @@
           "name": "trailingIcon",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/fab/index.tsx#L14",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/fab/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         }
       ]
     }

@@ -33,17 +33,6 @@ Ripples will wrap whatever child component you pass it and apply the appropriate
 </Ripple>
 ```
 
-## Ripple
-A component for adding Ripples to other components.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `accent` | `undefined \| false \| true` | Makes the ripple an accent color |
-| `disabled` | `undefined \| false \| true` | makes the ripple disabled |
-| `primary` | `undefined \| false \| true` | Makes the ripple primary |
-| `surface` | `undefined \| false \| true` | For internal use |
-| `unbounded` | `undefined \| false \| true` | Makes the ripple unbounded |
+## 
 
 

@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "RMWCProviderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L52",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L51",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L62",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L61",
           "type": "React.ReactNode"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L55",
           "type": "Partial<IconOptions>"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "ripple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L54",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L53",
           "type": "undefined | false | true"
         },
         {
@@ -118,7 +118,7 @@
           },
           "kind": "property",
           "name": "tooltip",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L58",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L57",
           "type": "Partial<TooltipOptions>"
         },
         {
@@ -142,207 +142,8 @@
           },
           "kind": "property",
           "name": "typography",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L60",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L59",
           "type": "Partial<TypographyOptions>"
-        }
-      ]
-    },
-    "DeprecatedRMWCProviderPropsT": {
-      "fileName": "src/provider/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "DeprecatedRMWCProviderPropsT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L65",
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Ripples for all components are now controlled by the providers ripple prop</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Ripples for all components are now controlled by the providers ripple prop",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "buttonDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L67",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Use the &#39;icon&#39; prop. icon={{basename: &#39;material-icons&#39;}}</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Use the 'icon' prop. icon={{basename: 'material-icons'}}",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconClassNameBase",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L71",
-          "type": "undefined | string"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Use the &#39;icon&#39; prop. icon={{prefix: &#39;glyphicons-&#39;}}</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Use the 'icon' prop. icon={{prefix: 'glyphicons-'}}",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconClassNamePrefix",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L73",
-          "type": "undefined | string"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Use the &#39;icon&#39; prop. icon={{render: () =&gt; <div />}}</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Use the 'icon' prop. icon={{render: () => <div />}}",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconRender",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L77",
-          "type": "undefined | (props: ) => React.ReactNode"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Use the &#39;icon&#39; prop. icon={{strategy: &#39;className&#39;}}</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Use the 'icon' prop. icon={{strategy: 'className'}}",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconStrategy",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L75",
-          "type": "IconStrategyT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Ripples for all components are now controlled by the providers ripple prop</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Ripples for all components are now controlled by the providers ripple prop",
-            "metadata": {}
-          },
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "listItemDefaultRipple",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L69",
-          "type": "undefined | false | true"
-        }
-      ]
-    },
-    "WithProviderContext": {
-      "fileName": "src/provider/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "WithProviderContext",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L103",
-      "methods": [],
-      "properties": [
-        {
-          "fileName": "src/provider/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "providerContext",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/provider/index.tsx#L104",
-          "type": "RMWCProviderProps"
         }
       ]
     }
