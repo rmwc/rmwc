@@ -78,7 +78,10 @@ export default function() {
 
       <DocsSubtitle>Validation</DocsSubtitle>
       <DocsExample label="Disabled">
-        <TextField disabled label="disabled..." />
+        <TextField disabled label="Disabled..." />
+      </DocsExample>
+      <DocsExample label="Required">
+        <TextField required label="Required..." value="" />
       </DocsExample>
       <DocsExample label="Invalid">
         <TextField

@@ -45,11 +45,11 @@ export const useRippleFoundation = (
         registerInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
-        ): void => rootEl.addEventListener(evtType, handler),
+        ): void => {},
         deregisterInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>
-        ): void => rootEl.removeEventListener(evtType, handler),
+        ): void => {},
         registerDocumentInteractionHandler: <K extends EventType>(
           evtType: K,
           handler: SpecificEventListener<K>

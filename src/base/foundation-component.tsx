@@ -378,18 +378,24 @@ export const useFoundation = <
         });
         return acc;
       }, {} as any),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
-  const foundation = useMemo(
-    () =>
-      foundationFactory({
-        ...elements,
-        getProps: () => props.current,
-        emit: (...args) => emitFactory(props.current)(...args)
-      }),
-    []
-  );
+  const foundation = useMemo(() => {
+    // init foundation
+    const f = foundationFactory({
+      ...elements,
+      getProps: () => props.current,
+      emit: (...args) => emitFactory(props.current)(...args)
+    });
+
+    // handle apiRefs
+    api && props.current.apiRef?.(api({ foundation: f, ...elements }));
+
+    return f;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const f = foundation;
@@ -397,11 +403,10 @@ export const useFoundation = <
     return () => {
       f.destroy();
       Object.values(elements).map(element => element.destroy());
+      api && props.current.apiRef?.(null);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [foundation, elements]);
-
-  // handle apiRefs
-  api && props.current.apiRef?.(api({ foundation: foundation, ...elements }));
 
   return { foundation: foundation, ...elements };
 };
