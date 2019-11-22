@@ -68,7 +68,11 @@ You can make the TextField a textarea. Make sure to include `outlined` for prope
 ## Validation
 
 ```jsx
-<TextField disabled label="disabled..." />
+<TextField disabled label="Disabled..." />
+```
+
+```jsx
+<TextField required label="Required..." value="" />
 ```
 
 ```jsx

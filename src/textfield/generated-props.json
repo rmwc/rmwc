@@ -1,2710 +1,6 @@
 {
   "npm": {},
   "typescript": {
-    "TextField": {
-      "documentation": {
-        "contents": [
-          "<p>A TextField component for accepting text input from a user.</p>\n"
-        ],
-        "contentsRaw": "A TextField component for accepting text input from a user.",
-        "metadata": {}
-      },
-      "fileName": "src/textfield/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "class",
-      "name": "TextField",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L105",
-      "extends": [
-        "FoundationComponent<MDCTextFieldFoundation, TextFieldProps, >"
-      ],
-      "methods": [
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<TextFieldProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<TextFieldProps>>, nextState: Readonly<FoundationStateT<>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidCatch",
-          "inheritedFrom": "ComponentLifecycle.componentDidCatch",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.</p>\n"
-                ],
-                "contentsRaw": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidCatch",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "error",
-                  "type": "Error"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "errorInfo",
-                  "type": "ErrorInfo"
-                }
-              ],
-              "returnType": "void",
-              "type": "(error: Error, errorInfo: ErrorInfo) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidMount",
-          "inheritedFrom": "FoundationComponent.componentDidMount",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentDidMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidUpdate",
-          "inheritedFrom": "FoundationComponent.componentDidUpdate",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentDidUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "FoundationPropsT<TextFieldProps>"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prevProps: FoundationPropsT<TextFieldProps>) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<TextFieldProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUnmount",
-          "inheritedFrom": "FoundationComponent.componentWillUnmount",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentWillUnmount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<TextFieldProps>>, nextState: Readonly<FoundationStateT<>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "createElement",
-          "inheritedFrom": "FoundationComponent.createElement",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "createElement",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "elementName",
-                  "type": "string"
-                }
-              ],
-              "returnType": "FoundationElement<ExtractProps<ElementType>, ElementType>",
-              "type": "(elementName: string) => FoundationElement<ExtractProps<ElementType>, ElementType>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "emit",
-          "inheritedFrom": "FoundationComponent.emit",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Fires a cross-browser-compatible custom event from the component root of the given type,</p>\n"
-                ],
-                "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
-                "metadata": {}
-              },
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "emit",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtType",
-                  "type": "string"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtData",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
-                }
-              ],
-              "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L139",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L139",
-              "parameters": [],
-              "returnType": "MDCTextFieldFoundation",
-              "type": "() => MDCTextFieldFoundation"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getFoundationMap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L236",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getFoundationMap",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L236",
-              "parameters": [],
-              "returnType": "",
-              "type": "() => "
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getInputAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L222",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getInputAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L222",
-              "parameters": [],
-              "returnType": "",
-              "type": "() => "
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getLabelAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L187",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getLabelAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L187",
-              "parameters": [],
-              "returnType": "",
-              "type": "() => "
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getLineRippleAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L198",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getLineRippleAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L198",
-              "parameters": [],
-              "returnType": "",
-              "type": "() => "
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getOutlineAdapterMethods",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L212",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getOutlineAdapterMethods",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L212",
-              "parameters": [],
-              "returnType": "",
-              "type": "() => "
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getSnapshotBeforeUpdate",
-          "inheritedFrom": "NewLifecycle.getSnapshotBeforeUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Runs before React applies the result of <code>render</code> to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before <code>render</code> causes changes to it.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.</p>\n"
-                ],
-                "contentsRaw": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.\n\nNote: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "getSnapshotBeforeUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevState",
-                  "type": "Readonly<FoundationStateT<>>"
-                }
-              ],
-              "returnType": "SS | null",
-              "type": "(prevProps: Readonly<FoundationPropsT<TextFieldProps>>, prevState: Readonly<FoundationStateT<>>) => SS | null"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "handleOnChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L276",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "handleOnChange",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L276",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "ChangeEvent<HTMLInputElement>"
-                }
-              ],
-              "returnType": "void",
-              "type": "(evt: ChangeEvent<HTMLInputElement>) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L304",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L304",
-              "parameters": [],
-              "returnType": "Element",
-              "type": "() => Element"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "renderHelpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L281",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "renderHelpText",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L281",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "renderedCharacterCounter",
-                  "type": "React.ReactNode"
-                }
-              ],
-              "returnType": "null | Element",
-              "type": "(renderedCharacterCounter?: React.ReactNode) => null | Element"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "renderIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L248",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "renderIcon",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L248",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "icon",
-                  "type": "RMWC.IconPropT"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "leadOrTrail",
-                  "type": "\"leadingIcon\" | \"trailingIcon\""
-                }
-              ],
-              "returnType": "Element",
-              "type": "(icon: RMWC.IconPropT, leadOrTrail: \"leadingIcon\" | \"trailingIcon\") => Element"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "shouldComponentUpdate",
-          "inheritedFrom": "ComponentLifecycle.shouldComponentUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called to determine whether the change in props and state should trigger a re-render.</p>\n<p><code>Component</code> always returns true.\n<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any\nprops or states have changed.</p>\n<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>\nand <code>componentDidUpdate</code> will not be called.</p>\n"
-                ],
-                "contentsRaw": "Called to determine whether the change in props and state should trigger a re-render.\n\n`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "shouldComponentUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<TextFieldProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "boolean",
-              "type": "(nextProps: Readonly<FoundationPropsT<TextFieldProps>>, nextState: Readonly<FoundationStateT<>>, nextContext: any) => boolean"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "sync",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L267",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "sync",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L267",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "props",
-                  "type": "TextFieldProps"
-                }
-              ],
-              "returnType": "void",
-              "type": "(props: TextFieldProps) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "syncProp",
-          "inheritedFrom": "FoundationComponent.syncProp",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "syncProp",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prop",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProp",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "callback",
-                  "type": "() => void"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prop: any, prevProp: any, callback: () => void) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "update",
-          "inheritedFrom": "FoundationComponent.update",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "update",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        }
-      ],
-      "properties": [
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L114",
-          "defaultValue": "\"TextField\"",
-          "type": "string"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "shouldDebounce",
-          "defaultValue": "false",
-          "inheritedFrom": "FoundationComponent.shouldDebounce",
-          "type": "boolean"
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "characterCounter",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L123",
-          "defaultValue": " null",
-          "type": "null | TextFieldCharacterCount"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "elements",
-          "inheritedFrom": "FoundationComponent.elements",
-          "type": "{ [key: string]: FoundationElement<any, any> }"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "foundation",
-          "inheritedFrom": "FoundationComponent.foundation",
-          "type": "MDCTextFieldFoundation"
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "generatedId",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L115",
-          "defaultValue": " randomId('textfield')",
-          "type": "string"
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "leadingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L124",
-          "defaultValue": " null",
-          "type": "null | TextFieldIcon"
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L125",
-          "defaultValue": " null",
-          "type": "null | TextFieldIcon"
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "valueNeedsUpdate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L126",
-          "defaultValue": "false",
-          "type": "boolean"
-        }
-      ],
-      "constructorType": {
-        "fileName": "src/textfield/index.tsx",
-        "flags": {
-          "isExported": true,
-          "isExternal": false,
-          "isOptional": false,
-          "isPrivate": false,
-          "isProtected": false,
-          "isPublic": false,
-          "isRest": false,
-          "isStatic": false
-        },
-        "kind": "constructor",
-        "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L132",
-        "signatures": [
-          {
-            "fileName": "src/textfield/index.tsx",
-            "kind": "signature",
-            "name": "new TextField",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L132",
-            "parameters": [
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": false,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "props",
-                "type": "any"
-              }
-            ],
-            "returnType": "TextField",
-            "type": "(props: any) => TextField"
-          }
-        ]
-      }
-    },
-    "TextFieldIcon": {
-      "documentation": {
-        "contents": [
-          "<p>An Icon in a TextField</p>\n"
-        ],
-        "contentsRaw": "An Icon in a TextField",
-        "metadata": {}
-      },
-      "fileName": "src/textfield/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "class",
-      "name": "TextFieldIcon",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L489",
-      "extends": [
-        "FoundationComponent<MDCTextFieldIconFoundation, IconProps>"
-      ],
-      "methods": [
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<IconProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<IconProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidCatch",
-          "inheritedFrom": "ComponentLifecycle.componentDidCatch",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.</p>\n"
-                ],
-                "contentsRaw": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidCatch",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "error",
-                  "type": "Error"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "errorInfo",
-                  "type": "ErrorInfo"
-                }
-              ],
-              "returnType": "void",
-              "type": "(error: Error, errorInfo: ErrorInfo) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidMount",
-          "inheritedFrom": "FoundationComponent.componentDidMount",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentDidMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidUpdate",
-          "inheritedFrom": "FoundationComponent.componentDidUpdate",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentDidUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "FoundationPropsT<IconProps>"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prevProps: FoundationPropsT<IconProps>) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<IconProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUnmount",
-          "inheritedFrom": "FoundationComponent.componentWillUnmount",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentWillUnmount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<IconProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "createElement",
-          "inheritedFrom": "FoundationComponent.createElement",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "createElement",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "elementName",
-                  "type": "string"
-                }
-              ],
-              "returnType": "FoundationElement<ExtractProps<ElementType>, ElementType>",
-              "type": "(elementName: string) => FoundationElement<ExtractProps<ElementType>, ElementType>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "emit",
-          "inheritedFrom": "FoundationComponent.emit",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Fires a cross-browser-compatible custom event from the component root of the given type,</p>\n"
-                ],
-                "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
-                "metadata": {}
-              },
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "emit",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtType",
-                  "type": "string"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtData",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
-                }
-              ],
-              "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L496",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L496",
-              "parameters": [],
-              "returnType": "MDCTextFieldIconFoundation",
-              "type": "() => MDCTextFieldIconFoundation"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getSnapshotBeforeUpdate",
-          "inheritedFrom": "NewLifecycle.getSnapshotBeforeUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Runs before React applies the result of <code>render</code> to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before <code>render</code> causes changes to it.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.</p>\n"
-                ],
-                "contentsRaw": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.\n\nNote: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "getSnapshotBeforeUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                }
-              ],
-              "returnType": "SS | null",
-              "type": "(prevProps: Readonly<FoundationPropsT<IconProps>>, prevState: Readonly<FoundationStateT<S>>) => SS | null"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L519",
-          "signatures": [
-            {
-              "fileName": "src/textfield/index.tsx",
-              "kind": "signature",
-              "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L519",
-              "parameters": [],
-              "returnType": "Element",
-              "type": "() => Element"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "shouldComponentUpdate",
-          "inheritedFrom": "ComponentLifecycle.shouldComponentUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called to determine whether the change in props and state should trigger a re-render.</p>\n<p><code>Component</code> always returns true.\n<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any\nprops or states have changed.</p>\n<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>\nand <code>componentDidUpdate</code> will not be called.</p>\n"
-                ],
-                "contentsRaw": "Called to determine whether the change in props and state should trigger a re-render.\n\n`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "shouldComponentUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<IconProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "boolean",
-              "type": "(nextProps: Readonly<FoundationPropsT<IconProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => boolean"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "sync",
-          "inheritedFrom": "FoundationComponent.sync",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "sync",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "props",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(props: any, prevProps?: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "syncProp",
-          "inheritedFrom": "FoundationComponent.syncProp",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "syncProp",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prop",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProp",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "callback",
-                  "type": "() => void"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prop: any, prevProp: any, callback: () => void) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "update",
-          "inheritedFrom": "FoundationComponent.update",
-          "signatures": [
-            {
-              "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "update",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        }
-      ],
-      "properties": [
-        {
-          "fileName": "src/textfield/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L493",
-          "defaultValue": "\"TextFieldIcon\"",
-          "type": "string"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "shouldDebounce",
-          "defaultValue": "false",
-          "inheritedFrom": "FoundationComponent.shouldDebounce",
-          "type": "boolean"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "elements",
-          "inheritedFrom": "FoundationComponent.elements",
-          "type": "{ [key: string]: FoundationElement<any, any> }"
-        },
-        {
-          "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "foundation",
-          "inheritedFrom": "FoundationComponent.foundation",
-          "type": "MDCTextFieldIconFoundation"
-        }
-      ],
-      "constructorType": {
-        "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-        "flags": {
-          "isExported": true,
-          "isExternal": false,
-          "isOptional": false,
-          "isPrivate": false,
-          "isProtected": false,
-          "isPublic": false,
-          "isRest": false,
-          "isStatic": false
-        },
-        "kind": "constructor",
-        "name": "constructor",
-        "inheritedFrom": "FoundationComponent.__constructor",
-        "signatures": [
-          {
-            "fileName": "src/textfield/node_modules/@rmwc/icon/node_modules/@rmwc/base/foundation-component.tsx",
-            "kind": "signature",
-            "name": "new TextFieldIcon",
-            "parameters": [
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": false,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "props",
-                "type": "any"
-              }
-            ],
-            "returnType": "TextFieldIcon",
-            "type": "(props: any) => TextFieldIcon"
-          }
-        ]
-      }
-    },
     "TextFieldProps": {
       "documentation": {
         "contents": [
@@ -2726,7 +22,7 @@
       },
       "kind": "interface",
       "name": "TextFieldProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L24",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L25",
       "methods": [],
       "properties": [
         {
@@ -2750,7 +46,7 @@
           },
           "kind": "property",
           "name": "characterCount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L31",
           "type": "undefined | false | true"
         },
         {
@@ -2774,7 +70,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L35",
           "type": "undefined | false | true"
         },
         {
@@ -2798,7 +94,7 @@
           },
           "kind": "property",
           "name": "fullwidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L45",
           "type": "undefined | false | true"
         },
         {
@@ -2822,7 +118,7 @@
           },
           "kind": "property",
           "name": "helpText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L29",
           "type": "React.ReactNode | TextFieldHelperTextProps"
         },
         {
@@ -2846,7 +142,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L47",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2870,7 +166,7 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L53",
           "type": "MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null> | (ref: HTMLInputElement | HTMLTextAreaElement | null) => void"
         },
         {
@@ -2894,7 +190,7 @@
           },
           "kind": "property",
           "name": "invalid",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L33",
           "type": "undefined | false | true"
         },
         {
@@ -2918,7 +214,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L40",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L41",
           "type": "React.ReactNode"
         },
         {
@@ -2942,7 +238,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L39",
           "type": "undefined | false | true"
         },
         {
@@ -2966,7 +262,7 @@
           },
           "kind": "property",
           "name": "required",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L37",
           "type": "undefined | false | true"
         },
         {
@@ -2990,7 +286,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L51",
           "type": "Object"
         },
         {
@@ -3014,7 +310,7 @@
           },
           "kind": "property",
           "name": "textarea",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L43",
           "type": "undefined | false | true"
         },
         {
@@ -3038,7 +334,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L49",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3062,7 +358,7 @@
           },
           "kind": "property",
           "name": "type",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L56",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L57",
           "type": "undefined | string"
         },
         {
@@ -3086,12 +382,125 @@
           },
           "kind": "property",
           "name": "value",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L27",
           "type": "string | number"
         }
       ]
     },
+    "TextFieldCharacterCountApi": {
+      "documentation": {
+        "contents": [
+          "<p>Character Count</p>\n"
+        ],
+        "contentsRaw": "Character Count",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldCharacterCountApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L221",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getFoundation",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L222",
+          "type": "() => MDCTextFieldCharacterCounterFoundation"
+        }
+      ]
+    },
+    "TextFieldCharacterCountProps": {
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldCharacterCountProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L225",
+      "extends": [
+        "IconProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L226",
+          "type": "undefined | (api: TextFieldCharacterCountApi) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+            ],
+            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/icon/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "IconProps.icon",
+          "type": "RMWC.IconPropT"
+        }
+      ]
+    },
     "TextFieldHelperTextProps": {
+      "documentation": {
+        "contents": [
+          "<p>Helper Text</p>\n"
+        ],
+        "contentsRaw": "Helper Text",
+        "metadata": {}
+      },
       "fileName": "src/textfield/index.tsx",
       "flags": {
         "isExported": true,
@@ -3105,7 +514,7 @@
       },
       "kind": "interface",
       "name": "TextFieldHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L460",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L240",
       "methods": [],
       "properties": [
         {
@@ -3129,7 +538,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L466",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L246",
           "type": "React.ReactNode"
         },
         {
@@ -3153,7 +562,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L462",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L242",
           "type": "undefined | false | true"
         },
         {
@@ -3177,8 +586,121 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L464",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L244",
           "type": "undefined | false | true"
+        }
+      ]
+    },
+    "TextFieldIconApi": {
+      "documentation": {
+        "contents": [
+          "<p>Icon</p>\n"
+        ],
+        "contentsRaw": "Icon",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldIconApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L273",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getFoundation",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L274",
+          "type": "() => MDCTextFieldIconFoundation"
+        }
+      ]
+    },
+    "TextFieldIconProps": {
+      "documentation": {
+        "contents": [
+          "<p>An Icon in a TextField</p>\n"
+        ],
+        "contentsRaw": "An Icon in a TextField",
+        "metadata": {}
+      },
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "TextFieldIconProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L278",
+      "extends": [
+        "IconProps"
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L279",
+          "type": "undefined | (api: TextFieldIconApi) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
+            ],
+            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/icon/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "icon",
+          "inheritedFrom": "IconProps.icon",
+          "type": "RMWC.IconPropT"
         }
       ]
     }
