@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { componentFactory, classNames } from '@rmwc/base';
+import { classNames, Tag } from '@rmwc/base';
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export interface IconProps {
@@ -103,7 +103,12 @@ const buildIconOptions = (icon?: RMWC.IconPropT) => {
   return icon as RMWC.IconOptions;
 };
 
-const IconRoot = componentFactory({ displayName: 'IconRoot', tag: 'i' });
+const IconRoot = React.forwardRef(function IconRoot(
+  props: any,
+  ref: React.Ref<any>
+) {
+  return <Tag tag="i" {...props} ref={ref} />;
+});
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export const Icon = React.forwardRef(

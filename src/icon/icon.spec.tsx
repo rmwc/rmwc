@@ -11,7 +11,7 @@ describe('Icon', () => {
   it('renders Url', () => {
     const el2 = mount(<Icon icon="images/icons/twitter.png" />);
     expect(el2.html()).toBe(
-      `<i style="background-image: url(images/icons/twitter.png);" class="rmwc-icon material-icons rmwc-icon--image"></i>`
+      `<i class="rmwc-icon material-icons rmwc-icon--image" style="background-image: url(images/icons/twitter.png);"></i>`
     );
   });
 

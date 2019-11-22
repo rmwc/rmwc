@@ -261,7 +261,7 @@ export const TextFieldHelperText = React.forwardRef(
       }
     ]);
 
-    return <Tag {...rest} className={className} ref={ref} />;
+    return <Tag tag="p" {...rest} className={className} ref={ref} />;
   }
 );
 TextFieldHelperText.displayName = 'TextFieldHelperText';
@@ -280,9 +280,8 @@ export interface TextFieldIconProps extends IconProps {
 }
 
 /** An Icon in a TextField */
-const TextFieldIcon = React.forwardRef(function TextFieldIcon(
-  props: TextFieldIconProps & RMWC.ComponentProps,
-  ref
+const TextFieldIcon = function TextFieldIcon(
+  props: TextFieldIconProps & RMWC.ComponentProps
 ) {
   const { apiRef, ...rest } = props;
   const { rootEl } = useTextFieldIconFoundation(props);
@@ -296,5 +295,5 @@ const TextFieldIcon = React.forwardRef(function TextFieldIcon(
       })}
     />
   );
-});
+};
 TextFieldIcon.displayName = 'TextFieldIcon';

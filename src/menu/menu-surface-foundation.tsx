@@ -1,4 +1,9 @@
-import { useFoundation, closest, emptyClientRect } from '@rmwc/base';
+import {
+  useFoundation,
+  closest,
+  emptyClientRect,
+  FoundationElement
+} from '@rmwc/base';
 import { MenuSurfaceProps, MenuSurfaceApi } from './menu-surface';
 
 import {
@@ -40,16 +45,19 @@ export const useMenuSurfaceFoundation = (
     props,
     elements: { rootEl: true },
     api: ({
-      foundation
+      foundation,
+      rootEl
     }: {
       foundation: MDCMenuSurfaceFoundation;
+      rootEl: FoundationElement<any, any>;
     }): MenuSurfaceApi => {
       return {
         hoistMenuToBody: () => hoistMenuToBody(),
         setAnchorCorner: (corner: Corner) => foundation.setAnchorCorner(corner),
         setAnchorElement: (element: HTMLElement) =>
           (anchorElementRef.current = element),
-        setOpen: (open: boolean) => setOpen(open)
+        setOpen: (open: boolean) => setOpen(open),
+        getSurfaceElement: () => rootEl.ref
       };
     },
     foundation: ({ rootEl, getProps, emit }) => {
@@ -166,12 +174,10 @@ export const useMenuSurfaceFoundation = (
           className === 'mdc-menu-surface' ? true : rootEl.hasClass(className),
         hasAnchor: () => !!anchorElementRef.current,
         notifyClose: () => {
-          console.log('notifyClose');
           deregisterBodyClickListener();
           setOpen(false);
         },
         notifyOpen: () => {
-          console.log('notifyOpen');
           emit('onOpen', {});
           registerBodyClickListener();
         },
@@ -261,14 +267,13 @@ export const useMenuSurfaceFoundation = (
       );
       anchor && (anchorElementRef.current = anchor);
     }
-    return () => {
-      el && hoistedRef.current && unhoistMenuFromBody();
-    };
-  }, [rootEl.ref, unhoistMenuFromBody]);
+  }, [rootEl.ref]);
 
   // hoistToBody
   useEffect(() => {
-    props.hoistToBody ? hoistMenuToBody() : unhoistMenuFromBody();
+    if (props.hoistToBody !== undefined) {
+      props.hoistToBody ? hoistMenuToBody() : unhoistMenuFromBody();
+    }
   }, [props.hoistToBody, foundation, hoistMenuToBody, unhoistMenuFromBody]);
 
   // anchorCorner
@@ -307,6 +312,12 @@ export const useMenuSurfaceFoundation = (
   useEffect(() => {
     setOpen(!!props.open);
   }, [props.open]);
+
+  useEffect(() => {
+    return () => {
+      unhoistMenuFromBody();
+    };
+  }, []);
 
   return { ...elements };
 };

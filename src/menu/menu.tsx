@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 
 import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
-import { componentFactory, getDisplayName, classNames } from '@rmwc/base';
+import { getDisplayName, classNames, useClassNames } from '@rmwc/base';
 
 import {
   MenuSurface,
@@ -40,27 +40,26 @@ export interface MenuProps extends Omit<MenuSurfaceProps, 'apiRef'> {
 export interface MenuItemsProps extends ListProps {}
 
 /** A wrapper for menu items */
-export const MenuItems = componentFactory<MenuItemsProps>({
-  displayName: 'MenuItems',
-  tag: List,
-  classNames: ['mdc-list mdc-menu__items'],
-  defaultProps: {
-    role: 'menu'
-  }
+export const MenuItems = React.forwardRef(function MenuItems(
+  props: MenuItemsProps & RMWC.ComponentProps,
+  ref: React.Ref<any>
+) {
+  const className = useClassNames(props, ['mdc-list mdc-menu__items']);
+  return <List role="menu" {...props} className={className} ref={ref} />;
 });
+MenuItems.displayName = 'MenuItems';
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export interface MenuItemProps extends ListItemProps {}
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
-export const MenuItem = componentFactory<MenuItemProps>({
-  displayName: 'MenuItem',
-  tag: ListItem,
-  defaultProps: {
-    role: 'menuitem',
-    tabIndex: 0
-  }
+export const MenuItem = React.forwardRef(function MenuItem(
+  props: MenuItemProps & RMWC.ComponentProps,
+  ref: React.Ref<any>
+) {
+  return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
 });
+MenuItem.displayName = 'MenuItem';
 
 const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';

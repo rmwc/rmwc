@@ -1,20 +1,23 @@
 import { MenuProps } from './menu';
 import { useFoundation, closest } from '@rmwc/base';
 import { MDCMenuFoundation } from '@material/menu';
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useEffect, useState } from 'react';
 import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from './menu-surface';
 import { ListApi } from '@rmwc/list';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const menuSurfaceApi = useRef<MenuSurfaceApi>();
   const listApi = useRef<ListApi>();
+  const [, setIteration] = useState(0);
 
   const setListApi = (api: ListApi) => {
     listApi.current = api;
+    setIteration(val => val + 1);
   };
 
   const setMenuSurfaceApi = (api: MenuSurfaceApi) => {
     menuSurfaceApi.current = api;
+    setIteration(val => val + 1);
   };
 
   const items = useCallback(() => {
@@ -125,9 +128,13 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   rootEl.setProp('onClick', handleClick, true);
   rootEl.setProp('onOpen', handleOpen, true);
 
-  if (listApi.current && menuSurfaceApi.current && props.apiRef) {
-    props.apiRef({ ...listApi.current, ...menuSurfaceApi.current, items });
-  }
+  const canSetApi = listApi.current && menuSurfaceApi.current && props.apiRef;
+  useEffect(() => {
+    if (listApi.current && menuSurfaceApi.current && props.apiRef) {
+      props.apiRef({ ...listApi.current, ...menuSurfaceApi.current, items });
+    }
+    // eslint-disable-next-line
+  }, [canSetApi, items]);
 
   return { setListApi, setMenuSurfaceApi, ...elements };
 };

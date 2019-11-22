@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, classNames } from '@rmwc/base';
+import { classNames, Tag } from '@rmwc/base';
 
 /** A collapsible list component. */
 export interface CollapsibleListProps {
@@ -20,11 +20,6 @@ interface CollapsibleState {
   open: boolean;
   childrenStyle: React.CSSProperties;
 }
-
-const CollapsibleRoot = componentFactory<{}>({
-  displayName: 'CollapsibleRoot',
-  classNames: ['rmwc-collapsible-list']
-});
 
 const possiblyFocusElement = (el: Element | null) => {
   if (!el) return false;
@@ -221,12 +216,12 @@ export class CollapsibleList extends React.Component<
     const { open, childrenStyle } = this.state;
 
     return (
-      <CollapsibleRoot
+      <Tag
         {...rest}
         onFocus={this.handleFocus}
         ref={(el: HTMLDivElement) => (this.root = el)}
         className={classNames('rmwc-collapsible-list', {
-          ['rmwc-collapsible-list--open']: open
+          'rmwc-collapsible-list--open': open
         })}
       >
         <div className="rmwc-collapsible-list__handle">
@@ -244,7 +239,7 @@ export class CollapsibleList extends React.Component<
             {children}
           </div>
         </div>
-      </CollapsibleRoot>
+      </Tag>
     );
   }
 }

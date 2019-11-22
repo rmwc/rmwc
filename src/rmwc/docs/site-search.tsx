@@ -48,10 +48,10 @@ const searchComponents = (val: string) =>
     }));
 
 const searchGoogle = async (val: string, abortController: AbortController) => {
-  const { items = [] } = await fetch(
-    `https://www.googleapis.com/customsearch/v1/siterestrict?key=${
-      process.env.REACT_APP_CUSTOM_SEARCH_KEY
-    }&cx=${process.env.REACT_APP_CUSTOM_SEARCH_ID}&q=${val}`,
+  const {
+    items = []
+  } = await fetch(
+    `https://www.googleapis.com/customsearch/v1/siterestrict?key=${process.env.REACT_APP_CUSTOM_SEARCH_KEY}&cx=${process.env.REACT_APP_CUSTOM_SEARCH_ID}&q=${val}`,
     { signal: abortController.signal }
   ).then<{ items?: SiteSearchItemT[] }>(res => res.json());
 

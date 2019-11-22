@@ -8,9 +8,10 @@ import {
   debounce,
   toCamel,
   toDashCase,
-  FoundationComponent,
   closest
 } from './';
+import { FoundationElement } from './foundation-component';
+import { wait } from './utils/test-utils';
 
 jest.spyOn(console, 'warn');
 
@@ -18,96 +19,11 @@ describe('RMWC', () => {
   it('works', () => {});
 });
 
-describe('FoundationComponent', () => {
-  class MyComp extends FoundationComponent<
-    {},
-    {
-      onInteraction?: any;
-      value?: any;
-    }
-  > {
-    root = this.createElement('root');
-
-    sync(props: any, prevProps: any) {
-      this.syncProp(props.value, prevProps.value, () => {});
-    }
-
-    render() {
-      const { onInteraction, ...rest } = this.props;
-      return <div ref={this.root.setRef} {...this.root.props(rest)} />;
-    }
-  }
-
-  class MyComp2 extends FoundationComponent<
-    {},
-    {
-      onInteraction?: any;
-      value?: any;
-    }
-  > {
-    static shouldDebounce = false;
-    root = this.createElement('root');
-
-    sync(props: any, prevProps: any) {
-      super.sync(props, prevProps);
-      this.syncProp(props.value, prevProps.value, () => {});
-    }
-
-    render() {
-      const { onInteraction, ...rest } = this.props;
-      return <div ref={this.root.setRef} {...this.root.props(rest)} />;
-    }
-  }
-
-  it('mounts', () => {
-    mount(<MyComp />);
-  });
-
-  it('unmounts', () => {
-    const el = mount(<MyComp />);
-    el.unmount();
-  });
-
-  it('emits events', () => {
-    let interacted = false;
-
-    const el = mount(
-      <MyComp
-        onInteraction={(evt: RMWC.CustomEventT<any>) =>
-          (interacted = evt.detail)
-        }
-      />
-    );
-    const inst = el.instance() as MyComp;
-    inst.emit('onInteraction', { foo: 'val' });
-    expect(interacted).toEqual({ foo: 'val' });
-
-    // should not explode after it unmounts
-    el.unmount();
-    inst.emit('onInteraction', { foo: 'val' });
-  });
-
-  it('handle sync', () => {
-    const el = mount(<MyComp />);
-    el.setProps({ value: 1 });
-    el.setProps({ value: 2 });
-    el.setProps({ value: undefined });
-  });
-
-  it('handles getDefaultFoundation', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
-    expect(inst.getDefaultFoundation()).toBeTruthy();
-  });
-
-  it('handles debounce', () => {
-    const el = mount(<MyComp />);
-    const el2 = mount(<MyComp2 />);
-  });
-
+describe('FoundationElement', () => {
   it('FoundationElement: handles classNames', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement(() => {})
+    };
 
     inst.root.addClass('foo');
     inst.root.addClass('foo');
@@ -121,15 +37,19 @@ describe('FoundationComponent', () => {
   });
 
   it('FoundationElement: handles ref', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement(() => {})
+    };
+
+    mount(<div ref={inst.root.setRef} />);
 
     expect(inst.root.ref instanceof HTMLDivElement).toBe(true);
   });
 
   it('FoundationElement: handles addEventListener / removeEventListener', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement(() => {})
+    };
 
     // double up on the adds to check that it doesnt add a second time
     const changeHandler = () => {};
@@ -147,8 +67,9 @@ describe('FoundationComponent', () => {
   });
 
   it('FoundationElement: handles setStyle', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement(() => {})
+    };
 
     inst.root.setStyle('color', 'red');
     inst.root.setStyle('color', 'red');
@@ -167,8 +88,9 @@ describe('FoundationComponent', () => {
   });
 
   it('FoundationElement: handles prop setters / getters', () => {
-    const el = mount(<MyComp />);
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement<any, any>(() => {})
+    };
 
     inst.root.setProp('title', 'red');
     inst.root.setProp('title', 'red');
@@ -179,31 +101,33 @@ describe('FoundationComponent', () => {
     expect(inst.root.getProp('title')).toBe(undefined);
   });
 
-  it('FoundationElement: handles prop merging', done => {
+  it('FoundationElement: handles prop merging', async done => {
     let blueChangeCalled = false;
     let redChangeCalled = false;
     const el = mount(
-      <MyComp
+      <div
         className="blue"
         style={{ background: 'blue' }}
         onChange={() => (blueChangeCalled = true)}
       />
     );
-    const inst = el.instance() as MyComp;
+    const inst = {
+      root: new FoundationElement<any, any>(() => {})
+    };
 
     inst.root.addClass('red');
     inst.root.setStyle('color', 'red');
     inst.root.addEventListener('change', () => (redChangeCalled = true));
     el.update();
-    setTimeout(() => {
-      el.simulate('change');
-      const mergedProps = inst.root.props(el.props());
-      expect(mergedProps.className).toBe('blue red');
-      expect(mergedProps.style).toEqual({ color: 'red', background: 'blue' });
-      expect(blueChangeCalled).toBe(true);
-      expect(redChangeCalled).toBe(true);
-      done();
-    }, 100);
+
+    await wait(100);
+    const mergedProps = inst.root.props(el.props());
+    mergedProps.onChange();
+    expect(mergedProps.className).toBe('blue red');
+    expect(mergedProps.style).toEqual({ color: 'red', background: 'blue' });
+    expect(blueChangeCalled).toBe(true);
+    expect(redChangeCalled).toBe(true);
+    done();
   });
 });
 

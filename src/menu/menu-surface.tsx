@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { Corner } from '@material/menu-surface';
-import { componentFactory, useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag } from '@rmwc/base';
 import { useMenuSurfaceFoundation } from './menu-surface-foundation';
 
 export type AnchorT =
@@ -22,6 +22,7 @@ export interface MenuSurfaceApi {
   setAnchorCorner: (corner: Corner) => void;
   setAnchorElement: (element: HTMLElement) => void;
   setOpen: (open: boolean) => void;
+  getSurfaceElement: () => HTMLElement | null;
 }
 
 export interface MenuSurfaceProps {
@@ -86,7 +87,8 @@ MenuSurface.displayName = 'MenuSurface';
  ****************************************************************/
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
-export const MenuSurfaceAnchor = componentFactory({
-  displayName: 'MenuSurfaceAnchor',
-  classNames: ['mdc-menu-surface--anchor']
-});
+export function MenuSurfaceAnchor(props: RMWC.ComponentProps) {
+  const className = useClassNames(props, ['mdc-menu-surface--anchor']);
+  return <Tag {...props} className={className} />;
+}
+MenuSurfaceAnchor.displayName = 'MenuSurfaceAnchor';

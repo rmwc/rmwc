@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Select, SelectBase, SelectIcon } from './';
-import { wait } from '@rmwc/base/utils/test-utils';
+import { Select } from './';
 
 describe('Select', () => {
   it('renders', () => {
@@ -121,79 +120,16 @@ describe('Select', () => {
       />
     );
 
-    expect(el.find('.mdc-select').hasClass('my-custom-classname')).toEqual(
-      true
-    );
+    expect(
+      el
+        .find('.mdc-select')
+        .first()
+        .hasClass('my-custom-classname')
+    ).toEqual(true);
   });
 
   it('can autofocus', () => {
     const el = mount(<Select options={['one', 'two', 'three']} autoFocus />);
     expect(document.activeElement).toBe(el.find('select').getDOMNode());
   });
-
-  it('adapter checks', () => {
-    const standard = mount(
-      <SelectBase options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }} />
-    );
-
-    const enhanced = mount(
-      <SelectBase
-        enhanced
-        options={{ 1: 'Cookies', 2: 'Pizza', 3: 'Icecream' }}
-      />
-    );
-
-    const inst = standard.instance() as any;
-    const a = inst.foundation.adapter_;
-    const enhancedA = (enhanced.instance() as any).foundation.adapter_;
-
-    [a, enhancedA].forEach(a => {
-      a.getValue();
-      a.setValue();
-      a.openMenu();
-      a.closeMenu();
-      a.isMenuOpen();
-      a.setSelectedIndex(0);
-      a.setDisabled(false);
-      a.setValid(true);
-
-      // having an issue polyiflling check validity
-      //a.checkValidity();
-    });
-
-    a.addClass('test');
-    a.hasClass('test');
-    a.removeClass('test');
-    a.isRtl();
-    a.setRippleCenter(0);
-    a.activateBottomLine();
-    a.deactivateBottomLine();
-    a.notifyChange();
-
-    a.hasOutline();
-    a.notchOutline(0, false);
-    a.closeOutline();
-
-    a.floatLabel(false);
-    a.getLabelWidth();
-  });
-});
-
-describe('Select Icon', () => {
-  it('renders', () => {
-    mount(<SelectIcon icon="favorite" />);
-  });
-
-  // it('adapter checks', () => {
-  //   const el = mount(<SelectIcon icon="favorite" />);
-  //   const a = el.instance().foundation.adapter_;
-
-  //   a.getAttr('test');
-  //   a.setAttr('test', 'test');
-  //   a.removeAttr('test');
-  //   a.setContent('test');
-  //   a.registerInteractionHandler('click', () => {});
-  //   a.deregisterInteractionHandler('click', () => {});
-  //   a.notifyIconAction();
-  // });
 });
