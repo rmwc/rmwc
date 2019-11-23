@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/menu",
-  "version": "6.0.0-alpha.2",
+  "version": "6.0.0-alpha.3",
   "description": "RMWC Menu component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,8 +34,8 @@
   "dependencies": {
     "@material/menu": "^3.1.0",
     "@material/menu-surface": "^3.1.0",
-    "@rmwc/base": "^6.0.0-alpha.2",
-    "@rmwc/list": "^6.0.0-alpha.2",
-    "@rmwc/types": "^6.0.0-alpha.2"
+    "@rmwc/base": "^6.0.0-alpha.3",
+    "@rmwc/list": "^6.0.0-alpha.3",
+    "@rmwc/types": "^6.0.0-alpha.3"
   }
 }
