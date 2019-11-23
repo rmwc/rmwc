@@ -1,3 +1,10 @@
+#### 6.0.0-alpha.1 (2019-11-23)
+
+##### Refactors
+
+* **Select:**  Convert to new foundation pattern (f8184bd1)
+* **TextField:**  Convert to new foundation pattern (10c1982e)
+
 #### 6.0.0-alpha.0 (2019-11-22)
 
 ##### Refactors
