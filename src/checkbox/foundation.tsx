@@ -15,7 +15,7 @@ export const useCheckboxFoundation = (
       rootEl: true,
       checkboxEl: true
     },
-    foundation: ({ rootEl, checkboxEl }) => {
+    foundation: ({ rootEl, checkboxEl, getProps }) => {
       return new MDCCheckboxFoundation({
         addClass: (className: string) => rootEl.addClass(className),
         removeClass: (className: string) => rootEl.removeClass(className),
@@ -23,10 +23,10 @@ export const useCheckboxFoundation = (
           checkboxEl.setProp(attr as any, value),
         removeNativeControlAttr: (attr: string) =>
           checkboxEl.removeProp(attr as any),
-        isIndeterminate: () => !!props.indeterminate,
+        isIndeterminate: () => !!getProps().indeterminate,
         isChecked: () =>
-          props.checked !== undefined
-            ? !!props.checked
+          getProps().checked !== undefined
+            ? !!getProps().checked
             : !!(checkboxEl.ref as HTMLInputElement)?.checked,
         hasNativeControl: () => !!checkboxEl.ref,
         setNativeControlDisabled: (disabled: boolean) =>
@@ -41,10 +41,12 @@ export const useCheckboxFoundation = (
 
   // Handles syncing of indeterminate state
   const doSync = useCallback(() => {
-    foundation.handleChange();
     if (checkboxEl.ref) {
       (checkboxEl.ref as HTMLInputElement).indeterminate = !!props.indeterminate;
     }
+    window.requestAnimationFrame(() => {
+      foundation.handleChange();
+    });
   }, [props.indeterminate, foundation, checkboxEl.ref]);
 
   useEffect(() => {

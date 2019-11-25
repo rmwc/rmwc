@@ -56,7 +56,11 @@ export const Checkbox = React.forwardRef<
 
   const checkbox = (
     <CheckboxRoot
-      {...rootEl.props(toggleRootProps)}
+      {...rootEl.props({
+        checked: rest.checked,
+        indeterminate,
+        ...toggleRootProps
+      })}
       ref={mergeRefs(rootEl.setRef, ref)}
     >
       <input
@@ -69,6 +73,7 @@ export const Checkbox = React.forwardRef<
         id={id}
       />
       <CheckboxBackground />
+      <CheckboxRipple />
     </CheckboxRoot>
   );
 
@@ -86,11 +91,12 @@ const CheckboxRoot = withRipple({
 })(
   React.forwardRef<any, CheckboxProps & RMWC.ComponentProps>(
     function CheckboxRoot(props, ref) {
-      const { disabled, ...rest } = props;
+      const { disabled, checked, indeterminate, ...rest } = props;
       const className = useClassNames(props, [
         'mdc-checkbox',
         {
-          'mdc-checkbox--disabled': disabled
+          'mdc-checkbox--disabled': disabled,
+          'mdc-checkbox--selected': checked || indeterminate
         }
       ]);
       return <Tag {...rest} className={className} />;
@@ -98,6 +104,10 @@ const CheckboxRoot = withRipple({
   )
 );
 CheckboxRoot.displayName = 'CheckboxRoot';
+
+const CheckboxRipple = React.memo(function CheckboxRipple() {
+  return <div className="mdc-checkbox__ripple" />;
+});
 
 const CheckboxBackground = React.memo(() => {
   return (
