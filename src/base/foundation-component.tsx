@@ -214,7 +214,9 @@ const emitFactory = (props: { [key: string]: any }) => (
 };
 
 export const useFoundation = <
-  Foundation extends MDCFoundation,
+  // TODO, re-enable this
+  Foundation extends any,
+  //Foundation extends MDCFoundation,
   Elements extends { [key: string]: true },
   Props extends { [key: string]: any },
   Api extends (
@@ -252,7 +254,9 @@ export const useFoundation = <
   const elements = useMemo(
     () =>
       Object.keys(elementsInput).reduce<
-        { [key in keyof Elements]: FoundationElement<Props, HTMLElement> }
+        {
+          [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+        }
       >((acc, key: keyof Elements) => {
         acc[key] = new FoundationElement<Props, HTMLElement>(() => {
           setIteration(val => val + 1);
