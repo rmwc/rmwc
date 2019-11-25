@@ -1,3 +1,15 @@
+#### 6.0.0-alpha.4 (2019-11-25)
+
+##### Chores
+
+* **Checkbox:**  Restructure for new ripple, fix animation issues (67812ead)
+* **Fab:**  Restructure for new ripple (9f3da06e)
+* **Button:**  Adding button ripple element (3fbaa792)
+
+##### Bug Fixes
+
+* **Base:**  Importing tslib to reduce bundle size (238c416d)
+
 #### 6.0.0-alpha.3 (2019-11-23)
 
 #### 6.0.0-alpha.2 (2019-11-23)
