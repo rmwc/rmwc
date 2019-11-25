@@ -82,6 +82,7 @@ export const Button = withRipple({
 
     return (
       <Tag tag="button" {...rest} ref={ref} className={className}>
+        <ButtonRipple />
         {!!icon && <ButtonIcon icon={icon} />}
         <span className="mdc-button__label">
           {label}
@@ -96,8 +97,12 @@ export const Button = withRipple({
 Button.displayName = 'Button';
 
 /*********************************************************************
- * ButtonIcon
+ * Bits
  *********************************************************************/
+
+const ButtonRipple = React.memo(function ButtonRipple() {
+  return <div className="mdc-button__ripple"></div>;
+});
 
 interface ButtonIconProps extends IconProps {}
 
