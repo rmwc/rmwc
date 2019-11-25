@@ -17,6 +17,7 @@ export const useLinearProgressFoundation = (props: LinearProgressProps) => {
             ) || null
           );
         },
+        forceLayout: () => rootEl.ref?.offsetWidth,
         getBuffer: () =>
           rootEl.ref?.querySelector(
             MDCLinearProgressFoundation.strings.BUFFER_SELECTOR
