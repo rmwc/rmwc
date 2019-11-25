@@ -11,12 +11,14 @@ export const useSelectIconFoundation = (
   const { foundation, ...elements } = useFoundation({
     props,
     elements: { rootEl: true },
+    // @ts-ignore TODO, fix type error
     api: ({
       foundation
     }: {
       foundation: MDCTextFieldIconFoundation;
     }): SelectIconApi => {
       return {
+        // @ts-ignore TODO, fix type error
         getFoundation: () => foundation
       };
     },
