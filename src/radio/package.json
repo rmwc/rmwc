@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/radio": "^3.1.0",
+    "@material/radio": "^4.0.0",
     "@rmwc/base": "^6.0.0-alpha.6",
     "@rmwc/formfield": "^6.0.0-alpha.6",
     "@rmwc/ripple": "^6.0.0-alpha.6",

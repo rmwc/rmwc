@@ -36,6 +36,7 @@ export const Radio = React.forwardRef<any, RadioProps & RMWC.ComponentProps>(
           ref={inputRef}
         />
         <RadioBackground />
+        <RadioRipple />
       </RadioRoot>
     );
 
@@ -47,6 +48,10 @@ Radio.displayName = 'Radio';
 /*********************************************************************
  * Bits
  *********************************************************************/
+
+const RadioRipple = React.memo(function RadioRipple() {
+  return <div className="mdc-radio__ripple" />;
+});
 
 const RadioRoot = withRipple({
   surface: false,
