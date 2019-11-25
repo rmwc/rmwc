@@ -20,12 +20,8 @@ export interface FabProps extends RMWC.WithRippleProps {
   exited?: boolean;
 }
 
-const FabIcon = React.memo(function FabIcon(props: IconProps) {
-  return <Icon className="mdc-fab__icon" {...props} />;
-});
-
 /** A floating action button component */
-export const Fab = withRipple()(
+export const Fab = withRipple({ surface: false })(
   React.forwardRef<any, FabProps & RMWC.ComponentProps>(function Fab(
     props,
     ref
@@ -57,6 +53,7 @@ export const Fab = withRipple()(
 
     return (
       <Tag tag="button" label={label} {...rest} ref={ref} className={className}>
+        <FabRipple />
         {!!icon && <FabIcon icon={icon} />}
         {!!label && <div className="mdc-fab__label">{label}</div>}
         {children}
@@ -67,3 +64,15 @@ export const Fab = withRipple()(
 );
 
 Fab.displayName = 'Fab';
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+const FabRipple = React.memo(function FabRipple() {
+  return <div className="mdc-fab__ripple"></div>;
+});
+
+const FabIcon = React.memo(function FabIcon(props: IconProps) {
+  return <Icon className="mdc-fab__icon" {...props} />;
+});
