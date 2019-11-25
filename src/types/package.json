@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/jamesmfriedman/rmwc/issues"
   },
-  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/types#readme"
+  "homepage": "https://github.com/jamesmfriedman/rmwc/tree/master/src/types#readme",
+  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

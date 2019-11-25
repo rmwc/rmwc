@@ -35,5 +35,6 @@
     "@rmwc/base": "^6.0.0-alpha.5",
     "@rmwc/icon": "^6.0.0-alpha.5",
     "@rmwc/types": "^6.0.0-alpha.5"
-  }
+  },
+  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

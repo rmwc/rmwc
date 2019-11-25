@@ -80,5 +80,6 @@
     "@rmwc/types": "^6.0.0-alpha.5",
     "@rmwc/typography": "^6.0.0-alpha.5",
     "material-components-web": "^3.1.1"
-  }
+  },
+  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
