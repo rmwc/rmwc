@@ -31,6 +31,10 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           listElements(rootEl.ref).indexOf(
             document.activeElement as HTMLLIElement
           ),
+        listItemAtIndexHasClass: (index: number, className: string) => {
+          const element = listElements(rootEl.ref)[index];
+          return !!element?.classList.contains(className);
+        },
         setAttributeForElementIndex: (
           index: number,
           attr: string,
