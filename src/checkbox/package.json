@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/checkbox",
-  "version": "6.0.0-alpha.3",
+  "version": "6.0.0-alpha.4",
   "description": "RMWC Checkbox component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,10 +34,10 @@
   "dependencies": {
     "@material/checkbox": "^4.0.0",
     "@material/form-field": "^4.0.0",
-    "@rmwc/base": "^6.0.0-alpha.3",
-    "@rmwc/formfield": "^6.0.0-alpha.3",
-    "@rmwc/ripple": "^6.0.0-alpha.3",
-    "@rmwc/toggleable": "^6.0.0-alpha.3",
+    "@rmwc/base": "^6.0.0-alpha.4",
+    "@rmwc/formfield": "^6.0.0-alpha.4",
+    "@rmwc/ripple": "^6.0.0-alpha.4",
+    "@rmwc/toggleable": "^6.0.0-alpha.4",
     "@rmwc/types": "^6.0.0-alpha.3"
   }
 }

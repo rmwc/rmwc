@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/select",
-  "version": "6.0.0-alpha.3",
+  "version": "6.0.0-alpha.4",
   "description": "RMWC Select component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,14 +33,14 @@
   },
   "dependencies": {
     "@material/select": "^3.1.0",
-    "@rmwc/base": "^6.0.0-alpha.3",
-    "@rmwc/floating-label": "^6.0.0-alpha.3",
-    "@rmwc/icon": "^6.0.0-alpha.3",
-    "@rmwc/line-ripple": "^6.0.0-alpha.3",
-    "@rmwc/list": "^6.0.0-alpha.3",
-    "@rmwc/menu": "^6.0.0-alpha.3",
-    "@rmwc/notched-outline": "^6.0.0-alpha.3",
-    "@rmwc/ripple": "^6.0.0-alpha.3",
+    "@rmwc/base": "^6.0.0-alpha.4",
+    "@rmwc/floating-label": "^6.0.0-alpha.4",
+    "@rmwc/icon": "^6.0.0-alpha.4",
+    "@rmwc/line-ripple": "^6.0.0-alpha.4",
+    "@rmwc/list": "^6.0.0-alpha.4",
+    "@rmwc/menu": "^6.0.0-alpha.4",
+    "@rmwc/notched-outline": "^6.0.0-alpha.4",
+    "@rmwc/ripple": "^6.0.0-alpha.4",
     "@rmwc/types": "^6.0.0-alpha.3"
   }
 }
