@@ -331,6 +331,11 @@ ul li {
   color: var(--mdc-theme-primary);
 }
 
+/* page badges */
+#page-badges .live-preview .rmwc-badge-anchor {
+  margin-right: 1.5rem;
+}
+
 /* page cards */
 #page-cards .live-preview {
   justify-content: center;
@@ -678,6 +683,10 @@ ul li {
   width: 100%;
   margin: 0;
   overflow-y: auto;
+}
+
+.live-example-center .live-preview {
+  justify-content: center;
 }
 
 .live-example-code-only .live-error {

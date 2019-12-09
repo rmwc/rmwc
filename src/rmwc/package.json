@@ -42,6 +42,7 @@
   "dependencies": {
     "@rmwc/avatar": "^6.0.0-alpha.6",
     "@rmwc/base": "^6.0.0-alpha.6",
+    "@rmwc/badge": "^6.0.0-alpha.6",
     "@rmwc/button": "^6.0.0-alpha.6",
     "@rmwc/card": "^6.0.0-alpha.6",
     "@rmwc/checkbox": "^6.0.0-alpha.6",

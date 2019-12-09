@@ -107,7 +107,10 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
 export interface DocPropsI {
   src: any;
-  components: Array<React.ComponentType<any>>;
+  components: Array<
+    | React.ComponentType<any>
+    | { displayName: string; component: React.ComponentType<any> }
+  >;
 }
 
 export class DocProps extends React.Component<DocPropsI> {
@@ -300,6 +303,7 @@ export function DocsExample({
   label?: string;
   codeOnly?: boolean;
   iframe?: boolean;
+  center?: boolean;
 }) {
   const { examples } = useContext(DocsContext);
   const [code] = useState(examples[index]);
@@ -312,13 +316,15 @@ function DocsExampleBase({
   codeOnly,
   iframe,
   label,
-  children
+  children,
+  center
 }: {
   code: string;
   codeOnly?: boolean;
   iframe?: boolean;
   label?: string;
   children?: React.ReactNode;
+  center?: boolean;
 }) {
   return (
     <LiveProvider
@@ -328,7 +334,9 @@ function DocsExampleBase({
       disabled={!!codeOnly}
     >
       <div
-        className={`live-example ${codeOnly ? 'live-example-code-only' : ''}`}
+        className={`live-example ${codeOnly ? 'live-example-code-only' : ''} ${
+          center ? 'live-example-center' : ''
+        }`}
       >
         {!codeOnly && (
           <div className="live-preview">

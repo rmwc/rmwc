@@ -1,0 +1,4 @@
+**/*.spec.*
+**/*.story.*
+node_modules/
+package-lock.json

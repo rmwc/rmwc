@@ -10,6 +10,7 @@ import LibraryIntegrationsMD from './README-LIBRARY-INTEGRATIONS.md';
 import TypesMD from './README-TYPES.md';
 
 import { galleryExample as avatarExample } from '@rmwc/avatar/readme';
+import { galleryExample as badgeExample } from '@rmwc/badge/readme';
 import { galleryExample as buttonExample } from '@rmwc/button/readme';
 import { galleryExample as fabExample } from '@rmwc/fab/readme';
 import { galleryExample as iconButtonExample } from '@rmwc/icon-button/readme';
@@ -53,6 +54,7 @@ const TypeDocs = () => <DocsMarkdown fileSrc={TypesMD} />;
 const ResourcesDocs = React.lazy(() => import('./resources'));
 
 const AvatarDocs = React.lazy(() => import('@rmwc/avatar/readme'));
+const BadgeDocs = React.lazy(() => import('@rmwc/badge/readme'));
 const ButtonDocs = React.lazy(() => import('@rmwc/button/readme'));
 const FabDocs = React.lazy(() => import('@rmwc/fab/readme'));
 const IconButtonDocs = React.lazy(() => import('@rmwc/icon-button/readme'));
@@ -175,6 +177,12 @@ export const menuContent: MenuItemT[] = [
     url: `/avatars`,
     gallery: avatarExample,
     component: Loadable(AvatarDocs)
+  },
+  {
+    label: 'Badges',
+    url: `/badges`,
+    gallery: badgeExample,
+    component: Loadable(BadgeDocs)
   },
   {
     label: 'Buttons',

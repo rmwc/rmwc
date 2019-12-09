@@ -1,0 +1,123 @@
+{
+  "npm": {},
+  "typescript": {
+    "BadgeProps": {
+      "documentation": {
+        "contents": [
+          "<p>A Badge component for indicating alerts or counts.</p>\n"
+        ],
+        "contentsRaw": "A Badge component for indicating alerts or counts.",
+        "metadata": {}
+      },
+      "fileName": "src/badge/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "BadgeProps",
+      "methods": [],
+      "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>How to align the badge.</p>\n"
+            ],
+            "contentsRaw": "How to align the badge.",
+            "metadata": {}
+          },
+          "fileName": "src/badge/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "align",
+          "type": "\"end\" | \"start\" | \"inline\""
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A value to inset the badge alignment by, useful for positioning the badge on different shaped components.</p>\n"
+            ],
+            "contentsRaw": "A value to inset the badge alignment by, useful for positioning the badge on different shaped components.",
+            "metadata": {}
+          },
+          "fileName": "src/badge/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "inset",
+          "type": "string | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>A label or count for the badge.</p>\n"
+            ],
+            "contentsRaw": "A label or count for the badge.",
+            "metadata": {}
+          },
+          "fileName": "src/badge/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "label",
+          "type": "React.ReactNode | number"
+        }
+      ]
+    },
+    "BadgeAnchorProps": {
+      "documentation": {
+        "contents": [
+          "<p>An anchor component for badges.</p>\n"
+        ],
+        "contentsRaw": "An anchor component for badges.",
+        "metadata": {}
+      },
+      "fileName": "src/badge/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "BadgeAnchorProps",
+      "methods": [],
+      "properties": []
+    }
+  }
+}

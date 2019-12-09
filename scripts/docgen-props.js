@@ -1,8 +1,13 @@
 const { exec } = require('child_process');
 const getChangedPackages = require('./get-changed-packages');
+const getAllPackages = require('./get-all-packages');
+
+const getPackages =
+  //getAllPackages
+  getChangedPackages;
 
 try {
-  getChangedPackages()
+  getPackages()
     .filter(name => !['base', 'rmwc', '@types'].includes(name))
     .forEach(d => {
       console.log(`Building Docs For: ${d}`);

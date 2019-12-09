@@ -2,6 +2,7 @@ export { version } from '@rmwc/base/package.json';
 
 export * from '@rmwc/avatar';
 export * from '@rmwc/base';
+export * from '@rmwc/badge';
 export * from '@rmwc/button';
 export * from '@rmwc/card';
 export * from '@rmwc/circular-progress';
