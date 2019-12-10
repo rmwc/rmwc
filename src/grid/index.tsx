@@ -20,7 +20,7 @@ export const Grid = React.forwardRef<any, GridProps & RMWC.ComponentProps>(
     const className = useClassNames(props, [
       'mdc-layout-grid',
       {
-        [`mdc-layout-grid__cell--align-${align || ''}`]:
+        [`mdc-layout-grid--align-${align || ''}`]:
           props.align !== undefined,
         'mdc-layout-grid--fixed-column-width': fixedColumnWidth
       }
