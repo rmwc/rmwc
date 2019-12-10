@@ -1581,7 +1581,7 @@
       },
       "kind": "class",
       "name": "Menu",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L65",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L66",
       "extends": [
         "FoundationComponent<MDCMenuFoundation, MenuProps>"
       ],
@@ -2280,13 +2280,13 @@
           },
           "kind": "method",
           "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L97",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L98",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L97",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L98",
               "parameters": [],
               "returnType": "MDCMenuFoundation",
               "type": "() => MDCMenuFoundation"
@@ -2371,13 +2371,13 @@
           },
           "kind": "method",
           "name": "handleClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L143",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "handleClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L142",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L143",
               "parameters": [
                 {
                   "flags": {
@@ -2414,13 +2414,13 @@
           },
           "kind": "method",
           "name": "handleKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L149",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L150",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "handleKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L149",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L150",
               "parameters": [
                 {
                   "flags": {
@@ -2457,13 +2457,13 @@
           },
           "kind": "method",
           "name": "handleOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L166",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L167",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "handleOpen",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L166",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L167",
               "parameters": [
                 {
                   "flags": {
@@ -2500,13 +2500,13 @@
           },
           "kind": "method",
           "name": "hoistMenuToBody",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L86",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "hoistMenuToBody",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L85",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L86",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -2527,13 +2527,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L179",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L180",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L179",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L180",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -2554,13 +2554,13 @@
           },
           "kind": "method",
           "name": "setAnchorCorner",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L90",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "setAnchorCorner",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L89",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L90",
               "parameters": [
                 {
                   "flags": {
@@ -2597,13 +2597,13 @@
           },
           "kind": "method",
           "name": "setAnchorElement",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L93",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L94",
           "signatures": [
             {
               "fileName": "src/menu/menu.tsx",
               "kind": "signature",
               "name": "setAnchorElement",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L93",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L94",
               "parameters": [
                 {
                   "flags": {
@@ -2876,7 +2876,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L66",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L67",
           "defaultValue": "\"Menu\"",
           "type": "string"
         },
@@ -2946,7 +2946,7 @@
           },
           "kind": "property",
           "name": "list",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L72",
           "defaultValue": " null",
           "type": "List | null"
         },
@@ -2964,7 +2964,7 @@
           },
           "kind": "property",
           "name": "menuSurface",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L72",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L73",
           "defaultValue": " null",
           "type": "MenuSurface | null"
         }
@@ -2983,13 +2983,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L72",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L73",
         "signatures": [
           {
             "fileName": "src/menu/menu.tsx",
             "kind": "signature",
             "name": "new Menu",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L72",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L73",
             "parameters": [
               {
                 "flags": {
@@ -3819,7 +3819,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L222",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L223",
       "extends": [
         "MenuProps"
       ],
@@ -3871,7 +3871,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L228",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L229",
           "type": "React.ReactNode"
         },
         {
@@ -3945,7 +3945,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L224",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L225",
           "type": "ReactElement<any>"
         },
         {
@@ -4094,7 +4094,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L226",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L227",
           "type": "Object"
         }
       ]
@@ -4120,7 +4120,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L232",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L233",
       "extends": [
         "MenuSurfaceProps"
       ],
@@ -4172,7 +4172,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L238",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L239",
           "type": "React.ReactNode"
         },
         {
@@ -4221,7 +4221,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L234",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L235",
           "type": "ReactElement<any>"
         },
         {
@@ -4345,7 +4345,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L236",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L237",
           "type": "Object"
         }
       ]
@@ -4364,7 +4364,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuState",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L241",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L242",
       "methods": [],
       "properties": [
         {
@@ -4381,7 +4381,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L242",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L243",
           "type": "boolean"
         }
       ]

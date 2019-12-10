@@ -60,7 +60,8 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 <>
   <SimpleTopAppBar
     title="test"
-    navigationIcon={{ onClick: () => console.log('Navigate') }}
+    navigationIcon
+    onNav={() => console.log('Navigate')}
     actionItems={[
       {
         icon: 'file_download',
@@ -183,7 +184,7 @@ A navigation icon for the top app bar. This is an instance of the Icon component
 
 
 ## TopAppBarActionItem
-Action items for the top app bar. This is an instance of the Icon component.
+Action items for the top app bar. This is an instance of the IconButton component.
 
 ### Props
 
