@@ -17,7 +17,7 @@ const GridRoot = componentFactory<GridProps>({
   classNames: (props: GridProps) => [
     'mdc-layout-grid',
     {
-      [`mdc-layout-grid__cell--align-${props.align || ''}`]:
+      [`mdc-layout-grid--align-${props.align || ''}`]:
         props.align !== undefined,
       'mdc-layout-grid--fixed-column-width': props.fixedColumnWidth
     }
