@@ -160,6 +160,7 @@ class TopAppBarBase extends FoundationComponent<
   navIcon: HTMLElement | null = null;
   scrollTarget: EventTarget | null = null;
   handleTargetScroll!: SpecificEventListener<'scroll'>;
+  handleNavigationClick!: EventListener;
 
   get window() {
     return this.root.ref &&
@@ -184,6 +185,20 @@ class TopAppBarBase extends FoundationComponent<
       this.root.ref.querySelector(
         MDCTopAppBarFoundation.strings.NAVIGATION_ICON_SELECTOR
       );
+
+    this.handleNavigationClick = this.foundation.handleNavigationClick.bind(
+      this.foundation
+    );
+
+    this.navIcon &&
+      this.navIcon.addEventListener('click', this.handleNavigationClick);
+  }
+
+  componentWillUnmount() {
+    this.navIcon &&
+      this.navIcon.removeEventListener('click', this.handleNavigationClick);
+
+    super.componentWillUnmount();
   }
 
   getDefaultFoundation() {
@@ -195,24 +210,8 @@ class TopAppBarBase extends FoundationComponent<
         this.root.ref && this.root.ref.style.setProperty(property, value),
       getTopAppBarHeight: () =>
         this.root.ref ? this.root.ref.clientHeight : 0,
-      registerNavigationIconInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => {
-        if (this.navIcon) {
-          this.navIcon.addEventListener(evtType, handler);
-        }
-      },
-      deregisterNavigationIconInteractionHandler: (
-        evtType: string,
-        handler: (evt: Event) => void
-      ) => {
-        if (this.navIcon) {
-          this.navIcon.removeEventListener(evtType, handler);
-        }
-      },
       notifyNavigationIconClicked: () => {
-        this.emit(MDCTopAppBarFoundation.strings.NAVIGATION_EVENT, {});
+        this.emit('onNav', {});
       },
       registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
         this.scrollTarget &&
@@ -260,8 +259,10 @@ class TopAppBarBase extends FoundationComponent<
   setScrollTarget(target: EventTarget) {
     // Remove scroll handler from the previous scroll target
     this.scrollTarget &&
-      this.scrollTarget.removeEventListener('scroll', this
-        .handleTargetScroll as EventListener);
+      this.scrollTarget.removeEventListener(
+        'scroll',
+        this.handleTargetScroll as EventListener
+      );
 
     this.scrollTarget = target;
 
@@ -269,8 +270,10 @@ class TopAppBarBase extends FoundationComponent<
     this.handleTargetScroll = this.foundation.handleTargetScroll.bind(
       this.foundation
     );
-    this.scrollTarget.addEventListener('scroll', this
-      .handleTargetScroll as EventListener);
+    this.scrollTarget.addEventListener(
+      'scroll',
+      this.handleTargetScroll as EventListener
+    );
   }
 
   sync(props: TopAppBarProps) {
