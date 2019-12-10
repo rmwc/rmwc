@@ -665,6 +665,21 @@ function Bug486() {
   );
 }
 
+class Bug533 extends React.Component<any> {
+  render() {
+    return (
+      <React.Fragment>
+        <Select
+          label="Optional"
+          options={['Cookies', 'Pizza', 'Icecream']}
+          placeholder="Select one..."
+          value={this.props.value}
+        />
+      </React.Fragment>
+    );
+  }
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -739,4 +754,12 @@ storiesOf('Bugs', module)
   .add('#460', () => <Bug460 />)
   .add('#485', () => <Bug485 />)
   .add('#358', () => <Bug358 />)
-  .add('#486', () => <Bug486 />);
+  .add('#486', () => <Bug486 />)
+  .add('#533', () => {
+    return (
+      <>
+        <Bug533 />
+        <Bug533 value="Cookies" />
+      </>
+    );
+  });
