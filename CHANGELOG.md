@@ -1,3 +1,15 @@
+#### 5.7.2 (2019-12-10)
+
+##### Bug Fixes
+
+* **TopAppBar:**
+  *  Corrects issue with persisted events around Navigation and Action icons #536 (3f473180)
+  *  Implements broken onNav prop (1f17d0d0)
+* **Grid:**  Fix incorrect className for grid align property #526 (302ea95d)
+* **FormField:**  Correct broken link in doc #529 (41409aa7)
+* **Slider:**  Sync min/max props before value to avoid warnings. (34d36798)
+* **Menu:**  fixed "isMenuItems" check to not break on Symbol and string element types. (d707c3d1)
+
 #### 5.7.1 (2019-09-13)
 
 ##### New Features
