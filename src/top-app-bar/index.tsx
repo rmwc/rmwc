@@ -83,31 +83,23 @@ export const TopAppBarSection = componentFactory<TopAppBarSectionProps>({
 export interface TopAppBarNavigationIconProps extends IconButtonProps {}
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export const TopAppBarNavigationIcon = withRipple({
-  unbounded: true,
-  surface: false
-})(
-  componentFactory<TopAppBarNavigationIconProps>({
-    displayName: 'TopAppBarNavigationIcon',
-    classNames: ['mdc-top-app-bar__navigation-icon'],
-    tag: IconButton
-  })
-);
+export const TopAppBarNavigationIcon = componentFactory<
+  TopAppBarNavigationIconProps
+>({
+  displayName: 'TopAppBarNavigationIcon',
+  classNames: ['mdc-top-app-bar__navigation-icon'],
+  tag: IconButton
+});
 
-/** Action items for the top app bar. This is an instance of the Icon component.*/
+/** Action items for the top app bar. This is an instance of the IconButton component.*/
 export interface TopAppBarActionItemProps extends IconButtonProps {}
 
-/** Action items for the top app bar. This is an instance of the Icon component.*/
-export const TopAppBarActionItem = withRipple({
-  unbounded: true,
-  surface: false
-})(
-  componentFactory<TopAppBarActionItemProps>({
-    displayName: 'TopAppBarActionItem',
-    classNames: ['mdc-top-app-bar__action-item'],
-    tag: IconButton
-  })
-);
+/** Action items for the top app bar. This is an instance of the IconButton component.*/
+export const TopAppBarActionItem = componentFactory<TopAppBarActionItemProps>({
+  displayName: 'TopAppBarActionItem',
+  classNames: ['mdc-top-app-bar__action-item'],
+  tag: IconButton
+});
 
 /** A title for the top app bar. */
 export interface TopAppBarTitleProps {}
