@@ -27,7 +27,10 @@ import {
   ListItem,
   ListItemGraphic,
   ListItemText,
-  ListItemMeta
+  ListItemMeta,
+  Theme,
+  ThemeProvider,
+  Radio
 } from '../rmwc';
 
 class Bug216 extends React.Component {
@@ -680,6 +683,114 @@ class Bug533 extends React.Component<any> {
   }
 }
 
+function Bug534() {
+  const theme = [
+    'primary',
+    'secondary',
+    'onPrimary',
+    'onSecondary',
+    'surface',
+    'primaryLight',
+    'primaryDark',
+    'secondaryLight',
+    'secondaryDark',
+    'error',
+    'background',
+    'surfaceLight',
+    'surfaceDark',
+    'textPrimaryOnBackground',
+    'textSecondaryOnBackground',
+    'textHintOnBackground',
+    'textDisabledOnBackground',
+    'textIconOnBackground',
+    'textPrimaryOnLight',
+    'textSecondaryOnLight',
+    'textHintOnLight',
+    'textDisabledOnLight',
+    'textIconOnLight',
+    'onError',
+    'textPrimaryOnDark',
+    'textSecondaryOnDark',
+    'textHintOnDark',
+    'textDisabledOnDark',
+    'textIconOnDark'
+  ];
+
+  const options = {
+    primary: '#24aee9',
+    secondary: '#e539ff',
+    error: '#b00020',
+    background: '#212121',
+    surface: '#37474F',
+    onPrimary: 'rgba(255,255,255,.87)',
+    onSecondary: 'rgba(0,0,0,0.87)',
+    onSurface: 'rgba(255,255,255,.87)',
+    onError: '#fff',
+    textPrimaryOnBackground: 'red',
+    textSecondaryOnBackground: 'rgba(255, 255, 255, 0.7)',
+    textHintOnBackground: 'rgba(255, 255, 255, 0.5)',
+    textDisabledOnBackground: 'rgba(255, 255, 255, 0.5)',
+    textIconOnBackground: 'rgba(255, 255, 255, 0.5)',
+    textPrimaryOnLight: 'rgba(0, 0, 0, 0.87)',
+    textSecondaryOnLight: 'rgba(0, 0, 0, 0.54)',
+    textHintOnLight: 'rgba(0, 0, 0, 0.38)',
+    textDisabledOnLight: 'rgba(0, 0, 0, 0.38)',
+    textIconOnLight: 'rgba(0, 0, 0, 0.38)',
+    textPrimaryOnDark: 'white',
+    textSecondaryOnDark: 'rgba(255, 255, 255, 0.7)',
+    textHintOnDark: 'rgba(255, 255, 255, 0.5)',
+    textDisabledOnDark: 'rgba(255, 255, 255, 0.5)',
+    textIconOnDark: 'rgba(255, 255, 255, 0.5)'
+  };
+
+  const innerOptions = {
+    primary: '#ffdbcf',
+    secondary: '#feeae6',
+    error: '#b00020',
+    background: '#fff',
+    surface: '#fff',
+    onPrimary: 'rgba(0, 0, 0, 0.87)',
+    onSecondary: 'rgba(0, 0, 0, 0.87)',
+    onSurface: 'rgba(0, 0, 0, 0.87)',
+    onError: '#fff',
+    textPrimaryOnBackground: 'red',
+    textSecondaryOnBackground: 'rgba(0, 0, 0, 0.54)',
+    textHintOnBackground: 'rgba(0, 0, 0, 0.38)',
+    textDisabledOnBackground: 'rgba(0, 0, 0, 0.38)',
+    textIconOnBackground: 'rgba(0, 0, 0, 0.38)',
+    textPrimaryOnLight: 'rgba(0, 0, 0, 0.87)',
+    textSecondaryOnLight: 'rgba(0, 0, 0, 0.54)',
+    textHintOnLight: 'rgba(0, 0, 0, 0.38)',
+    textDisabledOnLight: 'rgba(0, 0, 0, 0.38)',
+    textIconOnLight: 'rgba(0, 0, 0, 0.38)',
+    textPrimaryOnDark: 'white',
+    textSecondaryOnDark: 'rgba(255, 255, 255, 0.7)',
+    textHintOnDark: 'rgba(255, 255, 255, 0.5)',
+    textDisabledOnDark: 'rgba(255, 255, 255, 0.5)',
+    textIconOnDark: '#e539ff'
+  };
+
+  return (
+    <div className="App">
+      <Theme use={theme as any} wrap>
+        {/* first set of options for the theme */}
+        <ThemeProvider options={options}>
+          <Typography use="body1">Hello World</Typography>
+          <Button raised>Cookies</Button>
+          <Radio label="Icecream" defaultChecked />
+          {/* second set of options for the theme.
+              In this case, typography doesn't change its color */}
+          <ThemeProvider options={innerOptions}>
+            <Typography use="body2">Hello World</Typography>
+            <Button raised>Cookies</Button>
+            <Radio label="Icecream" defaultChecked />
+          </ThemeProvider>
+        </ThemeProvider>
+      </Theme>
+    </div>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -762,4 +873,5 @@ storiesOf('Bugs', module)
         <Bug533 value="Cookies" />
       </>
     );
-  });
+  })
+  .add('#534', () => <Bug534 />);
