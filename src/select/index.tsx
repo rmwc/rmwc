@@ -129,7 +129,7 @@ class SelectNativeControl extends React.Component<
   render() {
     const {
       selectOptions,
-      placeholder = '',
+      placeholder,
       children,
       elementRef,
       ...rest
@@ -142,8 +142,8 @@ class SelectNativeControl extends React.Component<
         ref={elementRef}
         className={`mdc-select__native-control ${rest.className || ''}`}
       >
-        {!this.props.value && !this.props.defaultValue && (
-          <option value="" disabled={placeholder === ''}>
+        {placeholder != undefined && (
+          <option value="" disabled={rest.required}>
             {placeholder}
           </option>
         )}
