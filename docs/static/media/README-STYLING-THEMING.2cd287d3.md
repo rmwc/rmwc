@@ -203,9 +203,21 @@ You can easily theme the library at runtime using CSS variables. Inspect the `<h
 Earlier versions of `material-components-web` shipped with a built in Dark Mode but it has since be removed. You can now achieve similar results using RMWC's `ThemeProvider` component. Please refer to the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
 
 
-## SASS customization
+## SASS Customization
 
-Additional customization can be done through your own SASS build. This is a feature of the `material-components-web`, not RMWC. If you want your own custom SASS build, please view the `material-components-web` [documentation on theming.](https://material.io/components/web/docs/theming/)
+Additional customization can be done through your own SASS build. This is a feature of the `material-components-web`, not RMWC. There are several options to modify components such as mixins and component specific SASS variables. Please refer to the [Material Web Components](https://material.io/develop/web/) documentation for that specific component.
+
+For theming there are a couple of ways to implement theming. If you only import the theme variables and install the `@material/theme` library, it will only change the CSS custom property `--mdc-theme-[xxx]` used when generating the CSS so your colors will be set something like `var(--mdc-theme-primary,#6200ee)` where the `#6200ee` would still be the `material-components-web` default color. Browsers that do not support `var()` will still show the default color `#6200ee`. To get the fallback color to be the variable you're trying to set, you will need create scss files that import the material component's scss file from the material library with the desired variables set above...
+
+```scss
+$mdc-theme-primary: #0063dd;
+$mdc-theme-secondary: #870186;
+
+@import "@material/button/mdc-button";
+@import "@material/checkbox/mdc-checkbox";
+```
+
+Please refer to the `material-components-web` [documentation on theming](https://material.io/components/web/docs/theming/) for more detailed information.
 
 
 ## Theme and ThemeProvider
