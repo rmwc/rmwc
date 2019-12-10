@@ -26,6 +26,34 @@ Features:
 > - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
 
 ## Recent updates
+v6.0.0 is coming!
+
+TL;DR
+- `npm i rmwc@next` or `npm i @rmwc/button@next`.
+- Coming out sometime early spring
+
+Since the creation of RMWC, React and Javascript have continued their blazing pace of change. For context, this project was initially written in FlowTyped with a bunch of classes, and Google's part was plain old JS. Fast forard 2.5 years and React has undergone a paradigm shift with hooks while Typescript continues to expand... Also, a while back, Google released their own React wrapper that was very similar to this project. It was recently declared abandonware which has lead to an increase in intereset in RMWC since it should be a relatively simple migration strategy. Needless to say, RMWC needs some love! It's time for some spring cleaning.
+
+The goals of V6 are simple.
+
+- A full internal API rewrite to hooks
+- A full internal conversion of components to idiomatic functional React components. Currently there is an abstraction called 'componentFactory' which is a barrier to entry for 3rd party contributors. With this change, anyone wanting to contribute should be able to jump in and get going.
+- Removal of all existing deprecations.
+- Smaller bundle size
+- Better performance
+- Some new components :)
+- More exhaustive testing
+
+Will it be hard to migrate?
+
+- No, breaking changes will still be kept to a minimum and documented in the migration guide / changelog
+- The removal of previously deprecated features will always be considered a breaking change.
+- While unit test coverage is fairly high, the change in paradigm from classes to hooks does open up the possibility for unexpected bugs.
+- Some of the more enterprising folks that have hacked around the internals of this library to fix or subvert behaviors, so those hacks can't be guaranteed to continue working.
+
+Feel free to kick the tires and get in any feature requests or bugs in the meantime. 5.7.x will continue to receive minor patches and bugfixes until the v6 release.
+
+v5.7.2 is a maintenance release fixing a few non critical bugs
 
 v5.7.0 is out with some great new features and fixes!
 - A new Tooltip component has been added
@@ -34,24 +62,6 @@ v5.7.0 is out with some great new features and fixes!
 - Bugfixes for Selects, Sliders, Lists, and Chips
 - Updated all dependencies
 - See the changelog for more details.
-
-v5.6.0 is a maintenance release, no breaking changes :)
-
-V5.5.0 is live with some great new features!
-- Added the concept of "danger" buttons for those destructive actions
-- SnackbarQueue is a new way to easily create notifications from anywhere in your app
-- DialogQueue emulates the browsers built in alert, confirm, and prompt apis and gives you an easy way to create dialogs from anywhere in your app
-- Full docs search has been added so make navigating a bit easier
-- The docs have a new domain, rmwc.io
-- Upgraded to material-components-web 2.x.x which includes a host of fixes and cleanup
-
-V5 is officially out! RMWC has been completely rewritten in Typescript while also knocking out about a years worth of tech debt and improving things across the board. You can expect better typing, better performance, better integration with material-components-web, and just better everything. All of this was done with as few breaking changes as possible, so upgrading should be relatively painless.
-
-Your quick migration guide:
-
-- React 16.3 is the new min version to take advantage of React Fragments, Ref Forwarding, and the new Context Api. If you need React 15 support, you'll have to stay on 4.x.x and below.
-- The library has been rewritten in Typescript instead of Flow. At this time, Flow types are no longer supported. Please comment on issue #407 If you're interested in bringing these back
-- Changelog couldn't be generated for this release, see the release notes for the full details 🚀 https://opencollective.com/rmwc/updates/5-0-0-a-giant-leap-for-rmwc
 
 *View all release notes* 👉 https://opencollective.com/rmwc/updates
 
