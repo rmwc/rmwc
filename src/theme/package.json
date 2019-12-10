@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/theme",
-  "version": "5.7.0",
+  "version": "5.7.2",
   "description": "RMWC Theme component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@material/theme": "^3.1.0",
-    "@rmwc/base": "^5.7.0",
+    "@rmwc/base": "^5.7.2",
     "@rmwc/types": "^5.6.0"
   }
 }
