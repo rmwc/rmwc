@@ -57,7 +57,7 @@ export default function() {
         This is really just a div with `position: relative` and some other
         sensible layout properties set on it, so you can use this or your own
         CSS to achieve the same result. Additionally, exact positioning is
-        highlight depending on your design, and shape of your components. Badges
+        highly dependent on your design and shape of your components. Badges
         provide an `inset` property that allows you to adjust the positioning of
         the Badge as necessary.
       </DocsP>
