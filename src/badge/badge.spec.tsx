@@ -20,6 +20,11 @@ describe('Badge', () => {
     expect(el2.html().includes('rmwc-badge--align-start')).toBe(true);
   });
 
+  it('exited', () => {
+    const el = mount(<Badge exited />);
+    expect(el.html().includes('rmwc-badge--exited')).toBe(true);
+  });
+
   it('inset', () => {
     // cant assert, jsdom doesn't include css vars?
     mount(<Badge inset="10rem" />);
