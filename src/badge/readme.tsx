@@ -142,7 +142,7 @@ export default function() {
           const [label, setLabel] = React.useState<any>(undefined);
 
           React.useEffect(() => {
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
               switch (label) {
                 case '99+':
                   setLabel(undefined);
@@ -155,6 +155,8 @@ export default function() {
                   break;
               }
             }, 1800);
+
+            return () => clearTimeout(timeout);
           }, [label]);
 
           return (
