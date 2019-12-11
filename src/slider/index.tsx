@@ -41,19 +41,12 @@ const SliderTrack = React.memo(
 );
 
 const SliderTrackMarkerContainer = React.memo(
-  function SliderTrackMarkerContainer({
-    markersCount
-  }: {
-    markersCount: number;
-  }) {
-    return (
-      <div className="mdc-slider__track-marker-container">
-        {[...Array(markersCount)].map((v, i) => (
-          <div className="mdc-slider__track-marker" key={i} />
-        ))}
-      </div>
-    );
-  }
+  React.forwardRef(function SliderTrackMarkerContainer(
+    props,
+    ref: React.Ref<any>
+  ) {
+    return <div ref={ref} className="mdc-slider__track-marker-container"></div>;
+  })
 );
 
 const SliderPin = React.memo(function SliderPin({ value }: { value: number }) {
@@ -84,7 +77,7 @@ export function Slider(
     thumbContainerEl,
     sliderPinEl,
     setTrackRef,
-    trackMarkersCount
+    setTrackMarkerContainerRef
   } = useSliderFoundation(props);
 
   const {
@@ -135,7 +128,7 @@ export function Slider(
       <div className="mdc-slider__track-container">
         <SliderTrack ref={setTrackRef} />
         {displayMarkers && (
-          <SliderTrackMarkerContainer markersCount={trackMarkersCount} />
+          <SliderTrackMarkerContainer ref={setTrackMarkerContainerRef} />
         )}
       </div>
       <Tag element={thumbContainerEl} className="mdc-slider__thumb-container">

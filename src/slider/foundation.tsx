@@ -10,9 +10,12 @@ import { useRef, useState, useEffect } from 'react';
 export const useSliderFoundation = (
   props: SliderProps & React.HTMLProps<any>
 ) => {
-  const [trackMarkersCount, setTrackMarkersCount] = useState(0);
   const trackRef = useRef<HTMLElement>();
   const setTrackRef = (element: HTMLElement) => (trackRef.current = element);
+
+  const trackmarkerContainerRef = useRef<HTMLElement>();
+  const setTrackMarkerContainerRef = (element: HTMLElement) =>
+    (trackmarkerContainerRef.current = element);
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -97,24 +100,21 @@ export const useSliderFoundation = (
         setMarkerValue: (value: number) => {
           sliderPinEl.setProp('value', value);
         },
-        appendTrackMarkers: (numMarkers: number) => {
-          setTrackMarkersCount(numMarkers);
-        },
-        removeTrackMarkers: () => {
-          setTrackMarkersCount(0);
-        },
-        setLastTrackMarkersStyleProperty: (
-          propertyName: string,
-          value: any
-        ) => {
-          if (rootEl.ref) {
-            // We remove and append new nodes, thus, the last track marker must be dynamically found.
-            const lastTrackMarker = rootEl.ref.querySelector<HTMLElement>(
-              MDCSliderFoundation.strings.LAST_TRACK_MARKER_SELECTOR
-            );
-            lastTrackMarker &&
-              lastTrackMarker.style.setProperty(propertyName, value);
-          }
+
+        setTrackMarkers: (step: number, max: number, min: number) => {
+          const stepStr = step.toLocaleString();
+          const maxStr = max.toLocaleString();
+          const minStr = min.toLocaleString();
+          // keep calculation in css for better rounding/subpixel behavior
+          const markerAmount = `((${maxStr} - ${minStr}) / ${stepStr})`;
+          const markerWidth = `2px`;
+          const markerBkgdImage = `linear-gradient(to right, currentColor ${markerWidth}, transparent 0)`;
+          const markerBkgdLayout = `0 center / calc((100% - ${markerWidth}) / ${markerAmount}) 100% repeat-x`;
+          const markerBkgdShorthand = `${markerBkgdImage} ${markerBkgdLayout}`;
+          trackmarkerContainerRef.current?.style.setProperty(
+            'background',
+            markerBkgdShorthand
+          );
         },
         isRTL: () =>
           !!rootEl.ref && getComputedStyle(rootEl.ref).direction === 'rtl'
@@ -207,5 +207,9 @@ export const useSliderFoundation = (
     };
   }, [foundation]);
 
-  return { setTrackRef, trackMarkersCount, ...elements };
+  return {
+    setTrackRef,
+    setTrackMarkerContainerRef,
+    ...elements
+  };
 };
