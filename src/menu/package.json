@@ -32,8 +32,8 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/menu": "^3.1.0",
-    "@material/menu-surface": "^3.1.0",
+    "@material/menu": "^4.0.0",
+    "@material/menu-surface": "^4.0.0",
     "@rmwc/base": "^6.0.0-alpha.6",
     "@rmwc/list": "^6.0.0-alpha.6",
     "@rmwc/types": "^6.0.0-alpha.6"
