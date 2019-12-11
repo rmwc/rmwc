@@ -30,7 +30,7 @@ export interface SnackbarProps {
   message?: React.ReactNode;
   /** One or more actions to add to the snackbar. */
   action?: React.ReactNode | React.ReactNode[];
-  /** Milliseconds to show the Snackbar for. */
+  /** Milliseconds to show the Snackbar for. Set to -1 to show indefinitely. */
   timeout?: number;
   /** Places the action underneath the message text. */
   stacked?: boolean;

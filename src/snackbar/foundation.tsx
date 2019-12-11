@@ -81,9 +81,13 @@ export function useSnackbarFoundation(
   // timeout
   useEffect(() => {
     if (props.timeout) {
-      // don't tell me what I can cant set my timeout too...
-      // directly patch over using setTimeoutMs
-      (foundation as any).autoDismissTimeoutMs_ = props.timeout;
+      if (props.timeout === -1) {
+        foundation.setTimeoutMs(props.timeout);
+      } else {
+        // don't tell me what I can cant set my timeout too...
+        // directly patch over using setTimeoutMs
+        (foundation as any).autoDismissTimeoutMs_ = props.timeout;
+      }
     }
   }, [props.timeout, foundation]);
 

@@ -67,14 +67,15 @@ export default function() {
               <Snackbar
                 open={open}
                 onClose={evt => setOpen(false)}
-                message="Start aligned"
+                message="Start aligned, open until dismissed"
                 stacked
+                dismissesOnAction
                 action={[
                   <SnackbarAction label="Yeah!" />,
                   <SnackbarAction label="No..." />
                 ]}
                 leading
-                timeout={10000}
+                timeout={-1}
               />
 
               <Button
@@ -207,7 +208,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Snackbar, SnackbarAction]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'Snackbar', component: Snackbar },
+          { displayName: 'SnackbarAction', component: SnackbarAction }
+        ]}
+      />
     </Docs>
   );
 }
