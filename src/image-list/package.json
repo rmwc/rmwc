@@ -32,7 +32,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/image-list": "^3.1.0",
+    "@material/image-list": "^4.0.0",
     "@rmwc/base": "^6.0.0-alpha.6",
     "@rmwc/types": "^6.0.0-alpha.6"
   },
