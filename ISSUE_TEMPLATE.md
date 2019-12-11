@@ -1,3 +1,4 @@
+<!--- 
 ** PLEASE READ THIS BEFORE FILING AN ISSUE **
 
 ## RMWC or MDC?
@@ -7,6 +8,7 @@ RMWC is a React wrapper for Google's official MDC that provides a props based in
 Do you really want it fixed? Make a repro in the sandbox!
 > - Javascript Sandbox https://codesandbox.io/s/kpy13vqnr
 > - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
+-->
 
 - What RMWC Version are you using [major.minor.patch]:
 

@@ -85,7 +85,8 @@ export default function() {
         <>
           <SimpleTopAppBar
             title="test"
-            navigationIcon={{ onClick: () => console.log('Navigate') }}
+            navigationIcon
+            onNav={() => console.log('Navigate')}
             actionItems={[
               {
                 icon: 'file_download',
