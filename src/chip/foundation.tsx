@@ -2,6 +2,7 @@ import { ChipProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
+import { EventSource } from '@material/chips/chip/constants';
 
 export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   const chipId = useId('chip', props);
@@ -13,7 +14,7 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
       trailingIconEl: true,
       checkmarkEl: true
     },
-    foundation: ({ rootEl, checkmarkEl, emit }) =>
+    foundation: ({ rootEl, checkmarkEl, emit, getProps }) =>
       new MDCChipFoundation({
         addClass: className => {
           rootEl.addClass(className);
@@ -51,6 +52,9 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
             { chipId, root: rootEl.ref },
             true /* shouldBubble */
           ),
+        notifyNavigation: (key: string, source: EventSource) => {
+          //TODO
+        },
         getComputedStyleValue: propertyName =>
           rootEl.ref
             ? window.getComputedStyle(rootEl.ref).getPropertyValue(propertyName)
@@ -64,7 +68,30 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
           rootEl.ref?.getBoundingClientRect() || emptyClientRect,
         getCheckmarkBoundingClientRect: () =>
           checkmarkEl.ref?.getBoundingClientRect() || emptyClientRect,
-        setAttr: (attr, value) => rootEl.setProp(attr as any, value)
+        setPrimaryActionAttr: (attr: string, value: string) => {
+          // Not clear in documentation what this should be used for
+        },
+        focusPrimaryAction: () => {
+          // Not clear in documentation what this should be used for
+        },
+        hasTrailingAction: () => {
+          return !!getProps().trailingIcon;
+        },
+        setTrailingActionAttr: (attr: string, value: string) => {
+          const safeAttr = attr === 'tabindex' ? 'tabIndex' : attr;
+          trailingIconEl.setProp(safeAttr as any, value);
+        },
+
+        focusTrailingAction: () => {
+          trailingIconEl.ref?.focus();
+        },
+        isRTL: () => {
+          return rootEl.ref
+            ? window
+                .getComputedStyle(rootEl.ref)
+                .getPropertyValue('direction') === 'rtl'
+            : false;
+        }
       })
   });
 

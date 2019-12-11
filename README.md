@@ -49,6 +49,7 @@ Will it be hard to migrate?
 - No, breaking changes will still be kept to a minimum and documented in the migration guide / changelog
 - The removal of previously deprecated features will always be considered a breaking change.
 - While unit test coverage is fairly high, the change in paradigm from classes to hooks does open up the possibility for unexpected bugs.
+- Anyone who relies on snapshot testing will see a lot of snapshots change since internally there or structural DOM changes.
 - Some of the more enterprising folks that have hacked around the internals of this library to fix or subvert behaviors, so those hacks can't be guaranteed to continue working.
 
 Feel free to kick the tires and get in any feature requests or bugs in the meantime. 5.7.x will continue to receive minor patches and bugfixes until the v6 release.

@@ -77,19 +77,21 @@ export const Chip = withRipple()(
 
     return (
       <Tag
-        tag="button"
-        tabIndex={0}
+        role="row"
         {...rootEl.props({ ...rest, className })}
         ref={mergeRefs(ref, rootEl.setRef)}
       >
+        <ChipRipple />
         {!!icon && (
           <ChipIcon icon={icon} leading hidden={selected && checkmark} />
         )}
         {!!checkmark && <ChipCheckmark ref={checkmarkEl.setRef} />}
-        <div className="mdc-chip__text">
-          {label}
-          {children}
-        </div>
+        <span role="gridcell">
+          <span role="button" className="mdc-chip__text" tabIndex={0}>
+            {label}
+            {children}
+          </span>
+        </span>
         {!!trailingIcon && (
           <ChipIcon
             icon={trailingIcon}
@@ -107,6 +109,10 @@ Chip.displayName = 'Chip';
 /*********************************************************************
  * Bits
  *********************************************************************/
+
+const ChipRipple = React.memo(function ChipRipple() {
+  return <div className="mdc-chip__ripple"></div>;
+});
 
 /** A checkmark for chip selection and filtering. */
 const ChipCheckmark = React.memo(
