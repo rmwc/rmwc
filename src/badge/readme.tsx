@@ -143,14 +143,24 @@ export default function() {
 
           React.useEffect(() => {
             setTimeout(() => {
-              setLabel(label === '99+' ? undefined : '99+');
-            }, 2500);
+              switch (label) {
+                case '99+':
+                  setLabel(undefined);
+                  break;
+                case '':
+                  setLabel('99+');
+                  break;
+                case undefined:
+                  setLabel('');
+                  break;
+              }
+            }, 1800);
           }, [label]);
 
           return (
             <BadgeAnchor>
               <Button raised label="Button" />
-              <Badge label={label} />
+              <Badge label={label} exited={label === undefined} />
             </BadgeAnchor>
           );
         }}

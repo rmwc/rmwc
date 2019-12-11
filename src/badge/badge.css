@@ -28,6 +28,12 @@
   font-size: 0;
 }
 
+.rmwc-badge--exited {
+  transform: scale(0);
+  opacity: 0;
+  font-size: 0;
+}
+
 .rmwc-badge--align-start,
 .rmwc-badge--align-end {
   position: absolute;
