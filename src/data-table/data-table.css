@@ -8,7 +8,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   display: inline-block;
   text-align: left;
-  color: var(--mdc-theme-primary-on-background, rgba(0, 0, 0, 0.87));
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));
 }
 
 /** DataTable Sticky Rules */
@@ -210,7 +210,7 @@
   padding-bottom: 0.5rem;
   box-sizing: border-box;
   height: 3rem;
-  color: var(--mdc-theme-secondary-on-background, rgba(0, 0, 0, 0.54));
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
   background-color: var(--mdc-theme-surface, white);
 }
 
