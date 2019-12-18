@@ -13,11 +13,11 @@ import '@material/image-list/dist/mdc.image-list.css';
 import '@material/layout-grid/dist/mdc.layout-grid.css';
 import '@material/linear-progress/dist/mdc.linear-progress.css';
 import '@material/list/dist/mdc.list.css';
+import '@material/select/dist/mdc.select.css';
 import '@material/menu/dist/mdc.menu.css';
 import '@material/menu-surface/dist/mdc.menu-surface.css';
 import '@material/radio/dist/mdc.radio.css';
 import '@material/ripple/dist/mdc.ripple.css';
-import '@material/select/dist/mdc.select.css';
 import '@material/switch/dist/mdc.switch.css';
 import '@material/slider/dist/mdc.slider.css';
 import '@material/snackbar/dist/mdc.snackbar.css';
@@ -32,6 +32,7 @@ import '@material/typography/dist/mdc.typography.css';
 
 // rmwc additions
 import '@rmwc/avatar/avatar.css';
+import '@rmwc/select/select.css';
 import '@rmwc/badge/badge.css';
 import '@rmwc/circular-progress/circular-progress.css';
 import '@rmwc/data-table/data-table.css';

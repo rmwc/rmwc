@@ -46,7 +46,6 @@
 
 .siteSearch :global(.rmwc-icon) {
   color: inherit !important;
-  top: 0.5rem !important;
 }
 
 .loading {

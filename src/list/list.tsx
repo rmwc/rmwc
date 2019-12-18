@@ -25,6 +25,15 @@ export interface ListApi {
   listElements: () => HTMLLIElement[];
   focusRoot: () => void;
   getClasses: () => string;
+  addClassToElementIndex: (index: number, className: string) => void;
+  removeClassFromElementAtIndex: (index: number, className: string) => void;
+  setAttributeForElementIndex: (
+    index: number,
+    attr: string,
+    value: any
+  ) => void;
+  getListItemCount: () => number;
+  focusItemAtIndex: (index: number) => void;
 }
 
 export function List(props: ListProps & RMWC.ComponentProps) {

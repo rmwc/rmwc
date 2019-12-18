@@ -35,22 +35,12 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
     },
     foundation: ({ emit }) => {
       return new MDCMenuFoundation({
-        addClassToElementAtIndex: (index: number, className: string) => {
-          const list = items();
-          list[index].classList.add(className);
-        },
-        removeClassFromElementAtIndex: (index: number, className: string) => {
-          const list = items();
-          list[index].classList.remove(className);
-        },
-        addAttributeToElementAtIndex: (
-          index: number,
-          attr: string,
-          value: string
-        ) => {
-          const list = items();
-          list[index].setAttribute(attr, value);
-        },
+        addClassToElementAtIndex: (...args) =>
+          listApi.current?.addClassToElementIndex(...args),
+        removeClassFromElementAtIndex: (...args) =>
+          listApi.current?.removeClassFromElementAtIndex(...args),
+        addAttributeToElementAtIndex: (...args) =>
+          listApi.current?.setAttributeForElementIndex(...args),
         removeAttributeFromElementAtIndex: (index: number, attr: string) => {
           const list = items();
           list[index].removeAttribute(attr);
@@ -68,8 +58,9 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
             index: evtData.index,
             item: items()[evtData.index]
           }),
-        getMenuItemCount: () => items().length,
-        focusItemAtIndex: index => (items()[index] as HTMLElement).focus(),
+        getMenuItemCount: () => listApi.current?.getListItemCount() || 0,
+        focusItemAtIndex: (...args) =>
+          listApi.current?.focusItemAtIndex(...args),
         focusListRoot: () => listApi.current?.focusRoot()
       });
     }

@@ -1,7 +1,7 @@
 import { ListProps, ListApi } from './list';
 import { matches, FoundationElement } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
-import { MDCListFoundation } from '@material/list';
+import { MDCListFoundation, MDCListAdapter } from '@material/list';
 import { useEffect, useCallback } from 'react';
 
 export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
@@ -16,11 +16,23 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
 
   const { foundation, ...elements } = useFoundation({
     props,
-    api: ({ rootEl }: { rootEl: FoundationElement<any, any> }): ListApi => {
+    api: ({
+      rootEl,
+      foundation
+    }: {
+      rootEl: FoundationElement<any, any>;
+      foundation: MDCListFoundation;
+    }): ListApi => {
+      const adapter = (foundation as any).adapter_ as MDCListAdapter;
       return {
         listElements: () => listElements(rootEl.ref),
         focusRoot: () => rootEl.ref && rootEl.ref.focus(),
-        getClasses: () => MDCListFoundation.cssClasses.LIST_ITEM_CLASS
+        getClasses: () => MDCListFoundation.cssClasses.LIST_ITEM_CLASS,
+        addClassToElementIndex: adapter.addClassForElementIndex,
+        removeClassFromElementAtIndex: adapter.removeClassForElementIndex,
+        setAttributeForElementIndex: adapter.setAttributeForElementIndex,
+        getListItemCount: adapter.getListItemCount,
+        focusItemAtIndex: adapter.focusItemAtIndex
       };
     },
     elements: { rootEl: true },
@@ -42,8 +54,12 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         ) => {
           // This value is getting set and never getting set back
           // This is causing list items to be un-tabbable
-          if (attr === 'tabindex' && value === -1) {
-            return;
+          // if (attr === 'tabindex' && value === -1) {
+          //   return;
+          // }
+
+          if (attr === 'tabindex') {
+            attr = 'tabIndex';
           }
 
           const element = listElements(rootEl.ref)[index];
