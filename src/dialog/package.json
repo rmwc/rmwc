@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/dialog",
-  "version": "6.0.0-alpha.6",
+  "version": "6.0.0-alpha.7",
   "description": "RMWC Dialog component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@material/dialog": "^4.0.0",
-    "@rmwc/base": "^6.0.0-alpha.6",
-    "@rmwc/button": "^6.0.0-alpha.6",
-    "@rmwc/textfield": "^6.0.0-alpha.6",
+    "@rmwc/base": "^6.0.0-alpha.7",
+    "@rmwc/button": "^6.0.0-alpha.7",
+    "@rmwc/textfield": "^6.0.0-alpha.7",
     "@rmwc/types": "^6.0.0-alpha.6"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
