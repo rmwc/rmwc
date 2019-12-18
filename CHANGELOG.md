@@ -1,3 +1,41 @@
+#### 6.0.0-alpha.7 (2019-12-18)
+
+##### Chores
+
+* **Select:**  Upgrade to MDC 4.x.x (b7aaeca9)
+* **Base:**  Upgrading unchanged packages to MDC 4.x.x (ff77a31b)
+* **Menu:**  Upgrading to MDC 4.x.x (2b41310c)
+* **Slider:**  Refactor track markers (d39b28b2)
+* **Chip:**  Upgrade to MDC 4.x.x (7aac4498)
+* **Textfield:**  Update to mdc 4.x.x (368f8bf4)
+* **List:**  Update to mdc 4.x.x (f23254c1)
+* **Switch:**  update to mdc 4.x.x (134f5cf8)
+* **Dialog:**  Update to mdc 4.x.x (7ae83a27)
+* **IconButton:**  Update to mdc 4.x.x (2d4e0305)
+* **Radio:**  Update to mdc 4.x.x (c77eb7b1)
+* **Ripple:**  Updating ripple to mdc 4.x.x (90f348c7)
+* **LinearProgress:**  Update to mdc 4.x.x (18664e29)
+
+##### New Features
+
+* **Snackbar:**  Adding indefinite timeout. Pass a timeout of -1 (341eec2d)
+* **Badge:**
+  *  Adding exited prop option (500d5516)
+  *  New badge component #411 (46888630)
+
+##### Bug Fixes
+
+* **TopAppBar:**
+  *  Correcting double ripple on action buttons (680b1b5c)
+  *  Corrects issue with persisted events around Navigation and Action icons #536 (3f473180)
+  *  Implements broken onNav prop (1f17d0d0)
+* **Grid:**
+  *  Fix incorrect className for grid align property #526 (4f0ee2b2)
+  *  Fix incorrect className for grid align property #526 (302ea95d)
+* **FormField:**
+  *  Correct broken link in doc #529 (6c25e59b)
+  *  Correct broken link in doc #529 (41409aa7)
+
 #### 6.0.0-alpha.6 (2019-11-25)
 
 #### 6.0.0-alpha.5 (2019-11-25)
