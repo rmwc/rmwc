@@ -350,6 +350,40 @@
             "isStatic": false
           },
           "kind": "property",
+          "name": "addClassToElementIndex",
+          "inheritedFrom": "ListApi.addClassToElementIndex",
+          "type": "(index: number, className: string) => void"
+        },
+        {
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "focusItemAtIndex",
+          "inheritedFrom": "ListApi.focusItemAtIndex",
+          "type": "(index: number) => void"
+        },
+        {
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
           "name": "focusRoot",
           "inheritedFrom": "ListApi.focusRoot",
           "type": "() => void"
@@ -370,6 +404,23 @@
           "name": "getClasses",
           "inheritedFrom": "ListApi.getClasses",
           "type": "() => string"
+        },
+        {
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getListItemCount",
+          "inheritedFrom": "ListApi.getListItemCount",
+          "type": "() => number"
         },
         {
           "fileName": "src/menu/menu-surface.tsx",
@@ -442,6 +493,23 @@
           "type": "() => HTMLLIElement[]"
         },
         {
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "removeClassFromElementAtIndex",
+          "inheritedFrom": "ListApi.removeClassFromElementAtIndex",
+          "type": "(index: number, className: string) => void"
+        },
+        {
           "fileName": "src/menu/menu-surface.tsx",
           "flags": {
             "isExported": true,
@@ -476,6 +544,23 @@
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L23",
           "inheritedFrom": "MenuSurfaceApi.setAnchorElement",
           "type": "(element: HTMLElement) => void"
+        },
+        {
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "setAttributeForElementIndex",
+          "inheritedFrom": "ListApi.setAttributeForElementIndex",
+          "type": "(index: number, attr: string, value: any) => void"
         },
         {
           "fileName": "src/menu/menu-surface.tsx",

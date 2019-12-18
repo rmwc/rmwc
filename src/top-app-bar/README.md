@@ -60,7 +60,8 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 <>
   <SimpleTopAppBar
     title="test"
-    navigationIcon={{ onClick: () => console.log('Navigate') }}
+    navigationIcon
+    onNav={() => console.log('Navigate')}
     actionItems={[
       {
         icon: 'file_download',
@@ -167,10 +168,10 @@ A title for the top app bar.
 
 
 
-## Function
+## 
 
 
-## Function
+## 
 
 
 ## TopAppBarFixedAdjust

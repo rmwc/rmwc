@@ -288,7 +288,7 @@
       },
       "kind": "interface",
       "name": "ChipSetProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L167",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L173",
       "methods": [],
       "properties": [
         {
@@ -312,7 +312,7 @@
           },
           "kind": "property",
           "name": "choice",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L169",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L175",
           "type": "undefined | false | true"
         },
         {
@@ -336,7 +336,7 @@
           },
           "kind": "property",
           "name": "filter",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L171",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L177",
           "type": "undefined | false | true"
         }
       ]

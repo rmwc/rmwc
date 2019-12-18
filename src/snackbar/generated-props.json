@@ -254,9 +254,9 @@
         {
           "documentation": {
             "contents": [
-              "<p>Milliseconds to show the Snackbar for.</p>\n"
+              "<p>Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.</p>\n"
             ],
-            "contentsRaw": "Milliseconds to show the Snackbar for.",
+            "contentsRaw": "Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.",
             "metadata": {}
           },
           "fileName": "src/snackbar/snackbar.tsx",
@@ -854,9 +854,9 @@
         {
           "documentation": {
             "contents": [
-              "<p>Milliseconds to show the Snackbar for.</p>\n"
+              "<p>Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.</p>\n"
             ],
-            "contentsRaw": "Milliseconds to show the Snackbar for.",
+            "contentsRaw": "Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.",
             "metadata": {}
           },
           "fileName": "src/snackbar/snackbar.tsx",
@@ -1161,9 +1161,9 @@
         {
           "documentation": {
             "contents": [
-              "<p>Milliseconds to show the Snackbar for.</p>\n"
+              "<p>Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.</p>\n"
             ],
-            "contentsRaw": "Milliseconds to show the Snackbar for.",
+            "contentsRaw": "Milliseconds to show the Snackbar for. Set to -1 to show indefinitely.",
             "metadata": {}
           },
           "fileName": "src/snackbar/snackbar.tsx",

@@ -1958,7 +1958,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarActionItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L191",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L188",
       "extends": [
         "IconButtonProps"
       ],
@@ -2131,7 +2131,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L205",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L199",
       "methods": [],
       "properties": []
     },
@@ -2156,7 +2156,7 @@
       },
       "kind": "interface",
       "name": "TopAppBarFixedAdjustProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L218",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L212",
       "methods": [],
       "properties": [
         {
@@ -2180,7 +2180,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L220",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L214",
           "type": "undefined | false | true"
         },
         {
@@ -2204,7 +2204,7 @@
           },
           "kind": "property",
           "name": "denseProminent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L224",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L218",
           "type": "undefined | false | true"
         },
         {
@@ -2228,7 +2228,7 @@
           },
           "kind": "property",
           "name": "prominent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L222",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L216",
           "type": "undefined | false | true"
         },
         {
@@ -2252,7 +2252,7 @@
           },
           "kind": "property",
           "name": "short",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L226",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/top-app-bar/index.tsx#L220",
           "type": "undefined | false | true"
         }
       ]

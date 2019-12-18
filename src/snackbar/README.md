@@ -50,14 +50,15 @@ function Example() {
       <Snackbar
         open={open}
         onClose={evt => setOpen(false)}
-        message="Start aligned"
+        message="Start aligned, open until dismissed"
         stacked
+        dismissesOnAction
         action={[
           <SnackbarAction label="Yeah!" />,
           <SnackbarAction label="No..." />
         ]}
         leading
-        timeout={10000}
+        timeout={-1}
       />
 
       <Button
@@ -174,7 +175,24 @@ queue.notify({
 }
 ```
 
-## 
+## Snackbar
+A Snackbar component for notifications.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `action` | `React.ReactNode \| React.ReactNode[]` | One or more actions to add to the snackbar. |
+| `dismissIcon` | `boolean \| string` |  |
+| `dismissesOnAction` | `undefined \| false \| true` | Whether or not your want clicking an action to close the Snackbar. |
+| `icon` | `RMWC.IconPropT` | An icon for the snackbar |
+| `leading` | `undefined \| false \| true` |  |
+| `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |
+| `onClose` | `undefined \| (evt: SnackbarOnCloseEventT) => void` | A callback thats fired when the Snackbar hides. evt.detail = { reason?: string } |
+| `onOpen` | `undefined \| (evt: SnackbarOnOpenEventT) => void` | A callback thats fired when the Snackbar shows. |
+| `open` | `undefined \| false \| true` | Show the Snackbar. |
+| `stacked` | `undefined \| false \| true` | Places the action underneath the message text. |
+| `timeout` | `undefined \| number` | Milliseconds to show the Snackbar for. Set to -1 to show indefinitely. |
 
 
 ## SnackbarAction

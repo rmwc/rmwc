@@ -70,24 +70,21 @@ function Example() {
       <Chip
         selected={selected.cookies}
         checkmark
-        onClick={() => toggleSelected('cookies')}
+        onInteraction={() => toggleSelected('cookies')}
         label="Cookies"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.pizza}
         checkmark
-        onClick={() => toggleSelected('pizza')}
+        onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.icecream}
         checkmark
-        onClick={() => toggleSelected('icecream')}
+        onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
-        trailingIcon="close"
         label="Icecream"
       />
     </ChipSet>
@@ -112,22 +109,19 @@ function Example() {
     <ChipSet choice>
       <Chip
         selected={selected.cookies}
-        onClick={() => toggleSelected('cookies')}
+        onInteraction={() => toggleSelected('cookies')}
         label="Cookies"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.pizza}
-        onClick={() => toggleSelected('pizza')}
+        onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.icecream}
-        onClick={() => toggleSelected('icecream')}
+        onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
-        trailingIcon="close"
         label="Icecream"
       />
     </ChipSet>
