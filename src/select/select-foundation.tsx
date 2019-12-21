@@ -309,7 +309,9 @@ export const useSelectFoundation = (
   // value in our foundation
   const stringifiedOptions = JSON.stringify(props.options);
   useEffect(() => {
-    foundation.setValue((props.value || props.defaultValue || '') as string);
+    const newValue = (props.value || props.defaultValue || '') as string;
+    const existingValue = foundation.getValue();
+    newValue !== existingValue && foundation.setValue(newValue);
   }, [props.value, props.defaultValue, stringifiedOptions, foundation]);
 
   // Disabled
