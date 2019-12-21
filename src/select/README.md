@@ -4,6 +4,7 @@
 
 - Module **@rmwc/select**
 - Import styles:
+  - import **'@rmwc/select/select.css'**
   - import **'@material/select/dist/mdc.select.css'**
   - import **'@material/floating-label/dist/mdc.floating-label.css'**
   - import **'@material/notched-outline/dist/mdc.notched-outline.css'**
