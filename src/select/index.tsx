@@ -163,8 +163,8 @@ const SelectedTextEl = withRipple()(function(props: any) {
 
 interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
-  selectedIndex: number;
   placeholder?: string;
+  selectedIndex?: number;
   menuApiRef: (api: MenuApi) => void;
   value?: string;
   defaultValue?: any;
@@ -175,9 +175,10 @@ function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
   const {
     selectOptions,
     menuApiRef,
-    selectedIndex,
+    value,
     placeholder,
     children,
+    selectedIndex,
     ...rest
   } = props;
 
@@ -191,10 +192,15 @@ function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
     option: FormattedOption;
   }) => {
     currentIndex += 1;
+
     return (
       <MenuItem
         key={`${label}-${option.value}`}
-        activated={currentIndex - 1 === selectedIndex}
+        activated={
+          value !== undefined
+            ? option.value === value
+            : currentIndex - 1 === selectedIndex
+        }
         {...option}
         data-value={option.value}
       >
@@ -273,7 +279,6 @@ export const Select = React.forwardRef(function Select(
     selectedTextEl,
     notchWidth,
     menuOpen,
-    selectedIndex,
     selectedTextContent,
     lineRippleActive,
     lineRippleCenter,
@@ -281,6 +286,7 @@ export const Select = React.forwardRef(function Select(
     setFloatingLabel,
     setNativeControl,
     setLeadingIcon,
+    selectedIndex,
     setMenu,
     handleFocus,
     handleBlur,
@@ -364,9 +370,9 @@ export const Select = React.forwardRef(function Select(
           {!enhanced && (
             <NativeMenu
               {...rest}
+              value={value}
               children={children}
               defaultValue={defaultValue}
-              value={value}
               placeholder={placeholder}
               open={menuOpen}
               selectOptions={selectOptions}
@@ -386,15 +392,15 @@ export const Select = React.forwardRef(function Select(
             {...rest}
             anchorCorner="bottomStart"
             defaultValue={defaultValue}
-            value={value}
             placeholder={placeholder}
             open={menuOpen}
             onClose={handleMenuClosed}
             onOpen={handleMenuOpened}
-            onSelect={(evt: MenuOnSelectEventT) =>
-              handleMenuSelected(evt.detail.index)
-            }
+            onSelect={(evt: MenuOnSelectEventT) => {
+              handleMenuSelected(evt.detail.index);
+            }}
             selectOptions={selectOptions}
+            value={value}
             selectedIndex={selectedIndex}
             menuApiRef={setMenu}
             children={children}

@@ -19,8 +19,9 @@ export const useSelectFoundation = (
   const [lineRippleCenter, setLineRippleCenter] = useState(0);
   const [floatLabel, setFloatLabel] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
   const [selectedTextContent, setSelectedTextContent] = useState('');
+
+  const selectedIndex = useRef(-1);
 
   const floatingLabel = useRef<FloatingLabelApi>();
   const setFloatingLabel = (api: FloatingLabelApi) => {
@@ -49,16 +50,6 @@ export const useSelectFoundation = (
 
   const silenceChange = useRef(false);
 
-  // A state ref to be used inside the foundation
-  // This didn't come up in a single other foundation implementation
-  // So handling it as a one off...
-  const state = useRef({
-    selectedIndex
-  });
-  state.current = {
-    selectedIndex
-  };
-
   const { foundation, ...elements } = useFoundation({
     props,
     elements: { rootEl: true, selectedTextEl: true },
@@ -86,11 +77,15 @@ export const useSelectFoundation = (
               return nativeControl.current?.selectedOptions[0] || null;
             }
 
-            return (
-              menu.current
-                ?.getSurfaceElement()
-                ?.querySelector('.mdc-list-item--activated') || null
-            );
+            if (selectedIndex.current === -1) {
+              return (
+                menu.current
+                  ?.getSurfaceElement()
+                  ?.querySelector('.mdc-list-item--activated') || null
+              );
+            } else {
+              return items()[selectedIndex.current];
+            }
           },
           getMenuItemAttr: (menuItem: Element, attr: string) => {
             if (attr === 'data-value') {
@@ -99,7 +94,9 @@ export const useSelectFoundation = (
 
             return menuItem.getAttribute(attr);
           },
-          setSelectedText: (text: string) => setSelectedTextContent(text),
+          setSelectedText: (text: string) => {
+            setSelectedTextContent(text);
+          },
           isSelectedTextFocused: () =>
             !!(
               selectedTextEl.ref &&
@@ -161,7 +158,7 @@ export const useSelectFoundation = (
               emit(
                 'onChange',
                 {
-                  index: state.current.selectedIndex,
+                  index: selectedIndex.current,
                   value
                 },
                 true
@@ -221,6 +218,7 @@ export const useSelectFoundation = (
       f.updateLabel_ = () => {
         const doWork = () => {
           const value = f.getValue();
+
           // This is the line we have to override to work with placeholders
           // we need to consider haveing a placeholder as a valid value
           const optionHasValue = !!getProps().placeholder || value.length > 0;
@@ -234,7 +232,8 @@ export const useSelectFoundation = (
           }
         };
 
-        isNative() ? doWork() : window.requestAnimationFrame(doWork);
+        doWork();
+        //isNative() ? doWork() : window.requestAnimationFrame(doWork);
       };
 
       // This is only set one time in the constructor which
@@ -302,11 +301,10 @@ export const useSelectFoundation = (
 
   const handleMenuSelected = useCallback(
     (index: number) => {
-      props.enhanced
-        ? setSelectedIndex(index)
-        : foundation.setSelectedIndex(index);
+      selectedIndex.current = index;
+      foundation.handleMenuItemAction(index);
     },
-    [props.enhanced, foundation]
+    [foundation]
   );
 
   const handleMenuOpened = useCallback(() => {
@@ -323,11 +321,13 @@ export const useSelectFoundation = (
   // value in our foundation
   const stringifiedOptions = JSON.stringify(props.options);
   const foundationValue = foundation.getValue();
-  const value = (props.value || props.defaultValue || '') as string;
+  const value = (props.value || props.defaultValue) as string;
 
   useEffect(() => {
     silenceChange.current = true;
-    value !== foundationValue && foundation.setValue(value);
+    if (value !== undefined) {
+      value !== foundationValue && foundation.setValue(value);
+    }
     setTimeout(() => {
       silenceChange.current = false;
     });
@@ -344,16 +344,16 @@ export const useSelectFoundation = (
   }, [rootEl.ref]);
 
   // handle setting the index
-  const foundationSelectedIndex = foundation.getSelectedIndex();
-  useEffect(() => {
-    setSelectedIndex(foundationSelectedIndex);
-  }, [foundationSelectedIndex]);
+  // const foundationSelectedIndex = foundation.getSelectedIndex();
+  // useEffect(() => {
+  //   setSelectedIndex(foundationSelectedIndex);
+  // }, [foundationSelectedIndex]);
 
   // Handle selectedIndex change
-  useEffect(() => {
-    selectedIndex !== foundation.getSelectedIndex() &&
-      foundation.handleMenuItemAction(selectedIndex);
-  }, [selectedIndex, foundation]);
+  // useEffect(() => {
+  //   selectedIndex !== foundation.getSelectedIndex() &&
+  //     foundation.handleMenuItemAction(selectedIndex);
+  // }, [selectedIndex, foundation]);
 
   return {
     notchWidth,
@@ -361,7 +361,7 @@ export const useSelectFoundation = (
     lineRippleActive,
     lineRippleCenter,
     floatLabel,
-    selectedIndex,
+    selectedIndex: selectedIndex.current,
     selectedTextContent,
     setFloatingLabel,
     setMenu,

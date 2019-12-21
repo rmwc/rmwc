@@ -153,7 +153,7 @@ function EnhancedSelect() {
 }
 
 function ControlledSelect() {
-  const [value, setValue] = React.useState<string | undefined>(undefined);
+  const [value, setValue] = React.useState<string | undefined>('Cookies');
   const opts = [
     {
       label: 'Cookies',
@@ -205,6 +205,17 @@ function ControlledSelect() {
           </option>
         ))}
       </select>
+
+      <hr />
+
+      <Select
+        value="Cookies"
+        onChange={evt => {}}
+        label="Array"
+        options={opts2}
+      />
+      <Select label="Array" options={opts2} />
+      <Select label="Array" enhanced options={opts2} />
     </>
   );
 }
