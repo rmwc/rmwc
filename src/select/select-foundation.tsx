@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, debounce } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
@@ -47,6 +47,8 @@ export const useSelectFoundation = (
     nativeControl.current = el;
   };
 
+  const silenceChange = useRef(false);
+
   // A state ref to be used inside the foundation
   // This didn't come up in a single other foundation implementation
   // So handling it as a one off...
@@ -61,8 +63,9 @@ export const useSelectFoundation = (
     props,
     elements: { rootEl: true, selectedTextEl: true },
     foundation: ({ rootEl, selectedTextEl, getProps, emit }) => {
+      const isNative = () => !getProps().enhanced;
+
       const getSelectAdapterMethods = (): Partial<MDCSelectAdapter> => {
-        const isNative = () => !getProps().enhanced;
         const items = (): HTMLElement[] =>
           (isNative()
             ? Array.apply<null, any, HTMLOptionElement[]>(
@@ -71,8 +74,11 @@ export const useSelectFoundation = (
               )
             : menu.current?.items()) || [];
 
-        const getValue = (el: Element) =>
-          el.getAttribute('data-value') || el.getAttribute('value') || '';
+        const getValue = (el: Element) => {
+          return (
+            el.getAttribute('data-value') || el.getAttribute('value') || ''
+          );
+        };
 
         return {
           getSelectedMenuItem: () => {
@@ -151,14 +157,16 @@ export const useSelectFoundation = (
           activateBottomLine: () => setLineRippleActive(true),
           deactivateBottomLine: () => setLineRippleActive(false),
           notifyChange: (value: any) => {
-            emit(
-              'onChange',
-              {
-                index: state.current.selectedIndex,
-                value
-              },
-              true
-            );
+            if (!silenceChange.current) {
+              emit(
+                'onChange',
+                {
+                  index: state.current.selectedIndex,
+                  value
+                },
+                true
+              );
+            }
           }
         };
       };
@@ -211,18 +219,22 @@ export const useSelectFoundation = (
 
       // @ts-ignore private override
       f.updateLabel_ = () => {
-        const value = f.getValue();
-        // This is the line we have to override to work with placeholders
-        // we need to consider haveing a placeholder as a valid value
+        const doWork = () => {
+          const value = f.getValue();
+          // This is the line we have to override to work with placeholders
+          // we need to consider haveing a placeholder as a valid value
+          const optionHasValue = !!getProps().placeholder || value.length > 0;
 
-        const optionHasValue = !!getProps().placeholder || value.length > 0;
-        if (adapter.hasLabel()) {
-          f.notchOutline(optionHasValue);
+          if (adapter.hasLabel()) {
+            f.notchOutline(optionHasValue);
 
-          if (!adapter.hasClass(cssClasses.FOCUSED)) {
-            adapter.floatLabel(optionHasValue);
+            if (!adapter.hasClass(cssClasses.FOCUSED)) {
+              adapter.floatLabel(optionHasValue);
+            }
           }
-        }
+        };
+
+        isNative() ? doWork() : window.requestAnimationFrame(doWork);
       };
 
       // This is only set one time in the constructor which
@@ -290,9 +302,11 @@ export const useSelectFoundation = (
 
   const handleMenuSelected = useCallback(
     (index: number) => {
-      foundation.handleMenuItemAction(index);
+      props.enhanced
+        ? setSelectedIndex(index)
+        : foundation.setSelectedIndex(index);
     },
-    [foundation]
+    [props.enhanced, foundation]
   );
 
   const handleMenuOpened = useCallback(() => {
@@ -308,11 +322,16 @@ export const useSelectFoundation = (
   // we need to jump through some checks to see if we need to update the
   // value in our foundation
   const stringifiedOptions = JSON.stringify(props.options);
+  const foundationValue = foundation.getValue();
+  const value = (props.value || props.defaultValue || '') as string;
+
   useEffect(() => {
-    const newValue = (props.value || props.defaultValue || '') as string;
-    const existingValue = foundation.getValue();
-    newValue !== existingValue && foundation.setValue(newValue);
-  }, [props.value, props.defaultValue, stringifiedOptions, foundation]);
+    silenceChange.current = true;
+    value !== foundationValue && foundation.setValue(value);
+    setTimeout(() => {
+      silenceChange.current = false;
+    });
+  }, [value, foundationValue, stringifiedOptions, foundation]);
 
   // Disabled
   useEffect(() => {
@@ -324,13 +343,17 @@ export const useSelectFoundation = (
     rootEl.ref && menu.current?.setAnchorElement(rootEl.ref);
   }, [rootEl.ref]);
 
-  // handle on mount behavior
-  useEffect(() => {}, [foundation]);
-
+  // handle setting the index
   const foundationSelectedIndex = foundation.getSelectedIndex();
   useEffect(() => {
     setSelectedIndex(foundationSelectedIndex);
   }, [foundationSelectedIndex]);
+
+  // Handle selectedIndex change
+  useEffect(() => {
+    selectedIndex !== foundation.getSelectedIndex() &&
+      foundation.handleMenuItemAction(selectedIndex);
+  }, [selectedIndex, foundation]);
 
   return {
     notchWidth,

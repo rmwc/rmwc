@@ -176,17 +176,27 @@ function ControlledSelect() {
       <Select
         value={value}
         onChange={evt => {
+          console.log('RMWC Change', evt);
           setValue(evt.currentTarget.value);
-          console.log(evt.currentTarget.value, evt.currentTarget.value);
         }}
         label="Array"
+        options={opts2}
+      />
+      <Select
+        value={value}
+        onChange={evt => {
+          console.log('Enhanced Change', evt);
+          setValue(evt.currentTarget.value);
+        }}
+        label="Array"
+        enhanced
         options={opts2}
       />
       <select
         value={value}
         onChange={evt => {
+          console.log('Native Change');
           setValue(evt.currentTarget.value);
-          console.log(evt.currentTarget.value, evt.currentTarget.value);
         }}
       >
         {opts2.map(o => (

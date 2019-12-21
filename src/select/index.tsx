@@ -161,7 +161,7 @@ const SelectedTextEl = withRipple()(function(props: any) {
   return <Tag {...props} />;
 });
 
-interface SelectMenuProps extends MenuProps {
+interface EnhancedMenuProps extends MenuProps {
   selectOptions: FormattedOption[];
   selectedIndex: number;
   placeholder?: string;
@@ -171,7 +171,7 @@ interface SelectMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
-function EnhancedMenu(props: SelectMenuProps & RMWC.ComponentProps) {
+function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
   const {
     selectOptions,
     menuApiRef,
@@ -351,7 +351,7 @@ export const Select = React.forwardRef(function Select(
             onClick={handleClick}
             onKeyDown={handleKeydown}
           >
-            {selectedTextContent}
+            {selectedTextContent || <>&nbsp;</>}
           </SelectedTextEl>
           {outlined ? (
             <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
