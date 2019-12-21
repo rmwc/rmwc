@@ -1,6 +1,6 @@
 {
   "name": "rmwc",
-  "version": "6.0.0-alpha.7",
+  "version": "6.0.0-alpha.8",
   "description": "RMWC is a React UI Kit built on Google's official Material Components Web library.",
   "main": "dist/index.js",
   "types": "index.d.ts",
@@ -68,7 +68,7 @@
     "@rmwc/provider": "^6.0.0-alpha.7",
     "@rmwc/radio": "^6.0.0-alpha.7",
     "@rmwc/ripple": "^6.0.0-alpha.7",
-    "@rmwc/select": "^6.0.0-alpha.7",
+    "@rmwc/select": "^6.0.0-alpha.8",
     "@rmwc/slider": "^6.0.0-alpha.7",
     "@rmwc/snackbar": "^6.0.0-alpha.7",
     "@rmwc/switch": "^6.0.0-alpha.7",
