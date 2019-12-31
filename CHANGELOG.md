@@ -7,6 +7,7 @@
   *  Implements broken onNav prop (1f17d0d0)
 * **Grid:**  Fix incorrect className for grid align property #526 (302ea95d)
 * **FormField:**  Correct broken link in doc #529 (41409aa7)
+* **Select:**  Fix placeholder disappearing when value or defaultValue prop is set #533 (991885ec)
 * **Slider:**  Sync min/max props before value to avoid warnings. (34d36798)
 * **Menu:**  fixed "isMenuItems" check to not break on Symbol and string element types. (d707c3d1)
 
