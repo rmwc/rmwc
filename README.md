@@ -25,6 +25,9 @@ Features:
 > - Javascript Sandbox https://codesandbox.io/s/kpy13vqnr
 > - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
 
+## Like this project? Try out some of my others
+- https://github.com/jamesmfriedman/redux-state-branch
+
 ## Recent updates
 v6.0.0 is coming!
 
