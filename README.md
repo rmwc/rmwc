@@ -26,7 +26,8 @@ Features:
 > - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
 
 ## Like this project? Try out some of my others 😎
-- https://github.com/jamesmfriedman/redux-state-branch
+- A library for simplified Redux development: https://github.com/jamesmfriedman/redux-state-branch
+- Feature Flagging made Easy: https://github.com/jamesmfriedman/flagg
 
 ## Recent updates
 v6.0.0 is coming!
