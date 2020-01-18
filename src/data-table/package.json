@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/data-table",
-  "version": "6.0.0-alpha.7",
+  "version": "6.0.0-alpha.11",
   "description": "RMWC Data Table Component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,8 +32,8 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^6.0.0-alpha.7",
-    "@rmwc/icon": "^6.0.0-alpha.7",
+    "@rmwc/base": "^6.0.0-alpha.11",
+    "@rmwc/icon": "^6.0.0-alpha.11",
     "@rmwc/types": "^6.0.0-alpha.6"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
