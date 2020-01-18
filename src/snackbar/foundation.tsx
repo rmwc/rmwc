@@ -75,7 +75,7 @@ export function useSnackbarFoundation(
 
   // open
   useEffect(() => {
-    props.open && foundation.open();
+    props.open ? foundation.open() : foundation.close();
   }, [props.open, foundation]);
 
   // timeout
