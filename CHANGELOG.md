@@ -1,3 +1,9 @@
+#### 6.0.0-alpha.11 (2020-01-18)
+
+##### New Features
+
+* **Snackbar:**  Adding api features to clearAll pending notifications, and invidually remove Snackbars. (a6e14635)
+
 #### 6.0.0-alpha.10 (2019-12-21)
 
 #### 6.0.0-alpha.9 (2019-12-21)
