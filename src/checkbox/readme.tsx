@@ -26,7 +26,7 @@ export default function() {
             <Checkbox
               label="Cookies"
               checked={checked}
-              onChange={evt => setChecked(evt.currentTarget.checked)}
+              onChange={evt => setChecked(!!evt.currentTarget.checked)}
             />
           );
         }}

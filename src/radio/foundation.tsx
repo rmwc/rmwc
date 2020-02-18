@@ -1,10 +1,11 @@
+import * as RMWC from '@rmwc/types';
 import { RadioProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
 import { MDCRadioFoundation } from '@material/radio';
 
 export const useRadioFoundation = (
-  props: RadioProps & React.HTMLProps<any>
+  props: RadioProps & RMWC.HTMLProps<HTMLInputElement>
 ) => {
   const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
 

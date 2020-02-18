@@ -1,7 +1,7 @@
 /**
  * Utils
  */
-export type MergeInterfacesT<A, B> = A & Pick<B, Exclude<keyof B, keyof A>>;
+export type MergeInterfacesT<A, B> = A & Omit<B, keyof A>;
 
 /**
  * Theming
@@ -32,7 +32,8 @@ export type ThemeOptionT =
   | 'textSecondaryOnDark'
   | 'textHintOnDark'
   | 'textDisabledOnDark'
-  | 'textIconOnDark';
+  | 'textIconOnDark'
+  | undefined;
 
 export type ThemePropT = ThemeOptionT | ThemeOptionT[];
 
@@ -109,3 +110,25 @@ export interface IconOptions {
 }
 
 export type IconPropT = IconElementT | IconOptions;
+
+export type ComponentElementType = React.ElementType | undefined;
+
+/**
+ * As terrible as this seems, it is the lesser of all of the evils...
+ * Typescript obsessively flattens any types with the Omit property
+ * Or anything that is a union. There are a few props in RMWC that conflict
+ * with the native HTML Attributes. The only way that I have found to get around
+ * the prop flattening in the TS declaration files (which leads to gigantic long unions and recursive type errors)
+ * was to actually pull in the attributes here, edit the ones I needed, and reconstruct
+ * The definition or React.HTMLProps which the new attributes object.
+ */
+interface AllHTMLAttributes<T>
+  extends Omit<React.AllHTMLAttributes<T>, 'label' | 'wrap' | 'size'> {}
+
+export interface HTMLProps<T = HTMLElement>
+  extends AllHTMLAttributes<T>,
+    React.ClassAttributes<T> {
+  tag?: TagT;
+  theme?: ThemePropT;
+  ref?: React.Ref<T>;
+}

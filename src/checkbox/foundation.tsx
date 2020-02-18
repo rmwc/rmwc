@@ -1,3 +1,4 @@
+import * as RMWC from '@rmwc/types';
 import { CheckboxProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
@@ -5,7 +6,7 @@ import { MDCCheckboxFoundation } from '@material/checkbox';
 import { useEffect, useCallback } from 'react';
 
 export const useCheckboxFoundation = (
-  props: CheckboxProps & React.HTMLProps<any>
+  props: CheckboxProps & RMWC.HTMLProps<HTMLInputElement>
 ) => {
   const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
 
@@ -56,7 +57,7 @@ export const useCheckboxFoundation = (
   }, [doSync]);
 
   // Callback handling
-  const handleAnimationEnd = (evt: React.AnimationEvent) => {
+  const handleAnimationEnd = (evt: React.AnimationEvent<HTMLInputElement>) => {
     props.onAnimationEnd?.(evt);
     foundation.handleAnimationEnd();
   };

@@ -1,6 +1,7 @@
 import React from 'react';
 import * as RMWC from '@rmwc/types';
-import { useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import { Link } from 'react-router-dom';
 
 /** A Badge component for indicating alerts or counts. */
 export interface BadgeProps {
@@ -15,8 +16,9 @@ export interface BadgeProps {
 }
 
 /** A Badge component for indicating alerts or counts. */
-export function Badge(props: BadgeProps & Omit<RMWC.ComponentProps, 'label'>) {
+export const Badge = createComponent<BadgeProps>(function Badge(props, ref) {
   const { align = 'end', label, style, exited, inset, ...rest } = props;
+
   const className = useClassNames(props, [
     'rmwc-badge',
     `rmwc-badge--align-${align}`,
@@ -35,21 +37,39 @@ export function Badge(props: BadgeProps & Omit<RMWC.ComponentProps, 'label'>) {
       : style;
 
   return (
-    <Tag {...rest} style={finalStyle} className={className}>
+    <Tag {...rest} style={finalStyle} className={className} ref={ref}>
       {label ?? <>&nbsp;</>}
     </Tag>
   );
-}
+});
 
 /** An anchor component for badges. */
 export interface BadgeAnchorProps {}
 
-export function BadgeAnchor(props: BadgeAnchorProps & RMWC.ComponentProps) {
-  const { children, ...rest } = props;
-  const className = useClassNames(props, ['rmwc-badge-anchor']);
-  return (
-    <div {...rest} className={className}>
-      {children}
-    </div>
-  );
-}
+/** An anchor component for badges. */
+export const BadgeAnchor = createComponent<BadgeAnchorProps>(
+  function BadgeAnchor(props, ref) {
+    const { children, ...rest } = props;
+
+    const className = useClassNames(props, ['rmwc-badge-anchor']);
+    return (
+      <Tag {...rest} className={className} ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
+
+// function Foo() {
+//   return (
+//     <>
+//       <BadgeAnchor to="" />
+//       <BadgeAnchor tag={Link} to="" />
+//       <BadgeAnchor tag={Link} to="" ref={el => {
+//         console.log(el)
+//       }} />
+//       <BadgeAnchor onClick={() => {}} />
+//       <BadgeAnchor hello />
+//     </>
+//   );
+// }

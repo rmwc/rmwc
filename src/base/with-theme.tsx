@@ -12,9 +12,11 @@ export interface WithThemeProps {
 /**
  * Actually parses the theme options
  */
-export const parseThemeOptions = (theme: string | string[]): string[] => {
+export const parseThemeOptions = (
+  theme: undefined | string | Array<string | undefined>
+): string[] => {
   const themeItems = Array.isArray(theme) ? theme : [theme];
-  return themeItems.map(v => `mdc-theme--${toDashCase(v)}`);
+  return themeItems.filter(v => !!v).map(v => `mdc-theme--${toDashCase(v!)}`);
 };
 
 /**

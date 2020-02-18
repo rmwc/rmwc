@@ -158,7 +158,11 @@ export default function() {
 
       <DocProps
         src={propsSrc}
-        components={[Avatar, AvatarGroup, AvatarCount]}
+        components={[
+          { displayName: 'Avatar', component: Avatar },
+          { displayName: 'AvatarGroup', component: AvatarGroup },
+          { displayName: 'AvatarCount', component: AvatarCount }
+        ]}
       />
     </Docs>
   );

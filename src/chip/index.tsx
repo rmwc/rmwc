@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { useChipFoundation } from './foundation';
-import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 
 /*********************************************************************
  * Events
@@ -48,10 +48,7 @@ export interface ChipProps {
 
 /** A Chip component. */
 export const Chip = withRipple()(
-  React.forwardRef<any, ChipProps & RMWC.ComponentProps>(function Chip(
-    props,
-    ref
-  ) {
+  createComponent<ChipProps>(function Chip(props, ref) {
     const {
       onInteraction,
       onTrailingIconInteraction,
@@ -103,8 +100,6 @@ export const Chip = withRipple()(
     );
   })
 );
-
-Chip.displayName = 'Chip';
 
 /*********************************************************************
  * Bits
@@ -163,8 +158,6 @@ const ChipIcon = React.memo(function ChipIcon(
   return <Icon {...trailingProps} {...rest} className={className} />;
 });
 
-ChipIcon.displayName = 'ChipIcon';
-
 /*********************************************************************
  * Chip Set
  *********************************************************************/
@@ -178,10 +171,10 @@ export interface ChipSetProps {
 }
 
 /** A container for multiple chips. */
-export const ChipSet = React.forwardRef<
-  HTMLDivElement,
-  ChipSetProps & RMWC.ComponentProps
->(function ChipSet(props, ref) {
+export const ChipSet = createComponent<ChipSetProps>(function ChipSet(
+  props,
+  ref
+) {
   const { choice, filter, ...rest } = props;
 
   const className = useClassNames(props, [
@@ -194,5 +187,3 @@ export const ChipSet = React.forwardRef<
 
   return <Tag {...rest} ref={ref} className={className} />;
 });
-
-ChipSet.displayName = 'ChipSet';

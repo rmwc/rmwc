@@ -3,7 +3,12 @@ import * as React from 'react';
 
 import { MDCTabFoundation } from '@material/tab';
 
-import { useClassNames, Tag, FoundationElement } from '@rmwc/base';
+import {
+  useClassNames,
+  Tag,
+  FoundationElement,
+  createComponent
+} from '@rmwc/base';
 import { IconProps, Icon } from '@rmwc/icon';
 import { withRipple, RippleSurface } from '@rmwc/ripple';
 
@@ -42,11 +47,13 @@ export type TabApi = {
   getIndex: () => number;
 };
 
+type TabRootProps = TabProps & {
+  children?: React.ReactNode;
+  element?: FoundationElement<any, any>;
+};
+
 const TabRoot = withRipple({ surface: false })(
-  React.forwardRef(function TabRoot(
-    props: TabProps & { element: FoundationElement<any, any> },
-    ref
-  ) {
+  createComponent<TabRootProps>(function TabRoot(props, ref) {
     const { stacked, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-tab',

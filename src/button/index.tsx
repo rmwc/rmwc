@@ -3,7 +3,12 @@ import * as React from 'react';
 
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
-import { Tag, useClassNames } from '@rmwc/base';
+import {
+  Tag,
+  useClassNames,
+  createComponent,
+  createMemoComponent
+} from '@rmwc/base';
 
 /*********************************************************************
  * Button
@@ -38,13 +43,8 @@ export interface ButtonProps extends RMWC.WithRippleProps {
 /**
  * The Button component.
  */
-export const Button = withRipple({
-  surface: false
-})(
-  React.forwardRef<any, ButtonProps & RMWC.ComponentProps>(function Button(
-    props,
-    ref
-  ) {
+export const Button = withRipple()(
+  createComponent<ButtonProps>(function Button(props, ref) {
     const {
       dense,
       raised,
@@ -94,8 +94,6 @@ export const Button = withRipple({
   })
 );
 
-Button.displayName = 'Button';
-
 /*********************************************************************
  * Bits
  *********************************************************************/
@@ -107,9 +105,10 @@ const ButtonRipple = React.memo(function ButtonRipple() {
 interface ButtonIconProps extends IconProps {}
 
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-const ButtonIcon = React.memo(function ButtonIcon(props: ButtonIconProps) {
+const ButtonIcon = createMemoComponent<ButtonIconProps>(function ButtonIcon(
+  props,
+  ref
+) {
   const className = useClassNames(props, ['mdc-button__icon']);
-  return <Icon {...props} className={className} />;
+  return <Icon {...props} className={className} ref={ref} />;
 });
-
-ButtonIcon.displayName = 'ButtonIcon';

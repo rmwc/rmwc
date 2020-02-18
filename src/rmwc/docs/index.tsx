@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { Router, Link } from 'react-router-dom';
 
 import { history } from './history';
 import ReactGA from 'react-ga';
@@ -13,6 +13,18 @@ import App from './app';
 // @ts-ignore
 import { unregister } from './register-service-worker';
 import { RMWCProvider } from '@rmwc/provider';
+
+function Foo<TagT extends React.ElementType<any>>({
+  tag
+}: {
+  tag: TagT;
+} & React.ComponentProps<TagT>) {
+  const Tag = tag as TagT;
+  // @ts-ignore
+  return <Tag />;
+}
+
+<Foo tag={Link} to="/" />;
 
 const renderApp = (Component: React.ComponentType<any>) => {
   ReactDOM.render(

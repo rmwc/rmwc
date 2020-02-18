@@ -155,7 +155,7 @@ const getTheme = (themeName: string) => {
   ];
 
   return order.reduce<{ [key: string]: string }>((acc, key) => {
-    const newKey = `--mdc-theme-${toDashCase(key)}`;
+    const newKey = `--mdc-theme-${toDashCase(key!)}`;
     acc[newKey] = merged[newKey];
     return acc;
   }, {});

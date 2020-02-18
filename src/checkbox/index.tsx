@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useCheckboxFoundation } from './foundation';
@@ -32,53 +32,52 @@ export interface CheckboxProps
 }
 
 /** A Checkbox component. */
-export const Checkbox = React.forwardRef<
-  any,
-  CheckboxProps & RMWC.ComponentProps
->(function Checkbox(props, ref) {
-  const {
-    renderToggle,
-    id,
-    toggleRootProps,
-    rootEl,
-    checkboxEl
-  } = useCheckboxFoundation(props);
+export const Checkbox = createComponent<CheckboxProps, 'input'>(
+  function Checkbox(props, ref) {
+    const {
+      renderToggle,
+      id,
+      toggleRootProps,
+      rootEl,
+      checkboxEl
+    } = useCheckboxFoundation(props);
 
-  const {
-    children,
-    className,
-    label,
-    style,
-    indeterminate,
-    inputRef,
-    ...rest
-  } = props;
+    const {
+      children,
+      className,
+      label,
+      style,
+      indeterminate,
+      inputRef,
+      ...rest
+    } = props;
 
-  const checkbox = (
-    <CheckboxRoot
-      {...rootEl.props({
-        checked: rest.checked,
-        indeterminate,
-        ...toggleRootProps
-      })}
-      ref={mergeRefs(rootEl.setRef, ref)}
-    >
-      <input
-        {...checkboxEl.props({
-          ...rest,
-          className: 'mdc-checkbox__native-control'
+    const checkbox = (
+      <CheckboxRoot
+        {...rootEl.props({
+          checked: rest.checked,
+          indeterminate,
+          ...toggleRootProps
         })}
-        type="checkbox"
-        ref={mergeRefs(checkboxEl.setRef, inputRef)}
-        id={id}
-      />
-      <CheckboxBackground />
-      <CheckboxRipple />
-    </CheckboxRoot>
-  );
+        ref={mergeRefs(rootEl.setRef, ref)}
+      >
+        <input
+          {...checkboxEl.props({
+            ...rest,
+            className: 'mdc-checkbox__native-control'
+          })}
+          type="checkbox"
+          ref={mergeRefs(checkboxEl.setRef, inputRef)}
+          id={id}
+        />
+        <CheckboxBackground />
+        <CheckboxRipple />
+      </CheckboxRoot>
+    );
 
-  return renderToggle(checkbox);
-});
+    return renderToggle(checkbox);
+  }
+);
 Checkbox.displayName = 'Checkbox';
 
 /*********************************************************************

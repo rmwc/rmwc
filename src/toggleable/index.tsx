@@ -1,3 +1,4 @@
+import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useId } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
@@ -20,7 +21,7 @@ export interface ToggleableFoundationProps {
 }
 
 export function useToggleFoundation(
-  props: ToggleableFoundationProps & React.HTMLProps<any>
+  props: ToggleableFoundationProps & RMWC.HTMLProps<any>
 ) {
   const { className, style, rootProps, label, children, disabled } = props;
   const hasLabel = props.label || props.children;

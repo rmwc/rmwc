@@ -73,9 +73,11 @@ const SwitchThumbUnderlay = withRipple({
   surface: false
 })(function SwitchThumbUnderlay({
   className,
+  children,
   ...rest
 }: {
   className?: string;
+  children: React.ReactNode;
 }) {
   return (
     <div

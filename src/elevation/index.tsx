@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { wrapChild } from '@rmwc/base';
+import { wrapChild, createComponent } from '@rmwc/base';
 import { Tag, useClassNames } from '@rmwc/base';
 
 /** The Elevation Component */
@@ -14,10 +14,10 @@ export interface ElevationProps {
 }
 
 /** The Elevation Component */
-export const Elevation = React.forwardRef<
-  any,
-  ElevationProps & Omit<RMWC.ComponentProps, 'wrap'>
->(function Elevation(props, ref) {
+export const Elevation = createComponent<ElevationProps>(function Elevation(
+  props,
+  ref
+) {
   const { z = 0, transition = false, wrap, ...rest } = props;
 
   const className = useClassNames(props, [
@@ -31,4 +31,3 @@ export const Elevation = React.forwardRef<
 
   return <Tag {...rest} ref={ref} className={className} />;
 });
-Elevation.displayName = 'Elevation';

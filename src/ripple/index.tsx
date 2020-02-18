@@ -156,15 +156,52 @@ interface WithRippleOpts {
 /**
  * HOC that adds ripples to any component
  */
+// export const withRipple = ({
+//   unbounded: defaultUnbounded,
+//   accent: defaultAccent,
+//   surface: defaultSurface
+// }: WithRippleOpts = {}) => <P extends {}>(
+//   Component: React.ComponentType<P & RMWC.WithRippleProps>
+// ): React.ComponentType<P & RMWC.WithRippleProps> => {
+//   const WithRippleComponent = React.forwardRef<any, any>(
+//     ({ ripple, ...rest }: P & RMWC.WithRippleProps, ref) => {
+//       const providerContext = useProviderContext();
+//       ripple = ripple ?? providerContext.ripple;
+//       const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
+
+//       if (ripple) {
+//         return (
+//           <Ripple
+//             {...rest}
+//             accent={rippleOptions.accent || defaultAccent}
+//             unbounded={rippleOptions.unbounded || defaultUnbounded}
+//             surface={rippleOptions.surface || defaultSurface}
+//           >
+//             <Component {...(rest as P)} ref={ref} />
+//           </Ripple>
+//         );
+//       }
+
+//       return <Component {...(rest as P)} ref={ref} />;
+//     }
+//   );
+
+//   WithRippleComponent.displayName = `withRipple(${
+//     Component.displayName || Component.constructor.name || 'Unknown'
+//   })`;
+
+//   return WithRippleComponent as React.ComponentType<P & RMWC.WithRippleProps>;
+// };
+
 export const withRipple = ({
   unbounded: defaultUnbounded,
   accent: defaultAccent,
   surface: defaultSurface
-}: WithRippleOpts = {}) => <P extends {}>(
-  Component: React.ComponentType<P & RMWC.WithRippleProps>
-): React.ComponentType<P & RMWC.WithRippleProps> => {
-  const WithRippleComponent = React.forwardRef<any, any>(
-    ({ ripple, ...rest }: P & RMWC.WithRippleProps, ref) => {
+}: WithRippleOpts = {}) => <P extends {}, C extends React.ComponentType<P>>(
+  Component: C
+): C => {
+  const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
+    ({ ripple, ...rest }, ref) => {
       const providerContext = useProviderContext();
       ripple = ripple ?? providerContext.ripple;
       const rippleOptions = typeof ripple !== 'object' ? {} : ripple;
@@ -177,18 +214,18 @@ export const withRipple = ({
             unbounded={rippleOptions.unbounded || defaultUnbounded}
             surface={rippleOptions.surface || defaultSurface}
           >
-            <Component {...(rest as P)} ref={ref} />
+            <Component {...(rest as any)} ref={ref} />
           </Ripple>
         );
       }
 
-      return <Component {...(rest as P)} ref={ref} />;
+      return <Component {...(rest as any)} ref={ref} />;
     }
   );
 
-  WithRippleComponent.displayName = `withRipple(${Component.displayName ||
-    Component.constructor.name ||
-    'Unknown'})`;
+  // WithRippleComponent.displayName = `withRipple(${
+  //   Component.displayName || Component.constructor.name || 'Unknown'
+  // })`;
 
-  return WithRippleComponent as React.ComponentType<P & RMWC.WithRippleProps>;
+  return WithRippleComponent as any;
 };
