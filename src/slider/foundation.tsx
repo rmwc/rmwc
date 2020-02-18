@@ -5,7 +5,7 @@ import { EventType, SpecificEventListener } from '@material/base/types';
 import { debounce } from '@rmwc/base';
 
 import { MDCSliderFoundation } from '@material/slider';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 export const useSliderFoundation = (
   props: SliderProps & React.HTMLProps<any>

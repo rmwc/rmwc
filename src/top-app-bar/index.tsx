@@ -3,7 +3,6 @@ import React from 'react';
 import { useClassNames, Tag } from '@rmwc/base';
 
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
-import { withRipple } from '@rmwc/ripple';
 import { useTopAppBarFoundation } from './foundation';
 
 /*********************************************************************

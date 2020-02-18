@@ -42,7 +42,9 @@ export const useCheckboxFoundation = (
   // Handles syncing of indeterminate state
   const doSync = useCallback(() => {
     if (checkboxEl.ref) {
-      (checkboxEl.ref as HTMLInputElement).indeterminate = !!props.indeterminate;
+      (checkboxEl.ref as HTMLInputElement).indeterminate = Boolean(
+        props.indeterminate
+      );
     }
     window.requestAnimationFrame(() => {
       foundation.handleChange();

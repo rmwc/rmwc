@@ -59,10 +59,10 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
   getType(type: string) {
     // do some cleaning to add the type signature to the events
-    const eventMatches = type.match(/\S+?EventT/);
-    if (eventMatches) {
-      const evtName = eventMatches[0];
-    }
+    // const eventMatches = type.match(/\S+?EventT/);
+    // if (eventMatches) {
+    //   const evtName = eventMatches[0];
+    // }
 
     return type;
   }
@@ -288,7 +288,12 @@ const IFrame = ({
   }, [headNode, mountNode]);
 
   return (
-    <iframe {...props} ref={setContentRef} className="docs-iframe">
+    <iframe
+      {...props}
+      ref={setContentRef}
+      className="docs-iframe"
+      title="RMWC Example"
+    >
       {mountNode && canMount && createPortal(<>{children}</>, mountNode)}
     </iframe>
   );
@@ -377,7 +382,7 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
     fetch(fileSrc)
       .then(src => src.text())
       .then(src => setSrc(src));
-  }, []);
+  }, [fileSrc]);
 
   return src ? (
     <div>

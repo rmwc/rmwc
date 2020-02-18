@@ -3,7 +3,6 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';
-import MDCFoundation from '@material/base/foundation';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;

@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent } from './menu-content';
@@ -508,23 +508,27 @@ export function App() {
 
   const [, forceUpdate] = useState(Math.random());
 
-  const doSizeCheck = (initial?: boolean) => {
-    const _isMobile = window.innerWidth < 640;
-    const _menuIsOpen = initial && window.innerWidth > 640 ? true : menuIsOpen;
+  const doSizeCheck = useCallback(
+    (initial?: boolean) => {
+      const _isMobile = window.innerWidth < 640;
+      const _menuIsOpen =
+        initial && window.innerWidth > 640 ? true : menuIsOpen;
 
-    if (isMobile !== _isMobile || menuIsOpen !== _menuIsOpen) {
-      setIsMobile(_isMobile);
-      setMenuIsOpen(_menuIsOpen);
-      setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-      }, 300);
-    }
-  };
+      if (isMobile !== _isMobile || menuIsOpen !== _menuIsOpen) {
+        setIsMobile(_isMobile);
+        setMenuIsOpen(_menuIsOpen);
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 300);
+      }
+    },
+    [isMobile, menuIsOpen]
+  );
 
   useEffect(() => {
     doSizeCheck(true);
     history.listen(() => forceUpdate(Math.random()));
-  }, []);
+  }, [doSizeCheck]);
 
   useEffect(() => {
     const listener = () => doSizeCheck();

@@ -13,7 +13,8 @@
         "ignoreTrailingComments": true,
         "ignoreUrls": true,
         "ignoreStrings": true,
-        "ignoreTemplateLiterals": true
+        "ignoreTemplateLiterals": true,
+        "ignorePattern": "^[\\S\\s]+\\{.+/\\}"
       }
     ],
     "react/prop-types": "off",

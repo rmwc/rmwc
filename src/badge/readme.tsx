@@ -6,7 +6,6 @@ import examples from './generated-examples.json';
 
 import { Badge, BadgeAnchor } from '.';
 import { Button } from '../button';
-import { Chip } from '../chip';
 import { IconButton } from '../icon-button';
 import { Avatar } from '../avatar';
 

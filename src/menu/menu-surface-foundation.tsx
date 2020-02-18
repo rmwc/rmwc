@@ -317,6 +317,7 @@ export const useMenuSurfaceFoundation = (
     return () => {
       unhoistMenuFromBody();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { ...elements };

@@ -1,5 +1,4 @@
-import * as RMWC from '@rmwc/types';
-import { useFoundation, debounce } from '@rmwc/base';
+import { useFoundation } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
