@@ -267,7 +267,7 @@ class Bug297 extends React.Component {
 
 class Bug350 extends React.Component {
   state = { options: [] };
-  ref = React.createRef();
+  ref = React.createRef<any>();
 
   render() {
     const style = { width: '100%', marginBottom: '1rem' };
@@ -426,7 +426,7 @@ function Bug415() {
         icon={{ icon: 'edit', size: 'medium' }} // or icon="edit"
         label="some label"
         tag={Link}
-        {...{ to: '/link' }}
+        to="/link"
       />
     </BrowserRouter>
   );
@@ -652,7 +652,7 @@ function Bug486() {
       label="Select currency"
       value={value}
       onChange={event => {
-        setValue(event.currentTarget.value);
+        setValue(String(event.currentTarget.value));
       }}
     >
       <>

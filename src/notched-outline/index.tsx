@@ -1,6 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { useNotchedOutlineFoundation } from './foundation';
+import { createComponent } from '@rmwc/base';
 
 export interface NotchedOutlineProps {
   notch?: number;
@@ -10,34 +11,33 @@ export interface NotchedOutlineProps {
  * Notched Outline
  *********************************************************************/
 
-export function NotchedOutline(
-  props: NotchedOutlineProps & RMWC.ComponentProps
-) {
-  const { children, ...rest } = props;
-  const { rootEl, notchedEl } = useNotchedOutlineFoundation(props);
+export const NotchedOutline = createComponent<NotchedOutlineProps>(
+  function NotchedOutline(props) {
+    const { children, ...rest } = props;
+    const { rootEl, notchedEl } = useNotchedOutlineFoundation(props);
 
-  return (
-    <div
-      {...rootEl.props({
-        ...rest,
-        className: 'mdc-notched-outline'
-      })}
-      ref={rootEl.setRef}
-    >
-      <NotchedOutlineLeading />
+    return (
       <div
-        {...notchedEl.props({
-          className: 'mdc-notched-outline__notch'
+        {...rootEl.props({
+          ...rest,
+          className: 'mdc-notched-outline'
         })}
-        ref={notchedEl.setRef}
+        ref={rootEl.setRef}
       >
-        {children}
+        <NotchedOutlineLeading />
+        <div
+          {...notchedEl.props({
+            className: 'mdc-notched-outline__notch'
+          })}
+          ref={notchedEl.setRef}
+        >
+          {children}
+        </div>
+        <NotchedOutlineTrailing />
       </div>
-      <NotchedOutlineTrailing />
-    </div>
-  );
-}
-NotchedOutline.displayName = 'NotchedOutline';
+    );
+  }
+);
 
 /*********************************************************************
  * Bits

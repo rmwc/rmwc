@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useListFoundation } from './foundation';
 
 export type ListOnActionEventT = RMWC.CustomEventT<number>;
@@ -36,7 +36,7 @@ export interface ListApi {
   focusItemAtIndex: (index: number) => void;
 }
 
-export function List(props: ListProps & RMWC.ComponentProps) {
+export const List = createComponent<ListProps>(function List(props, ref) {
   const {
     dense,
     twoLine,
@@ -56,5 +56,5 @@ export function List(props: ListProps & RMWC.ComponentProps) {
       'mdc-list--non-interactive': nonInteractive
     }
   ]);
-  return <Tag {...rest} element={rootEl} className={className} />;
-}
+  return <Tag {...rest} element={rootEl} className={className} ref={ref} />;
+});

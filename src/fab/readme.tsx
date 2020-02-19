@@ -40,7 +40,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Fab]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Fab', component: Fab }]}
+      />
     </Docs>
   );
 }

@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-import { useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
 
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { useTopAppBarFoundation } from './foundation';
@@ -33,14 +33,23 @@ export interface TopAppBarProps {
 }
 
 /** A TopAppBar component */
-export const TopAppBar = (props: TopAppBarProps & RMWC.ComponentProps) => (
-  <TopAppBarBase
-    key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
-    {...props}
-  />
-);
+export const TopAppBar = createComponent<TopAppBarProps>(function TopAppBar(
+  props,
+  ref
+) {
+  return (
+    <TopAppBarBase
+      key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
+      {...props}
+      ref={ref}
+    />
+  );
+});
 
-function TopAppBarBase(props: TopAppBarProps & RMWC.ComponentProps) {
+const TopAppBarBase = createComponent<TopAppBarProps>(function TopAppBarBase(
+  props,
+  ref
+) {
   const { rootEl } = useTopAppBarFoundation(props);
   const {
     onNav,
@@ -66,11 +75,13 @@ function TopAppBarBase(props: TopAppBarProps & RMWC.ComponentProps) {
   return (
     <Tag
       tag="header"
-      {...rootEl.props({ ...rest, className })}
-      ref={rootEl.setRef}
+      {...rest}
+      element={rootEl}
+      className={className}
+      ref={ref}
     />
   );
-}
+});
 
 /** A simplified syntax for creating an AppBar. */
 export interface SimpleTopAppBarProps extends TopAppBarProps {
@@ -87,12 +98,8 @@ export interface SimpleTopAppBarProps extends TopAppBarProps {
 }
 
 /** A simplified syntax for creating an AppBar. */
-export class SimpleTopAppBar extends React.Component<
-  SimpleTopAppBarProps & RMWC.ComponentProps
-> {
-  static displayName = 'SimpleTopAppBar';
-
-  render() {
+export const SimpleTopAppBar = createComponent<SimpleTopAppBarProps>(
+  function SimpleTopAppBar(props, ref) {
     const {
       title,
       actionItems,
@@ -100,9 +107,9 @@ export class SimpleTopAppBar extends React.Component<
       startContent,
       endContent,
       ...rest
-    } = this.props;
+    } = props;
     return (
-      <TopAppBar {...rest}>
+      <TopAppBar {...rest} ref={ref}>
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             {!!navigationIcon && (
@@ -128,7 +135,7 @@ export class SimpleTopAppBar extends React.Component<
       </TopAppBar>
     );
   }
-}
+);
 
 /*********************************************************************
  * Bits
@@ -138,13 +145,12 @@ export class SimpleTopAppBar extends React.Component<
 export interface TopAppBarRowProps {}
 
 /** A row for the app bar. */
-export const TopAppBarRow = React.forwardRef<
-  any,
-  TopAppBarRowProps & RMWC.ComponentProps
->(function TopAppBarRow(props, ref) {
-  const className = useClassNames(props, ['mdc-top-app-bar__row']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
+export const TopAppBarRow = createComponent<TopAppBarRowProps>(
+  function TopAppBarRow(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__row']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 TopAppBarRow.displayName = 'TopAppBarRow';
 
 /** A section for the app bar. */
@@ -156,20 +162,19 @@ export interface TopAppBarSectionProps {
 }
 
 /** A section for the app bar. */
-export const TopAppBarSection = React.forwardRef<
-  any,
-  TopAppBarSectionProps & RMWC.ComponentProps
->(function TopAppBarSection(props, ref) {
-  const { alignStart, alignEnd, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-top-app-bar__section',
-    {
-      'mdc-top-app-bar__section--align-start': alignStart,
-      'mdc-top-app-bar__section--align-end': alignEnd
-    }
-  ]);
-  return <Tag tag="section" ref={ref} {...rest} className={className} />;
-});
+export const TopAppBarSection = createComponent<TopAppBarSectionProps>(
+  function TopAppBarSection(props, ref) {
+    const { alignStart, alignEnd, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-top-app-bar__section',
+      {
+        'mdc-top-app-bar__section--align-start': alignStart,
+        'mdc-top-app-bar__section--align-end': alignEnd
+      }
+    ]);
+    return <Tag tag="section" ref={ref} {...rest} className={className} />;
+  }
+);
 TopAppBarSection.displayName = 'TopAppBarSection';
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
@@ -198,13 +203,12 @@ export const TopAppBarActionItem = function TopAppBarActionItem(
 export interface TopAppBarTitleProps {}
 
 /** A title for the top app bar. */
-export const TopAppBarTitle = React.forwardRef<
-  any,
-  TopAppBarTitleProps & RMWC.ComponentProps
->(function TopAppBarTitle(props, ref) {
-  const className = useClassNames(props, ['mdc-top-app-bar__title']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
+export const TopAppBarTitle = createComponent<TopAppBarTitleProps>(
+  function TopAppBarTitle(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__title']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 TopAppBarTitle.displayName = 'TopAppBarTitle';
 
 /** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
@@ -220,20 +224,19 @@ export interface TopAppBarFixedAdjustProps {
 }
 
 /** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export const TopAppBarFixedAdjust = React.forwardRef<
-  any,
-  TopAppBarFixedAdjustProps & RMWC.ComponentProps
->(function TopAppBarFixedAdjust(props, ref) {
-  const { dense, denseProminent, prominent, short, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-top-app-bar--fixed-adjust',
-    {
-      'mdc-top-app-bar--dense-fixed-adjust': props.dense,
-      'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
-      'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
-      'mdc-top-app-bar--short-fixed-adjust': props.short
-    }
-  ]);
-  return <Tag ref={ref} {...rest} className={className} />;
-});
+export const TopAppBarFixedAdjust = createComponent<TopAppBarFixedAdjustProps>(
+  function TopAppBarFixedAdjust(props, ref) {
+    const { dense, denseProminent, prominent, short, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-top-app-bar--fixed-adjust',
+      {
+        'mdc-top-app-bar--dense-fixed-adjust': props.dense,
+        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
+        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
+        'mdc-top-app-bar--short-fixed-adjust': props.short
+      }
+    ]);
+    return <Tag ref={ref} {...rest} className={className} />;
+  }
+);
 TopAppBarFixedAdjust.displayName = 'TopAppBarFixedAdjust';

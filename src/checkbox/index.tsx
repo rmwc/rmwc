@@ -32,7 +32,7 @@ export interface CheckboxProps
 }
 
 /** A Checkbox component. */
-export const Checkbox = createComponent<CheckboxProps, 'input'>(
+export const Checkbox = createComponent<CheckboxProps, HTMLInputElement>(
   function Checkbox(props, ref) {
     const {
       renderToggle,

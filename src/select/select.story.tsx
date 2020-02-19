@@ -62,7 +62,7 @@ function EnhancedSelect() {
           value={value}
           onChange={evt => {
             console.log('onChange', evt.currentTarget.value);
-            setValue(evt.currentTarget.value);
+            setValue(String(evt.currentTarget.value));
           }}
         />
       </div>
@@ -74,7 +74,7 @@ function EnhancedSelect() {
           }}
           onChange={evt => {
             console.log('onChange', evt.currentTarget.value);
-            setValue(evt.currentTarget.value);
+            setValue(String(evt.currentTarget.value));
           }}
         >
           <MenuItems twoLine style={{ width: '400px' }}>
@@ -93,7 +93,7 @@ function EnhancedSelect() {
         value={value}
         onChange={evt => {
           console.log('onChange', evt.currentTarget.value);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
       />
 
@@ -105,7 +105,7 @@ function EnhancedSelect() {
         value={value}
         onChange={evt => {
           console.log('onChange', evt.currentTarget.value);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
       />
 
@@ -177,7 +177,7 @@ function ControlledSelect() {
         value={value}
         onChange={evt => {
           console.log('RMWC Change', evt);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
         label="Array"
         options={opts2}
@@ -186,7 +186,7 @@ function ControlledSelect() {
         value={value}
         onChange={evt => {
           console.log('Enhanced Change', evt);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
         label="Array"
         enhanced

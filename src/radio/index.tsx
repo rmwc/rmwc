@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { Tag, useClassNames, mergeRefs } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useRadioFoundation } from './foundation';
@@ -15,35 +15,35 @@ export interface RadioProps
     ToggleableFoundationProps {}
 
 /** A Radio button component. */
-export const Radio = React.forwardRef<any, RadioProps & RMWC.ComponentProps>(
-  function Radio(props, ref) {
-    const { renderToggle, id, toggleRootProps, rootEl } = useRadioFoundation(
-      props
-    );
+export const Radio = createComponent<RadioProps, 'input'>(function Radio(
+  props,
+  ref
+) {
+  const { renderToggle, id, toggleRootProps, rootEl } = useRadioFoundation(
+    props
+  );
 
-    const { children, className, label, style, inputRef, ...rest } = props;
+  const { children, className, label, style, inputRef, ...rest } = props;
 
-    const radio = (
-      <RadioRoot
-        {...rootEl.props(toggleRootProps)}
-        ref={mergeRefs(rootEl.setRef, ref)}
-      >
-        <input
-          {...rest}
-          className="mdc-radio__native-control"
-          type="radio"
-          id={id}
-          ref={inputRef}
-        />
-        <RadioBackground />
-        <RadioRipple />
-      </RadioRoot>
-    );
+  const radio = (
+    <RadioRoot
+      {...rootEl.props(toggleRootProps)}
+      ref={mergeRefs(rootEl.setRef, ref)}
+    >
+      <input
+        {...rest}
+        className="mdc-radio__native-control"
+        type="radio"
+        id={id}
+        ref={inputRef}
+      />
+      <RadioBackground />
+      <RadioRipple />
+    </RadioRoot>
+  );
 
-    return renderToggle(radio);
-  }
-);
-Radio.displayName = 'Radio';
+  return renderToggle(radio);
+});
 
 /*********************************************************************
  * Bits
@@ -71,7 +71,6 @@ const RadioRoot = withRipple({
     return <Tag {...rest} className={className} />;
   })
 );
-RadioRoot.displayName = 'RadioRoot';
 
 const RadioBackground = React.memo(function RadioBackground() {
   return (

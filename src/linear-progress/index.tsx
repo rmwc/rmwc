@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useLinearProgressFoundation } from './foundation';
-import { mergeRefs, Tag, useClassNames } from '@rmwc/base';
+import { mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /** A component to display linear progress. */
 export interface LinearProgressProps {
@@ -16,32 +16,31 @@ export interface LinearProgressProps {
 }
 
 /** A component to display linear progress. */
-export const LinearProgress = React.forwardRef<
-  any,
-  LinearProgressProps & RMWC.ComponentProps
->(function LinearProgress(props, ref) {
-  const { reversed, closed, progress, buffer, ...rest } = props;
-  const className = useClassNames(props, [
-    'mdc-linear-progress',
-    {
-      'mdc-linear-progress--reversed': reversed,
-      'mdc-linear-progress--closed': closed
-    }
-  ]);
-  const { rootEl } = useLinearProgressFoundation(props);
+export const LinearProgress = createComponent<LinearProgressProps>(
+  function LinearProgress(props, ref) {
+    const { reversed, closed, progress, buffer, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-linear-progress',
+      {
+        'mdc-linear-progress--reversed': reversed,
+        'mdc-linear-progress--closed': closed
+      }
+    ]);
+    const { rootEl } = useLinearProgressFoundation(props);
 
-  return (
-    <Tag
-      tag="nav"
-      role="progressbar"
-      {...rootEl.props({ ...rest, className })}
-      ref={mergeRefs(rootEl.setRef, ref)}
-    >
-      <LinearProgressBody />
-    </Tag>
-  );
-});
-LinearProgress.displayName = 'LinearProgress';
+    return (
+      <Tag
+        tag="nav"
+        role="progressbar"
+        element={rootEl}
+        className={className}
+        ref={ref}
+      >
+        <LinearProgressBody />
+      </Tag>
+    );
+  }
+);
 
 const LinearProgressBody = React.memo(function LinearProgressBody() {
   return (
@@ -57,5 +56,3 @@ const LinearProgressBody = React.memo(function LinearProgressBody() {
     </>
   );
 });
-
-LinearProgressBody.displayName = 'LinearProgressBody';

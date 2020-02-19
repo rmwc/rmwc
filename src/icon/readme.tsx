@@ -296,7 +296,10 @@ export default function() {
         `}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Icon]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Icon', component: Icon }]}
+      />
     </Docs>
   );
 }

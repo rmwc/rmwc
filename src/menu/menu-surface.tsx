@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { Corner } from '@material/menu-surface';
-import { useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useMenuSurfaceFoundation } from './menu-surface-foundation';
 
 export type AnchorT =
@@ -49,46 +49,46 @@ export interface MenuSurfaceProps {
  ****************************************************************/
 
 /** A generic menu component for displaying any type of content. */
-export const MenuSurface = React.forwardRef(function MenuSurface(
-  props: MenuSurfaceProps & RMWC.ComponentProps,
-  ref: React.Ref<any>
-) {
-  const {
-    children,
-    open,
-    anchorCorner,
-    onOpen,
-    onClose,
-    hoistToBody,
-    fixed,
-    apiRef,
-    ...rest
-  } = props;
+export const MenuSurface = createComponent<MenuSurfaceProps>(
+  function MenuSurface(props, ref) {
+    const {
+      children,
+      open,
+      anchorCorner,
+      onOpen,
+      onClose,
+      hoistToBody,
+      fixed,
+      apiRef,
+      ...rest
+    } = props;
 
-  const { rootEl } = useMenuSurfaceFoundation(props);
+    const { rootEl } = useMenuSurfaceFoundation(props);
 
-  const className = useClassNames(props, [
-    'mdc-menu-surface',
-    {
-      'mdc-menu-surface--fixed': fixed
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-menu-surface',
+      {
+        'mdc-menu-surface--fixed': fixed
+      }
+    ]);
 
-  return (
-    <Tag {...rest} element={rootEl} className={className} ref={ref}>
-      {children}
-    </Tag>
-  );
-});
-MenuSurface.displayName = 'MenuSurface';
+    return (
+      <Tag {...rest} element={rootEl} className={className} ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
 
 /****************************************************************
  * MenuSurfaceAnchor
  ****************************************************************/
+export interface MenuSurfaceAnchorProps {}
 
 /** A Menu Anchor. When using the anchorCorner prop of Menu, you must set MenuSurfaceAnchors css style position to absolute. */
-export function MenuSurfaceAnchor(props: RMWC.ComponentProps) {
-  const className = useClassNames(props, ['mdc-menu-surface--anchor']);
-  return <Tag {...props} className={className} />;
-}
-MenuSurfaceAnchor.displayName = 'MenuSurfaceAnchor';
+export const MenuSurfaceAnchor = createComponent<MenuSurfaceAnchorProps>(
+  function MenuSurfaceAnchor(props, ref) {
+    const className = useClassNames(props, ['mdc-menu-surface--anchor']);
+    return <Tag {...props} className={className} ref={ref} />;
+  }
+);

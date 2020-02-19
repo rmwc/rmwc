@@ -1,10 +1,13 @@
+import * as RMWC from '@rmwc/types';
 import { ChipProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
 
-export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
+export const useChipFoundation = (
+  props: ChipProps & RMWC.HTMLProps<HTMLDivElement>
+) => {
   const chipId = useId('chip', props);
 
   const foundationWithElements = useFoundation({
@@ -100,8 +103,8 @@ export const useChipFoundation = (props: ChipProps & React.HTMLProps<any>) => {
   const handleInteraction = (
     evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
   ) => {
-    evt.type === 'click' && props.onClick?.(evt);
-    evt.type === 'keydown' && props.onKeyDown?.(evt);
+    evt.type === 'click' && props.onClick?.(evt as any);
+    evt.type === 'keydown' && props.onKeyDown?.(evt as any);
     return foundation.handleInteraction(evt);
   };
 

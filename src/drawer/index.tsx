@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { mergeRefs, Tag, useClassNames } from '@rmwc/base';
+import { mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
 import {
   useDismissableDrawerFoundation,
   useModalDrawerFoundation
@@ -32,20 +32,17 @@ export interface DrawerProps {
 }
 
 /** A Drawer component. */
-export const Drawer = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
-  function Drawer(props, ref) {
-    if (props.dismissible) {
-      return <DismissibleDrawer {...props} ref={ref} />;
-    }
-
-    if (props.modal) {
-      return <ModalDrawer {...props} ref={ref} />;
-    }
-
-    return <DrawerRoot {...props} ref={ref} />;
+export const Drawer = createComponent<DrawerProps>(function Drawer(props, ref) {
+  if (props.dismissible) {
+    return <DismissibleDrawer {...props} ref={ref} />;
   }
-);
-Drawer.displayName = 'Drawer';
+
+  if (props.modal) {
+    return <ModalDrawer {...props} ref={ref} />;
+  }
+
+  return <DrawerRoot {...props} ref={ref} />;
+});
 
 const slidableDrawerFactory = (
   useDrawerFoundation:
@@ -53,21 +50,22 @@ const slidableDrawerFactory = (
     | typeof useModalDrawerFoundation,
   displayName: string
 ) => {
-  const DrawerInner = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
-    function DrawerInner(props, ref) {
-      const { rootEl, scrimEl } = useDrawerFoundation(props);
-      const { onOpen, onClose, open, ...rest } = props;
-      return (
-        <>
-          <DrawerRoot
-            ref={mergeRefs(rootEl.setRef, ref)}
-            {...rootEl.props(rest)}
-          />
-          {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
-        </>
-      );
-    }
-  );
+  const DrawerInner = createComponent<DrawerProps>(function DrawerInner(
+    props,
+    ref
+  ) {
+    const { rootEl, scrimEl } = useDrawerFoundation(props);
+    const { onOpen, onClose, open, ...rest } = props;
+    return (
+      <>
+        <DrawerRoot
+          ref={mergeRefs(rootEl.setRef, ref)}
+          {...rootEl.props(rest)}
+        />
+        {rest.modal && <DrawerScrim {...scrimEl.props({})} />}
+      </>
+    );
+  });
 
   DrawerInner.displayName = displayName;
 
@@ -83,20 +81,21 @@ const DismissibleDrawer = slidableDrawerFactory(
   'dismissibleDrawer'
 );
 
-const DrawerRoot = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
-  function DrawerRoot(props, ref) {
-    const { dismissible, modal, ...rest } = props;
-    const className = useClassNames(props, [
-      'mdc-drawer',
-      {
-        'mdc-drawer--dismissible': dismissible,
-        'mdc-drawer--modal': modal
-      }
-    ]);
+const DrawerRoot = createComponent<DrawerProps>(function DrawerRoot(
+  props,
+  ref
+) {
+  const { dismissible, modal, ...rest } = props;
+  const className = useClassNames(props, [
+    'mdc-drawer',
+    {
+      'mdc-drawer--dismissible': dismissible,
+      'mdc-drawer--modal': modal
+    }
+  ]);
 
-    return <Tag tag="aside" ref={ref} {...rest} className={className} />;
-  }
-);
+  return <Tag tag="aside" ref={ref} {...rest} className={className} />;
+});
 
 /***************************************************************************************
  * Bits
@@ -106,53 +105,45 @@ const DrawerRoot = React.forwardRef<any, DrawerProps & RMWC.ComponentProps>(
 export interface DrawerHeaderProps {}
 
 /** An optional header for the Drawer. */
-export const DrawerHeader = React.forwardRef<
-  any,
-  DrawerHeaderProps & RMWC.ComponentProps
->(function DrawerHeader(props, ref) {
-  const className = useClassNames(props, ['mdc-drawer__header']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
-DrawerHeader.displayName = 'DrawerHeader';
+export const DrawerHeader = createComponent<DrawerHeaderProps>(
+  function DrawerHeader(props, ref) {
+    const className = useClassNames(props, ['mdc-drawer__header']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 
 /** An title for the DrawerHeader. */
 export interface DrawerTitleProps {}
 
 /** An title for the DrawerHeader. */
-export const DrawerTitle = React.forwardRef<
-  any,
-  DrawerTitleProps & RMWC.ComponentProps
->(function DrawerTitle(props, ref) {
-  const className = useClassNames(props, ['mdc-drawer__title']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
-DrawerTitle.displayName = 'DrawerTitle';
+export const DrawerTitle = createComponent<DrawerTitleProps>(
+  function DrawerTitle(props, ref) {
+    const className = useClassNames(props, ['mdc-drawer__title']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 
 /** A subtitle for the DrawerHeader. */
 export interface DrawerSubtitleProps {}
 
 /** A subtitle for the DrawerHeader. */
-export const DrawerSubtitle = React.forwardRef<
-  any,
-  DrawerSubtitleProps & RMWC.ComponentProps
->(function DrawerSubtitle(props, ref) {
-  const className = useClassNames(props, ['mdc-drawer__subtitle']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
-DrawerSubtitle.displayName = 'DrawerSubtitle';
+export const DrawerSubtitle = createComponent<DrawerSubtitleProps>(
+  function DrawerSubtitle(props, ref) {
+    const className = useClassNames(props, ['mdc-drawer__subtitle']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 
 /** Content for Drawers. */
 export interface DrawerContentProps {}
 
 /** Content for Drawers. */
-export const DrawerContent = React.forwardRef<
-  any,
-  DrawerContentProps & RMWC.ComponentProps
->(function DrawerContent(props, ref) {
-  const className = useClassNames(props, ['mdc-drawer__content']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
-DrawerContent.displayName = 'DrawerContent';
+export const DrawerContent = createComponent<DrawerContentProps>(
+  function DrawerContent(props, ref) {
+    const className = useClassNames(props, ['mdc-drawer__content']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 
 /** Protects the app's UI from interactions while a modal drawer is open. */
 const DrawerScrim = ({
@@ -165,11 +156,9 @@ const DrawerScrim = ({
 export interface DrawerAppContentProps {}
 
 /** For the Dismissible variant only. Sibling element that is resized when the drawer opens/closes. */
-export const DrawerAppContent = React.forwardRef<
-  any,
-  DrawerAppContentProps & RMWC.ComponentProps
->(function DrawerAppContent(props, ref) {
-  const className = useClassNames(props, ['mdc-drawer-app-content']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
-DrawerAppContent.displayName = 'DrawerAppContent';
+export const DrawerAppContent = createComponent<DrawerAppContentProps>(
+  function DrawerAppContent(props, ref) {
+    const className = useClassNames(props, ['mdc-drawer-app-content']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);

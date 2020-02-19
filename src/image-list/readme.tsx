@@ -106,12 +106,18 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          ImageList,
-          ImageListItem,
-          ImageListImageAspectContainer,
-          ImageListImage,
-          ImageListSupporting,
-          ImageListLabel
+          { displayName: 'ImageList', component: ImageList },
+          { displayName: 'ImageListItem', component: ImageListItem },
+          {
+            displayName: 'ImageListImageAspectContainer',
+            component: ImageListImageAspectContainer
+          },
+          { displayName: 'ImageListImage', component: ImageListImage },
+          {
+            displayName: 'ImageListSupporting',
+            component: ImageListSupporting
+          },
+          { displayName: 'ImageListLabel', component: ImageListLabel }
         ]}
       />
     </Docs>

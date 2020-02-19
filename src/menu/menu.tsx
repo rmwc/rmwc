@@ -2,7 +2,12 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 
 import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
-import { getDisplayName, classNames, useClassNames } from '@rmwc/base';
+import {
+  getDisplayName,
+  classNames,
+  useClassNames,
+  createComponent
+} from '@rmwc/base';
 
 import {
   MenuSurface,
@@ -40,35 +45,31 @@ export interface MenuProps extends Omit<MenuSurfaceProps, 'apiRef'> {
 export interface MenuItemsProps extends ListProps {}
 
 /** A wrapper for menu items */
-export const MenuItems = React.forwardRef(function MenuItems(
-  props: MenuItemsProps & RMWC.ComponentProps,
-  ref: React.Ref<any>
+export const MenuItems = createComponent<MenuItemsProps>(function MenuItems(
+  props,
+  ref
 ) {
   const className = useClassNames(props, ['mdc-list mdc-menu__items']);
   return <List role="menu" {...props} className={className} ref={ref} />;
 });
-MenuItems.displayName = 'MenuItems';
+MenuItems.displayName = 'Menuitems';
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export interface MenuItemProps extends ListItemProps {}
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
-export const MenuItem = React.forwardRef(function MenuItem(
-  props: MenuItemProps & RMWC.ComponentProps,
-  ref: React.Ref<any>
+export const MenuItem = createComponent<MenuItemProps>(function MenuItem(
+  props,
+  ref
 ) {
   return <ListItem role="menuitem" tabIndex={0} {...props} ref={ref} />;
 });
-MenuItem.displayName = 'MenuItem';
 
 const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';
 
 /** A menu component for displaying lists items. */
-export const Menu = React.forwardRef(function Menu(
-  props: MenuProps & Omit<RMWC.ComponentProps, 'onSelect'>,
-  ref: React.Ref<any>
-) {
+export const Menu = createComponent<MenuProps>(function Menu(props, ref) {
   const { children, focusOnOpen, onSelect, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
@@ -94,7 +95,7 @@ export const Menu = React.forwardRef(function Menu(
         React.Children.map(children, child => {
           if (isMenuItems(child)) {
             return React.cloneElement(child as React.ReactElement<any>, {
-              ...(React.isValidElement(child) && child.props),
+              ...(React.isValidElement(child) ? (child.props as Object) : {}),
               ...menuItemsProps
             });
           }
@@ -104,7 +105,6 @@ export const Menu = React.forwardRef(function Menu(
     </MenuSurface>
   );
 });
-Menu.displayName = 'Menu';
 
 /****************************************************************
  * Simple Menu

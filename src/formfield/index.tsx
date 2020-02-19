@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useFormfieldFoundation } from './foundation';
 
 /** A FormField component. */
@@ -10,10 +10,10 @@ export interface FormFieldProps {
 }
 
 /** A FormField component. */
-export const FormField = React.forwardRef<
-  any,
-  FormFieldProps & RMWC.ComponentProps
->(function FormField(props, ref) {
+export const FormField = createComponent<FormFieldProps>(function FormField(
+  props,
+  ref
+) {
   useFormfieldFoundation(props);
 
   const { alignEnd, ...rest } = props;

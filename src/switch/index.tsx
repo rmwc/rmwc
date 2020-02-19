@@ -1,6 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { classNames, mergeRefs, Tag, useClassNames } from '@rmwc/base';
+import {
+  classNames,
+  mergeRefs,
+  Tag,
+  useClassNames,
+  createComponent
+} from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableFoundationProps } from '@rmwc/toggleable';
 import { useSwitchFoundation } from './foundation';
@@ -15,7 +21,7 @@ export interface SwitchProps
     ToggleableFoundationProps {}
 
 /** A Switch component. */
-export const Switch = React.forwardRef<any, SwitchProps & RMWC.ComponentProps>(
+export const Switch = createComponent<SwitchProps, HTMLInputElement>(
   function Switch(props, ref) {
     const {
       renderToggle,
@@ -54,7 +60,6 @@ export const Switch = React.forwardRef<any, SwitchProps & RMWC.ComponentProps>(
     return renderToggle(renderedSwitch);
   }
 );
-Switch.displayName = 'Switch';
 
 /*********************************************************************
  * Bits

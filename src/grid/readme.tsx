@@ -38,7 +38,14 @@ export default function() {
         </Grid>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Grid, GridCell, GridInner]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'Grid', component: Grid },
+          { displayName: 'GridCell', component: GridCell },
+          { displayName: 'GridInner', component: GridInner }
+        ]}
+      />
     </Docs>
   );
 }

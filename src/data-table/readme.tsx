@@ -145,13 +145,13 @@ export default function() {
                   label="Rows"
                   options={['0', '1']}
                   value={String(rows)}
-                  onChange={evt => setRows(evt.currentTarget.value)}
+                  onChange={evt => setRows(Number(evt.currentTarget.value))}
                 />
                 <Select
                   label="Cols"
                   options={['0', '1']}
                   value={String(cols)}
-                  onChange={evt => setCols(evt.currentTarget.value)}
+                  onChange={evt => setCols(Number(evt.currentTarget.value))}
                 />
               </div>
             </>

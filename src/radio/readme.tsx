@@ -30,7 +30,7 @@ export default function() {
               <Radio
                 value="cookies"
                 checked={value === 'cookies'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Cookies
               </Radio>
@@ -38,7 +38,7 @@ export default function() {
               <Radio
                 value="pizza"
                 checked={value === 'pizza'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Pizza
               </Radio>
@@ -46,7 +46,7 @@ export default function() {
               <Radio
                 value="icecream"
                 checked={value === 'icecream'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Icecream
               </Radio>

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon } from '@rmwc/icon';
-import { useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
 
 interface SharedDataTableCellProps {
   /** Align content to the start of the cell. */
@@ -21,10 +21,10 @@ export interface DataTableProps {
 }
 
 /** The DataTable Component. */
-export const DataTable = React.forwardRef<
-  any,
-  DataTableProps & RMWC.ComponentProps
->(function DataTable(props, ref) {
+export const DataTable = createComponent<DataTableProps>(function DataTable(
+  props,
+  ref
+) {
   const { stickyColumns, stickyRows, ...rest } = props;
   const className = useClassNames(props, [
     'rmwc-data-table',
@@ -43,39 +43,36 @@ DataTable.displayName = 'DataTable';
 export interface DataTableContentProps {}
 
 /** The data table content. */
-export const DataTableContent = React.forwardRef<
-  any,
-  DataTableContentProps & RMWC.ComponentProps
->(function DataTableContent(props, ref) {
-  const className = useClassNames(props, ['rmwc-data-table__content']);
-  return <Tag tag="table" ref={ref} {...props} className={className} />;
-});
+export const DataTableContent = createComponent<DataTableContentProps>(
+  function DataTableContent(props, ref) {
+    const className = useClassNames(props, ['rmwc-data-table__content']);
+    return <Tag tag="table" ref={ref} {...props} className={className} />;
+  }
+);
 DataTableContent.displayName = 'DataTableContent';
 
 /** A header for the data table. */
 export interface DataTableHeadProps {}
 
 /** A header for the data table. */
-export const DataTableHead = React.forwardRef<
-  any,
-  DataTableHeadProps & RMWC.ComponentProps
->(function DataTableHead(props, ref) {
-  const className = useClassNames(props, ['rmwc-data-table__head']);
-  return <Tag tag="thead" ref={ref} {...props} className={className} />;
-});
+export const DataTableHead = createComponent<DataTableHeadProps>(
+  function DataTableHead(props, ref) {
+    const className = useClassNames(props, ['rmwc-data-table__head']);
+    return <Tag tag="thead" ref={ref} {...props} className={className} />;
+  }
+);
 DataTableHead.displayName = 'DataTableHead';
 
 /** A body for the data table. */
 export interface DataTableBodyProps {}
 
 /** A body for the data table. */
-export const DataTableBody = React.forwardRef<
-  any,
-  DataTableBodyProps & RMWC.ComponentProps
->(function DataTableBody(props, ref) {
-  const className = useClassNames(props, ['rmwc-data-table__body']);
-  return <Tag tag="tbody" ref={ref} {...props} className={className} />;
-});
+export const DataTableBody = createComponent<DataTableBodyProps>(
+  function DataTableBody(props, ref) {
+    const className = useClassNames(props, ['rmwc-data-table__body']);
+    return <Tag tag="tbody" ref={ref} {...props} className={className} />;
+  }
+);
 DataTableBody.displayName = 'DataTableBody';
 
 /** A row for the data table. */
@@ -87,20 +84,19 @@ export interface DataTableRowProps {
 }
 
 /** A row for the data table. */
-export const DataTableRow = React.forwardRef<
-  any,
-  DataTableRowProps & RMWC.ComponentProps
->(function DataTableRow(props, ref) {
-  const { activated, selected, ...rest } = props;
-  const className = useClassNames(props, [
-    'rmwc-data-table__row',
-    {
-      'rmwc-data-table__row--selected': props.selected,
-      'rmwc-data-table__row--activated': props.activated
-    }
-  ]);
-  return <Tag tag="tr" ref={ref} {...rest} className={className} />;
-});
+export const DataTableRow = createComponent<DataTableRowProps>(
+  function DataTableRow(props, ref) {
+    const { activated, selected, ...rest } = props;
+    const className = useClassNames(props, [
+      'rmwc-data-table__row',
+      {
+        'rmwc-data-table__row--selected': props.selected,
+        'rmwc-data-table__row--activated': props.activated
+      }
+    ]);
+    return <Tag tag="tr" ref={ref} {...rest} className={className} />;
+  }
+);
 DataTableRow.displayName = 'DataTableRow';
 
 const DataTableSortIcon = React.memo(function DataTableSortIcon() {
@@ -130,75 +126,73 @@ export interface DataTableHeadCellProps extends SharedDataTableCellProps {
 }
 
 /** A header cell for the data table. */
-export const DataTableHeadCell = React.forwardRef<
-  any,
-  DataTableHeadCellProps & RMWC.ComponentProps
->(function DataTableHeadCell(props, ref) {
-  const {
-    alignStart,
-    alignMiddle,
-    alignEnd,
-    sort,
-    onSortChange,
-    onClick,
-    children,
-    ...rest
-  } = props;
+export const DataTableHeadCell = createComponent<DataTableHeadCellProps>(
+  function DataTableHeadCell(props, ref) {
+    const {
+      alignStart,
+      alignMiddle,
+      alignEnd,
+      sort,
+      onSortChange,
+      onClick,
+      children,
+      ...rest
+    } = props;
 
-  const className = useClassNames(props, [
-    'rmwc-data-table__cell',
-    'rmwc-data-table__head-cell',
-    {
-      'rmwc-data-table__head-cell--sortable': sort !== undefined,
-      'rmwc-data-table__head-cell--sorted': !!sort,
-      'rmwc-data-table__head-cell--sorted-ascending': sort === 1,
-      'rmwc-data-table__head-cell--sorted-descending': sort === -1,
-      'rmwc-data-table__cell--align-start': alignStart,
-      'rmwc-data-table__cell--align-middle': alignMiddle,
-      'rmwc-data-table__cell--align-end': alignEnd
-    }
-  ]);
+    const className = useClassNames(props, [
+      'rmwc-data-table__cell',
+      'rmwc-data-table__head-cell',
+      {
+        'rmwc-data-table__head-cell--sortable': sort !== undefined,
+        'rmwc-data-table__head-cell--sorted': !!sort,
+        'rmwc-data-table__head-cell--sorted-ascending': sort === 1,
+        'rmwc-data-table__head-cell--sorted-descending': sort === -1,
+        'rmwc-data-table__cell--align-start': alignStart,
+        'rmwc-data-table__cell--align-middle': alignMiddle,
+        'rmwc-data-table__cell--align-end': alignEnd
+      }
+    ]);
 
-  const onClickProp =
-    onSortChange && sort !== undefined
-      ? {
-          onClick: (evt: any) => {
-            onSortChange &&
-              onSortChange(sort === null ? 1 : sort === 1 ? -1 : null);
+    const onClickProp =
+      onSortChange && sort !== undefined
+        ? {
+            onClick: (evt: any) => {
+              onSortChange &&
+                onSortChange(sort === null ? 1 : sort === 1 ? -1 : null);
 
-            onClick && onClick(evt);
+              onClick && onClick(evt);
+            }
           }
-        }
-      : {};
+        : {};
 
-  return (
-    <Tag tag="th" {...rest} {...onClickProp} className={className} ref={ref}>
-      {sort !== undefined && <DataTableSortIcon />}
-      {children}
-    </Tag>
-  );
-});
+    return (
+      <Tag tag="th" {...rest} {...onClickProp} className={className} ref={ref}>
+        {sort !== undefined && <DataTableSortIcon />}
+        {children}
+      </Tag>
+    );
+  }
+);
 DataTableHeadCell.displayName = 'DataTableHeadCell';
 
 /** A cell for the DataTable */
 export interface DataTableCellProps extends SharedDataTableCellProps {}
 
 /** A cell for the DataTable */
-export const DataTableCell = React.forwardRef<
-  any,
-  DataTableCellProps & RMWC.ComponentProps
->(function DataTableCell(props, ref) {
-  const { alignStart, alignMiddle, alignEnd, ...rest } = props;
-  const className = useClassNames(props, [
-    'rmwc-data-table__cell',
-    {
-      'rmwc-data-table__cell--align-start': props.alignStart,
-      'rmwc-data-table__cell--align-middle': props.alignMiddle,
-      'rmwc-data-table__cell--align-end': props.alignEnd
-    }
-  ]);
-  return <Tag tag="td" ref={ref} {...rest} className={className} />;
-});
+export const DataTableCell = createComponent<DataTableCellProps>(
+  function DataTableCell(props, ref) {
+    const { alignStart, alignMiddle, alignEnd, ...rest } = props;
+    const className = useClassNames(props, [
+      'rmwc-data-table__cell',
+      {
+        'rmwc-data-table__cell--align-start': props.alignStart,
+        'rmwc-data-table__cell--align-middle': props.alignMiddle,
+        'rmwc-data-table__cell--align-end': props.alignEnd
+      }
+    ]);
+    return <Tag tag="td" ref={ref} {...rest} className={className} />;
+  }
+);
 DataTableCell.displayName = 'DataTableCell';
 
 /** A simple data table to render matrices. */

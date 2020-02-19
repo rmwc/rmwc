@@ -47,7 +47,8 @@ export default function() {
             <MenuSurfaceAnchor>
               <Menu
                 open={open}
-                onSelect={evt => console.log(evt.detail.index)}
+                /** Todo, fix any */
+                onSelect={(evt: any) => console.log(evt.detail.index)}
                 onClose={evt => setOpen(false)}
               >
                 <MenuItem>Cookies</MenuItem>

@@ -1,6 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { useFloatingLabelFoundation } from './foundation';
+import { createComponent, mergeRefs } from '@rmwc/base';
 
 export interface FloatingLabelProps {
   shake?: boolean;
@@ -11,18 +12,15 @@ export interface FloatingLabelApi {
   getWidth: () => number;
 }
 
-export const FloatingLabel = React.forwardRef<
-  any,
-  FloatingLabelProps &
-    RMWC.ComponentProps & { apiRef?: (api: FloatingLabelApi) => void }
+export const FloatingLabel = createComponent<
+  FloatingLabelProps & { apiRef?: (api: FloatingLabelApi) => void }
 >(function FloatingLabel(props, ref) {
   const { rootEl } = useFloatingLabelFoundation(props);
   const { shake, float, apiRef, ...rest } = props;
   return (
     <label
       {...rootEl.props({ ...rest, className: 'mdc-floating-label' })}
-      ref={rootEl.setRef}
+      ref={mergeRefs(rootEl.setRef, ref)}
     />
   );
 });
-FloatingLabel.displayName = 'FloatingLabel';

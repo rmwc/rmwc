@@ -166,7 +166,8 @@ export function SiteSearch() {
         onClose={() => {
           setIsSearching(false);
         }}
-        onSelect={evt => {
+        // TODO: fix any
+        onSelect={(evt: any) => {
           window.scrollTo(0, 0);
           history.replace(
             (evt.detail.item as HTMLAnchorElement).href.split('/').pop() || '/'

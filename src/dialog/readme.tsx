@@ -225,12 +225,12 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          Dialog,
-          DialogTitle,
-          DialogContent,
-          DialogActions,
-          DialogButton,
-          SimpleDialog
+          { displayName: 'Dialog', component: Dialog },
+          { displayName: 'DialogTitle', component: DialogTitle },
+          { displayName: 'DialogContent', component: DialogContent },
+          { displayName: 'DialogActions', component: DialogActions },
+          { displayName: 'DialogButton', component: DialogButton },
+          { displayName: 'SimpleDialog', component: SimpleDialog }
         ]}
       />
     </Docs>

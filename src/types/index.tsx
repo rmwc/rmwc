@@ -130,5 +130,5 @@ export interface HTMLProps<T = HTMLElement>
     React.ClassAttributes<T> {
   tag?: TagT;
   theme?: ThemePropT;
-  ref?: React.Ref<T>;
+  ref?: React.Ref<any>;
 }

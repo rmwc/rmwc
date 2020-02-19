@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { MDCSelectIconFoundation } from '@material/select';
-import { useClassNames, useId, Tag } from '@rmwc/base';
+import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
 import { Icon, IconProps } from '@rmwc/icon';
@@ -249,168 +249,172 @@ function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
   );
 }
 
-export const Select = React.forwardRef(function Select(
-  props: SelectProps & RMWC.ComponentProps,
-  ref: React.Ref<any>
-) {
-  const {
-    placeholder,
-    children,
-    value,
-    outlined,
-    label = '',
-    options = [],
-    rootProps = {},
-    enhanced,
-    icon,
-    onChange,
-    onFocus,
-    onBlur,
-    onKeyDown,
-    invalid,
-    inputRef,
-    helpText,
-    ...rest
-  } = props;
+export const Select = createComponent<SelectProps, HTMLSelectElement>(
+  function Select(props, ref) {
+    const {
+      placeholder,
+      children,
+      value,
+      outlined,
+      label = '',
+      options = [],
+      rootProps = {},
+      enhanced,
+      icon,
+      onChange,
+      onFocus,
+      onBlur,
+      onKeyDown,
+      invalid,
+      inputRef,
+      helpText,
+      ...rest
+    } = props;
 
-  const selectOptions = createSelectOptions(options);
-  const {
-    rootEl,
-    selectedTextEl,
-    notchWidth,
-    menuOpen,
-    selectedTextContent,
-    lineRippleActive,
-    lineRippleCenter,
-    floatLabel,
-    setFloatingLabel,
-    setNativeControl,
-    setLeadingIcon,
-    selectedIndex,
-    setMenu,
-    handleFocus,
-    handleBlur,
-    handleClick,
-    handleKeydown,
-    handleMenuClosed,
-    handleMenuOpened,
-    handleMenuSelected
-  } = useSelectFoundation(props);
+    const selectOptions = createSelectOptions(options);
+    const {
+      rootEl,
+      selectedTextEl,
+      notchWidth,
+      menuOpen,
+      selectedTextContent,
+      lineRippleActive,
+      lineRippleCenter,
+      floatLabel,
+      setFloatingLabel,
+      setNativeControl,
+      setLeadingIcon,
+      selectedIndex,
+      setMenu,
+      handleFocus,
+      handleBlur,
+      handleClick,
+      handleKeydown,
+      handleMenuClosed,
+      handleMenuOpened,
+      handleMenuSelected
+    } = useSelectFoundation(props);
 
-  const id = useId('select', props);
+    const id = useId('select', props);
 
-  const className = useClassNames(props, [
-    'mdc-select',
-    {
-      'mdc-select--outlined': !!outlined,
-      'mdc-select--required': !!props.required,
-      'mdc-select--invalid': !!invalid,
-      'mdc-select--with-leading-icon': !!icon
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-select',
+      {
+        'mdc-select--outlined': !!outlined,
+        'mdc-select--required': !!props.required,
+        'mdc-select--invalid': !!invalid,
+        'mdc-select--with-leading-icon': !!icon
+      }
+    ]);
 
-  const defaultValue =
-    value !== undefined ? undefined : props.defaultValue || '';
+    const defaultValue =
+      value !== undefined ? undefined : props.defaultValue || '';
 
-  const renderedLabel = (
-    <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
-      {label}
-    </FloatingLabel>
-  );
-
-  const renderHelpText = () => {
-    const shouldRender = !!helpText;
-
-    if (!shouldRender) {
-      return null;
-    }
-
-    const shouldSpread =
-      typeof helpText === 'object' && !React.isValidElement(helpText);
-
-    return helpText && shouldSpread ? (
-      <SelectHelperText {...(helpText as any)} />
-    ) : (
-      <SelectHelperText>{helpText}</SelectHelperText>
+    const renderedLabel = (
+      <FloatingLabel float={floatLabel} apiRef={setFloatingLabel} htmlFor={id}>
+        {label}
+      </FloatingLabel>
     );
-  };
 
-  return (
-    <>
-      <Tag
-        role="listbox"
-        {...rootProps}
-        element={rootEl}
-        ref={ref}
-        className={className}
-      >
-        <div className="mdc-select__anchor">
-          {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
-          <SelectDropdownArrow />
-          <SelectedTextEl
-            className="mdc-select__selected-text"
-            role="button"
-            aria-haspopup="listbox"
-            element={selectedTextEl}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onClick={handleClick}
-            onKeyDown={handleKeydown}
-          >
-            {selectedTextContent || <>&nbsp;</>}
-          </SelectedTextEl>
-          {outlined ? (
-            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-          ) : (
-            <>
-              {renderedLabel}
-              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-            </>
-          )}
-          {!enhanced && (
-            <NativeMenu
+    const renderHelpText = () => {
+      const shouldRender = !!helpText;
+
+      if (!shouldRender) {
+        return null;
+      }
+
+      const shouldSpread =
+        typeof helpText === 'object' && !React.isValidElement(helpText);
+
+      return helpText && shouldSpread ? (
+        <SelectHelperText {...(helpText as any)} />
+      ) : (
+        <SelectHelperText>{helpText}</SelectHelperText>
+      );
+    };
+
+    return (
+      <>
+        <Tag
+          role="listbox"
+          {...rootProps}
+          element={rootEl}
+          ref={ref}
+          className={className}
+        >
+          <div className="mdc-select__anchor">
+            {!!icon && <SelectIcon apiRef={setLeadingIcon} icon={icon} />}
+            <SelectDropdownArrow />
+            <SelectedTextEl
+              className="mdc-select__selected-text"
+              role="button"
+              aria-haspopup="listbox"
+              element={selectedTextEl}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onClick={handleClick}
+              onKeyDown={handleKeydown}
+            >
+              {selectedTextContent || <>&nbsp;</>}
+            </SelectedTextEl>
+            {outlined ? (
+              <NotchedOutline notch={notchWidth}>
+                {renderedLabel}
+              </NotchedOutline>
+            ) : (
+              <>
+                {renderedLabel}
+                <LineRipple
+                  active={lineRippleActive}
+                  center={lineRippleCenter}
+                />
+              </>
+            )}
+            {!enhanced && (
+              <NativeMenu
+                {...rest}
+                value={value}
+                children={children}
+                defaultValue={defaultValue}
+                placeholder={placeholder}
+                open={menuOpen}
+                selectOptions={selectOptions}
+                elementRef={setNativeControl}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onKeyDown={handleKeydown}
+                onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
+                  handleMenuSelected(evt.currentTarget.selectedIndex)
+                }
+              />
+            )}
+          </div>
+
+          {enhanced && (
+            <EnhancedMenu
               {...rest}
-              value={value}
-              children={children}
+              anchorCorner="bottomStart"
               defaultValue={defaultValue}
               placeholder={placeholder}
               open={menuOpen}
+              onClose={handleMenuClosed}
+              onOpen={handleMenuOpened}
+              onSelect={(evt: MenuOnSelectEventT) => {
+                handleMenuSelected(evt.detail.index);
+              }}
               selectOptions={selectOptions}
-              elementRef={setNativeControl}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onKeyDown={handleKeydown}
-              onChange={(evt: React.ChangeEvent<HTMLSelectElement>) =>
-                handleMenuSelected(evt.currentTarget.selectedIndex)
-              }
+              value={value}
+              selectedIndex={selectedIndex}
+              menuApiRef={setMenu}
+              children={children}
             />
           )}
-        </div>
-
-        {enhanced && (
-          <EnhancedMenu
-            {...rest}
-            anchorCorner="bottomStart"
-            defaultValue={defaultValue}
-            placeholder={placeholder}
-            open={menuOpen}
-            onClose={handleMenuClosed}
-            onOpen={handleMenuOpened}
-            onSelect={(evt: MenuOnSelectEventT) => {
-              handleMenuSelected(evt.detail.index);
-            }}
-            selectOptions={selectOptions}
-            value={value}
-            selectedIndex={selectedIndex}
-            menuApiRef={setMenu}
-            children={children}
-          />
-        )}
-      </Tag>
-      {renderHelpText()}
-    </>
-  );
-});
+        </Tag>
+        {renderHelpText()}
+      </>
+    );
+  }
+);
 
 export interface SelectIconApi {
   getFoundation: () => MDCSelectIconFoundation;

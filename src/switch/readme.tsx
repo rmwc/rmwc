@@ -34,7 +34,7 @@ export default function() {
           return (
             <Switch
               checked={checked}
-              onChange={evt => setChecked(evt.currentTarget.checked)}
+              onChange={evt => setChecked(!!evt.currentTarget.checked)}
               label="Cookies"
             />
           );

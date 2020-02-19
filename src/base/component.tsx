@@ -24,8 +24,7 @@ type ClassNamesInputT<Props> =
 
 export const Tag = React.forwardRef<
   any,
-  any
-  //RMWC.ComponentProps & { element?: FoundationElement<any, any> }
+  RMWC.ComponentProps & { element?: FoundationElement<any, any> }
 >(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
   const finalProps = element ? element.props(rest) : rest;
   const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
@@ -60,32 +59,29 @@ export const mergeRefs = (
 type ComponentProps<
   Props extends {},
   Tag extends React.ElementType,
-  DefaultTag extends keyof JSX.IntrinsicElements
+  DefaultElement extends Element
 > = Props & {
   tag?: Tag;
   theme?: RMWC.ThemePropT;
 } & Props &
-  (
-    | RMWC.HTMLProps<JSX.IntrinsicElements[DefaultTag]>
-    | React.ComponentPropsWithRef<Tag>
-  );
+  (RMWC.HTMLProps<DefaultElement> | React.ComponentPropsWithRef<Tag>);
 
 export function createComponent<
   P extends {},
-  DefaultTag extends keyof JSX.IntrinsicElements = 'div'
+  DefaultElement extends Element = HTMLElement
 >(
   Component: React.RefForwardingComponent<
     any,
-    ComponentProps<P, any, DefaultTag>
+    P & RMWC.HTMLProps<DefaultElement>
   >
 ) {
   const ForwardComponent = React.forwardRef<
     any,
-    ComponentProps<P, any, DefaultTag>
+    ComponentProps<P, any, DefaultElement>
   >(Component);
 
-  const WrappedComponent = <Tag extends React.ElementType = DefaultTag>(
-    props: ComponentProps<P, Tag, DefaultTag>,
+  const WrappedComponent = <Tag extends React.ElementType = 'div'>(
+    props: ComponentProps<P, Tag, DefaultElement>,
     ref: any
   ) => {
     return <ForwardComponent {...props} ref={ref} />;
@@ -98,11 +94,11 @@ export function createComponent<
 
 export function createMemoComponent<
   P extends {},
-  DefaultTag extends keyof JSX.IntrinsicElements = 'div'
+  DefaultElement extends Element = HTMLElement
 >(
   Component: React.RefForwardingComponent<
     any,
-    ComponentProps<P, any, DefaultTag>
+    P & RMWC.HTMLProps<DefaultElement>
   >
 ) {
   const Comp = createComponent<P>(Component);

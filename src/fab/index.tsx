@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /** A floating action button component */
 export interface FabProps extends RMWC.WithRippleProps {
@@ -22,10 +22,7 @@ export interface FabProps extends RMWC.WithRippleProps {
 
 /** A floating action button component */
 export const Fab = withRipple({ surface: false })(
-  React.forwardRef<any, FabProps & RMWC.ComponentProps>(function Fab(
-    props,
-    ref
-  ) {
+  createComponent<FabProps>(function Fab(props, ref) {
     const {
       children,
       label,
@@ -62,8 +59,6 @@ export const Fab = withRipple({ surface: false })(
     );
   })
 );
-
-Fab.displayName = 'Fab';
 
 /*********************************************************************
  * Bits

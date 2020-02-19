@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /** The root of the Image List. */
 export interface ImageListProps {
@@ -11,10 +11,10 @@ export interface ImageListProps {
 }
 
 /** The root of the Image List. */
-export const ImageList = React.forwardRef<
-  any,
-  ImageListProps & RMWC.ComponentProps
->(function ImageList(props, ref) {
+export const ImageList = createComponent<ImageListProps>(function ImageList(
+  props,
+  ref
+) {
   const { masonry, withTextProtection, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-image-list',
@@ -31,22 +31,20 @@ ImageList.displayName = 'ImageList';
 export interface ImageListItemProps {}
 
 /** Indicates each item in an Image List. */
-export const ImageListItem = React.forwardRef<
-  any,
-  ImageListItemProps & RMWC.ComponentProps
->(function ImageListItem(props, ref) {
-  const className = useClassNames(props, ['mdc-image-list__item']);
-  return <Tag tag="li" ref={ref} {...props} className={className} />;
-});
+export const ImageListItem = createComponent<ImageListItemProps>(
+  function ImageListItem(props, ref) {
+    const className = useClassNames(props, ['mdc-image-list__item']);
+    return <Tag tag="li" ref={ref} {...props} className={className} />;
+  }
+);
 ImageListItem.displayName = 'ImageListItem';
 
 /** Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio. */
 export interface ImageListImageAspectContainerProps {}
 
 /** Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio. */
-export const ImageListImageAspectContainer = React.forwardRef<
-  any,
-  ImageListImageAspectContainerProps & RMWC.ComponentProps
+export const ImageListImageAspectContainer = createComponent<
+  ImageListImageAspectContainerProps
 >(function ImageListImageAspectContainer(props, ref) {
   const className = useClassNames(props, [
     'mdc-image-list__image-aspect-container'
@@ -59,37 +57,34 @@ ImageListImageAspectContainer.displayName = 'ImageListImageAspectContainer';
 export interface ImageListImageProps {}
 
 /** Indicates the image element in each item. */
-export const ImageListImage = React.forwardRef<
-  any,
-  ImageListImageProps & RMWC.ComponentProps
->(function ImageListImage(props, ref) {
-  const className = useClassNames(props, ['mdc-image-list__image']);
-  return <Tag tag="img" ref={ref} {...props} className={className} />;
-});
+export const ImageListImage = createComponent<ImageListImageProps>(
+  function ImageListImage(props, ref) {
+    const className = useClassNames(props, ['mdc-image-list__image']);
+    return <Tag tag="img" ref={ref} {...props} className={className} />;
+  }
+);
 ImageListImage.displayName = 'ImageListImage';
 
 /** Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels. */
 export interface ImageListSupportingProps {}
 
 /** Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels. */
-export const ImageListSupporting = React.forwardRef<
-  any,
-  ImageListSupportingProps & RMWC.ComponentProps
->(function ImageListSupporting(props, ref) {
-  const className = useClassNames(props, ['mdc-image-list__supporting']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
+export const ImageListSupporting = createComponent<ImageListSupportingProps>(
+  function ImageListSupporting(props, ref) {
+    const className = useClassNames(props, ['mdc-image-list__supporting']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 ImageListSupporting.displayName = 'ImageListSupporting';
 
 /** Optional. Indicates the text label in each item, if the Image List contains text labels. */
 export interface ImageListLabelProps {}
 
 /** Optional. Indicates the text label in each item, if the Image List contains text labels. */
-export const ImageListLabel = React.forwardRef<
-  any,
-  ImageListLabelProps & RMWC.ComponentProps
->(function ImageListLabel(props, ref) {
-  const className = useClassNames(props, ['mdc-image-list__label']);
-  return <Tag ref={ref} {...props} className={className} />;
-});
+export const ImageListLabel = createComponent<ImageListLabelProps>(
+  function ImageListLabel(props, ref) {
+    const className = useClassNames(props, ['mdc-image-list__label']);
+    return <Tag ref={ref} {...props} className={className} />;
+  }
+);
 ImageListLabel.displayName = 'ImageListLabel';
