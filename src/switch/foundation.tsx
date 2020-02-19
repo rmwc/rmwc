@@ -1,13 +1,11 @@
 import * as RMWC from '@rmwc/types';
-import { SwitchProps } from '.';
+import { SwitchProps, SwitchHTMLProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
 import { useEffect } from 'react';
 import { MDCSwitchFoundation } from '@material/switch';
 
-export const useSwitchFoundation = (
-  props: SwitchProps & RMWC.HTMLProps<HTMLInputElement>
-) => {
+export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
   const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
 
   const { foundation, ...elements } = useFoundation({

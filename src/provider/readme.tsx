@@ -58,7 +58,10 @@ export default function() {
         `}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[RMWCProvider]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'RMWCProvider', component: RMWCProvider }]}
+      />
     </Docs>
   );
 }

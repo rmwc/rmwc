@@ -1,7 +1,6 @@
-import React from 'react';
 import * as RMWC from '@rmwc/types';
+import React from 'react';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
-import { Link } from 'react-router-dom';
 
 /** A Badge component for indicating alerts or counts. */
 export interface BadgeProps {
@@ -59,17 +58,3 @@ export const BadgeAnchor = createComponent<BadgeAnchorProps>(
     );
   }
 );
-
-// function Foo() {
-//   return (
-//     <>
-//       <BadgeAnchor to="" />
-//       <BadgeAnchor tag={Link} to="" />
-//       <BadgeAnchor tag={Link} to="" ref={el => {
-//         console.log(el)
-//       }} />
-//       <BadgeAnchor onClick={() => {}} />
-//       <BadgeAnchor hello />
-//     </>
-//   );
-// }

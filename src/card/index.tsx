@@ -21,9 +21,8 @@ export const Card = createComponent<CardProps>(function Card(props, ref) {
       'mdc-card--outlined': outlined
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag {...rest} ref={ref} className={className} />;
 });
-Card.displayName = 'Card';
 
 /** Media area that displays a custom background-image with background-size: cover */
 export interface CardMediaProps {
@@ -46,9 +45,8 @@ export const CardMedia = createComponent<CardMediaProps>(function CardMedia(
       'mdc-card__media--16-9': sixteenByNine
     }
   ]);
-  return <Tag tag="section" ref={ref} {...rest} className={className} />;
+  return <Tag tag="section" {...rest} ref={ref} className={className} />;
 });
-CardMedia.displayName = 'CardMedia';
 
 /** An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image */
 export interface CardMediaContentProps {}
@@ -57,10 +55,9 @@ export interface CardMediaContentProps {}
 export const CardMediaContent = createComponent<CardMediaContentProps>(
   function CardMediaContent(props, ref) {
     const className = useClassNames(props, ['mdc-card__media-content']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-CardMediaContent.displayName = 'CardMediaContent';
 
 /** The main clickable area for the primary content of the card */
 export interface CardPrimaryActionProps {}
@@ -74,10 +71,9 @@ export const CardPrimaryAction = withRipple({
     ref
   ) {
     const className = useClassNames(props, ['mdc-card__primary-action']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   })
 );
-CardPrimaryAction.displayName = 'CardPrimaryAction';
 
 /** Row containing action buttons and/or icons */
 export interface CardActionsProps {
@@ -93,10 +89,9 @@ export const CardActions = createComponent<CardActionsProps>(
       'mdc-card__actions',
       { 'mdc-card__actions--full-bleed': fullBleed }
     ]);
-    return <Tag tag="section" ref={ref} {...rest} className={className} />;
+    return <Tag tag="section" {...rest} ref={ref} className={className} />;
   }
 );
-CardActions.displayName = 'CardActions';
 
 /** A group of action buttons, displayed on the left side of the card (in LTR), adjacent to CardActionIcons */
 export interface CardActionButtonsProps {}
@@ -105,10 +100,9 @@ export interface CardActionButtonsProps {}
 export const CardActionButtons = createComponent<CardActionButtonsProps>(
   function CardActionButtons(props, ref) {
     const className = useClassNames(props, ['mdc-card__action-buttons']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-CardActionButtons.displayName = 'CardActionButtons';
 
 /** A group of supplemental action icons, displayed on the right side of the card (in LTR), adjacent to CardActionButtons */
 export interface CardActionIconsProps {}
@@ -117,10 +111,9 @@ export interface CardActionIconsProps {}
 export const CardActionIcons = createComponent<CardActionIconsProps>(
   function CardActionIcons(props, ref) {
     const className = useClassNames(props, ['mdc-card__action-icons']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-CardActionButtons.displayName = 'CardActionButtons';
 
 /** A card action Icon */
 export interface CardActionIconProps extends IconButtonProps {}
@@ -132,10 +125,9 @@ export const CardActionIcon = createComponent<CardActionIconProps>(
       'mdc-card__action',
       'mdc-card__action--icon'
     ]);
-    return <IconButton ref={ref} {...props} className={className} />;
+    return <IconButton {...props} ref={ref} className={className} />;
   }
 );
-CardActionIcon.displayName = 'CardActionIcon';
 
 /** A card action Button */
 export interface CardActionButtonProps extends ButtonProps {}
@@ -150,4 +142,3 @@ export const CardActionButton = createComponent<CardActionButtonProps>(
     return <Button ref={ref} {...props} className={className} />;
   }
 );
-CardActionButton.displayName = 'CardActionButton';

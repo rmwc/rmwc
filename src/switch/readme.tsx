@@ -52,7 +52,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Switch]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Switch', component: Switch }]}
+      />
     </Docs>
   );
 }

@@ -171,7 +171,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[TabBar, Tab]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'TabBar', component: TabBar },
+          { displayName: 'Tab', component: Tab }
+        ]}
+      />
     </Docs>
   );
 }

@@ -31,17 +31,23 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   onIcon?: RMWC.IconPropT;
 }
 
-/** An IconButton component that can also be used as a toggle. */
-export const IconButton = createComponent<IconButtonProps>(function IconButton(
-  { ...rest },
-  ref
-) {
-  if (rest.onIcon) {
-    return <IconButtonToggle {...rest} ref={ref} />;
-  }
+export type IconButtonHTMLProps = RMWC.HTMLProps<
+  HTMLInputElement,
+  Omit<React.AllHTMLAttributes<HTMLButtonElement>, 'onChange'>
+>;
 
-  return <IconButtonRoot aria-hidden="true" tag="button" {...rest} ref={ref} />;
-});
+/** An IconButton component that can also be used as a toggle. */
+export const IconButton = createComponent<IconButtonProps, IconButtonHTMLProps>(
+  function IconButton({ ...rest }, ref) {
+    if (rest.onIcon) {
+      return <IconButtonToggle {...rest} ref={ref} />;
+    }
+
+    return (
+      <IconButtonRoot aria-hidden="true" tag="button" {...rest} ref={ref} />
+    );
+  }
+);
 
 const IconButtonToggle = createComponent<IconButtonProps>(
   function IconButtonToggle(props, ref) {

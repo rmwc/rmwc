@@ -204,7 +204,13 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[ThemeProvider, Theme]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'ThemeProvider', component: ThemeProvider },
+          { displayName: 'Theme', component: Theme }
+        ]}
+      />
     </Docs>
   );
 }

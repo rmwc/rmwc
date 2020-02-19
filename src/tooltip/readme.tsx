@@ -179,7 +179,10 @@ export default function() {
         </RMWCProvider>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Tooltip]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Tooltip', component: Tooltip }]}
+      />
     </Docs>
   );
 }

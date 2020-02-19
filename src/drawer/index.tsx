@@ -47,8 +47,7 @@ export const Drawer = createComponent<DrawerProps>(function Drawer(props, ref) {
 const slidableDrawerFactory = (
   useDrawerFoundation:
     | typeof useDismissableDrawerFoundation
-    | typeof useModalDrawerFoundation,
-  displayName: string
+    | typeof useModalDrawerFoundation
 ) => {
   const DrawerInner = createComponent<DrawerProps>(function DrawerInner(
     props,
@@ -67,19 +66,11 @@ const slidableDrawerFactory = (
     );
   });
 
-  DrawerInner.displayName = displayName;
-
   return DrawerInner;
 };
 
-const ModalDrawer = slidableDrawerFactory(
-  useModalDrawerFoundation,
-  'ModalDrawer'
-);
-const DismissibleDrawer = slidableDrawerFactory(
-  useDismissableDrawerFoundation,
-  'dismissibleDrawer'
-);
+const ModalDrawer = slidableDrawerFactory(useModalDrawerFoundation);
+const DismissibleDrawer = slidableDrawerFactory(useDismissableDrawerFoundation);
 
 const DrawerRoot = createComponent<DrawerProps>(function DrawerRoot(
   props,
@@ -94,7 +85,7 @@ const DrawerRoot = createComponent<DrawerProps>(function DrawerRoot(
     }
   ]);
 
-  return <Tag tag="aside" ref={ref} {...rest} className={className} />;
+  return <Tag tag="aside" {...rest} ref={ref} className={className} />;
 });
 
 /***************************************************************************************
@@ -108,7 +99,7 @@ export interface DrawerHeaderProps {}
 export const DrawerHeader = createComponent<DrawerHeaderProps>(
   function DrawerHeader(props, ref) {
     const className = useClassNames(props, ['mdc-drawer__header']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -119,7 +110,7 @@ export interface DrawerTitleProps {}
 export const DrawerTitle = createComponent<DrawerTitleProps>(
   function DrawerTitle(props, ref) {
     const className = useClassNames(props, ['mdc-drawer__title']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -130,7 +121,7 @@ export interface DrawerSubtitleProps {}
 export const DrawerSubtitle = createComponent<DrawerSubtitleProps>(
   function DrawerSubtitle(props, ref) {
     const className = useClassNames(props, ['mdc-drawer__subtitle']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -141,7 +132,7 @@ export interface DrawerContentProps {}
 export const DrawerContent = createComponent<DrawerContentProps>(
   function DrawerContent(props, ref) {
     const className = useClassNames(props, ['mdc-drawer__content']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -159,6 +150,6 @@ export interface DrawerAppContentProps {}
 export const DrawerAppContent = createComponent<DrawerAppContentProps>(
   function DrawerAppContent(props, ref) {
     const className = useClassNames(props, ['mdc-drawer-app-content']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );

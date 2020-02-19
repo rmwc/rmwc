@@ -15,7 +15,7 @@ export type TabScrollerApi = {
   getScrollContentWidth: () => number;
 };
 
-export function TabScroller(props: TabScrollerProps & RMWC.ComponentProps) {
+export function TabScroller(props: TabScrollerProps & RMWC.HTMLProps) {
   const { children, apiRef, ...rest } = props;
   const { rootEl, areaEl, contentEl } = useTabScrollerFoundation(props);
   return (

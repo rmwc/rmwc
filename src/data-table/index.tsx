@@ -35,9 +35,8 @@ export const DataTable = createComponent<DataTableProps>(function DataTable(
       'rmwc-data-table--sticky-rows-1': !!stickyRows
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag {...rest} ref={ref} className={className} />;
 });
-DataTable.displayName = 'DataTable';
 
 /** The data table content. */
 export interface DataTableContentProps {}
@@ -46,10 +45,9 @@ export interface DataTableContentProps {}
 export const DataTableContent = createComponent<DataTableContentProps>(
   function DataTableContent(props, ref) {
     const className = useClassNames(props, ['rmwc-data-table__content']);
-    return <Tag tag="table" ref={ref} {...props} className={className} />;
+    return <Tag tag="table" {...props} ref={ref} className={className} />;
   }
 );
-DataTableContent.displayName = 'DataTableContent';
 
 /** A header for the data table. */
 export interface DataTableHeadProps {}
@@ -58,10 +56,9 @@ export interface DataTableHeadProps {}
 export const DataTableHead = createComponent<DataTableHeadProps>(
   function DataTableHead(props, ref) {
     const className = useClassNames(props, ['rmwc-data-table__head']);
-    return <Tag tag="thead" ref={ref} {...props} className={className} />;
+    return <Tag tag="thead" {...props} ref={ref} className={className} />;
   }
 );
-DataTableHead.displayName = 'DataTableHead';
 
 /** A body for the data table. */
 export interface DataTableBodyProps {}
@@ -70,10 +67,9 @@ export interface DataTableBodyProps {}
 export const DataTableBody = createComponent<DataTableBodyProps>(
   function DataTableBody(props, ref) {
     const className = useClassNames(props, ['rmwc-data-table__body']);
-    return <Tag tag="tbody" ref={ref} {...props} className={className} />;
+    return <Tag tag="tbody" {...props} ref={ref} className={className} />;
   }
 );
-DataTableBody.displayName = 'DataTableBody';
 
 /** A row for the data table. */
 export interface DataTableRowProps {
@@ -94,10 +90,9 @@ export const DataTableRow = createComponent<DataTableRowProps>(
         'rmwc-data-table__row--activated': props.activated
       }
     ]);
-    return <Tag tag="tr" ref={ref} {...rest} className={className} />;
+    return <Tag tag="tr" {...rest} ref={ref} className={className} />;
   }
 );
-DataTableRow.displayName = 'DataTableRow';
 
 const DataTableSortIcon = React.memo(function DataTableSortIcon() {
   return (
@@ -173,7 +168,6 @@ export const DataTableHeadCell = createComponent<DataTableHeadCellProps>(
     );
   }
 );
-DataTableHeadCell.displayName = 'DataTableHeadCell';
 
 /** A cell for the DataTable */
 export interface DataTableCellProps extends SharedDataTableCellProps {}
@@ -190,10 +184,9 @@ export const DataTableCell = createComponent<DataTableCellProps>(
         'rmwc-data-table__cell--align-end': props.alignEnd
       }
     ]);
-    return <Tag tag="td" ref={ref} {...rest} className={className} />;
+    return <Tag tag="td" {...rest} ref={ref} className={className} />;
   }
 );
-DataTableCell.displayName = 'DataTableCell';
 
 /** A simple data table to render matrices. */
 export interface SimpleDataTableProps extends DataTableProps {

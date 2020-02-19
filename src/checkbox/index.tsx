@@ -3,7 +3,7 @@ import * as React from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { ToggleableFoundationProps } from '@rmwc/toggleable';
+import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
 import { useCheckboxFoundation } from './foundation';
 
 /*********************************************************************
@@ -24,15 +24,15 @@ MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
  *********************************************************************/
 
 /** A Checkbox component. */
-export interface CheckboxProps
-  extends RMWC.WithRippleProps,
-    ToggleableFoundationProps {
+export interface CheckboxProps extends RMWC.WithRippleProps, ToggleableProps {
   /** Make the control indeterminate */
   indeterminate?: boolean;
 }
 
+export type CheckboxHTMLProps = ToggleHTMLProps;
+
 /** A Checkbox component. */
-export const Checkbox = createComponent<CheckboxProps, HTMLInputElement>(
+export const Checkbox = createComponent<CheckboxProps, CheckboxHTMLProps>(
   function Checkbox(props, ref) {
     const {
       renderToggle,
@@ -78,7 +78,6 @@ export const Checkbox = createComponent<CheckboxProps, HTMLInputElement>(
     return renderToggle(checkbox);
   }
 );
-Checkbox.displayName = 'Checkbox';
 
 /*********************************************************************
  * Bits
@@ -88,21 +87,21 @@ const CheckboxRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  React.forwardRef<any, CheckboxProps & RMWC.ComponentProps>(
-    function CheckboxRoot(props, ref) {
-      const { disabled, checked, indeterminate, ...rest } = props;
-      const className = useClassNames(props, [
-        'mdc-checkbox',
-        {
-          'mdc-checkbox--disabled': disabled,
-          'mdc-checkbox--selected': checked || indeterminate
-        }
-      ]);
-      return <Tag {...rest} className={className} />;
-    }
-  )
+  React.forwardRef<any, CheckboxProps & RMWC.HTMLProps>(function CheckboxRoot(
+    props,
+    ref
+  ) {
+    const { disabled, checked, indeterminate, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-checkbox',
+      {
+        'mdc-checkbox--disabled': disabled,
+        'mdc-checkbox--selected': checked || indeterminate
+      }
+    ]);
+    return <Tag {...rest} className={className} />;
+  })
 );
-CheckboxRoot.displayName = 'CheckboxRoot';
 
 const CheckboxRipple = React.memo(function CheckboxRipple() {
   return <div className="mdc-checkbox__ripple" />;
@@ -123,5 +122,3 @@ const CheckboxBackground = React.memo(() => {
     </div>
   );
 });
-
-CheckboxBackground.displayName = 'CheckboxBackground';

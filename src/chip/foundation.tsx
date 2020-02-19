@@ -1,13 +1,11 @@
 import * as RMWC from '@rmwc/types';
-import { ChipProps } from './';
+import { ChipProps, ChipHTMLProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
 
-export const useChipFoundation = (
-  props: ChipProps & RMWC.HTMLProps<HTMLDivElement>
-) => {
+export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const chipId = useId('chip', props);
 
   const foundationWithElements = useFoundation({

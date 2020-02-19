@@ -4,7 +4,7 @@ import * as React from 'react';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { useChipFoundation } from './foundation';
-import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /*********************************************************************
  * Events
@@ -46,9 +46,14 @@ export interface ChipProps {
   onRemove?: (evt: ChipOnRemoveEventT) => void;
 }
 
+export type ChipHTMLProps = RMWC.HTMLProps<
+  HTMLDivElement,
+  Omit<React.AllHTMLAttributes<HTMLDivElement>, 'label'>
+>;
+
 /** A Chip component. */
 export const Chip = withRipple()(
-  createComponent<ChipProps>(function Chip(props, ref) {
+  createComponent<ChipProps, ChipHTMLProps>(function Chip(props, ref) {
     const {
       onInteraction,
       onTrailingIconInteraction,
@@ -75,8 +80,10 @@ export const Chip = withRipple()(
     return (
       <Tag
         role="row"
-        {...rootEl.props({ ...rest, className })}
-        ref={mergeRefs(ref, rootEl.setRef)}
+        {...rest}
+        element={rootEl}
+        className={className}
+        ref={ref}
       >
         <ChipRipple />
         {!!icon && (
@@ -136,7 +143,7 @@ interface ChipIconProps extends IconProps {
 
 /** Icons inside of a chip. This is an instance of the Icon component. To make the icons interactive, add props tabIndex="0" and role="button". */
 const ChipIcon = React.memo(function ChipIcon(
-  props: ChipIconProps & RMWC.ComponentProps
+  props: ChipIconProps & RMWC.HTMLProps
 ) {
   const { leading, trailing, hidden, ...rest } = props;
   const className = useClassNames(props, [

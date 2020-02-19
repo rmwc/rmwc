@@ -24,7 +24,7 @@ type ClassNamesInputT<Props> =
 
 export const Tag = React.forwardRef<
   any,
-  RMWC.ComponentProps & { element?: FoundationElement<any, any> }
+  RMWC.HTMLProps & { element?: FoundationElement<any, any> }
 >(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
   const finalProps = element ? element.props(rest) : rest;
   const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
@@ -58,30 +58,25 @@ export const mergeRefs = (
 
 type ComponentProps<
   Props extends {},
-  Tag extends React.ElementType,
-  DefaultElement extends Element
+  ElementProps extends {},
+  Tag extends React.ElementType
 > = Props & {
   tag?: Tag;
   theme?: RMWC.ThemePropT;
 } & Props &
-  (RMWC.HTMLProps<DefaultElement> | React.ComponentPropsWithRef<Tag>);
+  (ElementProps | React.ComponentPropsWithRef<Tag>);
 
 export function createComponent<
   P extends {},
-  DefaultElement extends Element = HTMLElement
->(
-  Component: React.RefForwardingComponent<
-    any,
-    P & RMWC.HTMLProps<DefaultElement>
-  >
-) {
+  ElementP extends {} = React.HTMLProps<HTMLDivElement>
+>(Component: React.RefForwardingComponent<any, P & ElementP>) {
   const ForwardComponent = React.forwardRef<
     any,
-    ComponentProps<P, any, DefaultElement>
+    ComponentProps<P, ElementP, any>
   >(Component);
 
   const WrappedComponent = <Tag extends React.ElementType = 'div'>(
-    props: ComponentProps<P, Tag, DefaultElement>,
+    props: ComponentProps<P, ElementP, Tag>,
     ref: any
   ) => {
     return <ForwardComponent {...props} ref={ref} />;
@@ -94,13 +89,8 @@ export function createComponent<
 
 export function createMemoComponent<
   P extends {},
-  DefaultElement extends Element = HTMLElement
->(
-  Component: React.RefForwardingComponent<
-    any,
-    P & RMWC.HTMLProps<DefaultElement>
-  >
-) {
-  const Comp = createComponent<P>(Component);
+  ElementP extends {} = React.HTMLProps<HTMLDivElement>
+>(Component: React.RefForwardingComponent<any, P & ElementP>) {
+  const Comp = createComponent<P, ElementP>(Component);
   return React.memo(Comp) as typeof Comp;
 }

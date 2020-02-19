@@ -196,7 +196,10 @@ export default function() {
         </Select>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Select]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Select', component: Select }]}
+      />
     </Docs>
   );
 }

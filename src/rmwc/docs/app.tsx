@@ -165,7 +165,7 @@ const MainMenuItem = ({ url, label }: { url: string; label: string }) => {
   return (
     <ListItem
       tag={Link}
-      {...({ to: url } as any)}
+      to={url}
       onClick={() => window.scrollTo(0, 0)}
       activated={
         window.location.pathname.split('/').pop() === url.split('/').pop()
@@ -198,7 +198,7 @@ function AppBar({
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             <TopAppBarNavigationIcon onClick={onNavClick} icon="menu" />
-            <TopAppBarTitle tag={Link} {...{ to: '/' }}>
+            <TopAppBarTitle tag={Link} to="/">
               RMWC
             </TopAppBarTitle>
             <SimpleMenu

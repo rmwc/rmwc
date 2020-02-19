@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 export type TypographyT =
   | 'headline1'
@@ -25,10 +25,10 @@ export interface TypographyProps {
 }
 
 /** The Typography Component */
-export const Typography = React.forwardRef<
-  any,
-  TypographyProps & RMWC.ComponentProps
->(function Typography(props, ref) {
+export const Typography = createComponent<TypographyProps>(function Typography(
+  props,
+  ref
+) {
   const { use, ...rest } = props;
 
   const providerContext = useProviderContext();
@@ -46,4 +46,3 @@ export const Typography = React.forwardRef<
 
   return <Tag tag={tag} {...rest} ref={ref} className={className} />;
 });
-Typography.displayName = 'Typography';

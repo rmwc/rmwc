@@ -1,17 +1,21 @@
+import * as RMWC from '@rmwc/types';
 import React, { useState, useEffect } from 'react';
-import { SimpleDialog, SimpleDialogProps, DialogOnCloseEventT } from './dialog';
+import {
+  SimpleDialog,
+  SimpleDialogProps,
+  SimpleDialogHTMLProps,
+  DialogOnCloseEventT
+} from './dialog';
 import { ArrayEmitter, randomId } from '@rmwc/base';
-import { TextField, TextFieldProps } from '@rmwc/textfield';
-import { ComponentProps, MergeInterfacesT } from '@rmwc/types';
-
-interface DialogQueueInputBase extends SimpleDialogProps {
-  id?: string;
-  /** Props for the input when using the prompt dialog. Only applies to prompt. */
-  inputProps?: MergeInterfacesT<TextFieldProps, ComponentProps>;
-}
+import { TextField, TextFieldProps, TextFieldHTMLProps } from '@rmwc/textfield';
 
 export interface DialogQueueInput
-  extends MergeInterfacesT<DialogQueueInputBase, ComponentProps> {}
+  extends SimpleDialogProps,
+    SimpleDialogHTMLProps {
+  id?: string;
+  /** Props for the input when using the prompt dialog. Only applies to prompt. */
+  inputProps?: TextFieldProps & TextFieldHTMLProps;
+}
 
 interface DialogQueueSpec extends DialogQueueInput {
   id: string;
@@ -28,7 +32,7 @@ export interface DialogQueueProps extends SimpleDialogProps {
 export function DialogQueue({
   dialogs,
   ...defaultDialogProps
-}: MergeInterfacesT<DialogQueueProps, ComponentProps>) {
+}: DialogQueueProps) {
   const [, setIteration] = useState(0);
   const [closingDialogs, setClosingDialogs] = useState<{ [key: string]: true }>(
     {}
@@ -94,7 +98,6 @@ export function DialogQueue({
     </>
   );
 }
-DialogQueue.displayName = 'DialogQueue';
 
 /**
  * A base dialog factory that handle setting up the promise
@@ -120,7 +123,7 @@ function PromptBody({
   apiRef
 }: {
   body?: React.ReactNode;
-  inputProps?: MergeInterfacesT<TextFieldProps, ComponentProps>;
+  inputProps?: DialogQueueInput['inputProps'];
   apiRef: (getValue: () => string) => void;
 }) {
   const [value, setValue] = useState('');
@@ -144,7 +147,6 @@ function PromptBody({
     </div>
   );
 }
-PromptBody.displayName = 'PromptBody';
 
 const promptFactory = (dialog: DialogQueueSpec): DialogQueueSpec => {
   let getValue: any = () => '';

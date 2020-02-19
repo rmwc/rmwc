@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { useProviderContext } from '@rmwc/provider';
-import { classNames, Tag, createComponent } from '@rmwc/base';
+import { classNames, Tag, createComponent, getDisplayName } from '@rmwc/base';
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
 export interface IconProps {
@@ -186,7 +186,9 @@ export const Icon = createComponent<IconProps>(
     if (
       rendered.props.children &&
       rendered.props.children.type &&
-      ['Avatar', 'Icon'].includes(rendered.props.children.type.displayName)
+      ['Avatar', 'AvatarRoot', 'Icon'].includes(
+        getDisplayName(rendered.props.children)
+      )
     ) {
       return React.cloneElement(rendered.props.children, {
         ...rendered.props.children.props,

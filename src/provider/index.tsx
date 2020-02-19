@@ -98,5 +98,3 @@ export const RMWCProvider = ({ children, ...rest }: RMWCProviderProps) => {
     </ProviderContext.Provider>
   );
 };
-
-RMWCProvider.displayName = 'RMWCProvider';

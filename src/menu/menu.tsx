@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
 import {
@@ -41,6 +41,11 @@ export interface MenuProps extends Omit<MenuSurfaceProps, 'apiRef'> {
   apiRef?: (api: MenuApi) => void;
 }
 
+export type MenuHTMLProps = RMWC.HTMLProps<
+  HTMLInputElement,
+  Omit<React.AllHTMLAttributes<HTMLInputElement>, 'onSelect'>
+>;
+
 /** A wrapper for menu items */
 export interface MenuItemsProps extends ListProps {}
 
@@ -52,7 +57,7 @@ export const MenuItems = createComponent<MenuItemsProps>(function MenuItems(
   const className = useClassNames(props, ['mdc-list mdc-menu__items']);
   return <List role="menu" {...props} className={className} ref={ref} />;
 });
-MenuItems.displayName = 'Menuitems';
+MenuItems.displayName = 'MenuItems';
 
 /** This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility. */
 export interface MenuItemProps extends ListItemProps {}
@@ -69,7 +74,10 @@ const isMenuItems = (child: React.ReactNode) =>
   getDisplayName(child) === 'MenuItems';
 
 /** A menu component for displaying lists items. */
-export const Menu = createComponent<MenuProps>(function Menu(props, ref) {
+export const Menu = createComponent<MenuProps, MenuHTMLProps>(function Menu(
+  props,
+  ref
+) {
   const { children, focusOnOpen, onSelect, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
@@ -134,70 +142,51 @@ export interface SimpleMenuState {
   open: boolean;
 }
 
-const simpleMenuFactory = <Props extends SimpleMenuProps>(
-  MenuComponent: React.ComponentType<MenuProps | MenuSurfaceProps> &
-    RMWC.ComponentProps
+const simpleMenuFactory = <
+  Props extends SimpleMenuProps | SimpleMenuSurfaceProps
+>(
+  MenuComponent: typeof Menu | typeof MenuSurface
 ): React.ComponentType<Props> =>
-  class extends React.Component<Props, SimpleMenuState> {
-    static displayName = 'Simple' + MenuComponent.displayName;
+  function(props: Props) {
+    const [stateOpen, setStateOpen] = useState(!!props.open);
 
-    componentDidMount() {
-      this.syncWithOpenProp(this.props.open);
-    }
+    useEffect(() => {
+      if (props.open !== undefined && props.open !== stateOpen) {
+        setStateOpen(!!props.open);
+      }
+    }, [props.open, stateOpen]);
 
-    componentDidUpdate(nextProps: Props) {
-      this.syncWithOpenProp(nextProps.open);
-    }
+    const { handle, onClose, children, rootProps = {}, open, ...rest } = props;
 
-    state = {
-      open: !!this.props.open
+    const wrappedHandle = React.cloneElement(handle, {
+      ...handle.props,
+      onClick: (evt: React.MouseEvent) => {
+        setStateOpen(!stateOpen);
+        if (handle.props.onClick) {
+          handle.props.onClick(evt);
+        }
+      }
+    });
+
+    const wrappedOnClose = (evt: MenuSurfaceOnCloseEventT) => {
+      setStateOpen(!!open || false);
+      onClose?.(evt);
     };
 
-    syncWithOpenProp(open?: boolean) {
-      if (open !== undefined && this.state.open !== open) {
-        this.setState({ open });
-      }
-    }
+    const RenderMenuComponent = MenuComponent as React.ComponentType<MenuProps>;
 
-    render() {
-      const {
-        handle,
-        onClose,
-        children,
-        rootProps = {},
-        open,
-        ...rest
-      } = this.props;
-      const wrappedHandle = React.cloneElement(handle, {
-        ...handle.props,
-        onClick: (evt: React.MouseEvent) => {
-          this.setState({ open: !this.state.open });
-          if (handle.props.onClick) {
-            handle.props.onClick(evt);
-          }
-        }
-      });
-
-      const wrappedOnClose = (evt: MenuSurfaceOnCloseEventT) => {
-        this.setState({ open: !!open || false });
-        if (onClose) {
-          onClose(evt);
-        }
-      };
-
-      return (
-        <MenuSurfaceAnchor {...rootProps}>
-          <MenuComponent
-            {...rest}
-            onClose={wrappedOnClose}
-            open={this.state.open}
-          >
-            {children}
-          </MenuComponent>
-          {wrappedHandle}
-        </MenuSurfaceAnchor>
-      );
-    }
+    return (
+      <MenuSurfaceAnchor {...rootProps}>
+        <RenderMenuComponent
+          {...rest}
+          onClose={wrappedOnClose}
+          open={stateOpen}
+        >
+          {children}
+        </RenderMenuComponent>
+        {wrappedHandle}
+      </MenuSurfaceAnchor>
+    );
   };
 
 /** A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor */
@@ -205,5 +194,5 @@ export const SimpleMenu = simpleMenuFactory<SimpleMenuProps>(Menu);
 
 /** The same as SimpleMenu, but a generic surface. */
 export const SimpleMenuSurface = simpleMenuFactory<SimpleMenuSurfaceProps>(
-  MenuSurface as any
+  MenuSurface
 );

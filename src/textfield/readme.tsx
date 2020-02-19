@@ -114,7 +114,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[TextField]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'TextField', component: TextField }]}
+      />
     </Docs>
   );
 }

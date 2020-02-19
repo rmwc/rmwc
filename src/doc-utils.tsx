@@ -107,10 +107,10 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
 export interface DocPropsI {
   src: any;
-  components: Array<
-    | React.ComponentType<any>
-    | { displayName: string; component: React.ComponentType<any> }
-  >;
+  components: Array<{
+    displayName: string;
+    component: React.ComponentType<any>;
+  }>;
 }
 
 export class DocProps extends React.Component<DocPropsI> {

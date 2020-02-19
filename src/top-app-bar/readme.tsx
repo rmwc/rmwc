@@ -172,14 +172,23 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          TopAppBar,
-          TopAppBarRow,
-          TopAppBarSection,
-          TopAppBarTitle,
-          TopAppBarNavigationIcon,
-          TopAppBarActionItem,
-          TopAppBarFixedAdjust,
-          SimpleTopAppBar
+          { displayName: 'TopAppBar', component: TopAppBar },
+          { displayName: 'TopAppBarRow', component: TopAppBarRow },
+          { displayName: 'TopAppBarSection', component: TopAppBarSection },
+          { displayName: 'TopAppBarTitle', component: TopAppBarTitle },
+          {
+            displayName: 'TopAppBarNavigationIcon',
+            component: TopAppBarNavigationIcon
+          },
+          {
+            displayName: 'TopAppBarActionItem',
+            component: TopAppBarActionItem
+          },
+          {
+            displayName: 'TopAppBarFixedAdjust',
+            component: TopAppBarFixedAdjust
+          },
+          { displayName: 'SimpleTopAppBar', component: SimpleTopAppBar }
         ]}
       />
     </Docs>

@@ -83,54 +83,60 @@ export interface SimpleDialogProps extends DialogProps {
   children?: React.ReactNode;
 }
 
-/** A SimpleDialog component for ease of use. */
-export const SimpleDialog = createComponent<SimpleDialogProps>(
-  function SimpleDialog(
-    {
-      title,
-      header,
-      body,
-      footer,
-      acceptLabel = 'Accept',
-      cancelLabel = 'Cancel',
-      children,
-      open,
-      ...rest
-    },
-    ref
-  ) {
-    return (
-      <Dialog open={open} {...rest} ref={ref}>
-        {(!!title || !!header) && (
-          <DialogTitle>
-            {!!title && title}
-            {!!header && header}
-          </DialogTitle>
-        )}
-        {(!!body || children) && (
-          <DialogContent>
-            {body}
-            {children}
-          </DialogContent>
-        )}
+export type SimpleDialogHTMLProps = RMWC.HTMLProps<
+  HTMLDivElement,
+  Omit<React.AllHTMLAttributes<HTMLDivElement>, 'title'>
+>;
 
-        {(!!cancelLabel || !!acceptLabel || !!footer) && (
-          <DialogActions>
-            {!!footer && footer}
-            {!!cancelLabel && (
-              <DialogButton action="close">{cancelLabel}</DialogButton>
-            )}
-            {!!acceptLabel && (
-              <DialogButton action="accept" isDefaultAction>
-                {acceptLabel}
-              </DialogButton>
-            )}
-          </DialogActions>
-        )}
-      </Dialog>
-    );
-  }
-);
+/** A SimpleDialog component for ease of use. */
+export const SimpleDialog = createComponent<
+  SimpleDialogProps,
+  SimpleDialogHTMLProps
+>(function SimpleDialog(
+  {
+    title,
+    header,
+    body,
+    footer,
+    acceptLabel = 'Accept',
+    cancelLabel = 'Cancel',
+    children,
+    open,
+    ...rest
+  },
+  ref
+) {
+  return (
+    <Dialog open={open} {...rest} ref={ref}>
+      {(!!title || !!header) && (
+        <DialogTitle>
+          {!!title && title}
+          {!!header && header}
+        </DialogTitle>
+      )}
+      {(!!body || children) && (
+        <DialogContent>
+          {body}
+          {children}
+        </DialogContent>
+      )}
+
+      {(!!cancelLabel || !!acceptLabel || !!footer) && (
+        <DialogActions>
+          {!!footer && footer}
+          {!!cancelLabel && (
+            <DialogButton action="close">{cancelLabel}</DialogButton>
+          )}
+          {!!acceptLabel && (
+            <DialogButton action="accept" isDefaultAction>
+              {acceptLabel}
+            </DialogButton>
+          )}
+        </DialogActions>
+      )}
+    </Dialog>
+  );
+});
 
 /*********************************************************************
  * Bits
@@ -156,7 +162,7 @@ export interface DialogTitleProps {}
 export const DialogTitle = createComponent<DialogTitleProps>(
   function DialogTitle(props, ref) {
     const className = useClassNames(props, ['mdc-dialog__title']);
-    return <Tag tag="h2" ref={ref} {...props} className={className} />;
+    return <Tag tag="h2" {...props} ref={ref} className={className} />;
   }
 );
 
@@ -167,7 +173,7 @@ export interface DialogContentProps {}
 export const DialogContent = createComponent<DialogContentProps>(
   function DialogContent(props, ref) {
     const className = useClassNames(props, ['mdc-dialog__content']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -178,7 +184,7 @@ export interface DialogActionsProps {}
 export const DialogActions = createComponent<DialogActionsProps>(
   function DialogActions(props, ref) {
     const className = useClassNames(props, ['mdc-dialog__actions']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 

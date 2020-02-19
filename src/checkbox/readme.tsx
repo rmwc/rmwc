@@ -46,7 +46,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Checkbox]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Checkbox', component: Checkbox }]}
+      />
     </Docs>
   );
 }

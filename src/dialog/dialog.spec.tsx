@@ -201,7 +201,7 @@ describe('DialogQueue', () => {
     el.update();
     expect(el.html().includes('myPrompt')).toBe(true);
 
-    (el.find('TextField').prop('onChange') as any)({
+    (el.find('input').prop('onChange') as any)({
       currentTarget: { value: 'WORKING' }
     });
 

@@ -55,6 +55,11 @@ export interface SelectProps {
   icon?: RMWC.IconPropT;
 }
 
+export type SelectHTMLProps = RMWC.HTMLProps<
+  HTMLSelectElement,
+  Omit<React.AllHTMLAttributes<HTMLSelectElement>, 'onSelect'>
+>;
+
 /**
  * Takes multiple structures for options and returns [{label: 'label', value: 'value', ...rest}]
  */
@@ -171,7 +176,7 @@ interface EnhancedMenuProps extends MenuProps {
   children?: React.ReactNode;
 }
 
-function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
+function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
   const {
     selectOptions,
     menuApiRef,
@@ -217,11 +222,11 @@ function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
       focusOnOpen
       hoistToBody
     >
-      {/* {!!props.placeholder && (
-        <MenuItem selected={currentIndex - 1 === selectedIndex} data-value=" ">
+      {!!props.placeholder && (
+        <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
           {placeholder}
         </MenuItem>
-      )} */}
+      )}
 
       {selectOptions.map(
         ({ label, options, ...option }: FormattedOption, i: number) => {
@@ -249,7 +254,7 @@ function EnhancedMenu(props: EnhancedMenuProps & RMWC.ComponentProps) {
   );
 }
 
-export const Select = createComponent<SelectProps, HTMLSelectElement>(
+export const Select = createComponent<SelectProps, SelectHTMLProps>(
   function Select(props, ref) {
     const {
       placeholder,
@@ -426,7 +431,7 @@ export interface SelectIconProps extends IconProps {
 }
 
 const SelectIcon = function SelectIcon(
-  props: SelectIconProps & RMWC.ComponentProps
+  props: SelectIconProps & RMWC.HTMLProps
 ) {
   const { apiRef, ...rest } = props;
   const { rootEl } = useSelectIconFoundation(props);
@@ -441,7 +446,6 @@ const SelectIcon = function SelectIcon(
     />
   );
 };
-SelectIcon.displayName = 'SelectIcon';
 
 /** A help text component */
 export interface SelectHelperTextProps {
@@ -453,7 +457,7 @@ export interface SelectHelperTextProps {
 
 /** A help text component */
 export const SelectHelperText = React.forwardRef(function SelectHelperText(
-  props: SelectHelperTextProps & RMWC.ComponentProps,
+  props: SelectHelperTextProps & RMWC.HTMLProps,
   ref: React.Ref<any>
 ) {
   const { persistent, validationMsg, ...rest } = props;
@@ -467,4 +471,3 @@ export const SelectHelperText = React.forwardRef(function SelectHelperText(
 
   return <Tag tag="p" {...rest} className={className} ref={ref} />;
 });
-SelectHelperText.displayName = 'SelectHelperText';

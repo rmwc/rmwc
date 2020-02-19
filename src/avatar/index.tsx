@@ -80,6 +80,7 @@ const AvatarRoot = withRipple()(
     return <Icon {...rest} className={className} ref={ref} />;
   })
 );
+AvatarRoot.displayName = 'AvatarRoot';
 
 /** A container for groups of Avatars */
 export interface AvatarGroupProps {
@@ -99,7 +100,7 @@ export const AvatarGroup = createComponent<AvatarGroupProps>(
       }
     ]);
 
-    return <Tag ref={ref} {...rest} className={className} />;
+    return <Tag {...rest} ref={ref} className={className} />;
   }
 );
 
@@ -139,6 +140,7 @@ export const Avatar = createComponent<AvatarProps>(function Avatar(
     />
   );
 });
+Avatar.displayName = 'Avatar';
 
 /** An Avatar count for displaying list overflow. */
 export interface AvatarCountProps {

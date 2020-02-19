@@ -1,7 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import React, { useMemo } from 'react';
 
-import { toDashCase, parseThemeOptions, wrapChild } from '@rmwc/base';
+import {
+  toDashCase,
+  parseThemeOptions,
+  wrapChild,
+  createComponent
+} from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
 import { Tag, useClassNames } from '@rmwc/base';
 
@@ -14,10 +19,7 @@ export interface ThemeProps {
 }
 
 /** A Theme Component. */
-export const Theme = React.forwardRef<
-  any,
-  RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>
->(function Theme(props, ref) {
+export const Theme = createComponent<ThemeProps>(function Theme(props, ref) {
   const { use, wrap, ...rest } = props;
 
   const className = useClassNames(props, [parseThemeOptions(use).join(' ')]);
@@ -35,8 +37,6 @@ export const Theme = React.forwardRef<
   );
 });
 
-Theme.displayName = 'Theme';
-
 /** A ThemeProvider. This sets theme colors for its child tree. */
 export interface ThemeProviderProps {
   /** Any theme option pointing to a valid CSS value. */
@@ -50,38 +50,36 @@ export interface ThemeProviderProps {
 }
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
-export function ThemeProvider(
-  props: ThemeProviderProps & Omit<RMWC.ComponentProps, 'wrap' | 'options'>
-) {
-  const parsed = JSON.stringify(props.options);
+export const ThemeProvider = createComponent<ThemeProviderProps>(
+  function ThemeProvider(props, ref) {
+    const parsed = JSON.stringify(props.options);
 
-  const colors = useMemo(() => {
-    const processedColors = Object.keys(props.options).reduce(
-      (acc: any, key) => {
-        const val = props.options[key];
-        key = key.startsWith('--') ? key : `--mdc-theme-${toDashCase(key)}`;
-        acc[key] = val;
-        return acc;
-      },
-      {}
-    );
+    const colors = useMemo(() => {
+      const processedColors = Object.keys(props.options).reduce(
+        (acc: any, key) => {
+          const val = props.options[key];
+          key = key.startsWith('--') ? key : `--mdc-theme-${toDashCase(key)}`;
+          acc[key] = val;
+          return acc;
+        },
+        {}
+      );
 
-    return getAutoColorsForTheme(processedColors);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [parsed]);
+      return getAutoColorsForTheme(processedColors);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [parsed]);
 
-  const { options, style = {}, wrap, ...rest } = props;
+    const { options, style = {}, wrap, ...rest } = props;
 
-  const themeStyles = {
-    ...style,
-    ...colors
-  };
+    const themeStyles = {
+      ...style,
+      ...colors
+    } as React.CSSProperties;
 
-  if (wrap && rest.children) {
-    return wrapChild({ ...rest, style: themeStyles });
+    if (wrap && rest.children) {
+      return wrapChild({ ...rest, style: themeStyles, ref });
+    }
+
+    return <Tag {...rest} style={themeStyles} ref={ref} />;
   }
-
-  return <div {...rest} style={themeStyles} />;
-}
-
-ThemeProvider.displayName = 'ThemeProvider';
+);

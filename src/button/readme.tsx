@@ -68,7 +68,10 @@ export default function() {
         </Button>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Button]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Button', component: Button }]}
+      />
     </Docs>
   );
 }

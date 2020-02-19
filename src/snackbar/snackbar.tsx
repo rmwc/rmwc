@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCSnackbarFoundation } from '@material/snackbar';
 import { Button, ButtonProps } from '@rmwc/button';
-import { useClassNames, Tag } from '@rmwc/base';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useSnackbarFoundation } from './foundation';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { Icon } from '@rmwc/icon';
@@ -44,86 +44,92 @@ export interface SnackbarProps {
   icon?: RMWC.IconPropT;
 }
 
+export type SnackbarHTMLProps = RMWC.HTMLProps<
+  HTMLDivElement,
+  Omit<React.AllHTMLAttributes<HTMLDivElement>, 'action'>
+>;
+
 /** A Snackbar component for notifications. */
-export function Snackbar(
-  props: SnackbarProps & Omit<RMWC.ComponentProps, 'action'>
-) {
-  const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
+export const Snackbar = createComponent<SnackbarProps, SnackbarHTMLProps>(
+  function Snackbar(props, ref) {
+    const { rootEl, surfaceEl, labelEl } = useSnackbarFoundation(props);
 
-  const {
-    open,
-    message,
-    timeout,
-    dismissIcon,
-    onOpen,
-    onClose,
-    children,
-    action,
-    icon,
-    leading,
-    stacked,
-    dismissesOnAction,
-    ...rest
-  } = props;
+    const {
+      open,
+      message,
+      timeout,
+      dismissIcon,
+      onOpen,
+      onClose,
+      children,
+      action,
+      icon,
+      leading,
+      stacked,
+      dismissesOnAction,
+      ...rest
+    } = props;
 
-  const className = useClassNames(props, [
-    'mdc-snackbar',
-    {
-      'mdc-snackbar--leading': leading,
-      'mdc-snackbar--stacked': stacked
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-snackbar',
+      {
+        'mdc-snackbar--leading': leading,
+        'mdc-snackbar--stacked': stacked
+      }
+    ]);
 
-  const actions: SnackbarProps['action'][] = Array.isArray(action)
-    ? action
-    : action
-    ? [action]
-    : [];
+    const actions: SnackbarProps['action'][] = Array.isArray(action)
+      ? action
+      : action
+      ? [action]
+      : [];
 
-  return (
-    <Tag
-      {...rest}
-      element={rootEl}
-      aria-live="assertive"
-      aria-atomic
-      aria-hidden
-      className={className}
-    >
-      <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
-        {!!icon && (
-          <Icon
-            style={{
-              color: 'rgba(255, 255, 255, 0.87)',
-              fill: 'currentColor',
-              marginLeft: '1rem'
-            }}
-            icon={icon}
-          />
-        )}
-        <SnackbarLabel>
-          {message}
-          {/**
-           * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
-           * Wrapping the content for accessibility so it can be announced for screen readers
-           */}
-          <div style={{ display: 'none' }} ref={labelEl.setRef} />
-        </SnackbarLabel>
-
-        <SnackbarActions>
-          {actions.map((a, i) => (
-            <React.Fragment key={i}>{a}</React.Fragment>
-          ))}
-          {dismissIcon && (
-            <SnackbarDismiss
-              icon={dismissIcon === true ? 'close' : dismissIcon}
+    return (
+      <Tag
+        {...rest}
+        ref={ref}
+        element={rootEl}
+        aria-live="assertive"
+        aria-atomic
+        aria-hidden
+        className={className}
+      >
+        <div {...surfaceEl.props({})} className="mdc-snackbar__surface">
+          {!!icon && (
+            <Icon
+              style={{
+                color: 'rgba(255, 255, 255, 0.87)',
+                fill: 'currentColor',
+                marginLeft: '1rem'
+              }}
+              icon={icon}
             />
           )}
-        </SnackbarActions>
-        {children}
-      </div>
-    </Tag>
-  );
-}
+          <SnackbarLabel>
+            {message}
+            {/**
+             * Fixes bug https://github.com/jamesmfriedman/rmwc/issues/418
+             * Wrapping the content for accessibility so it can be announced for screen readers
+             */}
+            <div style={{ display: 'none' }} ref={labelEl.setRef} />
+          </SnackbarLabel>
+
+          <SnackbarActions>
+            {actions.map((a, i) => (
+              <React.Fragment key={i}>{a}</React.Fragment>
+            ))}
+            {dismissIcon && (
+              <SnackbarDismiss
+                icon={dismissIcon === true ? 'close' : dismissIcon}
+              />
+            )}
+          </SnackbarActions>
+          {children}
+        </div>
+      </Tag>
+    );
+  }
+);
 
 /*********************************************************************
  * Bits
@@ -139,12 +145,10 @@ function SnackbarLabel(props: { children: React.ReactNode }) {
     />
   );
 }
-SnackbarLabel.displayName = 'SnackbarLabel';
 
 function SnackbarActions(props: { children: React.ReactNode }) {
   return <div className="mdc-snackbar__actions" {...props} />;
 }
-SnackbarActions.displayName = 'SnackbarActions';
 
 /** A button for a snackbar action. */
 export interface SnackbarActionProps extends ButtonProps {
@@ -153,9 +157,9 @@ export interface SnackbarActionProps extends ButtonProps {
 }
 
 /** A button for a snackbar action. */
-export const SnackbarAction = React.forwardRef<
-  any,
-  SnackbarActionProps & Omit<RMWC.ComponentProps, 'action'>
+export const SnackbarAction = createComponent<
+  SnackbarActionProps,
+  SnackbarHTMLProps
 >(function SnackbarAction(props, ref) {
   const className = useClassNames(props, ['mdc-snackbar__action']);
   const {
@@ -171,9 +175,7 @@ export const SnackbarAction = React.forwardRef<
     />
   );
 });
-SnackbarAction.displayName = 'SnackbarAction';
 
 function SnackbarDismiss(props: IconButtonProps) {
   return <IconButton {...props} className="mdc-snackbar__dismiss" />;
 }
-SnackbarDismiss.displayName = 'SnackbarDismiss';

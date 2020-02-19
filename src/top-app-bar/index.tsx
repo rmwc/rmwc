@@ -148,10 +148,9 @@ export interface TopAppBarRowProps {}
 export const TopAppBarRow = createComponent<TopAppBarRowProps>(
   function TopAppBarRow(props, ref) {
     const className = useClassNames(props, ['mdc-top-app-bar__row']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-TopAppBarRow.displayName = 'TopAppBarRow';
 
 /** A section for the app bar. */
 export interface TopAppBarSectionProps {
@@ -172,32 +171,31 @@ export const TopAppBarSection = createComponent<TopAppBarSectionProps>(
         'mdc-top-app-bar__section--align-end': alignEnd
       }
     ]);
-    return <Tag tag="section" ref={ref} {...rest} className={className} />;
+    return <Tag tag="section" {...rest} ref={ref} className={className} />;
   }
 );
-TopAppBarSection.displayName = 'TopAppBarSection';
 
 /** A navigation icon for the top app bar. This is an instance of the Icon component. */
 export interface TopAppBarNavigationIconProps extends IconButtonProps {}
 
 /** A navigation icon for the top app bar. This is an instance of the IconButton component. */
-export const TopAppBarNavigationIcon = function TopAppBarNavigationIcon(
-  props: TopAppBarNavigationIconProps & RMWC.ComponentProps
-) {
+export const TopAppBarNavigationIcon = createComponent<
+  TopAppBarNavigationIconProps
+>(function TopAppBarNavigationIcon(props, ref) {
   const className = useClassNames(props, ['mdc-top-app-bar__navigation-icon']);
-  return <IconButton {...props} className={className} />;
-};
+  return <IconButton {...props} className={className} ref={ref} />;
+});
 
 /** Action items for the top app bar. This is an instance of the Icon component.*/
 export interface TopAppBarActionItemProps extends IconButtonProps {}
 
 /** Action items for the top app bar. This is an instance of the IconButton component.*/
-export const TopAppBarActionItem = function TopAppBarActionItem(
-  props: TopAppBarActionItemProps & RMWC.ComponentProps
-) {
-  const className = useClassNames(props, ['mdc-top-app-bar__action-item']);
-  return <IconButton {...props} className={className} />;
-};
+export const TopAppBarActionItem = createComponent<TopAppBarActionItemProps>(
+  function TopAppBarActionItem(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__action-item']);
+    return <IconButton {...props} className={className} ref={ref} />;
+  }
+);
 
 /** A title for the top app bar. */
 export interface TopAppBarTitleProps {}
@@ -206,10 +204,9 @@ export interface TopAppBarTitleProps {}
 export const TopAppBarTitle = createComponent<TopAppBarTitleProps>(
   function TopAppBarTitle(props, ref) {
     const className = useClassNames(props, ['mdc-top-app-bar__title']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-TopAppBarTitle.displayName = 'TopAppBarTitle';
 
 /** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
 export interface TopAppBarFixedAdjustProps {
@@ -236,7 +233,6 @@ export const TopAppBarFixedAdjust = createComponent<TopAppBarFixedAdjustProps>(
         'mdc-top-app-bar--short-fixed-adjust': props.short
       }
     ]);
-    return <Tag ref={ref} {...rest} className={className} />;
+    return <Tag {...rest} ref={ref} className={className} />;
   }
 );
-TopAppBarFixedAdjust.displayName = 'TopAppBarFixedAdjust';

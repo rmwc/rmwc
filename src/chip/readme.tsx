@@ -150,7 +150,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Chip, ChipSet]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'Chip', component: Chip },
+          { displayName: 'ChipSet', component: ChipSet }
+        ]}
+      />
     </Docs>
   );
 }

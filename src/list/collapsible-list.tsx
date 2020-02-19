@@ -49,7 +49,7 @@ const getNextSibling = (
 
 /** A collapsible list component. */
 export class CollapsibleList extends React.Component<
-  CollapsibleListProps & RMWC.ComponentProps,
+  CollapsibleListProps & RMWC.HTMLProps,
   CollapsibleState
 > {
   static displayName = 'CollapsibleList';

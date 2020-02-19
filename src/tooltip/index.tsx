@@ -78,5 +78,3 @@ export const Tooltip = function Tooltip({
     </ReactTooltip>
   );
 };
-
-Tooltip.displayName = 'Tooltip';

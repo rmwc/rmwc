@@ -6,7 +6,7 @@ import {
   MDCTextFieldIconFoundation
 } from '@material/textfield';
 
-import { useClassNames, Tag, useId } from '@rmwc/base';
+import { useClassNames, Tag, useId, createComponent } from '@rmwc/base';
 import { Icon } from '@rmwc/icon';
 import { LineRipple } from '@rmwc/line-ripple';
 import { FloatingLabel } from '@rmwc/floating-label';
@@ -57,156 +57,161 @@ export interface TextFieldProps {
   type?: string;
 }
 
+export type TextFieldHTMLProps = RMWC.HTMLProps<
+  HTMLInputElement,
+  Omit<React.AllHTMLAttributes<HTMLInputElement>, 'label'>
+>;
+
 /** A TextField component for accepting text input from a user. */
-export const TextField = React.forwardRef(function TextField(
-  props: TextFieldProps & Omit<RMWC.ComponentProps, 'label'>,
-  ref: React.Ref<any>
-) {
-  const {
-    label,
-    style,
-    outlined,
-    fullwidth,
-    invalid,
-    disabled,
-    helpText,
-    children,
-    textarea,
-    inputRef,
-    characterCount,
-    icon,
-    trailingIcon,
-    rootProps = {},
-    ...rest
-  } = props;
+export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
+  function TextField(props, ref) {
+    const {
+      label,
+      style,
+      outlined,
+      fullwidth,
+      invalid,
+      disabled,
+      helpText,
+      children,
+      textarea,
+      inputRef,
+      characterCount,
+      icon,
+      trailingIcon,
+      rootProps = {},
+      ...rest
+    } = props;
 
-  const {
-    rootEl,
-    inputEl,
-    shakeLabel,
-    floatLabel,
-    notchWidth,
-    lineRippleActive,
-    lineRippleCenter,
-    setLeadingIcon,
-    setTrailingIcon,
-    setFloatingLabel,
-    setCharacterCounter
-  } = useTextFieldFoundation(props);
+    const {
+      rootEl,
+      inputEl,
+      shakeLabel,
+      floatLabel,
+      notchWidth,
+      lineRippleActive,
+      lineRippleCenter,
+      setLeadingIcon,
+      setTrailingIcon,
+      setFloatingLabel,
+      setCharacterCounter
+    } = useTextFieldFoundation(props);
 
-  const id = useId('textfield', props);
+    const id = useId('textfield', props);
 
-  const className = useClassNames(props, [
-    'mdc-text-field',
-    'mdc-text-field--upgraded',
-    {
-      'mdc-text-field--textarea': textarea,
-      'mdc-text-field--fullwidth': fullwidth,
-      'mdc-text-field--outlined': outlined,
-      'mdc-text-field--invalid': invalid,
-      'mdc-text-field--disabled': disabled,
-      'mdc-text-field--with-leading-icon': !!icon,
-      'mdc-text-field--with-trailing-icon': !!trailingIcon,
-      'mdc-text-field--no-label': !label
-    }
-  ]);
+    const className = useClassNames(props, [
+      'mdc-text-field',
+      'mdc-text-field--upgraded',
+      {
+        'mdc-text-field--textarea': textarea,
+        'mdc-text-field--fullwidth': fullwidth,
+        'mdc-text-field--outlined': outlined,
+        'mdc-text-field--invalid': invalid,
+        'mdc-text-field--disabled': disabled,
+        'mdc-text-field--with-leading-icon': !!icon,
+        'mdc-text-field--with-trailing-icon': !!trailingIcon,
+        'mdc-text-field--no-label': !label
+      }
+    ]);
 
-  // handle leading and trailing icons
-  const renderIcon = (
-    icon: RMWC.IconPropT,
-    leadOrTrail: 'leadingIcon' | 'trailingIcon'
-  ) => {
-    return (
-      <TextFieldIcon
-        apiRef={api => {
-          leadOrTrail === 'leadingIcon'
-            ? setLeadingIcon(api)
-            : setTrailingIcon(api);
-        }}
-        tabIndex={leadOrTrail === 'trailingIcon' ? 0 : undefined}
-        icon={icon}
-      />
-    );
-  };
-
-  const renderHelpText = (renderedCharacterCounter?: React.ReactNode) => {
-    const shouldRender = !!helpText || (characterCount && !textarea);
-
-    if (!shouldRender) {
-      return null;
-    }
-
-    const shouldSpread =
-      typeof helpText === 'object' && !React.isValidElement(helpText);
-
-    return (
-      <div className="mdc-text-field-helper-line">
-        {helpText && shouldSpread ? (
-          <TextFieldHelperText {...(helpText as any)} />
-        ) : (
-          <TextFieldHelperText>{helpText}</TextFieldHelperText>
-        )}
-        {!textarea && renderedCharacterCounter}
-      </div>
-    );
-  };
-
-  const renderedLabel = label ? (
-    <FloatingLabel
-      shake={shakeLabel}
-      float={floatLabel}
-      apiRef={setFloatingLabel}
-      htmlFor={id}
-    >
-      {label}
-    </FloatingLabel>
-  ) : null;
-
-  const renderedCharacterCounter = characterCount ? (
-    <TextFieldCharacterCount apiRef={setCharacterCounter} />
-  ) : null;
-
-  return (
-    <>
-      <TextFieldRoot
-        {...rootProps}
-        element={rootEl}
-        style={style}
-        className={className}
-        ref={ref}
-      >
-        {!!icon && renderIcon(icon, 'leadingIcon')}
-        {children}
-        {/** Render character counter in different place for textarea */}
-        {!!textarea && renderedCharacterCounter}
-
-        <Tag
-          {...rest}
-          element={inputEl}
-          className="mdc-text-field__input"
-          disabled={disabled}
-          tag={textarea ? 'textarea' : 'input'}
-          ref={inputRef}
+    // handle leading and trailing icons
+    const renderIcon = (
+      icon: RMWC.IconPropT,
+      leadOrTrail: 'leadingIcon' | 'trailingIcon'
+    ) => {
+      return (
+        <TextFieldIcon
+          apiRef={api => {
+            leadOrTrail === 'leadingIcon'
+              ? setLeadingIcon(api)
+              : setTrailingIcon(api);
+          }}
+          tabIndex={leadOrTrail === 'trailingIcon' ? 0 : undefined}
+          icon={icon}
         />
+      );
+    };
 
-        {!!outlined ? (
-          <>
-            <NotchedOutline notch={notchWidth}>{renderedLabel}</NotchedOutline>
-            {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
-          </>
-        ) : (
-          <>
-            {renderedLabel}
-            {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
-            <LineRipple active={lineRippleActive} center={lineRippleCenter} />
-          </>
-        )}
-      </TextFieldRoot>
-      {renderHelpText(renderedCharacterCounter)}
-    </>
-  );
-});
-TextField.displayName = 'TextField';
+    const renderHelpText = (renderedCharacterCounter?: React.ReactNode) => {
+      const shouldRender = !!helpText || (characterCount && !textarea);
+
+      if (!shouldRender) {
+        return null;
+      }
+
+      const shouldSpread =
+        typeof helpText === 'object' && !React.isValidElement(helpText);
+
+      return (
+        <div className="mdc-text-field-helper-line">
+          {helpText && shouldSpread ? (
+            <TextFieldHelperText {...(helpText as any)} />
+          ) : (
+            <TextFieldHelperText>{helpText}</TextFieldHelperText>
+          )}
+          {!textarea && renderedCharacterCounter}
+        </div>
+      );
+    };
+
+    const renderedLabel = label ? (
+      <FloatingLabel
+        shake={shakeLabel}
+        float={floatLabel}
+        apiRef={setFloatingLabel}
+        htmlFor={id}
+      >
+        {label}
+      </FloatingLabel>
+    ) : null;
+
+    const renderedCharacterCounter = characterCount ? (
+      <TextFieldCharacterCount apiRef={setCharacterCounter} />
+    ) : null;
+
+    return (
+      <>
+        <TextFieldRoot
+          {...rootProps}
+          element={rootEl}
+          style={style}
+          className={className}
+          ref={ref}
+        >
+          {!!icon && renderIcon(icon, 'leadingIcon')}
+          {children}
+          {/** Render character counter in different place for textarea */}
+          {!!textarea && renderedCharacterCounter}
+
+          <Tag
+            {...rest}
+            element={inputEl}
+            className="mdc-text-field__input"
+            disabled={disabled}
+            tag={textarea ? 'textarea' : 'input'}
+            ref={inputRef}
+          />
+
+          {!!outlined ? (
+            <>
+              <NotchedOutline notch={notchWidth}>
+                {renderedLabel}
+              </NotchedOutline>
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
+            </>
+          ) : (
+            <>
+              {renderedLabel}
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
+              <LineRipple active={lineRippleActive} center={lineRippleCenter} />
+            </>
+          )}
+        </TextFieldRoot>
+        {renderHelpText(renderedCharacterCounter)}
+      </>
+    );
+  }
+);
 
 const TextFieldRoot = withRipple()(
   React.forwardRef(function TextFieldRoot(props: any, ref: React.Ref<any>) {
@@ -247,11 +252,8 @@ export interface TextFieldHelperTextProps {
 }
 
 /** A help text component */
-export const TextFieldHelperText = React.forwardRef(
-  function TextFieldHelperText(
-    props: TextFieldHelperTextProps & RMWC.ComponentProps,
-    ref: React.Ref<any>
-  ) {
+export const TextFieldHelperText = createComponent<TextFieldHelperTextProps>(
+  function TextFieldHelperText(props, ref) {
     const { persistent, validationMsg, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-text-field-helper-text',
@@ -264,7 +266,6 @@ export const TextFieldHelperText = React.forwardRef(
     return <Tag tag="p" {...rest} className={className} ref={ref} />;
   }
 );
-TextFieldHelperText.displayName = 'TextFieldHelperText';
 
 /*********************************************************************
  * Icon
@@ -281,7 +282,7 @@ export interface TextFieldIconProps extends IconProps {
 
 /** An Icon in a TextField */
 const TextFieldIcon = function TextFieldIcon(
-  props: TextFieldIconProps & RMWC.ComponentProps
+  props: TextFieldIconProps & RMWC.HTMLProps
 ) {
   const { apiRef, ...rest } = props;
   const { rootEl } = useTextFieldIconFoundation(props);
@@ -296,4 +297,3 @@ const TextFieldIcon = function TextFieldIcon(
     />
   );
 };
-TextFieldIcon.displayName = 'TextFieldIcon';

@@ -254,13 +254,13 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          DataTable,
-          DataTableRow,
-          DataTableCell,
-          DataTableHead,
-          DataTableBody,
-          DataTableHeadCell,
-          SimpleDataTable
+          { displayName: 'DataTable', component: DataTable },
+          { displayName: 'DataTableRow', component: DataTableRow },
+          { displayName: 'DataTableCell', component: DataTableCell },
+          { displayName: 'DataTableHead', component: DataTableHead },
+          { displayName: 'DataTableBody', component: DataTableBody },
+          { displayName: 'DataTableHeadCell', component: DataTableHeadCell },
+          { displayName: 'SimpleDataTable', component: SimpleDataTable }
         ]}
       />
     </Docs>

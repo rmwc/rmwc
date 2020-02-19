@@ -8,7 +8,7 @@ import {
   createComponent
 } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { ToggleableFoundationProps } from '@rmwc/toggleable';
+import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
 import { useSwitchFoundation } from './foundation';
 
 /*********************************************************************
@@ -16,12 +16,12 @@ import { useSwitchFoundation } from './foundation';
  *********************************************************************/
 
 /** A Switch component. */
-export interface SwitchProps
-  extends RMWC.WithRippleProps,
-    ToggleableFoundationProps {}
+export interface SwitchProps extends RMWC.WithRippleProps, ToggleableProps {}
+
+export type SwitchHTMLProps = ToggleHTMLProps;
 
 /** A Switch component. */
-export const Switch = createComponent<SwitchProps, HTMLInputElement>(
+export const Switch = createComponent<SwitchProps, SwitchHTMLProps>(
   function Switch(props, ref) {
     const {
       renderToggle,
@@ -78,7 +78,6 @@ const SwitchThumbUnderlay = withRipple({
   surface: false
 })(function SwitchThumbUnderlay({
   className,
-  children,
   ...rest
 }: {
   className?: string;

@@ -1,7 +1,12 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import {
+  useClassNames,
+  Tag,
+  createComponent,
+  createMemoComponent
+} from '@rmwc/base';
 
 /** Grid List Component */
 export interface GridListProps {
@@ -57,10 +62,9 @@ export interface GridTilePrimaryProps {}
 export const GridTilePrimary = createComponent<GridTilePrimaryProps>(
   function GridTilePrimary(props, ref) {
     const className = useClassNames(props, ['mdc-grid-tile__primary']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-GridTilePrimary.displayName = 'GridTilePrimary';
 
 /** The inner primary content for a Grid tile */
 export interface GridTilePrimaryContentProps {}
@@ -70,9 +74,8 @@ export const GridTilePrimaryContent = createComponent<
   GridTilePrimaryContentProps
 >(function GridTilePrimaryContent(props, ref) {
   const className = useClassNames(props, ['mdc-grid-tile__primary-content']);
-  return <Tag tag="img" ref={ref} {...props} className={className} />;
+  return <Tag tag="img" {...props} ref={ref} className={className} />;
 });
-GridTilePrimaryContent.displayName = 'GridTilePrimaryContent';
 
 /** A grid tile */
 export interface GridTileProps {}
@@ -83,9 +86,8 @@ export const GridTile = createComponent<GridTileProps>(function GridTile(
   ref
 ) {
   const className = useClassNames(props, ['mdc-grid-tile']);
-  return <Tag tag="li" ref={ref} {...props} className={className} />;
+  return <Tag tag="li" {...props} ref={ref} className={className} />;
 });
-GridTile.displayName = 'GridTile';
 
 /** The secondary content for a Grid tile */
 export interface GridTileSecondaryProps {}
@@ -94,24 +96,20 @@ export interface GridTileSecondaryProps {}
 export const GridTileSecondary = createComponent<GridTileSecondaryProps>(
   function GridTileSecondary(props, ref) {
     const className = useClassNames(props, ['mdc-grid-tile__secondary']);
-    return <Tag tag="span" ref={ref} {...props} className={className} />;
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
-GridTileSecondary.displayName = 'GridTileSecondary';
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
 export interface GridTileIconProps extends IconProps {}
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
-export const GridTileIcon = React.memo(
-  React.forwardRef<any, GridTileIconProps & RMWC.ComponentProps>(
-    function GridTileIcon(props, ref) {
-      const className = useClassNames(props, ['mdc-grid-tile__icon']);
-      return <Icon ref={ref} {...props} className={className} />;
-    }
-  )
+export const GridTileIcon = createMemoComponent<GridTileIconProps>(
+  function GridTileIcon(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile__icon']);
+    return <Icon {...props} ref={ref} className={className} />;
+  }
 );
-GridTileIcon.displayName = 'GridTileIcon';
 
 /** The title for a Grid tile */
 export interface GridTileTitleProps {}
@@ -120,10 +118,9 @@ export interface GridTileTitleProps {}
 export const GridTileTitle = createComponent<GridTileTitleProps>(
   function GridTileTitle(props, ref) {
     const className = useClassNames(props, ['mdc-grid-tile__title']);
-    return <Tag tag="span" ref={ref} {...props} className={className} />;
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
-GridTileTitle.displayName = 'GridTileTitle';
 
 /** Supporting Text for the Grid Tile */
 export interface GridTileTitleSupportTextProps {}
@@ -133,6 +130,5 @@ export const GridTileTitleSupportText = createComponent<
   GridTileTitleSupportTextProps
 >(function GridTileTitleSupportText(props, ref) {
   const className = useClassNames(props, ['mdc-grid-tile__support-text']);
-  return <Tag tag="span" ref={ref} {...props} className={className} />;
+  return <Tag tag="span" {...props} ref={ref} className={className} />;
 });
-GridTileTitleSupportText.displayName = 'GridTileTitleSupportText';

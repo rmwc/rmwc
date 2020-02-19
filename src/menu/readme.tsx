@@ -170,12 +170,12 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          Menu,
-          MenuItem,
-          MenuSurface,
-          MenuSurfaceAnchor,
-          SimpleMenu,
-          SimpleMenuSurface
+          { displayName: 'Menu', component: Menu },
+          { displayName: 'MenuItem', component: MenuItem },
+          { displayName: 'MenuSurface', component: MenuSurface },
+          { displayName: 'MenuSurfaceAnchor', component: MenuSurfaceAnchor },
+          { displayName: 'SimpleMenu', component: SimpleMenu },
+          { displayName: 'SimpleMenuSurface', component: SimpleMenuSurface }
         ]}
       />
     </Docs>

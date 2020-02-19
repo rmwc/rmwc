@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { useNotchedOutlineFoundation } from './foundation';
-import { createComponent } from '@rmwc/base';
+import { createComponent, Tag } from '@rmwc/base';
 
 export interface NotchedOutlineProps {
   notch?: number;
@@ -12,17 +12,16 @@ export interface NotchedOutlineProps {
  *********************************************************************/
 
 export const NotchedOutline = createComponent<NotchedOutlineProps>(
-  function NotchedOutline(props) {
+  function NotchedOutline(props, ref) {
     const { children, ...rest } = props;
     const { rootEl, notchedEl } = useNotchedOutlineFoundation(props);
 
     return (
-      <div
-        {...rootEl.props({
-          ...rest,
-          className: 'mdc-notched-outline'
-        })}
-        ref={rootEl.setRef}
+      <Tag
+        {...rest}
+        element={rootEl}
+        className={'mdc-notched-outline'}
+        ref={ref}
       >
         <NotchedOutlineLeading />
         <div
@@ -34,7 +33,7 @@ export const NotchedOutline = createComponent<NotchedOutlineProps>(
           {children}
         </div>
         <NotchedOutlineTrailing />
-      </div>
+      </Tag>
     );
   }
 );

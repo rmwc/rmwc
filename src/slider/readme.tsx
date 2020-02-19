@@ -58,7 +58,10 @@ export default function() {
         <Slider discrete displayMarkers min={100} max={200} step={5} />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Slider]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Slider', component: Slider }]}
+      />
     </Docs>
   );
 }

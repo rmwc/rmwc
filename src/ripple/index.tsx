@@ -54,7 +54,7 @@ const withDomNode = () => <P extends any>(
 };
 
 export const Ripple = withDomNode()(function Ripple(
-  props: RippleProps & RMWC.ComponentProps & { domNode?: Element }
+  props: RippleProps & RMWC.HTMLProps & { domNode?: Element }
 ) {
   const {
     children,

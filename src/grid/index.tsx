@@ -71,7 +71,7 @@ export const GridCell = createComponent<GridCellProps>(function GridCell(
         props.desktop !== undefined
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag {...rest} ref={ref} className={className} />;
 });
 
 /** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
@@ -83,5 +83,6 @@ export const GridInner = createComponent<GridInnerProps>(function GridInner(
   ref
 ) {
   const className = useClassNames(props, ['mdc-layout-grid__inner']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag {...props} ref={ref} className={className} />;
 });
+GridInner.displayName = 'GridInner';

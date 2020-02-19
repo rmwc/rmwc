@@ -23,5 +23,5 @@ export const FormField = createComponent<FormFieldProps>(function FormField(
       'mdc-form-field--align-end': props.alignEnd
     }
   ]);
-  return <Tag ref={ref} {...rest} className={className} />;
+  return <Tag {...rest} ref={ref} className={className} />;
 });

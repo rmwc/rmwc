@@ -100,7 +100,10 @@ export default function() {
         />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[IconButton]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'IconButton', component: IconButton }]}
+      />
     </Docs>
   );
 }

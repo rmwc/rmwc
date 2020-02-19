@@ -180,7 +180,7 @@ export function SiteSearch() {
           {results.map(r => (
             <SimpleListItem
               tag={Link}
-              {...{ to: r.url }}
+              to={r.url}
               graphic={r.icon}
               key={r.id}
               text={r.sectionName}

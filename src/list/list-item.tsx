@@ -38,7 +38,7 @@ export interface ListItemTextProps {}
 export const ListItemText = createComponent<ListItemTextProps>(
   function ListItemText(props, ref) {
     const className = useClassNames(props, ['mdc-list-item__text']);
-    return <Tag tag="span" ref={ref} {...props} className={className} />;
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
 
@@ -49,7 +49,7 @@ export interface ListItemPrimaryTextProps {}
 export const ListItemPrimaryText = createComponent<ListItemPrimaryTextProps>(
   function ListItemPrimaryText(props, ref) {
     const className = useClassNames(props, ['mdc-list-item__primary-text']);
-    return <Tag tag="span" ref={ref} {...props} className={className} />;
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
   }
 );
 
@@ -61,7 +61,7 @@ export const ListItemSecondaryText = createComponent<
   ListItemSecondaryTextProps
 >(function ListItemSecondaryText(props, ref) {
   const className = useClassNames(props, ['mdc-list-item__secondary-text']);
-  return <Tag tag="span" ref={ref} {...props} className={className} />;
+  return <Tag tag="span" {...props} ref={ref} className={className} />;
 });
 
 /** A graphic / icon for the ListItem */
@@ -71,7 +71,7 @@ export interface ListItemGraphicProps extends IconProps {}
 export const ListItemGraphic = createComponent<ListItemGraphicProps>(
   function ListItemGraphic(props, ref) {
     const className = useClassNames(props, ['mdc-list-item__graphic']);
-    return <Icon ref={ref} {...props} className={className} />;
+    return <Icon {...props} ref={ref} className={className} />;
   }
 );
 
@@ -84,7 +84,7 @@ export const ListItemMeta = createComponent<ListItemMetaProps>(
     const className = useClassNames(props, ['mdc-list-item__meta']);
 
     if (!!props.icon) {
-      return <Icon ref={ref} {...props} className={className} />;
+      return <Icon {...props} ref={ref} className={className} />;
     }
 
     if (React.isValidElement(props.children)) {
@@ -96,7 +96,7 @@ export const ListItemMeta = createComponent<ListItemMetaProps>(
       });
     }
 
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -109,7 +109,7 @@ export const ListGroup = createComponent<ListGroupProps>(function ListGroup(
   ref
 ) {
   const className = useClassNames(props, ['mdc-list-group']);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag {...props} ref={ref} className={className} />;
 });
 
 /** A subheader for the ListGroup */
@@ -119,7 +119,7 @@ export interface ListGroupSubheaderProps {}
 export const ListGroupSubheader = createComponent<ListGroupSubheaderProps>(
   function ListGroupSubheader(props, ref) {
     const className = useClassNames(props, ['mdc-list-group__subheader']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 
@@ -130,7 +130,7 @@ export interface ListDividerProps {}
 export const ListDivider = createComponent<ListDividerProps>(
   function ListDivider(props, ref) {
     const className = useClassNames(props, ['mdc-list-divider']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
 

@@ -63,10 +63,10 @@ export const CircularProgress = createComponent<CircularProgressProps>(
         aria-valuenow={progress}
         aria-valuemin={min}
         aria-valuemax={max}
-        ref={ref}
         {...rest}
         style={style}
         className={className}
+        ref={ref}
       >
         <svg
           className="rmwc-circular-progress__circle"

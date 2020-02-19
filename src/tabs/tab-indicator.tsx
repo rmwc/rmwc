@@ -20,7 +20,7 @@ export type TabIndicatorApi = {
 
 export function TabIndicator(
   props: TabIndicatorProps &
-    RMWC.ComponentProps & { apiRef?: (api: TabIndicatorApi) => void }
+    RMWC.HTMLProps & { apiRef?: (api: TabIndicatorApi) => void }
 ) {
   const { rootEl, contentEl } = useTabIndicatorFoundation(props);
 

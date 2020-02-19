@@ -87,7 +87,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Radio]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Radio', component: Radio }]}
+      />
     </Docs>
   );
 }

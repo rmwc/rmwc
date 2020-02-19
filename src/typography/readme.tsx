@@ -72,7 +72,10 @@ export default function() {
         </RMWCProvider>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Typography]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Typography', component: Typography }]}
+      />
     </Docs>
   );
 }

@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React, { useRef } from 'react';
 
-import { Tag, useClassNames } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
@@ -25,7 +25,7 @@ export interface TabBarProps {
   indicatorTransition?: 'slide' | 'fade';
 }
 
-export function TabBar(props: TabBarProps & RMWC.ComponentProps) {
+export const TabBar = createComponent<TabBarProps>(function TabBar(props, ref) {
   const { children, activeTabIndex, onActivate, ...rest } = props;
 
   const {
@@ -48,9 +48,9 @@ export function TabBar(props: TabBarProps & RMWC.ComponentProps) {
 
   return (
     <TabBarContext.Provider value={contextApi.current}>
-      <Tag tag="nav" element={rootEl} {...rest} className={className}>
+      <Tag tag="nav" element={rootEl} {...rest} className={className} ref={ref}>
         <TabScroller apiRef={setTabScrollerApi}>{children}</TabScroller>
       </Tag>
     </TabBarContext.Provider>
   );
-}
+});

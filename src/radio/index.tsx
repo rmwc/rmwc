@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import { ToggleableFoundationProps } from '@rmwc/toggleable';
+import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
 import { useRadioFoundation } from './foundation';
 
 /*********************************************************************
@@ -10,12 +10,12 @@ import { useRadioFoundation } from './foundation';
  *********************************************************************/
 
 /** A Radio button component. */
-export interface RadioProps
-  extends RMWC.WithRippleProps,
-    ToggleableFoundationProps {}
+export interface RadioProps extends RMWC.WithRippleProps, ToggleableProps {}
+
+export type RadioHTMLProps = ToggleHTMLProps;
 
 /** A Radio button component. */
-export const Radio = createComponent<RadioProps, 'input'>(function Radio(
+export const Radio = createComponent<RadioProps, RadioHTMLProps>(function Radio(
   props,
   ref
 ) {
@@ -57,7 +57,7 @@ const RadioRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  React.forwardRef<any, RadioProps & RMWC.ComponentProps>(function RadioRoot(
+  React.forwardRef<any, RadioProps & RMWC.HTMLProps>(function RadioRoot(
     props,
     ref
   ) {

@@ -23,9 +23,8 @@ export const ImageList = createComponent<ImageListProps>(function ImageList(
       'mdc-image-list--with-text-protection': withTextProtection
     }
   ]);
-  return <Tag tag="ul" ref={ref} {...rest} className={className} />;
+  return <Tag tag="ul" {...rest} ref={ref} className={className} />;
 });
-ImageList.displayName = 'ImageList';
 
 /** Indicates each item in an Image List. */
 export interface ImageListItemProps {}
@@ -34,10 +33,9 @@ export interface ImageListItemProps {}
 export const ImageListItem = createComponent<ImageListItemProps>(
   function ImageListItem(props, ref) {
     const className = useClassNames(props, ['mdc-image-list__item']);
-    return <Tag tag="li" ref={ref} {...props} className={className} />;
+    return <Tag tag="li" {...props} ref={ref} className={className} />;
   }
 );
-ImageListItem.displayName = 'ImageListItem';
 
 /** Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio. */
 export interface ImageListImageAspectContainerProps {}
@@ -49,9 +47,8 @@ export const ImageListImageAspectContainer = createComponent<
   const className = useClassNames(props, [
     'mdc-image-list__image-aspect-container'
   ]);
-  return <Tag ref={ref} {...props} className={className} />;
+  return <Tag {...props} ref={ref} className={className} />;
 });
-ImageListImageAspectContainer.displayName = 'ImageListImageAspectContainer';
 
 /** Indicates the image element in each item. */
 export interface ImageListImageProps {}
@@ -60,10 +57,9 @@ export interface ImageListImageProps {}
 export const ImageListImage = createComponent<ImageListImageProps>(
   function ImageListImage(props, ref) {
     const className = useClassNames(props, ['mdc-image-list__image']);
-    return <Tag tag="img" ref={ref} {...props} className={className} />;
+    return <Tag tag="img" {...props} ref={ref} className={className} />;
   }
 );
-ImageListImage.displayName = 'ImageListImage';
 
 /** Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels. */
 export interface ImageListSupportingProps {}
@@ -72,10 +68,9 @@ export interface ImageListSupportingProps {}
 export const ImageListSupporting = createComponent<ImageListSupportingProps>(
   function ImageListSupporting(props, ref) {
     const className = useClassNames(props, ['mdc-image-list__supporting']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-ImageListSupporting.displayName = 'ImageListSupporting';
 
 /** Optional. Indicates the text label in each item, if the Image List contains text labels. */
 export interface ImageListLabelProps {}
@@ -84,7 +79,6 @@ export interface ImageListLabelProps {}
 export const ImageListLabel = createComponent<ImageListLabelProps>(
   function ImageListLabel(props, ref) {
     const className = useClassNames(props, ['mdc-image-list__label']);
-    return <Tag ref={ref} {...props} className={className} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
 );
-ImageListLabel.displayName = 'ImageListLabel';

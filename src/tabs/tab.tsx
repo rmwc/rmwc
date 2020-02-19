@@ -66,17 +66,12 @@ const TabRoot = withRipple({ surface: false })(
 );
 
 /** A Tab icon. This is an instance of the Icon component. */
-const TabIcon = React.memo(function TabIcon(
-  props: IconProps & RMWC.ComponentProps
-) {
+const TabIcon = React.memo(function TabIcon(props: IconProps & RMWC.HTMLProps) {
   return <Icon {...props} className="mdc-tab__icon" />;
 });
 
 /** A Tab component */
-export const Tab = React.forwardRef(function Tab(
-  props: TabProps & RMWC.ComponentProps,
-  ref
-) {
+export const Tab = createComponent<TabProps>(function Tab(props, ref) {
   const {
     children,
     label,
@@ -117,4 +112,3 @@ export const Tab = React.forwardRef(function Tab(
     </TabRoot>
   );
 });
-Tab.displayName = 'Tab';

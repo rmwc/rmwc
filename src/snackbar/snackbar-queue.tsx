@@ -3,9 +3,10 @@ import {
   Snackbar,
   SnackbarProps,
   SnackbarAction,
-  SnackbarActionProps
+  SnackbarActionProps,
+  SnackbarHTMLProps
 } from './snackbar';
-import { MergeInterfacesT, IconPropT } from '@rmwc/types';
+import { IconPropT } from '@rmwc/types';
 import { ArrayEmitter } from '@rmwc/base';
 
 interface SnackbarQueueMessageBase {
@@ -13,14 +14,14 @@ interface SnackbarQueueMessageBase {
   body?: React.ReactNode;
   icon?: IconPropT;
   actions?: Array<
-    | NotificationAction
-    | MergeInterfacesT<SnackbarActionProps, React.HTMLProps<any>>
+    NotificationAction | (SnackbarActionProps & SnackbarHTMLProps)
   >;
 }
 
 export interface SnackbarQueueMessage
   extends SnackbarProps,
-    MergeInterfacesT<SnackbarQueueMessageBase, NotificationOptions> {}
+    SnackbarQueueMessageBase,
+    Omit<NotificationOptions, keyof SnackbarQueueMessageBase> {}
 
 /** A snackbar queue for rendering messages */
 export interface SnackbarQueueProps extends SnackbarProps {

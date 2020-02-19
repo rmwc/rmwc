@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useId } from '@rmwc/base';
 import { FormField } from '@rmwc/formfield';
 
-export interface ToggleableFoundationProps {
+export interface ToggleableProps {
   /** A DOM ID for the toggle. */
   id?: string;
   /** Disables the control. */
@@ -20,9 +20,12 @@ export interface ToggleableFoundationProps {
   inputRef?: React.Ref<HTMLInputElement>;
 }
 
-export function useToggleFoundation(
-  props: ToggleableFoundationProps & RMWC.HTMLProps<any>
-) {
+export type ToggleHTMLProps = RMWC.HTMLProps<
+  HTMLInputElement,
+  Omit<React.AllHTMLAttributes<HTMLInputElement>, 'label'>
+>;
+
+export function useToggleFoundation(props: ToggleableProps & ToggleHTMLProps) {
   const { className, style, rootProps, label, children, disabled } = props;
   const hasLabel = props.label || props.children;
   const id = useId('toggle-', props);
