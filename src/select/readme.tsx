@@ -20,7 +20,8 @@ export default function() {
         '@material/line-ripple/dist/mdc.line-ripple.css',
         '@material/list/dist/mdc.list.css',
         '@material/menu/dist/mdc.menu.css',
-        '@material/menu-surface/dist/mdc.menu-surface.css'
+        '@material/menu-surface/dist/mdc.menu-surface.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/select-menus/"
       examples={examples}

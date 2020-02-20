@@ -21,7 +21,12 @@ export default function() {
       title="Top App Bar"
       lead="Top App Bar acts as a container for items such as application title, navigation icon, and action items."
       module="@rmwc/top-app-bar"
-      styles={['@material/top-app-bar/dist/mdc.top-app-bar.css']}
+      styles={[
+        '@material/top-app-bar/dist/mdc.top-app-bar.css',
+        '@material/icon-button/dist/mdc.icon-button.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/icon/icon.css'
+      ]}
       docsLink="https://material.io/develop/web/components/top-app-bar/"
       examples={examples}
     >

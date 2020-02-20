@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/checkbox"
       styles={[
         '@material/checkbox/dist/mdc.checkbox.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/checkboxes/"
       examples={examples}

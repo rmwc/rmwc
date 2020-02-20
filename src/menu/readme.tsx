@@ -27,7 +27,9 @@ export default function() {
       styles={[
         '@material/menu/dist/mdc.menu.css',
         '@material/menu-surface/dist/mdc.menu-surface.css',
-        '@material/list/dist/mdc.list.css'
+        '@material/ripple/dist/mdc.ripple.css',
+        '@material/list/dist/mdc.list.css',
+        '@rmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/menus/"
       examples={examples}

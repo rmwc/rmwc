@@ -15,7 +15,11 @@ export default function() {
       title="Avatars"
       lead="Avatars are virtual representations of users in a system."
       module="@rmwc/avatar"
-      styles={['@rmwc/avatar/avatar.css']}
+      styles={[
+        '@rmwc/avatar/avatar.css',
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css'
+      ]}
       examples={examples}
       addon
     >

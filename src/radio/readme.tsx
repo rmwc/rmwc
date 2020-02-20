@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/radio"
       styles={[
         '@material/radio/dist/mdc.radio.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/radio-buttons/"
       examples={examples}

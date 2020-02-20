@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/switch"
       styles={[
         '@material/switch/dist/mdc.switch.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/switches/"
       examples={examples}

@@ -25,7 +25,7 @@ export default function() {
       title="Data Tables"
       lead="Data tables display sets of data."
       module="@rmwc/data-table"
-      styles={['@rmwc/data-table/data-table.css']}
+      styles={['@rmwc/data-table/data-table.css', '@rmwc/icon/icon.css']}
       examples={examples}
       addon
     >

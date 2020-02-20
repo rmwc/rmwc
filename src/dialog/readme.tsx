@@ -24,7 +24,8 @@ export default function() {
       module="@rmwc/dialog"
       styles={[
         '@material/dialog/dist/mdc.dialog.css',
-        '@material/button/dist/mdc.button.css'
+        '@material/button/dist/mdc.button.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/dialogs/"
       examples={examples}

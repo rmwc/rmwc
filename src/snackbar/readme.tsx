@@ -20,7 +20,8 @@ export default function() {
       module="@rmwc/snackbar"
       styles={[
         '@material/snackbar/dist/mdc.snackbar.css',
-        '@material/button/dist/mdc.button.css'
+        '@material/button/dist/mdc.button.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/snackbars/"
       examples={examples}
