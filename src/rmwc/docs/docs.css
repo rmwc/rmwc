@@ -44,11 +44,6 @@ body ul li {
   background-color: var(--mdc-theme-background);
   color: var(--mdc-theme-on-surface);
 }
-
-.mdc-drawer .mdc-list-item {
-  color: var(--mdc-theme-on-surface);
-}
-
 /** Install Block */
 .app__content {
   flex: 1 1 auto;
@@ -250,7 +245,6 @@ ul {
 
 .app__top-app-bar {
   z-index: 7;
-  color: var(--mdc-theme-on-primary, white);
   max-width: 100vw;
 }
 
@@ -274,10 +268,6 @@ ul {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: auto;
-}
-
-#main-nav.mdc-drawer .mdc-list-item--activated {
-  color: var(--mdc-theme-primary);
 }
 
 #main-nav .mdc-drawer__drawer {

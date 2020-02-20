@@ -8,8 +8,6 @@ import { Theme, ThemeProvider } from '.';
 import { Button } from '../button';
 import { Radio } from '../radio';
 import { Checkbox } from '../checkbox';
-import { Tab, TabBar } from '../tabs';
-import { TopAppBar, TopAppBarRow } from '../top-app-bar';
 
 export default function() {
   return (
@@ -17,13 +15,20 @@ export default function() {
       title="Theming"
       lead="MDC Theme is a foundational module that themes MDC Web components."
       module="@rmwc/theme"
-      styles={['@material/theme/dist/mdc.theme.css']}
+      styles={['@material/theme/dist/mdc.theme.css', '@rmwc/theme/theme.css']}
       docsLink="https://material.io/develop/web/components/theme/"
       examples={examples}
     >
       <DocsSubtitle>Theme Options</DocsSubtitle>
       <DocsP>
-        **Important** You should include the theme style sheet BEFORE any of
+        The Theme module fully embraces using CSS variables for runtime theming.
+        This allows for some really powerful usecases like a built in dark mode,
+        custom palettes for your clients, or dynamic configuration for
+        accessibility.
+      </DocsP>
+
+      <DocsP>
+        **Important** You should include the theme style sheets BEFORE any of
         your other styles.
       </DocsP>
 
@@ -129,44 +134,6 @@ export default function() {
           <Checkbox label="Pizza" defaultChecked />
           <Radio label="Icecream" defaultChecked />
         </ThemeProvider>
-      </DocsExample>
-
-      <DocsSubtitle>Using the ThemeProvider to fix broken styles</DocsSubtitle>
-      <DocsP>
-        As stated above, theming in `material-components-web` isn't perfect, but
-        the ThemeProvider can be used to conveniently fix some of the built in
-        style issues. For instance, the Tab bar doesn't respond correctly when
-        used in the TopAppBar or on any other dark color surface.
-      </DocsP>
-      <DocsExample label="Broken Styles">
-        <TopAppBar style={{ position: 'static' }}>
-          {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
-          <TopAppBarRow style={{ alignItems: 'center' }}>
-            <TabBar>
-              <Tab>Cookies</Tab>
-              <Tab>Pizza</Tab>
-              <Tab>Icecream</Tab>
-            </TabBar>
-          </TopAppBarRow>
-        </TopAppBar>
-      </DocsExample>
-
-      <DocsExample label="Fixed Styles">
-        <TopAppBar style={{ position: 'static' }}>
-          {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
-          <TopAppBarRow style={{ alignItems: 'center' }}>
-            <ThemeProvider
-              options={{ primary: 'white', onSurface: 'white' }}
-              wrap
-            >
-              <TabBar>
-                <Tab>Cookies</Tab>
-                <Tab>Pizza</Tab>
-                <Tab>Icecream</Tab>
-              </TabBar>
-            </ThemeProvider>
-          </TopAppBarRow>
-        </TopAppBar>
       </DocsExample>
 
       <DocsSubtitle>Theme Component</DocsSubtitle>
