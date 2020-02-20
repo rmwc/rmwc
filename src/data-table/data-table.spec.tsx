@@ -124,7 +124,7 @@ describe('DataTable', () => {
         </DataTableContent>
       </DataTable>
     );
-    expect(el.html().includes('rmwc-data-table__row--selected')).toBe(true);
+    expect(el.html().includes('mdc-data-table__row--selected')).toBe(true);
   });
 
   it('can have have aligned cells', () => {
