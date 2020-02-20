@@ -107,7 +107,7 @@ export const DataTableRow = createComponent<DataTableRowProps>(
       {
         'mdc-data-table__header-row': isHeaderRow,
         'mdc-data-table__row': !isHeaderRow,
-        'mdc-data-table__row--selected': props.selected,
+        'mdc-data-table__row--selected': props.selected || props.activated,
         'rmwc-data-table__row--activated': props.activated
       }
     ]);
