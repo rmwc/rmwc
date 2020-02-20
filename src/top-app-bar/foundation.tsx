@@ -29,8 +29,7 @@ export const useTopAppBarFoundation = (
           rootEl.setStyle(property, value),
 
         getTopAppBarHeight: () => rootEl.ref?.clientHeight || 0,
-        notifyNavigationIconClicked: () =>
-          emit(MDCTopAppBarFoundation.strings.NAVIGATION_EVENT, {}),
+        notifyNavigationIconClicked: () => emit('onNav', {}),
         getViewportScrollY: () => {
           const target = scrollTargetRef.current as any;
           return target
@@ -75,11 +74,17 @@ export const useTopAppBarFoundation = (
 
   useEffect(() => {
     navIconRef.current =
-      rootEl.ref &&
-      rootEl.ref.querySelector<HTMLElement>(
+      rootEl.ref?.querySelector<HTMLElement>(
         MDCTopAppBarFoundation.strings.NAVIGATION_ICON_SELECTOR
-      );
-  }, [rootEl.ref]);
+      ) || null;
+
+    const handler = foundation.handleNavigationClick.bind(foundation);
+    navIconRef.current?.addEventListener('click', handler);
+
+    return () => {
+      navIconRef.current?.removeEventListener('click', handler);
+    };
+  }, [rootEl.ref, foundation]);
 
   // The Top App Bar sets these values in its constructor...
   // Reinit them after mount
