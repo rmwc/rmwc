@@ -1,15 +1,25 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { Icon } from '@rmwc/icon';
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import {
+  useClassNames,
+  Tag,
+  createComponent,
+  DataTableHeadContext,
+  DataTableContext
+} from '@rmwc/base';
 
 interface SharedDataTableCellProps {
+  /** Changes alignment for numeric columns */
+  isNumeric?: boolean;
   /** Align content to the start of the cell. */
   alignStart?: boolean;
   /** Align content to the middle of the cell. */
   alignMiddle?: boolean;
   /** Align content to the end of the cell. */
   alignEnd?: boolean;
+  /** Optionally Remove padding on the cell for checkboxes, radios, and switches. */
+  hasFormControl?: boolean;
 }
 
 /** The DataTable Component. */
@@ -27,7 +37,7 @@ export const DataTable = createComponent<DataTableProps>(function DataTable(
 ) {
   const { stickyColumns, stickyRows, ...rest } = props;
   const className = useClassNames(props, [
-    'rmwc-data-table',
+    'mdc-data-table',
     {
       'rmwc-data-table--sticky-columns': !!stickyColumns,
       'rmwc-data-table--sticky-columns-1': !!stickyColumns,
@@ -35,7 +45,11 @@ export const DataTable = createComponent<DataTableProps>(function DataTable(
       'rmwc-data-table--sticky-rows-1': !!stickyRows
     }
   ]);
-  return <Tag {...rest} ref={ref} className={className} />;
+  return (
+    <DataTableContext.Provider value={true}>
+      <Tag {...rest} ref={ref} className={className} />
+    </DataTableContext.Provider>
+  );
 });
 
 /** The data table content. */
@@ -44,7 +58,7 @@ export interface DataTableContentProps {}
 /** The data table content. */
 export const DataTableContent = createComponent<DataTableContentProps>(
   function DataTableContent(props, ref) {
-    const className = useClassNames(props, ['rmwc-data-table__content']);
+    const className = useClassNames(props, ['mdc-data-table__table']);
     return <Tag tag="table" {...props} ref={ref} className={className} />;
   }
 );
@@ -56,7 +70,11 @@ export interface DataTableHeadProps {}
 export const DataTableHead = createComponent<DataTableHeadProps>(
   function DataTableHead(props, ref) {
     const className = useClassNames(props, ['rmwc-data-table__head']);
-    return <Tag tag="thead" {...props} ref={ref} className={className} />;
+    return (
+      <DataTableHeadContext.Provider value={true}>
+        <Tag tag="thead" {...props} ref={ref} className={className} />
+      </DataTableHeadContext.Provider>
+    );
   }
 );
 
@@ -66,7 +84,7 @@ export interface DataTableBodyProps {}
 /** A body for the data table. */
 export const DataTableBody = createComponent<DataTableBodyProps>(
   function DataTableBody(props, ref) {
-    const className = useClassNames(props, ['rmwc-data-table__body']);
+    const className = useClassNames(props, ['mdc-data-table__content']);
     return <Tag tag="tbody" {...props} ref={ref} className={className} />;
   }
 );
@@ -75,18 +93,21 @@ export const DataTableBody = createComponent<DataTableBodyProps>(
 export interface DataTableRowProps {
   /** Styles the row in a selected state. */
   selected?: boolean;
-  /** Styles the row in an activated state. */
+  /** Styles the row in a bolder activated state. */
   activated?: boolean;
 }
 
 /** A row for the data table. */
 export const DataTableRow = createComponent<DataTableRowProps>(
   function DataTableRow(props, ref) {
+    const isHeaderRow = useContext(DataTableHeadContext);
     const { activated, selected, ...rest } = props;
     const className = useClassNames(props, [
       'rmwc-data-table__row',
       {
-        'rmwc-data-table__row--selected': props.selected,
+        'mdc-data-table__header-row': isHeaderRow,
+        'mdc-data-table__row': !isHeaderRow,
+        'mdc-data-table__row--selected': props.selected,
         'rmwc-data-table__row--activated': props.activated
       }
     ]);
@@ -127,21 +148,25 @@ export const DataTableHeadCell = createComponent<DataTableHeadCellProps>(
       alignStart,
       alignMiddle,
       alignEnd,
+      isNumeric,
       sort,
       onSortChange,
       onClick,
       children,
+      hasFormControl,
       ...rest
     } = props;
 
     const className = useClassNames(props, [
       'rmwc-data-table__cell',
-      'rmwc-data-table__head-cell',
+      'mdc-data-table__header-cell',
       {
         'rmwc-data-table__head-cell--sortable': sort !== undefined,
         'rmwc-data-table__head-cell--sorted': !!sort,
         'rmwc-data-table__head-cell--sorted-ascending': sort === 1,
         'rmwc-data-table__head-cell--sorted-descending': sort === -1,
+        'mdc-data-table__header-cell--checkbox': hasFormControl,
+        'mdc-data-table__header-cell--numeric': isNumeric,
         'rmwc-data-table__cell--align-start': alignStart,
         'rmwc-data-table__cell--align-middle': alignMiddle,
         'rmwc-data-table__cell--align-end': alignEnd
@@ -161,7 +186,15 @@ export const DataTableHeadCell = createComponent<DataTableHeadCellProps>(
         : {};
 
     return (
-      <Tag tag="th" {...rest} {...onClickProp} className={className} ref={ref}>
+      <Tag
+        tag="th"
+        {...rest}
+        {...onClickProp}
+        className={className}
+        ref={ref}
+        role="columnheader"
+        scope="col"
+      >
         {sort !== undefined && <DataTableSortIcon />}
         {children}
       </Tag>
@@ -175,10 +208,20 @@ export interface DataTableCellProps extends SharedDataTableCellProps {}
 /** A cell for the DataTable */
 export const DataTableCell = createComponent<DataTableCellProps>(
   function DataTableCell(props, ref) {
-    const { alignStart, alignMiddle, alignEnd, ...rest } = props;
+    const {
+      alignStart,
+      alignMiddle,
+      alignEnd,
+      isNumeric,
+      hasFormControl,
+      ...rest
+    } = props;
     const className = useClassNames(props, [
+      'mdc-data-table__cell',
       'rmwc-data-table__cell',
       {
+        'mdc-data-table__cell--numeric': isNumeric,
+        'mdc-data-table__cell--checkbox': hasFormControl,
         'rmwc-data-table__cell--align-start': props.alignStart,
         'rmwc-data-table__cell--align-middle': props.alignMiddle,
         'rmwc-data-table__cell--align-end': props.alignEnd

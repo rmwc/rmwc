@@ -573,6 +573,17 @@ ul li {
   justify-content: center;
 }
 
+#page-data-tables .doc-controls {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+#page-data-tables .doc-controls > * {
+  max-width: 10rem;
+  flex: 1;
+  margin: 1rem 0.5rem;
+}
+
 #page-data-tables .example.render-with-code .run .rmwc-data-table {
   max-width: 100%;
 }

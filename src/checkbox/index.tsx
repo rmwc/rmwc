@@ -1,7 +1,14 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { MDCCheckboxFoundation } from '@material/checkbox';
-import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
+import {
+  Tag,
+  useClassNames,
+  mergeRefs,
+  createComponent,
+  DataTableContext,
+  DataTableHeadContext
+} from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
 import { useCheckboxFoundation } from './foundation';
@@ -91,15 +98,19 @@ const CheckboxRoot = withRipple({
     props,
     ref
   ) {
+    const isDataTable = useContext(DataTableContext);
+    const isDataTableHeader = useContext(DataTableHeadContext);
     const { disabled, checked, indeterminate, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-checkbox',
       {
+        'mdc-data-table__row-checkbox': isDataTable && !isDataTableHeader,
+        'mdc-data-table__header-row-checkbox': isDataTableHeader,
         'mdc-checkbox--disabled': disabled,
         'mdc-checkbox--selected': checked || indeterminate
       }
     ]);
-    return <Tag {...rest} className={className} />;
+    return <Tag {...rest} className={className} ref={ref} />;
   })
 );
 

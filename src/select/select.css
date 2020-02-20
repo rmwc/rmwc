@@ -1,3 +1,7 @@
+.mdc-select__anchor {
+  width: 100%;
+}
+
 .rmwc-select__native-control {
   position: absolute;
   top: 0;
