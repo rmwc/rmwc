@@ -111,99 +111,98 @@ const IconRoot = React.forwardRef(function IconRoot(
 });
 
 /** An Icon component. Most of these options can be set once globally, read the documentation on Provider for more info. */
-export const Icon = createComponent<IconProps>(
-  // TODO Icon should take ref
-  ({ icon, ...rest }, ref) => {
-    const providerContext = useProviderContext();
+export const Icon = createComponent<IconProps>(({ icon, ...rest }, ref) => {
+  const providerContext = useProviderContext();
 
-    // Build icon options object
-    const {
-      icon: content,
-      strategy,
-      prefix,
-      basename,
-      render,
-      size,
-      ...optionsRest
-    }: RMWC.IconOptions = {
-      ...buildIconOptions(icon)
-    };
+  // Build icon options object
+  const {
+    icon: content,
+    strategy,
+    prefix,
+    basename,
+    render,
+    size,
+    ...optionsRest
+  }: RMWC.IconOptions = {
+    ...buildIconOptions(icon)
+  };
 
-    // Get provider options
-    const {
-      basename: providerBasename = null,
-      prefix: providerPrefix = null,
-      strategy: providerStrategy = null,
-      render: providerRender = null
-    } = providerContext.icon || {};
+  // Get provider options
+  const {
+    basename: providerBasename = null,
+    prefix: providerPrefix = null,
+    strategy: providerStrategy = null,
+    render: providerRender = null
+  } = providerContext.icon || {};
 
-    const contentToUse = content;
+  const contentToUse = content;
 
-    const strategyToUse = getIconStrategy(
-      contentToUse,
-      strategy || null,
-      providerStrategy || null
+  const strategyToUse = getIconStrategy(
+    contentToUse,
+    strategy || null,
+    providerStrategy || null
+  );
+  const prefixToUse = prefix || providerPrefix;
+  const basenameToUse = basename === undefined ? providerBasename : basename;
+  const iconClassName =
+    strategyToUse === 'className' && typeof content === 'string'
+      ? `${String(prefixToUse)}${content}`
+      : null;
+
+  const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];
+
+  // For some reason TS thinks the render method will return undefined...
+  const renderToUse: any =
+    strategyToUse === 'custom'
+      ? render || providerRender
+      : rendererFromMap || null;
+
+  if (!renderToUse) {
+    console.error(
+      `Icon: rendering not implemented for ${String(strategyToUse)}.`
     );
-    const prefixToUse = prefix || providerPrefix;
-    const basenameToUse = basename === undefined ? providerBasename : basename;
-    const iconClassName =
-      strategyToUse === 'className' && typeof content === 'string'
-        ? `${String(prefixToUse)}${content}`
-        : null;
+    return null;
+  }
 
-    const rendererFromMap = !!strategyToUse && iconRenderMap[strategyToUse];
+  const rendered = renderToUse({
+    ...rest,
+    ...optionsRest,
+    ref,
+    content: contentToUse,
+    className: classNames(
+      'rmwc-icon',
+      basenameToUse,
+      rest.className,
+      optionsRest.className,
+      iconClassName,
+      {
+        [`rmwc-icon--size-${size || ''}`]: !!size
+      }
+    )
+  });
 
-    // For some reason TS thinks the render method will return undefined...
-    const renderToUse: any =
-      strategyToUse === 'custom'
-        ? render || providerRender
-        : rendererFromMap || null;
-
-    if (!renderToUse) {
-      console.error(
-        `Icon: rendering not implemented for ${String(strategyToUse)}.`
-      );
-      return null;
-    }
-
-    const rendered = renderToUse({
-      ...rest,
-      ...optionsRest,
-      content: contentToUse,
+  // Unwrap double layered icons...
+  if (
+    rendered.props.children &&
+    rendered.props.children.type &&
+    ['Avatar', 'AvatarRoot', 'Icon'].includes(
+      getDisplayName(rendered.props.children)
+    )
+  ) {
+    return React.cloneElement(rendered.props.children, {
+      ...rendered.props.children.props,
+      ...rendered.props,
+      ref,
+      // prevents an infinite loop
+      children: rendered.props.children.props.children,
       className: classNames(
-        'rmwc-icon',
-        basenameToUse,
-        rest.className,
-        optionsRest.className,
-        iconClassName,
-        {
-          [`rmwc-icon--size-${size || ''}`]: !!size
-        }
+        rendered.props.className,
+        rendered.props.children.props.className
       )
     });
-
-    // Unwrap double layered icons...
-    if (
-      rendered.props.children &&
-      rendered.props.children.type &&
-      ['Avatar', 'AvatarRoot', 'Icon'].includes(
-        getDisplayName(rendered.props.children)
-      )
-    ) {
-      return React.cloneElement(rendered.props.children, {
-        ...rendered.props.children.props,
-        ...rendered.props,
-        // prevents an infinite loop
-        children: rendered.props.children.props.children,
-        className: classNames(
-          rendered.props.className,
-          rendered.props.children.props.className
-        )
-      });
-    }
-
-    return rendered;
   }
-);
+
+  return rendered;
+});
 
 Icon.displayName = 'Icon';

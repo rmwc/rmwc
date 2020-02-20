@@ -37,7 +37,7 @@ export function TabIndicator(
       <Tag
         tag={!!icon ? Icon : 'span'}
         aria-hidden="true"
-        // @ts-ignore TODO fix type issue
+        // @ts-ignore icon prop not always present, this is ok
         icon={icon}
         element={contentEl}
         className={`mdc-tab-indicator__content mdc-tab-indicator__content--${

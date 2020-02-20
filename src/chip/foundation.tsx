@@ -54,7 +54,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
             true /* shouldBubble */
           ),
         notifyNavigation: (key: string, source: EventSource) => {
-          //TODO
+          //TODO, but probably not needed in case of React
         },
         getComputedStyleValue: propertyName =>
           rootEl.ref
