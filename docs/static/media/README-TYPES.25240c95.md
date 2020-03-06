@@ -2,7 +2,6 @@
 
 > The Type system has been designed from the ground up to give you the most possible flexibility and control.
 
-
 Theres nothing worse than using a third party library and not being able to do something because the creators forgot to implement it. This issue is usually compounded in UI libraries, because there are an infinite number of interactions that can take place.
 
 RMWC addresses these issues while giving you the ability to lock down your api if you choose to do so. For Typescript, there are no additional steps to get started. RMWC ships with the Typescript declarations built in.
@@ -36,6 +35,40 @@ const MyComp = () => <Button
   myNewProp="Hello" //valid
 />
 ```
+
+## Custom tag typing support
+
+Most components in RMWC allow you to pass a `tag` prop to specify the HTML tag or component that should render instead of the default. This is useful for situations where you want to change behavior or semantics. One case that comes up frequently is using something like the `Link` component from React Router. Passing a new component to the tag prop will infer the props of that component and alert you of issues at build time.
+
+```jsx
+import { Link } from 'react-router-dom';
+import { Button } from '@rmwc/button';
+
+function Example() {
+  return (
+    <>
+      {/** This is annoying and will cause styling issues... */}
+      <Link to="http://example.com" >
+        <Button label="My Link" />
+      </Link>
+
+      {/** Use the `tag` prop to override the buttons root component. */}
+      <Button label="My Link" tag={Link} to="http://example.com" />
+
+      {/** RMWC will give you typesafety out of the box for when you are extending components. */}
+      {/** Error: Property `to` not found on Button. */}
+      <Button label="My Link" to="http://example.com" />
+
+      {/** Error: Link component requires Property `to`. */}
+      <Button label="My Link" tag={Link} />
+
+      
+
+    </>
+  )
+}
+```
+
 
 ## Handling in form controls
 

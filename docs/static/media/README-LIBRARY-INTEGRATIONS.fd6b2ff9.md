@@ -27,7 +27,4 @@ import { Button } from '@rmwc/button';
 
 {/* Make it all work together! RMWC lets you make the button the link */}
 <Button tag={Link} to="/">Go Home</Button>
-
-{/* Typescript typesafe workaround for magically combining components... */}
-<Button {...{tag: Link, to: '/'}}>Go Home</Button>
 ```
