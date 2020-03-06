@@ -1,3 +1,20 @@
+#### 6.0.0-alpha.12 (2020-03-06)
+
+##### Chores
+
+* **Base:**
+  *  Audit all todos (67a3b3b4)
+  *  Fixing all linting issues (e8964499)
+
+##### New Features
+
+* **DataTables:**   Refactoring to use the official material table styles (5699f236)
+* **Base:**  Simplified syntax for importing styles when using CSS loaders (71ab1c58)
+
+##### Bug Fixes
+
+* **TopAppBar:**  Implementing broken `onNav` prop (dab4cce3)
+
 #### 6.0.0-alpha.11 (2020-01-18)
 
 ##### New Features
