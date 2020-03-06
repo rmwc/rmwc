@@ -168,7 +168,7 @@
       },
       "kind": "interface",
       "name": "DrawerHeaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L106",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L96",
       "methods": [],
       "properties": []
     },
@@ -193,7 +193,7 @@
       },
       "kind": "interface",
       "name": "DrawerTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L119",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L107",
       "methods": [],
       "properties": []
     },
@@ -218,7 +218,7 @@
       },
       "kind": "interface",
       "name": "DrawerSubtitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L132",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L118",
       "methods": [],
       "properties": []
     },
@@ -243,7 +243,7 @@
       },
       "kind": "interface",
       "name": "DrawerContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L145",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L129",
       "methods": [],
       "properties": []
     },
@@ -268,7 +268,7 @@
       },
       "kind": "interface",
       "name": "DrawerAppContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L165",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/drawer/index.tsx#L147",
       "methods": [],
       "properties": []
     },

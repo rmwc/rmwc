@@ -408,7 +408,7 @@
       },
       "kind": "interface",
       "name": "TextFieldCharacterCountApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L221",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L226",
       "methods": [],
       "properties": [
         {
@@ -425,7 +425,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L222",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L227",
           "type": "() => MDCTextFieldCharacterCounterFoundation"
         }
       ]
@@ -444,7 +444,7 @@
       },
       "kind": "interface",
       "name": "TextFieldCharacterCountProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L225",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L230",
       "extends": [
         "IconProps"
       ],
@@ -464,7 +464,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L226",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L231",
           "type": "undefined | (api: TextFieldCharacterCountApi) => void"
         },
         {
@@ -514,7 +514,7 @@
       },
       "kind": "interface",
       "name": "TextFieldHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L240",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L245",
       "methods": [],
       "properties": [
         {
@@ -538,7 +538,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L246",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L251",
           "type": "React.ReactNode"
         },
         {
@@ -562,7 +562,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L242",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L247",
           "type": "undefined | false | true"
         },
         {
@@ -586,7 +586,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L244",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L249",
           "type": "undefined | false | true"
         }
       ]
@@ -612,7 +612,7 @@
       },
       "kind": "interface",
       "name": "TextFieldIconApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L273",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L274",
       "methods": [],
       "properties": [
         {
@@ -629,7 +629,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L274",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L275",
           "type": "() => MDCTextFieldIconFoundation"
         }
       ]
@@ -655,7 +655,7 @@
       },
       "kind": "interface",
       "name": "TextFieldIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L278",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L279",
       "extends": [
         "IconProps"
       ],
@@ -675,7 +675,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L279",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L280",
           "type": "undefined | (api: TextFieldIconApi) => void"
         },
         {
@@ -703,6 +703,23 @@
           "type": "RMWC.IconPropT"
         }
       ]
+    },
+    "TextFieldHTMLProps": {
+      "fileName": "src/textfield/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "TextFieldHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L60",
+      "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"label\">>"
     }
   }
 }

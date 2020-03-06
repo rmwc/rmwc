@@ -5,6 +5,8 @@
 - Module **@rmwc/avatar**
 - Import styles:
   - import **'@rmwc/avatar/avatar.css'**
+  - import **'@rmwc/icon/icon.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
 
 
 ```jsx
@@ -153,6 +155,7 @@ An Avatar component for displaying users in a system.
 | `contain` | `undefined \| false \| true` | Contain the avatar image instead of covering. |
 | `interactive` | `undefined \| false \| true` | Make the avatar interactive. |
 | `name` | `undefined \| string` | The name of the user. This will get converted to initials and set the hover title. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `size` | `RMWC.IconSizeT` | The size of the avatar |
 | `square` | `undefined \| false \| true` | Make the avatar square. |
 | `src` | `undefined \| string` | The url for the image. This gets passed to the Icon component. |

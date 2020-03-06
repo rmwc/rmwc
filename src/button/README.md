@@ -5,6 +5,8 @@
 - Module **@rmwc/button**
 - Import styles:
   - import **'@material/button/dist/mdc.button.css'**
+  - import **'@rmwc/@rmwc/icon/icon.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/](https://material.io/develop/web/components/buttons/)
 
 ```jsx

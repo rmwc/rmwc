@@ -6,6 +6,7 @@
 - Import styles:
   - import **'@material/radio/dist/mdc.radio.css'**
   - import **'@material/form-field/dist/mdc.form-field.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/radio-buttons/](https://material.io/develop/web/components/input-controls/radio-buttons/)
 
 ## Controlled Usage
@@ -19,7 +20,7 @@ function Example() {
       <Radio
         value="cookies"
         checked={value === 'cookies'}
-        onChange={evt => setValue(evt.currentTarget.value)}
+        onChange={evt => setValue(String(evt.currentTarget.value))}
       >
         Cookies
       </Radio>
@@ -27,7 +28,7 @@ function Example() {
       <Radio
         value="pizza"
         checked={value === 'pizza'}
-        onChange={evt => setValue(evt.currentTarget.value)}
+        onChange={evt => setValue(String(evt.currentTarget.value))}
       >
         Pizza
       </Radio>
@@ -35,7 +36,7 @@ function Example() {
       <Radio
         value="icecream"
         checked={value === 'icecream'}
-        onChange={evt => setValue(evt.currentTarget.value)}
+        onChange={evt => setValue(String(evt.currentTarget.value))}
       >
         Icecream
       </Radio>

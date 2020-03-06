@@ -6,6 +6,7 @@
 - Import styles:
   - import **'@material/switch/dist/mdc.switch.css'**
   - import **'@material/form-field/dist/mdc.form-field.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/switches/](https://material.io/develop/web/components/input-controls/switches/)
 
 Switches are identical in function to the Checkbox component, they just present a different UI / UX paradigm.
@@ -21,7 +22,7 @@ function Example() {
   return (
     <Switch
       checked={checked}
-      onChange={evt => setChecked(evt.currentTarget.checked)}
+      onChange={evt => setChecked(!!evt.currentTarget.checked)}
       label="Cookies"
     />
   );

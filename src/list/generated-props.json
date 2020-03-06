@@ -24,7 +24,7 @@
       "name": "CollapsibleList",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L51",
       "extends": [
-        "Component<CollapsibleListProps & ComponentProps, CollapsibleState>"
+        "Component<CollapsibleListProps & RMWC.HTMLProps, CollapsibleState>"
       ],
       "methods": [
         {
@@ -175,7 +175,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -194,7 +194,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextContext: any) => void"
             }
           ]
         },
@@ -247,7 +247,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -281,7 +281,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
             }
           ]
         },
@@ -524,7 +524,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -543,7 +543,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextContext: any) => void"
             }
           ]
         },
@@ -629,7 +629,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -663,7 +663,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
             }
           ]
         },
@@ -793,7 +793,7 @@
                   },
                   "kind": "parameter",
                   "name": "prevProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -812,7 +812,7 @@
                 }
               ],
               "returnType": "SS | null",
-              "type": "(prevProps: Readonly<CollapsibleListProps & ComponentProps>, prevState: Readonly<CollapsibleState>) => SS | null"
+              "type": "(prevProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, prevState: Readonly<CollapsibleState>) => SS | null"
             }
           ]
         },
@@ -1006,7 +1006,7 @@
                   },
                   "kind": "parameter",
                   "name": "state",
-                  "type": "(prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & ComponentProps>) => null | S |  | null | S | "
+                  "type": "(prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & RMWC.HTMLProps>) => null | S |  | null | S | "
                 },
                 {
                   "flags": {
@@ -1025,7 +1025,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(state: (prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & ComponentProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
+              "type": "(state: (prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & RMWC.HTMLProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
             }
           ]
         },
@@ -1070,7 +1070,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -1104,7 +1104,7 @@
                 }
               ],
               "returnType": "boolean",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => boolean"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => boolean"
             }
           ]
         },
@@ -1287,7 +1287,7 @@
           "kind": "property",
           "name": "props",
           "inheritedFrom": "Component.props",
-          "type": "Readonly<CollapsibleListProps & ComponentProps> & Readonly<>"
+          "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps> & Readonly<>"
         },
         {
           "documentation": {
@@ -1992,7 +1992,7 @@
       },
       "kind": "interface",
       "name": "ListItemTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L39",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L35",
       "methods": [],
       "properties": []
     },
@@ -2017,7 +2017,7 @@
       },
       "kind": "interface",
       "name": "ListItemPrimaryTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L52",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L46",
       "methods": [],
       "properties": []
     },
@@ -2042,7 +2042,7 @@
       },
       "kind": "interface",
       "name": "ListItemSecondaryTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L65",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L57",
       "methods": [],
       "properties": []
     },
@@ -2067,7 +2067,7 @@
       },
       "kind": "interface",
       "name": "ListItemGraphicProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L78",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L68",
       "extends": [
         "IconProps"
       ],
@@ -2120,7 +2120,7 @@
       },
       "kind": "interface",
       "name": "ListItemMetaProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L91",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L79",
       "extends": [
         "IconProps"
       ],
@@ -2173,7 +2173,7 @@
       },
       "kind": "interface",
       "name": "ListGroupProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L118",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L104",
       "methods": [],
       "properties": []
     },
@@ -2198,7 +2198,7 @@
       },
       "kind": "interface",
       "name": "ListGroupSubheaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L131",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L116",
       "methods": [],
       "properties": []
     },
@@ -2223,7 +2223,7 @@
       },
       "kind": "interface",
       "name": "ListDividerProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L144",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L127",
       "methods": [],
       "properties": []
     },
@@ -2248,7 +2248,7 @@
       },
       "kind": "interface",
       "name": "SimpleListItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L157",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L138",
       "extends": [
         "ListItemProps"
       ],
@@ -2300,7 +2300,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L169",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L150",
           "type": "React.ReactNode"
         },
         {
@@ -2349,7 +2349,7 @@
           },
           "kind": "property",
           "name": "graphic",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L163",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L144",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2373,7 +2373,7 @@
           },
           "kind": "property",
           "name": "meta",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L167",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L148",
           "type": "React.ReactNode"
         },
         {
@@ -2397,7 +2397,7 @@
           },
           "kind": "property",
           "name": "metaIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L165",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L146",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2445,7 +2445,7 @@
           },
           "kind": "property",
           "name": "secondaryText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L161",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L142",
           "type": "React.ReactNode"
         },
         {
@@ -2494,7 +2494,7 @@
           },
           "kind": "property",
           "name": "text",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L159",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L140",
           "type": "React.ReactNode"
         }
       ]

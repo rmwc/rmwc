@@ -6,7 +6,9 @@
 - Import styles:
   - import **'@material/menu/dist/mdc.menu.css'**
   - import **'@material/menu-surface/dist/mdc.menu-surface.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
   - import **'@material/list/dist/mdc.list.css'**
+  - import **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage
@@ -177,6 +179,8 @@ This is just the ListItem component exported from the Menu module for convenienc
 
 
 ## MenuSurfaceAnchor
+MenuSurfaceAnchor
+
 
 
 ## SimpleMenu

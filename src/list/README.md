@@ -5,6 +5,8 @@
 - Module **@rmwc/list**
 - Import styles:
   - import **'@material/list/dist/mdc.list.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - import **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ## Basic Usage
@@ -74,7 +76,19 @@ While there are siutations where you would need / want to compose the entire lis
 </List>
 ```
 
-## 
+## List
+A List Component
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `apiRef` | `undefined \| (api: ListApi) => void` | An internal api used for cross component communication |
+| `avatarList` | `undefined \| false \| true` | Makes the list start detail circular for avatars. |
+| `dense` | `undefined \| false \| true` | Reduces the padding on List items. |
+| `nonInteractive` | `undefined \| false \| true` | Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. |
+| `onAction` | `undefined \| (evt: ListOnActionEventT) => void` | A callback for when a list item is interacted with. evt.detail = number |
+| `twoLine` | `undefined \| false \| true` | Gives more space for dual lined list items. |
 
 
 ## ListItem

@@ -22,10 +22,10 @@
       },
       "kind": "interface",
       "name": "CheckboxProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L27",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L34",
       "extends": [
         "WithRippleProps",
-        "ToggleableFoundationProps"
+        "ToggleableProps"
       ],
       "methods": [],
       "properties": [
@@ -50,7 +50,7 @@
           },
           "kind": "property",
           "name": "checked",
-          "inheritedFrom": "ToggleableFoundationProps.checked",
+          "inheritedFrom": "ToggleableProps.checked",
           "type": "undefined | false | true"
         },
         {
@@ -74,7 +74,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "inheritedFrom": "ToggleableFoundationProps.disabled",
+          "inheritedFrom": "ToggleableProps.disabled",
           "type": "undefined | false | true"
         },
         {
@@ -98,7 +98,7 @@
           },
           "kind": "property",
           "name": "id",
-          "inheritedFrom": "ToggleableFoundationProps.id",
+          "inheritedFrom": "ToggleableProps.id",
           "type": "undefined | string"
         },
         {
@@ -122,7 +122,7 @@
           },
           "kind": "property",
           "name": "indeterminate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L36",
           "type": "undefined | false | true"
         },
         {
@@ -146,7 +146,7 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "inheritedFrom": "ToggleableFoundationProps.inputRef",
+          "inheritedFrom": "ToggleableProps.inputRef",
           "type": "React.Ref<HTMLInputElement>"
         },
         {
@@ -170,7 +170,7 @@
           },
           "kind": "property",
           "name": "label",
-          "inheritedFrom": "ToggleableFoundationProps.label",
+          "inheritedFrom": "ToggleableProps.label",
           "type": "React.ReactNode"
         },
         {
@@ -218,7 +218,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "inheritedFrom": "ToggleableFoundationProps.rootProps",
+          "inheritedFrom": "ToggleableProps.rootProps",
           "type": "React.HTMLProps<any>"
         },
         {
@@ -242,10 +242,27 @@
           },
           "kind": "property",
           "name": "value",
-          "inheritedFrom": "ToggleableFoundationProps.value",
+          "inheritedFrom": "ToggleableProps.value",
           "type": "string | number | string[]"
         }
       ]
+    },
+    "CheckboxHTMLProps": {
+      "fileName": "src/checkbox/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "CheckboxHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/checkbox/index.tsx#L39",
+      "type": "ToggleHTMLProps"
     }
   }
 }

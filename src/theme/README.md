@@ -5,11 +5,14 @@
 - Module **@rmwc/theme**
 - Import styles:
   - import **'@material/theme/dist/mdc.theme.css'**
+  - import **'@rmwc/theme/theme.css'**
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
 
-**Important** You should include the theme style sheet BEFORE any of your other styles.
+The Theme module fully embraces using CSS variables for runtime theming. This allows for some really powerful usecases like a built in dark mode, custom palettes for your clients, or dynamic configuration for accessibility.
+
+**Important** You should include the theme style sheets BEFORE any of your other styles.
 
 ```jsx
 <>
@@ -99,41 +102,6 @@ Theming in `material-components-web` isn't perfect, but a few basic options will
   <Checkbox label="Pizza" defaultChecked />
   <Radio label="Icecream" defaultChecked />
 </ThemeProvider>
-```
-
-## Using the ThemeProvider to fix broken styles
-
-As stated above, theming in `material-components-web` isn't perfect, but the ThemeProvider can be used to conveniently fix some of the built in style issues. For instance, the Tab bar doesn't respond correctly when used in the TopAppBar or on any other dark color surface.
-
-```jsx
-<TopAppBar style={{ position: 'static' }}>
-  {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
-  <TopAppBarRow style={{ alignItems: 'center' }}>
-    <TabBar>
-      <Tab>Cookies</Tab>
-      <Tab>Pizza</Tab>
-      <Tab>Icecream</Tab>
-    </TabBar>
-  </TopAppBarRow>
-</TopAppBar>
-```
-
-```jsx
-<TopAppBar style={{ position: 'static' }}>
-  {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
-  <TopAppBarRow style={{ alignItems: 'center' }}>
-    <ThemeProvider
-      options={{ primary: 'white', onSurface: 'white' }}
-      wrap
-    >
-      <TabBar>
-        <Tab>Cookies</Tab>
-        <Tab>Pizza</Tab>
-        <Tab>Icecream</Tab>
-      </TabBar>
-    </ThemeProvider>
-  </TopAppBarRow>
-</TopAppBar>
 ```
 
 ## Theme Component

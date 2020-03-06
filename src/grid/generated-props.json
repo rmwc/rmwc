@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "GridProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L6",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "align",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L15",
           "type": "\"left\" | \"right\""
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L17",
           "type": "React.ReactNode"
         },
         {
@@ -94,7 +94,7 @@
           },
           "kind": "property",
           "name": "fixedColumnWidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L13",
           "type": "undefined | false | true"
         }
       ]
@@ -120,7 +120,7 @@
       },
       "kind": "interface",
       "name": "GridCellProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L39",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L40",
       "methods": [],
       "properties": [
         {
@@ -144,7 +144,7 @@
           },
           "kind": "property",
           "name": "align",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L51",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L52",
           "type": "\"top\" | \"middle\" | \"bottom\""
         },
         {
@@ -168,7 +168,7 @@
           },
           "kind": "property",
           "name": "desktop",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L47",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L48",
           "type": "undefined | number"
         },
         {
@@ -192,7 +192,7 @@
           },
           "kind": "property",
           "name": "order",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L49",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L50",
           "type": "undefined | number"
         },
         {
@@ -216,7 +216,7 @@
           },
           "kind": "property",
           "name": "phone",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L43",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L44",
           "type": "undefined | number"
         },
         {
@@ -240,7 +240,7 @@
           },
           "kind": "property",
           "name": "span",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L42",
           "type": "undefined | number"
         },
         {
@@ -264,7 +264,7 @@
           },
           "kind": "property",
           "name": "tablet",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L45",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/grid/index.tsx#L46",
           "type": "undefined | number"
         }
       ]

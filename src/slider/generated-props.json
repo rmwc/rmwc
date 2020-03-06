@@ -276,6 +276,23 @@
       "name": "SliderOnInputEventT",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L11",
       "type": "RMWC.CustomEventT<>"
+    },
+    "SliderHTMLProps": {
+      "fileName": "src/slider/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "SliderHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L37",
+      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"onChange\" | \"onInput\">>"
     }
   }
 }

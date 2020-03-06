@@ -189,7 +189,19 @@ function Example() {
 }
 ```
 
-## 
+## List
+A List Component
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `apiRef` | `undefined \| (api: ListApi) => void` | An internal api used for cross component communication |
+| `avatarList` | `undefined \| false \| true` | Makes the list start detail circular for avatars. |
+| `dense` | `undefined \| false \| true` | Reduces the padding on List items. |
+| `nonInteractive` | `undefined \| false \| true` | Makes the list non interactive. In addition, you'll have to set `ripple={false}` on the individual ListItems. |
+| `onAction` | `undefined \| (evt: ListOnActionEventT) => void` | A callback for when a list item is interacted with. evt.detail = number |
+| `twoLine` | `undefined \| false \| true` | Gives more space for dual lined list items. |
 
 
 ## ListItem

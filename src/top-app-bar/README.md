@@ -5,6 +5,9 @@
 - Module **@rmwc/top-app-bar**
 - Import styles:
   - import **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
+  - import **'@material/icon-button/dist/mdc.icon-button.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - import **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 
 Whats the difference between the TopAppBar and Toolbar? Toolbar is technically deprecated (although it still works just fine). TopAppBar functionality continues to be worked on by the `material-components-web` team.
@@ -144,7 +147,20 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 </>
 ```
 
-## 
+## TopAppBar
+TopAppBar
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
+| `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
+| `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
+| `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
+| `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 
 
 ## TopAppBarRow
@@ -168,10 +184,36 @@ A title for the top app bar.
 
 
 
-## 
+## TopAppBarNavigationIcon
+A navigation icon for the top app bar. This is an instance of the Icon component.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
+| `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
+| `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
+| `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 
-## 
+## TopAppBarActionItem
+Action items for the top app bar. This is an instance of the Icon component.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
+| `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
+| `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
+| `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 
 ## TopAppBarFixedAdjust

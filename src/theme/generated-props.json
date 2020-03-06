@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "ThemeProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L14",
       "methods": [],
       "properties": [
         {
@@ -46,7 +46,7 @@
           },
           "kind": "property",
           "name": "use",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L16",
           "type": "RMWC.ThemePropT"
         },
         {
@@ -70,7 +70,7 @@
           },
           "kind": "property",
           "name": "wrap",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/theme/index.tsx#L18",
           "type": "undefined | false | true"
         }
       ]

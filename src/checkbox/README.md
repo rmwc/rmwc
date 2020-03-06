@@ -6,6 +6,7 @@
 - Import styles:
   - import **'@material/checkbox/dist/mdc.checkbox.css'**
   - import **'@material/form-field/dist/mdc.form-field.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 ```jsx
@@ -15,7 +16,7 @@ function Example() {
     <Checkbox
       label="Cookies"
       checked={checked}
-      onChange={evt => setChecked(evt.currentTarget.checked)}
+      onChange={evt => setChecked(!!evt.currentTarget.checked)}
     />
   );
 }

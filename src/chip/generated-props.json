@@ -398,6 +398,23 @@
       "name": "ChipOnRemoveEventT",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L17",
       "type": "RMWC.CustomEventT<>"
+    },
+    "ChipHTMLProps": {
+      "fileName": "src/chip/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "ChipHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L49",
+      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"label\">>"
     }
   }
 }

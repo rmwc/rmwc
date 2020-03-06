@@ -298,7 +298,7 @@
       },
       "kind": "interface",
       "name": "SnackbarActionProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L150",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L154",
       "extends": [
         "ButtonProps"
       ],
@@ -325,7 +325,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L152",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L156",
           "type": "undefined | string"
         },
         {
@@ -611,7 +611,8 @@
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L21",
       "extends": [
         "SnackbarProps",
-        "SnackbarQueueMessageBase & "
+        "SnackbarQueueMessageBase",
+        "any"
       ],
       "methods": [],
       "properties": [
@@ -639,6 +640,42 @@
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L32",
           "inheritedFrom": "SnackbarProps.action",
           "type": "React.ReactNode | React.ReactNode[]"
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "actions",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L16",
+          "inheritedFrom": "SnackbarQueueMessageBase.actions",
+          "type": "Array<NotificationAction | any>"
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "body",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L14",
+          "inheritedFrom": "SnackbarQueueMessageBase.body",
+          "type": "React.ReactNode"
         },
         {
           "fileName": "src/snackbar/snackbar.tsx",
@@ -875,6 +912,24 @@
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L34",
           "inheritedFrom": "SnackbarProps.timeout",
           "type": "undefined | number"
+        },
+        {
+          "fileName": "src/snackbar/snackbar-queue.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "title",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L13",
+          "inheritedFrom": "SnackbarQueueMessageBase.title",
+          "type": "React.ReactNode"
         }
       ]
     },
@@ -899,7 +954,7 @@
       },
       "kind": "interface",
       "name": "SnackbarQueueProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L26",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L27",
       "extends": [
         "SnackbarProps"
       ],
@@ -1055,7 +1110,7 @@
           },
           "kind": "property",
           "name": "messages",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar-queue.tsx#L28",
           "type": "ArrayEmitter<SnackbarQueueMessage>"
         },
         {
@@ -1225,6 +1280,23 @@
       "name": "SnackbarOnCloseEventT",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L15",
       "type": "RMWC.CustomEventT<>"
+    },
+    "SnackbarHTMLProps": {
+      "fileName": "src/snackbar/snackbar.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "SnackbarHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/snackbar/snackbar.tsx#L47",
+      "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"action\">>"
     }
   }
 }

@@ -144,7 +144,7 @@
       },
       "kind": "interface",
       "name": "BadgeAnchorProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L45",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/badge/index.tsx#L46",
       "methods": [],
       "properties": []
     }

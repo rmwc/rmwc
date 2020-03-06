@@ -8,6 +8,8 @@
   - import **'@material/tab/dist/mdc.tab.css'**
   - import **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
   - import **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
+  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - import **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Basic Usage
@@ -155,7 +157,16 @@ function IconIndicatorExample() {
 }
 ```
 
-## 
+## TabBar
+The TabBar component
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `activeTabIndex` | `undefined \| number` | The index of the active tab. |
+| `indicatorTransition` | `"slide" \| "fade"` | Specifies whether the indicator should slide or fade. Defaults to slide. |
+| `onActivate` | `undefined \| (evt: TabBarOnActivateEventT) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } |
 
 
 ## Tab

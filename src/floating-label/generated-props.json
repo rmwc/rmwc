@@ -15,7 +15,7 @@
       },
       "kind": "interface",
       "name": "FloatingLabelProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L5",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L6",
       "methods": [],
       "properties": [
         {
@@ -32,7 +32,7 @@
           },
           "kind": "property",
           "name": "float",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L7",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L8",
           "type": "undefined | false | true"
         },
         {
@@ -49,7 +49,7 @@
           },
           "kind": "property",
           "name": "shake",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L6",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L7",
           "type": "undefined | false | true"
         }
       ]
@@ -68,7 +68,7 @@
       },
       "kind": "interface",
       "name": "FloatingLabelApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L10",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L11",
       "methods": [],
       "properties": [
         {
@@ -85,7 +85,7 @@
           },
           "kind": "property",
           "name": "getWidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/floating-label/index.tsx#L12",
           "type": "() => number"
         }
       ]

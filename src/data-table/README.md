@@ -1,17 +1,17 @@
-# Data Tables `RMWC ADDON`
+# Data Tables
 
 > Data tables display sets of data.
 
 - Module **@rmwc/data-table**
 - Import styles:
+  - import **'@material/data-table/dist/mdc.data-table.css'**
   - import **'@rmwc/data-table/data-table.css'**
+  - import **'@rmwc/icon/icon.css'**
 
 
 ## Standard Table
 
 The DataTable components are intended to be flexible, properly styled, Material compliant HTML tables. Because of the complexities of working with datasets (especially large ones), the DataTable component DOES NOT handle pagination, data fetching, sorting, or performance of long lists.
-
-**Heads Up!** RMWC implemented data tables before they were available in `material-components-web`. In the future, they will be refactored to implement the official spec. For the time being, please do not file issues against functionality in comparison to the ones from mat-web.
 
 ```jsx
 function Example() {
@@ -41,7 +41,7 @@ function Example() {
             <DataTableCell alignEnd>25</DataTableCell>
             <DataTableCell alignEnd>$2.90</DataTableCell>
           </DataTableRow>
-          <DataTableRow activated>
+          <DataTableRow selected>
             <DataTableCell>Pizza</DataTableCell>
             <DataTableCell alignEnd>50</DataTableCell>
             <DataTableCell alignEnd>$1.25</DataTableCell>
@@ -102,19 +102,18 @@ function Example() {
         </DataTableContent>
       </DataTable>
 
-      <div>
-        Sticky
+      <div className="doc-controls">
         <Select
-          label="Rows"
+          label="Sticky Rows"
           options={['0', '1']}
           value={String(rows)}
-          onChange={evt => setRows(evt.currentTarget.value)}
+          onChange={evt => setRows(Number(evt.currentTarget.value))}
         />
         <Select
-          label="Cols"
+          label="Sticky Cols"
           options={['0', '1']}
           value={String(cols)}
-          onChange={evt => setCols(evt.currentTarget.value)}
+          onChange={evt => setCols(Number(evt.currentTarget.value))}
         />
       </div>
     </>
@@ -136,11 +135,10 @@ function Example() {
       <DataTableContent>
         <DataTableHead>
           <DataTableRow>
-            <DataTableHeadCell>
+            <DataTableHeadCell hasFormControl>
               <Checkbox />
-              Label
             </DataTableHeadCell>
-            <DataTableHeadCell>Header</DataTableHeadCell>
+            <DataTableHeadCell>Label</DataTableHeadCell>
             <DataTableHeadCell>Header</DataTableHeadCell>
             <DataTableHeadCell>Header</DataTableHeadCell>
             <DataTableHeadCell>Toggle</DataTableHeadCell>
@@ -149,7 +147,7 @@ function Example() {
         <DataTableBody>
           {sampleRows.map((v, i) => (
             <DataTableRow key={i} selected={checked[i]}>
-              <DataTableCell>
+              <DataTableCell hasFormControl>
                 <Checkbox
                   checked={checked[i]}
                   onChange={evt => {
@@ -157,15 +155,14 @@ function Example() {
                     setChecked({ ...checked });
                   }}
                 />
-                Label
               </DataTableCell>
+              <DataTableCell>Label</DataTableCell>
               <DataTableCell>
                 <Select
                   placeholder="--Select--"
                   options={['Cookies', 'Pizza', 'Icecream']}
                 />
               </DataTableCell>
-              <DataTableCell>R{i} C2</DataTableCell>
               <DataTableCell>R{i} C3</DataTableCell>
               <DataTableCell>
                 <Switch />
@@ -189,9 +186,11 @@ If you just need to throw a table on the screen, you can pass an array of data t
     return row[1] > 100 ? { activated: true } : {};
   }}
   getCellProps={(cell, index, isHead) => {
+    const props = { isNumeric: index > 0, style: undefined };
+
     return !isHead &amp;&amp; index === 2 &amp;&amp; !cell.includes('$')
-      ? { style: { color: 'red' } }
-      : {};
+      ? { ...props, style: { color: 'red' } }
+      : props;
   }}
   headers={[['Item', 'Quantity', 'Value']]}
   data={[
@@ -223,7 +222,7 @@ A row for the data table.
 
 | Name | Type | Description |
 |------|------|-------------|
-| `activated` | `undefined \| false \| true` | Styles the row in an activated state. |
+| `activated` | `undefined \| false \| true` | Styles the row in a bolder activated state. |
 | `selected` | `undefined \| false \| true` | Styles the row in a selected state. |
 
 
@@ -237,6 +236,8 @@ A cell for the DataTable
 | `alignEnd` | `undefined \| false \| true` | Align content to the end of the cell. |
 | `alignMiddle` | `undefined \| false \| true` | Align content to the middle of the cell. |
 | `alignStart` | `undefined \| false \| true` | Align content to the start of the cell. |
+| `hasFormControl` | `undefined \| false \| true` | Optionally Remove padding on the cell for checkboxes, radios, and switches. |
+| `isNumeric` | `undefined \| false \| true` | Changes alignment for numeric columns |
 
 
 ## DataTableHead
@@ -260,10 +261,24 @@ A header cell for the data table.
 | `alignMiddle` | `undefined \| false \| true` | Align content to the middle of the cell. |
 | `alignStart` | `undefined \| false \| true` | Align content to the start of the cell. |
 | `children` | `React.ReactNode` | Children to pass to the cell. |
+| `hasFormControl` | `undefined \| false \| true` | Optionally Remove padding on the cell for checkboxes, radios, and switches. |
+| `isNumeric` | `undefined \| false \| true` | Changes alignment for numeric columns |
 | `onSortChange` | `undefined \| (dir: null \| number) => void` | A callback for when the sorting method changes. Null for not sorted, 1 for ascending, and -1 for descending. |
 | `sort` | `null \| number` | Make the column sortable. Null for not sorted, 1 for ascending, and -1 for descending. |
 
 
-## 
+## SimpleDataTable
+A simple data table to render matrices.
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `data` | `Array<any[]>` | Data to render. |
+| `getCellProps` | `undefined \| (cell: any[], index: number, isHead: boolean) => Object` | A function that allows you to return custom props for a cell. |
+| `getRowProps` | `undefined \| (row: any[], index: number, isHead: boolean) => Object` | A function that allows you to return custom props for a row. |
+| `headers` | `Array<any[]>` | Table headers to render. |
+| `stickyColumns` | `undefined \| number` | The number of columns to affix to the side of the table when scrolling. |
+| `stickyRows` | `undefined \| number` | The number of rows to affix to the top of the table when scrolling. |
 
 

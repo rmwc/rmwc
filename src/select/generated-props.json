@@ -6951,7 +6951,7 @@
       },
       "kind": "interface",
       "name": "SelectIconApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L415",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L424",
       "methods": [],
       "properties": [
         {
@@ -6968,7 +6968,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L416",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L425",
           "type": "() => MDCSelectIconFoundation"
         }
       ]
@@ -6994,7 +6994,7 @@
       },
       "kind": "interface",
       "name": "SelectIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L420",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L429",
       "extends": [
         "IconProps"
       ],
@@ -7014,7 +7014,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L421",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L430",
           "type": "undefined | (api: SelectIconApi) => void"
         },
         {
@@ -7064,7 +7064,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L443",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L451",
       "methods": [],
       "properties": [
         {
@@ -7088,7 +7088,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L445",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L453",
           "type": "undefined | false | true"
         },
         {
@@ -7112,10 +7112,27 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L447",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L455",
           "type": "undefined | false | true"
         }
       ]
+    },
+    "SelectHTMLProps": {
+      "fileName": "src/select/index.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "SelectHTMLProps",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L58",
+      "type": "RMWC.HTMLProps<HTMLSelectElement, Omit<AllHTMLAttributes<HTMLSelectElement>, \"onSelect\">>"
     }
   }
 }

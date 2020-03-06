@@ -62,7 +62,10 @@ function Example() {
       <Select
         value={state.tileAspect}
         onChange={evt =>
-          setState({ ...state, tileAspect: evt.currentTarget.value })
+          setState({
+            ...state,
+            tileAspect: String(evt.currentTarget.value)
+          })
         }
         label="tileAspect"
         options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}
