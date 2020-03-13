@@ -1,7 +1,8 @@
 # Styling and Theming
 
-> RMWC doesn't include any styles of its own, but there are multiple ways you can style and customize your components.
+> Material Components Web uses standard CSS and the BEM syntax to style components. RMWC has some additional style sheets for custom components that mirror this behavior and use standard CSS. You do have to include the stylesheets for each component, but for customizing them you are free to use whatever method of styling you like (CSS Modules, styled components, JSS, etc).
 
+- [Including Stylesheets](#including-stylesheets)
 - [Standard CSS](#using-standard-css)
 - [CSS Modules](#using-css-modules)
 - [Styled Components](#using-the-styled-components-library)
@@ -10,6 +11,29 @@
 - [SASS Customization](#sass-customization)
 - [Theme and ThemeProvider](#theme-and-themeprovider)
 
+## Including Stylesheets
+
+Before you can customize the components, you need to include the base stylesheets from Material Components Web and RMWC. The imports are listed at the top of each components docs page and you can include them in whatever way you include external CSS in your project. There are a lot of stylesheets to manage, so there is a simplified import in every component called "styles" that will work for anyone using a CSS Loader (this is the default for Create React App users).
+
+```jsx
+/** Simplified ES6 imports for people using URL Loaders */
+import '@rmwc/button/dist/styles';
+import '@rmwc/avatar/dist/styles';
+```
+
+**Warning** If you're using this method with tree shaking turned on, make sure to include css in your package.json sideEffects. `"sideEffects": [ "*.css" ]` https://github.com/jamesmfriedman/rmwc/issues/545
+
+```jsx
+/** Importing individual stylesheets */
+import '@material/button/dist/mdc.button.css';
+import '@rmwc/icon/icon.css';
+```
+
+```html
+<!-- Placing in the head of your HTML file -->
+<link rel="stylesheet" type="text/css" href="node_modules/@material/button/dist/mdc.button.css">;
+<link rel="stylesheet" type="text/css" href="node_modules/@rmwc/icon/icon.css">;
+```
 
 ## Using Standard CSS
 

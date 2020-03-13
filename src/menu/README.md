@@ -4,11 +4,14 @@
 
 - Module **@rmwc/menu**
 - Import styles:
-  - import **'@material/menu/dist/mdc.menu.css'**
-  - import **'@material/menu-surface/dist/mdc.menu-surface.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
-  - import **'@material/list/dist/mdc.list.css'**
-  - import **'@rmwc/icon/icon.css'**
+  - Using CSS Loader
+    - import '@rmwc/menu/dist/styles';
+  - Or include stylesheets
+    - **'@material/menu/dist/mdc.menu.css'**
+    - **'@material/menu-surface/dist/mdc.menu-surface.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@material/list/dist/mdc.list.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage

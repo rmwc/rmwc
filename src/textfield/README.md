@@ -4,12 +4,15 @@
 
 - Module **@rmwc/textfield**
 - Import styles:
-  - import **'@material/textfield/dist/mdc.textfield.css'**
-  - import **'@material/floating-label/dist/mdc.floating-label.css'**
-  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**
-  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
-  - import **'@rmwc/icon/icon.css'**
+  - Using CSS Loader
+    - import '@rmwc/textfield/dist/styles';
+  - Or include stylesheets
+    - **'@material/textfield/dist/mdc.textfield.css'**
+    - **'@material/floating-label/dist/mdc.floating-label.css'**
+    - **'@material/notched-outline/dist/mdc.notched-outline.css'**
+    - **'@material/line-ripple/dist/mdc.line-ripple.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/text-field/](https://material.io/develop/web/components/input-controls/text-field/)
 
 ## TextField Variants

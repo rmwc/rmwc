@@ -4,9 +4,12 @@
 
 - Module **@rmwc/dialog**
 - Import styles:
-  - import **'@material/dialog/dist/mdc.dialog.css'**
-  - import **'@material/button/dist/mdc.button.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/dialog/dist/styles';
+  - Or include stylesheets
+    - **'@material/dialog/dist/mdc.dialog.css'**
+    - **'@material/button/dist/mdc.button.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/dialogs/](https://material.io/develop/web/components/dialogs/)
 
 ## Standard Usage

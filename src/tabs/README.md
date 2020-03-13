@@ -4,12 +4,15 @@
 
 - Module **@rmwc/tabs**
 - Import styles:
-  - import **'@material/tab-bar/dist/mdc.tab-bar.css'**
-  - import **'@material/tab/dist/mdc.tab.css'**
-  - import **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
-  - import **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
-  - import **'@rmwc/icon/icon.css'**
+  - Using CSS Loader
+    - import '@rmwc/tabs/dist/styles';
+  - Or include stylesheets
+    - **'@material/tab-bar/dist/mdc.tab-bar.css'**
+    - **'@material/tab/dist/mdc.tab.css'**
+    - **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
+    - **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Basic Usage

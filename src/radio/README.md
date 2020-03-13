@@ -4,9 +4,12 @@
 
 - Module **@rmwc/radio**
 - Import styles:
-  - import **'@material/radio/dist/mdc.radio.css'**
-  - import **'@material/form-field/dist/mdc.form-field.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/radio/dist/styles';
+  - Or include stylesheets
+    - **'@material/radio/dist/mdc.radio.css'**
+    - **'@material/form-field/dist/mdc.form-field.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/radio-buttons/](https://material.io/develop/web/components/input-controls/radio-buttons/)
 
 ## Controlled Usage

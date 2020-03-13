@@ -28,6 +28,12 @@ export default function() {
       </DocsP>
 
       <DocsP>
+        Support for theming inside of `material-components-web` is not without
+        issue, so RMWC maintains a theme fixes file to correct any anomalies for
+        you. Please make sure you include both!
+      </DocsP>
+
+      <DocsP>
         **Important** You should include the theme style sheets BEFORE any of
         your other styles.
       </DocsP>

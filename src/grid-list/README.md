@@ -4,7 +4,10 @@
 
 - Module **@rmwc/grid-list**
 - Import styles:
-  - import **'@material/grid-list/dist/mdc.grid-list.css'**
+  - Using CSS Loader
+    - import '@rmwc/grid-list/dist/styles';
+  - Or include stylesheets
+    - **'@material/grid-list/dist/mdc.grid-list.css'**
 - MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
 
 ```jsx

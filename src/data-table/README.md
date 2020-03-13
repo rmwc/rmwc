@@ -4,9 +4,12 @@
 
 - Module **@rmwc/data-table**
 - Import styles:
-  - import **'@material/data-table/dist/mdc.data-table.css'**
-  - import **'@rmwc/data-table/data-table.css'**
-  - import **'@rmwc/icon/icon.css'**
+  - Using CSS Loader
+    - import '@rmwc/data-table/dist/styles';
+  - Or include stylesheets
+    - **'@material/data-table/dist/mdc.data-table.css'**
+    - **'@rmwc/data-table/data-table.css'**
+    - **'@rmwc/icon/icon.css'**
 
 
 ## Standard Table

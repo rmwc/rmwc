@@ -4,7 +4,10 @@
 
 - Module **@rmwc/ripple**
 - Import styles:
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/ripple/dist/styles';
+  - Or include stylesheets
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/ripples/](https://material.io/develop/web/components/ripples/)
 
 Ripples will wrap whatever child component you pass it and apply the appropriate classes and styles.

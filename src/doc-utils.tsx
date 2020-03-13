@@ -211,11 +211,24 @@ function DocsSetup({
         <li>
           Import styles:
           <ul>
-            {styles.map(s => (
-              <li key={s}>
-                import <strong>'{s}'</strong>;
-              </li>
-            ))}
+            <li>
+              Using CSS Loader
+              <ul>
+                <li>
+                  import <strong>'{module}/dist/styles';</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Or include stylesheets
+              <ul>
+                {styles.map(s => (
+                  <li key={s}>
+                    <strong>'{s}'</strong>;
+                  </li>
+                ))}
+              </ul>
+            </li>
           </ul>
         </li>
       )}

@@ -4,9 +4,12 @@
 
 - Module **@rmwc/avatar**
 - Import styles:
-  - import **'@rmwc/avatar/avatar.css'**
-  - import **'@rmwc/icon/icon.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/avatar/dist/styles';
+  - Or include stylesheets
+    - **'@rmwc/avatar/avatar.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 
 
 ```jsx

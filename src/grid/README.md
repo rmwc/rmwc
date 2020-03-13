@@ -4,7 +4,10 @@
 
 - Module **@rmwc/grid**
 - Import styles:
-  - import **'@material/layout-grid/dist/mdc.layout-grid.css'**
+  - Using CSS Loader
+    - import '@rmwc/grid/dist/styles';
+  - Or include stylesheets
+    - **'@material/layout-grid/dist/mdc.layout-grid.css'**
 - MDC Docs: [https://material.io/develop/web/components/layout-grid/](https://material.io/develop/web/components/layout-grid/)
 
 ```jsx

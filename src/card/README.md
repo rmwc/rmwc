@@ -4,9 +4,12 @@
 
 - Module **@rmwc/card**
 - Import styles:
-  - import **'@material/card/dist/mdc.card.css'**
-  - import **'@material/button/dist/mdc.button.css'**
-  - import **'@material/icon-button/dist/mdc.icon-button.css'**
+  - Using CSS Loader
+    - import '@rmwc/card/dist/styles';
+  - Or include stylesheets
+    - **'@material/card/dist/mdc.card.css'**
+    - **'@material/button/dist/mdc.button.css'**
+    - **'@material/icon-button/dist/mdc.icon-button.css'**
 - MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
 ## Fully Featured Example

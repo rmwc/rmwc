@@ -4,13 +4,18 @@
 
 - Module **@rmwc/theme**
 - Import styles:
-  - import **'@material/theme/dist/mdc.theme.css'**
-  - import **'@rmwc/theme/theme.css'**
+  - Using CSS Loader
+    - import '@rmwc/theme/dist/styles';
+  - Or include stylesheets
+    - **'@material/theme/dist/mdc.theme.css'**
+    - **'@rmwc/theme/theme.css'**
 - MDC Docs: [https://material.io/develop/web/components/theme/](https://material.io/develop/web/components/theme/)
 
 ## Theme Options
 
 The Theme module fully embraces using CSS variables for runtime theming. This allows for some really powerful usecases like a built in dark mode, custom palettes for your clients, or dynamic configuration for accessibility.
+
+Support for theming inside of `material-components-web` is not without issue, so RMWC maintains a theme fixes file to correct any anomalies for you. Please make sure you include both!
 
 **Important** You should include the theme style sheets BEFORE any of your other styles.
 

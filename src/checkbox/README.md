@@ -4,9 +4,12 @@
 
 - Module **@rmwc/checkbox**
 - Import styles:
-  - import **'@material/checkbox/dist/mdc.checkbox.css'**
-  - import **'@material/form-field/dist/mdc.form-field.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/checkbox/dist/styles';
+  - Or include stylesheets
+    - **'@material/checkbox/dist/mdc.checkbox.css'**
+    - **'@material/form-field/dist/mdc.form-field.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 ```jsx

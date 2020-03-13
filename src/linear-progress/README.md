@@ -4,7 +4,10 @@
 
 - Module **@rmwc/linear-progress**
 - Import styles:
-  - import **'@material/linear-progress/dist/mdc.linear-progress.css'**
+  - Using CSS Loader
+    - import '@rmwc/linear-progress/dist/styles';
+  - Or include stylesheets
+    - **'@material/linear-progress/dist/mdc.linear-progress.css'**
 - MDC Docs: [https://material.io/develop/web/components/linear-progress/](https://material.io/develop/web/components/linear-progress/)
 
 ```jsx

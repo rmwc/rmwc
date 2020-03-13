@@ -4,7 +4,10 @@
 
 - Module **@rmwc/drawer**
 - Import styles:
-  - import **'@material/drawer/dist/mdc.drawer.css'**
+  - Using CSS Loader
+    - import '@rmwc/drawer/dist/styles';
+  - Or include stylesheets
+    - **'@material/drawer/dist/mdc.drawer.css'**
 - MDC Docs: [https://material.io/develop/web/components/drawers/](https://material.io/develop/web/components/drawers/)
 
 ## Permanent

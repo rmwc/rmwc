@@ -4,9 +4,12 @@
 
 - Module **@rmwc/switch**
 - Import styles:
-  - import **'@material/switch/dist/mdc.switch.css'**
-  - import **'@material/form-field/dist/mdc.form-field.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/switch/dist/styles';
+  - Or include stylesheets
+    - **'@material/switch/dist/mdc.switch.css'**
+    - **'@material/form-field/dist/mdc.form-field.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/switches/](https://material.io/develop/web/components/input-controls/switches/)
 
 Switches are identical in function to the Checkbox component, they just present a different UI / UX paradigm.

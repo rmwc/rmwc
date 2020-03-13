@@ -4,9 +4,12 @@
 
 - Module **@rmwc/snackbar**
 - Import styles:
-  - import **'@material/snackbar/dist/mdc.snackbar.css'**
-  - import **'@material/button/dist/mdc.button.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/snackbar/dist/styles';
+  - Or include stylesheets
+    - **'@material/snackbar/dist/mdc.snackbar.css'**
+    - **'@material/button/dist/mdc.button.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ## Basic Usage

@@ -4,9 +4,12 @@
 
 - Module **@rmwc/list**
 - Import styles:
-  - import **'@material/list/dist/mdc.list.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
-  - import **'@rmwc/icon/icon.css'**
+  - Using CSS Loader
+    - import '@rmwc/list/dist/styles';
+  - Or include stylesheets
+    - **'@material/list/dist/mdc.list.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/lists/](https://material.io/develop/web/components/lists/)
 
 ## Basic Usage

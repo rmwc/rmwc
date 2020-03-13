@@ -75,6 +75,15 @@ body ul li {
   border-bottom-right-radius: 0.75rem;
 }
 
+.docs-setup > li > ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.docs-setup > li > ul > li > ul {
+  list-style: circle;
+}
+
 .docs-setup > li {
   margin-top: 0.25rem;
 }

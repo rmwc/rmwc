@@ -194,9 +194,15 @@ function DocsSetup({
         <>
           - Import styles:
           <Br />
+          {'  '}- Using CSS Loader
+          <Br />
+          {'    '}- import '{module}/dist/styles';
+          <Br />
+          {'  '}- Or include stylesheets
+          <Br />
           {styles.map(s => (
             <React.Fragment key={s}>
-              {'  '}- import **'{s}'**
+              {'    '}- **'{s}'**
               <Br />
             </React.Fragment>
           ))}

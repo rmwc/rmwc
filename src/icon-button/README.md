@@ -4,9 +4,12 @@
 
 - Module **@rmwc/icon-button**
 - Import styles:
-  - import **'@material/icon-button/dist/mdc.icon-button.css'**
-  - import **'@rmwc/icon/icon.css'**
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/icon-button/dist/styles';
+  - Or include stylesheets
+    - **'@material/icon-button/dist/mdc.icon-button.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
 ## Basic Usage
