@@ -253,8 +253,24 @@ function DocsLead({ children }: { children: React.ReactNode }) {
   return <blockquote>{children}</blockquote>;
 }
 
+const createTextLinks = (text: string) => {
+  return (text || '').replace(
+    /([^\S]|^)(((https?\:\/\/)|(www\.))(\S+))/gi,
+    function(match, space, url) {
+      var hyperlink = url;
+      if (!hyperlink.match('^https?://')) {
+        hyperlink = 'http://' + hyperlink;
+      }
+      return space + '<a href="' + hyperlink + '">' + url + '</a>';
+    }
+  );
+};
+
+const createTextCode = (text: string) =>
+  String(text).replace(/`(.+?)`/g, '<code>$1</code>');
+
 export function DocsP({ children }: { children: React.ReactNode }) {
-  const __html = String(children).replace(/`(.+?)`/g, '<code>$1</code>');
+  const __html = createTextLinks(createTextCode(children as string));
   return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
 }
 
