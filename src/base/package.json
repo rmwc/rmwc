@@ -1,11 +1,13 @@
 {
   "name": "@rmwc/base",
-  "version": "6.0.0-alpha.12",
+  "version": "6.0.0-alpha.13",
   "description": "RMWC base module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "next/index.js",
-  "sideEffects": [ "*.css" ],
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -32,7 +34,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/types": "^6.0.0-alpha.12",
+    "@rmwc/types": "^6.0.0-alpha.13",
     "classnames": "^2.2.6",
     "focus-trap": "^5.0.0",
     "hyperform": "^0.9.9",
