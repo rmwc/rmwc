@@ -6,13 +6,16 @@
 * Preferred: Install **INDIVIDUAL** components
   * `npm i @rmwc/button --save` or `yarn add @rmwc/button`
   * Include the individual components stylesheets (listed on their docs page) in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.).   
-* OR Install **ALL** of RMWC
+* OR Install **ALL** of RMWC: This is not recommended for production apps!
   * `npm i rmwc --save` or `yarn add rmwc`
-  * include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
+  * If you're using a css loader (Recommended, and the default for Create React App users)
+    * `import 'rmwc/dist/styles'`
+  * Otherwise, manually include the CSS
+    * Include styles from `node_modules/material-components-web/dist/material-components-web.min.css` in your project via your method of choice (using es6 imports, a link tag, a css-loader, etc.). [material-components-web](https://github.com/material-components/material-components-web) should already be installed automatically as a peer dependency.
+    * Navigate to the individual components documentation and include any additional RMWC specific stylesheets .
 
 
 **Optional steps**
-
 * If you would like to use the default **Roboto font**:
   * add `<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />`
   * add the class `mdc-typography` to the body `<body className="mdc-typography">...</body>`
