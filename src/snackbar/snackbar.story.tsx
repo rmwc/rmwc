@@ -26,6 +26,7 @@ function SnackbarStory() {
       message={message}
       leading={leading}
       stacked={stacked}
+      foundationRef={console.log}
       dismissesOnAction={dismissesOnAction}
       action={
         <SnackbarAction

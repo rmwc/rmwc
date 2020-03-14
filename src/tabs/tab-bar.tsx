@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
+import { MDCTabBarFoundation } from '@material/tab-bar';
 import { MDCTabInteractionEvent } from '@material/tab';
 import { TabScroller } from './tab-scroller';
 import { TabBarContext, TabBarContextT } from './tab-bar-context';
@@ -23,10 +24,18 @@ export interface TabBarProps {
   activeTabIndex?: number;
   /** Specifies whether the indicator should slide or fade. Defaults to slide. */
   indicatorTransition?: 'slide' | 'fade';
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCTabBarFoundation | null>;
 }
 
 export const TabBar = createComponent<TabBarProps>(function TabBar(props, ref) {
-  const { children, activeTabIndex, onActivate, ...rest } = props;
+  const {
+    children,
+    activeTabIndex,
+    onActivate,
+    foundationRef,
+    ...rest
+  } = props;
 
   const {
     rootEl,

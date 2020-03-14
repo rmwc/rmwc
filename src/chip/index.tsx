@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
+import { MDCChipFoundation } from '@material/chips';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { useChipFoundation } from './foundation';
@@ -44,6 +44,8 @@ export interface ChipProps {
   ) => void;
   /** A callback that is fired once the chip is in an exited state from removing it. evt.detail = { chipId: string } */
   onRemove?: (evt: ChipOnRemoveEventT) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCChipFoundation>;
 }
 
 export type ChipHTMLProps = RMWC.HTMLProps<
@@ -65,6 +67,7 @@ export const Chip = withRipple()(
       label,
       children,
       selected,
+      foundationRef,
       ...rest
     } = props;
 

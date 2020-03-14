@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React, { useEffect, useState } from 'react';
-
+import { MDCMenuFoundation } from '@material/menu';
 import { List, ListItem, ListItemProps, ListProps, ListApi } from '@rmwc/list';
 import {
   getDisplayName,
@@ -32,13 +32,16 @@ export interface MenuApi extends ListApi, MenuSurfaceApi {
 }
 
 /** A menu component for displaying lists items. */
-export interface MenuProps extends Omit<MenuSurfaceProps, 'apiRef'> {
+export interface MenuProps
+  extends Omit<MenuSurfaceProps, 'apiRef' | 'foundationRef'> {
   /** Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } */
   onSelect?: (evt: MenuOnSelectEventT) => void;
   /** Whether or not to focus the first list item on open. Defaults to true. */
   focusOnOpen?: boolean;
   /** Internal api reference for cross component communication. */
   apiRef?: (api: MenuApi) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCMenuFoundation>;
 }
 
 export type MenuHTMLProps = RMWC.HTMLProps<
@@ -78,7 +81,7 @@ export const Menu = createComponent<MenuProps, MenuHTMLProps>(function Menu(
   props,
   ref
 ) {
-  const { children, focusOnOpen, onSelect, ...rest } = props;
+  const { children, focusOnOpen, onSelect, foundationRef, ...rest } = props;
   const { rootEl, setListApi, setMenuSurfaceApi } = useMenuFoundation(props);
 
   const needsMenuItemsWrapper = (
@@ -156,7 +159,15 @@ const simpleMenuFactory = <
       }
     }, [props.open, stateOpen]);
 
-    const { handle, onClose, children, rootProps = {}, open, ...rest } = props;
+    const {
+      handle,
+      onClose,
+      children,
+      rootProps = {},
+      open,
+      foundationRef,
+      ...rest
+    } = props;
 
     const wrappedHandle = React.cloneElement(handle, {
       ...handle.props,

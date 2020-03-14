@@ -42,6 +42,8 @@ export interface SnackbarProps {
   dismissesOnAction?: boolean;
   /** An icon for the snackbar */
   icon?: RMWC.IconPropT;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCSnackbarFoundation | null>;
 }
 
 export type SnackbarHTMLProps = RMWC.HTMLProps<
@@ -67,6 +69,7 @@ export const Snackbar = createComponent<SnackbarProps, SnackbarHTMLProps>(
       leading,
       stacked,
       dismissesOnAction,
+      foundationRef,
       ...rest
     } = props;
 

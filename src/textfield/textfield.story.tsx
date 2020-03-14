@@ -22,6 +22,7 @@ function TextFieldStory() {
       icon={text('withLeadingIcon', '')}
       trailingIcon={text('withTrailingIcon', '')}
       textarea={boolean('textarea', false)}
+      foundationRef={console.log}
     />
   );
 }

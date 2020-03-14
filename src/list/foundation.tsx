@@ -1,8 +1,8 @@
-import { ListProps, ListApi } from './list';
+import { useEffect, useCallback } from 'react';
+import { MDCListFoundation, MDCListAdapter } from '@material/list';
 import { matches, FoundationElement } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
-import { MDCListFoundation, MDCListAdapter } from '@material/list';
-import { useEffect, useCallback } from 'react';
+import { ListProps, ListApi } from './list';
 
 export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const listElements = useCallback((el: Element | null): HTMLLIElement[] => {

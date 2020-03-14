@@ -1,5 +1,9 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import {
+  MDCModalDrawerFoundation,
+  MDCDismissibleDrawerFoundation
+} from '@material/drawer';
 import { mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
 import {
   useDismissableDrawerFoundation,
@@ -29,6 +33,10 @@ export interface DrawerProps {
   dismissible?: boolean;
   /** Makes a modal / temporary drawer. */
   modal?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<
+    MDCModalDrawerFoundation | MDCDismissibleDrawerFoundation
+  >;
 }
 
 /** A Drawer component. */
@@ -54,7 +62,7 @@ const slidableDrawerFactory = (
     ref
   ) {
     const { rootEl, scrimEl } = useDrawerFoundation(props);
-    const { onOpen, onClose, open, ...rest } = props;
+    const { onOpen, onClose, open, foundationRef, ...rest } = props;
     return (
       <>
         <DrawerRoot
@@ -76,7 +84,7 @@ const DrawerRoot = createComponent<DrawerProps>(function DrawerRoot(
   props,
   ref
 ) {
-  const { dismissible, modal, ...rest } = props;
+  const { dismissible, modal, foundationRef, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-drawer',
     {

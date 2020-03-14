@@ -6,7 +6,9 @@ import { useEffect } from 'react';
 import { MDCSwitchFoundation } from '@material/switch';
 
 export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
-  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
+  const { renderToggle, toggleRootProps, id } = useToggleFoundation<
+    MDCSwitchFoundation
+  >(props);
 
   const { foundation, ...elements } = useFoundation({
     props,

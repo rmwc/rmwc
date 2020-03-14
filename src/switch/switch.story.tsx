@@ -16,6 +16,7 @@ function SwitchStory() {
       disabled={disabled}
       checked={checked}
       value={value}
+      foundationRef={inst => console.log(inst)}
       onChange={evt => {
         setChecked(evt.currentTarget.checked);
         action(

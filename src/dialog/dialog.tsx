@@ -30,6 +30,8 @@ export interface DialogProps {
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
   /** Prevent the dialog from closing when the scrim is clicked. */
   preventOutsideDismiss?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCDialogFoundation>;
 }
 
 /** A Dialog component. */
@@ -45,6 +47,7 @@ export const Dialog = createComponent<DialogProps>(function Dialog(props, ref) {
     onClose,
     onStateChange,
     preventOutsideDismiss,
+    foundationRef,
     ...rest
   } = props;
 

@@ -1,6 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { MDCRippleFoundation } from '@material/ripple';
 import { classNames } from '@rmwc/base';
 import { useProviderContext } from '@rmwc/provider';
 import { useRippleFoundation } from './foundation';
@@ -22,6 +23,8 @@ export interface RippleProps {
   disabled?: boolean;
   /** For internal use */
   surface?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCRippleFoundation>;
 }
 
 const RippleSurfaceContext = React.createContext({});
@@ -64,6 +67,7 @@ export const Ripple = withDomNode()(function Ripple(
     unbounded,
     surface,
     domNode,
+    foundationRef,
     ...rest
   } = props;
 
@@ -160,7 +164,7 @@ export const withRipple = ({
   unbounded: defaultUnbounded,
   accent: defaultAccent,
   surface: defaultSurface
-}: WithRippleOpts = {}) => <P extends {}, C extends React.ComponentType<P>>(
+}: WithRippleOpts = {}) => <P extends any, C extends React.ComponentType<P>>(
   Component: C
 ): C => {
   const WithRippleComponent = React.forwardRef<any, P & RMWC.WithRippleProps>(
@@ -172,7 +176,6 @@ export const withRipple = ({
       if (ripple) {
         return (
           <Ripple
-            {...rest}
             accent={rippleOptions.accent || defaultAccent}
             unbounded={rippleOptions.unbounded || defaultUnbounded}
             surface={rippleOptions.surface || defaultSurface}
@@ -186,9 +189,9 @@ export const withRipple = ({
     }
   );
 
-  // WithRippleComponent.displayName = `withRipple(${
-  //   Component.displayName || Component.constructor.name || 'Unknown'
-  // })`;
+  WithRippleComponent.displayName = `withRipple(${
+    Component.displayName || Component.constructor.name || 'Unknown'
+  })`;
 
   return WithRippleComponent as any;
 };

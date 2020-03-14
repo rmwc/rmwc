@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-
+import { MDCSliderFoundation } from '@material/slider';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useSliderFoundation } from './foundation';
 
@@ -32,6 +32,8 @@ export interface SliderProps {
   displayMarkers?: boolean;
   /** Disables the control. */
   disabled?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCSliderFoundation>;
 }
 
 export type SliderHTMLProps = RMWC.HTMLProps<
@@ -95,6 +97,7 @@ export const Slider = createComponent<SliderProps, SliderHTMLProps>(
       onChange,
       onInput,
       children,
+      foundationRef,
       ...rest
     } = props;
 

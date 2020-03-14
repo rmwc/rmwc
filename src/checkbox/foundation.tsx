@@ -8,7 +8,9 @@ import { useEffect, useCallback } from 'react';
 export const useCheckboxFoundation = (
   props: CheckboxProps & CheckboxHTMLProps
 ) => {
-  const { renderToggle, toggleRootProps, id } = useToggleFoundation(props);
+  const { renderToggle, toggleRootProps, id } = useToggleFoundation<
+    MDCCheckboxFoundation
+  >(props);
 
   const { foundation, ...elements } = useFoundation({
     props,

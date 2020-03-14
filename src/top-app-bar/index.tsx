@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
+import { MDCTopAppBarFoundation } from '@material/top-app-bar';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
-
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
 import { useTopAppBarFoundation } from './foundation';
 
@@ -30,6 +30,8 @@ export interface TopAppBarProps {
   dense?: boolean;
   /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.*/
   scrollTarget?: Element | null;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCTopAppBarFoundation | null>;
 }
 
 /** A TopAppBar component */
@@ -59,6 +61,7 @@ const TopAppBarBase = createComponent<TopAppBarProps>(function TopAppBarBase(
     short,
     shortCollapsed,
     dense,
+    foundationRef,
     ...rest
   } = props;
   const className = useClassNames(props, [

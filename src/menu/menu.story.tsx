@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { select, array } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
 import { Button } from '../button';
 import { useKnob } from '../base/utils/use-knob';
@@ -26,6 +26,7 @@ class MenuStory extends React.Component {
 
         <Menu
           open={this.state.open}
+          foundationRef={console.log}
           anchorCorner={
             select(
               'anchorCorner',
@@ -73,6 +74,7 @@ class MenuSurfaceStory extends React.Component {
 
         <MenuSurface
           open={this.state.open}
+          foundationRef={console.log}
           anchorCorner={
             select(
               'anchorCorner',

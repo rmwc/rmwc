@@ -22,6 +22,7 @@ const DialogStory = function() {
   return (
     <Dialog
       open={open}
+      foundationRef={console.log}
       onClose={evt => {
         console.log(evt.detail.action);
         setOpen(false);

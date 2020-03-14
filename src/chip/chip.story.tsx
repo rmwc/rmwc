@@ -49,7 +49,7 @@ class ChipFiltering extends React.Component {
 storiesOf('Chips', module)
   .add('Chip', () => (
     <ChipSet>
-      <Chip label="Cookies" />
+      <Chip label="Cookies" foundationRef={console.log} />
       <Chip label="Pizza" />
       <Chip label="Icecream" />
     </ChipSet>

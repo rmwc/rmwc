@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-import { Corner } from '@material/menu-surface';
+import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useMenuSurfaceFoundation } from './menu-surface-foundation';
 
@@ -42,6 +42,8 @@ export interface MenuSurfaceProps {
   children?: React.ReactNode;
   /** An internal api for cross component communication. */
   apiRef?: (api: MenuSurfaceApi) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCMenuSurfaceFoundation>;
 }
 
 /****************************************************************
@@ -60,6 +62,7 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
       hoistToBody,
       fixed,
       apiRef,
+      foundationRef,
       ...rest
     } = props;
 

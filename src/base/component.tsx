@@ -56,6 +56,18 @@ export const mergeRefs = (
   }
 };
 
+export const handleRef = <T extends any>(
+  ref: React.Ref<T> | null | undefined,
+  value: T
+) => {
+  if (typeof ref === 'function') {
+    ref(value);
+  } else if (ref && 'current' in ref) {
+    // @ts-ignore
+    ref.current = value;
+  }
+};
+
 type ComponentProps<
   Props extends {},
   ElementProps extends {},

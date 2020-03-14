@@ -22,6 +22,7 @@ function MutatingSelect(props: any) {
     <Select
       {...props}
       disabled={disabled}
+      foundationRef={console.log}
       label={label}
       value={value}
       enhanced={enhanced}

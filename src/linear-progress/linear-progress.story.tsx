@@ -10,5 +10,6 @@ storiesOf('Progress', module).add('LinearProgress', () => (
     buffer={number('buffer', 0)}
     reversed={boolean('reversed', false)}
     closed={boolean('closed', false)}
+    foundationRef={console.log}
   />
 ));

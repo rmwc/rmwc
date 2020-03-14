@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
 import { toCamel } from './utils/strings';
 import { MDCFoundation } from '@material/base';
+import { handleRef } from './component';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
@@ -216,15 +217,19 @@ const emitFactory = (props: { [key: string]: any }) => (
 export const useFoundation = <
   Foundation extends MDCFoundation,
   Elements extends { [key: string]: true },
-  Props extends { [key: string]: any },
   Api extends (
     params: {
       [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
     } & { foundation: Foundation }
-  ) => void
+  ) => any,
+  Props extends {
+    [key: string]: any;
+    foundationRef?: React.Ref<Foundation | null>;
+    apiRef?: (ref: ReturnType<Api> | null) => void;
+  }
 >({
   foundation: foundationFactory,
-  props: _props,
+  props: inputProps,
   elements: elementsInput,
   api
 }: {
@@ -246,8 +251,8 @@ export const useFoundation = <
 }) => {
   const [, setIteration] = useState(0);
 
-  const props = useRef(_props);
-  props.current = _props;
+  const props = useRef(inputProps);
+  props.current = inputProps;
 
   const elements = useMemo(
     () =>
@@ -274,7 +279,7 @@ export const useFoundation = <
     });
 
     // handle apiRefs
-    api && props.current.apiRef?.(api({ foundation: f, ...elements }));
+    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }));
 
     return f;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -283,9 +288,14 @@ export const useFoundation = <
   useEffect(() => {
     const f = foundation;
     f.init();
+    handleRef(props.current.foundationRef, f);
+
     return () => {
       f.destroy();
-      api && props.current.apiRef?.(null);
+      handleRef(props.current.apiRef, null);
+      handleRef(props.current.foundationRef, null);
+      // @ts-ignore
+      props.current = null;
       Object.values(elements).map(element => element.destroy());
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

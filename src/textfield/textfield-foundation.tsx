@@ -16,8 +16,8 @@ export const useTextFieldFoundation = (props: TextFieldProps) => {
   const [shakeLabel, setShakeLabel] = useState(false);
   const [floatLabel, setFloatlabel] = useState(false);
 
-  const characterCounter = useRef<TextFieldCharacterCountApi>();
-  const setCharacterCounter = (api: TextFieldCharacterCountApi) =>
+  const characterCounter = useRef<TextFieldCharacterCountApi | null>();
+  const setCharacterCounter = (api: TextFieldCharacterCountApi | null) =>
     (characterCounter.current = api);
 
   const leadingIcon = useRef<TextFieldIconApi>();

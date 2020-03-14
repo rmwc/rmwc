@@ -1,7 +1,8 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import { MDCLinearProgressFoundation } from '@material/linear-progress';
 import { useLinearProgressFoundation } from './foundation';
-import { mergeRefs, Tag, useClassNames, createComponent } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /** A component to display linear progress. */
 export interface LinearProgressProps {
@@ -13,12 +14,21 @@ export interface LinearProgressProps {
   reversed?: boolean;
   /** Hides the progress bar. Adding / removing this prop will trigger an animation in or out.  */
   closed?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCLinearProgressFoundation>;
 }
 
 /** A component to display linear progress. */
 export const LinearProgress = createComponent<LinearProgressProps>(
   function LinearProgress(props, ref) {
-    const { reversed, closed, progress, buffer, ...rest } = props;
+    const {
+      reversed,
+      closed,
+      progress,
+      buffer,
+      foundationRef,
+      ...rest
+    } = props;
     const className = useClassNames(props, [
       'mdc-linear-progress',
       {
@@ -30,6 +40,7 @@ export const LinearProgress = createComponent<LinearProgressProps>(
 
     return (
       <Tag
+        {...rest}
         tag="nav"
         role="progressbar"
         element={rootEl}

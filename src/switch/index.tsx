@@ -1,5 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import { MDCSwitchFoundation } from '@material/switch';
 import {
   classNames,
   mergeRefs,
@@ -16,7 +17,9 @@ import { useSwitchFoundation } from './foundation';
  *********************************************************************/
 
 /** A Switch component. */
-export interface SwitchProps extends RMWC.WithRippleProps, ToggleableProps {}
+export interface SwitchProps
+  extends RMWC.WithRippleProps,
+    ToggleableProps<MDCSwitchFoundation> {}
 
 export type SwitchHTMLProps = ToggleHTMLProps;
 
@@ -32,7 +35,15 @@ export const Switch = createComponent<SwitchProps, SwitchHTMLProps>(
     } = useSwitchFoundation(props);
 
     const rootClassName = useClassNames(toggleRootProps, ['mdc-switch']);
-    const { children, className, label, style, inputRef, ...rest } = props;
+    const {
+      children,
+      className,
+      label,
+      style,
+      inputRef,
+      foundationRef,
+      ...rest
+    } = props;
 
     const renderedSwitch = (
       <Tag

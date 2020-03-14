@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import React from 'react';
-import { MDCSelectIconFoundation } from '@material/select';
+import { MDCSelectIconFoundation, MDCSelectFoundation } from '@material/select';
 import { useClassNames, useId, Tag, createComponent } from '@rmwc/base';
 import { FloatingLabel } from '@rmwc/floating-label';
 import { LineRipple } from '@rmwc/line-ripple';
@@ -53,6 +53,8 @@ export interface SelectProps {
   inputRef?: (ref: HTMLSelectElement | null) => void;
   /** Add a leading icon. */
   icon?: RMWC.IconPropT;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCSelectFoundation>;
 }
 
 export type SelectHTMLProps = RMWC.HTMLProps<
@@ -273,6 +275,7 @@ export const Select = createComponent<SelectProps, SelectHTMLProps>(
       invalid,
       inputRef,
       helpText,
+      foundationRef,
       ...rest
     } = props;
 

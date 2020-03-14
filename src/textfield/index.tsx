@@ -3,7 +3,8 @@ import * as React from 'react';
 import { IconProps } from '@rmwc/icon';
 import {
   MDCTextFieldCharacterCounterFoundation,
-  MDCTextFieldIconFoundation
+  MDCTextFieldIconFoundation,
+  MDCTextFieldFoundation
 } from '@material/textfield';
 
 import { useClassNames, Tag, useId, createComponent } from '@rmwc/base';
@@ -55,6 +56,8 @@ export interface TextFieldProps {
     | ((ref: HTMLInputElement | HTMLTextAreaElement | null) => void);
   /** The type of input field to render, search, number, etc */
   type?: string;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCTextFieldFoundation | null>;
 }
 
 export type TextFieldHTMLProps = RMWC.HTMLProps<
@@ -80,6 +83,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
       icon,
       trailingIcon,
       rootProps = {},
+      foundationRef,
       ...rest
     } = props;
 
@@ -228,7 +232,7 @@ export interface TextFieldCharacterCountApi {
 }
 
 export interface TextFieldCharacterCountProps extends IconProps {
-  apiRef?: (api: TextFieldCharacterCountApi) => void;
+  apiRef?: (api: TextFieldCharacterCountApi | null) => void;
 }
 
 const TextFieldCharacterCount = React.memo(function TextFieldCharacterCount(

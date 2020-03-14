@@ -1,5 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import { MDCIconButtonToggleFoundation } from '@material/icon-button';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
@@ -29,6 +30,8 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   icon?: RMWC.IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
   onIcon?: RMWC.IconPropT;
+  /** Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. */
+  foundationRef?: React.Ref<MDCIconButtonToggleFoundation>;
 }
 
 export type IconButtonHTMLProps = RMWC.HTMLProps<
@@ -51,7 +54,7 @@ export const IconButton = createComponent<IconButtonProps, IconButtonHTMLProps>(
 
 const IconButtonToggle = createComponent<IconButtonProps>(
   function IconButtonToggle(props, ref) {
-    const { icon, onIcon, ...rest } = props;
+    const { icon, onIcon, foundationRef, ...rest } = props;
     const { isOn, rootEl } = useIconButtonFoundation(props);
 
     return (
@@ -78,7 +81,7 @@ const IconButtonRoot = withRipple({
   unbounded: true
 })(
   createComponent<IconButtonProps>(function IconButtonRoot(props, ref) {
-    const { checked, label, ...rest } = props;
+    const { checked, label, foundationRef, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-icon-button',
       {

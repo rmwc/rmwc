@@ -1,5 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import { MDCListFoundation } from '@material/list';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useListFoundation } from './foundation';
 
@@ -19,6 +20,8 @@ export interface ListProps {
   onAction?: (evt: ListOnActionEventT) => void;
   /** An internal api used for cross component communication */
   apiRef?: (api: ListApi) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCListFoundation | null>;
 }
 
 export interface ListApi {
@@ -44,6 +47,7 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     apiRef,
     nonInteractive,
     onAction,
+    foundationRef,
     ...rest
   } = props;
   const { rootEl } = useListFoundation(props);

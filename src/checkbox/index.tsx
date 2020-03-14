@@ -31,7 +31,9 @@ MDCCheckboxFoundation.prototype.installPropertyChangeHooks_ = () => {};
  *********************************************************************/
 
 /** A Checkbox component. */
-export interface CheckboxProps extends RMWC.WithRippleProps, ToggleableProps {
+export interface CheckboxProps
+  extends RMWC.WithRippleProps,
+    ToggleableProps<MDCCheckboxFoundation> {
   /** Make the control indeterminate */
   indeterminate?: boolean;
 }
@@ -56,6 +58,7 @@ export const Checkbox = createComponent<CheckboxProps, CheckboxHTMLProps>(
       style,
       indeterminate,
       inputRef,
+      foundationRef,
       ...rest
     } = props;
 

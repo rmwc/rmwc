@@ -1,7 +1,7 @@
-import { LinearProgressProps } from '.';
-import { useFoundation } from '@rmwc/base';
-import { MDCLinearProgressFoundation } from '@material/linear-progress';
 import { useEffect, useState } from 'react';
+import { MDCLinearProgressFoundation } from '@material/linear-progress';
+import { useFoundation } from '@rmwc/base';
+import { LinearProgressProps } from '.';
 
 export const useLinearProgressFoundation = (props: LinearProgressProps) => {
   const { foundation, ...elements } = useFoundation({

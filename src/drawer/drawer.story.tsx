@@ -37,6 +37,7 @@ storiesOf('Drawers', module).add('Drawer', () => (
       dismissible={boolean('dismissible', false)}
       open={boolean('open', true)}
       onClose={action('onClose')}
+      foundationRef={console.log}
     >
       <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
         <DrawerTitle>DrawerTitle</DrawerTitle>

@@ -1,5 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
+import { MDCFormFieldFoundation } from '@material/form-field';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useFormfieldFoundation } from './foundation';
 
@@ -7,6 +8,8 @@ import { useFormfieldFoundation } from './foundation';
 export interface FormFieldProps {
   /** Position the input after the label. */
   alignEnd?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCFormFieldFoundation>;
 }
 
 /** A FormField component. */
@@ -16,7 +19,7 @@ export const FormField = createComponent<FormFieldProps>(function FormField(
 ) {
   useFormfieldFoundation(props);
 
-  const { alignEnd, ...rest } = props;
+  const { alignEnd, foundationRef, ...rest } = props;
   const className = useClassNames(props, [
     'mdc-form-field',
     {

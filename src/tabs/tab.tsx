@@ -34,6 +34,8 @@ export interface TabProps {
   restrictIndicator?: boolean;
   /** Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } */
   onInteraction?: (evt: TabOnInteractionEventT) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCTabFoundation | null>;
 }
 
 export type TabApi = {
@@ -80,6 +82,7 @@ export const Tab = createComponent<TabProps>(function Tab(props, ref) {
     restrictIndicator,
     onInteraction,
     iconIndicator,
+    foundationRef,
     ...rest
   } = props;
 

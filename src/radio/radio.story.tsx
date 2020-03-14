@@ -16,6 +16,7 @@ function RadioStory() {
       disabled={disabled}
       checked={checked}
       value={value}
+      foundationRef={console.log}
       onChange={evt => {
         setChecked(evt.currentTarget.checked);
         action(

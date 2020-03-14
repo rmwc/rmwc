@@ -18,6 +18,7 @@ storiesOf('Ripples', module).add('Ripple', () => (
     primary={boolean('primary', false)}
     accent={boolean('accent', false)}
     unbounded={boolean('unbounded', false)}
+    foundationRef={console.log}
   >
     <div style={rippleStyle}>Click Me</div>
   </Ripple>
