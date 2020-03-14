@@ -1,3 +1,18 @@
+#### 6.0.0-alpha.13 (2020-03-14)
+
+##### Documentation Changes
+
+* **Icon:**  Improving documentation on setting up icons. (d2e5927a)
+* **Base:**  Improving style import documentation for all components (a484d61c)
+
+##### New Features
+
+* **Base:**  Adding foundationRef to all components (4027a3c5)
+
+##### Bug Fixes
+
+* **Base:**  Declaring CSS as sideEffect across all components #545 (9dcd6197)
+
 #### 6.0.0-alpha.12 (2020-03-06)
 
 ##### Chores
