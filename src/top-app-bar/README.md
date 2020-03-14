@@ -159,6 +159,7 @@ TopAppBar
 |------|------|-------------|
 | `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
 | `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `foundationRef` | `React.Ref<MDCTopAppBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
 | `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
@@ -196,6 +197,7 @@ A navigation icon for the top app bar. This is an instance of the Icon component
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
@@ -212,6 +214,7 @@ Action items for the top app bar. This is an instance of the Icon component.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
@@ -243,6 +246,7 @@ A simplified syntax for creating an AppBar.
 | `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
 | `endContent` | `React.ReactNode` | Additional content to place in the end section. |
 | `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `foundationRef` | `React.Ref<MDCTopAppBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `navigationIcon` | `Object \| boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
 | `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |

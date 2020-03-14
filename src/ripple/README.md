@@ -45,6 +45,7 @@ A component for adding Ripples to other components.
 |------|------|-------------|
 | `accent` | `undefined \| false \| true` | Makes the ripple an accent color |
 | `disabled` | `undefined \| false \| true` | makes the ripple disabled |
+| `foundationRef` | `React.Ref<MDCRippleFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `primary` | `undefined \| false \| true` | Makes the ripple primary |
 | `surface` | `undefined \| false \| true` | For internal use |
 | `unbounded` | `undefined \| false \| true` | Makes the ripple unbounded |

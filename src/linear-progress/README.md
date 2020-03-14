@@ -35,6 +35,7 @@ A component to display linear progress.
 |------|------|-------------|
 | `buffer` | `undefined \| number` | A Progress buffer float percentage between 0 and 1. |
 | `closed` | `undefined \| false \| true` | Hides the progress bar. Adding / removing this prop will trigger an animation in or out. |
+| `foundationRef` | `React.Ref<MDCLinearProgressFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `progress` | `undefined \| number` | Progress float percentage between 0 and 1. |
 | `reversed` | `undefined \| false \| true` | Progress goes from right to left. |
 

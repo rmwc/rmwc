@@ -221,6 +221,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/menu/menu-surface.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L46",
+          "type": "React.Ref<MDCMenuSurfaceFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container.</p>\n"
             ],
             "contentsRaw": "Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container.",
@@ -337,7 +361,7 @@
       },
       "kind": "interface",
       "name": "MenuSurfaceAnchorProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L86",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L89",
       "methods": [],
       "properties": []
     },
@@ -655,7 +679,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L42",
           "type": "undefined | (api: MenuApi) => void"
         },
         {
@@ -679,8 +703,32 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L40",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/menu/menu.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L44",
+          "type": "React.Ref<MDCMenuFoundation>"
         },
         {
           "documentation": {
@@ -703,7 +751,7 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L38",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         }
       ]
@@ -729,7 +777,7 @@
       },
       "kind": "interface",
       "name": "MenuItemsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L50",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L53",
       "extends": [
         "ListProps"
       ],
@@ -806,6 +854,30 @@
           "name": "dense",
           "inheritedFrom": "ListProps.dense",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/menu/node_modules/@rmwc/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "inheritedFrom": "ListProps.foundationRef",
+          "type": "React.Ref<MDCListFoundation | null>"
         },
         {
           "documentation": {
@@ -902,7 +974,7 @@
       },
       "kind": "interface",
       "name": "MenuItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L63",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L66",
       "extends": [
         "ListItemProps"
       ],
@@ -1027,7 +1099,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L122",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L125",
       "extends": [
         "MenuProps"
       ],
@@ -1054,7 +1126,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L41",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L42",
           "inheritedFrom": "MenuProps.apiRef",
           "type": "undefined | (api: MenuApi) => void"
         },
@@ -1079,7 +1151,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L128",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L131",
           "type": "React.ReactNode"
         },
         {
@@ -1103,9 +1175,34 @@
           },
           "kind": "property",
           "name": "focusOnOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L40",
           "inheritedFrom": "MenuProps.focusOnOpen",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/menu/menu.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L44",
+          "inheritedFrom": "MenuProps.foundationRef",
+          "type": "React.Ref<MDCMenuFoundation>"
         },
         {
           "documentation": {
@@ -1128,7 +1225,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L124",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L127",
           "type": "ReactElement<any>"
         },
         {
@@ -1152,7 +1249,7 @@
           },
           "kind": "property",
           "name": "onSelect",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L37",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L38",
           "inheritedFrom": "MenuProps.onSelect",
           "type": "undefined | (evt: MenuOnSelectEventT) => void"
         },
@@ -1177,7 +1274,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L126",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L129",
           "type": "Object"
         }
       ]
@@ -1203,7 +1300,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuSurfaceProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L132",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L135",
       "extends": [
         "MenuSurfaceProps"
       ],
@@ -1280,7 +1377,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L138",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L141",
           "type": "React.ReactNode"
         },
         {
@@ -1311,6 +1408,31 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/menu/menu-surface.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu-surface.tsx#L46",
+          "inheritedFrom": "MenuSurfaceProps.foundationRef",
+          "type": "React.Ref<MDCMenuSurfaceFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>An element that will open the menu when clicked</p>\n"
             ],
             "contentsRaw": "An element that will open the menu when clicked",
@@ -1329,7 +1451,7 @@
           },
           "kind": "property",
           "name": "handle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L134",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L137",
           "type": "ReactElement<any>"
         },
         {
@@ -1453,7 +1575,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L136",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L139",
           "type": "Object"
         }
       ]
@@ -1472,7 +1594,7 @@
       },
       "kind": "interface",
       "name": "SimpleMenuState",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L141",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L144",
       "methods": [],
       "properties": [
         {
@@ -1489,7 +1611,7 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L145",
           "type": "boolean"
         }
       ]
@@ -1583,7 +1705,7 @@
       },
       "kind": "type alias",
       "name": "MenuHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L44",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/menu/menu.tsx#L47",
       "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"onSelect\">>"
     }
   }

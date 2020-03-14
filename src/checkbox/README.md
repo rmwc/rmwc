@@ -51,6 +51,7 @@ A Checkbox component.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Toggle the control on and off. |
 | `disabled` | `undefined \| false \| true` | Disables the control. |
+| `foundationRef` | `React.Ref<MDCCheckboxFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `id` | `undefined \| string` | A DOM ID for the toggle. |
 | `indeterminate` | `undefined \| false \| true` | Make the control indeterminate |
 | `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |

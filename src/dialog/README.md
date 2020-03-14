@@ -188,6 +188,7 @@ A Dialog component.
 
 | Name | Type | Description |
 |------|------|-------------|
+| `foundationRef` | `React.Ref<MDCDialogFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
 | `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
 | `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
@@ -244,6 +245,7 @@ A SimpleDialog component for ease of use.
 | `cancelLabel` | `React.ReactNode` | Creates an cancel button for the default Dialog with a given label. You can pass `null` to remove the button. |
 | `children` | `React.ReactNode` | Any children will be rendered in the body of the default Dialog template. |
 | `footer` | `React.ReactNode` | Additional footer content for the default Dialog template, rendered before any buttons. |
+| `foundationRef` | `React.Ref<MDCDialogFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `header` | `React.ReactNode` | Additional Dialog header content for the default Dialog template. |
 | `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
 | `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |

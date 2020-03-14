@@ -168,6 +168,7 @@ The TabBar component
 | Name | Type | Description |
 |------|------|-------------|
 | `activeTabIndex` | `undefined \| number` | The index of the active tab. |
+| `foundationRef` | `React.Ref<MDCTabBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `indicatorTransition` | `"slide" \| "fade"` | Specifies whether the indicator should slide or fade. Defaults to slide. |
 | `onActivate` | `undefined \| (evt: TabBarOnActivateEventT) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } |
 
@@ -180,6 +181,7 @@ A Tab component
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
+| `foundationRef` | `React.Ref<MDCTabFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
 | `iconIndicator` | `RMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
 | `label` | `any` | A label for the tab. |

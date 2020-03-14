@@ -189,6 +189,7 @@ A Snackbar component for notifications.
 | `action` | `React.ReactNode \| React.ReactNode[]` | One or more actions to add to the snackbar. |
 | `dismissIcon` | `boolean \| string` |  |
 | `dismissesOnAction` | `undefined \| false \| true` | Whether or not your want clicking an action to close the Snackbar. |
+| `foundationRef` | `React.Ref<MDCSnackbarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | An icon for the snackbar |
 | `leading` | `undefined \| false \| true` |  |
 | `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |

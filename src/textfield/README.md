@@ -119,6 +119,7 @@ A TextField component for accepting text input from a user.
 |------|------|-------------|
 | `characterCount` | `undefined \| false \| true` | Shows the character count, must be used in conjunction with maxLength. |
 | `disabled` | `undefined \| false \| true` | Makes the Textfield disabled. |
+| `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |

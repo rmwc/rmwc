@@ -150,6 +150,7 @@ A menu component for displaying lists items.
 |------|------|-------------|
 | `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
+| `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 
 
@@ -175,6 +176,7 @@ This is just the ListItem component exported from the Menu module for convenienc
 | `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render. |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
 | `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
@@ -196,6 +198,7 @@ A Simplified menu component that allows you to pass a handle element and will au
 | `apiRef` | `undefined \| (api: MenuApi) => void` | Internal api reference for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
 | `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
+| `foundationRef` | `React.Ref<MDCMenuFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
 | `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
 | `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
@@ -212,6 +215,7 @@ The same as SimpleMenu, but a generic surface.
 | `apiRef` | `undefined \| (api: MenuSurfaceApi) => void` | An internal api for cross component communication. |
 | `children` | `React.ReactNode` | Children to render |
 | `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
+| `foundationRef` | `React.Ref<MDCMenuSurfaceFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
 | `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
 | `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |

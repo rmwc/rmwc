@@ -143,6 +143,7 @@ A Chip component.
 |------|------|-------------|
 | `checkmark` | `undefined \| false \| true` | Includes an optional checkmark for the chips selected state. |
 | `children` | `React.ReactNode` | Additional children will be rendered in the text area. |
+| `foundationRef` | `React.Ref<MDCChipFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 | `id` | `undefined \| string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
 | `label` | `React.ReactNode` | Text for your Chip. |

@@ -52,6 +52,7 @@ A Switch component.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Toggle the control on and off. |
 | `disabled` | `undefined \| false \| true` | Disables the control. |
+| `foundationRef` | `React.Ref<MDCSwitchFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `id` | `undefined \| string` | A DOM ID for the toggle. |
 | `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |
 | `label` | `React.ReactNode` | A label for the control. |

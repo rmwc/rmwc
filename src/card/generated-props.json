@@ -353,6 +353,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation. Only for Toggleable buttons.",
+            "metadata": {}
+          },
+          "fileName": "src/card/node_modules/@rmwc/icon-button/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "inheritedFrom": "IconButtonProps.foundationRef",
+          "type": "React.Ref<MDCIconButtonToggleFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>Icon for the button</p>\n"
             ],
             "contentsRaw": "Icon for the button",

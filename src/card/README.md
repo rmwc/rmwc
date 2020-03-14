@@ -226,6 +226,7 @@ A card action Icon
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
 | `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |

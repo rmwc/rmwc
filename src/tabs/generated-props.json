@@ -155,6 +155,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L38",
+          "type": "React.Ref<MDCTabFoundation | null>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>The icon to use for the tab.</p>\n"
             ],
             "contentsRaw": "The icon to use for the tab.",
@@ -319,7 +343,7 @@
       },
       "kind": "interface",
       "name": "TabBarProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L20",
       "methods": [],
       "properties": [
         {
@@ -343,8 +367,32 @@
           },
           "kind": "property",
           "name": "activeTabIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L24",
           "type": "undefined | number"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab-bar.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L28",
+          "type": "React.Ref<MDCTabBarFoundation | null>"
         },
         {
           "documentation": {
@@ -367,7 +415,7 @@
           },
           "kind": "property",
           "name": "indicatorTransition",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L26",
           "type": "\"slide\" | \"fade\""
         },
         {
@@ -391,7 +439,7 @@
           },
           "kind": "property",
           "name": "onActivate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L22",
           "type": "undefined | (evt: TabBarOnActivateEventT) => void"
         }
       ]
@@ -478,7 +526,7 @@
       },
       "kind": "type alias",
       "name": "TabApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L39",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L41",
       "type": ""
     },
     "TabBarOnActivateEventT": {
@@ -502,7 +550,7 @@
       },
       "kind": "type alias",
       "name": "TabBarOnActivateEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab-bar.tsx#L15",
       "type": "RMWC.CustomEventT<>"
     }
   }

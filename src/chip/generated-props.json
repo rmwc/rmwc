@@ -76,6 +76,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/chip/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L48",
+          "type": "React.Ref<MDCChipFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>Instance of an Icon Component.</p>\n"
             ],
             "contentsRaw": "Instance of an Icon Component.",
@@ -288,7 +312,7 @@
       },
       "kind": "interface",
       "name": "ChipSetProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L173",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L176",
       "methods": [],
       "properties": [
         {
@@ -312,7 +336,7 @@
           },
           "kind": "property",
           "name": "choice",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L175",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L178",
           "type": "undefined | false | true"
         },
         {
@@ -336,7 +360,7 @@
           },
           "kind": "property",
           "name": "filter",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L177",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L180",
           "type": "undefined | false | true"
         }
       ]
@@ -413,7 +437,7 @@
       },
       "kind": "type alias",
       "name": "ChipHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L49",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/chip/index.tsx#L51",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"label\">>"
     }
   }

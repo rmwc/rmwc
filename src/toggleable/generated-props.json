@@ -69,6 +69,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/toggleable/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L22",
+          "type": "React.Ref<Foundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>A DOM ID for the toggle.</p>\n"
             ],
             "contentsRaw": "A DOM ID for the toggle.",
@@ -202,7 +226,7 @@
       },
       "kind": "type alias",
       "name": "ToggleHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L23",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/toggleable/index.tsx#L25",
       "type": "RMWC.HTMLProps<HTMLInputElement, Omit<AllHTMLAttributes<HTMLInputElement>, \"label\">>"
     }
   }

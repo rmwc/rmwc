@@ -22,10 +22,10 @@
       },
       "kind": "interface",
       "name": "SwitchProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L19",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L20",
       "extends": [
         "WithRippleProps",
-        "ToggleableProps"
+        "ToggleableProps<MDCSwitchFoundation>"
       ],
       "methods": [],
       "properties": [
@@ -76,6 +76,30 @@
           "name": "disabled",
           "inheritedFrom": "ToggleableProps.disabled",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/switch/node_modules/@rmwc/toggleable/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "inheritedFrom": "ToggleableProps.foundationRef",
+          "type": "React.Ref<MDCSwitchFoundation>"
         },
         {
           "documentation": {
@@ -237,7 +261,7 @@
       },
       "kind": "type alias",
       "name": "SwitchHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L21",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/switch/index.tsx#L24",
       "type": "ToggleHTMLProps"
     }
   }

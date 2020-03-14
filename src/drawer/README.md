@@ -155,6 +155,7 @@ A Drawer component.
 | Name | Type | Description |
 |------|------|-------------|
 | `dismissible` | `undefined \| false \| true` | Makes a dismissible drawer. |
+| `foundationRef` | `React.Ref<MDCModalDrawerFoundation \| MDCDismissibleDrawerFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `modal` | `undefined \| false \| true` | Makes a modal / temporary drawer. |
 | `onClose` | `undefined \| (evt: DrawerOnOpenEventT) => void` | Callback that fires when the Drawer is closed. |
 | `onOpen` | `undefined \| (evt: DrawerOnCloseEventT) => void` | Callback that fires when the Drawer is opened. |

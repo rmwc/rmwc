@@ -100,6 +100,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/slider/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L36",
+          "type": "React.Ref<MDCSliderFoundation>"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>The maximum value of the Slider.</p>\n"
             ],
             "contentsRaw": "The maximum value of the Slider.",
@@ -291,7 +315,7 @@
       },
       "kind": "type alias",
       "name": "SliderHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L37",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/slider/index.tsx#L39",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"onChange\" | \"onInput\">>"
     }
   }
