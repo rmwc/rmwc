@@ -222,7 +222,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
 );
 
 const TextFieldRipple = React.memo(function TextFieldRipple() {
-  return <div className="mdc-text-field__ripple"></div>;
+  return <span className="mdc-text-field__ripple"></span>;
 });
 
 const TextFieldRoot = withRipple({ surface: false })(

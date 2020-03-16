@@ -16,6 +16,12 @@ export const LineRipple = createComponent<LineRippleProps>(function LineRipple(
   const { rootEl } = useLineRippleFoundation(props);
 
   return (
-    <Tag {...rest} element={rootEl} className="mdc-line-ripple" ref={ref} />
+    <Tag
+      {...rest}
+      tag="span"
+      element={rootEl}
+      className="mdc-line-ripple"
+      ref={ref}
+    />
   );
 });
