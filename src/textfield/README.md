@@ -117,17 +117,19 @@ A TextField component for accepting text input from a user.
 
 | Name | Type | Description |
 |------|------|-------------|
+| `align` | `"start" \| "end"` | How to align the text inside the TextField. Defaults to 'start'. |
 | `characterCount` | `undefined \| false \| true` | Shows the character count, must be used in conjunction with maxLength. |
 | `disabled` | `undefined \| false \| true` | Makes the Textfield disabled. |
 | `foundationRef` | `React.Ref<MDCTextFieldFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `fullwidth` | `undefined \| false \| true` | Makes the TextField fullwidth. |
 | `helpText` | `React.ReactNode \| TextFieldHelperTextProps` | Adds help text to the field |
 | `icon` | `RMWC.IconPropT` | Add a leading icon. |
-| `inputRef` | `MutableRefObject<HTMLInputElement \| HTMLTextAreaElement \| null> \| (ref: HTMLInputElement \| HTMLTextAreaElement \| null) => void` | A reference to the native input or textarea. |
+| `inputRef` | `React.Ref<HTMLInputElement \| HTMLTextAreaElement \| null>` | A reference to the native input or textarea. |
 | `invalid` | `undefined \| false \| true` | Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used. |
 | `label` | `React.ReactNode` | A label for the input. |
-| `outlined` | `undefined \| false \| true` | Outline the TextField |
+| `outlined` | `undefined \| false \| true` | Outline the TextField. |
 | `required` | `undefined \| false \| true` | Makes the Textfield required. |
+| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `Object` | By default, props spread to the input. These props are for the component's root container. |
 | `textarea` | `undefined \| false \| true` | Makes a multiline TextField. |
 | `trailingIcon` | `RMWC.IconPropT` | Add a trailing icon. |

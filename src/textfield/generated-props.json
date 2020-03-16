@@ -23,8 +23,35 @@
       "kind": "interface",
       "name": "TextFieldProps",
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L26",
+      "extends": [
+        "WithRippleProps"
+      ],
       "methods": [],
       "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>How to align the text inside the TextField. Defaults to &#39;start&#39;.</p>\n"
+            ],
+            "contentsRaw": "How to align the text inside the TextField. Defaults to 'start'.",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "align",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L42",
+          "type": "\"start\" | \"end\""
+        },
         {
           "documentation": {
             "contents": [
@@ -118,7 +145,7 @@
           },
           "kind": "property",
           "name": "fullwidth",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L46",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L48",
           "type": "undefined | false | true"
         },
         {
@@ -166,7 +193,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L48",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L50",
           "type": "RMWC.IconPropT"
         },
         {
@@ -190,8 +217,8 @@
           },
           "kind": "property",
           "name": "inputRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L54",
-          "type": "MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null> | (ref: HTMLInputElement | HTMLTextAreaElement | null) => void"
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L56",
+          "type": "React.Ref<HTMLInputElement | HTMLTextAreaElement | null>"
         },
         {
           "documentation": {
@@ -238,15 +265,15 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L42",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L44",
           "type": "React.ReactNode"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Outline the TextField</p>\n"
+              "<p>Outline the TextField.</p>\n"
             ],
-            "contentsRaw": "Outline the TextField",
+            "contentsRaw": "Outline the TextField.",
             "metadata": {}
           },
           "fileName": "src/textfield/index.tsx",
@@ -292,6 +319,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Adds a ripple effect to the component</p>\n"
+            ],
+            "contentsRaw": "Adds a ripple effect to the component",
+            "metadata": {}
+          },
+          "fileName": "src/textfield/node_modules/@rmwc/types/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "ripple",
+          "inheritedFrom": "WithRippleProps.ripple",
+          "type": "RipplePropT"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>By default, props spread to the input. These props are for the component&#39;s root container.</p>\n"
             ],
             "contentsRaw": "By default, props spread to the input. These props are for the component's root container.",
@@ -310,7 +361,7 @@
           },
           "kind": "property",
           "name": "rootProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L52",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L54",
           "type": "Object"
         },
         {
@@ -334,7 +385,7 @@
           },
           "kind": "property",
           "name": "textarea",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L44",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L46",
           "type": "undefined | false | true"
         },
         {
@@ -358,7 +409,7 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L50",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L52",
           "type": "RMWC.IconPropT"
         },
         {
@@ -432,7 +483,7 @@
       },
       "kind": "interface",
       "name": "TextFieldCharacterCountApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L230",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L238",
       "methods": [],
       "properties": [
         {
@@ -449,7 +500,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L231",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L239",
           "type": "() => MDCTextFieldCharacterCounterFoundation"
         }
       ]
@@ -468,7 +519,7 @@
       },
       "kind": "interface",
       "name": "TextFieldCharacterCountProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L234",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L242",
       "extends": [
         "IconProps"
       ],
@@ -488,7 +539,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L235",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L243",
           "type": "undefined | (api: TextFieldCharacterCountApi | null) => void"
         },
         {
@@ -538,7 +589,7 @@
       },
       "kind": "interface",
       "name": "TextFieldHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L249",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L257",
       "methods": [],
       "properties": [
         {
@@ -562,7 +613,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L255",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L263",
           "type": "React.ReactNode"
         },
         {
@@ -586,7 +637,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L251",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L259",
           "type": "undefined | false | true"
         },
         {
@@ -610,7 +661,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L253",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L261",
           "type": "undefined | false | true"
         }
       ]
@@ -636,7 +687,7 @@
       },
       "kind": "interface",
       "name": "TextFieldIconApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L278",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L286",
       "methods": [],
       "properties": [
         {
@@ -653,7 +704,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L279",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L287",
           "type": "() => MDCTextFieldIconFoundation"
         }
       ]
@@ -679,7 +730,7 @@
       },
       "kind": "interface",
       "name": "TextFieldIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L283",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L291",
       "extends": [
         "IconProps"
       ],
@@ -699,7 +750,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L284",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L292",
           "type": "undefined | (api: TextFieldIconApi) => void"
         },
         {
@@ -725,6 +776,23 @@
           "name": "icon",
           "inheritedFrom": "IconProps.icon",
           "type": "RMWC.IconPropT"
+        },
+        {
+          "fileName": "src/textfield/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "position",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/textfield/index.tsx#L293",
+          "type": "\"leading\" | \"trailing\""
         }
       ]
     },

@@ -192,7 +192,7 @@
       },
       "kind": "interface",
       "name": "SimpleDialogProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L72",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L75",
       "extends": [
         "DialogProps"
       ],
@@ -219,7 +219,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
           "type": "React.ReactNode"
         },
         {
@@ -243,7 +243,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L78",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
           "type": "React.ReactNode"
         },
         {
@@ -267,7 +267,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
           "type": "React.ReactNode"
         },
         {
@@ -291,7 +291,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L86",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
           "type": "React.ReactNode"
         },
         {
@@ -315,7 +315,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L80",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
           "type": "React.ReactNode"
         },
         {
@@ -364,7 +364,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L76",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
           "type": "React.ReactNode"
         },
         {
@@ -513,7 +513,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
           "type": "React.ReactNode"
         }
       ]
@@ -539,7 +539,7 @@
       },
       "kind": "interface",
       "name": "DialogTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L162",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L165",
       "methods": [],
       "properties": []
     },
@@ -564,7 +564,7 @@
       },
       "kind": "interface",
       "name": "DialogContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L173",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L176",
       "methods": [],
       "properties": []
     },
@@ -589,7 +589,7 @@
       },
       "kind": "interface",
       "name": "DialogActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L184",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L187",
       "methods": [],
       "properties": []
     },
@@ -614,7 +614,7 @@
       },
       "kind": "interface",
       "name": "DialogButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L195",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L198",
       "extends": [
         "ButtonProps"
       ],
@@ -641,7 +641,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L197",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L200",
           "type": "undefined | string"
         },
         {
@@ -785,7 +785,7 @@
           },
           "kind": "property",
           "name": "isDefaultAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L199",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L202",
           "type": "undefined | false | true"
         },
         {
@@ -976,7 +976,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
           "inheritedFrom": "SimpleDialogProps.acceptLabel",
           "type": "React.ReactNode"
         },
@@ -1001,7 +1001,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L78",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
           "inheritedFrom": "SimpleDialogProps.body",
           "type": "React.ReactNode"
         },
@@ -1026,7 +1026,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
           "inheritedFrom": "SimpleDialogProps.cancelLabel",
           "type": "React.ReactNode"
         },
@@ -1051,7 +1051,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L86",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
           "inheritedFrom": "SimpleDialogProps.children",
           "type": "React.ReactNode"
         },
@@ -1076,7 +1076,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L80",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
           "inheritedFrom": "SimpleDialogProps.footer",
           "type": "React.ReactNode"
         },
@@ -1126,7 +1126,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L76",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
           "inheritedFrom": "SimpleDialogProps.header",
           "type": "React.ReactNode"
         },
@@ -1317,7 +1317,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
           "inheritedFrom": "SimpleDialogProps.title",
           "type": "React.ReactNode"
         }
@@ -1371,7 +1371,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L82",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
           "inheritedFrom": "SimpleDialogProps.acceptLabel",
           "type": "React.ReactNode"
         },
@@ -1396,7 +1396,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L78",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
           "inheritedFrom": "SimpleDialogProps.body",
           "type": "React.ReactNode"
         },
@@ -1421,7 +1421,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L84",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
           "inheritedFrom": "SimpleDialogProps.cancelLabel",
           "type": "React.ReactNode"
         },
@@ -1446,7 +1446,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L86",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
           "inheritedFrom": "SimpleDialogProps.children",
           "type": "React.ReactNode"
         },
@@ -1488,7 +1488,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L80",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
           "inheritedFrom": "SimpleDialogProps.footer",
           "type": "React.ReactNode"
         },
@@ -1538,7 +1538,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L76",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
           "inheritedFrom": "SimpleDialogProps.header",
           "type": "React.ReactNode"
         },
@@ -1688,7 +1688,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L74",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
           "inheritedFrom": "SimpleDialogProps.title",
           "type": "React.ReactNode"
         }
@@ -1749,7 +1749,7 @@
       },
       "kind": "type alias",
       "name": "SimpleDialogHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L92",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"title\">>"
     }
   }
