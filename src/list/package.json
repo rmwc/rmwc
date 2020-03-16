@@ -34,7 +34,7 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/list": "^4.0.0",
+    "@material/list": "^5.1.0",
     "@rmwc/base": "^6.0.0-alpha.13",
     "@rmwc/icon": "^6.0.0-alpha.13",
     "@rmwc/provider": "^6.0.0-alpha.13",
