@@ -55,3 +55,11 @@ body
   .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }
+
+/****************************************************************
+ * Chips
+ ****************************************************************/
+/** Corrects focus outline */
+body .mdc-chip__text__primary-action:focus {
+  outline: none;
+}

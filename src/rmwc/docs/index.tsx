@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './docstyles';
 import { Router } from 'react-router-dom';
-
 import { history } from './history';
 import ReactGA from 'react-ga';
-import '../styles';
 
-import 'prismjs/themes/prism.css';
-import './docs.css';
 import { AppContainer } from 'react-hot-loader';
 import App from './app';
 // @ts-ignore

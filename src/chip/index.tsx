@@ -94,9 +94,15 @@ export const Chip = withRipple()(
         )}
         {!!checkmark && <ChipCheckmark ref={checkmarkEl.setRef} />}
         <span role="gridcell">
-          <span role="button" className="mdc-chip__text" tabIndex={0}>
-            {label}
-            {children}
+          <span
+            role="button"
+            className="mdc-chip__text__primary-action"
+            tabIndex={0}
+          >
+            <span className="mdc-chip__text">
+              {label}
+              {children}
+            </span>
           </span>
         </span>
         {!!trailingIcon && (
