@@ -121,16 +121,15 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
     // handle leading and trailing icons
     const renderIcon = (
       icon: RMWC.IconPropT,
-      leadOrTrail: 'leadingIcon' | 'trailingIcon'
+      position: 'leading' | 'trailing'
     ) => {
       return (
         <TextFieldIcon
           apiRef={api => {
-            leadOrTrail === 'leadingIcon'
-              ? setLeadingIcon(api)
-              : setTrailingIcon(api);
+            position === 'leading' ? setLeadingIcon(api) : setTrailingIcon(api);
           }}
-          tabIndex={leadOrTrail === 'trailingIcon' ? 0 : undefined}
+          position={position}
+          tabIndex={position === 'trailing' ? 0 : undefined}
           icon={icon}
         />
       );
@@ -182,7 +181,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
           className={className}
           ref={ref}
         >
-          {!!icon && renderIcon(icon, 'leadingIcon')}
+          {!!icon && renderIcon(icon, 'leading')}
           {children}
           {/** Render character counter in different place for textarea */}
           {!!textarea && renderedCharacterCounter}
@@ -201,12 +200,12 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
               <NotchedOutline notch={notchWidth}>
                 {renderedLabel}
               </NotchedOutline>
-              {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
             </>
           ) : (
             <>
               {renderedLabel}
-              {!!trailingIcon && renderIcon(trailingIcon, 'trailingIcon')}
+              {!!trailingIcon && renderIcon(trailingIcon, 'trailing')}
               <LineRipple active={lineRippleActive} center={lineRippleCenter} />
             </>
           )}
@@ -282,15 +281,22 @@ export interface TextFieldIconApi {
 /** An Icon in a TextField */
 export interface TextFieldIconProps extends IconProps {
   apiRef?: (api: TextFieldIconApi) => void;
+  position: 'leading' | 'trailing';
 }
 
 /** An Icon in a TextField */
 const TextFieldIcon = function TextFieldIcon(
   props: TextFieldIconProps & RMWC.HTMLProps
 ) {
-  const { apiRef, ...rest } = props;
+  const { apiRef, position, ...rest } = props;
   const { rootEl } = useTextFieldIconFoundation(props);
-  const className = useClassNames(props, ['mdc-text-field__icon']);
+  const className = useClassNames(props, [
+    'mdc-text-field__icon',
+    {
+      'mdc-text-field__icon--trailing': position === 'trailing',
+      'mdc-text-field__icon--leading': position === 'leading'
+    }
+  ]);
 
   return (
     <Icon
