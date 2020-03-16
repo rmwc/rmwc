@@ -55,22 +55,3 @@ body
   .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }
-
-/****************************************************************
- * Slider
- ****************************************************************/
-body .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track-container {
-  background-color: transparent;
-}
-
-body .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track-container:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: var(--mdc-theme-secondary);
-  opacity: 0.26;
-  filter: brightness(50%);
-}
