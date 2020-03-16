@@ -48,20 +48,23 @@ export const Dialog = createComponent<DialogProps>(function Dialog(props, ref) {
     onStateChange,
     preventOutsideDismiss,
     foundationRef,
+    'aria-labelledby': ariaLabelledby,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
 
   return (
-    <Tag
-      role="alertdialog"
-      aria-modal
-      {...rest}
-      element={rootEl}
-      className={className}
-      ref={ref}
-    >
+    <Tag {...rest} element={rootEl} className={className} ref={ref}>
       <div className="mdc-dialog__container">
-        <div className="mdc-dialog__surface">{children}</div>
+        <div
+          className="mdc-dialog__surface"
+          role="alertdialog"
+          aria-modal
+          aria-labelledby={ariaLabelledby}
+          aria-describedby={ariaDescribedBy}
+        >
+          {children}
+        </div>
       </div>
       <DialogScrim disableInteraction={preventOutsideDismiss} />
     </Tag>
