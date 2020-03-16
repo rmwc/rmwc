@@ -40,7 +40,11 @@ export const LinearProgress = createComponent<LinearProgressProps>(
 
     return (
       <Tag
+        aria-label="Progress Bar"
         {...rest}
+        aria-valuemin={0}
+        aria-valuemax={1}
+        aria-valuenow={progress}
         tag="nav"
         role="progressbar"
         element={rootEl}
