@@ -4,7 +4,7 @@ import {
   matches,
   useFoundation,
   FocusTrap,
-  createFocusTrap
+  focusTrapFactory
 } from '@rmwc/base';
 import { DialogProps } from '.';
 import { useRef, useEffect, useMemo } from 'react';
@@ -47,10 +47,10 @@ export const useDialogFoundation = (
           try {
             // we don't always have an item to focus
             // so we try catch it
-            focusTrap.current?.activate();
+            focusTrap.current?.trapFocus();
           } catch (err) {}
         },
-        releaseFocus: () => focusTrap.current?.deactivate(),
+        releaseFocus: () => focusTrap.current?.releaseFocus(),
         isContentScrollable: () =>
           !!content.current && isScrollable(content.current),
         areButtonsStacked: () => areTopsMisaligned(buttons.current),
@@ -135,17 +135,15 @@ export const useDialogFoundation = (
 
   // Create the focus trap
   useEffect(() => {
-    const container =
+    const surface =
       rootEl.ref &&
       rootEl.ref.querySelector<HTMLElement>(
-        MDCDialogFoundation.strings.CONTAINER_SELECTOR
+        MDCDialogFoundation.strings.SURFACE_SELECTOR
       );
 
-    if (container) {
-      focusTrap.current = createFocusTrap(container, {
-        initialFocus: undefined,
-        escapeDeactivates: false,
-        clickOutsideDeactivates: true
+    if (surface) {
+      focusTrap.current = focusTrapFactory(surface, {
+        initialFocusEl: defaultButton.current || undefined
       });
     }
   }, [rootEl.ref]);
@@ -156,19 +154,6 @@ export const useDialogFoundation = (
       if (!foundation.isOpen()) {
         document.addEventListener('keydown', handleDocumentKeydown);
         foundation.open();
-
-        // Don't like this fix
-        // This corrects an issue where the default button was stealing focus
-        // When something else in the dialog should have it
-        setTimeout(() => {
-          if (
-            defaultButton.current &&
-            document.activeElement !== defaultButton.current &&
-            document.activeElement?.classList.contains('mdc-dialog__button')
-          ) {
-            defaultButton.current.focus();
-          }
-        }, 200);
       }
     } else {
       if (foundation.isOpen()) {

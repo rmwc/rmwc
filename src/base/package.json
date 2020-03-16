@@ -36,7 +36,6 @@
   "dependencies": {
     "@rmwc/types": "^6.0.0-alpha.13",
     "classnames": "^2.2.6",
-    "focus-trap": "^5.0.0",
     "hyperform": "^0.9.9",
     "mutation-observer": "^1.0.3",
     "tslib": "^1.10.0"

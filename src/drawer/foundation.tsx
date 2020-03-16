@@ -3,7 +3,7 @@ import {
   MDCDismissibleDrawerFoundation
 } from '@material/drawer';
 import { DrawerProps } from '.';
-import { useFoundation, FocusTrap, createFocusTrap } from '@rmwc/base';
+import { useFoundation, FocusTrap, focusTrapFactory } from '@rmwc/base';
 import { useRef, useEffect } from 'react';
 
 const useDrawerFoundationFactory = (
@@ -53,12 +53,12 @@ const useDrawerFoundationFactory = (
           notifyOpen: () => emit('onOpen', {}, true /* shouldBubble */),
           trapFocus: () => {
             try {
-              focusTrapRef.current?.activate();
+              focusTrapRef.current?.trapFocus();
             } catch (err) {}
           },
           releaseFocus: () => {
             try {
-              focusTrapRef.current?.deactivate();
+              focusTrapRef.current?.releaseFocus();
             } catch (err) {}
           }
         });
@@ -69,12 +69,7 @@ const useDrawerFoundationFactory = (
 
     useEffect(() => {
       if (rootEl.ref) {
-        focusTrapRef.current = createFocusTrap(rootEl.ref, {
-          clickOutsideDeactivates: true,
-          initialFocus: undefined,
-          escapeDeactivates: false,
-          returnFocusOnDeactivate: false
-        });
+        focusTrapRef.current = focusTrapFactory(rootEl.ref);
       }
     }, [rootEl.ref]);
 
