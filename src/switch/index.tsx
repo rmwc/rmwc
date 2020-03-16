@@ -61,6 +61,8 @@ export const Switch = createComponent<SwitchProps, SwitchHTMLProps>(
               type="checkbox"
               id={id}
               ref={mergeRefs(checkboxEl.setRef, inputRef)}
+              role="switch"
+              aria-checked={rest.checked ?? rest['aria-checked']}
             />
           </div>
         </SwitchThumbUnderlay>
