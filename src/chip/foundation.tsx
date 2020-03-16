@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import { ChipProps, ChipHTMLProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
-import { MDCChipFoundation } from '@material/chips';
+import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
@@ -63,7 +63,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
         setStyleProperty: (propertyName, value) => {
           rootEl.setStyle(propertyName, value);
         },
-
+        getAttribute: attrName => rootEl.ref?.getAttribute(attrName),
         hasLeadingIcon: () => !!props.icon,
         getRootBoundingClientRect: () =>
           rootEl.ref?.getBoundingClientRect() || emptyClientRect,
@@ -93,7 +93,7 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
                 .getPropertyValue('direction') === 'rtl'
             : false;
         }
-      })
+      } as MDCChipAdapter)
   });
 
   const { rootEl, trailingIconEl, foundation } = foundationWithElements;
