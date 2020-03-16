@@ -32,12 +32,14 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   characterCount?: boolean;
   /** Makes the TextField visually invalid. This is sometimes automatically applied in cases where required or pattern is used.  */
   invalid?: boolean;
-  /** Makes the Textfield disabled.  */
+  /** Makes the Textfield disabled. */
   disabled?: boolean;
-  /** Makes the Textfield required.  */
+  /** Makes the Textfield required. */
   required?: boolean;
-  /** Outline the TextField */
+  /** Outline the TextField. */
   outlined?: boolean;
+  /** How to align the text inside the TextField. Defaults to 'start'. */
+  align?: 'start' | 'end';
   /** A label for the input. */
   label?: React.ReactNode;
   /** Makes a multiline TextField. */
@@ -51,9 +53,7 @@ export interface TextFieldProps extends RMWC.WithRippleProps {
   /** By default, props spread to the input. These props are for the component's root container. */
   rootProps?: Object;
   /** A reference to the native input or textarea. */
-  inputRef?:
-    | React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>
-    | ((ref: HTMLInputElement | HTMLTextAreaElement | null) => void);
+  inputRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement | null>;
   /** The type of input field to render, search, number, etc */
   type?: string;
   /** Advanced: A reference to the MDCFoundation. */
@@ -72,6 +72,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
       label,
       style,
       outlined,
+      align,
       fullwidth,
       invalid,
       disabled,
@@ -116,7 +117,8 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
         'mdc-text-field--disabled': disabled,
         'mdc-text-field--with-leading-icon': !!icon,
         'mdc-text-field--with-trailing-icon': !!trailingIcon,
-        'mdc-text-field--no-label': !label
+        'mdc-text-field--no-label': !label,
+        'mdc-text-field--end-aligned': align === 'end'
       }
     ]);
 

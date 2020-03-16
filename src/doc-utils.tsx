@@ -255,7 +255,7 @@ function DocsLead({ children }: { children: React.ReactNode }) {
 
 const createTextLinks = (text: string) => {
   return (text || '').replace(
-    /([^\S]|^)(((https?\:\/\/)|(www\.))(\S+))/gi,
+    /([^\S]|^)(((https?:\/\/)|(www\.))(\S+))/gi,
     function(match, space, url) {
       var hyperlink = url;
       if (!hyperlink.match('^https?://')) {
