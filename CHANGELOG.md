@@ -1,3 +1,24 @@
+#### 6.0.0-alpha.14 (2020-03-16)
+
+##### Chores
+
+* **Switch:**  DOM Restructure (90521305)
+* **Base:**
+  *  Refactor focus trap to use mdc internal lib (77135f41)
+  *  Upgrade all deps (b85b3618)
+* **Chip:**  Correct focus styles (4073e17b)
+* **TextField:**  Moving ripple to separate element (48cbe64f)
+* **Textfield:**
+  *  Changing root element to label (a3ae935d)
+  *  Add separate classes for leading / trailing icons (ecb0bd8b)
+* **Dialog:**  Adding aria attributes to dialog surface (9ea0df0c)
+
+##### New Features
+
+* **TextField:**  Adding align option (786305f8)
+* **Switch:**  Adding aria attributes (45517837)
+* **LinearProgress:**  Adding aria attributes (fab4cacb)
+
 #### 6.0.0-alpha.13 (2020-03-14)
 
 ##### Documentation Changes
