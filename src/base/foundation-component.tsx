@@ -294,9 +294,9 @@ export const useFoundation = <
       f.destroy();
       handleRef(props.current.apiRef, null);
       handleRef(props.current.foundationRef, null);
-      // @ts-ignore
-      props.current = null;
       Object.values(elements).map(element => element.destroy());
+      // @ts-ignore
+      props.current = {};
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [foundation, elements]);
