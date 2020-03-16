@@ -3,7 +3,7 @@ import { SwitchProps, SwitchHTMLProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
 import { useFoundation } from '@rmwc/base';
 import { useEffect } from 'react';
-import { MDCSwitchFoundation } from '@material/switch';
+import { MDCSwitchFoundation, MDCSwitchAdapter } from '@material/switch';
 
 export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
   const { renderToggle, toggleRootProps, id } = useToggleFoundation<
@@ -23,8 +23,10 @@ export const useSwitchFoundation = (props: SwitchProps & SwitchHTMLProps) => {
         setNativeControlChecked: (checked: boolean) =>
           checkboxEl.setProp('checked', checked),
         setNativeControlDisabled: (disabled: boolean) =>
-          checkboxEl.setProp('disabled', disabled)
-      });
+          checkboxEl.setProp('disabled', disabled),
+        setNativeControlAttr: (attr: string, value: string) =>
+          rootEl.setProp(attr as any, value)
+      } as MDCSwitchAdapter);
     }
   });
 
