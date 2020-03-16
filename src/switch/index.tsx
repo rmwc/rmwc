@@ -52,19 +52,18 @@ export const Switch = createComponent<SwitchProps, SwitchHTMLProps>(
       >
         <SwitchTrack />
         <SwitchThumbUnderlay>
-          <div className="mdc-switch__thumb">
-            <input
-              {...checkboxEl.props({
-                ...rest,
-                className: 'mdc-switch__native-control'
-              })}
-              type="checkbox"
-              id={id}
-              ref={mergeRefs(checkboxEl.setRef, inputRef)}
-              role="switch"
-              aria-checked={rest.checked ?? rest['aria-checked']}
-            />
-          </div>
+          <SwitchThumb />
+          <input
+            {...checkboxEl.props({
+              ...rest,
+              className: 'mdc-switch__native-control'
+            })}
+            type="checkbox"
+            id={id}
+            ref={mergeRefs(checkboxEl.setRef, inputRef)}
+            role="switch"
+            aria-checked={rest.checked ?? rest['aria-checked']}
+          />
         </SwitchThumbUnderlay>
         <SwitchKnob />
       </Tag>
@@ -84,6 +83,10 @@ const SwitchTrack = React.memo(function SwitchTrack() {
 
 const SwitchKnob = React.memo(function SwitchKnob() {
   return <div className="mdc-switch__knob" />;
+});
+
+const SwitchThumb = React.memo(function SwitchThumb() {
+  return <div className="mdc-switch__thumb" />;
 });
 
 const SwitchThumbUnderlay = withRipple({
