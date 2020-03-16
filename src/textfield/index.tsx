@@ -23,7 +23,7 @@ import { useTextFieldFoundation } from './textfield-foundation';
  *********************************************************************/
 
 /** A TextField component for accepting text input from a user. */
-export interface TextFieldProps {
+export interface TextFieldProps extends RMWC.WithRippleProps {
   /** Sets the value for controlled TextFields. */
   value?: string | number;
   /** Adds help text to the field */
@@ -84,6 +84,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
       trailingIcon,
       rootProps = {},
       foundationRef,
+      ripple,
       ...rest
     } = props;
 
@@ -187,7 +188,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
           {children}
           {/** Render character counter in different place for textarea */}
           {!!textarea && renderedCharacterCounter}
-
+          <TextFieldRipple />
           <Tag
             {...rest}
             element={inputEl}
@@ -218,7 +219,11 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
   }
 );
 
-const TextFieldRoot = withRipple()(
+const TextFieldRipple = React.memo(function TextFieldRipple() {
+  return <div className="mdc-text-field__ripple"></div>;
+});
+
+const TextFieldRoot = withRipple({ surface: false })(
   React.forwardRef(function TextFieldRoot(props: any, ref: React.Ref<any>) {
     return <Tag {...props} tag="label" ref={ref} />;
   })
