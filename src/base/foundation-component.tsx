@@ -215,12 +215,12 @@ const emitFactory = (props: { [key: string]: any }) => (
 };
 
 export const useFoundation = <
-  Foundation extends MDCFoundation,
+  Foundation extends MDCFoundation<any>,
   Elements extends { [key: string]: true },
   Api extends (
     params: {
       [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
-    } & { foundation: Foundation }
+    } & { foundation: any }
   ) => any,
   Props extends {
     [key: string]: any;

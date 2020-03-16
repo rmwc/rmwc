@@ -6,7 +6,7 @@ import { useState } from 'react';
 export const useTextFieldCharacterCountFoundation = (
   props: TextFieldCharacterCountProps
 ) => {
-  const [content, setContent] = useState();
+  const [content, setContent] = useState<string>();
 
   const { foundation, ...elements } = useFoundation({
     props,

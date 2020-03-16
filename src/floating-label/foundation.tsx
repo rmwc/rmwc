@@ -1,7 +1,10 @@
 import { useFoundation } from '@rmwc/base';
 
 import { FloatingLabelProps, FloatingLabelApi } from '.';
-import { MDCFloatingLabelFoundation } from '@material/floating-label';
+import {
+  MDCFloatingLabelFoundation,
+  MDCFloatingLabelAdapter
+} from '@material/floating-label';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { useEffect } from 'react';
 
@@ -37,7 +40,7 @@ export const useFloatingLabelFoundation = (
           evtType: K,
           handler: SpecificEventListener<K>
         ): void => rootEl.removeEventListener(evtType, handler)
-      });
+      } as MDCFloatingLabelAdapter);
     }
   });
 

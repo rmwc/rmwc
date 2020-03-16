@@ -42,14 +42,14 @@ export type SliderHTMLProps = RMWC.HTMLProps<
 >;
 
 const SliderTrack = React.memo(
-  React.forwardRef(function SliderTrack(props, ref: React.Ref<any>) {
+  React.forwardRef(function SliderTrack(props: any, ref: React.Ref<any>) {
     return <div ref={ref} className="mdc-slider__track" />;
   })
 );
 
 const SliderTrackMarkerContainer = React.memo(
   React.forwardRef(function SliderTrackMarkerContainer(
-    props,
+    props: any,
     ref: React.Ref<any>
   ) {
     return <div ref={ref} className="mdc-slider__track-marker-container"></div>;
