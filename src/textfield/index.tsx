@@ -102,6 +102,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
     } = useTextFieldFoundation(props);
 
     const id = useId('textfield', props);
+    const labelId = id + '-label';
 
     const className = useClassNames(props, [
       'mdc-text-field',
@@ -162,7 +163,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
         shake={shakeLabel}
         float={floatLabel}
         apiRef={setFloatingLabel}
-        htmlFor={id}
+        id={labelId}
       >
         {label}
       </FloatingLabel>
@@ -180,6 +181,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
           style={style}
           className={className}
           ref={ref}
+          aria-labelledby={labelId}
         >
           {!!icon && renderIcon(icon, 'leading')}
           {children}
@@ -218,7 +220,7 @@ export const TextField = createComponent<TextFieldProps, TextFieldHTMLProps>(
 
 const TextFieldRoot = withRipple()(
   React.forwardRef(function TextFieldRoot(props: any, ref: React.Ref<any>) {
-    return <Tag {...props} ref={ref} />;
+    return <Tag {...props} tag="label" ref={ref} />;
   })
 );
 
