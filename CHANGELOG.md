@@ -1,3 +1,12 @@
+#### 6.0.0-alpha.15 (2020-03-17)
+
+##### Bug Fixes
+
+* **SnackbarQueue:**  Correcting type signature of component #494 (1b3ed2d0)
+* **List:**  Adding missing className to collapsible list #543 (3d63f571)
+* **IconButton:**  Remove aria-hidden attribute #549 (e19795ae)
+* **DataTable:**  Correct sort icon direction based on Material Spec #551 (028da5b1)
+
 #### 6.0.0-alpha.14 (2020-03-16)
 
 ##### Chores
