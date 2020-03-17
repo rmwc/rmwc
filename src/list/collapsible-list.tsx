@@ -70,6 +70,7 @@ export class CollapsibleList extends React.Component<
 
   childContainer: HTMLDivElement | null = null;
   root: HTMLDivElement | null = null;
+  rafId: number | null = null;
 
   state: CollapsibleState = {
     open: !!this.props.startOpen || !!this.props.open,
@@ -96,6 +97,10 @@ export class CollapsibleList extends React.Component<
     }
   }
 
+  componentWillUnmount() {
+    this.rafId && window.cancelAnimationFrame(this.rafId);
+  }
+
   syncOpenState() {
     const { onOpen, onClose } = this.props;
     const childrenStyle = {
@@ -118,7 +123,7 @@ export class CollapsibleList extends React.Component<
         }, 300);
       } else {
         onClose && onClose();
-        window.requestAnimationFrame(() => {
+        this.rafId = window.requestAnimationFrame(() => {
           this.setState({
             childrenStyle: {}
           });
@@ -128,7 +133,7 @@ export class CollapsibleList extends React.Component<
   }
 
   correctFocus(back: boolean) {
-    window.requestAnimationFrame(() => {
+    this.rafId = window.requestAnimationFrame(() => {
       if (
         !this.state.open &&
         this.root &&

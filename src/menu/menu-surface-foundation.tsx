@@ -315,6 +315,8 @@ export const useMenuSurfaceFoundation = (
 
   useEffect(() => {
     return () => {
+      // @ts-ignore Fixes unsafe access from MDC when component unmounts
+      foundation.adapter_.notifyClose = () => {};
       unhoistMenuFromBody();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

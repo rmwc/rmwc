@@ -1,5 +1,5 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
 import { FoundationElement } from './foundation-component';
@@ -87,16 +87,19 @@ export function createComponent<
     ComponentProps<P, ElementP, any>
   >(Component);
 
+  // Interestingly enough, we only need this declaration
+  // for a generic placeholder for typescript inference,
+  // we don't actually have to pay the penalty for using it at runtime :)
   const WrappedComponent = <Tag extends React.ElementType = 'div'>(
     props: ComponentProps<P, ElementP, Tag>,
     ref: any
   ) => {
-    return <ForwardComponent {...props} ref={ref} />;
+    return <></>;
   };
 
   WrappedComponent.displayName = Component.constructor.name || 'RMWCComponent';
 
-  return React.forwardRef(WrappedComponent) as typeof WrappedComponent;
+  return ForwardComponent as typeof WrappedComponent;
 }
 
 export function createMemoComponent<
