@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import { ChipProps, ChipHTMLProps } from './';
 import { useId, emptyClientRect } from '@rmwc/base';

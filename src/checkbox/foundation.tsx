@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import { CheckboxProps, CheckboxHTMLProps } from '.';
 import { useToggleFoundation } from '@rmwc/toggleable';
