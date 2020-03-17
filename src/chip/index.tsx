@@ -30,6 +30,8 @@ export interface ChipProps {
   icon?: RMWC.IconPropT;
   /** Instance of an Icon Component. */
   trailingIcon?: RMWC.IconPropT;
+  /** Defaults to true. Set this to false if your trailing icon is something other than a remove button. */
+  trailingIconRemovesChip?: boolean;
   /** An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present.  */
   id?: string;
   /** Includes an optional checkmark for the chips selected state. */
@@ -63,6 +65,7 @@ export const Chip = withRipple()(
       onSelect,
       icon,
       trailingIcon,
+      trailingIconRemovesChip,
       checkmark,
       label,
       children,

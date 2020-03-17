@@ -5,6 +5,7 @@ import { useId, emptyClientRect } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { MDCChipFoundation, MDCChipAdapter } from '@material/chips';
 import { EventSource } from '@material/chips/chip/constants';
+import { useEffect, useCallback } from 'react';
 
 export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
   const chipId = useId('chip', props);
@@ -99,23 +100,37 @@ export const useChipFoundation = (props: ChipProps & ChipHTMLProps) => {
 
   const { rootEl, trailingIconEl, foundation } = foundationWithElements;
 
-  const handleInteraction = (
-    evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
-  ) => {
-    evt.type === 'click' && props.onClick?.(evt as any);
-    evt.type === 'keydown' && props.onKeyDown?.(evt as any);
-    return foundation.handleInteraction(evt);
-  };
+  const handleInteraction = useCallback(
+    (
+      evt: React.MouseEvent & React.KeyboardEvent & MouseEvent & KeyboardEvent
+    ) => {
+      evt.type === 'click' && props.onClick?.(evt as any);
+      evt.type === 'keydown' && props.onKeyDown?.(evt as any);
+      return foundation.handleInteraction(evt);
+    },
+    [foundation, props.onClick, props.onKeyDown]
+  );
 
-  const handleTransitionEnd = (
-    evt: React.TransitionEvent & TransitionEvent
-  ) => {
-    foundation.handleTransitionEnd(evt);
-  };
+  const handleTransitionEnd = useCallback(
+    (evt: React.TransitionEvent & TransitionEvent) => {
+      foundation.handleTransitionEnd(evt);
+    },
+    [foundation]
+  );
 
-  const handleTrailingIconInteraction = (evt: any) => {
-    return foundation.handleTrailingIconInteraction(evt);
-  };
+  const handleTrailingIconInteraction = useCallback(
+    (evt: any) => {
+      return foundation.handleTrailingIconInteraction(evt);
+    },
+    [foundation]
+  );
+
+  // Allow customizing the behavior of the trailing icon
+  useEffect(() => {
+    foundation.setShouldRemoveOnTrailingIconClick(
+      props.trailingIconRemovesChip ?? true
+    );
+  }, [foundation, props.trailingIconRemovesChip]);
 
   rootEl.setProp('onClick', handleInteraction, true);
   rootEl.setProp('onKeyDown', handleInteraction, true);
