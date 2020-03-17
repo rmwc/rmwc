@@ -58,7 +58,6 @@ const renderClassName = ({
 const renderUrl = ({ content, ...rest }: { content: string }) => (
   <IconRoot
     {...rest}
-    className={classNames((rest as any).className, 'rmwc-icon--image')}
     style={{
       ...(rest as any).style,
       backgroundImage: `url(${content})`
@@ -171,6 +170,7 @@ export const Icon = createComponent<IconProps>(({ icon, ...rest }, ref) => {
     content: contentToUse,
     className: classNames(
       'rmwc-icon',
+      `rmwc-icon--${strategyToUse}`,
       basenameToUse,
       rest.className,
       optionsRest.className,

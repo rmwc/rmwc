@@ -1,8 +1,18 @@
 .rmwc-icon {
-  
 }
 
-.rmwc-icon--image {
+/**
+ * Adds disabled styles for the icon directly,
+ * and an icon that is a direct descendent of a disabled element like IconButtons
+ */
+.rmwc-icon--url[disabled],
+.rmwc-icon--component[disabled],
+[disabled] > .rmwc-icon--url,
+[disabled] > .rmwc-icon--component {
+  opacity: 0.38;
+}
+
+.rmwc-icon--url {
   min-width: 1em;
   min-height: 1em;
   background-repeat: no-repeat;
