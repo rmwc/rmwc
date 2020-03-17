@@ -32,6 +32,8 @@ export interface TabProps {
   stacked?: boolean;
   /** Restricts the indicator to the content */
   restrictIndicator?: boolean;
+  /** Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap. */
+  minWidth?: boolean;
   /** Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } */
   onInteraction?: (evt: TabOnInteractionEventT) => void;
   /** Advanced: A reference to the MDCFoundation. */
@@ -56,11 +58,12 @@ type TabRootProps = TabProps & {
 
 const TabRoot = withRipple({ surface: false })(
   createComponent<TabRootProps>(function TabRoot(props, ref) {
-    const { stacked, ...rest } = props;
+    const { stacked, minWidth, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-tab',
       {
-        'mdc-tab--stacked': stacked
+        'mdc-tab--stacked': stacked,
+        'mdc-tab--min-width': minWidth
       }
     ]);
     return <Tag tag="button" {...rest} className={className} ref={ref} />;
