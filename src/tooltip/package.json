@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/tooltip",
-  "version": "6.0.0-alpha.14",
+  "version": "6.0.0-alpha.15",
   "description": "RMWC tooltip component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,8 +34,8 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^6.0.0-alpha.14",
-    "@rmwc/provider": "^6.0.0-alpha.14",
+    "@rmwc/base": "^6.0.0-alpha.15",
+    "@rmwc/provider": "^6.0.0-alpha.15",
     "rc-tooltip": "3.7.3"
   },
   "devDependencies": {
