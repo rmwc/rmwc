@@ -28,7 +28,7 @@ export interface DialogProps {
   onClose?: (evt: DialogOnCloseEventT) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
-  /** Prevent the dialog from closing when the scrim is clicked. */
+  /** Prevent the dialog from closing when the scrim is clicked or escape key is pressed. */
   preventOutsideDismiss?: boolean;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCDialogFoundation>;

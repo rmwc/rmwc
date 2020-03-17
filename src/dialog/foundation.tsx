@@ -105,10 +105,15 @@ export const useDialogFoundation = (
 
   const { rootEl } = elements;
 
-  const handleDocumentKeydown = useMemo(
-    () => foundation.handleDocumentKeydown.bind(foundation),
-    [foundation]
-  );
+  const handleDocumentKeydown = useMemo(() => {
+    const bound = foundation.handleDocumentKeydown.bind(foundation);
+    // Wrap the callback in a function that can
+    // short circuit the escape key if we are preventing outside dismiss
+    return (evt: KeyboardEvent) => {
+      if (evt.which === 27 && props.preventOutsideDismiss) return;
+      return bound(evt);
+    };
+  }, [foundation, props.preventOutsideDismiss]);
 
   // Set refs on mount
   useEffect(() => {
