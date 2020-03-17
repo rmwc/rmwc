@@ -216,6 +216,7 @@ export class CollapsibleList extends React.Component<
       onClose,
       open: openProp,
       startOpen,
+      className,
       ...rest
     } = this.props;
     const { open, childrenStyle } = this.state;
@@ -225,7 +226,7 @@ export class CollapsibleList extends React.Component<
         {...rest}
         onFocus={this.handleFocus}
         ref={(el: HTMLDivElement) => (this.root = el)}
-        className={classNames('rmwc-collapsible-list', {
+        className={classNames('rmwc-collapsible-list', className, {
           'rmwc-collapsible-list--open': open
         })}
       >
