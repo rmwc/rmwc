@@ -1,3 +1,4 @@
+import * as RMWC from '@rmwc/types';
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   Snackbar,
@@ -32,7 +33,7 @@ export interface SnackbarQueueProps extends SnackbarProps {
 export function SnackbarQueue({
   messages,
   ...defaultSnackbarProps
-}: SnackbarQueueProps) {
+}: SnackbarQueueProps & RMWC.HTMLProps) {
   const currentMessage = messages.array[0];
   const [, setIteration] = useState(0);
   const [message, setMessage] = useState<SnackbarQueueMessage | undefined>(
