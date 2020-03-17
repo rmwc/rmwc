@@ -46,9 +46,7 @@ export const IconButton = createComponent<IconButtonProps, IconButtonHTMLProps>(
       return <IconButtonToggle {...rest} ref={ref} />;
     }
 
-    return (
-      <IconButtonRoot aria-hidden="true" tag="button" {...rest} ref={ref} />
-    );
+    return <IconButtonRoot tag="button" {...rest} ref={ref} />;
   }
 );
 
@@ -60,7 +58,6 @@ const IconButtonToggle = createComponent<IconButtonProps>(
     return (
       <IconButtonToggleRoot
         aria-pressed={isOn}
-        aria-hidden="true"
         {...rootEl.props(rest)}
         tag="button"
         ref={ref}
