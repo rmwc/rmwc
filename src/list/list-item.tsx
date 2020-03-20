@@ -72,7 +72,7 @@ export interface ListItemGraphicProps extends IconProps {}
 export const ListItemGraphic = createComponent<ListItemGraphicProps>(
   function ListItemGraphic(props, ref) {
     const className = useClassNames(props, ['mdc-list-item__graphic']);
-    return <Icon {...props} ref={ref} className={className} />;
+    return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
   }
 );
 
@@ -85,7 +85,7 @@ export const ListItemMeta = createComponent<ListItemMetaProps>(
     const className = useClassNames(props, ['mdc-list-item__meta']);
 
     if (!!props.icon) {
-      return <Icon {...props} ref={ref} className={className} />;
+      return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
     }
 
     if (React.isValidElement(props.children)) {
