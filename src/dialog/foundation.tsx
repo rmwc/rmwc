@@ -79,22 +79,12 @@ export const useDialogFoundation = (
               button.parentElement && button.parentElement.appendChild(button)
           );
         },
-        notifyOpening: () => {
-          emit('onOpen', {});
-          getProps().onStateChange?.('opening');
-        },
-        notifyOpened: () => {
-          emit('onOpened', {});
-          getProps().onStateChange?.('opened');
-        },
-        notifyClosing: (action: string) => {
-          emit('onClose', action ? { action } : {});
-          getProps().onStateChange?.('closing');
-        },
-        notifyClosed: (action: string) => {
-          emit('onClosed', action ? { action } : {});
-          getProps().onStateChange?.('closed');
-        },
+        notifyOpening: () =>  emit('onOpen', {}),
+        notifyOpened: () =>  emit('onOpened', {}),
+        notifyClosing: (action: string) =>  
+          emit('onClose', action ? { action } : {}),
+        notifyClosed: (action: string) => 
+          emit('onClosed', action ? { action } : {}),
         getInitialFocusEl: () =>
           document.querySelector(
             `[${MDCDialogFoundation.strings.INITIAL_FOCUS_ATTRIBUTE}]`

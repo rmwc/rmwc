@@ -32,8 +32,6 @@ export interface DialogProps {
   onClose?: (evt: DialogOnCloseEventT) => void;
   /** Callback for when the Dialog finishes closing. evt.detail = { action?: string }*/
   onClosed?: (evt: DialogOnCloseEventT) => void;
-  /** Callback to use if you need more direct access to the Dialog's lifecycle. */
-  onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
   /** Prevent the dialog from closing when the scrim is clicked or escape key is pressed. */
   preventOutsideDismiss?: boolean;
   /** Advanced: A reference to the MDCFoundation. */
@@ -53,7 +51,6 @@ export const Dialog = createComponent<DialogProps>(function Dialog(props, ref) {
     onOpened,
     onClose,
     onClosed,
-    onStateChange,
     preventOutsideDismiss,
     foundationRef,
     'aria-labelledby': ariaLabelledby,
