@@ -34,7 +34,7 @@ v6.0.0 is coming!
 
 TL;DR
 - `npm i rmwc@next` or `npm i @rmwc/button@next`.
-- Coming out sometime early spring
+- Release is close. Will be switching from alpha to RC within the next week.
 
 Since the creation of RMWC, React and Javascript have continued their blazing pace of change. For context, this project was initially written in FlowTyped with a bunch of classes, and Google's part was plain old JS. Fast forward 2.5 years and React has undergone a paradigm shift with hooks while Typescript continues to expand... Also, a while back, Google released their own React wrapper that was very similar to this project. It was recently declared abandonware which has lead to an increase in interest in RMWC since it should be a relatively simple migration. Needless to say, RMWC needs some love! It's time for some spring cleaning.
 
