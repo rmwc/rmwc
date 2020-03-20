@@ -43,6 +43,7 @@ export default function() {
                   console.log(evt.detail.action);
                   setOpen(false);
                 }}
+                onClosed={evt => console.log(evt.detail.action)}
               >
                 <DialogTitle>Dialog Title</DialogTitle>
                 <DialogContent>This is a standard dialog.</DialogContent>
