@@ -13,6 +13,7 @@ export interface ListItemProps extends RMWC.WithRippleProps {
   activated?: boolean;
   /** A modifier for a disabled state. */
   disabled?: boolean;
+
 }
 
 /** A ListItem component. */
@@ -27,7 +28,7 @@ export const ListItem = withRipple({ surface: false })(
         'mdc-list-item--disabled': props.disabled
       }
     ]);
-    return <Tag tabIndex={0} {...rest} className={className} ref={ref} />;
+    return <Tag tag="li" tabIndex={0} {...rest} className={className} ref={ref} />;
   })
 );
 
@@ -71,7 +72,7 @@ export interface ListItemGraphicProps extends IconProps {}
 export const ListItemGraphic = createComponent<ListItemGraphicProps>(
   function ListItemGraphic(props, ref) {
     const className = useClassNames(props, ['mdc-list-item__graphic']);
-    return <Icon {...props} ref={ref} className={className} />;
+    return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
   }
 );
 
@@ -84,7 +85,7 @@ export const ListItemMeta = createComponent<ListItemMetaProps>(
     const className = useClassNames(props, ['mdc-list-item__meta']);
 
     if (!!props.icon) {
-      return <Icon {...props} ref={ref} className={className} />;
+      return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
     }
 
     if (React.isValidElement(props.children)) {
@@ -130,7 +131,7 @@ export interface ListDividerProps {}
 export const ListDivider = createComponent<ListDividerProps>(
   function ListDivider(props, ref) {
     const className = useClassNames(props, ['mdc-list-divider']);
-    return <Tag {...props} ref={ref} className={className} />;
+    return <Tag tag="li" role="separator" {...props} ref={ref} className={className} />;
   }
 );
 

@@ -60,5 +60,5 @@ export const List = createComponent<ListProps>(function List(props, ref) {
       'mdc-list--non-interactive': nonInteractive
     }
   ]);
-  return <Tag {...rest} element={rootEl} className={className} ref={ref} />;
+  return <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />;
 });
