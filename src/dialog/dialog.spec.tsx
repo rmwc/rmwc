@@ -42,17 +42,21 @@ describe('Dialog', () => {
   });
 
   it('Dialog lifecycle', async done => {
+    let open = 0;
     let opened = 0;
+    let close = 0;
     let closed = 0;
     let lifecycle: string[] = [];
 
     const el = mount(
       <Dialog
-        onOpen={() => opened++}
+        onOpen={() => open++}
+        onOpened={() => opened++}
         onClose={() => {
-          closed++;
+          close++;
           el.setProps({ open: false });
         }}
+        onClosed={() => closed++}
         onStateChange={state => lifecycle.push(state)}
       >
         <DialogTitle>Dialog Title</DialogTitle>
@@ -77,7 +81,9 @@ describe('Dialog', () => {
     const cancelButton = el.find('button.mdc-dialog__button').first();
     cancelButton.simulate('click');
     await wait(250);
+    expect(open).toBe(2);
     expect(opened).toBe(2);
+    expect(close).toBe(2);
     expect(closed).toBe(2);
     expect(lifecycle).toEqual([
       'opening',
