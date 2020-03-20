@@ -130,7 +130,7 @@ export interface ListDividerProps {}
 export const ListDivider = createComponent<ListDividerProps>(
   function ListDivider(props, ref) {
     const className = useClassNames(props, ['mdc-list-divider']);
-    return <Tag {...props} ref={ref} className={className} />;
+    return <Tag {...props} role="separator" ref={ref} className={className} />;
   }
 );
 
