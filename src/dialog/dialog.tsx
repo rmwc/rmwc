@@ -12,7 +12,9 @@ import { useDialogFoundation } from './foundation';
  *********************************************************************/
 
 export type DialogOnOpenEventT = RMWC.CustomEventT<{}>;
+export type DialogOnOpenedEventT = RMWC.CustomEventT<{}>;
 export type DialogOnCloseEventT = RMWC.CustomEventT<{ action?: string }>;
+export type DialogOnClosedEventT = RMWC.CustomEventT<{ action?: string }>;
 
 /*********************************************************************
  * Dialogs
@@ -24,8 +26,12 @@ export interface DialogProps {
   open?: boolean;
   /** Callback for when the Dialog opens. */
   onOpen?: (evt: DialogOnOpenEventT) => void;
-  /** Callback for when the Dialog closes. evt.detail = { action?: string }*/
+  /** Callback for when the Dialog finishes opening */
+  onOpened?: (evt: DialogOnOpenedEventT) => void;
+  /** Callback for when the Dialog beings to close. evt.detail = { action?: string }*/
   onClose?: (evt: DialogOnCloseEventT) => void;
+  /** Callback for when the Dialog finishes closing. evt.detail = { action?: string }*/
+  onClosed?: (evt: DialogOnCloseEventT) => void;
   /** Callback to use if you need more direct access to the Dialog's lifecycle. */
   onStateChange?: (state: 'opening' | 'opened' | 'closing' | 'closed') => void;
   /** Prevent the dialog from closing when the scrim is clicked or escape key is pressed. */
@@ -44,7 +50,9 @@ export const Dialog = createComponent<DialogProps>(function Dialog(props, ref) {
     children,
     open,
     onOpen,
+    onOpened,
     onClose,
+    onClosed,
     onStateChange,
     preventOutsideDismiss,
     foundationRef,
