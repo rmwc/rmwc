@@ -152,6 +152,7 @@ A Chip component.
 | `onTrailingIconInteraction` | `undefined \| (evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
 | `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
 | `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
+| `trailingIconRemovesChip` | `undefined \| false \| true` | Defaults to true. Set this to false if your trailing icon is something other than a remove button. |
 
 
 ## ChipSet

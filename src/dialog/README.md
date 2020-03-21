@@ -25,6 +25,7 @@ function Example() {
           console.log(evt.detail.action);
           setOpen(false);
         }}
+        onClosed={evt => console.log(evt.detail.action)}
       >
         <DialogTitle>Dialog Title</DialogTitle>
         <DialogContent>This is a standard dialog.</DialogContent>
@@ -189,11 +190,12 @@ A Dialog component.
 | Name | Type | Description |
 |------|------|-------------|
 | `foundationRef` | `React.Ref<MDCDialogFoundation>` | Advanced: A reference to the MDCFoundation. |
-| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
+| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog beings to close. evt.detail = { action?: string } |
+| `onClosed` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog finishes closing. evt.detail = { action?: string } |
 | `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
-| `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
+| `onOpened` | `undefined \| (evt: DialogOnOpenedEventT) => void` | Callback for when the Dialog finishes opening |
 | `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
-| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
+| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked or escape key is pressed. |
 
 
 ## DialogTitle
@@ -247,11 +249,12 @@ A SimpleDialog component for ease of use.
 | `footer` | `React.ReactNode` | Additional footer content for the default Dialog template, rendered before any buttons. |
 | `foundationRef` | `React.Ref<MDCDialogFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `header` | `React.ReactNode` | Additional Dialog header content for the default Dialog template. |
-| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog closes. evt.detail = { action?: string } |
+| `onClose` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog beings to close. evt.detail = { action?: string } |
+| `onClosed` | `undefined \| (evt: DialogOnCloseEventT) => void` | Callback for when the Dialog finishes closing. evt.detail = { action?: string } |
 | `onOpen` | `undefined \| (evt: DialogOnOpenEventT) => void` | Callback for when the Dialog opens. |
-| `onStateChange` | `undefined \| (state: "opening" \| "opened" \| "closing" \| "closed") => void` | Callback to use if you need more direct access to the Dialog's lifecycle. |
+| `onOpened` | `undefined \| (evt: DialogOnOpenedEventT) => void` | Callback for when the Dialog finishes opening |
 | `open` | `undefined \| false \| true` | Whether or not the Dialog is showing. |
-| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked. |
+| `preventOutsideDismiss` | `undefined \| false \| true` | Prevent the dialog from closing when the scrim is clicked or escape key is pressed. |
 | `title` | `React.ReactNode` | A title for the default Dialog template. |
 
 

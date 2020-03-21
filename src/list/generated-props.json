@@ -2028,7 +2028,7 @@
       },
       "kind": "interface",
       "name": "ListItemTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L35",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L36",
       "methods": [],
       "properties": []
     },
@@ -2053,7 +2053,7 @@
       },
       "kind": "interface",
       "name": "ListItemPrimaryTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L46",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L47",
       "methods": [],
       "properties": []
     },
@@ -2078,7 +2078,7 @@
       },
       "kind": "interface",
       "name": "ListItemSecondaryTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L57",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L58",
       "methods": [],
       "properties": []
     },
@@ -2103,7 +2103,7 @@
       },
       "kind": "interface",
       "name": "ListItemGraphicProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L68",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L69",
       "extends": [
         "IconProps"
       ],
@@ -2156,7 +2156,7 @@
       },
       "kind": "interface",
       "name": "ListItemMetaProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L79",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L80",
       "extends": [
         "IconProps"
       ],
@@ -2209,7 +2209,7 @@
       },
       "kind": "interface",
       "name": "ListGroupProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L104",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L105",
       "methods": [],
       "properties": []
     },
@@ -2234,7 +2234,7 @@
       },
       "kind": "interface",
       "name": "ListGroupSubheaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L116",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L117",
       "methods": [],
       "properties": []
     },
@@ -2259,7 +2259,7 @@
       },
       "kind": "interface",
       "name": "ListDividerProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L127",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L128",
       "methods": [],
       "properties": []
     },
@@ -2284,7 +2284,7 @@
       },
       "kind": "interface",
       "name": "SimpleListItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L138",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L139",
       "extends": [
         "ListItemProps"
       ],
@@ -2336,7 +2336,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L150",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L151",
           "type": "React.ReactNode"
         },
         {
@@ -2385,7 +2385,7 @@
           },
           "kind": "property",
           "name": "graphic",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L144",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L145",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2409,7 +2409,7 @@
           },
           "kind": "property",
           "name": "meta",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L148",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L149",
           "type": "React.ReactNode"
         },
         {
@@ -2433,7 +2433,7 @@
           },
           "kind": "property",
           "name": "metaIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L146",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L147",
           "type": "RMWC.IconPropT"
         },
         {
@@ -2481,7 +2481,7 @@
           },
           "kind": "property",
           "name": "secondaryText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L142",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L143",
           "type": "React.ReactNode"
         },
         {
@@ -2530,7 +2530,7 @@
           },
           "kind": "property",
           "name": "text",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L140",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L141",
           "type": "React.ReactNode"
         }
       ]

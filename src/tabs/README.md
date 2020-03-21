@@ -185,6 +185,7 @@ A Tab component
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
 | `iconIndicator` | `RMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
 | `label` | `any` | A label for the tab. |
+| `minWidth` | `undefined \| false \| true` | Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap. |
 | `onInteraction` | `undefined \| (evt: TabOnInteractionEventT) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } |
 | `restrictIndicator` | `undefined \| false \| true` | Restricts the indicator to the content |
 | `stacked` | `undefined \| false \| true` | Stacks the icon on top of the text label |
