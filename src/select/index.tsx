@@ -225,7 +225,11 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
       hoistToBody
     >
       {!!props.placeholder && (
-        <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
+        <MenuItem
+          selected={currentIndex - 1 === selectedIndex}
+          data-value=""
+          theme="textDisabledOnBackground"
+        >
           {placeholder}
         </MenuItem>
       )}

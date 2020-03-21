@@ -69,6 +69,18 @@ function EnhancedSelect() {
       </div>
       <div>
         <Select
+          label={'Controlled'}
+          placeholder={'Select a Food'}
+          enhanced
+          options={['Cookies', 'Pizza', 'Icecream']}
+          value={'Cookies'}
+          onChange={evt => {
+            console.log('onChange', evt.currentTarget.value);
+          }}
+        />
+      </div>
+      <div>
+        <Select
           label={'Manual Enhanced'}
           enhanced={{
             anchorCorner: 'bottomStart'
@@ -304,5 +316,16 @@ storiesOf('Select', module)
       autoFocus
       value="one"
       options={['one', 'two', 'three']}
+    />
+  ))
+  .add('Controlled Single', () => (
+    <Select
+      label="Controlled"
+      value="one"
+      enhanced
+      options={['one', 'two', 'three']}
+      onChange={evt => {
+        console.log('onChange', evt.currentTarget.value);
+      }}
     />
   ));

@@ -232,7 +232,6 @@ export const useSelectFoundation = (
         };
 
         doWork();
-        //isNative() ? doWork() : window.requestAnimationFrame(doWork);
       };
 
       // This is only set one time in the constructor which
@@ -243,6 +242,22 @@ export const useSelectFoundation = (
           return adapter.getMenuItemValues();
         }
       });
+
+      // We have to add some logic after the original init function
+      // in order to sync placeholder labels
+      // Also... MDC fires change events on init which is the
+      // exact opposite of what we want to happen with normal selects
+      const init = f.init.bind(f);
+      f.init = () => {
+        silenceChange.current = true;
+        init();
+
+        const placeholder = String(getProps().placeholder || '');
+        if (!f.getValue() && placeholder) {
+          adapter.setSelectedText(placeholder);
+        }
+        silenceChange.current = false;
+      };
 
       return f;
     }
@@ -322,12 +337,18 @@ export const useSelectFoundation = (
   const foundationValue = foundation.getValue();
   const value = (props.value || props.defaultValue) as string;
 
+  // MDC Select is a bit of a mess here...
+  // - We have to set our value
+  // - In the event of a controlled value change, we don't want to fire a change event
+  // - Jump through stupid hoops to prevent the event from firing
   useEffect(() => {
     silenceChange.current = true;
-    if (value !== undefined) {
-      value !== foundationValue && foundation.setValue(value);
+    if (value !== undefined && value !== foundationValue) {
+      // @ts-ignore unsafe private variable access
+      selectedIndex.current = foundation.menuItemValues_.indexOf(value);
+      foundation.setValue(value);
     }
-    setTimeout(() => {
+    window.requestAnimationFrame(() => {
       silenceChange.current = false;
     });
   }, [value, foundationValue, stringifiedOptions, foundation]);
@@ -341,18 +362,6 @@ export const useSelectFoundation = (
   useEffect(() => {
     rootEl.ref && menu.current?.setAnchorElement(rootEl.ref);
   }, [rootEl.ref]);
-
-  // handle setting the index
-  // const foundationSelectedIndex = foundation.getSelectedIndex();
-  // useEffect(() => {
-  //   setSelectedIndex(foundationSelectedIndex);
-  // }, [foundationSelectedIndex]);
-
-  // Handle selectedIndex change
-  // useEffect(() => {
-  //   selectedIndex !== foundation.getSelectedIndex() &&
-  //     foundation.handleMenuItemAction(selectedIndex);
-  // }, [selectedIndex, foundation]);
 
   return {
     notchWidth,

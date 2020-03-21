@@ -791,6 +791,68 @@ function Bug534() {
   );
 }
 
+function Bug552() {
+  const [country, setCountry] = React.useState('');
+  const [region, setRegion] = React.useState('');
+
+  return (
+    <div className="App">
+      <Select
+        outlined
+        placeholder="Foo"
+        label="Select country"
+        options={['USA', 'UK']}
+        value={country}
+        onChange={event => {
+          setCountry(event.currentTarget.value);
+          setRegion('');
+        }}
+        rootProps={{ style: { width: '100%' } }}
+        data-testid="country"
+      />
+
+      <Select
+        outlined
+        label="Select region"
+        options={['North', 'West']}
+        value={region}
+        onChange={event => setRegion(event.currentTarget.value)}
+        rootProps={{ style: { width: '100%', marginTop: '1rem' } }}
+        data-testid="region"
+      />
+
+      <br />
+      <br />
+
+      <Select
+        outlined
+        enhanced
+        placeholder="Foo"
+        label="Select country"
+        options={['USA', 'UK']}
+        value={country}
+        onChange={event => {
+          setCountry(event.currentTarget.value);
+          setRegion('');
+        }}
+        rootProps={{ style: { width: '100%' } }}
+        data-testid="country"
+      />
+
+      <Select
+        outlined
+        enhanced
+        label="Select region"
+        options={['North', 'West']}
+        value={region}
+        onChange={event => setRegion(event.currentTarget.value)}
+        rootProps={{ style: { width: '100%', marginTop: '1rem' } }}
+        data-testid="region"
+      />
+    </div>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#206', () => (
     <Menu open={true} onSelect={() => console.log('selected')}>
@@ -874,4 +936,5 @@ storiesOf('Bugs', module)
       </>
     );
   })
-  .add('#534', () => <Bug534 />);
+  .add('#534', () => <Bug534 />)
+  .add('#552', () => <Bug552 />);
