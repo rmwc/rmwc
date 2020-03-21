@@ -4,7 +4,8 @@ import {
   matches,
   useFoundation,
   FocusTrap,
-  focusTrapFactory
+  focusTrapFactory,
+  triggerWindowResize
 } from '@rmwc/base';
 import { DialogProps } from '.';
 import { useRef, useEffect, useMemo } from 'react';
@@ -79,11 +80,16 @@ export const useDialogFoundation = (
               button.parentElement && button.parentElement.appendChild(button)
           );
         },
-        notifyOpening: () =>  emit('onOpen', {}),
-        notifyOpened: () =>  emit('onOpened', {}),
-        notifyClosing: (action: string) =>  
+        notifyOpening: () => emit('onOpen', {}),
+        notifyOpened: () => {
+          emit('onOpened', {});
+          // Fixes an issue with sub components that require
+          // Layout for events
+          triggerWindowResize();
+        },
+        notifyClosing: (action: string) =>
           emit('onClose', action ? { action } : {}),
-        notifyClosed: (action: string) => 
+        notifyClosed: (action: string) =>
           emit('onClosed', action ? { action } : {}),
         getInitialFocusEl: () =>
           document.querySelector(
