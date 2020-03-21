@@ -222,7 +222,6 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
       apiRef={menuApiRef}
       className="mdc-select__menu"
       focusOnOpen
-      hoistToBody
     >
       {!!props.placeholder && (
         <MenuItem
