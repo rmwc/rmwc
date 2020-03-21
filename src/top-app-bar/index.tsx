@@ -28,7 +28,7 @@ export interface TopAppBarProps {
   shortCollapsed?: boolean;
   /** Styles the top app bar to be dense. */
   dense?: boolean;
-  /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.*/
+  /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi.*/
   scrollTarget?: Element | null;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCTopAppBarFoundation | null>;
