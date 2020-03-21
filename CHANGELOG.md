@@ -1,3 +1,30 @@
+#### 6.0.0-alpha.16 (2020-03-21)
+
+##### Breaking Changes
+
+* **Dialog:**  removal of onStateChange (34d129e1)
+
+##### Documentation Changes
+
+* **dialog:**  update to include onOpened and onClosed (30458c85)
+
+##### New Features
+
+* **list:**  list Icons should be aria-hidden (1b165c87)
+* **dialog:**  add onClosed and onOpened (b4c69477)
+* **Chip:**  Allow modifying trailing icon behavior #500 (68b54b87)
+* **Dialog:**  Add escape key handling to preventOutsideDismiss #499 (41427b81)
+* **Tabs:**  Adding minWidth option #532 (2178b1fb)
+
+##### Bug Fixes
+
+* **list:**  use semantic tags (cc1592af)
+* **Icon:**  Adds proper disabled styles for images and components #556 (5a95a47b)
+
+##### Other Changes
+
+* **dialog:**  update to include onOpened and onClosed (f9462c02)
+
 #### 6.0.0-alpha.15 (2020-03-17)
 
 ##### Bug Fixes
