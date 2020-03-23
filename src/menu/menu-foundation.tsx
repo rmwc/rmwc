@@ -99,9 +99,9 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const handleOpen = useCallback(
     (evt: MenuSurfaceOnOpenEventT) => {
       const list = items();
-
+      
       if (
-        props.focusOnOpen &&
+        (props.focusOnOpen || props.focusOnOpen === undefined) &&
         list.length > 0 &&
         !list.some(el => el === document.activeElement)
       ) {
