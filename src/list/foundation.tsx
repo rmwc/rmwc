@@ -141,7 +141,8 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
         },
         isFocusInsideList: () => {
           return !!rootEl.ref?.contains(document.activeElement);
-        }
+        },
+        isRootFocused: () => document.activeElement === rootEl.ref,
       });
     }
   });
@@ -203,6 +204,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const handleKeydown = useCallback(
     (evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) => {
       props.onKeyDown?.(evt);
+
 
       const index = getListItemIndex(evt);
 
