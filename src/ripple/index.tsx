@@ -179,6 +179,7 @@ export const withRipple = ({
             accent={rippleOptions.accent || defaultAccent}
             unbounded={rippleOptions.unbounded || defaultUnbounded}
             surface={rippleOptions.surface || defaultSurface}
+            disabled={rest.disabled}
           >
             <Component {...(rest as any)} ref={ref} />
           </Ripple>
