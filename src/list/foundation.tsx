@@ -246,7 +246,8 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   // layout on mount
   useEffect(() => {
     foundation.layout();
-  }, [foundation]);
+    foundation.setWrapFocus((props.wrapFocus || props.wrapFocus === undefined));
+  }, [foundation, props.wrapFocus]);
 
   return { ...elements };
 };
