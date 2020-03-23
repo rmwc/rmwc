@@ -22,7 +22,8 @@ export interface ListProps {
   apiRef?: (api: ListApi) => void;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCListFoundation | null>;
-  /** Sets the list to allow the up arrow on the first element to focus the last element of the list and vice versa. Defaults to true */ 
+  /** Sets the list to allow the up arrow on the first element to focus the
+   * last element of the list and vice versa. Defaults to true */ 
   wrapFocus?: boolean;
   /** Sets the lists vertical orientation. Defaults to true */
   vertical?: boolean;
