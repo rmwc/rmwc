@@ -247,7 +247,8 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   useEffect(() => {
     foundation.layout();
     foundation.setWrapFocus((props.wrapFocus || props.wrapFocus === undefined));
-  }, [foundation, props.wrapFocus]);
+    foundation.setVerticalOrientation((props.vertical || props.vertical === undefined));
+  }, [foundation, props.wrapFocus, props.vertical]);
 
   return { ...elements };
 };
