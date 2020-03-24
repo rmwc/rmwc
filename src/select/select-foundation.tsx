@@ -106,8 +106,12 @@ export const useSelectFoundation = (
             attr = attr === 'tabindex' ? 'tabIndex' : attr;
             selectedTextEl.setProp(attr, value);
           },
-          openMenu: () => setMenuOpen(true),
-          closeMenu: () => setMenuOpen(false),
+          openMenu: () => {
+            setMenuOpen(true);
+          },
+          closeMenu: () => {
+            setMenuOpen(false);
+          },
           getAnchorElement: () => anchor.current,
           setMenuAnchorElement: (anchorEl: HTMLElement) => setAnchor(anchorEl),
           setMenuAnchorCorner: (anchorCorner: Corner) =>
@@ -139,8 +143,12 @@ export const useSelectFoundation = (
 
       const getCommonAdapterMethods = () => {
         return {
-          addClass: (className: string) => rootEl.addClass(className),
-          removeClass: (className: string) => rootEl.removeClass(className),
+          addClass: (className: string) => {
+            rootEl.addClass(className);
+          },
+          removeClass: (className: string) => {
+            rootEl.removeClass(className);
+          },
           hasClass: (className: string) => rootEl.hasClass(className),
           isRtl: () =>
             rootEl.ref &&
@@ -283,9 +291,14 @@ export const useSelectFoundation = (
 
   const handleClick = useCallback(
     (evt: any) => {
-      const { onMouseDown, onTouchStart } = props;
-      evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
-      evt.type === 'touchstart' && onTouchStart && onTouchStart(evt);
+      // Fixes an issue where clicking on the select when it
+      // is already opens fires events in an incorrect order.
+      // We can't use Reacts menuOpen variable because it is
+      // ahead of the actual DOM animation...
+      // Not ideal, but no other way currently
+      if (rootEl.ref?.querySelector('.mdc-menu-surface--open')) {
+        return;
+      }
 
       const getNormalizedXCoordinate = (evt: any) => {
         const targetClientRect = evt.target.getBoundingClientRect();
@@ -293,16 +306,11 @@ export const useSelectFoundation = (
         return xCoordinate - targetClientRect.left;
       };
 
-      selectedTextEl.ref && selectedTextEl.ref.focus();
-
-      // Timeout corrects an issue for firefox not changing the value
-      // https://github.com/jamesmfriedman/rmwc/issues/412
       const coord = getNormalizedXCoordinate(evt);
-      setTimeout(() => {
-        foundation.handleClick(coord);
-      });
+      selectedTextEl.ref && selectedTextEl.ref.focus();
+      foundation.handleClick(coord);
     },
-    [foundation, selectedTextEl.ref, props]
+    [foundation, selectedTextEl.ref, rootEl.ref]
   );
 
   const handleKeydown = useCallback(

@@ -91,9 +91,9 @@ function EnhancedSelect() {
           }}
         >
           <MenuItems twoLine style={{ width: '400px' }}>
-            <MenuItem data-value="cookies">Cookies</MenuItem>
-            <MenuItem data-value="pizza">Pizza</MenuItem>
-            <MenuItem data-value="icecream">Icecream</MenuItem>
+            <MenuItem data-value="Cookies">Cookies</MenuItem>
+            <MenuItem data-value="Pizza">Pizza</MenuItem>
+            <MenuItem data-value="Icecream">Icecream</MenuItem>
           </MenuItems>
         </Select>
       </div>
@@ -322,6 +322,7 @@ storiesOf('Select', module)
     <Select
       label="Controlled"
       value="one"
+      outlined
       enhanced
       options={['one', 'two', 'three']}
       onChange={evt => {

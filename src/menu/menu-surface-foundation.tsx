@@ -201,6 +201,7 @@ export const useMenuSurfaceFoundation = (
       const existingClose = foundation.close.bind(foundation);
       const newClose = (skipRestoreFocus = false) => {
         emit('onClose', {});
+
         setTimeout(() => {
           if (!getProps().open) {
             existingClose(skipRestoreFocus);
@@ -208,6 +209,13 @@ export const useMenuSurfaceFoundation = (
         });
       };
       foundation.close = newClose;
+
+      // Didn't have another way to hook into the destroy function...
+      const existingDestroy = foundation.destroy.bind(foundation);
+      foundation.destroy = () => {
+        deregisterBodyClickListener();
+        existingDestroy();
+      };
 
       return foundation;
     }
@@ -292,9 +300,7 @@ export const useMenuSurfaceFoundation = (
 
   // open
   useEffect(() => {
-    const value = open;
-
-    if (value) {
+    if (open) {
       const focusableElements = rootEl.ref
         ? rootEl.ref.querySelectorAll<HTMLElement>(
             MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
@@ -302,10 +308,20 @@ export const useMenuSurfaceFoundation = (
         : [];
       firstFocusableElementRef.current =
         focusableElements.length > 0 ? focusableElements[0] : null;
-
       foundation.open();
-    } else if (foundation.isOpen()) {
-      foundation.close();
+    } else {
+      // Yet another hack to try to sync up React
+      // with MDC. This fixes react lifecycle of
+      // changing the open prop externally, while also not
+      // conflicting with any internal events that might have closed
+      // the menu, like a body click or escape key
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          if (foundation.isOpen()) {
+            foundation.close();
+          }
+        });
+      });
     }
   }, [open, foundation, rootEl.ref]);
 

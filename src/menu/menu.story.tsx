@@ -135,13 +135,16 @@ function MenuHoist() {
 storiesOf('Menus', module)
   .add('Menu', () => <MenuStory />)
   .add('MenuSurface', () => <MenuSurfaceStory />)
-  .add('Menu: Always Open', () => (
-    <Menu open={true}>
-      <MenuItem>Cookies</MenuItem>
-      <MenuItem>Pizza</MenuItem>
-      <MenuItem>Icecream</MenuItem>
-    </Menu>
-  ))
+  .add('Menu: Always Open', () => {
+    const [open] = useKnob('boolean', 'open', true);
+    return (
+      <Menu open={open}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </Menu>
+    );
+  })
   .add('Menu: hoistToBody', () => <MenuHoist />)
   .add('SimpleMenu', () => (
     <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
