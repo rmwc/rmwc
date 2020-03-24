@@ -122,7 +122,11 @@ function MenuHoist() {
         >
           Open Menu
         </Button>
-        <Menu open={open} hoistToBody={hoisted} onClose={() => setOpen(false)}>
+        <Menu
+          open={open}
+          renderToPortal={hoisted}
+          onClose={() => setOpen(false)}
+        >
           {options.map((o: string) => (
             <MenuItem key={o}>{o}</MenuItem>
           ))}
@@ -145,7 +149,12 @@ storiesOf('Menus', module)
       </Menu>
     );
   })
-  .add('Menu: hoistToBody', () => <MenuHoist />)
+  .add('Menu: hoistToBody', () => (
+    <>
+      <MenuHoist />
+      <MenuHoist />
+    </>
+  ))
   .add('SimpleMenu', () => (
     <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
       <MenuItem>Cookies</MenuItem>

@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, raf } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
@@ -356,7 +356,7 @@ export const useSelectFoundation = (
       selectedIndex.current = foundation.menuItemValues_.indexOf(value);
       foundation.setValue(value);
     }
-    window.requestAnimationFrame(() => {
+    raf(() => {
       silenceChange.current = false;
     });
   }, [value, foundationValue, stringifiedOptions, foundation]);

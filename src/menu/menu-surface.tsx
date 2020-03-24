@@ -3,6 +3,7 @@ import React from 'react';
 import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { useMenuSurfaceFoundation } from './menu-surface-foundation';
+import { PortalChild, PortalPropT } from '@rmwc/base';
 
 export type AnchorT =
   | 'bottomEnd'
@@ -30,8 +31,8 @@ export interface MenuSurfaceProps {
   open?: boolean;
   /** Make the menu position fixed. */
   fixed?: boolean;
-  /** Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. */
-  hoistToBody?: boolean;
+  /** Renders the menu to a portal. Useful for situations where the content might be cutoff by an overflow: hidden container. You can pass "true" to render to the default RMWC portal. */
+  renderToPortal?: PortalPropT;
   /** Manually position the menu to one of the corners. */
   anchorCorner?: AnchorT;
   /** Callback for when the menu is opened. */
@@ -59,7 +60,7 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
       anchorCorner,
       onOpen,
       onClose,
-      hoistToBody,
+      renderToPortal,
       fixed,
       apiRef,
       foundationRef,
@@ -76,9 +77,11 @@ export const MenuSurface = createComponent<MenuSurfaceProps>(
     ]);
 
     return (
-      <Tag {...rest} element={rootEl} className={className} ref={ref}>
-        {children}
-      </Tag>
+      <PortalChild renderTo={renderToPortal}>
+        <Tag {...rest} element={rootEl} className={className} ref={ref}>
+          {children}
+        </Tag>
+      </PortalChild>
     );
   }
 );

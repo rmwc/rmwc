@@ -2,6 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import '../src/rmwc/styles';
+import { Portal } from '@rmwc/base';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
@@ -23,7 +24,15 @@ const StylesDecorator = storyFn => (
   </div>
 );
 
+const PortalDecorator = storyFn => (
+  <>
+    {storyFn()}
+    <Portal />
+  </>
+);
+
 addDecorator(withKnobs);
 addDecorator(StylesDecorator);
+addDecorator(PortalDecorator);
 
 configure(loadStories, module);

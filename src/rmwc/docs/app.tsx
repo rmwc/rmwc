@@ -276,7 +276,7 @@ class ThemePicker extends React.Component<{
     return (
       <MenuSurfaceAnchor>
         <MenuSurface
-          hoistToBody
+          renderToPortal
           style={{ maxWidth: '100vw', width: '520px' }}
           open={this.state.open}
           onClose={() => {
