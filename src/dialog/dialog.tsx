@@ -3,7 +3,13 @@ import * as React from 'react';
 
 import { MDCDialogFoundation } from '@material/dialog';
 
-import { useClassNames, Tag, createComponent } from '@rmwc/base';
+import {
+  useClassNames,
+  Tag,
+  createComponent,
+  PortalPropT,
+  PortalChild
+} from '@rmwc/base';
 import { Button, ButtonProps } from '@rmwc/button';
 import { useDialogFoundation } from './foundation';
 
@@ -34,6 +40,8 @@ export interface DialogProps {
   onClosed?: (evt: DialogOnCloseEventT) => void;
   /** Prevent the dialog from closing when the scrim is clicked or escape key is pressed. */
   preventOutsideDismiss?: boolean;
+  /** Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass "true" to render to the default RMWC portal. */
+  renderToPortal?: PortalPropT;
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCDialogFoundation>;
 }
@@ -53,26 +61,29 @@ export const Dialog = createComponent<DialogProps>(function Dialog(props, ref) {
     onClosed,
     preventOutsideDismiss,
     foundationRef,
+    renderToPortal,
     'aria-labelledby': ariaLabelledby,
     'aria-describedby': ariaDescribedBy,
     ...rest
   } = props;
 
   return (
-    <Tag {...rest} element={rootEl} className={className} ref={ref}>
-      <div className="mdc-dialog__container">
-        <div
-          className="mdc-dialog__surface"
-          role="alertdialog"
-          aria-modal
-          aria-labelledby={ariaLabelledby}
-          aria-describedby={ariaDescribedBy}
-        >
-          {children}
+    <PortalChild renderTo={renderToPortal}>
+      <Tag {...rest} element={rootEl} className={className} ref={ref}>
+        <div className="mdc-dialog__container">
+          <div
+            className="mdc-dialog__surface"
+            role="alertdialog"
+            aria-modal
+            aria-labelledby={ariaLabelledby}
+            aria-describedby={ariaDescribedBy}
+          >
+            {children}
+          </div>
         </div>
-      </div>
-      <DialogScrim disableInteraction={preventOutsideDismiss} />
-    </Tag>
+        <DialogScrim disableInteraction={preventOutsideDismiss} />
+      </Tag>
+    </PortalChild>
   );
 });
 
