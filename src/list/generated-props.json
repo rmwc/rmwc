@@ -1724,6 +1724,54 @@
           "name": "twoLine",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L14",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Sets the lists vertical orientation. Defaults to true</p>\n"
+            ],
+            "contentsRaw": "Sets the lists vertical orientation. Defaults to true",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "vertical",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L29",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Sets the list to allow the up arrow on the first element to focus the\nlast element of the list and vice versa. Defaults to true</p>\n"
+            ],
+            "contentsRaw": "Sets the list to allow the up arrow on the first element to focus the\nlast element of the list and vice versa. Defaults to true",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "wrapFocus",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L27",
+          "type": "undefined | false | true"
         }
       ]
     },
@@ -1741,7 +1789,7 @@
       },
       "kind": "interface",
       "name": "ListApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L27",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L32",
       "methods": [],
       "properties": [
         {
@@ -1758,7 +1806,7 @@
           },
           "kind": "property",
           "name": "addClassToElementIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L36",
           "type": "(index: number, className: string) => void"
         },
         {
@@ -1775,7 +1823,7 @@
           },
           "kind": "property",
           "name": "focusItemAtIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L39",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
           "type": "(index: number) => void"
         },
         {
@@ -1792,7 +1840,7 @@
           },
           "kind": "property",
           "name": "focusRoot",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L34",
           "type": "() => void"
         },
         {
@@ -1809,7 +1857,7 @@
           },
           "kind": "property",
           "name": "getClasses",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L30",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L35",
           "type": "() => string"
         },
         {
@@ -1826,7 +1874,7 @@
           },
           "kind": "property",
           "name": "getListItemCount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L43",
           "type": "() => number"
         },
         {
@@ -1843,7 +1891,7 @@
           },
           "kind": "property",
           "name": "listElements",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
           "type": "() => HTMLLIElement[]"
         },
         {
@@ -1860,7 +1908,7 @@
           },
           "kind": "property",
           "name": "removeClassFromElementAtIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L37",
           "type": "(index: number, className: string) => void"
         },
         {
@@ -1877,7 +1925,7 @@
           },
           "kind": "property",
           "name": "setAttributeForElementIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L38",
           "type": "(index: number, attr: string, value: any) => void"
         }
       ]

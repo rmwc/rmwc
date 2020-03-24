@@ -162,7 +162,7 @@ TopAppBar
 | `foundationRef` | `React.Ref<MDCTopAppBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
-| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi. |
 | `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
 | `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 
@@ -250,7 +250,7 @@ A simplified syntax for creating an AppBar.
 | `navigationIcon` | `Object \| boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
 | `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
-| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi. |
 | `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
 | `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 | `startContent` | `React.ReactNode` | Additional content to place in the start section. |
