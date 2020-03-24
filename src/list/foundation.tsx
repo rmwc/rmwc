@@ -246,11 +246,18 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   // layout on mount
   useEffect(() => {
     foundation.layout();
+  }, [foundation]);
+  
+  useEffect(() => {
     foundation.setWrapFocus((props.wrapFocus || props.wrapFocus === undefined));
+  }, [foundation, props.wrapFocus]);
+
+  useEffect(() => {
     foundation.setVerticalOrientation(
       (props.vertical || props.vertical === undefined)
     );
-  }, [foundation, props.wrapFocus, props.vertical]);
+  }, [foundation, props.vertical]);
+
 
   return { ...elements };
 };
