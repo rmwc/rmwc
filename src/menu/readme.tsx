@@ -17,6 +17,7 @@ import { ListDivider } from '../list';
 import { Button } from '../button';
 import { Select } from '../select';
 import { IconButton } from '../icon-button';
+import { Checkbox } from '../checkbox';
 
 export default function() {
   return (
@@ -128,7 +129,7 @@ export default function() {
       <DocsSubtitle>Anchoring</DocsSubtitle>
       <DocsP>
         By default, Menus will attempt to automatically position themselves, but
-        this behavior can be overriden by setting the `anchorCorner` prop.
+        this behavior can be overridden by setting the `anchorCorner` prop.
       </DocsP>
 
       <DocsExample>
@@ -162,6 +163,75 @@ export default function() {
                   'bottomStart',
                   'bottomEnd'
                 ]}
+              />
+            </>
+          );
+        }}
+      </DocsExample>
+
+      <DocsSubtitle>Rendering through Portals</DocsSubtitle>
+      <DocsP>
+        Occasionally, you may find your menu being cut off from being inside a
+        container that is styled to be `overflow:hidden`. RMWC provides a
+        `renderToPortal` prop that lets you use React's portal functionality to
+        render the menu dropdown in a different container.
+      </DocsP>
+
+      <DocsP>
+        You can specify any element or selector you want, but the simplest
+        method is to pass `true` and use RMWC's built in `Portal` component.
+      </DocsP>
+
+      <DocsExample codeOnly>
+        {/* jsx */ `
+          // Somewhere at the top level of your app
+          // Render the RMWC Portal
+          // You only have to do this once
+          import React from 'react';
+          import { Portal } from '@rmwc/base';
+
+          export default function App() {
+            return (
+              <div>
+                ...
+                <Portal />
+              </div>
+            )
+          }
+        `}
+      </DocsExample>
+
+      <DocsP>
+        Now you can use the `renderToPortal` prop. Below is a contrived example
+        of a menu being cut off due to `overflow: hidden`.
+      </DocsP>
+
+      <DocsExample>
+        {function Example() {
+          const [renderToPortal, setRenderToPortal] = React.useState(true);
+          const options = ['Cookies', 'Pizza', 'Icecream'];
+          return (
+            <>
+              <div
+                style={{
+                  marginBottom: '10rem',
+                  height: '3.5rem',
+                  overflow: 'hidden'
+                }}
+              >
+                <MenuSurfaceAnchor>
+                  <Button raised>Open Menu</Button>
+                  <Menu open renderToPortal={renderToPortal}>
+                    {options.map(o => (
+                      <MenuItem key={o}>{o}</MenuItem>
+                    ))}
+                  </Menu>
+                </MenuSurfaceAnchor>
+              </div>
+              <Checkbox
+                checked={renderToPortal}
+                onChange={evt => setRenderToPortal(evt.currentTarget.checked)}
+                label="renderToPortal"
               />
             </>
           );

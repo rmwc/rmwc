@@ -164,7 +164,7 @@ function NativeMenu(
   );
 }
 
-const SelectedTextEl = withRipple()(function(props: any) {
+const SelectedTextEl = withRipple({ surface: false })(function(props: any) {
   return <Tag {...props} />;
 });
 
@@ -222,10 +222,13 @@ function EnhancedMenu(props: EnhancedMenuProps & SelectHTMLProps) {
       apiRef={menuApiRef}
       className="mdc-select__menu"
       focusOnOpen
-      hoistToBody
     >
       {!!props.placeholder && (
-        <MenuItem selected={currentIndex - 1 === selectedIndex} data-value="">
+        <MenuItem
+          selected={currentIndex - 1 === selectedIndex}
+          data-value=""
+          theme="textDisabledOnBackground"
+        >
           {placeholder}
         </MenuItem>
       )}
@@ -385,7 +388,6 @@ export const Select = createComponent<SelectProps, SelectHTMLProps>(
                 children={children}
                 defaultValue={defaultValue}
                 placeholder={placeholder}
-                open={menuOpen}
                 selectOptions={selectOptions}
                 elementRef={setNativeControl}
                 onFocus={handleFocus}

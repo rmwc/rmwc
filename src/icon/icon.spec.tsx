@@ -5,13 +5,15 @@ import { Icon } from './';
 describe('Icon', () => {
   it('renders ligature', () => {
     const el = mount(<Icon icon="favorite" />);
-    expect(el.html()).toBe(`<i class="rmwc-icon material-icons">favorite</i>`);
+    expect(el.html()).toBe(
+      `<i class="rmwc-icon rmwc-icon--ligature material-icons">favorite</i>`
+    );
   });
 
   it('renders Url', () => {
     const el2 = mount(<Icon icon="images/icons/twitter.png" />);
     expect(el2.html()).toBe(
-      `<i class="rmwc-icon material-icons rmwc-icon--image" style="background-image: url(images/icons/twitter.png);"></i>`
+      `<i class="rmwc-icon rmwc-icon--url material-icons" style="background-image: url(images/icons/twitter.png);"></i>`
     );
   });
 
@@ -31,7 +33,7 @@ describe('Icon', () => {
       />
     );
     expect(el.html()).toBe(
-      `<i class="rmwc-icon material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
+      `<i class="rmwc-icon rmwc-icon--component material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
     );
 
     const el2 = mount(
@@ -44,7 +46,7 @@ describe('Icon', () => {
       />
     );
     expect(el2.html()).toBe(
-      `<i class="rmwc-icon material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
+      `<i class="rmwc-icon rmwc-icon--component material-icons"><div style="background: purple; width: 24px; height: 24px;"></div></i>`
     );
   });
 
@@ -59,7 +61,7 @@ describe('Icon', () => {
       />
     );
     expect(el.html()).toBe(
-      `<svg class="rmwc-icon material-icons"><path></path></svg>`
+      `<svg class="rmwc-icon rmwc-icon--component material-icons"><path></path></svg>`
     );
   });
 
@@ -88,7 +90,9 @@ describe('Icon', () => {
         }}
       />
     );
-    expect(el.html()).toBe(`<i class="rmwc-icon icon ion-ionic"></i>`);
+    expect(el.html()).toBe(
+      `<i class="rmwc-icon rmwc-icon--className icon ion-ionic"></i>`
+    );
   });
 
   it('Errors when bad strategy is passed', () => {

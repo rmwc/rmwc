@@ -22,7 +22,7 @@
       },
       "kind": "interface",
       "name": "DialogProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L22",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
       "methods": [],
       "properties": [
         {
@@ -46,15 +46,15 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "type": "React.Ref<MDCDialogFoundation>"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback for when the Dialog closes. evt.detail = { action?: string }</p>\n"
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
             ],
-            "contentsRaw": "Callback for when the Dialog closes. evt.detail = { action?: string }",
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -70,7 +70,31 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -94,15 +118,15 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback to use if you need more direct access to the Dialog&#39;s lifecycle.</p>\n"
+              "<p>Callback for when the Dialog finishes opening</p>\n"
             ],
-            "contentsRaw": "Callback to use if you need more direct access to the Dialog's lifecycle.",
+            "contentsRaw": "Callback for when the Dialog finishes opening",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -117,9 +141,9 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
-          "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
         {
           "documentation": {
@@ -142,15 +166,15 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Prevent the dialog from closing when the scrim is clicked.</p>\n"
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
             ],
-            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked.",
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -166,8 +190,32 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "type": "PortalPropT"
         }
       ]
     },
@@ -192,7 +240,7 @@
       },
       "kind": "interface",
       "name": "SimpleDialogProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L75",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L91",
       "extends": [
         "DialogProps"
       ],
@@ -219,7 +267,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L101",
           "type": "React.ReactNode"
         },
         {
@@ -243,7 +291,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L97",
           "type": "React.ReactNode"
         },
         {
@@ -267,7 +315,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L103",
           "type": "React.ReactNode"
         },
         {
@@ -291,7 +339,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L105",
           "type": "React.ReactNode"
         },
         {
@@ -315,7 +363,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L99",
           "type": "React.ReactNode"
         },
         {
@@ -339,7 +387,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "inheritedFrom": "DialogProps.foundationRef",
           "type": "React.Ref<MDCDialogFoundation>"
         },
@@ -364,15 +412,15 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L95",
           "type": "React.ReactNode"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback for when the Dialog closes. evt.detail = { action?: string }</p>\n"
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
             ],
-            "contentsRaw": "Callback for when the Dialog closes. evt.detail = { action?: string }",
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -388,8 +436,33 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
           "inheritedFrom": "DialogProps.onClose",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "inheritedFrom": "DialogProps.onClosed",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -413,16 +486,16 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback to use if you need more direct access to the Dialog&#39;s lifecycle.</p>\n"
+              "<p>Callback for when the Dialog finishes opening</p>\n"
             ],
-            "contentsRaw": "Callback to use if you need more direct access to the Dialog's lifecycle.",
+            "contentsRaw": "Callback for when the Dialog finishes opening",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -437,10 +510,10 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
-          "inheritedFrom": "DialogProps.onStateChange",
-          "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "inheritedFrom": "DialogProps.onOpened",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
         {
           "documentation": {
@@ -463,16 +536,16 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Prevent the dialog from closing when the scrim is clicked.</p>\n"
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
             ],
-            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked.",
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -488,9 +561,34 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "inheritedFrom": "DialogProps.renderToPortal",
+          "type": "PortalPropT"
         },
         {
           "documentation": {
@@ -513,7 +611,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
           "type": "React.ReactNode"
         }
       ]
@@ -539,7 +637,7 @@
       },
       "kind": "interface",
       "name": "DialogTitleProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L165",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L181",
       "methods": [],
       "properties": []
     },
@@ -564,7 +662,7 @@
       },
       "kind": "interface",
       "name": "DialogContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L176",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L192",
       "methods": [],
       "properties": []
     },
@@ -589,7 +687,7 @@
       },
       "kind": "interface",
       "name": "DialogActionsProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L187",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L203",
       "methods": [],
       "properties": []
     },
@@ -614,7 +712,7 @@
       },
       "kind": "interface",
       "name": "DialogButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L198",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L214",
       "extends": [
         "ButtonProps"
       ],
@@ -641,7 +739,7 @@
           },
           "kind": "property",
           "name": "action",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L200",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L216",
           "type": "undefined | string"
         },
         {
@@ -785,7 +883,7 @@
           },
           "kind": "property",
           "name": "isDefaultAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L202",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L218",
           "type": "undefined | false | true"
         },
         {
@@ -948,7 +1046,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueInput",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L12",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L13",
       "extends": [
         "SimpleDialogProps",
         "any"
@@ -976,7 +1074,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L101",
           "inheritedFrom": "SimpleDialogProps.acceptLabel",
           "type": "React.ReactNode"
         },
@@ -1001,7 +1099,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L97",
           "inheritedFrom": "SimpleDialogProps.body",
           "type": "React.ReactNode"
         },
@@ -1026,7 +1124,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L103",
           "inheritedFrom": "SimpleDialogProps.cancelLabel",
           "type": "React.ReactNode"
         },
@@ -1051,7 +1149,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L105",
           "inheritedFrom": "SimpleDialogProps.children",
           "type": "React.ReactNode"
         },
@@ -1076,7 +1174,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L99",
           "inheritedFrom": "SimpleDialogProps.footer",
           "type": "React.ReactNode"
         },
@@ -1101,7 +1199,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "inheritedFrom": "DialogProps.foundationRef",
           "type": "React.Ref<MDCDialogFoundation>"
         },
@@ -1126,7 +1224,7 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L95",
           "inheritedFrom": "SimpleDialogProps.header",
           "type": "React.ReactNode"
         },
@@ -1144,7 +1242,7 @@
           },
           "kind": "property",
           "name": "id",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L16",
           "type": "undefined | string"
         },
         {
@@ -1168,15 +1266,15 @@
           },
           "kind": "property",
           "name": "inputProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L18",
           "type": "TextFieldProps & TextFieldHTMLProps"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback for when the Dialog closes. evt.detail = { action?: string }</p>\n"
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
             ],
-            "contentsRaw": "Callback for when the Dialog closes. evt.detail = { action?: string }",
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1192,8 +1290,33 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
           "inheritedFrom": "DialogProps.onClose",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "inheritedFrom": "DialogProps.onClosed",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -1217,16 +1340,16 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback to use if you need more direct access to the Dialog&#39;s lifecycle.</p>\n"
+              "<p>Callback for when the Dialog finishes opening</p>\n"
             ],
-            "contentsRaw": "Callback to use if you need more direct access to the Dialog's lifecycle.",
+            "contentsRaw": "Callback for when the Dialog finishes opening",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1241,10 +1364,10 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
-          "inheritedFrom": "DialogProps.onStateChange",
-          "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "inheritedFrom": "DialogProps.onOpened",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
         {
           "documentation": {
@@ -1267,16 +1390,16 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Prevent the dialog from closing when the scrim is clicked.</p>\n"
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
             ],
-            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked.",
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1292,9 +1415,34 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "inheritedFrom": "DialogProps.renderToPortal",
+          "type": "PortalPropT"
         },
         {
           "documentation": {
@@ -1317,7 +1465,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
           "inheritedFrom": "SimpleDialogProps.title",
           "type": "React.ReactNode"
         }
@@ -1344,7 +1492,7 @@
       },
       "kind": "interface",
       "name": "DialogQueueProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L27",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
       "extends": [
         "SimpleDialogProps"
       ],
@@ -1371,7 +1519,7 @@
           },
           "kind": "property",
           "name": "acceptLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L85",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L101",
           "inheritedFrom": "SimpleDialogProps.acceptLabel",
           "type": "React.ReactNode"
         },
@@ -1396,7 +1544,7 @@
           },
           "kind": "property",
           "name": "body",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L81",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L97",
           "inheritedFrom": "SimpleDialogProps.body",
           "type": "React.ReactNode"
         },
@@ -1421,7 +1569,7 @@
           },
           "kind": "property",
           "name": "cancelLabel",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L87",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L103",
           "inheritedFrom": "SimpleDialogProps.cancelLabel",
           "type": "React.ReactNode"
         },
@@ -1446,7 +1594,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L89",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L105",
           "inheritedFrom": "SimpleDialogProps.children",
           "type": "React.ReactNode"
         },
@@ -1464,7 +1612,7 @@
           },
           "kind": "property",
           "name": "dialogs",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog-queue.tsx#L29",
           "type": "ArrayEmitter<DialogQueueSpec>"
         },
         {
@@ -1488,7 +1636,7 @@
           },
           "kind": "property",
           "name": "footer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L83",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L99",
           "inheritedFrom": "SimpleDialogProps.footer",
           "type": "React.ReactNode"
         },
@@ -1513,7 +1661,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L46",
           "inheritedFrom": "DialogProps.foundationRef",
           "type": "React.Ref<MDCDialogFoundation>"
         },
@@ -1538,16 +1686,16 @@
           },
           "kind": "property",
           "name": "header",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L79",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L95",
           "inheritedFrom": "SimpleDialogProps.header",
           "type": "React.ReactNode"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback for when the Dialog closes. evt.detail = { action?: string }</p>\n"
+              "<p>Callback for when the Dialog beings to close. evt.detail = { action?: string }</p>\n"
             ],
-            "contentsRaw": "Callback for when the Dialog closes. evt.detail = { action?: string }",
+            "contentsRaw": "Callback for when the Dialog beings to close. evt.detail = { action?: string }",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1563,8 +1711,33 @@
           },
           "kind": "property",
           "name": "onClose",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L28",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L38",
           "inheritedFrom": "DialogProps.onClose",
+          "type": "undefined | (evt: DialogOnCloseEventT) => void"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Callback for when the Dialog finishes closing. evt.detail = { action?: string }</p>\n"
+            ],
+            "contentsRaw": "Callback for when the Dialog finishes closing. evt.detail = { action?: string }",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "onClosed",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L40",
+          "inheritedFrom": "DialogProps.onClosed",
           "type": "undefined | (evt: DialogOnCloseEventT) => void"
         },
         {
@@ -1588,16 +1761,16 @@
           },
           "kind": "property",
           "name": "onOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L26",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L34",
           "inheritedFrom": "DialogProps.onOpen",
           "type": "undefined | (evt: DialogOnOpenEventT) => void"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Callback to use if you need more direct access to the Dialog&#39;s lifecycle.</p>\n"
+              "<p>Callback for when the Dialog finishes opening</p>\n"
             ],
-            "contentsRaw": "Callback to use if you need more direct access to the Dialog's lifecycle.",
+            "contentsRaw": "Callback for when the Dialog finishes opening",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1612,10 +1785,10 @@
             "isStatic": false
           },
           "kind": "property",
-          "name": "onStateChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L30",
-          "inheritedFrom": "DialogProps.onStateChange",
-          "type": "undefined | (state: \"opening\" | \"opened\" | \"closing\" | \"closed\") => void"
+          "name": "onOpened",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L36",
+          "inheritedFrom": "DialogProps.onOpened",
+          "type": "undefined | (evt: DialogOnOpenedEventT) => void"
         },
         {
           "documentation": {
@@ -1638,16 +1811,16 @@
           },
           "kind": "property",
           "name": "open",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L24",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
           "inheritedFrom": "DialogProps.open",
           "type": "undefined | false | true"
         },
         {
           "documentation": {
             "contents": [
-              "<p>Prevent the dialog from closing when the scrim is clicked.</p>\n"
+              "<p>Prevent the dialog from closing when the scrim is clicked or escape key is pressed.</p>\n"
             ],
-            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked.",
+            "contentsRaw": "Prevent the dialog from closing when the scrim is clicked or escape key is pressed.",
             "metadata": {}
           },
           "fileName": "src/dialog/dialog.tsx",
@@ -1663,9 +1836,34 @@
           },
           "kind": "property",
           "name": "preventOutsideDismiss",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L32",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L42",
           "inheritedFrom": "DialogProps.preventOutsideDismiss",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass &quot;true&quot; to render to the default RMWC portal.</p>\n"
+            ],
+            "contentsRaw": "Renders the dialog to a portal. Useful for situations where the dialog might be cutoff by an overflow: hidden container. You can pass \"true\" to render to the default RMWC portal.",
+            "metadata": {}
+          },
+          "fileName": "src/dialog/dialog.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "renderToPortal",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L44",
+          "inheritedFrom": "DialogProps.renderToPortal",
+          "type": "PortalPropT"
         },
         {
           "documentation": {
@@ -1688,7 +1886,7 @@
           },
           "kind": "property",
           "name": "title",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L93",
           "inheritedFrom": "SimpleDialogProps.title",
           "type": "React.ReactNode"
         }
@@ -1715,7 +1913,24 @@
       },
       "kind": "type alias",
       "name": "DialogOnOpenEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L14",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L20",
+      "type": "RMWC.CustomEventT<{}>"
+    },
+    "DialogOnOpenedEventT": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnOpenedEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L21",
       "type": "RMWC.CustomEventT<{}>"
     },
     "DialogOnCloseEventT": {
@@ -1732,7 +1947,24 @@
       },
       "kind": "type alias",
       "name": "DialogOnCloseEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L15",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L22",
+      "type": "RMWC.CustomEventT<>"
+    },
+    "DialogOnClosedEventT": {
+      "fileName": "src/dialog/dialog.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "type alias",
+      "name": "DialogOnClosedEventT",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L23",
       "type": "RMWC.CustomEventT<>"
     },
     "SimpleDialogHTMLProps": {
@@ -1749,7 +1981,7 @@
       },
       "kind": "type alias",
       "name": "SimpleDialogHTMLProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L92",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/dialog/dialog.tsx#L108",
       "type": "RMWC.HTMLProps<HTMLDivElement, Omit<AllHTMLAttributes<HTMLDivElement>, \"title\">>"
     }
   }

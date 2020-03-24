@@ -2,7 +2,8 @@ import {
   useFoundation,
   closest,
   emptyClientRect,
-  FoundationElement
+  FoundationElement,
+  raf
 } from '@rmwc/base';
 import { MenuSurfaceProps, MenuSurfaceApi } from './menu-surface';
 
@@ -39,7 +40,6 @@ export const useMenuSurfaceFoundation = (
   const firstFocusableElementRef = useRef<HTMLElement | null>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const anchorElementRef = useRef<HTMLElement | null>(null);
-  const hoistedRef = useRef(false);
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -52,7 +52,9 @@ export const useMenuSurfaceFoundation = (
       rootEl: FoundationElement<any, any>;
     }): MenuSurfaceApi => {
       return {
-        hoistMenuToBody: () => hoistMenuToBody(),
+        hoistMenuToBody: () => {
+          // this is controlled by the renderToPortal prop
+        },
         setAnchorCorner: (corner: Corner) => foundation.setAnchorCorner(corner),
         setAnchorElement: (element: HTMLElement) =>
           (anchorElementRef.current = element),
@@ -201,6 +203,7 @@ export const useMenuSurfaceFoundation = (
       const existingClose = foundation.close.bind(foundation);
       const newClose = (skipRestoreFocus = false) => {
         emit('onClose', {});
+
         setTimeout(() => {
           if (!getProps().open) {
             existingClose(skipRestoreFocus);
@@ -208,6 +211,13 @@ export const useMenuSurfaceFoundation = (
         });
       };
       foundation.close = newClose;
+
+      // Didn't have another way to hook into the destroy function...
+      const existingDestroy = foundation.destroy.bind(foundation);
+      foundation.destroy = () => {
+        deregisterBodyClickListener();
+        existingDestroy();
+      };
 
       return foundation;
     }
@@ -224,32 +234,6 @@ export const useMenuSurfaceFoundation = (
   );
 
   rootEl.setProp('onKeyDown', handleKeydown, true);
-
-  const hoistMenuToBody = useCallback(() => {
-    if (rootEl.ref?.parentElement) {
-      document.body.appendChild(
-        rootEl.ref.parentElement.removeChild(rootEl.ref)
-      );
-      hoistedRef.current = true;
-      foundation.setIsHoisted(true);
-
-      // correct layout for open menu
-      if (foundation.isOpen()) {
-        // wait an extra frame so that the element is actually
-        // done being hoisted and painting. Fixes Issue #453
-        // @ts-ignore unsafe private variable access
-        window.requestAnimationFrame(() => foundation.autoPosition_());
-      }
-    }
-  }, [foundation, rootEl.ref]);
-
-  const unhoistMenuFromBody = useCallback(() => {
-    if (anchorElementRef.current && rootEl.ref) {
-      anchorElementRef.current.appendChild(rootEl.ref);
-      hoistedRef.current = false;
-      foundation.setIsHoisted(false);
-    }
-  }, [foundation, rootEl.ref]);
 
   // fixed
   useEffect(() => {
@@ -269,12 +253,34 @@ export const useMenuSurfaceFoundation = (
     }
   }, [rootEl.ref]);
 
-  // hoistToBody
+  // renderToPortal
   useEffect(() => {
-    if (props.hoistToBody !== undefined) {
-      props.hoistToBody ? hoistMenuToBody() : unhoistMenuFromBody();
-    }
-  }, [props.hoistToBody, foundation, hoistMenuToBody, unhoistMenuFromBody]);
+    props.renderToPortal
+      ? foundation.setIsHoisted(true)
+      : foundation.setIsHoisted(false);
+
+    const autoPosition = () => {
+      try {
+        // silence this, it blows up loudly occasionally
+        // @ts-ignore unsafe private variable access
+        foundation.autoPosition_();
+      } catch (err) {}
+    };
+
+    // wait an extra frame so that the element is actually
+    // done being hoisted and painting. Fixes Issue #453
+    const handler = props.renderToPortal ? autoPosition : () => {};
+
+    raf(() => {
+      foundation.isOpen() && autoPosition();
+    });
+
+    // fix positioning on window resize when renderToPortal is true
+    window.addEventListener('resize', handler);
+    return () => {
+      window.removeEventListener('resize', handler);
+    };
+  }, [props.renderToPortal, foundation]);
 
   // anchorCorner
   useEffect(() => {
@@ -292,9 +298,7 @@ export const useMenuSurfaceFoundation = (
 
   // open
   useEffect(() => {
-    const value = open;
-
-    if (value) {
+    if (open) {
       const focusableElements = rootEl.ref
         ? rootEl.ref.querySelectorAll<HTMLElement>(
             MDCMenuSurfaceFoundation.strings.FOCUSABLE_ELEMENTS
@@ -302,25 +306,24 @@ export const useMenuSurfaceFoundation = (
         : [];
       firstFocusableElementRef.current =
         focusableElements.length > 0 ? focusableElements[0] : null;
-
       foundation.open();
-    } else if (foundation.isOpen()) {
-      foundation.close();
+    } else {
+      // Yet another hack to try to sync up React
+      // with MDC. This fixes react lifecycle of
+      // changing the open prop externally, while also not
+      // conflicting with any internal events that might have closed
+      // the menu, like a body click or escape key
+      raf(() => {
+        if (foundation.isOpen()) {
+          foundation.close();
+        }
+      }, 2);
     }
   }, [open, foundation, rootEl.ref]);
 
   useEffect(() => {
     setOpen(!!props.open);
   }, [props.open]);
-
-  useEffect(() => {
-    return () => {
-      // @ts-ignore Fixes unsafe access from MDC when component unmounts
-      foundation.adapter_.notifyClose = () => {};
-      unhoistMenuFromBody();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return { ...elements };
 };

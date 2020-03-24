@@ -6975,7 +6975,7 @@
       },
       "kind": "interface",
       "name": "SelectIconApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L427",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L429",
       "methods": [],
       "properties": [
         {
@@ -6992,7 +6992,7 @@
           },
           "kind": "property",
           "name": "getFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L428",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L430",
           "type": "() => MDCSelectIconFoundation"
         }
       ]
@@ -7018,7 +7018,7 @@
       },
       "kind": "interface",
       "name": "SelectIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L432",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L434",
       "extends": [
         "IconProps"
       ],
@@ -7038,7 +7038,7 @@
           },
           "kind": "property",
           "name": "apiRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L433",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L435",
           "type": "undefined | (api: SelectIconApi) => void"
         },
         {
@@ -7088,7 +7088,7 @@
       },
       "kind": "interface",
       "name": "SelectHelperTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L454",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L456",
       "methods": [],
       "properties": [
         {
@@ -7112,7 +7112,7 @@
           },
           "kind": "property",
           "name": "persistent",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L456",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L458",
           "type": "undefined | false | true"
         },
         {
@@ -7136,7 +7136,7 @@
           },
           "kind": "property",
           "name": "validationMsg",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L458",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/select/index.tsx#L460",
           "type": "undefined | false | true"
         }
       ]

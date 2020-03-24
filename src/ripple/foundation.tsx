@@ -192,5 +192,9 @@ export const useRippleFoundation = (
     foundation.setUnbounded(!!props.unbounded);
   }, [props.unbounded, foundation]);
 
+  useEffect(() => {
+    props.disabled && foundation.handleBlur();
+  }, [props.disabled, foundation]);
+
   return { ...elements };
 };

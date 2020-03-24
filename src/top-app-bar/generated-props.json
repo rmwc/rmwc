@@ -148,9 +148,9 @@
         {
           "documentation": {
             "contents": [
-              "<p>Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.</p>\n"
+              "<p>Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example <a href=\"https://codesandbox.io/s/reverent-austin-16zzi\">https://codesandbox.io/s/reverent-austin-16zzi</a>.</p>\n"
             ],
-            "contentsRaw": "Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.",
+            "contentsRaw": "Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi.",
             "metadata": {}
           },
           "fileName": "src/top-app-bar/index.tsx",
@@ -446,9 +446,9 @@
         {
           "documentation": {
             "contents": [
-              "<p>Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.</p>\n"
+              "<p>Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example <a href=\"https://codesandbox.io/s/reverent-austin-16zzi\">https://codesandbox.io/s/reverent-austin-16zzi</a>.</p>\n"
             ],
-            "contentsRaw": "Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.",
+            "contentsRaw": "Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi.",
             "metadata": {}
           },
           "fileName": "src/top-app-bar/index.tsx",

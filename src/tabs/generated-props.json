@@ -173,7 +173,7 @@
           },
           "kind": "property",
           "name": "foundationRef",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L38",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L40",
           "type": "React.Ref<MDCTabFoundation | null>"
         },
         {
@@ -251,6 +251,30 @@
         {
           "documentation": {
             "contents": [
+              "<p>Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap.</p>\n"
+            ],
+            "contentsRaw": "Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap.",
+            "metadata": {}
+          },
+          "fileName": "src/tabs/tab.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "minWidth",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L36",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
               "<p>Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string }</p>\n"
             ],
             "contentsRaw": "Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string }",
@@ -269,7 +293,7 @@
           },
           "kind": "property",
           "name": "onInteraction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L36",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L38",
           "type": "undefined | (evt: TabOnInteractionEventT) => void"
         },
         {
@@ -526,7 +550,7 @@
       },
       "kind": "type alias",
       "name": "TabApi",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L41",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/tabs/tab.tsx#L43",
       "type": ""
     },
     "TabBarOnActivateEventT": {

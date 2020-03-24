@@ -41,7 +41,7 @@
     "deploy:docs": "npm run build:docsite && git add docs -f && git commit --allow-empty -m 'Deploying docs' && git push --force && npm run clean",
     "changelog": "changelog || echo 'No Changes'",
     "storybook": "start-storybook --port 9001",
-    "storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest @types/storybook__react@latest",
+    "storybook:update": "npm i -D @storybook/addon-actions@latest @storybook/addon-knobs@latest @storybook/react@latest",
     "preversion": "npm run clean && npm test -- --coverage && npm run docgen && git add --all && git commit --allow-empty -m 'Generating Props'",
     "version": "npm run build:code && node scripts/fix-package-version && npm run changelog && git add CHANGELOG.md && git commit --allow-empty -m 'Updating Changelog'",
     "postpublish": "npm run clean && npm run build:docsite && git add docs && git commit --allow-empty -m 'Building docs' &&  git push && git push --tags && npm run clean"
@@ -60,7 +60,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^4.3.5",
-    "@types/storybook__react": "^4.0.2",
+    "@types/storybook__react": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^7.0.2",
     "copyfiles": "^2.2.0",

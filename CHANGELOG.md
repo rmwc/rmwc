@@ -1,3 +1,55 @@
+#### 6.0.0-rc.0 (2020-03-24)
+
+##### Breaking Changes
+
+* **Menu:**  Replacing `hoistToBody` with `renderToPortal` functionality (05129ad5)
+
+##### Chores
+
+*  linting issues with long lines (410cc6f8)
+
+##### New Features
+
+* **Dialog:**  Adding renderToPortal functionality (31532dd7)
+* **list:**
+  *  adds vertical property (7e3d6252)
+  *  add wrapFocus prop which proxies  the foundation's setWrapFocus() method. (b29cc52d)
+  *  implement isRootFocused (33502010)
+
+##### Bug Fixes
+
+* **list:**  use new  useEffect() per prop (79b17062)
+* **menu:**  focusOnOpen defaults to true (54ed96af)
+* **Ripple:**  Corrects issue with disabled ripple selection #515 (4463d1a3)
+* **Slider:**  Fixes issue with slider interactivity in dialog on open #538 (be5347e1)
+
+#### 6.0.0-alpha.16 (2020-03-21)
+
+##### Breaking Changes
+
+* **Dialog:**  removal of onStateChange (34d129e1)
+
+##### Documentation Changes
+
+* **dialog:**  update to include onOpened and onClosed (30458c85)
+
+##### New Features
+
+* **list:**  list Icons should be aria-hidden (1b165c87)
+* **dialog:**  add onClosed and onOpened (b4c69477)
+* **Chip:**  Allow modifying trailing icon behavior #500 (68b54b87)
+* **Dialog:**  Add escape key handling to preventOutsideDismiss #499 (41427b81)
+* **Tabs:**  Adding minWidth option #532 (2178b1fb)
+
+##### Bug Fixes
+
+* **list:**  use semantic tags (cc1592af)
+* **Icon:**  Adds proper disabled styles for images and components #556 (5a95a47b)
+
+##### Other Changes
+
+* **dialog:**  update to include onOpened and onClosed (f9462c02)
+
 #### 6.0.0-alpha.15 (2020-03-17)
 
 ##### Bug Fixes

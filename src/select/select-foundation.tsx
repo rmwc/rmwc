@@ -1,4 +1,4 @@
-import { useFoundation } from '@rmwc/base';
+import { useFoundation, raf } from '@rmwc/base';
 import {
   MDCSelectFoundation,
   MDCSelectAdapter,
@@ -106,8 +106,12 @@ export const useSelectFoundation = (
             attr = attr === 'tabindex' ? 'tabIndex' : attr;
             selectedTextEl.setProp(attr, value);
           },
-          openMenu: () => setMenuOpen(true),
-          closeMenu: () => setMenuOpen(false),
+          openMenu: () => {
+            setMenuOpen(true);
+          },
+          closeMenu: () => {
+            setMenuOpen(false);
+          },
           getAnchorElement: () => anchor.current,
           setMenuAnchorElement: (anchorEl: HTMLElement) => setAnchor(anchorEl),
           setMenuAnchorCorner: (anchorCorner: Corner) =>
@@ -139,8 +143,12 @@ export const useSelectFoundation = (
 
       const getCommonAdapterMethods = () => {
         return {
-          addClass: (className: string) => rootEl.addClass(className),
-          removeClass: (className: string) => rootEl.removeClass(className),
+          addClass: (className: string) => {
+            rootEl.addClass(className);
+          },
+          removeClass: (className: string) => {
+            rootEl.removeClass(className);
+          },
           hasClass: (className: string) => rootEl.hasClass(className),
           isRtl: () =>
             rootEl.ref &&
@@ -232,7 +240,6 @@ export const useSelectFoundation = (
         };
 
         doWork();
-        //isNative() ? doWork() : window.requestAnimationFrame(doWork);
       };
 
       // This is only set one time in the constructor which
@@ -243,6 +250,22 @@ export const useSelectFoundation = (
           return adapter.getMenuItemValues();
         }
       });
+
+      // We have to add some logic after the original init function
+      // in order to sync placeholder labels
+      // Also... MDC fires change events on init which is the
+      // exact opposite of what we want to happen with normal selects
+      const init = f.init.bind(f);
+      f.init = () => {
+        silenceChange.current = true;
+        init();
+
+        const placeholder = String(getProps().placeholder || '');
+        if (!f.getValue() && placeholder) {
+          adapter.setSelectedText(placeholder);
+        }
+        silenceChange.current = false;
+      };
 
       return f;
     }
@@ -268,9 +291,14 @@ export const useSelectFoundation = (
 
   const handleClick = useCallback(
     (evt: any) => {
-      const { onMouseDown, onTouchStart } = props;
-      evt.type === 'mousedown' && onMouseDown && onMouseDown(evt);
-      evt.type === 'touchstart' && onTouchStart && onTouchStart(evt);
+      // Fixes an issue where clicking on the select when it
+      // is already opens fires events in an incorrect order.
+      // We can't use Reacts menuOpen variable because it is
+      // ahead of the actual DOM animation...
+      // Not ideal, but no other way currently
+      if (rootEl.ref?.querySelector('.mdc-menu-surface--open')) {
+        return;
+      }
 
       const getNormalizedXCoordinate = (evt: any) => {
         const targetClientRect = evt.target.getBoundingClientRect();
@@ -278,16 +306,11 @@ export const useSelectFoundation = (
         return xCoordinate - targetClientRect.left;
       };
 
-      selectedTextEl.ref && selectedTextEl.ref.focus();
-
-      // Timeout corrects an issue for firefox not changing the value
-      // https://github.com/jamesmfriedman/rmwc/issues/412
       const coord = getNormalizedXCoordinate(evt);
-      setTimeout(() => {
-        foundation.handleClick(coord);
-      });
+      selectedTextEl.ref && selectedTextEl.ref.focus();
+      foundation.handleClick(coord);
     },
-    [foundation, selectedTextEl.ref, props]
+    [foundation, selectedTextEl.ref, rootEl.ref]
   );
 
   const handleKeydown = useCallback(
@@ -322,12 +345,18 @@ export const useSelectFoundation = (
   const foundationValue = foundation.getValue();
   const value = (props.value || props.defaultValue) as string;
 
+  // MDC Select is a bit of a mess here...
+  // - We have to set our value
+  // - In the event of a controlled value change, we don't want to fire a change event
+  // - Jump through stupid hoops to prevent the event from firing
   useEffect(() => {
     silenceChange.current = true;
-    if (value !== undefined) {
-      value !== foundationValue && foundation.setValue(value);
+    if (value !== undefined && value !== foundationValue) {
+      // @ts-ignore unsafe private variable access
+      selectedIndex.current = foundation.menuItemValues_.indexOf(value);
+      foundation.setValue(value);
     }
-    setTimeout(() => {
+    raf(() => {
       silenceChange.current = false;
     });
   }, [value, foundationValue, stringifiedOptions, foundation]);
@@ -341,18 +370,6 @@ export const useSelectFoundation = (
   useEffect(() => {
     rootEl.ref && menu.current?.setAnchorElement(rootEl.ref);
   }, [rootEl.ref]);
-
-  // handle setting the index
-  // const foundationSelectedIndex = foundation.getSelectedIndex();
-  // useEffect(() => {
-  //   setSelectedIndex(foundationSelectedIndex);
-  // }, [foundationSelectedIndex]);
-
-  // Handle selectedIndex change
-  // useEffect(() => {
-  //   selectedIndex !== foundation.getSelectedIndex() &&
-  //     foundation.handleMenuItemAction(selectedIndex);
-  // }, [selectedIndex, foundation]);
 
   return {
     notchWidth,

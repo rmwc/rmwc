@@ -224,6 +224,95 @@ export default function() {
         }}
       </DocsExample>
 
+      <DocsSubtitle>Rendering through Portals</DocsSubtitle>
+      <DocsP>
+        Occasionally, you may find your dialog being cut off from being inside a
+        container that is styled to be `overflow:hidden`. RMWC provides a
+        `renderToPortal` prop that lets you use React's portal functionality to
+        render the menu dropdown in a different container.
+      </DocsP>
+
+      <DocsP>
+        You can specify any element or selector you want, but the simplest
+        method is to pass `true` and use RMWC's built in `Portal` component.
+      </DocsP>
+
+      <DocsExample codeOnly>
+        {/* jsx */ `
+          // Somewhere at the top level of your app
+          // Render the RMWC Portal
+          // You only have to do this once
+          import React from 'react';
+          import { Portal } from '@rmwc/base';
+
+          export default function App() {
+            return (
+              <div>
+                ...
+                <Portal />
+              </div>
+            )
+          }
+        `}
+      </DocsExample>
+
+      <DocsP>
+        Now you can use the `renderToPortal` prop. Below is a contrived example
+        of a dialog being cut off due to `overflow: hidden`.
+      </DocsP>
+
+      <DocsExample>
+        {function Example() {
+          const [renderToPortal, setRenderToPortal] = React.useState(true);
+          const [open, setOpen] = React.useState(false);
+          return (
+            <>
+              <div
+                id="dialog-portal-example"
+                style={{
+                  transform: 'translateZ(0)',
+                  height: '20rem',
+                  overflow: 'hidden'
+                }}
+              >
+                <SimpleDialog
+                  title={`This is a ${
+                    renderToPortal ? 'working!' : 'broken :/'
+                  }`}
+                  renderToPortal={renderToPortal}
+                  body="Use `renderToPortal` to get around `overflow:hidden` and layout issues."
+                  open={open}
+                  onClose={evt => {
+                    console.log(evt.detail.action);
+                    setOpen(false);
+                  }}
+                />
+
+                <Button
+                  raised
+                  onClick={() => {
+                    setRenderToPortal(false);
+                    setOpen(true);
+                  }}
+                >
+                  Open Broken :/
+                </Button>
+
+                <Button
+                  raised
+                  onClick={() => {
+                    setRenderToPortal(true);
+                    setOpen(true);
+                  }}
+                >
+                  Open in Portal
+                </Button>
+              </div>
+            </>
+          );
+        }}
+      </DocsExample>
+
       <DocProps
         src={propsSrc}
         components={[

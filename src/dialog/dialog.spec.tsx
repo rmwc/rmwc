@@ -46,7 +46,6 @@ describe('Dialog', () => {
     let opened = 0;
     let close = 0;
     let closed = 0;
-    let lifecycle: string[] = [];
 
     const el = mount(
       <Dialog
@@ -57,7 +56,6 @@ describe('Dialog', () => {
           el.setProps({ open: false });
         }}
         onClosed={() => closed++}
-        onStateChange={state => lifecycle.push(state)}
       >
         <DialogTitle>Dialog Title</DialogTitle>
 
@@ -85,16 +83,6 @@ describe('Dialog', () => {
     expect(opened).toBe(2);
     expect(close).toBe(2);
     expect(closed).toBe(2);
-    expect(lifecycle).toEqual([
-      'opening',
-      'opened',
-      'closing',
-      'closed',
-      'opening',
-      'opened',
-      'closing',
-      'closed'
-    ]);
     done();
   });
 

@@ -10,6 +10,7 @@ import App from './app';
 // @ts-ignore
 import { unregister } from './register-service-worker';
 import { RMWCProvider } from '@rmwc/provider';
+import { Portal } from '@rmwc/base';
 
 const renderApp = (Component: React.ComponentType<any>) => {
   ReactDOM.render(
@@ -17,6 +18,7 @@ const renderApp = (Component: React.ComponentType<any>) => {
       <AppContainer>
         <Router history={history}>
           <Component location={window.location.href} />
+          <Portal />
         </Router>
       </AppContainer>
     </RMWCProvider>,

@@ -384,6 +384,16 @@ ul li {
   justify-content: center;
 }
 
+#page-dialogs #dialog-portal-example {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#page-dialogs #dialog-portal-example > * {
+  margin: 1rem;
+}
+
 /* page ripples */
 #page-ripples .live-preview {
   justify-content: center;

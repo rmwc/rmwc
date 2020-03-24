@@ -176,6 +176,7 @@ export const withRipple = ({
       if (ripple) {
         return (
           <Ripple
+            {...rest}
             accent={rippleOptions.accent || defaultAccent}
             unbounded={rippleOptions.unbounded || defaultUnbounded}
             surface={rippleOptions.surface || defaultSurface}

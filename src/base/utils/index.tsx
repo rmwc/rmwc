@@ -12,3 +12,5 @@ export * from './apply-passive';
 export * from './get-display-name';
 export * from './empty-client-rect';
 export * from './data-table-context';
+export * from './trigger-window-resize';
+export * from './raf';
