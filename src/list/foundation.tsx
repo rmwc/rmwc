@@ -282,6 +282,12 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     foundation.setSingleSelection(isSingleSelection);
   }, [foundation, props.singleSelection]);
 
+  useEffect(() => {
+    if (props.selectedIndex) {
+      foundation.setSelectedIndex(props.selectedIndex)
+    }
+  }, [foundation, props.selectedIndex]);
+
 
   const setEnabled = (index: number, isEnabled: boolean) => {
     foundation.setEnabled(index,isEnabled);

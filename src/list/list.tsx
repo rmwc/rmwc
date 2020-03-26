@@ -30,6 +30,8 @@ export interface ListProps {
   vertical?: boolean;
   /** Sets the list to be a selection list. Enables the enter and space keys for selecting/deselecting a list item. Defaults to false */
   singleSelection?: boolean;
+  /** sets the selectedIdex for singleSelection variants */
+  selectedIndex?: number;
 }
 
 export interface ListApi {
@@ -59,6 +61,7 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     wrapFocus,
     vertical,
     singleSelection,
+    selectedIndex,
     ...rest
   } = props;
   const { rootEl, listItemClasses, setEnabled } = useListFoundation(props);
