@@ -3,6 +3,7 @@ import * as React from 'react';
 import { MDCListFoundation } from '@material/list';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useListFoundation } from './foundation';
+import { ListContext } from './list-context';
 
 export type ListOnActionEventT = RMWC.CustomEventT<number>;
 
@@ -27,6 +28,8 @@ export interface ListProps {
   wrapFocus?: boolean;
   /** Sets the lists vertical orientation. Defaults to true */
   vertical?: boolean;
+  /** Sets the list to be a selection list. Enables the enter and space keys for selecting/deselecting a list item. Defaults to false */
+  singleSelection?: boolean;
 }
 
 export interface ListApi {
@@ -53,9 +56,12 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     nonInteractive,
     onAction,
     foundationRef,
+    singleSelection,
     ...rest
   } = props;
-  const { rootEl } = useListFoundation(props);
+  const { rootEl, listItemClasses } = useListFoundation(props);
+  const getListItemClassesForIndex = (index: number): string[]  => 
+    listItemClasses[index] || [];
   const className = useClassNames(props, [
     'mdc-list',
     {
@@ -65,5 +71,9 @@ export const List = createComponent<ListProps>(function List(props, ref) {
       'mdc-list--non-interactive': nonInteractive
     }
   ]);
-  return <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />;
+  return  (
+    <ListContext.Provider value={{getClassName: getListItemClassesForIndex}}>
+      <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
+    </ListContext.Provider>
+  )
 });

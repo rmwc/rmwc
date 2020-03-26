@@ -1,8 +1,10 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { MDCListFoundation, MDCListAdapter } from '@material/list';
 import { matches, FoundationElement } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { ListProps, ListApi } from './list';
+
+interface ListItemClassesState  { [index: number]: string[] };
 
 export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   const listElements = useCallback((el: Element | null): HTMLLIElement[] => {
@@ -13,6 +15,10 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     }
     return [];
   }, []);
+
+
+  const [ listItemClasses, setListItemClasses ] =
+    useState<ListItemClassesState>({});
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -61,23 +67,37 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           if (attr === 'tabindex') {
             attr = 'tabIndex';
           }
-
           const element = listElements(rootEl.ref)[index];
           if (element) {
             element.setAttribute(attr, String(value));
           }
         },
         addClassForElementIndex: (index: number, className: string) => {
-          const element = listElements(rootEl.ref)[index];
-          if (element) {
-            element.classList.add(className);
-          }
+          setListItemClasses((listItems: ListItemClassesState) => {
+            if (listItems[index] && listItems[index].indexOf(className) > -1) {
+              // no dupes
+              return listItems
+            }
+
+            if ( listItems[index] 
+              && listItems[index].indexOf(className) === -1) {
+              return  {...listItems, [index]: [...listItems[index],className]}
+            } 
+
+            return {...listItems, [index]: [className]}
+          });
         },
         removeClassForElementIndex: (index: number, className: string) => {
-          const element = listElements(rootEl.ref)[index];
-          if (element) {
-            element.classList.remove(className);
-          }
+          setListItemClasses((listItems: ListItemClassesState) => {
+            if (listItems[index] && listItems[index].indexOf(className) > -1) {
+              return {
+                ...listItems, 
+                [index]: listItems[index].filter((name) => name !== className) 
+              }
+            }
+
+            return listItems
+          })
         },
         focusItemAtIndex: (index: number) => {
           const element = listElements(rootEl.ref)[index];
@@ -258,6 +278,10 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     );
   }, [foundation, props.vertical]);
 
+  useEffect(() => {
+    const isSingleSelection = props.singleSelection || false;
+    foundation.setSingleSelection(isSingleSelection);
+  }, [foundation, props.singleSelection]);
 
-  return { ...elements };
+  return { ...elements, listItemClasses};
 };
