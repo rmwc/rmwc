@@ -56,6 +56,8 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     nonInteractive,
     onAction,
     foundationRef,
+    wrapFocus,
+    vertical,
     singleSelection,
     ...rest
   } = props;
