@@ -156,7 +156,7 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           }
         },
         notifyAction: (index: number) => {
-          emit('onAction', index);
+          emit('onAction', {index});
         },
         isFocusInsideList: () => {
           return !!rootEl.ref?.contains(document.activeElement);
