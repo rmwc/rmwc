@@ -16,7 +16,6 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     return [];
   }, []);
 
-
   const [ listItemClasses, setListItemClasses ] =
     useState<ListItemClassesState>({});
 
@@ -283,5 +282,10 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     foundation.setSingleSelection(isSingleSelection);
   }, [foundation, props.singleSelection]);
 
-  return { ...elements, listItemClasses};
+
+  const setEnabled = (index: number, isEnabled: boolean) => {
+    foundation.setEnabled(index,isEnabled);
+  }
+
+  return { ...elements, listItemClasses, setEnabled};
 };

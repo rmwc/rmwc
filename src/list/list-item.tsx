@@ -44,15 +44,22 @@ export const ListItem = withRipple({ surface: false })(
       if (liRef.current) { setIndex(getIndex()) }
     }, [liRef,getIndex])
 
+    React.useEffect(() => {
+      if (index > -1 && props.disabled !== undefined) {
+        // let the foundation handle disabled items--it also handles aria updates
+        context.setEnabled(index,!props.disabled)
+      }
+    },[index, props.disabled, context])
+
     const { selected, activated, disabled, ...rest } = props;
     const className = useClassNames(props, [
       'mdc-list-item',  ...context.getClassName(index),
       {
         'mdc-list-item--selected': props.selected,
         'mdc-list-item--activated': props.activated,
-        'mdc-list-item--disabled': props.disabled
       }
     ]);
+    
     return <Tag tag="li" tabIndex={0} {...rest} className={className} ref={liRef} />;
   })
 );

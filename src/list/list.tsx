@@ -61,9 +61,13 @@ export const List = createComponent<ListProps>(function List(props, ref) {
     singleSelection,
     ...rest
   } = props;
-  const { rootEl, listItemClasses } = useListFoundation(props);
-  const getListItemClassesForIndex = (index: number): string[]  => 
-    listItemClasses[index] || [];
+  const { rootEl, listItemClasses, setEnabled } = useListFoundation(props);
+
+  const listItemValues= React.useMemo(() => ({
+    getClassName: (index: number): string[]  =>  listItemClasses[index] || [],
+    setEnabled
+  }),[listItemClasses,setEnabled]);
+
   const className = useClassNames(props, [
     'mdc-list',
     {
@@ -73,9 +77,9 @@ export const List = createComponent<ListProps>(function List(props, ref) {
       'mdc-list--non-interactive': nonInteractive
     }
   ]);
+
   return  (
-    <ListContext.Provider value={{getClassName: getListItemClassesForIndex}}>
-      <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
+    <ListContext.Provider value={listItemValues}><Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
     </ListContext.Provider>
   )
 });
