@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { classNames, useClassNames, Tag, createComponent } from '@rmwc/base';
+import { classNames, useClassNames, Tag, createComponent, mergeRefs } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 import { ListContext } from './list-context';
@@ -21,6 +21,8 @@ export interface ListItemProps extends RMWC.WithRippleProps {
 export const ListItem = withRipple({ surface: false })(
   createComponent<ListItemProps>(function ListItem(props, ref) {
     const liRef = React.createRef();
+    const finalRef = ref ? mergeRefs(ref,liRef) : liRef
+        
     const context = React.useContext(ListContext);
     const [index, setIndex] = React.useState<number>(-1);
 
@@ -60,7 +62,7 @@ export const ListItem = withRipple({ surface: false })(
       }
     ]);
     
-    return <Tag tag="li" tabIndex={0} {...rest} className={className} ref={liRef} />;
+    return <Tag tag="li" tabIndex={0} {...rest} className={className} ref={finalRef} />;
   })
 );
 
