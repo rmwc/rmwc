@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { version } from '../';
+import { version } from '../../..';
 import { Typography } from '@rmwc/typography';
 
 import { Card, CardMedia } from '@rmwc/card';
@@ -11,7 +11,7 @@ import { Icon } from '@rmwc/icon';
 import styles from './home.module.css';
 import { Button } from '@rmwc/button';
 
-import { galleryContent } from './menu-content';
+import { galleryContent } from '../../common/menu-content';
 
 const checklist = [
   "Uses Google's official material-components-web library",
@@ -168,7 +168,7 @@ export const Home = () => {
               key={ex.label}
               name={ex.label}
               ex={ex.gallery}
-              url={ex.url}
+              url={ex.url!}
             />
           );
         })}

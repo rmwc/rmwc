@@ -165,7 +165,7 @@ export const useMenuSurfaceFoundation = (
         };
       };
 
-      const foundation = new MDCMenuSurfaceFoundation({
+      const f = new MDCMenuSurfaceFoundation({
         addClass: (className: string) => {
           rootEl.addClass(className);
         },
@@ -200,7 +200,7 @@ export const useMenuSurfaceFoundation = (
 
       // Fixes a very annoying issue where the menu isn't stateful
       // this allows us to keep the menu open based on its controlled prop.
-      const existingClose = foundation.close.bind(foundation);
+      const existingClose = f.close.bind(f);
       const newClose = (skipRestoreFocus = false) => {
         emit('onClose', {});
 
@@ -210,16 +210,16 @@ export const useMenuSurfaceFoundation = (
           }
         });
       };
-      foundation.close = newClose;
+      f.close = newClose;
 
       // Didn't have another way to hook into the destroy function...
-      const existingDestroy = foundation.destroy.bind(foundation);
-      foundation.destroy = () => {
+      const existingDestroy = f.destroy.bind(f);
+      f.destroy = () => {
         deregisterBodyClickListener();
         existingDestroy();
       };
 
-      return foundation;
+      return f;
     }
   });
 

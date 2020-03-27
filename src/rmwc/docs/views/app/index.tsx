@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import React, { useEffect, useState, useCallback } from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
-import { menuContent } from './menu-content';
+import { menuContent, MenuItemT } from '../../common/menu-content';
 
 // @ts-ignore
 import { version } from 'rmwc/rmwc';
@@ -48,11 +48,11 @@ import {
   MenuItem
 } from '@rmwc/menu';
 import { Button } from '@rmwc/button';
-import { toCamel, toDashCase } from '@rmwc/base';
+import { toCamel, toDashCase, Portal } from '@rmwc/base';
 
-import Home from './home';
-import { SiteSearch } from './site-search';
-import { history } from './history';
+import Home from '../home';
+import { SiteSearch } from '../site-search';
+import { history } from '../../common/history';
 
 const OLDER_VERSIONS = ['4.0.6', '3.0.11', '2.2.3', '1.9.4'];
 
@@ -161,14 +161,14 @@ const getTheme = (themeName: string) => {
   }, {});
 };
 
-const MainMenuItem = ({ url, label }: { url: string; label: string }) => {
+const MainMenuItem = ({ url, label }: { url?: string; label: string }) => {
   return (
     <ListItem
       tag={Link}
       to={url}
       onClick={() => window.scrollTo(0, 0)}
       activated={
-        window.location.pathname.split('/').pop() === url.split('/').pop()
+        window.location.pathname.split('/').pop() === url?.split('/').pop()
       }
     >
       <span>{label}</span>
@@ -452,28 +452,7 @@ function Nav(props: DrawerProps) {
       <Drawer id="main-nav" {...props}>
         <DrawerContent>
           <List>
-            {menuContent.map(m => {
-              if ('options' in m) {
-                return (
-                  <CollapsibleList
-                    key={m.label}
-                    startOpen={m.options.some(
-                      o =>
-                        window.location.pathname.split('/').pop() ===
-                        o.url.split('/').pop()
-                    )}
-                    handle={
-                      <SimpleListItem text={m.label} metaIcon="chevron_right" />
-                    }
-                  >
-                    {m.options.map(v => (
-                      <MainMenuItem key={v.label} label={v.label} url={v.url} />
-                    ))}
-                  </CollapsibleList>
-                );
-              }
-              return <MainMenuItem label={m.label} url={m.url} key={m.label} />;
-            })}
+            <NavItems options={menuContent} />
           </List>
         </DrawerContent>
         <Ripple
@@ -568,38 +547,70 @@ export function App() {
 
         <DrawerAppContent tag="main" className="app__content">
           <RouterSwitch>
-            {menuContent.map(m => {
-              if ('options' in m) {
-                return m.options.map(v => (
-                  <Route
-                    path={v.url}
-                    exact
-                    render={() => {
-                      document.title = `RMWC | React Material Web Components | ${v.label}`;
-                      return <v.component />;
-                    }}
-                    key={v.label + 'sub'}
-                  />
-                ));
-              }
-
-              return (
-                <Route
-                  path={m.url}
-                  exact
-                  key={m.label}
-                  render={() => {
-                    document.title = `RMWC | React Material Web Components | ${m.label}`;
-                    return <m.component />;
-                  }}
-                />
-              );
-            })}
             <Route path="/" exact component={Home} />
+            <DocRoutes options={menuContent} />
           </RouterSwitch>
         </DrawerAppContent>
       </div>
+      <Portal />
     </ThemeProvider>
+  );
+}
+
+function NavItems({ options }: { options: MenuItemT[] }) {
+  return (
+    <>
+      {options.map(m => {
+        if (m.options) {
+          return (
+            <CollapsibleList
+              key={m.label}
+              startOpen={
+                m.label === 'Components' ||
+                m.options?.some(
+                  o =>
+                    o.url &&
+                    window.location.pathname.split('/').pop() ===
+                      o.url?.split('/').pop()
+                )
+              }
+              handle={
+                <SimpleListItem text={m.label} metaIcon="chevron_right" />
+              }
+            >
+              <NavItems options={m.options!} />
+            </CollapsibleList>
+          );
+        }
+        return <MainMenuItem label={m.label} url={m.url!} key={m.label} />;
+      })}
+    </>
+  );
+}
+
+function DocRoutes({ options }: { options: MenuItemT[] }) {
+  return (
+    <>
+      {options.map((m, index) => {
+        if (m.options) {
+          return <DocRoutes key={index} options={m.options} />;
+        }
+
+        return (
+          <Route
+            path={m.url}
+            exact
+            key={index}
+            render={() => {
+              document.title = `RMWC | React Material Web Components | ${m.label}`;
+              const Component = m.component || <></>;
+              // @ts-ignore
+              return <Component />;
+            }}
+          />
+        );
+      })}
+    </>
   );
 }
 

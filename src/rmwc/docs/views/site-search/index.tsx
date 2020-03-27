@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { menuContent } from './menu-content';
+import { menuContent, MenuItemT } from '../../common/menu-content';
 import { Menu, MenuItems, MenuSurfaceAnchor } from '@rmwc/menu';
 
 import { SimpleListItem } from '@rmwc/list';
@@ -7,7 +7,7 @@ import { TextField } from '@rmwc/textfield';
 import { Link } from 'react-router-dom';
 import { CircularProgress } from '@rmwc/circular-progress';
 
-import { history } from './history';
+import { history } from '../../common/history';
 import styles from './site-search.module.css';
 import { IconPropT } from '@rmwc/types';
 
@@ -23,16 +23,23 @@ type SiteSearchItemT = {
   title: string; //"RMWC | React Material Web Components | Installation"
 };
 
-const searchComponents = (val: string) =>
-  menuContent
-    .reduce<Array<{ label: string; url: string }>>((acc, val) => {
-      if ('options' in val) {
-        acc.push(...val.options);
+const componentsList = (() => {
+  const walkOptions = (options: MenuItemT[]) => {
+    return options.reduce<MenuItemT[]>((acc, val) => {
+      if (val.options) {
+        acc.push(...walkOptions(val.options!));
       } else {
         acc.push(val);
       }
       return acc;
-    }, [])
+    }, []);
+  };
+
+  return walkOptions(menuContent);
+})();
+
+const searchComponents = (val: string) =>
+  componentsList
     .filter(c => {
       return c.label.toLowerCase().includes(val.toLowerCase());
     })
@@ -44,7 +51,7 @@ const searchComponents = (val: string) =>
       },
       sectionName: c.label,
       snippet: `View docs for ${c.label}`,
-      url: c.url
+      url: c.url!
     }));
 
 const searchGoogle = async (val: string, abortController: AbortController) => {

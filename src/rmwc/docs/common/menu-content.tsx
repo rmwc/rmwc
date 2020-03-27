@@ -1,13 +1,13 @@
 import React from 'react';
 import { CircularProgress } from '@rmwc/circular-progress';
-import { DocsMarkdown } from '../../doc-utils';
+import { DocsMarkdown } from '../../../doc-utils';
 
-import InstallationMD from './README-INSTALLATION.md';
-import UsageMD from './README-USAGE.md';
-import StylingMD from './README-STYLING-THEMING.md';
-import MethodologyMD from './README-METHODOLOGY.md';
-import LibraryIntegrationsMD from './README-LIBRARY-INTEGRATIONS.md';
-import TypesMD from './README-TYPES.md';
+import InstallationMD from '../markdown/README-INSTALLATION.md';
+import UsageMD from '../markdown/README-USAGE.md';
+import StylingMD from '../markdown/README-STYLING-THEMING.md';
+import MethodologyMD from '../markdown/README-METHODOLOGY.md';
+import LibraryIntegrationsMD from '../markdown/README-LIBRARY-INTEGRATIONS.md';
+import TypesMD from '../markdown/README-TYPES.md';
 
 import { galleryExample as avatarExample } from '@rmwc/avatar/readme';
 import { galleryExample as badgeExample } from '@rmwc/badge/readme';
@@ -51,7 +51,7 @@ const LibraryIntegrationsDocs = () => (
 );
 const TypeDocs = () => <DocsMarkdown fileSrc={TypesMD} />;
 
-const ResourcesDocs = React.lazy(() => import('./resources'));
+const ResourcesDocs = React.lazy(() => import('../views/resources'));
 
 const AvatarDocs = React.lazy(() => import('@rmwc/avatar/readme'));
 const BadgeDocs = React.lazy(() => import('@rmwc/badge/readme'));
@@ -117,19 +117,13 @@ const Loadable = (Component: any) => () => (
   </React.Suspense>
 );
 
-type SingleMenuItemT = {
+export type MenuItemT = {
   label: string;
-  url: string;
+  url?: string;
   gallery?: React.ReactNode;
-  component: () => JSX.Element;
+  component?: () => JSX.Element;
+  options?: MenuItemT[];
 };
-
-type MenuWithSubSectionsT = {
-  label: string;
-  options: SingleMenuItemT[];
-};
-
-type MenuItemT = SingleMenuItemT | MenuWithSubSectionsT;
 
 export const menuContent: MenuItemT[] = [
   {
@@ -141,19 +135,9 @@ export const menuContent: MenuItemT[] = [
         component: Loadable(InstallationDocs)
       },
       {
-        label: 'Resources',
-        url: `/resources`,
-        component: Loadable(ResourcesDocs)
-      },
-      {
-        label: 'Usage',
+        label: 'Basic Usage',
         url: `/usage`,
         component: Loadable(UsageDocs)
-      },
-      {
-        label: 'Styling and Theming',
-        url: `/styling-theming`,
-        component: Loadable(StylingThemingDocs)
       },
       {
         label: 'Project Methodology',
@@ -173,247 +157,269 @@ export const menuContent: MenuItemT[] = [
     ]
   },
   {
-    label: 'Avatars',
-    url: `/avatars`,
-    gallery: avatarExample,
-    component: Loadable(AvatarDocs)
+    label: 'Style and Theming',
+    url: `/styling-theming`,
+    component: Loadable(StylingThemingDocs)
   },
   {
-    label: 'Badges',
-    url: `/badges`,
-    gallery: badgeExample,
-    component: Loadable(BadgeDocs)
+    label: 'Resources',
+    url: `/resources`,
+    component: Loadable(ResourcesDocs)
   },
   {
-    label: 'Buttons',
+    label: 'Components',
     options: [
+      {
+        label: 'Avatars',
+        url: `/avatars`,
+        gallery: avatarExample,
+        component: Loadable(AvatarDocs)
+      },
+      {
+        label: 'Badges',
+        url: `/badges`,
+        gallery: badgeExample,
+        component: Loadable(BadgeDocs)
+      },
       {
         label: 'Buttons',
-        url: `/buttons`,
-        gallery: buttonExample,
-        component: Loadable(ButtonDocs)
+        options: [
+          {
+            label: 'Buttons',
+            url: `/buttons`,
+            gallery: buttonExample,
+            component: Loadable(ButtonDocs)
+          },
+          {
+            label: 'Fabs',
+            url: `/fabs`,
+            gallery: fabExample,
+            component: Loadable(FabDocs)
+          },
+          {
+            label: 'Icon Buttons',
+            url: `/icon-buttons`,
+            gallery: iconButtonExample,
+            component: Loadable(IconButtonDocs)
+          }
+        ]
       },
       {
-        label: 'Fabs',
-        url: `/fabs`,
-        gallery: fabExample,
-        component: Loadable(FabDocs)
+        label: 'Cards',
+        url: `/cards`,
+        gallery: cardExample,
+        component: Loadable(CardDocs)
       },
       {
-        label: 'Icon Buttons',
-        url: `/icon-buttons`,
-        gallery: iconButtonExample,
-        component: Loadable(IconButtonDocs)
-      }
-    ]
-  },
-  {
-    label: 'Cards',
-    url: `/cards`,
-    gallery: cardExample,
-    component: Loadable(CardDocs)
-  },
-  {
-    label: 'Chips',
-    url: `/chips`,
-    gallery: chipExample,
-    component: Loadable(ChipDocs)
-  },
-  {
-    label: 'Data Tables',
-    url: `/data-tables`,
-    gallery: dataTableExample,
-    component: Loadable(DataTableDocs)
-  },
-  {
-    label: 'Dialogs',
-    url: `/dialogs`,
-    gallery: dialogExample,
-    component: Loadable(DialogDocs)
-  },
-  {
-    label: 'Drawers',
-    url: `/drawers`,
-    gallery: drawerExample,
-    component: Loadable(DrawerDocs)
-  },
-  {
-    label: 'Elevation',
-    url: `/elevation`,
-    gallery: elevationExample,
-    component: Loadable(ElevationDocs)
-  },
-  {
-    label: 'Grid Lists',
-    url: `/grid-lists`,
-    gallery: gridListExample,
-    component: Loadable(GridListDocs)
-  },
-  {
-    label: 'Image Lists',
-    url: `/image-lists`,
-    gallery: imageListExample,
-    component: Loadable(ImageListDocs)
-  },
-  {
-    label: 'Inputs and Controls',
-    options: [
-      {
-        label: 'Checkboxes',
-        url: `/checkboxes`,
-        gallery: checkboxExample,
-        component: Loadable(CheckboxDocs)
+        label: 'Chips',
+        url: `/chips`,
+        gallery: chipExample,
+        component: Loadable(ChipDocs)
       },
       {
-        label: 'FormFields',
-        url: `/formfields`,
-        component: Loadable(FormfieldDocs)
+        label: 'Data Tables',
+        url: `/data-tables`,
+        gallery: dataTableExample,
+        component: Loadable(DataTableDocs)
       },
       {
-        label: 'Radio Buttons',
-        url: `/radio-buttons`,
-        gallery: radioExample,
-        component: Loadable(RadioDocs)
+        label: 'Dialogs',
+        url: `/dialogs`,
+        gallery: dialogExample,
+        component: Loadable(DialogDocs)
       },
       {
-        label: 'Select Menus',
-        url: `/select-menus`,
-        gallery: selectExample,
-        component: Loadable(SelectDocs)
+        label: 'Drawers',
+        url: `/drawers`,
+        gallery: drawerExample,
+        component: Loadable(DrawerDocs)
       },
       {
-        label: 'Sliders',
-        url: `/sliders`,
-        gallery: sliderExample,
-        component: Loadable(SliderDocs)
+        label: 'Elevation',
+        url: `/elevation`,
+        gallery: elevationExample,
+        component: Loadable(ElevationDocs)
       },
       {
-        label: 'Switches',
-        url: `/switches`,
-        gallery: switchExample,
-        component: Loadable(SwitchDocs)
+        label: 'Grids',
+        options: [
+          {
+            label: 'Layout Grid',
+            url: `/layout-grid`,
+            gallery: gridExample,
+            component: Loadable(GridDocs)
+          },
+          {
+            label: 'Image Lists',
+            url: `/image-lists`,
+            gallery: imageListExample,
+            component: Loadable(ImageListDocs)
+          },
+          {
+            label: 'Grid Lists',
+            url: `/grid-lists`,
+            gallery: gridListExample,
+            component: Loadable(GridListDocs)
+          }
+        ]
       },
+
       {
-        label: 'Text Fields',
-        url: `/text-fields`,
-        gallery: textfieldExample,
-        component: Loadable(TextfieldDocs)
-      }
-    ]
-  },
-  {
-    label: 'Layout Grid',
-    url: `/layout-grid`,
-    gallery: gridExample,
-    component: Loadable(GridDocs)
-  },
-  {
-    label: 'Progress',
-    options: [
-      {
-        label: 'Linear Progress',
-        url: `/linear-progress`,
-        gallery: linearProgressExample,
-        component: Loadable(LinearProgressDocs)
+        label: 'Inputs and Controls',
+        options: [
+          {
+            label: 'Checkboxes',
+            url: `/checkboxes`,
+            gallery: checkboxExample,
+            component: Loadable(CheckboxDocs)
+          },
+          {
+            label: 'FormFields',
+            url: `/formfields`,
+            component: Loadable(FormfieldDocs)
+          },
+          {
+            label: 'Radio Buttons',
+            url: `/radio-buttons`,
+            gallery: radioExample,
+            component: Loadable(RadioDocs)
+          },
+          {
+            label: 'Select Menus',
+            url: `/select-menus`,
+            gallery: selectExample,
+            component: Loadable(SelectDocs)
+          },
+          {
+            label: 'Sliders',
+            url: `/sliders`,
+            gallery: sliderExample,
+            component: Loadable(SliderDocs)
+          },
+          {
+            label: 'Switches',
+            url: `/switches`,
+            gallery: switchExample,
+            component: Loadable(SwitchDocs)
+          },
+          {
+            label: 'Text Fields',
+            url: `/text-fields`,
+            gallery: textfieldExample,
+            component: Loadable(TextfieldDocs)
+          }
+        ]
       },
+
       {
-        label: 'Circular Progress',
-        url: `/circular-progress`,
-        gallery: circularProgressExample,
-        component: Loadable(CircularProgressDocsDocs)
-      }
-    ]
-  },
-  {
-    label: 'Lists',
-    options: [
+        label: 'Progress',
+        options: [
+          {
+            label: 'Linear Progress',
+            url: `/linear-progress`,
+            gallery: linearProgressExample,
+            component: Loadable(LinearProgressDocs)
+          },
+          {
+            label: 'Circular Progress',
+            url: `/circular-progress`,
+            gallery: circularProgressExample,
+            component: Loadable(CircularProgressDocsDocs)
+          }
+        ]
+      },
       {
         label: 'Lists',
-        url: `/lists`,
-        gallery: listExample,
-        component: Loadable(ListDocs)
+        options: [
+          {
+            label: 'Lists',
+            url: `/lists`,
+            gallery: listExample,
+            component: Loadable(ListDocs)
+          },
+          {
+            label: 'Collapsible',
+            url: `/lists-collapsible`,
+            component: Loadable(ListCollapsibleDocs)
+          },
+          {
+            label: 'Variants',
+            url: `/lists-variants`,
+            component: Loadable(ListVariantsDocs)
+          }
+        ]
       },
       {
-        label: 'Collapsible',
-        url: `/lists-collapsible`,
-        component: Loadable(ListCollapsibleDocs)
+        label: 'Menus',
+        url: `/menus`,
+        gallery: menuExample,
+        component: Loadable(MenuDocs)
       },
       {
-        label: 'Variants',
-        url: `/lists-variants`,
-        component: Loadable(ListVariantsDocs)
+        label: 'Ripples',
+        url: `/ripples`,
+        gallery: rippleExample,
+        component: Loadable(RippleDocs)
+      },
+
+      {
+        label: 'Snackbars',
+        url: `/snackbars`,
+        gallery: snackbarExample,
+        component: Loadable(SnackbarDocs)
+      },
+      {
+        label: 'Tabs',
+        url: `/tabs`,
+        gallery: tabsExample,
+        component: Loadable(TabsDocs)
+      },
+      {
+        label: 'Theme',
+        url: `/theme`,
+        gallery: themeExample,
+        component: Loadable(ThemeDocs)
+      },
+      {
+        label: 'Tooltips',
+        url: `/tooltips`,
+        gallery: tooltipExample,
+        component: Loadable(TooltipDocs)
+      },
+      {
+        label: 'Top App Bar',
+        url: `/top-app-bar`,
+        gallery: topAppBarExample,
+        component: Loadable(TopAppBarDocs)
+      },
+
+      {
+        label: 'Typography',
+        url: `/typography`,
+        gallery: typographyExample,
+        component: Loadable(TypographyDocs)
+      },
+      {
+        label: 'Icons',
+        url: `/icons`,
+        gallery: iconExample,
+        component: Loadable(IconDocs)
+      },
+      {
+        label: 'Provider',
+        url: `/provider`,
+        component: Loadable(ProviderDocs)
       }
     ]
-  },
-  {
-    label: 'Menus',
-    url: `/menus`,
-    gallery: menuExample,
-    component: Loadable(MenuDocs)
-  },
-  {
-    label: 'Ripples',
-    url: `/ripples`,
-    gallery: rippleExample,
-    component: Loadable(RippleDocs)
-  },
-
-  {
-    label: 'Snackbars',
-    url: `/snackbars`,
-    gallery: snackbarExample,
-    component: Loadable(SnackbarDocs)
-  },
-  {
-    label: 'Tabs',
-    url: `/tabs`,
-    gallery: tabsExample,
-    component: Loadable(TabsDocs)
-  },
-  {
-    label: 'Theme',
-    url: `/theme`,
-    gallery: themeExample,
-    component: Loadable(ThemeDocs)
-  },
-  {
-    label: 'Tooltips',
-    url: `/tooltips`,
-    gallery: tooltipExample,
-    component: Loadable(TooltipDocs)
-  },
-  {
-    label: 'Top App Bar',
-    url: `/top-app-bar`,
-    gallery: topAppBarExample,
-    component: Loadable(TopAppBarDocs)
-  },
-
-  {
-    label: 'Typography',
-    url: `/typography`,
-    gallery: typographyExample,
-    component: Loadable(TypographyDocs)
-  },
-  {
-    label: 'Icons',
-    url: `/icons`,
-    gallery: iconExample,
-    component: Loadable(IconDocs)
-  },
-  {
-    label: 'Provider',
-    url: `/provider`,
-    component: Loadable(ProviderDocs)
   }
 ];
 
 export const galleryContent = menuContent
-  .reduce<SingleMenuItemT[]>((acc, item) => {
+  .reduce<MenuItemT[]>((acc, item) => {
     if ('options' in item) {
       acc.push(...item.options);
     } else {
-      acc.push(item as SingleMenuItemT);
+      acc.push(item as MenuItemT);
     }
 
     return acc;
