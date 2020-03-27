@@ -124,10 +124,10 @@ A collapsible list component.
 
 | Name | Type | Description |
 |------|------|-------------|
+| `defaultOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 | `handle` | `ReactElement<any>` | The handle that opens and closes the collapsible section. Usually a ListItem. |
 | `onClose` | `undefined \| () => void` | Callback for when the collapsible list closes. |
 | `onOpen` | `undefined \| () => void` | Callback for when the collapsible list opens. |
 | `open` | `undefined \| false \| true` | Show the collapsible list as open. |
-| `startOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 
 

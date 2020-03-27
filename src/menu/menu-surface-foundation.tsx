@@ -40,6 +40,7 @@ export const useMenuSurfaceFoundation = (
   const firstFocusableElementRef = useRef<HTMLElement | null>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const anchorElementRef = useRef<HTMLElement | null>(null);
+  const timerIdRef = useRef<number | null>(null);
 
   const { foundation, ...elements } = useFoundation({
     props,
@@ -204,7 +205,7 @@ export const useMenuSurfaceFoundation = (
       const newClose = (skipRestoreFocus = false) => {
         emit('onClose', {});
 
-        setTimeout(() => {
+        timerIdRef.current = window.setTimeout(() => {
           if (!getProps().open) {
             existingClose(skipRestoreFocus);
           }
@@ -324,6 +325,13 @@ export const useMenuSurfaceFoundation = (
   useEffect(() => {
     setOpen(!!props.open);
   }, [props.open]);
+
+  // cleanup
+  useEffect(() => {
+    return () => {
+      timerIdRef.current && window.clearTimeout(timerIdRef.current);
+    };
+  }, []);
 
   return { ...elements };
 };

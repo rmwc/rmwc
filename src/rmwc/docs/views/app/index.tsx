@@ -53,8 +53,7 @@ import { toCamel, toDashCase, Portal } from '@rmwc/base';
 import Home from '../home';
 import { SiteSearch } from '../site-search';
 import { history } from '../../common/history';
-
-const OLDER_VERSIONS = ['4.0.6', '3.0.11', '2.2.3', '1.9.4'];
+import { DOC_VERSIONS } from '../../common/doc-versions';
 
 const DEFAULT_THEME = {
   '--mdc-theme-primary': '#6200ee',
@@ -209,7 +208,7 @@ function AppBar({
               }
             >
               <MenuItem>{version}</MenuItem>
-              {OLDER_VERSIONS.map(v => (
+              {DOC_VERSIONS.map(v => (
                 <MenuItem key={v} tag="a" href={`/version/${v}`}>
                   {v}
                 </MenuItem>
@@ -565,7 +564,7 @@ function NavItems({ options }: { options: MenuItemT[] }) {
           return (
             <CollapsibleList
               key={m.label}
-              startOpen={
+              defaultOpen={
                 m.label === 'Components' ||
                 m.options?.some(
                   o =>

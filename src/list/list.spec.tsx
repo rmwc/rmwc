@@ -136,7 +136,7 @@ describe('Collapsible List', () => {
       <List>
         <ListItem>One</ListItem>
         <CollapsibleList
-          startOpen
+          defaultOpen
           handle={<ListItem className="handle">Handle</ListItem>}
         >
           <ListItem>Two</ListItem>
@@ -162,7 +162,7 @@ describe('Collapsible List', () => {
       <List>
         <ListItem>One</ListItem>
         <CollapsibleList
-          startOpen
+          defaultOpen
           handle={<ListItem className="handle">Handle</ListItem>}
         >
           <ListItem>Two</ListItem>
