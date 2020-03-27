@@ -137,12 +137,12 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
           }
         },
         notifyAction: (index: number) => {
-          emit('onAction', index);
+          emit('onAction', { index });
         },
         isFocusInsideList: () => {
           return !!rootEl.ref?.contains(document.activeElement);
         },
-        isRootFocused: () => document.activeElement === rootEl.ref,
+        isRootFocused: () => document.activeElement === rootEl.ref
       });
     }
   });
@@ -205,7 +205,6 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
     (evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) => {
       props.onKeyDown?.(evt);
 
-
       const index = getListItemIndex(evt);
 
       if (index >= 0) {
@@ -247,17 +246,16 @@ export const useListFoundation = (props: ListProps & React.HTMLProps<any>) => {
   useEffect(() => {
     foundation.layout();
   }, [foundation]);
-  
+
   useEffect(() => {
-    foundation.setWrapFocus((props.wrapFocus || props.wrapFocus === undefined));
+    foundation.setWrapFocus(props.wrapFocus || props.wrapFocus === undefined);
   }, [foundation, props.wrapFocus]);
 
   useEffect(() => {
     foundation.setVerticalOrientation(
-      (props.vertical || props.vertical === undefined)
+      props.vertical || props.vertical === undefined
     );
   }, [foundation, props.vertical]);
-
 
   return { ...elements };
 };

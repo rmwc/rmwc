@@ -4,7 +4,7 @@ import { MDCListFoundation } from '@material/list';
 import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { useListFoundation } from './foundation';
 
-export type ListOnActionEventT = RMWC.CustomEventT<number>;
+export type ListOnActionEventT = RMWC.CustomEventT<{ index: number }>;
 
 /** A List Component */
 export interface ListProps {
@@ -23,7 +23,8 @@ export interface ListProps {
   /** Advanced: A reference to the MDCFoundation. */
   foundationRef?: React.Ref<MDCListFoundation | null>;
   /** Sets the list to allow the up arrow on the first element to focus the
-   * last element of the list and vice versa. Defaults to true */ 
+   * last element of the list and vice versa. Defaults to true */
+
   wrapFocus?: boolean;
   /** Sets the lists vertical orientation. Defaults to true */
   vertical?: boolean;
@@ -65,5 +66,7 @@ export const List = createComponent<ListProps>(function List(props, ref) {
       'mdc-list--non-interactive': nonInteractive
     }
   ]);
-  return <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />;
+  return (
+    <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
+  );
 });
