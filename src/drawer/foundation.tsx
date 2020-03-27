@@ -3,8 +3,13 @@ import {
   MDCDismissibleDrawerFoundation
 } from '@material/drawer';
 import { DrawerProps } from '.';
-import { useFoundation, FocusTrap, focusTrapFactory } from '@rmwc/base';
-import { useRef, useEffect } from 'react';
+import {
+  useFoundation,
+  FocusTrap,
+  focusTrapFactory,
+  triggerWindowResize
+} from '@rmwc/base';
+import { useRef, useEffect, useCallback } from 'react';
 
 const useDrawerFoundationFactory = (
   MDCConstructor:
@@ -20,10 +25,10 @@ const useDrawerFoundationFactory = (
         rootEl: true,
         scrimEl: true
       },
-      foundation: ({ rootEl, emit }) => {
+      foundation: ({ rootEl, emit, getProps }) => {
         let previousFocusEl: HTMLElement;
 
-        return new MDCConstructor({
+        const f = new MDCConstructor({
           addClass: (className: string) => rootEl.addClass(className),
           removeClass: (className: string) => rootEl.removeClass(className),
           hasClass: (className: string) => rootEl.hasClass(className),
@@ -49,8 +54,12 @@ const useDrawerFoundationFactory = (
               (activeNavItemEl as HTMLElement).focus();
             }
           },
-          notifyClose: () => emit('onClose', {}, true /* shouldBubble */),
-          notifyOpen: () => emit('onOpen', {}, true /* shouldBubble */),
+          notifyClose: () => {
+            //emit('onClose', {}, true /* shouldBubble */);
+          },
+          notifyOpen: () => {
+            emit('onOpen', {}, true /* shouldBubble */);
+          },
           trapFocus: () => {
             try {
               focusTrapRef.current?.trapFocus();
@@ -62,6 +71,22 @@ const useDrawerFoundationFactory = (
             } catch (err) {}
           }
         });
+
+        // Fixes a very annoying issue where the menu isn't stateful
+        // this allows us to keep the menu open based on its controlled prop.
+        const existingClose = f.close.bind(f);
+        const newClose = () => {
+          emit('onClose', {});
+
+          setTimeout(() => {
+            if (!getProps().open) {
+              existingClose();
+            }
+          });
+        };
+        f.close = newClose;
+
+        return f;
       }
     });
 
@@ -77,21 +102,26 @@ const useDrawerFoundationFactory = (
       props.open ? foundation.open() : foundation.close();
     }, [props.open, foundation]);
 
-    const handleScrimClick = () => {
+    const handleScrimClick = useCallback(() => {
       (foundation as MDCModalDrawerFoundation).handleScrimClick?.();
-    };
+    }, [foundation]);
 
-    const handleKeyDown = (evt: React.KeyboardEvent & KeyboardEvent) => {
-      props.onKeyDown?.(evt);
-      foundation.handleKeydown(evt);
-    };
+    const handleKeyDown = useCallback(
+      (evt: React.KeyboardEvent & KeyboardEvent) => {
+        props.onKeyDown?.(evt);
+        foundation.handleKeydown(evt);
+      },
+      [foundation, props.onKeyDown]
+    );
 
-    const handleTransitionEnd = (
-      evt: React.TransitionEvent & TransitionEvent
-    ) => {
-      props.onTransitionEnd?.(evt);
-      foundation.handleTransitionEnd(evt);
-    };
+    const handleTransitionEnd = useCallback(
+      (evt: React.TransitionEvent & TransitionEvent) => {
+        props.onTransitionEnd?.(evt);
+        foundation.handleTransitionEnd(evt);
+        triggerWindowResize();
+      },
+      [foundation, props.onTransitionEnd]
+    );
 
     rootEl.setProp('onKeyDown', handleKeyDown, true);
     rootEl.setProp('onTransitionEnd', handleTransitionEnd, true);
