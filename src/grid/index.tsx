@@ -21,7 +21,7 @@ export interface GridProps {
 /** A Grid component */
 export const Grid = createComponent<GridProps>(function Grid(props, ref) {
   const { children, fixedColumnWidth, align, ...rest } = props;
-  const needsInnerGrid = !(getDisplayName(children) === 'GridInner');
+  const needsInnerGrid = !(getDisplayName(children) === 'GridRow');
   const className = useClassNames(props, [
     'mdc-layout-grid',
     {
@@ -32,7 +32,7 @@ export const Grid = createComponent<GridProps>(function Grid(props, ref) {
 
   return (
     <Tag {...rest} className={className} ref={ref}>
-      {!!needsInnerGrid ? <GridInner>{children}</GridInner> : children}
+      {!!needsInnerGrid ? <GridRow>{children}</GridRow> : children}
     </Tag>
   );
 });
@@ -75,15 +75,15 @@ export const GridCell = createComponent<GridCellProps>(function GridCell(
   return <Tag {...rest} ref={ref} className={className} />;
 });
 
-/** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export interface GridInnerProps {}
+/** By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids. */
+export interface GridRowProps {}
 
-/** By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids. */
-export const GridInner = createComponent<GridInnerProps>(function GridInner(
+/** By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids. */
+export const GridRow = createComponent<GridRowProps>(function GridRow(
   props,
   ref
 ) {
   const className = useClassNames(props, ['mdc-layout-grid__inner']);
   return <Tag {...props} ref={ref} className={className} />;
 });
-GridInner.displayName = 'GridInner';
+GridRow.displayName = 'GridRow';

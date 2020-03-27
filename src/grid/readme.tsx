@@ -4,7 +4,7 @@ import { Docs, DocsExample, DocProps } from '@doc-utils';
 import propsSrc from './generated-props.json';
 import examples from './generated-examples.json';
 
-import { Grid, GridCell, GridInner } from '.';
+import { Grid, GridCell, GridRow } from '.';
 
 export default function() {
   return (
@@ -25,16 +25,16 @@ export default function() {
       </DocsExample>
       <DocsExample label="Sub Grids">
         <Grid>
-          {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridInner components. */}
-          <GridInner>
+          {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridRow components. */}
+          <GridRow>
             <GridCell span={6}>1</GridCell>
             <GridCell span={6}>
-              <GridInner>
+              <GridRow>
                 <GridCell span={6}>a</GridCell>
                 <GridCell span={6}>b</GridCell>
-              </GridInner>
+              </GridRow>
             </GridCell>
-          </GridInner>
+          </GridRow>
         </Grid>
       </DocsExample>
 
@@ -43,7 +43,7 @@ export default function() {
         components={[
           { displayName: 'Grid', component: Grid },
           { displayName: 'GridCell', component: GridCell },
-          { displayName: 'GridInner', component: GridInner }
+          { displayName: 'GridRow', component: GridRow }
         ]}
       />
     </Docs>

@@ -20,16 +20,16 @@
 
 ```jsx
 <Grid>
-  {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridInner components. */}
-  <GridInner>
+  {/* If you need additional control over height of your grid, or need to add SubGrids, you can add your own GridRow components. */}
+  <GridRow>
     <GridCell span={6}>1</GridCell>
     <GridCell span={6}>
-      <GridInner>
+      <GridRow>
         <GridCell span={6}>a</GridCell>
         <GridCell span={6}>b</GridCell>
-      </GridInner>
+      </GridRow>
     </GridCell>
-  </GridInner>
+  </GridRow>
 </Grid>
 ```
 
@@ -60,8 +60,8 @@ A Grid cell
 | `tablet` | `undefined \| number` | Number of columns to span on a tablet. |
 
 
-## GridInner
-By default, an inner grid component is included inside of <Grid>. Use GridInner when doing nested Grids.
+## GridRow
+By default, an inner grid component is included inside of <Grid>. Use GridRow when doing nested Grids.
 
 
 
