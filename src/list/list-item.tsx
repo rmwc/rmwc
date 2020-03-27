@@ -28,8 +28,10 @@ export const ListItem = withRipple({ surface: false })(
 
     const getIndex = React.useCallback((): number => {
         const listElements: HTMLLIElement[] = 
-          getListElements(liRef.current as HTMLLIElement);
+        getListElements(liRef.current as HTMLLIElement);
+      console.log('getting index; currently: '  + index);
       if (listElements) {
+        console.log(listElements.indexOf(liRef.current as HTMLLIElement))
         return listElements.indexOf(liRef.current as HTMLLIElement);
       }
       return -1
@@ -43,7 +45,7 @@ export const ListItem = withRipple({ surface: false })(
     }
 
     React.useEffect(() => {
-      if (liRef.current) { setIndex(getIndex()) }
+      if (liRef.current && index === -1) { setIndex(getIndex()) }
     }, [liRef,getIndex])
 
     React.useEffect(() => {
