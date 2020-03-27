@@ -36,6 +36,11 @@ body .mdc-drawer .mdc-list-item:not(.mdc-list-item--activated) {
   color: var(--mdc-theme-on-surface);
 }
 
+/** Fixes an issue where dividers on cards had bullet points */
+body .mdc-list-divider {
+  list-style: none;
+}
+
 /****************************************************************
  * Select
  ****************************************************************/
