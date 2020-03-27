@@ -15,9 +15,9 @@ import {
   MenuSurfaceProps,
   MenuSurfaceOnCloseEventT,
   MenuSurfaceApi
-} from './menu-surface';
+} from '../menu-surface';
 
-import { useMenuFoundation } from './menu-foundation';
+import { useMenuFoundation } from './foundation';
 
 /****************************************************************
  * Menu

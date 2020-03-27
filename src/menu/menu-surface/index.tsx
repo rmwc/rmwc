@@ -2,7 +2,7 @@ import * as RMWC from '@rmwc/types';
 import React from 'react';
 import { Corner, MDCMenuSurfaceFoundation } from '@material/menu-surface';
 import { useClassNames, Tag, createComponent } from '@rmwc/base';
-import { useMenuSurfaceFoundation } from './menu-surface-foundation';
+import { useMenuSurfaceFoundation } from './foundation';
 import { PortalChild, PortalPropT } from '@rmwc/base';
 
 export type AnchorT =

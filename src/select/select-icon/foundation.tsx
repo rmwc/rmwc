@@ -3,7 +3,7 @@ import { IconProps } from '@rmwc/icon';
 import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCSelectIconFoundation } from '@material/select';
 import { MDCTextFieldIconFoundation } from '@material/textfield';
-import { SelectIconApi } from '.';
+import { SelectIconApi } from './';
 
 export const useSelectIconFoundation = (
   props: IconProps & React.HTMLProps<any>

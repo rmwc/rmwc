@@ -1,8 +1,8 @@
-import { MenuProps } from './menu';
+import { MenuProps } from './';
 import { useFoundation, closest } from '@rmwc/base';
 import { MDCMenuFoundation } from '@material/menu';
 import { useCallback, useRef, useEffect } from 'react';
-import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from './menu-surface';
+import { MenuSurfaceOnOpenEventT, MenuSurfaceApi } from '../menu-surface';
 import { ListApi } from '@rmwc/list';
 
 export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
@@ -99,7 +99,7 @@ export const useMenuFoundation = (props: MenuProps & React.HTMLProps<any>) => {
   const handleOpen = useCallback(
     (evt: MenuSurfaceOnOpenEventT) => {
       const list = items();
-      
+
       if (
         (props.focusOnOpen || props.focusOnOpen === undefined) &&
         list.length > 0 &&

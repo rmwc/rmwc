@@ -5,7 +5,7 @@ import {
   FoundationElement,
   raf
 } from '@rmwc/base';
-import { MenuSurfaceProps, MenuSurfaceApi } from './menu-surface';
+import { MenuSurfaceProps, MenuSurfaceApi } from '.';
 
 import {
   MDCMenuSurfaceFoundation,

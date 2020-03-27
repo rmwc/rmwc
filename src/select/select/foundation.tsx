@@ -4,11 +4,12 @@ import {
   MDCSelectAdapter,
   cssClasses
 } from '@material/select';
-import { SelectProps, SelectIconApi } from '.';
 import { useCallback, useState, useRef, useEffect } from 'react';
 import { FloatingLabelApi } from '@rmwc/floating-label';
 import { MenuApi } from '@rmwc/menu';
 import { Corner } from '@material/menu-surface';
+import { SelectIconApi } from '../select-icon';
+import { SelectProps } from './';
 
 export const useSelectFoundation = (
   props: SelectProps & React.HTMLProps<any>
