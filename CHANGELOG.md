@@ -1,3 +1,14 @@
+#### 6.0.0-rc.1 (2020-03-27)
+
+##### Breaking Changes
+
+* **Grid:**  The GridInner has been renamed to GridRow (28c6c263)
+
+##### Bug Fixes
+
+* **Drawer:**  Fixing issue where Drawer was uncontrolled (25d469b0)
+* **List:**  Allow up to 5 levels of indentation for collapsible lists. (821c4bfc)
+
 #### 6.0.0-rc.0 (2020-03-24)
 
 ##### Breaking Changes
