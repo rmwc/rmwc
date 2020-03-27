@@ -314,7 +314,8 @@ export const Select = createComponent<SelectProps, SelectHTMLProps>(
         'mdc-select--outlined': !!outlined,
         'mdc-select--required': !!props.required,
         'mdc-select--invalid': !!invalid,
-        'mdc-select--with-leading-icon': !!icon
+        'mdc-select--with-leading-icon': !!icon,
+        'mdc-select--no-label': !label
       }
     ]);
 
