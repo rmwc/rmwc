@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/floating-label",
-  "version": "6.0.0-rc.2",
+  "version": "6.0.0-rc.3",
   "description": "RMWC FloatingLabel component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "@material/floating-label": "^5.1.0",
-    "@rmwc/base": "^6.0.0-rc.2",
-    "@rmwc/types": "^6.0.0-rc.1"
+    "@rmwc/base": "^6.0.0-rc.3",
+    "@rmwc/types": "^6.0.0-rc.3"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
