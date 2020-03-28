@@ -1,6 +1,6 @@
 import { SnackbarProps } from '.';
 import { MDCSnackbarFoundation, util } from '@material/snackbar';
-import { closest } from '@rmwc/base';
+import { closest, triggerWindowResize } from '@rmwc/base';
 import { useFoundation } from '@rmwc/base';
 import { useEffect } from 'react';
 
@@ -29,7 +29,10 @@ export function useSnackbarFoundation(
         removeClass: (className: string) => rootEl.removeClass(className),
         announce: () => labelEl.ref && util.announce(labelEl.ref),
         notifyOpening: () => emit('onOpen', {}),
-        notifyOpened: () => emit('onOpened', {}),
+        notifyOpened: () => {
+          triggerWindowResize();
+          emit('onOpened', {});
+        },
         notifyClosing: (reason: string) => {
           emit('onClose', reason ? { reason } : {});
         },
