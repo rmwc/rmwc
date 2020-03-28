@@ -4,7 +4,10 @@
 
 - Module **@rmwc/slider**
 - Import styles:
-  - import **'@material/slider/dist/mdc.slider.css'**
+  - Using CSS Loader
+    - import '@rmwc/slider/dist/styles';
+  - Or include stylesheets
+    - **'@material/slider/dist/mdc.slider.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/sliders/](https://material.io/develop/web/components/input-controls/sliders/)
 
 Sliders can be both uncontrolled and controlled. When creating a controlled `Slider`, you should be listening to the `onInput` event and use `evt.detail.value` to set your new value.
@@ -51,6 +54,7 @@ A Slider component.
 | `disabled` | `undefined \| false \| true` | Disables the control. |
 | `discrete` | `undefined \| false \| true` | Displays the exact value of the Slider on the knob. |
 | `displayMarkers` | `undefined \| false \| true` | Displays the individual step markers on the Slider track. |
+| `foundationRef` | `React.Ref<MDCSliderFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `max` | `number \| string` | The maximum value of the Slider. |
 | `min` | `number \| string` | The minimum value of the Slider. |
 | `onChange` | `undefined \| (evt: SliderOnChangeEventT) => void` | A callback that fires when the Slider stops sliding which takes an event with event.detail.value set to the Slider's value. evt.detail = { value: number;} |

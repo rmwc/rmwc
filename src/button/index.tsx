@@ -1,9 +1,18 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
+import {
+  Tag,
+  useClassNames,
+  createComponent,
+  createMemoComponent
+} from '@rmwc/base';
+
+/*********************************************************************
+ * Button
+ *********************************************************************/
 
 /**
  * The Button component.
@@ -34,73 +43,72 @@ export interface ButtonProps extends RMWC.WithRippleProps {
 /**
  * The Button component.
  */
-export const Button = withRipple({
-  surface: false
-})(
-  componentFactory<ButtonProps>({
-    displayName: 'Button',
-    tag: 'button',
-    classNames: (props: ButtonProps) => [
+export const Button = withRipple({ surface: false })(
+  createComponent<ButtonProps>(function Button(props, ref) {
+    const {
+      dense,
+      raised,
+      unelevated,
+      outlined,
+      danger,
+      icon,
+      label,
+      trailingIcon,
+      children,
+      ...rest
+    } = props;
+
+    const className = useClassNames(props, [
       'mdc-button',
       {
-        'mdc-button--dense': props.dense,
-        'mdc-button--raised': props.raised,
-        'mdc-button--unelevated': props.unelevated,
-        'mdc-button--outlined': props.outlined
+        'mdc-button--dense': dense,
+        'mdc-button--raised': raised,
+        'mdc-button--unelevated': unelevated,
+        'mdc-button--outlined': outlined
       }
-    ],
-    consumeProps: [
-      'dense',
-      'unelevated',
-      'outlined',
-      'primary',
-      'accent',
-      'unbounded'
-    ],
-    render: (
-      {
-        icon,
-        trailingIcon,
-        label,
-        children,
-        raised,
-        danger,
-        ...rest
-      }: ButtonProps & React.HTMLProps<any>,
-      ref: React.Ref<any>,
-      Tag: any
-    ) => {
-      if (danger) {
-        const existingStyle = rest.style || {};
-        const dangerStyle = {
-          '--mdc-theme-primary': 'var(--mdc-theme-error)',
-          '--mdc-theme-on-primary': 'var(--mdc-theme-on-error)'
-        };
-        rest.style = {
-          ...dangerStyle,
-          ...existingStyle
-        };
-      }
+    ]);
 
-      return (
-        <Tag {...rest} ref={ref}>
-          {!!icon && <ButtonIcon icon={icon} />}
-          <span className="mdc-button__label">
-            {label}
-            {children}
-          </span>
-          {!!trailingIcon && <ButtonIcon icon={trailingIcon} />}
-        </Tag>
-      );
+    if (danger) {
+      const existingStyle = rest.style || {};
+      const dangerStyle = {
+        '--mdc-theme-primary': 'var(--mdc-theme-error)',
+        '--mdc-theme-on-primary': 'var(--mdc-theme-on-error)'
+      };
+      rest.style = {
+        ...dangerStyle,
+        ...existingStyle
+      };
     }
+
+    return (
+      <Tag tag="button" {...rest} ref={ref} className={className}>
+        <ButtonRipple />
+        {!!icon && <ButtonIcon icon={icon} />}
+        <span className="mdc-button__label">
+          {label}
+          {children}
+        </span>
+        {!!trailingIcon && <ButtonIcon icon={trailingIcon} />}
+      </Tag>
+    );
   })
 );
 
-export interface ButtonIconProps extends IconProps {}
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+const ButtonRipple = React.memo(function ButtonRipple() {
+  return <div className="mdc-button__ripple"></div>;
+});
+
+interface ButtonIconProps extends IconProps {}
 
 /** An icon that goes inside of buttons. This is an instance of the Icon component. */
-export const ButtonIcon = componentFactory<ButtonIconProps>({
-  displayName: 'ButtonIcon',
-  tag: Icon,
-  classNames: ['mdc-button__icon']
+const ButtonIcon = createMemoComponent<ButtonIconProps>(function ButtonIcon(
+  props,
+  ref
+) {
+  const className = useClassNames(props, ['mdc-button__icon']);
+  return <Icon {...props} className={className} ref={ref} />;
 });

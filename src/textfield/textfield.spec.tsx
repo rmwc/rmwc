@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { TextField, TextFieldHelperText, TextFieldIcon } from './';
+import { TextField, TextFieldHelperText } from './';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('TextField', () => {
   it('renders', () => {
@@ -101,13 +102,25 @@ describe('TextField', () => {
     mount(<TextField disabled />);
   });
 
-  it('can be required', () => {
+  it('can be required', async done => {
     const el = mount(<TextField value="" onChange={() => {}} required />);
     const getValid = () =>
       el.html().includes('mdc-text-field--invalid') === false;
 
     // should render valid to start
     expect(getValid()).toBe(true);
+
+    el.find('input')
+      .first()
+      .simulate('focus');
+    await wait(20);
+    el.find('input')
+      .first()
+      .simulate('blur');
+    await wait(20);
+
+    expect(getValid()).toBe(false);
+    done();
   });
 
   it('can be have icon', () => {
@@ -137,23 +150,14 @@ describe('TextField', () => {
     expect(inputObjectRef instanceof HTMLInputElement).toBeTruthy();
   });
 
-  it('label floats on dynamic change', done => {
+  it('label floats on dynamic change', async done => {
     const el = mount(<TextField label="test" value="" onChange={() => {}} />);
     expect(el.html().includes('mdc-floating-label--float-above')).toBe(false);
-    el.setProps({ value: 'foo' }, () => {
-      setTimeout(() => {
-        expect(el.html().includes('mdc-floating-label--float-above')).toBe(
-          true
-        );
-        done();
-      }, 100);
-    });
-  });
-});
-
-describe('TextFieldIcon', () => {
-  it('renders', () => {
-    mount(<TextFieldIcon icon="favorite" />);
+    el.setProps({ value: 'foo' });
+    el.update();
+    await wait(100);
+    expect(el.html().includes('mdc-floating-label--float-above')).toBe(true);
+    done();
   });
 });
 

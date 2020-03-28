@@ -4,8 +4,11 @@
 
 - Module **@rmwc/list**
 - Import styles:
-  - import **'@material/list/dist/mdc.list.css'**
-  - import **'@rmwc/list/collapsible-list.css'**
+  - Using CSS Loader
+    - import '@rmwc/list/dist/styles';
+  - Or include stylesheets
+    - **'@material/list/dist/mdc.list.css'**
+    - **'@rmwc/list/collapsible-list.css'**
 
 
 Collapsible lists aren't part of the material spec, but they've been added to RMWC after continuing requests from the community. They present an accordion style navigation element to progressively reveal content. They've have been built to work with the `List` and `ListItem` components in regards to keyboard events and styling, but they technically be used with any kind of content.
@@ -121,10 +124,10 @@ A collapsible list component.
 
 | Name | Type | Description |
 |------|------|-------------|
+| `defaultOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 | `handle` | `ReactElement<any>` | The handle that opens and closes the collapsible section. Usually a ListItem. |
 | `onClose` | `undefined \| () => void` | Callback for when the collapsible list closes. |
 | `onOpen` | `undefined \| () => void` | Callback for when the collapsible list opens. |
 | `open` | `undefined \| false \| true` | Show the collapsible list as open. |
-| `startOpen` | `undefined \| false \| true` | Starts the collapsible list as open. |
 
 

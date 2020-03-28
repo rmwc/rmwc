@@ -177,12 +177,12 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          Drawer,
-          DrawerHeader,
-          DrawerTitle,
-          DrawerSubtitle,
-          DrawerContent,
-          DrawerAppContent
+          { displayName: 'Drawer', component: Drawer },
+          { displayName: 'DrawerHeader', component: DrawerHeader },
+          { displayName: 'DrawerTitle', component: DrawerTitle },
+          { displayName: 'DrawerSubtitle', component: DrawerSubtitle },
+          { displayName: 'DrawerContent', component: DrawerContent },
+          { displayName: 'DrawerAppContent', component: DrawerAppContent }
         ]}
       />
     </Docs>

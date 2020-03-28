@@ -59,10 +59,10 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
   getType(type: string) {
     // do some cleaning to add the type signature to the events
-    const eventMatches = type.match(/\S+?EventT/);
-    if (eventMatches) {
-      const evtName = eventMatches[0];
-    }
+    // const eventMatches = type.match(/\S+?EventT/);
+    // if (eventMatches) {
+    //   const evtName = eventMatches[0];
+    // }
 
     return type;
   }
@@ -107,7 +107,10 @@ class DocumentComponent extends React.Component<DocumentComponentProps> {
 
 export interface DocPropsI {
   src: any;
-  components: Array<React.ComponentType<any>>;
+  components: Array<{
+    displayName: string;
+    component: React.ComponentType<any>;
+  }>;
 }
 
 export class DocProps extends React.Component<DocPropsI> {
@@ -208,11 +211,24 @@ function DocsSetup({
         <li>
           Import styles:
           <ul>
-            {styles.map(s => (
-              <li key={s}>
-                import <strong>'{s}'</strong>;
-              </li>
-            ))}
+            <li>
+              Using CSS Loader
+              <ul>
+                <li>
+                  import <strong>'{module}/dist/styles';</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Or include stylesheets
+              <ul>
+                {styles.map(s => (
+                  <li key={s}>
+                    <strong>'{s}'</strong>;
+                  </li>
+                ))}
+              </ul>
+            </li>
           </ul>
         </li>
       )}
@@ -237,8 +253,24 @@ function DocsLead({ children }: { children: React.ReactNode }) {
   return <blockquote>{children}</blockquote>;
 }
 
+const createTextLinks = (text: string) => {
+  return (text || '').replace(
+    /([^\S]|^)(((https?:\/\/)|(www\.))(\S+))/gi,
+    function(match, space, url) {
+      var hyperlink = url;
+      if (!hyperlink.match('^https?://')) {
+        hyperlink = 'http://' + hyperlink;
+      }
+      return space + '<a href="' + hyperlink + '">' + url + '</a>';
+    }
+  );
+};
+
+const createTextCode = (text: string) =>
+  String(text).replace(/`(.+?)`/g, '<code>$1</code>');
+
 export function DocsP({ children }: { children: React.ReactNode }) {
-  const __html = String(children).replace(/`(.+?)`/g, '<code>$1</code>');
+  const __html = createTextLinks(createTextCode(children as string));
   return <p className="docs-p" dangerouslySetInnerHTML={{ __html }} />;
 }
 
@@ -285,7 +317,12 @@ const IFrame = ({
   }, [headNode, mountNode]);
 
   return (
-    <iframe {...props} ref={setContentRef} className="docs-iframe">
+    <iframe
+      {...props}
+      ref={setContentRef}
+      className="docs-iframe"
+      title="RMWC Example"
+    >
       {mountNode && canMount && createPortal(<>{children}</>, mountNode)}
     </iframe>
   );
@@ -300,6 +337,7 @@ export function DocsExample({
   label?: string;
   codeOnly?: boolean;
   iframe?: boolean;
+  center?: boolean;
 }) {
   const { examples } = useContext(DocsContext);
   const [code] = useState(examples[index]);
@@ -312,13 +350,15 @@ function DocsExampleBase({
   codeOnly,
   iframe,
   label,
-  children
+  children,
+  center
 }: {
   code: string;
   codeOnly?: boolean;
   iframe?: boolean;
   label?: string;
   children?: React.ReactNode;
+  center?: boolean;
 }) {
   return (
     <LiveProvider
@@ -328,7 +368,9 @@ function DocsExampleBase({
       disabled={!!codeOnly}
     >
       <div
-        className={`live-example ${codeOnly ? 'live-example-code-only' : ''}`}
+        className={`live-example ${codeOnly ? 'live-example-code-only' : ''} ${
+          center ? 'live-example-center' : ''
+        }`}
       >
         {!codeOnly && (
           <div className="live-preview">
@@ -369,7 +411,7 @@ export function DocsMarkdown({ fileSrc }: { fileSrc: string }) {
     fetch(fileSrc)
       .then(src => src.text())
       .then(src => setSrc(src));
-  }, []);
+  }, [fileSrc]);
 
   return src ? (
     <div>

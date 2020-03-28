@@ -4,8 +4,12 @@
 
 - Module **@rmwc/switch**
 - Import styles:
-  - import **'@material/switch/dist/mdc.switch.css'**
-  - import **'@material/form-field/dist/mdc.form-field.css'**
+  - Using CSS Loader
+    - import '@rmwc/switch/dist/styles';
+  - Or include stylesheets
+    - **'@material/switch/dist/mdc.switch.css'**
+    - **'@material/form-field/dist/mdc.form-field.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/switches/](https://material.io/develop/web/components/input-controls/switches/)
 
 Switches are identical in function to the Checkbox component, they just present a different UI / UX paradigm.
@@ -21,7 +25,7 @@ function Example() {
   return (
     <Switch
       checked={checked}
-      onChange={evt => setChecked(evt.currentTarget.checked)}
+      onChange={evt => setChecked(!!evt.currentTarget.checked)}
       label="Cookies"
     />
   );
@@ -48,8 +52,9 @@ A Switch component.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Toggle the control on and off. |
 | `disabled` | `undefined \| false \| true` | Disables the control. |
+| `foundationRef` | `React.Ref<MDCSwitchFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `id` | `undefined \| string` | A DOM ID for the toggle. |
-| `inputRef` | `MutableRefObject<HTMLInputElement \| null> \| (ref: HTMLInputElement \| null) => void` | A reference to the native input. |
+| `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |
 | `label` | `React.ReactNode` | A label for the control. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |

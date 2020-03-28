@@ -4,10 +4,15 @@
 
 - Module **@rmwc/tabs**
 - Import styles:
-  - import **'@material/tab-bar/dist/mdc.tab-bar.css'**
-  - import **'@material/tab/dist/mdc.tab.css'**
-  - import **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
-  - import **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
+  - Using CSS Loader
+    - import '@rmwc/tabs/dist/styles';
+  - Or include stylesheets
+    - **'@material/tab-bar/dist/mdc.tab-bar.css'**
+    - **'@material/tab/dist/mdc.tab.css'**
+    - **'@material/tab-scroller/dist/mdc.tab-scroller.css'**
+    - **'@material/tab-indicator/dist/mdc.tab-indicator.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/tabs/tab-bar/](https://material.io/develop/web/components/tabs/tab-bar/)
 
 ## Basic Usage
@@ -163,6 +168,7 @@ The TabBar component
 | Name | Type | Description |
 |------|------|-------------|
 | `activeTabIndex` | `undefined \| number` | The index of the active tab. |
+| `foundationRef` | `React.Ref<MDCTabBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `indicatorTransition` | `"slide" \| "fade"` | Specifies whether the indicator should slide or fade. Defaults to slide. |
 | `onActivate` | `undefined \| (evt: TabBarOnActivateEventT) => void` | Callback when the active tab changes. Receives event as an argument with event.target.value set to the activeTabIndex. evt.detail = { index: number; } |
 
@@ -175,9 +181,11 @@ A Tab component
 | Name | Type | Description |
 |------|------|-------------|
 | `children` | `React.ReactNode` | The label for the tab, passed as children. |
+| `foundationRef` | `React.Ref<MDCTabFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | The icon to use for the tab. |
 | `iconIndicator` | `RMWC.IconPropT` | Optionally use a custom icon for the active indicator, instead of the underline. |
 | `label` | `any` | A label for the tab. |
+| `minWidth` | `undefined \| false \| true` | Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap. |
 | `onInteraction` | `undefined \| (evt: TabOnInteractionEventT) => void` | Fires when a tab has been interacted with. This is captures both keyboard and click events. evt.detail = { tabId: string } |
 | `restrictIndicator` | `undefined \| false \| true` | Restricts the indicator to the content |
 | `stacked` | `undefined \| false \| true` | Stacks the icon on top of the text label |

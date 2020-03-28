@@ -4,9 +4,14 @@
 
 - Module **@rmwc/menu**
 - Import styles:
-  - import **'@material/menu/dist/mdc.menu.css'**
-  - import **'@material/menu-surface/dist/mdc.menu-surface.css'**
-  - import **'@material/list/dist/mdc.list.css'**
+  - Using CSS Loader
+    - import '@rmwc/menu/dist/styles';
+  - Or include stylesheets
+    - **'@material/menu/dist/mdc.menu.css'**
+    - **'@material/menu-surface/dist/mdc.menu-surface.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@material/list/dist/mdc.list.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/menus/](https://material.io/develop/web/components/menus/)
 
 ## Basic Usage
@@ -97,7 +102,7 @@ RMWC provides a convenience `SimpleMenu` component that takes a handle as a prop
 
 ## Anchoring
 
-By default, Menus will attempt to automatically position themselves, but this behavior can be overriden by setting the `anchorCorner` prop.
+By default, Menus will attempt to automatically position themselves, but this behavior can be overridden by setting the `anchorCorner` prop.
 
 ```jsx
 function Example() {
@@ -136,89 +141,80 @@ function Example() {
 }
 ```
 
+## Rendering through Portals
+
+Occasionally, you may find your menu being cut off from being inside a container that is styled to be `overflow:hidden`. RMWC provides a `renderToPortal` prop that lets you use React's portal functionality to render the menu dropdown in a different container.
+
+You can specify any element or selector you want, but the simplest method is to pass `true` and use RMWC's built in `Portal` component.
+
+```jsx
+
+  // Somewhere at the top level of your app
+  // Render the RMWC Portal
+  // You only have to do this once
+  import React from 'react';
+  import { Portal } from '@rmwc/base';
+
+  export default function App() {
+    return (
+      <div>
+        ...
+        <Portal />
+      </div>
+    )
+  }
+
+```
+
+Now you can use the `renderToPortal` prop. Below is a contrived example of a menu being cut off due to `overflow: hidden`.
+
+```jsx
+function Example() {
+  const [renderToPortal, setRenderToPortal] = React.useState(true);
+  const options = ['Cookies', 'Pizza', 'Icecream'];
+  return (
+    <>
+      <div
+        style={{
+          marginBottom: '10rem',
+          height: '3.5rem',
+          overflow: 'hidden'
+        }}
+      >
+        <MenuSurfaceAnchor>
+          <Button raised>Open Menu</Button>
+          <Menu open renderToPortal={renderToPortal}>
+            {options.map(o => (
+              <MenuItem key={o}>{o}</MenuItem>
+            ))}
+          </Menu>
+        </MenuSurfaceAnchor>
+      </div>
+      <Checkbox
+        checked={renderToPortal}
+        onChange={evt => setRenderToPortal(evt.currentTarget.checked)}
+        label="renderToPortal"
+      />
+    </>
+  );
+}
+```
+
 ## Menu
-A menu component for displaying lists items.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `children` | `React.ReactNode` | Children to render. |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
-| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
-| `open` | `undefined \| false \| true` | Opens the menu. |
 
 
 ## MenuItem
-This is just the ListItem component exported from the Menu module for convenience. You can use `ListItem` or `SimpleListItem` components from the List section as long as you add `role="menuitem"` and `tabIndex="0"` to the components for accessibility.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `activated` | `undefined \| false \| true` | A modifier for an active state. |
-| `disabled` | `undefined \| false \| true` | A modifier for a disabled state. |
-| `ripple` | `RipplePropT` | Adds a ripple effect to the component |
-| `selected` | `undefined \| false \| true` | A modifier for a selected state. |
 
 
 ## MenuSurface
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `children` | `React.ReactNode` | Children to render. |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
-| `open` | `undefined \| false \| true` | Opens the menu. |
 
 
 ## MenuSurfaceAnchor
 
 
 ## SimpleMenu
-A Simplified menu component that allows you to pass a handle element and will automatically control the open state and add a MenuSurfaceAnchor
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `children` | `React.ReactNode` | Children to render |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
-| `focusOnOpen` | `undefined \| false \| true` | Whether or not to focus the first list item on open. Defaults to true. |
-| `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
-| `onSelect` | `undefined \| (evt: MenuOnSelectEventT) => void` | Callback that fires when a Menu item is selected. evt.detail = { index: number; item: HTMLElement; } |
-| `open` | `undefined \| false \| true` | Opens the menu. |
-| `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 
 ## SimpleMenuSurface
-The same as SimpleMenu, but a generic surface.
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `anchorCorner` | `AnchorT` | Manually position the menu to one of the corners. |
-| `children` | `React.ReactNode` | Children to render |
-| `fixed` | `undefined \| false \| true` | Make the menu position fixed. |
-| `handle` | `ReactElement<any>` | An element that will open the menu when clicked |
-| `hoistToBody` | `undefined \| false \| true` | Moves the menu to the body. Useful for situations where the content might be cutoff by an overflow: hidden container. |
-| `onClose` | `undefined \| (evt: MenuSurfaceOnCloseEventT) => void` | Callback for when the menu is closed. |
-| `onOpen` | `undefined \| (evt: MenuSurfaceOnOpenEventT) => void` | Callback for when the menu is opened. |
-| `open` | `undefined \| false \| true` | Opens the menu. |
-| `rootProps` | `Object` | By default, props spread to the Menu component. These will spread to the MenuSurfaceAnchor which is useful for things like overall positioning of the anchor. |
 
 

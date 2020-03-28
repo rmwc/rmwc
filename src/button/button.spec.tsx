@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Button, ButtonIcon } from './';
+import { Button } from './';
 
 describe('Button', () => {
   it('renders', () => {
@@ -9,12 +9,7 @@ describe('Button', () => {
   });
 
   it('can have an icon', () => {
-    mount(
-      <Button>
-        <ButtonIcon icon="favorite" />
-        Button
-      </Button>
-    );
+    mount(<Button icon="favorite">Button</Button>);
   });
 
   it('can be raised', () => {

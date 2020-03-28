@@ -59,7 +59,10 @@ export default function() {
         </Elevation>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Elevation]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Elevation', component: Elevation }]}
+      />
     </Docs>
   );
 }

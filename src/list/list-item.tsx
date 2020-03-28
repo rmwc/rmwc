@@ -1,7 +1,7 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 
-import { componentFactory, classNames } from '@rmwc/base';
+import { classNames, useClassNames, Tag, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
 
@@ -13,24 +13,22 @@ export interface ListItemProps extends RMWC.WithRippleProps {
   activated?: boolean;
   /** A modifier for a disabled state. */
   disabled?: boolean;
+
 }
 
 /** A ListItem component. */
 export const ListItem = withRipple({ surface: false })(
-  componentFactory<ListItemProps>({
-    displayName: 'ListItem',
-    defaultProps: {
-      tabIndex: 0
-    },
-    classNames: (props: ListItemProps) => [
+  createComponent<ListItemProps>(function ListItem(props, ref) {
+    const { selected, activated, disabled, ...rest } = props;
+    const className = useClassNames(props, [
       'mdc-list-item',
       {
         'mdc-list-item--selected': props.selected,
         'mdc-list-item--activated': props.activated,
         'mdc-list-item--disabled': props.disabled
       }
-    ],
-    consumeProps: ['selected', 'activated', 'disabled', 'options'] //options is from the select element
+    ]);
+    return <Tag tag="li" tabIndex={0} {...rest} className={className} ref={ref} />;
   })
 );
 
@@ -38,55 +36,56 @@ export const ListItem = withRipple({ surface: false })(
 export interface ListItemTextProps {}
 
 /** Text Wrapper for the ListItem */
-export const ListItemText = componentFactory<ListItemTextProps>({
-  displayName: 'ListItemText',
-  tag: 'span',
-  classNames: ['mdc-list-item__text']
-});
+export const ListItemText = createComponent<ListItemTextProps>(
+  function ListItemText(props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__text']);
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** Primary Text for the ListItem */
 export interface ListItemPrimaryTextProps {}
 
 /** Primary Text for the ListItem */
-export const ListItemPrimaryText = componentFactory<ListItemPrimaryTextProps>({
-  displayName: 'ListItemPrimaryText',
-  tag: 'span',
-  classNames: ['mdc-list-item__primary-text']
-});
+export const ListItemPrimaryText = createComponent<ListItemPrimaryTextProps>(
+  function ListItemPrimaryText(props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__primary-text']);
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** Secondary text for the ListItem */
 export interface ListItemSecondaryTextProps {}
 
 /** Secondary text for the ListItem */
-export const ListItemSecondaryText = componentFactory<
+export const ListItemSecondaryText = createComponent<
   ListItemSecondaryTextProps
->({
-  displayName: 'ListItemSecondaryText',
-  tag: 'span',
-  classNames: ['mdc-list-item__secondary-text']
+>(function ListItemSecondaryText(props, ref) {
+  const className = useClassNames(props, ['mdc-list-item__secondary-text']);
+  return <Tag tag="span" {...props} ref={ref} className={className} />;
 });
 
 /** A graphic / icon for the ListItem */
 export interface ListItemGraphicProps extends IconProps {}
 
 /** A graphic / icon for the ListItem */
-export const ListItemGraphic = componentFactory<ListItemGraphicProps>({
-  displayName: 'ListItemGraphic',
-  classNames: ['mdc-list-item__graphic'],
-  tag: Icon
-});
+export const ListItemGraphic = createComponent<ListItemGraphicProps>(
+  function ListItemGraphic(props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__graphic']);
+    return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
+  }
+);
 
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
 export interface ListItemMetaProps extends IconProps {}
 
 /** Meta content for the ListItem. This can either by an icon by setting the `icon` prop, or any other kind of content. */
-export const ListItemMeta = componentFactory<ListItemMetaProps>({
-  displayName: 'ListItemMeta',
-  classNames: ['mdc-list-item__meta'],
-  tag: 'div',
-  render: (props, ref, Tag) => {
+export const ListItemMeta = createComponent<ListItemMetaProps>(
+  function ListItemMeta(props, ref) {
+    const className = useClassNames(props, ['mdc-list-item__meta']);
+
     if (!!props.icon) {
-      return <Icon ref={ref} {...props} />;
+      return <Icon {...props} aria-hidden="true" ref={ref} className={className} />;
     }
 
     if (React.isValidElement(props.children)) {
@@ -94,40 +93,47 @@ export const ListItemMeta = componentFactory<ListItemMetaProps>({
       return React.cloneElement(props.children, {
         ...rest,
         ...props.children.props,
-        className: classNames(props.className, props.children.props.className)
+        className: classNames(className, props.children.props.className)
       });
     }
 
-    return <Tag ref={ref} {...props} />;
+    return <Tag {...props} ref={ref} className={className} />;
   }
-});
+);
 
 /** A container to group ListItems */
 export interface ListGroupProps {}
 
 /** A container to group ListItems */
-export const ListGroup = componentFactory<ListGroupProps>({
-  displayName: 'ListGroup',
-  classNames: ['mdc-list-group']
+export const ListGroup = createComponent<ListGroupProps>(function ListGroup(
+  props,
+  ref
+) {
+  const className = useClassNames(props, ['mdc-list-group']);
+  return <Tag {...props} ref={ref} className={className} />;
 });
 
 /** A subheader for the ListGroup */
 export interface ListGroupSubheaderProps {}
 
 /** A subheader for the ListGroup */
-export const ListGroupSubheader = componentFactory<ListGroupSubheaderProps>({
-  displayName: 'ListGroupSubheader',
-  classNames: ['mdc-list-group__subheader']
-});
+export const ListGroupSubheader = createComponent<ListGroupSubheaderProps>(
+  function ListGroupSubheader(props, ref) {
+    const className = useClassNames(props, ['mdc-list-group__subheader']);
+    return <Tag {...props} ref={ref} className={className} />;
+  }
+);
 
 /** A divider for the List */
 export interface ListDividerProps {}
 
 /** A divider for the List */
-export const ListDivider = componentFactory<ListDividerProps>({
-  displayName: 'ListDivider',
-  classNames: ['mdc-list-divider']
-});
+export const ListDivider = createComponent<ListDividerProps>(
+  function ListDivider(props, ref) {
+    const className = useClassNames(props, ['mdc-list-divider']);
+    return <Tag tag="li" role="separator" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** A simple list item template. */
 export interface SimpleListItemProps extends ListItemProps {
@@ -146,45 +152,40 @@ export interface SimpleListItemProps extends ListItemProps {
 }
 
 /** A simple list item template. */
-export const SimpleListItem = ({
-  text,
-  secondaryText,
-  graphic,
-  metaIcon,
-  meta,
-  children,
-  ...rest
-}: SimpleListItemProps & RMWC.ComponentProps) => {
-  const primaryTextToRender =
-    text && secondaryText !== undefined ? (
-      <ListItemPrimaryText>{text}</ListItemPrimaryText>
-    ) : (
-      text
-    );
-
-  const secondaryTextToRender =
-    secondaryText !== undefined ? (
-      <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
-    ) : null;
-
-  return (
-    <ListItem {...rest}>
-      {graphic !== undefined && <ListItemGraphic icon={graphic} />}
-      {secondaryTextToRender !== null ? (
-        <ListItemText>
-          {primaryTextToRender}
-          {secondaryTextToRender}
-        </ListItemText>
+export const SimpleListItem = createComponent<SimpleListItemProps>(
+  (
+    { text, secondaryText, graphic, metaIcon, meta, children, ...rest },
+    ref
+  ) => {
+    const primaryTextToRender =
+      text && secondaryText !== undefined ? (
+        <ListItemPrimaryText>{text}</ListItemPrimaryText>
       ) : (
-        primaryTextToRender
-      )}
-      {(!!meta || !!metaIcon) && (
-        <ListItemMeta icon={metaIcon}>{meta}</ListItemMeta>
-      )}
+        text
+      );
 
-      {children}
-    </ListItem>
-  );
-};
+    const secondaryTextToRender =
+      secondaryText !== undefined ? (
+        <ListItemSecondaryText>{secondaryText}</ListItemSecondaryText>
+      ) : null;
 
-SimpleListItem.displayName = 'SimpleListItem';
+    return (
+      <ListItem {...rest} ref={ref}>
+        {graphic !== undefined && <ListItemGraphic icon={graphic} />}
+        {secondaryTextToRender !== null ? (
+          <ListItemText>
+            {primaryTextToRender}
+            {secondaryTextToRender}
+          </ListItemText>
+        ) : (
+          primaryTextToRender
+        )}
+        {(!!meta || !!metaIcon) && (
+          <ListItemMeta icon={metaIcon}>{meta}</ListItemMeta>
+        )}
+
+        {children}
+      </ListItem>
+    );
+  }
+);

@@ -11,6 +11,7 @@ import {
   DrawerSubtitle
 } from './';
 import { List, ListItem, ListItemGraphic } from '../list';
+import { useKnob } from '@rmwc/base/utils/use-knob';
 
 const menuItems = [
   { displayName: 'Home', icon: 'home' },
@@ -30,23 +31,30 @@ const ListItems = (props: any) => (
   </>
 );
 
-storiesOf('Drawers', module).add('Drawer', () => (
-  <div style={{ margin: '-24px' }}>
-    <Drawer
-      modal={boolean('modal', false)}
-      dismissible={boolean('dismissible', false)}
-      open={boolean('open', true)}
-      onClose={action('onClose')}
-    >
-      <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
-        <DrawerTitle>DrawerTitle</DrawerTitle>
-        <DrawerSubtitle>DrawerSubtitle</DrawerSubtitle>
-      </DrawerHeader>
-      <DrawerContent>
-        <List>
-          <ListItems onItemClick={action('onClick')} />
-        </List>
-      </DrawerContent>
-    </Drawer>
-  </div>
-));
+storiesOf('Drawers', module).add('Drawer', function() {
+  const [open, setOpen] = useKnob('boolean', 'open', true);
+  return (
+    <div style={{ margin: '-24px' }}>
+      <Drawer
+        modal={boolean('modal', false)}
+        dismissible={boolean('dismissible', false)}
+        open={open}
+        onClose={() => {
+          action('onClose')();
+          setOpen(false);
+        }}
+        foundationRef={console.log}
+      >
+        <DrawerHeader style={{ backgroundColor: '#f6f6f6' }}>
+          <DrawerTitle>DrawerTitle</DrawerTitle>
+          <DrawerSubtitle>DrawerSubtitle</DrawerSubtitle>
+        </DrawerHeader>
+        <DrawerContent>
+          <List>
+            <ListItems onItemClick={action('onClick')} />
+          </List>
+        </DrawerContent>
+      </Drawer>
+    </div>
+  );
+});

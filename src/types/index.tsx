@@ -1,9 +1,4 @@
 /**
- * Utils
- */
-export type MergeInterfacesT<A, B> = A & Pick<B, Exclude<keyof B, keyof A>>;
-
-/**
  * Theming
  */
 export type ThemeOptionT =
@@ -32,7 +27,8 @@ export type ThemeOptionT =
   | 'textSecondaryOnDark'
   | 'textHintOnDark'
   | 'textDisabledOnDark'
-  | 'textIconOnDark';
+  | 'textIconOnDark'
+  | undefined;
 
 export type ThemePropT = ThemeOptionT | ThemeOptionT[];
 
@@ -47,16 +43,7 @@ export type RipplePropT =
       unbounded?: boolean;
     };
 
-export interface DeprecatedRippleProps {
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}` */
-  accent?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}` */
-  surface?: boolean;
-  /** DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}` */
-  unbounded?: boolean;
-}
-
-export interface WithRippleProps extends DeprecatedRippleProps {
+export interface WithRippleProps {
   /** Adds a ripple effect to the component */
   ripple?: RipplePropT;
 }
@@ -65,11 +52,6 @@ export interface WithRippleProps extends DeprecatedRippleProps {
  * Components
  */
 export type TagT = string | React.ComponentType<any>;
-
-export interface ComponentProps extends React.HTMLProps<any> {
-  tag?: TagT;
-  theme?: ThemePropT;
-}
 
 export type CustomEventT<T> = CustomEvent<T> &
   React.SyntheticEvent<EventTarget>;
@@ -117,3 +99,12 @@ export interface IconOptions {
 }
 
 export type IconPropT = IconElementT | IconOptions;
+
+export type ComponentElementType = React.ElementType | undefined;
+
+export type HTMLProps<T = HTMLElement, A = React.AllHTMLAttributes<T>> = A &
+  React.ClassAttributes<T> & {
+    tag?: TagT;
+    theme?: ThemePropT;
+    ref?: React.Ref<any>;
+  };

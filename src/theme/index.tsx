@@ -1,18 +1,14 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React, { useMemo } from 'react';
 
 import {
-  componentFactory,
   toDashCase,
   parseThemeOptions,
-  wrapChild
+  wrapChild,
+  createComponent
 } from '@rmwc/base';
 import { getAutoColorsForTheme } from './utils';
-
-const ThemeRoot = componentFactory<{}>({
-  displayName: 'ThemeRoot',
-  tag: 'span'
-});
+import { Tag, useClassNames } from '@rmwc/base';
 
 /** A Theme Component. */
 export interface ThemeProps {
@@ -23,25 +19,26 @@ export interface ThemeProps {
 }
 
 /** A Theme Component. */
-export const Theme = ({
-  use,
-  wrap,
-  ...rest
-}: RMWC.MergeInterfacesT<ThemeProps, RMWC.ComponentProps>) => {
-  if (wrap) {
-    return wrapChild({ ...rest, className: parseThemeOptions(use).join(' ') });
-  }
-  return <ThemeRoot theme={use} {...rest} />;
-};
+export const Theme = createComponent<ThemeProps>(function Theme(props, ref) {
+  const { use, wrap, ...rest } = props;
 
-Theme.displayName = 'Theme';
+  const className = useClassNames(props, [parseThemeOptions(use).join(' ')]);
+
+  if (wrap) {
+    return wrapChild({
+      ...rest,
+      ref,
+      className
+    });
+  }
+
+  return (
+    <Tag tag="span" theme={use} {...rest} ref={ref} className={className} />
+  );
+});
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
-export interface ThemeProviderProps
-  extends Pick<
-    RMWC.ComponentProps,
-    Exclude<keyof RMWC.ComponentProps, 'wrap'>
-  > {
+export interface ThemeProviderProps {
   /** Any theme option pointing to a valid CSS value. */
   options: { [key: string]: string };
   /** Additional standard inline styles that will be merged into the style tag. */
@@ -53,22 +50,14 @@ export interface ThemeProviderProps
 }
 
 /** A ThemeProvider. This sets theme colors for its child tree. */
-export class ThemeProvider extends React.Component<ThemeProviderProps> {
-  static displayName = 'ThemeProvider';
+export const ThemeProvider = createComponent<ThemeProviderProps>(
+  function ThemeProvider(props, ref) {
+    const parsed = JSON.stringify(props.options);
 
-  prevOpts_ = '';
-  colors_ = {};
-
-  get colors() {
-    // implement some caching to prevent the color checking from being called over and over again.
-    const parsed = JSON.stringify(this.props.options);
-    if (parsed !== this.prevOpts_) {
-      this.prevOpts_ = parsed;
-
-      const processedColors = Object.keys(this.props.options).reduce(
+    const colors = useMemo(() => {
+      const processedColors = Object.keys(props.options).reduce(
         (acc: any, key) => {
-          const val = this.props.options[key];
-
+          const val = props.options[key];
           key = key.startsWith('--') ? key : `--mdc-theme-${toDashCase(key)}`;
           acc[key] = val;
           return acc;
@@ -76,35 +65,29 @@ export class ThemeProvider extends React.Component<ThemeProviderProps> {
         {}
       );
 
-      this.colors_ = getAutoColorsForTheme(processedColors);
-    }
+      return getAutoColorsForTheme(processedColors);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [parsed]);
 
-    return this.colors_;
-  }
+    const { options, style = {}, wrap, ...rest } = props;
+    const className = useClassNames(props, [
+      wrap &&
+        typeof rest.children === 'object' &&
+        // @ts-ignore
+        rest.children?.props?.className
+    ]);
 
-  render() {
-    const { options, style = {}, wrap, children, ...rest } = this.props;
-    // Casting styles to avoid TSX error
-    const tsxSafeStyle: React.CSSProperties = style;
     const themeStyles = {
-      ...tsxSafeStyle,
-      ...this.colors
-    };
+      ...style,
+      ...colors
+    } as React.CSSProperties;
 
-    if (wrap && children) {
-      const child = React.Children.only(children);
-      if (!React.isValidElement<React.HTMLProps<any>>(child)) {
-        return;
-      }
-      const childStyle = child.props.style || {};
-
-      return React.cloneElement(child, {
-        ...child.props,
-        ...rest,
-        style: { ...themeStyles, ...childStyle }
-      });
+    if (wrap && rest.children) {
+      return wrapChild({ ...rest, style: themeStyles, ref });
     }
 
-    return <div {...rest} children={children} style={themeStyles} />;
+    return (
+      <Tag {...rest} style={themeStyles} className={className} ref={ref} />
+    );
   }
-}
+);

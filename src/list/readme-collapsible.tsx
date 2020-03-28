@@ -135,7 +135,12 @@ export default function() {
         </CollapsibleList>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[CollapsibleList] as any} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'CollapsibleList', component: CollapsibleList as any }
+        ]}
+      />
     </Docs>
   );
 }

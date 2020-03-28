@@ -4,7 +4,10 @@
 
 - Module **@rmwc/circular-progress**
 - Import styles:
-  - import **'@rmwc/circular-progress/circular-progress.css'**
+  - Using CSS Loader
+    - import '@rmwc/circular-progress/dist/styles';
+  - Or include stylesheets
+    - **'@rmwc/circular-progress/circular-progress.css'**
 
 
 ## Basic Usage

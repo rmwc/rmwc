@@ -8,8 +8,6 @@ import { Theme, ThemeProvider } from '.';
 import { Button } from '../button';
 import { Radio } from '../radio';
 import { Checkbox } from '../checkbox';
-import { Toolbar, ToolbarRow } from '../toolbar';
-import { Tab, TabBar } from '../tabs';
 
 export default function() {
   return (
@@ -17,13 +15,26 @@ export default function() {
       title="Theming"
       lead="MDC Theme is a foundational module that themes MDC Web components."
       module="@rmwc/theme"
-      styles={['@material/theme/dist/mdc.theme.css']}
+      styles={['@material/theme/dist/mdc.theme.css', '@rmwc/theme/theme.css']}
       docsLink="https://material.io/develop/web/components/theme/"
       examples={examples}
     >
       <DocsSubtitle>Theme Options</DocsSubtitle>
       <DocsP>
-        **Important** You should include the theme style sheet BEFORE any of
+        The Theme module fully embraces using CSS variables for runtime theming.
+        This allows for some really powerful usecases like a built in dark mode,
+        custom palettes for your clients, or dynamic configuration for
+        accessibility.
+      </DocsP>
+
+      <DocsP>
+        Support for theming inside of `material-components-web` is not without
+        issue, so RMWC maintains a theme fixes file to correct any anomalies for
+        you. Please make sure you include both!
+      </DocsP>
+
+      <DocsP>
+        **Important** You should include the theme style sheets BEFORE any of
         your other styles.
       </DocsP>
 
@@ -131,44 +142,6 @@ export default function() {
         </ThemeProvider>
       </DocsExample>
 
-      <DocsSubtitle>Using the ThemeProvider to fix broken styles</DocsSubtitle>
-      <DocsP>
-        As stated above, theming in `material-components-web` isn't perfect, but
-        the ThemeProvider can be used to conveniently fix some of the built in
-        style issues. For instance, the Tab bar doesn't respond correctly when
-        used in the TopAppBar or on any other dark color surface.
-      </DocsP>
-      <DocsExample label="Broken Styles">
-        <Toolbar>
-          {/* Broken Tab Bar styles when used in Toolbar / TopAppBar */}
-          <ToolbarRow>
-            <TabBar>
-              <Tab>Cookies</Tab>
-              <Tab>Pizza</Tab>
-              <Tab>Icecream</Tab>
-            </TabBar>
-          </ToolbarRow>
-        </Toolbar>
-      </DocsExample>
-
-      <DocsExample label="Fixed Styles">
-        <Toolbar>
-          {/* Fixed using ThemeProvider. Use "wrap" to not screw up layout with an extra div. */}
-          <ToolbarRow>
-            <ThemeProvider
-              options={{ primary: 'white', onSurface: 'white' }}
-              wrap
-            >
-              <TabBar>
-                <Tab>Cookies</Tab>
-                <Tab>Pizza</Tab>
-                <Tab>Icecream</Tab>
-              </TabBar>
-            </ThemeProvider>
-          </ToolbarRow>
-        </Toolbar>
-      </DocsExample>
-
       <DocsSubtitle>Theme Component</DocsSubtitle>
       <DocsP>
         The Theme component allows you to apply theme colors to RMWC components,
@@ -204,7 +177,13 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[ThemeProvider, Theme]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'ThemeProvider', component: ThemeProvider },
+          { displayName: 'Theme', component: Theme }
+        ]}
+      />
     </Docs>
   );
 }

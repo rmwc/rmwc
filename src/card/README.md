@@ -4,9 +4,12 @@
 
 - Module **@rmwc/card**
 - Import styles:
-  - import **'@material/card/dist/mdc.card.css'**
-  - import **'@material/button/dist/mdc.button.css'**
-  - import **'@material/icon-button/dist/mdc.icon-button.css'**
+  - Using CSS Loader
+    - import '@rmwc/card/dist/styles';
+  - Or include stylesheets
+    - **'@material/card/dist/mdc.card.css'**
+    - **'@material/button/dist/mdc.button.css'**
+    - **'@material/icon-button/dist/mdc.icon-button.css'**
 - MDC Docs: [https://material.io/develop/web/components/cards/](https://material.io/develop/web/components/cards/)
 
 ## Fully Featured Example
@@ -223,7 +226,9 @@ A card action Icon
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |

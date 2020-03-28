@@ -13,7 +13,11 @@ export default function() {
       title="Buttons"
       lead="Buttons communicate the action that will occur when the user touches them."
       module="@rmwc/button"
-      styles={['@material/button/dist/mdc.button.css']}
+      styles={[
+        '@material/button/dist/mdc.button.css',
+        '@rmwc/@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css'
+      ]}
       docsLink="https://material.io/develop/web/components/buttons/"
       examples={examples}
     >
@@ -68,7 +72,10 @@ export default function() {
         </Button>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Button]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Button', component: Button }]}
+      />
     </Docs>
   );
 }

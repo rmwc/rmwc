@@ -29,4 +29,18 @@ export class ArrayEmitter<T> extends EventEmitter {
     this.trigger('change');
     return rVal;
   }
+  empty() {
+    this.array.length = 0;
+    this.trigger('change');
+  }
+  remove(item: T) {
+    const index = this.array.indexOf(item);
+
+    if (index > -1) {
+      this.array.splice(index, 1);
+      this.trigger('change');
+      return true;
+    }
+    return false;
+  }
 }

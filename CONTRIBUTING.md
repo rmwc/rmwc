@@ -131,3 +131,14 @@ If you've done some experimental work on your branch/fork and committed these vi
 Finally, it helps to make sure that your branch/fork is up to date with what's currently on master. You can ensure this by running `git pull --rebase origin master` on your branch.
 
 > **NOTE**: Please do _not merge_ master into your branch. _Always_ `pull --rebase` instead. This ensures a linear history by always putting the work you've done after the work that's already on master, regardless of the date in which those commits were made.
+
+### Archiving older versions of the docs
+This is mainly a cheat sheet for the maintainers. Its a manual process, but only happens on major releases.
+- Pull a fresh copy or rmwc/master
+- open the root package.json file
+- change homepage to the version you are archiving "https://rmwc.io" to "homepage": "https://rmwc.io/version/x.x.x",
+- run `npm run build:docs`
+- copy the contents the docs folder to public/version/x.x.x. Make sure you remove the "sub" version folder if there is one
+- edit docs/common/doc-versions to add the version x.x.x
+- Do NOT commit the updates to package.json, discard it
+- Commit the updated docs

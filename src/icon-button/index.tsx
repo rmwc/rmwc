@@ -1,20 +1,27 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCIconButtonToggleFoundation } from '@material/icon-button';
-import {
-  componentFactory,
-  FoundationComponent,
-  deprecationWarning
-} from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 import { Icon, IconProps } from '@rmwc/icon';
 import { withRipple } from '@rmwc/ripple';
+import { useIconButtonFoundation } from './foundation';
+
+/*********************************************************************
+ * Events
+ *********************************************************************/
 
 export type IconButtonOnChangeEventT = RMWC.CustomEventT<{ isOn: boolean }>;
+
+/*********************************************************************
+ * Icon Button
+ *********************************************************************/
 
 /** An IconButton component that can also be used as a toggle. */
 export interface IconButtonProps extends RMWC.WithRippleProps {
   /** Controls the on / off state of the a toggleable button. */
   checked?: boolean;
+  /** Apply an aria label. */
+  label?: string;
   /** An onChange callback that receives a custom event. evt.detail = { isOn: boolean } */
   onChange?: (evt: IconButtonOnChangeEventT) => void;
   /** Makes the button disabled */
@@ -23,33 +30,71 @@ export interface IconButtonProps extends RMWC.WithRippleProps {
   icon?: RMWC.IconPropT;
   /** If specified, renders a toggle with this icon as the on state. */
   onIcon?: RMWC.IconPropT;
+  /** Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. */
+  foundationRef?: React.Ref<MDCIconButtonToggleFoundation>;
 }
 
-export interface DeprecatedIconButtonProps {
-  /** DEPRECATED: Pass options directly to icon */
-  iconOptions?: any;
-  /** DEPRECATED: Pass options directly to onIcon */
-  onIconOptions?: any;
-}
+export type IconButtonHTMLProps = RMWC.HTMLProps<
+  HTMLInputElement,
+  Omit<React.AllHTMLAttributes<HTMLButtonElement>, 'onChange'>
+>;
+
+/** An IconButton component that can also be used as a toggle. */
+export const IconButton = createComponent<IconButtonProps, IconButtonHTMLProps>(
+  function IconButton({ ...rest }, ref) {
+    if (rest.onIcon) {
+      return <IconButtonToggle {...rest} ref={ref} />;
+    }
+
+    return <IconButtonRoot tag="button" {...rest} ref={ref} />;
+  }
+);
+
+const IconButtonToggle = createComponent<IconButtonProps>(
+  function IconButtonToggle(props, ref) {
+    const { icon, onIcon, foundationRef, ...rest } = props;
+    const { isOn, rootEl } = useIconButtonFoundation(props);
+
+    return (
+      <IconButtonToggleRoot
+        aria-pressed={isOn}
+        {...rootEl.props(rest)}
+        tag="button"
+        ref={ref}
+      >
+        <IconButtonIcon icon={icon} />
+        <IconButtonIcon icon={onIcon} on />
+      </IconButtonToggleRoot>
+    );
+  }
+);
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
 
 const IconButtonRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  componentFactory<IconButtonProps>({
-    displayName: 'IconButtonRoot',
-    tag: Icon,
-    classNames: (props: IconButtonProps) => [
+  createComponent<IconButtonProps>(function IconButtonRoot(props, ref) {
+    const { checked, label, foundationRef, ...rest } = props;
+    const className = useClassNames(props, [
       'mdc-icon-button',
       {
-        'mdc-icon-button--on': props.checked
+        'mdc-icon-button--on': checked
       }
-    ],
-    defaultProps: {
-      role: 'button',
-      tabIndex: '0'
-    },
-    consumeProps: ['checked']
+    ]);
+    return (
+      <Icon
+        role="button"
+        tabIndex={0}
+        aria-label={label}
+        {...rest}
+        className={className}
+        ref={ref}
+      />
+    );
   })
 );
 
@@ -57,20 +102,24 @@ const IconButtonToggleRoot = withRipple({
   surface: false,
   unbounded: true
 })(
-  componentFactory<IconButtonProps>({
-    displayName: 'IconButtonRoot',
-    tag: 'button',
-    classNames: (props: IconButtonProps) => [
+  createComponent<IconButtonProps>(function IconButtonToggleRoot(props, ref) {
+    const { checked, ...rest } = props;
+    const className = useClassNames(props, [
       'mdc-icon-button',
       {
-        'mdc-icon-button--on': props.checked
+        'mdc-icon-button--on': checked
       }
-    ],
-    defaultProps: {
-      role: 'button',
-      tabIndex: '0'
-    },
-    consumeProps: ['checked']
+    ]);
+    return (
+      <Tag
+        tag="button"
+        role="button"
+        tabIndex={0}
+        {...rest}
+        className={className}
+        ref={ref}
+      />
+    );
   })
 );
 
@@ -78,105 +127,15 @@ interface IconButtonIconProps extends IconProps {
   on?: boolean;
 }
 
-const IconButtonIcon = componentFactory<IconButtonIconProps>({
-  displayName: 'IconButtonIcon',
-  tag: Icon,
-  classNames: (props: IconButtonIconProps) => [
+const IconButtonIcon = React.memo(function IconButtonIcon(
+  props: IconButtonIconProps
+) {
+  const { on, ...rest } = props;
+  const className = useClassNames(props, [
     'mdc-icon-button__icon',
     {
       'mdc-icon-button__icon--on': props.on
     }
-  ],
-  consumeProps: ['on']
+  ]);
+  return <Icon {...rest} className={className} />;
 });
-
-class IconButtonToggle extends FoundationComponent<
-  MDCIconButtonToggleFoundation,
-  IconButtonProps & DeprecatedIconButtonProps
-> {
-  static displayName = 'IconButton';
-
-  private root = this.createElement('root');
-
-  constructor(props: IconButtonProps & RMWC.ComponentProps) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  get on() {
-    return this.foundation && this.foundation.isOn();
-  }
-
-  set on(isOn) {
-    this.foundation.toggle(isOn);
-  }
-
-  getDefaultFoundation() {
-    return new MDCIconButtonToggleFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      hasClass: (className: string) => this.root.hasClass(className),
-      setAttr: (attrName: string, attrValue: string | number | null) =>
-        this.root.setProp(attrName as any, attrValue),
-      notifyChange: (evtData: { isOn: boolean }) =>
-        this.emit('onChange', evtData)
-    });
-  }
-
-  /** Takes into account our checked prop */
-  isOn() {
-    if (this.props.checked !== undefined) {
-      return this.props.checked;
-    }
-
-    return this.on;
-  }
-
-  sync(nextProps: IconButtonProps) {
-    // checked
-    if (nextProps.checked !== undefined && this.on !== nextProps.checked) {
-      this.on = !!nextProps.checked;
-    }
-  }
-
-  handleClick(evt: React.MouseEvent<HTMLButtonElement>) {
-    this.props.onClick && this.props.onClick(evt);
-    this.foundation.handleClick();
-  }
-
-  render() {
-    const { icon, iconOptions, onIcon, onIconOptions, ...rest } = this.props;
-
-    if (iconOptions || onIconOptions) {
-      deprecationWarning(
-        'IconButton component props iconOptions and onIconOptions must be passed directly to the icon and onIcon prop. This issue has NOT been automatically fixed for you, please update your code.'
-      );
-    }
-
-    return (
-      <IconButtonToggleRoot
-        aria-pressed={this.isOn()}
-        aria-hidden="true"
-        {...this.root.props(rest)}
-        tag="button"
-        onClick={this.handleClick}
-      >
-        <IconButtonIcon icon={icon} />
-        <IconButtonIcon icon={onIcon} on />
-      </IconButtonToggleRoot>
-    );
-  }
-}
-
-/** An IconButton component that can also be used as a toggle. */
-export const IconButton = ({
-  ...rest
-}: IconButtonProps & RMWC.ComponentProps) => {
-  if (rest.onIcon) {
-    return <IconButtonToggle {...rest} />;
-  }
-
-  return <IconButtonRoot aria-hidden="true" tag="button" {...rest} />;
-};
-
-IconButton.displayName = 'IconButton';

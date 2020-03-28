@@ -20,7 +20,8 @@ export default function() {
       module="@rmwc/snackbar"
       styles={[
         '@material/snackbar/dist/mdc.snackbar.css',
-        '@material/button/dist/mdc.button.css'
+        '@material/button/dist/mdc.button.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/snackbars/"
       examples={examples}
@@ -39,6 +40,7 @@ export default function() {
                 open={open}
                 onClose={evt => setOpen(false)}
                 message="This is a new message"
+                dismissesOnAction
                 action={
                   <SnackbarAction
                     label="Dismiss"
@@ -66,14 +68,15 @@ export default function() {
               <Snackbar
                 open={open}
                 onClose={evt => setOpen(false)}
-                message="Start aligned"
+                message="Start aligned, open until dismissed"
                 stacked
+                dismissesOnAction
                 action={[
                   <SnackbarAction label="Yeah!" />,
                   <SnackbarAction label="No..." />
                 ]}
                 leading
-                timeout={10000}
+                timeout={-1}
               />
 
               <Button
@@ -188,6 +191,7 @@ export default function() {
                     notify({
                       title: <b>Success</b>,
                       body: 'You have selected pizza!',
+                      dismissesOnAction: true,
                       icon: 'check',
                       actions: [
                         {
@@ -205,7 +209,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Snackbar, SnackbarAction]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'Snackbar', component: Snackbar },
+          { displayName: 'SnackbarAction', component: SnackbarAction }
+        ]}
+      />
     </Docs>
   );
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { TabBar, Tab, TabIndicator } from './';
+import { TabBar, Tab } from './';
 
 describe('Tabs', () => {
   beforeAll(() => {
@@ -100,61 +100,10 @@ describe('Tabs', () => {
         <Tab>2</Tab>
       </TabBar>
     );
-    setTimeout(() => {
+    window.requestAnimationFrame(() => {
       expect(el1.html().includes('mdc-tab--active')).toEqual(true);
       expect(el2.html().includes('mdc-tab--active')).toEqual(true);
       done();
     });
-  });
-});
-
-describe('Tab', () => {
-  it('foundation', () => {
-    const el = mount(
-      <TabBar>
-        <Tab>Foo</Tab>
-      </TabBar>
-    );
-
-    const inst = el
-      .find(Tab)
-      .childAt(0)
-      .instance() as any;
-
-    const a = inst.foundation.adapter_;
-    a.setAttr('title', 'test');
-    a.addClass('foo');
-    a.removeClass('foo');
-    a.hasClass('foo');
-    a.activateIndicator({
-      bottom: 196,
-      height: 21,
-      left: 170,
-      right: 699.71875,
-      top: 175,
-      width: 529.71875,
-      x: 170,
-      y: 175
-    });
-    a.deactivateIndicator();
-    a.notifyInteracted();
-    a.getOffsetLeft();
-    a.getOffsetWidth();
-    a.getContentOffsetLeft();
-    a.getContentOffsetWidth();
-    a.focus();
-  });
-});
-
-describe('TabIndicator', () => {
-  it('foundation', () => {
-    const el = mount(<TabIndicator />);
-    const inst = el.instance() as TabIndicator;
-
-    const a = inst.foundation.adapter_;
-    a.addClass('foo');
-    a.removeClass('foo');
-    a.setContentStyleProperty('color', 'red');
-    expect(a.computeContentClientRect('foo')).toBeTruthy();
   });
 });

@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/radio"
       styles={[
         '@material/radio/dist/mdc.radio.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/radio-buttons/"
       examples={examples}
@@ -30,7 +31,7 @@ export default function() {
               <Radio
                 value="cookies"
                 checked={value === 'cookies'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Cookies
               </Radio>
@@ -38,7 +39,7 @@ export default function() {
               <Radio
                 value="pizza"
                 checked={value === 'pizza'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Pizza
               </Radio>
@@ -46,7 +47,7 @@ export default function() {
               <Radio
                 value="icecream"
                 checked={value === 'icecream'}
-                onChange={evt => setValue(evt.currentTarget.value)}
+                onChange={evt => setValue(String(evt.currentTarget.value))}
               >
                 Icecream
               </Radio>
@@ -87,7 +88,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Radio]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Radio', component: Radio }]}
+      />
     </Docs>
   );
 }

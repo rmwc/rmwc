@@ -1,10 +1,10 @@
-import * as RMWC from '@rmwc/types';
 import { SpecificEventListener } from '@material/base/types';
-import * as React from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import classNames from 'classnames';
 import { eventsMap } from './utils/events-map';
-import { debounce } from './utils/debounce';
 import { toCamel } from './utils/strings';
+import { MDCFoundation } from '@material/base';
+import { handleRef } from './component';
 
 const reactPropFromEventName = (evtName: string) =>
   (eventsMap as { [key: string]: string })[evtName] || evtName;
@@ -38,11 +38,14 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
 
   destroy() {
     this._onChange = null;
-    this._ref = null;
     this._events = {};
     this._style = {};
     this._props = {};
     this._classes = new Set();
+
+    setTimeout(() => {
+      this._ref = null;
+    });
   }
 
   /**************************************************
@@ -69,10 +72,10 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
   /**************************************************
    * Props
    **************************************************/
-  setProp(propName: keyof Props, value: any) {
+  setProp(propName: keyof Props, value: any, silent: boolean = false) {
     if (this._props[propName] !== value) {
       this._props[propName] = value;
-      this.onChange();
+      !silent && this.onChange();
     }
   }
 
@@ -176,123 +179,127 @@ export class FoundationElement<Props extends {}, ElementType = HTMLElement> {
     return this._ref;
   }
 }
-type ExtractProps<
-  TComponentOrTProps
-> = TComponentOrTProps extends React.Component<infer TProps, any>
-  ? TProps
-  : TComponentOrTProps;
 
-export interface FoundationProps extends RMWC.ComponentProps {}
+const emitFactory = (props: { [key: string]: any }) => (
+  evtType: string,
+  evtData: any,
+  shouldBubble: boolean = false
+) => {
+  let evt;
 
-interface FoundationState {}
+  evt = new CustomEvent(evtType, {
+    detail: evtData,
+    bubbles: shouldBubble
+  });
 
-type FoundationPropsT<P> = RMWC.MergeInterfacesT<P, FoundationProps>;
-type FoundationStateT<S> = S & FoundationState;
+  // bugfix for events coming from form elements
+  // and also fits with reacts form pattern better...
+  // This should always otherwise be null since there is no target
+  // for Custom Events
+  Object.defineProperty(evt, 'target', {
+    value: evtData,
+    writable: false
+  });
 
-export class FoundationComponent<
-  Foundation extends any,
-  P,
-  S extends any = {}
-> extends React.Component<FoundationPropsT<P>, FoundationStateT<S>> {
-  static shouldDebounce = false;
+  Object.defineProperty(evt, 'currentTarget', {
+    value: evtData,
+    writable: false
+  });
 
-  foundation!: Foundation;
-  elements: { [key: string]: FoundationElement<any, any> } = {};
+  // Custom handling for React
+  const propName = evtType;
 
-  constructor(props: any) {
-    super(props);
-    //@ts-ignore
-    if (this.constructor.shouldDebounce) {
-      this.update = debounce(this.update.bind(this), 0);
-    } else {
-      this.update = this.update.bind(this);
+  props[propName] && props[propName](evt);
+
+  return evt;
+};
+
+export const useFoundation = <
+  Foundation extends MDCFoundation<any>,
+  Elements extends { [key: string]: true },
+  Api extends (
+    params: {
+      [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+    } & { foundation: any }
+  ) => any,
+  Props extends {
+    [key: string]: any;
+    foundationRef?: React.Ref<Foundation | null>;
+    apiRef?: (ref: ReturnType<Api> | null) => void;
+  }
+>({
+  foundation: foundationFactory,
+  props: inputProps,
+  elements: elementsInput,
+  api
+}: {
+  foundation: (
+    elements: {
+      [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+    } & {
+      getProps: () => Props;
+      emit: (
+        evtType: string,
+        evtData: any,
+        shouldBubble?: boolean
+      ) => CustomEvent<any>;
     }
-  }
+  ) => Foundation;
+  props: Props;
+  elements: Elements;
+  api?: Api;
+}) => {
+  const [, setIteration] = useState(0);
 
-  componentDidMount() {
-    this.foundation = this.getDefaultFoundation();
-    this.foundation.init();
-    this.sync(this.props, {});
-  }
+  const props = useRef(inputProps);
+  props.current = inputProps;
 
-  componentDidUpdate(prevProps: FoundationPropsT<P>) {
-    this.sync(this.props, prevProps);
-  }
+  const elements = useMemo(
+    () =>
+      Object.keys(elementsInput).reduce<
+        {
+          [key in keyof Elements]: FoundationElement<Props, HTMLElement>;
+        }
+      >((acc, key: keyof Elements) => {
+        acc[key] = new FoundationElement<Props, HTMLElement>(() => {
+          setIteration(val => val + 1);
+        });
+        return acc;
+      }, {} as any),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
-  componentWillUnmount() {
-    this.foundation && this.foundation.destroy();
-    // @ts-ignore
-    this.foundation = undefined;
-    Object.values(this.elements).forEach(el => el.destroy());
-  }
-
-  createElement<ElementType extends any = HTMLElement>(elementName: string) {
-    const el = new FoundationElement<ExtractProps<ElementType>, ElementType>(
-      this.update
-    );
-
-    this.elements[elementName] = el;
-    return el;
-  }
-
-  update() {
-    this.foundation && this.setState({});
-  }
-
-  sync(props: any, prevProps?: any) {}
-
-  syncProp(prop: any, prevProp: any, callback: () => void) {
-    if (
-      (prop !== undefined || (prevProp !== undefined && prop === undefined)) &&
-      prop !== prevProp
-    ) {
-      callback();
-    }
-  }
-
-  getDefaultFoundation() {
-    return ({
-      init: () => {},
-      destroy: () => {}
-    } as unknown) as Foundation;
-  }
-
-  /**
-   * Fires a cross-browser-compatible custom event from the component root of the given type,
-   */
-  emit(evtType: string, evtData: any, shouldBubble: boolean = false) {
-    let evt;
-
-    evt = new CustomEvent(evtType, {
-      detail: evtData,
-      bubbles: shouldBubble
+  const foundation = useMemo(() => {
+    // init foundation
+    const f = foundationFactory({
+      ...elements,
+      getProps: () => props.current,
+      emit: (...args) => emitFactory(props.current)(...args)
     });
 
-    // bugfix for events coming from form elements
-    // and also fits with reacts form pattern better...
-    // This should always otherwise be null since there is no target
-    // for Custom Events
-    Object.defineProperty(evt, 'target', {
-      value: evtData,
-      writable: false
-    });
+    // handle apiRefs
+    api && handleRef(props.current.apiRef, api({ foundation: f, ...elements }));
 
-    Object.defineProperty(evt, 'currentTarget', {
-      value: evtData,
-      writable: false
-    });
+    return f;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    // Custom handling for React
-    const propName = evtType;
+  useEffect(() => {
+    const f = foundation;
+    f.init();
+    handleRef(props.current.foundationRef, f);
 
-    // check to see if the foundation still exists. If not, we are
-    // probably unmounted or destroyed and dont want to call any more handlers
-    // This happens when MDC broadcasts certain events on timers
-    if (this.foundation) {
-      //@ts-ignore
-      this.props[propName] && this.props[propName](evt);
-    }
+    return () => {
+      f.destroy();
+      handleRef(props.current.apiRef, null);
+      handleRef(props.current.foundationRef, null);
+      Object.values(elements).map(element => element.destroy());
+      // @ts-ignore
+      props.current = {};
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [foundation, elements]);
 
-    return evt;
-  }
-}
+  return { foundation: foundation, ...elements };
+};

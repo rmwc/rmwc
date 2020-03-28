@@ -4,7 +4,12 @@
 
 - Module **@rmwc/chip**
 - Import styles:
-  - import **'@material/chips/dist/mdc.chips.css'**
+  - Using CSS Loader
+    - import '@rmwc/chip/dist/styles';
+  - Or include stylesheets
+    - **'@material/chips/dist/mdc.chips.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/chips/](https://material.io/develop/web/components/chips/)
 
 ```jsx
@@ -70,24 +75,21 @@ function Example() {
       <Chip
         selected={selected.cookies}
         checkmark
-        onClick={() => toggleSelected('cookies')}
+        onInteraction={() => toggleSelected('cookies')}
         label="Cookies"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.pizza}
         checkmark
-        onClick={() => toggleSelected('pizza')}
+        onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.icecream}
         checkmark
-        onClick={() => toggleSelected('icecream')}
+        onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
-        trailingIcon="close"
         label="Icecream"
       />
     </ChipSet>
@@ -112,22 +114,19 @@ function Example() {
     <ChipSet choice>
       <Chip
         selected={selected.cookies}
-        onClick={() => toggleSelected('cookies')}
+        onInteraction={() => toggleSelected('cookies')}
         label="Cookies"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.pizza}
-        onClick={() => toggleSelected('pizza')}
+        onInteraction={() => toggleSelected('pizza')}
         icon="local_pizza"
         label="Pizza"
-        trailingIcon="close"
       />
       <Chip
         selected={selected.icecream}
-        onClick={() => toggleSelected('icecream')}
+        onInteraction={() => toggleSelected('icecream')}
         icon="favorite_border"
-        trailingIcon="close"
         label="Icecream"
       />
     </ChipSet>
@@ -144,6 +143,7 @@ A Chip component.
 |------|------|-------------|
 | `checkmark` | `undefined \| false \| true` | Includes an optional checkmark for the chips selected state. |
 | `children` | `React.ReactNode` | Additional children will be rendered in the text area. |
+| `foundationRef` | `React.Ref<MDCChipFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | Instance of an Icon Component. |
 | `id` | `undefined \| string` | An optional chip ID that will be included in callback evt.detail. If this is not passed, RMWC will attempt to use the "key" prop if present. |
 | `label` | `React.ReactNode` | Text for your Chip. |
@@ -152,6 +152,7 @@ A Chip component.
 | `onTrailingIconInteraction` | `undefined \| (evt: ChipOnTrailingIconInteractionEventT) => void` | A callback for click or enter key for the trailing icon. material-components-web always treats this as an intent to remove the chip. evt.detail = { chipId: string } |
 | `selected` | `undefined \| false \| true` | makes the Chip appear selected. |
 | `trailingIcon` | `RMWC.IconPropT` | Instance of an Icon Component. |
+| `trailingIconRemovesChip` | `undefined \| false \| true` | Defaults to true. Set this to false if your trailing icon is something other than a remove button. |
 
 
 ## ChipSet

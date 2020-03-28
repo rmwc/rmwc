@@ -4,7 +4,10 @@
 
 - Module **@rmwc/grid-list**
 - Import styles:
-  - import **'@material/grid-list/dist/mdc.grid-list.css'**
+  - Using CSS Loader
+    - import '@rmwc/grid-list/dist/styles';
+  - Or include stylesheets
+    - **'@material/grid-list/dist/mdc.grid-list.css'**
 - MDC Docs: [https://material.io/components/web/catalog/grid-lists/](https://material.io/components/web/catalog/grid-lists/)
 
 ```jsx
@@ -62,7 +65,10 @@ function Example() {
       <Select
         value={state.tileAspect}
         onChange={evt =>
-          setState({ ...state, tileAspect: evt.currentTarget.value })
+          setState({
+            ...state,
+            tileAspect: String(evt.currentTarget.value)
+          })
         }
         label="tileAspect"
         options={['1x1', '16x9', '2x3', '3x2', '4x3', '3x4']}

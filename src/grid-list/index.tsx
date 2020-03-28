@@ -1,7 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { Icon, IconProps } from '@rmwc/icon';
-import { componentFactory } from '@rmwc/base';
+import {
+  useClassNames,
+  Tag,
+  createComponent,
+  createMemoComponent
+} from '@rmwc/base';
 
 /** Grid List Component */
 export interface GridListProps {
@@ -18,112 +24,112 @@ export interface GridListProps {
 }
 
 /** Grid List Component */
-export const GridList = componentFactory<GridListProps>({
-  displayName: 'GridList',
-  classNames: (props: GridListProps) => [
+export const GridList = createComponent<GridListProps>(function GridList(
+  props,
+  ref
+) {
+  const {
+    tileGutter1,
+    headerCaption,
+    twolineCaption,
+    withIconAlignStart,
+    tileAspect = '1x1',
+    children,
+    ...rest
+  } = props;
+
+  const className = useClassNames(props, [
     'mdc-grid-list',
     {
-      'mdc-grid-list--tile-gutter-1': props.tileGutter1,
-      'mdc-grid-list--header-caption': props.headerCaption,
-      'mdc-grid-list--twoline-caption': props.twolineCaption,
-      'mdc-grid-list--with-icon-align-start': props.withIconAlignStart,
-      [`mdc-grid-list--tile-aspect-${props.tileAspect || ''}`]: props.tileAspect
+      'mdc-grid-list--tile-gutter-1': tileGutter1,
+      'mdc-grid-list--header-caption': headerCaption,
+      'mdc-grid-list--twoline-caption': twolineCaption,
+      'mdc-grid-list--with-icon-align-start': withIconAlignStart,
+      [`mdc-grid-list--tile-aspect-${tileAspect || ''}`]: tileAspect
     }
-  ],
-  defaultProps: {
-    tileGutter1: false,
-    headerCaption: false,
-    twolineCaption: false,
-    withIconAlignStart: false,
-    tileAspect: '1x1'
-  },
-  consumeProps: [
-    'tileGutter1',
-    'headerCaption',
-    'twolineCaption',
-    'withIconAlignStart',
-    'tileAspect'
-  ],
-  render: (
-    { children, ...rest }: GridListProps & RMWC.ComponentProps,
-    ref: any,
-    Tag: any
-  ) => (
-    <Tag {...rest} ref={ref}>
+  ]);
+
+  return (
+    <Tag {...rest} ref={ref} className={className}>
       <ul className="mdc-grid-list__tiles">{children}</ul>
     </Tag>
-  )
+  );
 });
 
 /** The primary content for a Grid tile */
 export interface GridTilePrimaryProps {}
 
 /** The primary content for a Grid tile */
-export const GridTilePrimary = componentFactory<GridTilePrimaryProps>({
-  displayName: 'GridTilePrimary',
-  classNames: ['mdc-grid-tile__primary']
-});
+export const GridTilePrimary = createComponent<GridTilePrimaryProps>(
+  function GridTilePrimary(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile__primary']);
+    return <Tag {...props} ref={ref} className={className} />;
+  }
+);
 
 /** The inner primary content for a Grid tile */
 export interface GridTilePrimaryContentProps {}
 
 /** The inner primary content for a Grid tile */
-export const GridTilePrimaryContent = componentFactory<
+export const GridTilePrimaryContent = createComponent<
   GridTilePrimaryContentProps
->({
-  displayName: 'GridTilePrimaryContent',
-  tag: 'img',
-  classNames: ['mdc-grid-tile__primary-content']
+>(function GridTilePrimaryContent(props, ref) {
+  const className = useClassNames(props, ['mdc-grid-tile__primary-content']);
+  return <Tag tag="img" {...props} ref={ref} className={className} />;
 });
 
 /** A grid tile */
 export interface GridTileProps {}
 
 /** A grid tile */
-export const GridTile = componentFactory<GridTileProps>({
-  displayName: 'GridTile',
-  tag: 'li',
-  classNames: ['mdc-grid-tile']
+export const GridTile = createComponent<GridTileProps>(function GridTile(
+  props,
+  ref
+) {
+  const className = useClassNames(props, ['mdc-grid-tile']);
+  return <Tag tag="li" {...props} ref={ref} className={className} />;
 });
 
 /** The secondary content for a Grid tile */
 export interface GridTileSecondaryProps {}
 
 /** The secondary content for a Grid tile */
-export const GridTileSecondary = componentFactory<GridTileSecondaryProps>({
-  displayName: 'GridTileSecondary',
-  tag: 'span',
-  classNames: ['mdc-grid-tile__secondary']
-});
+export const GridTileSecondary = createComponent<GridTileSecondaryProps>(
+  function GridTileSecondary(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile__secondary']);
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
 export interface GridTileIconProps extends IconProps {}
 
 /** The icon for a Grid tile. This is an instance of Icon component. */
-export const GridTileIcon = componentFactory<GridTileIconProps>({
-  displayName: 'GridTileIcon',
-  tag: Icon,
-  classNames: ['mdc-grid-tile__icon']
-});
+export const GridTileIcon = createMemoComponent<GridTileIconProps>(
+  function GridTileIcon(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile__icon']);
+    return <Icon {...props} ref={ref} className={className} />;
+  }
+);
 
 /** The title for a Grid tile */
 export interface GridTileTitleProps {}
 
 /** The title for a Grid tile */
-export const GridTileTitle = componentFactory<GridTileTitleProps>({
-  displayName: 'GridTileTitle',
-  tag: 'span',
-  classNames: ['mdc-grid-tile__title']
-});
+export const GridTileTitle = createComponent<GridTileTitleProps>(
+  function GridTileTitle(props, ref) {
+    const className = useClassNames(props, ['mdc-grid-tile__title']);
+    return <Tag tag="span" {...props} ref={ref} className={className} />;
+  }
+);
 
 /** Supporting Text for the Grid Tile */
 export interface GridTileTitleSupportTextProps {}
 
 /** Supporting Text for the Grid Tile */
-export const GridTileTitleSupportText = componentFactory<
+export const GridTileTitleSupportText = createComponent<
   GridTileTitleSupportTextProps
->({
-  displayName: 'GridTileTitleSupportText',
-  tag: 'span',
-  classNames: ['mdc-grid-tile__support-text']
+>(function GridTileTitleSupportText(props, ref) {
+  const className = useClassNames(props, ['mdc-grid-tile__support-text']);
+  return <Tag tag="span" {...props} ref={ref} className={className} />;
 });

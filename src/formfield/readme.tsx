@@ -23,7 +23,10 @@ export default function() {
         </FormField>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[FormField]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'FormField', component: FormField }]}
+      />
     </Docs>
   );
 }

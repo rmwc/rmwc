@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Chip, ChipSet, ChipIcon } from './';
+import { Chip, ChipSet } from './';
+import { useChipFoundation } from './foundation';
+import { mountHook } from '@rmwc/base/utils/test-utils';
 
 describe('Chip', () => {
   it('renders', () => {
@@ -29,6 +31,7 @@ describe('Chip', () => {
     const el = mount(
       <ChipSet>
         <Chip checkmark selected label="test-label" />
+        <Chip checkmark selected icon="favorite" label="test-label" />
       </ChipSet>
     );
 
@@ -38,13 +41,12 @@ describe('Chip', () => {
   it('handles onInteraction', () => {
     let value = 0;
     const el = mount(<Chip onInteraction={() => value++} />);
-    const inst = el.instance() as Chip;
-    (inst.foundation as any).adapter_.notifyInteraction();
+    el.simulate('click');
     expect(value).toEqual(1);
   });
 
   it('handles custom ChipIcon', () => {
-    const el = mount(<Chip icon={<ChipIcon icon="favorite" />} />);
+    const el = mount(<Chip icon="favorite" />);
     expect(el.html().includes('favorite')).toBe(true);
   });
 
@@ -64,12 +66,13 @@ describe('Chip', () => {
       .simulate('click');
 
     expect(onInteraction).toEqual(1);
-
-    const a = (el.instance() as any).foundation.adapter_;
-    a.notifyRemoval();
-    expect(onRemove).toEqual(1);
-
     el.simulate('transitionend');
+
+    // Having to force a call of this since JSDOM cant
+    // replicate MDCs internal animation behavior
+    el.props().onRemove();
+
+    expect(onRemove).toEqual(1);
   });
 
   it('handles onInteraction', () => {
@@ -77,5 +80,13 @@ describe('Chip', () => {
     const el = mount(<Chip onInteraction={() => value++} />);
     el.simulate('click');
     expect(value).toEqual(1);
+  });
+});
+
+describe('Chip: Foundation', () => {
+  it('useChipFoundation', () => {
+    mountHook(() => {
+      const { foundation } = useChipFoundation({});
+    });
   });
 });

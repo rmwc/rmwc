@@ -190,15 +190,15 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          Card,
-          CardPrimaryAction,
-          CardMedia,
-          CardMediaContent,
-          CardActions,
-          CardActionButtons,
-          CardActionIcons,
-          CardActionIcon,
-          CardActionButton
+          { displayName: 'Card', component: Card },
+          { displayName: 'CardPrimaryAction', component: CardPrimaryAction },
+          { displayName: 'CardMedia', component: CardMedia },
+          { displayName: 'CardMediaContent', component: CardMediaContent },
+          { displayName: 'CardActions', component: CardActions },
+          { displayName: 'CardActionButtons', component: CardActionButtons },
+          { displayName: 'CardActionIcons', component: CardActionIcons },
+          { displayName: 'CardActionIcon', component: CardActionIcon },
+          { displayName: 'CardActionButton', component: CardActionButton }
         ]}
       />
     </Docs>

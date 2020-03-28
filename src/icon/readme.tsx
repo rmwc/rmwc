@@ -23,23 +23,16 @@ export default function() {
         Icons are not part of the official material-components-web spec, but
         they are referenced many times in the documentation. RMWC provides a
         declarative way to use icons. Note that RMWC does not ship with any
-        icons of its own. You can include [Material
-        Icons](https://material.io/icons/), any other font icon set, use SVGs,
-        or your own images.
+        icons of its own. Make sure you include an icon set! You can use any one
+        you want, but Google's Material Icons are available through open source.
+        Follow Google's developer guide to get them setup with your app.
+        https://google.github.io/material-design-icons/
       </DocsP>
       <DocsP>
-        By default, the Icon component will attempt to detect the strategy for
-        the icon you are embedding. For example, it assumes if pass something
-        that starts with `http://` to the `icon` prop that you are attempting to
-        load an image and will render it accordingly. Beacuse of ambiguity with
-        ligatures verses icons added using classNames, you might have to
-        explicitly set the strategy by passing it in as an option, or setting it
-        as a global default using the `RMWCProvider`.`RMWCProvider` provides
-        other global icon options. Please see the "Provider" section for more
-        detail.
-      </DocsP>
-      <DocsP>
-        The default strategy is 'ligature' which works with the material.io font
+        There are lots of different strategies for implementing icons on the
+        web, and the Icon component is flexible for most of them. Use ligatures,
+        classNames, inline SVGs, HTML, or URLs to get icons into your app. The
+        default strategy is 'ligature' which works with the material.io font
         icon set.
       </DocsP>
 
@@ -296,7 +289,10 @@ export default function() {
         `}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Icon]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Icon', component: Icon }]}
+      />
     </Docs>
   );
 }

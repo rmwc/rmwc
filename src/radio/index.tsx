@@ -1,79 +1,93 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCRadioFoundation } from '@material/radio';
-import { componentFactory } from '@rmwc/base';
+import { Tag, useClassNames, mergeRefs, createComponent } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
-import {
-  ToggleableFoundationComponent,
-  ToggleableFoundationProps
-} from '@rmwc/toggleable';
+import { ToggleableProps, ToggleHTMLProps } from '@rmwc/toggleable';
+import { useRadioFoundation } from './foundation';
+
+/*********************************************************************
+ * Radio
+ *********************************************************************/
 
 /** A Radio button component. */
 export interface RadioProps
   extends RMWC.WithRippleProps,
-    ToggleableFoundationProps {}
+    ToggleableProps<MDCRadioFoundation> {}
 
-const RadioRoot = withRipple({ unbounded: true, accent: true })(
-  componentFactory<RadioProps>({
-    displayName: 'RadioRoot',
-    classNames: (props: RadioProps) => [
+export type RadioHTMLProps = ToggleHTMLProps;
+
+/** A Radio button component. */
+export const Radio = createComponent<RadioProps, RadioHTMLProps>(function Radio(
+  props,
+  ref
+) {
+  const { renderToggle, id, toggleRootProps, rootEl } = useRadioFoundation(
+    props
+  );
+
+  const {
+    children,
+    className,
+    label,
+    style,
+    inputRef,
+    foundationRef,
+    ...rest
+  } = props;
+
+  const radio = (
+    <RadioRoot
+      {...rootEl.props(toggleRootProps)}
+      ref={mergeRefs(rootEl.setRef, ref)}
+    >
+      <input
+        {...rest}
+        className="mdc-radio__native-control"
+        type="radio"
+        id={id}
+        ref={inputRef}
+      />
+      <RadioBackground />
+      <RadioRipple />
+    </RadioRoot>
+  );
+
+  return renderToggle(radio);
+});
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+const RadioRipple = React.memo(function RadioRipple() {
+  return <div className="mdc-radio__ripple" />;
+});
+
+const RadioRoot = withRipple({
+  surface: false,
+  unbounded: true
+})(
+  React.forwardRef<any, RadioProps & RMWC.HTMLProps>(function RadioRoot(
+    props,
+    ref
+  ) {
+    const { disabled, ...rest } = props;
+    const className = useClassNames(props, [
       'mdc-radio',
-      { 'mdc-radio--disabled': props.disabled }
-    ]
+      {
+        'mdc-radio--disabled': disabled
+      }
+    ]);
+    return <Tag {...rest} className={className} />;
   })
 );
 
-const RadioNativeControl = componentFactory<{}>({
-  displayName: 'RadioNativeControl',
-  defaultProps: {
-    type: 'radio'
-  },
-  tag: 'input',
-  classNames: ['mdc-radio__native-control']
+const RadioBackground = React.memo(function RadioBackground() {
+  return (
+    <div className="mdc-radio__background">
+      <div className="mdc-radio__outer-circle" />
+      <div className="mdc-radio__inner-circle" />
+    </div>
+  );
 });
-
-class RadioBackground extends React.Component<{}> {
-  static displayName = 'RadioBackground';
-
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <div className="mdc-radio__background">
-        <div className="mdc-radio__outer-circle" />
-        <div className="mdc-radio__inner-circle" />
-      </div>
-    );
-  }
-}
-
-/** A Radio button component. */
-export class Radio extends ToggleableFoundationComponent<
-  MDCRadioFoundation,
-  RadioProps
-> {
-  static displayName = 'Radio';
-  private root = this.createElement('root');
-
-  getDefaultFoundation() {
-    return new MDCRadioFoundation({
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className)
-    });
-  }
-
-  render() {
-    const { children, className, label, style, inputRef, ...rest } = this.props;
-
-    const radio = (
-      <RadioRoot {...this.toggleRootProps} ref={this.root.setRef}>
-        <RadioNativeControl {...rest} id={this.id} ref={inputRef} />
-        <RadioBackground />
-      </RadioRoot>
-    );
-
-    return this.renderToggle(radio);
-  }
-}

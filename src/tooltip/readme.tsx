@@ -71,7 +71,7 @@ export default function() {
             </div>
           }
         >
-          <a href="#">S. Rogers</a>
+          <span role="button">S. Rogers</span>
         </Tooltip>
       </DocsExample>
       <DocsExample label="Styled content">
@@ -95,7 +95,7 @@ export default function() {
             </div>
           }
         >
-          <a href="#">Popover Window</a>
+          <span role="button">Popover Window</span>
         </Tooltip>
       </DocsExample>
       <DocsExample label="Delay">
@@ -144,15 +144,13 @@ export default function() {
           <Tooltip content="Cookies" activateOn="hover">
             <Button label="Hover" />
           </Tooltip>
-
+          ''
           <Tooltip content="Pizza" activateOn="click">
             <Button label="Click" />
           </Tooltip>
-
           <Tooltip content="Icecream" activateOn="focus">
             <Button label="Focus" />
           </Tooltip>
-
           <Tooltip content="Cake" activateOn={['hover', 'focus']}>
             <Button label="Multiple" />
           </Tooltip>
@@ -181,7 +179,10 @@ export default function() {
         </RMWCProvider>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Tooltip]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Tooltip', component: Tooltip }]}
+      />
     </Docs>
   );
 }

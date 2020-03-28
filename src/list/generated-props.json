@@ -22,9 +22,9 @@
       },
       "kind": "class",
       "name": "CollapsibleList",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L56",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L51",
       "extends": [
-        "Component<CollapsibleListProps & ComponentProps, CollapsibleState>"
+        "Component<CollapsibleListProps & RMWC.HTMLProps, CollapsibleState>"
       ],
       "methods": [
         {
@@ -41,13 +41,13 @@
           },
           "kind": "method",
           "name": "getDerivedStateFromProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L62",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "getDerivedStateFromProps",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L62",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L57",
               "parameters": [
                 {
                   "flags": {
@@ -175,7 +175,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -194,7 +194,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextContext: any) => void"
             }
           ]
         },
@@ -247,7 +247,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -281,7 +281,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
             }
           ]
         },
@@ -363,13 +363,13 @@
           },
           "kind": "method",
           "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L91",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L91",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L88",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -390,13 +390,13 @@
           },
           "kind": "method",
           "name": "componentDidUpdate",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L95",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentDidUpdate",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L95",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L92",
               "parameters": [
                 {
                   "flags": {
@@ -524,7 +524,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -543,16 +543,16 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextContext: any) => void"
             }
           ]
         },
         {
-          "fileName": "node_modules/@types/react/index.d.ts",
+          "fileName": "src/list/collapsible-list.tsx",
           "flags": {
             "isExported": true,
             "isExternal": false,
-            "isOptional": true,
+            "isOptional": false,
             "isPrivate": false,
             "isProtected": false,
             "isPublic": false,
@@ -561,19 +561,13 @@
           },
           "kind": "method",
           "name": "componentWillUnmount",
-          "inheritedFrom": "ComponentLifecycle.componentWillUnmount",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
           "signatures": [
             {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in <code>componentDidMount</code>.</p>\n"
-                ],
-                "contentsRaw": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
+              "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "componentWillUnmount",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L101",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -629,7 +623,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -663,7 +657,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => void"
             }
           ]
         },
@@ -681,13 +675,13 @@
           },
           "kind": "method",
           "name": "correctFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L135",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "correctFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L135",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L137",
               "parameters": [
                 {
                   "flags": {
@@ -793,7 +787,7 @@
                   },
                   "kind": "parameter",
                   "name": "prevProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -812,7 +806,7 @@
                 }
               ],
               "returnType": "SS | null",
-              "type": "(prevProps: Readonly<CollapsibleListProps & ComponentProps>, prevState: Readonly<CollapsibleState>) => SS | null"
+              "type": "(prevProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, prevState: Readonly<CollapsibleState>) => SS | null"
             }
           ]
         },
@@ -830,13 +824,13 @@
           },
           "kind": "method",
           "name": "handleClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L163",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L163",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L165",
               "parameters": [
                 {
                   "flags": {
@@ -873,13 +867,13 @@
           },
           "kind": "method",
           "name": "handleFocus",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L197",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleFocus",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L197",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L199",
               "parameters": [
                 {
                   "flags": {
@@ -916,13 +910,13 @@
           },
           "kind": "method",
           "name": "handleKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L171",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "handleKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L171",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L173",
               "parameters": [
                 {
                   "flags": {
@@ -959,13 +953,13 @@
           },
           "kind": "method",
           "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L211",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L211",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L213",
               "parameters": [],
               "returnType": "Element",
               "type": "() => Element"
@@ -1006,7 +1000,7 @@
                   },
                   "kind": "parameter",
                   "name": "state",
-                  "type": "(prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & ComponentProps>) => null | S |  | null | S | "
+                  "type": "(prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & RMWC.HTMLProps>) => null | S |  | null | S | "
                 },
                 {
                   "flags": {
@@ -1025,7 +1019,7 @@
                 }
               ],
               "returnType": "void",
-              "type": "(state: (prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & ComponentProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
+              "type": "(state: (prevState: Readonly<CollapsibleState>, props: Readonly<CollapsibleListProps & RMWC.HTMLProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
             }
           ]
         },
@@ -1070,7 +1064,7 @@
                   },
                   "kind": "parameter",
                   "name": "nextProps",
-                  "type": "Readonly<CollapsibleListProps & ComponentProps>"
+                  "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps>"
                 },
                 {
                   "flags": {
@@ -1104,7 +1098,7 @@
                 }
               ],
               "returnType": "boolean",
-              "type": "(nextProps: Readonly<CollapsibleListProps & ComponentProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => boolean"
+              "type": "(nextProps: Readonly<CollapsibleListProps & RMWC.HTMLProps>, nextState: Readonly<CollapsibleState>, nextContext: any) => boolean"
             }
           ]
         },
@@ -1122,13 +1116,13 @@
           },
           "kind": "method",
           "name": "syncOpenState",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L104",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "syncOpenState",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L104",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L106",
               "parameters": [],
               "returnType": "void",
               "type": "() => void"
@@ -1149,13 +1143,13 @@
           },
           "kind": "method",
           "name": "toggleOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L159",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
           "signatures": [
             {
               "fileName": "src/list/collapsible-list.tsx",
               "kind": "signature",
               "name": "toggleOpen",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L159",
+              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L161",
               "parameters": [
                 {
                   "flags": {
@@ -1222,7 +1216,7 @@
           },
           "kind": "property",
           "name": "displayName",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L60",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L55",
           "defaultValue": "\"CollapsibleList\"",
           "type": "string"
         },
@@ -1240,25 +1234,24 @@
           },
           "kind": "property",
           "name": "childContainer",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L76",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L71",
           "defaultValue": " null",
           "type": "HTMLDivElement | null"
         },
         {
           "documentation": {
             "contents": [
-              "<p>If using the new style context, re-declare this in your class to be the\n<code>React.ContextType</code> of your <code>static contextType</code>.</p>\n<pre><code class=\"lang-ts\">static contextType = MyContext\ncontext!: React.ContextType&lt;typeof MyContext&gt;\n</code></pre>\n",
+              "<p>If using the new style context, re-declare this in your class to be the\n<code>React.ContextType</code> of your <code>static contextType</code>.\nShould be used with type annotation or static contextType.</p>\n<pre><code class=\"lang-ts\">static contextType = MyContext\n// For TS pre-3.7:\ncontext!: React.ContextType&lt;typeof MyContext&gt;\n// For TS 3.7 and above:\ndeclare context: React.ContextType&lt;typeof MyContext&gt;\n</code></pre>\n",
               {
                 "tag": "see",
-                "value": "https://reactjs.org/docs/legacy-context.html"
+                "value": "https://reactjs.org/docs/context.html"
               }
             ],
-            "contentsRaw": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.\n\n```ts\nstatic contextType = MyContext\ncontext!: React.ContextType<typeof MyContext>\n```\n\n\n@see https://reactjs.org/docs/legacy-context.html",
+            "contentsRaw": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.\nShould be used with type annotation or static contextType.\n\n```ts\nstatic contextType = MyContext\n// For TS pre-3.7:\ncontext!: React.ContextType<typeof MyContext>\n// For TS 3.7 and above:\ndeclare context: React.ContextType<typeof MyContext>\n```\n\n\n@see https://reactjs.org/docs/context.html",
             "metadata": {}
           },
           "fileName": "node_modules/@types/react/index.d.ts",
           "flags": {
-            "isDeprecated": "if used without a type annotation, or without static contextType",
             "isExported": true,
             "isExternal": false,
             "isOptional": false,
@@ -1288,7 +1281,25 @@
           "kind": "property",
           "name": "props",
           "inheritedFrom": "Component.props",
-          "type": "Readonly<CollapsibleListProps & ComponentProps> & Readonly<>"
+          "type": "Readonly<CollapsibleListProps & RMWC.HTMLProps> & Readonly<>"
+        },
+        {
+          "fileName": "src/list/collapsible-list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "rafId",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L73",
+          "defaultValue": " null",
+          "type": "number | null"
         },
         {
           "documentation": {
@@ -1327,9 +1338,27 @@
           },
           "kind": "property",
           "name": "root",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L77",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L72",
           "defaultValue": " null",
           "type": "HTMLDivElement | null"
+        },
+        {
+          "fileName": "src/list/collapsible-list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "timerId",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L74",
+          "defaultValue": " null",
+          "type": "number | null"
         }
       ],
       "constructorType": {
@@ -1346,13 +1375,13 @@
         },
         "kind": "constructor",
         "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L82",
+        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
         "signatures": [
           {
             "fileName": "src/list/collapsible-list.tsx",
             "kind": "signature",
             "name": "new CollapsibleList",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L82",
+            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L79",
             "parameters": [
               {
                 "flags": {
@@ -1372,1429 +1401,6 @@
             ],
             "returnType": "CollapsibleList",
             "type": "(props: any) => CollapsibleList"
-          }
-        ]
-      }
-    },
-    "List": {
-      "documentation": {
-        "contents": [
-          "<p>A List Component</p>\n"
-        ],
-        "contentsRaw": "A List Component",
-        "metadata": {}
-      },
-      "fileName": "src/list/list.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "class",
-      "name": "List",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
-      "extends": [
-        "FoundationComponent<MDCListFoundation, ListProps>"
-      ],
-      "methods": [
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<ListProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<ListProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidCatch",
-          "inheritedFrom": "ComponentLifecycle.componentDidCatch",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.</p>\n"
-                ],
-                "contentsRaw": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidCatch",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "error",
-                  "type": "Error"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "errorInfo",
-                  "type": "ErrorInfo"
-                }
-              ],
-              "returnType": "void",
-              "type": "(error: Error, errorInfo: ErrorInfo) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidMount",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L71",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "componentDidMount",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L71",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidUpdate",
-          "inheritedFrom": "FoundationComponent.componentDidUpdate",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentDidUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "FoundationPropsT<ListProps>"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prevProps: FoundationPropsT<ListProps>) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<ListProps>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUnmount",
-          "inheritedFrom": "FoundationComponent.componentWillUnmount",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "componentWillUnmount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<FoundationPropsT<ListProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "createElement",
-          "inheritedFrom": "FoundationComponent.createElement",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "createElement",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "elementName",
-                  "type": "string"
-                }
-              ],
-              "returnType": "FoundationElement<ExtractProps<ElementType>, ElementType>",
-              "type": "(elementName: string) => FoundationElement<ExtractProps<ElementType>, ElementType>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "emit",
-          "inheritedFrom": "FoundationComponent.emit",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Fires a cross-browser-compatible custom event from the component root of the given type,</p>\n"
-                ],
-                "contentsRaw": "Fires a cross-browser-compatible custom event from the component root of the given type,",
-                "metadata": {}
-              },
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "emit",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtType",
-                  "type": "string"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evtData",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "shouldBubble",
-                  "defaultValue": "false",
-                  "type": "boolean"
-                }
-              ],
-              "returnType": "CustomEvent<any>",
-              "type": "(evtType: string, evtData: any, shouldBubble?: boolean) => CustomEvent<any>"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "focusItemAtIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L76",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "focusItemAtIndex",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L76",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "index",
-                  "type": "number"
-                }
-              ],
-              "returnType": "void",
-              "type": "(index: number) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getDefaultFoundation",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L80",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "getDefaultFoundation",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L80",
-              "parameters": [],
-              "returnType": "MDCListFoundation",
-              "type": "() => MDCListFoundation"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getListItemIndex",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L193",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Used to figure out which list item this event is targetting. Or returns -1 if\nthere is no list item</p>\n"
-                ],
-                "contentsRaw": "Used to figure out which list item this event is targetting. Or returns -1 if\nthere is no list item",
-                "metadata": {}
-              },
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "getListItemIndex",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L193",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "FocusEvent | KeyboardEvent | MouseEvent"
-                }
-              ],
-              "returnType": "number",
-              "type": "(evt: FocusEvent | KeyboardEvent | MouseEvent) => number"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getSnapshotBeforeUpdate",
-          "inheritedFrom": "NewLifecycle.getSnapshotBeforeUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Runs before React applies the result of <code>render</code> to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before <code>render</code> causes changes to it.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.</p>\n"
-                ],
-                "contentsRaw": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.\n\nNote: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "getSnapshotBeforeUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                }
-              ],
-              "returnType": "SS | null",
-              "type": "(prevProps: Readonly<FoundationPropsT<ListProps>>, prevState: Readonly<FoundationStateT<S>>) => SS | null"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "handleClick",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L223",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "handleClick",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L223",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "MouseEvent"
-                }
-              ],
-              "returnType": "void",
-              "type": "(evt: MouseEvent) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "handleFocusIn",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L254",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "handleFocusIn",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L254",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "FocusEvent & FocusEvent"
-                }
-              ],
-              "returnType": "void",
-              "type": "(evt: FocusEvent & FocusEvent) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "handleFocusOut",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L259",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "handleFocusOut",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L259",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "FocusEvent & FocusEvent"
-                }
-              ],
-              "returnType": "void",
-              "type": "(evt: FocusEvent & FocusEvent) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "handleKeydown",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L237",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "handleKeydown",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L237",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "evt",
-                  "type": "KeyboardEvent<HTMLElement> & KeyboardEvent"
-                }
-              ],
-              "returnType": "void",
-              "type": "(evt: KeyboardEvent<HTMLElement> & KeyboardEvent) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L264",
-          "signatures": [
-            {
-              "fileName": "src/list/list.tsx",
-              "kind": "signature",
-              "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L264",
-              "parameters": [],
-              "returnType": "Element",
-              "type": "() => Element"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "shouldComponentUpdate",
-          "inheritedFrom": "ComponentLifecycle.shouldComponentUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called to determine whether the change in props and state should trigger a re-render.</p>\n<p><code>Component</code> always returns true.\n<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any\nprops or states have changed.</p>\n<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>\nand <code>componentDidUpdate</code> will not be called.</p>\n"
-                ],
-                "contentsRaw": "Called to determine whether the change in props and state should trigger a re-render.\n\n`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "shouldComponentUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<FoundationPropsT<ListProps>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<FoundationStateT<S>>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "boolean",
-              "type": "(nextProps: Readonly<FoundationPropsT<ListProps>>, nextState: Readonly<FoundationStateT<S>>, nextContext: any) => boolean"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "sync",
-          "inheritedFrom": "FoundationComponent.sync",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "sync",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "props",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(props: any, prevProps?: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "syncProp",
-          "inheritedFrom": "FoundationComponent.syncProp",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "syncProp",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prop",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProp",
-                  "type": "any"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "callback",
-                  "type": "() => void"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prop: any, prevProp: any, callback: () => void) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "update",
-          "inheritedFrom": "FoundationComponent.update",
-          "signatures": [
-            {
-              "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-              "kind": "signature",
-              "name": "update",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        }
-      ],
-      "properties": [
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "shouldDebounce",
-          "defaultValue": "false",
-          "inheritedFrom": "FoundationComponent.shouldDebounce",
-          "type": "boolean"
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "elements",
-          "inheritedFrom": "FoundationComponent.elements",
-          "type": "{ [key: string]: FoundationElement<any, any> }"
-        },
-        {
-          "fileName": "src/list/node_modules/@rmwc/base/foundation-component.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "foundation",
-          "inheritedFrom": "FoundationComponent.foundation",
-          "type": "MDCListFoundation"
-        }
-      ],
-      "constructorType": {
-        "fileName": "src/list/list.tsx",
-        "flags": {
-          "isExported": true,
-          "isExternal": false,
-          "isOptional": false,
-          "isPrivate": false,
-          "isProtected": false,
-          "isPublic": false,
-          "isRest": false,
-          "isStatic": false
-        },
-        "kind": "constructor",
-        "name": "constructor",
-        "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L49",
-        "signatures": [
-          {
-            "fileName": "src/list/list.tsx",
-            "kind": "signature",
-            "name": "new List",
-            "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L49",
-            "parameters": [
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": false,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "props",
-                "type": "ListProps"
-              }
-            ],
-            "returnType": "List",
-            "type": "(props: ListProps) => List"
           }
         ]
       }
@@ -2823,6 +1429,30 @@
       "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L6",
       "methods": [],
       "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>Starts the collapsible list as open.</p>\n"
+            ],
+            "contentsRaw": "Starts the collapsible list as open.",
+            "metadata": {}
+          },
+          "fileName": "src/list/collapsible-list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "defaultOpen",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
+          "type": "undefined | false | true"
+        },
         {
           "documentation": {
             "contents": [
@@ -2918,30 +1548,6 @@
           "name": "open",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L10",
           "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>Starts the collapsible list as open.</p>\n"
-            ],
-            "contentsRaw": "Starts the collapsible list as open.",
-            "metadata": {}
-          },
-          "fileName": "src/list/collapsible-list.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "startOpen",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/collapsible-list.tsx#L12",
-          "type": "undefined | false | true"
         }
       ]
     },
@@ -2966,9 +1572,33 @@
       },
       "kind": "interface",
       "name": "ListProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L9",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L10",
       "methods": [],
       "properties": [
+        {
+          "documentation": {
+            "contents": [
+              "<p>An internal api used for cross component communication</p>\n"
+            ],
+            "contentsRaw": "An internal api used for cross component communication",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "apiRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L22",
+          "type": "undefined | (api: ListApi) => void"
+        },
         {
           "documentation": {
             "contents": [
@@ -2990,7 +1620,7 @@
           },
           "kind": "property",
           "name": "avatarList",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L16",
           "type": "undefined | false | true"
         },
         {
@@ -3014,8 +1644,32 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L11",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L12",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Advanced: A reference to the MDCFoundation.</p>\n"
+            ],
+            "contentsRaw": "Advanced: A reference to the MDCFoundation.",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "foundationRef",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L24",
+          "type": "React.Ref<MDCListFoundation | null>"
         },
         {
           "documentation": {
@@ -3038,7 +1692,7 @@
           },
           "kind": "property",
           "name": "nonInteractive",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L18",
           "type": "undefined | false | true"
         },
         {
@@ -3062,7 +1716,7 @@
           },
           "kind": "property",
           "name": "onAction",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L20",
           "type": "undefined | (evt: ListOnActionEventT) => void"
         },
         {
@@ -3086,8 +1740,211 @@
           },
           "kind": "property",
           "name": "twoLine",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L14",
           "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Sets the lists vertical orientation. Defaults to true</p>\n"
+            ],
+            "contentsRaw": "Sets the lists vertical orientation. Defaults to true",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "vertical",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L30",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Sets the list to allow the up arrow on the first element to focus the\nlast element of the list and vice versa. Defaults to true</p>\n"
+            ],
+            "contentsRaw": "Sets the list to allow the up arrow on the first element to focus the\nlast element of the list and vice versa. Defaults to true",
+            "metadata": {}
+          },
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "wrapFocus",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L28",
+          "type": "undefined | false | true"
+        }
+      ]
+    },
+    "ListApi": {
+      "fileName": "src/list/list.tsx",
+      "flags": {
+        "isExported": true,
+        "isExternal": false,
+        "isOptional": false,
+        "isPrivate": false,
+        "isProtected": false,
+        "isPublic": false,
+        "isRest": false,
+        "isStatic": false
+      },
+      "kind": "interface",
+      "name": "ListApi",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L33",
+      "methods": [],
+      "properties": [
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "addClassToElementIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L37",
+          "type": "(index: number, className: string) => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "focusItemAtIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L45",
+          "type": "(index: number) => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "focusRoot",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L35",
+          "type": "() => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getClasses",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L36",
+          "type": "() => string"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "getListItemCount",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L44",
+          "type": "() => number"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "listElements",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L34",
+          "type": "() => HTMLLIElement[]"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "removeClassFromElementAtIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L38",
+          "type": "(index: number, className: string) => void"
+        },
+        {
+          "fileName": "src/list/list.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": false,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "setAttributeForElementIndex",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L39",
+          "type": "(index: number, attr: string, value: any) => void"
         }
       ]
     },
@@ -3118,30 +1975,6 @@
       ],
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -3237,54 +2070,6 @@
           "name": "selected",
           "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L11",
           "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         }
       ]
     },
@@ -3309,7 +2094,7 @@
       },
       "kind": "interface",
       "name": "ListItemTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L38",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L36",
       "methods": [],
       "properties": []
     },
@@ -3334,7 +2119,7 @@
       },
       "kind": "interface",
       "name": "ListItemPrimaryTextProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L48",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L47",
       "methods": [],
       "properties": []
     },
@@ -3384,7 +2169,7 @@
       },
       "kind": "interface",
       "name": "ListItemGraphicProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L70",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L69",
       "extends": [
         "IconProps"
       ],
@@ -3413,30 +2198,6 @@
           "name": "icon",
           "inheritedFrom": "IconProps.icon",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
         }
       ]
     },
@@ -3490,30 +2251,6 @@
           "name": "icon",
           "inheritedFrom": "IconProps.icon",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
         }
       ]
     },
@@ -3538,7 +2275,7 @@
       },
       "kind": "interface",
       "name": "ListGroupProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L106",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L105",
       "methods": [],
       "properties": []
     },
@@ -3563,7 +2300,7 @@
       },
       "kind": "interface",
       "name": "ListGroupSubheaderProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L115",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L117",
       "methods": [],
       "properties": []
     },
@@ -3588,7 +2325,7 @@
       },
       "kind": "interface",
       "name": "ListDividerProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L124",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L128",
       "methods": [],
       "properties": []
     },
@@ -3613,36 +2350,12 @@
       },
       "kind": "interface",
       "name": "SimpleListItemProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L133",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L139",
       "extends": [
         "ListItemProps"
       ],
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -3689,7 +2402,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L145",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L151",
           "type": "React.ReactNode"
         },
         {
@@ -3738,7 +2451,7 @@
           },
           "kind": "property",
           "name": "graphic",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L139",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L145",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3762,7 +2475,7 @@
           },
           "kind": "property",
           "name": "meta",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L143",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L149",
           "type": "React.ReactNode"
         },
         {
@@ -3786,7 +2499,7 @@
           },
           "kind": "property",
           "name": "metaIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L141",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L147",
           "type": "RMWC.IconPropT"
         },
         {
@@ -3834,7 +2547,7 @@
           },
           "kind": "property",
           "name": "secondaryText",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L137",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L143",
           "type": "React.ReactNode"
         },
         {
@@ -3865,30 +2578,6 @@
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
               "<p>Text for the ListItem.</p>\n"
             ],
             "contentsRaw": "Text for the ListItem.",
@@ -3907,32 +2596,8 @@
           },
           "kind": "property",
           "name": "text",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L135",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list-item.tsx#L141",
           "type": "React.ReactNode"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/list/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         }
       ]
     },
@@ -3950,8 +2615,8 @@
       },
       "kind": "type alias",
       "name": "ListOnActionEventT",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L6",
-      "type": "RMWC.CustomEventT<number>"
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/list/list.tsx#L7",
+      "type": "RMWC.CustomEventT<>"
     }
   }
 }

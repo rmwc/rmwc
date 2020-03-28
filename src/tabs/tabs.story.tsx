@@ -78,6 +78,7 @@ class TabBarStory extends React.Component {
         <TabBar
           activeTabIndex={this.state.activeTabIndex}
           onActivate={(evt: any) => this.onChange(evt)}
+          foundationRef={console.log}
         >
           {this.state.tabs.map(label => (
             <Tab key={label}>{label}</Tab>
@@ -88,7 +89,12 @@ class TabBarStory extends React.Component {
         Uncontrolled
         <TabBar>
           {this.state.tabs.map((label, index) => (
-            <Tab key={label} label={label} icon={this.state.icons[index]} />
+            <Tab
+              key={label}
+              label={label}
+              icon={this.state.icons[index]}
+              foundationRef={console.log}
+            />
           ))}
         </TabBar>
         <br />
@@ -121,6 +127,30 @@ class TabBarStory extends React.Component {
 }
 
 storiesOf('Tabs', module)
+  .add('TabBar', () => <TabBarStory />)
+  .add('TabBar Scrolls', () => {
+    const [tabIndex, setTabIndex] = React.useState(0);
+
+    return (
+      <TabBar
+        activeTabIndex={tabIndex}
+        onActivate={evt => setTabIndex(evt.detail.index)}
+      >
+        {/* Tabs automatically scroll with lots of content. */}
+        <Tab>Cookies</Tab>
+        <Tab>Pizza</Tab>
+        <Tab>Icecream</Tab>
+        <Tab>Chocolate</Tab>
+        <Tab>Fishsticks</Tab>
+        <Tab>Ratatouille</Tab>
+        <Tab>Bread</Tab>
+        <Tab>Rolls</Tab>
+        <Tab>Sushi</Tab>
+        <Tab>Cupcake</Tab>
+        <Tab>Cheesecake</Tab>
+      </TabBar>
+    );
+  })
   .add('TabBar', () => <TabBarStory />)
   .add('TabBar Icon Indicators', () => (
     <TabBar>

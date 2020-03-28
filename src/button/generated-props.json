@@ -22,36 +22,12 @@
       },
       "kind": "interface",
       "name": "ButtonProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L11",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L20",
       "extends": [
         "WithRippleProps"
       ],
       "methods": [],
       "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{accent: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{accent: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/button/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "accent",
-          "inheritedFrom": "DeprecatedRippleProps.accent",
-          "type": "undefined | false | true"
-        },
         {
           "documentation": {
             "contents": [
@@ -73,7 +49,7 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L27",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L36",
           "type": "React.ReactNode"
         },
         {
@@ -97,7 +73,7 @@
           },
           "kind": "property",
           "name": "danger",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L23",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L32",
           "type": "undefined | false | true"
         },
         {
@@ -121,7 +97,7 @@
           },
           "kind": "property",
           "name": "dense",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L13",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L22",
           "type": "undefined | false | true"
         },
         {
@@ -145,7 +121,7 @@
           },
           "kind": "property",
           "name": "disabled",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L21",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L30",
           "type": "undefined | false | true"
         },
         {
@@ -169,7 +145,7 @@
           },
           "kind": "property",
           "name": "icon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L29",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L38",
           "type": "RMWC.IconPropT"
         },
         {
@@ -193,7 +169,7 @@
           },
           "kind": "property",
           "name": "label",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L25",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L34",
           "type": "React.ReactNode | any"
         },
         {
@@ -217,7 +193,7 @@
           },
           "kind": "property",
           "name": "outlined",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L19",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L28",
           "type": "undefined | false | true"
         },
         {
@@ -241,7 +217,7 @@
           },
           "kind": "property",
           "name": "raised",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L15",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L24",
           "type": "undefined | false | true"
         },
         {
@@ -271,30 +247,6 @@
         {
           "documentation": {
             "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{surface: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{surface: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/button/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "surface",
-          "inheritedFrom": "DeprecatedRippleProps.surface",
-          "type": "undefined | false | true"
-        },
-        {
-          "documentation": {
-            "contents": [
               "<p>A trailing icon for the Button</p>\n"
             ],
             "contentsRaw": "A trailing icon for the Button",
@@ -313,32 +265,8 @@
           },
           "kind": "property",
           "name": "trailingIcon",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L31",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L40",
           "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: pass an options object to the ripple prop <code>ripple={{unbounded: true}}</code></p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: pass an options object to the ripple prop `ripple={{unbounded: true}}`",
-            "metadata": {}
-          },
-          "fileName": "src/button/node_modules/@rmwc/types/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "unbounded",
-          "inheritedFrom": "DeprecatedRippleProps.unbounded",
-          "type": "undefined | false | true"
         },
         {
           "documentation": {
@@ -361,78 +289,8 @@
           },
           "kind": "property",
           "name": "unelevated",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L17",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L26",
           "type": "undefined | false | true"
-        }
-      ]
-    },
-    "ButtonIconProps": {
-      "fileName": "src/button/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "interface",
-      "name": "ButtonIconProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/button/index.tsx#L99",
-      "extends": [
-        "IconProps"
-      ],
-      "methods": [],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.</p>\n"
-            ],
-            "contentsRaw": "The icon to use. This can be a string for a font icon, a url, or whatever the selected strategy needs.",
-            "metadata": {}
-          },
-          "fileName": "src/button/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "icon",
-          "inheritedFrom": "IconProps.icon",
-          "type": "RMWC.IconPropT"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>DEPRECATED: Additional Icon Options. See the Icon component documentation.</p>\n"
-            ],
-            "contentsRaw": "DEPRECATED: Additional Icon Options. See the Icon component documentation.",
-            "metadata": {}
-          },
-          "fileName": "src/button/node_modules/@rmwc/icon/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "iconOptions",
-          "inheritedFrom": "DeprecatedIconProps.iconOptions",
-          "type": "RMWC.IconOptions"
         }
       ]
     }

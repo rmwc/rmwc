@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { select, array } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 import { Menu, MenuItem, MenuSurfaceAnchor, SimpleMenu, MenuSurface } from './';
 import { Button } from '../button';
 import { useKnob } from '../base/utils/use-knob';
@@ -26,6 +26,7 @@ class MenuStory extends React.Component {
 
         <Menu
           open={this.state.open}
+          foundationRef={console.log}
           anchorCorner={
             select(
               'anchorCorner',
@@ -73,6 +74,7 @@ class MenuSurfaceStory extends React.Component {
 
         <MenuSurface
           open={this.state.open}
+          foundationRef={console.log}
           anchorCorner={
             select(
               'anchorCorner',
@@ -102,8 +104,8 @@ class MenuSurfaceStory extends React.Component {
 }
 
 function MenuHoist() {
-  const [hoisted] = useKnob('boolean', 'hoisted', false);
-  const [open, setOpen] = useKnob('boolean', 'open', false);
+  const [hoisted] = useKnob('boolean', 'hoisted', true);
+  const [open, setOpen] = React.useState(true);
   const [options] = useKnob('array', 'options', [
     'Cookies',
     'Pizza',
@@ -120,7 +122,11 @@ function MenuHoist() {
         >
           Open Menu
         </Button>
-        <Menu open={open} hoistToBody={hoisted} onClose={() => setOpen(false)}>
+        <Menu
+          open={open}
+          renderToPortal={hoisted}
+          onClose={() => setOpen(false)}
+        >
           {options.map((o: string) => (
             <MenuItem key={o}>{o}</MenuItem>
           ))}
@@ -133,14 +139,22 @@ function MenuHoist() {
 storiesOf('Menus', module)
   .add('Menu', () => <MenuStory />)
   .add('MenuSurface', () => <MenuSurfaceStory />)
-  .add('Menu: Always Open', () => (
-    <Menu open={true}>
-      <MenuItem>Cookies</MenuItem>
-      <MenuItem>Pizza</MenuItem>
-      <MenuItem>Icecream</MenuItem>
-    </Menu>
+  .add('Menu: Always Open', () => {
+    const [open] = useKnob('boolean', 'open', true);
+    return (
+      <Menu open={open}>
+        <MenuItem>Cookies</MenuItem>
+        <MenuItem>Pizza</MenuItem>
+        <MenuItem>Icecream</MenuItem>
+      </Menu>
+    );
+  })
+  .add('Menu: hoistToBody', () => (
+    <>
+      <MenuHoist />
+      <MenuHoist />
+    </>
   ))
-  .add('Menu: hoistToBody', () => <MenuHoist />)
   .add('SimpleMenu', () => (
     <SimpleMenu handle={<Button raised>Open Simple Menu</Button>}>
       <MenuItem>Cookies</MenuItem>

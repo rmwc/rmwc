@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 import { Docs, DocsP, DocsExample, DocProps, DocsSubtitle } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -72,7 +72,10 @@ export default function() {
         </RMWCProvider>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Typography]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Typography', component: Typography }]}
+      />
     </Docs>
   );
 }

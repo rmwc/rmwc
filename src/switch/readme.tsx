@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/switch"
       styles={[
         '@material/switch/dist/mdc.switch.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/switches/"
       examples={examples}
@@ -34,7 +35,7 @@ export default function() {
           return (
             <Switch
               checked={checked}
-              onChange={evt => setChecked(evt.currentTarget.checked)}
+              onChange={evt => setChecked(!!evt.currentTarget.checked)}
               label="Cookies"
             />
           );
@@ -52,7 +53,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Switch]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Switch', component: Switch }]}
+      />
     </Docs>
   );
 }

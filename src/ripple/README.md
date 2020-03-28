@@ -4,7 +4,10 @@
 
 - Module **@rmwc/ripple**
 - Import styles:
-  - import **'@material/ripple/dist/mdc.ripple.css'**
+  - Using CSS Loader
+    - import '@rmwc/ripple/dist/styles';
+  - Or include stylesheets
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/ripples/](https://material.io/develop/web/components/ripples/)
 
 Ripples will wrap whatever child component you pass it and apply the appropriate classes and styles.
@@ -42,6 +45,7 @@ A component for adding Ripples to other components.
 |------|------|-------------|
 | `accent` | `undefined \| false \| true` | Makes the ripple an accent color |
 | `disabled` | `undefined \| false \| true` | makes the ripple disabled |
+| `foundationRef` | `React.Ref<MDCRippleFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `primary` | `undefined \| false \| true` | Makes the ripple primary |
 | `surface` | `undefined \| false \| true` | For internal use |
 | `unbounded` | `undefined \| false \| true` | Makes the ripple unbounded |

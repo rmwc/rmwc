@@ -9,6 +9,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "amd",
+    "importHelpers": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,

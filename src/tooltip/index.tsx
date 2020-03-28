@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { classNames } from '@rmwc/base';
 import ReactTooltip from 'rc-tooltip';
-import { withProviderContext, WithProviderContext } from '@rmwc/provider';
+import { useProviderContext } from '@rmwc/provider';
 
 export type TooltipActivationT = 'hover' | 'click' | 'focus';
 
@@ -38,14 +38,15 @@ export interface TooltipProps {
 }
 
 /** A Tooltip component for displaying informative popover information. */
-export const Tooltip = withProviderContext()(function Tooltip({
+export const Tooltip = function Tooltip({
   children,
   content,
   className,
-  providerContext,
   open,
   ...rest
-}: TooltipProps & WithProviderContext) {
+}: TooltipProps) {
+  const providerContext = useProviderContext();
+
   // merge together provider options
   const {
     showArrow = false,
@@ -76,6 +77,4 @@ export const Tooltip = withProviderContext()(function Tooltip({
       {children}
     </ReactTooltip>
   );
-});
-
-Tooltip.displayName = 'Tooltip';
+};

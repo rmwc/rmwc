@@ -4,29 +4,38 @@ import { storiesOf } from '@storybook/react';
 import {
   List,
   ListItem,
+  ListItemText,
+  ListItemSecondaryText,
   ListItemGraphic,
   ListItemPrimaryText,
   ListItemMeta
 } from './';
 
 storiesOf('Lists', module).add('List', () => (
-  <List>
-    <ListItem ripple>
-      <ListItemGraphic>star_border</ListItemGraphic>
-      <ListItemPrimaryText>Cookies</ListItemPrimaryText>
-      <ListItemMeta>info</ListItemMeta>
+  <List twoLine foundationRef={console.log}>
+    <ListItem>
+      <ListItemGraphic icon="star_border" />
+      <ListItemText>
+        <ListItemPrimaryText>Cookies</ListItemPrimaryText>
+        <ListItemSecondaryText>$4.99 a dozen</ListItemSecondaryText>
+      </ListItemText>
+      <ListItemMeta icon="info" />
     </ListItem>
-
-    <ListItem ripple>
-      <ListItemGraphic>favorite_border</ListItemGraphic>
-      <ListItemPrimaryText>Pizza</ListItemPrimaryText>
-      <ListItemMeta>info</ListItemMeta>
+    <ListItem>
+      <ListItemGraphic icon="local_pizza" />
+      <ListItemText>
+        <ListItemPrimaryText>Pizza</ListItemPrimaryText>
+        <ListItemSecondaryText>$1.99 a slice</ListItemSecondaryText>
+      </ListItemText>
+      <ListItemMeta icon="info" />
     </ListItem>
-
-    <ListItem ripple>
-      <ListItemGraphic>mood</ListItemGraphic>
-      <ListItemPrimaryText>Icecream</ListItemPrimaryText>
-      <ListItemMeta>$1.00</ListItemMeta>
+    <ListItem activated>
+      <ListItemGraphic icon="mood" />
+      <ListItemText>
+        <ListItemPrimaryText>Icecream</ListItemPrimaryText>
+        <ListItemSecondaryText>$0.99 a scoop</ListItemSecondaryText>
+      </ListItemText>
+      <ListItemMeta>Winner!</ListItemMeta>
     </ListItem>
   </List>
 ));

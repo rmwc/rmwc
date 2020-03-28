@@ -14,7 +14,8 @@ export default function() {
       module="@rmwc/checkbox"
       styles={[
         '@material/checkbox/dist/mdc.checkbox.css',
-        '@material/form-field/dist/mdc.form-field.css'
+        '@material/form-field/dist/mdc.form-field.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/checkboxes/"
       examples={examples}
@@ -26,7 +27,7 @@ export default function() {
             <Checkbox
               label="Cookies"
               checked={checked}
-              onChange={evt => setChecked(evt.currentTarget.checked)}
+              onChange={evt => setChecked(!!evt.currentTarget.checked)}
             />
           );
         }}
@@ -46,7 +47,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Checkbox]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Checkbox', component: Checkbox }]}
+      />
     </Docs>
   );
 }

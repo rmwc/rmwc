@@ -18,6 +18,7 @@ function CheckboxStory() {
       checked={checked}
       indeterminate={indeterminate}
       value={value}
+      foundationRef={ref => console.log(ref)}
       onChange={evt => {
         setChecked(evt.currentTarget.checked);
         action(

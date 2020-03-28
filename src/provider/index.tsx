@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as RMWC from '@rmwc/types';
-import { deprecationWarning } from '@rmwc/base';
 
 // prettier-ignore
 // eslint-disable-next-line max-len
@@ -62,24 +61,6 @@ export interface RMWCProviderProps {
   children?: React.ReactNode;
 }
 
-export interface DeprecatedRMWCProviderPropsT {
-  /** DEPRECATED: Ripples for all components are now controlled by the providers ripple prop */
-  buttonDefaultRipple?: boolean;
-  /** DEPRECATED: Ripples for all components are now controlled by the providers ripple prop */
-  listItemDefaultRipple?: boolean;
-  /** DEPRECATED: Use the 'icon' prop. icon={{basename: 'material-icons'}} */
-  iconClassNameBase?: string;
-  /** DEPRECATED: Use the 'icon' prop. icon={{prefix: 'glyphicons-'}} */
-  iconClassNamePrefix?: string;
-  /** DEPRECATED: Use the 'icon' prop. icon={{strategy: 'className'}} */
-  iconStrategy?: IconStrategyT;
-  /** DEPRECATED: Use the 'icon' prop. icon={{render: () => <div />}} */
-  iconRender?: (props: {
-    content: React.ReactNode;
-    className: string;
-  }) => React.ReactNode;
-}
-
 // Default provider options
 const providerDefaults: RMWCProviderProps = {
   ripple: true,
@@ -100,57 +81,16 @@ const providerDefaults: RMWCProviderProps = {
   }
 };
 
-export interface WithProviderContext {
-  providerContext: RMWCProviderProps;
-}
-
 export const ProviderContext = React.createContext(providerDefaults);
 
-export const withProviderContext = () => <P extends {}>(
-  Component: React.ComponentType<P & WithProviderContext>
-) => {
-  const wrapped = React.forwardRef((props: P, ref) => (
-    <ProviderContext.Consumer>
-      {providerContext => (
-        <Component {...props} providerContext={providerContext} ref={ref} />
-      )}
-    </ProviderContext.Consumer>
-  ));
-
-  return (wrapped as unknown) as React.ComponentType<
-    P & Partial<WithProviderContext>
-  >;
-};
+export const useProviderContext = () => React.useContext(ProviderContext);
 
 /** A provider for setting global options in RMWC. */
-export const RMWCProvider = ({
-  children,
-  iconClassNameBase,
-  iconClassNamePrefix,
-  iconStrategy,
-  iconRender,
-  ...rest
-}: RMWCProviderProps & DeprecatedRMWCProviderPropsT) => {
-  const value = { ...providerDefaults };
-  const iconOptions = { ...value.icon } as RMWC.IconOptions;
-
-  /* istanbul ignore if */
-  if (iconClassNameBase || iconClassNamePrefix || iconStrategy || iconRender) {
-    deprecationWarning(
-      `RMWCProvider component no longer accepts iconClassNameBase, iconClassNamePrefix, iconStrategy, or iconRender props. Please use the 'icon' props instead. icon={{basename: 'material-icons', strategy: 'url'}}`
-    );
-    iconOptions.basename = iconClassNameBase || iconOptions.basename;
-    iconOptions.prefix = iconClassNamePrefix || iconOptions.prefix;
-    iconOptions.strategy = iconStrategy || iconOptions.strategy;
-    iconOptions.render = iconRender || iconOptions.render;
-  }
-
-  value.icon = iconOptions;
-
+export const RMWCProvider = ({ children, ...rest }: RMWCProviderProps) => {
   return (
     <ProviderContext.Provider
       value={{
-        ...value,
+        ...providerDefaults,
         ...rest
       }}
     >
@@ -158,5 +98,3 @@ export const RMWCProvider = ({
     </ProviderContext.Provider>
   );
 };
-
-RMWCProvider.displayName = 'RMWCProvider';

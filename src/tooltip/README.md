@@ -4,7 +4,10 @@
 
 - Module **@rmwc/tooltip**
 - Import styles:
-  - import **'@rmwc/tooltip/tooltip.css'**
+  - Using CSS Loader
+    - import '@rmwc/tooltip/dist/styles';
+  - Or include stylesheets
+    - **'@rmwc/tooltip/tooltip.css'**
 
 
 ## Basic Usage
@@ -57,7 +60,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
     </div>
   }
 >
-  <a href="#">S. Rogers</a>
+  <span role="button">S. Rogers</span>
 </Tooltip>
 ```
 
@@ -82,7 +85,7 @@ Wrap any component in a `Tooltip` and provide the content attribute. The only re
     </div>
   }
 >
-  <a href="#">Popover Window</a>
+  <span role="button">Popover Window</span>
 </Tooltip>
 ```
 
@@ -130,15 +133,13 @@ By default, tooltips will activate on hover and focus. You can change this behav
   <Tooltip content="Cookies" activateOn="hover">
     <Button label="Hover" />
   </Tooltip>
-
+  ''
   <Tooltip content="Pizza" activateOn="click">
     <Button label="Click" />
   </Tooltip>
-
   <Tooltip content="Icecream" activateOn="focus">
     <Button label="Focus" />
   </Tooltip>
-
   <Tooltip content="Cake" activateOn={['hover', 'focus']}>
     <Button label="Multiple" />
   </Tooltip>

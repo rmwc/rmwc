@@ -32,7 +32,12 @@ export default function() {
         <LinearProgress progress={0.2} reversed />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[LinearProgress]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'LinearProgress', component: LinearProgress }
+        ]}
+      />
     </Docs>
   );
 }

@@ -2,7 +2,6 @@
 
 # dependencies
 node_modules
-src/**/package-lock.json
 
 # testing
 /coverage
@@ -12,6 +11,8 @@ src/**/package-lock.json
 **/flow-typed
 **/dist
 **/next
+**/styles.js
+**/styles.d.ts
 react-versions
 
 # misc

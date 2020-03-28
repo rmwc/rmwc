@@ -1,6 +1,6 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory, classNames } from '@rmwc/base';
+import { classNames, Tag } from '@rmwc/base';
 
 /** A collapsible list component. */
 export interface CollapsibleListProps {
@@ -9,7 +9,7 @@ export interface CollapsibleListProps {
   /** Show the collapsible list as open. */
   open?: boolean;
   /** Starts the collapsible list as open. */
-  startOpen?: boolean;
+  defaultOpen?: boolean;
   /** Callback for when the collapsible list opens. */
   onOpen?: () => void;
   /** Callback for when the collapsible list closes. */
@@ -20,11 +20,6 @@ interface CollapsibleState {
   open: boolean;
   childrenStyle: React.CSSProperties;
 }
-
-const CollapsibleRoot = componentFactory<{}>({
-  displayName: 'CollapsibleRoot',
-  classNames: ['rmwc-collapsible-list']
-});
 
 const possiblyFocusElement = (el: Element | null) => {
   if (!el) return false;
@@ -54,7 +49,7 @@ const getNextSibling = (
 
 /** A collapsible list component. */
 export class CollapsibleList extends React.Component<
-  CollapsibleListProps & RMWC.ComponentProps,
+  CollapsibleListProps & RMWC.HTMLProps,
   CollapsibleState
 > {
   static displayName = 'CollapsibleList';
@@ -75,9 +70,11 @@ export class CollapsibleList extends React.Component<
 
   childContainer: HTMLDivElement | null = null;
   root: HTMLDivElement | null = null;
+  rafId: number | null = null;
+  timerId: number | null = null;
 
   state: CollapsibleState = {
-    open: !!this.props.startOpen || !!this.props.open,
+    open: !!this.props.defaultOpen || !!this.props.open,
     childrenStyle: {}
   };
 
@@ -101,6 +98,11 @@ export class CollapsibleList extends React.Component<
     }
   }
 
+  componentWillUnmount() {
+    this.rafId && window.cancelAnimationFrame(this.rafId);
+    this.timerId && window.clearTimeout(this.timerId);
+  }
+
   syncOpenState() {
     const { onOpen, onClose } = this.props;
     const childrenStyle = {
@@ -112,7 +114,7 @@ export class CollapsibleList extends React.Component<
     this.setState({ childrenStyle }, () => {
       if (this.state.open) {
         onOpen && onOpen();
-        setTimeout(() => {
+        this.timerId = window.setTimeout(() => {
           if (this.state.open) {
             this.setState({
               childrenStyle: {
@@ -123,7 +125,7 @@ export class CollapsibleList extends React.Component<
         }, 300);
       } else {
         onClose && onClose();
-        window.requestAnimationFrame(() => {
+        this.rafId = window.requestAnimationFrame(() => {
           this.setState({
             childrenStyle: {}
           });
@@ -133,7 +135,7 @@ export class CollapsibleList extends React.Component<
   }
 
   correctFocus(back: boolean) {
-    window.requestAnimationFrame(() => {
+    this.rafId = window.requestAnimationFrame(() => {
       if (
         !this.state.open &&
         this.root &&
@@ -215,18 +217,19 @@ export class CollapsibleList extends React.Component<
       onOpen,
       onClose,
       open: openProp,
-      startOpen,
+      defaultOpen,
+      className,
       ...rest
     } = this.props;
     const { open, childrenStyle } = this.state;
 
     return (
-      <CollapsibleRoot
+      <Tag
         {...rest}
         onFocus={this.handleFocus}
         ref={(el: HTMLDivElement) => (this.root = el)}
-        className={classNames('rmwc-collapsible-list', {
-          ['rmwc-collapsible-list--open']: open
+        className={classNames('rmwc-collapsible-list', className, {
+          'rmwc-collapsible-list--open': open
         })}
       >
         <div className="rmwc-collapsible-list__handle">
@@ -244,7 +247,7 @@ export class CollapsibleList extends React.Component<
             {children}
           </div>
         </div>
-      </CollapsibleRoot>
+      </Tag>
     );
   }
 }

@@ -64,7 +64,12 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[CircularProgress]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'CircularProgress', component: CircularProgress }
+        ]}
+      />
     </Docs>
   );
 }

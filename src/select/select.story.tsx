@@ -22,6 +22,7 @@ function MutatingSelect(props: any) {
     <Select
       {...props}
       disabled={disabled}
+      foundationRef={console.log}
       label={label}
       value={value}
       enhanced={enhanced}
@@ -62,7 +63,19 @@ function EnhancedSelect() {
           value={value}
           onChange={evt => {
             console.log('onChange', evt.currentTarget.value);
-            setValue(evt.currentTarget.value);
+            setValue(String(evt.currentTarget.value));
+          }}
+        />
+      </div>
+      <div>
+        <Select
+          label={'Controlled'}
+          placeholder={'Select a Food'}
+          enhanced
+          options={['Cookies', 'Pizza', 'Icecream']}
+          value={'Cookies'}
+          onChange={evt => {
+            console.log('onChange', evt.currentTarget.value);
           }}
         />
       </div>
@@ -74,13 +87,13 @@ function EnhancedSelect() {
           }}
           onChange={evt => {
             console.log('onChange', evt.currentTarget.value);
-            setValue(evt.currentTarget.value);
+            setValue(String(evt.currentTarget.value));
           }}
         >
           <MenuItems twoLine style={{ width: '400px' }}>
-            <MenuItem data-value="cookies">Cookies</MenuItem>
-            <MenuItem data-value="pizza">Pizza</MenuItem>
-            <MenuItem data-value="icecream">Icecream</MenuItem>
+            <MenuItem data-value="Cookies">Cookies</MenuItem>
+            <MenuItem data-value="Pizza">Pizza</MenuItem>
+            <MenuItem data-value="Icecream">Icecream</MenuItem>
           </MenuItems>
         </Select>
       </div>
@@ -93,7 +106,7 @@ function EnhancedSelect() {
         value={value}
         onChange={evt => {
           console.log('onChange', evt.currentTarget.value);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
       />
 
@@ -105,7 +118,7 @@ function EnhancedSelect() {
         value={value}
         onChange={evt => {
           console.log('onChange', evt.currentTarget.value);
-          setValue(evt.currentTarget.value);
+          setValue(String(evt.currentTarget.value));
         }}
       />
 
@@ -153,7 +166,7 @@ function EnhancedSelect() {
 }
 
 function ControlledSelect() {
-  const [value, setValue] = React.useState<string | undefined>(undefined);
+  const [value, setValue] = React.useState<string | undefined>('Cookies');
   const opts = [
     {
       label: 'Cookies',
@@ -176,17 +189,27 @@ function ControlledSelect() {
       <Select
         value={value}
         onChange={evt => {
-          setValue(evt.currentTarget.value);
-          console.log(evt.currentTarget.value, evt.currentTarget.value);
+          console.log('RMWC Change', evt);
+          setValue(String(evt.currentTarget.value));
         }}
         label="Array"
+        options={opts2}
+      />
+      <Select
+        value={value}
+        onChange={evt => {
+          console.log('Enhanced Change', evt);
+          setValue(String(evt.currentTarget.value));
+        }}
+        label="Array"
+        enhanced
         options={opts2}
       />
       <select
         value={value}
         onChange={evt => {
+          console.log('Native Change');
           setValue(evt.currentTarget.value);
-          console.log(evt.currentTarget.value, evt.currentTarget.value);
         }}
       >
         {opts2.map(o => (
@@ -195,6 +218,17 @@ function ControlledSelect() {
           </option>
         ))}
       </select>
+
+      <hr />
+
+      <Select
+        value="Cookies"
+        onChange={evt => {}}
+        label="Array"
+        options={opts2}
+      />
+      <Select label="Array" options={opts2} />
+      <Select label="Array" enhanced options={opts2} />
     </>
   );
 }
@@ -283,4 +317,38 @@ storiesOf('Select', module)
       value="one"
       options={['one', 'two', 'three']}
     />
-  ));
+  ))
+  .add('Controlled Single', () => (
+    <Select
+      label="Controlled"
+      value="one"
+      outlined
+      enhanced
+      options={['one', 'two', 'three']}
+      onChange={evt => {
+        console.log('onChange', evt.currentTarget.value);
+      }}
+    />
+  ))
+  .add('Changing', function() {
+    const [value, setValue] = React.useState('');
+
+    React.useEffect(() => {
+      setInterval(() => {
+        setValue(val => (val === '' ? 'one' : ''));
+      }, 2000);
+    }, []);
+
+    return (
+      <Select
+        label="Controlled"
+        value={value}
+        outlined
+        enhanced
+        options={['one', 'two', 'three']}
+        onChange={evt => {
+          console.log('onChange', evt.currentTarget.value);
+        }}
+      />
+    );
+  });

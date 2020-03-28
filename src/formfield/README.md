@@ -4,7 +4,10 @@
 
 - Module **@rmwc/formfield**
 - Import styles:
-  - import **'@material/form-field/dist/mdc.form-field.css'**
+  - Using CSS Loader
+    - import '@rmwc/formfield/dist/styles';
+  - Or include stylesheets
+    - **'@material/form-field/dist/mdc.form-field.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/form-fields/](https://material.io/develop/web/components/input-controls/form-fields/)
 
 ```jsx
@@ -22,5 +25,6 @@ A FormField component.
 | Name | Type | Description |
 |------|------|-------------|
 | `alignEnd` | `undefined \| false \| true` | Position the input after the label. |
+| `foundationRef` | `React.Ref<MDCFormFieldFoundation>` | Advanced: A reference to the MDCFoundation. |
 
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Elevation } from './';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 const elevationStyle = {
   padding: '16px',
@@ -31,16 +32,40 @@ class HoverElevation extends React.Component {
   }
 }
 
-storiesOf('Elevation', module).add('Elevation', () => (
-  <div>
-    <HoverElevation />
+storiesOf('Elevation', module)
+  .add('Elevation', () => (
+    <div>
+      <HoverElevation />
 
-    {Array(25)
-      .fill(undefined)
-      .map((val, i) => (
-        <Elevation z={i} key={i} style={elevationStyle}>
-          {i}dp
+      {Array(25)
+        .fill(undefined)
+        .map((val, i) => (
+          <Elevation z={i} key={i} style={elevationStyle}>
+            {i}dp
+          </Elevation>
+        ))}
+    </div>
+  ))
+  .add('Component Test', () => {
+    return (
+      <>
+        <Elevation z={10} style={elevationStyle}>
+          Box
         </Elevation>
-      ))}
-  </div>
-));
+
+        <Elevation
+          z={10}
+          style={elevationStyle}
+          ref={(el: any) => console.log(el)}
+        >
+          Ref
+        </Elevation>
+
+        <BrowserRouter>
+          <Elevation z={10} style={elevationStyle} tag={Link} to="#">
+            Tag
+          </Elevation>
+        </BrowserRouter>
+      </>
+    );
+  });

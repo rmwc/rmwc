@@ -20,6 +20,7 @@ function SliderStory() {
       min={min}
       max={max}
       step={step}
+      foundationRef={console.log}
       discrete={discrete}
       displayMarkers={displayMarkers}
       disabled={disabled}

@@ -16,7 +16,9 @@ export default function() {
         '@material/tab-bar/dist/mdc.tab-bar.css',
         '@material/tab/dist/mdc.tab.css',
         '@material/tab-scroller/dist/mdc.tab-scroller.css',
-        '@material/tab-indicator/dist/mdc.tab-indicator.css'
+        '@material/tab-indicator/dist/mdc.tab-indicator.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/tabs/tab-bar/"
       examples={examples}
@@ -171,7 +173,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[TabBar, Tab]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'TabBar', component: TabBar },
+          { displayName: 'Tab', component: Tab }
+        ]}
+      />
     </Docs>
   );
 }

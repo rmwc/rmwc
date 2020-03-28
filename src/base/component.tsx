@@ -1,104 +1,111 @@
 import * as RMWC from '@rmwc/types';
-import * as React from 'react';
+import React from 'react';
 import classNamesFunc from 'classnames';
 import { parseThemeOptions } from './with-theme';
-import { handleDeprecations, DeprecateT } from './utils/deprecation';
+import { FoundationElement } from './foundation-component';
 
-type ClassNamesInputT =
+type ClassNamesInputT<Props> =
+  | undefined
   | ((
-      props: any
+      props: Props
     ) => Array<
       | string
       | undefined
       | null
       | { [className: string]: boolean | undefined | string | number }
     >)
-  | string[];
+  | string[]
+  | Array<
+      | string
+      | undefined
+      | null
+      | { [className: string]: boolean | undefined | string | number }
+    >;
 
-interface ComponentFactoryOpts<Props> {
-  displayName: string;
-  classNames?: ClassNamesInputT;
-  tag?: RMWC.TagT;
-  deprecate?: DeprecateT;
-  consumeProps?: string[];
-  // TODO, any had to be included
-  // Currently causing errors because things like "role" cant be undefined
-  defaultProps?: any & Partial<RMWC.ComponentProps & Props>;
-  render?: (
-    props: any,
-    ref: React.Ref<any>,
-    tag: RMWC.TagT
-  ) => React.ReactElement<any>;
-}
+export const Tag = React.forwardRef<
+  any,
+  RMWC.HTMLProps & { element?: FoundationElement<any, any> }
+>(function Tag({ tag: TagEl = 'div', theme, element, ...rest }, ref) {
+  const finalProps = element ? element.props(rest) : rest;
+  const finalRef = element ? mergeRefs(ref, element.setRef) : ref;
 
-// ALL OF THESE FUNCTIONS MUTATE THE COPY OF PROPS
-// this is intentional and done for speed and memory
+  return <TagEl {...finalProps} ref={finalRef} />;
+});
 
-const handleClassNames = (
-  props: any,
-  classNames: ClassNamesInputT,
-  className?: string,
-  theme?: RMWC.ThemePropT
+export const useClassNames = <Props extends { [key: string]: any }>(
+  props: Props,
+  classNames: ClassNamesInputT<Props>
 ) => {
-  const finalClassNames = classNamesFunc(
-    className,
-    ...(!!theme ? parseThemeOptions(theme) : []),
+  return classNamesFunc(
+    props.className,
+    ...(!!props.theme ? parseThemeOptions(props.theme) : []),
     ...(typeof classNames === 'function' ? classNames(props) : classNames)
   );
-
-  props.className = finalClassNames;
 };
 
-const handleTag = (props: any, defaultTag: RMWC.TagT, tag?: RMWC.TagT) => {
-  // Handle the case where we are extending a component but passing
-  // a string as a tag. For instance, extending an Icon but rendering a span
-  if (typeof defaultTag !== 'string') {
-    props.tag = tag;
-    return defaultTag;
-  }
-
-  return tag || defaultTag;
-};
-
-const handleConsumeProps = (props: any, consumeProps: string[]) => {
-  consumeProps.forEach(p => {
-    delete props[p];
-  });
-};
-
-export const componentFactory = <P extends {}>({
-  displayName,
-  classNames = [],
-  tag: defaultTag = 'div',
-  deprecate,
-  defaultProps,
-  consumeProps = [],
-  render
-}: ComponentFactoryOpts<P>) => {
-  const Component = React.forwardRef((props: RMWC.ComponentProps & P, ref) => {
-    const { className, theme, tag, ...rest } = props;
-    let newProps = rest;
-
-    handleClassNames(newProps, classNames, className, theme);
-    const Tag = handleTag(newProps, defaultTag, tag);
-
-    if (deprecate) {
-      newProps = handleDeprecations(newProps, deprecate, displayName);
+export const mergeRefs = (
+  ...refs: Array<React.Ref<any> | undefined | null>
+) => (el: any) => {
+  for (const ref of refs) {
+    if (typeof ref === 'function') {
+      ref(el);
+    } else if (ref && 'current' in ref) {
+      // @ts-ignore
+      ref.current = el;
     }
-    handleConsumeProps(newProps, consumeProps);
-    const finalProps: RMWC.ComponentProps = newProps;
-
-    // @ts-ignore
-    return render ? (
-      render(finalProps, ref, Tag)
-    ) : (
-      <Tag {...finalProps} ref={ref} />
-    );
-  });
-
-  Component.displayName = displayName;
-  Component.defaultProps = defaultProps;
-  return (Component as unknown) as React.ComponentType<
-    RMWC.MergeInterfacesT<P, RMWC.ComponentProps>
-  >;
+  }
 };
+
+export const handleRef = <T extends any>(
+  ref: React.Ref<T> | null | undefined,
+  value: T
+) => {
+  if (typeof ref === 'function') {
+    ref(value);
+  } else if (ref && 'current' in ref) {
+    // @ts-ignore
+    ref.current = value;
+  }
+};
+
+type ComponentProps<
+  Props extends {},
+  ElementProps extends {},
+  Tag extends React.ElementType
+> = Props & {
+  tag?: Tag;
+  theme?: RMWC.ThemePropT;
+} & Props &
+  (ElementProps | React.ComponentPropsWithRef<Tag>);
+
+export function createComponent<
+  P extends {},
+  ElementP extends {} = React.HTMLProps<HTMLDivElement>
+>(Component: React.RefForwardingComponent<any, P & ElementP>) {
+  const ForwardComponent = React.forwardRef<
+    any,
+    ComponentProps<P, ElementP, any>
+  >(Component);
+
+  // Interestingly enough, we only need this declaration
+  // for a generic placeholder for typescript inference,
+  // we don't actually have to pay the penalty for using it at runtime :)
+  const WrappedComponent = <Tag extends React.ElementType>(
+    props: ComponentProps<P, ElementP, Tag>,
+    ref: any
+  ) => {
+    return <></>;
+  };
+
+  WrappedComponent.displayName = Component.constructor.name || 'RMWCComponent';
+
+  return ForwardComponent as typeof WrappedComponent;
+}
+
+export function createMemoComponent<
+  P extends {},
+  ElementP extends {} = React.HTMLProps<HTMLDivElement>
+>(Component: React.RefForwardingComponent<any, P & ElementP>) {
+  const Comp = createComponent<P, ElementP>(Component);
+  return React.memo(Comp) as typeof Comp;
+}

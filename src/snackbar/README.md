@@ -4,8 +4,12 @@
 
 - Module **@rmwc/snackbar**
 - Import styles:
-  - import **'@material/snackbar/dist/mdc.snackbar.css'**
-  - import **'@material/button/dist/mdc.button.css'**
+  - Using CSS Loader
+    - import '@rmwc/snackbar/dist/styles';
+  - Or include stylesheets
+    - **'@material/snackbar/dist/mdc.snackbar.css'**
+    - **'@material/button/dist/mdc.button.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/snackbars/](https://material.io/develop/web/components/snackbars/)
 
 ## Basic Usage
@@ -22,6 +26,7 @@ function Example() {
         open={open}
         onClose={evt => setOpen(false)}
         message="This is a new message"
+        dismissesOnAction
         action={
           <SnackbarAction
             label="Dismiss"
@@ -49,14 +54,15 @@ function Example() {
       <Snackbar
         open={open}
         onClose={evt => setOpen(false)}
-        message="Start aligned"
+        message="Start aligned, open until dismissed"
         stacked
+        dismissesOnAction
         action={[
           <SnackbarAction label="Yeah!" />,
           <SnackbarAction label="No..." />
         ]}
         leading
-        timeout={10000}
+        timeout={-1}
       />
 
       <Button
@@ -155,6 +161,7 @@ queue.notify({
             notify({
               title: <b>Success</b>,
               body: 'You have selected pizza!',
+              dismissesOnAction: true,
               icon: 'check',
               actions: [
                 {
@@ -182,6 +189,7 @@ A Snackbar component for notifications.
 | `action` | `React.ReactNode \| React.ReactNode[]` | One or more actions to add to the snackbar. |
 | `dismissIcon` | `boolean \| string` |  |
 | `dismissesOnAction` | `undefined \| false \| true` | Whether or not your want clicking an action to close the Snackbar. |
+| `foundationRef` | `React.Ref<MDCSnackbarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `icon` | `RMWC.IconPropT` | An icon for the snackbar |
 | `leading` | `undefined \| false \| true` |  |
 | `message` | `React.ReactNode` | A string or other renderable JSX to be used as the message body. |
@@ -189,7 +197,7 @@ A Snackbar component for notifications.
 | `onOpen` | `undefined \| (evt: SnackbarOnOpenEventT) => void` | A callback thats fired when the Snackbar shows. |
 | `open` | `undefined \| false \| true` | Show the Snackbar. |
 | `stacked` | `undefined \| false \| true` | Places the action underneath the message text. |
-| `timeout` | `undefined \| number` | Milliseconds to show the Snackbar for. |
+| `timeout` | `undefined \| number` | Milliseconds to show the Snackbar for. Set to -1 to show indefinitely. |
 
 
 ## SnackbarAction

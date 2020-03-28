@@ -23,5 +23,6 @@
     "unminified",
     "unmounting"
   ],
-  "cSpell.allowCompoundWords": true
+  "cSpell.allowCompoundWords": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

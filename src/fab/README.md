@@ -4,7 +4,12 @@
 
 - Module **@rmwc/fab**
 - Import styles:
-  - import **'@material/fab/dist/mdc.fab.css'**
+  - Using CSS Loader
+    - import '@rmwc/fab/dist/styles';
+  - Or include stylesheets
+    - **'@material/fab/dist/mdc.fab.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/floating-action-buttons/](https://material.io/develop/web/components/buttons/floating-action-buttons/)
 
 ```jsx

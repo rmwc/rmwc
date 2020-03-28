@@ -1,11 +1,13 @@
 {
   "name": "@rmwc/icon",
-  "version": "5.7.2",
+  "version": "6.0.0-rc.4",
   "description": "RMWC Icon component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "next/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -32,8 +34,9 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@rmwc/base": "^5.7.2",
-    "@rmwc/provider": "^5.7.2",
-    "@rmwc/types": "^5.6.0"
-  }
+    "@rmwc/base": "^6.0.0-rc.4",
+    "@rmwc/provider": "^6.0.0-rc.4",
+    "@rmwc/types": "^6.0.0-rc.3"
+  },
+  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

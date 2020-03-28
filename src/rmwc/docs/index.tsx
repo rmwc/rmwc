@@ -1,17 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './styles';
 import { Router } from 'react-router-dom';
-
-import { history } from './history';
+import { history } from './common/history';
 import ReactGA from 'react-ga';
-import '../styles';
 
-import 'prismjs/themes/prism.css';
-import './docs.css';
 import { AppContainer } from 'react-hot-loader';
-import App from './app';
-// @ts-ignore
-import { unregister } from './register-service-worker';
+import App from './views/app';
 import { RMWCProvider } from '@rmwc/provider';
 
 const renderApp = (Component: React.ComponentType<any>) => {
@@ -30,7 +25,7 @@ const renderApp = (Component: React.ComponentType<any>) => {
 // @ts-ignore
 if (module.hot) {
   // @ts-ignore
-  module.hot.accept(['./app'], () => renderApp(App));
+  module.hot.accept(['./views/app'], () => renderApp(App));
 }
 
 const initAnalytics = () => {
@@ -44,7 +39,6 @@ const initAnalytics = () => {
 const init = () => {
   renderApp(App);
   initAnalytics();
-  unregister();
 };
 
 export default init;

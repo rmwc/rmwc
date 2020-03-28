@@ -12,7 +12,11 @@ export default function() {
       title="Chips"
       lead="Chips represent complex entities in small blocks, such as a contact."
       module="@rmwc/chip"
-      styles={['@material/chips/dist/mdc.chips.css']}
+      styles={[
+        '@material/chips/dist/mdc.chips.css',
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css'
+      ]}
       docsLink="https://material.io/develop/web/components/chips/"
       examples={examples}
     >
@@ -89,24 +93,21 @@ export default function() {
               <Chip
                 selected={selected.cookies}
                 checkmark
-                onClick={() => toggleSelected('cookies')}
+                onInteraction={() => toggleSelected('cookies')}
                 label="Cookies"
-                trailingIcon="close"
               />
               <Chip
                 selected={selected.pizza}
                 checkmark
-                onClick={() => toggleSelected('pizza')}
+                onInteraction={() => toggleSelected('pizza')}
                 icon="local_pizza"
                 label="Pizza"
-                trailingIcon="close"
               />
               <Chip
                 selected={selected.icecream}
                 checkmark
-                onClick={() => toggleSelected('icecream')}
+                onInteraction={() => toggleSelected('icecream')}
                 icon="favorite_border"
-                trailingIcon="close"
                 label="Icecream"
               />
             </ChipSet>
@@ -133,22 +134,19 @@ export default function() {
             <ChipSet choice>
               <Chip
                 selected={selected.cookies}
-                onClick={() => toggleSelected('cookies')}
+                onInteraction={() => toggleSelected('cookies')}
                 label="Cookies"
-                trailingIcon="close"
               />
               <Chip
                 selected={selected.pizza}
-                onClick={() => toggleSelected('pizza')}
+                onInteraction={() => toggleSelected('pizza')}
                 icon="local_pizza"
                 label="Pizza"
-                trailingIcon="close"
               />
               <Chip
                 selected={selected.icecream}
-                onClick={() => toggleSelected('icecream')}
+                onInteraction={() => toggleSelected('icecream')}
                 icon="favorite_border"
-                trailingIcon="close"
                 label="Icecream"
               />
             </ChipSet>
@@ -156,7 +154,13 @@ export default function() {
         }}
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Chip, ChipSet]} />
+      <DocProps
+        src={propsSrc}
+        components={[
+          { displayName: 'Chip', component: Chip },
+          { displayName: 'ChipSet', component: ChipSet }
+        ]}
+      />
     </Docs>
   );
 }

@@ -13,13 +13,15 @@ export default function() {
       lead="Menus display a list of choices on a transient sheet of material."
       module="@rmwc/select"
       styles={[
+        '@rmwc/select/select.css',
         '@material/select/dist/mdc.select.css',
         '@material/floating-label/dist/mdc.floating-label.css',
         '@material/notched-outline/dist/mdc.notched-outline.css',
         '@material/line-ripple/dist/mdc.line-ripple.css',
         '@material/list/dist/mdc.list.css',
         '@material/menu/dist/mdc.menu.css',
-        '@material/menu-surface/dist/mdc.menu-surface.css'
+        '@material/menu-surface/dist/mdc.menu-surface.css',
+        '@material/ripple/dist/mdc.ripple.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/select-menus/"
       examples={examples}
@@ -195,7 +197,10 @@ export default function() {
         </Select>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Select]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Select', component: Select }]}
+      />
     </Docs>
   );
 }

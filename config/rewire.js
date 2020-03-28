@@ -111,22 +111,26 @@ const jestCoverage = config => {
   return config;
 };
 
+const jestEnableOptionalChaining = config => {
+  config.transform['^.+\\.(js|jsx|ts|tsx)$'] = require.resolve(
+    './jest-transformer'
+  );
+  return config;
+};
+
 // Build the webpack config
 module.exports = {
   webpack: (config, env) => {
     console.log(colors.magenta('Starting RMWC ❤️'));
-    return pipe(
-      fixLinting,
-      addAliases,
-      config => {
-        //console.log(config);
-        return config;
-      }
-    )(config);
+    return pipe(fixLinting, addAliases, config => {
+      //console.log(config);
+      return config;
+    })(config);
   },
   storybook: (config, env) => pipe(addAliases)(config),
   jest: config => {
     return pipe(
+      jestEnableOptionalChaining,
       jestModuleNameMapper,
       jestResolver,
       jestCoverage,

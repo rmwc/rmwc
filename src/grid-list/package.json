@@ -1,11 +1,13 @@
 {
   "name": "@rmwc/grid-list",
-  "version": "5.7.2",
+  "version": "6.0.0-rc.4",
   "description": "RMWC GridList component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "next/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -32,9 +34,10 @@
     "react-dom": "^16.3.x"
   },
   "dependencies": {
-    "@material/grid-list": "^3.1.0",
-    "@rmwc/base": "^5.7.2",
-    "@rmwc/icon": "^5.7.2",
-    "@rmwc/types": "^5.6.0"
-  }
+    "@material/grid-list": "^4.0.0",
+    "@rmwc/base": "^6.0.0-rc.4",
+    "@rmwc/icon": "^6.0.0-rc.4",
+    "@rmwc/types": "^6.0.0-rc.3"
+  },
+  "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }

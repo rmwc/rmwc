@@ -1,9 +1,10 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
 import { MDCListFoundation } from '@material/list';
-import { FoundationComponent, componentFactory, matches } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { useListFoundation } from './foundation';
 
-export type ListOnActionEventT = RMWC.CustomEventT<number>;
+export type ListOnActionEventT = RMWC.CustomEventT<{ index: number }>;
 
 /** A List Component */
 export interface ListProps {
@@ -17,261 +18,55 @@ export interface ListProps {
   nonInteractive?: boolean;
   /** A callback for when a list item is interacted with. evt.detail = number */
   onAction?: (evt: ListOnActionEventT) => void;
+  /** An internal api used for cross component communication */
+  apiRef?: (api: ListApi) => void;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCListFoundation | null>;
+  /** Sets the list to allow the up arrow on the first element to focus the
+   * last element of the list and vice versa. Defaults to true */
+
+  wrapFocus?: boolean;
+  /** Sets the lists vertical orientation. Defaults to true */
+  vertical?: boolean;
 }
 
-/** A List Component */
-const ListRoot = componentFactory<ListProps>({
-  displayName: 'ListRoot',
-  defaultProps: {
-    dense: undefined,
-    twoLine: undefined,
-    avatarList: undefined,
-    nonInteractive: undefined
-  },
-  classNames: (props: ListProps) => [
+export interface ListApi {
+  listElements: () => HTMLLIElement[];
+  focusRoot: () => void;
+  getClasses: () => string;
+  addClassToElementIndex: (index: number, className: string) => void;
+  removeClassFromElementAtIndex: (index: number, className: string) => void;
+  setAttributeForElementIndex: (
+    index: number,
+    attr: string,
+    value: any
+  ) => void;
+  getListItemCount: () => number;
+  focusItemAtIndex: (index: number) => void;
+}
+
+export const List = createComponent<ListProps>(function List(props, ref) {
+  const {
+    dense,
+    twoLine,
+    avatarList,
+    apiRef,
+    nonInteractive,
+    onAction,
+    foundationRef,
+    ...rest
+  } = props;
+  const { rootEl } = useListFoundation(props);
+  const className = useClassNames(props, [
     'mdc-list',
     {
-      'mdc-list--dense': props.dense,
-      'mdc-list--two-line': props.twoLine,
-      'mdc-list--avatar-list': props.avatarList,
-      'mdc-list--non-interactive': props.nonInteractive
+      'mdc-list--dense': dense,
+      'mdc-list--two-line': twoLine,
+      'mdc-list--avatar-list': avatarList,
+      'mdc-list--non-interactive': nonInteractive
     }
-  ],
-  consumeProps: ['dense', 'twoLine', 'avatarList', 'nonInteractive', 'onAction']
+  ]);
+  return (
+    <Tag tag="ul" {...rest} element={rootEl} className={className} ref={ref} />
+  );
 });
-
-/** A List Component */
-export class List extends FoundationComponent<MDCListFoundation, ListProps> {
-  static get cssClasses() {
-    return MDCListFoundation.cssClasses;
-  }
-
-  private root = this.createElement('root');
-
-  constructor(props: ListProps) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
-    this.handleFocusIn = this.handleFocusIn.bind(this);
-    this.handleFocusOut = this.handleFocusOut.bind(this);
-  }
-
-  get listElements(): HTMLLIElement[] {
-    if (this.root.ref) {
-      return [].slice.call(
-        this.root.ref.querySelectorAll(
-          `.${MDCListFoundation.cssClasses.LIST_ITEM_CLASS}`
-        )
-      );
-    }
-    return [];
-  }
-
-  componentDidMount() {
-    super.componentDidMount();
-    this.foundation.layout();
-  }
-
-  focusItemAtIndex(index: number) {
-    (this.foundation as any).adapter_.focusItemAtIndex(index);
-  }
-
-  getDefaultFoundation() {
-    return new MDCListFoundation(
-      /** @type {!MDCListAdapter} */ (Object.assign({
-        getListItemCount: () => this.listElements.length,
-        getFocusedElementIndex: () =>
-          this.listElements.indexOf(document.activeElement as HTMLLIElement),
-        setAttributeForElementIndex: (
-          index: number,
-          attr: string,
-          value: string | number
-        ) => {
-          // This value is getting set and never getting set back
-          // This is causing list items to be un-tabbable
-          if (attr === 'tabindex' && value === -1) {
-            return;
-          }
-
-          const element = this.listElements[index];
-          if (element) {
-            element.setAttribute(attr, String(value));
-          }
-        },
-        removeAttributeForElementIndex: (index: number, attr: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.removeAttribute(attr);
-          }
-        },
-        addClassForElementIndex: (index: number, className: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.classList.add(className);
-          }
-        },
-        removeClassForElementIndex: (index: number, className: string) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.classList.remove(className);
-          }
-        },
-        focusItemAtIndex: (index: number) => {
-          const element = this.listElements[index];
-          if (element) {
-            element.focus();
-          }
-        },
-        setTabIndexForListItemChildren: (
-          listItemIndex: number,
-          tabIndexValue: string | number
-        ) => {
-          const element = this.listElements[listItemIndex];
-          const listItemChildren: Element[] = [].slice.call(
-            element.querySelectorAll(
-              MDCListFoundation.strings.CHILD_ELEMENTS_TO_TOGGLE_TABINDEX
-            )
-          );
-          listItemChildren.forEach(ele =>
-            ele.setAttribute('tabindex', String(tabIndexValue))
-          );
-        },
-        hasCheckboxAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          return !!listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_SELECTOR
-          );
-        },
-        hasRadioAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          return !!listItem.querySelector(
-            MDCListFoundation.strings.RADIO_SELECTOR
-          );
-        },
-        isCheckboxCheckedAtIndex: (index: number) => {
-          const listItem = this.listElements[index];
-          const toggleEl = listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_SELECTOR
-          ) as HTMLInputElement | null;
-
-          return toggleEl ? toggleEl.checked : false;
-        },
-        setCheckedCheckboxOrRadioAtIndex: (
-          index: number,
-          isChecked: boolean
-        ) => {
-          const listItem = this.listElements[index];
-          const toggleEl = listItem.querySelector(
-            MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-          ) as HTMLInputElement | null;
-
-          if (toggleEl) {
-            toggleEl.checked = isChecked;
-
-            const event = document.createEvent('Event');
-            event.initEvent('change', true, true);
-            toggleEl.dispatchEvent(event);
-          }
-        },
-        notifyAction: (index: number) => {
-          this.emit('onAction', index);
-        },
-        isFocusInsideList: () => {
-          return (
-            this.root.ref && this.root.ref.contains(document.activeElement)
-          );
-        }
-      }))
-    );
-  }
-
-  /**
-   * Used to figure out which list item this event is targetting. Or returns -1 if
-   * there is no list item
-   */
-  getListItemIndex(
-    evt: React.FocusEvent | React.KeyboardEvent | React.MouseEvent
-  ) {
-    let eventTarget = evt.target as HTMLElement | null;
-    let index = -1;
-
-    // Find the first ancestor that is a list item or the list.
-    while (
-      eventTarget &&
-      !eventTarget.classList.contains(
-        MDCListFoundation.cssClasses.LIST_ITEM_CLASS
-      ) &&
-      !eventTarget.classList.contains(MDCListFoundation.cssClasses.ROOT)
-    ) {
-      eventTarget = eventTarget.parentElement as HTMLLIElement;
-    }
-
-    // Get the index of the element if it is a list item.
-    if (
-      eventTarget &&
-      eventTarget.classList.contains(
-        MDCListFoundation.cssClasses.LIST_ITEM_CLASS
-      )
-    ) {
-      index = this.listElements.indexOf(eventTarget as HTMLLIElement);
-    }
-
-    return index;
-  }
-
-  handleClick(evt: React.MouseEvent) {
-    this.props.onClick && this.props.onClick(evt);
-
-    const index = this.getListItemIndex(evt);
-
-    // Toggle the checkbox only if it's not the target of the event, or the checkbox will have 2 change events.
-    const toggleCheckbox = !matches(
-      evt.target as HTMLElement,
-      MDCListFoundation.strings.CHECKBOX_RADIO_SELECTOR
-    );
-
-    this.foundation.handleClick(index, toggleCheckbox);
-  }
-
-  handleKeydown(evt: React.KeyboardEvent<HTMLElement> & KeyboardEvent) {
-    this.props.onKeyDown && this.props.onKeyDown(evt);
-
-    const index = this.getListItemIndex(evt);
-
-    if (index >= 0) {
-      this.foundation.handleKeydown(
-        evt,
-        evt.target instanceof Element &&
-          evt.target.classList.contains(
-            MDCListFoundation.cssClasses.LIST_ITEM_CLASS
-          ),
-        index
-      );
-    }
-  }
-
-  handleFocusIn(evt: React.FocusEvent & FocusEvent) {
-    this.props.onFocus && this.props.onFocus(evt);
-    this.foundation.handleFocusIn(evt, this.getListItemIndex(evt));
-  }
-
-  handleFocusOut(evt: React.FocusEvent & FocusEvent) {
-    this.props.onBlur && this.props.onBlur(evt);
-    this.foundation.handleFocusOut(evt, this.getListItemIndex(evt));
-  }
-
-  render() {
-    const { ...rest } = this.props;
-    return (
-      <ListRoot
-        {...rest}
-        ref={this.root.setRef}
-        onClick={this.handleClick}
-        onKeyDown={this.handleKeydown}
-        onFocus={this.handleFocusIn}
-        onBlur={this.handleFocusOut}
-      />
-    );
-  }
-}

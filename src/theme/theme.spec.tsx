@@ -48,8 +48,6 @@ describe('ThemeProvider', () => {
       }
     });
     el.update();
-    const inst = el.instance() as ThemeProvider;
-    inst.colors;
 
     el.setProps({
       options: {
@@ -58,10 +56,8 @@ describe('ThemeProvider', () => {
         surface: '#000000'
       }
     });
-    inst.colors;
 
     el.update();
-    inst.colors;
   });
 
   test('can wrap', () => {

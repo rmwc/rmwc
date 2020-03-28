@@ -1,11 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
-import {
-  withProviderContext,
-  WithProviderContext,
-  RMWCProviderProps
-} from '@rmwc/provider';
+import { useProviderContext } from '@rmwc/provider';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 export type TypographyT =
   | 'headline1'
@@ -28,30 +25,25 @@ export interface TypographyProps {
   use: TypographyT;
 }
 
-const TypographyRoot = componentFactory<TypographyProps>({
-  displayName: 'TypographyRoot',
-  tag: 'span',
-  classNames: (props: TypographyProps) => [
+/** The Typography Component */
+export const Typography = createComponent<TypographyProps>(function Typography(
+  props,
+  ref
+) {
+  const { use, ...rest } = props;
+
+  const providerContext = useProviderContext();
+
+  const typographyOptions = providerContext.typography;
+
+  const tag =
+    typographyOptions?.[use] || typographyOptions?.defaultTag || 'span';
+
+  const className = useClassNames(props, [
     {
       [`mdc-typography--${props.use}`]: props.use
     }
-  ],
-  consumeProps: ['use']
+  ]);
+
+  return <Tag tag={tag} {...rest} ref={ref} className={className} />;
 });
-
-/** The Typography Component */
-export const Typography = withProviderContext()(
-  React.forwardRef<
-    any,
-    TypographyProps & RMWC.ComponentProps & Partial<WithProviderContext>
-  >(function Typography({ providerContext = {}, ...rest }, ref) {
-    const typographyOptions = providerContext.typography;
-    const tag =
-      (typographyOptions
-        ? typographyOptions[rest.use] || typographyOptions.defaultTag
-        : undefined) || rest.tag;
-    return <TypographyRoot {...rest} tag={tag} ref={ref} />;
-  })
-);
-
-Typography.displayName = 'Typography';

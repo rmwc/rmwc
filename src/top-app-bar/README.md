@@ -4,7 +4,13 @@
 
 - Module **@rmwc/top-app-bar**
 - Import styles:
-  - import **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
+  - Using CSS Loader
+    - import '@rmwc/top-app-bar/dist/styles';
+  - Or include stylesheets
+    - **'@material/top-app-bar/dist/mdc.top-app-bar.css'**
+    - **'@material/icon-button/dist/mdc.icon-button.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
+    - **'@rmwc/icon/icon.css'**
 - MDC Docs: [https://material.io/develop/web/components/top-app-bar/](https://material.io/develop/web/components/top-app-bar/)
 
 Whats the difference between the TopAppBar and Toolbar? Toolbar is technically deprecated (although it still works just fine). TopAppBar functionality continues to be worked on by the `material-components-web` team.
@@ -144,7 +150,21 @@ You can use the `SimpleTopAppBar` component which contains a default template al
 </>
 ```
 
-## 
+## TopAppBar
+TopAppBar
+
+### Props
+
+| Name | Type | Description |
+|------|------|-------------|
+| `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
+| `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `foundationRef` | `React.Ref<MDCTopAppBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
+| `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
+| `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi. |
+| `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
+| `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 
 
 ## TopAppBarRow
@@ -177,14 +197,16 @@ A navigation icon for the top app bar. This is an instance of the Icon component
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 
 
 ## TopAppBarActionItem
-Action items for the top app bar. This is an instance of the IconButton component.
+Action items for the top app bar. This is an instance of the Icon component.
 
 ### Props
 
@@ -192,7 +214,9 @@ Action items for the top app bar. This is an instance of the IconButton componen
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
@@ -222,10 +246,11 @@ A simplified syntax for creating an AppBar.
 | `dense` | `undefined \| false \| true` | Styles the top app bar to be dense. |
 | `endContent` | `React.ReactNode` | Additional content to place in the end section. |
 | `fixed` | `undefined \| false \| true` | Styles the top app bar as a fixed top app bar. |
+| `foundationRef` | `React.Ref<MDCTopAppBarFoundation \| null>` | Advanced: A reference to the MDCFoundation. |
 | `navigationIcon` | `Object \| boolean` | Props for the NavigationIcon, which is an instance of the Icon component. You can also set this to `true` and use the `onNav` prop to handle interactions. |
 | `onNav` | `undefined \| (evt: TopAppBarOnNavEventT) => void` | Emits when the navigation icon is clicked. |
 | `prominent` | `undefined \| false \| true` | Styles the top app bar as a prominent top app bar. |
-| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. |
+| `scrollTarget` | `Element \| null` | Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi. |
 | `short` | `undefined \| false \| true` | Styles the top app bar as a short top app bar. |
 | `shortCollapsed` | `undefined \| false \| true` | Styles the top app bar to always be collapsed. |
 | `startContent` | `React.ReactNode` | Additional content to place in the start section. |

@@ -1,1135 +1,6 @@
 {
   "npm": {},
   "typescript": {
-    "SimpleDataTable": {
-      "documentation": {
-        "contents": [
-          "<p>A simple data table to render matrices.</p>\n"
-        ],
-        "contentsRaw": "A simple data table to render matrices.",
-        "metadata": {}
-      },
-      "fileName": "src/data-table/index.tsx",
-      "flags": {
-        "isExported": true,
-        "isExternal": false,
-        "isOptional": false,
-        "isPrivate": false,
-        "isProtected": false,
-        "isPublic": false,
-        "isRest": false,
-        "isStatic": false
-      },
-      "kind": "class",
-      "name": "SimpleDataTable",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L198",
-      "extends": [
-        "Component<SimpleDataTableProps>"
-      ],
-      "methods": [
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<SimpleDataTableProps>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "UNSAFE_componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.UNSAFE_componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>This method will not stop working in React 17.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "UNSAFE_componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<S>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<SimpleDataTableProps>, nextState: Readonly<S>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidCatch",
-          "inheritedFrom": "ComponentLifecycle.componentDidCatch",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.</p>\n"
-                ],
-                "contentsRaw": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidCatch",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "error",
-                  "type": "Error"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "errorInfo",
-                  "type": "ErrorInfo"
-                }
-              ],
-              "returnType": "void",
-              "type": "(error: Error, errorInfo: ErrorInfo) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidMount",
-          "inheritedFrom": "ComponentLifecycle.componentDidMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately after a component is mounted. Setting state here will trigger re-rendering.</p>\n"
-                ],
-                "contentsRaw": "Called immediately after a component is mounted. Setting state here will trigger re-rendering.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentDidUpdate",
-          "inheritedFrom": "NewLifecycle.componentDidUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately after updating occurs. Not called for the initial render.</p>\n<p>The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.</p>\n"
-                ],
-                "contentsRaw": "Called immediately after updating occurs. Not called for the initial render.\n\nThe snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentDidUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevState",
-                  "type": "Readonly<S>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "snapshot",
-                  "type": "SS"
-                }
-              ],
-              "returnType": "void",
-              "type": "(prevProps: Readonly<SimpleDataTableProps>, prevState: Readonly<S>, snapshot?: SS) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillMount",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillMount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before mounting occurs, and before <code>Component#render</code>.\nAvoid introducing any side-effects or subscriptions in this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillMount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillReceiveProps",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillReceiveProps",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.</p>\n<p>Calling <code>Component#setState</code> generally does not trigger this method.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.\n\nCalling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillReceiveProps",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<SimpleDataTableProps>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUnmount",
-          "inheritedFrom": "ComponentLifecycle.componentWillUnmount",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in <code>componentDidMount</code>.</p>\n"
-                ],
-                "contentsRaw": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillUnmount",
-              "parameters": [],
-              "returnType": "void",
-              "type": "() => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "componentWillUpdate",
-          "inheritedFrom": "DeprecatedLifecycle.componentWillUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called immediately before rendering when new props or state is received. Not called for the initial render.</p>\n<p>Note: You cannot call <code>Component#setState</code> here.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.</p>\n",
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-                  },
-                  {
-                    "tag": "see",
-                    "value": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path"
-                  }
-                ],
-                "contentsRaw": "Called immediately before rendering when new props or state is received. Not called for the initial render.\n\nNote: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n\n\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update\n@see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "componentWillUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<S>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "void",
-              "type": "(nextProps: Readonly<SimpleDataTableProps>, nextState: Readonly<S>, nextContext: any) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "forceUpdate",
-          "inheritedFrom": "Component.forceUpdate",
-          "signatures": [
-            {
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "forceUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "callback",
-                  "type": "undefined | () => void"
-                }
-              ],
-              "returnType": "void",
-              "type": "(callback?: undefined | () => void) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "getSnapshotBeforeUpdate",
-          "inheritedFrom": "NewLifecycle.getSnapshotBeforeUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Runs before React applies the result of <code>render</code> to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before <code>render</code> causes changes to it.</p>\n<p>Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.</p>\n"
-                ],
-                "contentsRaw": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.\n\nNote: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "getSnapshotBeforeUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "prevState",
-                  "type": "Readonly<S>"
-                }
-              ],
-              "returnType": "SS | null",
-              "type": "(prevProps: Readonly<SimpleDataTableProps>, prevState: Readonly<S>) => SS | null"
-            }
-          ]
-        },
-        {
-          "fileName": "src/data-table/index.tsx",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "render",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L199",
-          "signatures": [
-            {
-              "fileName": "src/data-table/index.tsx",
-              "kind": "signature",
-              "name": "render",
-              "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L199",
-              "parameters": [],
-              "returnType": "Element",
-              "type": "() => Element"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "setState",
-          "inheritedFrom": "Component.setState",
-          "signatures": [
-            {
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "setState",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "state",
-                  "type": "(prevState: Readonly<S>, props: Readonly<SimpleDataTableProps>) => null | S |  | null | S | "
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": true,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "callback",
-                  "type": "undefined | () => void"
-                }
-              ],
-              "returnType": "void",
-              "type": "(state: (prevState: Readonly<S>, props: Readonly<SimpleDataTableProps>) => null | S |  | null | S | , callback?: undefined | () => void) => void"
-            }
-          ]
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "method",
-          "name": "shouldComponentUpdate",
-          "inheritedFrom": "ComponentLifecycle.shouldComponentUpdate",
-          "signatures": [
-            {
-              "documentation": {
-                "contents": [
-                  "<p>Called to determine whether the change in props and state should trigger a re-render.</p>\n<p><code>Component</code> always returns true.\n<code>PureComponent</code> implements a shallow comparison on props and state and returns true if any\nprops or states have changed.</p>\n<p>If false is returned, <code>Component#render</code>, <code>componentWillUpdate</code>\nand <code>componentDidUpdate</code> will not be called.</p>\n"
-                ],
-                "contentsRaw": "Called to determine whether the change in props and state should trigger a re-render.\n\n`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.",
-                "metadata": {}
-              },
-              "fileName": "node_modules/@types/react/index.d.ts",
-              "kind": "signature",
-              "name": "shouldComponentUpdate",
-              "parameters": [
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextProps",
-                  "type": "Readonly<SimpleDataTableProps>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextState",
-                  "type": "Readonly<S>"
-                },
-                {
-                  "flags": {
-                    "isExported": false,
-                    "isExternal": false,
-                    "isOptional": false,
-                    "isPrivate": false,
-                    "isProtected": false,
-                    "isPublic": false,
-                    "isRest": false,
-                    "isStatic": false
-                  },
-                  "kind": "parameter",
-                  "name": "nextContext",
-                  "type": "any"
-                }
-              ],
-              "returnType": "boolean",
-              "type": "(nextProps: Readonly<SimpleDataTableProps>, nextState: Readonly<S>, nextContext: any) => boolean"
-            }
-          ]
-        }
-      ],
-      "properties": [
-        {
-          "documentation": {
-            "contents": [
-              "<p>If set, <code>this.context</code> will be set at runtime to the current value of the given Context.</p>\n<p>Usage:</p>\n<pre><code class=\"lang-ts\">type MyContext = number\nconst Ctx = React.createContext&lt;MyContext&gt;(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType&lt;typeof Ctx&gt;\n  render () {\n    return &lt;&gt;My context&#39;s value: {this.context}&lt;/&gt;;\n  }\n}\n</code></pre>\n",
-              {
-                "tag": "see",
-                "value": "https://reactjs.org/docs/context.html#classcontexttype"
-              }
-            ],
-            "contentsRaw": "If set, `this.context` will be set at runtime to the current value of the given Context.\n\nUsage:\n\n```ts\ntype MyContext = number\nconst Ctx = React.createContext<MyContext>(0)\n\nclass Foo extends React.Component {\n  static contextType = Ctx\n  context!: React.ContextType<typeof Ctx>\n  render () {\n    return <>My context's value: {this.context}</>;\n  }\n}\n```\n\n\n@see https://reactjs.org/docs/context.html#classcontexttype",
-            "metadata": {}
-          },
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": true,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": true
-          },
-          "kind": "property",
-          "name": "contextType",
-          "inheritedFrom": "Component.contextType",
-          "type": "Context<any>"
-        },
-        {
-          "documentation": {
-            "contents": [
-              "<p>If using the new style context, re-declare this in your class to be the\n<code>React.ContextType</code> of your <code>static contextType</code>.</p>\n<pre><code class=\"lang-ts\">static contextType = MyContext\ncontext!: React.ContextType&lt;typeof MyContext&gt;\n</code></pre>\n",
-              {
-                "tag": "see",
-                "value": "https://reactjs.org/docs/legacy-context.html"
-              }
-            ],
-            "contentsRaw": "If using the new style context, re-declare this in your class to be the\n`React.ContextType` of your `static contextType`.\n\n```ts\nstatic contextType = MyContext\ncontext!: React.ContextType<typeof MyContext>\n```\n\n\n@see https://reactjs.org/docs/legacy-context.html",
-            "metadata": {}
-          },
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isDeprecated": "if used without a type annotation, or without static contextType",
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "context",
-          "inheritedFrom": "Component.context",
-          "type": "any"
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "props",
-          "inheritedFrom": "Component.props",
-          "type": "Readonly<SimpleDataTableProps> & Readonly<>"
-        },
-        {
-          "documentation": {
-            "contents": [],
-            "contentsRaw": "",
-            "metadata": {}
-          },
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isDeprecated": "https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs",
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "refs",
-          "inheritedFrom": "Component.refs",
-          "type": "{ [key: string]: ReactInstance }"
-        },
-        {
-          "fileName": "node_modules/@types/react/index.d.ts",
-          "flags": {
-            "isExported": true,
-            "isExternal": false,
-            "isOptional": false,
-            "isPrivate": false,
-            "isProtected": false,
-            "isPublic": false,
-            "isRest": false,
-            "isStatic": false
-          },
-          "kind": "property",
-          "name": "state",
-          "inheritedFrom": "Component.state",
-          "type": "Readonly<S>"
-        }
-      ],
-      "constructorType": {
-        "documentation": {
-          "contents": [
-            {
-              "tag": "see",
-              "value": "https://reactjs.org/docs/legacy-context.html"
-            }
-          ],
-          "contentsRaw": "@see https://reactjs.org/docs/legacy-context.html",
-          "metadata": {}
-        },
-        "fileName": "node_modules/@types/react/index.d.ts",
-        "flags": {
-          "isDeprecated": true,
-          "isExported": true,
-          "isExternal": false,
-          "isOptional": false,
-          "isPrivate": false,
-          "isProtected": false,
-          "isPublic": false,
-          "isRest": false,
-          "isStatic": false
-        },
-        "kind": "constructor",
-        "name": "constructor",
-        "inheritedFrom": "Component.__constructor",
-        "signatures": [
-          {
-            "documentation": {
-              "contents": [],
-              "contentsRaw": "",
-              "metadata": {}
-            },
-            "fileName": "node_modules/@types/react/index.d.ts",
-            "kind": "signature",
-            "name": "new SimpleDataTable",
-            "parameters": [
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": false,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "props",
-                "type": "Readonly<SimpleDataTableProps>"
-              }
-            ],
-            "returnType": "SimpleDataTable",
-            "type": "(props: Readonly<SimpleDataTableProps>) => SimpleDataTable"
-          },
-          {
-            "documentation": {
-              "contents": [
-                {
-                  "tag": "see",
-                  "value": "https://reactjs.org/docs/legacy-context.html"
-                }
-              ],
-              "contentsRaw": "@see https://reactjs.org/docs/legacy-context.html",
-              "metadata": {}
-            },
-            "fileName": "node_modules/@types/react/index.d.ts",
-            "kind": "signature",
-            "name": "new SimpleDataTable",
-            "parameters": [
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": false,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "props",
-                "type": "SimpleDataTableProps"
-              },
-              {
-                "flags": {
-                  "isExported": false,
-                  "isExternal": false,
-                  "isOptional": true,
-                  "isPrivate": false,
-                  "isProtected": false,
-                  "isPublic": false,
-                  "isRest": false,
-                  "isStatic": false
-                },
-                "kind": "parameter",
-                "name": "context",
-                "type": "any"
-              }
-            ],
-            "returnType": "SimpleDataTable",
-            "type": "(props: SimpleDataTableProps, context?: any) => SimpleDataTable"
-          }
-        ]
-      }
-    },
     "DataTableProps": {
       "documentation": {
         "contents": [
@@ -1151,7 +22,7 @@
       },
       "kind": "interface",
       "name": "DataTableProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L16",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L27",
       "methods": [],
       "properties": [
         {
@@ -1175,7 +46,7 @@
           },
           "kind": "property",
           "name": "stickyColumns",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L31",
           "type": "undefined | number"
         },
         {
@@ -1199,7 +70,7 @@
           },
           "kind": "property",
           "name": "stickyRows",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L29",
           "type": "undefined | number"
         }
       ]
@@ -1225,7 +96,7 @@
       },
       "kind": "interface",
       "name": "DataTableContentProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L39",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L57",
       "methods": [],
       "properties": []
     },
@@ -1250,7 +121,7 @@
       },
       "kind": "interface",
       "name": "DataTableHeadProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L49",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L68",
       "methods": [],
       "properties": []
     },
@@ -1275,7 +146,7 @@
       },
       "kind": "interface",
       "name": "DataTableBodyProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L59",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L83",
       "methods": [],
       "properties": []
     },
@@ -1300,15 +171,15 @@
       },
       "kind": "interface",
       "name": "DataTableRowProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L69",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L94",
       "methods": [],
       "properties": [
         {
           "documentation": {
             "contents": [
-              "<p>Styles the row in an activated state.</p>\n"
+              "<p>Styles the row in a bolder activated state.</p>\n"
             ],
-            "contentsRaw": "Styles the row in an activated state.",
+            "contentsRaw": "Styles the row in a bolder activated state.",
             "metadata": {}
           },
           "fileName": "src/data-table/index.tsx",
@@ -1324,7 +195,7 @@
           },
           "kind": "property",
           "name": "activated",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L73",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L98",
           "type": "undefined | false | true"
         },
         {
@@ -1348,7 +219,7 @@
           },
           "kind": "property",
           "name": "selected",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L71",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L96",
           "type": "undefined | false | true"
         }
       ]
@@ -1374,7 +245,7 @@
       },
       "kind": "interface",
       "name": "DataTableHeadCellProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L105",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L136",
       "extends": [
         "SharedDataTableCellProps"
       ],
@@ -1401,7 +272,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L21",
           "inheritedFrom": "SharedDataTableCellProps.alignEnd",
           "type": "undefined | false | true"
         },
@@ -1426,7 +297,7 @@
           },
           "kind": "property",
           "name": "alignMiddle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L19",
           "inheritedFrom": "SharedDataTableCellProps.alignMiddle",
           "type": "undefined | false | true"
         },
@@ -1451,7 +322,7 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L17",
           "inheritedFrom": "SharedDataTableCellProps.alignStart",
           "type": "undefined | false | true"
         },
@@ -1476,8 +347,58 @@
           },
           "kind": "property",
           "name": "children",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L111",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L142",
           "type": "React.ReactNode"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Optionally Remove padding on the cell for checkboxes, radios, and switches.</p>\n"
+            ],
+            "contentsRaw": "Optionally Remove padding on the cell for checkboxes, radios, and switches.",
+            "metadata": {}
+          },
+          "fileName": "src/data-table/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "hasFormControl",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L23",
+          "inheritedFrom": "SharedDataTableCellProps.hasFormControl",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Changes alignment for numeric columns</p>\n"
+            ],
+            "contentsRaw": "Changes alignment for numeric columns",
+            "metadata": {}
+          },
+          "fileName": "src/data-table/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "isNumeric",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L15",
+          "inheritedFrom": "SharedDataTableCellProps.isNumeric",
+          "type": "undefined | false | true"
         },
         {
           "documentation": {
@@ -1500,7 +421,7 @@
           },
           "kind": "property",
           "name": "onSortChange",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L109",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L140",
           "type": "undefined | (dir: null | number) => void"
         },
         {
@@ -1524,7 +445,7 @@
           },
           "kind": "property",
           "name": "sort",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L107",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L138",
           "type": "null | number"
         }
       ]
@@ -1550,7 +471,7 @@
       },
       "kind": "interface",
       "name": "DataTableCellProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L168",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L207",
       "extends": [
         "SharedDataTableCellProps"
       ],
@@ -1577,7 +498,7 @@
           },
           "kind": "property",
           "name": "alignEnd",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L12",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L21",
           "inheritedFrom": "SharedDataTableCellProps.alignEnd",
           "type": "undefined | false | true"
         },
@@ -1602,7 +523,7 @@
           },
           "kind": "property",
           "name": "alignMiddle",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L10",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L19",
           "inheritedFrom": "SharedDataTableCellProps.alignMiddle",
           "type": "undefined | false | true"
         },
@@ -1627,8 +548,58 @@
           },
           "kind": "property",
           "name": "alignStart",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L8",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L17",
           "inheritedFrom": "SharedDataTableCellProps.alignStart",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Optionally Remove padding on the cell for checkboxes, radios, and switches.</p>\n"
+            ],
+            "contentsRaw": "Optionally Remove padding on the cell for checkboxes, radios, and switches.",
+            "metadata": {}
+          },
+          "fileName": "src/data-table/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "hasFormControl",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L23",
+          "inheritedFrom": "SharedDataTableCellProps.hasFormControl",
+          "type": "undefined | false | true"
+        },
+        {
+          "documentation": {
+            "contents": [
+              "<p>Changes alignment for numeric columns</p>\n"
+            ],
+            "contentsRaw": "Changes alignment for numeric columns",
+            "metadata": {}
+          },
+          "fileName": "src/data-table/index.tsx",
+          "flags": {
+            "isExported": true,
+            "isExternal": false,
+            "isOptional": true,
+            "isPrivate": false,
+            "isProtected": false,
+            "isPublic": false,
+            "isRest": false,
+            "isStatic": false
+          },
+          "kind": "property",
+          "name": "isNumeric",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L15",
+          "inheritedFrom": "SharedDataTableCellProps.isNumeric",
           "type": "undefined | false | true"
         }
       ]
@@ -1654,7 +625,7 @@
       },
       "kind": "interface",
       "name": "SimpleDataTableProps",
-      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L186",
+      "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L236",
       "extends": [
         "DataTableProps"
       ],
@@ -1681,7 +652,7 @@
           },
           "kind": "property",
           "name": "data",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L188",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L238",
           "type": "Array<any[]>"
         },
         {
@@ -1705,7 +676,7 @@
           },
           "kind": "property",
           "name": "getCellProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L194",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L244",
           "type": "undefined | (cell: any[], index: number, isHead: boolean) => Object"
         },
         {
@@ -1729,7 +700,7 @@
           },
           "kind": "property",
           "name": "getRowProps",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L192",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L242",
           "type": "undefined | (row: any[], index: number, isHead: boolean) => Object"
         },
         {
@@ -1753,7 +724,7 @@
           },
           "kind": "property",
           "name": "headers",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L190",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L240",
           "type": "Array<any[]>"
         },
         {
@@ -1777,7 +748,7 @@
           },
           "kind": "property",
           "name": "stickyColumns",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L20",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L31",
           "inheritedFrom": "DataTableProps.stickyColumns",
           "type": "undefined | number"
         },
@@ -1802,7 +773,7 @@
           },
           "kind": "property",
           "name": "stickyRows",
-          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L18",
+          "sourceUrl": "https://github.com/jamesmfriedman/rmwc/blob/master/src/data-table/index.tsx#L29",
           "inheritedFrom": "DataTableProps.stickyRows",
           "type": "undefined | number"
         }

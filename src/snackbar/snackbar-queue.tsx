@@ -1,11 +1,13 @@
-import * as React from 'react';
+import * as RMWC from '@rmwc/types';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Snackbar,
   SnackbarProps,
   SnackbarAction,
-  SnackbarActionProps
+  SnackbarActionProps,
+  SnackbarHTMLProps
 } from './snackbar';
-import { MergeInterfacesT, IconPropT } from '@rmwc/types';
+import { IconPropT } from '@rmwc/types';
 import { ArrayEmitter } from '@rmwc/base';
 
 interface SnackbarQueueMessageBase {
@@ -13,135 +15,126 @@ interface SnackbarQueueMessageBase {
   body?: React.ReactNode;
   icon?: IconPropT;
   actions?: Array<
-    | NotificationAction
-    | MergeInterfacesT<SnackbarActionProps, React.HTMLProps<any>>
+    NotificationAction | (SnackbarActionProps & SnackbarHTMLProps)
   >;
 }
 
 export interface SnackbarQueueMessage
   extends SnackbarProps,
-    MergeInterfacesT<SnackbarQueueMessageBase, NotificationOptions> {}
+    SnackbarQueueMessageBase,
+    Omit<NotificationOptions, keyof SnackbarQueueMessageBase> {}
 
 /** A snackbar queue for rendering messages */
 export interface SnackbarQueueProps extends SnackbarProps {
   messages: ArrayEmitter<SnackbarQueueMessage>;
 }
 
-interface SnackbarQueueState {
-  message?: SnackbarQueueMessage;
-}
-
 /** A snackbar queue for rendering messages */
-export class SnackbarQueue extends React.Component<
-  SnackbarQueueProps,
-  SnackbarQueueState
-> {
-  static displayName = 'SnackbarQueue';
+export function SnackbarQueue({
+  messages,
+  ...defaultSnackbarProps
+}: SnackbarQueueProps & RMWC.HTMLProps) {
+  const currentMessage = messages.array[0];
+  const [, setIteration] = useState(0);
+  const [message, setMessage] = useState<SnackbarQueueMessage | undefined>(
+    messages.array[0]
+  );
 
-  state: SnackbarQueueState = {
-    message: this.props.messages.array[0]
-  };
+  const removeMessage = useCallback(
+    (message?: SnackbarQueueMessage) => {
+      message && messages.remove(message);
+    },
+    [messages]
+  );
 
-  constructor(props: SnackbarQueueProps) {
-    super(props);
-    this.getMessage = this.getMessage.bind(this);
-    this.props.messages.on('change', this.getMessage);
-  }
+  useEffect(() => {
+    let timerId: number;
+    const doChange = () => {
+      if (messages.array[0] !== message) {
+        setIteration(val => val + 1);
+        timerId = window.setTimeout(() => setMessage(messages.array[0]), 150);
+      }
+    };
+    messages.on('change', doChange);
+    return () => {
+      timerId && clearTimeout(timerId);
+      messages.off('change', doChange);
+    };
+  }, [messages, message]);
 
-  componentWillUnmount() {
-    this.props.messages.off('change', this.getMessage);
-  }
+  const {
+    body = '',
+    image,
+    title = '',
+    onClose,
+    actions,
+    ...messageSnackbarProps
+  } = message || {};
 
-  getMessage() {
-    if (this.props.messages.array[0] !== this.state.message) {
-      this.setState({
-        message: this.props.messages.array[0]
-      });
-    }
-  }
+  const actionProp = actions
+    ? actions.map(({ title, label, ...rest }: any) => (
+        <SnackbarAction {...rest} label={label || title} />
+      ))
+    : null;
 
-  removeMessage(message?: SnackbarQueueMessage) {
-    if (!message) return;
+  // We are open if we have a message
+  // and the current one is the one in state
+  const open = message && message === currentMessage;
 
-    setTimeout(() => {
-      const index = this.props.messages.array.indexOf(message);
-      !!~index && this.props.messages.array.splice(index, 1);
-      this.setState(
-        {
-          message: undefined
-        },
-        this.getMessage
-      );
-    }, 75);
-  }
-
-  render() {
-    const { messages, ...defaultSnackbarProps } = this.props;
-    const { message } = this.state;
-
-    const {
-      body = '',
-      image,
-      title = '',
-      onClose,
-      actions,
-      ...messageSnackbarProps
-    } = (message || {}) as SnackbarQueueMessage;
-
-    const actionProp = actions
-      ? actions.map(({ title, label, ...rest }: any) => (
-          <SnackbarAction {...rest} label={label || title} />
-        ))
-      : null;
-
-    return (
-      <Snackbar
-        {...defaultSnackbarProps}
-        {...messageSnackbarProps}
-        open={!!message}
-        message={
-          <>
-            {title}
-            {!!title && !!body && <br />}
-            {body}
-            {!!image && (
-              <div
-                className="rmwc-snackbar__image"
-                style={{
-                  margin: '1rem auto',
-                  textAlign: 'center'
-                }}
-              >
-                <img
-                  src={image}
-                  alt={`${image}`}
-                  style={{ maxWidth: '100%', maxHeight: '18rem' }}
-                />
-              </div>
-            )}
-          </>
-        }
-        onClose={evt => {
-          onClose && onClose(evt);
-          this.removeMessage(message);
-        }}
-        action={actionProp}
-      />
-    );
-  }
+  return (
+    <Snackbar
+      {...defaultSnackbarProps}
+      {...messageSnackbarProps}
+      open={open}
+      message={
+        <>
+          {title}
+          {!!title && !!body && <br />}
+          {body}
+          {!!image && (
+            <div
+              className="rmwc-snackbar__image"
+              style={{
+                margin: '1rem auto',
+                textAlign: 'center'
+              }}
+            >
+              <img
+                src={image}
+                alt={`${image}`}
+                style={{ maxWidth: '100%', maxHeight: '18rem' }}
+              />
+            </div>
+          )}
+        </>
+      }
+      onClose={evt => {
+        onClose?.(evt);
+        removeMessage(message);
+      }}
+      action={actionProp}
+    />
+  );
 }
 
 /** Creates a snackbar queue */
 export const createSnackbarQueue = (): {
   messages: ArrayEmitter<SnackbarQueueMessage>;
-  notify: (message: SnackbarQueueMessage) => void;
+  clearAll: () => void;
+  notify: (message: SnackbarQueueMessage) => { close: () => void };
 } => {
   const messages = new ArrayEmitter<SnackbarQueueMessage>();
 
   return {
     messages,
+    clearAll: () => messages.empty(),
     notify: (message: SnackbarQueueMessage) => {
       messages.push(message);
+      return {
+        close: () => {
+          messages.remove(message);
+        }
+      };
     }
   };
 };

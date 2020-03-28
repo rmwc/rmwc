@@ -6,6 +6,7 @@ import {
   createSnackbarQueue,
   SnackbarQueue
 } from './';
+import { wait } from '@rmwc/base/utils/test-utils';
 
 describe('Snackbar', () => {
   it('renders', done => {
@@ -70,8 +71,7 @@ describe('Snackbar', () => {
       />
     );
 
-    const root = el.find('.mdc-snackbar');
-    root.simulate('keydown');
+    el.simulate('keydown');
 
     const surface = el.find('.mdc-snackbar__surface');
     surface.simulate('click');
@@ -91,7 +91,7 @@ describe('SnackbarQueue', () => {
     el.unmount();
   });
 
-  it('notifies', done => {
+  it('notifies', async done => {
     const queue = createSnackbarQueue();
     const el = mount(<SnackbarQueue messages={queue.messages} />);
     // check multiple notifications
@@ -122,6 +122,8 @@ describe('SnackbarQueue', () => {
         }
       ]
     });
+
+    await wait(500);
 
     expect(el.html().includes('myNotificationTitle1')).toBe(true);
     expect(el.html().includes('myNotificationBody1')).toBe(true);

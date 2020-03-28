@@ -16,7 +16,9 @@ export default function() {
         '@material/textfield/dist/mdc.textfield.css',
         '@material/floating-label/dist/mdc.floating-label.css',
         '@material/notched-outline/dist/mdc.notched-outline.css',
-        '@material/line-ripple/dist/mdc.line-ripple.css'
+        '@material/line-ripple/dist/mdc.line-ripple.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/icon/icon.css'
       ]}
       docsLink="https://material.io/develop/web/components/input-controls/text-field/"
       examples={examples}
@@ -78,7 +80,10 @@ export default function() {
 
       <DocsSubtitle>Validation</DocsSubtitle>
       <DocsExample label="Disabled">
-        <TextField disabled label="disabled..." />
+        <TextField disabled label="Disabled..." />
+      </DocsExample>
+      <DocsExample label="Required">
+        <TextField required label="Required..." value="" />
       </DocsExample>
       <DocsExample label="Invalid">
         <TextField
@@ -111,7 +116,10 @@ export default function() {
         </>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[TextField]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'TextField', component: TextField }]}
+      />
     </Docs>
   );
 }

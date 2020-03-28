@@ -1,56 +1,31 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { EventType, SpecificEventListener } from '@material/base/types';
 import { MDCFormFieldFoundation } from '@material/form-field';
-
-import { FoundationComponent } from '@rmwc/base';
-import { componentFactory } from '@rmwc/base';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
+import { useFormfieldFoundation } from './foundation';
 
 /** A FormField component. */
 export interface FormFieldProps {
   /** Position the input after the label. */
   alignEnd?: boolean;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCFormFieldFoundation>;
 }
 
-export const FormFieldRoot = componentFactory<FormFieldProps>({
-  displayName: 'FormFieldRoot',
-  defaultProps: {
-    alignEnd: undefined
-  },
-  classNames: (props: FormFieldProps) => [
+/** A FormField component. */
+export const FormField = createComponent<FormFieldProps>(function FormField(
+  props,
+  ref
+) {
+  useFormfieldFoundation(props);
+
+  const { alignEnd, foundationRef, ...rest } = props;
+  const className = useClassNames(props, [
     'mdc-form-field',
     {
       'mdc-form-field--align-end': props.alignEnd
     }
-  ],
-  consumeProps: ['alignEnd']
+  ]);
+  return <Tag {...rest} ref={ref} className={className} />;
 });
-
-/** A FormField component. */
-export class FormField extends FoundationComponent<
-  MDCFormFieldFoundation,
-  FormFieldProps
-> {
-  static displayName = 'FormField';
-
-  getDefaultFoundation() {
-    // For RMWC, the entire foundation is a noop. Interactions and ripples are controlled
-    // on the components themselves
-    return new MDCFormFieldFoundation({
-      registerInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {},
-      deregisterInteractionHandler: <K extends EventType>(
-        evtType: K,
-        handler: SpecificEventListener<K>
-      ): void => {},
-      activateInputRipple: () => {},
-      deactivateInputRipple: () => {}
-    });
-  }
-
-  render() {
-    return <FormFieldRoot {...this.props} />;
-  }
-}

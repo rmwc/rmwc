@@ -13,7 +13,6 @@ function TextFieldStory() {
       label={text('label', 'Hello world')}
       value={text('value', value)}
       disabled={boolean('disabled', false)}
-      dense={boolean('dense', false)}
       required={boolean('required', false)}
       outlined={boolean('outlined', false)}
       invalid={boolean('invalid', false)}
@@ -23,6 +22,7 @@ function TextFieldStory() {
       icon={text('withLeadingIcon', '')}
       trailingIcon={text('withTrailingIcon', '')}
       textarea={boolean('textarea', false)}
+      foundationRef={console.log}
     />
   );
 }
@@ -48,4 +48,22 @@ class TextFieldUncontrolledStory extends React.Component {
 storiesOf('TextField', module)
   .add('TextField (Controlled)', () => <TextFieldStory />)
   .add('TextField (Uncontrolled)', () => <TextFieldUncontrolledStory />)
-  .add('autoFocus', () => <TextField label="Hello" autoFocus />);
+  .add('autoFocus', () => <TextField label="Hello" autoFocus />)
+  .add('Changing', function() {
+    const [value, setValue] = React.useState('');
+
+    React.useEffect(() => {
+      setInterval(() => {
+        setValue(val => (val === '' ? 'Hello World' : ''));
+      }, 2000);
+    }, []);
+
+    return (
+      <TextField
+        label="Controlled"
+        value={value}
+        outlined
+        onChange={() => {}}
+      />
+    );
+  });

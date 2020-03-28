@@ -1,8 +1,8 @@
 import * as RMWC from '@rmwc/types';
 import * as React from 'react';
-import { componentFactory } from '@rmwc/base';
 import { withRipple } from '@rmwc/ripple';
 import { Icon, IconProps } from '@rmwc/icon';
+import { Tag, useClassNames, createComponent } from '@rmwc/base';
 
 /** A floating action button component */
 export interface FabProps extends RMWC.WithRippleProps {
@@ -20,63 +20,54 @@ export interface FabProps extends RMWC.WithRippleProps {
   exited?: boolean;
 }
 
-const FabRoot = withRipple({ surface: false })(
-  componentFactory<FabProps>({
-    displayName: 'FabRoot',
-    tag: 'button',
-    classNames: (props: FabProps) => [
-      'mdc-fab',
-      {
-        'mdc-fab--mini': props.mini,
-        'mdc-fab--exited': props.exited,
-        'mdc-fab--extended': props.label
-      }
-    ],
-    defaultProps: {
-      cssOnly: false,
-      mini: false
-    },
-    consumeProps: ['mini', 'cssOnly', 'exited', 'label', 'icon']
-  })
-);
-
-export const FabIcon = componentFactory<IconProps>({
-  displayName: 'FabIcon',
-  tag: Icon,
-  classNames: ['mdc-fab__icon']
-});
-
-const FabLabel = componentFactory<{}>({
-  displayName: 'FabLabel',
-  classNames: ['mdc-fab__label']
-});
-
 /** A floating action button component */
-export const Fab = React.forwardRef(
-  (
-    {
+export const Fab = withRipple({ surface: false })(
+  createComponent<FabProps>(function Fab(props, ref) {
+    const {
       children,
       label,
       icon,
       trailingIcon,
+      mini,
+      exited,
       ...rest
-    }: FabProps & RMWC.ComponentProps,
-    ref
-  ) => {
+    } = props;
+
+    const className = useClassNames(props, [
+      'mdc-fab',
+      {
+        'mdc-fab--mini': mini,
+        'mdc-fab--exited': exited,
+        'mdc-fab--extended': label
+      }
+    ]);
+
     if (trailingIcon && !label) {
       console.warn(
         `FAB 'trailingIcon' prop should only be used in conjunction with 'label'`
       );
     }
+
     return (
-      <FabRoot label={label} {...rest} ref={ref}>
+      <Tag tag="button" label={label} {...rest} ref={ref} className={className}>
+        <FabRipple />
         {!!icon && <FabIcon icon={icon} />}
-        {!!label && <FabLabel>{label}</FabLabel>}
+        {!!label && <div className="mdc-fab__label">{label}</div>}
         {children}
         {!!trailingIcon && <FabIcon icon={trailingIcon} />}
-      </FabRoot>
+      </Tag>
     );
-  }
+  })
 );
 
-Fab.displayName = 'Fab';
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+const FabRipple = React.memo(function FabRipple() {
+  return <div className="mdc-fab__ripple"></div>;
+});
+
+const FabIcon = React.memo(function FabIcon(props: IconProps) {
+  return <Icon className="mdc-fab__icon" {...props} />;
+});

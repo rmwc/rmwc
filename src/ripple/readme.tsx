@@ -41,7 +41,10 @@ export default function() {
         </Ripple>
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[Ripple]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'Ripple', component: Ripple }]}
+      />
     </Docs>
   );
 }

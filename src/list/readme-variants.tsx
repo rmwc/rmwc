@@ -224,16 +224,22 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          List,
-          ListItem,
-          ListItemPrimaryText,
-          ListItemSecondaryText,
-          ListItemGraphic,
-          ListItemMeta,
-          ListDivider,
-          ListGroup,
-          ListGroupSubheader,
-          SimpleListItem
+          { displayName: 'List', component: List },
+          { displayName: 'ListItem', component: ListItem },
+          {
+            displayName: 'ListItemPrimaryText',
+            component: ListItemPrimaryText
+          },
+          {
+            displayName: 'ListItemSecondaryText',
+            component: ListItemSecondaryText
+          },
+          { displayName: 'ListItemGraphic', component: ListItemGraphic },
+          { displayName: 'ListItemMeta', component: ListItemMeta },
+          { displayName: 'ListDivider', component: ListDivider },
+          { displayName: 'ListGroup', component: ListGroup },
+          { displayName: 'ListGroupSubheader', component: ListGroupSubheader },
+          { displayName: 'SimpleListItem', component: SimpleListItem }
         ]}
       />
     </Docs>

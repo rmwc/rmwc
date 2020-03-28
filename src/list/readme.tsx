@@ -24,7 +24,11 @@ export default function() {
       title="Lists"
       lead="Lists are continuous, vertical indexes of text or images."
       module="@rmwc/list"
-      styles={['@material/list/dist/mdc.list.css']}
+      styles={[
+        '@material/list/dist/mdc.list.css',
+        '@material/ripple/dist/mdc.ripple.css',
+        '@rmwc/icon/icon.css'
+      ]}
       docsLink="https://material.io/develop/web/components/lists/"
       examples={examples}
     >
@@ -102,16 +106,22 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          List,
-          ListItem,
-          ListItemPrimaryText,
-          ListItemSecondaryText,
-          ListItemGraphic,
-          ListItemMeta,
-          ListDivider,
-          ListGroup,
-          ListGroupSubheader,
-          SimpleListItem
+          { displayName: 'List', component: List },
+          { displayName: 'ListItem', component: ListItem },
+          {
+            displayName: 'ListItemPrimaryText',
+            component: ListItemPrimaryText
+          },
+          {
+            displayName: 'ListItemSecondaryText',
+            component: ListItemSecondaryText
+          },
+          { displayName: 'ListItemGraphic', component: ListItemGraphic },
+          { displayName: 'ListItemMeta', component: ListItemMeta },
+          { displayName: 'ListDivider', component: ListDivider },
+          { displayName: 'ListGroup', component: ListGroup },
+          { displayName: 'ListGroupSubheader', component: ListGroupSubheader },
+          { displayName: 'SimpleListItem', component: SimpleListItem }
         ]}
       />
     </Docs>

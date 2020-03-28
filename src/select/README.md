@@ -4,13 +4,18 @@
 
 - Module **@rmwc/select**
 - Import styles:
-  - import **'@material/select/dist/mdc.select.css'**
-  - import **'@material/floating-label/dist/mdc.floating-label.css'**
-  - import **'@material/notched-outline/dist/mdc.notched-outline.css'**
-  - import **'@material/line-ripple/dist/mdc.line-ripple.css'**
-  - import **'@material/list/dist/mdc.list.css'**
-  - import **'@material/menu/dist/mdc.menu.css'**
-  - import **'@material/menu-surface/dist/mdc.menu-surface.css'**
+  - Using CSS Loader
+    - import '@rmwc/select/dist/styles';
+  - Or include stylesheets
+    - **'@rmwc/select/select.css'**
+    - **'@material/select/dist/mdc.select.css'**
+    - **'@material/floating-label/dist/mdc.floating-label.css'**
+    - **'@material/notched-outline/dist/mdc.notched-outline.css'**
+    - **'@material/line-ripple/dist/mdc.line-ripple.css'**
+    - **'@material/list/dist/mdc.list.css'**
+    - **'@material/menu/dist/mdc.menu.css'**
+    - **'@material/menu-surface/dist/mdc.menu-surface.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/select-menus/](https://material.io/develop/web/components/input-controls/select-menus/)
 
 ## Select Styles
@@ -179,24 +184,5 @@ Both native and enhanced Selects can contain option groups. Just nest additional
 ```
 
 ## Select
-A Select Component
-
-### Props
-
-| Name | Type | Description |
-|------|------|-------------|
-| `disabled` | `undefined \| false \| true` | Makes the Select disabled. |
-| `enhanced` | `boolean \| MenuProps` | Renders a non native / enhanced dropdown |
-| `helpText` | `React.ReactNode \| SelectHelperTextProps` | Adds help text to the field |
-| `icon` | `RMWC.IconPropT` | Add a leading icon. |
-| `inputRef` | `undefined \| (ref: HTMLSelectElement \| null) => void` | A reference to the native select element. Not applicable when `enhanced` is true. |
-| `invalid` | `undefined \| false \| true` | Makes the Select visually invalid. This is sometimes automatically my material-components-web. |
-| `label` | `undefined \| string` | A label for the form control. |
-| `options` | `FormattedOption[] \| string[] \| { [value: string]: string }` | Options accepts flat arrays, value => label maps, and more. See examples for details. |
-| `outlined` | `undefined \| false \| true` | Makes the select outlined. |
-| `placeholder` | `undefined \| string` | Placeholder text for the form control. Set to a blank string to create a non-floating placeholder label. |
-| `required` | `undefined \| false \| true` | Makes the Select required. |
-| `rootProps` | `Object` | Props for the root element. By default, additional props spread to the native select element. |
-| `value` | `undefined \| string` | The value for a controlled select. |
 
 

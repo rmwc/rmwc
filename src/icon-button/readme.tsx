@@ -12,7 +12,11 @@ export default function() {
       title="Icon Buttons"
       lead="Icon buttons allow users to take actions, and make choices, with a single tap."
       module="@rmwc/icon-button"
-      styles={['@material/icon-button/dist/mdc.icon-button.css']}
+      styles={[
+        '@material/icon-button/dist/mdc.icon-button.css',
+        '@rmwc/icon/icon.css',
+        '@material/ripple/dist/mdc.ripple.css'
+      ]}
       docsLink="https://material.io/develop/web/components/buttons/icon-buttons/"
       examples={examples}
     >
@@ -100,7 +104,10 @@ export default function() {
         />
       </DocsExample>
 
-      <DocProps src={propsSrc} components={[IconButton]} />
+      <DocProps
+        src={propsSrc}
+        components={[{ displayName: 'IconButton', component: IconButton }]}
+      />
     </Docs>
   );
 }

@@ -4,7 +4,10 @@
 
 - Module **@rmwc/drawer**
 - Import styles:
-  - import **'@material/drawer/dist/mdc.drawer.css'**
+  - Using CSS Loader
+    - import '@rmwc/drawer/dist/styles';
+  - Or include stylesheets
+    - **'@material/drawer/dist/mdc.drawer.css'**
 - MDC Docs: [https://material.io/develop/web/components/drawers/](https://material.io/develop/web/components/drawers/)
 
 ## Permanent
@@ -152,6 +155,7 @@ A Drawer component.
 | Name | Type | Description |
 |------|------|-------------|
 | `dismissible` | `undefined \| false \| true` | Makes a dismissible drawer. |
+| `foundationRef` | `React.Ref<MDCModalDrawerFoundation \| MDCDismissibleDrawerFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `modal` | `undefined \| false \| true` | Makes a modal / temporary drawer. |
 | `onClose` | `undefined \| (evt: DrawerOnOpenEventT) => void` | Callback that fires when the Drawer is closed. |
 | `onOpen` | `undefined \| (evt: DrawerOnCloseEventT) => void` | Callback that fires when the Drawer is opened. |

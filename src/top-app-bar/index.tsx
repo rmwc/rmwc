@@ -1,19 +1,19 @@
 import * as RMWC from '@rmwc/types';
-import { componentFactory, FoundationComponent } from '@rmwc/base';
-
-import * as React from 'react';
-
-import {
-  MDCTopAppBarFoundation,
-  MDCFixedTopAppBarFoundation,
-  MDCShortTopAppBarFoundation
-} from '@material/top-app-bar';
-
+import React from 'react';
+import { MDCTopAppBarFoundation } from '@material/top-app-bar';
+import { useClassNames, Tag, createComponent } from '@rmwc/base';
 import { IconButton, IconButtonProps } from '@rmwc/icon-button';
-import { withRipple } from '@rmwc/ripple';
-import { SpecificEventListener } from '@material/base/types';
+import { useTopAppBarFoundation } from './foundation';
+
+/*********************************************************************
+ * Events
+ *********************************************************************/
 
 export type TopAppBarOnNavEventT = RMWC.CustomEventT<{}>;
+
+/*********************************************************************
+ * TopAppBar
+ *********************************************************************/
 
 export interface TopAppBarProps {
   /** Emits when the navigation icon is clicked. */
@@ -28,265 +28,63 @@ export interface TopAppBarProps {
   shortCollapsed?: boolean;
   /** Styles the top app bar to be dense. */
   dense?: boolean;
-  /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element.*/
+  /** Set a scrollTarget other than the window when you are using the TopAppBar inside of a nested scrolling DOM Element. Please note that you should store your scrollTarget in a stateful variable. See example https://codesandbox.io/s/reverent-austin-16zzi.*/
   scrollTarget?: Element | null;
+  /** Advanced: A reference to the MDCFoundation. */
+  foundationRef?: React.Ref<MDCTopAppBarFoundation | null>;
 }
-
-const TopAppBarRoot = componentFactory<TopAppBarProps>({
-  displayName: 'TopAppBarRoot',
-  tag: 'header',
-  classNames: (props: TopAppBarProps) => [
-    'mdc-top-app-bar',
-    {
-      'mdc-top-app-bar--fixed': props.fixed,
-      'mdc-top-app-bar--prominent': props.prominent,
-      'mdc-top-app-bar--short': props.short || props.shortCollapsed,
-      'mdc-top-app-bar--short-collapsed': props.shortCollapsed,
-      'mdc-top-app-bar--dense': props.dense
-    }
-  ],
-  consumeProps: ['fixed', 'prominent', 'short', 'shortCollapsed', 'dense']
-});
-
-/** A row for the app bar. */
-export interface TopAppBarRowProps {}
-
-/** A row for the app bar. */
-export const TopAppBarRow = componentFactory<TopAppBarRowProps>({
-  displayName: 'TopAppBarRow',
-  classNames: ['mdc-top-app-bar__row']
-});
-
-/** A section for the app bar. */
-export interface TopAppBarSectionProps {
-  /** Aligns the section to the start. */
-  alignStart?: boolean;
-  /** Aligns the section to the end. */
-  alignEnd?: boolean;
-}
-
-/** A section for the app bar. */
-export const TopAppBarSection = componentFactory<TopAppBarSectionProps>({
-  displayName: 'TopAppBarSection',
-  tag: 'section',
-  classNames: (props: TopAppBarSectionProps) => [
-    'mdc-top-app-bar__section',
-    {
-      'mdc-top-app-bar__section--align-start': props.alignStart,
-      'mdc-top-app-bar__section--align-end': props.alignEnd
-    }
-  ],
-  consumeProps: ['alignStart', 'alignEnd']
-});
-
-/** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export interface TopAppBarNavigationIconProps extends IconButtonProps {}
-
-/** A navigation icon for the top app bar. This is an instance of the Icon component. */
-export const TopAppBarNavigationIcon = componentFactory<
-  TopAppBarNavigationIconProps
->({
-  displayName: 'TopAppBarNavigationIcon',
-  classNames: ['mdc-top-app-bar__navigation-icon'],
-  tag: IconButton
-});
-
-/** Action items for the top app bar. This is an instance of the IconButton component.*/
-export interface TopAppBarActionItemProps extends IconButtonProps {}
-
-/** Action items for the top app bar. This is an instance of the IconButton component.*/
-export const TopAppBarActionItem = componentFactory<TopAppBarActionItemProps>({
-  displayName: 'TopAppBarActionItem',
-  classNames: ['mdc-top-app-bar__action-item'],
-  tag: IconButton
-});
-
-/** A title for the top app bar. */
-export interface TopAppBarTitleProps {}
-
-/** A title for the top app bar. */
-export const TopAppBarTitle = componentFactory<TopAppBarTitleProps>({
-  displayName: 'TopAppBarTitle',
-  classNames: ['mdc-top-app-bar__title']
-});
-
-/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export interface TopAppBarFixedAdjustProps {
-  /** Class used to style the content below the dense top app bar to prevent the top app bar from covering it. */
-  dense?: boolean;
-  /** Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. */
-  prominent?: boolean;
-  /** Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it. */
-  denseProminent?: boolean;
-  /** Class used to style the content below the short top app bar to prevent the top app bar from covering it. */
-  short?: boolean;
-}
-
-/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
-export const TopAppBarFixedAdjust = componentFactory<TopAppBarFixedAdjustProps>(
-  {
-    displayName: 'TopAppBarFixedAdjust',
-    classNames: (props: TopAppBarFixedAdjustProps) => [
-      'mdc-top-app-bar--fixed-adjust',
-      {
-        'mdc-top-app-bar--dense-fixed-adjust': props.dense,
-        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
-        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
-        'mdc-top-app-bar--short-fixed-adjust': props.short
-      }
-    ],
-    consumeProps: ['dense', 'denseProminent', 'prominent', 'short']
-  }
-);
 
 /** A TopAppBar component */
-class TopAppBarBase extends FoundationComponent<
-  | MDCShortTopAppBarFoundation
-  | MDCFixedTopAppBarFoundation
-  | MDCTopAppBarFoundation,
-  TopAppBarProps
-> {
-  static displayName = 'TopAppBar';
+export const TopAppBar = createComponent<TopAppBarProps>(function TopAppBar(
+  props,
+  ref
+) {
+  return (
+    <TopAppBarBase
+      key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
+      {...props}
+      ref={ref}
+    />
+  );
+});
 
-  private root = this.createElement('root');
-  navIcon: HTMLElement | null = null;
-  scrollTarget: EventTarget | null = null;
-  handleTargetScroll!: SpecificEventListener<'scroll'>;
-  handleNavigationClick!: EventListener;
-
-  get window() {
-    return this.root.ref &&
-      this.root.ref.ownerDocument &&
-      this.root.ref.ownerDocument.defaultView
-      ? this.root.ref.ownerDocument.defaultView
-      : window;
-  }
-
-  componentDidMount() {
-    super.componentDidMount();
-
-    if (!this.props.scrollTarget) {
-      this.handleTargetScroll = this.foundation.handleTargetScroll.bind(
-        this.foundation
-      );
-      this.setScrollTarget(this.window);
+const TopAppBarBase = createComponent<TopAppBarProps>(function TopAppBarBase(
+  props,
+  ref
+) {
+  const { rootEl } = useTopAppBarFoundation(props);
+  const {
+    onNav,
+    scrollTarget,
+    fixed,
+    prominent,
+    short,
+    shortCollapsed,
+    dense,
+    foundationRef,
+    ...rest
+  } = props;
+  const className = useClassNames(props, [
+    'mdc-top-app-bar',
+    {
+      'mdc-top-app-bar--fixed': fixed,
+      'mdc-top-app-bar--prominent': prominent,
+      'mdc-top-app-bar--short': short || shortCollapsed,
+      'mdc-top-app-bar--short-collapsed': shortCollapsed,
+      'mdc-top-app-bar--dense': dense
     }
+  ]);
 
-    this.navIcon =
-      this.root.ref &&
-      this.root.ref.querySelector(
-        MDCTopAppBarFoundation.strings.NAVIGATION_ICON_SELECTOR
-      );
-
-    this.handleNavigationClick = this.foundation.handleNavigationClick.bind(
-      this.foundation
-    );
-
-    this.navIcon &&
-      this.navIcon.addEventListener('click', this.handleNavigationClick);
-  }
-
-  componentWillUnmount() {
-    this.navIcon &&
-      this.navIcon.removeEventListener('click', this.handleNavigationClick);
-
-    super.componentWillUnmount();
-  }
-
-  getDefaultFoundation() {
-    const adapter = {
-      hasClass: (className: string) => this.root.hasClass(className),
-      addClass: (className: string) => this.root.addClass(className),
-      removeClass: (className: string) => this.root.removeClass(className),
-      setStyle: (property: string, value: string) =>
-        this.root.ref && this.root.ref.style.setProperty(property, value),
-      getTopAppBarHeight: () =>
-        this.root.ref ? this.root.ref.clientHeight : 0,
-      notifyNavigationIconClicked: () => {
-        this.emit('onNav', {});
-      },
-      registerScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
-        this.scrollTarget &&
-        this.scrollTarget.addEventListener('scroll', handler as EventListener),
-      deregisterScrollHandler: (handler: SpecificEventListener<'scroll'>) =>
-        this.scrollTarget &&
-        this.scrollTarget.removeEventListener(
-          'scroll',
-          handler as EventListener
-        ),
-      registerResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        this.scrollTarget &&
-        this.scrollTarget.addEventListener('resize', handler as EventListener),
-      deregisterResizeHandler: (handler: SpecificEventListener<'resize'>) =>
-        this.scrollTarget &&
-        this.scrollTarget.removeEventListener(
-          'resize',
-          handler as EventListener
-        ),
-      getViewportScrollY: () =>
-        this.scrollTarget &&
-        (this.scrollTarget as any)[
-          'pageYOffset' in this.scrollTarget ? 'pageYOffset' : 'scrollTop'
-        ],
-      getTotalActionItems: () =>
-        this.root.ref
-          ? this.root.ref.querySelectorAll(
-              MDCTopAppBarFoundation.strings.ACTION_ITEM_SELECTOR
-            ).length
-          : 0
-    };
-
-    let foundation;
-    if (this.props.short) {
-      foundation = new MDCShortTopAppBarFoundation(adapter);
-    } else if (this.props.fixed) {
-      foundation = new MDCFixedTopAppBarFoundation(adapter);
-    } else {
-      foundation = new MDCTopAppBarFoundation(adapter);
-    }
-
-    return foundation;
-  }
-
-  setScrollTarget(target: EventTarget) {
-    // Remove scroll handler from the previous scroll target
-    this.scrollTarget &&
-      this.scrollTarget.removeEventListener(
-        'scroll',
-        this.handleTargetScroll as EventListener
-      );
-
-    this.scrollTarget = target;
-
-    // Initialize scroll handler on the new scroll target
-    this.handleTargetScroll = this.foundation.handleTargetScroll.bind(
-      this.foundation
-    );
-    this.scrollTarget.addEventListener(
-      'scroll',
-      this.handleTargetScroll as EventListener
-    );
-  }
-
-  sync(props: TopAppBarProps) {
-    this.syncProp(props.scrollTarget, this.scrollTarget, () => {
-      this.scrollTarget = props.scrollTarget || this.window;
-      this.setScrollTarget(this.scrollTarget);
-    });
-  }
-
-  render() {
-    const { onNav, scrollTarget, ...rest } = this.props;
-    return <TopAppBarRoot {...this.root.props(rest)} ref={this.root.setRef} />;
-  }
-}
-
-export const TopAppBar = (props: TopAppBarProps & RMWC.ComponentProps) => (
-  <TopAppBarBase
-    key={props.short ? 'short' : props.fixed ? 'fixed' : 'top-app-bar'}
-    {...props}
-  />
-);
+  return (
+    <Tag
+      tag="header"
+      {...rest}
+      element={rootEl}
+      className={className}
+      ref={ref}
+    />
+  );
+});
 
 /** A simplified syntax for creating an AppBar. */
 export interface SimpleTopAppBarProps extends TopAppBarProps {
@@ -303,12 +101,8 @@ export interface SimpleTopAppBarProps extends TopAppBarProps {
 }
 
 /** A simplified syntax for creating an AppBar. */
-export class SimpleTopAppBar extends React.Component<
-  SimpleTopAppBarProps & RMWC.ComponentProps
-> {
-  static displayName = 'SimpleTopAppBar';
-
-  render() {
+export const SimpleTopAppBar = createComponent<SimpleTopAppBarProps>(
+  function SimpleTopAppBar(props, ref) {
     const {
       title,
       actionItems,
@@ -316,9 +110,9 @@ export class SimpleTopAppBar extends React.Component<
       startContent,
       endContent,
       ...rest
-    } = this.props;
+    } = props;
     return (
-      <TopAppBar {...rest}>
+      <TopAppBar {...rest} ref={ref}>
         <TopAppBarRow>
           <TopAppBarSection alignStart>
             {!!navigationIcon && (
@@ -344,4 +138,104 @@ export class SimpleTopAppBar extends React.Component<
       </TopAppBar>
     );
   }
+);
+
+/*********************************************************************
+ * Bits
+ *********************************************************************/
+
+/** A row for the app bar. */
+export interface TopAppBarRowProps {}
+
+/** A row for the app bar. */
+export const TopAppBarRow = createComponent<TopAppBarRowProps>(
+  function TopAppBarRow(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__row']);
+    return <Tag {...props} ref={ref} className={className} />;
+  }
+);
+
+/** A section for the app bar. */
+export interface TopAppBarSectionProps {
+  /** Aligns the section to the start. */
+  alignStart?: boolean;
+  /** Aligns the section to the end. */
+  alignEnd?: boolean;
 }
+
+/** A section for the app bar. */
+export const TopAppBarSection = createComponent<TopAppBarSectionProps>(
+  function TopAppBarSection(props, ref) {
+    const { alignStart, alignEnd, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-top-app-bar__section',
+      {
+        'mdc-top-app-bar__section--align-start': alignStart,
+        'mdc-top-app-bar__section--align-end': alignEnd
+      }
+    ]);
+    return <Tag tag="section" {...rest} ref={ref} className={className} />;
+  }
+);
+
+/** A navigation icon for the top app bar. This is an instance of the Icon component. */
+export interface TopAppBarNavigationIconProps extends IconButtonProps {}
+
+/** A navigation icon for the top app bar. This is an instance of the IconButton component. */
+export const TopAppBarNavigationIcon = createComponent<
+  TopAppBarNavigationIconProps
+>(function TopAppBarNavigationIcon(props, ref) {
+  const className = useClassNames(props, ['mdc-top-app-bar__navigation-icon']);
+  return <IconButton {...props} className={className} ref={ref} />;
+});
+
+/** Action items for the top app bar. This is an instance of the Icon component.*/
+export interface TopAppBarActionItemProps extends IconButtonProps {}
+
+/** Action items for the top app bar. This is an instance of the IconButton component.*/
+export const TopAppBarActionItem = createComponent<TopAppBarActionItemProps>(
+  function TopAppBarActionItem(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__action-item']);
+    return <IconButton {...props} className={className} ref={ref} />;
+  }
+);
+
+/** A title for the top app bar. */
+export interface TopAppBarTitleProps {}
+
+/** A title for the top app bar. */
+export const TopAppBarTitle = createComponent<TopAppBarTitleProps>(
+  function TopAppBarTitle(props, ref) {
+    const className = useClassNames(props, ['mdc-top-app-bar__title']);
+    return <Tag {...props} ref={ref} className={className} />;
+  }
+);
+
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export interface TopAppBarFixedAdjustProps {
+  /** Class used to style the content below the dense top app bar to prevent the top app bar from covering it. */
+  dense?: boolean;
+  /** Class used to style the content below the prominent top app bar to prevent the top app bar from covering it. */
+  prominent?: boolean;
+  /** Class used to style the content below the top app bar when styled as both prominent and dense, to prevent the top app bar from covering it. */
+  denseProminent?: boolean;
+  /** Class used to style the content below the short top app bar to prevent the top app bar from covering it. */
+  short?: boolean;
+}
+
+/** An optional component to fill the space when the TopAppBar is fixed. Place it directly after the TopAppBar. */
+export const TopAppBarFixedAdjust = createComponent<TopAppBarFixedAdjustProps>(
+  function TopAppBarFixedAdjust(props, ref) {
+    const { dense, denseProminent, prominent, short, ...rest } = props;
+    const className = useClassNames(props, [
+      'mdc-top-app-bar--fixed-adjust',
+      {
+        'mdc-top-app-bar--dense-fixed-adjust': props.dense,
+        'mdc-top-app-bar--prominent-fixed-adjust': props.prominent,
+        'mdc-top-app-bar--dense-prominent-fixed-adjust': props.denseProminent,
+        'mdc-top-app-bar--short-fixed-adjust': props.short
+      }
+    ]);
+    return <Tag {...rest} ref={ref} className={className} />;
+  }
+);

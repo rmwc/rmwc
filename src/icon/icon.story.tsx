@@ -88,8 +88,10 @@ storiesOf('Icons', module).add('Icon', () => (
     <li>
       custom with Provider:{' '}
       <RMWCProvider
-        iconStrategy="custom"
-        iconRender={props => <div>Custom + {props.content}</div>}
+        icon={{
+          strategy: 'custom',
+          render: props => <div>Custom + {props.content}</div>
+        }}
       >
         <Icon icon="test" />
       </RMWCProvider>

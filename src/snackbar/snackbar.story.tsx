@@ -26,6 +26,7 @@ function SnackbarStory() {
       message={message}
       leading={leading}
       stacked={stacked}
+      foundationRef={console.log}
       dismissesOnAction={dismissesOnAction}
       action={
         <SnackbarAction
@@ -45,7 +46,7 @@ function SnackbarStory() {
   );
 }
 
-const { messages, notify } = createSnackbarQueue();
+const { messages, notify, clearAll } = createSnackbarQueue();
 
 storiesOf('Snackbar', module)
   .add('Snackbar', () => <SnackbarStory />)
@@ -55,11 +56,13 @@ storiesOf('Snackbar', module)
         <SnackbarQueue messages={messages} />
         <Button
           label="Notify"
-          onClick={() =>
+          onClick={() => {
             notify({
+              timeout: -1,
               title: <b>Warning</b>,
               body: 'You have selected pizza instead icecream!',
               icon: 'warning',
+              dismissesOnAction: true,
               actions: [
                 {
                   // NotificationAction api format
@@ -74,9 +77,80 @@ storiesOf('Snackbar', module)
                   onClick: () => {}
                 }
               ]
-            })
-          }
+            });
+          }}
         />
+      </>
+    );
+  })
+  .add('SnackbarQueue API Close', function() {
+    return (
+      <>
+        <SnackbarQueue messages={messages} />
+        <Button
+          label="Notify"
+          onClick={() => {
+            const { close } = notify({
+              timeout: -1,
+              title: <b>Warning</b>,
+              body: 'You have selected pizza instead icecream!',
+              icon: 'warning',
+              dismissesOnAction: true,
+              actions: [
+                {
+                  // NotificationAction api format
+                  title: 'Fix It!',
+                  icon: 'close',
+                  action: 'fixit'
+                },
+                {
+                  // OR SnackbarActionProps format
+                  label: 'Continue...',
+                  icon: 'check',
+                  onClick: () => {}
+                }
+              ]
+            });
+
+            setTimeout(() => {
+              close();
+            }, 1500);
+          }}
+        />
+      </>
+    );
+  })
+  .add('SnackbarQueue API Clear All', function() {
+    React.useEffect(() => {
+      new Array(40).fill(undefined).forEach(() => {
+        notify({
+          timeout: 1000,
+          title: <b>Warning</b>,
+          body: 'You have selected pizza instead icecream!',
+          icon: 'warning',
+          dismissesOnAction: true,
+          actions: [
+            {
+              // NotificationAction api format
+              title: 'Fix It!',
+              icon: 'close',
+              action: 'fixit'
+            },
+            {
+              // OR SnackbarActionProps format
+              label: 'Continue...',
+              icon: 'check',
+              onClick: () => {}
+            }
+          ]
+        });
+      });
+    }, []);
+
+    return (
+      <>
+        <SnackbarQueue messages={messages} />
+        <Button onClick={clearAll}>Clear All</Button>
       </>
     );
   });

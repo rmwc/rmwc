@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Docs, DocsExample, DocsSubtitle, DocProps, DocsP } from '@doc-utils';
 import propsSrc from './generated-props.json';
@@ -25,9 +25,12 @@ export default function() {
       title="Data Tables"
       lead="Data tables display sets of data."
       module="@rmwc/data-table"
-      styles={['@rmwc/data-table/data-table.css']}
+      styles={[
+        '@material/data-table/dist/mdc.data-table.css',
+        '@rmwc/data-table/data-table.css',
+        '@rmwc/icon/icon.css'
+      ]}
       examples={examples}
-      addon
     >
       <DocsSubtitle>Standard Table</DocsSubtitle>
 
@@ -36,13 +39,6 @@ export default function() {
         Material compliant HTML tables. Because of the complexities of working
         with datasets (especially large ones), the DataTable component DOES NOT
         handle pagination, data fetching, sorting, or performance of long lists.
-      </DocsP>
-
-      <DocsP>
-        **Heads Up!** RMWC implemented data tables before they were available in
-        `material-components-web`. In the future, they will be refactored to
-        implement the official spec. For the time being, please do not file
-        issues against functionality in comparison to the ones from mat-web.
       </DocsP>
 
       <DocsExample>
@@ -74,7 +70,7 @@ export default function() {
                     <DataTableCell alignEnd>25</DataTableCell>
                     <DataTableCell alignEnd>$2.90</DataTableCell>
                   </DataTableRow>
-                  <DataTableRow activated>
+                  <DataTableRow selected>
                     <DataTableCell>Pizza</DataTableCell>
                     <DataTableCell alignEnd>50</DataTableCell>
                     <DataTableCell alignEnd>$1.25</DataTableCell>
@@ -139,19 +135,18 @@ export default function() {
                 </DataTableContent>
               </DataTable>
 
-              <div>
-                Sticky
+              <div className="doc-controls">
                 <Select
-                  label="Rows"
+                  label="Sticky Rows"
                   options={['0', '1']}
                   value={String(rows)}
-                  onChange={evt => setRows(evt.currentTarget.value)}
+                  onChange={evt => setRows(Number(evt.currentTarget.value))}
                 />
                 <Select
-                  label="Cols"
+                  label="Sticky Cols"
                   options={['0', '1']}
                   value={String(cols)}
-                  onChange={evt => setCols(evt.currentTarget.value)}
+                  onChange={evt => setCols(Number(evt.currentTarget.value))}
                 />
               </div>
             </>
@@ -176,11 +171,10 @@ export default function() {
               <DataTableContent>
                 <DataTableHead>
                   <DataTableRow>
-                    <DataTableHeadCell>
+                    <DataTableHeadCell hasFormControl>
                       <Checkbox />
-                      Label
                     </DataTableHeadCell>
-                    <DataTableHeadCell>Header</DataTableHeadCell>
+                    <DataTableHeadCell>Label</DataTableHeadCell>
                     <DataTableHeadCell>Header</DataTableHeadCell>
                     <DataTableHeadCell>Header</DataTableHeadCell>
                     <DataTableHeadCell>Toggle</DataTableHeadCell>
@@ -190,7 +184,7 @@ export default function() {
                   {sampleRows.map((v, i) => (
                     // @ts-ignore
                     <DataTableRow key={i} selected={checked[i]}>
-                      <DataTableCell>
+                      <DataTableCell hasFormControl>
                         <Checkbox
                           // @ts-ignore
                           checked={checked[i]}
@@ -200,15 +194,14 @@ export default function() {
                             setChecked({ ...checked });
                           }}
                         />
-                        Label
                       </DataTableCell>
+                      <DataTableCell>Label</DataTableCell>
                       <DataTableCell>
                         <Select
                           placeholder="--Select--"
                           options={['Cookies', 'Pizza', 'Icecream']}
                         />
                       </DataTableCell>
-                      <DataTableCell>R{i} C2</DataTableCell>
                       <DataTableCell>R{i} C3</DataTableCell>
                       <DataTableCell>
                         <Switch />
@@ -235,9 +228,11 @@ export default function() {
             return row[1] > 100 ? { activated: true } : {};
           }}
           getCellProps={(cell, index, isHead) => {
+            const props = { isNumeric: index > 0, style: undefined };
+
             return !isHead && index === 2 && !cell.includes('$')
-              ? { style: { color: 'red' } }
-              : {};
+              ? { ...props, style: { color: 'red' } }
+              : props;
           }}
           headers={[['Item', 'Quantity', 'Value']]}
           data={[
@@ -254,13 +249,13 @@ export default function() {
       <DocProps
         src={propsSrc}
         components={[
-          DataTable,
-          DataTableRow,
-          DataTableCell,
-          DataTableHead,
-          DataTableBody,
-          DataTableHeadCell,
-          SimpleDataTable
+          { displayName: 'DataTable', component: DataTable },
+          { displayName: 'DataTableRow', component: DataTableRow },
+          { displayName: 'DataTableCell', component: DataTableCell },
+          { displayName: 'DataTableHead', component: DataTableHead },
+          { displayName: 'DataTableBody', component: DataTableBody },
+          { displayName: 'DataTableHeadCell', component: DataTableHeadCell },
+          { displayName: 'SimpleDataTable', component: SimpleDataTable }
         ]}
       />
     </Docs>

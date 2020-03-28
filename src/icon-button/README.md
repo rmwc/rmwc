@@ -4,7 +4,12 @@
 
 - Module **@rmwc/icon-button**
 - Import styles:
-  - import **'@material/icon-button/dist/mdc.icon-button.css'**
+  - Using CSS Loader
+    - import '@rmwc/icon-button/dist/styles';
+  - Or include stylesheets
+    - **'@material/icon-button/dist/mdc.icon-button.css'**
+    - **'@rmwc/icon/icon.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/buttons/icon-buttons/](https://material.io/develop/web/components/buttons/icon-buttons/)
 
 ## Basic Usage
@@ -96,7 +101,9 @@ An IconButton component that can also be used as a toggle.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Controls the on / off state of the a toggleable button. |
 | `disabled` | `undefined \| false \| true` | Makes the button disabled |
+| `foundationRef` | `React.Ref<MDCIconButtonToggleFoundation>` | Advanced: A reference to the MDCFoundation. Only for Toggleable buttons. |
 | `icon` | `RMWC.IconPropT` | Icon for the button |
+| `label` | `undefined \| string` | Apply an aria label. |
 | `onChange` | `undefined \| (evt: IconButtonOnChangeEventT) => void` | An onChange callback that receives a custom event. evt.detail = { isOn: boolean } |
 | `onIcon` | `RMWC.IconPropT` | If specified, renders a toggle with this icon as the on state. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |

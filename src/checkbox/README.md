@@ -4,8 +4,12 @@
 
 - Module **@rmwc/checkbox**
 - Import styles:
-  - import **'@material/checkbox/dist/mdc.checkbox.css'**
-  - import **'@material/form-field/dist/mdc.form-field.css'**
+  - Using CSS Loader
+    - import '@rmwc/checkbox/dist/styles';
+  - Or include stylesheets
+    - **'@material/checkbox/dist/mdc.checkbox.css'**
+    - **'@material/form-field/dist/mdc.form-field.css'**
+    - **'@material/ripple/dist/mdc.ripple.css'**
 - MDC Docs: [https://material.io/develop/web/components/input-controls/checkboxes/](https://material.io/develop/web/components/input-controls/checkboxes/)
 
 ```jsx
@@ -15,7 +19,7 @@ function Example() {
     <Checkbox
       label="Cookies"
       checked={checked}
-      onChange={evt => setChecked(evt.currentTarget.checked)}
+      onChange={evt => setChecked(!!evt.currentTarget.checked)}
     />
   );
 }
@@ -47,9 +51,10 @@ A Checkbox component.
 |------|------|-------------|
 | `checked` | `undefined \| false \| true` | Toggle the control on and off. |
 | `disabled` | `undefined \| false \| true` | Disables the control. |
+| `foundationRef` | `React.Ref<MDCCheckboxFoundation>` | Advanced: A reference to the MDCFoundation. |
 | `id` | `undefined \| string` | A DOM ID for the toggle. |
 | `indeterminate` | `undefined \| false \| true` | Make the control indeterminate |
-| `inputRef` | `MutableRefObject<HTMLInputElement \| null> \| (ref: HTMLInputElement \| null) => void` | A reference to the native input. |
+| `inputRef` | `React.Ref<HTMLInputElement>` | A reference to the native input. |
 | `label` | `React.ReactNode` | A label for the control. |
 | `ripple` | `RipplePropT` | Adds a ripple effect to the component |
 | `rootProps` | `React.HTMLProps<any>` | By default, all props except className and style spread to the input. These are additional props for the root of the checkbox. |

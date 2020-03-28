@@ -1,17 +1,22 @@
-import * as React from 'react';
-import { SimpleDialog, SimpleDialogProps, DialogOnCloseEventT } from './dialog';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as RMWC from '@rmwc/types';
+import React, { useState, useEffect } from 'react';
+import {
+  SimpleDialog,
+  SimpleDialogProps,
+  SimpleDialogHTMLProps,
+  DialogOnCloseEventT
+} from './dialog';
 import { ArrayEmitter, randomId } from '@rmwc/base';
-import { TextField, TextFieldProps } from '@rmwc/textfield';
-import { ComponentProps, MergeInterfacesT } from '@rmwc/types';
-
-interface DialogQueueInputBase extends SimpleDialogProps {
-  id?: string;
-  /** Props for the input when using the prompt dialog. Only applies to prompt. */
-  inputProps?: MergeInterfacesT<TextFieldProps, ComponentProps>;
-}
+import { TextField, TextFieldProps, TextFieldHTMLProps } from '@rmwc/textfield';
 
 export interface DialogQueueInput
-  extends MergeInterfacesT<DialogQueueInputBase, ComponentProps> {}
+  extends SimpleDialogProps,
+    SimpleDialogHTMLProps {
+  id?: string;
+  /** Props for the input when using the prompt dialog. Only applies to prompt. */
+  inputProps?: TextFieldProps & TextFieldHTMLProps;
+}
 
 interface DialogQueueSpec extends DialogQueueInput {
   id: string;
@@ -24,88 +29,75 @@ export interface DialogQueueProps extends SimpleDialogProps {
   dialogs: ArrayEmitter<DialogQueueSpec>;
 }
 
-interface DialogQueueState {
-  closingDialogs: { [id: string]: true };
-}
-
 /** A snackbar queue for rendering messages */
-export class DialogQueue extends React.Component<
-  MergeInterfacesT<DialogQueueProps, ComponentProps>,
-  DialogQueueState
-> {
-  static displayName = 'DialogQueue';
+export function DialogQueue({
+  dialogs,
+  ...defaultDialogProps
+}: DialogQueueProps) {
+  const [, setIteration] = useState(0);
+  const [closingDialogs, setClosingDialogs] = useState<{ [key: string]: true }>(
+    {}
+  );
 
-  state: DialogQueueState = {
-    closingDialogs: {}
+  useEffect(() => {
+    const forceUpdate = () => setIteration(val => val + 1);
+    dialogs.on('change', forceUpdate);
+    return () => {
+      dialogs.off('change', forceUpdate);
+    };
+  }, [dialogs]);
+
+  const removeDialog = (evt: DialogOnCloseEventT, dialog: DialogQueueSpec) => {
+    setClosingDialogs({
+      ...closingDialogs,
+      [dialog.id]: true
+    });
+
+    dialog.resolve(evt);
+    setTimeout(() => {
+      // remove the dialog from our array
+      const index = dialogs.array.indexOf(dialog);
+      !!~index && dialogs.array.splice(index, 1);
+
+      // remove it from the closing state
+      const newClosingDialogs = { ...closingDialogs };
+      delete newClosingDialogs[dialog.id];
+      setClosingDialogs(newClosingDialogs);
+    }, 150);
   };
 
-  constructor(props: DialogQueueProps) {
-    super(props);
-    this.forceUpdate = this.forceUpdate.bind(this);
-    this.props.dialogs.on('change', this.forceUpdate);
-  }
+  // A simple way to show only one at a time
+  // We loop through until we find a dialog thats not closing
+  // When one is closing, we flip this flag and render all of the other ones in a closed state
+  // This ensures we get the proper animations for closing dialogs
+  let foundOpen = false;
 
-  componentWillUnmount() {
-    this.props.dialogs.off('change', this.forceUpdate);
-  }
+  return (
+    <>
+      {dialogs.array.map(dialog => {
+        const { resolve, reject, id, inputProps, ...rest } = dialog;
 
-  removeDialog(evt: DialogOnCloseEventT, dialog: DialogQueueSpec) {
-    this.setState(
-      {
-        closingDialogs: {
-          ...this.state.closingDialogs,
-          [dialog.id]: true
+        const rendered = (
+          <SimpleDialog
+            {...defaultDialogProps}
+            {...rest}
+            key={id}
+            open={!closingDialogs[id] && !foundOpen}
+            onClose={evt => {
+              removeDialog(evt, dialog);
+              dialog.onClose && dialog.onClose(evt);
+            }}
+          />
+        );
+
+        if (!closingDialogs[id]) {
+          foundOpen = true;
         }
-      },
-      () => {
-        dialog.resolve(evt);
-        setTimeout(() => {
-          const index = this.props.dialogs.array.indexOf(dialog);
-          !!~index && this.props.dialogs.array.splice(index, 1);
 
-          const { closingDialogs } = this.state;
-          delete closingDialogs[dialog.id];
-
-          this.setState({
-            closingDialogs
-          });
-        }, 150);
-      }
-    );
-  }
-
-  render() {
-    const { dialogs, ...defaultDialogProps } = this.props;
-
-    // A simple way to show only one at a time
-    // We loop through until we find a dialog thats not closing
-    // When one is closing, we flip this flag and render all of the other ones in a closed state
-    // This ensures we get the proper animations for closing dialogs
-    let foundOpen = false;
-
-    return dialogs.array.map(dialog => {
-      const { resolve, reject, id, inputProps, ...rest } = dialog;
-
-      const rendered = (
-        <SimpleDialog
-          {...defaultDialogProps}
-          {...rest}
-          key={id}
-          open={!this.state.closingDialogs[id] && !foundOpen}
-          onClose={evt => {
-            this.removeDialog(evt, dialog);
-            dialog.onClose && dialog.onClose(evt);
-          }}
-        />
-      );
-
-      if (!this.state.closingDialogs[id]) {
-        foundOpen = true;
-      }
-
-      return rendered;
-    });
-  }
+        return rendered;
+      })}
+    </>
+  );
 }
 
 /**
@@ -126,37 +118,35 @@ const dialogFactory = (
  * Handle prompt dialogs
  * We have to jump through a few hoops to get the value back out
  */
-class PromptBody extends React.Component<{
+function PromptBody({
+  body,
+  inputProps,
+  apiRef
+}: {
   body?: React.ReactNode;
-  inputProps?: MergeInterfacesT<TextFieldProps, ComponentProps>;
+  inputProps?: DialogQueueInput['inputProps'];
   apiRef: (getValue: () => string) => void;
-}> {
-  static displayName = 'PromptBody';
+}) {
+  const [value, setValue] = useState('');
 
-  state = {
-    value: ''
-  };
+  useEffect(() => {
+    apiRef(() => value);
+  }, [apiRef, value]);
 
-  componentDidMount() {
-    this.props.apiRef(() => this.state.value);
-  }
-
-  render() {
-    return (
-      <div>
-        {!!this.props.body && (
-          <div style={{ marginBottom: '1rem' }}>{this.props.body}</div>
-        )}
-        <TextField
-          style={{ width: '100%' }}
-          autoFocus
-          {...this.props.inputProps}
-          value={this.state.value}
-          onChange={evt => this.setState({ value: evt.currentTarget.value })}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      {!!body && <div style={{ marginBottom: '1rem' }}>{body}</div>}
+      <TextField
+        style={{ width: '100%' }}
+        autoFocus
+        {...inputProps}
+        value={value}
+        onChange={evt => {
+          setValue(evt.currentTarget.value);
+        }}
+      />
+    </div>
+  );
 }
 
 const promptFactory = (dialog: DialogQueueSpec): DialogQueueSpec => {
