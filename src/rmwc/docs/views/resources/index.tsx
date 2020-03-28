@@ -61,7 +61,10 @@ const RESOURCES: ResourceT[] = [
         label: 'Javascript',
         url: 'https://codesandbox.io/s/rmwc-sandbox-o0s0d'
       },
-      { label: 'Typescript', url: 'https://codesandbox.io/s/kl0w4xp95' }
+      {
+        label: 'Typescript',
+        url: 'https://codesandbox.io/s/rmwc-typescript-sandbox-y7516'
+      }
     ]
   },
   {
