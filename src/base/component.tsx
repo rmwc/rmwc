@@ -98,6 +98,7 @@ export function createComponent<
   };
 
   WrappedComponent.displayName = Component.constructor.name || 'RMWCComponent';
+  ForwardComponent.displayName = WrappedComponent.displayName;
 
   return ForwardComponent as typeof WrappedComponent;
 }

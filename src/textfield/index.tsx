@@ -316,3 +316,4 @@ const TextFieldIcon = function TextFieldIcon(
     />
   );
 };
+TextFieldIcon.displayName = 'TextFieldIcon';
