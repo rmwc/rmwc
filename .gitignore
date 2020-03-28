@@ -11,6 +11,8 @@ node_modules
 **/flow-typed
 **/dist
 **/next
+**/styles.js
+**/styles.d.ts
 react-versions
 
 # misc

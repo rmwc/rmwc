@@ -37,6 +37,17 @@ const promises = getPackageDirs().map(d => {
       path.resolve(root, 'src', d, 'next')
     );
 
+    // Copy the styles file to the root.
+    copyFile(
+      path.resolve(root, 'build', 'dist', d, 'styles.js'),
+      path.resolve(root, 'src', d, 'styles.js')
+    );
+
+    copyFile(
+      path.resolve(root, 'build', 'dist', d, 'styles.d.ts'),
+      path.resolve(root, 'src', d, 'styles.d.ts')
+    );
+
     resolve();
   });
 });
