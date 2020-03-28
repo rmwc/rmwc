@@ -22,8 +22,8 @@ Features:
 * [x] Individually packaged and released components
 
 ## Try it in the Code Sandbox
-> - Javascript Sandbox https://codesandbox.io/s/kpy13vqnr
-> - Typescript Sandbox https://codesandbox.io/s/kl0w4xp95
+> - Javascript Sandbox https://codesandbox.io/s/rmwc-sandbox-o0s0d
+> - Typescript Sandbox https://codesandbox.io/s/rmwc-typescript-sandbox-y7516
 
 ## Like this project? Try out some of my others 😎
 - A library for simplified Redux development: https://github.com/jamesmfriedman/redux-state-branch
