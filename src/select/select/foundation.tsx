@@ -352,10 +352,12 @@ export const useSelectFoundation = (
   // - Jump through stupid hoops to prevent the event from firing
   useEffect(() => {
     silenceChange.current = true;
-    if (value !== undefined && value !== foundationValue) {
+
+    if (value !== foundationValue) {
       // @ts-ignore unsafe private variable access
-      selectedIndex.current = foundation.menuItemValues_.indexOf(value);
-      foundation.setValue(value);
+      const index = foundation.menuItemValues_.indexOf(value);
+      selectedIndex.current = index;
+      foundation.setValue(value || '');
     }
     raf(() => {
       silenceChange.current = false;
