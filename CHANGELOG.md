@@ -1,3 +1,9 @@
+#### 6.0.1 (2020-03-28)
+
+##### Bug Fixes
+
+* **Menu:**  Correcting issue requiring double click to open (70004375)
+
 #### 6.0.0 (2020-03-28)
 
 #### 6.0.0-rc.5 (2020-03-28)
