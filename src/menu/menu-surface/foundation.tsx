@@ -308,17 +308,8 @@ export const useMenuSurfaceFoundation = (
       firstFocusableElementRef.current =
         focusableElements.length > 0 ? focusableElements[0] : null;
       foundation.open();
-    } else {
-      // Yet another hack to try to sync up React
-      // with MDC. This fixes react lifecycle of
-      // changing the open prop externally, while also not
-      // conflicting with any internal events that might have closed
-      // the menu, like a body click or escape key
-      raf(() => {
-        if (foundation.isOpen()) {
-          foundation.close();
-        }
-      }, 2);
+    } else if (foundation.isOpen()) {
+      foundation.close();
     }
   }, [open, foundation, rootEl.ref]);
 
