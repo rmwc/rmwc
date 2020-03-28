@@ -43,7 +43,7 @@ export interface ButtonProps extends RMWC.WithRippleProps {
 /**
  * The Button component.
  */
-export const Button = withRipple()(
+export const Button = withRipple({ surface: false })(
   createComponent<ButtonProps>(function Button(props, ref) {
     const {
       dense,
