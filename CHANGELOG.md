@@ -1,3 +1,14 @@
+#### 6.0.0-rc.2 (2020-03-28)
+
+##### Breaking Changes
+
+* **List:**  changing event detail to {index: number} instead of raw number #432 (3807a9b3)
+
+##### Bug Fixes
+
+* **ThemeProvider:**  Allow setting theme prop directly on ThemeProvider #567 (ca797461)
+* **Snackbar:**  Corrects layout issue with ripple #560 (da2952de)
+
 #### 6.0.0-rc.1 (2020-03-27)
 
 ##### Breaking Changes
