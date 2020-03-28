@@ -47,7 +47,7 @@ describe('List', () => {
     el.find(ListItem)
       .last()
       .simulate('click');
-    expect(clickedIndex).toBe(1);
+    expect(clickedIndex).toEqual({ index: 1 });
   });
 
   it('SimpleListItem renders', () => {
