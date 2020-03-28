@@ -101,6 +101,11 @@ body ul li {
   color: inherit;
 }
 
+.app__content > div {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .app__content > div,
 .container {
   padding: 1.5rem;

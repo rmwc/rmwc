@@ -196,7 +196,7 @@ function DocsSetup({
           <Br />
           {'  '}- Using CSS Loader
           <Br />
-          {'    '}- import '{module}/dist/styles';
+          {'    '}- import '{module}/styles';
           <Br />
           {'  '}- Or include stylesheets
           <Br />
