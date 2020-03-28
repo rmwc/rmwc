@@ -1,6 +1,6 @@
 {
   "name": "@rmwc/button",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "RMWC Button component",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,6 @@
     "./styles.js",
     "*.css"
   ],
-  
   "publishConfig": {
     "access": "public"
   },
@@ -38,11 +37,11 @@
   },
   "dependencies": {
     "@material/button": "^5.1.0",
-    "@rmwc/base": "^6.0.0",
-    "@rmwc/icon": "^6.0.0",
-    "@rmwc/provider": "^6.0.0",
-    "@rmwc/ripple": "^6.0.0",
-    "@rmwc/types": "^6.0.0"
+    "@rmwc/base": "^6.0.1",
+    "@rmwc/icon": "^6.0.1",
+    "@rmwc/provider": "^6.0.1",
+    "@rmwc/ripple": "^6.0.1",
+    "@rmwc/types": "^6.0.1"
   },
   "gitHead": "bf098adc2571ee1641ef20d79f38fb64e9ff186e"
 }
