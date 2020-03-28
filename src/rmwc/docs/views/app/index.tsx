@@ -39,6 +39,7 @@ import Home from '../home';
 import { SiteSearch } from '../site-search';
 import { DOC_VERSIONS } from '../../common/doc-versions';
 import { ThemePicker, getTheme } from './theme-picker';
+import { history } from '../../common/history';
 
 const MainMenuItem = ({ url, label }: { url?: string; label: string }) => {
   return (
@@ -148,6 +149,9 @@ function Nav(props: DrawerProps) {
 export function App() {
   const isMobile = window.innerWidth < 640;
   const [menuIsOpen, setMenuIsOpen] = useState(!isMobile);
+  const [pageId, setPageId] = useState(
+    `page-${window.location.pathname.split('/').pop() || 'home'}`
+  );
   const [theme, setTheme] = useState(
     window.localStorage.getItem('rmwcTheme') || 'Baseline'
   );
@@ -164,7 +168,11 @@ export function App() {
     return () => window.removeEventListener('resize', listener);
   }, [isMobile]);
 
-  const pageId = `page-${window.location.pathname.split('/').pop() || 'home'}`;
+  useEffect(() => {
+    history.listen(() => {
+      setPageId(`page-${window.location.pathname.split('/').pop() || 'home'}`);
+    });
+  }, []);
 
   return (
     <ThemeProvider
