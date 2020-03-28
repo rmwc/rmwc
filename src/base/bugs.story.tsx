@@ -106,7 +106,18 @@ function Bug560() {
   );
 }
 
+function Bug567() {
+  return (
+    <React.Fragment>
+      <ThemeProvider options={{ primary: 'red' }} theme="primary">
+        Expected: red text here. Actual: black.
+      </ThemeProvider>
+    </React.Fragment>
+  );
+}
+
 storiesOf('Bugs', module)
   .add('#538', Bug538)
   .add('#515', Bug515)
-  .add('#560', Bug560);
+  .add('#560', Bug560)
+  .add('#567', Bug567);
