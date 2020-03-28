@@ -46,7 +46,7 @@ const RESOURCES: ResourceT[] = [
     name: 'Code Sandbox',
     description:
       'Play around with RMWC components in both Javascript and Typescript. Useful for kicking the tires, or reproducing issues.',
-    url: 'https://codesandbox.io/s/kpy13vqnr',
+    url: 'https://codesandbox.io/s/rmwc-sandbox-o0s0d',
     img: 'images/backgrounds/mb-bg-fb-09.png',
     icon: (
       <svg viewBox="0 0 24 24">
@@ -57,7 +57,10 @@ const RESOURCES: ResourceT[] = [
       </svg>
     ),
     actions: [
-      { label: 'Javascript', url: 'https://codesandbox.io/s/kpy13vqnr' },
+      {
+        label: 'Javascript',
+        url: 'https://codesandbox.io/s/rmwc-sandbox-o0s0d'
+      },
       { label: 'Typescript', url: 'https://codesandbox.io/s/kl0w4xp95' }
     ]
   },
