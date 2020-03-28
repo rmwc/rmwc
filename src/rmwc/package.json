@@ -5,10 +5,7 @@
   "main": "dist/index.js",
   "types": "index.d.ts",
   "module": "next/index.js",
-  "sideEffects": [
-    "./styles.tsx",
-    "*.css"
-  ],
+  "sideEffects": true,
   "publishConfig": {
     "access": "public"
   },

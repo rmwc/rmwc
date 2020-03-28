@@ -6,8 +6,11 @@
   "types": "dist/index.d.ts",
   "module": "next/index.js",
   "sideEffects": [
+    "./styles.tsx",
+    "./styles.js",
     "*.css"
   ],
+  
   "publishConfig": {
     "access": "public"
   },
