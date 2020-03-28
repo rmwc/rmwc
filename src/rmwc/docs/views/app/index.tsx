@@ -1,6 +1,6 @@
 // eslint-disable-next-line  @typescript-eslint/no-unused-vars
 import * as RMWC from '@rmwc/types';
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Link, Switch as RouterSwitch } from 'react-router-dom';
 
 import { menuContent, MenuItemT } from '../../common/menu-content';
@@ -37,7 +37,6 @@ import { Portal } from '@rmwc/base';
 
 import Home from '../home';
 import { SiteSearch } from '../site-search';
-import { history } from '../../common/history';
 import { DOC_VERSIONS } from '../../common/doc-versions';
 import { ThemePicker, getTheme } from './theme-picker';
 
@@ -147,41 +146,23 @@ function Nav(props: DrawerProps) {
 }
 
 export function App() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const isMobile = window.innerWidth < 640;
+  const [menuIsOpen, setMenuIsOpen] = useState(!isMobile);
   const [theme, setTheme] = useState(
     window.localStorage.getItem('rmwcTheme') || 'Baseline'
   );
 
-  const [, forceUpdate] = useState(Math.random());
-
-  const doSizeCheck = useCallback(
-    (initial?: boolean) => {
+  useEffect(() => {
+    isMobile && setMenuIsOpen(false);
+    const listener = (evt: any) => {
       const _isMobile = window.innerWidth < 640;
-      const _menuIsOpen =
-        initial && window.innerWidth > 640 ? true : menuIsOpen;
-
-      if (isMobile !== _isMobile || menuIsOpen !== _menuIsOpen) {
-        setIsMobile(_isMobile);
-        setMenuIsOpen(_menuIsOpen);
-        setTimeout(() => {
-          window.dispatchEvent(new Event('resize'));
-        }, 300);
+      if (_isMobile !== isMobile) {
+        setMenuIsOpen(!_isMobile);
       }
-    },
-    [isMobile, menuIsOpen]
-  );
-
-  useEffect(() => {
-    doSizeCheck(true);
-    history.listen(() => forceUpdate(Math.random()));
-  }, [doSizeCheck]);
-
-  useEffect(() => {
-    const listener = () => doSizeCheck();
+    };
     window.addEventListener('resize', listener);
     return () => window.removeEventListener('resize', listener);
-  });
+  }, [isMobile]);
 
   const pageId = `page-${window.location.pathname.split('/').pop() || 'home'}`;
 
@@ -192,7 +173,11 @@ export function App() {
       tag="div"
       id={pageId}
     >
-      <AppBar onNavClick={evt => setMenuIsOpen(!menuIsOpen)}>
+      <AppBar
+        onNavClick={evt => {
+          setMenuIsOpen(!menuIsOpen);
+        }}
+      >
         {!isMobile && (
           <ThemePicker
             selectedThemeName={theme}
